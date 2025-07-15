@@ -1,0 +1,39 @@
+:root {
+  --md-sys-color-primary: #cc3333;
+  --md-sys-color-secondary: #239c41;
+  --md-sys-color-tertiary: #16239b;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-background: #117221;
+  --md-sys-color-outline: #000000;
+  --md-sys-color-outline-variant: #2742c7;
+  --md-sys-color-on-surface-variant: #2742c7;
+  --md-sys-color-shadow: #000000;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-rows: [header-nav] auto [main] 85% [footer] 10%;
+}
+
+nav {
+  position: relative;
+  --md-elevation-level: 4;
+}
+
+/* .article {
+  position: relative;
+  height: 100%;
+  border-radius: 16px;
+  --md-elevation-level: 4;
+} */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

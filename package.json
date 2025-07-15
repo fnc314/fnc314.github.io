@@ -1,0 +1,41 @@
+{
+  "name": "com.fnc314.homepage",
+  "version": "1.0.0",
+  "description": "Homepage for fnc314.com",
+  "keywords": [
+    "homepage",
+    "fnc314"
+  ],
+  "homepage": "https://github.com/fnc314/fnc314.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/fnc314/fnc314.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fnc314/fnc314.github.io.git"
+  },
+  "license": "MIT",
+  "author": "Franco N. Colaizzi",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "@lit/reactive-element": "2.1.1",
+    "@material/web": "2.3.0",
+    "lit": "3.3.1",
+    "lit-element": "4.2.1",
+    "lit-html": "3.3.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "5.0.1",
+    "@web/dev-server": "0.4.6",
+    "eslint": "9.31.0",
+    "eslint-plugin-lit": "2.1.1",
+    "lit-analyzer": "2.0.3",
+    "rollup": "4.45.1",
+    "typescript": "5.8.3"
+  }
+}
