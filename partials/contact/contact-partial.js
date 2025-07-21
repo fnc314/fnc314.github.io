@@ -6,11 +6,29 @@ export class ContactPartial extends LitElement {
       :root {
 
       }
+
       article {
         height: 100%;
         position: relative;
         border-radius: 16px;
+        display: grid;
+        grid-template-rows: [title] 10% [content] auto;
         --md-elevation-level: 4;
+      }
+
+      .article-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .article-body {
+        padding: 0 1rem;
+
+        p {
+          margin: unset;
+          padding: 1rem;
+        }
       }
     `;
   }
@@ -29,7 +47,9 @@ export class ContactPartial extends LitElement {
         class="md-typescale-body-medium"
         >
         <md-elevation></md-elevation>
-        <h1>ContactPartial</h1>
+        <section class="article-title">
+          <h1 class="md-typescale-title-medium">ContactPartial</h1>
+        </section>
       </article>
     `;
   }

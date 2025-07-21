@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <title>fnc314.com - Homepage of Franco N. Colaizzi</title>
     <!-- <base target="_top" href="https://fnc314.com" /> -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="any" type="image/svg+xml" href="./icons/favicon.svg" />
+    <link rel="canonical" href="https://www.fnc314.com" />
+    <link rel="stylesheet" href="./stylesheets/styles.css" type="text/css" media="screen" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined&display=swap"
       />
     <script type="importmap">
       {
@@ -19,6 +23,13 @@
           "lit-html": "https://esm.run/lit-html"
         }
       }
+    </script>
+    <script
+      defer
+      type="module"
+      href="./partials/nav/nav-partial.js"
+      >
+      import { NavPartial } from "./partials/nav/nav-partial.js";
     </script>
     <script
       defer
@@ -58,13 +69,6 @@
     <script
       defer
       type="module"
-      href="./index.js"
-      >
-
-    </script>
-    <script
-      defer
-      type="module"
       >
       import "@material/web/all.js";
       import { LitElement, html, css } from "lit-element";
@@ -72,97 +76,20 @@
 
       document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    <link
-      rel="canonical"
-      href="https://www.fnc314.com"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/styles.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="icon"
-      sizes="any"
-      type="image/svg+xml"
-      href="./icons/favicon.svg"
-      />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      />
-    <title>fnc314.com - Homepage of Franco N. Colaizzi</title>
+    <script defer type="module" href="./index.js"></script>
   </head>
   <body>
     <header>
       <nav-partial id="main-nav"></nav-partial>
     </header>
     <main>
-      <info-partial
-        role="tabpanel"
-        id="panel-info"
-        aria-labelledby="tab-info"
-        >
-      </info-partial>
-      <work-partial
-        role="tabpanel"
-        id="panel-work"
-        aria-labelledby="tab-work"
-        hidden
-        >
-      </work-partial>
-      <code-partial
-        role="tabpanel"
-        id="panel-code"
-        aria-labelledby="tab-code"
-        hidden
-        >
-      </code-partial>
-      <contact-partial
-        role="tabpanel"
-        id="panel-contact"
-        aria-labelledBy="tab-contact"
-        hidden
-        >
-      </contact-partial>
+      <info-partial role="tabpanel" id="panel-info" aria-labelledby="tab-info"></info-partial>
+      <work-partial role="tabpanel" id="panel-work" aria-labelledby="tab-work" hidden></work-partial>
+      <code-partial role="tabpanel" id="panel-code" aria-labelledby="tab-code" hidden></code-partial>
+      <contact-partial role="tabpanel" id="panel-contact" aria-labelledBy="tab-contact" hidden></contact-partial>
     </main>
     <footer>
       <footer-partial></footer-partial>
     </footer>
-    <script
-      defer
-      type="module"
-      href="./partials/nav/nav-partial.js"
-      >
-      import { NavPartial } from "./partials/nav/nav-partial.js";
-    </script>
-    <!-- <script
-      defer
-      type="module"
-      >
-      /**
-       * Determines which {@link MdTabs} is selected
-       * @param tabs The {@link MdTabs} from {@link document.getElementById}
-       * @return The {@link MdTab} selected *or* {@link nul}
-       */
-      function getVisibleTab(tabs) {
-        const activeTab = tabs.activeTab?.getAttribute("aria-controls");
-        return tabs.getRootNode().querySelector(`#${activeTab}`);
-      }
-
-      const tabs = document.getElementById("nav-md-tabs");
-      let visibleTab = getVisibleTab(tabs);
-
-      tabs.addEventListener("change", () => {
-        if (visibleTab) {
-          visibleTab.hidden = true;
-        }
-        visibleTab = getVisibleTab(tabs);
-        if (visibleTab) {
-          visibleTab.hidden = false
-        }
-      });
-    </script> -->
   </body>
 </html>
