@@ -13,11 +13,16 @@
 html,
 body {
   min-height: 100vh;
+  font-family: Roboto, sans-serif;
 }
 
 body {
   display: grid;
-  grid-template-rows: [header-nav] auto [main] 85% [footer] 10%;
+  grid-template-areas:
+    "header-nav"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
 }
 
 nav {

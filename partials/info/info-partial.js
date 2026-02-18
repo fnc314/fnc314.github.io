@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, css, html } from "lit-element";
 
 export class InfoPartial extends LitElement {
   static get styles() {
@@ -57,11 +57,22 @@ export class InfoPartial extends LitElement {
           <h1 class="md-typescale-title-medium">About Me</h1>
         </section>
         <section class="article-body">
-          <p>My name is Franco and I am a former secondary Mathematics teacher (of almost ten years) and currently a mobile architect, with a specialty in Android.</p>
           <p>
+            My name is Franco N. Colaizzi and I am a strategic technical leader & system architect
+            with over a decade of experience driving large-scale Android and web initiatives. A
+            former educator turned technical director, I leverage a unique background in mathematics
+            and instruction to translate complex, multi-layered technical flows into accessible,
+            executive-ready narratives for broad organizational alignment. I specialize in building
+            resilient, future-proof architectures by defaulting to time-tested, industry-standard
+            solutions that prioritize stability and maintainability over fleeting trends. Known for
+            a high-empathy approach to leadership, I focus on mentoring cross-functional teams,
+            fostering professional growth, and bridging the communication gap between business
+            vision and technical execution.
+          </p>
+          <!-- <p>
             My development career starts in 2014 when I was beginning to master ${this.#renderLink(html`<code>AngularJS</code>`, "https://angularjs.org")}.  It
             was only a few months into my first project with ${this.#renderLink(html`<code>AngularJS</code>`, "https://angularjs.org")}
-          </p>
+          </p> -->
         </section>
       </article>
     `;

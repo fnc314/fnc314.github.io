@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "name": "project-collections-gradle-settings-plugin",
+      "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
+      "description": "A `org.gradle.api.invocation.Settings` `org.gradle.api.Plugin` to streamline calls to `org.gradle.api.invocation.Settings.include` based on nested collections of sub-projects"
+    },
+    {
+      "name": "fnc314-kmp",
+      "url": "https://github.com/fnc314/fnc314-kmp",
+      "description": "A KMP sample generated from https://kmp.jetbrains.com/"
+    },
+    {
+      "name": "mac-os-env-scripts",
+      "url": "https://github.com/fnc314/mac-os-env-scripts",
+      "description": "Convenient scripts for `bash` or `zsh` terminals, used on MacOS"
+    },
+    {
+      "name": "fnc314.github.io",
+      "url": "https://github.com/fnc314/fnc314.github.io",
+      "description": "Portfolio Page"
+    }
+  ]
+}
