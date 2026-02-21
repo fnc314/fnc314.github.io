@@ -1,4 +1,228 @@
 {
+  "experiences": [
+    {
+      "employer": "CGI Technology and Solutions, Inc.",
+      "role": "Director, Consulting Expert",
+      "date": {
+        "start": "August 2014",
+        "end": "January 2026"
+      },
+      "dates": {
+        "start": {
+          "stamp": "2014-08",
+          "text": "August 2014"
+        },
+        "end": {
+          "stamp": "2026-01",
+          "text": "January 2026"
+        }
+      },
+      "jobs": [
+        {
+          "client": "PNC Financial Services",
+          "role": "Mobile Redesign Architect Lead",
+          "date": {
+            "start": "November 2023",
+            "end": "June 2025"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2023-11",
+              "text": "November 2023"
+            },
+            "end": {
+              "stamp": "2025-06",
+              "text": "June 2025"
+            }
+          },
+          "summary": [
+            {
+              "item": "Spearheaded the technical foundation for a ground-up native redesign of PNC’s retail banking application, adopting a “day zero, future-focused” approach that ensures project resilience against unforeseen executive requirement shifts."
+            },
+            {
+              "item": "Transformed potential technical debt into intentional architecture by identifying and extending patterns that mandate feature segregation, making haphazard modularization impossible to implement."
+            },
+            {
+              "item": "Enforced industry best practices (design tokens, color roles, linters) and introduced custom onboarding/troubleshooting scripts to facilitate seamless development across the redesigned app and design library."
+            }
+          ]
+        },
+
+        {
+          "client": "PNC Financial Services",
+          "role": "Android Mobile Project Tech Lead",
+          "date": {
+            "start": "January 2020",
+            "end": "November 2023"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2020-01",
+              "text": "January 2020"
+            },
+            "end": {
+              "stamp": "2023-11",
+              "text": "November 2023"
+            }
+          },
+          "summary": [
+            {
+              "item": "Established foundational code maintenance and development patterns that were adopted by the organization’s change management team as institutional policy."
+            },
+            {
+              "item": "Led the technical stack for a flagship Android application supporting 3.5M+ active users, including the architecture and implementation of the in-app mobile payment processing platform."
+            },
+            {
+              "item": "Served as the primary technical evaluator for third-party integrations; reduced vendor pools from broad fields to 2–3 viable candidates by identifying technical incompatibilities early."
+            },
+            {
+              "item": "Bridged the gap between business and technology by educating executive leadership on the intersection of technical flows (e.g., OS permissions) and business logic."
+            }
+          ]
+        },
+
+        {
+          "client": "PNC Financial Services",
+          "role": "Android Team Lead",
+          "date": {
+            "start": "August 2019",
+            "end": "January 2020"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2019-08",
+              "text": "August 2019"
+            },
+            "end": {
+              "stamp": "2020-01",
+              "text": "January 2020"
+            }
+          },
+          "summary": [
+            {
+              "item": "Built a new authentication platform and successfully migrated 7M+ active users with zero downtime and helped the institution achieve Zelle network integration requirements (QR codes/deep-linking)."
+            }
+          ]
+        },
+
+        {
+          "client": "PNC Financial Services",
+          "role": "Web Development Lead",
+          "date": {
+            "start": "August 2017",
+            "end": "August 2019"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2017-08",
+              "text": "August 2018"
+            },
+            "end": {
+              "stamp": "2019-08",
+              "text": "August 2019"
+            }
+          },
+          "summary": [
+            {
+              "item": "Directed a web development crew of 25+ developers at project peak for the online banking platform redesign, laying the groundwork for organization-wide patterns while coaching teammates on best practices in modern web development."
+            }
+          ]
+        },
+
+        {
+          "client": "PNC Financial Services",
+          "role": "Web Development",
+          "date": {
+            "start": "August 2016",
+            "end": "August 2017"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2016-08",
+              "text": "August 2016"
+            },
+            "end": {
+              "stamp": "2017-08",
+              "text": "August 2017"
+            }
+          },
+          "summary": [
+            {
+              "item": "Worked hand-in-hand with designers and product owners to develop the administration portal for the newly launched peer-to-peer payment platform Zelle."
+            }
+          ]
+        },
+
+        {
+          "client": "Samsung",
+          "role": "Android Developer",
+          "date": {
+            "start": "January 2015",
+            "end": "August 2016"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2015-01",
+              "text": "January 2015"
+            },
+            "end": {
+              "stamp": "2016-08",
+              "text": "August 2016"
+            }
+          },
+          "summary": [
+            {
+              "item": "Delivered an Android FIDO authenticator proof-of-concept that spring-boarded the institutional adoption of Samsung Knox and multi-factor authentication (MFA)."
+            }
+          ]
+        },
+
+        {
+          "client": "PPG Industries",
+          "role": "Web Developer",
+          "date": {
+            "start": "January 2015",
+            "end": "August 2016"
+          },
+          "dates": {
+            "start": {
+              "stamp": "2015-01",
+              "text": "January 2015"
+            },
+            "end": {
+              "stamp": "2016-08",
+              "text": "August 2016"
+            }
+          },
+          "summary": [
+            {
+              "item": "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined processes and tool enhancement."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "employer": "Pittsburgh Public Schools",
+      "role": "Secondary Mathematics Teacher",
+      "date": {
+        "start": "September 2007",
+        "end": "August 2012"
+      },
+      "dates": {
+        "start": {
+          "stamp": "2007-09",
+          "text": "September 2007"
+        },
+        "end": {
+          "stamp": "2012-08",
+          "text": "August 2012"
+        }
+      },
+      "jobs": []
+    }
+  ],
   "experience": [
     {
       "employer": "CGI Technology and Solutions, Inc.",

@@ -74,7 +74,7 @@ export class ContactPartial extends LitElement {
 
             <dt>Phone</dt>
             <dd>
-              <a href="tel:4127219550">412-721-9550</a>
+              <a href="tel:+14127219550">412-721-9550</a>
             </dd>
 
             <dt>LinkedIn</dt>

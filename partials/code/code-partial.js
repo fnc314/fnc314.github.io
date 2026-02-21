@@ -9,6 +9,7 @@ export class CodePartial extends LitElement {
       }
 
       article {
+        container-type: inline-size;
         height: 100%;
         position: relative;
         border-radius: 16px;
@@ -32,28 +33,33 @@ export class CodePartial extends LitElement {
 
       .article-body {
         padding: 1rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30cqw, 1fr));
+        grid-auto-rows: minmax(30cqw, 1fr);
+        gap: 2rem;
 
-        p {
-          margin: unset;
+        .code-widget {
+          aspect-ratio: 1 / 1;
           padding: 1rem;
-        }
-      }
+          position: relative;
+          border-radius: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          --md-elevation-level: 5;
 
-      .code-widget {
-        width: 25vw;
-        padding: 2rem;
-        position: relative;
-        border-radius: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        --md-elevation-level: 5;
+          a {
+            text-decoration: none;
+            text-align: center;
+          }
+
+          p {
+            margin: unset;
+            padding: 1rem;
+            word-wrap: break-word;
+          }
+        }
       }
     `;
   }

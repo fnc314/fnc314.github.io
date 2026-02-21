@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "ts-lit-plugin"
+      }
+    ]
+
+  },
+  "include": [
+    "partials/*",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

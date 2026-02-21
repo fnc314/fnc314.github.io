@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, css, html } from "lit-element";
 
 export class FooterPartial extends LitElement {
   static get styles() {
@@ -21,9 +21,9 @@ export class FooterPartial extends LitElement {
 
   render() {
     return html`
-      <div class="footer-partial">
+      <footer class="footer-partial">
         <a href="mailto:fnc314@fnc314.com">Email Me!</a>
-      </div>
+      </footer>
     `;
   }
 }
