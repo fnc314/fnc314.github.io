@@ -1,16 +1,23 @@
 {
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "ts-lit-plugin"
-      }
-    ]
-
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "checkJs": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/dist/*": ["./dist/*"],
+      "@/partials/*": ["./src/partials/*"]
+    }
   },
   "include": [
-    "partials/*",
+    "src/**/*.js",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
