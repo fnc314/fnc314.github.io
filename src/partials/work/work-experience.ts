@@ -1,5 +1,5 @@
+import { customElement, property } from "@lit/reactive-element/decorators.js";
 import { css, html, LitElement, nothing } from "lit-element";
-import { customElement, property } from "lit/decorators.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
