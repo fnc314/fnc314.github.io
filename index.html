@@ -21,7 +21,8 @@
           "lit": "https://esm.run/lit",
           "lit-element": "https://esm.run/lit-element",
           "lit-html": "https://esm.run/lit-html",
-          "lit-js": "https://esm.run/lit-js"
+          "lit-js": "https://esm.run/lit-js",
+          "@lit/reactive-element": "https://esm.run/@lit/reactive-element"
         }
       }
     </script>
@@ -73,6 +74,7 @@
       >
       import "@material/web/all.js";
       import { LitElement, html, css } from "lit-element";
+      import { customElement, property } from "lit/decorators.js";
       import {styles as typescaleStyles} from "@material/web/typography/md-typescale-styles.js";
 
       document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
