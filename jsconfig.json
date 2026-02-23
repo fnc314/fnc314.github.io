@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "checkJs": true,
     "outDir": "./dist",
     "rootDir": "./src",
@@ -12,7 +12,11 @@
     "paths": {
       "@/dist/*": ["./dist/*"],
       "@/partials/*": ["./src/partials/*"]
-    }
+    },
+    "types": [
+      "node",
+      "eslint",
+    ]
   },
   "include": [
     "src/**/*.js",

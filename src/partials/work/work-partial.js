@@ -1,5 +1,5 @@
 import { LitElement, css, html } from "lit-element";
-import "./../../../dist/partials/work/work-experience.js";
+import "./../../../dist/src/partials/work/work-experience.js";
 import WorkJson from "./work.json" with { type: "json" };
 
 export class WorkPartial extends LitElement {

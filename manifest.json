@@ -1,0 +1,12 @@
+{
+  "theme_color": "#cc3333",
+  "short_name": "fnc314.com",
+  "author": "Franco N. Colaizzi",
+  "description": "Personal Webite",
+  "version": "0.0.0",
+  "name": "fnc314.com",
+  "manifest_version": "3",
+  "display": "browser",
+  "categories": ["developer", "development", "networking"],
+  "start_url": "/"
+}
