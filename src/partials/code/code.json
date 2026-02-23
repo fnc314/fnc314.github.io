@@ -2,23 +2,51 @@
   "projects": [
     {
       "name": "project-collections-gradle-settings-plugin",
+      "technologies": [
+        "<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"
+      ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
-      "description": "A `org.gradle.api.invocation.Settings` `org.gradle.api.Plugin` to streamline calls to `org.gradle.api.invocation.Settings.include` based on nested collections of sub-projects"
+      "description": "A <pre>org.gradle.api.invocation.Settings</pre> <pre>org.gradle.api.Plugin</pre> streamlining invocations of <pre>org.gradle.api.invocation.Settings.include</pre> for nested collections of sub-projects"
     },
     {
       "name": "fnc314-kmp",
+      "technologies": [
+        "<a href=\"https://kotlinlang.org/\" target=\"_blank\">Kotlin</a>",
+        "<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>",
+        "<a href=\"https://developer.android.com/\" target=\"_blank\">Android</a>"
+      ],
       "url": "https://github.com/fnc314/fnc314-kmp",
-      "description": "A KMP sample generated from https://kmp.jetbrains.com/"
+      "description": "A <abbr title=\"Kotlin Multiplatform\">KMP</abbr> (Kotlin Multiplatform) sample generated from the <a href=\"https://kmp.jetbrains.com/\" target=\"_blank\">KMP Wizard</a>"
     },
     {
       "name": "mac-os-env-scripts",
+      "technologies": [
+        "<a href=\"https://www.gnu.org/software/bash/\" target=\"_blank\">Bash</a>",
+        "<a href=\"https://ohmyz.sh/\" target=\"_blank\">Oh-My-Zsh</a>"
+      ],
       "url": "https://github.com/fnc314/mac-os-env-scripts",
-      "description": "Convenient scripts for `bash` or `zsh` terminals, used on MacOS"
+      "description": "Convenient scripts for <pre>bash</pre> or <pre>zsh</pre> terminals, used on MacOS"
     },
     {
       "name": "fnc314.github.io",
+      "technologies": [
+        "<a href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
+        "<a href=\"https://lit.dev/\" target=\"_blank\">Lit</a>",
+        "<a href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
+        "<a href=\"https://nodejs.org/\" target=\"_blank\">Node/NPM</a>",
+        "<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>"
+      ],
       "url": "https://github.com/fnc314/fnc314.github.io",
-      "description": "Portfolio Page"
+      "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a>"
+    },
+    {
+      "name": "project_euler",
+      "technologies": [
+        "<a href=\"https://python.org/\" target=\"_blank\">Python</a>",
+        "<a href=\"https://www.ruby-lang.org/en/\" target=\"_blank\">Ruby</a>"
+      ],
+      "url": "https://github.com/fnc314/project_euler",
+      "description": "Solutions to various <a href=\"https://projecteuler.net/\" target=\"_blank\">Project Euler</a> problems"
     }
   ]
 }

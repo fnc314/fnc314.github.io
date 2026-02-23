@@ -58,7 +58,6 @@ export class WorkPartial extends LitElement {
       <article
         class="md-typescale-body-medium"
         >
-        <md-elevation></md-elevation>
         <h1 class="article-header md-typescale-title-medium">Work Experience</h1>
         <div class="article-body">
           ${WorkJson.experiences.map(exp => html`

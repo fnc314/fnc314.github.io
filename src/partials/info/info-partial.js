@@ -52,7 +52,6 @@ export class InfoPartial extends LitElement {
       <article
         class="md-typescale-body-medium"
         >
-        <md-elevation></md-elevation>
         <section class="article-title">
           <h1 class="md-typescale-title-medium">About Me</h1>
         </section>

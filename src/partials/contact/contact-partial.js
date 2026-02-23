@@ -63,7 +63,6 @@ export class ContactPartial extends LitElement {
       <article
         class="md-typescale-body-medium"
         >
-        <md-elevation></md-elevation>
         <section class="contact-section-container">
           <h1 class="md-typescale-title-medium article-title">Contact Me</h1>
           <dl class="contact-list">

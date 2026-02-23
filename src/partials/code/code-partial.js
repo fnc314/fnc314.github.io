@@ -13,11 +13,8 @@ export class CodePartial extends LitElement {
         height: 100%;
         position: relative;
         border-radius: 16px;
-        display: grid;
-        grid-template-areas:
-          "title"
-          "content";
-        grid-template-rows: auto 1fr;
+        display: flex;
+        flex-direction: column;
         --md-elevation-level: 4;
 
         h1 {
@@ -25,41 +22,102 @@ export class CodePartial extends LitElement {
         }
       }
 
-      .article-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .article-body {
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
+        grid-auto-rows: 1fr; /* Ensures all rows (and thus cards) have the same height */
+        gap: 2rem;
       }
 
-      .article-body {
-        padding: 1rem;
+      .code-widget {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(30cqw, 1fr));
-        grid-auto-rows: minmax(30cqw, 1fr);
-        gap: 2rem;
+        grid-template-areas:
+          "header"
+          "content"
+          "footer";
+        grid-template-rows: 0.5fr minmax(auto, 1fr) 1fr;
+        padding: 1.5rem;
+        position: relative;
+        border-radius: 1rem;
+        gap: 1.5rem;
+        background: var(--md-sys-color-surface-container-low, #f7f7f7);
+        transition: transform 0.2s ease-in-out;
+        --md-elevation-level: 2;
 
-        .code-widget {
-          aspect-ratio: 1 / 1;
-          padding: 1rem;
-          position: relative;
-          border-radius: 16px;
+        header, .widget-content, footer {
+          //outline: 1px red solid;
+        }
+
+        &:hover {
+          transform: translateY(-4px);
+          --md-elevation-level: 4;
+        }
+
+        header {
+          grid-area: header;
           display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+          justify-content: center;
           align-items: center;
-          --md-elevation-level: 5;
 
-          a {
-            text-decoration: none;
-            text-align: center;
-          }
-
-          p {
-            margin: unset;
-            padding: 1rem;
-            word-wrap: break-word;
+          h2 {
+            font-family: sans-serif;
           }
         }
+
+        a {
+          text-decoration: none;
+          color: var(--md-sys-color-primary, inherit);
+
+          h2 {
+            margin: unset;
+            color: var(--md-sys-color-tertiary, inherit);
+            text-align: center;
+            line-height: 1.5rem;
+          }
+        }
+
+        .widget-content {
+          align-self: flex-start;
+          grid-area: content;
+        }
+
+        p {
+          margin: 0;
+          word-wrap: break-word;
+        }
+
+        footer {
+          grid-area: footer;
+        }
+
+        .tech-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+          margin: unset;
+          padding: unset;
+
+          li {
+            list-style-type: none;
+            outline: 1px solid var(--md-sys-color-on-surface-variant, #1d192b);
+            background: var(--md-sys-color-surface-variant, #e8def8);
+            color: var(--md-sys-color-on-surface-variant, #1d192b);
+            padding: 0.25rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-family: monospace;
+
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      pre {
+        display: inline;
       }
     `;
   }
@@ -72,15 +130,24 @@ export class CodePartial extends LitElement {
     super();
   }
 
-  #renderCodeWidget({ name, url, description }) {
+  #renderCodeWidget({ name, url, description, technologies }) {
     return html`
-      <div class="code-widget">
+      <section class="code-widget">
         <md-elevation></md-elevation>
-        <a target="_blank" href="${url}">
-          <h2 class="md-typescale-title-small">${name}</h2>
-        </a>
-        <p class="md-typescale-body-small">${description}</p>
-      </div>
+        <header>
+          <a target="_blank" href="${url}">
+            <h2 class="md-typescale-title-medium">${name}</h2>
+          </a>
+        </header>
+        <div class="widget-content">
+          <p class="md-typescale-body-medium" .innerHTML=${description}></p>
+        </div>
+        <footer>
+          <ul class="tech-stack">
+            ${technologies.map(t => html`<li .innerHTML=${t}></li>`)}
+          </ul>
+        </footer>
+      </section>
     `;
   }
 
@@ -89,11 +156,10 @@ export class CodePartial extends LitElement {
       <article
         class="md-typescale-body-medium"
         >
-        <md-elevation></md-elevation>
         <h1 class="md-typescale-title-medium">Code Projects</h1>
-        <section class="article-body">
+        <div class="article-body">
           ${CodeJson.projects.map(p => this.#renderCodeWidget(p))}
-        </section>
+        </div>
       </article>
     `;
   }
