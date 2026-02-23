@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Franco N. Colaizzi : Developer Extraordinaire " />
+    <script src="javascripts/jquery-2.1.0.js"></script>
+    <script src="javascripts/handlebars-v1.3.0.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/pygent_trac.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+    <title>Franco N. Colaizzi</title>
+    <link rel="icon" href="images/Portrait.jpg">
+    <script>
+      (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;
+        i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+          a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];
+          a.async=1;
+          a.src=g;
+          m.parentNode.insertBefore(a,m)
+      })
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-50369472-1', 'fnc314.github.io');
+      ga('send', 'pageview');
+  </script>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/fnc314" target="_blank">View on GitHub</a>
+
+          <h1 id="project_title">Franco N. Colaizzi</h1>
+          <h2 id="project_tagline">Developer Extraordinaire </h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tbody>
+          <tr>
+            <td colspan="2" align="center">
+              <img class="img-responsive" src="images/Portrait.jpg"></img>
+            </td>
+          </tr>
+          <tr>
+            <td align="center"><a href="/FrancoNColaizzi_Resume.pdf" target="_blank">Resume</a></td>
+            <td align="center"><span class="glyphicon glyphicon-envelope">&nbsp;</span><a href="mailto:fnc314@gmail.com" target="_blank">fnc314@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td align="center"><a href="http://www.linkedin.com/in/fnc314" target="_blank">LinkedIn</a></td>
+            <td align="center"><a href="http://fnc314.tumblr.com/" target="_blank">Tumblr</a></td>
+          </tr>
+          <!-- <tr>
+            
+          </tr>
+          <tr>
+            
+          </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+  <h3>
+  <a name="background" class="anchor" href="#background"><span class="octicon octicon-link"></span></a>Background</h3>
+
+  <p>I am a former secondary Mathematics teacher from the Pittsburgh Public Schools.  I hold a Bachelor's Degree in pure Mathematics from the University of Pittsburgh where I graduated Cum Laude.  In January 2014 I enrolled in a 3 month immersive program (Web Development Immersive) offered by General Assembly.  Through this course I mastered Ruby, Rails, JavaScript, HTML, CSS, API integration, and the general M-V-C Framework.  Outside of my time at General Assembly, I've become comfortable with both Python and Java, teaching myself how to work with the Android platform and using Python to complete <a href="http://www.projecteuler.net/" target="_blank">Project Euler</a> problems.  My solutions are found <a href="https://github.com/fnc314/project_euler" target="_blank">here</a>.</p>
+
+  <h3>
+  <a name="experience" class="anchor" href="#experience"><span class="octicon octicon-link"></span></a>Experience</h3>
+
+  <p>Through-out the Web Development Immersive, I worked both individually and in groups.  I learned that I work best in groups and prefer to be an active team player on any project.  There were two grand projects during the 12 week immersive class:</p>
+
+<ul>
+<li><p><h6><a href="https://github.com/fnc314/Project1" target="_blank">HairEtcApp</a> 1.0</h6>
+  This project was designed to be a small web-based app for a family business (a hair salon) in the Pittsburgh area.  The app is a simple portal through which clients can schedule appointments with their desired stylist at Hair Etc.  The app implements Twilio to send a chosen stylist a text message containing information about the newly created appointment.  The customer can also view their entire appointment history.  Work on this project has ended to focus on HairEtcApp 2.0.
+</p></li>
+
+  <li><p><h6><a href="https://github.com/fnc314/seat" target="_blank">Seat</a></h6>
+    This app was a group project with <a href="https://github.com/darrenmwong" target="_blank">Darren Wong</a> and <a href="https://github.com/jackson-sandland" target="_blank">Jackson Sandland</a>.  Seat is a web app for a given restaurant (ours was Alexander's Steak House).  Seat contains a customer facing portal through which they make accounts (either by their own email address or through Facebook account association).  Once users are registered, they can create reservations and view past reservations.  Users receive a confirmation email to verify the creation of their account and the creation of a new reservation (powered by ActiveMailer in Rails).  Customers receive a reminder text (generated using Twilio) 24 hours before a reservation.  The other half of the web app is an administration view for the restaurant managers and staff.  This portal (created using the ActiveAdmin gem) gives administrators the ability to create/delete reservations, assign reservations to tables, set servers (creating and deleting them as well - to coincide with hiring and firing of wait-staff), and update tables (as well as place reservations at specific tables).  This app can be accessed as an administrator using <code>fnc314@gmail.com</code> (email) and <code>0123456789</code> (password).  To access the services as a normal customer, simply create an account!</p></li>
+  
+  <div id="Seat-carousel" class="carousel slide" data-ride="carousel"> <!-- Seat Image Carousel -->
+    <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#Seat-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#Seat-carousel" data-slide-to="1"></li>
+        <li data-target="#Seat-carousel" data-slide-to="2"></li>
+        <li data-target="#Seat-carousel" data-slide-to="3"></li>
+        <li data-target="#Seat-carousel" data-slide-to="4"></li>
+        <li data-target="#Seat-carousel" data-slide-to="5"></li>
+        <li data-target="#Seat-carousel" data-slide-to="6"></li>
+        <li data-target="#Seat-carousel" data-slide-to="7"></li>
+        <li data-target="#Seat-carousel" data-slide-to="8"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active"> <!-- repeat this div! -->
+          <img src="images/SeatImages/V7x0Pyg.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->        
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/Iyzkd38.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+        
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/gU5ga6X.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/zgbx0qC.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/29820yx.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/EvNRKev.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/lVAFnSq.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/fbhZPBU.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/SeatImages/NikWHnl.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#Seat-carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#Seat-carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div> <!-- Seat Image Carousel -->
+  
+
+  <li><p><h6><a href="https://github.com/fnc314/hair_etc_app" target="_blank">HairEtcApp</a> 2.0 (<a href="https://github.com/fnc314/hair_etc_app_android" target="_blank">Android</a>)</h6>
+    This was a chance for me to expand the experience and functionality of my prior work, HairEtcApp 1.0.  I took the time to make sure that the user experience was not only consistent, but easy to figure out in a matter of moments.  I also redesigned the entire site (both the front and back ends) to include tools like Devise and to focus on the mobile experience first.  Because I was able to recycle my original blueprint for the project, I was able to further develop the way users would interact with my service.  Therefore, I developed a companion application in native Android.  The Android app uses a unique controller on the Rails server to access the databases.  The Java/Android code can be cloned from GitHub and run on an emulator or device running Android 4.4 KitKat or above.  The live web app can be accessed <a href="https://hairetcapp.herokuapp.com/">here</a> using <code>example@example.com</code> (email) and <code>1234567890</code> (password).</p></li>
+    
+    <div id="hairEtcAppAndroid-carousel" class="carousel slide" data-ride="carousel"> <!-- Android Image Carousel -->
+    <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="1"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="2"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="3"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="4"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="5"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="6"></li>
+        <li data-target="#hairEtcAppAndroid-carousel" data-slide-to="7"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/vnPG9f1.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/E4NrjND.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->        
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/9w6lRta.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+        
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/2NWGeo7.png" alt="...">
+          <div class="carousel-caption">            
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/YwSkLge.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/rhSP30n.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/JvCapA3.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+        <div class="item"> <!-- repeat this div! -->
+          <img src="images/HairEtcAppImages/nsHxVCt.png" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div> <!-- repeat this div! -->
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#hairEtcAppAndroid-carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#hairEtcAppAndroid-carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div> <!-- Android Image Carousel -->
+
+
+  <br>
+</ul>
+
+<h3>
+
+<a name="skills" class="anchor" href="#skills"><span class="octicon octicon-link"></span></a>Skills</h3>
+
+<table class="table table-bordered">
+<!-- <thead><tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr></thead> -->
+<tbody>
+<tr>
+<td align="center">Languages</td>
+<td align="center">Ruby, Python, JavaScript, Java</td>
+</tr>
+<tr>
+<td align="center">Frameworks</td>
+<td align="center">Rails, Angular.js, Backbone.js</td>
+</tr>
+<tr>
+<td align="center">Databases</td>
+<td align="center">Postgres, MySQL</td>
+</tr>
+<tr>
+  <td align="center">Others</td>
+  <td align="center">GitHub, AWS, EC2, Heroku, Redis, Sidekiq</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+  <a name="extra-curricular-activities" class="anchor" href="#extra-curricular-activities">
+    <span class="octicon octicon-link"></span>
+  </a>
+  Extra-Curricular Activities
+</h3>
+
+<p>During the program I took the initiative to teach myself the valuable languages of Python and Java.  I have been recently experimenting with the Android SDK.  I developed a working app called <a href="https://www.github.com/fnc314/Mathify">Mathify</a> for the sole purpose of experimenting with Android.  I hope to work more with Java and Python.</p>
+
+<p>I also like to volunteer my time helping other people understand and better utilize technology.  Just recently, I completed a full guide for Non-Profits in the city of Pittsburgh, PA to migrate to Google Apps for Business.  The Guide is available <a href="/PHDA_GoogleAppsGuide.pdf">here</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
+        <p>Styled with <a href="http://www.getbootstrap.com/" target="_blank">Twitter Bootstrap</a> using <a href="http://www.glyphicons.com" target="_blank">Glyphicons</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

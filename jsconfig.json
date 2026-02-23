@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "checkJs": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/dist/*": ["./dist/*"],
+      "@/partials/*": ["./src/partials/*"]
+    }
+  },
+  "include": [
+    "src/**/*.js",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
