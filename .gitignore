@@ -1,3 +1,8 @@
 node_modules/
 .DS_Store
-dist/
+dist/*
+!dist/partials/
+dist/partials/*
+!dist/partials/work/
+dist/partials/work/*
+!dist/partials/work/work-experience.js
