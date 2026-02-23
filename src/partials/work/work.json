@@ -100,7 +100,10 @@
           },
           "summary": [
             {
-              "item": "Built a new authentication platform and successfully migrated 7M+ active users with zero downtime and helped the institution achieve Zelle network integration requirements (QR codes/deep-linking)."
+              "item": "Built and deployed a new authentication platform while executing a zero-downtime migration strategy affecting 7+ million daily active users."
+            },
+            {
+              "item": "Achieved Zelle network integration requirements with QR-code and deep-link integrations."
             }
           ]
         },

@@ -6,7 +6,6 @@ export class WorkExperience extends LitElement {
   static override styles = css`
     :host {
       display: block;
-      margin-block-end: 1.5rem;
       /* For contextual layout */
       container-type: inline-size;
 
@@ -41,7 +40,8 @@ export class WorkExperience extends LitElement {
 
       li {
         list-style-type: square;
-        margin-block: 0.5rem;
+        margin-block-start: 0.25rem;
+        margin-block-end: 0.5rem;
       }
     }
 
@@ -50,7 +50,7 @@ export class WorkExperience extends LitElement {
     }
 
     .time-nested {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */
@@ -81,10 +81,13 @@ export class WorkExperience extends LitElement {
     }
 
     @container (min-inline-size: 600px) {
+      div.experience-container {
+        gap: 0.5rem 1.5rem;
+      }
       .experience-container {
         display: grid;
         grid-template-columns: 17rem 1fr;
-        column-gap: 2rem;
+        gap: 0.5rem 1.5rem;
         align-items: baseline;
 
         .experience-info {
@@ -108,7 +111,6 @@ export class WorkExperience extends LitElement {
             grid-column: 2;
             grid-row: 2;
             opacity: 0.7;
-            margin-block-end: 0.5rem;
           }
         }
 
@@ -162,11 +164,11 @@ export class WorkExperience extends LitElement {
           <p>${this.experienceOrg}</p>
           <p>
             <time
-                class=${this.isNested ? "time-nested" : "time"}
-                datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
-              <time
-                class=${this.isNested ? "time-nested" : "time"}
-                datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
+              class=${this.isNested ? "time-nested" : "time"}
+              datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
+            <time
+              class=${this.isNested ? "time-nested" : "time"}
+              datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
           </p>
         </hgroup>
       `;
