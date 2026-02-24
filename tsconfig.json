@@ -12,7 +12,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -42,8 +42,8 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@/dist/*": ["./dist/*"],
-      "@/partials/*": ["./src/partials/*"]
     }
   },
   "include": [
@@ -52,5 +52,6 @@
   ],
   "exclude": [
     "node_modules",
+    "./dist",
   ]
 }

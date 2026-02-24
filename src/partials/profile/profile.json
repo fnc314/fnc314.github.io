@@ -1,0 +1,30 @@
+{
+  "bio": "My name is Franco N. Colaizzi and I am a strategic technical leader & system architect with over a decade of experience driving large-scale Android and web initiatives. A former educator turned technical director, I leverage a unique background in mathematics and instruction to translate complex, multi-layered technical flows into accessible, executive-ready narratives for broad organizational alignment. I specialize in building resilient, future-proof architectures by defaulting to time-tested, industry-standard solutions that prioritize stability and maintainability over fleeting trends. Known for a high-empathy approach to leadership, I focus on mentoring cross-functional teams, fostering professional growth, and bridging the communication gap between business vision and technical execution.",
+  "contactInfo": [
+    {
+      "method": "Email",
+      "identity": "fnc314@fnc314.com",
+      "html": "<md-icon>email</md-icon> <a href=\"mailto:fnc314@fnc314.com\" target=\"_blank\">fnc314@fnc314.com</a>",
+      "mdIcon": "email"
+    },
+    {
+      "method": "Phone",
+      "identity": "412-721-9550",
+      "html": "<md-icon>call</md-icon> <a href=\"tel:+14127219550\" target=\"_blank\">412-721-9550</a>",
+      "mdIcon": "call"
+    },
+    {
+      "method": "LinkedIn",
+      "identity": "https://www.linkedin.com/in/fnc314",
+      "html": "<md-icon>enterprise</md-icon> <a href=\"https://www.linkedin.com/in/fnc314\" target=\"_blank\">https://www.linkedin.com/in/fnc314</a>",
+      "mdIcon": "enterprise"
+    },
+    {
+      "method": "GitHub",
+      "identity": "https://www.github.com/fnc314/",
+      "html": "<md-icon>deployed_code</md-icon> <a href=\"https://www.github.com/fnc314/\" target=\"_blank\">https://www.github.com/fnc314/</a>",
+      "mdIcon": "deployed_code"
+    }
+  ],
+  "profilePhoto": ""
+}

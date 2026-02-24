@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, css, html } from "lit-element";
 
 export class NavPartial extends LitElement {
   static get styles() {
@@ -17,7 +17,7 @@ export class NavPartial extends LitElement {
 
       nav {
         position: relative;
-        --md-elevation-level: 4;
+        --md-elevation-level: 2;
       }
     `;
   }
@@ -89,12 +89,12 @@ export class NavPartial extends LitElement {
           active-tab-index="0"
           >
           <md-primary-tab
-            href="#info"
-            id="tab-info"
-            aria-controls="panel-info"
+            href="#profile"
+            id="tab-profile"
+            aria-controls="panel-profile"
             >
             <md-icon slot="icon">person</md-icon>
-            Info
+            Profile
           </md-primary-tab>
           <md-primary-tab
             href="#work"
@@ -111,14 +111,6 @@ export class NavPartial extends LitElement {
             >
             <md-icon slot="icon">code</md-icon>
             Code
-          </md-primary-tab>
-          <md-primary-tab
-            href="#contact"
-            id="tab-contact"
-            aria-controls="panel-contact"
-            >
-            <md-icon slot="icon">contact_page</md-icon>
-            Contact
           </md-primary-tab>
         </md-tabs>
       </nav>

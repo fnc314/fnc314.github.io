@@ -39,9 +39,9 @@
     <script
       defer
       type="module"
-      href="./src/partials/info/info-partial.js"
+      href="./dis/partials/profile/profile-partial.js"
       >
-      import { InfoPartial } from "./src/partials/info/info-partial.js";
+      import { ProfilePartial } from "./dist/partials/profile/profile-partial.js";
     </script>
     <script
       defer
@@ -56,13 +56,6 @@
       href="./src/partials/code/code-partial.js"
       >
       import { CodePartial } from "./src/partials/code/code-partial.js";
-    </script>
-    <script
-      defer
-      type="module"
-      href="./src/partials/contact/contact-partial.js"
-      >
-      import { ContactPartial } from "./src/partials/contact/contact-partial.js";
     </script>
     <script
       defer
@@ -88,10 +81,9 @@
       <nav-partial id="main-nav"></nav-partial>
     </header>
     <main>
-      <info-partial role="tabpanel" id="panel-info" aria-labelledby="tab-info"></info-partial>
+      <profile-partial role="tabpanel" id="panel-profile" aria-labelledby="tab-profile"></profile-partial>
       <work-partial role="tabpanel" id="panel-work" aria-labelledby="tab-work" hidden></work-partial>
       <code-partial role="tabpanel" id="panel-code" aria-labelledby="tab-code" hidden></code-partial>
-      <contact-partial role="tabpanel" id="panel-contact" aria-labelledBy="tab-contact" hidden></contact-partial>
     </main>
     <footer-partial></footer-partial>
   </body>
