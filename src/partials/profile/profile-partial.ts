@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles";
+import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles.js";
 import "./contact-list";
 import ProfileJson from "./profile.json" with { type: "json" };
 

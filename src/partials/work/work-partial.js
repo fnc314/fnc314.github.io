@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit-element";
 import "./../../../dist/partials/work/work-experience.js";
-import { ParialHeadingStyles, PartialArticleStyles } from "./../../../dist/styles/partial-styles";
+import { ParialHeadingStyles, PartialArticleStyles } from "./../../../dist/styles/partial-styles.js";
 import WorkJson from "./work.json" with { type: "json" };
 
 export class WorkPartial extends LitElement {

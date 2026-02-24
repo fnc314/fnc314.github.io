@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles";
+import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles.js";
 import "./contact-list";
 import ProfileJson from "./profile.json" with { type: "json" };
 let ProfilePartial = class ProfilePartial extends LitElement {
