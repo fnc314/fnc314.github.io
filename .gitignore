@@ -10,6 +10,7 @@ dist/partials/profile/*
 !dist/partials/work/work-experience.js
 !dist/partials/profile/profile-partial.js
 !dist/partials/profile/contact-list.js
+!dist/partials/profile/profile.json
 
 !dist/styles/
 dist/styles/*
