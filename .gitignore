@@ -4,8 +4,12 @@ dist/*
 !dist/partials/
 dist/partials/*
 !dist/partials/work/
+!dist/partials/profile/
 dist/partials/work/*
+dist/partials/profile/*
 !dist/partials/work/work-experience.js
+!dist/partials/profile/profile-partial.js
+!dist/partials/profile/contact-list.js
 
 !dist/styles/
 dist/styles/*
