@@ -26,5 +26,40 @@
       "mdIcon": "deployed_code"
     }
   ],
-  "profilePhoto": ""
+  "profilePhoto": "",
+  "wordCloud": {
+    "tech": {
+      "Android": 10,
+      "Mobile": 10,
+      "Kotlin": 8,
+      "Java": 8,
+      "Gradle": 8,
+      "RxJava": 7,
+      "Coroutines": 7,
+      "JavaScript": 6,
+      "TypeScript": 6,
+      "CSS": 6,
+      "HTML": 6,
+      "Ruby": 5,
+      "Mac": 5,
+      "DI": 5,
+      "iOS": 4,
+      "Node": 4,
+      "NPM": 4,
+      "Python": 3
+    },
+    "practices": {
+      "Design Systems": 10,
+      "Tokens": 10,
+      "Mentorship": 10,
+      "MVI": 9,
+      "MVVM": 9,
+      "Modularization": 9,
+      "Agile": 8,
+      "Clean Architecture": 8,
+      "Change Management": 8,
+      "Continuous Integration": 7,
+      "Continuous Delivery": 7
+    }
+  }
 }

@@ -5,23 +5,14 @@ import { customElement, property } from "lit/decorators.js";
 export class ContactList extends LitElement {
   static override styles = css`
     :host {
-      display: contents;
+      container-type: inline-size;
+      background-color: yellow;
     }
 
-    dl {
-      display: grid;
-      grid-template-areas:
-        "email-dt linkedin-dt"
-        "email-dd linkedin-dd"
-        "phone-dt github-dt"
-        "phone-dd github-dd";
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-
-    dt {
-      margin-block: 0.5rem;
-      text-align: center;
+    @container (min-inline-size: auto) {
+      dl {
+        background-color: teal;
+      }
     }
 
     dd {
@@ -32,37 +23,16 @@ export class ContactList extends LitElement {
       margin-inline-start: 0.5rem;
     }
 
-    .email-dt {
-      grid-area: email-dt;
+    dt {
+      margin-block-start: 0.25rem;
     }
 
-    .email-dd {
-      grid-area: email-dd;
+    @media (min-width: 800px) {
+      dt {
+        margin-block: 0.5rem;
+      }
     }
 
-    .phone-dt {
-      grid-area: phone-dt;
-    }
-
-    .phone-dd {
-      grid-area: phone-dd;
-    }
-
-    .linkedin-dt {
-      grid-area: linkedin-dt;
-    }
-
-    .linkedin-dd {
-      grid-area: linkedin-dd;
-    }
-
-    .github-dt {
-      grid-area: github-dt;
-    }
-
-    .github-dd {
-      grid-area: github-dd;
-    }
   `;
 
   @property({ type: Array })
@@ -73,11 +43,10 @@ export class ContactList extends LitElement {
       <dl>
         ${
           this.contactInfo.map(info => html`
-            <dt class=${info.method.toLowerCase()}-dt>
+            <dt>
               ${info.method}
             </dt>
             <dd
-              class=${info.method.toLowerCase()}-dd
               .innerHTML=${info.html}
               >
             </dd>

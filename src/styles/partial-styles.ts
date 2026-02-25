@@ -30,7 +30,7 @@ export const ParialHeadingStyles = css`
     position: relative;
     --md-elevation-level: 3;
     border-radius: 1rem;
-    padding: 1rem;
+    margin-block-start: 1rem;
 
     h1 {
       margin-block: 1rem;

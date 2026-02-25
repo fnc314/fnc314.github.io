@@ -143,7 +143,7 @@ let WorkExperience = class WorkExperience extends LitElement {
   `; }
     render() {
         const info = html `
-        <hgroup class="experience-info">
+        <header class="experience-info">
           ${this.isNested ? html `<h3>${this.experienceRole}</h3>` : html `<h2>${this.experienceRole}</h2>`}
           <p>${this.experienceOrg}</p>
           <p>
@@ -154,7 +154,7 @@ let WorkExperience = class WorkExperience extends LitElement {
               class=${this.isNested ? "time-nested" : "time"}
               datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
           </p>
-        </hgroup>
+        </header>
       `;
         const content = this.jobs.length ?
             html `
@@ -223,4 +223,3 @@ WorkExperience = __decorate([
     customElement("work-experience")
 ], WorkExperience);
 export { WorkExperience };
-//# sourceMappingURL=work-experience.js.map

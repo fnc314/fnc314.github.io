@@ -159,7 +159,7 @@ export class WorkExperience extends LitElement {
 
     override render() {
       const info = html`
-        <hgroup class="experience-info">
+        <header class="experience-info">
           ${this.isNested ? html`<h3>${this.experienceRole}</h3>` : html`<h2>${this.experienceRole}</h2>`}
           <p>${this.experienceOrg}</p>
           <p>
@@ -170,7 +170,7 @@ export class WorkExperience extends LitElement {
               class=${this.isNested ? "time-nested" : "time"}
               datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
           </p>
-        </hgroup>
+        </header>
       `;
       const content = this.jobs.length ?
         html`

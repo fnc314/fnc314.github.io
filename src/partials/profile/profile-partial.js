@@ -6,30 +6,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import "./../../../dist/partials/profile/contact-list.js";
-import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles.js";
+import { ParialHeadingStyles } from "./../../styles/partial-styles";
+import "./contact-list";
 import ProfileJson from "./profile.json" with { type: "json" };
 let ProfilePartial = class ProfilePartial extends LitElement {
     static { this.styles = [
         ParialHeadingStyles,
         css `
-      :host {}
+      :host {
+        container-type: inline-size;
+      }
 
       .profile-container {
-        padding-block-start: 1rem;
         display: grid;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas:
-          "header header header"
-          "contact bio bio";
-        grid-template-rows: auto 1fr;
-        grid-template-columns: 1fr 2fr;
+          "header"
+          "bio"
+          "contact";
         gap: 1rem;
 
         header, aside, section {
           position: relative;
           --md-elevation-level: 3;
           border-radius: 1rem;
-          padding: 1rem;
+        }
+      }
+
+      @media (min-width: 600px) {
+        .profile-container {
+          grid-template-rows: auto 1fr;
+          grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 1fr);
+          grid-template-areas:
+            "header header"
+            "bio contact";
         }
       }
 
@@ -43,6 +53,7 @@ let ProfilePartial = class ProfilePartial extends LitElement {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        padding: 1rem;
 
         h2 {
           margin: unset;
@@ -60,6 +71,7 @@ let ProfilePartial = class ProfilePartial extends LitElement {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        padding: 1rem;
 
         h2 {
           align-self: center;
@@ -74,20 +86,20 @@ let ProfilePartial = class ProfilePartial extends LitElement {
       <article class="profile-container">
         <header>
           <md-elevation></md-elevation>
-          <h1>Profile</h1>
+          <h1 class="md-typescale-title-medium">Franco N. Colaizzi</h1>
         </header>
-
-        <aside class="contact">
-          <md-elevation></md-elevation>
-          <h2>Contact</h2>
-          <contact-list .contactInfo=${ProfileJson.contactInfo}></contact-list>
-        </aside>
 
         <section class="about-me">
           <md-elevation></md-elevation>
           <h2>About Me</h2>
           <p>${ProfileJson.bio}</p>
         </section>
+
+        <aside class="contact">
+          <md-elevation></md-elevation>
+          <h2>Contact</h2>
+          <contact-list .contactInfo=${ProfileJson.contactInfo}></contact-list>
+        </aside>
       </article>
     `;
     }
@@ -97,4 +109,3 @@ ProfilePartial = __decorate([
 ], ProfilePartial);
 export { ProfilePartial };
 ;
-//# sourceMappingURL=profile-partial.js.map

@@ -1,5 +1,5 @@
 import { LitElement, css, html } from "lit-element";
-import { ParialHeadingStyles } from "./../../../dist/styles/partial-styles.js";
+import { ParialHeadingStyles } from "./../../styles/partial-styles";
 import CodeJson from "./code.json" with { type: "json" };
 
 export class CodePartial extends LitElement {
@@ -14,11 +14,11 @@ export class CodePartial extends LitElement {
         article {
           container-type: inline-size;
           height: 100%;
-          position: relative;
           border-radius: 16px;
           display: flex;
           flex-direction: column;
           --md-elevation-level: 4;
+          gap: 1rem;
 
           h1 {
             text-align: center;

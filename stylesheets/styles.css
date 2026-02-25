@@ -26,6 +26,7 @@ body {
     "main"
     "footer";
   grid-template-rows: auto 1fr auto;
+  container-type: size;
 }
 
 nav {
