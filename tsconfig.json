@@ -2,16 +2,20 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "moduleResolution": "bundler",
     "lib": [
       "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "outDir": "./dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "inlineSources": false,
+    "pretty": true,
+    "outDir": "./src",
     "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
@@ -20,7 +24,6 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -43,15 +46,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/dist/*": ["./dist/*"],
     }
   },
   "include": [
     "src/**/*.ts",
+    // "src/**/*.js",
     //"eslint.config.ts"
   ],
   "exclude": [
     "node_modules",
-    "./dist",
   ]
 }
