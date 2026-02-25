@@ -17,7 +17,12 @@ export class NavPartial extends LitElement {
 
       nav {
         position: relative;
-        --md-elevation-level: 2;
+        --md-elevation-level: 5;
+        border-radius: 50vh;
+
+        md-tabs {
+          border-radius: 50vh;
+        }
       }
     `;
   }
