@@ -52,7 +52,7 @@ export const MaterialThemes = {
       --md-sys-color-surface-container: #FCEAE8;
       --md-sys-color-surface-container-high: #F6E4E2;
       --md-sys-color-surface-container-highest: #F1DEDD;
-    }
+  }
   `,
   lightMediumContrast: css`
     :root {

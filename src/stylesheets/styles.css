@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --md-sys-color-primary: #904A46;
   --md-sys-color-surface-tint: #904A46;
   --md-sys-color-on-primary: #FFFFFF;
@@ -48,28 +48,26 @@
   --md-sys-color-surface-container: #FCEAE8;
   --md-sys-color-surface-container-high: #F6E4E2;
   --md-sys-color-surface-container-highest: #F1DEDD;
-}
+} */
 
 html,
-body {
-  min-height: 100vh;
+body,
+main {
   font-family: Roboto, sans-serif;
   writing-mode: horizontal-tb;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
 }
 
 body {
+  min-height: 100vh;
   display: grid;
   grid-template-areas:
-  "header-nav"
-  "main"
-  "footer";
+    "header-nav"
+    "main"
+    "footer";
   grid-template-rows: auto 1fr auto;
   container-type: size;
-}
-
-main {
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
 }
 
 nav {

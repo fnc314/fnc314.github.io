@@ -71,8 +71,10 @@
       import "@material/web/all.js";
       import { LitElement, html, css } from "lit-element";
       import {styles as typescaleStyles} from "@material/web/typography/md-typescale-styles.js";
+      import { MaterialThemes } from "./src/styles/material-styles.js"
 
       document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+      document.adoptedStyleSheets.push(MaterialThemes.light.styleSheet)
     </script>
     <script defer type="module" href="./index.js"></script>
   </head>

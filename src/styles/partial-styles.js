@@ -7,6 +7,12 @@ export const PartialArticleStyles = css `
   }
 `;
 export const ParialHeadingStyles = css `
+  ${ThemeColors}
+  :root {
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+  }
+
   header {
     display: flex;
     align-items: center;
