@@ -5,12 +5,16 @@ export class FooterPartial extends LitElement {
     return [
       css`
         :host {
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
         }
 
         .footer-partial {
           display: flex;
           justify-content: center;
           align-items: center;
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
 
           a {
             color: var(--md-sys-color-on-surface-variant);

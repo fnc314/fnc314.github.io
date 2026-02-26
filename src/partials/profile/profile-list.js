@@ -29,10 +29,10 @@ let ProfileList = class ProfileList extends LitElement {
         display: grid;
         grid-template-columns: 1fr 3fr;
         gap: 1rem;
+        padding-inline: 1rem;
 
         div {
           display: contents;
-          /* padding-inline: 1rem; */
         }
       }
 

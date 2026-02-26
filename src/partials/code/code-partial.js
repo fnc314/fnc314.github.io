@@ -8,7 +8,8 @@ export class CodePartial extends LitElement {
       ParialHeadingStyles,
       css`
         :root {
-
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
         }
 
         article {
@@ -26,7 +27,7 @@ export class CodePartial extends LitElement {
         }
 
         .article-body {
-          padding: 0.5rem;
+          padding: 1rem;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
           grid-auto-rows: 1fr;
@@ -42,19 +43,22 @@ export class CodePartial extends LitElement {
           grid-template-rows: 0.5fr minmax(auto, 1fr) 1fr;
           padding: 1.5rem;
           position: relative;
-          border-radius: 1rem;
+          border-radius: 0.5rem;
+          outline: 1px solid var(--md-sys-color-on-surface);
           gap: 1.5rem;
-          background: var(--md-sys-color-surface-container-lowest);
-          transition: transform 0.2s ease-in-out;
+          background: var(--md-sys-color-surface-container-low);
           --md-elevation-level: 2;
-
-          header, .widget-content, footer {
-            //outline: 1px red solid;
-          }
+          transition:
+            transform 0.2s ease-in-out,
+            background-color 0.2s ease-in-out,
+            --md-elevation-level 0.2s ease-in-out,
+            border-radius 0.2s ease-in-out;
 
           &:hover {
             transform: translateY(-4px);
             --md-elevation-level: 4;
+            background-color: var(--md-sys-color-surface-container-high);
+            border-radius: 1rem;
           }
 
           header {
@@ -104,9 +108,9 @@ export class CodePartial extends LitElement {
 
             li {
               list-style-type: none;
-              outline: 1px solid var(--md-sys-color-on-surface-variant, #1d192b);
-              background: var(--md-sys-color-surface-variant, #e8def8);
-              color: var(--md-sys-color-on-surface-variant, #1d192b);
+              outline: 1px solid var(--md-sys-color-on-surface, #1d192b);
+              background: var(--md-sys-color-surface-container-highest, #e8def8);
+              color: var(--md-sys-color-on-surface, #1d192b);
               padding: 0.25rem 1rem;
               border-radius: 0.5rem;
               font-size: 0.85rem;

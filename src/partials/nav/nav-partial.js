@@ -7,16 +7,12 @@ export class NavPartial extends LitElement {
       ThemeColors,
       css`
         :root {
+          background-color: var(--md-sys-color-surface);
         }
 
         nav {
           position: relative;
           --md-elevation-level: 1;
-          border-radius: 50vh;
-
-          md-tabs {
-            border-radius: 50vh;
-          }
         }
       `
     ];
