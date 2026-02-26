@@ -1,5 +1,5 @@
 import { LitElement, css, html } from "lit-element";
-import { ParialHeadingStyles } from "./../../styles/partial-styles";
+import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
 import CodeJson from "./code.json" with { type: "json" };
 
 export class CodePartial extends LitElement {

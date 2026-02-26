@@ -6,7 +6,6 @@ export class ContactList extends LitElement {
   static override styles = css`
     :host {
       container-type: inline-size;
-      background-color: yellow;
     }
 
     @container (min-inline-size: auto) {

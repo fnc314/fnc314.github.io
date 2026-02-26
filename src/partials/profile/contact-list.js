@@ -14,7 +14,6 @@ let ContactList = class ContactList extends LitElement {
     static { this.styles = css `
     :host {
       container-type: inline-size;
-      background-color: yellow;
     }
 
     @container (min-inline-size: auto) {
