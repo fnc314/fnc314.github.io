@@ -55,3 +55,9 @@ export class ContactList extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "contact-list": ContactList;
+  }
+}
