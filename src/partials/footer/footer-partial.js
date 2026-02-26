@@ -13,7 +13,7 @@ export class FooterPartial extends LitElement {
           align-items: center;
 
           a {
-            color: var(--md-sys-color-on-surface);
+            color: var(--md-sys-color-on-surface-variant);
           }
         }
       `

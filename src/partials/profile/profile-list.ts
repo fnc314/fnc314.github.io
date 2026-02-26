@@ -40,6 +40,10 @@ export class ProfileList extends LitElement {
       dd {
         margin: unset;
       }
+
+      a {
+        color: var(--md-sys-color-on-surface-variant);
+      }
     `,
   ];
 
