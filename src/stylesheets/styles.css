@@ -67,6 +67,11 @@ body {
   container-type: size;
 }
 
+main {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
 nav {
   position: relative;
   --md-elevation-level: 4;

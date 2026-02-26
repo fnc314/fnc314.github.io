@@ -15,6 +15,7 @@ export const ParialHeadingStyles = css `
     --md-elevation-level: 2;
     border-radius: 1rem;
     margin-block-start: 1rem;
+    margin-inline: 2rem;
     background-color: var(--md-sys-color-tertiary);
 
     h1 {

@@ -2,13 +2,19 @@ import { LitElement, css, html } from "lit-element";
 
 export class FooterPartial extends LitElement {
   static get styles() {
-    return css`
-      .footer-partial {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    `;
+    return [
+      css`
+        :host {
+          background-color: var(--md-sys-color-surface);
+        }
+
+        .footer-partial {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      `
+    ];
   }
 
   static get properties() {
