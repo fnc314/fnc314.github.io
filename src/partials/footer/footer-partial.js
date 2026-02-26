@@ -15,9 +15,11 @@ export class FooterPartial extends LitElement {
           align-items: center;
           background-color: var(--md-sys-color-surface);
           color: var(--md-sys-color-on-surface);
+          padding-block: 1rem;
 
           a {
             color: var(--md-sys-color-on-surface-variant);
+            font-style: italic;
           }
         }
       `
