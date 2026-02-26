@@ -44,7 +44,7 @@ export class CodePartial extends LitElement {
           position: relative;
           border-radius: 1rem;
           gap: 1.5rem;
-          background: var(--md-sys-color-surface-container-low, #f7f7f7);
+          background: var(--md-sys-color-surface-container-lowest);
           transition: transform 0.2s ease-in-out;
           --md-elevation-level: 2;
 
@@ -62,6 +62,7 @@ export class CodePartial extends LitElement {
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: unset;
 
             h2 {
               font-family: sans-serif;

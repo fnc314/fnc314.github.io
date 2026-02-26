@@ -3,39 +3,46 @@ import { customElement, property } from "lit/decorators.js";
 
 @customElement("contact-list")
 export class ContactList extends LitElement {
-  static override styles = css`
-    :host {
-      container-type: inline-size;
-    }
-
-    @container (min-inline-size: auto) {
-      dl {
-        background-color: teal;
+  static override styles = [
+    css`
+      :host {
+        container-type: size;
       }
-    }
 
-    dd {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.5rem;
-      margin-inline-start: 0.5rem;
-    }
+      @container (min-width: auto) {
+        dl {
+          background-color: teal;
+        }
+      }
 
-    dt {
-      margin-block-start: 0.25rem;
-    }
+      dd {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        margin-inline-start: 0.5rem;
+      }
 
-    @media (min-width: 800px) {
       dt {
-        margin-block: 0.5rem;
+        margin-block-start: 0.25rem;
       }
-    }
 
-  `;
+      @media (min-width: 800px) {
+        dt {
+          margin-block: 0.5rem;
+        }
+      }
+
+    `
+  ];
 
   @property({ type: Array })
-  contactInfo: { method: string, identity: string, html: string }[] = [];
+  contactInfo: {
+    method: string,
+    identity: string,
+    html: string,
+    htmlNoIcon: string
+  }[] = [];
 
   override render() {
     return html`
@@ -46,7 +53,7 @@ export class ContactList extends LitElement {
               ${info.method}
             </dt>
             <dd
-              .innerHTML=${info.html}
+              .innerHTML=${info.htmlNoIcon}
               >
             </dd>
           `)

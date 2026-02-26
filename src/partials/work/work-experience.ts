@@ -1,132 +1,146 @@
 import { css, html, LitElement, nothing } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
+import { ThemeColors } from "./../../styles/partial-styles.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
-  static override styles = css`
-    :host {
-      display: block;
-      /* For contextual layout */
-      container-type: inline-size;
+  static override styles = [
+    ThemeColors,
+    css`
+      :host {
+        display: block;
+        /* For contextual layout */
+        container-type: inline-size;
 
-      h2, h3, p {
-        margin: unset;
+        h2, h3, p {
+          margin: unset;
+        }
       }
-    }
 
-    /* --- SHARED BASE --- */
-    h2 { font-size: 1.4rem; font-weight: 600; color: var(--md-sys-color-on-surface, inherit); }
-    h3 { font-size: 1.1rem; font-weight: 600; }
-    time {
-      font-style: italic;
-      font-weight: 600;
-      font-family: monospace;
-      opacity: 0.8;
-    }
-
-    .nested-experiences {
-      display: flex;
-      flex-direction: column;
-    }
-    .nested-experience {
-      display: flex;
-      flex-direction: column;
-    }
-    .nested-summary {
-      padding-inline: 1.5rem;
-      margin-block: unset;
-      grid-row: 3;
-      grid-column: 2;
-
-      li {
-        list-style-type: square;
-        margin-block-start: 0.25rem;
-        margin-block-end: 0.5rem;
+      /* --- SHARED BASE --- */
+      h2 { font-size: 1.4rem; font-weight: 600; color: var(--md-sys-color-on-surface, inherit); }
+      h3 { font-size: 1.1rem; font-weight: 600; }
+      time {
+        font-style: italic;
+        font-weight: 600;
+        font-family: monospace;
+        opacity: 0.8;
       }
-    }
 
-    .time {
-      font-size: 1rem;
-    }
-
-    .time-nested {
-      font-size: 0.85rem;
-    }
-
-    /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */
-    .experience-container {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding-block: 0.5rem;
-    }
-
-    .experience-info,
-    .nested-experience-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .nested-experiences {
-      gap: 1rem;
-      margin-block-start: 0.5rem;
-      padding-inline-start: 1rem;
-      border-inline-start: 2px solid var(--md-sys-color-outline-variant, #e0e0e0);
-    }
-
-    .nested-experience-container {
-      display: grid;
-      grid-template-columns: subgrid;
-    }
-
-    @container (min-inline-size: 600px) {
-      div.experience-container {
-        gap: 0.5rem 1.5rem;
+      .nested-experiences {
+        display: flex;
+        flex-direction: column;
       }
+      .nested-experience {
+        display: flex;
+        flex-direction: column;
+      }
+      .nested-summary {
+        padding-inline: 1.5rem;
+        margin-block: unset;
+        grid-row: 3;
+        grid-column: 2;
+
+        li {
+          list-style-type: square;
+          margin-block-start: 0.25rem;
+          margin-block-end: 0.5rem;
+        }
+      }
+
+      .time {
+        font-size: 1rem;
+      }
+
+      .time-nested {
+        font-size: 0.85rem;
+      }
+
+      /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */
       .experience-container {
-        display: grid;
-        grid-template-columns: 17rem 1fr;
-        gap: 0.5rem 1.5rem;
-        align-items: baseline;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-block: 0.5rem;
+      }
 
-        .experience-info {
-          display: contents;
+      .experience-info,
+      .nested-experience-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
 
-          /* Dates */
-          > p:last-child {
-            grid-column: 1;
-            grid-row: 1;
-            text-align: end;
-            position: sticky;
-            inset-block-start: 0;
-          }
-          /* Role */
-          > h2 {
-            grid-column: 2;
-            grid-row: 1;
-          }
-          /* Org */
-          > p:nth-child(2) {
-            grid-column: 2;
-            grid-row: 2;
-            opacity: 0.7;
-          }
+        > h2, > h3 {
+          color: var(--md-sys-color-secondary);
         }
 
-        /* Nested content */
-        .nested-experiences {
-          container-type: inline-size;
-          grid-column: auto / span 2;
-          grid-row: 3;
-          border-inline-start: none;
-          padding-inline-start: 0;
-          display: grid;
-          grid-template-columns: subgrid;
+        > p:nth-child(2) {
+          font-style: italic;
         }
       }
-    }
-  `;
+
+      .nested-experiences {
+        gap: 1rem;
+        margin-block-start: 0.5rem;
+        padding-inline-start: 1rem;
+        border-inline-start: 2px solid var(--md-sys-color-tertiary);
+      }
+
+      .nested-experience-container {
+        display: grid;
+        grid-template-columns: subgrid;
+      }
+
+      @container (min-inline-size: 600px) {
+        div.experience-container {
+          gap: 0.5rem 1.5rem;
+        }
+        .experience-container {
+          display: grid;
+          grid-template-columns: minmax(35ch, min-content) 1fr;
+          gap: 0.5rem 1.5rem;
+          align-items: baseline;
+
+          .experience-info {
+            display: contents;
+
+            /* Dates */
+            > p:last-child {
+              grid-column: 1;
+              grid-row: 1;
+              text-align: end;
+              position: sticky;
+              inset-block-start: 0;
+            }
+            /* Role */
+            > h2, > h3 {
+              grid-column: 2;
+              grid-row: 1;
+              color: var(--md-sys-color-secondary);
+            }
+            /* Org */
+            > p:nth-child(2) {
+              grid-column: 2;
+              grid-row: 2;
+              opacity: 0.7;
+              font-style: italic;
+            }
+          }
+
+          /* Nested content */
+          .nested-experiences {
+            container-type: inline-size;
+            grid-column: auto / span 2;
+            grid-row: 3;
+            border-inline-start: none;
+            padding-inline-start: 0;
+            display: grid;
+            grid-template-columns: subgrid;
+          }
+        }
+      }
+    `
+  ];
 
     @property({ type: Boolean, attribute: "is-nested" })
     isNested = false;

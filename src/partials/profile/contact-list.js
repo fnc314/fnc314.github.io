@@ -11,36 +11,38 @@ let ContactList = class ContactList extends LitElement {
         super(...arguments);
         this.contactInfo = [];
     }
-    static { this.styles = css `
-    :host {
-      container-type: inline-size;
-    }
-
-    @container (min-inline-size: auto) {
-      dl {
-        background-color: teal;
+    static { this.styles = [
+        css `
+      :host {
+        container-type: size;
       }
-    }
 
-    dd {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.5rem;
-      margin-inline-start: 0.5rem;
-    }
+      @container (min-width: auto) {
+        dl {
+          background-color: teal;
+        }
+      }
 
-    dt {
-      margin-block-start: 0.25rem;
-    }
+      dd {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        margin-inline-start: 0.5rem;
+      }
 
-    @media (min-width: 800px) {
       dt {
-        margin-block: 0.5rem;
+        margin-block-start: 0.25rem;
       }
-    }
 
-  `; }
+      @media (min-width: 800px) {
+        dt {
+          margin-block: 0.5rem;
+        }
+      }
+
+    `
+    ]; }
     render() {
         return html `
       <dl>
@@ -49,7 +51,7 @@ let ContactList = class ContactList extends LitElement {
               ${info.method}
             </dt>
             <dd
-              .innerHTML=${info.html}
+              .innerHTML=${info.htmlNoIcon}
               >
             </dd>
           `)}

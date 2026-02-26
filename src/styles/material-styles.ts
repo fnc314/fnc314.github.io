@@ -1,0 +1,82 @@
+import { css } from "lit-element";
+
+export const MaterialThemes = {
+  light: css`
+    :root {
+      --md-sys-color-primary: #904A46;
+      --md-sys-color-surface-tint: #904A46;
+      --md-sys-color-on-primary: #FFFFFF;
+      --md-sys-color-primary-container: #FFDAD7;
+      --md-sys-color-on-primary-container: #733330;
+      --md-sys-color-secondary: #38693C;
+      --md-sys-color-on-secondary: #FFFFFF;
+      --md-sys-color-secondary-container: #B9F0B7;
+      --md-sys-color-on-secondary-container: #205026;
+      --md-sys-color-tertiary: #545A92;
+      --md-sys-color-on-tertiary: #FFFFFF;
+      --md-sys-color-tertiary-container: #DFE0FF;
+      --md-sys-color-on-tertiary-container: #3C4279;
+      --md-sys-color-error: #904B40;
+      --md-sys-color-on-error: #FFFFFF;
+      --md-sys-color-error-container: #FFDAD4;
+      --md-sys-color-on-error-container: #73342A;
+      --md-sys-color-background: #FFF8F7;
+      --md-sys-color-on-background: #231919;
+      --md-sys-color-surface: #FFF8F7;
+      --md-sys-color-on-surface: #231919;
+      --md-sys-color-surface-variant: #F5DDDB;
+      --md-sys-color-on-surface-variant: #534342;
+      --md-sys-color-outline: #857371;
+      --md-sys-color-outline-variant: #D8C2BF;
+      --md-sys-color-shadow: #000000;
+      --md-sys-color-scrim: #000000;
+      --md-sys-color-inverse-surface: #382E2D;
+      --md-sys-color-inverse-on-surface: #FFEDEB;
+      --md-sys-color-inverse-primary: #FFB3AD;
+      --md-sys-color-primary-fixed: #FFDAD7;
+      --md-sys-color-on-primary-fixed: #3B0909;
+      --md-sys-color-primary-fixed-dim: #FFB3AD;
+      --md-sys-color-on-primary-fixed-variant: #733330;
+      --md-sys-color-secondary-fixed: #B9F0B7;
+      --md-sys-color-on-secondary-fixed: #002106;
+      --md-sys-color-secondary-fixed-dim: #9ED49D;
+      --md-sys-color-on-secondary-fixed-variant: #205026;
+      --md-sys-color-tertiary-fixed: #DFE0FF;
+      --md-sys-color-on-tertiary-fixed: #0F154B;
+      --md-sys-color-tertiary-fixed-dim: #BDC2FF;
+      --md-sys-color-on-tertiary-fixed-variant: #3C4279;
+      --md-sys-color-surface-dim: #E8D6D4;
+      --md-sys-color-surface-bright: #FFF8F7;
+      --md-sys-color-surface-container-lowest: #FFFFFF;
+      --md-sys-color-surface-container-low: #FFF0EF;
+      --md-sys-color-surface-container: #FCEAE8;
+      --md-sys-color-surface-container-high: #F6E4E2;
+      --md-sys-color-surface-container-highest: #F1DEDD;
+    }
+  `,
+  lightMediumContrast: css`
+    :root {
+
+    }
+  `,
+  lightHighContrast: css`
+    :root {
+
+    }
+  `,
+  dark: css`
+    :root {
+
+    }
+  `,
+  darkMediumContrast: css`
+    :root {
+
+    }
+  `,
+  darkHighContrast: css`
+    :root {
+
+    }
+  `,
+}

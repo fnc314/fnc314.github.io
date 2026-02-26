@@ -1,30 +1,26 @@
 import { LitElement, css, html } from "lit-element";
+import { ThemeColors } from "./../../styles/partial-styles.js";
 
 export class NavPartial extends LitElement {
   static get styles() {
-    return css`
-      :root {
-        --md-sys-color-primary: #cc3333;
-        --md-sys-color-secondary: #239c41;
-        --md-sys-color-tertiary: #16239b;
-        --md-sys-color-surface: #ffffff;
-        --md-sys-color-background: #117221;
-        --md-sys-color-outline: #000000;
-        --md-sys-color-outline-variant: #2742c7;
-        --md-sys-color-on-surface-variant: #2742c7;
-        --md-sys-color-shadow: #000000;
-      }
-
-      nav {
-        position: relative;
-        --md-elevation-level: 5;
-        border-radius: 50vh;
-
-        md-tabs {
-          border-radius: 50vh;
+    return [
+      ThemeColors,
+      css`
+        :root {
         }
-      }
-    `;
+
+        nav {
+          position: relative;
+          --md-elevation-level: 1;
+          border-radius: 50vh;
+
+          md-tabs {
+            border-radius: 50vh;
+          }
+        }
+      `
+    ];
+    return ;
   }
 
   static get properties() {

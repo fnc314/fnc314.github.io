@@ -8,27 +8,24 @@ import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
 import "./contact-list.js";
-import ProfileJson from "./profile.json" with { type: "json" };
+import "./profile-list.js";
 let ProfilePartial = class ProfilePartial extends LitElement {
     static { this.styles = [
         ParialHeadingStyles,
         css `
       :host {
-        container-type: inline-size;
+        container-type: size;
       }
 
       .profile-container {
         display: grid;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr;
         grid-template-areas:
           "header"
-          "bio"
-          "contact";
+          "profile-list";
         gap: 1rem;
 
-        header, aside, section {
-          position: relative;
-          --md-elevation-level: 3;
+        header {
           border-radius: 1rem;
         }
       }
@@ -36,10 +33,10 @@ let ProfilePartial = class ProfilePartial extends LitElement {
       @media (min-width: 600px) {
         .profile-container {
           grid-template-rows: auto 1fr;
-          grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 1fr);
+          grid-template-columns: minmax(min-content, 1fr);
           grid-template-areas:
-            "header header"
-            "bio contact";
+            "header"
+            "profile-list";
         }
       }
 
@@ -47,36 +44,8 @@ let ProfilePartial = class ProfilePartial extends LitElement {
         grid-area: header;
       }
 
-      .about-me {
-        grid-area: bio;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-
-        h2 {
-          margin: unset;
-        }
-
-        p::first-letter {
-          text-transform: uppercase;
-          font-size: 2rem;
-        }
-      }
-
-      .contact {
-        grid-area: contact;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 1rem;
-
-        h2 {
-          align-self: center;
-          margin: unset;
-        }
+      section {
+        grid-area: profile-list;
       }
 
     `,
@@ -89,17 +58,9 @@ let ProfilePartial = class ProfilePartial extends LitElement {
           <h1 class="md-typescale-title-medium">Franco N. Colaizzi</h1>
         </header>
 
-        <section class="about-me">
-          <md-elevation></md-elevation>
-          <h2>About Me</h2>
-          <p>${ProfileJson.bio}</p>
+        <section class="profile-list">
+          <profile-list></profile-list>
         </section>
-
-        <aside class="contact">
-          <md-elevation></md-elevation>
-          <h2>Contact</h2>
-          <contact-list .contactInfo=${ProfileJson.contactInfo}></contact-list>
-        </aside>
       </article>
     `;
     }
