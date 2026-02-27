@@ -4,10 +4,13 @@
     <title>fnc314.com - Homepage of Franco N. Colaizzi</title>
     <!-- <base target="_top" href="https://fnc314.com" /> -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=contain" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="Personal Webite" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#4C5C92" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#B5C4FF" />
+    <meta name="color-scheme" content="dark light" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" sizes="any" type="image/svg+xml" href="./icons/favicon.svg" />
     <link rel="canonical" href="https://www.fnc314.com" />
@@ -70,7 +73,7 @@
       >
       import "@material/web/all.js";
       import { LitElement, html, css } from "lit-element";
-      import {styles as typescaleStyles} from "@material/web/typography/md-typescale-styles.js";
+      import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
       import { MaterialThemes } from "./src/styles/material-styles.js"
 
       document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
