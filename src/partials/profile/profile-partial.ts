@@ -26,12 +26,13 @@ export class ProfilePartial extends LitElement {
 
       header {
         grid-area: header;
+        margin-inline: 1rem;
       }
 
       figure {
         grid-area: figure;
-        margin: auto;
         place-self: center;
+        margin: 1rem;
 
         picture {
           display: grid;
@@ -40,7 +41,7 @@ export class ProfilePartial extends LitElement {
 
       img {
         object-fit: scale-down;
-        max-width: 80%;
+        max-width: 100%;
         height: auto;
         place-self: center;
         border-radius: 1rem;
@@ -55,6 +56,7 @@ export class ProfilePartial extends LitElement {
 
       section {
         grid-area: profile-list;
+        margin: 1rem;
       }
 
       @container (min-width: 850px) {
@@ -63,11 +65,12 @@ export class ProfilePartial extends LitElement {
             "header header"
             "figure profile-list";
           gap: 1rem;
-          padding-inline: 1rem;
+          grid-template-rows: auto 1fr;
         }
 
         header {
           grid-area: header;
+          margin-inline: 1rem;
         }
 
         figure {
@@ -101,7 +104,11 @@ export class ProfilePartial extends LitElement {
         </figure>
 
         <section>
-          <profile-list></profile-list>
+          <profile-list
+            .bio=${ProfileJson.bio}
+            .contactInfo=${ProfileJson.contactInfo}
+            .socialInfo=${ProfileJson.socialInfo}
+          ></profile-list>
         </section>
       </article>
     `;

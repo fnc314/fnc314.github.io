@@ -25,15 +25,15 @@
     {
       "method": "LinkedIn",
       "identity": "https://www.linkedin.com/in/fnc314",
-      "html": "<md-icon>enterprise</md-icon> <a href=\"https://www.linkedin.com/in/fnc314\" target=\"_blank\">https://www.linkedin.com/in/fnc314</a>",
-      "htmlNoIcon": "<a href=\"https://www.linkedin.com/in/fnc314\" target=\"_blank\">https://www.linkedin.com/in/fnc314</a>",
+      "html": "<md-icon>enterprise</md-icon> <a href=\"https://www.linkedin.com/in/fnc314\" target=\"_blank\">linkedin.com/in/fnc314</a>",
+      "htmlNoIcon": "<a href=\"https://www.linkedin.com/in/fnc314\" target=\"_blank\">linkedin.com/in/fnc314</a>",
       "mdIcon": "enterprise"
     },
     {
       "method": "GitHub",
       "identity": "https://www.github.com/fnc314/",
-      "html": "<md-icon>deployed_code</md-icon> <a href=\"https://www.github.com/fnc314/\" target=\"_blank\">https://www.github.com/fnc314/</a>",
-      "htmlNoIcon": "<a href=\"https://www.github.com/fnc314/\" target=\"_blank\">https://www.github.com/fnc314/</a>",
+      "html": "<md-icon>deployed_code</md-icon> <a href=\"https://www.github.com/fnc314\" target=\"_blank\">github.com/fnc314</a>",
+      "htmlNoIcon": "<a href=\"https://www.github.com/fnc314\" target=\"_blank\">github.com/fnc314</a>",
       "mdIcon": "deployed_code"
     }
   ],

@@ -14,7 +14,48 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" sizes="any" type="image/svg+xml" href="./icons/favicon.svg" />
     <link rel="canonical" href="https://www.fnc314.com" />
-    <link rel="stylesheet" href="./src/stylesheets/styles.css" type="text/css" media="screen" />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/light.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/light-mc.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/light-hc.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/dark.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/dark-mc.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/dark-hc.css"
+      type="text/css"
+      media="screen"
+      />
+    <link
+      rel="stylesheet"
+      href="./src/stylesheets/styles.css"
+      type="text/css"
+      media="screen"
+      />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined&display=swap"
@@ -72,12 +113,15 @@
       type="module"
       >
       import "@material/web/all.js";
-      import { LitElement, html, css } from "lit-element";
       import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-      import { MaterialThemes } from "./src/styles/material-styles.js"
+      import { onThemeChange, MaterialCSSStyleSheet } from "./src/styles/styles.js";
 
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", onThemeChange);
+
+      document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
       document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-      document.adoptedStyleSheets.push(MaterialThemes.dark.styleSheet)
     </script>
     <script defer type="module" href="./index.js"></script>
   </head>

@@ -1,5 +1,5 @@
 import { css } from "lit-element";
-export const MaterialThemes = {
+export const MaterialSchemes = {
     light: css `
     :root {
       --md-sys-color-primary: #4C5C92;

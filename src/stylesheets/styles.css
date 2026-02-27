@@ -1,3 +1,9 @@
+:root {
+  --md-ref-typeface-brand: Roboto;
+  --md-ref-typeface-plain: monospace;
+  color-scheme: dark light;
+}
+
 html,
 body {
   /* font-size: 16px; */
@@ -24,6 +30,7 @@ body {
   }
 
   main {
+    padding-block-end: 1rem;
     grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);

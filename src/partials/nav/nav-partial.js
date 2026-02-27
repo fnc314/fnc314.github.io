@@ -1,108 +1,115 @@
-import { LitElement, css, html } from "lit-element";
-
-export class NavPartial extends LitElement {
-  static get styles() {
-    return [
-      css`
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { css, html, LitElement } from "lit-element";
+import { customElement } from "lit/decorators.js";
+let NavPartial = class NavPartial extends LitElement {
+    static get styles() {
+        return [
+            css `
         :host {
-          background-color: var(--md-sys-color-surface);
-        }
-
-        nav {
-          position: relative;
-          --md-elevation-level: 1;
+          --md-primary-tab-active-indicator-color: var(--md-sys-color-tertiary);
+          --md-primary-tab-active-indicator-height: 0.4rem;
+          --md-primary-tab-active-indicator-shape: 1rem;
+          /* --md-primary-tab-active-icon-color: var(--md-sys-color-tertiary);
+          --md-primary-tab-active-label-text-color: var(--md-sys-color-tertiary); */
+          --md-primary-tab-container-color: var(--md-sys-color-surface-container);
+          --md-primary-tab-container-elevation: 1;
+          --md-primary-tab-container-height: 5rem;
+          --md-primary-tab-container-shape-start-start: 0.1rem;
+          --md-primary-tab-container-shape-start-end: 0.1rem;
+          --md-primary-tab-container-shape-end-start: 0.1rem;
+          --md-primary-tab-container-shape-end-end: 0.1rem;
+          --md-primary-tab-icon-color: var(--md-sys-color-primary);
+          --md-primary-tab-label-font: monospace;
+          --md-primary-tab-label-text-color: var(--md-sys-color-primary);
+          --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
+          --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
         }
       `
-    ];
-    return ;
-  }
-
-  static get properties() {
-    return {};
-  }
-
-  /**
-   * The current {@link MdPrimaryTab} which is actively being displayed
-   */
-  #activeTab = null;
-
-  /**
-   * Determines which {@link MdTabs} is selected
-   * @param tabs The {@link MdTabs} from {@link document.getElementById}
-   * @return The {@link MdTab} selected *or* {@link null}
-   */
-  #getVisibleTab(tabs) {
-    const activeTabControl = tabs.children.item(tabs.activeTabIndex).getAttribute("aria-controls");
-    return document.querySelector(`#${activeTabControl}`);
-  }
-
-  /**
-   * Queries {@link this.shadowRoot} for {@link #nav-md-tabs} returning the {@link NodeCollection}
-   *   or {@link null}
-   * @return A {@link NodeCollection} or {@link null}
-   */
-  #getTabs() {
-    return this.shadowRoot.querySelector("#nav-md-tabs") ?? null;
-  }
-
-  /**
-   * A lifecycle-esque callback offered by {@link LitElement} implementations allowing a post-render
-   *   hook during which event listeners can be wired appropriately
-   * @param {*} _changedProperties A framework-provided {@link Object} with meta-data relevant to the
-   *   ongoing render cycle.  Currently unused
-   */
-  async firstUpdated(_changedProperties) {
-    await new Promise((r) => setTimeout(r, 0));
-    const tabs = this.#getTabs();
-    if (tabs == null) {
-      return;
+        ];
     }
-    this.#activeTab = this.#getVisibleTab(tabs);
-    tabs.addEventListener("change", e => {
-      if (this.#activeTab) {
-        this.#activeTab.hidden = true;
-      }
-      this.#activeTab = this.#getVisibleTab(tabs);
-      if (this.#activeTab) {
-        this.#activeTab.hidden = false
-      }
-    });
-  }
-
-  constructor() {
-    super();
-  }
-
-  render() {
-    return html`
+    static get properties() {
+        return {};
+    }
+    /**
+     * The current {@link MdPrimaryTab} which is actively being displayed
+     */
+    #activeTabPanel = null;
+    #activeTab = null;
+    /**
+     * {@typedef MdTabs}
+     * {@type MdTabs}
+     */
+    #tabs = null;
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+        this.#tabs = this.renderRoot.querySelector("#nav-md-tabs");
+        this.#tabs?.addEventListener("change", (event) => this.#handleChange(event));
+    }
+    #handleChange(event) {
+        const target = event.target;
+        this.#activeTab = target.activeTab;
+        this.#activeTabPanel =
+            document.querySelector(`#${this.#activeTab.getAttribute("aria-controls")}[role="tabpanel"]`);
+        document
+            .querySelectorAll("[role=\"tabpanel\"")
+            .forEach((panelEl) => {
+            panelEl.toggleAttribute("hidden", true);
+            panelEl.setAttribute("aria-hidden", "true");
+        });
+        if (this.#activeTabPanel !== null) {
+            this.#activeTabPanel.toggleAttribute("hidden", false);
+            this.#activeTabPanel.toggleAttribute("aria-hidden", false);
+        }
+        target.tabs.forEach((tab) => {
+            tab.toggleAttribute("active", false);
+            tab.toggleAttribute("inline-icon", false);
+            tab.requestUpdate("active");
+        });
+        this.#activeTab.toggleAttribute("active", true);
+        this.#activeTab.toggleAttribute("inline-icon", true);
+    }
+    connectedCallback() {
+        super.connectedCallback();
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.#tabs?.removeEventListener("change", this.#handleChange);
+    }
+    constructor() {
+        super();
+    }
+    render() {
+        return html `
       <nav>
-        <md-elevation></md-elevation>
         <md-tabs
           id="nav-md-tabs"
           aria-label="Primary Nav Tabs"
-          auto-activate="true"
-          active-tab-index="0"
           >
           <md-primary-tab
-            href="#profile"
             id="tab-profile"
             aria-controls="panel-profile"
+            .hasIcon=${true}
             >
             <md-icon slot="icon">person</md-icon>
             Profile
           </md-primary-tab>
           <md-primary-tab
-            href="#work"
             id="tab-work"
             aria-controls="panel-work"
+            .hasIcon=${true}
             >
             <md-icon slot="icon">engineering</md-icon>
             Work
           </md-primary-tab>
           <md-primary-tab
-            href="#code"
             id="tab-code"
             aria-controls="panel-code"
+            .hasIcon=${true}
             >
             <md-icon slot="icon">code</md-icon>
             Code
@@ -110,7 +117,10 @@ export class NavPartial extends LitElement {
         </md-tabs>
       </nav>
     `;
-  }
-}
-
-window.customElements.define("nav-partial", NavPartial);
+    }
+};
+NavPartial = __decorate([
+    customElement("nav-partial")
+], NavPartial);
+export { NavPartial };
+;

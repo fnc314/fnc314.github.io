@@ -1,6 +1,11 @@
-import { css } from "lit-element";
+import { css, CSSResult } from "lit-element";
 
-export const MaterialThemes = {
+export type MaterialSchemeName =
+  "light" | "lightMediumContrast" | "lightHighContrast" | "dark" | "darkMediumContrast" | "darkHighContrast";
+export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
+export type MaterialSchemes = Record<MaterialSchemeName, CSSResult>;
+
+export const MaterialSchemes: MaterialSchemes = {
   light: css`
     :root {
       --md-sys-color-primary: #4C5C92;

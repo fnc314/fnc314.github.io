@@ -49,10 +49,10 @@ export class CodePartial extends LitElement {
           background: var(--md-sys-color-surface-container-low);
           --md-elevation-level: 2;
           transition:
-            transform 0.2s ease-in-out,
-            background-color 0.2s ease-in-out,
-            --md-elevation-level 0.2s ease-in-out,
-            border-radius 0.2s ease-in-out;
+            transform 0.1s ease-in-out,
+            background-color 0.1s ease-in-out,
+            --md-elevation-level 0.1s ease-in-out,
+            border-radius 0.1s ease-in-out;
 
           &:hover {
             transform: translateY(-4px);
@@ -75,11 +75,11 @@ export class CodePartial extends LitElement {
 
           a {
             text-decoration: none;
-            color: var(--md-sys-color-primary, inherit);
+            color: var(--md-sys-color-primary);
 
             h2 {
               margin: unset;
-              color: var(--md-sys-color-tertiary, inherit);
+              color: var(--md-sys-color-tertiary);
               text-align: center;
               line-height: 1.5rem;
             }
@@ -108,9 +108,9 @@ export class CodePartial extends LitElement {
 
             li {
               list-style-type: none;
-              outline: 1px solid var(--md-sys-color-on-surface, #1d192b);
-              background: var(--md-sys-color-surface-container-highest, #e8def8);
-              color: var(--md-sys-color-on-surface, #1d192b);
+              outline: 1px solid var(--md-sys-color-on-surface);
+              background: var(--md-sys-color-surface-container-highest);
+              color: var(--md-sys-color-on-surface);
               padding: 0.25rem 1rem;
               border-radius: 0.5rem;
               font-size: 0.85rem;

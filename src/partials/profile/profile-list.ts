@@ -1,7 +1,6 @@
 import { LitElement, css, html } from "lit-element";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
-import ProfileJson from "./profile.json" with { type: "json" };
 
 @customElement("profile-list")
 export class ProfileList extends LitElement {
@@ -14,10 +13,10 @@ export class ProfileList extends LitElement {
       }
 
       .profile-list {
+        min-height: 100%;
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 2rem 3rem;
-        padding-inline: 1rem;
+        gap: 3rem 1rem;
 
         div {
           display: contents;
@@ -50,14 +49,19 @@ export class ProfileList extends LitElement {
       }
 
       a {
-        color: var(--md-sys-color-on-surface-variant);
+        color: var(--md-sys-color-primary);
       }
     `,
   ];
 
-  #capitalizeKey(key: string): string {
-    return key.charAt(0).toUpperCase() + key.slice(1);
-  }
+  @property({ type: Array })
+  contactInfo: { method: string, htmlNoIcon: string }[] = [];
+
+  @property({ type: Array })
+  socialInfo: { method: string, htmlNoIcon: string }[] = [];
+
+  @property({ type: String })
+  bio: string = "";
 
   #renderSubList(contents: {method: string, htmlNoIcon: string}[]) {
     return html`
@@ -79,30 +83,28 @@ export class ProfileList extends LitElement {
   override render() {
     return html`
       <dl class="profile-list">
-        ${
-          Object.keys(ProfileJson)
-            .map((key) => {
-              if (key === "contactInfo" || key === "socialInfo") {
-                return html`
-                  <div>
-                    <dt>${this.#capitalizeKey(key).replace("Info", "")}</dt>
-                    <dd>
-                      ${this.#renderSubList(ProfileJson[key])}
-                    </dd>
-                  </div>
-                `;
-              } else if (key === "proficiencies" || key ==="photo") {
-                return;
-              } else {
-                return html`
-                  <div>
-                    <dt>${this.#capitalizeKey(key)}</dt>
-                    <dd>${ProfileJson[`${key}`]}</dd>
-                  </div>
-                `;
-              }
-            })
-        }
+        <div>
+          <dt class="md-typescale-title-medium">
+            Bio
+          </dt>
+          <dd>${this.bio}</dd>
+        </div>
+        <div>
+          <dt class="md-typescale-title-medium">
+            Contact
+          </dt>
+          <dd>
+            ${this.#renderSubList(this.contactInfo)}
+          </dd>
+        </div>
+        <div>
+          <dt class="md-typescale-title-medium">
+            Social
+          </dt>
+          <dd>
+            ${this.#renderSubList(this.socialInfo)}
+          </dd>
+        </div>
       </dl>
     `;
   }

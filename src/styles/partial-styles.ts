@@ -1,17 +1,9 @@
+import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import { css } from "lit-element";
 
-export const PartialArticleStyles = css`
-  article {
-    padding-block-start: 1rem;
-  }
-`;
+export const MaterialTypescaleStyles = typescaleStyles
 
 export const ParialHeadingStyles = css`
-  :host {
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
-  }
-
   header {
     display: flex;
     align-items: center;
