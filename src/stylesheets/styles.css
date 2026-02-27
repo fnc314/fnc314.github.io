@@ -1,5 +1,6 @@
 html,
 body {
+  /* font-size: 16px; */
   font-family: Roboto, sans-serif;
   writing-mode: horizontal-tb;
   margin: unset;
@@ -12,14 +13,18 @@ body {
   display: grid;
   grid-template-areas:
     "header-nav"
-    "main"
-    "footer";
-  grid-template-rows: auto 1fr auto;
+    "main";
+  grid-template-rows: auto 1fr;
   container-type: size;
   color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface);
 
+  header {
+    grid-area: header-nav;
+  }
+
   main {
+    grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
   }

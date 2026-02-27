@@ -1,7 +1,4 @@
 import { css } from "lit-element";
-import { MaterialThemes } from "./material-styles.js";
-
-export const ThemeColors = MaterialThemes.light;
 
 export const PartialArticleStyles = css`
   article {
@@ -10,8 +7,7 @@ export const PartialArticleStyles = css`
 `;
 
 export const ParialHeadingStyles = css`
-  ${ThemeColors}
-  :root {
+  :host {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
   }

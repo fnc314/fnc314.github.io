@@ -6,7 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { css, html, LitElement, nothing } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
-import { ThemeColors } from "./../../styles/partial-styles.js";
 let WorkExperience = class WorkExperience extends LitElement {
     constructor() {
         super(...arguments);
@@ -19,7 +18,6 @@ let WorkExperience = class WorkExperience extends LitElement {
         this.jobs = [];
     }
     static { this.styles = [
-        ThemeColors,
         css `
       :host {
         display: block;

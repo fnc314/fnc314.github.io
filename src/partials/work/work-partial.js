@@ -8,7 +8,7 @@ export class WorkPartial extends LitElement {
     return [
       ParialHeadingStyles,
       css`
-        :root {
+        :host {
 
         }
 

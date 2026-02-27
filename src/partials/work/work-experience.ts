@@ -1,11 +1,9 @@
 import { css, html, LitElement, nothing } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
-import { ThemeColors } from "./../../styles/partial-styles.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
   static override styles = [
-    ThemeColors,
     css`
       :host {
         display: block;

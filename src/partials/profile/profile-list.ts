@@ -1,7 +1,6 @@
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
-import "./contact-list.js";
 import ProfileJson from "./profile.json" with { type: "json" };
 
 @customElement("profile-list")
@@ -10,13 +9,14 @@ export class ProfileList extends LitElement {
     ParialHeadingStyles,
     css`
       :host {
-
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
       }
 
       .profile-list {
         display: grid;
-        grid-template-columns: 1fr minmax(min-content, max-content);
-        gap: 2rem 1rem;
+        grid-template-columns: auto 1fr;
+        gap: 2rem 3rem;
         padding-inline: 1rem;
 
         div {
@@ -25,16 +25,16 @@ export class ProfileList extends LitElement {
       }
 
       .profile-sub-list {
-
-      }
-
-      dl {
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-rows: max-content 1fr;
         gap: 1rem;
 
         div {
           display: contents;
+        }
+
+        dd {
+          text-align: center;
         }
       }
 
@@ -46,6 +46,7 @@ export class ProfileList extends LitElement {
       dd {
         margin: unset;
         color: var(--md-sys-color-on-surface-variant);
+        overflow-wrap: anywhere;
       }
 
       a {
@@ -56,6 +57,23 @@ export class ProfileList extends LitElement {
 
   #capitalizeKey(key: string): string {
     return key.charAt(0).toUpperCase() + key.slice(1);
+  }
+
+  #renderSubList(contents: {method: string, htmlNoIcon: string}[]) {
+    return html`
+      <dl class="profile-sub-list">
+        ${
+          contents.map((info) => html`
+            <div>
+              <dt>
+                ${info.method}
+              </dt>
+              <dd .innerHTML=${info.htmlNoIcon}></dd>
+            </div>
+          `)
+        }
+      </dl>
+    `;
   }
 
   override render() {
@@ -69,31 +87,17 @@ export class ProfileList extends LitElement {
                   <div>
                     <dt>${this.#capitalizeKey(key).replace("Info", "")}</dt>
                     <dd>
-                      <dl class="profile-sub-list">
-                        ${
-                          ProfileJson[key].map(info => html`
-                            <div>
-                              <dt>
-                                ${info.method}
-                              </dt>
-                              <dd
-                                .innerHTML=${info.htmlNoIcon}
-                                >
-                              </dd>
-                            </div>
-                          `)
-                        }
-                      </dl>
+                      ${this.#renderSubList(ProfileJson[key])}
                     </dd>
                   </div>
                 `;
-              } else if (key === "proficiencies" || key === "profilePhoto") {
+              } else if (key === "proficiencies" || key ==="photo") {
                 return;
               } else {
                 return html`
                   <div>
                     <dt>${this.#capitalizeKey(key)}</dt>
-                    <dd>${`${ProfileJson[key]}`}</dd>
+                    <dd>${ProfileJson[`${key}`]}</dd>
                   </div>
                 `;
               }

@@ -7,58 +7,103 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
-import "./contact-list.js";
 import "./profile-list.js";
+import ProfileJson from "./profile.json" with { type: "json" };
 let ProfilePartial = class ProfilePartial extends LitElement {
     static { this.styles = [
         ParialHeadingStyles,
         css `
       :host {
-        container-type: size;
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
       }
 
-      .profile-container {
+      article {
+        container-type: inline-size;
         display: grid;
-        grid-template-rows: auto 1fr;
         grid-template-areas:
           "header"
+          "figure"
           "profile-list";
-        gap: 1rem;
-
-        header {
-          border-radius: 1rem;
-        }
-      }
-
-      @media (min-width: 600px) {
-        .profile-container {
-          grid-template-rows: auto 1fr;
-          grid-template-columns: minmax(min-content, 1fr);
-          grid-template-areas:
-            "header"
-            "profile-list";
-        }
+        gap: 1rem 2rem;
       }
 
       header {
         grid-area: header;
       }
 
+      figure {
+        grid-area: figure;
+        margin: auto;
+        place-self: center;
+
+        picture {
+          display: grid;
+        }
+      }
+
+      img {
+        object-fit: scale-down;
+        max-width: 80%;
+        height: auto;
+        place-self: center;
+        border-radius: 1rem;
+      }
+
+      figcaption {
+        text-align: center;
+        color: var(--md-sys-color-on-surface-variant);
+        font-style: italic;
+        margin-block: 0.5rem;
+      }
+
       section {
         grid-area: profile-list;
+      }
+
+      @container (min-width: 850px) {
+        article {
+          grid-template-areas:
+            "header header"
+            "figure profile-list";
+          gap: 1rem;
+          padding-inline: 1rem;
+        }
+
+        header {
+          grid-area: header;
+        }
+
+        figure {
+          grid-area: figure;
+          place-self: center;
+        }
+
+        section {
+          grid-area: profile-list;
+        }
       }
 
     `,
     ]; }
     render() {
+        const photoData = ProfileJson["photo"];
         return html `
-      <article class="profile-container">
+      <article>
         <header>
           <md-elevation></md-elevation>
           <h1 class="md-typescale-title-medium">Franco N. Colaizzi</h1>
         </header>
 
-        <section class="profile-list">
+        <figure>
+          <picture>
+            <source srcset=${photoData.src} type="image/jpeg">
+            <img src=${photoData.src} alt=${photoData.alt}>
+          </picture>
+          <figcaption>${photoData.figcaption}</figcaption>
+        </figure>
+
+        <section>
           <profile-list></profile-list>
         </section>
       </article>

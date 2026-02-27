@@ -1,12 +1,10 @@
 import { LitElement, css, html } from "lit-element";
-import { ThemeColors } from "./../../styles/partial-styles.js";
 
 export class NavPartial extends LitElement {
   static get styles() {
     return [
-      ThemeColors,
       css`
-        :root {
+        :host {
           background-color: var(--md-sys-color-surface);
         }
 
