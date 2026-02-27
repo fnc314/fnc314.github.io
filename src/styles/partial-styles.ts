@@ -25,12 +25,12 @@ export const ParialHeadingStyles = css`
     border-radius: 1rem;
     margin-block-start: 1rem;
     margin-inline: 1rem;
-    background-color: var(--md-sys-color-tertiary);
+    background-color: var(--md-sys-color-primary-container);
 
     h1 {
       margin-block: 1rem;
       font-size: 2.5rem;
-      color: var(--md-sys-color-on-tertiary);
+      color: var(--md-sys-color-on-primary-container);
     }
   }
 `;

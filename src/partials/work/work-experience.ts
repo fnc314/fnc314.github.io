@@ -18,10 +18,9 @@ export class WorkExperience extends LitElement {
       }
 
       /* --- SHARED BASE --- */
-      h2 { font-size: 1.4rem; font-weight: 600; color: var(--md-sys-color-on-surface, inherit); }
+      h2 { font-size: 1.4rem; font-weight: 600; }
       h3 { font-size: 1.1rem; font-weight: 600; }
       time {
-        font-style: italic;
         font-weight: 600;
         font-family: monospace;
         opacity: 0.8;
@@ -71,11 +70,17 @@ export class WorkExperience extends LitElement {
         gap: 0.25rem;
 
         > h2, > h3 {
-          color: var(--md-sys-color-secondary);
+          color: var(--md-sys-color-tertiary);
         }
 
+        /* ORG */
         > p:nth-child(2) {
           font-style: italic;
+        }
+
+        /* Dates */
+        > p:last-child {
+          color: var(--md-sys-color-secondary);
         }
       }
 
@@ -83,7 +88,7 @@ export class WorkExperience extends LitElement {
         gap: 1rem;
         margin-block-start: 0.5rem;
         padding-inline-start: 1rem;
-        border-inline-start: 2px solid var(--md-sys-color-tertiary);
+        border-inline-start: 2px solid var(--md-sys-color-primary);
       }
 
       .nested-experience-container {
@@ -111,12 +116,13 @@ export class WorkExperience extends LitElement {
               text-align: end;
               position: sticky;
               inset-block-start: 0;
+              color: var(--md-sys-color-secondary);
             }
             /* Role */
             > h2, > h3 {
               grid-column: 2;
               grid-row: 1;
-              color: var(--md-sys-color-secondary);
+              color: var(--md-sys-color-tertiary);
             }
             /* Org */
             > p:nth-child(2) {
