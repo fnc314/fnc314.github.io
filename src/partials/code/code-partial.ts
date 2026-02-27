@@ -1,17 +1,20 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
 import CodeJson from "./code.json" with { type: "json" };
-let CodePartial = class CodePartial extends LitElement {
-    static { this.styles = [
-        ParialHeadingStyles,
-        css `
+
+interface Project {
+  name: string;
+  url: string;
+  description: string;
+  technologies: string[];
+}
+
+@customElement("code-partial")
+export class CodePartial extends LitElement {
+  static override styles = [
+    ParialHeadingStyles,
+    css`
       :root {
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
@@ -133,9 +136,10 @@ let CodePartial = class CodePartial extends LitElement {
         display: inline;
       }
     `
-    ]; }
-    #renderCodeWidget({ name, url, description, technologies }) {
-        return html `
+  ];
+
+  #renderCodeWidget({ name, url, description, technologies }: Project) {
+    return html`
       <section class="code-widget">
         <md-elevation></md-elevation>
         <header>
@@ -148,14 +152,15 @@ let CodePartial = class CodePartial extends LitElement {
         </div>
         <footer>
           <ul class="tech-stack">
-            ${technologies.map(t => html `<li .innerHTML=${t}></li>`)}
+            ${technologies.map(t => html`<li .innerHTML=${t}></li>`)}
           </ul>
         </footer>
       </section>
     `;
-    }
-    render() {
-        return html `
+  }
+
+  override render() {
+    return html`
       <article
         class="md-typescale-body-medium"
         >
@@ -164,13 +169,15 @@ let CodePartial = class CodePartial extends LitElement {
           <h1 class="md-typescale-title-medium">Code Projects</h1>
         </header>
         <div class="article-body">
-          ${CodeJson.projects.map(p => this.#renderCodeWidget(p))}
+          ${(CodeJson.projects as Project[]).map(p => this.#renderCodeWidget(p))}
         </div>
       </article>
     `;
-    }
-};
-CodePartial = __decorate([
-    customElement("code-partial")
-], CodePartial);
-export { CodePartial };
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "code-partial": CodePartial;
+  }
+}

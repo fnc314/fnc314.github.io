@@ -34,7 +34,8 @@
         "<a href=\"https://lit.dev/\" target=\"_blank\">Lit</a>",
         "<a href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
         "<a href=\"https://nodejs.org/\" target=\"_blank\">Node/NPM</a>",
-        "<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>"
+        "<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>",
+        "<a href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>"
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",
       "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a>"
