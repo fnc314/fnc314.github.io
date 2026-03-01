@@ -128,6 +128,7 @@ export class WorkExperience extends LitElement {
               grid-row: 2;
               opacity: 0.7;
               font-style: italic;
+              color: var(--md-sys-color-on-surface-variant)
             }
           }
 
