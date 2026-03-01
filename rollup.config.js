@@ -29,7 +29,7 @@ export default {
       patterns: [ "assets/**/*.{svg,jpg}" ], rootDir: "./",
     }),
     copy({
-      patterns: [ "files/*.pdf" ], rootDir: "./assets",
+      patterns: [ "files/**/*.pdf" ], rootDir: "./assets",
     }),
     copy({
       patterns: [ "partials/**/*.json" ], rootDir: "./src",
