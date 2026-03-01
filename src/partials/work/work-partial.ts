@@ -1,7 +1,7 @@
+import { ParialHeadingStyles } from "@/styles/partial-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import { ParialHeadingStyles } from "../../styles/partial-styles.js";
-import "./work-experience.js";
+import "./work-experience";
 import WorkJson from "./work.json" with { type: "json" };
 
 interface WorkDate {

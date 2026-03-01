@@ -1,7 +1,7 @@
+import { ParialHeadingStyles } from "@/styles/partial-styles";
 import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
-import "./profile-list.js";
+import "./profile-list";
 import ProfileJson from "./profile.json" with { type: "json" };
 
 @customElement("profile-partial")

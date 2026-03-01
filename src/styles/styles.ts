@@ -1,4 +1,4 @@
-import { MaterialSchemes } from "./material-styles.js";
+import { MaterialSchemes } from "./material-styles";
 
 export const onThemeChange = (event: MediaQueryListEvent) => {
   MaterialCSSStyleSheet.replaceSync(

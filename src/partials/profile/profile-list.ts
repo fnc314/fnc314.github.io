@@ -1,6 +1,6 @@
+import { ParialHeadingStyles } from "@/styles/partial-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
-import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
 
 @customElement("profile-list")
 export class ProfileList extends LitElement {

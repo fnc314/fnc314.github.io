@@ -1,6 +1,6 @@
+import { ParialHeadingStyles } from "@/styles/partial-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import { ParialHeadingStyles } from "./../../styles/partial-styles.js";
 import CodeJson from "./code.json" with { type: "json" };
 
 interface Project {

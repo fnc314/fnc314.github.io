@@ -11,7 +11,6 @@ export default {
     dir: "./website",
     format: "es",
     name: "com.fnc314.website",
-    // file: "./website/index.js",
   },
   plugins: [
     typescript({
@@ -20,8 +19,8 @@ export default {
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",
-      minifyCss: false,
-      minify: false,
+      minifyCss: true,
+      minify: true,
       flattenOutput: false,
       absoluteBaseUrl: "https://fnc314.com"
     }),
