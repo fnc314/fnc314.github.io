@@ -7,41 +7,44 @@ import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 export default {
-  input: "./src/index.html",
-  output: { dir: "website" },
+  output: {
+    dir: "./website",
+    format: "es",
+    name: "com.fnc314.website",
+    // file: "./website/index.js",
+  },
   plugins: [
     typescript({
       tsconfig: "./tsconfig.json",
     }),
     rollupPluginHTML({
-      input: "./src/index.html",
-      minifyCss: true,
-      minify: true,
+      input: "index.html",
+      rootDir: "./src",
+      minifyCss: false,
+      minify: false,
       flattenOutput: false,
       absoluteBaseUrl: "https://fnc314.com"
     }),
     resolve(),
     copy({
-      patterns: [
-        //"./src/*.html",
-        "./src/**/*.json",
-      ],
-      exclude: [
-        "package.json",
-        "package-lock.json",
-        "tsconfig.json",
-        ".prettierrc.json",
-        "jsconfig.json",
-        "./old",
-        "./node_modules",
-        "./website",
-        "./src",
-      ]
+      patterns: [ "**/*.{svg,jpg,json}" ], rootDir: "./assets",
+    }),
+    copy({
+      patterns: [ "partials/**/*.json" ], rootDir: "./src",
     }),
     json({
       compact: true,
+      exclude: [
+        "./assets/**/*.json",
+        "./src/theme/**.json",
+      ],
+      include: [
+        "./src/**/*.json",
+      ]
     }),
-    typescriptPaths(),
+    typescriptPaths({
+      tsConfigPath: "./tsconfig.json",
+    }),
     image({
       include: [
         "./assets/images/*.jpg"

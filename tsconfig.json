@@ -15,7 +15,7 @@
     "sourceMap": false,
     "inlineSources": false,
     "pretty": true,
-    "outDir": "./src",
+    "outDir": "./website",
     "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
