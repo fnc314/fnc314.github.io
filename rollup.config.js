@@ -26,7 +26,7 @@ export default {
     }),
     resolve(),
     copy({
-      patterns: [ "assets/**/*.{svg,jpg}" ], rootDir: "./",
+      patterns: [ "assets/**/*.{svg,jpg,pdf}" ], rootDir: "./",
     }),
     copy({
       patterns: [ "partials/**/*.json" ], rootDir: "./src",
