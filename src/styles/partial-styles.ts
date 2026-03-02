@@ -1,6 +1,7 @@
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import { css } from "lit-element";
 
+export { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 export const MaterialTypescaleStyles = typescaleStyles
 
 export const ParialHeadingStyles = css`

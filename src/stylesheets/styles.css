@@ -1,13 +1,12 @@
 :root {
-  --md-ref-typeface-brand: Roboto;
-  --md-ref-typeface-plain: monospace;
+  --md-ref-typeface-brand: monospace;
+  --md-ref-typeface-plain: Roboto;
   color-scheme: dark light;
 }
 
 html,
 body {
-  /* font-size: 16px; */
-  font-family: Roboto, sans-serif;
+  font-family: var(--md-ref-typeface-brand);
   writing-mode: horizontal-tb;
   margin: unset;
   padding: unset;

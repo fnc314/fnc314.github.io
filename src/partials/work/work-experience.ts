@@ -1,9 +1,11 @@
+import { typescaleStyles } from "@/styles/partial-styles";
 import { css, html, LitElement, nothing } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
   static override styles = [
+    typescaleStyles,
     css`
       :host {
         display: block;
@@ -16,12 +18,11 @@ export class WorkExperience extends LitElement {
       }
 
       /* --- SHARED BASE --- */
-      h2 { font-size: 1.4rem; font-weight: 600; }
-      h3 { font-size: 1.1rem; font-weight: 600; }
+      h2 { font-weight: 600; }
+      h3 { font-weight: 600; }
       time {
-        font-weight: 600;
-        font-family: monospace;
         opacity: 0.8;
+        font-weight: 600;
       }
 
       .nested-experiences {
@@ -43,14 +44,6 @@ export class WorkExperience extends LitElement {
           margin-block-start: 0.25rem;
           margin-block-end: 0.5rem;
         }
-      }
-
-      .time {
-        font-size: 1rem;
-      }
-
-      .time-nested {
-        font-size: 0.85rem;
       }
 
       /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */
@@ -177,20 +170,44 @@ export class WorkExperience extends LitElement {
     }[] = []
 
     override render() {
-      const info = html`
-        <header class="experience-info">
-          ${this.isNested ? html`<h3>${this.experienceRole}</h3>` : html`<h2>${this.experienceRole}</h2>`}
-          <p>${this.experienceOrg}</p>
+      const headerRole = this.isNested ?
+        html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
+        html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
+
+      const headerOrg = this.isNested ?
+        html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
+        html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
+
+      const headerDates = this.isNested ?
+        html`
           <p>
             <time
-              class=${this.isNested ? "time-nested" : "time"}
+              class="md-typescale-title-small"
               datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
             <time
-              class=${this.isNested ? "time-nested" : "time"}
+              class="md-typescale-title-small"
               datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
           </p>
+        ` :
+        html`
+          <p>
+            <time
+              class="md-typescale-title-medium"
+              datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
+            <time
+              class="md-typescale-title-medium"
+              datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
+          </p>
+        `;
+
+      const info = html`
+        <header class="experience-info">
+          ${headerRole}
+          ${headerOrg}
+          ${headerDates}
         </header>
       `;
+
       const content = this.jobs.length ?
         html`
           <div class="nested-experiences">
@@ -208,11 +225,12 @@ export class WorkExperience extends LitElement {
           </div>
         ` :
         nothing;
+
       const summaries = this.summaries.length ?
         html`
           <ul class="nested-summary">
             ${this.summaries.map(summary => html`
-              <li>${summary.item}</li>
+              <li class="md-typescale-body-medium">${summary.item}</li>
             `)}
           </ul>
         `

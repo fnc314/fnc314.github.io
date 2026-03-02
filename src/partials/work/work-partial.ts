@@ -1,4 +1,4 @@
-import { ParialHeadingStyles } from "@/styles/partial-styles";
+import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import "./work-experience";
@@ -38,6 +38,7 @@ const data = WorkJson as WorkData;
 @customElement("work-partial")
 export class WorkPartial extends LitElement {
   static override styles = [
+    typescaleStyles,
     ParialHeadingStyles,
     css`
       :host {
@@ -67,13 +68,6 @@ export class WorkPartial extends LitElement {
         justify-content: center;
       }
 
-      .article-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
       .article-body {
         padding: 0 1rem;
         overflow-y: scroll;
@@ -93,11 +87,17 @@ export class WorkPartial extends LitElement {
         >
         <header>
           <md-elevation></md-elevation>
-          <h1 class="article-header md-typescale-title-medium">Work Experience</h1>
+          <h1 class="article-header md-typescale-headline-large">Work Experience</h1>
         </header>
         <div class="article-body dark">
           ${data.experiences.map(exp => html`
-            <work-experience .isNested="${false}" experience-org="${exp.employer}" experience-role="${exp.role}" .dateStart="${exp.dates.start}" .dateEnd="${exp.dates.end}" .jobs="${exp.jobs}"></work-experience>
+            <work-experience
+              .isNested="${false}"
+              experience-org="${exp.employer}"
+              experience-role="${exp.role}"
+              .dateStart="${exp.dates.start}"
+              .dateEnd="${exp.dates.end}"
+              .jobs="${exp.jobs}"></work-experience>
           `)}
         </div>
       </article>

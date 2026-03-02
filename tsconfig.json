@@ -50,8 +50,6 @@
   },
   "include": [
     "src/**/*.ts",
-    // "src/**/*.js",
-    //"eslint.config.ts"
   ],
   "exclude": [
     "node_modules",

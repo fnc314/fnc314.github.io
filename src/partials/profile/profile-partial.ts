@@ -1,4 +1,4 @@
-import { ParialHeadingStyles } from "@/styles/partial-styles";
+import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
 import { css, html, LitElement, TemplateResult } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import ProfileJson from "./profile.json" with { type: "json" };
@@ -6,6 +6,7 @@ import ProfileJson from "./profile.json" with { type: "json" };
 @customElement("profile-partial")
 export class ProfilePartial extends LitElement {
   static override styles = [
+    typescaleStyles,
     ParialHeadingStyles,
     css`
       :host {
@@ -68,13 +69,8 @@ export class ProfilePartial extends LitElement {
         }
 
         dt {
-          grid-area: list-grid-label;
           padding: unset;
           margin: unset;
-        }
-
-        dd {
-          grid-area: list-grid-content;
         }
       }
 
@@ -139,13 +135,6 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      h1 {
-        font-size: var(--md-typescale-display-medium-font-size);
-        font-weight: var(--md-typescale-display-medium-font-weight);
-        font-family: var(--md-typescale-display-medium-font-family);
-        line-height: var(--md-typescale-display-medium-line-height);
-      }
-
       a {
         color: var(--md-sys-color-primary);
       }
@@ -158,7 +147,7 @@ export class ProfilePartial extends LitElement {
         ${
           contents.map((content) => html`
             <div class="list-grid-item">
-              <dt class="md-typescale-label-large">${content.method}</dt>
+              <dt class="md-typescale-title-small">${content.method}</dt>
               <dd class="md-typescale-body-medium" .innerHTML=${content.htmlNoIcon}></dd>
             </div>
           `)
@@ -171,7 +160,7 @@ export class ProfilePartial extends LitElement {
     return html`
       <header>
         <md-elevation></md-elevation>
-        <h1 class="md-typescale-display-medium">Franco N. Colaizzi</h1>
+        <h1 class="md-typescale-headline-large">Franco N. Colaizzi</h1>
       </header>
     `;
   }
@@ -183,7 +172,7 @@ export class ProfilePartial extends LitElement {
           <source srcset=${photoData.src} type="image/jpeg">
           <img src=${photoData.src} alt=${photoData.alt}>
         </picture>
-        <figcaption class="md-typescale-label-small">${photoData.figcaption}</figcaption>
+        <figcaption class="md-typescale-label-large">${photoData.figcaption}</figcaption>
       </figure>
     `;
   }
@@ -191,7 +180,7 @@ export class ProfilePartial extends LitElement {
   #renderBio(bio: string ): TemplateResult {
     return html`
       <section class="bio section-grid">
-        <h2 class="md-typescale-header-large">Bio</h2>
+        <h2 class="md-typescale-headline-small">Bio</h2>
         <p class="md-typescale-body-large">${bio}</p>
       </section>
     `;
@@ -200,7 +189,7 @@ export class ProfilePartial extends LitElement {
   #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string }[]): TemplateResult {
     return html`
       <section class="contact-info section-grid">
-        <h2 class="md-typescale-header-large">Contact</h2>
+        <h2 class="md-typescale-headline-small">Contact</h2>
         ${this.#renderDlList(pointsOfContact)}
       </section>
     `;
@@ -209,7 +198,7 @@ export class ProfilePartial extends LitElement {
   #renderLinks(links: { method: string, htmlNoIcon: string }[]): TemplateResult {
     return html`
       <section class="links section-grid">
-        <h2 class="md-typescale-header-large">Links</h2>
+        <h2 class="md-typescale-headline-small">Links</h2>
         ${this.#renderDlList(links)}
       </section>
     `;

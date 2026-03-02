@@ -5,12 +5,14 @@ import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
+import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 const isDev = process.env.NODE_ENV === "development";
 
 export default {
+  logLevel: "debug",
   // input: {
   //   index: "./src/index.js",
   // },
@@ -72,5 +74,8 @@ export default {
       warnings: true,
     }),
     summary(),
-  ].filter(Boolean)
+    progress({
+      clearLine: false,
+    }),
+  ].filter(Boolean),
 };

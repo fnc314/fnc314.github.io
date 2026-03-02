@@ -1,4 +1,4 @@
-import { ParialHeadingStyles } from "@/styles/partial-styles";
+import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import CodeJson from "./code.json" with { type: "json" };
@@ -13,6 +13,7 @@ interface Project {
 @customElement("code-partial")
 export class CodePartial extends LitElement {
   static override styles = [
+    typescaleStyles,
     ParialHeadingStyles,
     css`
       :root {
@@ -125,12 +126,14 @@ export class CodePartial extends LitElement {
             color: var(--md-sys-color-on-surface);
             padding: 0.25rem 1rem;
             border-radius: 0.5rem;
-            font-size: 0.85rem;
-            font-family: monospace;
 
             a {
               color: inherit;
               text-decoration: none;
+              font-size: inherit;
+              font-weight: inherit;
+              line-height: inherit;
+              font-family: inherit;
             }
           }
         }
@@ -148,15 +151,15 @@ export class CodePartial extends LitElement {
         <md-elevation></md-elevation>
         <header>
           <a target="_blank" href="${url}">
-            <h2 class="md-typescale-title-medium">${name}</h2>
+            <h2 class="md-typescale-title-large">${name}</h2>
           </a>
         </header>
         <div class="widget-content">
-          <p class="md-typescale-body-medium" .innerHTML=${description}></p>
+          <p class="md-typescale-body-large" .innerHTML=${description}></p>
         </div>
         <footer>
           <ul class="tech-stack">
-            ${technologies.map(t => html`<li .innerHTML=${t}></li>`)}
+            ${technologies.map(t => html`<li class="md-typescale-body-medium" .innerHTML=${t}></li>`)}
           </ul>
         </footer>
       </section>
@@ -170,7 +173,7 @@ export class CodePartial extends LitElement {
         >
         <header>
           <md-elevation></md-elevation>
-          <h1 class="md-typescale-title-medium">Code Projects</h1>
+          <h1 class="md-typescale-headline-large">Code Projects</h1>
         </header>
         <div class="article-body">
           ${(CodeJson.projects as Project[]).map(p => this.#renderCodeWidget(p))}
