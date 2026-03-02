@@ -1,3 +1,4 @@
+import image from "@rollup/plugin-image";
 import json from "@rollup/plugin-json";
 import { esbuildPlugin } from "@web/dev-server-esbuild";
 import { importMapsPlugin } from "@web/dev-server-import-maps";
@@ -9,8 +10,7 @@ export default {
   watch: true,
   debug: true,
   appIndex: "./website/index.html",
-  rootDir: "./website",
-  // basePath: "/website",
+  rootDir: "./",
   nodeResolve: {
     exportConditions: [
       "development",
@@ -24,7 +24,7 @@ export default {
     esbuildPlugin({
       js: true,
       ts: true,
-      json: false,
+      json: true,
       target: "auto",
       tsconfig: fileURLToPath(new URL("./tsconfig.json", import.meta.url)),
     }),
@@ -36,7 +36,13 @@ export default {
         include: [
           "./src/partials/**/*.json",
         ]
-      })
+      }),
+      image({
+        include: [
+          "./assets/images/*.jpg",
+          "./assets/icons/*.svg",
+        ]
+      }),
     )
   ]
 }

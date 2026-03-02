@@ -15,7 +15,7 @@
     "sourceMap": false,
     "inlineSources": false,
     "pretty": true,
-    "outDir": "./website",
+    "outDir": "./website/scripts",
     "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
@@ -55,5 +55,6 @@
   ],
   "exclude": [
     "node_modules",
+    "website/scripts",
   ]
 }

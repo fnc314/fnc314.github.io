@@ -16,42 +16,6 @@
     <link rel="canonical" href="https://www.fnc314.com" />
     <link
       rel="stylesheet"
-      href="./stylesheets/light.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/light-mc.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/light-hc.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/dark.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/dark-mc.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
-      href="./stylesheets/dark-hc.css"
-      type="text/css"
-      media="screen"
-      />
-    <link
-      rel="stylesheet"
       href="./stylesheets/styles.css"
       type="text/css"
       media="screen"
@@ -63,8 +27,7 @@
     <script type="importmap">
       {
         "imports": {
-          "@material/web/all.js": "https://esm.run/@material/web@2.4.1/all.js",
-          "@material/web/typography/md-typescale-styles.js": "https://esm.run/@material/web@2.4.1/typography/md-typescale-styles.js",
+          "@material/web": "https://esm.run/@material/web@2.4.1",
           "lit": "https://esm.run/lit@3.3.2",
           "lit/decorators.js": "https://esm.run/lit@3.3.2/decorators.js",
           "lit-element": "https://esm.run/lit-element@4.2.2",
@@ -73,50 +36,7 @@
         }
       }
     </script>
-    <script
-      defer
-      type="module"
-      href="./partials/nav/nav-partial.js"
-      >
-      import { NavPartial } from "./partials/nav/nav-partial.js";
-    </script>
-    <script
-      defer
-      type="module"
-      href="./partials/profile/profile-partial.js"
-      >
-      import { ProfilePartial } from "./partials/profile/profile-partial.js";
-    </script>
-    <script
-      defer
-      type="module"
-      href="./partials/work/work-partial.js"
-      >
-      import { WorkPartial } from "./partials/work/work-partial.js";
-    </script>
-     <script
-      defer
-      type="module"
-      href="./partials/code/code-partial.js"
-      >
-      import { CodePartial } from "./partials/code/code-partial.js";
-    </script>
-    <script
-      defer
-      type="module"
-      >
-      import "@material/web/all.js";
-      import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-      import { onThemeChange, MaterialCSSStyleSheet } from "./styles/styles.js";
-
-      window
-        .matchMedia("(prefers-color-scheme: light)")
-        .addEventListener("change", onThemeChange);
-
-      document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
-      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-    </script>
-    <script defer type="module" href="./index.js"></script>
+    <script defer type="module" src="./index.js"></script>
   </head>
   <body>
     <header>

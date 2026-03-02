@@ -62,6 +62,10 @@ export class CodePartial extends LitElement {
           --md-elevation-level 0.1s ease-in-out,
           border-radius 0.1s ease-in-out;
 
+        * > {
+          overflow-wrap: anywhere;
+        }
+
         &:hover {
           transform: translateY(-4px);
           --md-elevation-level: 4;

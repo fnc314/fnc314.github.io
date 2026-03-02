@@ -10,7 +10,7 @@ export class NavPartial extends LitElement {
       css`
         :host {
           --md-primary-tab-active-indicator-color: var(--md-sys-color-tertiary);
-          --md-primary-tab-active-indicator-height: 0.4rem;
+          --md-primary-tab-active-indicator-height: 0.5rem;
           --md-primary-tab-active-indicator-shape: 1rem;
           /* --md-primary-tab-active-icon-color: var(--md-sys-color-tertiary);
           --md-primary-tab-active-label-text-color: var(--md-sys-color-tertiary); */
@@ -22,7 +22,7 @@ export class NavPartial extends LitElement {
           --md-primary-tab-container-shape-end-start: 0.1rem;
           --md-primary-tab-container-shape-end-end: 0.1rem;
           --md-primary-tab-icon-color: var(--md-sys-color-primary);
-          --md-primary-tab-label-font: monospace;
+          --md-primary-tab-label-font: var(--md-ref-typeface-plain);
           --md-primary-tab-label-text-color: var(--md-sys-color-primary);
           --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
           --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
@@ -38,8 +38,13 @@ export class NavPartial extends LitElement {
   /**
    * The current {@link MdPrimaryTab} which is actively being displayed
    */
-  #activeTabPanel: LitElement | null = null;
   #activeTab: MdPrimaryTab | null = null;
+
+  /**
+   * The current {@link LitElement} which is actively being displayed
+   */
+  #activeTabPanel: LitElement | null = null;
+
   /**
    * {@typedef MdTabs}
    * {@type MdTabs}
@@ -49,12 +54,23 @@ export class NavPartial extends LitElement {
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
     this.#tabs = this.renderRoot.querySelector("#nav-md-tabs") as MdTabs;
-    this.#tabs?.addEventListener("change", (event: Event) => this.#handleChange(event));
+    setTimeout(() => {
+      this.#activeTab = this.#tabs?.activeTab as MdPrimaryTab;
+      this.#activeTab?.toggleAttribute("inline-icon", true);
+      this.#activeTab?.toggleAttribute("active", true);
+      this.#activeTab?.requestUpdate();
+    }, 0);
   }
 
   #handleChange(event: Event) {
     const target = event.target as MdTabs;
     this.#activeTab = target.activeTab as MdPrimaryTab;
+
+    target.tabs.forEach((tab) => {
+      tab.toggleAttribute("active", false);
+      tab.toggleAttribute("inline-icon", false);
+      tab.requestUpdate();
+    });
 
     this.#activeTabPanel =
       document.querySelector(
@@ -73,23 +89,8 @@ export class NavPartial extends LitElement {
       this.#activeTabPanel.toggleAttribute("aria-hidden", false);
     }
 
-    target.tabs.forEach((tab) => {
-      tab.toggleAttribute("active", false);
-      tab.toggleAttribute("inline-icon", false);
-      tab.requestUpdate("active");
-    });
-
     this.#activeTab.toggleAttribute("active", true);
     this.#activeTab.toggleAttribute("inline-icon", true);
-  }
-
-  override connectedCallback() {
-    super.connectedCallback();
-  }
-
-  override disconnectedCallback(): void {
-    super.disconnectedCallback();
-    this.#tabs?.removeEventListener("change", this.#handleChange);
   }
 
   constructor() {
@@ -102,11 +103,14 @@ export class NavPartial extends LitElement {
         <md-tabs
           id="nav-md-tabs"
           aria-label="Primary Nav Tabs"
+          @change=${this.#handleChange}
+          .activeTabIndex=${0}
           >
           <md-primary-tab
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
+            .active=${true}
             >
             <md-icon slot="icon">person</md-icon>
             Profile
@@ -137,5 +141,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "nav-partial": NavPartial;
   }
-
 };

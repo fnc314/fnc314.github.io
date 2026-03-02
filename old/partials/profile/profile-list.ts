@@ -18,22 +18,45 @@ export class ProfileList extends LitElement {
         grid-template-columns: auto 1fr;
         gap: 3rem 1rem;
 
-        div {
+        .wrapper-div {
           display: contents;
+
+          dt {
+            color: var(--md-sys-color-tertiary);
+          }
+        }
+      }
+
+      .profile-sub-list-container {
+        container-type: size;
+      }
+
+      @container (min-inline-size: 400px) {
+        .profile-sub-list {
+          display: grid;
+          grid-template-rows: max-content 1fr;
+
+          .sub-list-wrapper-div {
+            display: contents;
+          }
+
+          dd {
+            text-align: center;
+          }
         }
       }
 
       .profile-sub-list {
         display: grid;
-        grid-template-rows: max-content 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        gap: 2rem 1rem;
 
-        div {
-          display: contents;
-        }
+        .sub-list-wrapper-div {
+          display: block;
 
-        dd {
-          text-align: center;
+          dt {
+            color: var(--md-sys-color-secondary);
+          }
         }
       }
 
@@ -55,21 +78,15 @@ export class ProfileList extends LitElement {
   ];
 
   @property({ type: Array })
-  contactInfo: { method: string, htmlNoIcon: string }[] = [];
-
-  @property({ type: Array })
-  socialInfo: { method: string, htmlNoIcon: string }[] = [];
-
-  @property({ type: String })
-  bio: string = "";
+  links: { method: string, htmlNoIcon: string }[] = [];
 
   #renderSubList(contents: {method: string, htmlNoIcon: string}[]) {
     return html`
       <dl class="profile-sub-list">
         ${
           contents.map((info) => html`
-            <div>
-              <dt>
+            <div class="sub-list-wrapper-div">
+              <dt class="md-typescale-title-small">
                 ${info.method}
               </dt>
               <dd .innerHTML=${info.htmlNoIcon}></dd>
@@ -83,26 +100,12 @@ export class ProfileList extends LitElement {
   override render() {
     return html`
       <dl class="profile-list">
-        <div>
+        <div class="wrapper-div">
           <dt class="md-typescale-title-medium">
-            Bio
+            Links
           </dt>
-          <dd>${this.bio}</dd>
-        </div>
-        <div>
-          <dt class="md-typescale-title-medium">
-            Contact
-          </dt>
-          <dd>
-            ${this.#renderSubList(this.contactInfo)}
-          </dd>
-        </div>
-        <div>
-          <dt class="md-typescale-title-medium">
-            Social
-          </dt>
-          <dd>
-            ${this.#renderSubList(this.socialInfo)}
+          <dd class="profile-sub-list-container">
+            ${this.#renderSubList(this.links)}
           </dd>
         </div>
       </dl>

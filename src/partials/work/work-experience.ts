@@ -68,12 +68,13 @@ export class WorkExperience extends LitElement {
         gap: 0.25rem;
 
         > h2, > h3 {
-          color: var(--md-sys-color-tertiary);
+          color: var(--md-sys-color-primary);
         }
 
         /* ORG */
         > p:nth-child(2) {
           font-style: italic;
+          color: var(--md-sys-color-tertiary);
         }
 
         /* Dates */
@@ -120,15 +121,14 @@ export class WorkExperience extends LitElement {
             > h2, > h3 {
               grid-column: 2;
               grid-row: 1;
-              color: var(--md-sys-color-tertiary);
+              color: var(--md-sys-color-primary);
             }
             /* Org */
             > p:nth-child(2) {
               grid-column: 2;
               grid-row: 2;
-              opacity: 0.7;
               font-style: italic;
-              color: var(--md-sys-color-on-surface-variant)
+              color: var(--md-sys-color-tertiary)
             }
           }
 
