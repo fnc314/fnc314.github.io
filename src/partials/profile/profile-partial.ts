@@ -228,7 +228,7 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string }[]): TemplateResult {
+  #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
     return html`
       <section class="contact-info section-grid">
         <h2 class="md-typescale-headline-medium">Contact</h2>
@@ -237,7 +237,7 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  #renderLinks(links: { method: string, htmlNoIcon: string }[]): TemplateResult {
+  #renderLinks(links: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
     return html`
       <section class="links section-grid">
         <h2 class="md-typescale-headline-medium">Links</h2>
