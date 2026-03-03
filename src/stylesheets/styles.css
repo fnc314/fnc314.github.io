@@ -41,8 +41,3 @@ body {
     background-color: var(--md-sys-color-surface);
   }
 }
-
-nav {
-  position: relative;
-  --md-elevation-level: 4;
-}

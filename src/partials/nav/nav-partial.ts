@@ -27,6 +27,12 @@ export class NavPartial extends LitElement {
           --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
           --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
         }
+
+
+        nav {
+          position: relative;
+          --md-elevation-level: 4;
+        }
       `
     ];
   }
@@ -100,6 +106,7 @@ export class NavPartial extends LitElement {
   override render() {
     return html`
       <nav>
+        <md-elevation></md-elevation>
         <md-tabs
           id="nav-md-tabs"
           aria-label="Primary Nav Tabs"

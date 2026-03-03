@@ -27,14 +27,7 @@ export class ProfilePartial extends LitElement {
           "education"
           "contact-info"
           "links";
-        gap: 1rem 2rem;
-      }
-
-      p, dd {
-        margin: unset;
-        overflow-wrap: anywhere;
-        align-self: center;
-        padding-inline: 1rem;
+        gap: 1rem;
       }
 
       .section-grid {
@@ -80,6 +73,17 @@ export class ProfilePartial extends LitElement {
           padding: unset;
           margin: unset;
         }
+      }
+
+      a {
+        color: var(--section-grid-color);
+      }
+
+      p, dd {
+        margin: unset;
+        overflow-wrap: anywhere;
+        align-self: center;
+        padding-inline: 1rem;
       }
 
       header {
@@ -143,6 +147,29 @@ export class ProfilePartial extends LitElement {
         }
       }
 
+      @container (min-width: 600px) {
+        article {
+          grid-template-areas:
+            "header header"
+            "figure bio"
+            "figure bio"
+            "education education"
+            "contact-info contact-info"
+            "links links";
+          gap: 1rem;
+
+          grid-template-columns: fit-content(40%) 1fr;
+        }
+
+        .section-grid {
+          grid-template-rows: min-content auto;
+          grid-template-areas:
+            "section-grid-title"
+            "section-grid-content";
+          column-gap: 1rem;
+        }
+      }
+
       @container (min-width: 900px) {
         article {
           grid-template-areas:
@@ -182,7 +209,7 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      @container (min-width: 1600px) {
+      @container (min-width: 1500px) {
         article {
           grid-template-areas:
             "header header"
@@ -195,10 +222,6 @@ export class ProfilePartial extends LitElement {
 
           grid-template-columns: fit-content(40%) 1fr;
         }
-      }
-
-      a {
-        color: var(--section-grid-color);
       }
     `,
   ];
