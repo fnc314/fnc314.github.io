@@ -12,6 +12,9 @@ export class ProfilePartial extends LitElement {
       :host {
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
+
+        --section-grid-background: var(--md-sys-color-inverse-surface);
+        --section-grid-color: var(--md-sys-color-inverse-on-surface);
       }
 
       article {
@@ -29,7 +32,6 @@ export class ProfilePartial extends LitElement {
 
       p, dd {
         margin: unset;
-        color: var(--md-sys-color-on-surface-variant);
         overflow-wrap: anywhere;
         align-self: center;
         padding-inline: 1rem;
@@ -41,14 +43,14 @@ export class ProfilePartial extends LitElement {
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
-        gap: 1rem 2rem;
+        column-gap: 1rem;
         container-type: inline-size;
         padding: 1rem;
 
         h2 {
           grid-area: section-grid-title;
-          align-self: center;
-          color: var(--md-sys-color-tertiary);
+          place-self: center;
+          color: var(--section-grid-color);
         }
       }
 
@@ -87,8 +89,13 @@ export class ProfilePartial extends LitElement {
 
       figure {
         grid-area: figure;
-        margin: 1rem;
         place-self: center;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
 
         picture {
           display: grid;
@@ -104,16 +111,20 @@ export class ProfilePartial extends LitElement {
 
         figcaption {
           text-align: center;
-          color: var(--md-sys-color-on-surface-variant);
+          color: var(--section-grid-color);
+          background-color: var(--section-grid-background);
+          padding: 0.5rem;
+          border-radius: 1rem;
           font-style: italic;
           margin-block: 0.5rem;
         }
       }
 
       section {
-        background-color: var(--md-sys-color-surface-container-highest);
+        background-color: var(--section-grid-background);
         border-radius: 1rem;
         margin-inline-end: 1rem;
+        color: var(--section-grid-color);
 
         &.bio {
           grid-area: bio;
@@ -132,15 +143,16 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      @container (min-width: 700px) {
+      @container (min-width: 900px) {
         article {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure education"
-            "figure contact-info"
-            "figure links";
+            "figure bio"
+            "contact-info education"
+            "links links";
           gap: 1rem;
+
           grid-template-columns: fit-content(40%) 1fr;
         }
 
@@ -151,8 +163,42 @@ export class ProfilePartial extends LitElement {
         }
       }
 
+      @container (min-width: 1200px) {
+        article {
+          grid-template-areas:
+            "header header"
+            "figure bio"
+            "figure education"
+            "contact-info links";
+          gap: 1rem;
+
+          grid-template-columns: fit-content(40%) 1fr;
+        }
+
+        .section-grid {
+          grid-template-areas: "section-grid-title section-grid-content";
+          grid-template-columns: auto 1fr;
+          grid-template-rows: unset;
+        }
+      }
+
+      @container (min-width: 1600px) {
+        article {
+          grid-template-areas:
+            "header header"
+            "figure bio"
+            "figure education"
+            "figure contact-info"
+            "figure links";
+
+          gap: 1rem;
+
+          grid-template-columns: fit-content(40%) 1fr;
+        }
+      }
+
       a {
-        color: var(--md-sys-color-primary);
+        color: var(--section-grid-color);
       }
     `,
   ];
@@ -200,7 +246,7 @@ export class ProfilePartial extends LitElement {
   #renderBio(bio: string ): TemplateResult {
     return html`
       <section class="bio section-grid">
-        <h2 class="md-typescale-headline-medium">About Me</h2>
+        <h2 class="md-typescale-headline-small">About Me</h2>
         <p class="md-typescale-body-large">${bio}</p>
       </section>
     `;
@@ -209,17 +255,17 @@ export class ProfilePartial extends LitElement {
   #renderEducation(education: { institute: string, degree: string, location: string, graduationYear: string }[]): TemplateResult {
     return html`
       <section class="education section-grid">
-        <h2 class="md-typescale-headline-medium">Education</h2>
+        <h2 class="md-typescale-headline-small">Education</h2>
         <ul class="list-grid">
           ${
             education.map((edu) => html`
               <li>
-                <p class="md-typescale-title-large">
-                  ${edu.institute},
-                  <span class="md-typescale-body-medium">${edu.location}</span>
+                <p class="md-typescale-title-medium">
+                  ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
                 </p>
-                <p class="md-typescale-title-medium">${edu.degree}</p>
-                <p class="md-typescale-body-small">${edu.graduationYear}</p>
+                <p class="md-typescale-title-small">
+                  ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
+                </p>
               </li>
             `)
           }
@@ -231,7 +277,7 @@ export class ProfilePartial extends LitElement {
   #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
     return html`
       <section class="contact-info section-grid">
-        <h2 class="md-typescale-headline-medium">Contact</h2>
+        <h2 class="md-typescale-headline-small">Contact</h2>
         ${this.#renderDlList(pointsOfContact)}
       </section>
     `;
@@ -240,7 +286,7 @@ export class ProfilePartial extends LitElement {
   #renderLinks(links: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
     return html`
       <section class="links section-grid">
-        <h2 class="md-typescale-headline-medium">Links</h2>
+        <h2 class="md-typescale-headline-small">Links</h2>
         ${this.#renderDlList(links)}
       </section>
     `;

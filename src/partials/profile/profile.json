@@ -8,9 +8,12 @@
   "education": [
     {
       "institute": "University of Pittsburgh",
-      "degree": "B.S. Mathematics",
+      "degree": "Bachelor of Science in Mathematics",
       "location": "Pittsburgh, PA",
-      "graduationYear": "2011"
+      "graduationDate": {
+        "label": "April 2011",
+        "value": "2011-04"
+      }
     }
   ],
   "contactInfo": [
