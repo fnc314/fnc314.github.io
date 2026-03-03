@@ -22,7 +22,7 @@ export class NavPartial extends LitElement {
           --md-primary-tab-container-shape-end-start: 0.1rem;
           --md-primary-tab-container-shape-end-end: 0.1rem;
           --md-primary-tab-icon-color: var(--md-sys-color-primary);
-          --md-primary-tab-label-font: var(--md-ref-typeface-plain);
+          --md-primary-tab-label-font: var(--md-ref-typeface-brand);
           --md-primary-tab-label-text-color: var(--md-sys-color-primary);
           --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
           --md-primary-tab-with-icon-and-label-text-container-height: 5rem;

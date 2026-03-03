@@ -6,7 +6,16 @@
         "<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"
       ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
-      "description": "A <pre>org.gradle.api.invocation.Settings</pre> <pre>org.gradle.api.Plugin</pre> streamlining invocations of <pre>org.gradle.api.invocation.Settings.include</pre> for nested collections of sub-projects"
+      "description": "A <pre>gradle.settings(.kts)</pre> plugin streamlining invocations of <pre>Settings.include</pre> for nested collections of sub-projects"
+    },
+    {
+      "name": "material-theme-viewer",
+      "technologies": [
+        "<a href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
+        "<a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>"
+      ],
+      "url": "https://github.com/fnc314/material-theme-viewer",
+      "description": "Displays the output of <a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a> in a simple tabbed interface"
     },
     {
       "name": "fnc314-kmp",

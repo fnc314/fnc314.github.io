@@ -6,7 +6,8 @@
 
 html,
 body {
-  font-family: var(--md-ref-typeface-brand);
+  font-size: 15px;
+  font-family: var(--md-ref-typeface-plain);
   writing-mode: horizontal-tb;
   margin: unset;
   padding: unset;

@@ -18,7 +18,6 @@ export const ParialHeadingStyles = css`
 
     h1 {
       margin-block: 1rem;
-      font-size: 2.5rem;
       color: var(--md-sys-color-on-primary-container);
     }
   }

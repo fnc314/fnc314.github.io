@@ -21,12 +21,13 @@ export class ProfilePartial extends LitElement {
           "header"
           "figure"
           "bio"
+          "education"
           "contact-info"
           "links";
         gap: 1rem 2rem;
       }
 
-      p, li, dd {
+      p, dd {
         margin: unset;
         color: var(--md-sys-color-on-surface-variant);
         overflow-wrap: anywhere;
@@ -42,10 +43,12 @@ export class ProfilePartial extends LitElement {
           "section-grid-content";
         gap: 1rem 2rem;
         container-type: inline-size;
+        padding: 1rem;
 
         h2 {
           grid-area: section-grid-title;
-          place-self: center;
+          align-self: center;
+          color: var(--md-sys-color-tertiary);
         }
       }
 
@@ -56,9 +59,12 @@ export class ProfilePartial extends LitElement {
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-        list-style-type: none;
         padding: unset;
         gap: 1rem;
+
+        ul& {
+          list-style-type: none;
+        }
 
         .list-grid-item {
           display: flex;
@@ -82,6 +88,7 @@ export class ProfilePartial extends LitElement {
       figure {
         grid-area: figure;
         margin: 1rem;
+        place-self: center;
 
         picture {
           display: grid;
@@ -104,8 +111,16 @@ export class ProfilePartial extends LitElement {
       }
 
       section {
+        background-color: var(--md-sys-color-surface-container-highest);
+        border-radius: 1rem;
+        margin-inline-end: 1rem;
+
         &.bio {
           grid-area: bio;
+        }
+
+        &.education {
+          grid-area: education;
         }
 
         &.contact-info {
@@ -117,20 +132,21 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      @container (min-width: 850px) {
+      @container (min-width: 700px) {
         article {
           grid-template-areas:
             "header header"
             "figure bio"
+            "figure education"
             "figure contact-info"
             "figure links";
           gap: 1rem;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: fit-content(40%) 1fr;
         }
 
         .section-grid {
           grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: min-content 1fr;
+          grid-template-columns: auto 1fr;
           grid-template-rows: unset;
         }
       }
@@ -141,14 +157,18 @@ export class ProfilePartial extends LitElement {
     `,
   ];
 
-  #renderDlList(contents: {method: string, htmlNoIcon: string}[]): TemplateResult {
+  #renderDlList(contents: {method: string, htmlNoIcon: string[]}[]): TemplateResult {
     return html`
       <dl class="list-grid">
         ${
           contents.map((content) => html`
             <div class="list-grid-item">
-              <dt class="md-typescale-title-small">${content.method}</dt>
-              <dd class="md-typescale-body-medium" .innerHTML=${content.htmlNoIcon}></dd>
+              <dt class="md-typescale-title-medium">${content.method}</dt>
+              ${
+                content.htmlNoIcon.map((link) => html`
+                  <dd class="md-typescale-body-large" .innerHTML=${link}></dd>
+                `)
+              }
             </div>
           `)
         }
@@ -180,8 +200,30 @@ export class ProfilePartial extends LitElement {
   #renderBio(bio: string ): TemplateResult {
     return html`
       <section class="bio section-grid">
-        <h2 class="md-typescale-headline-small">Bio</h2>
+        <h2 class="md-typescale-headline-medium">About Me</h2>
         <p class="md-typescale-body-large">${bio}</p>
+      </section>
+    `;
+  }
+
+  #renderEducation(education: { institute: string, degree: string, location: string, graduationYear: string }[]): TemplateResult {
+    return html`
+      <section class="education section-grid">
+        <h2 class="md-typescale-headline-medium">Education</h2>
+        <ul class="list-grid">
+          ${
+            education.map((edu) => html`
+              <li>
+                <p class="md-typescale-title-large">
+                  ${edu.institute},
+                  <span class="md-typescale-body-medium">${edu.location}</span>
+                </p>
+                <p class="md-typescale-title-medium">${edu.degree}</p>
+                <p class="md-typescale-body-small">${edu.graduationYear}</p>
+              </li>
+            `)
+          }
+        </ul>
       </section>
     `;
   }
@@ -189,7 +231,7 @@ export class ProfilePartial extends LitElement {
   #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string }[]): TemplateResult {
     return html`
       <section class="contact-info section-grid">
-        <h2 class="md-typescale-headline-small">Contact</h2>
+        <h2 class="md-typescale-headline-medium">Contact</h2>
         ${this.#renderDlList(pointsOfContact)}
       </section>
     `;
@@ -198,7 +240,7 @@ export class ProfilePartial extends LitElement {
   #renderLinks(links: { method: string, htmlNoIcon: string }[]): TemplateResult {
     return html`
       <section class="links section-grid">
-        <h2 class="md-typescale-headline-small">Links</h2>
+        <h2 class="md-typescale-headline-medium">Links</h2>
         ${this.#renderDlList(links)}
       </section>
     `;
@@ -212,6 +254,8 @@ export class ProfilePartial extends LitElement {
         ${this.#renderFigureElement(ProfileJson.photo)}
 
         ${this.#renderBio(ProfileJson.bio)}
+
+        ${this.#renderEducation(ProfileJson.education)}
 
         ${this.#renderContactInfo(ProfileJson.contactInfo)}
 

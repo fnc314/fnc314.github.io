@@ -82,7 +82,7 @@ export class CodePartial extends LitElement {
           background-color: unset;
 
           h2 {
-            font-family: sans-serif;
+            font-family: var(--md-ref-typeface-plain);
           }
         }
 
@@ -141,6 +141,8 @@ export class CodePartial extends LitElement {
 
       pre {
         display: inline;
+        white-space: pre-wrap;
+        word-wrap: break-word;
       }
     `
   ];
