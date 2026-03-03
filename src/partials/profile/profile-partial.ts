@@ -252,7 +252,7 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  #renderEducation(education: { institute: string, degree: string, location: string, graduationYear: string }[]): TemplateResult {
+  #renderEducation(education: { institute: string, degree: string, location: string, graduationDate: { value: string, label: string }}[]): TemplateResult {
     return html`
       <section class="education section-grid">
         <h2 class="md-typescale-headline-small">Education</h2>
