@@ -1,6 +1,7 @@
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
 import { css, html, LitElement, PropertyValues } from "lit-element";
+import { createRef, Ref, ref } from "lit-html/directives/ref.js";
 import { customElement } from "lit/decorators.js";
 
 @customElement("nav-partial")
@@ -46,6 +47,7 @@ export class NavPartial extends LitElement {
    */
   #activeTab: MdPrimaryTab | null = null;
 
+
   /**
    * The current {@link LitElement} which is actively being displayed
    */
@@ -55,17 +57,21 @@ export class NavPartial extends LitElement {
    * {@typedef MdTabs}
    * {@type MdTabs}
    */
-  #tabs: MdTabs | null = null;
+  #tabsRef: Ref<MdTabs> = createRef();
+
+  #tabRefs: [ Ref<MdPrimaryTab>, Ref<MdPrimaryTab>, Ref<MdPrimaryTab> ] = [ createRef(), createRef(), createRef() ];
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-    this.#tabs = this.renderRoot.querySelector("#nav-md-tabs") as MdTabs;
-    setTimeout(() => {
-      this.#activeTab = this.#tabs?.activeTab as MdPrimaryTab;
-      this.#activeTab?.toggleAttribute("inline-icon", true);
-      this.#activeTab?.toggleAttribute("active", true);
-      this.#activeTab?.requestUpdate();
-    }, 0);
+    if (this.#tabsRef.value) {
+      console.info("TABS");
+      const activeTab = this.#tabRefs[0].value;
+      if (activeTab) {
+        activeTab.toggleAttribute("active", true);
+        activeTab.toggleAttribute("inline-icon", true);
+        this.#activeTab = activeTab;
+      }
+    }
   }
 
   #handleChange(event: Event) {
@@ -108,12 +114,14 @@ export class NavPartial extends LitElement {
       <nav>
         <md-elevation></md-elevation>
         <md-tabs
+          ${ref(this.#tabsRef)}
           id="nav-md-tabs"
           aria-label="Primary Nav Tabs"
           @change=${this.#handleChange}
           .activeTabIndex=${0}
           >
           <md-primary-tab
+            ${ref(this.#tabRefs[0])}
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
@@ -123,6 +131,7 @@ export class NavPartial extends LitElement {
             Profile
           </md-primary-tab>
           <md-primary-tab
+            ${ref(this.#tabRefs[1])}
             id="tab-work"
             aria-controls="panel-work"
             .hasIcon=${true}
@@ -131,6 +140,7 @@ export class NavPartial extends LitElement {
             Work
           </md-primary-tab>
           <md-primary-tab
+            ${ref(this.#tabRefs[2])}
             id="tab-code"
             aria-controls="panel-code"
             .hasIcon=${true}

@@ -1,3 +1,4 @@
+import commonjs from "@rollup/plugin-commonjs";
 import image from "@rollup/plugin-image";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
@@ -68,6 +69,7 @@ export default {
         "./assets/icons/*.svg",
       ]
     }),
+    commonjs(),
     !isDev && terser({
       ecma: 2020,
       module: true,
