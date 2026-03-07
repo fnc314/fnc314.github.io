@@ -298,7 +298,7 @@ export class ProfilePartial extends LitElement {
   ];
 
   #cloudContainer: Ref<HTMLDivElement> = createRef();
-  #cloudSection: Ref<HTMLSectionElement> = createRef();
+  #cloudSection: Ref<HTMLElement> = createRef();
   // #cloudCanvas: Ref<HTMLCanvasElement> = createRef();
 
   // #cloudList: [string, number, string][] = Object.keys(ProfileJson.proficiencies)
