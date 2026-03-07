@@ -2,20 +2,22 @@ import { css, html, LitElement, PropertyValues } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
 // Assuming you have types for MdTabs/MdPrimaryTab, otherwise use HTMLElement
+import { typescaleStyles } from "@/styles";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
+import { hashToRoute, Route, Routes } from "./routes";
 
 @customElement("nav-partial")
 export class NavPartial extends LitElement {
   static override styles = [
+    typescaleStyles,
     css`
-      /* ... keep your existing styles ... */
       :host {
         --md-primary-tab-active-indicator-color: var(--md-sys-color-tertiary);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: 1rem;
         --md-primary-tab-container-color: var(--md-sys-color-surface-container);
-        --md-primary-tab-container-elevation: 1;
+        --md-primary-tab-container-elevation: 4;
         --md-primary-tab-container-height: 5rem;
         --md-primary-tab-container-shape-start-start: 0.1rem;
         --md-primary-tab-container-shape-start-end: 0.1rem;
@@ -37,12 +39,16 @@ export class NavPartial extends LitElement {
 
   // Track the active index as state
   @state() activeTabIndex = 0;
+  @state() activeRoute: Route = Routes.PROFILE;
 
   #tabsRef: Ref<MdTabs> = createRef();
-  #tabRefs: Ref<MdPrimaryTab>[] = [createRef(), createRef(), createRef()];
+  #tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
+    work: createRef(),
+    code: createRef(),
+    profile: createRef()
+  }
 
-  // Define your routes mapping to tab indices: 0->profile, 1->work, 2->code
-  #routes = ['profile', 'work', 'code'];
+  #routes: Route[] = Object.values(Routes);
 
   constructor() {
     super();
@@ -51,22 +57,23 @@ export class NavPartial extends LitElement {
   override connectedCallback() {
     super.connectedCallback();
     // Listen for URL changes
-    window.addEventListener('hashchange', this.#handleHashChange);
+    window.addEventListener("hashchange", this.#handleHashChange);
     // Handle the initial URL on load
     this.#handleHashChange();
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('hashchange', this.#handleHashChange);
+    window.removeEventListener("hashchange", this.#handleHashChange);
   }
 
   /**
    * Syncs internal state with the URL hash.
    */
   #handleHashChange() {
-    const hash = window.location.hash.replace('#', '');
-    const index = this.#routes.indexOf(hash);
+    const hash = window.location.hash.replace("#", "");
+    const route: Route = hashToRoute(hash);
+    const index = this.#routes.indexOf(route);
 
     // Default to 0 (profile) if hash is empty or invalid
     const targetIndex = index >= 0 ? index : 0;
@@ -75,7 +82,7 @@ export class NavPartial extends LitElement {
       this.activeTabIndex = targetIndex;
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
-        this.#updateTabState(targetIndex);
+        this.#updateTabState(targetIndex, route);
       }
     }
   }
@@ -83,7 +90,7 @@ export class NavPartial extends LitElement {
   /**
    * Updates the visual state of tabs and panels based on the index.
    */
-  #updateTabState(index: number) {
+  #updateTabState(index: number, route: Route) {
     const tabs = this.#tabsRef.value;
     if (!tabs) return;
 
@@ -91,11 +98,11 @@ export class NavPartial extends LitElement {
     tabs.activeTabIndex = index;
 
     // Sync the visual state (active/inline-icon) and toggle panels
-    this.#tabRefs.forEach((tabRef, i) => {
+    Object.entries(this.#tabRefMap).forEach(([tabRoute, tabRef]) => {
       const tab = tabRef.value;
       if (!tab) return;
 
-      const isActive = i === index;
+      const isActive = route === tabRoute;
       tab.toggleAttribute("active", isActive);
       tab.toggleAttribute("inline-icon", isActive);
 
@@ -122,17 +129,17 @@ export class NavPartial extends LitElement {
     const route = this.#routes[index];
     if (route) {
       // pushState updates the URL without reloading the page
-      window.history.pushState(null, '', `#${route}`);
+      window.history.pushState(null, "", `#${route}`);
     }
 
     this.activeTabIndex = index;
-    this.#updateTabState(index);
+    this.#updateTabState(index, route);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
-    this.#updateTabState(this.activeTabIndex);
+    this.#updateTabState(this.activeTabIndex, this.activeRoute);
   }
 
   override render() {
@@ -147,7 +154,7 @@ export class NavPartial extends LitElement {
           .activeTabIndex=${this.activeTabIndex}
         >
           <md-primary-tab
-            ${ref(this.#tabRefs[0])}
+            ${ref(this.#tabRefMap.profile)}
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
@@ -156,7 +163,7 @@ export class NavPartial extends LitElement {
             Profile
           </md-primary-tab>
           <md-primary-tab
-            ${ref(this.#tabRefs[1])}
+            ${ref(this.#tabRefMap.work)}
             id="tab-work"
             aria-controls="panel-work"
             .hasIcon=${true}
@@ -165,7 +172,7 @@ export class NavPartial extends LitElement {
             Work
           </md-primary-tab>
           <md-primary-tab
-            ${ref(this.#tabRefs[2])}
+            ${ref(this.#tabRefMap.code)}
             id="tab-code"
             aria-controls="panel-code"
             .hasIcon=${true}

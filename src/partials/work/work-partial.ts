@@ -53,6 +53,7 @@ export class WorkPartial extends LitElement {
         grid-template-areas:
           "title"
           "content";
+        gap: 1rem;
         grid-template-rows: auto 1fr;
         --md-elevation-level: 4;
       }
@@ -69,8 +70,7 @@ export class WorkPartial extends LitElement {
       }
 
       .article-body {
-        padding: 0 1rem;
-        overflow-y: scroll;
+        padding-inline: 1rem;
         grid-area: content;
 
         h2, h3, p {

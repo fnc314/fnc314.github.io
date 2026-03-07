@@ -24,7 +24,6 @@ export class CodePartial extends LitElement {
       article {
         container-type: inline-size;
         height: 100%;
-        border-radius: 16px;
         display: flex;
         flex-direction: column;
         --md-elevation-level: 4;

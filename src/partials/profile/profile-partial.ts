@@ -54,11 +54,12 @@ export class ProfilePartial extends LitElement {
 
       .list-grid {
         grid-area: section-grid-content;
+        align-self: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: baseline;
         padding: unset;
         gap: 1rem;
 
@@ -87,7 +88,6 @@ export class ProfilePartial extends LitElement {
       p, dd {
         margin: unset;
         overflow-wrap: anywhere;
-        place-self: center;
         padding-inline: 1rem;
       }
 
@@ -139,11 +139,16 @@ export class ProfilePartial extends LitElement {
 
           > p {
             grid-area: section-grid-content;
+            place-self: center;
           }
         }
 
         &.education {
           grid-area: education;
+
+          li p {
+            place-self: end;
+          }
         }
 
         &.contact-info {
