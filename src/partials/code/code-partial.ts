@@ -36,11 +36,11 @@ export class CodePartial extends LitElement {
       }
 
       .article-body {
-        padding: 1rem;
+        margin-inline: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
         grid-auto-rows: 1fr;
-        gap: 2rem;
+        gap: 1rem;
       }
 
       .code-widget {
