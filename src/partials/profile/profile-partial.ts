@@ -1,5 +1,5 @@
 import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
-import { css, CSSResult, html, LitElement, PropertyValues, TemplateResult, unsafeCSS } from "lit-element";
+import { css, html, LitElement, PropertyValues, TemplateResult } from "lit-element";
 import { createRef, ref, Ref } from "lit-html/directives/ref.js";
 import { customElement } from "lit/decorators.js";
 import ProfileJson from "./profile.json" with { type: "json" };
@@ -299,94 +299,94 @@ export class ProfilePartial extends LitElement {
 
   #cloudContainer: Ref<HTMLDivElement> = createRef();
   #cloudSection: Ref<HTMLSectionElement> = createRef();
-  #cloudCanvas: Ref<HTMLCanvasElement> = createRef();
+  // #cloudCanvas: Ref<HTMLCanvasElement> = createRef();
 
-  #cloudList: [string, number, string][] = Object.keys(ProfileJson.proficiencies)
-    .flatMap((profKey) =>
-      (Object.entries(ProfileJson.proficiencies[profKey as keyof typeof ProfileJson.proficiencies]) as [string, number][])
-        .map((collection: [string, number]) =>
-          [...collection, profKey]
-        )
-    ) as [string, number, string][];
+  // #cloudList: [string, number, string][] = Object.keys(ProfileJson.proficiencies)
+  //   .flatMap((profKey) =>
+  //     (Object.entries(ProfileJson.proficiencies[profKey as keyof typeof ProfileJson.proficiencies]) as [string, number][])
+  //       .map((collection: [string, number]) =>
+  //         [...collection, profKey]
+  //       )
+  //   ) as [string, number, string][];
 
-  #materialColorVars: string[] = [
-    "primary",
-    "surface-tint",
-    "primary-container",
-    "on-primary-container",
-    "secondary",
-    "secondary-container",
-    "on-secondary-container",
-    "tertiary",
-    "tertiary-container",
-    "on-tertiary-container",
-    "error",
-    "error-container",
-    "on-error-container",
-    "on-background",
-    "on-surface",
-    "surface-variant",
-    "on-surface-variant",
-    "outline",
-    "outline-variant",
-    "inverse-surface",
-    "inverse-primary",
-    // "primary-fixed",
-    "on-primary-fixed",
-    "primary-fixed-dim",
-    "on-primary-fixed-variant",
-    // "secondary-fixed",
-    "on-secondary-fixed",
-    "secondary-fixed-dim",
-    "on-secondary-fixed-variant",
-    "tertiary-fixed",
-    "on-tertiary-fixed",
-    "tertiary-fixed-dim",
-    "on-tertiary-fixed-variant",
-  ].map((color) => `--color: var(--md-sys-color-${color})`);
+  // #materialColorVars: string[] = [
+  //   "primary",
+  //   "surface-tint",
+  //   "primary-container",
+  //   "on-primary-container",
+  //   "secondary",
+  //   "secondary-container",
+  //   "on-secondary-container",
+  //   "tertiary",
+  //   "tertiary-container",
+  //   "on-tertiary-container",
+  //   "error",
+  //   "error-container",
+  //   "on-error-container",
+  //   "on-background",
+  //   "on-surface",
+  //   "surface-variant",
+  //   "on-surface-variant",
+  //   "outline",
+  //   "outline-variant",
+  //   "inverse-surface",
+  //   "inverse-primary",
+  //   // "primary-fixed",
+  //   "on-primary-fixed",
+  //   "primary-fixed-dim",
+  //   "on-primary-fixed-variant",
+  //   // "secondary-fixed",
+  //   "on-secondary-fixed",
+  //   "secondary-fixed-dim",
+  //   "on-secondary-fixed-variant",
+  //   "tertiary-fixed",
+  //   "on-tertiary-fixed",
+  //   "tertiary-fixed-dim",
+  //   "on-tertiary-fixed-variant",
+  // ].map((color) => `--color: var(--md-sys-color-${color})`);
 
-  #colorList: CSSResult[] = [
-    "primary",
-    "surface-tint",
-    "primary-container",
-    "on-primary-container",
-    "secondary",
-    "secondary-container",
-    "on-secondary-container",
-    "tertiary",
-    "tertiary-container",
-    "on-tertiary-container",
-    "error",
-    "error-container",
-    "on-error-container",
-    "on-background",
-    "on-surface",
-    "surface-variant",
-    "on-surface-variant",
-    "outline",
-    "outline-variant",
-    "inverse-surface",
-    "inverse-primary",
-    "primary-fixed",
-    "on-primary-fixed",
-    "primary-fixed-dim",
-    "on-primary-fixed-variant",
-    "secondary-fixed",
-    "on-secondary-fixed",
-    "secondary-fixed-dim",
-    "on-secondary-fixed-variant",
-    "tertiary-fixed",
-    "on-tertiary-fixed",
-    "tertiary-fixed-dim",
-    "on-tertiary-fixed-variant",
-  ]
-    .map((color) => unsafeCSS(`var(--md-sys-color-${color})`))
-    .map((_color, index) =>  css`
-      .cloud-container span:nth-child(${index}) {
-        color: ${_color} !important;
-        -webkit-text-stroke: 1px black;
-      }
-    `);
+  // #colorList: CSSResult[] = [
+  //   "primary",
+  //   "surface-tint",
+  //   "primary-container",
+  //   "on-primary-container",
+  //   "secondary",
+  //   "secondary-container",
+  //   "on-secondary-container",
+  //   "tertiary",
+  //   "tertiary-container",
+  //   "on-tertiary-container",
+  //   "error",
+  //   "error-container",
+  //   "on-error-container",
+  //   "on-background",
+  //   "on-surface",
+  //   "surface-variant",
+  //   "on-surface-variant",
+  //   "outline",
+  //   "outline-variant",
+  //   "inverse-surface",
+  //   "inverse-primary",
+  //   "primary-fixed",
+  //   "on-primary-fixed",
+  //   "primary-fixed-dim",
+  //   "on-primary-fixed-variant",
+  //   "secondary-fixed",
+  //   "on-secondary-fixed",
+  //   "secondary-fixed-dim",
+  //   "on-secondary-fixed-variant",
+  //   "tertiary-fixed",
+  //   "on-tertiary-fixed",
+  //   "tertiary-fixed-dim",
+  //   "on-tertiary-fixed-variant",
+  // ]
+  //   .map((color) => unsafeCSS(`var(--md-sys-color-${color})`))
+  //   .map((_color, index) =>  css`
+  //     .cloud-container span:nth-child(${index}) {
+  //       color: ${_color} !important;
+  //       -webkit-text-stroke: 1px black;
+  //     }
+  //   `);
 
   constructor() {
     super();

@@ -4,9 +4,15 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "lib": [
-      "ESNext",
+      "Decorators",
       "DOM",
-      "DOM.Iterable"
+      "DOM.Iterable",
+      "ES2020",
+      "ES2021",
+      "ES2022",
+      "ES2023",
+      "ES2024",
+      "ESNext",
     ],
     "esModuleInterop": true,
     "resolveJsonModule": true,

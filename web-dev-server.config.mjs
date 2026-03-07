@@ -9,8 +9,8 @@ export default {
   open: false,
   watch: true,
   debug: true,
-  appIndex: "./website/index.html",
-  rootDir: "./",
+  appIndex: "index.html",
+  rootDir: "./website",
   nodeResolve: {
     exportConditions: [
       "development",
@@ -31,7 +31,7 @@ export default {
     rollupAdapter(
       json({
         exclude: [
-          "/assets/**/*.json",
+          "./assets/**/*.json",
         ],
         include: [
           "./src/partials/**/*.json",

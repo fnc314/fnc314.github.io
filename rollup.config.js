@@ -6,45 +6,40 @@ import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
+import fs from "node:fs";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 const isDev = process.env.NODE_ENV === "development";
-
 export default {
   logLevel: "debug",
-  // input: {
-  //   index: "./src/index.js",
-  // },
   output: {
     dir: "./website",
     format: "es",
     name: "com.fnc314.website",
-    sourcemap: isDev,
+    sourcemap: false,
   },
   plugins: [
-    typescript({
-      tsconfig: "./tsconfig.json",
-      sourceMap: false,
-      declarationMap: false,
-      declaration: false,
-      declarationMap: false,
-    }),
     rollupPluginHTML({
-      input: [
-        "index.html",
-      ],
+      input: "index.html",
       rootDir: "./src",
       minifyCss: false,
       minify: false,
       extractAssets: true,
       flattenOutput: false,
-      absoluteBaseUrl: "https://fnc314.com"
+      absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
+      transformAsset: [
+        (content, filePath) => {
+          if (filePath.endsWith("manifest.json") && isDev) {
+            return fs.readFileSync("./assets/manifest.dev.json", { encoding: "utf-8" });
+          }
+          return content;
+        }
+      ]
     }),
-    resolve(),
     copy({
-      patterns: [ "assets/**/*.{svg,jpg}" ], rootDir: "./",
+      patterns: [ "assets/**/*.jpg" ], rootDir: "./",
     }),
     copy({
       patterns: [ "files/**/*.pdf" ], rootDir: "./assets",
@@ -56,12 +51,9 @@ export default {
         "./src/theme/**.json",
       ],
       include: [
-        "./dist/**/**/*.json",
+        "./website/scripts/partials/**/*.json",
         "./src/partials/**/*.json",
       ]
-    }),
-    typescriptPaths({
-      tsConfigPath: "./tsconfig.json",
     }),
     image({
       include: [
@@ -69,13 +61,28 @@ export default {
         "./assets/icons/*.svg",
       ]
     }),
+    typescript({
+      tsconfig: "./tsconfig.json",
+      sourceMap: false,
+      declarationMap: false,
+      declaration: false,
+      declarationMap: false,
+    }),
+    typescriptPaths({
+      tsConfigPath: "./tsconfig.json",
+    }),
+    resolve(),
     commonjs(),
     !isDev && terser({
       ecma: 2020,
       module: true,
       warnings: true,
     }),
-    summary(),
+    summary({
+      showBrotliSize: true,
+      showGzippedSize: true,
+      showMinifiedSize: true,
+    }),
     progress({
       clearLine: false,
     }),

@@ -11,5 +11,5 @@
   "display_override": ["minimal-ui"],
   "categories": ["developer", "development", "networking"],
   "start_url": "/",
-  "id": "https://www.fnc314.com"
+  "id": "http://localhost:8000"
 }
