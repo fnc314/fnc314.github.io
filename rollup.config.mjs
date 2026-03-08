@@ -30,11 +30,7 @@ export default {
     name: "com.fnc314.website",
     sourcemap: false,
     plugins: [
-      !isDev && terser({
-        ecma: 2020,
-        module: true,
-        warnings: true,
-      })
+
     ]
   },
   plugins: [
@@ -95,6 +91,11 @@ export default {
     }),
     resolve(),
     commonjs(),
+    !isDev && terser({
+      ecma: 2020,
+      module: true,
+      warnings: true,
+    }),
     summary({
       showBrotliSize: true,
       showGzippedSize: true,
