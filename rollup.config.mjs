@@ -20,8 +20,9 @@ const isDev = process.env.NODE_ENV === "development";
  */
 export default {
   logLevel: "debug",
+  treeshake: true,
   input: {
-
+    index: "./src/index.js"
   },
   output: {
     dir: "./website",
@@ -39,14 +40,11 @@ export default {
   plugins: [
     rollupPluginHTML({
       input: "index.html",
-      exclude: [
-        "./assets/manifest.json",
-        "./assets/manifest.dev.json",
-      ],
       rootDir: "./src",
+      bundleCss: true,
       minifyCss: false,
       minify: false,
-      extractAssets: false,
+      extractAssets: true,
       flattenOutput: false,
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
       transformAsset: [
@@ -71,8 +69,6 @@ export default {
       compact: !isDev,
       preferConst: true,
       exclude: [
-        "./assets/manifest.json",
-        "./assets/manifest.dev.json",
         "./assets/**/*.json",
         "./src/theme/**.json",
       ],
@@ -89,10 +85,6 @@ export default {
     }),
     typescript({
       tsconfig: "./tsconfig.json",
-      exclude: [
-        "./assets/manifest.json",
-        "./assets/manifest.dev.json",
-      ],
       sourceMap: false,
       declarationMap: false,
       declaration: false,

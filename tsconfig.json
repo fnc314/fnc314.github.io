@@ -48,6 +48,7 @@
     "types": [
       "node",
       "eslint",
+      "rollup",
     ],
     "baseUrl": ".",
     "paths": {

@@ -37,16 +37,26 @@ body {
 
   main {
     overflow: hidden;
-    /* width: 100vw; */
     padding-block-end: 1rem;
     grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
 
-  }
+    & #carousel-track {
+      height: 100%;
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      transition: transform 0.3s ease-in-out;
 
-  #carousel-track {
-    height: 100%;
+      [aria-role="tabpanel"] {
+        width: 100%;
+        min-width: 0px;
+        overflow-x: hidden;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      }
+    }
   }
 
 }

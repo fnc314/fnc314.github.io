@@ -74,15 +74,16 @@ export class NavPartial extends LitElement {
     const hash = window.location.hash.replace("#", "");
     const route: Route = hashToRoute(hash);
     const index = this.#routes.indexOf(route);
-
+    this.activeRoute = route;
     // Default to 0 (profile) if hash is empty or invalid
     const targetIndex = index >= 0 ? index : 0;
 
     if (this.activeTabIndex !== targetIndex) {
       this.activeTabIndex = targetIndex;
+
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
-        this.#updateTabState(targetIndex, route);
+        this.#updateTabState(targetIndex);
       }
     }
   }
@@ -90,22 +91,12 @@ export class NavPartial extends LitElement {
   /**
    * Updates the visual state of tabs and panels based on the index.
    */
-  #updateTabState(index: number, route: Route) {
+  #updateTabState(index: number) {
     const tabs = this.#tabsRef.value;
     if (!tabs) return;
 
     // Sync the md-tabs component
     tabs.activeTabIndex = index;
-
-    // Sync the visual state (active/inline-icon) and toggle panels
-    Object.entries(this.#tabRefMap).forEach(([tabRoute, tabRef]) => {
-      const tab = tabRef.value;
-      if (!tab) return;
-
-      const isActive = route === tabRoute;
-      tab.toggleAttribute("active", isActive);
-      tab.toggleAttribute("inline-icon", isActive);
-    });
 
     this.#updateCarousel(index);
   }
@@ -118,7 +109,7 @@ export class NavPartial extends LitElement {
       if (tab) {
         const panelId = tab.getAttribute("aria-controls");
         if (panelId) {
-          const panel = document.querySelector(`#${panelId}[role="tabpanel"]`) as HTMLElement;
+          const panel = document.querySelector(`#${panelId}[aria-role="tabpanel"]`) as HTMLElement;
           if (panel) {
             panels.push(panel);
           }
@@ -131,22 +122,11 @@ export class NavPartial extends LitElement {
     const container = panels[0].parentElement;
     if (!container) return;
 
-    container.style.display = "flex";
-    container.style.flexDirection = "row";
-    container.style.width = "100%";
-    container.style.boxSizing = "border-box";
-    container.style.transition = "transform 0.3s ease-in-out";
     container.style.transform = `translateX(-${index * 100}%)`;
 
     panels.forEach((panel, i) => {
-      panel.removeAttribute("hidden");
       panel.setAttribute("aria-hidden", "false");
-      panel.style.width = "100%";
-      panel.style.minWidth = "0px";
-      panel.style.overflowX = "hidden";
-      panel.style.flexShrink = "0";
       panel.style.order = String(i);
-      panel.style.boxSizing = "border-box";
     });
   }
 
@@ -165,13 +145,14 @@ export class NavPartial extends LitElement {
     }
 
     this.activeTabIndex = index;
-    this.#updateTabState(index, route);
+    this.activeRoute = route;
+    this.#updateTabState(index);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
-    this.#updateTabState(this.activeTabIndex, this.activeRoute);
+    this.#updateTabState(this.activeTabIndex);
   }
 
   override render() {
@@ -190,6 +171,8 @@ export class NavPartial extends LitElement {
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
+            .active=${this.activeRoute === Routes.PROFILE}
+            .inlineIcon=${this.activeRoute === Routes.PROFILE}
           >
             <md-icon slot="icon">person</md-icon>
             Profile
@@ -199,6 +182,8 @@ export class NavPartial extends LitElement {
             id="tab-work"
             aria-controls="panel-work"
             .hasIcon=${true}
+            .active=${this.activeRoute === Routes.WORK}
+            .inlineIcon=${this.activeRoute === Routes.WORK}
           >
             <md-icon slot="icon">engineering</md-icon>
             Work
@@ -208,6 +193,8 @@ export class NavPartial extends LitElement {
             id="tab-code"
             aria-controls="panel-code"
             .hasIcon=${true}
+            .active=${this.activeRoute === Routes.CODE}
+            .inlineIcon=${this.activeRoute === Routes.CODE}
           >
             <md-icon slot="icon">code</md-icon>
             Code

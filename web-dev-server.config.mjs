@@ -18,6 +18,7 @@ export default {
   },
   mimeTypes: {
     "**/*.json": "application/json",
+    "**/*.css": "text/css",
   },
   plugins: [
     importMapsPlugin(),

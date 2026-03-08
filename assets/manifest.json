@@ -38,6 +38,7 @@
   "manifest_version": "3",
   "display": "browser",
   "display_overrides": ["minimal-ui"],
+  "display_override": ["minimal-ui"],
   "categories": ["developer", "development", "networking"],
   "start_url": ".",
   "id": "https://www.fnc314.com"

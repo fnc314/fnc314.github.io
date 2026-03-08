@@ -46,16 +46,12 @@ export class WorkPartial extends LitElement {
       }
 
       article {
-        height: 100%;
-        position: relative;
-        border-radius: 16px;
         display: grid;
         grid-template-areas:
           "title"
           "content";
         gap: 1rem;
         grid-template-rows: auto 1fr;
-        --md-elevation-level: 4;
       }
 
       header {
