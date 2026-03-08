@@ -24,13 +24,14 @@ export default {
     esbuildPlugin({
       js: true,
       ts: true,
-      json: true,
+      json: false,
       target: "auto",
       tsconfig: fileURLToPath(new URL("./tsconfig.json", import.meta.url)),
     }),
     rollupAdapter(
       json({
         exclude: [
+          "./assets/*.json",
           "./assets/**/*.json",
         ],
         include: [

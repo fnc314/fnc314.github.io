@@ -12,21 +12,41 @@ import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 const isDev = process.env.NODE_ENV === "development";
+
+/**
+ * @type RollupOptions
+ * @typedef RollupOptions
+ * @satisfies RollupOptions
+ */
 export default {
   logLevel: "debug",
+  input: {
+
+  },
   output: {
     dir: "./website",
     format: "es",
     name: "com.fnc314.website",
     sourcemap: false,
+    plugins: [
+      !isDev && terser({
+        ecma: 2020,
+        module: true,
+        warnings: true,
+      })
+    ]
   },
   plugins: [
     rollupPluginHTML({
       input: "index.html",
+      exclude: [
+        "./assets/manifest.json",
+        "./assets/manifest.dev.json",
+      ],
       rootDir: "./src",
       minifyCss: false,
       minify: false,
-      extractAssets: true,
+      extractAssets: false,
       flattenOutput: false,
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
       transformAsset: [
@@ -39,14 +59,20 @@ export default {
       ]
     }),
     copy({
-      patterns: [ "assets/**/*.{jpg,svg}" ], rootDir: "./",
+      patterns: ["assets/**/*.{jpg,svg}"], rootDir: "./",
     }),
     copy({
-      patterns: [ "files/**/*.pdf" ], rootDir: "./assets",
+      patterns: ["files/**/*.pdf"], rootDir: "./assets",
+    }),
+    copy({
+      patterns: [isDev ? "assets/manifest.dev.json" : "assets/manifest.json"], rootDir: "./",
     }),
     json({
-      compact: true,
+      compact: !isDev,
+      preferConst: true,
       exclude: [
+        "./assets/manifest.json",
+        "./assets/manifest.dev.json",
         "./assets/**/*.json",
         "./src/theme/**.json",
       ],
@@ -63,6 +89,10 @@ export default {
     }),
     typescript({
       tsconfig: "./tsconfig.json",
+      exclude: [
+        "./assets/manifest.json",
+        "./assets/manifest.dev.json",
+      ],
       sourceMap: false,
       declarationMap: false,
       declaration: false,
@@ -73,11 +103,6 @@ export default {
     }),
     resolve(),
     commonjs(),
-    !isDev && terser({
-      ecma: 2020,
-      module: true,
-      warnings: true,
-    }),
     summary({
       showBrotliSize: true,
       showGzippedSize: true,

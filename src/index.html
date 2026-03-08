@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <script type="module">
+      const manifestLink = document.createElement("link");
+      manifestLink.rel = "manifest";
+      manifestLink.href = window.location.hostname === "localhost" ? "./../assets/manifest.dev.json" : "./../assets/manifest.json";
+      document.head.appendChild(manifestLink);
+    </script>
     <title>fnc314.com - Homepage of Franco N. Colaizzi</title>
-    <!-- <base target="_top" href="https://fnc314.com" /> -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=contain" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -22,7 +27,6 @@
     <meta name="twitter:image:alt" content="Profile Photo of Franco N. Colaizzi with a blurred background of Abruzzo, Italy from 2025" />
     <meta name="twitter:creator" content="@fnc314" />
     <meta name="twitter:site" content="@fnc314" />
-    <link rel="manifest" href="./../assets/manifest.json" />
     <link rel="icon" sizes="any" type="image/svg+xml" href="./../assets/icons/favicon.svg" />
     <link rel="canonical" href="https://www.fnc314.com" />
     <link

@@ -3,8 +3,14 @@
   "background_color": "#FAF8FF",
   "icons": [
     {
-      "src": "./assets/icons/favicon.svg",
+      "src": "./../assets/icons/favicon.svg",
       "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./../assets/icons/favicon.svg",
+      "sizes": "1024x1024",
       "type": "image/svg+xml",
       "purpose": "any"
     }
@@ -18,6 +24,6 @@
   "display": "browser",
   "display_override": ["minimal-ui"],
   "categories": ["developer", "development", "networking"],
-  "start_url": "/",
+  "start_url": ".",
   "id": "http://localhost:8000"
 }

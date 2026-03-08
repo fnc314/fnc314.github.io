@@ -7,5 +7,4 @@ window
   .matchMedia("(prefers-color-scheme: light)")
   .addEventListener("change", onThemeChange);
 
-document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
-document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+document.adoptedStyleSheets.push(...[MaterialCSSStyleSheet, typescaleStyles.styleSheet]);
