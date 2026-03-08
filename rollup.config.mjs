@@ -6,7 +6,6 @@ import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
-import fs from "node:fs";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
@@ -43,14 +42,6 @@ export default {
       extractAssets: true,
       flattenOutput: false,
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
-      transformAsset: [
-        (content, filePath) => {
-          if (filePath.endsWith("manifest.json") && isDev) {
-            return fs.readFileSync("./assets/manifest.dev.json", { encoding: "utf-8" });
-          }
-          return content;
-        }
-      ],
       transformHtml: [
         (html, args) => html.replace(
           "<head>",
