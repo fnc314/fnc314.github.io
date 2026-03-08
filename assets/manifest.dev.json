@@ -1,4 +1,5 @@
 {
+  "screenshots": [],
   "protocol_handlers": [],
   "shortcuts": [
     {
@@ -8,11 +9,11 @@
       "url": "/#profile",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "src": "http://localhost:8000/assets/icons/favicon-192x192.png",
           "sizes": "192x192"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "src": "http://localhost:8000/assets/icons/favicon.svg",
           "sizes": "any"
         }
       ]
@@ -24,11 +25,11 @@
       "url": "/#work",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "src": "http://localhost:8000/assets/icons/favicon-192x192.png",
           "sizes": "192x192"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "src": "http://localhost:8000/assets/icons/favicon.svg",
           "sizes": "any"
         }
       ]
@@ -40,17 +41,16 @@
       "url": "/#code",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "src": "http://localhost:8000/assets/icons/favicon-192x192.png",
           "sizes": "192x192"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "src": "http://localhost:8000/assets/icons/favicon.svg",
           "sizes": "any"
         }
       ]
     }
   ],
-  "screenshots": [],
   "theme_color": "#4C5C92",
   "background_color": "#FAF8FF",
   "icons": [
