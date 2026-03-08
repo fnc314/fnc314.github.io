@@ -4,7 +4,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "checkJs": true,
-    "outDir": "./dist",
+    "outDir": "./website/scripts",
     "rootDir": "./src",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,

@@ -124,11 +124,6 @@ export class NavPartial extends LitElement {
     if (!container) return;
 
     container.style.transform = `translateX(-${index * 100}%)`;
-
-    panels.forEach((panel, i) => {
-      panel.setAttribute("aria-hidden", "false");
-      panel.style.order = String(i);
-    });
   }
 
   /**

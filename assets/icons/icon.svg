@@ -18,7 +18,7 @@
   </defs>
   <style>
     .icon-text {
-      font-family: Roboto, monospace;
+      font-family: -apple-system, Roboto, monospace;
       letter-spacing: normal;
       font-weight: 700;
       font-size: 44px;
@@ -64,6 +64,8 @@
     <textPath
       href="#text-curve"
       startOffset="50%"
+      stroke-linecap="round"
+      method="align"
       >
       fnc314
     </textPath>
