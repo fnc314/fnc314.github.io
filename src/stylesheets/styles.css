@@ -26,6 +26,7 @@ body {
     "header-nav"
     "main";
   grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
   container-type: size;
   color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface);
@@ -35,9 +36,17 @@ body {
   }
 
   main {
+    overflow: hidden;
+    /* width: 100vw; */
     padding-block-end: 1rem;
     grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
+
   }
+
+  #carousel-track {
+    height: 100%;
+  }
+
 }

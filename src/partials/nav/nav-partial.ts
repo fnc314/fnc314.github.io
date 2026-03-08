@@ -16,7 +16,7 @@ export class NavPartial extends LitElement {
         --md-primary-tab-active-indicator-color: var(--md-sys-color-tertiary);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: 1rem;
-        --md-primary-tab-container-color: var(--md-sys-color-surface-container);
+        --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
         --md-primary-tab-container-elevation: 4;
         --md-primary-tab-container-height: 5rem;
         --md-primary-tab-container-shape-start-start: 0.1rem;
@@ -105,16 +105,48 @@ export class NavPartial extends LitElement {
       const isActive = route === tabRoute;
       tab.toggleAttribute("active", isActive);
       tab.toggleAttribute("inline-icon", isActive);
+    });
 
-      // Toggle panel visibility in the main document
-      const panelId = tab.getAttribute("aria-controls");
-      if (panelId) {
-        const panel = document.querySelector(`#${panelId}[role="tabpanel"]`);
-        if (panel) {
-          panel.toggleAttribute("hidden", !isActive);
-          panel.setAttribute("aria-hidden", String(!isActive));
+    this.#updateCarousel(index);
+  }
+
+  #updateCarousel(index: number) {
+    const panels: HTMLElement[] = [];
+    for (const route of this.#routes) {
+      const tabRef = this.#tabRefMap[route];
+      const tab = tabRef.value;
+      if (tab) {
+        const panelId = tab.getAttribute("aria-controls");
+        if (panelId) {
+          const panel = document.querySelector(`#${panelId}[role="tabpanel"]`) as HTMLElement;
+          if (panel) {
+            panels.push(panel);
+          }
         }
       }
+    }
+
+    if (panels.length === 0) return;
+
+    const container = panels[0].parentElement;
+    if (!container) return;
+
+    container.style.display = "flex";
+    container.style.flexDirection = "row";
+    container.style.width = "100%";
+    container.style.boxSizing = "border-box";
+    container.style.transition = "transform 0.3s ease-in-out";
+    container.style.transform = `translateX(-${index * 100}%)`;
+
+    panels.forEach((panel, i) => {
+      panel.removeAttribute("hidden");
+      panel.setAttribute("aria-hidden", "false");
+      panel.style.width = "100%";
+      panel.style.minWidth = "0px";
+      panel.style.overflowX = "hidden";
+      panel.style.flexShrink = "0";
+      panel.style.order = String(i);
+      panel.style.boxSizing = "border-box";
     });
   }
 

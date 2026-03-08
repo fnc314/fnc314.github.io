@@ -42,7 +42,7 @@ export class WorkPartial extends LitElement {
     ParialHeadingStyles,
     css`
       :host {
-
+        display: block;
       }
 
       article {

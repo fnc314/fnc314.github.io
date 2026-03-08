@@ -16,8 +16,6 @@ export class ProfilePartial extends LitElement {
 
         --section-grid-background: var(--md-sys-color-inverse-surface);
         --section-grid-color: var(--md-sys-color-inverse-on-surface);
-
-        min-height: 100dvh;
       }
 
       article {

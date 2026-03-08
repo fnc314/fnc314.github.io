@@ -16,7 +16,8 @@ export class CodePartial extends LitElement {
     typescaleStyles,
     ParialHeadingStyles,
     css`
-      :root {
+      :host {
+        display: block;
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
       }
@@ -49,10 +50,10 @@ export class CodePartial extends LitElement {
           "content"
           "footer";
         grid-template-rows: 0.5fr minmax(auto, 1fr) 1fr;
-        padding: 1.5rem;
+        padding: 1rem 2rem;
         position: relative;
         border-radius: 0.5rem;
-        outline: 1px solid var(--md-sys-color-on-surface);
+        border: 1px solid var(--md-sys-color-on-surface);
         gap: 1.5rem;
         background: var(--md-sys-color-surface-container-low);
         --md-elevation-level: 2;
@@ -169,9 +170,7 @@ export class CodePartial extends LitElement {
 
   override render() {
     return html`
-      <article
-        class="md-typescale-body-medium"
-        >
+      <article>
         <header>
           <md-elevation></md-elevation>
           <h1 class="md-typescale-headline-large">Code Projects</h1>
