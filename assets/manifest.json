@@ -9,12 +9,28 @@
       "url": "/#profile",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
-          "sizes": "192x192"
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-filled-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
-          "sizes": "any"
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-outline-512.svg",
+          "sizes": "any",
+          "type": "image/svg+xml",
+          "purpose": "any"
         }
       ]
     },
@@ -25,20 +41,26 @@
       "url": "/#work",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcut-work-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        },
-        {
-          "src": "https://www.fnc314.com/assets/icons/shortcut-work-512.png",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcut-work-512.svg",
-          "sizes": "any",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.svg",
+          "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         }
@@ -51,12 +73,28 @@
       "url": "/#code",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
-          "sizes": "192x192"
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
-          "sizes": "any"
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-filled-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
         }
       ]
     }
