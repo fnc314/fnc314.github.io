@@ -1,4 +1,56 @@
 {
+  "protocol_handlers": [],
+  "shortcuts": [
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "View profile information on Franco N. Colaizzi",
+      "url": "/#profile",
+      "icons": [
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "sizes": "any"
+        }
+      ]
+    },
+    {
+      "name": "Work",
+      "short_name": "Work",
+      "description": "View Work experience of Franco N. Colaizzi",
+      "url": "/#work",
+      "icons": [
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "sizes": "any"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "short_name": "Code",
+      "description": "View Code samples from Franco N. Colaizzi",
+      "url": "/#code",
+      "icons": [
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+          "sizes": "any"
+        }
+      ]
+    }
+  ],
+  "screenshots": [],
   "theme_color": "#4C5C92",
   "background_color": "#FAF8FF",
   "icons": [
