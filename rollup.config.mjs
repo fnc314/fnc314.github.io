@@ -52,7 +52,10 @@ export default {
         }
       ],
       transformHtml: [
-        (html, args) => html.replace("<head>", `<head><link rel="manifest" href="./assets/${isDev ? "manifest.dev.json" : "manifest.json"}" />`)
+        (html, args) => html.replace(
+          "<head>",
+          `<head><link rel="manifest" href="./assets/${isDev ? "manifest.dev.json" : "manifest.json"}" />`
+        )
       ]
     }),
     copy({
