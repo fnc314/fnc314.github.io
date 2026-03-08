@@ -74,12 +74,13 @@ export class NavPartial extends LitElement {
     const hash = window.location.hash.replace("#", "");
     const route: Route = hashToRoute(hash);
     const index = this.#routes.indexOf(route);
-    this.activeRoute = route;
+
     // Default to 0 (profile) if hash is empty or invalid
     const targetIndex = index >= 0 ? index : 0;
 
     if (this.activeTabIndex !== targetIndex) {
       this.activeTabIndex = targetIndex;
+      this.activeRoute = route;
 
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
