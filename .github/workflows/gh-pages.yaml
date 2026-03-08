@@ -34,7 +34,7 @@ jobs:
           node-version: latest
       - run: npm install
       - run: npx tsc
-      - run: npx rollup -c
+      - run: NODE_ENV="production" npx rollup -c
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
