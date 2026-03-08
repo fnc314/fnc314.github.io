@@ -15,6 +15,9 @@
       "purpose": "any"
     }
   ],
+  "orientation": "any",
+  "dir": "ltr",
+  "lang": "en-US",
   "short_name": "fnc314.com",
   "author": "Franco N. Colaizzi",
   "description": "Personal Webite of Franco N. Colaizzi - fnc314",
@@ -22,7 +25,7 @@
   "name": "fnc314.com",
   "manifest_version": "3",
   "display": "browser",
-  "display_override": ["minimal-ui"],
+  "display_overrides": ["minimal-ui"],
   "categories": ["developer", "development", "networking"],
   "start_url": ".",
   "id": "http://localhost:8000"
