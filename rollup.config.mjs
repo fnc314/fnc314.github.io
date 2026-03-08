@@ -73,7 +73,7 @@ export default {
     image({
       include: [
         "./assets/images/*.jpg",
-        "./assets/icons/*.svg",
+        "./assets/icons/*.{svg,png}",
       ]
     }),
     typescript({
