@@ -1,6 +1,14 @@
 {
   "theme_color": "#4C5C92",
   "background_color": "#FAF8FF",
+  "icons": [
+    {
+      "src": "./assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
   "short_name": "fnc314.com",
   "author": "Franco N. Colaizzi",
   "description": "Personal Webite of Franco N. Colaizzi - fnc314",
