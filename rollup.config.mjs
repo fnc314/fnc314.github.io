@@ -53,7 +53,7 @@ export default {
       ]
     }),
     copy({
-      patterns: ["assets/**/*.{jpg,svg}"], rootDir: "./",
+      patterns: ["assets/**/*.{jpg,svg,png}"], rootDir: "./",
     }),
     copy({
       patterns: ["files/**/*.pdf"], rootDir: "./assets",

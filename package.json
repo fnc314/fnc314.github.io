@@ -23,6 +23,7 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "build:watch:website": "NODE_ENV=development rollup -c --watch",
+    "build:watch:website:prod": "NODE_ENV=production rollup -c --watch",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",

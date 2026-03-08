@@ -3,9 +3,9 @@
   "background_color": "#FAF8FF",
   "icons": [
     {
-      "src": "https://www.fnc314.com/assets/icons/favicon.svg",
+      "src": "https://www.fnc314.com/assets/icons/favicon-192x192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     },
     {
