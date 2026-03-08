@@ -167,9 +167,12 @@
   "version": "0.0.0",
   "name": "fnc314.com",
   "manifest_version": "3",
-  "display": "browser",
-  "display_overrides": ["minimal-ui"],
-  "display_override": ["minimal-ui"],
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
   "categories": ["developer", "development", "networking"],
   "start_url": "https://www.fnc314.com/#profile",
   "id": "https://www.fnc314.com"
