@@ -103,28 +103,16 @@
   "background_color": "#FAF8FF",
   "icons": [
     {
-      "src": "http://localhost:8000/assets/icons/favicon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "http://localhost:8000/assets/icons/favicon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "http://localhost:8000/assets/icons/favicon.svg",
-      "sizes": "1024x1024",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "http://localhost:8000/assets/icons/favicon.svg",
+      "src": "http://localhost:8000/assets/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
+    },
+    {
+      "src": "http://localhost:8000/assets/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
   "scope": "http://localhost:8000/",
@@ -137,9 +125,12 @@
   "version": "0.0.0",
   "name": "fnc314.com",
   "manifest_version": "3",
-  "display": "browser",
-  "display_overrides": ["minimal-ui"],
-  "display_override": ["minimal-ui"],
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
   "categories": ["developer", "development", "networking"],
   "start_url": "http://localhost:8000/#profile",
   "id": "http://localhost:8000"
