@@ -79,6 +79,7 @@
       "purpose": "any"
     }
   ],
+  "scope": "https://www.fnc314.com/",
   "orientation": "any",
   "dir": "ltr",
   "lang": "en-US",
