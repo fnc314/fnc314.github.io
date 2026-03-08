@@ -21,9 +21,9 @@ const isDev = process.env.NODE_ENV === "development";
 export default {
   logLevel: "debug",
   treeshake: true,
-  input: {
-    index: "./src/index.js"
-  },
+  // input: {
+  //   index: "./src/index.js"
+  // },
   output: {
     dir: "./website",
     format: "es",
