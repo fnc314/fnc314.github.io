@@ -2,59 +2,64 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="-64 -64 384 384"
   >
-  <rect width="384" height="384" x="-64" y="-64" fill="white"/>
+
   <defs>
     <path
       id="text-curve"
       d="
         M 24 128
-        C 58 146,
-        94 146,
-        128 128
-        C 162 110,
-        198 110,
-        232 128
-        "
+        C 58 146, 94 146, 128 128
+        C 162 110, 198 110, 232 128
+      "
+      />
+
+    <path
+      id="hexagon-half"
+      d="
+        M 128 10
+        L 232 58
+        L 232 95
+        C 198 77, 162 77, 128 95
+        C 94 113, 58 113, 24 95
+        L 24 58
+        Z
+      "
       />
   </defs>
   <style>
     .icon-text {
-      font-family: Roboto, monospace;
-      letter-spacing: normal;
+      font-family: -apple-system, Roboto, monospace;
       font-weight: 700;
-      font-size: 44px;
+      font-size: 9vh;
       text-rendering: optimizeLegibility;
       text-anchor: middle;
-      dominant-baseline: middle;
+      dominant-baseline: central;
+    }
+
+    .rotated-hexagon-half {
+      transform-box: fill-box;
     }
   </style>
 
-  <path
-    fill="#c12a1c"
-    fill-rule="evenodd"
-    d="
-      M 128 10
-      L 232 58
-      L 232 95
-      C 198 77, 162 77, 128 95
-      C 94 113, 58 113, 24 95
-      L 24 58
-      Z
-      "
+  <g display="none">
+    <circle cx="128" cy="10" r="10" fill="pink" />
+    <circle cx="232" cy="95" r="10" fill="black" />
+    <circle cx="24" cy="95" r="10" fill="purple" />
+    <circle cx="24" cy="161" r="10" fill="red" />
+  </g>
+
+  <rect
+    width="384"
+    height="384"
+    x="-64"
+    y="-64"
+    fill="white"
     />
 
-  <path
+  <use
+    href="#hexagon-half"
     fill="#c12a1c"
     fill-rule="evenodd"
-    d="
-      M 24 161
-      C 58 179, 94 179, 128 161
-      C 162 143, 198 143, 232 161
-      L 232 198
-      L 128 246
-      L 24 198
-      Z
-      "
     />
 
   <text
@@ -69,4 +74,16 @@
       fnc314
     </textPath>
   </text>
+
+  <use
+    href="#hexagon-half"
+    class="rotated-hexagon-half"
+    fill="#c12a1c"
+    fill-rule="evenodd"
+    transform="
+      translate(0, 138)
+      rotate(180)
+    "
+    transform-origin="center"
+    />
 </svg>
