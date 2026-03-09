@@ -50,6 +50,8 @@ export class NavPartial extends LitElement {
 
   #routes: Route[] = Object.values(Routes);
 
+  #boundListener = this.#handleHashChange.bind(this);
+
   constructor() {
     super();
   }
@@ -57,14 +59,14 @@ export class NavPartial extends LitElement {
   override connectedCallback() {
     super.connectedCallback();
     // Listen for URL changes
-    window.addEventListener("hashchange", this.#handleHashChange);
+    window.addEventListener("hashchange", this.#boundListener);
     // Handle the initial URL on load
-    this.#handleHashChange();
+    this.#boundListener();
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("hashchange", this.#handleHashChange);
+    window.removeEventListener("hashchange", this.#boundListener);
   }
 
   /**

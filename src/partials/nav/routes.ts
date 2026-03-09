@@ -6,15 +6,8 @@ export const Routes = {
 
 export type Route = typeof Routes[keyof typeof Routes];
 
+export type RouteHashs = `#${Route}`;
+
 export function hashToRoute(hash: string): Route {
-  switch (hash) {
-    case Routes.PROFILE:
-      return Routes.PROFILE;
-    case Routes.WORK:
-      return Routes.WORK;
-    case Routes.CODE:
-      return Routes.CODE;
-    default:
-      return Routes.PROFILE;
-  }
+  return Object.values(Routes).find((route) => route === hash) || Routes.PROFILE;
 }

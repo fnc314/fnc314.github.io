@@ -1,4 +1,3 @@
-import image from "@rollup/plugin-image";
 import json from "@rollup/plugin-json";
 import { esbuildPlugin } from "@web/dev-server-esbuild";
 import { importMapsPlugin } from "@web/dev-server-import-maps";
@@ -37,12 +36,6 @@ export default {
         ],
         include: [
           "./src/partials/**/*.json",
-        ]
-      }),
-      image({
-        include: [
-          "./assets/images/*.jpg",
-          "./assets/icons/*.{svg,png}",
         ]
       }),
     )

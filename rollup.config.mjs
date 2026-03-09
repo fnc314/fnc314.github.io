@@ -1,5 +1,4 @@
 import commonjs from "@rollup/plugin-commonjs";
-import image from "@rollup/plugin-image";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
@@ -11,6 +10,7 @@ import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
 
 const isDev = process.env.NODE_ENV === "development";
+const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
 
 /**
  * @type RollupOptions
@@ -28,9 +28,7 @@ export default {
     format: "es",
     name: "com.fnc314.website",
     sourcemap: false,
-    plugins: [
-
-    ]
+    interop: "auto",
   },
   plugins: [
     rollupPluginHTML({
@@ -41,13 +39,13 @@ export default {
       minify: !isDev,
       extractAssets: true,
       flattenOutput: false,
-      absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
       transformHtml: [
         (html, args) => html.replace(
           "<head>",
-          `<head><link rel="manifest" href="./assets/${isDev ? "manifest.dev.json" : "manifest.json"}" />`
+          `<head><link rel="manifest" href="./assets/${manifestJson}" />`
         )
-      ]
+      ],
+      absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
     }),
     copy({
       patterns: ["assets/**/*.{jpg,svg,png}"], rootDir: "./",
@@ -70,12 +68,6 @@ export default {
         "./src/partials/**/*.json",
       ]
     }),
-    image({
-      include: [
-        "./assets/images/*.jpg",
-        "./assets/icons/*.{svg,png}",
-      ]
-    }),
     typescript({
       tsconfig: "./tsconfig.json",
       sourceMap: false,
@@ -86,7 +78,9 @@ export default {
     typescriptPaths({
       tsConfigPath: "./tsconfig.json",
     }),
-    resolve(),
+    resolve({
+      rootDir: "./src",
+    }),
     commonjs(),
     !isDev && terser({
       ecma: 2020,
