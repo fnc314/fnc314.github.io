@@ -117,7 +117,7 @@ export class NavPartial extends LitElement {
 
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
-        this.#updateTabState(targetIndex);
+        this.#updateTabState(targetIndex, route);
       }
     }
   }
@@ -125,7 +125,7 @@ export class NavPartial extends LitElement {
   /**
    * Updates the visual state of tabs and panels based on the index.
    */
-  #updateTabState(index: number) {
+  #updateTabState(index: number, route: Route) {
     const tabs = this.#tabsRef.value;
     if (!tabs) return;
 
@@ -175,13 +175,14 @@ export class NavPartial extends LitElement {
 
     this._activeTabIndex = index;
     this._activeRoute = route;
-    this.#updateTabState(index);
+    this.#updateTabState(index, route);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
-    this.#updateTabState(this._activeTabIndex);
+    this._activeRoute = this.#routes[this._activeTabIndex];
+    this.#updateTabState(this._activeTabIndex, this._activeRoute);
   }
 
   override render() {
@@ -201,9 +202,9 @@ export class NavPartial extends LitElement {
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
-            .inlineIcon=${this._tabRefMap.profile.value?.active ?? false}
+            .inlineIcon=${this._activeRoute === Routes.PROFILE}
           >
-            <md-icon slot="icon" filled=${this._tabRefMap.profile.value?.active ?? false}>person</md-icon>
+            <md-icon slot="icon" filled=${this._activeRoute === Routes.PROFILE}>person</md-icon>
             Profile
           </md-primary-tab>
           <md-primary-tab
@@ -211,9 +212,9 @@ export class NavPartial extends LitElement {
             id="tab-work"
             aria-controls="panel-work"
             .hasIcon=${true}
-            .inlineIcon=${this._tabRefMap.work.value?.active ?? false}
+            .inlineIcon=${this._activeRoute === Routes.WORK}
           >
-            <md-icon slot="icon" filled=${this._tabRefMap.work.value?.active ?? false}>engineering</md-icon>
+            <md-icon slot="icon" filled=${this._activeRoute === Routes.WORK}>engineering</md-icon>
             Work
           </md-primary-tab>
           <md-primary-tab
@@ -221,9 +222,9 @@ export class NavPartial extends LitElement {
             id="tab-code"
             aria-controls="panel-code"
             .hasIcon=${true}
-            .inlineIcon=${this._tabRefMap.code.value?.active ?? false}
+            .inlineIcon=${this._activeRoute === Routes.CODE}
           >
-            <md-icon slot="icon" filled=${this._tabRefMap.code.value?.active ?? false}>code</md-icon>
+            <md-icon slot="icon" filled=${this._activeRoute === Routes.CODE}>code</md-icon>
             Code
           </md-primary-tab>
         </md-tabs>
