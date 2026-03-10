@@ -7,11 +7,22 @@ import "./partials/index.js";
 import { Routes } from "./partials/nav/routes.js";
 import { MaterialCSSStyleSheet, onThemeChange } from "./styles/styles.js";
 
+document.adoptedStyleSheets.push(
+  ...[MaterialCSSStyleSheet, typescaleStyles.styleSheet]
+);
+
 window
   .matchMedia("(prefers-color-scheme: light)")
   .addEventListener("change", onThemeChange);
 
-document.adoptedStyleSheets.push(...[MaterialCSSStyleSheet, typescaleStyles.styleSheet]);
+onThemeChange(
+  new MediaQueryListEvent(
+    "change",
+    {
+      matches: window.matchMedia("(prefers-color-scheme: light)").matches
+    }
+  )
+);
 
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
