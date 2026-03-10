@@ -1,7 +1,7 @@
 import { typescaleStyles } from "@/styles";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
-import { css, html, LitElement, PropertyValues } from "lit";
+import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
 import { hashToRoute, Route, Routes } from "./routes";
@@ -185,49 +185,58 @@ export class NavPartial extends LitElement {
     this.#updateTabState(this._activeTabIndex, this._activeRoute);
   }
 
+  /**
+   * Creates a {@link TemplateResult[]} consisting of {@link MdPrimaryTabs} and their child {@link MdIcon}s
+   */
+  #renderTabs(): TemplateResult {
+    const mdIconRouteMap: Record<Route, TemplateResult> = {
+      profile: html`
+        <md-icon slot="icon" filled=${this._activeRoute === Routes.PROFILE}>person</md-icon>
+        Profile
+      `,
+      work: html`
+        <md-icon slot="icon" filled=${this._activeRoute === Routes.WORK}>engineering</md-icon>
+        Work
+      `,
+      code: html`
+        <md-icon slot="icon" filled=${this._activeRoute === Routes.CODE}>code</md-icon>
+        Code
+      `
+    };
+
+    const tabs: TemplateResult[] = this.#routes.map((route: Route) => html`
+      <md-primary-tab
+        ${ref(this._tabRefMap[route])}
+        id="tab-${route}"
+        aria-controls="panel-${route}"
+        .hasIcon=${true}
+        .inlineIcon=${this._activeRoute === route}
+      >
+        ${mdIconRouteMap[route]}
+      </md-primary-tab>
+    `);
+
+    return html`
+      <md-tabs
+        ${ref(this.#tabsRef)}
+        id="nav-md-tabs"
+        aria-label="Primary Nav Tabs"
+        @change=${this.#onTabChange}
+        .activeTabIndex=${this._activeTabIndex}
+        .autoActivate=${true}
+      >
+      ${tabs}
+    </md-tabs>
+    `;
+
+
+  }
+
   override render() {
     return html`
       <nav>
         <md-elevation></md-elevation>
-        <md-tabs
-          ${ref(this.#tabsRef)}
-          id="nav-md-tabs"
-          aria-label="Primary Nav Tabs"
-          @change=${this.#onTabChange}
-          .activeTabIndex=${this._activeTabIndex}
-          .autoActivate=${true}
-        >
-          <md-primary-tab
-            ${ref(this._tabRefMap.profile)}
-            id="tab-profile"
-            aria-controls="panel-profile"
-            .hasIcon=${true}
-            .inlineIcon=${this._activeRoute === Routes.PROFILE}
-          >
-            <md-icon slot="icon" filled=${this._activeRoute === Routes.PROFILE}>person</md-icon>
-            Profile
-          </md-primary-tab>
-          <md-primary-tab
-            ${ref(this._tabRefMap.work)}
-            id="tab-work"
-            aria-controls="panel-work"
-            .hasIcon=${true}
-            .inlineIcon=${this._activeRoute === Routes.WORK}
-          >
-            <md-icon slot="icon" filled=${this._activeRoute === Routes.WORK}>engineering</md-icon>
-            Work
-          </md-primary-tab>
-          <md-primary-tab
-            ${ref(this._tabRefMap.code)}
-            id="tab-code"
-            aria-controls="panel-code"
-            .hasIcon=${true}
-            .inlineIcon=${this._activeRoute === Routes.CODE}
-          >
-            <md-icon slot="icon" filled=${this._activeRoute === Routes.CODE}>code</md-icon>
-            Code
-          </md-primary-tab>
-        </md-tabs>
+        ${this.#renderTabs()}
       </nav>
     `;
   }
