@@ -132,8 +132,6 @@ export class NavPartial extends LitElement {
     // Sync the md-tabs component
     tabs.activeTabIndex = index;
 
-    tabs.dispatchEvent(new Event("change"));
-
     this.#updateCarousel(index);
   }
 
