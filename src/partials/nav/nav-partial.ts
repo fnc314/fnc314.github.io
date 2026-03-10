@@ -114,7 +114,6 @@ export class NavPartial extends LitElement {
     if (this._activeTabIndex !== targetIndex) {
       this._activeTabIndex = targetIndex;
       this._activeRoute = route;
-      this._tabRefMap[route].value?.setAttribute("active", "true");
 
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
@@ -204,7 +203,6 @@ export class NavPartial extends LitElement {
             id="tab-profile"
             aria-controls="panel-profile"
             .hasIcon=${true}
-            .active=${this._tabRefMap.profile.value?.active ?? false}
             .inlineIcon=${this._tabRefMap.profile.value?.active ?? false}
           >
             <md-icon slot="icon" filled=${this._tabRefMap.profile.value?.active ?? false}>person</md-icon>
@@ -215,7 +213,6 @@ export class NavPartial extends LitElement {
             id="tab-work"
             aria-controls="panel-work"
             .hasIcon=${true}
-            .active=${this._tabRefMap.work.value?.active ?? false}
             .inlineIcon=${this._tabRefMap.work.value?.active ?? false}
           >
             <md-icon slot="icon" filled=${this._tabRefMap.work.value?.active ?? false}>engineering</md-icon>
@@ -226,7 +223,6 @@ export class NavPartial extends LitElement {
             id="tab-code"
             aria-controls="panel-code"
             .hasIcon=${true}
-            .active=${this._tabRefMap.code.value?.active ?? false}
             .inlineIcon=${this._tabRefMap.code.value?.active ?? false}
           >
             <md-icon slot="icon" filled=${this._tabRefMap.code.value?.active ?? false}>code</md-icon>
