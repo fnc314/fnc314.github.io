@@ -3,6 +3,8 @@
   --md-ref-typeface-plain: Roboto;
   color-scheme: dark light;
 
+  --icon-fill-color: #c12a1c;
+
   --breakpoint-compact-width-max: 600px;
   --breakpoint-medium-width-max: 900px;
   --breakpoint-large-width-max: 1200px;

@@ -20,6 +20,7 @@
     "declarationMap": false,
     "sourceMap": false,
     "inlineSources": false,
+    "emitDecoratorMetadata": true,
     "pretty": true,
     "outDir": "./website/scripts",
     "rootDir": "./src",

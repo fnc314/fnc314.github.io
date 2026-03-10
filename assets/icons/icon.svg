@@ -2,6 +2,8 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0, 0, 256, 256"
   preserveAspectRatio="xMidYMid meet"
+  x="0"
+  y="0"
   >
   <defs>
     <path
@@ -25,17 +27,18 @@
           Z
         "
       />
-  </defs>
-  <style>
-    .icon-text {
-      font-family: -apple-system, Roboto, monospace;
-      font-weight: 700;
-      font-size: 9vh;
-      text-rendering: optimizeLegibility;
-      text-anchor: middle;
-      dominant-baseline: central;
-    }
-  </style>
+
+      <style>
+        .icon-text {
+          font-family: -apple-system, Roboto, monospace;
+          font-weight: 700;
+          font-size: clamp(7.5vh, 8vh, 9.5vh);
+          text-rendering: optimizeLegibility;
+          text-anchor: middle;
+          dominant-baseline: central;
+        }
+      </style>
+    </defs>
 
 
   <g display="none">

@@ -1,6 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="-64 -64 384 384"
+  preserveAspectRatio="xMidYMid meet"
   >
 
   <defs>
@@ -25,21 +26,22 @@
         Z
       "
       />
-  </defs>
-  <style>
-    .icon-text {
-      font-family: -apple-system, Roboto, monospace;
-      font-weight: 700;
-      font-size: 9vh;
-      text-rendering: optimizeLegibility;
-      text-anchor: middle;
-      dominant-baseline: central;
-    }
 
-    .rotated-hexagon-half {
-      transform-box: fill-box;
-    }
-  </style>
+    <style>
+      .icon-text {
+        font-family: -apple-system, Roboto, monospace;
+        font-weight: 700;
+        font-size: clamp(7.5vh, 8vh, 9.5vh);
+        text-rendering: optimizeLegibility;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      .rotated-hexagon-half {
+        transform-box: fill-box;
+      }
+    </style>
+  </defs>
 
   <g display="none">
     <circle cx="128" cy="10" r="10" fill="pink" />
@@ -53,7 +55,10 @@
     height="384"
     x="-64"
     y="-64"
+    rx="64"
+    ry="64"
     fill="white"
+    fill-opacity="0.01"
     />
 
   <use
