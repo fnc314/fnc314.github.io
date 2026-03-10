@@ -117,7 +117,7 @@ export class NavPartial extends LitElement {
 
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
-        this.#updateTabState(targetIndex, route);
+        this.#updateTabState(targetIndex);
       }
     }
   }
@@ -125,7 +125,7 @@ export class NavPartial extends LitElement {
   /**
    * Updates the visual state of tabs and panels based on the index.
    */
-  #updateTabState(index: number, route: Route) {
+  #updateTabState(index: number) {
     const tabs = this.#tabsRef.value;
     if (!tabs) return;
 
@@ -175,14 +175,14 @@ export class NavPartial extends LitElement {
 
     this._activeTabIndex = index;
     this._activeRoute = route;
-    this.#updateTabState(index, route);
+    this.#updateTabState(index);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
     this._activeRoute = this.#routes[this._activeTabIndex];
-    this.#updateTabState(this._activeTabIndex, this._activeRoute);
+    this.#updateTabState(this._activeTabIndex);
   }
 
   /**
