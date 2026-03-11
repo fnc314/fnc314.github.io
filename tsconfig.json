@@ -39,6 +39,9 @@
     "checkJs": true,
     "plugins": [
       {
+        "name": "typescript-lit-html-plugin",
+      },
+      {
         "name": "ts-lit-plugin",
         "strict": true,
         "rules": {
