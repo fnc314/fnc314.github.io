@@ -73,7 +73,7 @@ export class AppShell extends LitElement {
         --dark-mode-toggle-label-font: var(--md-ref-typeface-brand);
         --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand);
 
-        --dark-mode-toggle-icon-filter: contrast(100%);
+        --dark-mode-toggle-icon-filter: none;
         --dark-mode-toggle-remember-filter: contrast(100%);
 
         &::part(fieldset) {
