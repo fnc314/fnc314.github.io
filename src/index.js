@@ -60,7 +60,13 @@ const domLoadedListener = (event) => {
       `${window.location.href}#${Routes.PROFILE}`
     )
   }
-  const matScheme = MaterialSchemes[window.localStorage.getItem("colorSchemeChange") ?? "light"];
+
+  const darkModeToggle = window.localStorage.getItem("dark-mode-toggle") ?? "light";
+  const colorSchemeChange = window.localStorage.getItem("colorSchemeChange");
+
+  const matScheme = MaterialSchemes[
+    colorSchemeChange || darkModeToggle
+  ];
   updateMaterialCSSStyleSheet(matScheme);
 };
 
