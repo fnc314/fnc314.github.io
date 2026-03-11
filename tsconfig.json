@@ -22,7 +22,6 @@
     "inlineSources": false,
     "emitDecoratorMetadata": true,
     "pretty": true,
-    "outDir": "./website/scripts",
     "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,

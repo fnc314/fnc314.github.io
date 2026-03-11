@@ -207,7 +207,7 @@ export class AppShell extends LitElement {
         <form id="theme-dialog-form" slot="content" method="dialog">
           <dark-mode-toggle
             autofocus
-            class="${classMap(classes)}"
+            class=${classMap(classes)}
             id="dark-mode-toggle"
             permanent
             appearance="three-way"
