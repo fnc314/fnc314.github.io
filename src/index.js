@@ -33,6 +33,11 @@ const onColorSchemeChange = (event) => {
   console.log(`ColorSchemeChange ${JSON.stringify(event.detail, null, 2)}`);
   updateMaterialCSSStyleSheet(MaterialSchemes[event.detail.colorScheme]);
 
+  const toggle = document.getElementById("dark-mode-toggle");
+  if (toggle) {
+    toggle.classList.toggle("dark", event.detail.colorScheme === "dark");
+  }
+
   const permanent = Boolean(
     window.localStorage.getItem("permanentColorScheme") ?? "false"
   );
