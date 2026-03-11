@@ -27,15 +27,15 @@ export class NavPartial extends LitElement {
 
         --md-primary-tab-active-indicator-color: var(--md-sys-color-error);
         --md-primary-tab-active-indicator-height: 0.5rem;
-        --md-primary-tab-active-indicator-shape: 1rem;
+        --md-primary-tab-active-indicator-shape: var(--md-sys-shape-corner-medium);
 
         --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
         --md-primary-tab-container-elevation: var(--md-elevation-level);
         --md-primary-tab-container-height: 5rem;
-        --md-primary-tab-container-shape-start-start: 0.1rem;
-        --md-primary-tab-container-shape-start-end: 0.1rem;
-        --md-primary-tab-container-shape-end-start: 0.1rem;
-        --md-primary-tab-container-shape-end-end: 0.1rem;
+        --md-primary-tab-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-start-end: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-end-start: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-end-end: var(--md-sys-shape-corner-extra-small);
 
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
 

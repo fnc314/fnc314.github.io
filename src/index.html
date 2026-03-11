@@ -56,37 +56,29 @@
     <script defer type="module" src="./index.js"></script>
   </head>
   <body>
-    <header>
-      <nav-partial id="main-nav"></nav-partial>
-    </header>
-    <main>
-      <div class="carousel-track" id="tabs-container">
-        <profile-partial
-          aria-role="tabpanel"
-          id="panel-profile"
-          aria-labelledby="tab-profile"
+    <app-shell>
+      <header>
+        <nav-partial id="main-nav"></nav-partial>
+      </header>
+      <main>
+        <div class="carousel-track" id="tabs-container">
+          <profile-partial
+            aria-role="tabpanel"
+            id="panel-profile"
+            aria-labelledby="tab-profile"
           ></profile-partial>
-        <work-partial
-          aria-role="tabpanel"
-          id="panel-work"
-          aria-labelledby="tab-work"
+          <work-partial
+            aria-role="tabpanel"
+            id="panel-work"
+            aria-labelledby="tab-work"
           ></work-partial>
-        <code-partial
-          aria-role="tabpanel"
-          id="panel-code"
-          aria-labelledby="tab-code"
+          <code-partial
+            aria-role="tabpanel"
+            id="panel-code"
+            aria-labelledby="tab-code"
           ></code-partial>
-      </div>
-    </main>
-    <dark-mode-toggle
-      id="dark-mode-toggle"
-      permanent="true"
-      appearance="three-way"
-      legend="UI Mode"
-      system="System"
-      light="Light"
-      dark="Dark"
-      remember="Persist UI Mode"
-      ></dark-mode-toggle>
+        </div>
+      </main>
+    </app-shell>
   </body>
 </html>

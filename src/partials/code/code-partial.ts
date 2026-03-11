@@ -52,7 +52,7 @@ export class CodePartial extends LitElement {
         grid-template-rows: 0.5fr minmax(auto, 1fr) 1fr;
         padding: 1rem 2rem;
         position: relative;
-        border-radius: 0.5rem;
+        border-radius: var(--md-sys-shape-corner-small);
         border: 1px solid var(--md-sys-color-on-surface);
         gap: 1.5rem;
         background: var(--md-sys-color-surface-container-low);
@@ -71,7 +71,7 @@ export class CodePartial extends LitElement {
           transform: translateY(-4px);
           --md-elevation-level: 4;
           background-color: var(--md-sys-color-surface-container-high);
-          border-radius: 1rem;
+          border-radius: var(--md-sys-shape-corner-medium);
         }
 
         header {

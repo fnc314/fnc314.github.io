@@ -20,9 +20,7 @@ const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
 export default {
   logLevel: "debug",
   treeshake: true,
-  input: {
-    logLevel: "debug"
-  },
+  input: "src/index.html", // Correctly specify the main HTML file as the input
   output: {
     dir: "./website",
     format: "es",
