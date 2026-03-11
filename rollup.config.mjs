@@ -93,5 +93,9 @@ export default {
     progress({
       clearLine: false,
     }),
+    isDev && copy({
+      patterns: [".well-known/appspecific/com.chrome.devtools.json"],
+      rootDir: "./"
+    }),
   ].filter(Boolean),
 };
