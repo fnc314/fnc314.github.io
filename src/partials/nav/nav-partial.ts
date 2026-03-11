@@ -147,12 +147,14 @@ export class NavPartial extends LitElement {
           const panel = document.querySelector(`#${panelId}[aria-role="tabpanel"]`) as HTMLElement;
           if (panel) {
             panels.push(panel);
+            panel.toggleAttribute("inert", true);
           }
         }
       }
     }
 
     if (panels.length === 0) return;
+    panels[index].toggleAttribute("inert", false);
 
     const container = document.getElementById("tabs-container");
     if (!container) return;
