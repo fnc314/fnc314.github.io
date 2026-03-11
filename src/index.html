@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="Personal Webite of Franco N. Colaizzi - fnc314" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#4C5C92" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#B5C4FF" />
     <meta property="og:title" content="fnc314.com" />
@@ -35,15 +35,10 @@
       rel="stylesheet"
       href="./stylesheets/styles.css"
       type="text/css"
-      media="screen"
       />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=block"
-      />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=block"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=block"
       />
     <script type="importmap">
       {
@@ -53,7 +48,8 @@
           "lit-element": "https://esm.run/lit-element@4.2.2",
           "lit-html": "https://esm.run/lit-html@3.3.2",
           "@lit/reactive-element": "https://esm.run/@lit/reactive-element@2.1.2",
-          "wordcloud": "https://esm.run/wordcloud@1.2.2"
+          "wordcloud": "https://esm.run/wordcloud@1.2.2",
+          "dark-mode-toggle": "https://esm.run/dark-mode-toggle@0.18.0"
         }
       }
     </script>
@@ -82,5 +78,15 @@
           ></code-partial>
       </div>
     </main>
+    <dark-mode-toggle
+      id="dark-mode-toggle"
+      permanent="true"
+      appearance="three-way"
+      legend="UI Mode"
+      system="System"
+      light="Light"
+      dark="Dark"
+      remember="Persist UI Mode"
+      ></dark-mode-toggle>
   </body>
 </html>

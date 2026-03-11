@@ -106,7 +106,6 @@ export class WorkExperience extends LitElement {
               grid-column: 1;
               grid-row: 1;
               text-align: end;
-              position: sticky;
               inset-block-start: 0;
               color: var(--md-sys-color-secondary);
             }

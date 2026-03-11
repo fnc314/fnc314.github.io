@@ -14,15 +14,15 @@ const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
 
 /**
  * @type RollupOptions
- * @typedef RollupOptions
+ * @type @import("rollup").RollupOptions
  * @satisfies RollupOptions
  */
 export default {
   logLevel: "debug",
   treeshake: true,
-  // input: {
-  //   index: "./src/index.js"
-  // },
+  input: {
+    logLevel: "debug"
+  },
   output: {
     dir: "./website",
     format: "es",
