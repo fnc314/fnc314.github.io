@@ -73,6 +73,11 @@ const domLoadedListener = (event) => {
     colorSchemeChange || darkModeToggle
   ];
   updateMaterialCSSStyleSheet(matScheme);
+
+  const toggle = document.getElementById("dark-mode-toggle");
+  if (toggle) {
+    toggle.classList.toggle("dark", darkModeToggle === "dark");
+  }
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);
