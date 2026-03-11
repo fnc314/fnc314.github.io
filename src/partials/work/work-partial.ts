@@ -58,13 +58,6 @@ export class WorkPartial extends LitElement {
         grid-area: title;
       }
 
-      .article-header {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       .article-body {
         padding-inline: 1rem;
         grid-area: content;
@@ -83,9 +76,9 @@ export class WorkPartial extends LitElement {
         >
         <header>
           <md-elevation></md-elevation>
-          <h1 class="article-header md-typescale-headline-large">Work Experience</h1>
+          <h1 class="md-typescale-headline-large">Work Experience</h1>
         </header>
-        <div class="article-body dark">
+        <div class="article-body">
           ${data.experiences.map(exp => html`
             <work-experience
               .isNested="${false}"

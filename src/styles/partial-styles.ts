@@ -17,6 +17,8 @@ export const ParialHeadingStyles = css`
     background-color: var(--md-sys-color-primary-container);
 
     h1 {
+      text-align: center;
+      margin-inline: auto;
       margin-block: 1rem;
       color: var(--md-sys-color-on-primary-container);
     }

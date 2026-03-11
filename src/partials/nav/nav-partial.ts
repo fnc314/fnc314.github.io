@@ -14,6 +14,7 @@ export class NavPartial extends LitElement {
     typescaleStyles,
     css`
       :host {
+        --md-elevation-level: 4;
         --md-primary-tab-active-icon-color: var(--md-sys-color-error);
         --md-primary-tab-active-focus-icon-color: var(--md-sys-color-error);
         --md-primary-tab-active-hover-icon-color: var(--md-sys-color-error);
@@ -27,23 +28,23 @@ export class NavPartial extends LitElement {
         --md-primary-tab-active-indicator-color: var(--md-sys-color-error);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: 1rem;
+
         --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
-        --md-primary-tab-container-elevation: 4;
+        --md-primary-tab-container-elevation: var(--md-elevation-level);
         --md-primary-tab-container-height: 5rem;
         --md-primary-tab-container-shape-start-start: 0.1rem;
         --md-primary-tab-container-shape-start-end: 0.1rem;
         --md-primary-tab-container-shape-end-start: 0.1rem;
         --md-primary-tab-container-shape-end-end: 0.1rem;
+
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
+
         --md-primary-tab-label-font: var(--md-ref-typeface-brand);
         --md-primary-tab-label-text-color: var(--md-sys-color-primary);
-        --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
-        --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
-      }
 
-      nav {
-        position: relative;
-        --md-elevation-level: 4;
+        --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
+
+        --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
       }
 
       md-icon[filled="true"] {
@@ -235,7 +236,6 @@ export class NavPartial extends LitElement {
   override render() {
     return html`
       <nav>
-        <md-elevation></md-elevation>
         ${this.#renderTabs()}
       </nav>
     `;
