@@ -63,7 +63,7 @@ export class WordCloud extends LitElement {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.5rem;
-        align-items: baseline;
+        align-items: center;
         justify-content: space-evenly;
         margin: unset;
         padding: unset;
