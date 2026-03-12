@@ -69,13 +69,12 @@ export class WordCloud extends LitElement {
         padding: unset;
 
         li {
-          border-radius: var(--md-sys-shape-corner-large);
+          border-radius: var(--md-sys-shape-corner-medium);
           border-color: currentColor;
           border-width: 1px;
           border-style: solid;
           font-family: var(--md-type-ref-plain);
           padding: 0.3rem 0.7rem;
-          font-weight: unset;
         }
       }
 
