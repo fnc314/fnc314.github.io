@@ -89,13 +89,13 @@ export class CodePartial extends LitElement {
           }
         }
 
-        a {
-          color: var(--md-sys-color-primary);
-        }
-
         .widget-content {
           align-self: flex-start;
           grid-area: content;
+
+          a {
+            color: var(--md-sys-color-primary);
+          }
         }
 
         p {
@@ -123,6 +123,7 @@ export class CodePartial extends LitElement {
             border-radius: 0.5rem;
 
             a {
+              text-decoration: none;
               color: inherit;
               font-size: inherit;
               font-weight: inherit;
