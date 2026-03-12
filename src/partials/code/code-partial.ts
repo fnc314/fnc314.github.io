@@ -1,7 +1,7 @@
+import CodeJson from "@/data/code.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import CodeJson from "./code.json" with { type: "json" };
 
 interface Project {
   name: string;

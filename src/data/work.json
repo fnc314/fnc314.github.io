@@ -1,4 +1,16 @@
 {
+  "resume": {
+    "googleDrive": {
+      "format": "googleDrive",
+      "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
+      "text": "Google Drive"
+    },
+    "pdf": {
+      "format": "pdf",
+      "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
+      "text": "PDF Download"
+    }
+  },
   "experiences": [
     {
       "employer": "CGI Technology and Solutions, Inc.",

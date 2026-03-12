@@ -1,0 +1,24 @@
+{
+  "connections": {
+    "phone": {
+      "method": "phone",
+      "href": "tel:+14127219550",
+      "text": "412-721-9550"
+    },
+    "email": {
+      "method": "email",
+      "href": "mailto:fnc314@fnc314.com",
+      "text": "fnc314@fnc314.com"
+    },
+    "linkedin": {
+      "method": "linkedin",
+      "href": "https://www.linkedin.com/in/fnc314",
+      "text": "linkedin.com/in/fnc314"
+    },
+    "github": {
+      "method": "github",
+      "href": "https://www.github.com/fnc314",
+      "text": "github.com/fnc314"
+    }
+  }
+}

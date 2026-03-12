@@ -1,8 +1,10 @@
 import { makeWordCloudWord, WordCloudWordCategory } from "@/components/word-cloud/word-cloud";
+import BioJson from "@/data/bio.json" with { type: "json" };
+import PhotoJson from "@/data/photo.json" with { type: "json" };
+import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement, TemplateResult } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import ProfileJson from "./profile.json" with { type: "json" };
 
 @customElement("profile-partial")
 export class ProfilePartial extends LitElement {
@@ -24,9 +26,8 @@ export class ProfilePartial extends LitElement {
           "header"
           "figure"
           "bio"
-          "contact-info"
-          "links"
-          "cloud";
+          "cloud"
+          ;
         height: min-content;
         min-height: 100%;
         grid-template-rows: auto;
@@ -130,9 +131,6 @@ export class ProfilePartial extends LitElement {
       .contact-info {
         grid-area: contact-info;
       }
-      .links {
-        grid-area: links;
-      }
       .cloud {
         grid-area: cloud;
       }
@@ -143,8 +141,6 @@ export class ProfilePartial extends LitElement {
             "header"
             "figure"
             "bio"
-            "contact-info"
-            "links"
             "cloud"
             ;
           gap: 1rem;
@@ -159,8 +155,6 @@ export class ProfilePartial extends LitElement {
             "header header"
             "figure bio"
             "figure bio"
-            "figure contact-info"
-            "links links"
             "cloud cloud"
             ;
           grid-template-rows: minmax(auto, min-content);
@@ -174,9 +168,7 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure contact-info"
-            "figure links"
-            "cloud cloud"
+            "figure cloud"
             ;
           grid-template-rows: minmax(auto, min-content);
           grid-auto-rows: auto;
@@ -189,9 +181,7 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header   header         header         header"
             "figure   bio            bio            bio"
-            "figure   contact-info   contact-info   contact-info"
-            "figure   links          links          links"
-            "cloud    cloud          cloud          cloud"
+            "figure   cloud          cloud          cloud"
             ;
           grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
           grid-auto-rows: min-content;
@@ -203,30 +193,6 @@ export class ProfilePartial extends LitElement {
 
   constructor() {
     super();
-  }
-
-  #renderDlList(
-    contents: { method: string; htmlNoIcon: string[] }[],
-  ): TemplateResult {
-    return html`
-      <dl class="list-grid">
-        ${contents.map(
-          (content) => html`
-            <div class="list-grid-item">
-              <dt class="md-typescale-title-medium">${content.method}</dt>
-              ${content.htmlNoIcon.map(
-                (link) => html`
-                  <dd
-                    class="md-typescale-body-large"
-                    .innerHTML=${link}
-                  ></dd>
-                `,
-              )}
-            </div>
-          `,
-        )}
-      </dl>
-    `;
   }
 
   #renderFigureElement(photoData: {
@@ -253,28 +219,11 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  // #renderConnections(
-  //   links: { method: string, htmlNoIcon: string[], mdIcon: string }[],
-  //   pointsOfContact: { method: string, htmlNoIcon: string[], mdIcon: string }[]
-  // ): TemplateResult {
-  //   const connections = [
-  //     ...links,
-  //     ...pointsOfContact
-  //   ].map((connection) => makeProfileConnection(
-  //     connection.method,
-  //     (connection.method === "Resume" ? "document" : (links.indexOf(connection) !== -1 ? "website" : "direct")),
-  //     connection.htmlNoIcon,
-  //     connection.mdIcon,
-  //   ));
-
-  //   return html`<profile-connections .connections=${connections}></profile-connections></profile-connections>`;
-  // }
-
   #renderCloud(): TemplateResult {
-    const words = Object.keys(ProfileJson.proficiencies).flatMap((proficency) =>
+    const words = Object.keys(SkillsJson.proficiencies).flatMap((proficency) =>
       Object.entries(
-        ProfileJson.proficiencies[
-          proficency as keyof typeof ProfileJson.proficiencies
+        SkillsJson.proficiencies[
+          proficency as keyof typeof SkillsJson.proficiencies
         ],
       ).map(([word, weight]) =>
         makeWordCloudWord(word, weight, proficency as WordCloudWordCategory),
@@ -316,9 +265,11 @@ export class ProfilePartial extends LitElement {
     // `;
     return html`
       <article>
-        <partial-header .headingText=${"Franco N. Colaizzi"}></partial-header>
+        <partial-header
+          .headingText=${"Franco N. Colaizzi"}>
+        </partial-header>
 
-        ${this.#renderFigureElement(ProfileJson.photo)}
+        ${this.#renderFigureElement(PhotoJson.photo)}
 
         <profile-section
           class="bio"
@@ -328,26 +279,8 @@ export class ProfilePartial extends LitElement {
             slot="section-grid-content"
             class="md-typescale-body-large"
           >
-            ${ProfileJson.bio}
+            ${BioJson.bio}
           </p>
-        </profile-section>
-
-        <profile-section
-          class="contact-info"
-          section-title="Contact"
-        >
-          <div slot="section-grid-content">
-            ${this.#renderDlList(ProfileJson.contactInfo)}
-          </div>
-        </profile-section>
-
-        <profile-section
-          class="links"
-          section-title="Links"
-        >
-          <div slot="section-grid-content">
-            ${this.#renderDlList(ProfileJson.links)}
-          </div>
         </profile-section>
 
         ${this.#renderCloud()}

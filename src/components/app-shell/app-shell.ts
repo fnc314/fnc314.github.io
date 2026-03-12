@@ -1,21 +1,23 @@
+import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type MdDialog } from "@material/web/dialog/dialog";
 import { ColorSchemeChangeEvent } from "dark-mode-toggle";
-import { LitElement, css, html } from "lit";
+import { LitElement, TemplateResult, css, html, nothing } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
 // Imports for side-effects to register the components
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
+import "@material/web/divider/divider";
 import "@material/web/fab/fab";
 import "@material/web/icon/icon";
+import "@material/web/list/list";
+import "@material/web/list/list-item";
 import "dark-mode-toggle";
 
 @customElement("app-shell")
 export class AppShell extends LitElement {
-  @query("#theme-dialog")
-  private themeDialog!: MdDialog;
 
   static override styles = [
     MaterialTypescaleStyles,
@@ -24,13 +26,23 @@ export class AppShell extends LitElement {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
         --md-fab-label-text-font: var(--md-ref-typeface-brand);
+        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-list-container-color: var(--md-sys-color-surface-container-highest);
+        --md-list-item-container-shape: var(--md-sys-shape-corner-large);
       }
 
       md-fab {
         position: fixed;
-        bottom: 0.5rem;
-        right: 0.5rem;
         z-index: 1; /* Ensure it floats above other content */
+        bottom: 0.5rem;
+
+        &.settings {
+          left: 0.5rem;
+        }
+
+        &.connect {
+          right: 0.5rem;
+        }
       }
 
       md-dialog {
@@ -163,6 +175,12 @@ export class AppShell extends LitElement {
   @state()
   _darkModeEnabled = false;
 
+  @query("#settings-dialog")
+  private themeDialog!: MdDialog;
+
+  @query("#connect-dialog")
+  private connectDialog!: MdDialog;
+
   override connectedCallback(): void {
     super.connectedCallback();
     document.addEventListener(
@@ -173,6 +191,30 @@ export class AppShell extends LitElement {
     );
   }
 
+  private renderConnectionsList(): TemplateResult {
+    return html`
+      ${
+        Object.values(Connections.connections).map((connection, index) => html`
+          <md-list-item
+            type="link"
+            .href=${connection.href}
+            target="_blank"
+            >
+            <div slot="overline">${connection.method.charAt(0).toUpperCase() + connection.method.slice(1)}</div>
+            ${connection.text}
+          </md-list-item>
+          ${
+            index === Object.values(Connections.connections).length - 1
+              ? nothing
+              : html`
+                <md-divider></md-divider>
+              `
+          }
+        `)
+      }
+    `;
+  }
+
   override render() {
     const classes = {
       dark: this._darkModeEnabled,
@@ -180,7 +222,7 @@ export class AppShell extends LitElement {
     return html`
       <slot></slot>
 
-      <md-dialog id="theme-dialog">
+      <md-dialog id="settings-dialog">
         <div slot="headline">
           <h2 class="md-typescale-headline-large">Settings</h2>
         </div>
@@ -208,19 +250,53 @@ export class AppShell extends LitElement {
       </md-dialog>
 
       <md-fab
+        class="settings"
         label="Settings"
         size="medium"
-        variant="primary"
+        variant="surface"
         aria-label="UI Mode"
         @click=${this.openThemeDialog}
       >
         <md-icon slot="icon">settings</md-icon>
       </md-fab>
+
+      <md-dialog id="connect-dialog">
+        <div slot="headline">
+          <h2 class="md-typescale-headline-large">Connect</h2>
+        </div>
+        <div slot="content">
+          <md-list>
+            ${this.renderConnectionsList()}
+          </md-list>
+        </div>
+        <div slot="actions">
+          <md-text-button @click=${this.closeConnectDialog}>Close</md-text-button>
+        </div>
+      </md-dialog>
+
+      <md-fab
+        class="connect"
+        label="Connect"
+        size="small"
+        variant="primary"
+        @click=${this.openConnectDialog}
+        >
+        <md-icon slot="icon">person_add</md-icon>
+      </md-fab>
+
     `;
   }
 
   private openThemeDialog() {
     this.themeDialog.show();
+  }
+
+  private openConnectDialog() {
+    this.connectDialog.show();
+  }
+
+  private closeConnectDialog() {
+    this.connectDialog.close();
   }
 }
 

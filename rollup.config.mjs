@@ -67,7 +67,7 @@ export default {
       ],
       include: [
         "./website/scripts/partials/**/*.json",
-        "./src/partials/**/*.json",
+        "./src/**/**/*.json",
       ],
     }),
     typescript({

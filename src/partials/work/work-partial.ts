@@ -1,8 +1,8 @@
+import WorkJson from "@/data/work.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import "./work-experience";
-import WorkJson from "./work.json" with { type: "json" };
 
 interface WorkDate {
   stamp: string;
@@ -31,6 +31,8 @@ interface Experience {
 
 interface WorkData {
   experiences: Experience[];
+
+  resume: Record<string, Record<"format" | "href" | "text", string>>;
 }
 
 const data = WorkJson as WorkData;
@@ -48,9 +50,11 @@ export class WorkPartial extends LitElement {
         display: grid;
         grid-template-areas:
           "title"
-          "content";
+          "content"
+          "footer"
+          ;
         gap: 1rem;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto 1fr auto;
       }
 
       partial-header {
@@ -66,6 +70,21 @@ export class WorkPartial extends LitElement {
         h3,
         p {
           margin: unset;
+        }
+      }
+
+      footer {
+        grid-area: footer;
+
+        ul {
+          list-style-type: none;
+          padding: unset;
+          margin: unset;
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          justify-content: center;
+          align-items: center;
         }
       }
     `,
@@ -89,6 +108,21 @@ export class WorkPartial extends LitElement {
             `,
           )}
         </div>
+        <footer>
+          <ul>
+            ${
+              Object.values(
+                data.resume
+              ).map((resume) => html`
+                <li>
+                  <a .href=${resume.href} target="_blank">
+                    ${resume.text}
+                  </a>
+                </li>
+              `)
+            }
+          </ul>
+        </footer>
       </article>
     `;
   }

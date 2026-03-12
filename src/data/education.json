@@ -1,0 +1,13 @@
+{
+  "education": [
+    {
+      "institute": "University of Pittsburgh",
+      "degree": "Bachelor of Science in Mathematics",
+      "location": "Pittsburgh, PA",
+      "graduationDate": {
+        "label": "April 2011",
+        "value": "2011-04"
+      }
+    }
+  ]
+}
