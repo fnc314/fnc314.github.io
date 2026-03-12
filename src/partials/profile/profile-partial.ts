@@ -148,7 +148,7 @@ export class ProfilePartial extends LitElement {
             "cloud"
             ;
           gap: 1rem;
-          grid-auto-rows: auto;
+          grid-template-rows: repeat(6, min-content);
           grid-template-columns: 1fr;
         }
       }

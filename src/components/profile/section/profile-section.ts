@@ -9,7 +9,7 @@ export class ProfileSection extends LitElement {
     css`
       :host {
         display: block;
-        container: profile-section-root / size;
+        container: profile-section-root / inline-size;
       }
 
       section {

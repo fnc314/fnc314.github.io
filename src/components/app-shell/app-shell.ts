@@ -27,8 +27,8 @@ export class AppShell extends LitElement {
 
       md-fab {
         position: fixed;
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: 1rem;
+        right: 1rem;
         z-index: 1; /* Ensure it floats above other content */
       }
 
