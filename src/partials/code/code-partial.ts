@@ -173,7 +173,7 @@ export class CodePartial extends LitElement {
       <article>
         <header>
           <md-elevation></md-elevation>
-          <h1 class="md-typescale-headline-large">Code Projects</h1>
+          <h1 class="md-typescale-display-medium">Code Projects</h1>
         </header>
         <div class="article-body">
           ${(CodeJson.projects as Project[]).map(p => this.#renderCodeWidget(p))}
