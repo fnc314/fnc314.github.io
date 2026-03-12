@@ -1,12 +1,11 @@
-import { typescaleStyles } from "@/styles";
-import { css, html, LitElement, nothing, PropertyValues } from "lit";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { css, html, LitElement } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property } from "lit/decorators.js";
 
 export type WordCloudWord = {
   word: string;
   weight: number;
-  scaledWeight: number;
   quartile: WeightQuartile;
   category: WordCloudWordCategory;
   extras: string[];
@@ -24,21 +23,19 @@ export const makeWordCloudWord = (
 ): WordCloudWord => ({
   word,
   weight,
-  scaledWeight: weight * 10,
   quartile: (
     () => {
-      const scaledWeight = weight * 10;
       switch (true) {
-        case scaledWeight > 80:
+        case weight > 8:
           return "first-quartile";
 
-        case 50 < scaledWeight && scaledWeight <= 80:
+        case 6 < weight && weight <= 8:
           return "second-quartile";
 
-        case 30 < scaledWeight && scaledWeight <= 50:
+        case 3 < weight && weight <= 6:
           return "third-quartile";
 
-        case scaledWeight < 30:
+        case weight < 3:
           return "fourth-quartile";
 
         default:
@@ -54,17 +51,11 @@ export const makeWordCloudWord = (
 export class WordCloud extends LitElement {
 
   static override styles = [
-    typescaleStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
-        gap: 0.5rem;
-        container-type: size;
-      }
-
-      dl {
         display: contents;
+        container-type: size;
       }
 
       ul {
@@ -150,32 +141,26 @@ export class WordCloud extends LitElement {
   @property({ type: Array })
   words: WordCloudWord[] = [];
 
-
-  protected override async firstUpdated(_changedProperties: PropertyValues) {
-    super.firstUpdated(_changedProperties);
-  }
-
-  #ignore(word: WordCloudWord) {
-    const dd = html`
-    <dd>weight: ${word.weight}</dd>
-    <dd>category: ${word.category}</dd>
-    ${
-      word.extras.length > 0 ?
-        html`
-          <dd>extras: ${word.extras.join(", ")}</dd>
-        ` :
-        nothing
-    }
-    `;
-  }
+  // #ignore(word: WordCloudWord) {
+  //   const dd = html`
+  //   <dd>weight: ${word.weight}</dd>
+  //   <dd>category: ${word.category}</dd>
+  //   ${
+  //     word.extras.length > 0 ?
+  //       html`
+  //         <dd>extras: ${word.extras.join(", ")}</dd>
+  //       ` :
+  //       nothing
+  //   }
+  //   `;
+  // }
 
   override render() {
     return html`
       <ul>
       ${
         this.words
-          //.sort((word1, word2) => word1.weight > word2.weight ? -1 : (word1.weight === word2.weight ? 0 : 1))
-          .sort(() => Math.random() - 0.5)
+          .toSorted(() => Math.random() - 0.5)
           .map((word) => {
             const classes = {
               tech: word.category === "tech",
@@ -193,10 +178,10 @@ export class WordCloud extends LitElement {
       </ul>
     `;
   }
-}
+};
 
 declare global {
   interface HTMLElementTagNameMap {
     "word-cloud": WordCloud;
   }
-}
+};

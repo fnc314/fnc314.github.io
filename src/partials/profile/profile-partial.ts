@@ -1,15 +1,13 @@
 import { makeWordCloudWord, WordCloudWordCategory } from "@/components/word-cloud/word-cloud";
-import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement, TemplateResult } from "lit-element";
-import { createRef, ref, Ref } from "lit-html/directives/ref.js";
 import { customElement } from "lit/decorators.js";
 import ProfileJson from "./profile.json" with { type: "json" };
 
 @customElement("profile-partial")
 export class ProfilePartial extends LitElement {
   static override styles = [
-    typescaleStyles,
-    ParialHeadingStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         display: block;
@@ -38,29 +36,10 @@ export class ProfilePartial extends LitElement {
         grid-template-rows: auto;
         grid-auto-rows: auto;
         gap: 1rem;
-        padding: 1rem;
-      }
-
-      .section-grid {
-        display: grid;
-        grid-template-rows: min-content auto;
-        grid-template-areas:
-          "section-grid-title"
-          "section-grid-content";
-        gap: 1rem;
-        container-type: size;
-        padding: 1rem;
-
-        h2 {
-          grid-area: section-grid-title;
-          place-self: center;
-          padding-block: 1rem;
-          color: var(--section-grid-color);
-        }
+        padding-inline: 1rem;
       }
 
       .list-grid {
-        grid-area: section-grid-content;
         align-self: center;
         display: flex;
         flex-direction: row;
@@ -98,7 +77,7 @@ export class ProfilePartial extends LitElement {
         padding-inline: 1rem;
       }
 
-      header {
+      partial-header {
         grid-area: header;
         margin: unset;
       }
@@ -136,45 +115,24 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      section {
-        background-color: var(--section-grid-background);
-        border-radius: 1rem;
-        color: var(--section-grid-color);
+      /* Apply grid-area to the custom elements by class */
+      .bio {
+        grid-area: bio;
 
-        &.bio {
-          grid-area: bio;
-
-          > p {
-            grid-area: section-grid-content;
-            place-self: center;
-          }
-        }
-
-        &.education {
-          grid-area: education;
-
-          li p {
-            place-self: end;
-          }
-        }
-
-        &.contact-info {
-          grid-area: contact-info;
-        }
-
-        &.links {
-          grid-area: links;
-        }
-
-        &.cloud {
-          grid-area: cloud;
-
-          word-cloud {
-            grid-area: section-grid-content;
-          }
-
+        > p {
+          place-self: center;
         }
       }
+      .education {
+        grid-area: education;
+
+        li p {
+          place-self: end;
+        }
+      }
+      .contact-info { grid-area: contact-info; }
+      .links { grid-area: links; }
+      .cloud { grid-area: cloud; }
 
       @container (min-width: 600px) {
         article {
@@ -190,13 +148,6 @@ export class ProfilePartial extends LitElement {
           gap: 1rem;
           grid-auto-rows: auto;
           grid-template-columns: 1fr;
-        }
-
-        .section-grid {
-          grid-template-areas:
-            "section-grid-title"
-            "section-grid-content";
-          grid-template-rows: min-content 1fr;
         }
       }
 
@@ -215,14 +166,6 @@ export class ProfilePartial extends LitElement {
           grid-auto-rows: auto;
           grid-template-columns: fit-content(40%) minmax(0, 1fr);
         }
-
-        .section-grid {
-          grid-template-areas:
-            "section-grid-title"
-            "section-grid-content";
-          column-gap: 1rem;
-          grid-template-rows: min-content 1fr;
-        }
       }
 
       @container (min-width: 1200px) {
@@ -239,38 +182,25 @@ export class ProfilePartial extends LitElement {
           grid-auto-rows: auto;
           grid-template-columns: fit-content(40%) minmax(0, 1fr);
         }
-
-        .section-grid {
-          grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: auto 1fr;
-          grid-template-rows: unset;
-        }
       }
 
       @container (min-width: 1500px) {
         article {
           grid-template-areas:
-            "header   header         header"
-            "figure   bio            cloud"
-            "figure   education      cloud"
-            "figure   contact-info   cloud"
-            "figure   links          cloud"
+            "header   header         header         header"
+            "figure   bio            bio            bio"
+            "figure   education      education      education"
+            "figure   contact-info   contact-info   contact-info"
+            "figure   links          links          links"
+            "cloud    cloud          cloud          cloud"
             ;
           grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr);
           grid-auto-rows: auto;
           grid-template-rows: minmax(auto, min-content);
         }
-
-        .section-grid {
-          grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: auto 1fr;
-          grid-template-rows: unset;
-        }
       }
     `,
   ];
-
-  #cloudSection: Ref<HTMLElement> = createRef();
 
   constructor() {
     super();
@@ -295,15 +225,6 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  #renderHeader(): TemplateResult {
-    return html`
-      <header>
-        <md-elevation></md-elevation>
-        <h1 class="md-typescale-display-medium">Franco N. Colaizzi</h1>
-      </header>
-    `;
-  }
-
   #renderFigureElement(photoData: { src: string, alt: string, figcaption: string }): TemplateResult {
     return html`
       <figure>
@@ -316,54 +237,22 @@ export class ProfilePartial extends LitElement {
     `;
   }
 
-  #renderBio(bio: string ): TemplateResult {
-    return html`
-      <section class="bio section-grid">
-        <h2 class="md-typescale-headline-small">About Me</h2>
-        <p class="md-typescale-body-large">${bio}</p>
-      </section>
-    `;
-  }
+  // #renderConnections(
+  //   links: { method: string, htmlNoIcon: string[], mdIcon: string }[],
+  //   pointsOfContact: { method: string, htmlNoIcon: string[], mdIcon: string }[]
+  // ): TemplateResult {
+  //   const connections = [
+  //     ...links,
+  //     ...pointsOfContact
+  //   ].map((connection) => makeProfileConnection(
+  //     connection.method,
+  //     (connection.method === "Resume" ? "document" : (links.indexOf(connection) !== -1 ? "website" : "direct")),
+  //     connection.htmlNoIcon,
+  //     connection.mdIcon,
+  //   ));
 
-  #renderEducation(education: { institute: string, degree: string, location: string, graduationDate: { value: string, label: string } }[]): TemplateResult {
-    return html`
-      <section class="education section-grid">
-        <h2 class="md-typescale-headline-small">Education</h2>
-        <ul class="list-grid">
-          ${
-            education.map((edu) => html`
-              <li>
-                <p class="md-typescale-title-medium">
-                  ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
-                </p>
-                <p class="md-typescale-title-small">
-                  ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
-                </p>
-              </li>
-            `)
-          }
-        </ul>
-      </section>
-    `;
-  }
-
-  #renderContactInfo(pointsOfContact: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
-    return html`
-      <section class="contact-info section-grid">
-        <h2 class="md-typescale-headline-small">Contact</h2>
-        ${this.#renderDlList(pointsOfContact)}
-      </section>
-    `;
-  }
-
-  #renderLinks(links: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
-    return html`
-      <section class="links section-grid">
-        <h2 class="md-typescale-headline-small">Links</h2>
-        ${this.#renderDlList(links)}
-      </section>
-    `;
-  }
+  //   return html`<profile-connections .connections=${connections}></profile-connections></profile-connections>`;
+  // }
 
   #renderCloud(): TemplateResult {
     const words = Object.keys(ProfileJson.proficiencies).flatMap((proficency) =>
@@ -371,27 +260,60 @@ export class ProfilePartial extends LitElement {
         .map(([word, weight]) => makeWordCloudWord(word, weight, proficency as WordCloudWordCategory))
     );
     return html`
-      <section ${ref(this.#cloudSection)} class="cloud section-grid">
-        <h2 class="md-typescale-headline-small">Skills</h2>
-        <word-cloud .words=${words}></word-cloud>
-      </section>
+      <profile-section
+        class="cloud"
+        section-title="Skills">
+        <word-cloud slot="section-grid-content" .words=${words}></word-cloud>
+      </profile-section>
     `;
   }
 
   override render() {
     return html`
       <article>
-        ${this.#renderHeader()}
+        <partial-header .headingText=${"Franco N. Colaizzi"}></partial-header>
 
         ${this.#renderFigureElement(ProfileJson.photo)}
 
-        ${this.#renderBio(ProfileJson.bio)}
+        <profile-section
+          class="bio"
+          section-title="Bio">
+          <p slot="section-grid-content" class="md-typescale-body-large">${ProfileJson.bio}</p>
+        </profile-section>
 
-        ${this.#renderEducation(ProfileJson.education)}
+        <profile-section
+          class="education"
+          section-title="Education">
+          <ul class="list-grid" slot="section-grid-content">
+            ${
+              ProfileJson.education.map((edu) => html`
+                <li>
+                  <p class="md-typescale-title-medium">
+                    ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
+                  </p>
+                  <p class="md-typescale-title-small">
+                    ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
+                  </p>
+                </li>
+              `)
+            }
+          </ul>
+        </profile-section>
 
-        ${this.#renderContactInfo(ProfileJson.contactInfo)}
+        <profile-section
+          class="contact-info"
+          section-title="Contact">
+          <div slot="section-grid-content">
+            ${this.#renderDlList(ProfileJson.contactInfo)}
+          </div>
+        </profile-section>
 
-        ${this.#renderLinks(ProfileJson.links)}
+        <profile-section class="links"
+          section-title="Links">
+          <div slot="section-grid-content">
+            ${this.#renderDlList(ProfileJson.links)}
+          </div>
+        </profile-section>
 
         ${this.#renderCloud()}
       </article>

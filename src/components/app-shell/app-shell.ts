@@ -1,4 +1,4 @@
-import { typescaleStyles } from "@/styles/partial-styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type MdDialog } from "@material/web/dialog/dialog";
 import { ColorSchemeChangeEvent } from "dark-mode-toggle";
 import { LitElement, css, html } from "lit";
@@ -18,7 +18,7 @@ export class AppShell extends LitElement {
   private themeDialog!: MdDialog;
 
   static override styles = [
-    typescaleStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         /* This allows the body's grid layout to apply to our slotted children */
@@ -223,7 +223,13 @@ export class AppShell extends LitElement {
         </div>
       </md-dialog>
 
-      <md-fab variant="primary" aria-label="UI Mode" @click=${this.openThemeDialog}>
+      <md-fab
+        label="Site Settings"
+        size="large"
+        variant="primary"
+        aria-label="UI Mode"
+        @click=${this.openThemeDialog}
+        >
         <md-icon slot="icon">settings</md-icon>
       </md-fab>
     `;

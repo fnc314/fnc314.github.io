@@ -1,4 +1,4 @@
-import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import CodeJson from "./code.json" with { type: "json" };
@@ -13,8 +13,7 @@ interface Project {
 @customElement("code-partial")
 export class CodePartial extends LitElement {
   static override styles = [
-    typescaleStyles,
-    ParialHeadingStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         display: block;
@@ -29,14 +28,10 @@ export class CodePartial extends LitElement {
         flex-direction: column;
         --md-elevation-level: 4;
         gap: 1rem;
-
-        h1 {
-          text-align: center;
-        }
+        margin-inline: 1rem;
       }
 
       .article-body {
-        margin-inline: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
         grid-auto-rows: 1fr;
@@ -171,10 +166,7 @@ export class CodePartial extends LitElement {
   override render() {
     return html`
       <article>
-        <header>
-          <md-elevation></md-elevation>
-          <h1 class="md-typescale-display-medium">Code Projects</h1>
-        </header>
+        <partial-header .headingText=${"Code Projects"}></partial-header>
         <div class="article-body">
           ${(CodeJson.projects as Project[]).map(p => this.#renderCodeWidget(p))}
         </div>

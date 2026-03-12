@@ -1,4 +1,4 @@
-import { typescaleStyles } from "@/styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
 import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
@@ -11,7 +11,7 @@ type IndexRoute = { route: Route, index: number };
 @customElement("nav-partial")
 export class NavPartial extends LitElement {
   static override styles = [
-    typescaleStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         --md-elevation-level: 4;

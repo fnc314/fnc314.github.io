@@ -1,11 +1,11 @@
-import { typescaleStyles } from "@/styles/partial-styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement, nothing } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
   static override styles = [
-    typescaleStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         display: block;

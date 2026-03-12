@@ -83,15 +83,16 @@
       "Firebase": 5,
       "Ruby": 5,
       "Mac": 5,
-      "Dependency Injection": 5,
+      "Bash": 4,
       "iOS": 4,
       "Node": 4,
       "NPM": 4,
+      "Google Cloud": 3,
       "Python": 3
     },
     "practice": {
       "Design Systems": 10,
-      "Tokens": 10,
+      "Design Tokens": 10,
       "Mentorship": 10,
       "MVI": 9,
       "MVVM": 9,
@@ -100,7 +101,10 @@
       "Clean Architecture": 8,
       "Change Management": 8,
       "Continuous Integration": 7,
-      "Continuous Delivery": 7
+      "Continuous Delivery": 7,
+      "Scrum": 6,
+      "KanBan": 6,
+      "Dependency Injection": 5
     }
   }
 }

@@ -1,4 +1,4 @@
-import { ParialHeadingStyles, typescaleStyles } from "@/styles/partial-styles";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 import "./work-experience";
@@ -38,8 +38,7 @@ const data = WorkJson as WorkData;
 @customElement("work-partial")
 export class WorkPartial extends LitElement {
   static override styles = [
-    typescaleStyles,
-    ParialHeadingStyles,
+    MaterialTypescaleStyles,
     css`
       :host {
         display: block;
@@ -54,8 +53,9 @@ export class WorkPartial extends LitElement {
         grid-template-rows: auto 1fr;
       }
 
-      header {
+      partial-header {
         grid-area: title;
+        margin-inline: 1rem;
       }
 
       .article-body {
@@ -72,12 +72,8 @@ export class WorkPartial extends LitElement {
   override render() {
     return html`
       <article
-        class="md-typescale-body-medium"
         >
-        <header>
-          <md-elevation></md-elevation>
-          <h1 class="md-typescale-display-medium">Work Experience</h1>
-        </header>
+        <partial-header .headingText=${"Work Experience"}></partial-header>
         <div class="article-body">
           ${data.experiences.map(exp => html`
             <work-experience
