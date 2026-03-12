@@ -5,7 +5,7 @@ import "@material/web/icon/icon.js";
 import "@material/web/tabs/primary-tab.js";
 import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-import "./app-shell.js";
+import "./components/app-shell/app-shell.js";
 import "./partials/index.js";
 import { Routes } from "./partials/nav/routes.js";
 import { MaterialSchemes } from "./styles/material-styles.js";
