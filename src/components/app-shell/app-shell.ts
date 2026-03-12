@@ -23,12 +23,13 @@ export class AppShell extends LitElement {
       :host {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
+        --md-fab-label-text-font: var(--md-ref-typeface-brand);
       }
 
       md-fab {
         position: fixed;
-        bottom: 1rem;
-        right: 1rem;
+        bottom: 0.5rem;
+        right: 0.5rem;
         z-index: 1; /* Ensure it floats above other content */
       }
 
@@ -181,7 +182,7 @@ export class AppShell extends LitElement {
 
       <md-dialog id="theme-dialog">
         <div slot="headline">
-          <h2 class="md-typescale-headline-large">UI Mode</h2>
+          <h2 class="md-typescale-headline-large">Settings</h2>
         </div>
         <form
           id="theme-dialog-form"
@@ -207,8 +208,8 @@ export class AppShell extends LitElement {
       </md-dialog>
 
       <md-fab
-        label="Site Settings"
-        size="large"
+        label="Settings"
+        size="medium"
         variant="primary"
         aria-label="UI Mode"
         @click=${this.openThemeDialog}
