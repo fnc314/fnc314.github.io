@@ -12,14 +12,20 @@ export class WorkExperience extends LitElement {
         /* For contextual layout */
         container-type: inline-size;
 
-        h2, h3, p {
+        h2,
+        h3,
+        p {
           margin: unset;
         }
       }
 
       /* --- SHARED BASE --- */
-      h2 { font-weight: 600; }
-      h3 { font-weight: 600; }
+      h2 {
+        font-weight: 600;
+      }
+      h3 {
+        font-weight: 600;
+      }
       time {
         opacity: 0.8;
         font-weight: 600;
@@ -60,7 +66,8 @@ export class WorkExperience extends LitElement {
         flex-direction: column;
         gap: 0.25rem;
 
-        > h2, > h3 {
+        > h2,
+        > h3 {
           color: var(--md-sys-color-primary);
         }
 
@@ -110,7 +117,8 @@ export class WorkExperience extends LitElement {
               color: var(--md-sys-color-secondary);
             }
             /* Role */
-            > h2, > h3 {
+            > h2,
+            > h3 {
               grid-column: 2;
               grid-row: 1;
               color: var(--md-sys-color-primary);
@@ -120,7 +128,7 @@ export class WorkExperience extends LitElement {
               grid-column: 2;
               grid-row: 2;
               font-style: italic;
-              color: var(--md-sys-color-tertiary)
+              color: var(--md-sys-color-tertiary);
             }
           }
 
@@ -136,81 +144,92 @@ export class WorkExperience extends LitElement {
           }
         }
       }
-    `
+    `,
   ];
 
-    @property({ type: Boolean, attribute: "is-nested" })
-    isNested = false;
+  @property({ type: Boolean, attribute: "is-nested" })
+  isNested = false;
 
-    @property({ type: String, attribute: "experience-role" })
-    experienceRole = "";
+  @property({ type: String, attribute: "experience-role" })
+  experienceRole = "";
 
-    @property({ type: String, attribute: "experience-org" })
-    experienceOrg = "";
+  @property({ type: String, attribute: "experience-org" })
+  experienceOrg = "";
 
-    @property({ type: Object, attribute: "date-start" })
-    dateStart: { stamp: string, text: string } = { stamp: "", text: "" };
+  @property({ type: Object, attribute: "date-start" })
+  dateStart: { stamp: string, text: string } = { stamp: "", text: "" };
 
-    @property({ type: Object, attribute: "date-end" })
-    dateEnd: { stamp: string, text: string } = { stamp: "", text: "" };
+  @property({ type: Object, attribute: "date-end" })
+  dateEnd: { stamp: string, text: string } = { stamp: "", text: "" };
 
-    @property({ type: Array, attribute: "summaries" })
-    summaries: { item: string }[] = [];
+  @property({ type: Array, attribute: "summaries" })
+  summaries: { item: string }[] = [];
 
-    @property({ type: Array, attribute: "jobs" })
-    jobs: {
-      role: string,
-      client: string,
-      dates: {
-        start: { stamp: string, text: string },
-        end: { stamp: string, text: string }
-      },
-      summary: { item: string }[]
-    }[] = []
+  @property({ type: Array, attribute: "jobs" })
+  jobs: {
+    role: string,
+    client: string,
+  dates: {
+      start: { stamp: string, text: string },
+      end: { stamp: string, text: string }
+    },
+    summary: { item: string }[]
+  }[] = []
 
-    override render() {
-      const headerRole = this.isNested ?
-        html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
-        html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
+  override render() {
+    const headerRole = this.isNested ?
+      html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
+      html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
 
-      const headerOrg = this.isNested ?
-        html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
-        html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
+    const headerOrg = this.isNested ?
+      html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
+      html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
 
-      const headerDates = this.isNested ?
-        html`
-          <p>
-            <time
-              class="md-typescale-title-small"
-              datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
-            <time
-              class="md-typescale-title-small"
-              datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
-          </p>
-        ` :
-        html`
-          <p>
-            <time
-              class="md-typescale-title-medium"
-              datetime="${this.dateStart.stamp}">${this.dateStart.text}</time> -
-            <time
-              class="md-typescale-title-medium"
-              datetime="${this.dateEnd.stamp}">${this.dateEnd.text}</time>
-          </p>
-        `;
-
-      const info = html`
-        <header class="experience-info">
-          ${headerRole}
-          ${headerOrg}
-          ${headerDates}
-        </header>
+    const headerDates = this.isNested ?
+      html`
+        <p>
+          <time
+            class="md-typescale-title-small"
+            datetime="${this.dateStart.stamp}"
+            >${this.dateStart.text}</time
+          >
+          -
+          <time
+            class="md-typescale-title-small"
+            datetime="${this.dateEnd.stamp}"
+            >${this.dateEnd.text}</time
+          >
+        </p>
+      ` :
+      html`
+        <p>
+          <time
+            class="md-typescale-title-medium"
+            datetime="${this.dateStart.stamp}"
+            >${this.dateStart.text}</time
+          >
+          -
+          <time
+            class="md-typescale-title-medium"
+            datetime="${this.dateEnd.stamp}"
+            >${this.dateEnd.text}</time
+          >
+        </p>
       `;
 
-      const content = this.jobs.length ?
-        html`
-          <div class="nested-experiences">
-            ${this.jobs.map(job => html`
+  const info = html`
+    <header class="experience-info">
+      ${headerRole}
+      ${headerOrg}
+      ${headerDates}
+    </header>
+  `;
+
+    const content = this.jobs.length ?
+      html`
+        <div class="nested-experiences">
+          ${this.jobs.map(
+            (job) => html`
               <work-experience
                 .isNested="${true}"
                 .dateStart=${job.dates.start}
@@ -218,37 +237,41 @@ export class WorkExperience extends LitElement {
                 .summaries=${job.summary}
                 experience-role="${job.role}"
                 experience-org="${job.client}"
-                >
-                </work-experience>
-            `)}
-          </div>
-        ` :
-        nothing;
+              >
+              </work-experience>
+            `,
+          )}
+        </div>
+      ` :
+      nothing;
 
-      const summaries = this.summaries.length ?
-        html`
-          <ul class="nested-summary">
-            ${this.summaries.map(summary => html`
+    const summaries = this.summaries.length ?
+      html`
+        <ul class="nested-summary">
+          ${this.summaries.map(
+            (summary) => html`
               <li class="md-typescale-body-medium">${summary.item}</li>
-            `)}
-          </ul>
-        `
-         :
-        nothing;
-      return this.isNested ?
-        html`
-          <div class="experience-container">
-            ${info}
-            ${summaries}
-          </div>
-        ` :
-        html`
-          <section class="experience-container">
-            ${info}
-            ${content}
-          </section>
-        `;
-    }
+            `,
+          )}
+        </ul>
+      `
+        :
+      nothing;
+
+    return this.isNested ?
+      html`
+        <div class="experience-container">
+          ${info}
+          ${summaries}
+        </div>
+      ` :
+      html`
+        <section class="experience-container">
+          ${info}
+          ${content}
+        </section>
+      `;
+  }
 }
 
 declare global {

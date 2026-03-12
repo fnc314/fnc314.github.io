@@ -3,15 +3,15 @@ import { MaterialSchemes } from "./material-styles";
 
 export const onThemeChange = (event: MediaQueryListEvent) => {
   const css = event.matches ? MaterialSchemes.dark : MaterialSchemes.light;
-  updateMaterialCSSStyleSheet(
-    css
+  updateMaterialCSSStyleSheet(css);
+  console.log(
+    `onThemeChange ${JSON.stringify({matches: event.matches, media: event.media, css}, null, 2)}`,
   );
-  console.log(`onThemeChange ${JSON.stringify({ matches: event.matches, media: event.media, css }, null, 2)}`);
 };
 
 export const updateMaterialCSSStyleSheet = (result: CSSResult) => {
   MaterialCSSStyleSheet.replaceSync(result.cssText);
-}
+};
 
 export const MaterialCSSStyleSheet: CSSStyleSheet = MaterialSchemes.light.styleSheet!;
 

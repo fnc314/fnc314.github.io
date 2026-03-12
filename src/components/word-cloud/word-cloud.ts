@@ -1,7 +1,7 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 
 export type WordCloudWord = {
   word: string;
@@ -19,37 +19,34 @@ export const makeWordCloudWord = (
   word: string,
   weight: number,
   category: WordCloudWordCategory,
-  extras: string[] = []
+  extras: string[] = [],
 ): WordCloudWord => ({
   word,
   weight,
-  quartile: (
-    () => {
-      switch (true) {
-        case weight > 8:
-          return "first-quartile";
+  quartile: (() => {
+    switch (true) {
+      case weight > 8:
+        return "first-quartile";
 
-        case 6 < weight && weight <= 8:
-          return "second-quartile";
+      case 6 < weight && weight <= 8:
+        return "second-quartile";
 
-        case 3 < weight && weight <= 6:
-          return "third-quartile";
+      case 3 < weight && weight <= 6:
+        return "third-quartile";
 
-        case weight < 3:
-          return "fourth-quartile";
+      case weight < 3:
+        return "fourth-quartile";
 
-        default:
-          return "fourth-quartile";
-      }
+      default:
+        return "fourth-quartile";
     }
-  )(),
+  })(),
   category,
-  extras
+  extras,
 });
 
 @customElement("word-cloud")
 export class WordCloud extends LitElement {
-
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -65,6 +62,7 @@ export class WordCloud extends LitElement {
         flex-wrap: wrap;
         gap: 0.5rem;
         align-items: baseline;
+        justify-content: space-evenly;
 
         li {
           border-radius: var(--md-sys-shape-corner-large);
@@ -72,24 +70,24 @@ export class WordCloud extends LitElement {
           border-width: 1px;
           border-style: solid;
           font-family: var(--md-type-ref-plain);
-          padding: 0.3rem 0.6rem;
+          padding: 0.3rem 0.7rem;
         }
       }
 
       .first-quartile {
-        font-size: 2.1rem;
+        font-size: 2.75rem;
       }
 
       .second-quartile {
-        font-size: 1.8rem
+        font-size: 2.25rem;
       }
 
       .third-quartile {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
 
       .fourth-quartile {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
       }
 
       .tech {
@@ -135,11 +133,16 @@ export class WordCloud extends LitElement {
           color: var(--md-sys-color-on-surface-container);
         }
       }
-    `
+    `,
   ];
 
-  @property({ type: Array })
+  @property({ type: Array, attribute: "words", hasChanged: () => true })
   words: WordCloudWord[] = [];
+
+  @state({
+    hasChanged: () => true,
+  })
+  _sortedWords: WordCloudWord[] = this.words.toSorted(() => Math.random() - 0.5);
 
   // #ignore(word: WordCloudWord) {
   //   const dd = html`
@@ -155,33 +158,42 @@ export class WordCloud extends LitElement {
   //   `;
   // }
 
+  override connectedCallback(): void {
+    super.connectedCallback();
+    this._sortedWords = this.words.toSorted(() => Math.random() - 0.5);
+  }
+
   override render() {
     return html`
       <ul>
-      ${
-        this.words
-          .toSorted(() => Math.random() - 0.5)
+        ${this._sortedWords
           .map((word) => {
             const classes = {
               tech: word.category === "tech",
               practice: word.category === "practice",
-              "first-quartile md-typescale-display-medium": word.quartile === "first-quartile",
-              "second-quartile md-typescale-headline-large": word.quartile === "second-quartile",
-              "third-quartile md-typescale-headline-small": word.quartile === "third-quartile",
-              "fourth-quartile md-typescale-title-large": word.quartile === "fourth-quartile",
+              "first-quartile md-typescale-display-medium":
+                word.quartile === "first-quartile",
+              "second-quartile md-typescale-headline-large":
+                word.quartile === "second-quartile",
+              "third-quartile md-typescale-headline-small":
+                word.quartile === "third-quartile",
+              "fourth-quartile md-typescale-title-large":
+                word.quartile === "fourth-quartile",
             };
             return html`
-              <li class=${classMap(classes)}>${word.word}</li>
+              <li class=${classMap(classes)}>
+                ${word.word}
+                <!-- <sup>${word.weight}</sup> <sub>${word.category}</sub> -->
+              </li>
             `;
-          })
-      }
+          })}
       </ul>
     `;
   }
-};
+}
 
 declare global {
   interface HTMLElementTagNameMap {
     "word-cloud": WordCloud;
   }
-};
+}

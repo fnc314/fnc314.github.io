@@ -13,7 +13,7 @@ import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } fro
 
 document.adoptedStyleSheets.push(
   typescaleStyles.styleSheet,
-  MaterialCSSStyleSheet
+  MaterialCSSStyleSheet,
 );
 
 window
@@ -24,7 +24,7 @@ onThemeChange(
   new MediaQueryListEvent(
     "change",
     {
-      matches: window.matchMedia("(prefers-color-scheme: dark)").matches,
+    matches: window.matchMedia("(prefers-color-scheme: dark)").matches,
       media: "(prefers-color-scheme: dark)"
     }
   )
@@ -35,7 +35,7 @@ const onColorSchemeChange = (event) => {
   updateMaterialCSSStyleSheet(MaterialSchemes[event.detail.colorScheme]);
 
   const permanent = Boolean(
-    window.localStorage.getItem("permanentColorScheme") ?? "false"
+    window.localStorage.getItem("permanentColorScheme") ?? "false",
   );
 
   if (permanent) {

@@ -1,0 +1,6 @@
+old/
+website/
+.well-known/
+.vscode/
+assets/
+node_modules/

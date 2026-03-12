@@ -21,21 +21,39 @@ export class NavPartial extends LitElement {
         --md-primary-tab-active-pressed-icon-color: var(--md-sys-color-error);
 
         --md-primary-tab-active-label-text-color: var(--md-sys-color-error);
-        --md-primary-tab-active-focus-label-text-color: var(--md-sys-color-error);
-        --md-primary-tab-active-hover-label-text-color: var(--md-sys-color-error);
-        --md-primary-tab-active-pressed-label-text-color: var(--md-sys-color-error);
+        --md-primary-tab-active-focus-label-text-color: var(
+          --md-sys-color-error
+        );
+        --md-primary-tab-active-hover-label-text-color: var(
+          --md-sys-color-error
+        );
+        --md-primary-tab-active-pressed-label-text-color: var(
+          --md-sys-color-error
+        );
 
         --md-primary-tab-active-indicator-color: var(--md-sys-color-error);
         --md-primary-tab-active-indicator-height: 0.5rem;
-        --md-primary-tab-active-indicator-shape: var(--md-sys-shape-corner-medium);
+        --md-primary-tab-active-indicator-shape: var(
+          --md-sys-shape-corner-medium
+        );
 
-        --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
+        --md-primary-tab-container-color: var(
+          --md-sys-color-surface-container-high
+        );
         --md-primary-tab-container-elevation: var(--md-elevation-level);
         --md-primary-tab-container-height: 5rem;
-        --md-primary-tab-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-start-end: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-end-start: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-end-end: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-start-start: var(
+          --md-sys-shape-corner-extra-small
+        );
+        --md-primary-tab-container-shape-start-end: var(
+          --md-sys-shape-corner-extra-small
+        );
+        --md-primary-tab-container-shape-end-start: var(
+          --md-sys-shape-corner-extra-small
+        );
+        --md-primary-tab-container-shape-end-end: var(
+          --md-sys-shape-corner-extra-small
+        );
 
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
 
@@ -48,20 +66,22 @@ export class NavPartial extends LitElement {
       }
 
       md-icon[filled="true"] {
-        font-variation-settings: 'FILL' 1;
+        font-variation-settings: "FILL" 1;
         color: var(--md-sys-color-error);
       }
-    `
+    `,
   ];
 
   // Track the active index as state
   @state({
-    hasChanged: (newValue: number, oldValue: number) => newValue !== oldValue
-  }) _activeTabIndex = 0;
+    hasChanged: (newValue: number, oldValue: number) => newValue !== oldValue,
+  })
+  _activeTabIndex = 0;
 
   @state({
-    hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue
-  }) _activeRoute: Route = Routes.PROFILE;
+    hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
+  })
+  _activeRoute: Route = Routes.PROFILE;
 
   #tabsRef: Ref<MdTabs> = createRef();
 
@@ -69,8 +89,8 @@ export class NavPartial extends LitElement {
   _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
     work: createRef(),
     code: createRef(),
-    profile: createRef()
-  }
+    profile: createRef(),
+  };
 
   #routes: Route[] = Object.values(Routes);
 
@@ -144,7 +164,9 @@ export class NavPartial extends LitElement {
       if (tab) {
         const panelId = tab.getAttribute("aria-controls");
         if (panelId) {
-          const panel = document.querySelector(`#${panelId}[aria-role="tabpanel"]`) as HTMLElement;
+          const panel = document.querySelector(
+            `#${panelId}[aria-role="tabpanel"]`,
+          ) as HTMLElement;
           if (panel) {
             panels.push(panel);
             panel.toggleAttribute("inert", true);
@@ -194,30 +216,44 @@ export class NavPartial extends LitElement {
   #renderTabs(): TemplateResult {
     const mdIconRouteMap: Record<Route, TemplateResult> = {
       profile: html`
-        <md-icon slot="icon" filled=${this._activeRoute === Routes.PROFILE}>person</md-icon>
+        <md-icon
+          slot="icon"
+          filled=${this._activeRoute === Routes.PROFILE}
+          >person</md-icon
+        >
         Profile
       `,
       work: html`
-        <md-icon slot="icon" filled=${this._activeRoute === Routes.WORK}>engineering</md-icon>
+        <md-icon
+          slot="icon"
+          filled=${this._activeRoute === Routes.WORK}
+          >engineering</md-icon
+        >
         Work
       `,
       code: html`
-        <md-icon slot="icon" filled=${this._activeRoute === Routes.CODE}>code</md-icon>
+        <md-icon
+          slot="icon"
+          filled=${this._activeRoute === Routes.CODE}
+          >code</md-icon
+        >
         Code
-      `
+      `,
     };
 
-    const tabs: TemplateResult[] = this.#routes.map((route: Route) => html`
-      <md-primary-tab
-        ${ref(this._tabRefMap[route])}
-        id="tab-${route}"
-        aria-controls="panel-${route}"
-        .hasIcon=${true}
-        .inlineIcon=${this._activeRoute === route}
-      >
-        ${mdIconRouteMap[route]}
-      </md-primary-tab>
-    `);
+    const tabs: TemplateResult[] = this.#routes.map(
+      (route: Route) => html`
+        <md-primary-tab
+          ${ref(this._tabRefMap[route])}
+          id="tab-${route}"
+          aria-controls="panel-${route}"
+          .hasIcon=${true}
+          .inlineIcon=${this._activeRoute === route}
+        >
+          ${mdIconRouteMap[route]}
+        </md-primary-tab>
+      `,
+    );
 
     return html`
       <md-tabs
@@ -228,19 +264,13 @@ export class NavPartial extends LitElement {
         .activeTabIndex=${this._activeTabIndex}
         .autoActivate=${true}
       >
-      ${tabs}
-    </md-tabs>
+        ${tabs}
+      </md-tabs>
     `;
-
-
   }
 
   override render() {
-    return html`
-      <nav>
-        ${this.#renderTabs()}
-      </nav>
-    `;
+    return html` <nav>${this.#renderTabs()}</nav> `;
   }
 }
 
@@ -248,4 +278,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "nav-partial": NavPartial;
   }
-};
+}

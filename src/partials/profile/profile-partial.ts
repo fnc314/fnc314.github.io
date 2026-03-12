@@ -16,8 +16,6 @@ export class ProfilePartial extends LitElement {
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
 
-        --section-grid-background: var(--md-sys-color-inverse-surface);
-        --section-grid-color: var(--md-sys-color-inverse-on-surface);
       }
 
       article {
@@ -26,11 +24,9 @@ export class ProfilePartial extends LitElement {
           "header"
           "figure"
           "bio"
-          "education"
           "contact-info"
           "links"
-          "cloud"
-          ;
+          "cloud";
         height: min-content;
         min-height: 100%;
         grid-template-rows: auto;
@@ -68,10 +64,11 @@ export class ProfilePartial extends LitElement {
       }
 
       a {
-        color: var(--section-grid-color);
+        color: var(--md-sys-color-inverse-on-surface);
       }
 
-      p, dd {
+      p,
+      dd {
         margin: unset;
         overflow-wrap: anywhere;
         padding-inline: 1rem;
@@ -106,8 +103,8 @@ export class ProfilePartial extends LitElement {
 
         figcaption {
           text-align: center;
-          color: var(--section-grid-color);
-          background-color: var(--section-grid-background);
+          color: var(--md-sys-color-inverse-on-surface);
+          background-color: var(--md-sys-color-inverse-surface);
           padding: 0.5rem;
           border-radius: 1rem;
           font-style: italic;
@@ -130,9 +127,15 @@ export class ProfilePartial extends LitElement {
           place-self: end;
         }
       }
-      .contact-info { grid-area: contact-info; }
-      .links { grid-area: links; }
-      .cloud { grid-area: cloud; }
+      .contact-info {
+        grid-area: contact-info;
+      }
+      .links {
+        grid-area: links;
+      }
+      .cloud {
+        grid-area: cloud;
+      }
 
       @container (min-width: 600px) {
         article {
@@ -140,7 +143,6 @@ export class ProfilePartial extends LitElement {
             "header"
             "figure"
             "bio"
-            "education"
             "contact-info"
             "links"
             "cloud"
@@ -157,7 +159,6 @@ export class ProfilePartial extends LitElement {
             "header header"
             "figure bio"
             "figure bio"
-            "figure education"
             "figure contact-info"
             "links links"
             "cloud cloud"
@@ -173,7 +174,6 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure education"
             "figure contact-info"
             "figure links"
             "cloud cloud"
@@ -189,13 +189,12 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header   header         header         header"
             "figure   bio            bio            bio"
-            "figure   education      education      education"
             "figure   contact-info   contact-info   contact-info"
             "figure   links          links          links"
             "cloud    cloud          cloud          cloud"
             ;
-          grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr);
-          grid-auto-rows: auto;
+          grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+          grid-auto-rows: min-content;
           grid-template-rows: minmax(auto, min-content);
         }
       }
@@ -206,33 +205,50 @@ export class ProfilePartial extends LitElement {
     super();
   }
 
-  #renderDlList(contents: { method: string, htmlNoIcon: string[] }[]): TemplateResult {
+  #renderDlList(
+    contents: { method: string; htmlNoIcon: string[] }[],
+  ): TemplateResult {
     return html`
       <dl class="list-grid">
-        ${
-          contents.map((content) => html`
+        ${contents.map(
+          (content) => html`
             <div class="list-grid-item">
               <dt class="md-typescale-title-medium">${content.method}</dt>
-              ${
-                content.htmlNoIcon.map((link) => html`
-                  <dd class="md-typescale-body-large" .innerHTML=${link}></dd>
-                `)
-              }
+              ${content.htmlNoIcon.map(
+                (link) => html`
+                  <dd
+                    class="md-typescale-body-large"
+                    .innerHTML=${link}
+                  ></dd>
+                `,
+              )}
             </div>
-          `)
-        }
+          `,
+        )}
       </dl>
     `;
   }
 
-  #renderFigureElement(photoData: { src: string, alt: string, figcaption: string }): TemplateResult {
+  #renderFigureElement(photoData: {
+    src: string;
+    alt: string;
+    figcaption: string;
+  }): TemplateResult {
     return html`
       <figure>
         <picture>
-          <source srcset=${photoData.src} type="image/jpeg">
-          <img src=${photoData.src} alt=${photoData.alt}>
+          <source
+            srcset=${photoData.src}
+            type="image/jpeg"
+          />
+          <img
+            src=${photoData.src}
+            alt=${photoData.alt}
+          />
         </picture>
-        <figcaption class="md-typescale-label-large">${photoData.figcaption}</figcaption>
+        <figcaption class="md-typescale-label-large">
+          ${photoData.figcaption}
+        </figcaption>
       </figure>
     `;
   }
@@ -256,19 +272,48 @@ export class ProfilePartial extends LitElement {
 
   #renderCloud(): TemplateResult {
     const words = Object.keys(ProfileJson.proficiencies).flatMap((proficency) =>
-      Object.entries(ProfileJson.proficiencies[proficency as keyof typeof ProfileJson.proficiencies])
-        .map(([word, weight]) => makeWordCloudWord(word, weight, proficency as WordCloudWordCategory))
+      Object.entries(
+        ProfileJson.proficiencies[
+          proficency as keyof typeof ProfileJson.proficiencies
+        ],
+      ).map(([word, weight]) =>
+        makeWordCloudWord(word, weight, proficency as WordCloudWordCategory),
+      ),
     );
     return html`
       <profile-section
         class="cloud"
-        section-title="Skills">
-        <word-cloud slot="section-grid-content" .words=${words}></word-cloud>
+        section-title="Skills"
+      >
+        <word-cloud
+          slot="section-grid-content"
+          .words=${words}
+        ></word-cloud>
       </profile-section>
     `;
   }
 
   override render() {
+    // const education = html`
+    //   <profile-section
+    //     class="education"
+    //     section-title="Education">
+    //     <ul class="list-grid" slot="section-grid-content">
+    //       ${
+    //         ProfileJson.education.map((edu) => html`
+    //           <li>
+    //             <p class="md-typescale-title-medium">
+    //               ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
+    //             </p>
+    //             <p class="md-typescale-title-small">
+    //               ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
+    //             </p>
+    //           </li>
+    //         `)
+    //       }
+    //     </ul>
+    //   </profile-section>
+    // `;
     return html`
       <article>
         <partial-header .headingText=${"Franco N. Colaizzi"}></partial-header>
@@ -277,39 +322,29 @@ export class ProfilePartial extends LitElement {
 
         <profile-section
           class="bio"
-          section-title="Bio">
-          <p slot="section-grid-content" class="md-typescale-body-large">${ProfileJson.bio}</p>
-        </profile-section>
-
-        <profile-section
-          class="education"
-          section-title="Education">
-          <ul class="list-grid" slot="section-grid-content">
-            ${
-              ProfileJson.education.map((edu) => html`
-                <li>
-                  <p class="md-typescale-title-medium">
-                    ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
-                  </p>
-                  <p class="md-typescale-title-small">
-                    ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
-                  </p>
-                </li>
-              `)
-            }
-          </ul>
+          section-title="Bio"
+        >
+          <p
+            slot="section-grid-content"
+            class="md-typescale-body-large"
+          >
+            ${ProfileJson.bio}
+          </p>
         </profile-section>
 
         <profile-section
           class="contact-info"
-          section-title="Contact">
+          section-title="Contact"
+        >
           <div slot="section-grid-content">
             ${this.#renderDlList(ProfileJson.contactInfo)}
           </div>
         </profile-section>
 
-        <profile-section class="links"
-          section-title="Links">
+        <profile-section
+          class="links"
+          section-title="Links"
+        >
           <div slot="section-grid-content">
             ${this.#renderDlList(ProfileJson.links)}
           </div>
@@ -325,4 +360,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "profile-partial": ProfilePartial;
   }
-};
+}

@@ -28,7 +28,7 @@ export class PartialHeader extends LitElement {
           color: var(--md-sys-color-on-primary-container);
         }
       }
-    `
+    `,
   ];
 
   @property({ type: String, attribute: "heading-text" })
@@ -41,10 +41,10 @@ export class PartialHeader extends LitElement {
       </header>
     `;
   }
-};
+}
 
 declare global {
   interface HTMLElementTagNameMap {
     "partial-header": PartialHeader;
   }
-};
+}

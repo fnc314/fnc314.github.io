@@ -16,7 +16,7 @@ interface Job {
     start: WorkDate;
     end: WorkDate;
   };
-  summary: { item: string }[];
+  summary: {item: string}[];
 }
 
 interface Experience {
@@ -62,28 +62,32 @@ export class WorkPartial extends LitElement {
         padding-inline: 1rem;
         grid-area: content;
 
-        h2, h3, p {
+        h2,
+        h3,
+        p {
           margin: unset;
         }
       }
-    `
+    `,
   ];
 
   override render() {
     return html`
-      <article
-        >
+      <article>
         <partial-header .headingText=${"Work Experience"}></partial-header>
         <div class="article-body">
-          ${data.experiences.map(exp => html`
-            <work-experience
-              .isNested="${false}"
-              experience-org="${exp.employer}"
-              experience-role="${exp.role}"
-              .dateStart="${exp.dates.start}"
-              .dateEnd="${exp.dates.end}"
-              .jobs="${exp.jobs}"></work-experience>
-          `)}
+          ${data.experiences.map(
+            (exp) => html`
+              <work-experience
+                .isNested="${false}"
+                experience-org="${exp.employer}"
+                experience-role="${exp.role}"
+                .dateStart="${exp.dates.start}"
+                .dateEnd="${exp.dates.end}"
+                .jobs="${exp.jobs}"
+              ></work-experience>
+            `,
+          )}
         </div>
       </article>
     `;

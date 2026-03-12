@@ -139,7 +139,7 @@ export class CodePartial extends LitElement {
         white-space: pre-wrap;
         word-wrap: break-word;
       }
-    `
+    `,
   ];
 
   #renderCodeWidget({ name, url, description, technologies }: Project) {
@@ -147,16 +147,28 @@ export class CodePartial extends LitElement {
       <section class="code-widget">
         <md-elevation></md-elevation>
         <header>
-          <a target="_blank" href="${url}">
+          <a
+            target="_blank"
+            href="${url}"
+          >
             <h2 class="md-typescale-title-large">${name}</h2>
           </a>
         </header>
         <div class="widget-content">
-          <p class="md-typescale-body-large" .innerHTML=${description}></p>
+          <p
+            class="md-typescale-body-large"
+            .innerHTML=${description}
+          ></p>
         </div>
         <footer>
           <ul class="tech-stack">
-            ${technologies.map(t => html`<li class="md-typescale-body-medium" .innerHTML=${t}></li>`)}
+            ${technologies.map(
+              (t) =>
+                html`<li
+                  class="md-typescale-body-medium"
+                  .innerHTML=${t}
+                ></li>`,
+            )}
           </ul>
         </footer>
       </section>
@@ -168,7 +180,9 @@ export class CodePartial extends LitElement {
       <article>
         <partial-header .headingText=${"Code Projects"}></partial-header>
         <div class="article-body">
-          ${(CodeJson.projects as Project[]).map(p => this.#renderCodeWidget(p))}
+          ${(CodeJson.projects as Project[]).map((p) =>
+            this.#renderCodeWidget(p),
+          )}
         </div>
       </article>
     `;

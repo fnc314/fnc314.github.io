@@ -29,34 +29,28 @@ export class ProfileSection extends LitElement {
       h2 {
         grid-area: section-grid-title;
         place-self: center;
-        background-color: var(--md-sys-color-inverse-surface);
-        color: var(--md-sys-color-inverse-on-surface);
         padding-block: 1rem;
       }
 
       div {
         display: contents;
         grid-area: section-grid-content;
-        background-color: var(--md-sys-color-inverse-surface);
-        color: var(--md-sys-color-inverse-on-surface);
       }
 
       @container (min-width: 600px) {
         section {
-          grid-template-areas:
-            "section-grid-title"
-            "section-grid-content";
-          grid-template-rows: min-content 1fr;
+          grid-template-areas: "section-grid-title section-grid-content";
+          grid-template-columns: auto 1fr;
+          grid-template-rows: auto;
         }
       }
 
       @container (min-width: 900px) {
         section {
-          grid-template-areas:
-            "section-grid-title"
-            "section-grid-content";
+          grid-template-areas: "section-grid-title section-grid-content";
           column-gap: 1rem;
-          grid-template-rows: min-content 1fr;
+          grid-template-columns: auto 1fr;
+          grid-template-rows: auto;
         }
       }
 
@@ -64,7 +58,7 @@ export class ProfileSection extends LitElement {
         section {
           grid-template-areas: "section-grid-title section-grid-content";
           grid-template-columns: auto 1fr;
-          grid-template-rows: unset;
+          grid-template-rows: auto;
         }
       }
 
@@ -72,7 +66,7 @@ export class ProfileSection extends LitElement {
         section {
           grid-template-areas: "section-grid-title section-grid-content";
           grid-template-columns: auto 1fr;
-          grid-template-rows: unset;
+          grid-template-rows: auto;
         }
       }
     `,
@@ -85,9 +79,7 @@ export class ProfileSection extends LitElement {
     return html`
       <section>
         <h2 class="md-typescale-headline-small">
-          <span>
-            ${this.sectionTitle}
-          </span>
+          <span> ${this.sectionTitle} </span>
         </h2>
         <div>
           <slot name="section-grid-content"></slot>
@@ -101,4 +93,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "profile-section": ProfileSection;
   }
-};
+}

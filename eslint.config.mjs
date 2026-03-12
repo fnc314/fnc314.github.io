@@ -11,7 +11,7 @@ export default defaultConfig({
     wc.configs?.recommended,
     lit.configs?.recommended,
     jsonSchemaValidator.configs.recommended,
-  ]
+  ],
 });
 
 // export default tseslint.config(

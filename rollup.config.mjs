@@ -38,21 +38,25 @@ export default {
       extractAssets: true,
       flattenOutput: false,
       transformHtml: [
-        (html, args) => html.replace(
-          "<head>",
-          `<head><link rel="manifest" href="./assets/${manifestJson}" />`
-        )
+        (html, args) =>
+          html.replace(
+            "<head>",
+            `<head><link rel="manifest" href="./assets/${manifestJson}" />`,
+          ),
       ],
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
     }),
     copy({
-      patterns: ["assets/**/*.{jpg,svg,png}"], rootDir: "./",
+      patterns: ["assets/**/*.{jpg,svg,png}"],
+      rootDir: "./",
     }),
     copy({
-      patterns: ["files/**/*.pdf"], rootDir: "./assets",
+      patterns: ["files/**/*.pdf"],
+      rootDir: "./assets",
     }),
     copy({
-      patterns: [isDev ? "assets/manifest.dev.json" : "assets/manifest.json"], rootDir: "./",
+      patterns: [isDev ? "assets/manifest.dev.json" : "assets/manifest.json"],
+      rootDir: "./",
     }),
     json({
       compact: !isDev,
@@ -64,7 +68,7 @@ export default {
       include: [
         "./website/scripts/partials/**/*.json",
         "./src/partials/**/*.json",
-      ]
+      ],
     }),
     typescript({
       tsconfig: "./tsconfig.json",
@@ -95,7 +99,7 @@ export default {
     }),
     isDev && copy({
       patterns: [".well-known/appspecific/com.chrome.devtools.json"],
-      rootDir: "./"
+      rootDir: "./",
     }),
   ].filter(Boolean),
 };

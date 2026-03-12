@@ -38,6 +38,6 @@ export default {
           "./src/partials/**/*.json",
         ]
       }),
-    )
-  ]
-}
+    ),
+  ],
+};

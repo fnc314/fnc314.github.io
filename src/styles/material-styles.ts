@@ -3,7 +3,12 @@ import { css, CSSResult } from "lit-element";
 export { styles as MaterialTypescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 
 export type MaterialSchemeName =
-  "light" | "lightMediumContrast" | "lightHighContrast" | "dark" | "darkMediumContrast" | "darkHighContrast";
+  | "light"
+  | "lightMediumContrast"
+  | "lightHighContrast"
+  | "dark"
+  | "darkMediumContrast"
+  | "darkHighContrast";
 export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialSchemes = Record<MaterialSchemeName, CSSResult>;
 
@@ -59,7 +64,7 @@ export const MaterialSchemes: MaterialSchemes = {
       --md-sys-color-surface-container: #EEEDF4;
       --md-sys-color-surface-container-high: #E9E7EF;
       --md-sys-color-surface-container-highest: #E3E1E9;
-  }
+    }
   `,
   lightMediumContrast: css`
     :root {
@@ -326,4 +331,4 @@ export const MaterialSchemes: MaterialSchemes = {
       --md-sys-color-surface-container-highest: #46464C;
     }
   `,
-}
+};
