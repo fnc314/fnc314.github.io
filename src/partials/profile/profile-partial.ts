@@ -12,6 +12,9 @@ export class ProfilePartial extends LitElement {
     ParialHeadingStyles,
     css`
       :host {
+        display: block;
+        container-type: inline-size;
+
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
 
@@ -30,15 +33,17 @@ export class ProfilePartial extends LitElement {
           "links"
           "cloud"
           ;
+        height: min-content;
+        min-height: 100%;
         grid-template-rows: auto;
-        grid-auto-rows: 1fr;
+        grid-auto-rows: auto;
         gap: 1rem;
         padding: 1rem;
       }
 
       .section-grid {
         display: grid;
-        grid-template-rows: min-content minmax(min-content, 1fr);
+        grid-template-rows: min-content auto;
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
@@ -49,6 +54,7 @@ export class ProfilePartial extends LitElement {
         h2 {
           grid-area: section-grid-title;
           place-self: center;
+          padding-block: 1rem;
           color: var(--section-grid-color);
         }
       }
@@ -182,8 +188,7 @@ export class ProfilePartial extends LitElement {
             "cloud"
             ;
           gap: 1rem;
-          grid-template-rows: auto;
-          grid-auto-rows: 1fr;
+          grid-auto-rows: auto;
           grid-template-columns: 1fr;
         }
 
@@ -201,14 +206,14 @@ export class ProfilePartial extends LitElement {
             "header header"
             "figure bio"
             "figure bio"
-            "education contact-info"
+            "figure education"
+            "figure contact-info"
             "links links"
             "cloud cloud"
             ;
-          gap: 1rem;
-          grid-template-rows: auto repeat(4, 1fr) min-content;
-          grid-auto-rows: 1fr;
-          grid-template-columns: fit-content(40%) 1fr;
+          grid-template-rows: minmax(auto, min-content);
+          grid-auto-rows: auto;
+          grid-template-columns: fit-content(40%) minmax(0, 1fr);
         }
 
         .section-grid {
@@ -225,16 +230,14 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure bio"
             "figure education"
             "figure contact-info"
             "figure links"
             "cloud cloud"
             ;
-          gap: 1rem;
-          grid-template-rows: auto repeat(5, 1fr) auto;
-          grid-auto-rows: 1fr;
-          grid-template-columns: fit-content(40%) 1fr;
+          grid-template-rows: minmax(auto, min-content);
+          grid-auto-rows: auto;
+          grid-template-columns: fit-content(40%) minmax(0, 1fr);
         }
 
         .section-grid {
@@ -247,19 +250,15 @@ export class ProfilePartial extends LitElement {
       @container (min-width: 1500px) {
         article {
           grid-template-areas:
-            "header header"
-            "figure bio"
-            "figure bio"
-            "figure education"
-            "figure contact-info"
-            "figure links"
-            "cloud cloud"
+            "header   header         header"
+            "figure   bio            cloud"
+            "figure   education      cloud"
+            "figure   contact-info   cloud"
+            "figure   links          cloud"
             ;
-
-          gap: 1rem;
-          grid-template-rows: auto;
-          grid-auto-rows: 1fr;
-          grid-template-columns: fit-content(40%) 1fr;
+          grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr);
+          grid-auto-rows: auto;
+          grid-template-rows: minmax(auto, min-content);
         }
 
         .section-grid {
@@ -300,7 +299,7 @@ export class ProfilePartial extends LitElement {
     return html`
       <header>
         <md-elevation></md-elevation>
-        <h1 class="md-typescale-headline-large">Franco N. Colaizzi</h1>
+        <h1 class="md-typescale-display-medium">Franco N. Colaizzi</h1>
       </header>
     `;
   }

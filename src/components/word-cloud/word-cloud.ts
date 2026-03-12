@@ -1,22 +1,54 @@
 import { typescaleStyles } from "@/styles";
 import { css, html, LitElement, nothing, PropertyValues } from "lit";
+import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property } from "lit/decorators.js";
 
 export type WordCloudWord = {
   word: string;
   weight: number;
+  scaledWeight: number;
+  quartile: WeightQuartile;
   category: WordCloudWordCategory;
   extras: string[];
 };
 
 export type WordCloudWordCategory = "tech" | "practice";
 
+type WeightQuartile = `${"first" | "second" | "third" | "fourth"}-quartile`;
+
 export const makeWordCloudWord = (
   word: string,
   weight: number,
   category: WordCloudWordCategory,
   extras: string[] = []
-): WordCloudWord => ({ word, weight, category, extras });
+): WordCloudWord => ({
+  word,
+  weight,
+  scaledWeight: weight * 10,
+  quartile: (
+    () => {
+      const scaledWeight = weight * 10;
+      switch (true) {
+        case scaledWeight > 80:
+          return "first-quartile";
+
+        case 50 < scaledWeight && scaledWeight <= 80:
+          return "second-quartile";
+
+        case 30 < scaledWeight && scaledWeight <= 50:
+          return "third-quartile";
+
+        case scaledWeight < 30:
+          return "fourth-quartile";
+
+        default:
+          return "fourth-quartile";
+      }
+    }
+  )(),
+  category,
+  extras
+});
 
 @customElement("word-cloud")
 export class WordCloud extends LitElement {
@@ -33,137 +65,87 @@ export class WordCloud extends LitElement {
 
       dl {
         display: contents;
+      }
 
-        div {
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: baseline;
+
+        li {
+          border-radius: var(--md-sys-shape-corner-large);
+          border-color: currentColor;
+          border-width: 1px;
+          border-style: solid;
+          font-family: var(--md-type-ref-plain);
+          padding: 0.3rem 0.6rem;
+        }
+      }
+
+      .first-quartile {
+        font-size: 2.1rem;
+      }
+
+      .second-quartile {
+        font-size: 1.8rem
+      }
+
+      .third-quartile {
+        font-size: 1.5rem;
+      }
+
+      .fourth-quartile {
+        font-size: 1.2rem;
+      }
+
+      .tech {
+        &.first-quartile {
+          background-color: var(--md-sys-color-primary);
+          color: var(--md-sys-color-on-primary);
+        }
+
+        &.second-quartile {
+          background-color: var(--md-sys-color-secondary);
+          color: var(--md-sys-color-on-secondary);
+        }
+
+        &.third-quartile {
+          background-color: var(--md-sys-color-tertiary);
+          color: var(--md-sys-color-on-tertiary);
+        }
+
+        &.fourth-quartile {
           background-color: var(--md-sys-color-surface);
           color: var(--md-sys-color-on-surface);
         }
       }
 
-      .cloud-container {
-        outline: 1px solid red;
-        min-height: 100%;
-        position: relative;
-        /* display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr)); */
-
-        & span:nth-child(n) {
-          transform: rotate(45deg);
+      .practice {
+        &.first-quartile {
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
         }
 
-        & span:nth-child(2n) {
-          transform: rotate(-45deg);
+        &.second-quartile {
+          background-color: var(--md-sys-color-secondary-container);
+          color: var(--md-sys-color-on-secondary-container);
         }
 
-        & span:nth-child(3n) {
-          transform: rotate(50deg);
+        &.third-quartile {
+          background-color: var(--md-sys-color-tertiary-container);
+          color: var(--md-sys-color-on-tertiary-container);
         }
 
-        & span:nth-child(4n) {
-          transform: rotate(-20deg);
-        }
-
-        & span:nth-child(5n) {
-          transform: rotate(90deg);
-        }
-
-        & span:nth-child(6n) {
-          transform: rotate(-30deg);
-        }
-
-        & span:nth-child(7n) {
-          transform: rotate(20deg);
-        }
-
-        .tech, .practice {
-          -webkit-text-stroke: 0.1px black;
-          /* font-size: calc(6cqi / ((var(--weight)) + 1 + 2cqb)); */
-          font-size: var(--md-sys-typescale-body-large-size) * var(--weight);
-          color: var(--color);
-          /* line-height: calc(calc(6cqi / ((var(--weight)) + 1 + 2cqb)) * 1.2); */
+        &.fourth-quartile {
+          background-color: var(--md-sys-color-surface-container);
+          color: var(--md-sys-color-on-surface-container);
         }
       }
     `
   ];
-
-  // #materialColorVars: string[] = [
-  //   "primary",
-  //   "surface-tint",
-  //   "primary-container",
-  //   "on-primary-container",
-  //   "secondary",
-  //   "secondary-container",
-  //   "on-secondary-container",
-  //   "tertiary",
-  //   "tertiary-container",
-  //   "on-tertiary-container",
-  //   "error",
-  //   "error-container",
-  //   "on-error-container",
-  //   "on-background",
-  //   "on-surface",
-  //   "surface-variant",
-  //   "on-surface-variant",
-  //   "outline",
-  //   "outline-variant",
-  //   "inverse-surface",
-  //   "inverse-primary",
-  //   // "primary-fixed",
-  //   "on-primary-fixed",
-  //   "primary-fixed-dim",
-  //   "on-primary-fixed-variant",
-  //   // "secondary-fixed",
-  //   "on-secondary-fixed",
-  //   "secondary-fixed-dim",
-  //   "on-secondary-fixed-variant",
-  //   "tertiary-fixed",
-  //   "on-tertiary-fixed",
-  //   "tertiary-fixed-dim",
-  //   "on-tertiary-fixed-variant",
-  // ].map((color) => `--color: var(--md-sys-color-${color})`);
-
-  // #colorList: CSSResult[] = [
-  //   "primary",
-  //   "surface-tint",
-  //   "primary-container",
-  //   "on-primary-container",
-  //   "secondary",
-  //   "secondary-container",
-  //   "on-secondary-container",
-  //   "tertiary",
-  //   "tertiary-container",
-  //   "on-tertiary-container",
-  //   "error",
-  //   "error-container",
-  //   "on-error-container",
-  //   "on-background",
-  //   "on-surface",
-  //   "surface-variant",
-  //   "on-surface-variant",
-  //   "outline",
-  //   "outline-variant",
-  //   "inverse-surface",
-  //   "inverse-primary",
-  //   "primary-fixed",
-  //   "on-primary-fixed",
-  //   "primary-fixed-dim",
-  //   "on-primary-fixed-variant",
-  //   "secondary-fixed",
-  //   "on-secondary-fixed",
-  //   "secondary-fixed-dim",
-  //   "on-secondary-fixed-variant",
-  //   "tertiary-fixed",
-  //   "on-tertiary-fixed",
-  //   "tertiary-fixed-dim",
-  //   "on-tertiary-fixed-variant",
-  // ]
-  //   .map((color) => unsafeCSS(`var(--md-sys-color-${color})`))
-  //   .map((_color, index) =>  css`
-  //     .cloud-container span:nth-child(${index}) {
-  //       color: ${_color} !important;
-  //       -webkit-text-stroke: 1px black;
-  //     }
-  //   `);
 
   @property({ type: Array })
   words: WordCloudWord[] = [];
@@ -171,81 +153,44 @@ export class WordCloud extends LitElement {
 
   protected override async firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
-    // this.#cloudList.map(([word, weight, category]: [string, number, string], index: number) => {
-    //   const span = document.createElement("span");
-    //   span.innerText = word;
-    //   span.classList.add(category);
-    //   span.setAttribute("style", `--weight: ${weight/10}; ${this.#materialColorVars.at(Math.floor(Math.random() * this.#materialColorVars.length)) ?? ""}`);
-    //   span.style.marginBlockStart = `-${(weight * Math.random() * Math.random() * Math.random())}rem`;
-    //   span.style.writingMode = (Math.random() > 0.8 && weight > 3) ? "vertical-rl" : "horizontal-tb";
-    //   return span;
-    // }).forEach((span, index) => this.#cloudContainer.value?.appendChild(span))
-    // if (this.#cloudContainer.value && this.#cloudSection.value /* && this.#cloudCanvas.value */) {
-    //   const sectionRect = this.#cloudSection.value.getClientRects()[0];
-    //   const containerRect = this.#cloudContainer.value.getClientRects()[0];
+  }
 
-    //   const x = (containerRect.right - containerRect.left) / 2;
-    //   const y = containerRect.height > 0 ? (containerRect.bottom - containerRect.top) / 2 : (sectionRect.bottom - sectionRect.top) / 2;
-
-    //   const config: WordCloud.Options = {
-    //     list: this.#cloudList,
-    //     fontFamily: "Roboto",
-    //     backgroundColor: "transparent",
-    //     weightFactor: (weight: number) => 2 * weight,
-    //     minRotation: -Math.PI,
-    //     maxRotation: Math.PI,
-    //     rotateRatio: 0.5,
-    //     shuffle: true,
-    //     shrinkToFit: true,
-    //     drawOutOfBound: true,
-    //     // origin: [sectionRect.width / 2, sectionRect.height * 2],
-    //     classes: (word: string, weight: string | number, fontSize: number, extraData: string | number) =>
-    //       `word-${word} weight-${weight} fontSize-${fontSize} ${extraData}`,
-    //     // color: (word: string, weight: string | number, fontSize: number, distance: number, theta: number) => "random-light",
-
-    //     // shape: "circle",
-    //     shape: (theta: number) => {
-    //       console.info(`THETA ${theta}`);
-    //       return 1 - (Math.cos(theta / 2) ** 2);
-    //     }
-    //   };
-
-    //   console.info(JSON.stringify({ config, sectionRect, containerRect }, null, 2));
-
-
-    //   WordCloud(
-    //     this.#cloudContainer.value,
-    //     config
-    //   );
-    //   this.#colorList
-    //     .map((css) => css.styleSheet)
-    //     .filter((css) => css !== undefined)
-    //     .forEach((css) => this.shadowRoot?.adoptedStyleSheets.push(css))
-    // }
+  #ignore(word: WordCloudWord) {
+    const dd = html`
+    <dd>weight: ${word.weight}</dd>
+    <dd>category: ${word.category}</dd>
+    ${
+      word.extras.length > 0 ?
+        html`
+          <dd>extras: ${word.extras.join(", ")}</dd>
+        ` :
+        nothing
+    }
+    `;
   }
 
   override render() {
     return html`
-      <dl>
+      <ul>
       ${
         this.words
-          .sort((word1, word2) => word1.weight > word2.weight ? -1 : (word1.weight === word2.weight ? 0 : 1))
-          .map((word) => html`
-            <div>
-              <dt>${word.word}</dt>
-              <dd>weight: ${word.weight}</dd>
-              <dd>category: ${word.category}</dd>
-              ${
-                word.extras.length > 0 ?
-                  html`
-                    <dd>extras: ${word.extras.join(", ")}</dd>
-                  ` :
-                  nothing
-              }
-            </div>
-          `)
+          //.sort((word1, word2) => word1.weight > word2.weight ? -1 : (word1.weight === word2.weight ? 0 : 1))
+          .sort(() => Math.random() - 0.5)
+          .map((word) => {
+            const classes = {
+              tech: word.category === "tech",
+              practice: word.category === "practice",
+              "first-quartile md-typescale-display-medium": word.quartile === "first-quartile",
+              "second-quartile md-typescale-headline-large": word.quartile === "second-quartile",
+              "third-quartile md-typescale-headline-small": word.quartile === "third-quartile",
+              "fourth-quartile md-typescale-title-large": word.quartile === "fourth-quartile",
+            };
+            return html`
+              <li class=${classMap(classes)}>${word.word}</li>
+            `;
+          })
       }
-      </dl>
+      </ul>
     `;
   }
 }
