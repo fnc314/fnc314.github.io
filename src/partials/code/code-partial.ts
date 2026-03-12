@@ -76,21 +76,21 @@ export class CodePartial extends LitElement {
           align-items: center;
           background-color: unset;
 
-          h2 {
-            font-family: var(--md-ref-typeface-plain);
+          a {
+            text-decoration: none;
+
+            > h2 {
+              font-family: var(--md-ref-typeface-plain);
+              margin: unset;
+              color: var(--md-sys-color-tertiary);
+              text-align: center;
+              line-height: 1.5rem;
+            }
           }
         }
 
         a {
-          text-decoration: none;
           color: var(--md-sys-color-primary);
-
-          h2 {
-            margin: unset;
-            color: var(--md-sys-color-tertiary);
-            text-align: center;
-            line-height: 1.5rem;
-          }
         }
 
         .widget-content {
@@ -116,15 +116,14 @@ export class CodePartial extends LitElement {
 
           li {
             list-style-type: none;
-            outline: 1px solid var(--md-sys-color-on-surface);
-            background: var(--md-sys-color-surface-container-highest);
-            color: var(--md-sys-color-on-surface);
+            outline: 1px solid var(--md-sys-color-inverse-on-surface);
+            background: var(--md-sys-color-inverse-surface);
+            color: var(--md-sys-color-inverse-on-surface);
             padding: 0.25rem 1rem;
             border-radius: 0.5rem;
 
             a {
               color: inherit;
-              text-decoration: none;
               font-size: inherit;
               font-weight: inherit;
               line-height: inherit;
