@@ -58,6 +58,9 @@
       "@/*": ["./src/*"],
       "@/components": ["./src/components/*"],
       "@/data": ["./src/data/*"],
+      "@/services": ["./src/services/*"],
+      "@/styles": ["./src/styles/*"],
+      "@/types": ["./src/types/*"],
     }
   },
   "include": [
