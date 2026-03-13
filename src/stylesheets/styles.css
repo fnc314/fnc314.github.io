@@ -20,6 +20,14 @@
   --breakpoint-expanded-width-max: 1500px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  all: unset;
+  display: revert;
+}
+
 html,
 body {
   font-size: 15px;

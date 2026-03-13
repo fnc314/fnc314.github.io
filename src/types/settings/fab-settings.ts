@@ -33,6 +33,9 @@ export const FabPositions: FabPosition[] = [
   "END_BOTTOM",
 ];
 
+export const fabPositionToUi = (fabPosition: FabPosition): string =>
+  fabPosition.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" / ")
+
 export const FAB_STYLE = {
   ICON_ONLY: "ICON_ONLY" as const,
   ICON_AND_TEXT: "ICON_AND_TEXT" as const,

@@ -1,7 +1,7 @@
 import { settingsService } from "@/services/settings";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { AppSettings, ColorScheme, ColorSchemeContrast, colorSchemeSettingsToMaterialSchemeName, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, FabSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST } from "@/types/settings";
+import { AppSettings, ColorScheme, ColorSchemeContrast, colorSchemeSettingsToMaterialSchemeName, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, fabPositionToUi, FabSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST } from "@/types/settings";
 import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -170,28 +170,27 @@ export class SettingsDialog extends LitElement {
         grid-template-rows: auto 1fr 1fr;
         gap: 1rem;
 
-        div {
-          display: block;
-        }
-
         legend {
           grid-area: legend;
         }
 
-        label:nth-child(2) {
-          grid-area: StartTop;
-        }
+        label {
+          &:has(md-radio:disabled) {
+            opacity: 0.5;
+          }
 
-        label:nth-child(3) {
-          grid-area: StartBottom;
-        }
-
-        label:nth-child(4) {
-          grid-area: EndTop;
-        }
-
-        label:nth-child(5) {
-          grid-area: EndBottom;
+          &:nth-child(2) {
+            grid-area: StartTop;
+          }
+          &:nth-child(3) {
+            grid-area: StartBottom;
+          }
+          &:nth-child(4) {
+            grid-area: EndTop;
+          }
+          &:nth-child(5) {
+            grid-area: EndBottom;
+          }
         }
       }
     `
@@ -386,7 +385,7 @@ export class SettingsDialog extends LitElement {
                     value=${position}
                     @change=${() => this.onFabPositionChange("fab.settings.position.change", position)}
                   ></md-radio>
-                  ${position}
+                  ${fabPositionToUi(position)}
                 </label>
               `)
             }
@@ -405,7 +404,7 @@ export class SettingsDialog extends LitElement {
                     value=${position}
                     @change=${() => this.onFabPositionChange("fab.connect.position.change", position)}
                   ></md-radio>
-                  ${position}
+                  ${fabPositionToUi(position)}
                 </label>
               `)
             }
