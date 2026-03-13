@@ -36,14 +36,14 @@ export class AppShell extends LitElement {
       md-fab {
         position: fixed;
         z-index: 1; /* Ensure it floats above other content */
-        bottom: 0.5rem;
+        bottom: 1rem;
 
         &.settings {
-          left: 0.5rem;
+          left: 1rem;
         }
 
         &.connect {
-          right: 0.5rem;
+          right: 1rem;
         }
       }
 
@@ -81,9 +81,9 @@ export class AppShell extends LitElement {
     position: FabPosition
   ) {
     console.error(`${fab} fab position changed to ${position}`);
-    const left = position.startsWith("START") ? "0.5rem" : "unset";
-    const right = position.startsWith("END") ? "0.5rem" : "unset";
-    const bottom = position.endsWith("BOTTOM") ? "0.5rem" : "calc(var(--md-fab-container-height) + 1rem)";
+    const left = position.startsWith("START") ? "1rem" : "unset";
+    const right = position.startsWith("END") ? "1rem" : "unset";
+    const bottom = position.endsWith("BOTTOM") ? "1rem" : "calc(var(--md-fab-container-height) + 1.5rem)";
     switch (fab) {
       case "settings":
         this.settingsFab.style.bottom = bottom;
