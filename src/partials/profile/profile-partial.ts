@@ -1,5 +1,6 @@
 import { makeWordCloudWord, WordCloudWordCategory } from "@/components/word-cloud/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
+import EducationJson from "@/data/education.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
@@ -26,6 +27,7 @@ export class ProfilePartial extends LitElement {
           "header"
           "figure"
           "bio"
+          "education"
           "cloud"
           ;
         height: min-content;
@@ -114,6 +116,9 @@ export class ProfilePartial extends LitElement {
       }
 
       /* Apply grid-area to the custom elements by class */
+      profile-section {
+        align-self: center;
+      }
       .bio {
         grid-area: bio;
 
@@ -141,6 +146,7 @@ export class ProfilePartial extends LitElement {
             "header"
             "figure"
             "bio"
+            "education"
             "cloud"
             ;
           gap: 1rem;
@@ -154,7 +160,7 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure bio"
+            "figure education"
             "cloud cloud"
             ;
           grid-template-rows: minmax(auto, min-content);
@@ -168,7 +174,8 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure cloud"
+            "figure education"
+            "cloud cloud"
             ;
           grid-template-rows: minmax(auto, min-content);
           grid-auto-rows: auto;
@@ -181,6 +188,7 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header   header         header         header"
             "figure   bio            bio            bio"
+            "figure   education      education      education"
             "figure   cloud          cloud          cloud"
             ;
           grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -243,26 +251,6 @@ export class ProfilePartial extends LitElement {
   }
 
   override render() {
-    // const education = html`
-    //   <profile-section
-    //     class="education"
-    //     section-title="Education">
-    //     <ul class="list-grid" slot="section-grid-content">
-    //       ${
-    //         ProfileJson.education.map((edu) => html`
-    //           <li>
-    //             <p class="md-typescale-title-medium">
-    //               ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
-    //             </p>
-    //             <p class="md-typescale-title-small">
-    //               ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
-    //             </p>
-    //           </li>
-    //         `)
-    //       }
-    //     </ul>
-    //   </profile-section>
-    // `;
     return html`
       <article>
         <partial-header
@@ -281,6 +269,25 @@ export class ProfilePartial extends LitElement {
           >
             ${BioJson.bio}
           </p>
+        </profile-section>
+
+        <profile-section
+          class="education"
+          section-title="Education">
+          <ul class="list-grid" slot="section-grid-content">
+            ${
+              EducationJson.education.map((edu) => html`
+                <li>
+                  <p class="md-typescale-title-medium">
+                    ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
+                  </p>
+                  <p class="md-typescale-title-small">
+                    ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
+                  </p>
+                </li>
+              `)
+            }
+          </ul>
         </profile-section>
 
         ${this.#renderCloud()}
