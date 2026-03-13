@@ -16,9 +16,11 @@ import "./components/index.js";
 import "./partials/index.js";
 import { Routes } from "./partials/nav/routes.js";
 import "./services/index.js";
+import { settingsService } from "./services/index.js";
 import { MaterialSchemes } from "./styles/material-styles.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import "./types/index.js";
+import { colorSchemeSettingsToMaterialSchemeName } from "./types/index.js";
 
 document.adoptedStyleSheets.push(
   typescaleStyles.styleSheet,
@@ -39,30 +41,6 @@ onThemeChange(
   )
 );
 
-const onColorSchemeChange = (event) => {
-  console.log(`ColorSchemeChange ${JSON.stringify(event.detail, null, 2)}`);
-  updateMaterialCSSStyleSheet(MaterialSchemes[event.detail.colorScheme]);
-
-  const permanent = Boolean(
-    window.localStorage.getItem("permanentColorScheme") ?? "false",
-  );
-
-  if (permanent) {
-    window.localStorage.setItem("colorSchemeChange", event.detail.colorScheme);
-  }
-};
-
-document.addEventListener("colorschemechange", onColorSchemeChange);
-
-const onPermanentColorScheme = (event) => {
-  window.localStorage.setItem("permanentColorScheme", event.detail.permanent);
-  if (!event.detail.permanent) {
-    window.localStorage.removeItem("colorSchemeChange");
-  }
-};
-
-document.addEventListener("permanentcolorscheme", onPermanentColorScheme);
-
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
   if (window.location.hash === "") {
@@ -71,11 +49,10 @@ const domLoadedListener = (event) => {
     )
   }
 
-  const darkModeToggle = window.localStorage.getItem("dark-mode-toggle") ?? "light";
-  const colorSchemeChange = window.localStorage.getItem("colorSchemeChange");
-
   const matScheme = MaterialSchemes[
-    colorSchemeChange || darkModeToggle
+    colorSchemeSettingsToMaterialSchemeName(
+      settingsService.loadSettings().colorScheme
+    )
   ];
   updateMaterialCSSStyleSheet(matScheme);
 };

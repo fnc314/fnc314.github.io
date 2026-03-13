@@ -1,7 +1,7 @@
 import { settingsService } from "@/services/settings";
-import { MaterialSchemeName, MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
+import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { AppSettings, ColorScheme, ColorSchemeContrast, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, FabSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings";
+import { AppSettings, ColorScheme, ColorSchemeContrast, colorSchemeSettingsToMaterialSchemeName, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, FabSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST } from "@/types/settings";
 import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -13,7 +13,7 @@ import "@material/web/radio/radio";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import "dark-mode-toggle";
-import { ColorSchemeChangeEvent } from "dark-mode-toggle";
+import { ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { css, html, LitElement } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, query, state } from "lit/decorators.js";
@@ -241,9 +241,24 @@ export class SettingsDialog extends LitElement {
             name: event.detail.colorScheme.toUpperCase() as ColorScheme
           }
         }
-        settingsService.saveSettings(this._appSettings);
+        this.onColorSchemeContrastChange(
+          this._appSettings.colorScheme.contrast
+        );
       },
     );
+    document.addEventListener(
+      "permanentcolorscheme",
+      (event: PermanentColorSchemeEvent) => {
+        this._appSettings = {
+          ...this._appSettings,
+          colorScheme: {
+            ...this._appSettings.colorScheme,
+            persist: event.detail.permanent,
+          }
+        }
+        settingsService.saveSettings(this._appSettings);
+      }
+    )
   }
 
   private onFabPositionChange(
@@ -303,23 +318,8 @@ export class SettingsDialog extends LitElement {
 
     settingsService.saveSettings(this._appSettings);
 
-    const materialSchemeVariant =
-      this._appSettings.colorScheme.name !== SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM ?
-      this._appSettings.colorScheme.name.toLowerCase() :
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ?
-        SETTINGS_KEYS_COLOR_SCHEME_NAMES.DARK :
-        SETTINGS_KEYS_COLOR_SCHEME_NAMES.LIGHT
-      ).toLowerCase();
-
-    const materialSchemeContrast =
-      this._appSettings.colorScheme.contrast === SETTINGS_KEY_COLOR_SCHEME_CONTRAST.NORMAL ?
-      "" :
-      this._appSettings.colorScheme.contrast.charAt(0).toUpperCase() + this._appSettings.colorScheme.contrast.slice(1).toLowerCase() + "Contrast";
-
-    const materialSchemeName: MaterialSchemeName = `${materialSchemeVariant}${materialSchemeContrast}` as MaterialSchemeName;
-
     updateMaterialCSSStyleSheet(
-      MaterialSchemes[materialSchemeName]
+      MaterialSchemes[colorSchemeSettingsToMaterialSchemeName(this._appSettings.colorScheme)]
     )
   }
 
