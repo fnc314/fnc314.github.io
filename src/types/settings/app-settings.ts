@@ -9,6 +9,7 @@ export type AppSettings = {
 export const DEFAULT_APP_SETTINGS: AppSettings = {
   colorScheme: {
     name: "SYSTEM",
+    contrast: "NORMAL",
     persist: false,
   },
   fab: {

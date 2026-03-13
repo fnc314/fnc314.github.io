@@ -1,6 +1,7 @@
 import { settingsService } from "@/services/settings";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { AppSettings, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, FabSettings } from "@/types/settings";
+import { MaterialSchemeName, MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
+import { updateMaterialCSSStyleSheet } from "@/styles/styles";
+import { AppSettings, ColorScheme, ColorSchemeContrast, DEFAULT_APP_SETTINGS, FabPosition, FabPositions, FabSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings";
 import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -9,6 +10,8 @@ import "@material/web/icon/icon";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
 import "@material/web/radio/radio";
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
 import "dark-mode-toggle";
 import { ColorSchemeChangeEvent } from "dark-mode-toggle";
 import { css, html, LitElement } from "lit-element";
@@ -231,6 +234,14 @@ export class SettingsDialog extends LitElement {
       "colorschemechange",
       (event: ColorSchemeChangeEvent) => {
         this._darkModeEnabled = event.detail.colorScheme === "dark";
+        this._appSettings = {
+          ...this._appSettings,
+          colorScheme: {
+            ...this._appSettings.colorScheme,
+            name: event.detail.colorScheme.toUpperCase() as ColorScheme
+          }
+        }
+        settingsService.saveSettings(this._appSettings);
       },
     );
   }
@@ -279,6 +290,39 @@ export class SettingsDialog extends LitElement {
     );
   }
 
+  private onColorSchemeContrastChange(
+    contrast: ColorSchemeContrast,
+  ) {
+    this._appSettings = {
+      ...this._appSettings,
+      colorScheme: {
+        ...this._appSettings.colorScheme,
+        contrast
+      }
+    };
+
+    settingsService.saveSettings(this._appSettings);
+
+    const materialSchemeVariant =
+      this._appSettings.colorScheme.name !== SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM ?
+      this._appSettings.colorScheme.name.toLowerCase() :
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ?
+        SETTINGS_KEYS_COLOR_SCHEME_NAMES.DARK :
+        SETTINGS_KEYS_COLOR_SCHEME_NAMES.LIGHT
+      ).toLowerCase();
+
+    const materialSchemeContrast =
+      this._appSettings.colorScheme.contrast === SETTINGS_KEY_COLOR_SCHEME_CONTRAST.NORMAL ?
+      "" :
+      this._appSettings.colorScheme.contrast.charAt(0).toUpperCase() + this._appSettings.colorScheme.contrast.slice(1).toLowerCase() + "Contrast";
+
+    const materialSchemeName: MaterialSchemeName = `${materialSchemeVariant}${materialSchemeContrast}` as MaterialSchemeName;
+
+    updateMaterialCSSStyleSheet(
+      MaterialSchemes[materialSchemeName]
+    )
+  }
+
   override render() {
     const classes = {
       dark: this._darkModeEnabled,
@@ -306,6 +350,28 @@ export class SettingsDialog extends LitElement {
             dark="Dark"
             remember="Persist UI Mode"
           ></dark-mode-toggle>
+
+          <fieldset class="color-scheme-contrast">
+            <legend>UI Contrast</legend>
+            <md-outlined-select
+              label="Choose UI Color Contrast"
+              name="color_scheme.contrast"
+              value=${this._appSettings.colorScheme.contrast}
+              @change=${(event: Event) => this.onColorSchemeContrastChange(event?.target?.value as ColorSchemeContrast)}
+            >
+              ${
+                Object.values(SETTINGS_KEY_COLOR_SCHEME_CONTRAST).map((contrast) => html`
+                  <md-select-option
+                    ?selected=${this._appSettings.colorScheme.contrast === contrast}
+                    value=${contrast}
+                    .displayText=${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
+                    >
+                    <div slot="headline">${contrast}</div>
+                  </md-select-option>
+                `)
+              }
+            </md-outlined-select>
+          </fieldset>
 
           <fieldset class="fab-settings-position">
             <legend>Settings Button Position</legend>

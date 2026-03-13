@@ -7,6 +7,8 @@ import "@material/web/icon/icon.js";
 import "@material/web/list/list-item.js";
 import "@material/web/list/list.js";
 import "@material/web/radio/radio.js";
+import "@material/web/select/outlined-select.js";
+import "@material/web/select/select-option.js";
 import "@material/web/tabs/primary-tab.js";
 import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
