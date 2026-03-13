@@ -366,7 +366,7 @@ export class SettingsDialog extends LitElement {
                     value=${contrast}
                     .displayText=${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
                     >
-                    <div slot="headline">${contrast}</div>
+                    <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
                   </md-select-option>
                 `)
               }
