@@ -39,34 +39,23 @@ export class ProfileSection extends LitElement {
 
       @container (min-width: 600px) {
         section {
+          /* Make the inner section span the columns of the host's subgrid */
+          grid-column: 1 / -1;
           grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: auto 1fr;
+          grid-template-columns: subgrid;
           grid-template-rows: auto;
+        }
+
+        :host {
+          /* Turn the component itself into a subgrid container */
+          display: grid;
+          grid-template-columns: subgrid;
         }
       }
 
       @container (min-width: 900px) {
         section {
-          grid-template-areas: "section-grid-title section-grid-content";
           column-gap: 1rem;
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
-        }
-      }
-
-      @container (min-width: 1200px) {
-        section {
-          grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
-        }
-      }
-
-      @container (min-width: 1500px) {
-        section {
-          grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
         }
       }
     `,
@@ -79,7 +68,7 @@ export class ProfileSection extends LitElement {
     return html`
       <section>
         <h2 class="md-typescale-headline-small">
-          <span> ${this.sectionTitle} </span>
+          ${this.sectionTitle}
         </h2>
         <div>
           <slot name="section-grid-content"></slot>

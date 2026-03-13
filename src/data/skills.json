@@ -1,5 +1,5 @@
 {
-  "proficiencies": {
+  "skills": {
     "tech": {
       "Mobile": 10,
       "Kotlin": 8,
@@ -23,6 +23,7 @@
       "Android Studio": 10,
       "IntelliJ": 10,
       "Visual Studio Code": 8,
+      "Fastlane": 6,
       "BitBucket": 5,
       "Firebase": 5,
       "GitHub": 5,

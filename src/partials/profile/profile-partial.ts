@@ -143,15 +143,14 @@ export class ProfilePartial extends LitElement {
       @container (min-width: 600px) {
         article {
           grid-template-areas:
-            "header"
-            "figure"
-            "bio"
-            "education"
-            "cloud"
+            "header header"
+            "figure figure"
+            "bio bio"
+            "education education"
+            "cloud cloud"
             ;
           gap: 1rem;
-          grid-template-rows: repeat(6, min-content);
-          grid-template-columns: 1fr;
+          grid-template-columns: auto 1fr;
         }
       }
 
@@ -228,10 +227,10 @@ export class ProfilePartial extends LitElement {
   }
 
   #renderCloud(): TemplateResult {
-    const words = Object.keys(SkillsJson.proficiencies).flatMap((proficency) =>
+    const words = Object.keys(SkillsJson.skills).flatMap((proficency) =>
       Object.entries(
-        SkillsJson.proficiencies[
-          proficency as keyof typeof SkillsJson.proficiencies
+        SkillsJson.skills[
+          proficency as keyof typeof SkillsJson.skills
         ],
       ).map(([word, weight]) =>
         makeWordCloudWord(word, weight, proficency as WordCloudWordCategory),
