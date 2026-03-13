@@ -76,17 +76,17 @@ export class NavPartial extends LitElement {
   @state({
     hasChanged: (newValue: number, oldValue: number) => newValue !== oldValue,
   })
-  _activeTabIndex = 0;
+  private _activeTabIndex = 0;
 
   @state({
     hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
   })
-  _activeRoute: Route = Routes.PROFILE;
+  private _activeRoute: Route = Routes.PROFILE;
 
   #tabsRef: Ref<MdTabs> = createRef();
 
   @state()
-  _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
+  private _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
     work: createRef(),
     code: createRef(),
     profile: createRef(),

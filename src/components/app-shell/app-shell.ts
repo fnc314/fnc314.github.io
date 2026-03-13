@@ -2,12 +2,13 @@ import { SettingsDialog } from "@/components/dialogs/settings/settings-dialog";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type MdDialog } from "@material/web/dialog/dialog";
-import { LitElement, PropertyValues, TemplateResult, css, html, nothing } from "lit";
-import { customElement, query } from "lit/decorators.js";
+import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
+import { customElement, query, state } from "lit/decorators.js";
 
 // Imports for side-effects to register the components
 import { settingsService } from "@/services/settings";
-import { FabPosition } from "@/types/settings/fab-settings";
+import { AppSettings } from "@/types/settings";
+import { FAB_STYLE, FabSettings } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -70,30 +71,31 @@ export class AppShell extends LitElement {
   @query("#fab-connect")
   private connectFab!: MdFab;
 
-  private connectFabPositionChangeListener: (event: Event) => void =
-    (event: Event) => this.onFabPositionChange.bind(this)("connect", (event as CustomEvent).detail.position);
+  @state()
+  private appSettings: AppSettings = settingsService.loadSettings();
 
-  private settingsFabPositionChangeListener: (event: Event) => void =
-    (event: Event) => this.onFabPositionChange.bind(this)("settings", (event as CustomEvent).detail.position);
+  private onFabChangeBind = this.onFabChange.bind(this);
 
-  private onFabPositionChange(
+  private onFabChange(
     fab: "settings" | "connect",
-    position: FabPosition
+    fabSettings: FabSettings,
   ) {
-    console.error(`${fab} fab position changed to ${position}`);
-    const left = position.startsWith("START") ? "1rem" : "unset";
-    const right = position.startsWith("END") ? "1rem" : "unset";
-    const bottom = position.endsWith("BOTTOM") ? "1rem" : "calc(var(--md-fab-container-height) + 1.5rem)";
+    console.error(`${fab} fab settings changed to ${fabSettings}`);
+    const left = fabSettings.position.startsWith("START") ? "1rem" : "unset";
+    const right = fabSettings.position.startsWith("END") ? "1rem" : "unset";
+    const bottom = fabSettings.position.endsWith("BOTTOM") ? "1rem" : "calc(var(--md-fab-container-height) + 1.5rem)";
     switch (fab) {
       case "settings":
         this.settingsFab.style.bottom = bottom;
         this.settingsFab.style.left = left;
         this.settingsFab.style.right = right;
+        this.settingsFab.label = fabSettings.style === FAB_STYLE.ICON_AND_TEXT ? "Settings" : "";
         break;
       case "connect":
         this.connectFab.style.bottom = bottom;
         this.connectFab.style.left = left;
         this.connectFab.style.right = right;
+        this.connectFab.label = fabSettings.style === FAB_STYLE.ICON_AND_TEXT ? "Connect" : "";
         break;
     }
   }
@@ -124,9 +126,9 @@ export class AppShell extends LitElement {
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-    const appSettings = settingsService.loadSettings();
-    this.onFabPositionChange("settings", appSettings.fab.settings.position);
-    this.onFabPositionChange("connect", appSettings.fab.connect.position);
+    this.appSettings = settingsService.loadSettings();
+    this.onFabChangeBind("settings", this.appSettings.fab.settings);
+    this.onFabChangeBind("connect", this.appSettings.fab.connect);
   }
 
   override render() {
@@ -138,19 +140,42 @@ export class AppShell extends LitElement {
       <md-fab
         id="fab-settings"
         class="settings"
-        label="Settings"
         size="medium"
         variant="surface"
-        aria-label="Site Settings"
+        aria-label="Settings"
         @click=${() =>
           this.settingsDialog.showDialog().then(() => {
             this.settingsDialog.addEventListener(
               "fab.connect.position.change",
-              this.connectFabPositionChangeListener
+              (event: Event) =>
+                this.onFabChangeBind(
+                  "connect",
+                  { ...this.appSettings.fab.connect, position: (event as CustomEvent).detail.position }
+                )
             );
             this.settingsDialog.addEventListener(
               "fab.settings.position.change",
-              this.settingsFabPositionChangeListener
+              (event: Event) =>
+                this.onFabChangeBind(
+                  "settings",
+                  { ...this.appSettings.fab.settings, position: (event as CustomEvent).detail.position }
+                )
+            );
+            this.settingsDialog.addEventListener(
+              "fab.settings.style.change",
+              (event: Event) =>
+                this.onFabChangeBind(
+                  "settings",
+                  { ...this.appSettings.fab.settings, style: (event as CustomEvent).detail.style }
+                )
+            );
+            this.settingsDialog.addEventListener(
+              "fab.connect.style.change",
+              (event: Event) =>
+                this.onFabChangeBind(
+                  "connect",
+                  { ...this.appSettings.fab.connect, style: (event as CustomEvent).detail.style }
+                )
             );
           })
         }
@@ -175,9 +200,9 @@ export class AppShell extends LitElement {
       <md-fab
         id="fab-connect"
         class="connect"
-        label="Connect"
-        size="small"
+        size="medium"
         variant="primary"
+        aria-label="Connect"
         @click=${() => this.connectDialog.show()}
         >
         <md-icon slot="icon">person_add</md-icon>

@@ -39,10 +39,15 @@ export const fabPositionToUi = (fabPosition: FabPosition): string =>
 export const FAB_STYLE = {
   ICON_ONLY: "ICON_ONLY" as const,
   ICON_AND_TEXT: "ICON_AND_TEXT" as const,
-  TEXT_ONLY: "TEXT_ONLY" as const,
+  // TEXT_ONLY: "TEXT_ONLY" as const,
 } as const;
 
+export const fabStyleToUi = (fabStyle: FabStyle): string =>
+  fabStyle.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" ")
+
 export type FabStyle = typeof FAB_STYLE[keyof typeof FAB_STYLE];
+
+export const FabStyles: FabStyle[] = Object.values(FAB_STYLE);
 
 export const FAB_SIZE = {
   // SMALL: "SMALL" as const,
