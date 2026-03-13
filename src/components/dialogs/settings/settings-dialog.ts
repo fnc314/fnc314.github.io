@@ -357,7 +357,7 @@ export class SettingsDialog extends LitElement {
               label="Choose UI Color Contrast"
               name="color_scheme.contrast"
               value=${this._appSettings.colorScheme.contrast}
-              @change=${(event: Event) => this.onColorSchemeContrastChange(event?.target?.value as ColorSchemeContrast)}
+              @change=${(event: Event) => this.onColorSchemeContrastChange((event.target as HTMLSelectElement).value as ColorSchemeContrast)}
             >
               ${
                 Object.values(SETTINGS_KEY_COLOR_SCHEME_CONTRAST).map((contrast) => html`
