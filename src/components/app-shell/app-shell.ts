@@ -6,7 +6,7 @@ import { LitElement, PropertyValues, TemplateResult, css, html, nothing } from "
 import { customElement, query } from "lit/decorators.js";
 
 // Imports for side-effects to register the components
-import { settingsService } from "@/services";
+import { settingsService } from "@/services/settings";
 import { FabPosition } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
