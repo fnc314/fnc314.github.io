@@ -50,19 +50,20 @@ export const FAB_STYLE = {
   ICON_ONLY: "ICON_ONLY" as const,
   ICON_AND_TEXT: "ICON_AND_TEXT" as const,
   ICON_ONLY_SMALL: "ICON_ONLY_SMALL" as const,
-  // ICON_ONLY_LARGE: "ICON_ONLY_LARGE" as const,
-  // TEXT_ONLY: "TEXT_ONLY" as const,
+  TEXT_ONLY: "TEXT_ONLY" as const,
 } as const;
 export type FabStyle = typeof FAB_STYLE[keyof typeof FAB_STYLE];
 
 export const fabStyleToUi = (fabStyle: FabStyle): string => {
   switch (fabStyle) {
     case FAB_STYLE.ICON_ONLY_SMALL:
-      return "Icon Only (Small)";
+      return "Small Icon Only";
     case FAB_STYLE.ICON_ONLY:
       return "Icon Only";
     case FAB_STYLE.ICON_AND_TEXT:
-      return "Icon And Text";
+      return "Text And Icon";
+    case FAB_STYLE.TEXT_ONLY:
+      return "Text Only";
   }
 };
 

@@ -10,6 +10,7 @@ import "@material/web/divider/divider";
 import "@material/web/fab/fab";
 import { MdFab } from "@material/web/fab/fab";
 import "@material/web/icon/icon";
+import { MdIcon } from "@material/web/icon/icon";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
 import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
@@ -80,31 +81,20 @@ export class AppShell extends LitElement {
     console.error(`${fab} fab settings changed to ${JSON.stringify(fabSettings, null, 1)}`);
     const left = fabSettings.position.startsWith("START") ? "1rem" : "unset";
     const right = fabSettings.position.startsWith("END") ? "1rem" : "unset";
-    const bottom = fabSettings.position.endsWith("BOTTOM") ? "1rem" : fabSettings.style !== FAB_STYLE.ICON_ONLY_SMALL ? "calc(var(--md-fab-container-height) + 1.5rem)" : "calc(var(--md-fab-small-container-height) + 1.5rem)";
-    switch (fab) {
-      case "settings":
-        this.settingsFab.style.bottom = bottom;
-        this.settingsFab.style.left = left;
-        this.settingsFab.style.right = right;
-        if (fabSettings.style === FAB_STYLE.ICON_AND_TEXT) {
-          this.settingsFab.label = "Settings";
-        } else {
-          this.settingsFab.label = ""
-          this.settingsFab.size = fabSettings.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
-        }
-        break;
-      case "connect":
-        this.connectFab.style.bottom = bottom;
-        this.connectFab.style.left = left;
-        this.connectFab.style.right = right;
-        if (fabSettings.style === FAB_STYLE.ICON_AND_TEXT) {
-          this.connectFab.label = "Connect";
-        } else {
-          this.connectFab.label = ""
-          this.connectFab.size = fabSettings.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
-        }
-        break;
-    }
+    const bottom = fabSettings.position.endsWith("BOTTOM") ? "1rem" :
+      fabSettings.style !== FAB_STYLE.ICON_ONLY_SMALL ?
+        "calc(var(--md-fab-container-height) + 1.5rem)" :
+        "calc(var(--md-fab-small-container-height) + 1.5rem)";
+
+    const fabElement: MdFab = fab === "settings" ? this.settingsFab : this.connectFab;
+    const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
+    fabElement.style.bottom = bottom;
+    fabElement.style.left = left;
+    fabElement.style.right = right;
+    fabElement.label = fabSettings.style === FAB_STYLE.ICON_AND_TEXT || fabSettings.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
+    fabElement.size = fabSettings.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
+    (fabElement.querySelector("md-icon") as MdIcon).style.display =
+      fabSettings.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
   }
 
   private renderConnectionsList(): TemplateResult {
@@ -187,7 +177,7 @@ export class AppShell extends LitElement {
           })
         }
       >
-        <md-icon slot="icon">settings</md-icon>
+        <md-icon id="settings-fab-icon" slot="icon">settings</md-icon>
       </md-fab>
 
       <md-dialog id="connect-dialog">
