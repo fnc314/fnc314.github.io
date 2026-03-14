@@ -1,22 +1,19 @@
 import { SettingsDialog } from "@/components/dialogs/settings/settings-dialog";
 import Connections from "@/data/connections.json" with { type: "json" };
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type MdDialog } from "@material/web/dialog/dialog";
-import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
-import { customElement, query, state } from "lit/decorators.js";
-
-// Imports for side-effects to register the components
 import { settingsService } from "@/services/settings";
-import { AppSettings } from "@/types/settings";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { FAB_STYLE, FabSettings } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
+import { type MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
 import "@material/web/fab/fab";
 import { MdFab } from "@material/web/fab/fab";
 import "@material/web/icon/icon";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
+import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
+import { customElement, query } from "lit/decorators.js";
 
 @customElement("app-shell")
 export class AppShell extends LitElement {
@@ -28,8 +25,11 @@ export class AppShell extends LitElement {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
         --md-fab-container-height: 4rem;
+        --md-fab-container-width: 4rem;
+        --md-fab-small-container-height: 3rem;
+        --md-fab-small-container-width: 3rem;
         --md-fab-label-text-font: var(--md-ref-typeface-brand);
-        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-container-color: var(--md-sys-color-surface-container-high);
         --md-list-container-color: var(--md-sys-color-surface-container-highest);
         --md-list-item-container-shape: var(--md-sys-shape-corner-large);
       }
@@ -71,31 +71,38 @@ export class AppShell extends LitElement {
   @query("#fab-connect")
   private connectFab!: MdFab;
 
-  @state()
-  private appSettings: AppSettings = settingsService.loadSettings();
-
   private onFabChangeBind = this.onFabChange.bind(this);
 
   private onFabChange(
     fab: "settings" | "connect",
     fabSettings: FabSettings,
   ) {
-    console.error(`${fab} fab settings changed to ${fabSettings}`);
+    console.error(`${fab} fab settings changed to ${JSON.stringify(fabSettings, null, 1)}`);
     const left = fabSettings.position.startsWith("START") ? "1rem" : "unset";
     const right = fabSettings.position.startsWith("END") ? "1rem" : "unset";
-    const bottom = fabSettings.position.endsWith("BOTTOM") ? "1rem" : "calc(var(--md-fab-container-height) + 1.5rem)";
+    const bottom = fabSettings.position.endsWith("BOTTOM") ? "1rem" : fabSettings.style !== FAB_STYLE.ICON_ONLY_SMALL ? "calc(var(--md-fab-container-height) + 1.5rem)" : "calc(var(--md-fab-small-container-height) + 1.5rem)";
     switch (fab) {
       case "settings":
         this.settingsFab.style.bottom = bottom;
         this.settingsFab.style.left = left;
         this.settingsFab.style.right = right;
-        this.settingsFab.label = fabSettings.style === FAB_STYLE.ICON_AND_TEXT ? "Settings" : "";
+        if (fabSettings.style === FAB_STYLE.ICON_AND_TEXT) {
+          this.settingsFab.label = "Settings";
+        } else {
+          this.settingsFab.label = ""
+          this.settingsFab.size = fabSettings.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
+        }
         break;
       case "connect":
         this.connectFab.style.bottom = bottom;
         this.connectFab.style.left = left;
         this.connectFab.style.right = right;
-        this.connectFab.label = fabSettings.style === FAB_STYLE.ICON_AND_TEXT ? "Connect" : "";
+        if (fabSettings.style === FAB_STYLE.ICON_AND_TEXT) {
+          this.connectFab.label = "Connect";
+        } else {
+          this.connectFab.label = ""
+          this.connectFab.size = fabSettings.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
+        }
         break;
     }
   }
@@ -126,9 +133,9 @@ export class AppShell extends LitElement {
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-    this.appSettings = settingsService.loadSettings();
-    this.onFabChangeBind("settings", this.appSettings.fab.settings);
-    this.onFabChangeBind("connect", this.appSettings.fab.connect);
+    const appSettings = settingsService.loadSettings();
+    this.onFabChangeBind("settings", appSettings.fab.settings);
+    this.onFabChangeBind("connect", appSettings.fab.connect);
   }
 
   override render() {
@@ -150,7 +157,7 @@ export class AppShell extends LitElement {
               (event: Event) =>
                 this.onFabChangeBind(
                   "connect",
-                  { ...this.appSettings.fab.connect, position: (event as CustomEvent).detail.position }
+                  { ...settingsService.loadSettings().fab.connect, position: (event as CustomEvent).detail.position }
                 )
             );
             this.settingsDialog.addEventListener(
@@ -158,7 +165,7 @@ export class AppShell extends LitElement {
               (event: Event) =>
                 this.onFabChangeBind(
                   "settings",
-                  { ...this.appSettings.fab.settings, position: (event as CustomEvent).detail.position }
+                  { ...settingsService.loadSettings().fab.settings, position: (event as CustomEvent).detail.position }
                 )
             );
             this.settingsDialog.addEventListener(
@@ -166,7 +173,7 @@ export class AppShell extends LitElement {
               (event: Event) =>
                 this.onFabChangeBind(
                   "settings",
-                  { ...this.appSettings.fab.settings, style: (event as CustomEvent).detail.style }
+                  { ...settingsService.loadSettings().fab.settings, style: (event as CustomEvent).detail.style }
                 )
             );
             this.settingsDialog.addEventListener(
@@ -174,7 +181,7 @@ export class AppShell extends LitElement {
               (event: Event) =>
                 this.onFabChangeBind(
                   "connect",
-                  { ...this.appSettings.fab.connect, style: (event as CustomEvent).detail.style }
+                  { ...settingsService.loadSettings().fab.connect, style: (event as CustomEvent).detail.style }
                 )
             );
           })

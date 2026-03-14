@@ -16,12 +16,10 @@ export const DEFAULT_APP_SETTINGS: AppSettings = {
     settings: {
       position: "START_BOTTOM",
       style: "ICON_AND_TEXT",
-      size: "DEFAULT",
     },
     connect: {
       position: "END_BOTTOM",
       style: "ICON_AND_TEXT",
-      size: "DEFAULT",
     }
   }
 };

@@ -20,6 +20,7 @@ class SettingsServiceImpl implements SettingsService {
   saveSettings(
     settings: AppSettings
   ): void {
+    this.#storageService.clearData("settings");
     this.#storageService.saveDate("settings", JSON.stringify(settings));
   }
 

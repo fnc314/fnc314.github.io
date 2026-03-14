@@ -1,6 +1,6 @@
 :root {
   --md-ref-typeface-brand: monospace;
-  --md-ref-typeface-plain: Roboto;
+  --md-ref-typeface-plain: Roboto, sans-serif;
 
   --md-sys-shape-corner-extra-large: 2rem;
   --md-sys-shape-corner-extra-small: 0.25rem;

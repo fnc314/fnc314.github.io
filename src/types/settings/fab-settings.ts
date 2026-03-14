@@ -1,3 +1,6 @@
+import { html } from "lit-element";
+import { TemplateResult } from "lit-html";
+
 export const FAB_POSITIONS = {
   HORIZONTAL: {
     LEADING: "START" as const,
@@ -33,30 +36,37 @@ export const FabPositions: FabPosition[] = [
   "END_BOTTOM",
 ];
 
+export const FabPositionIcons: Record<FabPosition, TemplateResult> = {
+  START_TOP: html`<md-icon slot="start">subheader</md-icon>`, // The missing `position_top_left` to match the others
+  END_TOP: html`<md-icon slot="start">position_top_right</md-icon>`,
+  END_BOTTOM: html`<md-icon slot="start">position_bottom_right</md-icon>`,
+  START_BOTTOM: html`<md-icon slot="start">position_bottom_left</md-icon>`,
+}
+
 export const fabPositionToUi = (fabPosition: FabPosition): string =>
   fabPosition.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" / ")
 
 export const FAB_STYLE = {
   ICON_ONLY: "ICON_ONLY" as const,
   ICON_AND_TEXT: "ICON_AND_TEXT" as const,
+  ICON_ONLY_SMALL: "ICON_ONLY_SMALL" as const,
+  // ICON_ONLY_LARGE: "ICON_ONLY_LARGE" as const,
   // TEXT_ONLY: "TEXT_ONLY" as const,
 } as const;
-
-export const fabStyleToUi = (fabStyle: FabStyle): string =>
-  fabStyle.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" ")
-
 export type FabStyle = typeof FAB_STYLE[keyof typeof FAB_STYLE];
+
+export const fabStyleToUi = (fabStyle: FabStyle): string => {
+  switch (fabStyle) {
+    case FAB_STYLE.ICON_ONLY_SMALL:
+      return "Icon Only (Small)";
+    case FAB_STYLE.ICON_ONLY:
+      return "Icon Only";
+    case FAB_STYLE.ICON_AND_TEXT:
+      return "Icon And Text";
+  }
+};
 
 export const FabStyles: FabStyle[] = Object.values(FAB_STYLE);
 
-export const FAB_SIZE = {
-  // SMALL: "SMALL" as const,
-  // MEDIUM: "MEDIUM" as const,
-  DEFAULT: "DEFAULT" as const,
-  LARGE: "LARGE" as const,
-} as const;
-
-export type FabSize = typeof FAB_SIZE[keyof typeof FAB_SIZE];
-
-export type FabSettings = { position: FabPosition, style: FabStyle, size: FabSize };
+export type FabSettings = { position: FabPosition, style: FabStyle };
 export type FabSettingsRecord = Record<"settings" | "connect", FabSettings>

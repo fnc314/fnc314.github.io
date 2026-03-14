@@ -1,5 +1,7 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
 import { SettingsKey } from "@/types/settings";
+import { html } from "lit-element";
+import { TemplateResult } from "lit-html";
 
 export const SETTINGS_KEYS_COLOR_SCHEME_NAMES = {
   DARK: "DARK" as const,
@@ -17,6 +19,12 @@ export const SETTINGS_KEY_COLOR_SCHEME_PERSIST: SettingsKey = "color_scheme.pers
 
 export type ColorScheme = typeof SETTINGS_KEYS_COLOR_SCHEME_NAMES[keyof typeof SETTINGS_KEYS_COLOR_SCHEME_NAMES];
 export type ColorSchemeContrast = typeof SETTINGS_KEY_COLOR_SCHEME_CONTRAST[keyof typeof SETTINGS_KEY_COLOR_SCHEME_CONTRAST];
+
+export const ColorSchemeContrastIcons: Record<ColorSchemeContrast, TemplateResult> = {
+  NORMAL: html`<md-icon slot="start">exposure_zero</md-icon>`,
+  MEDIUM: html`<md-icon slot="start">exposure_plus_1</md-icon>`,
+  HIGH: html`<md-icon slot="start">exposure_plus_2</md-icon>`,
+}
 
 export type ColorSchemeSettings = {
   name: ColorScheme;

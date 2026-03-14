@@ -2,6 +2,8 @@ export interface StorageService {
   saveDate(key: string, data: string): void;
 
   getData(key: string, defaultValue: string): { value: string, isDefault: boolean }
+
+  clearData(key: string): void;
 }
 
 class StorageServiceImpl implements StorageService {
@@ -16,6 +18,10 @@ class StorageServiceImpl implements StorageService {
       return { value: data, isDefault: false };
     }
     return { value: defaultValue, isDefault: true };
+  }
+
+  clearData(key: string): void {
+    localStorage.removeItem(key);
   }
 
 }
