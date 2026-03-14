@@ -4,7 +4,7 @@ import EducationJson from "@/data/education.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement, TemplateResult } from "lit-element";
+import { css, html, LitElement } from "lit-element";
 import { customElement } from "lit/decorators.js";
 
 @customElement("profile-partial")
@@ -202,31 +202,7 @@ export class ProfilePartial extends LitElement {
     super();
   }
 
-  #renderFigureElement(photoData: {
-    src: string;
-    alt: string;
-    figcaption: string;
-  }): TemplateResult {
-    return html`
-      <figure>
-        <picture>
-          <source
-            srcset=${photoData.src}
-            type="image/jpeg"
-          />
-          <img
-            src=${photoData.src}
-            alt=${photoData.alt}
-          />
-        </picture>
-        <figcaption class="md-typescale-label-large">
-          ${photoData.figcaption}
-        </figcaption>
-      </figure>
-    `;
-  }
-
-  #renderCloud(): TemplateResult {
+  override render() {
     const words = Object.keys(SkillsJson.skills).flatMap((proficency) =>
       Object.entries(
         SkillsJson.skills[
@@ -237,26 +213,26 @@ export class ProfilePartial extends LitElement {
       ),
     );
     return html`
-      <profile-section
-        class="cloud"
-        section-title="Skills"
-      >
-        <word-cloud
-          slot="section-grid-content"
-          .words=${words}
-        ></word-cloud>
-      </profile-section>
-    `;
-  }
-
-  override render() {
-    return html`
       <article>
         <partial-header
           .headingText=${"Franco N. Colaizzi"}>
         </partial-header>
 
-        ${this.#renderFigureElement(PhotoJson.photo)}
+        <figure>
+          <picture>
+            <source
+              srcset=${PhotoJson.photo.src}
+              type="image/jpeg"
+            />
+            <img
+              src=${PhotoJson.photo.src}
+              alt=${PhotoJson.photo.alt}
+            />
+          </picture>
+          <figcaption class="md-typescale-label-large">
+            ${PhotoJson.photo.figcaption}
+          </figcaption>
+        </figure>
 
         <profile-section
           class="bio"
@@ -289,7 +265,15 @@ export class ProfilePartial extends LitElement {
           </ul>
         </profile-section>
 
-        ${this.#renderCloud()}
+        <profile-section
+          class="cloud"
+          section-title="Skills"
+        >
+          <word-cloud
+            slot="section-grid-content"
+            .words=${words}
+          ></word-cloud>
+        </profile-section>
       </article>
     `;
   }
