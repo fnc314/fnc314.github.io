@@ -54,6 +54,7 @@ export class AppShell extends LitElement {
         left: 1rem;
         right: 1rem;
         display: grid;
+        padding-inline: 1rem;
         /* grid-template-areas:
           "start_top . end_top"
           "start_bottom . end_bottom"
