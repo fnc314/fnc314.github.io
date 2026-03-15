@@ -49,7 +49,7 @@ export class AppShell extends LitElement {
       }
 
       .fab-container {
-        position: absolute;
+        position: sticky;
         bottom: 1rem;
         left: 1rem;
         right: 1rem;
