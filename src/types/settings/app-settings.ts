@@ -1,12 +1,12 @@
 import { ColorSchemeSettings } from "./color-scheme-settings";
-import { FabSettingsRecord } from "./fab-settings";
+import { FabConfigssRecord } from "./fab-settings";
 
-export type AppSettings = {
+export type AppConfigs = {
   colorScheme: ColorSchemeSettings;
-  fab: FabSettingsRecord;
+  fab: FabConfigssRecord;
 };
 
-export const DEFAULT_APP_SETTINGS: AppSettings = {
+export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
     name: "SYSTEM",
     contrast: "NORMAL",

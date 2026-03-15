@@ -1,13 +1,13 @@
-import { AppSettings } from "@/types/settings";
-import { DEFAULT_APP_SETTINGS } from "@/types/settings/app-settings";
+import { AppConfigs } from "@/types/settings";
+import { DEFAULT_APP_CONFIGS } from "@/types/settings/app-settings";
 import { storageService, StorageService } from "../storage/storage-service";
 
 export interface SettingsService {
   saveSettings(
-    settings: AppSettings
+    settings: AppConfigs
   ): void
 
-  loadSettings(): AppSettings
+  loadSettings(): AppConfigs
 };
 
 class SettingsServiceImpl implements SettingsService {
@@ -18,19 +18,19 @@ class SettingsServiceImpl implements SettingsService {
   }
 
   saveSettings(
-    settings: AppSettings
+    settings: AppConfigs
   ): void {
     this.#storageService.clearData("settings");
     this.#storageService.saveDate("settings", JSON.stringify(settings));
   }
 
-  loadSettings(): AppSettings {
+  loadSettings(): AppConfigs {
     return JSON.parse(
       this.#storageService.getData(
         "settings",
-        JSON.stringify(DEFAULT_APP_SETTINGS)
+        JSON.stringify(DEFAULT_APP_CONFIGS)
       ).value
-    ) as AppSettings;
+    ) as AppConfigs;
   }
 };
 

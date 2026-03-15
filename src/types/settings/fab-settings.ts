@@ -69,5 +69,7 @@ export const fabStyleToUi = (fabStyle: FabStyle): string => {
 
 export const FabStyles: FabStyle[] = Object.values(FAB_STYLE);
 
-export type FabSettings = { position: FabPosition, style: FabStyle };
-export type FabSettingsRecord = Record<"settings" | "connect", FabSettings>
+export type FabConfig = { position: FabPosition, style: FabStyle };
+export type FabConfigssRecord = Record<"settings" | "connect", FabConfig>
+
+export type FabConfigChange = CustomEvent<{ newFabConfig: FabConfig }>;
