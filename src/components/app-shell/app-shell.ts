@@ -2,7 +2,7 @@ import { SettingsDialog } from "@/components/dialogs/settings/settings-dialog";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { settingsService } from "@/services/settings";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { FAB_POSITION_COMPONENTS_HORIZONTAL, FAB_POSITION_COMPONENTS_VERTICAL, FAB_STYLE, FabConfig, FabConfigChange, fabPositionComponents } from "@/types/settings/fab-settings";
+import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import { type MdDialog } from "@material/web/dialog/dialog";
@@ -14,7 +14,7 @@ import { MdIcon } from "@material/web/icon/icon";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
 import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
-import { customElement, query } from "lit/decorators.js";
+import { customElement, query, state } from "lit/decorators.js";
 
 @customElement("app-shell")
 export class AppShell extends LitElement {
@@ -25,6 +25,7 @@ export class AppShell extends LitElement {
       :host {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
+        container-type: inline-size;
         --md-fab-container-height: 4rem;
         --md-fab-container-width: 4rem;
         --md-fab-large-container-height: 4rem;
@@ -38,20 +39,6 @@ export class AppShell extends LitElement {
         --md-list-item-container-shape: var(--md-sys-shape-corner-large);
       }
 
-      md-fab {
-        position: fixed;
-        z-index: 1; /* Ensure it floats above other content */
-        bottom: 1rem;
-
-        &.settings {
-          left: 1rem;
-        }
-
-        &.connect {
-          right: 1rem;
-        }
-      }
-
       md-dialog {
         [slot="headline"] {
           display: flex;
@@ -61,19 +48,38 @@ export class AppShell extends LitElement {
         }
       }
 
-      .fad-container {
+      .fab-container {
         position: absolute;
         bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
         display: grid;
-        grid-template-areas:
-          "START_TOP . END_TOP"
-          "START_BOTTOM . END_BOTTOM"
-          ;
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: var(--md-fab-large-container-height) var(--md-fab-large-container-height);
+        /* grid-template-areas:
+          "start_top . end_top"
+          "start_bottom . end_bottom"
+          ; */
+        grid-template-columns: [start-start] 1fr [start-end empt-start] 1fr [empty-end end-start] 1fr [end-end];
+        grid-template-rows: [top-start] var(--md-fab-large-container-height) [top-end bottom-start] var(--md-fab-large-container-height) [bottom-end];
         gap: 1rem;
 
+        md-fab {
+          z-index: 1;
+          align-self: end;
 
+          &.settings {
+            grid-column-start: attr(data-grid-column-start type(<number>));
+            grid-column-end: calc(attr(data-grid-column-start type(<number>)) + 1);
+            grid-row-start: attr(data-grid-row-start type(<number>));
+            grid-row-end: calc(attr(data-grid-row-start type(<number>)) + 1);
+          }
+
+          &.connect {
+            grid-column-start: attr(data-grid-column-start type(<number>));
+            grid-column-end: calc(attr(data-grid-column-start type(<number>)) + 1);
+            grid-row-start: attr(data-grid-row-start type(<number>));
+            grid-row-end: calc(attr(data-grid-row-start type(<number>)) + 1);
+          }
+        }
       }
     `,
   ];
@@ -84,11 +90,17 @@ export class AppShell extends LitElement {
   @query("#fab-settings")
   private settingsFab!: MdFab;
 
+  @state()
+  private settingsFabConfig: FabConfig = settingsService.loadSettings().fab.settings;
+
   @query("#connect-dialog")
   private connectDialog!: MdDialog;
 
   @query("#fab-connect")
   private connectFab!: MdFab;
+
+  @state()
+  private connectFabConfig: FabConfig = settingsService.loadSettings().fab.connect;
 
   private onFabChangeBind = this.onFabChange.bind(this);
 
@@ -100,18 +112,13 @@ export class AppShell extends LitElement {
 
     // similar logic means this flag can be helpful
     const isSettings: boolean = fab === "settings";
+    if (isSettings) {
+      this.settingsFabConfig = fabConfig;
+    } else {
+      this.connectFabConfig = fabConfig;
+    }
     // target FAB
     const changedFab: MdFab = isSettings ? this.settingsFab : this.connectFab;
-    const changedFabPositionComponents = fabPositionComponents(fabConfig.position);
-    // other FAB
-    const otherFabSettings = settingsService.loadSettings().fab[isSettings ? "connect" : "settings"];
-    const otherFab: MdFab = isSettings ? this.connectFab : this.settingsFab;
-    const otherFabPositionComponents = fabPositionComponents(otherFabSettings.position);
-
-    const left = changedFabPositionComponents.horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? "1rem" : "unset";
-    changedFab.style.left = left;
-    const right = changedFabPositionComponents.horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.END ? "1rem" : "unset";
-    changedFab.style.right = right;
 
     const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
@@ -120,26 +127,10 @@ export class AppShell extends LitElement {
     (changedFab.querySelector("md-icon") as MdIcon).style.display =
       fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
 
-    // determine if there's chance for overlap
-    const bottomButton: MdFab = changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.BOTTOM ? changedFab : otherFab;
-    const topButton: MdFab = bottomButton === changedFab ? otherFab : changedFab;
-    const isBottomButtonBig = bottomButton.size === "medium";
-
-    // They are on the same side of the screen.  The bigger one will drive the bottom offset of the top one
-    if (changedFabPositionComponents.horizontal === otherFabPositionComponents.horizontal) {
-      const bottomPositionTopButton = isBottomButtonBig ?
-        "calc(var(--md-fab-container-height) + 1rem + 1rem)" :
-        "calc(var(--md-fab-small-container-height) + 1rem + 1rem)";
-      topButton.style.bottom = bottomPositionTopButton;
-      bottomButton.style.bottom = "1rem";
-    } else if (changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.BOTTOM) {
-      changedFab.style.bottom = "1rem";
-    } else if (changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.TOP) {
-      const bottomPositionTopButton = isBottomButtonBig ?
-        "calc(var(--md-fab-container-height) + 1rem + 1rem)" :
-        "calc(var(--md-fab-small-container-height) + 1rem + 1rem)";
-      topButton.style.bottom = bottomPositionTopButton;
-    }
+    const { rowStart, columnStart } = fabConfigToGrid(fabConfig);
+    changedFab.dataset.gridColumnStart = `${columnStart}`;
+    changedFab.dataset.gridRowStart = `${rowStart}`;
+    changedFab.style.justifySelf = columnStart === 1 ? "" : "end";
   }
 
   private renderConnectionsList(): TemplateResult {
@@ -171,8 +162,10 @@ export class AppShell extends LitElement {
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
     const appSettings = settingsService.loadSettings();
-    this.onFabChangeBind("settings", appSettings.fab.settings);
-    this.onFabChangeBind("connect", appSettings.fab.connect);
+    this.connectFabConfig = appSettings.fab.connect;
+    this.settingsFabConfig = appSettings.fab.settings;
+    this.onFabChangeBind("settings", this.settingsFabConfig);
+    this.onFabChangeBind("connect", this.connectFabConfig);
   }
 
   override connectedCallback() {

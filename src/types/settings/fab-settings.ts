@@ -71,3 +71,8 @@ export type FabConfig = { position: FabPosition, style: FabStyle };
 export type FabConfigssRecord = Record<"settings" | "connect", FabConfig>
 
 export type FabConfigChange = CustomEvent<{ fab: "settings" | "connect", newFabConfig: FabConfig }>;
+
+export const fabConfigToGrid: (config: FabConfig) => { rowStart: number, columnStart: number } = (config: FabConfig) => ({
+  rowStart: fabPositionComponents(config.position).vertical === FAB_POSITION_COMPONENTS_VERTICAL.TOP ? 1 : 2,
+  columnStart: fabPositionComponents(config.position).horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? 1 : 3,
+})
