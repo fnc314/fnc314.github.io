@@ -1,5 +1,4 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
-import { SettingsKey } from "@/types/settings";
 import { html } from "lit-element";
 import { TemplateResult } from "lit-html";
 
@@ -14,8 +13,6 @@ export const SETTINGS_KEY_COLOR_SCHEME_CONTRAST = {
   MEDIUM: "MEDIUM" as const,
   HIGH: "HIGH" as const,
 } as const;
-
-export const SETTINGS_KEY_COLOR_SCHEME_PERSIST: SettingsKey = "color_scheme.persist"
 
 export type ColorScheme = typeof SETTINGS_KEYS_COLOR_SCHEME_NAMES[keyof typeof SETTINGS_KEYS_COLOR_SCHEME_NAMES];
 export type ColorSchemeContrast = typeof SETTINGS_KEY_COLOR_SCHEME_CONTRAST[keyof typeof SETTINGS_KEY_COLOR_SCHEME_CONTRAST];
@@ -32,7 +29,7 @@ export type ColorSchemeSettings = {
   persist: boolean;
 };
 
-export const colorSchemeSettingsToMaterialSchemeName = (
+export const colorSchemeSettingsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeSettings) => MaterialSchemeName = (
   colorSchemeSettings: ColorSchemeSettings
 ): MaterialSchemeName => {
   const variant = colorSchemeSettings.name !== SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM ?

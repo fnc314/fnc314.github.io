@@ -1,5 +1,5 @@
-import { ColorSchemeSettings } from "./color-scheme-settings";
-import { FabConfigssRecord } from "./fab-settings";
+import { ColorSchemeSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "./color-scheme-settings";
+import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "./fab-settings";
 
 export type AppConfigs = {
   colorScheme: ColorSchemeSettings;
@@ -8,18 +8,18 @@ export type AppConfigs = {
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
-    name: "SYSTEM",
-    contrast: "NORMAL",
+    name: SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM,
+    contrast: SETTINGS_KEY_COLOR_SCHEME_CONTRAST.NORMAL,
     persist: false,
-  },
+  } as const,
   fab: {
     settings: {
-      position: "START_BOTTOM",
-      style: "ICON_AND_TEXT",
-    },
+      position: FAB_POSITION.START_BOTTOM,
+      style: FAB_STYLE.ICON_AND_TEXT,
+    } as const,
     connect: {
-      position: "END_BOTTOM",
-      style: "ICON_AND_TEXT",
-    }
-  }
-};
+      position: FAB_POSITION.END_BOTTOM,
+      style: FAB_STYLE.ICON_AND_TEXT,
+    } as const,
+  } as const
+} as const;

@@ -1,7 +1,7 @@
 import { settingsService } from "@/services/settings";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { AppConfigs, ColorScheme, ColorSchemeContrast, ColorSchemeContrastIcons, colorSchemeSettingsToMaterialSchemeName, FabConfig, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings";
+import { AppConfigs, ColorScheme, ColorSchemeContrast, ColorSchemeContrastIcons, colorSchemeSettingsToMaterialSchemeName, FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings";
 import "@material/web/button/filled-button";
 import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
@@ -177,6 +177,13 @@ export class SettingsDialog extends LitElement {
         md-outlined-select {
           width: 100%;
         }
+
+        &.contrast {
+          display: contents;
+          legend {
+            display: none;
+          }
+        }
       }
 
       fieldset.color_scheme,
@@ -195,32 +202,33 @@ export class SettingsDialog extends LitElement {
         justify-content: space-evenly;
         align-items: stretch;
         gap: 1.5rem;
-      }
 
-      fieldset.style {
-        display: grid;
-        grid-template-areas:
-          "IconOnly IconAndText"
-          "IconOnlySmall .";
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1rem;
 
-        legend {
-          grid-area: legend;
-        }
+        fieldset.style {
+          display: grid;
+          grid-template-areas:
+            "IconOnly IconAndText"
+            "IconOnlySmall .";
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 1rem;
 
-        label {
-          &:nth-child(2) {
-            grid-area: IconOnly;
+          legend {
+            grid-area: legend;
           }
 
-          &:nth-child(3) {
-            grid-area: IconAndText;
-          }
+          label {
+            &:nth-child(2) {
+              grid-area: IconOnly;
+            }
 
-          &:nth-child(4) {
-            grid-area: IconOnlySmall;
+            &:nth-child(3) {
+              grid-area: IconAndText;
+            }
+
+            &:nth-child(4) {
+              grid-area: IconOnlySmall;
+            }
           }
         }
       }
@@ -310,8 +318,6 @@ export class SettingsDialog extends LitElement {
     fab: "settings" | "connect",
     newFabConfig: FabConfig
   ) {
-
-    const customEventName: string = `fab.${fab}.change`;
     const newFabConfigs = fab === "settings" ?
       {
         fab: {
@@ -335,11 +341,12 @@ export class SettingsDialog extends LitElement {
 
     this.dispatchEvent(
       new CustomEvent(
-        customEventName,
+        "fab.change",
         {
           bubbles: true,
           composed: true,
           detail: {
+            fab,
             newFabConfig,
           }
         }
@@ -509,5 +516,9 @@ export class SettingsDialog extends LitElement {
 declare global {
   interface HTMLElementTagNameMap {
     "settings-dialog": SettingsDialog;
+  }
+
+  interface GlobalEventHandlersEventMap {
+    "fab.change": FabConfigChange;
   }
 }

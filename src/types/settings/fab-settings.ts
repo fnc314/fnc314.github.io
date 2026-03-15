@@ -1,40 +1,33 @@
 import { html } from "lit-element";
 import { TemplateResult } from "lit-html";
 
-export const FAB_POSITIONS = {
-  HORIZONTAL: {
-    LEADING: "START" as const,
-    TRAILING: "END" as const,
-  } as const,
-  VERTICAL: {
-    LEADING: "TOP" as const,
-    TRAILING: "BOTTOM" as const,
-  } as const,
+export const FAB_POSITION_COMPONENTS_VERTICAL = {
+  TOP: "TOP" as const,
+  BOTTOM: "BOTTOM" as const,
 } as const;
 
-export type FabLayoutSet = {
-  LEADING: "TOP";
-  TRAILING: "BOTTOM";
-} | {
-  LEADING: "START";
-  TRAILING: "END";
-}
+export const FAB_POSITION_COMPONENTS_HORIZONTAL = {
+  START: "START" as const,
+  END: "END" as const,
+} as const;
 
-type FabPositionVertical = typeof FAB_POSITIONS.VERTICAL[
-  keyof typeof FAB_POSITIONS.VERTICAL
-];
+export type FabPositionComponent = {
+  vertical: FabPositionComponentVertical;
+  horizontal: FabPositionComponentHorizontal;
+};
 
-type FabPositionHorizontal = typeof FAB_POSITIONS.HORIZONTAL[
-  keyof typeof FAB_POSITIONS.HORIZONTAL
-];
+export type FabPositionComponentVertical = typeof FAB_POSITION_COMPONENTS_VERTICAL[keyof typeof FAB_POSITION_COMPONENTS_VERTICAL];
+export type FabPositionComponentHorizontal = typeof FAB_POSITION_COMPONENTS_HORIZONTAL[keyof typeof FAB_POSITION_COMPONENTS_HORIZONTAL];
 
-export type FabPosition = `${FabPositionHorizontal}_${FabPositionVertical}`
-export const FabPositions: FabPosition[] = [
-  "START_TOP",
-  "START_BOTTOM",
-  "END_TOP",
-  "END_BOTTOM",
-];
+export const FAB_POSITION = {
+  START_TOP: "START_TOP" as const,
+  START_BOTTOM: "START_BOTTOM" as const,
+  END_TOP: "END_TOP" as const,
+  END_BOTTOM: "END_BOTTOM" as const,
+} as const;
+
+export type FabPosition = typeof FAB_POSITION[keyof typeof FAB_POSITION];
+export const FabPositions: FabPosition[] = Object.values(FAB_POSITION);
 
 export const FabPositionIcons: Record<FabPosition, TemplateResult> = {
   START_TOP: html`<md-icon slot="start">subheader</md-icon>`, // The missing `position_top_left` to match the others
@@ -43,8 +36,13 @@ export const FabPositionIcons: Record<FabPosition, TemplateResult> = {
   START_BOTTOM: html`<md-icon slot="start">position_bottom_left</md-icon>`,
 }
 
-export const fabPositionToUi = (fabPosition: FabPosition): string =>
-  fabPosition.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" / ")
+export const fabPositionToUi: (fabPosition: FabPosition) => string = (fabPosition: FabPosition): string =>
+  fabPosition.split("_").map((part) => `${part.charAt(0)}${part.slice(1).toLowerCase()}`).join(" / ");
+
+export const fabPositionComponents: (fabPosition: FabPosition) => FabPositionComponent = (fabPosition: FabPosition) => ({
+  vertical: fabPosition.split("_").at(1) as FabPositionComponentVertical,
+  horizontal: fabPosition.split("_").at(0) as FabPositionComponentHorizontal,
+}) satisfies FabPositionComponent
 
 export const FAB_STYLE = {
   ICON_ONLY: "ICON_ONLY" as const,
@@ -72,4 +70,4 @@ export const FabStyles: FabStyle[] = Object.values(FAB_STYLE);
 export type FabConfig = { position: FabPosition, style: FabStyle };
 export type FabConfigssRecord = Record<"settings" | "connect", FabConfig>
 
-export type FabConfigChange = CustomEvent<{ newFabConfig: FabConfig }>;
+export type FabConfigChange = CustomEvent<{ fab: "settings" | "connect", newFabConfig: FabConfig }>;

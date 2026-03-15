@@ -2,7 +2,7 @@ import { SettingsDialog } from "@/components/dialogs/settings/settings-dialog";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { settingsService } from "@/services/settings";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { FAB_STYLE, FabConfig, FabConfigChange } from "@/types/settings/fab-settings";
+import { FAB_POSITION_COMPONENTS_HORIZONTAL, FAB_POSITION_COMPONENTS_VERTICAL, FAB_STYLE, FabConfig, FabConfigChange, fabPositionComponents } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import { type MdDialog } from "@material/web/dialog/dialog";
@@ -60,6 +60,21 @@ export class AppShell extends LitElement {
           text-align: center;
         }
       }
+
+      .fad-container {
+        position: absolute;
+        bottom: 1rem;
+        display: grid;
+        grid-template-areas:
+          "START_TOP . END_TOP"
+          "START_BOTTOM . END_BOTTOM"
+          ;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: var(--md-fab-large-container-height) var(--md-fab-large-container-height);
+        gap: 1rem;
+
+
+      }
     `,
   ];
 
@@ -81,26 +96,50 @@ export class AppShell extends LitElement {
     fab: "settings" | "connect",
     fabConfig: FabConfig,
   ) {
-    console.error(`${fab} fab settings changed to ${JSON.stringify(fabConfig, null, 1)}`);
+    console.error(`FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`);
 
-    const changedFab: MdFab = fab === "settings" ? this.settingsFab : this.connectFab;
-    const otherFabSettings = settingsService.loadSettings().fab[fab === "settings" ? "connect" : "settings"];
-    const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
+    // similar logic means this flag can be helpful
+    const isSettings: boolean = fab === "settings";
+    // target FAB
+    const changedFab: MdFab = isSettings ? this.settingsFab : this.connectFab;
+    const changedFabPositionComponents = fabPositionComponents(fabConfig.position);
+    // other FAB
+    const otherFabSettings = settingsService.loadSettings().fab[isSettings ? "connect" : "settings"];
+    const otherFab: MdFab = isSettings ? this.connectFab : this.settingsFab;
+    const otherFabPositionComponents = fabPositionComponents(otherFabSettings.position);
 
-    const left = fabConfig.position.startsWith("START") ? "1rem" : "unset";
-    const right = fabConfig.position.startsWith("END") ? "1rem" : "unset";
-    const bottom = fabConfig.position.endsWith("BOTTOM") ? "1rem" :
-      otherFabSettings.style !== FAB_STYLE.ICON_ONLY_SMALL ?
-        "calc(var(--md-fab-container-height) + 1.5rem)" :
-        "calc(var(--md-fab-small-container-height) + 1.5rem)";
-
-    changedFab.style.bottom = bottom;
+    const left = changedFabPositionComponents.horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? "1rem" : "unset";
     changedFab.style.left = left;
+    const right = changedFabPositionComponents.horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.END ? "1rem" : "unset";
     changedFab.style.right = right;
+
+    const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
+
     changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
     (changedFab.querySelector("md-icon") as MdIcon).style.display =
       fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
+
+    // determine if there's chance for overlap
+    const bottomButton: MdFab = changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.BOTTOM ? changedFab : otherFab;
+    const topButton: MdFab = bottomButton === changedFab ? otherFab : changedFab;
+    const isBottomButtonBig = bottomButton.size === "medium";
+
+    // They are on the same side of the screen.  The bigger one will drive the bottom offset of the top one
+    if (changedFabPositionComponents.horizontal === otherFabPositionComponents.horizontal) {
+      const bottomPositionTopButton = isBottomButtonBig ?
+        "calc(var(--md-fab-container-height) + 1rem + 1rem)" :
+        "calc(var(--md-fab-small-container-height) + 1rem + 1rem)";
+      topButton.style.bottom = bottomPositionTopButton;
+      bottomButton.style.bottom = "1rem";
+    } else if (changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.BOTTOM) {
+      changedFab.style.bottom = "1rem";
+    } else if (changedFabPositionComponents.vertical === FAB_POSITION_COMPONENTS_VERTICAL.TOP) {
+      const bottomPositionTopButton = isBottomButtonBig ?
+        "calc(var(--md-fab-container-height) + 1rem + 1rem)" :
+        "calc(var(--md-fab-small-container-height) + 1rem + 1rem)";
+      topButton.style.bottom = bottomPositionTopButton;
+    }
   }
 
   private renderConnectionsList(): TemplateResult {
@@ -127,9 +166,7 @@ export class AppShell extends LitElement {
     `;
   }
 
-  private fabSettingsChange = ((event: FabConfigChange) => this.onFabChangeBind("settings", event.detail.newFabConfig)).bind(this);
-
-  private fabChangeConnect = ((event: FabConfigChange) => this.onFabChangeBind( "connect", event.detail.newFabConfig)).bind(this);
+  private onFabConfigBind = ((event: FabConfigChange) => this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
@@ -138,27 +175,19 @@ export class AppShell extends LitElement {
     this.onFabChangeBind("connect", appSettings.fab.connect);
   }
 
-  protected override connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     document.addEventListener(
-      "fab.connect.change",
-      this.fabChangeConnect
-    );
-    document.addEventListener(
-      "fab.settings.change",
-      this.fabSettingsChange
+      "fab.change",
+      this.onFabConfigBind
     );
   }
 
-  protected override disconnectedCallback() {
+  override disconnectedCallback() {
     super.disconnectedCallback();
     document.removeEventListener(
-      "fab.settings.change",
-      this.fabSettingsChange
-    );
-    document.removeEventListener(
-      "fab.connect.change",
-      this.fabChangeConnect
+      "fab.change",
+      this.onFabConfigBind
     );
   }
 
@@ -167,17 +196,6 @@ export class AppShell extends LitElement {
       <slot></slot>
 
       <settings-dialog id="settings-dialog"></settings-dialog>
-
-      <md-fab
-        id="fab-settings"
-        class="settings"
-        size="medium"
-        variant="surface"
-        aria-label="Settings"
-        @click=${() => this.settingsDialog.showDialog()}
-      >
-        <md-icon id="settings-fab-icon" slot="icon">settings</md-icon>
-      </md-fab>
 
       <md-dialog id="connect-dialog">
         <div slot="headline">
@@ -193,17 +211,31 @@ export class AppShell extends LitElement {
         </div>
       </md-dialog>
 
-      <md-fab
-        id="fab-connect"
-        class="connect"
-        size="medium"
-        variant="primary"
-        aria-label="Connect"
-        @click=${() => this.connectDialog.show()}
-        >
-        <md-icon slot="icon">person_add</md-icon>
-      </md-fab>
+      <section class="fab-container">
 
+        <md-fab
+          id="fab-settings"
+          class="settings"
+          size="medium"
+          variant="surface"
+          aria-label="Settings"
+          @click=${() => this.settingsDialog.showDialog()}
+          >
+          <md-icon id="settings-fab-icon" slot="icon">settings</md-icon>
+        </md-fab>
+
+        <md-fab
+          id="fab-connect"
+          class="connect"
+          size="medium"
+          variant="primary"
+          aria-label="Connect"
+          @click=${() => this.connectDialog.show()}
+          >
+          <md-icon slot="icon">person_add</md-icon>
+        </md-fab>
+
+      </section>
     `;
   }
 }
