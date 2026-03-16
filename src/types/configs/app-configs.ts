@@ -1,15 +1,15 @@
-import { ColorSchemeSettings, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "./color-scheme-settings";
-import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "./fab-settings";
+import { ColorSchemeConfigs, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "./color-scheme-configs";
+import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "./fab-configs";
 
 export type AppConfigs = {
-  colorScheme: ColorSchemeSettings;
+  colorScheme: ColorSchemeConfigs;
   fab: FabConfigssRecord;
 };
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
-    name: SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM,
-    contrast: SETTINGS_KEY_COLOR_SCHEME_CONTRAST.NORMAL,
+    name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
+    contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,
     persist: false,
   } as const,
   fab: {

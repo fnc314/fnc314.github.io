@@ -22,7 +22,7 @@ import { configsService } from "./services/index.js";
 import { MaterialSchemes } from "./styles/material-styles.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import "./types/index.js";
-import { colorSchemeSettingsToMaterialSchemeName } from "./types/index.js";
+import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
 window
   .matchMedia("(prefers-color-scheme: dark)")
@@ -43,7 +43,7 @@ const domLoadedListener = (event) => {
   }
 
   const matScheme = MaterialSchemes[
-    colorSchemeSettingsToMaterialSchemeName(
+    colorSchemeConfigsToMaterialSchemeName(
       configsService.loadConfigs().colorScheme
     )
   ];

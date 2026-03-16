@@ -1,5 +1,5 @@
-import { AppConfigs } from "@/types/settings";
-import { DEFAULT_APP_CONFIGS } from "@/types/settings/app-configs";
+import { AppConfigs } from "@/types/configs";
+import { DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 import { storageService, StorageService } from "../storage/storage-service";
 
 export interface ConfigsService {
@@ -23,6 +23,7 @@ class ConfigsServiceImpl implements ConfigsService {
     configs: AppConfigs
   ): void {
     this.#storageService.clearData("configs");
+    this.#storageService.clearData("dark-mode-toggle");
     this.#storageService.saveData("configs", JSON.stringify(configs));
     this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
   }
@@ -37,7 +38,6 @@ class ConfigsServiceImpl implements ConfigsService {
   }
 
   resetConfigs(): void {
-    this.#storageService.clearData("dark-mode-toggle");
     this.saveConfigs(DEFAULT_APP_CONFIGS);
   }
 };

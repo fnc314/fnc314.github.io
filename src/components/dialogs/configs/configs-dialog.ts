@@ -2,7 +2,7 @@ import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/componen
 import { configsService } from "@/services/configs";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { AppConfigs, ColorScheme, ColorSchemeConfigChange, ColorSchemeContrast, ColorSchemeContrastIcons, colorSchemeSettingsToMaterialSchemeName, DEFAULT_APP_CONFIGS, FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi, SETTINGS_KEY_COLOR_SCHEME_CONTRAST, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings";
+import { AppConfigs, ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, ColorSchemeContrastIcons, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, DEFAULT_APP_CONFIGS, FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -295,7 +295,7 @@ export class ConfigsDialog extends LitElement {
         ...this._appConfigs.colorScheme,
         name: event.detail.colorScheme.length > 0 ?
           event.detail.colorScheme.toUpperCase() as ColorScheme :
-          SETTINGS_KEYS_COLOR_SCHEME_NAMES.SYSTEM
+          CONFIG_COLOR_SCHEME_NAMES.SYSTEM
       }
     }
     this.onColorSchemeContrastChange(
@@ -426,7 +426,7 @@ export class ConfigsDialog extends LitElement {
     );
 
     updateMaterialCSSStyleSheet(
-      MaterialSchemes[colorSchemeSettingsToMaterialSchemeName(this._appConfigs.colorScheme)]
+      MaterialSchemes[colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)]
     )
   }
 
@@ -536,7 +536,7 @@ export class ConfigsDialog extends LitElement {
           >
             <span slot="leading-icon">${ColorSchemeContrastIcons[this._appConfigs.colorScheme.contrast]}</span>
             ${
-              Object.values(SETTINGS_KEY_COLOR_SCHEME_CONTRAST).map((contrast) => html`
+              Object.values(CONFIG_COLOR_CONTRAST_NAMES).map((contrast) => html`
                 <md-select-option
                   ?selected=${this._appConfigs.colorScheme.contrast === contrast}
                   value=${contrast}

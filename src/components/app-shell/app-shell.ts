@@ -3,8 +3,8 @@ import Connections from "@/data/connections.json" with { type: "json" };
 import { configsService } from "@/services/configs";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { ColorSchemeConfigChange, colorSchemeSettingsToMaterialSchemeName } from "@/types/settings/color-scheme-settings";
-import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/settings/fab-settings";
+import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName } from "@/types/configs/color-scheme-configs";
+import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/configs/fab-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import { type MdDialog } from "@material/web/dialog/dialog";
@@ -197,7 +197,7 @@ export class AppShell extends LitElement {
 
   private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
     updateMaterialCSSStyleSheet(
-      MaterialSchemes[colorSchemeSettingsToMaterialSchemeName(event.detail)]
+      MaterialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     )
   }).bind(this);
 

@@ -1,10 +1,10 @@
 import { configsService } from "@/services/configs";
-import { colorSchemeSettingsToMaterialSchemeName, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings/color-scheme-settings";
+import { colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/configs/color-scheme-configs";
 import { css, CSSResult } from "lit";
 import { MaterialSchemes } from "./material-styles";
 
 export const onThemeChange = (event: MediaQueryListEvent) => {
-  const name = event.matches ? SETTINGS_KEYS_COLOR_SCHEME_NAMES.DARK : SETTINGS_KEYS_COLOR_SCHEME_NAMES.LIGHT;
+  const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
 
   const appSettings = configsService.loadConfigs();
   const colorScheme = {
@@ -18,7 +18,7 @@ export const onThemeChange = (event: MediaQueryListEvent) => {
 
   updateMaterialCSSStyleSheet(
     MaterialSchemes[
-      colorSchemeSettingsToMaterialSchemeName(colorScheme)
+      colorSchemeConfigsToMaterialSchemeName(colorScheme)
     ]
   );
 };
