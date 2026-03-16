@@ -48,19 +48,19 @@ export class StepUpDialog extends LitElement {
   }
 
   private headlines: Record<ConfirmDialogStyle, TemplateResult> = {
-    confirm: html`<h2 class="md-typescale-headline-small">Are you sure?</h2>`,
+    confirm: html`<h2 class="md-typescale-headline-small">Please Confirm</h2>`,
     warning: html`<h2 class="md-typescale-headline-small">Warning</h2>`,
     attention: html`<h2 class="md-typescale-headline-small">Attention!</h2>`,
   };
 
   private icons: Record<ConfirmDialogStyle, TemplateResult> = {
-    confirm: html`<md-icon slot="icon">subheader</md-icon>`,
-    warning: html`<md-icon slot="icon">subheader</md-icon>`,
-    attention: html`<md-icon slot="icon">subheader</md-icon>`,
+    confirm: html`<md-icon slot="icon">question_mark</md-icon>`,
+    warning: html`<md-icon slot="icon">warning</md-icon>`,
+    attention: html`<md-icon slot="icon">priority_high</md-icon>`,
   }
 
   private primaryActions: Record<ConfirmDialogStyle, TemplateResult> = {
-    confirm: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Yes, I am sure</md-filled-button>`,
+    confirm: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button>`,
     warning: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button>`,
     attention: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button>`,
   }
