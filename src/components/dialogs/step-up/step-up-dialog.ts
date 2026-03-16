@@ -51,26 +51,7 @@ export class StepUpDialog extends LitElement {
 
   @query("#step-up-dialog")
   private _mdDialog!: MdDialog;
-  private colors: Record<ConfirmDialogStyle, Record<"container-color" | "headline-color" | "supporting-text-color" | "icon-color", string>> = {
-    confirm: {
-      "container-color": "var(--md-sys-color-surface-container-highest)",
-      "headline-color": "var(--md-sys-color-on-surface-variant)",
-      "supporting-text-color": "var(--md-sys-color-on-surface-variant)",
-      "icon-color": "var(--md-sys-color-tertiary)"
-    },
-    warning: {
-      "container-color": "var(--md-sys-color-surface-container-lowest)",
-      "headline-color": "var(--md-sys-color-on-surface-variant)",
-      "supporting-text-color": "var(--md-sys-color-on-surface-variant)",
-      "icon-color": "var(--md-sys-color-primary)"
-    },
-    attention: {
-      "container-color": "var(--md-sys-color-error-container)",
-      "headline-color": "var(--md-sys-color-on-error-container)",
-      "supporting-text-color": "var(--md-sys-color-on-error-container)",
-      "icon-color": "var(--md-sys-color-on-error-container)",
-    },
-  }
+
   async showDialog(): Promise<void> {
     return this._mdDialog.show();
   }
