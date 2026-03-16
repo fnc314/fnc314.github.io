@@ -1,3 +1,4 @@
+import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
 import { configsService } from "@/services/configs";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
@@ -18,7 +19,6 @@ import { ColorSchemeChangeEvent, DarkModeToggle, ColorScheme as DarkModeToggleCo
 import { css, html, LitElement, TemplateResult } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, query, state } from "lit/decorators.js";
-import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "../step-up/step-up-dialog";
 
 @customElement("configs-dialog")
 export class ConfigsDialog extends LitElement {
@@ -511,7 +511,7 @@ export class ConfigsDialog extends LitElement {
 
         <dark-mode-toggle
           .autofocus=${true}
-          class=${`variant ${classMap(classes)}`}
+          class="variant ${classMap(classes)}"
           id="dark-mode-toggle"
           permanent
           mode=${this._appConfigs.colorScheme.name.toLowerCase() as DarkModeToggleColorScheme}
@@ -560,6 +560,7 @@ export class ConfigsDialog extends LitElement {
         dialogStyle=${"confirm"}
         dialogContentString=${"Are you sure you want to revert all custom settings?"}
       ></step-up-dialog>
+
       <md-dialog class="configs-dialog" id="configs-dialog">
         <md-icon slot="icon">settings</md-icon>
         <div slot="headline">

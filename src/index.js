@@ -28,16 +28,6 @@ window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", onThemeChange);
 
-onThemeChange(
-  new MediaQueryListEvent(
-    "change",
-    {
-    matches: window.matchMedia("(prefers-color-scheme: dark)").matches,
-      media: "(prefers-color-scheme: dark)"
-    }
-  )
-);
-
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
 
@@ -54,7 +44,7 @@ const domLoadedListener = (event) => {
 
   const matScheme = MaterialSchemes[
     colorSchemeSettingsToMaterialSchemeName(
-      configsService.loadSettings().colorScheme
+      configsService.loadConfigs().colorScheme
     )
   ];
   updateMaterialCSSStyleSheet(matScheme);

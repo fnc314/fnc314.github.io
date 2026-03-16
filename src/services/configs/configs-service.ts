@@ -4,7 +4,7 @@ import { storageService, StorageService } from "../storage/storage-service";
 
 export interface ConfigsService {
   saveConfigs(
-    settings: AppConfigs
+    configs: AppConfigs
   ): void
 
   loadConfigs(): AppConfigs
@@ -20,16 +20,17 @@ class ConfigsServiceImpl implements ConfigsService {
   }
 
   saveConfigs(
-    settings: AppConfigs
+    configs: AppConfigs
   ): void {
-    this.#storageService.clearData("settings");
-    this.#storageService.saveDate("settings", JSON.stringify(settings));
+    this.#storageService.clearData("configs");
+    this.#storageService.saveData("configs", JSON.stringify(configs));
+    this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
   }
 
   loadConfigs(): AppConfigs {
     return JSON.parse(
       this.#storageService.getData(
-        "settings",
+        "configs",
         JSON.stringify(DEFAULT_APP_CONFIGS)
       ).value
     ) as AppConfigs;

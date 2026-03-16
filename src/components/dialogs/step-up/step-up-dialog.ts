@@ -1,6 +1,7 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { css, html, LitElement, TemplateResult } from "lit-element";
+import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property, query } from "lit/decorators.js";
 
 export type ConfirmDialogStyle = "confirm" | "warning" | "attention"
@@ -12,6 +13,32 @@ export class StepUpDialog extends LitElement {
     css`
       :host {
         --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+
+      }
+
+      .confirm {
+        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-supporting-text-color: var(--md-sys-color-on-surface-variant);
+        --md-dialog-icon-color: var(--md-sys-color-primary);
+        --md-dialog-headline-color: var(--md-sys-color-on-surface-variant);
+      }
+
+      .warning {
+        --md-dialog-container-color: var(--md-sys-color-surface-container-lowest);
+        --md-dialog-supporting-text-color: var(--md-sys-color-on-surface-variant);
+        --md-dialog-icon-color: var(--md-sys-color-primary-fixed);
+        --md-dialog-headline-color: var(--md-sys-color-on-surface-variant);
+      }
+
+      .attention {
+        --md-outlined-button-label-text-color: var(--md-sys-color-on-error-container);
+        --md-outlined-button-outline-color: var(--md-sys-color-on-error-container);
+        --md-outlined-button-hover-outline-color: var(--md-sys-color-on-error-container);
+        --md-outlined-button-focus-outline-color: var(--md-sys-color-on-error-container);
+        --md-dialog-container-color: var(--md-sys-color-error-container);
+        --md-dialog-supporting-text-color: var(--md-sys-color-on-error-container);
+        --md-dialog-icon-color: var(--md-sys-color-on-error-container);
+        --md-dialog-headline-color: var(--md-sys-color-on-error-container);
       }
     `
   ];
@@ -24,13 +51,28 @@ export class StepUpDialog extends LitElement {
 
   @query("#step-up-dialog")
   private _mdDialog!: MdDialog;
-
-  showDialog(): Promise<void> {
-    return this._mdDialog.show();
+  private colors: Record<ConfirmDialogStyle, Record<"container-color" | "headline-color" | "supporting-text-color" | "icon-color", string>> = {
+    confirm: {
+      "container-color": "var(--md-sys-color-surface-container-highest)",
+      "headline-color": "var(--md-sys-color-on-surface-variant)",
+      "supporting-text-color": "var(--md-sys-color-on-surface-variant)",
+      "icon-color": "var(--md-sys-color-tertiary)"
+    },
+    warning: {
+      "container-color": "var(--md-sys-color-surface-container-lowest)",
+      "headline-color": "var(--md-sys-color-on-surface-variant)",
+      "supporting-text-color": "var(--md-sys-color-on-surface-variant)",
+      "icon-color": "var(--md-sys-color-primary)"
+    },
+    attention: {
+      "container-color": "var(--md-sys-color-error-container)",
+      "headline-color": "var(--md-sys-color-on-error-container)",
+      "supporting-text-color": "var(--md-sys-color-on-error-container)",
+      "icon-color": "var(--md-sys-color-on-error-container)",
+    },
   }
-
-  returnValue(): string {
-    return this._mdDialog.returnValue;
+  async showDialog(): Promise<void> {
+    return this._mdDialog.show();
   }
 
   private onButtonClick(isCancel: boolean, event: PointerEvent) {
@@ -67,7 +109,7 @@ export class StepUpDialog extends LitElement {
 
   override render() {
     return html`
-      <md-dialog id="step-up-dialog" type="alert">
+      <md-dialog id="step-up-dialog" type="alert" class=${classMap({ confirm: this.dialogStyle === "confirm", attention: this.dialogStyle === "attention", warning: this.dialogStyle === "warning", })}>
         ${this.icons[this.dialogStyle]}
         <div slot="headline">
           ${this.headlines[this.dialogStyle]}

@@ -1,5 +1,5 @@
 export interface StorageService {
-  saveDate(key: string, data: string): void;
+  saveData(key: string, data: string): void;
 
   getData(key: string, defaultValue: string): { value: string, isDefault: boolean }
 
@@ -8,7 +8,7 @@ export interface StorageService {
 
 class StorageServiceImpl implements StorageService {
 
-  saveDate(key: string, data: string): void {
+  saveData(key: string, data: string): void {
     localStorage.setItem(key, data);
   }
 

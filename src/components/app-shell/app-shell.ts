@@ -55,6 +55,7 @@ export class AppShell extends LitElement {
       }
 
       .fab-container {
+        z-index: 1;
         position: sticky;
         bottom: 1rem;
         left: 1rem;
@@ -75,7 +76,7 @@ export class AppShell extends LitElement {
         gap: 1rem;
 
         md-fab {
-          z-index: 1;
+          z-index: 2;
           align-self: end;
 
           &.settings {
