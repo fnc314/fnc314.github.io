@@ -62,7 +62,7 @@ export class CodePartial extends LitElement {
           overflow-wrap: anywhere;
         }
 
-        &:hover {
+        &:hover, &:focus, &:focus-within {
           transform: translateY(-4px);
           --md-elevation-level: 4;
           background-color: var(--md-sys-color-surface-container-high);
@@ -120,12 +120,20 @@ export class CodePartial extends LitElement {
             background: var(--md-sys-color-inverse-surface);
             color: var(--md-sys-color-inverse-on-surface);
             padding: 0.25rem 1rem;
-            border-radius: 0.5rem;
+            border-radius: var(--md-sys-shape-corner-extra-small);
+            transition:
+              transform 0.1s ease-in-out,
+              background-color 0.1s ease-in-out,
+              color 0.1s ease-in-out,
+              outline 0.1s ease-in-out,
+              border-radius 0.1s ease-in-out;
 
-            &:where(:focus-within, a:focused) {
+            &:where(:focus-within, a:focused, :hover, a:hover) {
+              transform: translateY(-4px);
               background-color: var(--md-sys-color-surface);
               color: var(--md-sys-color-on-surface);
               outline: 2px solid var(--md-sys-color-on-surface);
+              border-radius: var(--md-sys-shape-corner-small);
             }
 
             a {
