@@ -122,6 +122,12 @@ export class CodePartial extends LitElement {
             padding: 0.25rem 1rem;
             border-radius: 0.5rem;
 
+            &:where(:focus-within, a:focused) {
+              background-color: var(--md-sys-color-surface);
+              color: var(--md-sys-color-on-surface);
+              outline: 2px solid var(--md-sys-color-on-surface);
+            }
+
             a {
               text-decoration: none;
               color: inherit;

@@ -25,24 +25,24 @@ export const makeWordCloudWord = (
 ): WordCloudWord => ({
   word,
   weight,
-  quartile: (() => {
+  quartile: ((theWeight: number) => {
     switch (true) {
-      case weight > 8:
+      case theWeight > 8:
         return "first-quartile";
 
-      case 6 < weight && weight <= 8:
+      case 6 < theWeight && theWeight <= 8:
         return "second-quartile";
 
-      case 3 < weight && weight <= 6:
+      case 3 < theWeight && theWeight <= 6:
         return "third-quartile";
 
-      case weight < 3:
+      case theWeight < 3:
         return "fourth-quartile";
 
       default:
         return "fourth-quartile";
     }
-  })(),
+  })(weight),
   category,
   extras,
 });
@@ -69,12 +69,13 @@ export class WordCloud extends LitElement {
         padding: unset;
 
         li {
-          border-radius: var(--md-sys-shape-corner-medium);
+          border-radius: var(--md-sys-shape-corner-small);
           border-color: currentColor;
           border-width: 1px;
           border-style: solid;
           font-family: var(--md-type-ref-plain);
           padding: 0.3rem 0.7rem;
+          min-width: 0;
         }
       }
 

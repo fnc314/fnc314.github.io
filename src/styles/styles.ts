@@ -1,4 +1,4 @@
-import { settingsService } from "@/services/settings";
+import { configsService } from "@/services/configs";
 import { colorSchemeSettingsToMaterialSchemeName, SETTINGS_KEYS_COLOR_SCHEME_NAMES } from "@/types/settings/color-scheme-settings";
 import { css, CSSResult } from "lit";
 import { MaterialSchemes } from "./material-styles";
@@ -6,12 +6,12 @@ import { MaterialSchemes } from "./material-styles";
 export const onThemeChange = (event: MediaQueryListEvent) => {
   const name = event.matches ? SETTINGS_KEYS_COLOR_SCHEME_NAMES.DARK : SETTINGS_KEYS_COLOR_SCHEME_NAMES.LIGHT;
 
-  const appSettings = settingsService.loadSettings();
+  const appSettings = configsService.loadConfigs();
   const colorScheme = {
     ...appSettings.colorScheme,
     name,
   };
-  settingsService.saveSettings({
+  configsService.saveConfigs({
     ...appSettings,
     colorScheme,
   });

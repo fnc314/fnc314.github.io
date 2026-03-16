@@ -1,3 +1,3 @@
-export * from "./settings";
+export * from "./configs";
 export * from "./storage";
 

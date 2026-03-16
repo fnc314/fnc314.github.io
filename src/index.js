@@ -1,4 +1,5 @@
 import "@material/web/button/filled-button.js";
+import "@material/web/button/outlined-button.js";
 import "@material/web/button/text-button.js";
 import "@material/web/dialog/dialog.js";
 import "@material/web/divider/divider.js";
@@ -17,16 +18,11 @@ import "./components/index.js";
 import "./partials/index.js";
 import { Routes } from "./partials/nav/routes.js";
 import "./services/index.js";
-import { settingsService } from "./services/index.js";
+import { configsService } from "./services/index.js";
 import { MaterialSchemes } from "./styles/material-styles.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import "./types/index.js";
 import { colorSchemeSettingsToMaterialSchemeName } from "./types/index.js";
-
-document.adoptedStyleSheets.push(
-  typescaleStyles.styleSheet,
-  MaterialCSSStyleSheet,
-);
 
 window
   .matchMedia("(prefers-color-scheme: dark)")
@@ -44,6 +40,12 @@ onThemeChange(
 
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
+
+  document.adoptedStyleSheets.push(
+    typescaleStyles.styleSheet,
+    MaterialCSSStyleSheet,
+  );
+
   if (window.location.hash === "") {
     window.location.replace(
       `${window.location.href}#${Routes.PROFILE}`
@@ -52,7 +54,7 @@ const domLoadedListener = (event) => {
 
   const matScheme = MaterialSchemes[
     colorSchemeSettingsToMaterialSchemeName(
-      settingsService.loadSettings().colorScheme
+      configsService.loadSettings().colorScheme
     )
   ];
   updateMaterialCSSStyleSheet(matScheme);

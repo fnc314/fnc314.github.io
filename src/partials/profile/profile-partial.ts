@@ -124,6 +124,15 @@ export class ProfilePartial extends LitElement {
 
         > p {
           place-self: center;
+          &::first-line {
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: justify;
+            text-justify: inter-word;
+            font-size: 150%;
+            text-indent: 0.5rem;
+          }
         }
       }
       .education {

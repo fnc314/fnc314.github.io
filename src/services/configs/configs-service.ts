@@ -1,30 +1,32 @@
 import { AppConfigs } from "@/types/settings";
-import { DEFAULT_APP_CONFIGS } from "@/types/settings/app-settings";
+import { DEFAULT_APP_CONFIGS } from "@/types/settings/app-configs";
 import { storageService, StorageService } from "../storage/storage-service";
 
-export interface SettingsService {
-  saveSettings(
+export interface ConfigsService {
+  saveConfigs(
     settings: AppConfigs
   ): void
 
-  loadSettings(): AppConfigs
+  loadConfigs(): AppConfigs
+
+  resetConfigs(): void;
 };
 
-class SettingsServiceImpl implements SettingsService {
+class ConfigsServiceImpl implements ConfigsService {
   #storageService: StorageService
 
   constructor(storageService: StorageService) {
     this.#storageService = storageService;
   }
 
-  saveSettings(
+  saveConfigs(
     settings: AppConfigs
   ): void {
     this.#storageService.clearData("settings");
     this.#storageService.saveDate("settings", JSON.stringify(settings));
   }
 
-  loadSettings(): AppConfigs {
+  loadConfigs(): AppConfigs {
     return JSON.parse(
       this.#storageService.getData(
         "settings",
@@ -32,8 +34,13 @@ class SettingsServiceImpl implements SettingsService {
       ).value
     ) as AppConfigs;
   }
+
+  resetConfigs(): void {
+    this.#storageService.clearData("dark-mode-toggle");
+    this.saveConfigs(DEFAULT_APP_CONFIGS);
+  }
 };
 
-export const settingsService: SettingsService = new SettingsServiceImpl(
+export const configsService: ConfigsService = new ConfigsServiceImpl(
   storageService
 );

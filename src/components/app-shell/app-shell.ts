@@ -1,7 +1,9 @@
-import { SettingsDialog } from "@/components/dialogs/settings/settings-dialog";
+import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
 import Connections from "@/data/connections.json" with { type: "json" };
-import { settingsService } from "@/services/settings";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { configsService } from "@/services/configs";
+import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
+import { updateMaterialCSSStyleSheet } from "@/styles/styles";
+import { ColorSchemeConfigChange, colorSchemeSettingsToMaterialSchemeName } from "@/types/settings/color-scheme-settings";
 import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/settings/fab-settings";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
@@ -26,15 +28,19 @@ export class AppShell extends LitElement {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
         container-type: inline-size;
+
         --md-fab-container-height: 4rem;
         --md-fab-container-width: 4rem;
+        --md-fab-container-shape: var(--md-sys-shape-corner-large);
         --md-fab-large-container-height: 4rem;
         --md-fab-large-container-width: 6rem;
+        --md-fab-large-container-shape: var(--md-sys-shape-corner-large);
         --md-fab-small-container-height: 3rem;
         --md-fab-small-container-width: 3rem;
-        --md-fab-label-text-font: var(--md-ref-typeface-brand);
-        --md-fab-label-text-size: 1rem;
+        --md-fab-small-container-shape: var(--md-sys-shape-corner-medium);
+
         --md-dialog-container-color: var(--md-sys-color-surface-container-high);
+
         --md-list-container-color: var(--md-sys-color-surface-container-highest);
         --md-list-item-container-shape: var(--md-sys-shape-corner-large);
       }
@@ -55,12 +61,17 @@ export class AppShell extends LitElement {
         right: 1rem;
         display: grid;
         padding-inline: 1rem;
-        /* grid-template-areas:
-          "start_top . end_top"
-          "start_bottom . end_bottom"
-          ; */
-        grid-template-columns: [start-start] 1fr [start-end empt-start] 1fr [empty-end end-start] 1fr [end-end];
-        grid-template-rows: [top-start] var(--md-fab-large-container-height) [top-end bottom-start] var(--md-fab-large-container-height) [bottom-end];
+        grid-template-rows:
+          [top-start] var(--md-fab-large-container-height)
+          [top-end bottom-start] var(--md-fab-large-container-height)
+          [bottom-end]
+          ;
+        grid-template-columns:
+          [start-start] 1fr
+          [start-end empt-start] 1fr
+          [empty-end end-start] 1fr
+          [end-end]
+          ;
         gap: 1rem;
 
         md-fab {
@@ -68,31 +79,25 @@ export class AppShell extends LitElement {
           align-self: end;
 
           &.settings {
-            grid-column-start: attr(data-grid-column-start type(<number>));
-            grid-column-end: calc(attr(data-grid-column-start type(<number>)) + 1);
-            grid-row-start: attr(data-grid-row-start type(<number>));
-            grid-row-end: calc(attr(data-grid-row-start type(<number>)) + 1);
+
           }
 
           &.connect {
-            grid-column-start: attr(data-grid-column-start type(<number>));
-            grid-column-end: calc(attr(data-grid-column-start type(<number>)) + 1);
-            grid-row-start: attr(data-grid-row-start type(<number>));
-            grid-row-end: calc(attr(data-grid-row-start type(<number>)) + 1);
+
           }
         }
       }
     `,
   ];
 
-  @query("#settings-dialog")
-  private settingsDialog!: SettingsDialog;
+  @query("#configs-dialog")
+  private configsDialog!: ConfigsDialog;
 
   @query("#fab-settings")
   private settingsFab!: MdFab;
 
   @state()
-  private settingsFabConfig: FabConfig = settingsService.loadSettings().fab.settings;
+  private settingsFabConfig: FabConfig = configsService.loadConfigs().fab.settings;
 
   @query("#connect-dialog")
   private connectDialog!: MdDialog;
@@ -101,7 +106,7 @@ export class AppShell extends LitElement {
   private connectFab!: MdFab;
 
   @state()
-  private connectFabConfig: FabConfig = settingsService.loadSettings().fab.connect;
+  private connectFabConfig: FabConfig = configsService.loadConfigs().fab.connect;
 
   private onFabChangeBind = this.onFabChange.bind(this);
 
@@ -123,15 +128,22 @@ export class AppShell extends LitElement {
 
     const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
+    changedFab.ariaLabel = fabLabel;
 
     changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
     (changedFab.querySelector("md-icon") as MdIcon).style.display =
       fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
 
-    const { rowStart, columnStart } = fabConfigToGrid(fabConfig);
-    changedFab.dataset.gridColumnStart = `${columnStart}`;
-    changedFab.dataset.gridRowStart = `${rowStart}`;
-    changedFab.style.justifySelf = columnStart === 1 ? "" : "end";
+    const { rowStart, rowEnd, columnStart, columnEnd } = fabConfigToGrid(fabConfig);
+    changedFab.style.gridColumnStart = `${columnStart}`;
+    changedFab.style.gridColumnEnd = `${columnEnd}`;
+    changedFab.style.gridRowStart = `${rowStart}`;
+    changedFab.style.gridRowEnd = `${rowEnd}`
+    if (fabConfig.position === "END_BOTTOM" || fabConfig.position === "END_TOP") {
+      changedFab.style.justifySelf = "end";
+    } else {
+      changedFab.style.justifySelf = "start";
+    }
   }
 
   private renderConnectionsList(): TemplateResult {
@@ -160,20 +172,44 @@ export class AppShell extends LitElement {
 
   private onFabConfigBind = ((event: FabConfigChange) => this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
 
-  protected override firstUpdated(_changedProperties: PropertyValues): void {
+  protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
     super.firstUpdated(_changedProperties);
-    const appSettings = settingsService.loadSettings();
+    const appSettings = configsService.loadConfigs();
     this.connectFabConfig = appSettings.fab.connect;
     this.settingsFabConfig = appSettings.fab.settings;
     this.onFabChangeBind("settings", this.settingsFabConfig);
     this.onFabChangeBind("connect", this.connectFabConfig);
   }
 
+  protected override async update(changedProperties: PropertyValues): Promise<void> {
+    super.update(changedProperties);
+    await this.updateComplete;
+    [
+      this.settingsFab, this.connectFab
+    ].forEach((fab: MdFab) => {
+      const label: HTMLSpanElement | null | undefined = fab.shadowRoot?.querySelector("span.label");
+      if (label) {
+        label.style.paddingInlineStart = "0.5rem";
+      }
+    });
+  }
+
+  private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
+    updateMaterialCSSStyleSheet(
+      MaterialSchemes[colorSchemeSettingsToMaterialSchemeName(event.detail)]
+    )
+  }).bind(this);
+
   override connectedCallback() {
     super.connectedCallback();
     document.addEventListener(
       "fab.change",
       this.onFabConfigBind
+    );
+
+    document.addEventListener(
+      "color_scheme.change",
+      this.onColorSchemeChange
     );
   }
 
@@ -183,13 +219,18 @@ export class AppShell extends LitElement {
       "fab.change",
       this.onFabConfigBind
     );
+
+    document.removeEventListener(
+      "color_scheme.change",
+      this.onColorSchemeChange
+    );
   }
 
   override render() {
     return html`
       <slot></slot>
 
-      <settings-dialog id="settings-dialog"></settings-dialog>
+      <configs-dialog id="configs-dialog"></configs-dialog>
 
       <md-dialog id="connect-dialog">
         <div slot="headline">
@@ -213,9 +254,9 @@ export class AppShell extends LitElement {
           size="medium"
           variant="surface"
           aria-label="Settings"
-          @click=${() => this.settingsDialog.showDialog()}
+          @click=${() => this.configsDialog.showDialog()}
           >
-          <md-icon id="settings-fab-icon" slot="icon">settings</md-icon>
+          <md-icon id="configs-fab-icon" slot="icon">settings</md-icon>
         </md-fab>
 
         <md-fab

@@ -45,4 +45,6 @@ export const colorSchemeSettingsToMaterialSchemeName: (colorSchemeSettings: Colo
       colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
 
   return `${variant}${contrast}` as MaterialSchemeName;
-}
+};
+
+export type ColorSchemeConfigChange = CustomEvent<ColorSchemeSettings>;
