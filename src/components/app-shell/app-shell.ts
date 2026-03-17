@@ -1,5 +1,5 @@
 import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
-import Connections from "@/data/connections.json" with { type: "json" };
+import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
 import { configsService } from "@/services/configs";
 import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
@@ -7,7 +7,6 @@ import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName } from 
 import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/configs/fab-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
-import { type MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
 import "@material/web/fab/fab";
 import { MdFab } from "@material/web/fab/fab";
@@ -15,7 +14,7 @@ import "@material/web/icon/icon";
 import { MdIcon } from "@material/web/icon/icon";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
-import { css, html, LitElement, nothing, PropertyValues, TemplateResult } from "lit";
+import { css, html, LitElement, PropertyValues } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 
 @customElement("app-shell")
@@ -55,9 +54,10 @@ export class AppShell extends LitElement {
       }
 
       .fab-container {
+        cursor: unset;
         z-index: 1;
         position: sticky;
-        bottom: 1rem;
+        bottom: 0;
         left: 1rem;
         right: 1rem;
         display: grid;
@@ -69,7 +69,7 @@ export class AppShell extends LitElement {
           ;
         grid-template-columns:
           [start-start] 1fr
-          [start-end empt-start] 1fr
+          [start-end empty-start] 1fr
           [empty-end end-start] 1fr
           [end-end]
           ;
@@ -101,7 +101,7 @@ export class AppShell extends LitElement {
   private settingsFabConfig: FabConfig = configsService.loadConfigs().fab.settings;
 
   @query("#connect-dialog")
-  private connectDialog!: MdDialog;
+  private connectDialog!: ConnectDialog;
 
   @query("#fab-connect")
   private connectFab!: MdFab;
@@ -145,30 +145,6 @@ export class AppShell extends LitElement {
     } else {
       changedFab.style.justifySelf = "start";
     }
-  }
-
-  private renderConnectionsList(): TemplateResult {
-    return html`
-      ${
-        Object.values(Connections.connections).map((connection, index) => html`
-          <md-list-item
-            type="link"
-            .href=${connection.href}
-            target="_blank"
-            >
-            <div slot="overline">${connection.method.charAt(0).toUpperCase() + connection.method.slice(1)}</div>
-            ${connection.text}
-          </md-list-item>
-          ${
-            index === Object.values(Connections.connections).length - 1
-              ? nothing
-              : html`
-                <md-divider></md-divider>
-              `
-          }
-        `)
-      }
-    `;
   }
 
   private onFabConfigBind = ((event: FabConfigChange) => this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
@@ -233,19 +209,7 @@ export class AppShell extends LitElement {
 
       <configs-dialog id="configs-dialog"></configs-dialog>
 
-      <md-dialog id="connect-dialog">
-        <div slot="headline">
-          <h2 class="md-typescale-headline-large">Connect</h2>
-        </div>
-        <div slot="content">
-          <md-list>
-            ${this.renderConnectionsList()}
-          </md-list>
-        </div>
-        <div slot="actions">
-          <md-text-button @click=${() => this.connectDialog.close()}>Close</md-text-button>
-        </div>
-      </md-dialog>
+      <connect-dialog id="connect-dialog"></connect-dialog>
 
       <section class="fab-container">
 
@@ -266,7 +230,7 @@ export class AppShell extends LitElement {
           size="medium"
           variant="primary"
           aria-label="Connect"
-          @click=${() => this.connectDialog.show()}
+          @click=${() => this.connectDialog.showDialog()}
           >
           <md-icon slot="icon">person_add</md-icon>
         </md-fab>

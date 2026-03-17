@@ -18,7 +18,6 @@ export class ProfilePartial extends LitElement {
 
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
-
       }
 
       article {

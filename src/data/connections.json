@@ -1,24 +1,55 @@
 {
-  "connections": {
-    "phone": {
-      "method": "phone",
-      "href": "tel:+14127219550",
-      "text": "412-721-9550"
+  "connections": [
+    {
+      "label": "Directly",
+      "connections": {
+        "phone": {
+          "method": "phone",
+          "href": "tel:+14127219550",
+          "text": "412-721-9550",
+          "icon": "<md-icon>call</md-icon>"
+        },
+        "email": {
+          "method": "email",
+          "href": "mailto:fnc314@fnc314.com",
+          "text": "fnc314@fnc314.com",
+          "icon": "<md-icon>mail</md-icon>"
+        }
+      }
     },
-    "email": {
-      "method": "email",
-      "href": "mailto:fnc314@fnc314.com",
-      "text": "fnc314@fnc314.com"
+    {
+      "label": "Socially",
+      "connections": {
+        "linkedin": {
+          "method": "linkedin",
+          "href": "https://www.linkedin.com/in/fnc314",
+          "text": "linkedin.com/in/fnc314",
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/linkedin.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+        },
+        "github": {
+          "method": "github",
+          "href": "https://www.github.com/fnc314",
+          "text": "github.com/fnc314",
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/github.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+        }
+      }
     },
-    "linkedin": {
-      "method": "linkedin",
-      "href": "https://www.linkedin.com/in/fnc314",
-      "text": "linkedin.com/in/fnc314"
-    },
-    "github": {
-      "method": "github",
-      "href": "https://www.github.com/fnc314",
-      "text": "github.com/fnc314"
+    {
+      "label": "Alternatively",
+      "connections": {
+        "googleDrive": {
+          "method": "google Drive",
+          "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
+          "text": "Live Resume",
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/google-drive.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+        },
+        "pdf": {
+          "method": "pdf",
+          "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
+          "text": "PDF Resume",
+          "icon": "<md-icon>picture_as_pdf</md-icon>"
+        }
+      }
     }
-  }
+  ]
 }

@@ -1,8 +1,8 @@
 import WorkJson from "@/data/work.json" with { type: "json" };
+import "@/partials/work/work-experience";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
-import "./work-experience";
 
 interface WorkDate {
   stamp: string;
@@ -108,21 +108,6 @@ export class WorkPartial extends LitElement {
             `,
           )}
         </div>
-        <footer>
-          <ul>
-            ${
-              Object.values(
-                data.resume
-              ).map((resume) => html`
-                <li>
-                  <a .href=${resume.href} target="_blank">
-                    ${resume.text}
-                  </a>
-                </li>
-              `)
-            }
-          </ul>
-        </footer>
       </article>
     `;
   }

@@ -47,7 +47,7 @@ export default {
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
     }),
     copy({
-      patterns: ["assets/**/*.{jpg,svg,png}"],
+      patterns: ["assets/**/**/*.{jpg,svg,png}"],
       rootDir: "./",
     }),
     copy({

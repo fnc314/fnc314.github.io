@@ -12,41 +12,69 @@ export class StepUpDialog extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
 
       }
 
-      .confirm {
-        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
-        --md-dialog-supporting-text-color: var(--md-sys-color-on-surface-variant);
-        --md-dialog-icon-color: var(--md-sys-color-primary);
-        --md-dialog-headline-color: var(--md-sys-color-on-surface-variant);
-      }
+      md-dialog {
+        --md-dialog-container-color: var(--md-sys-color-surface-container-high);
 
-      .warning {
-        --md-dialog-container-color: var(--md-sys-color-surface-container-lowest);
-        --md-dialog-supporting-text-color: var(--md-sys-color-on-surface-variant);
-        --md-dialog-icon-color: var(--md-sys-color-primary-fixed);
-        --md-dialog-headline-color: var(--md-sys-color-on-surface-variant);
-      }
+        --md-outlined-button-hover-state-layer-opacity: 0.5;
 
-      .attention {
-        --md-outlined-button-label-text-color: var(--md-sys-color-on-error-container);
-        --md-outlined-button-outline-color: var(--md-sys-color-on-error-container);
-        --md-outlined-button-hover-outline-color: var(--md-sys-color-on-error-container);
-        --md-outlined-button-focus-outline-color: var(--md-sys-color-on-error-container);
-        --md-dialog-container-color: var(--md-sys-color-error-container);
-        --md-dialog-supporting-text-color: var(--md-sys-color-on-error-container);
-        --md-dialog-icon-color: var(--md-sys-color-on-error-container);
-        --md-dialog-headline-color: var(--md-sys-color-on-error-container);
+        --md-filled-button-container-elevation: 2;
+        --md-filled-button-container-color: var(--md-sys-color-surface-variant);
+        --md-filled-button-label-text-color: var(--md-sys-color-on-surface);
+        --md-filled-button-outline-color: var(--md-sys-color-on-surface);
+        --md-filled-button-hover-label-text-color: var(--md-sys-color-on-surface-variant);
+        --md-filled-button-hover-container-color: var(--md-sys-color-surface-variant);
+        --md-filled-button-hover-outline-color: var(--md-sys-color-on-surface-variant);
+        --md-filled-button-focus-container-color: var(--md-sys-color-surface-variant);
+        --md-filled-button-focus-outline-color: var(--md-sys-color-on-surface-variant);
+        --md-filled-button-focus-label-text-color: var(--md-sys-color-on-surface-variant);
+
+        &.confirm {
+          --md-dialog-container-color: var(--md-sys-color-primary-container);
+          --md-dialog-supporting-text-color: var(--md-sys-color-on-primary-container);
+          --md-dialog-icon-color: var(--md-sys-color-on-primary-container);
+          --md-dialog-headline-color: var(--md-sys-color-on-primary-container);
+
+          --md-outlined-button-label-text-color: var(--md-sys-color-on-primary-container);
+          --md-outlined-button-outline-color: var(--md-sys-color-on-primary-container);
+          --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-primary-container);
+          --md-outlined-button-focus-outline-color: var(--md-sys-color-on-primary-container);
+        }
+
+        &.warning {
+          --md-dialog-container-color: var(--md-sys-color-tertiary);
+          --md-dialog-supporting-text-color: var(--md-sys-color-on-tertiary);
+          --md-dialog-icon-color: var(--md-sys-color-on-tertiary);
+          --md-dialog-headline-color: var(--md-sys-color-on-tertiary);
+
+          --md-outlined-button-label-text-color: var(--md-sys-color-on-tertiary);
+          --md-outlined-button-outline-color: var(--md-sys-color-on-tertiary);
+          --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-tertiary);
+          --md-outlined-button-focus-outline-color: var(--md-sys-color-on-tertiary);
+        }
+
+        &.attention {
+          --md-dialog-container-color: var(--md-sys-color-error);
+          --md-dialog-supporting-text-color: var(--md-sys-color-on-error);
+          --md-dialog-icon-color: var(--md-sys-color-on-error);
+          --md-dialog-headline-color: var(--md-sys-color-on-error);
+
+          --md-outlined-button-label-text-color: var(--md-sys-color-on-error);
+          --md-outlined-button-outline-color: var(--md-sys-color-on-error);
+          --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-error);
+          --md-outlined-button-focus-outline-color: var(--md-sys-color-on-error);
+        }
+
       }
     `
   ];
 
-  @property({ type: String })
+  @property({ type: String, attribute: "dialogStyle" })
   dialogStyle: ConfirmDialogStyle = "confirm";
 
-  @property({ type: String })
+  @property({ type: String, attribute: "dialogContentString" })
   dialogContentString: string = "";
 
   @query("#step-up-dialog")
@@ -59,14 +87,16 @@ export class StepUpDialog extends LitElement {
   private onButtonClick(isCancel: boolean, event: PointerEvent) {
     event.preventDefault();
     event.stopPropagation();
-    this.dispatchEvent(new CustomEvent("stepUpComplete", {
-      bubbles: true,
-      composed: true,
-      detail: {
-        cancelled: isCancel,
-        confirmed: !isCancel,
-      }
-    }));
+    this.dispatchEvent(
+      new CustomEvent("stepUpComplete", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          cancelled: isCancel,
+          confirmed: !isCancel,
+        }
+      })
+    );
     this._mdDialog.close();
   }
 
@@ -77,20 +107,25 @@ export class StepUpDialog extends LitElement {
   };
 
   private icons: Record<ConfirmDialogStyle, TemplateResult> = {
-    confirm: html`<md-icon slot="icon">question_mark</md-icon>`,
+    confirm: html`<md-icon slot="icon">check_circle</md-icon>`,
     warning: html`<md-icon slot="icon">warning</md-icon>`,
-    attention: html`<md-icon slot="icon">priority_high</md-icon>`,
+    attention: html`<md-icon slot="icon">report</md-icon>`,
   }
 
   private primaryActions: Record<ConfirmDialogStyle, TemplateResult> = {
     confirm: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button>`,
     warning: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button>`,
-    attention: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button>`,
+    attention: html`<md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button>`,
   }
 
   override render() {
+    const mdDialogClasses = {
+      confirm: this.dialogStyle === "confirm",
+      attention: this.dialogStyle === "attention",
+      warning: this.dialogStyle === "warning",
+    };
     return html`
-      <md-dialog id="step-up-dialog" type="alert" class=${classMap({ confirm: this.dialogStyle === "confirm", attention: this.dialogStyle === "attention", warning: this.dialogStyle === "warning", })}>
+      <md-dialog id="step-up-dialog" type="alert" class=${classMap(mdDialogClasses)}>
         ${this.icons[this.dialogStyle]}
         <div slot="headline">
           ${this.headlines[this.dialogStyle]}

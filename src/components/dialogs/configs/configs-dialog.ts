@@ -33,13 +33,17 @@ export class ConfigsDialog extends LitElement {
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
 
+        --md-filled-button-container-elevation: 2;
+
+        --md-outlined-button-label-text-color: var(--md-sys-color-outline);
+
         --md-outlined-select-text-field-leading-icon-color: var(--md-sys-color-error);
         --md-outlined-select-text-field-focus-leading-icon-color: var(--md-sys-color-error);
         --md-outlined-select-text-field-hover-leading-icon-color: var(--md-sys-color-error);
       }
 
       .configs-dialog {
-        min-width: calc(100dvw - 20rem);
+        min-width: calc(100dvw - 15rem);
         min-height: calc(100dvh - 20rem);
       }
 
@@ -84,6 +88,10 @@ export class ConfigsDialog extends LitElement {
 
         &::part(fieldset) {
           padding: unset;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
         }
 
         &::part(threeWayRadioWrapper) {
@@ -287,7 +295,7 @@ export class ConfigsDialog extends LitElement {
     }
   }).bind(this);
 
-  private colorSchemeChangeEventListener(event: ColorSchemeChangeEvent): void {
+  private colorSchemeChangeEventListener = ((event: ColorSchemeChangeEvent) => {
     this._darkModeEnabled = event.detail.colorScheme === "dark";
     this._appConfigs = {
       ...this._appConfigs,
@@ -301,11 +309,9 @@ export class ConfigsDialog extends LitElement {
     this.onColorSchemeContrastChange(
       this._appConfigs.colorScheme.contrast
     );
-  };
+  }).bind(this);
 
-  private boundColorSchemeChangeEventListener = this.colorSchemeChangeEventListener.bind(this);
-
-  private permanentColorSchemeEventListener(event: PermanentColorSchemeEvent): void {
+  private permanentColorSchemeEventListener = ((event: PermanentColorSchemeEvent) => {
     this._appConfigs = {
       ...this._appConfigs,
       colorScheme: {
@@ -314,26 +320,23 @@ export class ConfigsDialog extends LitElement {
       }
     }
     configsService.saveConfigs(this._appConfigs);
-  }
-
-  private boundPermanentColorSchemeEventListener = this.permanentColorSchemeEventListener.bind(this);
+  }).bind(this);
 
   override connectedCallback(): void {
     super.connectedCallback();
     this._appConfigs = configsService.loadConfigs();
     document.addEventListener(
       "colorschemechange",
-      this.boundColorSchemeChangeEventListener,
+      this.colorSchemeChangeEventListener,
     );
     document.addEventListener(
       "permanentcolorscheme",
-      this.boundPermanentColorSchemeEventListener
+      this.permanentColorSchemeEventListener
     );
     document.addEventListener(
       "stepUpOpen",
       this.openStepUp
     );
-
     document.addEventListener(
       "stepUpComplete",
       this.completeStepUp
@@ -345,11 +348,11 @@ export class ConfigsDialog extends LitElement {
     configsService.saveConfigs(this._appConfigs);
     document.removeEventListener(
       "colorschemechange",
-      this.boundColorSchemeChangeEventListener,
+      this.colorSchemeChangeEventListener,
     );
     document.removeEventListener(
       "permanentcolorscheme",
-      this.boundPermanentColorSchemeEventListener
+      this.permanentColorSchemeEventListener
     );
     document.removeEventListener(
       "stepUpOpen",
@@ -557,8 +560,8 @@ export class ConfigsDialog extends LitElement {
     return html`
       <step-up-dialog
         id="step-up-dialog"
-        dialogStyle=${"confirm"}
-        dialogContentString=${"Are you sure you want to revert all custom settings?"}
+        .dialogStyle=${"confirm"}
+        .dialogContentString=${"Are you sure you want to revert all custom settings?"}
       ></step-up-dialog>
 
       <md-dialog class="configs-dialog" id="configs-dialog">
