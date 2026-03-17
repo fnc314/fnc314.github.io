@@ -97,6 +97,8 @@ export class ConnectDialog extends LitElement {
           }
 
           md-list {
+            --md-icon-size: var(--md-list-item-leading-image-width);
+
             padding-block: unset;
 
             img {
@@ -149,15 +151,15 @@ export class ConnectDialog extends LitElement {
         <div slot="content" class="connect-content">
           ${
             Connections.connections.map((connection, index) => html`
-            <details .open=${index === 0} .name=${"connection"}>
-              <summary>
-                <h3 class="md-typescale-title-medium">
-                  ${connection.label}
-                </h3>
-                <md-icon>expand_circle_down</md-icon>
-              </summary>
-              ${this.#rederConnections(connection)}
-            </details>
+              <details .open=${index === 0} .name=${"connection"}>
+                <summary>
+                  <h3 class="md-typescale-title-medium">
+                    ${connection.label}
+                  </h3>
+                  <md-icon>expand_circle_down</md-icon>
+                </summary>
+                ${this.#rederConnections(connection)}
+              </details>
             `)
           }
         </div>
