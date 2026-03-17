@@ -36,6 +36,8 @@ export class ConnectDialog extends LitElement {
         --md-list-item-pressed-state-layer-opacity: 0.12;
 
         --md-list-item-leading-icon-size: 2rem;
+        --md-list-item-leading-image-width: 2rem;
+        --md-list-item-leading-image-height: 2rem;
       }
 
       md-dialog {
