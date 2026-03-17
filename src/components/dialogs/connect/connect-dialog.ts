@@ -24,13 +24,18 @@ export class ConnectDialog extends LitElement {
         --md-list-container-color: var(--md-sys-color-surface-container-highest);
 
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
-        --md-list-item-label-text-color: var(--md-sys-color-on-surface-variant);
-        --md-list-item-hover-state-layer-color: var(--md-sys-color-surface-container);
-        --md-list-item-hover-state-layer-opacity: 0.5;
+        --md-list-item-label-text-font: var(--md-ref-typeface-brand);
+        --md-list-item-label-text-weight: 700;
+
+        --md-list-item-supporting-text-color: var(--md-sys-color-primary);
+
+        --md-list-item-hover-label-text-color: var(--md-sys-color-on-surface-variant);
+        --md-list-item-hover-state-layer-color: var(--md-sys-color-primary);
+        --md-list-item-hover-state-layer-opacity: 0.12;
+        --md-list-item-pressed-state-layer-color: var(--md-sys-color-primary);
+        --md-list-item-pressed-state-layer-opacity: 0.12;
+
         --md-list-item-leading-icon-size: 2rem;
-        --md-list-item-leading-image-width: 2rem;
-        --md-list-item-leading-image-height: 2rem;
-        --md-list-item-leading-image-shape: var(--md-sys-shape-corner-small);
       }
 
       md-dialog {
@@ -68,9 +73,12 @@ export class ConnectDialog extends LitElement {
               transform: rotate(-90deg);
             }
 
-            &:focus, &:focus-within, &:hover, &:active {
-              background-color: color-mix(in srgb, var(--md-sys-color-surface-container-high), transparent 50%)
-              transition: background-color 0.2s ease-in-out;
+            &:focus, &:focus-within, &:hover {
+              background-color: color(
+                from var(--md-sys-color-primary) srgb r g b / .12
+              );
+              transition: background-color 0.1s ease-in-out;
+
               h3 {
                 text-decoration: underline;
                 transition: text-decoration 0.2s ease-in-out;
@@ -98,8 +106,23 @@ export class ConnectDialog extends LitElement {
 
           md-list {
             --md-icon-size: var(--md-list-item-leading-image-width);
-
             padding-block: unset;
+
+            md-list-item {
+              [slot="start"] {
+                color: var(--md-sys-color-error);
+              }
+              [slot="overline"] {
+                color: var(--md-sys-color-primary);
+              }
+              [slot="headline"] {
+                font-family: var(--md-ref-typeface-brand);
+              }
+
+              &:hover, &:focus, &:focus-within {
+                border-radius: var(--md-sys-shape-corner-small);
+              }
+            }
 
             img {
               width: var(--md-list-item-leading-image-width);

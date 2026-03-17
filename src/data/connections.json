@@ -57,20 +57,20 @@
     {
       "label": "Alternatively",
       "connections": {
-        "googleDrive": {
+        "googleDocs": {
           "html": {
-            "start": "<img slot=\"start\" src=\"./assets/icons/brand/google-drive.svg\" />",
+            "start": "<img slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
-            "overline": "<span slot=\"overline\">Google Drive</span>"
+            "overline": "<span slot=\"overline\">Google Docs</span>"
           },
-          "method": "google Drive",
+          "method": "google Docs",
           "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
           "text": "Live Resume",
-          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/google-drive.svg\" />"
+          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />"
         },
         "pdf": {
           "html": {
-            "start": "<md-icon slot=\"start\">picture_as_pdf</md-icon>",
+            "start": "<img slot=\"start\" src=\"./assets/icons/brand/pdf.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
             "overline": "<span slot=\"overline\">PDF</span>"
           },

@@ -27,21 +27,6 @@ export class AppShell extends LitElement {
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
         container-type: inline-size;
-
-        /* --md-fab-container-height: 4rem;
-        --md-fab-container-width: 4rem;
-        --md-fab-container-shape: var(--md-sys-shape-corner-large);
-        --md-fab-large-container-height: 4rem;
-        --md-fab-large-container-width: 6rem;
-        --md-fab-large-container-shape: var(--md-sys-shape-corner-large);
-        --md-fab-small-container-height: 3rem;
-        --md-fab-small-container-width: 3rem;
-        --md-fab-small-container-shape: var(--md-sys-shape-corner-medium);
-
-        --md-fab-icon-size: calc(var(--md-fab-container-height) * 0.5); */
-
-        --md-list-container-color: var(--md-sys-color-surface-container-highest);
-        --md-list-item-container-shape: var(--md-sys-shape-corner-large);
       }
 
       md-dialog {
@@ -78,6 +63,10 @@ export class AppShell extends LitElement {
         md-fab {
           z-index: 2;
           align-self: end;
+
+          md-icon {
+            line-height: unset;
+          }
 
           &.settings {
 

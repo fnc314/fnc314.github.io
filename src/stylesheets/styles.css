@@ -23,9 +23,9 @@
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
 
-  --asset-icons-brand-github-svg: url("./../../assets/icons/brand/github.svg");
-  --asset-icons-brand-linkedin-svg: url("./../../assets/icons/brand/linkedin.svg");
-  --asset-icons-brand-google-drive-svg: url("./../../assets/icons/brand/google-drive.svg");
+/*   --asset-icons-brand-github-svg: url("./assets/icons/brand/github.svg");
+  --asset-icons-brand-linkedin-svg: url("./assets/icons/brand/linkedin.svg");
+  --asset-icons-brand-google-drive-svg: url("./assets/icons/brand/google-drive.svg"); */
 }
 
 * {

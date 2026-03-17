@@ -53,6 +53,7 @@
   "dependencies": {
     "@lit/reactive-element": "2.1.2",
     "@material/web": "2.4.1",
+    "animate-css-grid": "^1.5.1",
     "dark-mode-toggle": "^0.18.0",
     "lit": "3.3.2",
     "lit-element": "4.2.2",
