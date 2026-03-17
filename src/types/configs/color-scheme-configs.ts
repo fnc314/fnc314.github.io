@@ -29,7 +29,8 @@ export const colorSchemeContrastToIcon: (slot: "start" | "leading-icon", contras
       default:
         return html`${nothing}`;
     }
-  }
+  };
+
 export type ColorSchemeConfigs = {
   name: ColorScheme;
   contrast: ColorSchemeContrast;

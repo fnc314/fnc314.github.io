@@ -1,6 +1,5 @@
-import { AppConfigs } from "@/types/configs";
-import { DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
-import { storageService, StorageService } from "../storage/storage-service";
+import { storageService, StorageService } from "@/services/storage/storage-service";
+import { AppConfigs, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 
 export interface ConfigsService {
   saveConfigs(
