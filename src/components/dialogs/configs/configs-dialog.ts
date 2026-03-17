@@ -558,14 +558,14 @@ export class ConfigsDialog extends LitElement {
             .menuPositioning=${"popover"}
             .hasLeadingIcon=${true}
           >
-            <span slot="leading-icon">${ColorSchemeContrastIcons[this._appConfigs.colorScheme.contrast]}</span>
+            ${colorSchemeContrastToIcon("leading-icon", this._appConfigs.colorScheme.contrast)}
             ${
               Object.values(CONFIG_COLOR_CONTRAST_NAMES).map((contrast) => html`
                 <md-select-option
                   ?selected=${this._appConfigs.colorScheme.contrast === contrast}
                   value=${contrast}
                   >
-                  ${ColorSchemeContrastIcons[contrast]}
+                  ${colorSchemeContrastToIcon("start", contrast)}
                   <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
                 </md-select-option>
               `)

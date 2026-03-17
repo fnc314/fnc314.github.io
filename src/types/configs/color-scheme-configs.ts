@@ -1,6 +1,6 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
 import { html } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { nothing, TemplateResult } from "lit-html";
 
 export const CONFIG_COLOR_SCHEME_NAMES = {
   DARK: "DARK" as const,
@@ -17,12 +17,19 @@ export const CONFIG_COLOR_CONTRAST_NAMES = {
 export type ColorScheme = typeof CONFIG_COLOR_SCHEME_NAMES[keyof typeof CONFIG_COLOR_SCHEME_NAMES];
 export type ColorSchemeContrast = typeof CONFIG_COLOR_CONTRAST_NAMES[keyof typeof CONFIG_COLOR_CONTRAST_NAMES];
 
-export const ColorSchemeContrastIcons: Record<ColorSchemeContrast, TemplateResult> = {
-  NORMAL: html`<md-icon slot="start">exposure_zero</md-icon>`,
-  MEDIUM: html`<md-icon slot="start">exposure_plus_1</md-icon>`,
-  HIGH: html`<md-icon slot="start">exposure_plus_2</md-icon>`,
-}
-
+export const colorSchemeContrastToIcon: (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => TemplateResult =
+  (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => {
+    switch (contrast) {
+      case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
+        return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;
+      case CONFIG_COLOR_CONTRAST_NAMES.MEDIUM:
+        return html`<md-icon slot="${slot}">exposure_plus_1</md-icon>`;
+      case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
+        return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
+      default:
+        return nothing;
+    }
+  }
 export type ColorSchemeConfigs = {
   name: ColorScheme;
   contrast: ColorSchemeContrast;

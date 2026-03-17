@@ -4,16 +4,26 @@
       "label": "Directly",
       "connections": {
         "phone": {
+          "html": {
+            "start": "<md-icon slot=\"start\">call</md-icon>",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">412-721-9550</span>",
+            "overline": "<span slot=\"overline\">Phone</span>"
+          },
           "method": "phone",
           "href": "tel:+14127219550",
           "text": "412-721-9550",
-          "icon": "<md-icon>call</md-icon>"
+          "icon": "<md-icon slot=\"start\">call</md-icon>"
         },
         "email": {
+          "html": {
+            "start": "<md-icon slot=\"start\">mail</md-icon>",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314@fnc314.com</span>",
+            "overline": "<span slot=\"overline\">Email</span>"
+          },
           "method": "email",
           "href": "mailto:fnc314@fnc314.com",
           "text": "fnc314@fnc314.com",
-          "icon": "<md-icon>mail</md-icon>"
+          "icon": "<md-icon slot=\"start\">mail</md-icon>"
         }
       }
     },
@@ -21,16 +31,26 @@
       "label": "Socially",
       "connections": {
         "linkedin": {
+          "html": {
+            "start": "<img slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">linkedin.com/in/fnc314</span>",
+            "overline": "<span slot=\"overline\">LinkedIn</span>"
+          },
           "method": "linkedin",
           "href": "https://www.linkedin.com/in/fnc314",
           "text": "linkedin.com/in/fnc314",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/linkedin.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
+          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />"
         },
         "github": {
+          "html": {
+            "start": "<img slot=\"start\" src=\"./assets/icons/brand/github.svg\" />",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
+            "overline": "<span slot=\"overline\">GitHub</span>"
+          },
           "method": "github",
           "href": "https://www.github.com/fnc314",
           "text": "github.com/fnc314",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/github.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
+          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/github.svg\" />"
         }
       }
     },
@@ -38,16 +58,26 @@
       "label": "Alternatively",
       "connections": {
         "googleDrive": {
+          "html": {
+            "start": "<img slot=\"start\" src=\"./assets/icons/brand/google-drive.svg\" />",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
+            "overline": "<span slot=\"overline\">Google Drive</span>"
+          },
           "method": "google Drive",
           "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
           "text": "Live Resume",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/google-drive.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
+          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/google-drive.svg\" />"
         },
         "pdf": {
+          "html": {
+            "start": "<md-icon slot=\"start\">picture_as_pdf</md-icon>",
+            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
+            "overline": "<span slot=\"overline\">PDF</span>"
+          },
           "method": "pdf",
           "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
           "text": "PDF Resume",
-          "icon": "<md-icon>picture_as_pdf</md-icon>"
+          "icon": "<md-icon slot=\"start\">picture_as_pdf</md-icon>"
         }
       }
     }

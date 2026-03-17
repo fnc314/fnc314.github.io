@@ -24,6 +24,13 @@ export class ConnectDialog extends LitElement {
         --md-list-container-color: var(--md-sys-color-surface-container-highest);
 
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
+        --md-list-item-label-text-color: var(--md-sys-color-on-surface-variant);
+        --md-list-item-hover-state-layer-color: var(--md-sys-color-surface-container);
+        --md-list-item-hover-state-layer-opacity: 0.5;
+        --md-list-item-leading-icon-size: 2rem;
+        --md-list-item-leading-image-width: 2rem;
+        --md-list-item-leading-image-height: 2rem;
+        --md-list-item-leading-image-shape: var(--md-sys-shape-corner-small);
       }
 
       md-dialog {
@@ -48,7 +55,8 @@ export class ConnectDialog extends LitElement {
             justify-content: space-between;
             align-items: center;
             color: var(--md-sys-color-primary);
-
+            padding-inline: 0.25rem;
+            border-radius: var(--md-sys-shape-corner-small);
 
             h3 {
               display: inline-block;
@@ -60,9 +68,12 @@ export class ConnectDialog extends LitElement {
               transform: rotate(-90deg);
             }
 
-            &:focus, &:focus-within, &:hover {
+            &:focus, &:focus-within, &:hover, &:active {
+              background-color: color-mix(in srgb, var(--md-sys-color-surface-container-high), transparent 50%)
+              transition: background-color 0.2s ease-in-out;
               h3 {
                 text-decoration: underline;
+                transition: text-decoration 0.2s ease-in-out;
               }
             }
           }
@@ -70,8 +81,8 @@ export class ConnectDialog extends LitElement {
           &::details-content {
             opacity: 0;
             transition:
-              opacity 0.4s,
-              content-visibility 0.4s allow-discrete;
+              opacity 0.2s ease-in-out,
+              content-visibility 0.2s ease-in-out allow-discrete;
           }
 
           &[open] {
@@ -82,6 +93,15 @@ export class ConnectDialog extends LitElement {
 
             md-icon {
               transform: rotate(0deg);
+            }
+          }
+
+          md-list {
+            padding-block: unset;
+
+            img {
+              width: var(--md-list-item-leading-image-width);
+              height: var(--md-list-item-leading-image-height);
             }
           }
         }
@@ -108,13 +128,9 @@ export class ConnectDialog extends LitElement {
               href=${conn.href}
               target="_blank"
               >
-                <slot slot="start">
-                  ${unsafeHTML(conn.icon)}
-                </slot>
-                <div slot="overline">
-                  ${conn.method.charAt(0).toUpperCase() + conn.method.slice(1)}
-                </div>
-                ${conn.text}
+                ${unsafeHTML(conn.html.start)}
+                ${unsafeHTML(conn.html.overline)}
+                ${unsafeHTML(conn.html.text)}
             </md-list-item>
             <md-divider></md-divider>
           `)
@@ -132,8 +148,8 @@ export class ConnectDialog extends LitElement {
         </div>
         <div slot="content" class="connect-content">
           ${
-            Connections.connections.map((connection) => html`
-            <details open>
+            Connections.connections.map((connection, index) => html`
+            <details .open=${index === 0} .name=${"connection"}>
               <summary>
                 <h3 class="md-typescale-title-medium">
                   ${connection.label}
