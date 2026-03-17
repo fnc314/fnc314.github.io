@@ -39,14 +39,14 @@ export class ConfigsDialog extends LitElement {
         --md-dialog-headline-color: var(--md-sys-color-primary);
 
         --md-filled-button-container-elevation: 2;
+        --md-outlined-button-label-text-color: var(--md-sys-color-outline);
+        --md-text-button-container-shape: var(--md-sys-shape-corner-small);
 
         --md-radio-pressed-icon-color: var(--md-sys-color-error);
         --md-radio-selected-icon-color: var(--md-sys-color-error);
         --md-radio-selected-focus-icon-color: var(--md-sys-color-error);
         --md-radio-selected-hover-icon-color: var(--md-sys-color-error);
         --md-radio-selected-pressed-icon-color: var(--md-sys-color-error);
-
-        --md-outlined-button-label-text-color: var(--md-sys-color-outline);
 
         --md-outlined-select-text-field-leading-icon-color: var(--md-sys-color-error);
         --md-outlined-select-text-field-focus-leading-icon-color: var(--md-sys-color-error);
@@ -76,6 +76,24 @@ export class ConfigsDialog extends LitElement {
           h2 {
             padding: 0;
             margin-block: 0.5rem;
+          }
+        }
+
+        [slot="actions"] {
+          display: grid;
+          grid-template-columns: auto 1fr auto auto;
+          grid-template-areas: "close . reset save";
+
+          md-text-button {
+            grid-area: close;
+          }
+
+          md-outlined-button {
+            grid-area: reset;
+          }
+
+          md-filled-button {
+            grid-area: save;
           }
         }
       }
@@ -196,6 +214,7 @@ export class ConfigsDialog extends LitElement {
       }
 
       fieldset {
+        position: relative;
         border-color: var(--md-sys-color-outline);
         border-radius: var(--md-sys-shape-corner-small);
         padding: 1rem;
@@ -273,7 +292,7 @@ export class ConfigsDialog extends LitElement {
   ];
 
   @query("#configs-dialog")
-  private _settingsMDDialog!: MdDialog;
+  private _configsMDDialog!: MdDialog;
 
   @query("#dark-mode-toggle")
   private _darkModeToggle!: DarkModeToggle;
@@ -294,11 +313,11 @@ export class ConfigsDialog extends LitElement {
   }
 
   public showDialog(): Promise<void> {
-    return this._settingsMDDialog.show();
+    return this._configsMDDialog.show();
   };
 
   public hideDialog(): Promise<void> {
-    return this._settingsMDDialog.close();
+    return this._configsMDDialog.close();
   };
 
   private openStepUp = ((_: OpenStepUpDialog) => {
@@ -477,7 +496,7 @@ export class ConfigsDialog extends LitElement {
               )
             }
             supportingText=${`${buttonName} Button Position`}
-            .menuPositioning=${"popover"}
+            .menuPositioning=${"absolute"}
             >
             ${
               html`
@@ -557,8 +576,7 @@ export class ConfigsDialog extends LitElement {
             value=${this._appConfigs.colorScheme.contrast}
             @change=${(event: Event) => this.onColorSchemeContrastChange((event.target as HTMLSelectElement).value as ColorSchemeContrast)}
             supportingText=${"Choose from Normal, Medium, and High Contrast Color Palettes"}
-            .menuPositioning=${"popover"}
-            .hasLeadingIcon=${true}
+            .menuPositioning=${"absolute"}
           >
             ${colorSchemeContrastToIcon("leading-icon", this._appConfigs.colorScheme.contrast)}
             ${
@@ -606,6 +624,11 @@ export class ConfigsDialog extends LitElement {
 
         </form>
         <div slot="actions">
+          <md-text-button
+            @click=${() => this._configsMDDialog.close()}
+            >
+            Close
+          </md-text-button>
           <md-outlined-button
             @click=${() => {
               this.dispatchEvent(
