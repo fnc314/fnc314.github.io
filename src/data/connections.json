@@ -32,7 +32,7 @@
       "connections": {
         "linkedin": {
           "html": {
-            "start": "<img slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />",
+            "start": "<img role=\"img\" alt=\"LinkedIn logo\" slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">linkedin.com/in/fnc314</span>",
             "overline": "<span slot=\"overline\">LinkedIn</span>"
           },
@@ -43,7 +43,7 @@
         },
         "github": {
           "html": {
-            "start": "<img slot=\"start\" src=\"./assets/icons/brand/github.svg\" />",
+            "start": "<img role=\"img\" alt=\"GitHub logo\" slot=\"start\" src=\"./assets/icons/brand/github.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
             "overline": "<span slot=\"overline\">GitHub</span>"
           },
@@ -59,7 +59,7 @@
       "connections": {
         "googleDocs": {
           "html": {
-            "start": "<img slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />",
+            "start": "<img role=\"img\" alt=\"Google Docs logo\" slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
             "overline": "<span slot=\"overline\">Google Docs</span>"
           },
@@ -70,7 +70,7 @@
         },
         "pdf": {
           "html": {
-            "start": "<img slot=\"start\" src=\"./assets/icons/brand/pdf.svg\" />",
+            "start": "<img role=\"img\" alt=\"PDF file logo\" slot=\"start\" src=\"./assets/icons/brand/pdf.svg\" />",
             "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
             "overline": "<span slot=\"overline\">PDF</span>"
           },

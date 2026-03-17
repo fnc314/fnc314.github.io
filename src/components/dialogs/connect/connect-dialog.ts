@@ -14,14 +14,14 @@ export class ConnectDialog extends LitElement {
         --md-dialog-icon-size: 3rem;
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
-        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-container-color: var(--md-sys-color-surface-container-high);
         --md-dialog-container-shape: var(--md-sys-shape-corner-medium);
         --md-dialog-headline-color: var(--md-sys-color-primary);
 
         --md-text-button-container-shape: var(--md-sys-shape-corner-small);
         --md-text-button-label-text-color: var(--md-sys-color-on-surface-variant);
 
-        --md-list-container-color: var(--md-sys-color-surface-container-highest);
+        --md-list-container-color: var(--md-dialog-container-color);
 
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
         --md-list-item-label-text-font: var(--md-ref-typeface-brand);
@@ -112,7 +112,10 @@ export class ConnectDialog extends LitElement {
 
             md-list-item {
               [slot="start"] {
-                color: var(--md-sys-color-error);
+                padding: 1rem;
+                background-color: var(--md-sys-color-primary-fixed-dim);
+                color: var(--md-sys-color-on-primary-fixed);
+                border-radius: var(--md-sys-shape-corner-full);
               }
               [slot="overline"] {
                 color: var(--md-sys-color-primary);
