@@ -2,6 +2,7 @@ import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { css, html, LitElement, TemplateResult } from "lit-element";
+import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 
 @customElement("connect-dialog")
@@ -11,8 +12,16 @@ export class ConnectDialog extends LitElement {
     css`
       :host {
         --md-dialog-icon-size: 3rem;
+        --md-dialog-icon-color: var(--md-sys-color-primary);
+        --md-dialog-icon-font: var(--md-ref-typeface-brand);
+        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-container-shape: var(--md-sys-shape-corner-medium);
+        --md-dialog-headline-color: var(--md-sys-color-primary);
 
-        --md-list-container-color: var(--md-sys-color-surface-container-high);
+        --md-text-button-container-shape: var(--md-sys-shape-corner-small);
+        --md-text-button-label-text-color: var(--md-sys-color-on-surface-variant);
+
+        --md-list-container-color: var(--md-sys-color-surface-container-highest);
 
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
       }
@@ -31,12 +40,14 @@ export class ConnectDialog extends LitElement {
 
         details {
           summary {
+            cursor: pointer;
             list-style-type: none;
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            color: var(--md-sys-color-primary);
 
 
             h3 {
@@ -97,8 +108,12 @@ export class ConnectDialog extends LitElement {
               href=${conn.href}
               target="_blank"
               >
-                <div slot="start" .innerHTML=${conn.icon}></div>
-                <div slot="overline">${conn.method.charAt(0).toUpperCase() + conn.method.slice(1)}</div>
+                <slot slot="start">
+                  ${unsafeHTML(conn.icon)}
+                </slot>
+                <div slot="overline">
+                  ${conn.method.charAt(0).toUpperCase() + conn.method.slice(1)}
+                </div>
                 ${conn.text}
             </md-list-item>
             <md-divider></md-divider>

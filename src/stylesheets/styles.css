@@ -19,6 +19,7 @@
   --breakpoint-large-width-max: 1200px;
   --breakpoint-expanded-width-max: 1500px;
 
+  --md-icon-size: 24px;
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
 

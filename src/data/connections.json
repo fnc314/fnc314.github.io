@@ -24,13 +24,13 @@
           "method": "linkedin",
           "href": "https://www.linkedin.com/in/fnc314",
           "text": "linkedin.com/in/fnc314",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/linkedin.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/linkedin.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
         },
         "github": {
           "method": "github",
           "href": "https://www.github.com/fnc314",
           "text": "github.com/fnc314",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/github.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/github.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
         }
       }
     },
@@ -41,7 +41,7 @@
           "method": "google Drive",
           "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
           "text": "Live Resume",
-          "icon": "<div style=\"background-image: url('./assets/icons/brand/google-drive.svg'); width: 24px; aspect-ratio: 1; background-repeat: no-repeat; background-size: contain;\"></div>"
+          "icon": "<div style=\"background-image: url('./assets/icons/brand/google-drive.svg'); width: var(--md-icon-size); aspect-ratio: 1; background-repeat: no-repeat; background-size: cover; background-position: center;\"></div>"
         },
         "pdf": {
           "method": "pdf",

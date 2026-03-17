@@ -32,8 +32,17 @@ export class ConfigsDialog extends LitElement {
         --md-dialog-icon-size: 3rem;
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
+        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-container-shape: var(--md-sys-shape-corner-medium);
+        --md-dialog-headline-color: var(--md-sys-color-primary);
 
         --md-filled-button-container-elevation: 2;
+
+        --md-radio-pressed-icon-color: var(--md-sys-color-error);
+        --md-radio-selected-icon-color: var(--md-sys-color-error);
+        --md-radio-selected-focus-icon-color: var(--md-sys-color-error);
+        --md-radio-selected-hover-icon-color: var(--md-sys-color-error);
+        --md-radio-selected-pressed-icon-color: var(--md-sys-color-error);
 
         --md-outlined-button-label-text-color: var(--md-sys-color-outline);
 
@@ -42,12 +51,18 @@ export class ConfigsDialog extends LitElement {
         --md-outlined-select-text-field-hover-leading-icon-color: var(--md-sys-color-error);
       }
 
-      .configs-dialog {
-        min-width: calc(100dvw - 15rem);
-        min-height: calc(100dvh - 20rem);
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
       }
 
       md-dialog {
+        min-width: calc(100dvw - 10rem);
+        max-width: calc(100dvw - 2rem);
+        max-height: calc(100dvh - 10rem);
+
         [slot="headline"] {
           display: flex;
           justify-content: center;
@@ -224,7 +239,7 @@ export class ConfigsDialog extends LitElement {
           display: grid;
           grid-template-areas:
             "IconOnly IconAndText"
-            "IconOnlySmall .";
+            "IconOnlySmall TextOnly";
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: repeat(2, 1fr);
           gap: 1rem;
@@ -233,7 +248,7 @@ export class ConfigsDialog extends LitElement {
             grid-area: legend;
           }
 
-          label {
+          .md-radio-label-wrapper {
             &:nth-child(2) {
               grid-area: IconOnly;
             }
@@ -244,6 +259,10 @@ export class ConfigsDialog extends LitElement {
 
             &:nth-child(4) {
               grid-area: IconOnlySmall;
+            }
+
+            &:nth-child(5) {
+              grid-area: TextOnly;
             }
           }
         }
@@ -486,7 +505,7 @@ export class ConfigsDialog extends LitElement {
           <legend>Style</legend>
           ${
             FabStyles.map((style) => html`
-              <label for=${`${fab}.style.${style}`}>
+              <div class="md-radio-label-wrapper">
                 <md-radio
                   name=${`${fab}.style`}
                   id=${`${fab}.style.${style}`}
@@ -494,8 +513,10 @@ export class ConfigsDialog extends LitElement {
                   ?checked=${currentConfig.style === style}
                   @change=${() => this.onFabChange(fab, { ...currentConfig, style })}
                 ></md-radio>
-                ${fabStyleToUi(style)}
-              </label>
+                <label for=${`${fab}.style.${style}`}>
+                  ${fabStyleToUi(style)}
+                </label>
+              </div>
             `)
           }
         </fieldset>

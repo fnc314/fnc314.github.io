@@ -28,7 +28,7 @@ export class AppShell extends LitElement {
         display: contents;
         container-type: inline-size;
 
-        --md-fab-container-height: 4rem;
+        /* --md-fab-container-height: 4rem;
         --md-fab-container-width: 4rem;
         --md-fab-container-shape: var(--md-sys-shape-corner-large);
         --md-fab-large-container-height: 4rem;
@@ -38,7 +38,7 @@ export class AppShell extends LitElement {
         --md-fab-small-container-width: 3rem;
         --md-fab-small-container-shape: var(--md-sys-shape-corner-medium);
 
-        --md-dialog-container-color: var(--md-sys-color-surface-container-high);
+        --md-fab-icon-size: calc(var(--md-fab-container-height) * 0.5); */
 
         --md-list-container-color: var(--md-sys-color-surface-container-highest);
         --md-list-item-container-shape: var(--md-sys-shape-corner-large);
@@ -57,7 +57,7 @@ export class AppShell extends LitElement {
         cursor: unset;
         z-index: 1;
         position: sticky;
-        bottom: 0;
+        bottom: 1rem;
         left: 1rem;
         right: 1rem;
         display: grid;
@@ -147,7 +147,8 @@ export class AppShell extends LitElement {
     }
   }
 
-  private onFabConfigBind = ((event: FabConfigChange) => this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
+  private onFabConfigBind = ((event: FabConfigChange) =>
+    this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
 
   protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
     super.firstUpdated(_changedProperties);
@@ -205,7 +206,8 @@ export class AppShell extends LitElement {
 
   override render() {
     return html`
-      <slot></slot>
+      <slot name="app-nav"></slot>
+      <slot name="app-content"></slot>
 
       <configs-dialog id="configs-dialog"></configs-dialog>
 
@@ -216,18 +218,18 @@ export class AppShell extends LitElement {
         <md-fab
           id="fab-settings"
           class="settings"
-          size="medium"
+          .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
           variant="surface"
           aria-label="Settings"
           @click=${() => this.configsDialog.showDialog()}
           >
-          <md-icon id="configs-fab-icon" slot="icon">settings</md-icon>
+          <md-icon slot="icon">settings</md-icon>
         </md-fab>
 
         <md-fab
           id="fab-connect"
           class="connect"
-          size="medium"
+          .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
           variant="primary"
           aria-label="Connect"
           @click=${() => this.connectDialog.showDialog()}
