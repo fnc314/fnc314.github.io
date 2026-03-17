@@ -27,7 +27,7 @@ export const colorSchemeContrastToIcon: (slot: "start" | "leading-icon", contras
       case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
         return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
       default:
-        return nothing;
+        return html`${nothing}`;
     }
   }
 export type ColorSchemeConfigs = {
