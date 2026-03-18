@@ -110,6 +110,7 @@ export class ConfigsDialog extends LitElement {
 
       dark-mode-toggle {
         place-items: center;
+        display: contents;
 
         --dark-mode-toggle-icon-size: 2rem;
 
@@ -131,12 +132,19 @@ export class ConfigsDialog extends LitElement {
         --dark-mode-toggle-icon-filter: none;
         --dark-mode-toggle-remember-filter: contrast(100%);
 
+        &::part(form) {
+          display: contents;
+        }
+
         &::part(fieldset) {
           padding: unset;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 1rem;
+          align-items: stretch;
+          justify-content: center;
+          gap: 0.5rem;
+          padding-inline: unset;
+          padding-block: unset;
         }
 
         &::part(threeWayRadioWrapper) {
@@ -211,6 +219,7 @@ export class ConfigsDialog extends LitElement {
 
         &::part(aside) {
           text-align: center;
+          visibility: visible;
         }
       }
 
@@ -237,7 +246,7 @@ export class ConfigsDialog extends LitElement {
           width: 100%;
         }
 
-        &.contrast {
+        &.contrast, &.theme {
           display: contents;
         }
       }
@@ -248,7 +257,7 @@ export class ConfigsDialog extends LitElement {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: stretch;
-        gap: 1.5rem;
+        gap: 1rem;
 
         fieldset {
           border-color: var(--md-sys-color-outline);
