@@ -48,7 +48,7 @@ export class AppShell extends LitElement {
         right: 1rem;
         display: grid;
         padding-inline: 1rem;
-        grid-template-rows: repeat(2, 4rem);
+        grid-template-rows: min-content;
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
           "StartTop    . EndTop"
@@ -170,10 +170,11 @@ export class AppShell extends LitElement {
     super.update(changedProperties);
     await this.updateComplete;
     [
-      this.settingsFab, this.connectFab
-    ].forEach((fab: MdFab) => {
+      { fab: this.settingsFab, config: this.settingsFabConfig },
+      { fab: this.connectFab, config: this.connectFabConfig }
+    ].forEach(({ fab, config }) => {
       const label: HTMLSpanElement | null | undefined = fab.shadowRoot?.querySelector("span.label");
-      if (label) {
+      if (label && config.style !== FAB_STYLE.TEXT_ONLY) {
         label.style.paddingInlineStart = "0.5rem";
       }
     });

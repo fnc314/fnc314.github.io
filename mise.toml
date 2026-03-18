@@ -1,2 +1,10 @@
 [tools]
-  node = "latest"
+  node = "25.8.1"
+
+[settings]
+  verbose = true
+
+[settings.status]
+  show_env = true
+  show_tools = true
+  truncate = false

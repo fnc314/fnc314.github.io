@@ -247,6 +247,7 @@ export class NavPartial extends LitElement {
           ${ref(this._tabRefMap[route])}
           id="tab-${route}"
           aria-controls="panel-${route}"
+          .role=${"tab"}
           .hasIcon=${true}
           .inlineIcon=${this._activeRoute === route}
         >
@@ -263,6 +264,7 @@ export class NavPartial extends LitElement {
         @change=${this.#onTabChange}
         .activeTabIndex=${this._activeTabIndex}
         .autoActivate=${true}
+        .role=${"tablist"}
       >
         ${tabs}
       </md-tabs>

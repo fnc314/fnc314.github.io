@@ -40,11 +40,9 @@ export class ProfilePartial extends LitElement {
         padding-inline: 1rem;
       }
 
-      .list-grid {
+      .education-list-grid {
         display: flex;
-        flex-flow: column;
-        justify-content: space-evenly;
-        align-items: center;
+        flex-direction: column;
         padding: unset;
         gap: 1rem;
 
@@ -52,16 +50,12 @@ export class ProfilePartial extends LitElement {
           list-style-type: none;
         }
 
-        .list-grid-item {
+        .education-list-grid-item {
           display: grid;
-          grid-template-rows: repeat(2, 1fr);
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.25rem;
           align-items: baseline;
+          grid-template-rows: repeat(4, 1fr);
 
-          span:nth-child(2n - 1) {
-            justify-self: flex-end;
-          }
+
         }
 
       }
@@ -75,7 +69,7 @@ export class ProfilePartial extends LitElement {
         margin: unset;
       }
 
-      figure {
+      .figure {
         grid-area: figure;
         place-self: center;
         margin: unset;
@@ -110,24 +104,20 @@ export class ProfilePartial extends LitElement {
 
       /* Apply grid-area to the custom elements by class */
       profile-section {
-        align-self: center;
+        /* align-self: center; */
       }
 
       .bio {
         grid-area: bio;
 
-        > p {
-          place-self: center;
-
-          &::first-line {
-            overflow-wrap: anywhere;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            text-align: justify;
-            text-justify: inter-word;
-            font-size: 150%;
-            text-indent: 0.5rem;
-          }
+        [slot="section-grid-content"]::first-line {
+          overflow-wrap: anywhere;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          text-align: justify;
+          text-justify: inter-word;
+          font-size: 150%;
+          text-indent: 0.5rem;
         }
       }
 
@@ -154,6 +144,20 @@ export class ProfilePartial extends LitElement {
             ;
           gap: 1rem;
           grid-template-columns: auto 1fr;
+        }
+      }
+
+      @media screen and (min-width: 600px) {
+        .education-list-grid {
+          .education-list-grid-item {
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.25rem;
+
+            span:nth-child(2n - 1) {
+              justify-self: flex-end;
+            }
+          }
         }
       }
 
@@ -244,23 +248,25 @@ export class ProfilePartial extends LitElement {
           .headingText=${"Franco N. Colaizzi"}>
         </partial-header>
 
-        <figure>
-          <picture>
-            <source
-              srcset=${
-                this.themeConfig.themePhoto.src
-              }
-              type="image/jpeg"
-            />
-            <img
-              src=${this.themeConfig.themePhoto.src}
-              alt=${this.themeConfig.themePhoto.alt}
-            />
-          </picture>
-          <figcaption class="md-typescale-label-large">
-            ${this.themeConfig.themePhoto.figcaption}
-          </figcaption>
-        </figure>
+
+          <figure class="figure">
+            <picture>
+              <source
+                srcset=${
+                  this.themeConfig.themePhoto.src
+                }
+                type="image/jpeg"
+              />
+              <img
+                src=${this.themeConfig.themePhoto.src}
+                alt=${this.themeConfig.themePhoto.alt}
+              />
+            </picture>
+            <figcaption class="md-typescale-label-large">
+              ${this.themeConfig.themePhoto.figcaption}
+            </figcaption>
+          </figure>
+
 
         <profile-section
           class="bio"
@@ -277,10 +283,10 @@ export class ProfilePartial extends LitElement {
         <profile-section
           class="education"
           section-title="Education">
-          <ul class="list-grid" slot="section-grid-content">
+          <ul class="education-list-grid" slot="section-grid-content">
             ${
               EducationJson.education.map((edu) => html`
-                <li class="list-grid-item">
+                <li class="education-list-grid-item">
                   <span class="md-typescale-title-medium">
                     ${edu.institute}
                   </span>
