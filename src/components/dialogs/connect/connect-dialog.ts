@@ -180,7 +180,7 @@ export class ConnectDialog extends LitElement {
   override render() {
     return html`
       <md-dialog id="connect-dialog">
-        <md-icon slot="icon">contact_page</md-icon>
+        <md-icon slot="icon">person_add</md-icon>
         <div slot="headline">
           <h2 class="md-typescale-headline-medium">Let's Connect</h2>
         </div>
