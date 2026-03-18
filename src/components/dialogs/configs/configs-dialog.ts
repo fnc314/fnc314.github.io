@@ -232,6 +232,7 @@ export class ConfigsDialog extends LitElement {
         label md-radio {
           margin-inline-end: 0.5rem;
         }
+
         md-outlined-select {
           width: 100%;
         }
@@ -256,19 +257,21 @@ export class ConfigsDialog extends LitElement {
         }
       }
 
+      fieldset.theme,
       fieldset.color_scheme {
         ::part(legend),
         fieldset legend {
           text-align: center;
           width: 100%;
         }
+      }
 
-        fieldset.theme {
-          md-select-option {
-            img {
-              width: 2rem;
-              height: auto;
-            }
+      fieldset.theme {
+
+        md-select-option {
+          img {
+            width: 2rem;
+            height: auto;
           }
         }
       }
@@ -574,9 +577,9 @@ export class ConfigsDialog extends LitElement {
         <legend>UI Theme, Mode, &amp; Contrast</legend>
 
         <fieldset form="configs-dialog-form" class="theme">
-          <legend>Color Theme</legend>
+          <legend>UI Theme</legend>
           <md-outlined-select
-            label="Choose Color Theme"
+            label="Choose UI Theme"
             name="color_scheme.theme"
             value=${this._appConfigs.colorScheme.theme}
             @change=${(event: Event) => this.onColorThemeModeContrastChange(
@@ -585,7 +588,7 @@ export class ConfigsDialog extends LitElement {
                 theme: (event.target as HTMLSelectElement).value as ThemeName,
               }
             )}
-            supportingText=${"Choose from a varity of Color Themes"}
+            supportingText=${"Choose from a varity of UI Themes"}
             .menuPositioning=${"absolute"}
           >
             ${themeToIcon("leading-icon", this._appConfigs.colorScheme.theme)}

@@ -121,13 +121,17 @@ export class ConnectDialog extends LitElement {
             md-list-item {
               [slot="start"] {
                 padding: 1rem;
-                background-color: var(--md-sys-color-primary-fixed-dim);
+                background-color: color(
+                  from var(--md-sys-color-primary-fixed-dim) srgb r g b / 0.5
+                );
                 color: var(--md-sys-color-on-primary-fixed);
                 border-radius: var(--md-sys-shape-corner-full);
               }
+
               [slot="overline"] {
                 color: var(--md-sys-color-primary);
               }
+
               [slot="headline"] {
                 font-family: var(--md-ref-typeface-brand);
               }
