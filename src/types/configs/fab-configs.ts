@@ -77,4 +77,7 @@ export const fabConfigToGrid: (config: FabConfig) => { rowStart: number, rowEnd:
   rowEnd: fabPositionComponents(config.position).vertical === FAB_POSITION_COMPONENTS_VERTICAL.TOP ? 2 : 3,
   columnStart: fabPositionComponents(config.position).horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? 1 : 3,
   columnEnd: fabPositionComponents(config.position).horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? 2 : 4,
-})
+});
+
+export const fabPositionClass: (fabPosition: FabPosition) => string = (fabPosition: FabPosition) =>
+  `${fabPosition.split("_").map((p) => `${p.charAt(0)}${p.slice(1).toLowerCase()}`).join("")}`

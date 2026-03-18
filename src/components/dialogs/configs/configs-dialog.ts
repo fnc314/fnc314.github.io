@@ -66,7 +66,7 @@ export class ConfigsDialog extends LitElement {
         @media (orientation: landscape) {
           min-width: calc(100dvw - 10rem);
           max-width: calc(100dvw - 2rem);
-          min-height: 100dvh;
+          min-height: 75dvh;
         }
 
         @media (orientation: portrait) {

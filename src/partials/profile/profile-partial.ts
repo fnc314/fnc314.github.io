@@ -41,12 +41,10 @@ export class ProfilePartial extends LitElement {
       }
 
       .list-grid {
-        align-self: center;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: column;
         justify-content: space-evenly;
-        align-items: baseline;
+        align-items: center;
         padding: unset;
         gap: 1rem;
 
@@ -55,28 +53,21 @@ export class ProfilePartial extends LitElement {
         }
 
         .list-grid-item {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 0.5rem;
+          display: grid;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.25rem;
+          align-items: baseline;
+
+          span:nth-child(2n - 1) {
+            justify-self: flex-end;
+          }
         }
 
-        dt {
-          padding: unset;
-          margin: unset;
-        }
       }
 
       a {
         color: var(--md-sys-color-inverse-on-surface);
-      }
-
-      p,
-      dd {
-        margin: unset;
-        overflow-wrap: anywhere;
-        padding-inline: 1rem;
       }
 
       partial-header {
@@ -121,11 +112,13 @@ export class ProfilePartial extends LitElement {
       profile-section {
         align-self: center;
       }
+
       .bio {
         grid-area: bio;
 
         > p {
           place-self: center;
+
           &::first-line {
             overflow-wrap: anywhere;
             white-space: pre-wrap;
@@ -137,16 +130,15 @@ export class ProfilePartial extends LitElement {
           }
         }
       }
+
       .education {
         grid-area: education;
-
-        li p {
-          place-self: end;
-        }
       }
+
       .contact-info {
         grid-area: contact-info;
       }
+
       .cloud {
         grid-area: cloud;
       }
@@ -288,13 +280,23 @@ export class ProfilePartial extends LitElement {
           <ul class="list-grid" slot="section-grid-content">
             ${
               EducationJson.education.map((edu) => html`
-                <li>
-                  <p class="md-typescale-title-medium">
-                    ${edu.institute}<span class="md-typescale-body-medium">, ${edu.location}</span>
-                  </p>
-                  <p class="md-typescale-title-small">
-                    ${edu.degree}<time class="md-typescale-body-medium" .dateTime=${edu.graduationDate.value}>, ${edu.graduationDate.label}</time>
-                  </p>
+                <li class="list-grid-item">
+                  <span class="md-typescale-title-medium">
+                    ${edu.institute}
+                  </span>
+
+                  <span class="md-typescale-body-medium">
+                    ${edu.location}
+                  </span>
+
+                  <span class="md-typescale-title-small">
+                    ${edu.degree}
+                  </span>
+
+                  <time class="md-typescale-body-medium"
+                    .dateTime=${edu.graduationDate.value}>
+                    ${edu.graduationDate.label}
+                  </time>
                 </li>
               `)
             }

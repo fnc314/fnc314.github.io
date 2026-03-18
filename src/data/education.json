@@ -1,6 +1,15 @@
 {
   "education": [
     {
+      "institute": "General Assemb.ly",
+      "degree": "Web Development Immersive",
+      "location": "San Francisco, CA",
+      "graduationDate": {
+        "label": "April 2014",
+        "value": "2014-04"
+      }
+    },
+    {
       "institute": "University of Pittsburgh",
       "degree": "Bachelor of Science in Mathematics",
       "location": "Pittsburgh, PA",

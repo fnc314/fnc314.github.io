@@ -5,7 +5,7 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { AppConfigs } from "@/types/configs/app-configs";
 import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName } from "@/types/configs/color-scheme-configs";
-import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/configs/fab-configs";
+import { FAB_STYLE, FabConfig, FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -48,37 +48,49 @@ export class AppShell extends LitElement {
         right: 1rem;
         display: grid;
         padding-inline: 1rem;
-        grid-template-rows:
-          [top-start] var(--md-fab-large-container-height)
-          [top-end bottom-start] var(--md-fab-large-container-height)
-          [bottom-end]
-          ;
-        grid-template-columns:
-          [start-start] 1fr
-          [start-end empty-start] 1fr
-          [empty-end end-start] 1fr
-          [end-end]
+        grid-template-rows: repeat(2, 4rem);
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+          "StartTop    . EndTop"
+          "StartBottom . EndBottom"
           ;
         gap: 1rem;
 
         md-fab {
           z-index: 2;
           align-self: end;
+          grid-area: unset;
+          justify-self: unset;
+          transition:
+            grid-area 0.2s ease-in-out,
+            justify-self 0.2s ease-in-out;
 
           md-icon {
             line-height: unset;
           }
 
-          &.settings {
-
+          &.StartTop {
+            grid-area: StartTop;
+            justify-self: start;
           }
 
-          &.connect {
+          &.StartBottom {
+            grid-area: StartBottom;
+            justify-self: start;
+          }
 
+          &.EndTop {
+            grid-area: EndTop;
+            justify-self: end;
+          }
+
+          &.EndBottom {
+            grid-area: EndBottom;
+            justify-self: end;
           }
         }
       }
-    `,
+    `
   ];
 
   @state()
@@ -109,17 +121,25 @@ export class AppShell extends LitElement {
     fab: "settings" | "connect",
     fabConfig: FabConfig,
   ) {
-    console.error(`FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`);
+    console.info(`FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`);
 
     // similar logic means this flag can be helpful
     const isSettings: boolean = fab === "settings";
+    // target FAB
+    const changedFab: MdFab = isSettings ? this.settingsFab : this.connectFab;
+
+    // remove positioning class
+    changedFab.classList.remove(
+      fabPositionClass(
+        (isSettings ? this.settingsFabConfig : this.connectFabConfig).position
+      )
+    );
+
     if (isSettings) {
       this.settingsFabConfig = fabConfig;
     } else {
       this.connectFabConfig = fabConfig;
     }
-    // target FAB
-    const changedFab: MdFab = isSettings ? this.settingsFab : this.connectFab;
 
     const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
@@ -129,16 +149,9 @@ export class AppShell extends LitElement {
     (changedFab.querySelector("md-icon") as MdIcon).style.display =
       fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
 
-    const { rowStart, rowEnd, columnStart, columnEnd } = fabConfigToGrid(fabConfig);
-    changedFab.style.gridColumnStart = `${columnStart}`;
-    changedFab.style.gridColumnEnd = `${columnEnd}`;
-    changedFab.style.gridRowStart = `${rowStart}`;
-    changedFab.style.gridRowEnd = `${rowEnd}`
-    if (fabConfig.position === "END_BOTTOM" || fabConfig.position === "END_TOP") {
-      changedFab.style.justifySelf = "end";
-    } else {
-      changedFab.style.justifySelf = "start";
-    }
+    changedFab.classList.add(
+      fabPositionClass(fabConfig.position)
+    );
   }
 
   private onFabConfigBind = ((event: FabConfigChange) =>
