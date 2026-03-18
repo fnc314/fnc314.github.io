@@ -1,8 +1,9 @@
-import { THEME_PROFILE_PHOTO_URLS, ThemeConfig } from "@/types/configs/theme-configs";
+import PhotoJson from "@/data/photo.json" with { type: "json" };
+import { ThemeConfig } from "@/types/configs/theme-configs";
 import { css } from "lit-element";
 
 export const InterThemeConfig: ThemeConfig = {
-  profilePhotoUrl: THEME_PROFILE_PHOTO_URLS.inter,
+  themePhoto: PhotoJson.inter,
   materialSchemes: {
     light: css`
       :root {

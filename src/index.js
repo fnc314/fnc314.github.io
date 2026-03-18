@@ -17,10 +17,10 @@ import { styles as typescaleStyles } from "@material/web/typography/md-typescale
 import "./components/index.js";
 import "./partials/index.js";
 import { Routes } from "./partials/nav/routes.js";
+import { appConfigsSchemeTheme, configsService } from "./services/configs/index.js";
 import "./services/index.js";
-import { configsService } from "./services/index.js";
-import { MaterialSchemes } from "./styles/material-styles.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
+import "./themes/themes.js";
 import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
@@ -42,11 +42,12 @@ const domLoadedListener = (event) => {
     )
   }
 
-  const matScheme = MaterialSchemes[
-    colorSchemeConfigsToMaterialSchemeName(
-      configsService.loadConfigs().colorScheme
-    )
-  ];
+  const matScheme = appConfigsSchemeTheme()
+    .materialSchemes[
+      colorSchemeConfigsToMaterialSchemeName(
+        configsService.loadConfigs().colorScheme
+      )
+    ];
   updateMaterialCSSStyleSheet(matScheme);
 };
 

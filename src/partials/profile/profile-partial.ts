@@ -1,11 +1,12 @@
 import { makeWordCloudWord, WordCloudWordCategory } from "@/components/word-cloud/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
-import PhotoJson from "@/data/photo.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
+import { appConfigsSchemeTheme } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { ThemeConfig } from "@/types/configs/theme-configs";
 import { css, html, LitElement } from "lit-element";
-import { customElement } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 
 @customElement("profile-partial")
 export class ProfilePartial extends LitElement {
@@ -206,6 +207,9 @@ export class ProfilePartial extends LitElement {
     `,
   ];
 
+  @state()
+  private themeConfig: ThemeConfig = appConfigsSchemeTheme();
+
   constructor() {
     super();
   }
@@ -229,16 +233,18 @@ export class ProfilePartial extends LitElement {
         <figure>
           <picture>
             <source
-              srcset=${PhotoJson.photo.src}
+              srcset=${
+                this.themeConfig.themePhoto.src
+              }
               type="image/jpeg"
             />
             <img
-              src=${PhotoJson.photo.src}
-              alt=${PhotoJson.photo.alt}
+              src=${this.themeConfig.themePhoto.src}
+              alt=${this.themeConfig.themePhoto.alt}
             />
           </picture>
           <figcaption class="md-typescale-label-large">
-            ${PhotoJson.photo.figcaption}
+            ${this.themeConfig.themePhoto.figcaption}
           </figcaption>
         </figure>
 

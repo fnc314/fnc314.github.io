@@ -1,8 +1,9 @@
 import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
-import { configsService } from "@/services/configs";
-import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
+import { appConfigsSchemeTheme, configsService } from "@/services/configs";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
+import { AppConfigs } from "@/types/configs/app-configs";
 import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName } from "@/types/configs/color-scheme-configs";
 import { FAB_STYLE, FabConfig, FabConfigChange, fabConfigToGrid } from "@/types/configs/fab-configs";
 import "@material/web/button/text-button";
@@ -80,6 +81,10 @@ export class AppShell extends LitElement {
     `,
   ];
 
+  @state()
+  private appConfigs: AppConfigs = configsService.loadConfigs();
+
+
   @query("#configs-dialog")
   private configsDialog!: ConfigsDialog;
 
@@ -87,7 +92,7 @@ export class AppShell extends LitElement {
   private settingsFab!: MdFab;
 
   @state()
-  private settingsFabConfig: FabConfig = configsService.loadConfigs().fab.settings;
+  private settingsFabConfig: FabConfig = this.appConfigs.fab.settings;
 
   @query("#connect-dialog")
   private connectDialog!: ConnectDialog;
@@ -96,7 +101,7 @@ export class AppShell extends LitElement {
   private connectFab!: MdFab;
 
   @state()
-  private connectFabConfig: FabConfig = configsService.loadConfigs().fab.connect;
+  private connectFabConfig: FabConfig = this.appConfigs.fab.connect;
 
   private onFabChangeBind = this.onFabChange.bind(this);
 
@@ -141,9 +146,9 @@ export class AppShell extends LitElement {
 
   protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
     super.firstUpdated(_changedProperties);
-    const appSettings = configsService.loadConfigs();
-    this.connectFabConfig = appSettings.fab.connect;
-    this.settingsFabConfig = appSettings.fab.settings;
+    this.appConfigs = configsService.loadConfigs();
+    this.connectFabConfig = this.appConfigs.fab.connect;
+    this.settingsFabConfig = this.appConfigs.fab.settings;
     this.onFabChangeBind("settings", this.settingsFabConfig);
     this.onFabChangeBind("connect", this.connectFabConfig);
   }
@@ -163,7 +168,7 @@ export class AppShell extends LitElement {
 
   private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
     updateMaterialCSSStyleSheet(
-      MaterialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
+      appConfigsSchemeTheme().materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     )
   }).bind(this);
 

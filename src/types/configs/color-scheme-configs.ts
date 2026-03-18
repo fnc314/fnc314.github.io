@@ -1,4 +1,5 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
+import { ThemeName } from "@/types/configs/theme-configs";
 import { html } from "lit-element";
 import { nothing, TemplateResult } from "lit-html";
 
@@ -55,4 +56,4 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
   return `${variant}${contrast}` as MaterialSchemeName;
 };
 
-export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs>;
+export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs & Partial<{ name: ThemeName }>>;

@@ -1,10 +1,11 @@
 import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
-import { configsService } from "@/services/configs";
-import { MaterialSchemes, MaterialTypescaleStyles } from "@/styles/material-styles";
+import { appConfigsSchemeTheme, configsService } from "@/services/configs";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { AppConfigs, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
 import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, } from "@/types/configs/color-scheme-configs";
 import { FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs/fab-configs";
+import { THEME_NAMES, ThemeName, themeToIcon } from "@/types/configs/theme-configs";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -330,7 +331,7 @@ export class ConfigsDialog extends LitElement {
       this._darkModeToggle.removeAttribute("permanent");
       this.onFabChange("settings", this._appConfigs.fab.settings);
       this.onFabChange("connect", this._appConfigs.fab.connect);
-      this.onColorSchemeContrastChange(this._appConfigs.colorScheme.contrast);
+      this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
       configsService.resetConfigs();
     }
   }).bind(this);
@@ -346,8 +347,8 @@ export class ConfigsDialog extends LitElement {
           CONFIG_COLOR_SCHEME_NAMES.SYSTEM
       }
     }
-    this.onColorSchemeContrastChange(
-      this._appConfigs.colorScheme.contrast
+    this.onColorThemeModeContrastChange(
+      this._appConfigs.colorScheme
     );
   }).bind(this);
 
@@ -444,15 +445,12 @@ export class ConfigsDialog extends LitElement {
     );
   }
 
-  private onColorSchemeContrastChange(
-    contrast: ColorSchemeContrast,
+  private onColorThemeModeContrastChange(
+    colorScheme: AppConfigs["colorScheme"]
   ) {
     this._appConfigs = {
       ...this._appConfigs,
-      colorScheme: {
-        ...this._appConfigs.colorScheme,
-        contrast
-      }
+      colorScheme
     };
 
     configsService.saveConfigs(this._appConfigs);
@@ -469,7 +467,10 @@ export class ConfigsDialog extends LitElement {
     );
 
     updateMaterialCSSStyleSheet(
-      MaterialSchemes[colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)]
+      appConfigsSchemeTheme()
+        .materialSchemes[
+          colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
+        ]
     )
   }
 
@@ -552,7 +553,37 @@ export class ConfigsDialog extends LitElement {
 
     return html`
       <fieldset form="configs-dialog-form" class="color_scheme">
-        <legend>UI Variant &amp; Contrast</legend>
+        <legend>UI Theme, Mode, &amp; Contrast</legend>
+
+        <fieldset form="configs-dialog-form" class="theme">
+          <label>Color Theme</label>
+          <md-outlined-select
+            label="Choose Color Theme"
+            name="color_scheme.theme"
+            value=${this._appConfigs.colorScheme.theme}
+            @change=${(event: Event) => this.onColorThemeModeContrastChange(
+              {
+                ...this._appConfigs.colorScheme,
+                theme: (event.target as HTMLSelectElement).value as ThemeName,
+              }
+            )}
+            supportingText=${"Choose from a varity of Color Themes"}
+            .menuPositioning=${"absolute"}
+          >
+            ${themeToIcon("leading-icon", this._appConfigs.colorScheme.theme)}
+            ${
+              Object.values(THEME_NAMES).map((theme) => html`
+                <md-select-option
+                  ?selected=${this._appConfigs.colorScheme.theme === theme}
+                  value=${theme}
+                  >
+                  ${themeToIcon("start", theme)}
+                  <div slot="headline">${theme.charAt(0) + theme.slice(1).toLowerCase()}</div>
+                </md-select-option>
+              `)
+            }
+          </md-outlined-select>
+        </fieldset>
 
         <dark-mode-toggle
           .autofocus=${true}
@@ -574,7 +605,12 @@ export class ConfigsDialog extends LitElement {
             label="Choose UI Contrast"
             name="color_scheme.contrast"
             value=${this._appConfigs.colorScheme.contrast}
-            @change=${(event: Event) => this.onColorSchemeContrastChange((event.target as HTMLSelectElement).value as ColorSchemeContrast)}
+            @change=${(event: Event) => this.onColorThemeModeContrastChange(
+              {
+                ...this._appConfigs.colorScheme,
+                contrast: (event.target as HTMLSelectElement).value as ColorSchemeContrast,
+              }
+            )}
             supportingText=${"Choose from Normal, Medium, and High Contrast Color Palettes"}
             .menuPositioning=${"absolute"}
           >

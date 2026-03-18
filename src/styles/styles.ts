@@ -1,7 +1,7 @@
-import { configsService } from "@/services/configs";
+import { appConfigsSchemeTheme, configsService } from "@/services/configs";
+import { THEME_CONFIGS } from "@/themes/themes";
 import { colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/configs/color-scheme-configs";
 import { css, CSSResult } from "lit";
-import { MaterialSchemes } from "./material-styles";
 
 export const onThemeChange = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
@@ -17,9 +17,10 @@ export const onThemeChange = (event: MediaQueryListEvent) => {
   });
 
   updateMaterialCSSStyleSheet(
-    MaterialSchemes[
-      colorSchemeConfigsToMaterialSchemeName(colorScheme)
-    ]
+    appConfigsSchemeTheme()
+      .materialSchemes[
+        colorSchemeConfigsToMaterialSchemeName(colorScheme)
+      ]
   );
 };
 
@@ -27,7 +28,7 @@ export const updateMaterialCSSStyleSheet = (result: CSSResult) => {
   MaterialCSSStyleSheet.replaceSync(result.cssText);
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = MaterialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
 
 export const Breakpoints: CSSResult = css`
   :host {

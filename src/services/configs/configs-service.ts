@@ -1,5 +1,6 @@
 import { storageService, StorageService } from "@/services/storage/storage-service";
-import { AppConfigs, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { THEME_CONFIGS } from "@/themes/themes";
+import { AppConfigs, AppConfigsSchemeTheme, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 
 export interface ConfigsService {
   saveConfigs(
@@ -28,12 +29,26 @@ class ConfigsServiceImpl implements ConfigsService {
   }
 
   loadConfigs(): AppConfigs {
-    return JSON.parse(
+    const storedConfigs: AppConfigs = JSON.parse(
       this.#storageService.getData(
         "configs",
         JSON.stringify(DEFAULT_APP_CONFIGS)
       ).value
     ) as AppConfigs;
+
+    if (Object.hasOwn(storedConfigs.colorScheme, "theme")) {
+      return storedConfigs;
+    }
+
+    const updatedConfigs: AppConfigs = {
+      ...storedConfigs,
+      colorScheme: {
+        ...storedConfigs.colorScheme,
+        theme: DEFAULT_APP_CONFIGS.colorScheme.theme,
+      }
+    };
+    this.saveConfigs(updatedConfigs);
+    return updatedConfigs;
   }
 
   resetConfigs(): void {
@@ -44,3 +59,6 @@ class ConfigsServiceImpl implements ConfigsService {
 export const configsService: ConfigsService = new ConfigsServiceImpl(
   storageService
 );
+
+export const appConfigsSchemeTheme: AppConfigsSchemeTheme = () =>
+  THEME_CONFIGS[configsService.loadConfigs().colorScheme.theme]

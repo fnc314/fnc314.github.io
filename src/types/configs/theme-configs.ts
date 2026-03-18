@@ -1,8 +1,16 @@
-import { MaterialSchemes } from "@/styles/material-styles";
+import { MaterialScheme } from "@/styles/material-styles";
+import { THEME_CONFIGS } from "@/themes/themes";
+import { css, CSSResult, html, TemplateResult, unsafeCSS } from "lit-element";
+
+export type ThemePhoto = {
+  src: string;
+  figcaption: string;
+  alt: string;
+};
 
 export type ThemeConfig = {
-  profilePhotoUrl: string;
-  materialSchemes: MaterialSchemes
+  themePhoto: ThemePhoto;
+  materialSchemes: MaterialScheme
 };
 
 export const THEME_NAMES = {
@@ -15,11 +23,41 @@ export const THEME_NAMES = {
 
 export type ThemeName = typeof THEME_NAMES[keyof typeof THEME_NAMES];
 
-export const THEME_PROFILE_PHOTO_URLS: Record<ThemeName, string> = {
-  chicago: "./assets/images/themes/chicago/profile-photo.jpg",
-  inter: "./assets/images/themes/inter/profile-photo.jpg",
-  red: "./assets/images/themes/red/profile-photo.jpg",
-  sunset: "./assets/images/themes/sunset/profile-photo.jpg",
+export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
+
+export const readScheme = (jsonSchema: object) => css`
+  ${
+    unsafeCSS(
+      Object
+        .entries(jsonSchema)
+        .map(([colorRole, colorRGB]) => (keyTransform(colorRole, colorRGB)))
+        .reduce(
+          (acc, curr) => css`${acc}${curr}`,
+          css``
+        )
+    )
+  }
+`;
+
+export function keyTransform(
+  jsonKey: string,
+  rgb: string
+): CSSResult {
+  const roleNameBase = jsonKey
+    .split(/(?=[A-Z])/)
+    .map((part) => part.toLowerCase())
+    .join("-");
+
+  return css`
+    :root {
+      --md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};
+    }
+  `;
 };
 
-export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
+export const themeToIcon: (slot: "leading-icon" | "start", theme: ThemeName) => TemplateResult = (
+  slot: "leading-icon" | "start",
+  theme: ThemeName
+) => html`
+  <img .slot=${slot} .src=${THEME_CONFIGS[theme].themePhoto.src} .alt=${THEME_CONFIGS[theme].themePhoto.alt} />
+`;
