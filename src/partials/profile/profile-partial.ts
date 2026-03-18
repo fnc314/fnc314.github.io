@@ -1,10 +1,10 @@
-import { makeWordCloudWord, WordCloudWordCategory } from "@/components/word-cloud/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { appConfigsSchemeTheme } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/themes/themes";
+import { makeWordCloudWord, WordCloudWordCategory } from "@/types/components/word-cloud/word-cloud";
 import { ColorSchemeConfigChange } from "@/types/configs/color-scheme-configs";
 import { ThemeConfig } from "@/types/configs/theme-configs";
 import { css, html, LitElement } from "lit-element";
@@ -54,8 +54,6 @@ export class ProfilePartial extends LitElement {
           display: grid;
           align-items: baseline;
           grid-template-rows: repeat(4, 1fr);
-
-
         }
 
       }
@@ -316,6 +314,8 @@ export class ProfilePartial extends LitElement {
           <word-cloud
             slot="section-grid-content"
             .words=${words}
+            instant-clear
+            .animationStrategy=${"by-category"}
           ></word-cloud>
         </profile-section>
       </article>
