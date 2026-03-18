@@ -1,37 +1,24 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="-64 -64 384 384"
-  preserveAspectRatio="xMidYMid meet"
-  >
-
-  <defs>
-    <path
-      id="text-curve"
-      d="
-        M 24 128
-        C 58 146, 94 146, 128 128
-        C 162 110, 198 110, 232 128
-      "
-      />
-
-    <path
-      id="hexagon-half"
-      d="
-        M 128 10
-        L 232 58
-        L 232 95
-        C 198 77, 162 77, 128 95
-        C 94 113, 58 113, 24 95
-        L 24 58
-        Z
-      "
-      />
-
-    <style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="-64 -64 384 384" preserveAspectRatio="xMidYMid meet" version="1.1" id="svg5"
+  sodipodi:docname="icon-maskable.svg" inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview5" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1"
+    inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:deskcolor="#505050"
+    inkscape:zoom="4.5363621" inkscape:cx="229.14837" inkscape:cy="180.3207" inkscape:window-width="1292"
+    inkscape:window-height="884" inkscape:window-x="0" inkscape:window-y="39" inkscape:window-maximized="0"
+    inkscape:current-layer="svg5" />
+  <defs id="defs1">
+    <path id="text-curve"
+      d="         M 24 128         C 58 146, 94 146, 128 128         C 162 110, 198 110, 232 128       " />
+    <path id="hexagon-half"
+      d="         M 128 10         L 232 58         L 232 95         C 198 77, 162 77, 128 95         C 94 113, 58 113, 24 95         L 24 58         Z       " />
+    <style id="style1">
       .icon-text {
         font-family: -apple-system, Roboto, monospace;
         font-weight: 700;
-        font-size: clamp(7.5vh, 8vh, 9.5vh);
+        font-size: 370%;
         text-rendering: optimizeLegibility;
         text-anchor: middle;
         dominant-baseline: central;
@@ -42,53 +29,19 @@
       }
     </style>
   </defs>
-
-  <g display="none">
-    <circle cx="128" cy="10" r="10" fill="pink" />
-    <circle cx="232" cy="95" r="10" fill="black" />
-    <circle cx="24" cy="95" r="10" fill="purple" />
-    <circle cx="24" cy="161" r="10" fill="red" />
+  <g display="none" id="g4">
+    <circle cx="128" cy="10" r="10" fill="pink" id="circle1" />
+    <circle cx="232" cy="95" r="10" fill="black" id="circle2" />
+    <circle cx="24" cy="95" r="10" fill="purple" id="circle3" />
+    <circle cx="24" cy="161" r="10" fill="red" id="circle4" />
   </g>
-
-  <rect
-    width="384"
-    height="384"
-    x="-64"
-    y="-64"
-    rx="64"
-    ry="64"
-    fill="white"
-    fill-opacity="0.01"
-    />
-
-  <use
-    href="#hexagon-half"
-    fill="#c12a1c"
-    fill-rule="evenodd"
-    />
-
-  <text
-    class="icon-text"
-    fill="#c12a1c"
-    fill-rule="evenodd"
-    >
-    <textPath
-      href="#text-curve"
-      startOffset="50%"
-      >
+  <rect width="384" height="384" x="-64" y="-64" rx="64" ry="64" fill="white" fill-opacity="0.01" id="rect4" />
+  <use href="#hexagon-half" fill="#c12a1c" fill-rule="evenodd" id="use4" />
+  <text class="icon-text" fill="#c12a1c" fill-rule="evenodd" id="text4">
+    <textPath href="#text-curve" startOffset="50%" id="textPath4">
       fnc314
     </textPath>
   </text>
-
-  <use
-    href="#hexagon-half"
-    class="rotated-hexagon-half"
-    fill="#c12a1c"
-    fill-rule="evenodd"
-    transform="
-      translate(0, 138)
-      rotate(180)
-    "
-    transform-origin="center"
-    />
+  <use href="#hexagon-half" class="rotated-hexagon-half" fill="#c12a1c" fill-rule="evenodd"
+    transform="       translate(0, 138)       rotate(180)     " transform-origin="center" id="use5" />
 </svg>

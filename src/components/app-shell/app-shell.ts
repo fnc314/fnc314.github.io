@@ -40,6 +40,7 @@ export class AppShell extends LitElement {
       }
 
       .fab-container {
+        pointer-events: auto;
         cursor: unset;
         z-index: 1;
         position: sticky;
