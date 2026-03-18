@@ -1,6 +1,5 @@
 import { MaterialScheme } from "@/styles/material-styles";
-import { THEME_CONFIGS } from "@/themes/themes";
-import { css, CSSResult, html, TemplateResult, unsafeCSS } from "lit-element";
+import { css, CSSResult, unsafeCSS } from "lit-element";
 
 export type ThemePhoto = {
   src: string;
@@ -55,9 +54,3 @@ export function keyTransform(
   `;
 };
 
-export const themeToIcon: (slot: "leading-icon" | "start", theme: ThemeName) => TemplateResult = (
-  slot: "leading-icon" | "start",
-  theme: ThemeName
-) => html`
-  <img .slot=${slot} .src=${THEME_CONFIGS[theme].themePhoto.src} .alt=${THEME_CONFIGS[theme].themePhoto.alt} />
-`;

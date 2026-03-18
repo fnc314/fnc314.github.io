@@ -2,10 +2,11 @@ import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/componen
 import { appConfigsSchemeTheme, configsService } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
+import { themeToIcon } from "@/themes/themes";
 import { AppConfigs, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
 import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, } from "@/types/configs/color-scheme-configs";
 import { FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs/fab-configs";
-import { THEME_NAMES, ThemeName, themeToIcon } from "@/types/configs/theme-configs";
+import { THEME_NAMES, ThemeName } from "@/types/configs/theme-configs";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -252,6 +253,15 @@ export class ConfigsDialog extends LitElement {
         fieldset legend {
           text-align: center;
           width: 100%;
+        }
+
+        fieldset.theme {
+          md-select-option {
+            img {
+              width: 2rem;
+              height: auto;
+            }
+          }
         }
       }
 
@@ -556,7 +566,7 @@ export class ConfigsDialog extends LitElement {
         <legend>UI Theme, Mode, &amp; Contrast</legend>
 
         <fieldset form="configs-dialog-form" class="theme">
-          <label>Color Theme</label>
+          <legend>Color Theme</legend>
           <md-outlined-select
             label="Choose Color Theme"
             name="color_scheme.theme"
@@ -578,7 +588,7 @@ export class ConfigsDialog extends LitElement {
                   value=${theme}
                   >
                   ${themeToIcon("start", theme)}
-                  <div slot="headline">${theme.charAt(0) + theme.slice(1).toLowerCase()}</div>
+                  <div slot="headline">${theme.charAt(0).toUpperCase() + theme.slice(1)}</div>
                 </md-select-option>
               `)
             }

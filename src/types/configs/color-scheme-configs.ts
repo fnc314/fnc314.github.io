@@ -1,5 +1,5 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
-import { ThemeName } from "@/types/configs/theme-configs";
+import { AppConfigs } from "@/types/configs/app-configs";
 import { html } from "lit-element";
 import { nothing, TemplateResult } from "lit-html";
 
@@ -38,7 +38,7 @@ export type ColorSchemeConfigs = {
   persist: boolean;
 };
 
-export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
+export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: AppConfigs["colorScheme"]) => MaterialSchemeName = (
   colorSchemeSettings: ColorSchemeConfigs
 ): MaterialSchemeName => {
   const variant = colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
@@ -56,4 +56,4 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
   return `${variant}${contrast}` as MaterialSchemeName;
 };
 
-export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs & Partial<{ name: ThemeName }>>;
+export type ColorSchemeConfigChange = CustomEvent<AppConfigs["colorScheme"]>;

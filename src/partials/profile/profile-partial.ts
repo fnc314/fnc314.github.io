@@ -4,6 +4,8 @@ import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { appConfigsSchemeTheme } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { THEME_CONFIGS } from "@/themes/themes";
+import { ColorSchemeConfigChange } from "@/types/configs/color-scheme-configs";
 import { ThemeConfig } from "@/types/configs/theme-configs";
 import { css, html, LitElement } from "lit-element";
 import { customElement, state } from "lit/decorators.js";
@@ -210,8 +212,28 @@ export class ProfilePartial extends LitElement {
   @state()
   private themeConfig: ThemeConfig = appConfigsSchemeTheme();
 
+  private onColorConfigsChange = ((event: ColorSchemeConfigChange) => {
+    this.themeConfig = THEME_CONFIGS[event.detail.theme];
+  }).bind(this);
+
   constructor() {
     super();
+  }
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+    document.addEventListener(
+      "color_scheme.change",
+      this.onColorConfigsChange
+    )
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    document.removeEventListener(
+      "color_scheme.change",
+      this.onColorConfigsChange
+    )
   }
 
   override render() {
