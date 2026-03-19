@@ -11,6 +11,7 @@ export class WorkExperience extends LitElement {
         display: block;
         /* For contextual layout */
         container-type: inline-size;
+        box-sizing: border-box;
 
         h2,
         h3,

@@ -13,6 +13,17 @@ export class WordCloud extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
+
+        --word-cloud-animation: 150ms;
+        --word-cloud-animation-reduced: 1ms;
+        --word-cloud-first-quartile-font-size: 1.75rem;
+        --word-cloud-first-quartile-line-height: 1.75rem;
+        --word-cloud-second-quartile-font-size: 1.5rem;
+        --word-cloud-second-quartile-line-height: 1.5rem;
+        --word-cloud-third-quartile-font-size: 1.25rem;
+        --word-cloud-third-quartile-line-height: 1.25rem;
+        --word-cloud-fourth-quartile-font-size: 1rem;
+        --word-cloud-fourth-quartile-line-height: 1rem;
       }
 
       ul {
@@ -41,14 +52,14 @@ export class WordCloud extends LitElement {
         opacity: 0;
         transform: scale(0.8) translateY(10px);
         transition:
-          opacity 0.15s ease-out,
-          transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+          opacity var(--word-cloud-animation) ease-out,
+          transform var(--word-cloud-animation) cubic-bezier(0.34, 1.56, 0.64, 1);
         will-change: opacity, transform;
       }
 
       @media (prefers-reduced-motion: reduce) {
         li {
-          transition: all 0.001s ease-in-out;
+          transition: all var(--word-cloud-animation-reduced) ease-in-out;
         }
       }
 
@@ -63,8 +74,8 @@ export class WordCloud extends LitElement {
       }
 
       .first-quartile {
-        font-size: 1.75rem;
-        line-height: 1.75rem;
+        font-size: var(--word-cloud-first-quartile-font-size);
+        line-height: var(--word-cloud-first-quartile-line-height);
 
         &.tech {
           background-color: var(--md-sys-color-primary-container);
@@ -83,8 +94,8 @@ export class WordCloud extends LitElement {
       }
 
       .second-quartile {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: var(--word-cloud-second-quartile-font-size);
+        line-height: var(--word-cloud-second-quartile-line-height);
 
         &.tech {
           background-color: var(--md-sys-color-secondary-container);
@@ -103,8 +114,8 @@ export class WordCloud extends LitElement {
       }
 
       .third-quartile {
-        font-size: 1.25rem;
-        line-height: 1.25rem;
+        font-size: var(--word-cloud-third-quartile-font-size);
+        line-height: var(--word-cloud-third-quartile-line-height);
 
         &.tech {
           background-color: var(--md-sys-color-tertiary-container);
@@ -123,8 +134,8 @@ export class WordCloud extends LitElement {
       }
 
       .fourth-quartile {
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: var(--word-cloud-fourth-quartile-font-size);
+        line-height: var(--word-cloud-fourth-quartile-line-height);
 
         &.tech {
           color: var(--md-sys-color-primary-container);
@@ -273,7 +284,7 @@ export class WordCloud extends LitElement {
     }
 
     // 3. Sort within groups
-    const sortFn = this._getSortFunction();
+    const sortFn = this._getSortFunction(this.sorting);
     if (sortFn) {
       groups.forEach((group) => group.sort(sortFn));
     }
@@ -310,10 +321,10 @@ export class WordCloud extends LitElement {
     return randomized;
   }
 
-  private _getSortFunction():
+  private _getSortFunction(sorting: WordCloudSorting):
     | ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)
     | undefined {
-    switch (this.sorting) {
+    switch (sorting) {
       case WordCloudSortings.BY_WEIGHT:
         return (a, b) => (a.weight as number) - (b.weight as number);
       case WordCloudSortings.BY_WEIGHT_REVERSED:

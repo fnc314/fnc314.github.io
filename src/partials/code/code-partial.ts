@@ -23,12 +23,17 @@ export class CodePartial extends LitElement {
 
       article {
         container-type: inline-size;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        height: min-content;
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: min-content auto;
         --md-elevation-level: 4;
         gap: 1rem;
-        margin-inline: 1rem;
+        padding-inline: 1rem;
+      }
+
+      partial-header {
+        margin: unset;
       }
 
       .article-body {

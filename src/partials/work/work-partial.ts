@@ -1,5 +1,5 @@
-import WorkJson from "@/data/work.json" with { type: "json" };
 import "@/components/work-experience/work-experience";
+import WorkJson from "@/data/work.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
@@ -44,47 +44,38 @@ export class WorkPartial extends LitElement {
     css`
       :host {
         display: block;
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
       }
 
       article {
+        box-sizing: border-box;
         display: grid;
         grid-template-areas:
           "title"
           "content"
-          "footer"
           ;
         gap: 1rem;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: min-content auto;
+        height: min-content;
+        min-height: 100%;
+        padding-inline: 1rem;
       }
 
       partial-header {
         grid-area: title;
-        margin-inline: 1rem;
+        margin: unset;
       }
 
       .article-body {
-        padding-inline: 1rem;
         grid-area: content;
+        display: flex;
+        flex-direction: column;
 
         h2,
         h3,
         p {
           margin: unset;
-        }
-      }
-
-      footer {
-        grid-area: footer;
-
-        ul {
-          list-style-type: none;
-          padding: unset;
-          margin: unset;
-          display: flex;
-          flex-direction: row;
-          gap: 1rem;
-          justify-content: center;
-          align-items: center;
         }
       }
     `,
