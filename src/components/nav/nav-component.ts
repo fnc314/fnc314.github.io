@@ -104,7 +104,10 @@ export class NavComponent extends LitElement {
   private _activeRoute: Route = Routes.PROFILE;
 
   @state()
-  private _inlineIconRoute: Route = Routes.PROFILE;
+  private _inlineIconRoute: Route | null = Routes.PROFILE;
+
+  @state()
+  private _exitingRoute: Route | null = null;
 
   #inlineIconTimeout = 0;
 
@@ -158,6 +161,7 @@ export class NavComponent extends LitElement {
     const targetIndex = index >= 0 ? index : 0;
 
     if (this._activeTabIndex !== targetIndex) {
+      const oldRoute = this._activeRoute;
       this._activeTabIndex = targetIndex;
       this._activeRoute = route;
 
@@ -165,12 +169,17 @@ export class NavComponent extends LitElement {
       if (this.hasUpdated) {
         this.#updateTabState(targetIndex);
 
+        this._exitingRoute = oldRoute;
+        this._inlineIconRoute = null;
+
         window.clearTimeout(this.#inlineIconTimeout);
         this.#inlineIconTimeout = window.setTimeout(() => {
           this._inlineIconRoute = route;
+          this._exitingRoute = null;
         }, 250);
       } else {
         this._inlineIconRoute = route;
+        this._exitingRoute = null;
       }
     }
   }
@@ -230,13 +239,18 @@ export class NavComponent extends LitElement {
       window.history.pushState(null, "", `#${route}`);
     }
 
+    const oldRoute = this._activeRoute;
     this._activeTabIndex = index;
     this._activeRoute = route;
     this.#updateTabState(index);
 
+    this._exitingRoute = oldRoute;
+    this._inlineIconRoute = null;
+
     window.clearTimeout(this.#inlineIconTimeout);
     this.#inlineIconTimeout = window.setTimeout(() => {
       this._inlineIconRoute = route;
+      this._exitingRoute = null;
     }, 250);
   }
 
@@ -256,7 +270,7 @@ export class NavComponent extends LitElement {
       profile: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.PROFILE}
+          filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
           >person</md-icon
         >
         Profile
@@ -264,7 +278,7 @@ export class NavComponent extends LitElement {
       work: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.WORK}
+          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
           >engineering</md-icon
         >
         Work
@@ -272,7 +286,7 @@ export class NavComponent extends LitElement {
       code: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.CODE}
+          filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
           >code_blocks</md-icon
         >
         Code
