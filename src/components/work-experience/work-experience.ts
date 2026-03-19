@@ -12,6 +12,7 @@ export class WorkExperience extends LitElement {
         /* For contextual layout */
         container-type: inline-size;
         box-sizing: border-box;
+        width: 100%;
 
         h2,
         h3,
@@ -22,14 +23,14 @@ export class WorkExperience extends LitElement {
 
       /* --- SHARED BASE --- */
       h2 {
-        font-weight: 600;
+        font-weight: 700;
       }
       h3 {
-        font-weight: 600;
+        font-weight: 700;
       }
       time {
         opacity: 0.8;
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .nested-experiences {

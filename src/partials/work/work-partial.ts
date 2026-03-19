@@ -1,41 +1,8 @@
 import "@/components/work-experience/work-experience";
-import WorkJson from "@/data/work.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { data as WorkJson } from "@/types/components/work-experience/work-experience";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
-
-interface WorkDate {
-  stamp: string;
-  text: string;
-}
-
-interface Job {
-  role: string;
-  client: string;
-  dates: {
-    start: WorkDate;
-    end: WorkDate;
-  };
-  summary: {item: string}[];
-}
-
-interface Experience {
-  employer: string;
-  role: string;
-  dates: {
-    start: WorkDate;
-    end: WorkDate;
-  };
-  jobs: Job[];
-}
-
-interface WorkData {
-  experiences: Experience[];
-
-  resume: Record<string, Record<"format" | "href" | "text", string>>;
-}
-
-const data = WorkJson as WorkData;
 
 @customElement("work-partial")
 export class WorkPartial extends LitElement {
@@ -44,21 +11,23 @@ export class WorkPartial extends LitElement {
     css`
       :host {
         display: block;
-        background-color: var(--md-sys-color-surface);
-        color: var(--md-sys-color-on-surface);
       }
 
       article {
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
         box-sizing: border-box;
+        align-content: start;
         display: grid;
         grid-template-areas:
           "title"
           "content"
           ;
         gap: 1rem;
-        grid-template-rows: min-content auto;
+        grid-template-rows: min-content;
+        grid-auto-rows: auto;
         height: min-content;
-        min-height: 100%;
+        min-height: 100dvh;
         padding-inline: 1rem;
       }
 
@@ -71,12 +40,7 @@ export class WorkPartial extends LitElement {
         grid-area: content;
         display: flex;
         flex-direction: column;
-
-        h2,
-        h3,
-        p {
-          margin: unset;
-        }
+        gap: 1rem;
       }
     `,
   ];
@@ -86,7 +50,7 @@ export class WorkPartial extends LitElement {
       <article>
         <partial-header .headingText=${"Work Experience"}></partial-header>
         <div class="article-body">
-          ${data.experiences.map(
+          ${WorkJson.experiences.map(
             (exp) => html`
               <work-experience
                 .isNested="${false}"
