@@ -26,7 +26,8 @@ export class PartialHeader extends LitElement {
           margin-inline: auto;
           margin-block: 1rem;
           color: var(--md-sys-color-on-primary-container);
-          /* font-variant-caps: small-caps; */
+          font-variant-caps: small-caps;
+          width: 100%;
         }
       }
     `,
@@ -38,7 +39,7 @@ export class PartialHeader extends LitElement {
   override render() {
     return html`
       <header>
-        <h1 class="md-typescale-display-medium">${this.headingText}</h1>
+        <h1 class="md-typescale-display-large">${this.headingText}</h1>
       </header>
     `;
   }

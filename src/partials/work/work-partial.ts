@@ -1,5 +1,5 @@
 import WorkJson from "@/data/work.json" with { type: "json" };
-import "@/partials/work/work-experience";
+import "@/components/work-experience/work-experience";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";

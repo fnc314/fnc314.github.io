@@ -250,7 +250,7 @@ export class WorkExperience extends LitElement {
         <ul class="nested-summary">
           ${this.summaries.map(
             (summary) => html`
-              <li class="md-typescale-body-medium">${summary.item}</li>
+              <li class="md-typescale-body-large">${summary.item}</li>
             `,
           )}
         </ul>
