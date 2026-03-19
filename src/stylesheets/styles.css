@@ -20,6 +20,7 @@
   --breakpoint-expanded-width-max: 1500px;
 
   --md-icon-size: 24px;
+  --md-icon-font: "Material Symbols Outlined";
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
 }
@@ -33,7 +34,7 @@
 
 html,
 body {
-  font-size: 15px;
+  font-size: 16px;
   font-family: var(--md-ref-typeface-plain);
   writing-mode: horizontal-tb;
   margin: unset;
