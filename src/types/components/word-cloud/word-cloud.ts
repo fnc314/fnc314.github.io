@@ -57,7 +57,7 @@ export const makeWordCloudWord = (
       case 3 < theWeight && theWeight <= 6:
         return "third-quartile";
 
-      case theWeight < 3:
+      case theWeight <= 3:
         return "fourth-quartile";
 
       default:
