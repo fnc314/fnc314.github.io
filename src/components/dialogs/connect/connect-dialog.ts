@@ -61,6 +61,8 @@ export class ConnectDialog extends LitElement {
         gap: 1rem;
 
         details {
+          interpolate-size: allow-keywords;
+
           summary {
             cursor: pointer;
             list-style-type: none;
@@ -98,15 +100,19 @@ export class ConnectDialog extends LitElement {
 
           &::details-content {
             opacity: 0;
+            block-size: 0;
+            overflow-y: hidden;
             transition:
-              opacity 0.2s ease-in-out,
-              content-visibility 0.2s ease-in-out allow-discrete;
+              opacity 0.3s ease-in-out,
+              block-size 0.3s ease-in-out,
+              content-visibility 0.3s ease-in-out allow-discrete;
           }
 
           &[open] {
 
             &::details-content {
               opacity: 1;
+              block-size: auto;
             }
 
             md-icon {
