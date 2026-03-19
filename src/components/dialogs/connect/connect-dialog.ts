@@ -98,22 +98,22 @@ export class ConnectDialog extends LitElement {
             }
           }
 
-          &::details-content {
+          .content-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
             opacity: 0;
-            block-size: 0;
             overflow-y: hidden;
             transition:
+              display 0.3s allow-discrete,
               opacity 0.3s ease-in-out,
-              block-size 0.3s ease-in-out,
-              content-visibility 0.3s ease-in-out allow-discrete;
+              grid-template-rows 0.3s ease-in-out;
           }
 
+          &[open] .content-wrapper {
+            opacity: 1;
+            grid-template-rows: 1fr;
+          }
           &[open] {
-
-            &::details-content {
-              opacity: 1;
-              block-size: auto;
-            }
 
             md-icon {
               transform: rotate(0deg);
@@ -151,6 +151,10 @@ export class ConnectDialog extends LitElement {
               width: var(--md-list-item-leading-image-width);
               height: var(--md-list-item-leading-image-height);
             }
+          }
+
+          .content {
+            min-height: 0;
           }
         }
       }
@@ -204,7 +208,11 @@ export class ConnectDialog extends LitElement {
                   </h3>
                   <md-icon>expand_circle_down</md-icon>
                 </summary>
-                ${this.#rederConnections(connection)}
+                <div class="content-wrapper">
+                  <div class="content">
+                    ${this.#rederConnections(connection)}
+                  </div>
+                </div>
               </details>
             `)
           }

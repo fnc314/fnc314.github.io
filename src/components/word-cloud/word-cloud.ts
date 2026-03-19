@@ -11,11 +11,12 @@ export class WordCloud2 extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: contents;
-        container-type: size;
+        display: flex;
+        flex-direction: column;
       }
 
       ul {
+        flex: 1;
         list-style-type: none;
         display: flex;
         flex-direction: row;
