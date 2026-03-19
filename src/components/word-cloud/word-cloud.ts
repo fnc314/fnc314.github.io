@@ -174,7 +174,7 @@ export class WordCloud2 extends LitElement {
   delay: number | "none" = "none";
 
   @property({ type: Number })
-  threshold = 0.75;
+  threshold = 0.1;
 
   @state({
     hasChanged: () => true,
