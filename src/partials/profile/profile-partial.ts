@@ -315,9 +315,10 @@ export class ProfilePartial extends LitElement {
             slot="section-grid-content"
             .words=${words}
             instant-clear
-            grouping="quartile"
-            sorting="none"
-            appearance="sequential"
+            grouping="category"
+            sorting="by-weight"
+            appearance="simultaneous"
+            delay="50"
           ></word-cloud>
         </profile-section>
       </article>

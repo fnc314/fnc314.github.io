@@ -1,6 +1,6 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { RenderableWordCloudWord, WeightQuartile, WordCloudAppearance, WordCloudAppearances, WordCloudGrouping, WordCloudGroupings, WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
-import { css, html, LitElement } from "lit";
+import { RenderableWordCloudWord, WordCloudAppearance, WordCloudAppearances, WordCloudGrouping, WordCloudGroupings, WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
+import { css, html, LitElement, PropertyValues } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -40,8 +40,8 @@ export class WordCloud2 extends LitElement {
         opacity: 0;
         transform: scale(0.8) translateY(10px);
         transition:
-          opacity 0.1s ease-out,
-          transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+          opacity 0.15s ease-out,
+          transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
         will-change: opacity, transform;
       }
 
@@ -169,6 +169,12 @@ export class WordCloud2 extends LitElement {
   @property({ attribute: "sorting" })
   sorting: WordCloudSorting = WordCloudSortings.NONE;
 
+  @property()
+  delay: number | "none" = "none";
+
+  @property({ type: Number })
+  threshold = 0.75;
+
   @state({
     hasChanged: () => true,
   })
@@ -187,7 +193,15 @@ export class WordCloud2 extends LitElement {
     this._sortedWords = this._processWords();
   }
 
-  override firstUpdated() {
+  override updated(changedProperties: PropertyValues<this>) {
+    super.updated(changedProperties);
+    if (changedProperties.has("threshold")) {
+      this._initIntersectionObserver();
+    }
+  }
+
+  private _initIntersectionObserver() {
+    this._intersectionObserver?.disconnect();
     this._intersectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -202,12 +216,16 @@ export class WordCloud2 extends LitElement {
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: this.threshold },
     );
 
     if (this._listElement) {
       this._intersectionObserver.observe(this._listElement);
     }
+  }
+
+  override firstUpdated() {
+    this._initIntersectionObserver();
   }
 
   override disconnectedCallback() {
@@ -217,7 +235,7 @@ export class WordCloud2 extends LitElement {
 
   private _processWords(): RenderableWordCloudWord[] {
     // 1. Layout: Always Randomize
-    const processed: RenderableWordCloudWord[] = this.words
+    const randomized: RenderableWordCloudWord[] = this.words
       .map((w) => ({ ...w }))
       .sort(() => Math.random() - 0.5);
 
@@ -261,10 +279,9 @@ export class WordCloud2 extends LitElement {
 
     // 4. Calculate delays
     let currentDelay = 0;
-    const GROUP_DELAY_OFFSET = 300; // Delay between groups if simultaneous
-    const ITEM_DELAY_OFFSET = 50; // Delay between items if sequential
-
-    const processed: RenderableWordCloudWord[] = [];
+    const delayVal = this.delay === "none" ? undefined : Number(this.delay);
+    const GROUP_DELAY_OFFSET = delayVal ?? 200; // Delay between groups if simultaneous
+    const ITEM_DELAY_OFFSET = delayVal ?? 50; // Delay between items if sequential
 
     groups.forEach((group) => {
       // If group is empty, skip
@@ -287,11 +304,9 @@ export class WordCloud2 extends LitElement {
         // No extra bump needed usually, or maybe a small one?
         // Let's just let it flow naturally.
       }
-
-      processed.push(...group);
     });
 
-    return processed;
+    return randomized;
   }
 
   private _getSortFunction():
@@ -310,16 +325,6 @@ export class WordCloud2 extends LitElement {
       default:
         return undefined;
     }
-  }
-
-  private _getQuartileRank(q: WeightQuartile): number {
-    switch (q) {
-      case "fourth-quartile": return 0;
-      case "third-quartile": return 1;
-      case "second-quartile": return 2;
-      case "first-quartile": return 3;
-    }
-    return 0;
   }
 
   override render() {
