@@ -44,12 +44,14 @@ export class ConnectDialog extends LitElement {
         @media (orientation: landscape) {
           min-width: calc(100dvw - 10rem);
           max-width: calc(100dvw - 2rem);
-          min-height: 100dvh;
+          min-height: 90dvh;
+          max-height: 100dvh;
         }
 
         @media (orientation: portrait) {
           min-width: calc(100dvw - 4rem);
           max-width: calc(100dvw - 2rem);
+          min-height: calc(100dvh - 6rem);
           max-height: calc(100dvh - 6rem);
         }
       }
