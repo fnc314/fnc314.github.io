@@ -1,15 +1,15 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { hashToRoute, type Route, Routes } from "@/types/components/nav/routes";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
 import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
-import { hashToRoute, type Route, Routes } from "./routes";
 
 type IndexRoute = { route: Route, index: number };
 
-@customElement("nav-partial")
-export class NavPartial extends LitElement {
+@customElement("nav-component")
+export class NavComponent extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -278,6 +278,6 @@ export class NavPartial extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "nav-partial": NavPartial;
+    "nav-component": NavComponent;
   }
 }

@@ -16,11 +16,11 @@ import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "./components/index.js";
 import "./partials/index.js";
-import { Routes } from "./partials/nav/routes.js";
 import { appConfigsSchemeTheme, configsService } from "./services/configs/index.js";
 import "./services/index.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import "./themes/themes.js";
+import { Routes } from "./types/components/nav/routes.js";
 import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
