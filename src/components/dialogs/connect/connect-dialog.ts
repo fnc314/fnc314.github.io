@@ -54,6 +54,14 @@ export class ConnectDialog extends LitElement {
           min-height: calc(100dvh - 6rem);
           max-height: calc(100dvh - 6rem);
         }
+
+        [slot="headline"] {
+          padding: 0;
+
+          h2 {
+            margin-block: 0.25rem;
+          }
+        }
       }
 
       .connect-content {
