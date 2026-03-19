@@ -15,6 +15,8 @@ export class NavComponent extends LitElement {
     css`
       :host {
         --md-elevation-level: 4;
+
+        /* Active state color overrides */
         --md-primary-tab-active-icon-color: var(--md-sys-color-error);
         --md-primary-tab-active-focus-icon-color: var(--md-sys-color-error);
         --md-primary-tab-active-hover-icon-color: var(--md-sys-color-error);
@@ -31,12 +33,14 @@ export class NavComponent extends LitElement {
           --md-sys-color-error
         );
 
+        /* Indicator overrides */
         --md-primary-tab-active-indicator-color: var(--md-sys-color-error);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: var(
           --md-sys-shape-corner-medium
         );
 
+        /* Container overrides */
         --md-primary-tab-container-color: var(
           --md-sys-color-surface-container-high
         );
@@ -55,14 +59,30 @@ export class NavComponent extends LitElement {
           --md-sys-shape-corner-extra-small
         );
 
+        /* Inactive/Default state overrides */
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
-
+        --md-primary-tab-icon-size: 2rem;
         --md-primary-tab-label-font: var(--md-ref-typeface-brand);
         --md-primary-tab-label-text-color: var(--md-sys-color-primary);
 
         --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
 
         --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
+      }
+
+      md-icon {
+        /*
+         * We must set the start value for the font variation to ensure that the
+         * transition is interpolated correctly by the browser engine.
+         */
+        font-variation-settings: "FILL" 0;
+        /*
+         * The transition duration and easing curve are synced with the
+         * sliding indicator of the <md-tabs> component.
+         */
+        transition:
+          font-variation-settings 225ms cubic-bezier(0.3, 0, 0, 1),
+          color 225ms cubic-bezier(0.3, 0, 0, 1);
       }
 
       md-icon[filled="true"] {
@@ -82,6 +102,11 @@ export class NavComponent extends LitElement {
     hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
   })
   private _activeRoute: Route = Routes.PROFILE;
+
+  @state()
+  private _inlineIconRoute: Route = Routes.PROFILE;
+
+  #inlineIconTimeout = 0;
 
   #tabsRef: Ref<MdTabs> = createRef();
 
@@ -139,6 +164,13 @@ export class NavComponent extends LitElement {
       // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
         this.#updateTabState(targetIndex);
+
+        window.clearTimeout(this.#inlineIconTimeout);
+        this.#inlineIconTimeout = window.setTimeout(() => {
+          this._inlineIconRoute = route;
+        }, 250);
+      } else {
+        this._inlineIconRoute = route;
       }
     }
   }
@@ -201,12 +233,18 @@ export class NavComponent extends LitElement {
     this._activeTabIndex = index;
     this._activeRoute = route;
     this.#updateTabState(index);
+
+    window.clearTimeout(this.#inlineIconTimeout);
+    this.#inlineIconTimeout = window.setTimeout(() => {
+      this._inlineIconRoute = route;
+    }, 250);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
     this._activeRoute = this.#routes[this._activeTabIndex];
+    this._inlineIconRoute = this.#routes[this._activeTabIndex];
     this.#updateTabState(this._activeTabIndex);
   }
 
@@ -235,7 +273,7 @@ export class NavComponent extends LitElement {
         <md-icon
           slot="icon"
           filled=${this._activeRoute === Routes.CODE}
-          >code</md-icon
+          >code_blocks</md-icon
         >
         Code
       `,
@@ -249,7 +287,7 @@ export class NavComponent extends LitElement {
           aria-controls="panel-${route}"
           .role=${"tab"}
           .hasIcon=${true}
-          .inlineIcon=${this._activeRoute === route}
+          .inlineIcon=${this._inlineIconRoute === route}
         >
           ${mdIconRouteMap[route]}
         </md-primary-tab>
