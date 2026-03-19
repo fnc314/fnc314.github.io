@@ -1,5 +1,5 @@
 import PhotoJson from "@/data/photo.json" with { type: "json" };
-import { ThemeConfig } from "@/types/configs/theme-configs";
+import { type ThemeConfig } from "@/types/configs/theme-configs";
 import { css } from "lit-element";
 
 export const InterThemeConfig: ThemeConfig = {

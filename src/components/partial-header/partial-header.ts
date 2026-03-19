@@ -26,6 +26,7 @@ export class PartialHeader extends LitElement {
           margin-inline: auto;
           margin-block: 1rem;
           color: var(--md-sys-color-on-primary-container);
+          /* font-variant-caps: small-caps; */
         }
       }
     `,

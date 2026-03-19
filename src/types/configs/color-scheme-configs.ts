@@ -1,5 +1,5 @@
 import { MaterialSchemeName } from "@/styles/material-styles";
-import { AppConfigs } from "@/types/configs/app-configs";
+import { type AppConfigs } from "@/types/configs/app-configs";
 import { html } from "lit-element";
 import { nothing, TemplateResult } from "lit-html";
 

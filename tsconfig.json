@@ -52,6 +52,7 @@
       "node",
       "eslint",
       "rollup",
+      "vite/client"
     ],
     "baseUrl": ".",
     "paths": {

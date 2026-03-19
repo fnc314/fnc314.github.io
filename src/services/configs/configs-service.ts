@@ -1,6 +1,6 @@
 import { storageService, StorageService } from "@/services/storage/storage-service";
 import { THEME_CONFIGS } from "@/themes/themes";
-import { AppConfigs, AppConfigsSchemeTheme, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { type AppConfigs, AppConfigsSchemeTheme, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 
 export interface ConfigsService {
   saveConfigs(

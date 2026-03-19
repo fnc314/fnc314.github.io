@@ -4,7 +4,7 @@ import { MdTabs } from "@material/web/tabs/tabs.js";
 import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
-import { hashToRoute, Route, Routes } from "./routes";
+import { hashToRoute, type Route, Routes } from "./routes";
 
 type IndexRoute = { route: Route, index: number };
 

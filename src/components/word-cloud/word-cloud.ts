@@ -1,12 +1,12 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { RenderableWordCloudWord, WordCloudAppearance, WordCloudAppearances, WordCloudGrouping, WordCloudGroupings, WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
+import { RenderableWordCloudWord, type WordCloudAppearance, WordCloudAppearances, type WordCloudGrouping, WordCloudGroupings, type WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
 import { css, html, LitElement, PropertyValues } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";
 
 @customElement("word-cloud")
-export class WordCloud2 extends LitElement {
+export class WordCloud extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -365,6 +365,6 @@ export class WordCloud2 extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "word-cloud": WordCloud2;
+    "word-cloud": WordCloud;
   }
 }

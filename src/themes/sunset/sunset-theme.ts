@@ -1,5 +1,5 @@
 import PhotoJson from "@/data/photo.json" with { type: "json" };
-import { readScheme, ThemeConfig } from "@/types/configs/theme-configs";
+import { readScheme, type ThemeConfig } from "@/types/configs/theme-configs";
 import ThemeJson from "./sunset.material3-expressive-theme.json" with { type: "json" };
 
 export const SunsetThemeConfig: ThemeConfig = {
