@@ -319,7 +319,7 @@ export class ProfilePartial extends LitElement {
             sorting="by-weight"
             appearance="simultaneous"
             delay="150"
-            threshold="0.85"
+            threshold="0.7"
           ></word-cloud>
         </profile-section>
       </article>
