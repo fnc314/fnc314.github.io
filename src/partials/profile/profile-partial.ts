@@ -315,7 +315,9 @@ export class ProfilePartial extends LitElement {
             slot="section-grid-content"
             .words=${words}
             instant-clear
-            .animationStrategy=${"by-category"}
+            grouping="quartile"
+            sorting="none"
+            appearance="sequential"
           ></word-cloud>
         </profile-section>
       </article>

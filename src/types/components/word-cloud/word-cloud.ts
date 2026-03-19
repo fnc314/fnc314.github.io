@@ -12,33 +12,30 @@ export type WeightQuartile = `${"first" | "second" | "third" | "fourth"}-quartil
 
 export type Weights = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
-export const WordCloudAnimationStrategies = {
-  /** The order in which words are animated into view is determined by the order in the randomized array */
+export const WordCloudGroupings = {
+  CATEGORY: "category" as const,
+  QUARTILE: "quartile" as const,
+  UNGROUPED: "ungrouped" as const,
+} as const;
+
+export type WordCloudGrouping = (typeof WordCloudGroupings)[keyof typeof WordCloudGroupings];
+
+export const WordCloudSortings = {
+  BY_WEIGHT: "by-weight" as const,
+  BY_WEIGHT_REVERSED: "by-weight-reversed" as const,
+  BY_ALPHABET: "by-alphabet" as const,
+  BY_ALPHABET_REVERSED: "by-alphabet-reversed" as const,
+  NONE: "none" as const,
+} as const;
+
+export type WordCloudSorting = (typeof WordCloudSortings)[keyof typeof WordCloudSortings];
+
+export const WordCloudAppearances = {
+  SIMULTANEOUS: "simultaneous" as const,
   SEQUENTIAL: "sequential" as const,
-  /** Elements are animated in order of their quartile, starting with the 4th. Elements within a quartile are displayed by index in randomized array */
-  BY_QUARTILE: "by-quartile" as const,
-  /** The same as `by-quartile` but starts with 1st quartile (i.e. largest) first. */
-  BY_QUARTILE_REVERSED: "by-quartile-reversed" as const,
-  /** The same as `by-quartile`, but the entries in each quartile are themselves sorted. This does *NOT* use the randomized array. */
-  BY_QUARTILE_SORTED: "by-quartile-sorted" as const,
-  /** Displays the entries by the alphabetical order of the categories. Display order within a given category is done highest weight to loweset. */
-  BY_CATEGORY: "by-category" as const,
 } as const;
 
-export type WordCloudAnimationStrategy =
-  (typeof WordCloudAnimationStrategies)[keyof typeof WordCloudAnimationStrategies];
-
-export const WordCloudRotationStrategies = {
-  /** Words are aligned horizontally like bricks. */
-  BRICK: "brick" as const,
-  /** Words are randomly rotated. */
-  ROTATED: "rotated" as const,
-  /** Words are rotated based on their weight, tending towards 45 degrees. */
-  ROTATION_WEIGHTED: "rotation-weighted" as const,
-} as const;
-
-export type WordCloudRotationStrategy =
-  (typeof WordCloudRotationStrategies)[keyof typeof WordCloudRotationStrategies];
+export type WordCloudAppearance = (typeof WordCloudAppearances)[keyof typeof WordCloudAppearances];
 
 /** A factory function to create a {@link WordCloudWord} */
 export const makeWordCloudWord = (
@@ -72,6 +69,5 @@ export const makeWordCloudWord = (
 });
 
 export type RenderableWordCloudWord = WordCloudWord & {
-  rotation?: number;
   delay?: number;
 };

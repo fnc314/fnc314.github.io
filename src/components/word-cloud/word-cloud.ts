@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { RenderableWordCloudWord, WeightQuartile, WordCloudAnimationStrategies, WordCloudAnimationStrategy, WordCloudRotationStrategies, WordCloudRotationStrategy, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
+import { RenderableWordCloudWord, WeightQuartile, WordCloudAppearance, WordCloudAppearances, WordCloudGrouping, WordCloudGroupings, WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
 import { css, html, LitElement } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
@@ -54,6 +54,7 @@ export class WordCloud2 extends LitElement {
       /* Animation Active State (base styles, transforms applied inline) */
       ul.visible li {
         opacity: 1;
+        transform: scale(1) translateY(0);
       }
 
       ul.instant-clear:not(.visible) li {
@@ -142,6 +143,10 @@ export class WordCloud2 extends LitElement {
     `,
   ];
 
+  /**
+   * The externally provided set of {@link WordCloudWord}s to render into
+   *   the cloud.
+   */
   @property({ type: Array, attribute: "words", hasChanged: () => true })
   words: WordCloudWord[] = [];
 
@@ -153,12 +158,16 @@ export class WordCloud2 extends LitElement {
   instantClear = false;
 
   /** Controls the order in which words are animated/displayed. */
-  @property({ attribute: "animation-strategy" })
-  animationStrategy: WordCloudAnimationStrategy = WordCloudAnimationStrategies.SEQUENTIAL;
+  @property({ attribute: "appearance" })
+  appearance: WordCloudAppearance = WordCloudAppearances.SEQUENTIAL;
 
-  /** Controls the rotation of the displayed words. */
-  @property({ attribute: "rotation-strategy" })
-  rotationStrategy: WordCloudRotationStrategy = WordCloudRotationStrategies.BRICK;
+  /** Controls how words are grouped together. */
+  @property({ attribute: "grouping" })
+  grouping: WordCloudGrouping = WordCloudGroupings.UNGROUPED;
+
+  /** Controls how words are sorted within their groupings. */
+  @property({ attribute: "sorting" })
+  sorting: WordCloudSorting = WordCloudSortings.NONE;
 
   @state({
     hasChanged: () => true,
@@ -175,7 +184,7 @@ export class WordCloud2 extends LitElement {
 
   override connectedCallback(): void {
     super.connectedCallback();
-    this._processWords();
+    this._sortedWords = this._processWords();
   }
 
   override firstUpdated() {
@@ -184,8 +193,8 @@ export class WordCloud2 extends LitElement {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             if (!this._isVisible) {
-              // Shuffle arrangement on re-entry
-              this._processWords();
+              // Shuffle arrangement on re-entry if unsorted
+              this._sortedWords = this._processWords();
               this._isVisible = true;
             }
           } else {
@@ -206,87 +215,101 @@ export class WordCloud2 extends LitElement {
     this._intersectionObserver?.disconnect();
   }
 
-  private _processWords() {
+  private _processWords(): RenderableWordCloudWord[] {
     // 1. Layout: Always Randomize
     const processed: RenderableWordCloudWord[] = this.words
       .map((w) => ({ ...w }))
       .sort(() => Math.random() - 0.5);
 
-    // 2. Animation: Determine Sequence (Delay)
-    const animationOrder: RenderableWordCloudWord[] = [...processed];
+    // 2. Determine groups
+    let groups: RenderableWordCloudWord[][] = [];
 
-    switch (this.animationStrategy) {
-      case WordCloudAnimationStrategies.SEQUENTIAL:
-        // Use random order (as layout)
-        break;
-
-      case WordCloudAnimationStrategies.BY_QUARTILE:
-        // Randomized first, then stable sort by quartile
-        animationOrder.sort(this._sortByQuartileAscending);
-        break;
-
-      case WordCloudAnimationStrategies.BY_QUARTILE_REVERSED:
-        // Randomized first, then stable sort by quartile reversed
-        animationOrder.sort(this._sortByQuartileDescending);
-        break;
-
-      case WordCloudAnimationStrategies.BY_QUARTILE_SORTED:
-        // Deterministic sort: Quartile Ascending -> Word Alphabetical
-        animationOrder.sort((a, b) => {
-          const quartileDiff =
-            this._getQuartileRank(a.quartile) -
-            this._getQuartileRank(b.quartile);
-          if (quartileDiff !== 0) return quartileDiff;
-          return a.word.localeCompare(b.word);
+    switch (this.grouping) {
+      case WordCloudGroupings.CATEGORY:
+        // Group by category, typically want consistent order for categories
+        // e.g. alphabetical or specific order. Let's do alphabetical.
+        const catMap = new Map<string, RenderableWordCloudWord[]>();
+        randomized.forEach((w) => {
+          if (!catMap.has(w.category)) catMap.set(w.category, []);
+          catMap.get(w.category)!.push(w);
         });
+        // Sort keys to ensure stable group order
+        const catKeys = Array.from(catMap.keys()).sort();
+        groups = catKeys.map((k) => catMap.get(k)!);
         break;
 
-      case WordCloudAnimationStrategies.BY_CATEGORY:
-        // Deterministic sort: Category Alphabetical -> Weight Descending
-        animationOrder.sort((a, b) => {
-          const catDiff = a.category.localeCompare(b.category);
-          if (catDiff !== 0) return catDiff;
-          // Weight is number | Weights. Assume number comparison.
-          return (b.weight as number) - (a.weight as number);
-        });
+      case WordCloudGroupings.QUARTILE:
+        // Fixed order: 1st, 2nd, 3rd, 4th
+        const q1 = randomized.filter((w) => w.quartile === "first-quartile");
+        const q2 = randomized.filter((w) => w.quartile === "second-quartile");
+        const q3 = randomized.filter((w) => w.quartile === "third-quartile");
+        const q4 = randomized.filter((w) => w.quartile === "fourth-quartile");
+        groups = [q1, q2, q3, q4];
+        break;
+
+      case WordCloudGroupings.UNGROUPED:
+      default:
+        groups = [randomized];
         break;
     }
 
-    // Assign delays based on animation order
-    animationOrder.forEach((w, i) => {
-      w.delay = i * 50;
+    // 3. Sort within groups
+    const sortFn = this._getSortFunction();
+    if (sortFn) {
+      groups.forEach((group) => group.sort(sortFn));
+    }
+
+    // 4. Calculate delays
+    let currentDelay = 0;
+    const GROUP_DELAY_OFFSET = 300; // Delay between groups if simultaneous
+    const ITEM_DELAY_OFFSET = 50; // Delay between items if sequential
+
+    const processed: RenderableWordCloudWord[] = [];
+
+    groups.forEach((group) => {
+      // If group is empty, skip
+      if (group.length === 0) return;
+
+      group.forEach((word) => {
+        word.delay = currentDelay;
+        if (this.appearance === WordCloudAppearances.SEQUENTIAL) {
+          currentDelay += ITEM_DELAY_OFFSET;
+        }
+      });
+
+      // After a group is processed:
+      if (this.appearance === WordCloudAppearances.SIMULTANEOUS) {
+        // All items in this group appeared at currentDelay.
+        // Bump delay for the next group.
+        currentDelay += GROUP_DELAY_OFFSET;
+      } else {
+        // SEQUENTIAL: currentDelay is already at the end of this group's items.
+        // No extra bump needed usually, or maybe a small one?
+        // Let's just let it flow naturally.
+      }
+
+      processed.push(...group);
     });
 
-    // 3. Apply Rotation if needed
-    switch (this.rotationStrategy) {
-      case WordCloudRotationStrategies.ROTATED:
-        processed.forEach((w) => {
-          w.rotation = Math.floor(Math.random() * 60) - 30; // -30 to 30 degrees
-        });
-        break;
-      case WordCloudRotationStrategies.ROTATION_WEIGHTED:
-        processed.forEach((w) => {
-          const x = ((w.weight as number) / 10) * 45;
-          let rotation: number;
+    return processed;
+  }
 
-          if (x > 45) {
-            rotation = 45 - (x - 45);
-          } else if (x < 45) {
-            rotation = x;
-          } else {
-            // x === 45: flip a coin
-            rotation = Math.random() > 0.5 ? x : 45 - (x - 45);
-          }
-          w.rotation = Math.random() > 0.5 ? rotation : -rotation;
-        });
-        break;
+  private _getSortFunction():
+    | ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)
+    | undefined {
+    switch (this.sorting) {
+      case WordCloudSortings.BY_WEIGHT:
+        return (a, b) => (a.weight as number) - (b.weight as number);
+      case WordCloudSortings.BY_WEIGHT_REVERSED:
+        return (a, b) => (b.weight as number) - (a.weight as number);
+      case WordCloudSortings.BY_ALPHABET:
+        return (a, b) => a.word.localeCompare(b.word);
+      case WordCloudSortings.BY_ALPHABET_REVERSED:
+        return (a, b) => b.word.localeCompare(a.word);
+      case WordCloudSortings.NONE:
       default:
-        processed.forEach((w) => {
-          w.rotation = 0;
-        });
+        return undefined;
     }
-
-    this._sortedWords = processed;
   }
 
   private _getQuartileRank(q: WeightQuartile): number {
@@ -298,12 +321,6 @@ export class WordCloud2 extends LitElement {
     }
     return 0;
   }
-
-  private _sortByQuartileAscending = (a: WordCloudWord, b: WordCloudWord) =>
-    this._getQuartileRank(a.quartile) - this._getQuartileRank(b.quartile);
-
-  private _sortByQuartileDescending = (a: WordCloudWord, b: WordCloudWord) =>
-    this._getQuartileRank(b.quartile) - this._getQuartileRank(a.quartile);
 
   override render() {
     const ulClasses = {
@@ -324,16 +341,8 @@ export class WordCloud2 extends LitElement {
             "fourth-quartile": word.quartile === "fourth-quartile",
           };
 
-          const rotation = word.rotation || 0;
-
           const styles = {
             transitionDelay: `${word.delay}ms`,
-            // Apply rotation to both states, but change scale/translate for entrance effect
-            transform: this._isVisible
-              ? `scale(1) translateY(0) rotate(${rotation}deg)`
-              : `scale(0.8) translateY(10px) rotate(${rotation}deg)`,
-            // Explicitly set opacity for styleMap control if needed, though CSS handles 0->1
-            opacity: this._isVisible ? "1" : "0",
           };
 
           return html`
