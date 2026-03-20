@@ -1,15 +1,14 @@
-import PhotoJson from "@/data/photo.json" with { type: "json" };
-import { readScheme, type ThemeConfig } from "@/types/configs/theme-configs";
-import ThemeJson from "./red.material3-expressive-theme.json" with { type: "json" };
+import { PhotoJsonFile, readScheme, type ThemeConfig } from "@/types/configs/theme-configs";
+import JsonTheme from "./red.material3-expressive-theme.json" with { type: "json" };
 
 export const RedThemeConfig: ThemeConfig = {
-  themePhoto: PhotoJson.red,
+  themePhoto: PhotoJsonFile.red,
   materialSchemes: {
-    light: readScheme(ThemeJson.schemes.light),
-    lightMediumContrast: readScheme(ThemeJson.schemes["light-medium-contrast"]),
-    lightHighContrast: readScheme(ThemeJson.schemes["light-high-contrast"]),
-    dark: readScheme(ThemeJson.schemes.dark),
-    darkMediumContrast: readScheme(ThemeJson.schemes["dark-medium-contrast"]),
-    darkHighContrast: readScheme(ThemeJson.schemes["dark-high-contrast"]),
+    light: readScheme(JsonTheme.schemes.light),
+    lightMediumContrast: readScheme(JsonTheme.schemes["light-medium-contrast"]),
+    lightHighContrast: readScheme(JsonTheme.schemes["light-high-contrast"]),
+    dark: readScheme(JsonTheme.schemes.dark),
+    darkMediumContrast: readScheme(JsonTheme.schemes["dark-medium-contrast"]),
+    darkHighContrast: readScheme(JsonTheme.schemes["dark-high-contrast"]),
   }
 };

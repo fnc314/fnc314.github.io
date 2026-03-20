@@ -47,7 +47,7 @@ export default {
     versionInjector({
       injectInComments: false,
       injectInTags: {
-        dateFormat: "dddd, mmmm dS, yyyy, h:MM:ss TT"
+        dateFormat: "yyyy-mm-dd @ HH:MM:ss"
       },
       packageJson: "./package.json",
       logger: console,

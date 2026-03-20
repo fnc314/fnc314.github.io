@@ -62,6 +62,13 @@ export class ConnectDialog extends LitElement {
             margin-block: 0.25rem;
           }
         }
+
+        [slot="actions"] {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
       }
 
       .connect-content {
@@ -228,6 +235,9 @@ export class ConnectDialog extends LitElement {
           }
         </div>
         <div slot="actions">
+          <p class="md-typescale-body-small">
+            ${"[VI]Version: {version}[/VI]"}<br>${"[VI]Build Date: {date}[/VI]"}
+          </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>
       </md-dialog>
