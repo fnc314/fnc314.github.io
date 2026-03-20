@@ -14,6 +14,9 @@ export class NavComponent extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        --nav-component-icon-animation: 225ms;
+        --nav-component-icon-animation-reduced: 1ms;
+
         --md-elevation-level: 4;
 
         /* Active state color overrides */
@@ -81,8 +84,14 @@ export class NavComponent extends LitElement {
          * sliding indicator of the <md-tabs> component.
          */
         transition:
-          font-variation-settings 225ms cubic-bezier(0.3, 0, 0, 1),
-          color 225ms cubic-bezier(0.3, 0, 0, 1);
+          font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
+          color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
+
+        @media (prefers-reduced-motion: reduce) {
+          transition:
+            font-variation-settings var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1),
+            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1);
+        }
       }
 
       md-icon[filled="true"] {

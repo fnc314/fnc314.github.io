@@ -3,8 +3,10 @@ import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
+import url from "@rollup/plugin-url";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
+import buildStatistics from "rollup-plugin-build-statistics";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
@@ -14,7 +16,7 @@ const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
 
 /**
  * @type RollupOptions
- * @type @import("rollup").RollupOptions
+ * @type {@import("rollup").RollupOptions}
  * @satisfies RollupOptions
  */
 export default {
@@ -29,6 +31,10 @@ export default {
     interop: "auto",
   },
   plugins: [
+    url({
+      include: [ "node_modules/material-symbols/**/*.woff2" ],
+      limit: Infinity,
+    }),
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",
@@ -47,7 +53,11 @@ export default {
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
     }),
     copy({
-      patterns: ["assets/**/**/*.{jpg,svg,png}"],
+      patterns: ["assets/images/themes/**/*.{jpg,png}"],
+      rootDir: "./",
+    }),
+    copy({
+      patterns: ["assets/icons/**/**/*.svg"],
       rootDir: "./",
     }),
     copy({
@@ -93,6 +103,9 @@ export default {
       showBrotliSize: true,
       showGzippedSize: true,
       showMinifiedSize: true,
+    }),
+    buildStatistics({
+      projectName: "fnc314.com"
     }),
     progress({
       clearLine: false,

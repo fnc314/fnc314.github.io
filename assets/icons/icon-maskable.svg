@@ -18,7 +18,7 @@
       .icon-text {
         font-family: -apple-system, Roboto, monospace;
         font-weight: 700;
-        font-size: 370%;
+        font-size: 375%;
         text-rendering: optimizeLegibility;
         text-anchor: middle;
         dominant-baseline: central;

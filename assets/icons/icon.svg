@@ -32,7 +32,7 @@
         .icon-text {
           font-family: -apple-system, Roboto, monospace;
           font-weight: 700;
-          font-size: clamp(7.5vh, 8vh, 9.5vh);
+          font-size: 375%;
           text-rendering: optimizeLegibility;
           text-anchor: middle;
           dominant-baseline: central;

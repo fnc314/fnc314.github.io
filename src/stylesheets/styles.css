@@ -1,28 +1,13 @@
+@import "./material-overrides.css";
+@import "./material-symbols.css";
+
 :root {
-  --md-ref-typeface-brand: monospace;
-  --md-ref-typeface-plain: Roboto, sans-serif;
-
-  --md-sys-shape-corner-extra-large: 2rem;
-  --md-sys-shape-corner-extra-small: 0.25rem;
-  --md-sys-shape-corner-full: 100%;
-  --md-sys-shape-corner-large: 1.5rem;
-  --md-sys-shape-corner-medium: 1rem;
-  --md-sys-shape-corner-none: 0;
-  --md-sys-shape-corner-small: 0.5rem;
-
   color-scheme: light dark;
-
   --icon-fill-color: #c12a1c;
-
   --breakpoint-compact-width-max: 600px;
   --breakpoint-medium-width-max: 900px;
   --breakpoint-large-width-max: 1200px;
   --breakpoint-expanded-width-max: 1500px;
-
-  --md-icon-size: 24px;
-  --md-icon-font: "Material Symbols Outlined";
-  --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
-  --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
 }
 
 * {
