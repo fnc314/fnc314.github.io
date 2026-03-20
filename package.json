@@ -1,8 +1,9 @@
 {
-  "name": "com.fnc314.homepage",
+  "name": "com.fnc314.website",
   "version": "1.0.0",
-  "description": "Homepage for fnc314.com",
+  "description": "Website for Franco N. Colaizzi - fnc314.com",
   "keywords": [
+    "website",
     "homepage",
     "fnc314"
   ],
@@ -107,9 +108,12 @@
     "rimraf": "^6.1.3",
     "rollup": "^4.59.0",
     "rollup-plugin-build-statistics": "^0.0.19",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-manifest-json": "^1.7.0",
     "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-summary": "^3.0.1",
     "rollup-plugin-typescript-paths": "^1.5.0",
+    "rollup-plugin-version-injector": "^1.3.3",
     "ts-lit-plugin": "^2.0.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.0",

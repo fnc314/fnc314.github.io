@@ -41,6 +41,7 @@ export class ProfilePartial extends LitElement {
       }
 
       .education-list-grid {
+        place-self: center;
         display: flex;
         flex-direction: column;
         padding: unset;
@@ -147,13 +148,19 @@ export class ProfilePartial extends LitElement {
 
       @media screen and (min-width: 600px) {
         .education-list-grid {
+          place-self: stretch;
           .education-list-grid-item {
             grid-template-rows: repeat(2, 1fr);
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.25rem;
+            gap: 0.5rem;
 
             span:nth-child(2n - 1) {
               justify-self: flex-end;
+              text-align: end;
+              border-inline-end: 0.1rem solid currentColor;
+              border-block-end: 0.1rem solid currentColor;
+              padding-inline: 0.5rem 0.25rem;
+              padding-block-end: 0.25rem;
             }
           }
         }

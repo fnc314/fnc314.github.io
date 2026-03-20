@@ -3,13 +3,14 @@ import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
-import url from "@rollup/plugin-url";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import buildStatistics from "rollup-plugin-build-statistics";
+import clear from "rollup-plugin-clear";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
+import versionInjector from "rollup-plugin-version-injector";
 
 const isDev = process.env.NODE_ENV === "development";
 const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
@@ -31,10 +32,37 @@ export default {
     interop: "auto",
   },
   plugins: [
-    url({
-      include: [ "node_modules/material-symbols/**/*.woff2" ],
-      limit: Infinity,
+    clear({
+      targets: ["./website"],
+      watch: isDev,
     }),
+    // url({
+    //   include: [ "**/*.woff2" ],
+    //   sourceDir: "node_modules/material-symbols",
+    //   destDir: "./website/assets",
+    //   fileName: "[name][hash][extname]",
+    //   limit: 0,
+    //   publicPath: "./website/assets"
+    // }),
+    versionInjector({
+      injectInComments: false,
+      injectInTags: {
+        dateFormat: "dddd, mmmm dS, yyyy, h:MM:ss TT"
+      },
+      packageJson: "./package.json",
+      logger: console,
+      logLevel: isDev ? "log" : "error",
+      exclude: [],
+    }),
+    // manifestJSON({
+    //   input: `./assets/${manifestJson}`,
+    //   minify: !isDev,
+    //   output: `./assets/${manifestJson}`,
+    //   manifest: {
+    //     name: "fnc314.com",
+    //     short_name: "fnc314.com",
+    //   }
+    // }),
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",

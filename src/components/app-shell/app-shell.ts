@@ -116,6 +116,8 @@ export class AppShell extends LitElement {
   @state()
   private connectFabConfig: FabConfig = this.appConfigs.fab.connect;
 
+  // private versionedBuildDate: string = "[VI]Version: {version} | Build Date: {date}[/VI]";
+
   private onFabChangeBind = this.onFabChange.bind(this);
 
   private onFabChange(
