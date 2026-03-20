@@ -42,7 +42,7 @@ export class WordCloud extends LitElement {
       li {
         border-radius: var(--md-sys-shape-corner-small);
         border-color: currentColor;
-        border-width: 1px;
+        border-width: var(--hairline-width);
         border-style: solid;
         font-family: var(--md-ref-typeface-brand);
         padding: 0.3rem 0.7rem;

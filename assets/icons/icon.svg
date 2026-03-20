@@ -74,8 +74,9 @@
       lengthAdjust="spacingAndGlyphs"
       textLength="75%"
       method="align"
+      letter-spacing="5"
       >
-      fnc314
+      FNC314
     </textPath>
   </text>
 

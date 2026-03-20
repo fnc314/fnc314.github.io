@@ -152,7 +152,7 @@ export class ConfigsDialog extends LitElement {
           z-index: 0;
           border-radius: 1rem;
           border-color: var(--md-sys-color-on-secondary-container);
-          border-width: 1px;
+          border-width: var(--hairline-width);
           border-style: solid;
           margin-block-start: 0.5rem;
           display: inline-flex;

@@ -68,6 +68,14 @@ export class ConnectDialog extends LitElement {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          border-block-start-width: var(--hairline-width);
+          border-block-start-color: var(--md-sys-color-primary);
+          border-block-start-style: solid;
+
+          p {
+            color: var(--md-sys-color-on-surface-variant);
+            font-family: var(--md-ref-typeface-brand);
+          }
         }
       }
 
@@ -182,8 +190,17 @@ export class ConnectDialog extends LitElement {
   @query("#connect-dialog")
   private _mdDialog!: MdDialog;
 
+  private date: string = "[VI]{date}[/VI]".split(" @ ").at(0)!;
+  private time: string = "[VI]{date}[/VI]".split(" @ ").at(1)!;
+  private version: string = "[VI]{version}[/VI]";
+
   showDialog(): Promise<void> {
-    return this._mdDialog.show();
+    return this._mdDialog.show().then(() => {
+      const dialogContainer = this._mdDialog.shadowRoot?.querySelector("div.container");
+      if (dialogContainer instanceof HTMLDivElement) {
+        dialogContainer.style.border = "var(--hairline-width) solid var(--md-sys-color-primary)";
+      }
+    });
   }
 
   #rederConnections(connection: typeof Connections.connections[number]): TemplateResult {
@@ -236,7 +253,7 @@ export class ConnectDialog extends LitElement {
         </div>
         <div slot="actions">
           <p class="md-typescale-body-small">
-            ${"[VI]Version: {version}[/VI]"}<br>${"[VI]Build Date: {date}[/VI]"}
+            ${`Version: ${this.version}`}&nbsp;|&nbsp;${`Date: ${this.date}`}&nbsp;|&nbsp;${`Time: ${this.time}`}
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>

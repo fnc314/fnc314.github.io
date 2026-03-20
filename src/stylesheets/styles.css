@@ -3,6 +3,7 @@
 
 :root {
   color-scheme: light dark;
+  --hairline-width: 1px;
   --icon-fill-color: #c12a1c;
   --breakpoint-compact-width-max: 600px;
   --breakpoint-medium-width-max: 900px;

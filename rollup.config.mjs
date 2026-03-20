@@ -75,25 +75,31 @@ export default {
         (html, args) =>
           html.replace(
             "<head>",
-            `<head><link rel="manifest" href="./assets/${manifestJson}" />`,
+            `<head>
+              <meta charset="utf-8" />
+              <link rel="manifest" href="./assets/${manifestJson}" />
+            `,
           ),
       ],
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
     }),
     copy({
-      patterns: ["assets/images/themes/**/*.{jpg,png}"],
+      patterns: ["assets\/images\/themes\/**\/*.{jpg,png}"],
       rootDir: "./",
     }),
     copy({
-      patterns: ["assets/icons/**/**/*.svg"],
+      patterns: [
+        "assets\/icons\/brand\/*.svg",
+        "assets\/icons\/shortcuts\/**\/icon-filled-512.{svg,png}"
+      ],
       rootDir: "./",
     }),
     copy({
-      patterns: ["files/**/*.pdf"],
+      patterns: ["files\/**\/*.pdf"],
       rootDir: "./assets",
     }),
     copy({
-      patterns: [isDev ? "assets/manifest.dev.json" : "assets/manifest.json"],
+      patterns: [isDev ? "assets\/manifest.dev.json" : "assets\/manifest.json"],
       rootDir: "./",
     }),
     json({

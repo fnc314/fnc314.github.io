@@ -1,6 +1,7 @@
 :root {
   --md-ref-typeface-brand: monospace;
   --md-ref-typeface-plain: Roboto, sans-serif;
+
   --md-ref-typeface-weight-regular: 400;
   --md-ref-typeface-weight-medium: 500;
   --md-ref-typeface-weight-bold: 700;
@@ -76,7 +77,7 @@
   --md-sys-shape-corner-none: 0;
   --md-sys-shape-corner-small: 0.5rem;
 
-  --md-icon-size: 24px;
+  --md-icon-size: 1.5rem;
   --md-icon-font: "Material Symbols Outlined";
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);

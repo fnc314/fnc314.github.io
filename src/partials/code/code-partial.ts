@@ -16,6 +16,9 @@ export class CodePartial extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        --code-partial-animation: 100ms;
+        --code-partial-animation-reduced: 0ms;
+
         display: block;
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
@@ -27,7 +30,6 @@ export class CodePartial extends LitElement {
         min-height: 100%;
         display: grid;
         grid-template-rows: min-content auto;
-        --md-elevation-level: 4;
         gap: 1rem;
         padding-inline: 1rem;
       }
@@ -41,6 +43,7 @@ export class CodePartial extends LitElement {
         grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
         grid-auto-rows: 1fr;
         gap: 1rem;
+        padding-block-end: 1rem;
       }
 
       .code-widget {
@@ -58,10 +61,10 @@ export class CodePartial extends LitElement {
         background: var(--md-sys-color-surface-container-low);
         --md-elevation-level: 2;
         transition:
-          transform 0.1s ease-in-out,
-          background-color 0.1s ease-in-out,
-          --md-elevation-level 0.1s ease-in-out,
-          border-radius 0.1s ease-in-out;
+          transform var(--code-partial-animation) ease-in-out,
+          background-color var(--code-partial-animation) ease-in-out,
+          --md-elevation-level var(--code-partial-animation) ease-in-out,
+          border-radius var(--code-partial-animation) ease-in-out;
 
         * > {
           overflow-wrap: anywhere;
@@ -127,11 +130,11 @@ export class CodePartial extends LitElement {
             padding: 0.25rem 1rem;
             border-radius: var(--md-sys-shape-corner-extra-small);
             transition:
-              transform 0.1s ease-in-out,
-              background-color 0.1s ease-in-out,
-              color 0.1s ease-in-out,
-              outline 0.1s ease-in-out,
-              border-radius 0.1s ease-in-out;
+              transform var(--code-partial-animation) ease-in-out,
+              background-color var(--code-partial-animation) ease-in-out,
+              color var(--code-partial-animation) ease-in-out,
+              outline var(--code-partial-animation) ease-in-out,
+              border-radius var(--code-partial-animation) ease-in-out;
 
             &:where(:focus-within, a:focused, :hover, a:hover) {
               transform: translateY(-4px);
@@ -157,6 +160,15 @@ export class CodePartial extends LitElement {
         display: inline;
         white-space: pre-wrap;
         word-wrap: break-word;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .code-widget {
+          transition: all var(--code-partial-animation-reduced) ease-in-out;
+        }
+        .tech-stack li {
+          transition: all var(--code-partial-animation-reduced) ease-in-out;
+        }
       }
     `,
   ];

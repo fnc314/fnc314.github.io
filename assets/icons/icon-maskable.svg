@@ -18,7 +18,7 @@
       .icon-text {
         font-family: -apple-system, Roboto, monospace;
         font-weight: 700;
-        font-size: 375%;
+        font-size: 350%;
         text-rendering: optimizeLegibility;
         text-anchor: middle;
         dominant-baseline: central;
@@ -39,7 +39,7 @@
   <use href="#hexagon-half" fill="#c12a1c" fill-rule="evenodd" id="use4" />
   <text class="icon-text" fill="#c12a1c" fill-rule="evenodd" id="text4">
     <textPath href="#text-curve" startOffset="50%" id="textPath4">
-      fnc314
+      FNC314
     </textPath>
   </text>
   <use href="#hexagon-half" class="rotated-hexagon-half" fill="#c12a1c" fill-rule="evenodd"

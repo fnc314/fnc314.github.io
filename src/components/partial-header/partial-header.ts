@@ -39,6 +39,7 @@ export class PartialHeader extends LitElement {
   override render() {
     return html`
       <header>
+        <md-elevation></md-elevation>
         <h1 class="md-typescale-display-large">${this.headingText}</h1>
       </header>
     `;
