@@ -114,7 +114,7 @@ export default {
       ],
       include: [
         "./src/data/*.json",
-        "./src/themes/**/*.json",
+        "./src/theme/**/*.json",
       ],
     }),
     typescript({

@@ -16,10 +16,10 @@ import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "./components/index.js";
 import "./partials/index.js";
-import { appConfigsSchemeTheme, configsService } from "./services/configs/index.js";
+import { appConfigsThemeConfig, configsService } from "./services/configs/index.js";
 import "./services/index.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
-import "./themes/themes.js";
+import "./theme/theme.js";
 import { Routes } from "./types/components/nav/routes.js";
 import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
@@ -42,7 +42,7 @@ const domLoadedListener = (event) => {
     )
   }
 
-  const matScheme = appConfigsSchemeTheme()
+  const matScheme = appConfigsThemeConfig()
     .materialSchemes[
       colorSchemeConfigsToMaterialSchemeName(
         configsService.loadConfigs().colorScheme

@@ -1,12 +1,12 @@
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { appConfigsSchemeTheme } from "@/services/configs";
+import { appConfigsThemeConfig } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { THEME_CONFIGS } from "@/themes/themes";
+import { THEME_CONFIGS } from "@/theme/theme";
 import { makeWordCloudWord, WordCloudWordCategory } from "@/types/components/word-cloud/word-cloud";
 import { ColorSchemeConfigChange } from "@/types/configs/color-scheme-configs";
-import { type ThemeConfig } from "@/types/configs/theme-configs";
+import { type ThemeConfig } from "@/types/theme/theme";
 import { css, html, LitElement } from "lit-element";
 import { customElement, state } from "lit/decorators.js";
 
@@ -211,7 +211,7 @@ export class ProfilePartial extends LitElement {
   ];
 
   @state()
-  private themeConfig: ThemeConfig = appConfigsSchemeTheme();
+  private themeConfig: ThemeConfig = appConfigsThemeConfig();
 
   private onColorConfigsChange = ((event: ColorSchemeConfigChange) => {
     this.themeConfig = THEME_CONFIGS[event.detail.theme];
@@ -252,7 +252,6 @@ export class ProfilePartial extends LitElement {
         <partial-header
           .headingText=${"Franco N. Colaizzi"}>
         </partial-header>
-
 
           <figure class="figure">
             <picture>

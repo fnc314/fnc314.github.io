@@ -1,6 +1,6 @@
 import { storageService, StorageService } from "@/services/storage/storage-service";
-import { THEME_CONFIGS } from "@/themes/themes";
-import { type AppConfigs, AppConfigsSchemeTheme, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { THEME_CONFIGS } from "@/theme/theme";
+import { type AppConfigs, type AppConfigsSchemeTheme, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 
 export interface ConfigsService {
   saveConfigs(
@@ -60,5 +60,5 @@ export const configsService: ConfigsService = new ConfigsServiceImpl(
   storageService
 );
 
-export const appConfigsSchemeTheme: AppConfigsSchemeTheme = () =>
+export const appConfigsThemeConfig: AppConfigsSchemeTheme = () =>
   THEME_CONFIGS[configsService.loadConfigs().colorScheme.theme]

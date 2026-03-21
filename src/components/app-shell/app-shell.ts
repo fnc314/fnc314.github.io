@@ -1,6 +1,6 @@
 import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
-import { appConfigsSchemeTheme, configsService } from "@/services/configs";
+import { appConfigsThemeConfig, configsService } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
@@ -177,16 +177,19 @@ export class AppShell extends LitElement {
       { fab: this.connectFab, config: this.connectFabConfig }
     ].forEach(({ fab, config }) => {
       const label: HTMLSpanElement | null | undefined = fab.shadowRoot?.querySelector("span.label");
-      if (label && config.style !== FAB_STYLE.TEXT_ONLY) {
+      if (label && config.style === FAB_STYLE.ICON_AND_TEXT) {
         label.style.paddingInlineStart = "0.5rem";
       }
     });
   }
 
   private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
+    const themeConfig = appConfigsThemeConfig();
     updateMaterialCSSStyleSheet(
-      appConfigsSchemeTheme().materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
+      themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     )
+    document.getElementById("theme-color-light")?.setAttribute("content", themeConfig.json.light.primary);
+    document.getElementById("theme-color-dark")?.setAttribute("content", themeConfig.json.dark.primary);
   }).bind(this);
 
   override connectedCallback() {

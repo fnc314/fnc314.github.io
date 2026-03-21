@@ -1,8 +1,9 @@
-import { PhotoJsonFile, readScheme, type ThemeConfig } from "@/types/configs/theme-configs";
-import JsonTheme from "./sunset.material3-expressive-theme.json" with { type: "json" };
+import { jsonIsThemeJsonSchemes, PhotoJsonFile, readScheme, ThemeJsonSchemes, type ThemeConfig } from "@/types/theme/theme";
+import JsonTheme from "./red.material3-expressive-theme.json" with { type: "json" };
 
-export const SunsetThemeConfig: ThemeConfig = {
-  themePhoto: PhotoJsonFile.sunset,
+export const RedThemeConfig: ThemeConfig = {
+  themePhoto: PhotoJsonFile.red,
+  json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : {} as ThemeJsonSchemes,
   materialSchemes: {
     light: readScheme(JsonTheme.schemes.light),
     lightMediumContrast: readScheme(JsonTheme.schemes["light-medium-contrast"]),

@@ -1,5 +1,5 @@
-import { appConfigsSchemeTheme, configsService } from "@/services/configs";
-import { THEME_CONFIGS } from "@/themes/themes";
+import { appConfigsThemeConfig, configsService } from "@/services/configs";
+import { THEME_CONFIGS } from "@/theme/theme";
 import { colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/configs/color-scheme-configs";
 import { css, CSSResult } from "lit";
 
@@ -17,7 +17,7 @@ export const onThemeChange = (event: MediaQueryListEvent) => {
   });
 
   updateMaterialCSSStyleSheet(
-    appConfigsSchemeTheme()
+    appConfigsThemeConfig()
       .materialSchemes[
         colorSchemeConfigsToMaterialSchemeName(colorScheme)
       ]

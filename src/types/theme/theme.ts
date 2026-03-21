@@ -57,12 +57,35 @@ export type ColorSchemeRoles =
 export type ColorSubValue = `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`
 export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 
-type ColorScheme = "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
+export type MaterialSchemeNames = "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
 
 export type ThemeJsonSchemes = {
-  [key in ColorScheme]: {
+  [key in MaterialSchemeNames]: {
     [key in ColorSchemeRoles]: `#${string}`
   }
+}
+
+export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
+  if (typeof json !== 'object' || json === null) {
+    return false;
+  }
+
+  const correctKeys = Object.keys(json).every((key) => [
+    "light", "light-medium-contrast", "light-high-contrast", "dark", "dark-medium-contrast", "dark-high-contrast"
+  ].includes(key));
+
+  if (!correctKeys) {
+    return false;
+  }
+
+  const correctValues = Object.values(json).flatMap((value) => Object.values(value)).every((value) => {
+    if (typeof value !== 'string') {
+      return false;
+    }
+    return value.startsWith('#') && value.length === 7;
+  });
+
+  return correctValues;
 }
 
 export type PhotoJson = {
@@ -73,6 +96,7 @@ export type PhotoJson = {
 
 export type ThemeConfig = {
   themePhoto: PhotoJson;
+  json: ThemeJsonSchemes;
   materialSchemes: MaterialScheme
 };
 

@@ -1,12 +1,12 @@
 import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
-import { appConfigsSchemeTheme, configsService } from "@/services/configs";
+import { appConfigsThemeConfig, configsService } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { themeToIcon } from "@/themes/themes";
+import { themeToIcon } from "@/theme/theme";
 import { type AppConfigs, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
 import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, } from "@/types/configs/color-scheme-configs";
 import { type FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs/fab-configs";
-import { THEME_NAMES, ThemeName } from "@/types/configs/theme-configs";
+import { THEME_NAMES, ThemeName } from "@/types/theme/theme";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -335,6 +335,28 @@ export class ConfigsDialog extends LitElement {
   @state()
   private _darkModeEnabled: boolean = false;
 
+  /**
+   * (property) ConfigsDialog._appConfigs: {
+        colorScheme: {
+            name: "DARK" | "LIGHT" | "SYSTEM";
+            contrast: "NORMAL" | "MEDIUM" | "HIGH";
+            persist: boolean;
+        } & {
+            theme: "chicago" | "inter" | "red" | "sunset";
+        };
+        fab: {
+            settings: {
+                position: "START_TOP" | "START_BOTTOM" | "END_TOP" | "END_BOTTOM";
+                style: "ICON_ONLY" | "ICON_AND_TEXT" | "ICON_ONLY_SMALL" | "TEXT_ONLY";
+            };
+            connect: {
+                position: "START_TOP" | "START_BOTTOM" | "END_TOP" | "END_BOTTOM";
+                style: "ICON_ONLY" | "ICON_AND_TEXT" | "ICON_ONLY_SMALL" | "TEXT_ONLY";
+            };
+        };
+    }
+   *
+   */
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
 
@@ -497,7 +519,7 @@ export class ConfigsDialog extends LitElement {
     );
 
     updateMaterialCSSStyleSheet(
-      appConfigsSchemeTheme()
+      appConfigsThemeConfig()
         .materialSchemes[
           colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
         ]

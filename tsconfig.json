@@ -61,7 +61,7 @@
       "@/data": ["./src/data/*"],
       "@/services": ["./src/services/*"],
       "@/styles": ["./src/styles/*"],
-      "@/themes": ["./src/themes/*"],
+      "@/theme": ["./src/theme/*"],
       "@/types": ["./src/types/*"],
     }
   },
