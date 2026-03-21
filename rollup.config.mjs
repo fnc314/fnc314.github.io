@@ -105,13 +105,14 @@ export default {
     json({
       compact: !isDev,
       preferConst: true,
+      namedExports: true,
+      includeArbitraryNames: true,
       exclude: [
-        "./assets/**/*.json",
-        "./src/theme/**.json",
+        "assets/**/*.json",
       ],
       include: [
-        "./website/scripts/partials/**/*.json",
-        "./src/**/**/*.json",
+        "./src/data/*.json",
+        "./src/themes/**/*.json",
       ],
     }),
     typescript({
