@@ -1,5 +1,6 @@
 import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
-import { appConfigsThemeConfig, configsService } from "@/services/configs";
+import { configsService } from "@/services/configs";
+import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
@@ -519,7 +520,7 @@ export class ConfigsDialog extends LitElement {
     );
 
     updateMaterialCSSStyleSheet(
-      appConfigsThemeConfig()
+      themeService.currentThemeConfig()
         .materialSchemes[
           colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
         ]

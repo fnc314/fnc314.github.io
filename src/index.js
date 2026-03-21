@@ -16,8 +16,9 @@ import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "./components/index.js";
 import "./partials/index.js";
-import { appConfigsThemeConfig, configsService } from "./services/configs/index.js";
+import { configsService } from "./services/configs/index.js";
 import "./services/index.js";
+import { themeService } from "./services/index.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import "./theme/theme.js";
 import { Routes } from "./types/components/nav/routes.js";
@@ -42,13 +43,14 @@ const domLoadedListener = (event) => {
     )
   }
 
-  const matScheme = appConfigsThemeConfig()
+  const matScheme = themeService.currentThemeConfig()
     .materialSchemes[
       colorSchemeConfigsToMaterialSchemeName(
         configsService.loadConfigs().colorScheme
       )
     ];
   updateMaterialCSSStyleSheet(matScheme);
+  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.currentThemeConfig().json[themeService.currentMaterialSchemeName()].primary);
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);

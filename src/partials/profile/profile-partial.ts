@@ -1,7 +1,7 @@
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { appConfigsThemeConfig } from "@/services/configs";
+import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { makeWordCloudWord, WordCloudWordCategory } from "@/types/components/word-cloud/word-cloud";
@@ -211,7 +211,7 @@ export class ProfilePartial extends LitElement {
   ];
 
   @state()
-  private themeConfig: ThemeConfig = appConfigsThemeConfig();
+  private themeConfig: ThemeConfig = themeService.currentThemeConfig();
 
   private onColorConfigsChange = ((event: ColorSchemeConfigChange) => {
     this.themeConfig = THEME_CONFIGS[event.detail.theme];

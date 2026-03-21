@@ -1,6 +1,7 @@
 import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
-import { appConfigsThemeConfig, configsService } from "@/services/configs";
+import { configsService } from "@/services/configs";
+import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
@@ -184,12 +185,11 @@ export class AppShell extends LitElement {
   }
 
   private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
-    const themeConfig = appConfigsThemeConfig();
+    const themeConfig = themeService.currentThemeConfig();
     updateMaterialCSSStyleSheet(
       themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     )
-    document.getElementById("theme-color-light")?.setAttribute("content", themeConfig.json.light.primary);
-    document.getElementById("theme-color-dark")?.setAttribute("content", themeConfig.json.dark.primary);
+    document.getElementById("meta-theme-color")?.setAttribute("content", themeConfig.json[themeService.currentMaterialSchemeName()].primary);
   }).bind(this);
 
   override connectedCallback() {
