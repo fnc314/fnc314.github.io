@@ -86,11 +86,9 @@ export class ConnectDialog extends LitElement {
         gap: 1rem;
 
         details {
-          interpolate-size: allow-keywords;
-
           summary {
             cursor: pointer;
-            list-style-type: none;
+            list-style: none;
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -100,13 +98,17 @@ export class ConnectDialog extends LitElement {
             padding-inline: 0.25rem;
             border-radius: var(--md-sys-shape-corner-small);
 
+            &::-webkit-details-marker {
+              display: none;
+            }
+
             h3 {
               display: inline-block;
               font-family: var(--md-ref-typeface-brand);
             }
 
             md-icon {
-              transition: transform 0.2s ease-in-out;
+              transition: transform 0.3s ease-in-out;
               transform: rotate(-90deg);
             }
 
@@ -124,19 +126,22 @@ export class ConnectDialog extends LitElement {
           }
 
           .content-wrapper {
-            display: grid;
+            /* !important needed to override user-agent styles that hide details content immediately */
+            display: grid !important;
             grid-template-rows: 0fr;
+            overflow: hidden;
             opacity: 0;
-            overflow-y: hidden;
+            visibility: hidden;
             transition:
-              display 0.3s allow-discrete,
+              grid-template-rows 0.3s ease-in-out,
               opacity 0.3s ease-in-out,
-              grid-template-rows 0.3s ease-in-out;
+              visibility 0.3s;
           }
 
           &[open] .content-wrapper {
             opacity: 1;
             grid-template-rows: 1fr;
+            visibility: visible;
           }
           &[open] {
 
@@ -147,7 +152,7 @@ export class ConnectDialog extends LitElement {
 
           md-list {
             --md-icon-size: var(--md-list-item-leading-image-width);
-            padding-block: unset;
+            padding-block: 0;
 
             md-list-item {
               [slot="start"] {
@@ -214,9 +219,9 @@ export class ConnectDialog extends LitElement {
               href=${conn.href}
               target="_blank"
               >
-                ${unsafeHTML(conn.html.start)}
-                ${unsafeHTML(conn.html.overline)}
-                ${unsafeHTML(conn.html.text)}
+                ${unsafeHTML(conn.start)}
+                ${unsafeHTML(conn.overline)}
+                ${unsafeHTML(conn.text)}
             </md-list-item>
             <md-divider></md-divider>
           `)

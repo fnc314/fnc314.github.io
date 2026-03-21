@@ -89,6 +89,8 @@ export default {
     }),
     copy({
       patterns: [
+        "assets\/icons\/icon.svg",
+        "assets\/icons\/icon-maskable.svg",
         "assets\/icons\/brand\/*.svg",
         "assets\/icons\/shortcuts\/**\/icon-filled-512.{svg,png}"
       ],

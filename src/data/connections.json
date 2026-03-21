@@ -4,26 +4,16 @@
       "label": "Directly",
       "connections": {
         "phone": {
-          "html": {
-            "start": "<md-icon slot=\"start\">call</md-icon>",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">412-721-9550</span>",
-            "overline": "<span slot=\"overline\">Phone</span>"
-          },
-          "method": "phone",
-          "href": "tel:+14127219550",
-          "text": "412-721-9550",
-          "icon": "<md-icon slot=\"start\">call</md-icon>"
+          "start": "<md-icon slot=\"start\">call</md-icon>",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">412-721-9550</span>",
+          "overline": "<span slot=\"overline\">Phone</span>",
+          "href": "tel:+14127219550"
         },
         "email": {
-          "html": {
-            "start": "<md-icon slot=\"start\">mail</md-icon>",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314@fnc314.com</span>",
-            "overline": "<span slot=\"overline\">Email</span>"
-          },
-          "method": "email",
-          "href": "mailto:fnc314@fnc314.com",
-          "text": "fnc314@fnc314.com",
-          "icon": "<md-icon slot=\"start\">mail</md-icon>"
+          "start": "<md-icon slot=\"start\">mail</md-icon>",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314@fnc314.com</span>",
+          "overline": "<span slot=\"overline\">Email</span>",
+          "href": "mailto:fnc314@fnc314.com"
         }
       }
     },
@@ -31,26 +21,16 @@
       "label": "Socially",
       "connections": {
         "linkedin": {
-          "html": {
-            "start": "<img role=\"img\" alt=\"LinkedIn logo\" slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">linkedin.com/in/fnc314</span>",
-            "overline": "<span slot=\"overline\">LinkedIn</span>"
-          },
-          "method": "linkedin",
-          "href": "https://www.linkedin.com/in/fnc314",
-          "text": "linkedin.com/in/fnc314",
-          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />"
+          "start": "<img role=\"img\" alt=\"LinkedIn logo\" slot=\"start\" src=\"./assets/icons/brand/linkedin.svg\" />",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">linkedin.com/in/fnc314</span>",
+          "overline": "<span slot=\"overline\">LinkedIn</span>",
+          "href": "https://www.linkedin.com/in/fnc314"
         },
         "github": {
-          "html": {
-            "start": "<img role=\"img\" alt=\"GitHub logo\" slot=\"start\" src=\"./assets/icons/brand/github.svg\" />",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
-            "overline": "<span slot=\"overline\">GitHub</span>"
-          },
-          "method": "github",
-          "href": "https://www.github.com/fnc314",
-          "text": "github.com/fnc314",
-          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/github.svg\" />"
+          "start": "<img role=\"img\" alt=\"GitHub logo\" slot=\"start\" src=\"./assets/icons/brand/github.svg\" />",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
+          "overline": "<span slot=\"overline\">GitHub</span>",
+          "href": "https://www.github.com/fnc314"
         }
       }
     },
@@ -58,26 +38,16 @@
       "label": "Alternatively",
       "connections": {
         "googleDocs": {
-          "html": {
-            "start": "<img role=\"img\" alt=\"Google Docs logo\" slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
-            "overline": "<span slot=\"overline\">Google Docs</span>"
-          },
-          "method": "google Docs",
-          "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
-          "text": "Live Resume",
-          "icon": "<img slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />"
+          "start": "<img role=\"img\" alt=\"Google Docs logo\" slot=\"start\" src=\"./assets/icons/brand/google-docs.svg\" />",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
+          "overline": "<span slot=\"overline\">Google Docs</span>",
+          "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub"
         },
         "pdf": {
-          "html": {
-            "start": "<img role=\"img\" alt=\"PDF file logo\" slot=\"start\" src=\"./assets/icons/brand/pdf.svg\" />",
-            "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
-            "overline": "<span slot=\"overline\">PDF</span>"
-          },
-          "method": "pdf",
-          "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
-          "text": "PDF Resume",
-          "icon": "<md-icon slot=\"start\">picture_as_pdf</md-icon>"
+          "start": "<img role=\"img\" alt=\"PDF file logo\" slot=\"start\" src=\"./assets/icons/brand/pdf.svg\" />",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
+          "overline": "<span slot=\"overline\">PDF</span>",
+          "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf"
         }
       }
     }
