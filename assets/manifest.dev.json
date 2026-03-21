@@ -63,10 +63,6 @@
       ]
     }
   ],
-  "theme_color": "#c12a1c",
-  "theme_color_dark": "#c12a1c",
-  "background_color": "#c12a1c",
-  "background_color_dark": "#c12a1c",
   "icons": [
     {
       "src": "http://localhost:8000/assets/icons/icon.svg",
