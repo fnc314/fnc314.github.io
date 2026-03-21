@@ -5,7 +5,7 @@ import { appConfigsThemeConfig } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { makeWordCloudWord, WordCloudWordCategory } from "@/types/components/word-cloud/word-cloud";
-import { ColorSchemeConfigChange } from "@/types/configs/color-scheme-configs";
+import { ColorSchemeConfigChange } from "@/types/theme/color-scheme-configs";
 import { type ThemeConfig } from "@/types/theme/theme";
 import { css, html, LitElement } from "lit-element";
 import { customElement, state } from "lit/decorators.js";

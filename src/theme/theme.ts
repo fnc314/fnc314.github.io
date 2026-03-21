@@ -12,8 +12,6 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-console.dir(THEME_CONFIGS.chicago.json.dark.primary);
-
 export const themeToIcon: (slot: "leading-icon" | "start", theme: ThemeName) => TemplateResult = (
   slot: "leading-icon" | "start",
   theme: ThemeName

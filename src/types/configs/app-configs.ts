@@ -1,5 +1,5 @@
-import { ColorSchemeConfigs, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "@/types/configs/color-scheme-configs";
 import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "@/types/configs/fab-configs";
+import { ColorSchemeConfigs, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, type ThemeConfig, ThemeName } from "@/types/theme/theme";
 
 export type AppConfigs = {
