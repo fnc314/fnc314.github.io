@@ -50,7 +50,8 @@ const domLoadedListener = (event) => {
       )
     ];
   updateMaterialCSSStyleSheet(matScheme);
-  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.currentThemeConfig().json[themeService.currentMaterialSchemeName()].primary);
+
+  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);

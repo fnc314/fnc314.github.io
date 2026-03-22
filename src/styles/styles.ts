@@ -23,6 +23,8 @@ export const onThemeChange = (event: MediaQueryListEvent) => {
         colorSchemeConfigsToMaterialSchemeName(colorScheme)
       ]
   );
+
+  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
 export const updateMaterialCSSStyleSheet = (result: CSSResult) => {

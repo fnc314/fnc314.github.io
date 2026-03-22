@@ -117,8 +117,6 @@ export class AppShell extends LitElement {
   @state()
   private connectFabConfig: FabConfig = this.appConfigs.fab.connect;
 
-  // private versionedBuildDate: string = "[VI]Version: {version} | Build Date: {date}[/VI]";
-
   private onFabChangeBind = this.onFabChange.bind(this);
 
   private onFabChange(
@@ -189,7 +187,7 @@ export class AppShell extends LitElement {
     updateMaterialCSSStyleSheet(
       themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     )
-    document.getElementById("meta-theme-color")?.setAttribute("content", themeConfig.json[themeService.currentMaterialSchemeName()].primary);
+    document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
   }).bind(this);
 
   override connectedCallback() {

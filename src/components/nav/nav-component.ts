@@ -20,24 +20,24 @@ export class NavComponent extends LitElement {
         --md-elevation-level: 4;
 
         /* Active state color overrides */
-        --md-primary-tab-active-icon-color: var(--md-sys-color-error);
-        --md-primary-tab-active-focus-icon-color: var(--md-sys-color-error);
-        --md-primary-tab-active-hover-icon-color: var(--md-sys-color-error);
-        --md-primary-tab-active-pressed-icon-color: var(--md-sys-color-error);
+        --md-primary-tab-active-icon-color: var(--icon-fill-color);
+        --md-primary-tab-active-focus-icon-color: var(--icon-fill-color);
+        --md-primary-tab-active-hover-icon-color: var(--icon-fill-color);
+        --md-primary-tab-active-pressed-icon-color: var(--icon-fill-color);
 
-        --md-primary-tab-active-label-text-color: var(--md-sys-color-error);
+        --md-primary-tab-active-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-focus-label-text-color: var(
-          --md-sys-color-error
+          --icon-fill-color
         );
         --md-primary-tab-active-hover-label-text-color: var(
-          --md-sys-color-error
+          --icon-fill-color
         );
         --md-primary-tab-active-pressed-label-text-color: var(
-          --md-sys-color-error
+          --icon-fill-color
         );
 
         /* Indicator overrides */
-        --md-primary-tab-active-indicator-color: var(--md-sys-color-error);
+        --md-primary-tab-active-indicator-color: var(--icon-fill-color);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: var(
           --md-sys-shape-corner-medium
@@ -96,7 +96,7 @@ export class NavComponent extends LitElement {
 
       md-icon[filled="true"] {
         font-variation-settings: "FILL" 1;
-        color: var(--md-sys-color-error);
+        color: var(--icon-fill-color);
       }
     `,
   ];

@@ -1,6 +1,6 @@
 import { configsService, ConfigsService } from "@/services/configs";
 import { THEME_CONFIGS } from "@/theme/theme";
-import { MaterialSchemeNames, ThemeConfig } from "@/types/theme";
+import { ColorSchemeRoles, ColorString, MaterialSchemeNames, ThemeConfig } from "@/types/theme";
 import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorScheme } from "@/types/theme/color-scheme-configs";
 
 export interface ThemeService {
@@ -9,6 +9,8 @@ export interface ThemeService {
   currentMaterialSchemeName(): MaterialSchemeNames
 
   metaTagThemeColor(preference: MaterialSchemeNames): string;
+
+  themeJson(): Record<ColorSchemeRoles, ColorString>;
 };
 
 class ThemeServiceImpl implements ThemeService {
@@ -45,6 +47,10 @@ class ThemeServiceImpl implements ThemeService {
 
   metaTagThemeColor(preference: MaterialSchemeNames): string {
     return this.currentThemeConfig().json[preference].primary;
+  }
+
+  themeJson(): Record<ColorSchemeRoles, ColorString> {
+    return this.currentThemeConfig().json[this.currentMaterialSchemeName()];
   }
 };
 

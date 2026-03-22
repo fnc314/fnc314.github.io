@@ -57,11 +57,13 @@ export type ColorSchemeRoles =
 export type ColorSubValue = `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`
 export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 
+export type ColorString = `#${string}`
+
 export type MaterialSchemeNames = "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
 
 export type ThemeJsonSchemes = {
   [key in MaterialSchemeNames]: {
-    [key in ColorSchemeRoles]: `#${string}`
+    [key in ColorSchemeRoles]: ColorString
   }
 }
 
