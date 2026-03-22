@@ -1,91 +1,72 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0, 0, 256, 256"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  width="512"
+  height="512"
+  viewBox="-256 -256 512 512"
   preserveAspectRatio="xMidYMid meet"
-  x="0"
-  y="0"
   >
   <defs>
     <path
       id="text-curve"
       d="
-        M 24 128
-        C 58 146, 94 146, 128 128
-        C 162 110, 198 110, 232 128
-      "
-      />
-
-      <path
-        id="hexagon-half"
-        d="
-          M 128 10
-          L 232 58
-          L 232 95
-          C 198 77, 162 77, 128 95
-          C 94 113, 58 113, 24 95
-          L 24 58
-          Z
+        M -199.19,0
+        C -99.6,-51.74 -99.6,-51.74 0,0
+        C 99.6,51.74 99.6,51.74 199.19,0
         "
       />
-
-      <style>
-        .icon-text {
-          font-family: -apple-system, Roboto, monospace;
-          font-weight: 700;
-          font-size: 375%;
-          text-rendering: optimizeLegibility;
-          text-anchor: middle;
-          dominant-baseline: central;
-        }
-      </style>
-    </defs>
-
-
-  <g display="none">
-    <rect x="0" y="0" width="256" height="256" fill="beige" />
-    <circle cx="128" cy="10" r="10" fill="white" />
-    <circle cx="232" cy="58" r="10" fill="yellow" />
-    <circle cx="232" cy="95" r="10" fill="blue" />
-    <circle cx="198" cy="77" r="10" fill="green" />
-    <circle cx="162" cy="77" r="10" fill="black" />
-    <circle cx="128" cy="95" r="10" fill="purple" />
-    <circle cx="94" cy="113" r="10" fill="teal" />
-    <circle cx="58" cy="113" r="10" fill="maroon" />
-    <circle cx="24" cy="95" r="10" fill="pink" />
-    <circle cx="24" cy="58" r="10" fill="silver" />
-  </g>
-
-  <use
-    href="#hexagon-half"
-    fill="#c12a1c"
-    fill-rule="evenodd"
+  </defs>
+  <path
+    id="top-half"
+    d="
+      M 199.19,-38.33
+      L 199.19,-115
+      L 0,-230
+      L -199.19,-115
+      L -199.19,-38.33
+      C -99.6,-90.69 -99.6,-90.69 0,-38.33
+      C 99.6,12.78 99.6,12.78 199.19,-38.33
+      Z
+      "
+    stroke="#FFDAD6"
+    stroke-width="2"
+    fill="#93000A"
     />
-
   <text
-    class="icon-text"
-    fill-rule="evenodd"
-    direction="ltr"
-    fill="#c12a1c"
+    id="text"
+    fill="#93000A"
+    stroke="#FFDAD6"
+    stroke-width="2"
+    font-family="Roboto, sans-serif"
+    font-size="64"
+    dominant-baseline="middle"
+    dy="8"
     >
     <textPath
-      href="#text-curve"
-      stroke-linecap="round"
+      xlink:href="#text-curve"
       startOffset="50%"
-      lengthAdjust="spacingAndGlyphs"
-      textLength="75%"
-      method="align"
-      letter-spacing="5"
+      text-anchor="middle"
+      textLength="398"
+      lengthAdjust="spacing"
       >
       FNC314
     </textPath>
   </text>
-
-  <use
-    href="#hexagon-half"
-    fill="#c12a1c"
-    fill-rule="evenodd"
-    transform="rotate(180)"
-    transform-origin="center"
+  <path
+    id="bottom-half"
+    d="
+      M -199.19,38.33
+      L -199.19,115
+      L 0,230
+      L 199.19,115
+      L 199.19,38.33
+      C 99.6,90.69 99.6,90.69 0,38.33
+      C -99.6,-12.78 -99.6,-12.78 -199.19,38.33
+      Z
+      "
+    stroke="#FFDAD6"
+    stroke-width="2"
+    fill="#93000A"
     />
-
 </svg>

@@ -120,10 +120,12 @@ export default {
     }),
     typescript({
       tsconfig: "./tsconfig.json",
-      sourceMap: false,
-      declarationMap: false,
-      declaration: false,
-      declarationMap: false,
+      compilerOptions: {
+        sourceMap: isDev,
+        declaration: isDev,
+        declarationMap: isDev,
+        outDir: "./website"
+      },
     }),
     typescriptPaths({
       tsConfigPath: "./tsconfig.json",
