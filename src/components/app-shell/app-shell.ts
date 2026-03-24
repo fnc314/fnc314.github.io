@@ -1,12 +1,13 @@
-import { ConfigsDialog } from "@/components/dialogs/configs/configs-dialog";
+import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
+import { FabMenu } from "@/components/fab-menu/fab-menu";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
 import { FAB_STYLE, type FabConfig, FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
-import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
+import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
@@ -26,6 +27,10 @@ export class AppShell extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        --md-fab-icon-size: var(--md-icon-size);
+        --md-fab-large-icon-size: calc(1.5 * var(--md-icon-size));
+        --md-fab-small-icon-size: calc(0.75 * var(--md-icon-size));
+
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
         container-type: inline-size;
@@ -60,6 +65,10 @@ export class AppShell extends LitElement {
 
         md-fab {
           z-index: 2;
+        }
+
+        fab-menu,
+        md-fab {
           align-self: end;
           grid-area: unset;
           justify-self: unset;
@@ -71,25 +80,30 @@ export class AppShell extends LitElement {
             line-height: unset;
           }
 
-          &.StartTop {
-            grid-area: StartTop;
-            justify-self: start;
+          .fab.extended {
+            padding-inline: 1rem;
           }
 
-          &.StartBottom {
-            grid-area: StartBottom;
-            justify-self: start;
-          }
+        }
 
-          &.EndTop {
-            grid-area: EndTop;
-            justify-self: end;
-          }
+        .StartTop {
+          grid-area: StartTop;
+          justify-self: start;
+        }
 
-          &.EndBottom {
-            grid-area: EndBottom;
-            justify-self: end;
-          }
+        .StartBottom {
+          grid-area: StartBottom;
+          justify-self: start;
+        }
+
+        .EndTop {
+          grid-area: EndTop;
+          justify-self: end;
+        }
+
+        .EndBottom {
+          grid-area: EndBottom;
+          justify-self: end;
         }
       }
     `
@@ -98,12 +112,14 @@ export class AppShell extends LitElement {
   @state()
   private appConfigs: AppConfigs = configsService.loadConfigs();
 
+  @state()
+  private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(this.appConfigs.colorScheme);
 
   @query("#configs-dialog")
   private configsDialog!: ConfigsDialog;
 
-  @query("#fab-settings")
-  private settingsFab!: MdFab;
+  @query("#fab-menu")
+  private fabMenu!: FabMenu;
 
   @state()
   private settingsFabConfig: FabConfig = this.appConfigs.fab.settings;
@@ -117,6 +133,9 @@ export class AppShell extends LitElement {
   @state()
   private connectFabConfig: FabConfig = this.appConfigs.fab.connect;
 
+  @state()
+  private _openDialogCount = 0;
+
   private onFabChangeBind = this.onFabChange.bind(this);
 
   private onFabChange(
@@ -127,8 +146,8 @@ export class AppShell extends LitElement {
 
     // similar logic means this flag can be helpful
     const isSettings: boolean = fab === "settings";
-    // target FAB
-    const changedFab: MdFab = isSettings ? this.settingsFab : this.connectFab;
+    // target MdFab/FabMenu
+    const changedFab: MdFab | FabMenu = isSettings ? this.fabMenu : this.connectFab;
 
     // remove positioning class
     changedFab.classList.remove(
@@ -146,10 +165,16 @@ export class AppShell extends LitElement {
     const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
     changedFab.ariaLabel = fabLabel;
-
     changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
-    (changedFab.querySelector("md-icon") as MdIcon).style.display =
-      fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
+
+    if (isSettings) {
+      (changedFab as FabMenu).icon = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
+    } else {
+      const fabIcon = changedFab.querySelector("md-icon") as MdIcon;
+      if (fabIcon) {
+        fabIcon.style.display = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
+      }
+    }
 
     changedFab.classList.add(
       fabPositionClass(fabConfig.position)
@@ -162,6 +187,7 @@ export class AppShell extends LitElement {
   protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
     super.firstUpdated(_changedProperties);
     this.appConfigs = configsService.loadConfigs();
+    this._uiModeIcon = this.uiModeIcon(this.appConfigs.colorScheme);
     this.connectFabConfig = this.appConfigs.fab.connect;
     this.settingsFabConfig = this.appConfigs.fab.settings;
     this.onFabChangeBind("settings", this.settingsFabConfig);
@@ -171,22 +197,22 @@ export class AppShell extends LitElement {
   protected override async update(changedProperties: PropertyValues): Promise<void> {
     super.update(changedProperties);
     await this.updateComplete;
-    [
-      { fab: this.settingsFab, config: this.settingsFabConfig },
-      { fab: this.connectFab, config: this.connectFabConfig }
-    ].forEach(({ fab, config }) => {
-      const label: HTMLSpanElement | null | undefined = fab.shadowRoot?.querySelector("span.label");
-      if (label && config.style === FAB_STYLE.ICON_AND_TEXT) {
-        label.style.paddingInlineStart = "0.5rem";
-      }
-    });
+    const label: HTMLSpanElement | null | undefined = this.connectFab.shadowRoot?.querySelector("span.label");
+    if (label) {
+      label.style.paddingInlineStart = this.connectFabConfig.style === FAB_STYLE.ICON_AND_TEXT ? "0.5rem" : "0";
+    }
+    const button: HTMLButtonElement | null | undefined = this.connectFab.shadowRoot?.querySelector("button");
+    if (button) {
+      button.style.paddingInline = "1rem";
+    }
   }
 
   private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
+    this._uiModeIcon = this.uiModeIcon(event.detail);
     const themeConfig = themeService.currentThemeConfig();
     updateMaterialCSSStyleSheet(
       themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
-    )
+    );
     document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
   }).bind(this);
 
@@ -216,33 +242,87 @@ export class AppShell extends LitElement {
     );
   }
 
+  private uiModeIcon(colorScheme: AppConfigs["colorScheme"]): "dark_mode" | "light_mode" | "routine" {
+    switch (colorScheme.name) {
+      case CONFIG_COLOR_SCHEME_NAMES.DARK:
+        return "dark_mode";
+      case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
+        return "light_mode";
+      case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
+        return "routine";
+    }
+  }
+
+  private _handleDialogOpened() {
+    this._openDialogCount++;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  }
+
+  private _handleDialogClosed() {
+    this._openDialogCount--;
+    if (this._openDialogCount === 0) {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+  }
+
+  private _onFabMenuItemClick(formContent: FormContent) {
+    this.fabMenu.open = false;
+    this.configsDialog.showDialog(formContent);
+  }
+
   override render() {
     return html`
       <slot name="app-nav"></slot>
       <slot name="app-content"></slot>
 
-      <configs-dialog id="configs-dialog"></configs-dialog>
+      <configs-dialog
+        id="configs-dialog"
+        @opened=${this._handleDialogOpened}
+        @closed=${this._handleDialogClosed}
+      ></configs-dialog>
 
-      <connect-dialog id="connect-dialog"></connect-dialog>
+      <connect-dialog
+        id="connect-dialog"
+        @opened=${this._handleDialogOpened}
+        @closed=${this._handleDialogClosed}
+      ></connect-dialog>
 
       <section class="fab-container">
 
-        <md-fab
-          id="fab-settings"
-          class="settings"
+        <fab-menu
+          id="fab-menu"
           .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          variant="surface"
-          aria-label="Settings"
-          @click=${() => this.configsDialog.showDialog()}
+          .icon=${"settings"}
+          .variant=${"surface"}
+          .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
           >
-          <md-icon slot="icon">settings</md-icon>
-        </md-fab>
+            <fab-menu-item
+              .icon=${"settings"}
+              .label=${"Settings Button"}
+              @click=${() => this._onFabMenuItemClick("button-settings")}
+              >
+            </fab-menu-item>
+            <fab-menu-item
+              .icon=${"person_add"}
+              .label=${"Connect Button"}
+              @click=${() => this._onFabMenuItemClick("button-connect")}
+              >
+            </fab-menu-item>
+            <fab-menu-item
+              .icon=${this._uiModeIcon}
+              .label=${"UI Mode"}
+              @click=${() => this._onFabMenuItemClick("ui-mode")}
+              >
+            </fab-menu-item>
+        </fab-menu>
 
         <md-fab
           id="fab-connect"
           class="connect"
           .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          variant="primary"
+          .variant=${"primary"}
           aria-label="Connect"
           @click=${() => this.connectDialog.showDialog()}
           >

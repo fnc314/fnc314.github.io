@@ -28,7 +28,7 @@ export default {
     dir: "./website",
     format: "es",
     name: "com.fnc314.website",
-    sourcemap: false,
+    sourcemap: isDev,
     interop: "auto",
   },
   plugins: [
@@ -36,14 +36,6 @@ export default {
       targets: ["./website"],
       watch: isDev,
     }),
-    // url({
-    //   include: [ "**/*.woff2" ],
-    //   sourceDir: "node_modules/material-symbols",
-    //   destDir: "./website/assets",
-    //   fileName: "[name][hash][extname]",
-    //   limit: 0,
-    //   publicPath: "./website/assets"
-    // }),
     versionInjector({
       injectInComments: false,
       injectInTags: {
@@ -54,15 +46,6 @@ export default {
       logLevel: isDev ? "log" : "error",
       exclude: [],
     }),
-    // manifestJSON({
-    //   input: `./assets/${manifestJson}`,
-    //   minify: !isDev,
-    //   output: `./assets/${manifestJson}`,
-    //   manifest: {
-    //     name: "fnc314.com",
-    //     short_name: "fnc314.com",
-    //   }
-    // }),
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",

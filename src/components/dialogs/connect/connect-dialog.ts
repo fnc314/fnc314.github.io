@@ -11,6 +11,8 @@ export class ConnectDialog extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        --connect-dialog-content-transition: 0.3s;
+
         --md-dialog-icon-size: 3rem;
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
@@ -25,7 +27,7 @@ export class ConnectDialog extends LitElement {
 
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
         --md-list-item-label-text-font: var(--md-ref-typeface-brand);
-        --md-list-item-label-text-weight: 700;
+        --md-list-item-label-text-weight: var(--md-ref-typeface-weight-bold);
 
         --md-list-item-supporting-text-color: var(--md-sys-color-primary);
 
@@ -133,9 +135,9 @@ export class ConnectDialog extends LitElement {
             opacity: 0;
             visibility: hidden;
             transition:
-              grid-template-rows 0.3s ease-in-out,
-              opacity 0.3s ease-in-out,
-              visibility 0.3s;
+              grid-template-rows var(--connect-dialog-content-transition) ease-in-out,
+              opacity var(--connect-dialog-content-transition) ease-in-out,
+              visibility var(--connect-dialog-content-transition);
           }
 
           &[open] .content-wrapper {
@@ -230,9 +232,16 @@ export class ConnectDialog extends LitElement {
     `;
   }
 
+  private _handleDialogEvent(event: Event) {
+    this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));
+  }
+
   override render() {
     return html`
-      <md-dialog id="connect-dialog">
+      <md-dialog
+        id="connect-dialog"
+        @opened=${this._handleDialogEvent}
+        @closed=${this._handleDialogEvent}>
         <md-icon slot="icon">person_add</md-icon>
         <div slot="headline">
           <h2 class="md-typescale-headline-medium">Let's Connect</h2>
@@ -258,11 +267,17 @@ export class ConnectDialog extends LitElement {
         </div>
         <div slot="actions">
           <p class="md-typescale-body-small">
-            ${`Version: ${this.version}`}&nbsp;|&nbsp;${`Date: ${this.date}`}&nbsp;|&nbsp;${`Time: ${this.time}`}
+            ${`Version: ${this.version}`}&nbsp;<br/>${`Date: ${this.date}`}&nbsp;<br/>${`Time: ${this.time}`}
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>
       </md-dialog>
     `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "connect-dialog": ConnectDialog;
   }
 }

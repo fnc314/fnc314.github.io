@@ -20,7 +20,7 @@ export class CodePartial extends LitElement {
         --code-partial-animation-reduced: 0ms;
 
         display: block;
-        background-color: var(--md-sys-color-surface);
+        background-color: var(--md-sys-color-surface-container-highest);
         color: var(--md-sys-color-on-surface);
       }
 
@@ -102,7 +102,7 @@ export class CodePartial extends LitElement {
           grid-area: content;
 
           a {
-            color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-surface);
           }
         }
 
@@ -209,7 +209,7 @@ export class CodePartial extends LitElement {
   override render() {
     return html`
       <article>
-        <partial-header .headingText=${"Code Projects"}></partial-header>
+        <partial-header .headerType=${"tertiary"} .headingText=${"Code Projects"}></partial-header>
         <div class="article-body">
           ${(CodeJson.projects as Project[]).map((p) =>
             this.#renderCodeWidget(p),

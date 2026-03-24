@@ -48,7 +48,7 @@ export class WorkPartial extends LitElement {
   override render() {
     return html`
       <article>
-        <partial-header .headingText=${"Work Experience"}></partial-header>
+        <partial-header .headerType=${"secondary"} .headingText=${"Work Experience"}></partial-header>
         <div class="article-body">
           ${WorkJson.experiences.map(
             (exp) => html`

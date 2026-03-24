@@ -1,6 +1,8 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Custom GitHub Pages dependencies preinstalled
 
+run-name: "Deploy to GitHub Pages by @${{ github.actor }}"
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -28,13 +30,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Rollup Bundle
-        uses: actions/setup-node@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: latest
-      - run: npm install
-      - run: npx tsc
-      - run: NODE_ENV="production" npx rollup -c
+          bun-version: latest
+
+      # - name: Rollup Bundle
+      #   uses: actions/setup-node@v6
+      #   with:
+      #     node-version: latest
+      - name: Bun Install
+        run: bun install
+
+      - name: Bun Build
+        run: bun run tsc
+
+      - name: Bun RollUp
+        run: NODE_ENV="production" bun run rollup -c
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -22,8 +22,11 @@ import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { ColorSchemeChangeEvent, DarkModeToggle, ColorScheme as DarkModeToggleColorScheme, PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { css, html, LitElement, TemplateResult } from "lit-element";
+import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, query, state } from "lit/decorators.js";
+
+export type FormContent = "ui-mode" | "button-settings" | "button-connect";
 
 @customElement("configs-dialog")
 export class ConfigsDialog extends LitElement {
@@ -152,7 +155,7 @@ export class ConfigsDialog extends LitElement {
           position: relative;
           z-index: 0;
           border-radius: 1rem;
-          border-color: var(--md-sys-color-on-secondary-container);
+          border-color: var(--md-sys-color-on-surface-variant);
           border-width: var(--hairline-width);
           border-style: solid;
           margin-block-start: 0.5rem;
@@ -167,7 +170,7 @@ export class ConfigsDialog extends LitElement {
           top: 0;
           bottom: 0;
           width: calc(100% / 3);
-          background-color: var(--md-sys-color-secondary-container);
+          background-color: var(--md-sys-color-surface-container-lowest);
           border-radius: inherit;
           transition: transform 0.3s ease-in-out;
           z-index: -1;
@@ -336,37 +339,23 @@ export class ConfigsDialog extends LitElement {
   @state()
   private _darkModeEnabled: boolean = false;
 
-  /**
-   * (property) ConfigsDialog._appConfigs: {
-        colorScheme: {
-            name: "DARK" | "LIGHT" | "SYSTEM";
-            contrast: "NORMAL" | "MEDIUM" | "HIGH";
-            persist: boolean;
-        } & {
-            theme: "chicago" | "inter" | "red" | "sunset";
-        };
-        fab: {
-            settings: {
-                position: "START_TOP" | "START_BOTTOM" | "END_TOP" | "END_BOTTOM";
-                style: "ICON_ONLY" | "ICON_AND_TEXT" | "ICON_ONLY_SMALL" | "TEXT_ONLY";
-            };
-            connect: {
-                position: "START_TOP" | "START_BOTTOM" | "END_TOP" | "END_BOTTOM";
-                style: "ICON_ONLY" | "ICON_AND_TEXT" | "ICON_ONLY_SMALL" | "TEXT_ONLY";
-            };
-        };
-    }
-   *
-   */
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
+
+  @state()
+  private _formContent: FormContent = "ui-mode";
+
+  private _handleDialogEvent(event: Event) {
+    this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));
+  }
 
   constructor() {
     super();
     this._appConfigs = configsService.loadConfigs();
   }
 
-  public showDialog(): Promise<void> {
+  public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
+    this._formContent = formContent;
     return this._configsMDDialog.show();
   };
 
@@ -550,7 +539,6 @@ export class ConfigsDialog extends LitElement {
               )
             }
             supportingText=${`${buttonName} Button Position`}
-            .menuPositioning=${"absolute"}
             >
             ${
               html`
@@ -621,7 +609,6 @@ export class ConfigsDialog extends LitElement {
               }
             )}
             supportingText=${"Choose from a varity of UI Themes"}
-            .menuPositioning=${"absolute"}
           >
             ${themeToIcon("leading-icon", this._appConfigs.colorScheme.theme)}
             ${
@@ -665,7 +652,6 @@ export class ConfigsDialog extends LitElement {
               }
             )}
             supportingText=${"Choose from Normal, Medium, and High Contrast Color Palettes"}
-            .menuPositioning=${"absolute"}
           >
             ${colorSchemeContrastToIcon("leading-icon", this._appConfigs.colorScheme.contrast)}
             ${
@@ -686,6 +672,32 @@ export class ConfigsDialog extends LitElement {
     `;
   }
 
+  private dialogContent(): TemplateResult | typeof nothing {
+    switch (this._formContent) {
+      case "ui-mode":
+        return this.#renderUIFieldset();
+      case "button-settings":
+        return this.#renderFabSettingsFieldset("settings", this._appConfigs.fab.settings);
+      case "button-connect":
+        return this.#renderFabSettingsFieldset("connect", this._appConfigs.fab.connect);
+      default:
+        return nothing;
+    }
+  }
+
+  private dialogTitle(): string {
+    switch (this._formContent) {
+      case "ui-mode":
+        return "Configure UI Mode";
+      case "button-settings":
+        return "Configure Settings Button";
+      case "button-connect":
+        return "Configure Connect Button";
+      default:
+        return "";
+    }
+  }
+
   override render() {
     return html`
       <step-up-dialog
@@ -694,10 +706,14 @@ export class ConfigsDialog extends LitElement {
         .dialogContentString=${"Are you sure you want to revert all custom settings?"}
       ></step-up-dialog>
 
-      <md-dialog class="configs-dialog" id="configs-dialog">
+      <md-dialog
+        class="configs-dialog"
+        id="configs-dialog"
+        @opened=${this._handleDialogEvent}
+        @closed=${this._handleDialogEvent}>
         <md-icon slot="icon">settings</md-icon>
         <div slot="headline">
-          <h2 class="md-typescale-headline-medium">Settings</h2>
+          <h2 class="md-typescale-headline-medium">${this.dialogTitle()}</h2>
         </div>
         <form
           id="configs-dialog-form"
@@ -705,11 +721,7 @@ export class ConfigsDialog extends LitElement {
           method="dialog"
         >
 
-          ${this.#renderUIFieldset()}
-
-          ${this.#renderFabSettingsFieldset("settings", this._appConfigs.fab.settings)}
-
-          ${this.#renderFabSettingsFieldset("connect", this._appConfigs.fab.connect)}
+          ${this.dialogContent()}
 
         </form>
         <div slot="actions">
