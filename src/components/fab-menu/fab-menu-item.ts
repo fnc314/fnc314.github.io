@@ -35,6 +35,7 @@ export class FabMenuItem extends LitElement {
         opacity: 1;
         transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         white-space: nowrap;
+        user-select: none;
       }
 
       md-fab {
