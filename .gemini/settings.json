@@ -1,0 +1,29 @@
+{
+  "ide": {
+    "hasSeenNudge": true,
+    "enabled": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "GitHub",
+    "autoThemeSwitching": false,
+    "inlineThinkingMode": "full",
+    "showStatusInTitle": true,
+    "showMemoryUsage": true,
+    "showLineNumbers": true,
+    "showCitations": true,
+    "showModelInfoInChat": true
+  },
+  "model": {
+    "name": "undefined"
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  }
+}
