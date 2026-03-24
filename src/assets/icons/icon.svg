@@ -39,14 +39,6 @@
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="4" dy="-4" stdDeviation="4" flood-color="#000000" flood-opacity="0.4" />
     </filter>
-    <path
-      id="text-curve"
-      d="
-        M -199.19,0
-        C -99.6,-51.74 -99.6,-51.74 0,0
-        C 99.6,51.74 99.6,51.74 199.19,0
-        "
-      />
   </defs>
   <path
     class="icon-fill icon-stroke"
@@ -62,25 +54,125 @@
       Z
       "
     />
-  <text
+  <g
     id="text"
     class="icon-fill icon-stroke"
     fill-rule="evenodd"
-    font-family="Roboto, sans-serif"
-    font-size="64"
-    dominant-baseline="middle"
-    dy="8"
     >
-    <textPath
-      xlink:href="#text-curve"
-      startOffset="50%"
-      text-anchor="middle"
-      textLength="398"
-      lengthAdjust="spacing"
-      >
-      FNC314
-    </textPath>
-  </text>
+    <path
+      id="text-f"
+      d="
+        M -14,-24
+        H 14
+        V -16
+        H -6
+        V -4
+        H 12
+        V 4
+        H -6
+        V 24
+        H -14
+        Z
+      "
+      transform="translate(-166, -18) rotate(-25)"
+    />
+    <path
+      id="text-n"
+      d="
+        M -18,24
+        V -24
+        H -10
+        L 10,4
+        V -24
+        H 18
+        V 24
+        H 10
+        L -10,-4
+        V 24
+        Z
+      "
+      transform="translate(-100, -35)"
+    />
+    <path
+      id="text-c"
+      d="
+        M 18,-14
+        Q 18,-24 0,-24
+        Q -18,-24 -18,0
+        Q -18,24 0,24
+        Q 18,24 18,14
+        V 6
+        Q 18,16 0,16
+        Q -10,16 -10,0
+        Q -10,-16 0,-16
+        Q 18,-16 18,-6
+        Z
+      "
+      transform="translate(-33, -18) rotate(25)"
+    />
+    <path
+      id="text-3"
+      d="
+        M -12,-24
+        H 12
+        L 4,-8
+        Q 14,-8 14,8
+        Q 14,24 -4,24
+        H -14
+        V 16
+        H -4
+        Q 6,16 6,8
+        Q 6,0 -4,0
+        H -10
+        V -8
+        H -4
+        L 4,-16
+        H -12
+        Z
+      "
+      transform="translate(33, 18) rotate(25)"
+    />
+    <path
+      id="text-1"
+      d="
+        M 4,-24
+        V 20
+        H 10
+        V 24
+        H -10
+        V 20
+        H -4
+        V -20
+        L -10,-14
+        V -18
+        L -4,-24
+        H 4
+        Z
+      "
+      transform="translate(100, 34)"
+    />
+    <path
+      id="text-4"
+      d="
+        M 14,-24
+        V 0
+        H 18
+        V 8
+        H 14
+        V 24
+        H 6
+        V 8
+        H -18
+        L 6,-24
+        Z
+        M 6,0
+        H -2
+        L 6,-10.67
+        Z
+      "
+      transform="translate(166, 18) rotate(-25)"
+    />
+  </g>
   <path
     id="bottom-half"
     class="icon-fill icon-stroke"
