@@ -64,29 +64,23 @@ export default {
             `,
           ),
       ],
-      absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://fnc314.com",
-    }),
-    copy({
-      patterns: ["assets\/images\/themes\/**\/*.{jpg,png}"],
-      rootDir: "./",
+      absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://www.fnc314.com",
     }),
     copy({
       patterns: [
+        isDev ? "assets\/manifest.dev.json" : "assets\/manifest.json",
         "assets\/icons\/icon.svg",
         "assets\/icons\/icon-maskable.svg",
         "assets\/icons\/brand\/*.svg",
         "assets\/icons\/components\/**\/*.svg",
-        "assets\/icons\/shortcuts\/**\/icon-filled-512.{svg,png}"
+        "assets\/icons\/shortcuts\/**\/icon-filled-512.{svg,png}",
+        "assets\/images\/themes\/**\/*.{jpg,png}",
       ],
-      rootDir: "./",
+      rootDir: "./src",
     }),
     copy({
       patterns: ["files\/**\/*.pdf"],
-      rootDir: "./assets",
-    }),
-    copy({
-      patterns: [isDev ? "assets\/manifest.dev.json" : "assets\/manifest.json"],
-      rootDir: "./",
+      rootDir: "./src/assets",
     }),
     json({
       compact: !isDev,
@@ -94,7 +88,7 @@ export default {
       namedExports: true,
       includeArbitraryNames: true,
       exclude: [
-        "assets/**/*.json",
+        "./src/assets/**/*.json",
       ],
       include: [
         "./src/data/*.json",
