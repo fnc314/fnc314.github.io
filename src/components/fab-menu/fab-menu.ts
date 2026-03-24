@@ -52,7 +52,7 @@ export class FabMenu extends LitElement {
         padding: 0;
         list-style: none;
         height: 0;
-        margin-inline-end: var(--md-fab-margin, 1rem);
+        margin-inline-end: var(--md-fab-margin, 0);
 
         transition:
           opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
@@ -113,7 +113,7 @@ export class FabMenu extends LitElement {
       :host([direction="start"]) ul.menu-items {
         align-items: flex-start;
         margin-inline-end: unset;
-        margin-inline-start: var(--md-fab-margin, 1rem);
+        margin-inline-start: var(--md-fab-margin, 0);
       }
     `,
 

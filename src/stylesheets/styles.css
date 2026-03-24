@@ -83,12 +83,3 @@ body {
 
   }
 }
-/*
-header, .carousel-track {
-  &:where(a, p, li, legend, input, button) {
-    &:has(:focus, :focus-visible, :focus-within) {
-      color: var(--md-sys-color-on-surface-variant);
-      background-color: var(--md-sys-color-surface-variant);
-    }
-  }
-} */
