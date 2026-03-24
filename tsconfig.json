@@ -52,7 +52,6 @@
       "node",
       "eslint",
       "rollup",
-      "vite/client",
       "bun-types",
       "lit",
     ],
