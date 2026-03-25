@@ -390,19 +390,17 @@ export class ConfigsDialog extends LitElement {
 
   private completeStepUp = (event: CompleteStepUpDialog) => {
     if (event.detail.confirmed) {
-      this._appConfigs = DEFAULT_APP_CONFIGS;
       switch (this._formContent) {
         case "ui-mode":
           this._darkModeToggle.removeAttribute("permanent");
-          this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
+          this.onColorThemeModeContrastChange(DEFAULT_APP_CONFIGS.colorScheme);
           break;
         case "button-settings":
         case "button-connect":
-          this.onFabChange("settings", this._appConfigs.fab.settings);
-          this.onFabChange("connect", this._appConfigs.fab.connect);
+          this.onFabChange("settings", DEFAULT_APP_CONFIGS.fab.settings);
+          this.onFabChange("connect", DEFAULT_APP_CONFIGS.fab.connect);
           break;
       }
-      configsService.resetConfigs();
     }
   };
 
