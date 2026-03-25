@@ -40,7 +40,7 @@ export class FabMenuItem extends LitElement {
       }
 
       md-fab {
-        --md-fab-container-elevation: 2;
+        --md-fab-container-elevation: 4;
       }
     `,
   ];

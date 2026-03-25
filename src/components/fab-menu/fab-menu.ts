@@ -89,7 +89,9 @@ export class FabMenu extends LitElement {
           transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
           background-color var(--fab-menu-transition-duration) linear,
           color var(--fab-menu-transition-duration) linear;
-        z-index: 2;
+
+        --md-fab-container-elevation: 4;
+        /* z-index: 2; */
 
         /* Reset default margin */
         margin-inline-start: unset;
@@ -120,8 +122,18 @@ export class FabMenu extends LitElement {
         margin-inline-end: unset;
         margin-inline-start: var(--md-fab-margin, 0);
       }
-    `,
 
+      .scrim {
+        background: var(--md-sys-color-scrim);
+        inset: 0;
+        opacity: 50%;
+        pointer-events: none;
+        position: fixed;
+        z-index: 0;
+        transition:
+          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    `,
   ];
 
   @query("#fab-menu-fab")
@@ -286,6 +298,7 @@ export class FabMenu extends LitElement {
     };
 
     return html`
+      ${this.open ? html`<div class="scrim"></div>` : nothing}
       ${this.open ? html`<div class="focus-trap-start" tabindex="0" @focus=${this._handleFocusTrap}></div>` : nothing}
       <div class="fab-container">
         <md-fab
