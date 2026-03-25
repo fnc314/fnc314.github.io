@@ -40,7 +40,7 @@
       <feDropShadow dx="4" dy="-4" stdDeviation="4" flood-color="#000000" flood-opacity="0.4" />
     </filter>
   </defs>
-  <rect x="-256" y="-256" width="512" height="512" fill="#221919" />
+  <rect x="-256" y="-256" width="512" height="512" fill="#000000" />
   <g transform="scale(0.8)">
     <path
       class="icon-fill icon-stroke"

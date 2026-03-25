@@ -71,10 +71,58 @@
       "purpose": "any"
     },
     {
-      "src": "https://www.fnc314.com/assets/icons/icon-maskable.svg",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x1024.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "48x48",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x48.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "72x72",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x72.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "96x96",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x96.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "128x128",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x128.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "384x384",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x384.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x512.png",
+      "type": "image/png"
     }
   ],
   "scope": "https://www.fnc314.com/",
