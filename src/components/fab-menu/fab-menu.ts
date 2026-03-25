@@ -14,7 +14,9 @@ import { MaterialSymbol } from "material-symbols";
  * A floating action button that toggles a menu of actions.
  *
  * @element fab-menu
- * @slot [menu-items] - The content of the menu, typically `fab-menu-item` elements.
+ * @slot menu-items - The content of the menu, typically `fab-menu-item` elements.
+ *
+ * @cssprop [--fab-menu-transition-duration=200ms] - The duration of the menu's opening and closing animations.
  */
 @customElement("fab-menu")
 export class FabMenu extends LitElement {
@@ -144,6 +146,7 @@ export class FabMenu extends LitElement {
 
   /**
    * Whether the menu is currently open.
+   * @attr open
    */
   @property({ type: Boolean, reflect: true })
   open = false;
@@ -153,12 +156,14 @@ export class FabMenu extends LitElement {
    * Defaults to 'add'.  An empty {@link string}
    *   suppresses the icon
    */
+  /** @attr icon */
   @property({ type: String })
   icon: MaterialSymbol | "" = "add";
 
   /**
    * The icon to display when the menu is open.
    * Defaults to 'close'.
+   * @attr opened-icon
    */
   @property({ type: String, attribute: "opened-icon" })
   openedIcon: MaterialSymbol = "close";
@@ -167,6 +172,7 @@ export class FabMenu extends LitElement {
    * The variant of the FAB.
    * Can be 'surface', 'primary', 'secondary', or 'tertiary'.
    * Defaults to 'primary'.
+   * @attr variant
    */
   @property({ type: String })
   variant: "surface" | "primary" | "secondary" | "tertiary" = "primary";
@@ -175,6 +181,7 @@ export class FabMenu extends LitElement {
    * The size of the FAB.
    * Can be 'small', 'medium', or 'large'.
    * Defaults to 'medium'.
+   * @attr size
    */
   @property({ type: String })
   size: "small" | "medium" | "large" = "medium";
@@ -182,18 +189,21 @@ export class FabMenu extends LitElement {
   /**
    * The label of the underlying {@link MdFab}.
    * Defaults to an empty string.
+   * @attr label
    */
   @property({ type: String })
   label: string = "";
 
   /**
    * The `aria-label` of the FAB.
+   * @attr aria-label
    */
   @property({ type: String, attribute: "aria-label" })
   override ariaLabel: string = "";
 
   /**
    * The direction in which the menu items should expand.
+   * @attr direction
    */
   @property({ type: String, reflect: true })
   direction: "start" | "end" = "end";

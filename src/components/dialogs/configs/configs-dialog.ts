@@ -28,6 +28,15 @@ import { customElement, query, state } from "lit/decorators.js";
 
 export type FormContent = "ui-mode" | "button-settings" | "button-connect";
 
+/**
+ * A comprehensive configuration dialog for managing application settings.
+ * Allows users to toggle dark mode, change color themes, adjust contrast,
+ * and customize Floating Action Button (FAB) behaviors.
+ *
+ * @element configs-dialog
+ * @fires fab.change - Dispatched when a FAB's position or style is modified.
+ * @fires color_scheme.change - Dispatched when the UI theme, mode, or contrast is changed.
+ */
 @customElement("configs-dialog")
 export class ConfigsDialog extends LitElement {
 
@@ -365,11 +374,20 @@ export class ConfigsDialog extends LitElement {
     )
   }
 
+  /**
+   * Shows the configuration dialog.
+   * @param formContent - The initial section to display in the dialog. Defaults to "ui-mode".
+   * @returns A promise that resolves when the dialog is shown.
+   */
   public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
     this._formContent = formContent;
     return this._configsMDDialog.show();
   };
 
+  /**
+   * Hides the configuration dialog.
+   * @returns A promise that resolves when the dialog is closed.
+   */
   public hideDialog(): Promise<void> {
     return this._configsMDDialog.close();
   };

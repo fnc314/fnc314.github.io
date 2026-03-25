@@ -55,16 +55,23 @@ export class FabMenuItem extends LitElement {
 
   /**
    * The text label displayed next to the FAB item.
+   * @attr label
    */
   @property({ type: String })
   label = "";
 
   /**
    * The icon to display inside the FAB item.
+   * @attr icon
    */
   @property({ type: String })
   icon: MaterialSymbol | "" = "";
 
+  /**
+   * Focuses the underlying FAB element.
+   *
+   * @param options - Standard browser focus options.
+   */
   override focus(options?: FocusOptions) {
     this._fab.focus(options);
   }

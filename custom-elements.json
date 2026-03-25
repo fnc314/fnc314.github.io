@@ -186,6 +186,7 @@
       "declarations": [
         {
           "name": "ConfigsDialog",
+          "description": "A comprehensive configuration dialog for managing application settings.\nAllows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -238,6 +239,7 @@
                 }
               },
               "name": "showDialog",
+              "description": "Shows the configuration dialog.",
               "kind": "method",
               "privacy": "public"
             },
@@ -248,6 +250,7 @@
                 }
               },
               "name": "hideDialog",
+              "description": "Hides the configuration dialog.",
               "kind": "method",
               "privacy": "public"
             },
@@ -369,10 +372,36 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L32"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L41"
           },
           "kind": "class",
           "tagName": "configs-dialog",
+          "events": [
+            {
+              "name": "fab",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "color_scheme",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            }
+          ],
           "cssProperties": [
             {
               "name": "--md-sys-color-surface-container-highest"
@@ -436,6 +465,7 @@
       "declarations": [
         {
           "name": "ConnectDialog",
+          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -475,6 +505,7 @@
                 }
               },
               "name": "showDialog",
+              "description": "Shows the connect dialog and applies a custom border to the internal container.",
               "kind": "method"
             },
             {
@@ -492,11 +523,16 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L9"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L16"
           },
           "kind": "class",
           "tagName": "connect-dialog",
           "cssProperties": [
+            {
+              "name": "--connect-dialog-content-transition",
+              "description": "The animation duration for expanding/collapsing connection details.",
+              "default": "0.3s"
+            },
             {
               "name": "--md-sys-color-surface-container-high"
             },
@@ -517,10 +553,6 @@
             },
             {
               "name": "--md-sys-color-on-surface-variant"
-            },
-            {
-              "name": "--connect-dialog-content-transition",
-              "default": "0.3s"
             },
             {
               "name": "--md-sys-color-primary-fixed-dim"
@@ -575,6 +607,7 @@
       "declarations": [
         {
           "name": "StepUpDialog",
+          "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -582,6 +615,7 @@
           "members": [
             {
               "name": "dialogStyle",
+              "description": "The visual style variant of the dialog, affecting colors and icons.",
               "type": {
                 "text": "\"confirm\" | \"warning\" | \"attention\"",
                 "references": [
@@ -597,6 +631,7 @@
             },
             {
               "name": "dialogContentString",
+              "description": "The text content to display in the dialog body.",
               "type": {
                 "text": "string"
               },
@@ -611,6 +646,7 @@
                 }
               },
               "name": "showDialog",
+              "description": "Shows the step-up confirmation dialog.",
               "kind": "method"
             },
             {
@@ -652,13 +688,14 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L10"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L21"
           },
           "kind": "class",
           "tagName": "step-up-dialog",
           "attributes": [
             {
               "name": "dialogStyle",
+              "description": "The visual style variant of the dialog, affecting colors and icons.",
               "type": {
                 "text": "\"confirm\" | \"warning\" | \"attention\"",
                 "references": [
@@ -673,11 +710,27 @@
             },
             {
               "name": "dialogContentString",
+              "description": "The text content to display in the dialog body.",
               "type": {
                 "text": "string"
               },
               "default": "\"\"",
               "fieldName": "dialogContentString"
+            }
+          ],
+          "events": [
+            {
+              "name": "stepUpComplete",
+              "description": "Dispatched when the user confirms or cancels the action.",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
             }
           ],
           "cssProperties": [
@@ -782,6 +835,7 @@
                 }
               ],
               "name": "focus",
+              "description": "Focuses the underlying FAB element.",
               "kind": "method"
             }
           ],
@@ -893,7 +947,6 @@
             },
             {
               "name": "icon",
-              "description": "The icon to display when the menu is closed.\nDefaults to 'add'.  An empty {@link string}\nsuppresses the icon",
               "type": {
                 "text": "MaterialSymbols[number] | \"\"",
                 "references": [
@@ -1016,7 +1069,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L20"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L22"
           },
           "kind": "class",
           "tagName": "fab-menu",
@@ -1032,7 +1085,6 @@
             },
             {
               "name": "icon",
-              "description": "The icon to display when the menu is closed.\nDefaults to 'add'.  An empty {@link string}\nsuppresses the icon",
               "type": {
                 "text": "MaterialSymbols[number] | \"\"",
                 "references": [
@@ -1108,14 +1160,16 @@
           ],
           "slots": [
             {
-              "name": "",
-              "description": "[menu-items] - The content of the menu, typically `fab-menu-item` elements."
-            },
-            {
-              "name": "menu-items"
+              "name": "menu-items",
+              "description": "The content of the menu, typically `fab-menu-item` elements."
             }
           ],
           "cssProperties": [
+            {
+              "name": "--fab-menu-transition-duration",
+              "description": "The duration of the menu's opening and closing animations.",
+              "default": "200ms"
+            },
             {
               "name": "--md-icon-size"
             },
@@ -1125,9 +1179,6 @@
             },
             {
               "name": "--md-sys-color-scrim"
-            },
-            {
-              "name": "--fab-menu-transition-duration"
             }
           ],
           "customElement": true
@@ -1162,6 +1213,7 @@
       "declarations": [
         {
           "name": "NavComponent",
+          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -1182,11 +1234,21 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L12"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L20"
           },
           "kind": "class",
           "tagName": "nav-component",
           "cssProperties": [
+            {
+              "name": "--nav-component-icon-animation",
+              "description": "The duration of the icon's fill and color transition.",
+              "default": "225ms"
+            },
+            {
+              "name": "--nav-component-icon-animation-reduced",
+              "description": "The duration of the icon's transition when motion is reduced.",
+              "default": "1ms"
+            },
             {
               "name": "--md-sys-shape-corner-medium"
             },
@@ -1207,13 +1269,6 @@
             },
             {
               "name": "--md-sys-color-tertiary"
-            },
-            {
-              "name": "--nav-component-icon-animation",
-              "default": "225ms"
-            },
-            {
-              "name": "--nav-component-icon-animation-reduced"
             },
             {
               "name": "--icon-fill-color"
@@ -1247,6 +1302,7 @@
       "declarations": [
         {
           "name": "PartialHeader",
+          "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -1254,6 +1310,7 @@
           "members": [
             {
               "name": "headingText",
+              "description": "The text to display within the header.",
               "type": {
                 "text": "string"
               },
@@ -1263,6 +1320,7 @@
             },
             {
               "name": "headerType",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
               "type": {
                 "text": "\"primary\" | \"secondary\" | \"tertiary\""
               },
@@ -1272,13 +1330,14 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/partial-header/partial-header.ts#L6"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/partial-header/partial-header.ts#L11"
           },
           "kind": "class",
           "tagName": "partial-header",
           "attributes": [
             {
               "name": "heading-text",
+              "description": "The text to display within the header.",
               "type": {
                 "text": "string"
               },
@@ -1287,6 +1346,7 @@
             },
             {
               "name": "header-type",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
               "type": {
                 "text": "\"primary\" | \"secondary\" | \"tertiary\""
               },

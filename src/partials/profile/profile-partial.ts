@@ -1,3 +1,6 @@
+import "@/components/partial-header/partial-header";
+import "@/components/profile-section/profile-section";
+import "@/components/word-cloud/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };

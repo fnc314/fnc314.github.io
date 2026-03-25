@@ -1,6 +1,7 @@
 import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
+import "@/components/fab-menu/fab-menu-item";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";

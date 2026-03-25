@@ -1,11 +1,22 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import "@material/web/button/filled-button";
+import "@material/web/button/outlined-button";
+import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
+import "@material/web/icon/icon";
 import { css, html, LitElement, TemplateResult } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property, query } from "lit/decorators.js";
 
 export type ConfirmDialogStyle = "confirm" | "warning" | "attention"
 
+/**
+ * A versatile confirmation dialog used to verify user intent before performing
+ * significant actions like resetting settings.
+ *
+ * @element step-up-dialog
+ * @fires stepUpComplete - Dispatched when the user confirms or cancels the action.
+ */
 @customElement("step-up-dialog")
 export class StepUpDialog extends LitElement {
   static override styles = [
@@ -71,15 +82,27 @@ export class StepUpDialog extends LitElement {
     `
   ];
 
+  /**
+   * The visual style variant of the dialog, affecting colors and icons.
+   * @attr dialogStyle
+   */
   @property({ type: String, attribute: "dialogStyle" })
   dialogStyle: ConfirmDialogStyle = "confirm";
 
+  /**
+   * The text content to display in the dialog body.
+   * @attr dialogContentString
+   */
   @property({ type: String, attribute: "dialogContentString" })
   dialogContentString: string = "";
 
   @query("#step-up-dialog")
   private _mdDialog!: MdDialog;
 
+  /**
+   * Shows the step-up confirmation dialog.
+   * @returns A promise that resolves when the dialog is shown.
+   */
   async showDialog(): Promise<void> {
     return this._mdDialog.show();
   }

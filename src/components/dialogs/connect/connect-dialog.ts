@@ -5,6 +5,13 @@ import { css, html, LitElement, TemplateResult } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 
+/**
+ * A dialog component that provides various contact methods and social links.
+ * It features collapsible sections for different connection categories.
+ *
+ * @element connect-dialog
+ * @cssprop [--connect-dialog-content-transition=0.3s] - The animation duration for expanding/collapsing connection details.
+ */
 @customElement("connect-dialog")
 export class ConnectDialog extends LitElement {
   static override styles= [
@@ -201,6 +208,10 @@ export class ConnectDialog extends LitElement {
   private time: string = "[VI]{date}[/VI]".split(" @ ").at(1)!;
   private version: string = "[VI]{version}[/VI]";
 
+  /**
+   * Shows the connect dialog and applies a custom border to the internal container.
+   * @returns A promise that resolves when the dialog is shown.
+   */
   showDialog(): Promise<void> {
     return this._mdDialog.show().then(() => {
       const dialogContainer = this._mdDialog.shadowRoot?.querySelector("div.container");
