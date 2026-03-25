@@ -9,6 +9,9 @@
   --breakpoint-medium-width-max: 900px;
   --breakpoint-large-width-max: 1200px;
   --breakpoint-expanded-width-max: 1500px;
+
+  --color-transition-duration: 500ms;
+  --color-transition-timing: ease-in-out;
 }
 
 * {
@@ -16,6 +19,13 @@
   padding: 0;
   box-sizing: border-box;
   display: revert;
+
+  transition:
+    stroke var(--color-transition-duration) var(--color-transition-timing),
+    fill var(--color-transition-duration) var(--color-transition-timing),
+    border-color var(--color-transition-duration) var(--color-transition-timing),
+    background-color var(--color-transition-duration) var(--color-transition-timing),
+    color var(--color-transition-duration) var(--color-transition-timing);
 }
 
 html,
