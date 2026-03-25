@@ -5,6 +5,22 @@ import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";
 
+/**
+ * A component that renders a cloud of words with various sorting and grouping options.
+ *
+ * @element word-cloud
+ *
+ * @cssprop [--word-cloud-animation=150ms] - Duration of the entrance animation for each word.
+ * @cssprop [--word-cloud-animation-reduced=1ms] - Duration of the entrance animation when prefers-reduced-motion is active.
+ * @cssprop [--word-cloud-first-quartile-font-size=1.75rem] - Font size for words in the first weight quartile (highest weight).
+ * @cssprop [--word-cloud-first-quartile-line-height=1.75rem] - Line height for words in the first weight quartile.
+ * @cssprop [--word-cloud-second-quartile-font-size=1.5rem] - Font size for words in the second weight quartile.
+ * @cssprop [--word-cloud-second-quartile-line-height=1.5rem] - Line height for words in the second weight quartile.
+ * @cssprop [--word-cloud-third-quartile-font-size=1.25rem] - Font size for words in the third weight quartile.
+ * @cssprop [--word-cloud-third-quartile-line-height=1.25rem] - Line height for words in the third weight quartile.
+ * @cssprop [--word-cloud-fourth-quartile-font-size=1rem] - Font size for words in the fourth weight quartile (lowest weight).
+ * @cssprop [--word-cloud-fourth-quartile-line-height=1rem] - Line height for words in the fourth weight quartile.
+ */
 @customElement("word-cloud")
 export class WordCloud extends LitElement {
   static override styles = [
@@ -156,34 +172,62 @@ export class WordCloud extends LitElement {
   ];
 
   /**
-   * The externally provided set of {@link WordCloudWord}s to render into
-   *   the cloud.
+   * The list of words to display in the cloud.
+   * @attr words
    */
   @property({ type: Array, attribute: "words", hasChanged: () => true })
   words: WordCloudWord[] = [];
 
   /**
-   * When set, the word cloud will not fade out when scrolling off-screen,
-   * but will instead instantly reset to opacity 0.
+   * Whether to clear the word cloud instantly when it is no longer visible.
+   * When true, the cloud resets instantly to opacity 0 instead of fading out.
+   * @attr instant-clear
    */
   @property({ type: Boolean, attribute: "instant-clear" })
   instantClear = false;
 
-  /** Controls the order in which words are animated/displayed. */
+  /**
+   * Controls the order in which words are animated/displayed.
+   *
+   * Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).
+   * @attr appearance
+   */
   @property({ attribute: "appearance" })
   appearance: WordCloudAppearance = WordCloudAppearances.SEQUENTIAL;
 
-  /** Controls how words are grouped together. */
+  /**
+   * Controls how words are grouped together within the cloud.
+   *
+   * Supported modes: 'category', 'quartile', or 'ungrouped'.
+   * @attr grouping
+   */
   @property({ attribute: "grouping" })
   grouping: WordCloudGrouping = WordCloudGroupings.UNGROUPED;
 
-  /** Controls how words are sorted within their groupings. */
+  /**
+   * Controls how words are sorted within their groupings.
+   *
+   * Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.
+   * @attr sorting
+   */
   @property({ attribute: "sorting" })
   sorting: WordCloudSorting = WordCloudSortings.NONE;
 
+  /**
+   * The delay in milliseconds between word appearances when using sequential mode.
+   *
+   * Set to "none" to use the component's internal default delays.
+   * @attr delay
+   */
   @property()
   delay: number | "none" = "none";
 
+  /**
+   * The intersection observer threshold for visibility detection.
+   *
+   * A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.
+   * @attr threshold
+   */
   @property({ type: Number })
   threshold = 0.1;
 

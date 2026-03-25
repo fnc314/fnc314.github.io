@@ -1,0 +1,1890 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/app-shell/app-shell.js",
+      "declarations": [
+        {
+          "name": "AppShell",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "onFabChangeBind",
+              "default": "this.onFabChange.bind(this)",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "\"settings\" | \"connect\""
+                  }
+                },
+                {
+                  "name": "fabConfig",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "name": "onFabChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "FabConfigChange"
+                  }
+                }
+              ],
+              "name": "onFabConfigBind",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "PropertyValues"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "firstUpdated",
+              "kind": "method",
+              "privacy": "protected"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "ColorSchemeConfigChange"
+                  }
+                }
+              ],
+              "name": "onColorSchemeChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "\"dark_mode\" | \"light_mode\" | \"routine\""
+                }
+              },
+              "name": "uiModeIcon",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_handleDialogOpened",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_handleDialogClosed",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "formContent",
+                  "type": {
+                    "text": "FormContent"
+                  }
+                }
+              ],
+              "name": "_onFabMenuItemClick",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "app-shell",
+          "slots": [
+            {
+              "name": "app-nav"
+            },
+            {
+              "name": "app-content"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-fab-icon-size",
+              "default": "var(--md-icon-size)"
+            },
+            {
+              "name": "--md-icon-size"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "app-shell",
+          "declaration": {
+            "name": "AppShell",
+            "module": "src/components/app-shell/app-shell.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AppShell",
+          "declaration": {
+            "name": "AppShell",
+            "module": "src/components/app-shell/app-shell.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/configs/configs-dialog.js",
+      "declarations": [
+        {
+          "name": "ConfigsDialog",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleDialogEvent",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "formContent",
+                  "type": {
+                    "text": "\"ui-mode\" | \"button-settings\" | \"button-connect\"",
+                    "references": [
+                      {
+                        "name": "FormContent",
+                        "module": "src/components/dialogs/configs/configs-dialog.js"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "kind": "method",
+              "privacy": "public"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "hideDialog",
+              "kind": "method",
+              "privacy": "public"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "_",
+                  "type": {
+                    "text": "OpenStepUpDialog"
+                  }
+                }
+              ],
+              "name": "openStepUp",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CompleteStepUpDialog"
+                  }
+                }
+              ],
+              "name": "completeStepUp",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ colorScheme: ColorScheme }\u003e",
+                    "references": [
+                      {
+                        "name": "ColorSchemeChangeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "colorSchemeChangeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ permanent: boolean }\u003e",
+                    "references": [
+                      {
+                        "name": "PermanentColorSchemeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "permanentColorSchemeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "\"settings\" | \"connect\""
+                  }
+                },
+                {
+                  "name": "newFabConfig",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "name": "onFabChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "name": "onColorThemeModeContrastChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "name": "dialogContent",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "name": "dialogTitle",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "configs-dialog",
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-highest"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-error"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-sys-color-surface-container-lowest"
+            },
+            {
+              "name": "--icon-fill-color"
+            },
+            {
+              "name": "--md-sys-color-outline"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "configs-dialog",
+          "declaration": {
+            "name": "ConfigsDialog",
+            "module": "src/components/dialogs/configs/configs-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConfigsDialog",
+          "declaration": {
+            "name": "ConfigsDialog",
+            "module": "src/components/dialogs/configs/configs-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/connect/connect-dialog.js",
+      "declarations": [
+        {
+          "name": "ConnectDialog",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "time",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{version}[/VI]\"",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleDialogEvent",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "connect-dialog",
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-dialog-container-color"
+            },
+            {
+              "name": "--md-sys-typescale-body-large-size"
+            },
+            {
+              "name": "--md-ref-typeface-weight-bold"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--connect-dialog-content-transition",
+              "default": "0.3s"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed-dim"
+            },
+            {
+              "name": "--md-sys-color-on-primary-fixed"
+            },
+            {
+              "name": "--md-sys-shape-corner-full"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--md-list-item-leading-image-width"
+            },
+            {
+              "name": "--md-list-item-leading-image-height"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-dialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConnectDialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/step-up/step-up-dialog.js",
+      "declarations": [
+        {
+          "name": "StepUpDialog",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "dialogStyle",
+              "type": {
+                "text": "\"confirm\" | \"warning\" | \"attention\"",
+                "references": [
+                  {
+                    "name": "ConfirmDialogStyle",
+                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                  }
+                ]
+              },
+              "default": "\"confirm\"",
+              "kind": "field",
+              "attribute": "dialogStyle"
+            },
+            {
+              "name": "dialogContentString",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "dialogContentString"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "isCancel",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ],
+              "name": "onButtonClick",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "headlines",
+              "type": {
+                "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
+              },
+              "default": "{\\n    confirm: html`\u003ch2 class=\"md-typescale-headline-small\"\u003ePlease Confirm\u003c/h2\u003e`,\\n    warning: html`\u003ch2 class=\"md-typescale-headline-small\"\u003eWarning\u003c/h2\u003e`,\\n    attention: html`\u003ch2 class=\"md-typescale-headline-small\"\u003eAttention!\u003c/h2\u003e`,\\n  }",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "icons",
+              "type": {
+                "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
+              },
+              "default": "{\\n    confirm: html`\u003cmd-icon slot=\"icon\"\u003echeck_circle\u003c/md-icon\u003e`,\\n    warning: html`\u003cmd-icon slot=\"icon\"\u003ewarning\u003c/md-icon\u003e`,\\n    attention: html`\u003cmd-icon slot=\"icon\"\u003ereport\u003c/md-icon\u003e`,\\n  }",
+              "kind": "field",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "step-up-dialog",
+          "attributes": [
+            {
+              "name": "dialogStyle",
+              "type": {
+                "text": "\"confirm\" | \"warning\" | \"attention\"",
+                "references": [
+                  {
+                    "name": "ConfirmDialogStyle",
+                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                  }
+                ]
+              },
+              "default": "\"confirm\"",
+              "fieldName": "dialogStyle"
+            },
+            {
+              "name": "dialogContentString",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "dialogContentString"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-color-surface-variant"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            },
+            {
+              "name": "--md-sys-color-error"
+            },
+            {
+              "name": "--md-sys-color-on-error"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "step-up-dialog",
+          "declaration": {
+            "name": "StepUpDialog",
+            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "StepUpDialog",
+          "declaration": {
+            "name": "StepUpDialog",
+            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/fab-menu/fab-menu-item.js",
+      "declarations": [
+        {
+          "name": "FabMenuItem",
+          "description": "An action item within a `fab-menu`.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "label",
+              "description": "The text label displayed next to the FAB item.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "label"
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display inside the FAB item.",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "icon"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "name": "focus",
+              "kind": "method"
+            }
+          ],
+          "kind": "class",
+          "tagName": "fab-menu-item",
+          "attributes": [
+            {
+              "name": "label",
+              "description": "The text label displayed next to the FAB item.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label"
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display inside the FAB item.",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"\"",
+              "fieldName": "icon"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--fab-menu-item-direction",
+              "default": "row"
+            },
+            {
+              "name": "--fab-menu-item-justify",
+              "default": "flex-end"
+            },
+            {
+              "name": "--fab-menu-item-padding-end",
+              "default": "0"
+            },
+            {
+              "name": "--fab-menu-item-padding-start",
+              "default": "0"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-elevation-2"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "fab-menu-item",
+          "declaration": {
+            "name": "FabMenuItem",
+            "module": "src/components/fab-menu/fab-menu-item.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabMenuItem",
+          "declaration": {
+            "name": "FabMenuItem",
+            "module": "src/components/fab-menu/fab-menu-item.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/fab-menu/fab-menu.js",
+      "declarations": [
+        {
+          "name": "FabMenu",
+          "description": "A floating action button that toggles a menu of actions.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "open",
+              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display when the menu is closed.\nDefaults to 'add'.  An empty {@link string}\nsuppresses the icon",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"add\"",
+              "kind": "field",
+              "attribute": "icon"
+            },
+            {
+              "name": "openedIcon",
+              "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+              "type": {
+                "text": "MaterialSymbols[number]",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"close\"",
+              "kind": "field",
+              "attribute": "opened-icon"
+            },
+            {
+              "name": "variant",
+              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "kind": "field",
+              "attribute": "variant"
+            },
+            {
+              "name": "size",
+              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "kind": "field",
+              "attribute": "size"
+            },
+            {
+              "name": "label",
+              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "label"
+            },
+            {
+              "name": "ariaLabel",
+              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "aria-label"
+            },
+            {
+              "name": "direction",
+              "description": "The direction in which the menu items should expand.",
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "kind": "field",
+              "attribute": "direction",
+              "reflects": true
+            },
+            {
+              "name": "_focusableElements",
+              "type": {
+                "text": "(HTMLElement \u0026 { focus: (options?: FocusOptions) =\u003e void; })[]"
+              },
+              "readonly": true,
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "FocusEvent"
+                  }
+                }
+              ],
+              "name": "_handleFocusTrap",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "name": "_handleDocumentClick",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_toggle",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "fab-menu",
+          "attributes": [
+            {
+              "name": "open",
+              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display when the menu is closed.\nDefaults to 'add'.  An empty {@link string}\nsuppresses the icon",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"add\"",
+              "fieldName": "icon"
+            },
+            {
+              "name": "opened-icon",
+              "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+              "type": {
+                "text": "MaterialSymbols[number]",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"close\"",
+              "fieldName": "openedIcon"
+            },
+            {
+              "name": "variant",
+              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "fieldName": "size"
+            },
+            {
+              "name": "label",
+              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "direction",
+              "description": "The direction in which the menu items should expand.",
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "fieldName": "direction"
+            }
+          ],
+          "slots": [
+            {
+              "name": "",
+              "description": "[menu-items] - The content of the menu, typically `fab-menu-item` elements."
+            },
+            {
+              "name": "menu-items"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-icon-size"
+            },
+            {
+              "name": "--md-fab-margin",
+              "default": "0"
+            },
+            {
+              "name": "--md-sys-color-scrim"
+            },
+            {
+              "name": "--fab-menu-transition-duration"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "fab-menu",
+          "declaration": {
+            "name": "FabMenu",
+            "module": "src/components/fab-menu/fab-menu.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabMenu",
+          "declaration": {
+            "name": "FabMenu",
+            "module": "src/components/fab-menu/fab-menu.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/nav/nav-component.js",
+      "declarations": [
+        {
+          "name": "NavComponent",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "PropertyValues"
+                  }
+                }
+              ],
+              "name": "firstUpdated",
+              "kind": "method",
+              "privacy": "protected"
+            }
+          ],
+          "kind": "class",
+          "tagName": "nav-component",
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-elevation-level"
+            },
+            {
+              "name": "--md-sys-shape-corner-extra-small"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--nav-component-icon-animation",
+              "default": "225ms"
+            },
+            {
+              "name": "--nav-component-icon-animation-reduced"
+            },
+            {
+              "name": "--icon-fill-color"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "nav-component",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NavComponent",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/partial-header/partial-header.js",
+      "declarations": [
+        {
+          "name": "PartialHeader",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "headingText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "heading-text"
+            },
+            {
+              "name": "headerType",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "kind": "field",
+              "attribute": "header-type"
+            }
+          ],
+          "kind": "class",
+          "tagName": "partial-header",
+          "attributes": [
+            {
+              "name": "heading-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "headingText"
+            },
+            {
+              "name": "header-type",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "fieldName": "headerType"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-primary"
+            },
+            {
+              "name": "--md-sys-color-secondary"
+            },
+            {
+              "name": "--md-sys-color-on-secondary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "partial-header",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PartialHeader",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/profile-section/profile-section.js",
+      "declarations": [
+        {
+          "name": "ProfileSection",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "sectionTitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "section-title"
+            }
+          ],
+          "kind": "class",
+          "tagName": "profile-section",
+          "attributes": [
+            {
+              "name": "section-title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "sectionTitle"
+            }
+          ],
+          "slots": [
+            {
+              "name": "section-grid-content"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-section",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfileSection",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word-cloud/word-cloud.js",
+      "declarations": [
+        {
+          "name": "WordCloud",
+          "description": "A component that renders a cloud of words with various sorting and grouping options.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "words",
+              "description": "The list of words to display in the cloud.",
+              "type": {
+                "text": "WordCloudWord[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "words"
+            },
+            {
+              "name": "instantClear",
+              "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "instant-clear"
+            },
+            {
+              "name": "appearance",
+              "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+              "type": {
+                "text": "WordCloudAppearance"
+              },
+              "default": "WordCloudAppearances.SEQUENTIAL",
+              "kind": "field",
+              "attribute": "appearance"
+            },
+            {
+              "name": "grouping",
+              "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+              "type": {
+                "text": "WordCloudGrouping"
+              },
+              "default": "WordCloudGroupings.UNGROUPED",
+              "kind": "field",
+              "attribute": "grouping"
+            },
+            {
+              "name": "sorting",
+              "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+              "type": {
+                "text": "WordCloudSorting"
+              },
+              "default": "WordCloudSortings.NONE",
+              "kind": "field",
+              "attribute": "sorting"
+            },
+            {
+              "name": "delay",
+              "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+              "type": {
+                "text": "number | \"none\""
+              },
+              "default": "\"none\"",
+              "kind": "field",
+              "attribute": "delay"
+            },
+            {
+              "name": "threshold",
+              "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+              "type": {
+                "text": "number"
+              },
+              "default": "0.1",
+              "kind": "field",
+              "attribute": "threshold"
+            },
+            {
+              "name": "_intersectionObserver",
+              "type": {
+                "text": "IntersectionObserver"
+              },
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_initIntersectionObserver",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "firstUpdated",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "RenderableWordCloudWord[]"
+                }
+              },
+              "name": "_processWords",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "sorting",
+                  "type": {
+                    "text": "WordCloudSorting"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "((a: RenderableWordCloudWord, b: RenderableWordCloudWord) =\u003e number) | undefined"
+                }
+              },
+              "name": "_getSortFunction",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "kind": "class",
+          "tagName": "word-cloud",
+          "attributes": [
+            {
+              "name": "words",
+              "description": "The list of words to display in the cloud.",
+              "type": {
+                "text": "WordCloudWord[]"
+              },
+              "default": "[]",
+              "fieldName": "words"
+            },
+            {
+              "name": "instant-clear",
+              "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "instantClear"
+            },
+            {
+              "name": "appearance",
+              "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+              "type": {
+                "text": "WordCloudAppearance"
+              },
+              "default": "WordCloudAppearances.SEQUENTIAL",
+              "fieldName": "appearance"
+            },
+            {
+              "name": "grouping",
+              "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+              "type": {
+                "text": "WordCloudGrouping"
+              },
+              "default": "WordCloudGroupings.UNGROUPED",
+              "fieldName": "grouping"
+            },
+            {
+              "name": "sorting",
+              "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+              "type": {
+                "text": "WordCloudSorting"
+              },
+              "default": "WordCloudSortings.NONE",
+              "fieldName": "sorting"
+            },
+            {
+              "name": "delay",
+              "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+              "type": {
+                "text": "number | \"none\""
+              },
+              "default": "\"none\"",
+              "fieldName": "delay"
+            },
+            {
+              "name": "threshold",
+              "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+              "type": {
+                "text": "number"
+              },
+              "default": "0.1",
+              "fieldName": "threshold"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--word-cloud-animation",
+              "description": "Duration of the entrance animation for each word.",
+              "default": "150ms"
+            },
+            {
+              "name": "--word-cloud-animation-reduced",
+              "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+              "default": "1ms"
+            },
+            {
+              "name": "--word-cloud-first-quartile-font-size",
+              "description": "Font size for words in the first weight quartile (highest weight).",
+              "default": "1.75rem"
+            },
+            {
+              "name": "--word-cloud-first-quartile-line-height",
+              "description": "Line height for words in the first weight quartile.",
+              "default": "1.75rem"
+            },
+            {
+              "name": "--word-cloud-second-quartile-font-size",
+              "description": "Font size for words in the second weight quartile.",
+              "default": "1.5rem"
+            },
+            {
+              "name": "--word-cloud-second-quartile-line-height",
+              "description": "Line height for words in the second weight quartile.",
+              "default": "1.5rem"
+            },
+            {
+              "name": "--word-cloud-third-quartile-font-size",
+              "description": "Font size for words in the third weight quartile.",
+              "default": "1.25rem"
+            },
+            {
+              "name": "--word-cloud-third-quartile-line-height",
+              "description": "Line height for words in the third weight quartile.",
+              "default": "1.25rem"
+            },
+            {
+              "name": "--word-cloud-fourth-quartile-font-size",
+              "description": "Font size for words in the fourth weight quartile (lowest weight).",
+              "default": "1rem"
+            },
+            {
+              "name": "--word-cloud-fourth-quartile-line-height",
+              "description": "Line height for words in the fourth weight quartile.",
+              "default": "1rem"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-secondary-container"
+            },
+            {
+              "name": "--md-sys-color-on-secondary-container"
+            },
+            {
+              "name": "--md-sys-color-secondary"
+            },
+            {
+              "name": "--md-sys-color-on-secondary"
+            },
+            {
+              "name": "--md-sys-color-secondary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-secondary-fixed"
+            },
+            {
+              "name": "--md-sys-color-tertiary-container"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary-container"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            },
+            {
+              "name": "--md-sys-color-tertiary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary-fixed"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-primary"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-primary-fixed"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "word-cloud",
+          "declaration": {
+            "name": "WordCloud",
+            "module": "src/components/word-cloud/word-cloud.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloud",
+          "declaration": {
+            "name": "WordCloud",
+            "module": "src/components/word-cloud/word-cloud.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/work-experience/work-experience.js",
+      "declarations": [
+        {
+          "name": "WorkExperience",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "isNested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "is-nested"
+            },
+            {
+              "name": "experienceRole",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "experience-role"
+            },
+            {
+              "name": "experienceOrg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "experience-org"
+            },
+            {
+              "name": "dateStart",
+              "type": {
+                "text": "{ stamp: string, text: string }"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "kind": "field",
+              "attribute": "date-start"
+            },
+            {
+              "name": "dateEnd",
+              "type": {
+                "text": "{ stamp: string, text: string }"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "kind": "field",
+              "attribute": "date-end"
+            },
+            {
+              "name": "summaries",
+              "type": {
+                "text": "{ item: string }[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "summaries"
+            },
+            {
+              "name": "jobs",
+              "type": {
+                "text": "{\n    role: string,\n    client: string,\n  dates: {\n      start: { stamp: string, text: string },\n      end: { stamp: string, text: string }\n    },\n    summary: { item: string }[]\n  }[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "jobs"
+            }
+          ],
+          "kind": "class",
+          "tagName": "work-experience",
+          "attributes": [
+            {
+              "name": "is-nested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "isNested"
+            },
+            {
+              "name": "experience-role",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "experienceRole"
+            },
+            {
+              "name": "experience-org",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "experienceOrg"
+            },
+            {
+              "name": "date-start",
+              "type": {
+                "text": "{ stamp: string, text: string }"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "fieldName": "dateStart"
+            },
+            {
+              "name": "date-end",
+              "type": {
+                "text": "{ stamp: string, text: string }"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "fieldName": "dateEnd"
+            },
+            {
+              "name": "summaries",
+              "type": {
+                "text": "{ item: string }[]"
+              },
+              "default": "[]",
+              "fieldName": "summaries"
+            },
+            {
+              "name": "jobs",
+              "type": {
+                "text": "{\n    role: string,\n    client: string,\n  dates: {\n      start: { stamp: string, text: string },\n      end: { stamp: string, text: string }\n    },\n    summary: { item: string }[]\n  }[]"
+              },
+              "default": "[]",
+              "fieldName": "jobs"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-secondary"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "work-experience",
+          "declaration": {
+            "name": "WorkExperience",
+            "module": "src/components/work-experience/work-experience.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WorkExperience",
+          "declaration": {
+            "name": "WorkExperience",
+            "module": "src/components/work-experience/work-experience.js"
+          }
+        }
+      ]
+    }
+  ]
+}

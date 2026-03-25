@@ -65,7 +65,6 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2",
-    "@custom-elements-manifest/analyzer": "^0.11.0",
     "@eslint/js": "^10.0.1",
     "@m00nbyte/rollup-plugin-copy-multiple-assets": "^1.0.0",
     "@material/material-color-utilities": "^0.4.0",
