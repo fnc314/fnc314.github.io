@@ -241,7 +241,6 @@ export class FabMenu extends LitElement {
         break;
       case "medium":
         this._items.forEach((item: FabMenuItem) => {
-          console.log(item);
           item.style.setProperty("--fab-menu-item-padding-start", "0.5rem");
           item.style.setProperty("--fab-menu-item-padding-end", "0.5rem");
         });
