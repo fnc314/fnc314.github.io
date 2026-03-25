@@ -5,8 +5,8 @@ import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { type AppConfigs } from "@/types/configs/app-configs";
-import { FAB_STYLE, type FabConfig, FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
+import { AppConfigsChange, type AppConfigs } from "@/types/configs/app-configs";
+import { FAB_STYLE, FabConfigChange, fabPositionClass, type FabConfig } from "@/types/configs/fab-configs";
 import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
@@ -181,8 +181,8 @@ export class AppShell extends LitElement {
     );
   }
 
-  private onFabConfigBind = ((event: FabConfigChange) =>
-    this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig)).bind(this);
+  private onFabConfigBind = (event: FabConfigChange) =>
+    this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig);
 
   protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
     super.firstUpdated(_changedProperties);
@@ -207,17 +207,26 @@ export class AppShell extends LitElement {
     }
   }
 
-  private onColorSchemeChange = ((event: ColorSchemeConfigChange) => {
+  private onColorSchemeChange = (event: ColorSchemeConfigChange) => {
     this._uiModeIcon = this.uiModeIcon(event.detail);
     const themeConfig = themeService.currentThemeConfig();
     updateMaterialCSSStyleSheet(
       themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
     );
     document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
-  }).bind(this);
+  };
+
+  private onAppConfigsChange = (event: Event) => {
+    this.appConfigs = (event as AppConfigsChange).detail.appConfigs;
+  };
 
   override connectedCallback() {
     super.connectedCallback();
+    configsService.addEventListener(
+      "app-configs.change",
+      this.onAppConfigsChange
+    );
+
     document.addEventListener(
       "fab.change",
       this.onFabConfigBind
@@ -299,18 +308,21 @@ export class AppShell extends LitElement {
           .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
           >
             <fab-menu-item
+              slot="menu-items"
               .icon=${"settings"}
               .label=${"Settings Button"}
               @click=${() => this._onFabMenuItemClick("button-settings")}
               >
             </fab-menu-item>
             <fab-menu-item
+              slot="menu-items"
               .icon=${"person_add"}
               .label=${"Connect Button"}
               @click=${() => this._onFabMenuItemClick("button-connect")}
               >
             </fab-menu-item>
             <fab-menu-item
+              slot="menu-items"
               .icon=${this._uiModeIcon}
               .label=${"UI Mode"}
               @click=${() => this._onFabMenuItemClick("ui-mode")}

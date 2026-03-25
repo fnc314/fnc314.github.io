@@ -2,6 +2,7 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdFab } from "@material/web/fab/fab";
 import { css, html, LitElement } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
+import { MaterialSymbol } from "material-symbols";
 
 /**
  * An action item within a `fab-menu`.
@@ -22,7 +23,7 @@ export class FabMenuItem extends LitElement {
         gap: 1rem;
         /* Align center of small FAB (40px) with center of medium FAB (56px) in parent.
            (56 - 40) / 2 = 8px = 0.5rem */
-        padding-inline-end: var(--fab-menu-item-padding-end, 0.5rem);
+        padding-inline-end: var(--fab-menu-item-padding-end, 0);
         padding-inline-start: var(--fab-menu-item-padding-start, 0);
       }
 
@@ -62,7 +63,7 @@ export class FabMenuItem extends LitElement {
    * The icon to display inside the FAB item.
    */
   @property({ type: String })
-  icon = "";
+  icon: MaterialSymbol | "" = "";
 
   override focus(options?: FocusOptions) {
     this._fab.focus(options);

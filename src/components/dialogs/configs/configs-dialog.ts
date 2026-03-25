@@ -4,9 +4,9 @@ import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
-import { type AppConfigs, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
+import { type AppConfigs, AppConfigsChange, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
 import { type FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs/fab-configs";
-import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, } from "@/types/theme/color-scheme-configs";
+import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, ThemeName } from "@/types/theme/theme";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
@@ -345,13 +345,24 @@ export class ConfigsDialog extends LitElement {
   @state()
   private _formContent: FormContent = "ui-mode";
 
+  @state()
+  private _stepUpDialogContent: string = "all custom";
+
   private _handleDialogEvent(event: Event) {
     this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));
   }
 
+  private onAppConfigsChange = (event: Event) => {
+    this._appConfigs = (event as AppConfigsChange).detail.appConfigs;
+  };
+
   constructor() {
     super();
     this._appConfigs = configsService.loadConfigs();
+    configsService.addEventListener(
+      "app-configs.change",
+      this.onAppConfigsChange
+    )
   }
 
   public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
@@ -363,22 +374,39 @@ export class ConfigsDialog extends LitElement {
     return this._configsMDDialog.close();
   };
 
-  private openStepUp = ((_: OpenStepUpDialog) => {
+  private openStepUp = (_: OpenStepUpDialog) => {
+    switch (this._formContent) {
+      case "ui-mode":
+        this._stepUpDialogContent = "UI Mode";
+        break;
+      case "button-settings":
+      case "button-connect":
+        this._stepUpDialogContent = "Settings & Connect Button";
+        break;
+    }
+    this._stepUpDialog.dialogContentString = `Are you sure you want to revert ${this._stepUpDialogContent} customizations?`;
     this._stepUpDialog.showDialog();
-  }).bind(this)
+  };
 
-  private completeStepUp = ((event: CompleteStepUpDialog) => {
+  private completeStepUp = (event: CompleteStepUpDialog) => {
     if (event.detail.confirmed) {
       this._appConfigs = DEFAULT_APP_CONFIGS;
-      this._darkModeToggle.removeAttribute("permanent");
-      this.onFabChange("settings", this._appConfigs.fab.settings);
-      this.onFabChange("connect", this._appConfigs.fab.connect);
-      this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
+      switch (this._formContent) {
+        case "ui-mode":
+          this._darkModeToggle.removeAttribute("permanent");
+          this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
+          break;
+        case "button-settings":
+        case "button-connect":
+          this.onFabChange("settings", this._appConfigs.fab.settings);
+          this.onFabChange("connect", this._appConfigs.fab.connect);
+          break;
+      }
       configsService.resetConfigs();
     }
-  }).bind(this);
+  };
 
-  private colorSchemeChangeEventListener = ((event: ColorSchemeChangeEvent) => {
+  private colorSchemeChangeEventListener = (event: ColorSchemeChangeEvent) => {
     this._darkModeEnabled = event.detail.colorScheme === "dark";
     this._appConfigs = {
       ...this._appConfigs,
@@ -392,9 +420,9 @@ export class ConfigsDialog extends LitElement {
     this.onColorThemeModeContrastChange(
       this._appConfigs.colorScheme
     );
-  }).bind(this);
+  };
 
-  private permanentColorSchemeEventListener = ((event: PermanentColorSchemeEvent) => {
+  private permanentColorSchemeEventListener = (event: PermanentColorSchemeEvent) => {
     this._appConfigs = {
       ...this._appConfigs,
       colorScheme: {
@@ -403,7 +431,7 @@ export class ConfigsDialog extends LitElement {
       }
     }
     configsService.saveConfigs(this._appConfigs);
-  }).bind(this);
+  };
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -703,7 +731,7 @@ export class ConfigsDialog extends LitElement {
       <step-up-dialog
         id="step-up-dialog"
         .dialogStyle=${"confirm"}
-        .dialogContentString=${"Are you sure you want to revert all custom settings?"}
+        .dialogContentString=${`Are you sure you want to revert ${this._stepUpDialogContent} customizations?`}
       ></step-up-dialog>
 
       <md-dialog
@@ -743,7 +771,9 @@ export class ConfigsDialog extends LitElement {
                 )
               );
             }}
-            >Reset Settings</md-outlined-button>
+            >
+              Reset Settings
+            </md-outlined-button>
           <md-filled-button form="configs-dialog-form">Save Settings</md-filled-button>
         </div>
       </md-dialog>

@@ -8,12 +8,13 @@ import { css, html, LitElement, nothing } from "lit";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { when } from "lit-html/directives/when.js";
 import { customElement, property, query, queryAssignedElements } from "lit/decorators.js";
+import { MaterialSymbol } from "material-symbols";
 
 /**
  * A floating action button that toggles a menu of actions.
  *
  * @element fab-menu
- * @slot - The content of the menu, typically `fab-menu-item` elements.
+ * @slot [menu-items] - The content of the menu, typically `fab-menu-item` elements.
  */
 @customElement("fab-menu")
 export class FabMenu extends LitElement {
@@ -29,13 +30,15 @@ export class FabMenu extends LitElement {
 
         /* Initial menu direction. Override with fab-menu[direction="start"] */
         --menu-direction: end;
+
+        --fab-menu-transition-duration: 200ms;
       }
 
       :host([direction="start"]) {
         align-items: flex-start; /* Align to left side */
         --fab-menu-item-direction: row-reverse;
         --fab-menu-item-padding-end: 0;
-        --fab-menu-item-padding-start: 0.5rem;
+        --fab-menu-item-padding-start: 0;
         --fab-menu-item-justify: flex-start;
       }
 
@@ -55,9 +58,9 @@ export class FabMenu extends LitElement {
         margin-inline-end: var(--md-fab-margin, 0);
 
         transition:
-          opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          visibility 0.2s linear;
+          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+          transform var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+          visibility var(--fab-menu-transition-duration) linear;
 
         opacity: 0;
         visibility: hidden;
@@ -83,9 +86,9 @@ export class FabMenu extends LitElement {
 
       md-fab {
         transition:
-          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-          background-color 0.2s linear,
-          color 0.2s linear;
+          transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
+          background-color var(--fab-menu-transition-duration) linear,
+          color var(--fab-menu-transition-duration) linear;
         z-index: 2;
 
         /* Reset default margin */
@@ -107,7 +110,9 @@ export class FabMenu extends LitElement {
 
       .icon-wrapper md-icon {
         grid-area: 1 / 1;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s linear;
+        transition:
+          transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.2s linear;
       }
 
       :host([direction="start"]) ul.menu-items {
@@ -122,7 +127,7 @@ export class FabMenu extends LitElement {
   @query("#fab-menu-fab")
   private _fab!: MdFab;
 
-  @queryAssignedElements({ flatten: true })
+  @queryAssignedElements({ slot: "menu-items", flatten: true })
   private readonly _items!: FabMenuItem[];
 
   /**
@@ -137,14 +142,14 @@ export class FabMenu extends LitElement {
    *   suppresses the icon
    */
   @property({ type: String })
-  icon = "add";
+  icon: MaterialSymbol | "" = "add";
 
   /**
    * The icon to display when the menu is open.
    * Defaults to 'close'.
    */
   @property({ type: String, attribute: "opened-icon" })
-  openedIcon = "close";
+  openedIcon: MaterialSymbol = "close";
 
   /**
    * The variant of the FAB.
@@ -226,6 +231,29 @@ export class FabMenu extends LitElement {
 
     super.update(changedProperties);
     await this.updateComplete;
+
+    switch (this.size) {
+      case "small":
+        this._items.forEach((item: FabMenuItem) => {
+          item.style.setProperty("--fab-menu-item-padding-start", "0");
+          item.style.setProperty("--fab-menu-item-padding-end", "0");
+        });
+        break;
+      case "medium":
+        this._items.forEach((item: FabMenuItem) => {
+          console.log(item);
+          item.style.setProperty("--fab-menu-item-padding-start", "0.5rem");
+          item.style.setProperty("--fab-menu-item-padding-end", "0.5rem");
+        });
+        break;
+      case "large":
+        this._items.forEach((item: FabMenuItem) => {
+          item.style.setProperty("--fab-menu-item-padding-start", "1rem");
+          item.style.setProperty("--fab-menu-item-padding-end", "1rem");
+        });
+        break;
+    }
+
     const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
       labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
@@ -286,7 +314,7 @@ export class FabMenu extends LitElement {
       </div>
 
       <ul class="menu-items" role="menu" .ariaLabel=${this.ariaLabel}>
-        <slot></slot>
+        <slot name="menu-items"></slot>
       </ul>
       ${this.open ? html`<div class="focus-trap-end" tabindex="0" @focus=${this._handleFocusTrap}></div>` : nothing}
     `;

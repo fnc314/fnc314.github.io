@@ -1,7 +1,7 @@
 import { storageService, StorageService } from "@/services/storage/storage-service";
-import { type AppConfigs, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { AppConfigsChange, DEFAULT_APP_CONFIGS, type AppConfigs } from "@/types/configs/app-configs";
 
-export interface ConfigsService {
+export interface ConfigsService extends EventTarget {
   saveConfigs(
     configs: AppConfigs
   ): void
@@ -11,10 +11,11 @@ export interface ConfigsService {
   resetConfigs(): void;
 };
 
-class ConfigsServiceImpl implements ConfigsService {
+class ConfigsServiceImpl extends EventTarget implements ConfigsService {
   #storageService: StorageService
 
   constructor(storageService: StorageService) {
+    super();
     this.#storageService = storageService;
   }
 
@@ -25,6 +26,18 @@ class ConfigsServiceImpl implements ConfigsService {
     this.#storageService.clearData("dark-mode-toggle");
     this.#storageService.saveData("configs", JSON.stringify(configs));
     this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
+    this.dispatchEvent(
+      new CustomEvent(
+        "app-configs.change",
+        {
+          bubbles: true,
+          composed: true,
+          detail: {
+            appConfigs: configs
+          }
+        }
+      )
+    );
   }
 
   loadConfigs(): AppConfigs {
@@ -58,3 +71,9 @@ class ConfigsServiceImpl implements ConfigsService {
 export const configsService: ConfigsService = new ConfigsServiceImpl(
   storageService
 );
+
+declare global {
+  interface GlobalEventHandlersEventMap {
+    "app-configs.change": AppConfigsChange;
+  }
+}

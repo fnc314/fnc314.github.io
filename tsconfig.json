@@ -6,7 +6,6 @@
     "lib": [
       "Decorators",
       "DOM",
-      "DOM.Iterable",
       "ES2020",
       "ES2021",
       "ES2022",

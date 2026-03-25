@@ -27,3 +27,5 @@ export const DEFAULT_APP_CONFIGS: AppConfigs = {
 } as const;
 
 export type AppConfigsSchemeTheme = () => ThemeConfig
+
+export type AppConfigsChange = CustomEvent<{ appConfigs: AppConfigs }>;
