@@ -136,6 +136,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L25"
+          },
           "kind": "class",
           "tagName": "app-shell",
           "slots": [
@@ -365,6 +368,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L32"
+          },
           "kind": "class",
           "tagName": "configs-dialog",
           "cssProperties": [
@@ -485,6 +491,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L9"
+          },
           "kind": "class",
           "tagName": "connect-dialog",
           "cssProperties": [
@@ -642,6 +651,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L10"
+          },
           "kind": "class",
           "tagName": "step-up-dialog",
           "attributes": [
@@ -773,6 +785,9 @@
               "kind": "method"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L13"
+          },
           "kind": "class",
           "tagName": "fab-menu-item",
           "attributes": [
@@ -1000,6 +1015,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L20"
+          },
           "kind": "class",
           "tagName": "fab-menu",
           "attributes": [
@@ -1163,6 +1181,9 @@
               "privacy": "protected"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L12"
+          },
           "kind": "class",
           "tagName": "nav-component",
           "cssProperties": [
@@ -1250,6 +1271,9 @@
               "attribute": "header-type"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/partial-header/partial-header.ts#L6"
+          },
           "kind": "class",
           "tagName": "partial-header",
           "attributes": [
@@ -1336,6 +1360,9 @@
               "attribute": "section-title"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/profile-section/profile-section.ts#L6"
+          },
           "kind": "class",
           "tagName": "profile-section",
           "attributes": [
@@ -1514,6 +1541,9 @@
               "privacy": "private"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word-cloud/word-cloud.ts#L25"
+          },
           "kind": "class",
           "tagName": "word-cloud",
           "attributes": [
@@ -1793,6 +1823,9 @@
               "attribute": "jobs"
             }
           ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L6"
+          },
           "kind": "class",
           "tagName": "work-experience",
           "attributes": [

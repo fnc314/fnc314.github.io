@@ -1,0 +1,30 @@
+additionalPackages:
+  - "npm:@material/web"
+
+generate:
+  files:
+    - "./src/components/**/*.ts"
+
+  output: "./custom-elements.json"
+
+serve:
+  no-reload: false
+
+  port: 8888
+
+  watchIgnore:
+    - "./website/**"
+    - "./node_modules/**"
+    - "./old/**"
+
+sourceControlRootUrl: "https://github.com/fnc314/fnc314.github.io/tree/main/"
+
+transforms:
+  css:
+    enabled: true
+    include:
+      - "./src/styles/*.css"
+
+  typescript:
+    enabled: true
+

@@ -8,6 +8,14 @@ import { createRef, ref, Ref } from "lit/directives/ref.js";
 
 type IndexRoute = { route: Route, index: number };
 
+/**
+ * A navigation component that renders primary tabs synchronized with the application's URL hash routes.
+ *
+ * @element nav-component
+ *
+ * @cssprop [--nav-component-icon-animation=225ms] - The duration of the icon's fill and color transition.
+ * @cssprop [--nav-component-icon-animation-reduced=1ms] - The duration of the icon's transition when motion is reduced.
+ */
 @customElement("nav-component")
 export class NavComponent extends LitElement {
   static override styles = [

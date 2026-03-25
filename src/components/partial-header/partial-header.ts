@@ -2,6 +2,11 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * A header component used for section titles with support for primary, secondary, and tertiary Material color variants.
+ *
+ * @element partial-header
+ */
 @customElement("partial-header")
 export class PartialHeader extends LitElement {
   static override styles = [
@@ -54,9 +59,18 @@ export class PartialHeader extends LitElement {
     `,
   ];
 
+  /**
+   * The text to display within the header.
+   * @attr heading-text
+   */
   @property({ type: String, attribute: "heading-text" })
   headingText: string = "";
 
+  /**
+   * The color variant theme for the header background and text.
+   * Can be 'primary', 'secondary', or 'tertiary'.
+   * @attr header-type
+   */
   @property({ type: String, attribute: "header-type" })
   headerType: "primary" | "secondary" | "tertiary" = "primary";
 

@@ -20,6 +20,7 @@
   "type": "module",
   "module": "src/index.js",
   "private": true,
+  "customElements": "./custom-elements.json",
   "scripts": {
     "start": "web-dev-server",
     "build": "tsc",
