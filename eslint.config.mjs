@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import defaultConfig from "eslint";
 import jsonSchemaValidator from "eslint-plugin-json-schema-validator";
 import lit from "eslint-plugin-lit";
 import wc from "eslint-plugin-wc";
