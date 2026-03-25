@@ -20,7 +20,7 @@ export class CodePartial extends LitElement {
         --code-partial-animation-reduced: 0ms;
 
         display: block;
-        background-color: var(--md-sys-color-surface-container-highest);
+        background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
       }
 

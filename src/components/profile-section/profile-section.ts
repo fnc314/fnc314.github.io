@@ -30,19 +30,26 @@ export class ProfileSection extends LitElement {
         grid-area: section-grid-title;
         place-self: center;
         padding-block: 1rem;
+        margin: unset;
       }
 
       div {
-        display: contents;
+        display: block;
+        container-type: inline-size;
         grid-area: section-grid-content;
+        align-self: center;
       }
 
-      @container (min-width: 600px) {
+      slot[name="section-grid-content"] {
+        place-self: center;
+      }
+
+      @container (min-width: 700px) {
         section {
           /* Make the inner section span the columns of the host's subgrid */
           grid-column: 1 / -1;
           grid-template-areas: "section-grid-title section-grid-content";
-          grid-template-columns: subgrid;
+          grid-template-columns: min-content 1fr;
           grid-template-rows: auto;
         }
 

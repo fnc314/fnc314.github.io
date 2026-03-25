@@ -44,6 +44,7 @@ export class ProfilePartial extends LitElement {
         place-self: center;
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         padding: unset;
         gap: 1rem;
 
@@ -109,14 +110,25 @@ export class ProfilePartial extends LitElement {
       .bio {
         grid-area: bio;
 
-        [slot="section-grid-content"]::first-line {
-          overflow-wrap: anywhere;
-          white-space: pre-wrap;
-          word-wrap: break-word;
-          text-align: justify;
-          text-justify: inter-word;
-          font-size: 150%;
-          text-indent: 0.5rem;
+        [slot="section-grid-content"] {
+
+
+          &::first-line {
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: justify;
+            text-justify: inter-word;
+            font-size: 150%;
+            text-indent: 0.5rem;
+          }
+
+          @container (min-width: 500px) {
+            column-count: 2;
+            column-gap: 2rem;
+            column-rule: var(--md-sys-color-inverse-on-surface) solid var(--hairline-width);
+            column-width: 40cqi;
+          }
         }
       }
 
@@ -149,6 +161,7 @@ export class ProfilePartial extends LitElement {
       @media screen and (min-width: 600px) {
         .education-list-grid {
           place-self: stretch;
+
           .education-list-grid-item {
             grid-template-rows: repeat(2, 1fr);
             grid-template-columns: repeat(2, 1fr);
