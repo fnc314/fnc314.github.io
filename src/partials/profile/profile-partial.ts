@@ -7,14 +7,10 @@ import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/theme/theme";
-import {
-  makeWordCloudWord,
-  Weights,
-  WordCloudWordCategory,
-} from "@/types/components/word-cloud/word-cloud";
+import { Weights, WordCloudWordCategory, makeWordCloudWord } from "@/types/components/word-cloud/word-cloud";
 import { ColorSchemeConfigChange } from "@/types/theme/color-scheme-configs";
 import { type ThemeConfig } from "@/types/theme/theme";
-import { css, html, LitElement } from "lit-element";
+import { LitElement, css, html } from "lit-element";
 import { customElement, state } from "lit/decorators.js";
 
 @customElement("profile-partial")
@@ -129,8 +125,7 @@ export class ProfilePartial extends LitElement {
           @container (min-width: 500px) {
             column-count: 2;
             column-gap: 2rem;
-            column-rule: var(--md-sys-color-inverse-on-surface) solid
-              var(--hairline-width);
+            column-rule: var(--md-sys-color-inverse-on-surface) solid var(--hairline-width);
             column-width: 40cqi;
           }
         }
@@ -215,10 +210,9 @@ export class ProfilePartial extends LitElement {
             "figure   bio            bio            bio"
             "figure   education      education      education"
             "figure   cloud          cloud          cloud";
-          grid-template-columns: fit-content(30%) minmax(0, 1fr) minmax(
-              0,
-              1fr
-            ) minmax(0, 1fr);
+          grid-template-columns:
+            fit-content(30%) minmax(0, 1fr) minmax(0, 1fr)
+            minmax(0, 1fr);
           grid-auto-rows: min-content;
           grid-template-rows: minmax(auto, min-content);
         }
@@ -244,22 +238,13 @@ export class ProfilePartial extends LitElement {
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
-    document.removeEventListener(
-      "color_scheme.change",
-      this.onColorConfigsChange,
-    );
+    document.removeEventListener("color_scheme.change", this.onColorConfigsChange);
   }
 
   override render() {
     const words = Object.keys(SkillsJson.skills).flatMap((proficency) =>
-      Object.entries(
-        SkillsJson.skills[proficency as keyof typeof SkillsJson.skills],
-      ).map(([word, weight]) =>
-        makeWordCloudWord(
-          word,
-          weight as Weights,
-          proficency as WordCloudWordCategory,
-        ),
+      Object.entries(SkillsJson.skills[proficency as keyof typeof SkillsJson.skills]).map(([word, weight]) =>
+        makeWordCloudWord(word, weight as Weights, proficency as WordCloudWordCategory),
       ),
     );
     return html`
@@ -273,13 +258,12 @@ export class ProfilePartial extends LitElement {
               type="image/jpeg"
             />
             <img
+              loading="lazy"
               src=${this.themeConfig.themePhoto.src}
               alt=${this.themeConfig.themePhoto.alt}
             />
           </picture>
-          <figcaption class="md-typescale-label-large">
-            ${this.themeConfig.themePhoto.figcaption}
-          </figcaption>
+          <figcaption class="md-typescale-label-large">${this.themeConfig.themePhoto.figcaption}</figcaption>
         </figure>
 
         <profile-section
@@ -305,9 +289,7 @@ export class ProfilePartial extends LitElement {
             ${EducationJson.education.map(
               (edu) => html`
                 <li class="education-list-grid-item">
-                  <span class="md-typescale-title-medium"
-                    >${edu.institute}</span
-                  >
+                  <span class="md-typescale-title-medium">${edu.institute}</span>
 
                   <span class="md-typescale-body-medium">${edu.location}</span>
 
