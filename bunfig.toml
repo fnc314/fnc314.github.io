@@ -2,3 +2,6 @@ logLevel = "debug"
 
 [debug]
   editor = "code"
+
+[install]
+  auto = "auto"
