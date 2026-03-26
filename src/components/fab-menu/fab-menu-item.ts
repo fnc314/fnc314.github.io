@@ -1,8 +1,8 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdFab } from "@material/web/fab/fab";
-import { css, html, LitElement } from "lit";
+import { LitElement, css, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
-import { MaterialSymbol } from "material-symbols";
+import { type MaterialSymbol } from "material-symbols";
 
 /**
  * An action item within a `fab-menu`.
@@ -82,8 +82,14 @@ export class FabMenuItem extends LitElement {
 
   override render() {
     return html`
-      ${this.label ? html`<div class="label-container"><span class="md-typescale-label-large">${this.label}</span></div>` : ""}
-      <md-fab size="small" variant="secondary" aria-label=${this.label}>
+      ${this.label
+        ? html`<div class="label-container"><span class="md-typescale-label-large">${this.label}</span></div>`
+        : ""}
+      <md-fab
+        size="small"
+        variant="secondary"
+        aria-label=${this.label}
+      >
         <md-icon slot="icon">${this.icon}</md-icon>
       </md-fab>
     `;

@@ -1,6 +1,15 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { RenderableWordCloudWord, type WordCloudAppearance, WordCloudAppearances, type WordCloudGrouping, WordCloudGroupings, type WordCloudSorting, WordCloudSortings, WordCloudWord } from "@/types/components/word-cloud/word-cloud";
-import { css, html, LitElement, PropertyValues } from "lit";
+import {
+  type RenderableWordCloudWord,
+  type WordCloudAppearance,
+  WordCloudAppearances,
+  type WordCloudGrouping,
+  WordCloudGroupings,
+  type WordCloudSorting,
+  WordCloudSortings,
+  type WordCloudWord,
+} from "@/types/components/word-cloud/word-cloud";
+import { LitElement, PropertyValues, css, html } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -291,9 +300,7 @@ export class WordCloud extends LitElement {
 
   private _processWords(): RenderableWordCloudWord[] {
     // 1. Layout: Always Randomize
-    const randomized: RenderableWordCloudWord[] = this.words
-      .map((w) => ({ ...w }))
-      .sort(() => Math.random() - 0.5);
+    const randomized: RenderableWordCloudWord[] = this.words.map((w) => ({ ...w })).sort(() => Math.random() - 0.5);
 
     // 2. Determine groups
     let groups: RenderableWordCloudWord[][];
@@ -312,7 +319,6 @@ export class WordCloud extends LitElement {
       }
 
       case WordCloudGroupings.QUARTILE: {
-
         // Fixed order: 1st, 2nd, 3rd, 4th
         const q1 = randomized.filter((w) => w.quartile === "first-quartile");
         const q2 = randomized.filter((w) => w.quartile === "second-quartile");
@@ -366,9 +372,9 @@ export class WordCloud extends LitElement {
     return randomized;
   }
 
-  private _getSortFunction(sorting: WordCloudSorting):
-    | ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)
-    | undefined {
+  private _getSortFunction(
+    sorting: WordCloudSorting,
+  ): ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number) | undefined {
     switch (sorting) {
       case WordCloudSortings.BY_WEIGHT:
         return (a, b) => (a.weight as number) - (b.weight as number);
@@ -408,7 +414,10 @@ export class WordCloud extends LitElement {
           };
 
           return html`
-            <li class=${classMap(classes)} style=${styleMap(styles)}>
+            <li
+              class=${classMap(classes)}
+              style=${styleMap(styles)}
+            >
               ${word.word}
             </li>
           `;

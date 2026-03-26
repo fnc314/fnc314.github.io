@@ -4,11 +4,11 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { PropertyValues } from "@lit/reactive-element";
 import { MdFab } from "@material/web/fab/fab";
 import { MdIcon } from "@material/web/icon/icon";
-import { css, html, LitElement, nothing } from "lit";
+import { LitElement, css, html, nothing } from "lit";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { when } from "lit-html/directives/when.js";
 import { customElement, property, query, queryAssignedElements } from "lit/decorators.js";
-import { MaterialSymbol } from "material-symbols";
+import { type MaterialSymbol } from "material-symbols";
 
 /**
  * A floating action button that toggles a menu of actions.
@@ -44,7 +44,8 @@ export class FabMenu extends LitElement {
         --fab-menu-item-justify: flex-start;
       }
 
-      .focus-trap-start, .focus-trap-end {
+      .focus-trap-start,
+      .focus-trap-end {
         position: absolute;
       }
 
@@ -132,8 +133,7 @@ export class FabMenu extends LitElement {
         pointer-events: none;
         position: fixed;
         z-index: 0;
-        transition:
-          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
       }
     `,
   ];
@@ -208,7 +208,7 @@ export class FabMenu extends LitElement {
   @property({ type: String, reflect: true })
   direction: "start" | "end" = "end";
 
-  private get _focusableElements(): (HTMLElement & { focus: (options?: FocusOptions) => void; })[] {
+  private get _focusableElements(): (HTMLElement & { focus: (options?: FocusOptions) => void })[] {
     if (!this.open) {
       return [];
     }
@@ -299,18 +299,24 @@ export class FabMenu extends LitElement {
     // Main icon: rotates 0 to 90, scale 1 to 0.5, opacity 1 to 0
     const mainIconStyle = {
       transform: `rotate(${this.open ? 90 : 0}deg) scale(${this.open ? 0.5 : 1})`,
-      opacity: this.open ? "0" : "1"
+      opacity: this.open ? "0" : "1",
     };
 
     // Opened icon: rotates -90 to 0, scale 0.5 to 1, opacity 0 to 1
     const openedIconStyle = {
       transform: `rotate(${this.open ? 0 : -90}deg) scale(${this.open ? 1 : 0.5})`,
-      opacity: this.open ? "1" : "0"
+      opacity: this.open ? "1" : "0",
     };
 
     return html`
       ${this.open ? html`<div class="scrim"></div>` : nothing}
-      ${this.open ? html`<div class="focus-trap-start" tabindex="0" @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}></div>` : nothing}
+      ${this.open
+        ? html`<div
+            class="focus-trap-start"
+            tabindex="0"
+            @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
+          ></div>`
+        : nothing}
       <div class="fab-container">
         <md-fab
           id="fab-menu-fab"
@@ -321,25 +327,36 @@ export class FabMenu extends LitElement {
           .ariaExpanded=${this.open ? "true" : "false"}
           @click=${() => this._toggle()}
         >
-          ${
-            when(
-              this.icon,
-              () => html`
-                <div class="icon-wrapper" slot="icon">
-                  <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
-                  <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
-                </div>
-              `,
-              () => nothing
-            )
-          }
+          ${when(
+            this.icon,
+            () => html`
+              <div
+                class="icon-wrapper"
+                slot="icon"
+              >
+                <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
+                <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
+              </div>
+            `,
+            () => nothing,
+          )}
         </md-fab>
       </div>
 
-      <ul class="menu-items" role="menu" .ariaLabel=${this.ariaLabel}>
+      <ul
+        class="menu-items"
+        role="menu"
+        .ariaLabel=${this.ariaLabel}
+      >
         <slot name="menu-items"></slot>
       </ul>
-      ${this.open ? html`<div class="focus-trap-end" tabindex="0" @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}></div>` : nothing}
+      ${this.open
+        ? html`<div
+            class="focus-trap-end"
+            tabindex="0"
+            @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
+          ></div>`
+        : nothing}
     `;
   }
 }
