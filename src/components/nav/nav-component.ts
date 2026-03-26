@@ -330,7 +330,7 @@ export class NavComponent extends LitElement {
         ${ref(this.#tabsRef)}
         id="nav-md-tabs"
         aria-label="Primary Nav Tabs"
-        @change=${this.#onTabChange}
+        @change=${(event: Event) => this.#onTabChange(event)}
         .activeTabIndex=${this._activeTabIndex}
         .autoActivate=${true}
         .role=${"tablist"}

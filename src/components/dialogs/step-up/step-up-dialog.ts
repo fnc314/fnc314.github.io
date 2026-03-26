@@ -107,7 +107,7 @@ export class StepUpDialog extends LitElement {
     return this._mdDialog.show();
   }
 
-  private onButtonClick(isCancel: boolean, event: PointerEvent) {
+  private async onButtonClick(isCancel: boolean, event: PointerEvent) {
     event.preventDefault();
     event.stopPropagation();
     this.dispatchEvent(
@@ -120,7 +120,7 @@ export class StepUpDialog extends LitElement {
         }
       })
     );
-    this._mdDialog.close();
+    await this._mdDialog.close();
   }
 
   private headlines: Record<ConfirmDialogStyle, TemplateResult> = {
@@ -171,7 +171,7 @@ export class StepUpDialog extends LitElement {
   }
 };
 
-export type OpenStepUpDialog = CustomEvent<{}>;
+export type OpenStepUpDialog = CustomEvent<object>;
 export type CompleteStepUpDialog = CustomEvent<{ cancelled: boolean, confirmed: boolean }>;
 
 declare global {

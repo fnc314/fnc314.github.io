@@ -76,7 +76,7 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
     return false;
   }
 
-  const correctValues = Object.values(json).flatMap((value) => Object.values(value)).every((value) => {
+  const correctValues = Object.values(json).flatMap((value) => Object.values(value as Record<string, unknown>)).every((value) => {
     if (typeof value !== 'string') {
       return false;
     }
@@ -120,7 +120,7 @@ export const readScheme = (jsonSchema: object) => css`
       unsafeCSS(
         Object
           .entries(jsonSchema)
-          .map(([colorRole, colorRGB]) => keyTransform(colorRole, colorRGB))
+          .map(([colorRole, colorRGB]) => keyTransform(colorRole, colorRGB as string))
           .reduce(
             (acc, curr) => css`${acc}${curr}`,
             css``

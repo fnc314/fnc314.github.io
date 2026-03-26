@@ -47,6 +47,10 @@ export class FabMenuItem extends LitElement {
 
   constructor() {
     super();
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
     this.setAttribute("role", "menuitem");
   }
 

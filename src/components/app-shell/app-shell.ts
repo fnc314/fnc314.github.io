@@ -1,4 +1,7 @@
-import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
+import {
+  ConfigsDialog,
+  FormContent,
+} from "@/components/dialogs/configs/configs-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
@@ -7,15 +10,23 @@ import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { AppConfigsChange, type AppConfigs } from "@/types/configs/app-configs";
-import { FAB_STYLE, FabConfigChange, fabPositionClass, type FabConfig } from "@/types/configs/fab-configs";
-import { ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
+import {
+  FAB_STYLE,
+  FabConfigChange,
+  fabPositionClass,
+  type FabConfig,
+} from "@/types/configs/fab-configs";
+import {
+  ColorSchemeConfigChange,
+  colorSchemeConfigsToMaterialSchemeName,
+  CONFIG_COLOR_SCHEME_NAMES,
+} from "@/types/theme/color-scheme-configs";
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
 import "@material/web/fab/fab";
 import { MdFab } from "@material/web/fab/fab";
 import "@material/web/icon/icon.js";
-import { MdIcon } from "@material/web/icon/icon.js";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
 import { css, html, LitElement, PropertyValues } from "lit";
@@ -65,8 +76,7 @@ export class AppShell extends LitElement {
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
           "StartTop    . EndTop"
-          "StartBottom . EndBottom"
-          ;
+          "StartBottom . EndBottom";
         gap: 1rem;
 
         md-fab {
@@ -89,7 +99,6 @@ export class AppShell extends LitElement {
           .fab.extended {
             padding-inline: 1rem;
           }
-
         }
 
         .StartTop {
@@ -112,7 +121,7 @@ export class AppShell extends LitElement {
           justify-self: end;
         }
       }
-    `
+    `,
   ];
 
   /** The current global application configuration state. */
@@ -121,7 +130,9 @@ export class AppShell extends LitElement {
 
   /** The icon associated with the current color scheme mode. */
   @state()
-  private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(this.appConfigs.colorScheme);
+  private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(
+    this.appConfigs.colorScheme,
+  );
 
   /** Reference to the configuration dialog. */
   @query("#configs-dialog")
@@ -161,22 +172,23 @@ export class AppShell extends LitElement {
    * @param fab - Which FAB is being updated ('settings' or 'connect').
    * @param fabConfig - The new configuration settings for the FAB.
    */
-  private onFabChange(
-    fab: "settings" | "connect",
-    fabConfig: FabConfig,
-  ) {
-    console.info(`FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`);
+  private onFabChange(fab: "settings" | "connect", fabConfig: FabConfig) {
+    console.info(
+      `FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`,
+    );
 
     // similar logic means this flag can be helpful
     const isSettings: boolean = fab === "settings";
     // target MdFab/FabMenu
-    const changedFab: MdFab | FabMenu = isSettings ? this.fabMenu : this.connectFab;
+    const changedFab: MdFab | FabMenu = isSettings
+      ? this.fabMenu
+      : this.connectFab;
 
     // remove positioning class
     changedFab.classList.remove(
       fabPositionClass(
-        (isSettings ? this.settingsFabConfig : this.connectFabConfig).position
-      )
+        (isSettings ? this.settingsFabConfig : this.connectFabConfig).position,
+      ),
     );
 
     if (fab === "settings") {
@@ -185,23 +197,28 @@ export class AppShell extends LitElement {
       this.connectFabConfig = fabConfig;
     }
 
-    const fabLabel = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
-    changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
+    const fabLabel = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`;
+    changedFab.label =
+      fabConfig.style === FAB_STYLE.ICON_AND_TEXT ||
+      fabConfig.style === FAB_STYLE.TEXT_ONLY
+        ? fabLabel
+        : "";
     changedFab.ariaLabel = fabLabel;
-    changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
+    changedFab.size =
+      fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
 
     if (isSettings) {
-      (changedFab as FabMenu).icon = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
+      (changedFab as FabMenu).icon =
+        fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
     } else {
       const fabIcon = changedFab.querySelector("md-icon")!;
       if (fabIcon) {
-        fabIcon.style.display = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
+        fabIcon.style.display =
+          fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
       }
     }
 
-    changedFab.classList.add(
-      fabPositionClass(fabConfig.position)
-    );
+    changedFab.classList.add(fabPositionClass(fabConfig.position));
   }
 
   private onFabConfigBind = (event: FabConfigChange) =>
@@ -213,7 +230,7 @@ export class AppShell extends LitElement {
    *
    * @param _changedProperties - Map of changed properties.
    */
-  protected override async firstUpdated(_changedProperties: PropertyValues): Promise<void> {
+  protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
     this.appConfigs = configsService.loadConfigs();
     this._uiModeIcon = this.uiModeIcon(this.appConfigs.colorScheme);
@@ -232,11 +249,16 @@ export class AppShell extends LitElement {
    */
   protected override updated(changedProperties: PropertyValues): void {
     super.updated(changedProperties);
-    const label: HTMLSpanElement | null | undefined = this.connectFab.shadowRoot?.querySelector("span.label");
+    const label: HTMLSpanElement | null | undefined =
+      this.connectFab.shadowRoot?.querySelector("span.label");
     if (label) {
-      label.style.paddingInlineStart = this.connectFabConfig.style === FAB_STYLE.ICON_AND_TEXT ? "0.5rem" : "0";
+      label.style.paddingInlineStart =
+        this.connectFabConfig.style === FAB_STYLE.ICON_AND_TEXT
+          ? "0.5rem"
+          : "0";
     }
-    const button: HTMLButtonElement | null | undefined = this.connectFab.shadowRoot?.querySelector("button");
+    const button: HTMLButtonElement | null | undefined =
+      this.connectFab.shadowRoot?.querySelector("button");
     if (button) {
       button.style.paddingInline = "1rem";
     }
@@ -251,9 +273,13 @@ export class AppShell extends LitElement {
     this._uiModeIcon = this.uiModeIcon(event.detail);
     const themeConfig = themeService.currentThemeConfig();
     updateMaterialCSSStyleSheet(
-      themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]
+      themeConfig.materialSchemes[
+        colorSchemeConfigsToMaterialSchemeName(event.detail)
+      ],
     );
-    document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+    document
+      .getElementById("meta-theme-color")
+      ?.setAttribute("content", themeService.themeJson().primary);
   };
 
   /**
@@ -268,30 +294,21 @@ export class AppShell extends LitElement {
     super.connectedCallback();
     configsService.addEventListener(
       "app-configs.change",
-      this.onAppConfigsChange
+      this.onAppConfigsChange,
     );
 
-    document.addEventListener(
-      "fab.change",
-      this.onFabConfigBind
-    );
+    document.addEventListener("fab.change", this.onFabConfigBind);
 
-    document.addEventListener(
-      "color_scheme.change",
-      this.onColorSchemeChange
-    );
+    document.addEventListener("color_scheme.change", this.onColorSchemeChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener(
-      "fab.change",
-      this.onFabConfigBind
-    );
+    document.removeEventListener("fab.change", this.onFabConfigBind);
 
     document.removeEventListener(
       "color_scheme.change",
-      this.onColorSchemeChange
+      this.onColorSchemeChange,
     );
   }
 
@@ -300,7 +317,9 @@ export class AppShell extends LitElement {
    * @param colorScheme - The current color scheme configuration.
    * @returns The string identifier for the MdIcon.
    */
-  private uiModeIcon(colorScheme: AppConfigs["colorScheme"]): "dark_mode" | "light_mode" | "routine" {
+  private uiModeIcon(
+    colorScheme: AppConfigs["colorScheme"],
+  ): "dark_mode" | "light_mode" | "routine" {
     switch (colorScheme.name) {
       case CONFIG_COLOR_SCHEME_NAMES.DARK:
         return "dark_mode";
@@ -332,9 +351,9 @@ export class AppShell extends LitElement {
    * Closes the menu and opens the configuration dialog with the requested content.
    * @param formContent - The type of configuration form to display.
    */
-  private _onFabMenuItemClick(formContent: FormContent) {
+  private async _onFabMenuItemClick(formContent: FormContent) {
     this.fabMenu.open = false;
-    this.configsDialog.showDialog(formContent);
+    await this.configsDialog.showDialog(formContent);
   }
 
   /**
@@ -345,7 +364,9 @@ export class AppShell extends LitElement {
    * @returns The label string or an empty string if the style is icon-only.
    */
   private _getFabLabel(fab: string, config: FabConfig) {
-    const showLabel = config.style === FAB_STYLE.ICON_AND_TEXT || config.style === FAB_STYLE.TEXT_ONLY;
+    const showLabel =
+      config.style === FAB_STYLE.ICON_AND_TEXT ||
+      config.style === FAB_STYLE.TEXT_ONLY;
     return showLabel ? `${fab.charAt(0).toUpperCase()}${fab.slice(1)}` : "";
   }
 
@@ -363,62 +384,77 @@ export class AppShell extends LitElement {
 
       <configs-dialog
         id="configs-dialog"
-        @opened=${this._handleDialogOpened}
-        @closed=${this._handleDialogClosed}
+        @opened=${() => this._handleDialogOpened()}
+        @closed=${() => this._handleDialogClosed()}
       ></configs-dialog>
 
       <connect-dialog
         id="connect-dialog"
-        @opened=${this._handleDialogOpened}
-        @closed=${this._handleDialogClosed}
+        @opened=${() => this._handleDialogOpened()}
+        @closed=${() => this._handleDialogClosed()}
       ></connect-dialog>
 
       <section class="fab-container">
-
         <fab-menu
           id="fab-menu"
           class=${fabPositionClass(this.settingsFabConfig.position)}
-          .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings"}
+          .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL
+            ? "small"
+            : "medium"}
+          .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY
+            ? ""
+            : "settings"}
           .variant=${"surface"}
           .label=${settingsLabel}
-          .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
+          .direction=${this.settingsFabConfig.position.startsWith("START")
+            ? "start"
+            : "end"}
+        >
+          <fab-menu-item
+            slot="menu-items"
+            .icon=${"settings"}
+            .label=${"Settings Button"}
+            @click=${() => this._onFabMenuItemClick("button-settings")}
           >
-            <fab-menu-item
-              slot="menu-items"
-              .icon=${"settings"}
-              .label=${"Settings Button"}
-              @click=${() => this._onFabMenuItemClick("button-settings")}
-              >
-            </fab-menu-item>
-            <fab-menu-item
-              slot="menu-items"
-              .icon=${"person_add"}
-              .label=${"Connect Button"}
-              @click=${() => this._onFabMenuItemClick("button-connect")}
-              >
-            </fab-menu-item>
-            <fab-menu-item
-              slot="menu-items"
-              .icon=${this._uiModeIcon}
-              .label=${"UI Mode"}
-              @click=${() => this._onFabMenuItemClick("ui-mode")}
-              >
-            </fab-menu-item>
+          </fab-menu-item>
+          <fab-menu-item
+            slot="menu-items"
+            .icon=${"person_add"}
+            .label=${"Connect Button"}
+            @click=${() => this._onFabMenuItemClick("button-connect")}
+          >
+          </fab-menu-item>
+          <fab-menu-item
+            slot="menu-items"
+            .icon=${this._uiModeIcon}
+            .label=${"UI Mode"}
+            @click=${() => this._onFabMenuItemClick("ui-mode")}
+          >
+          </fab-menu-item>
         </fab-menu>
 
         <md-fab
           id="fab-connect"
           class="connect ${fabPositionClass(this.connectFabConfig.position)}"
-          .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
+          .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL
+            ? "small"
+            : "medium"}
           .variant=${"primary"}
           .label=${connectLabel}
-          aria-label=${this._getFabLabel("connect", { ...this.connectFabConfig, style: FAB_STYLE.TEXT_ONLY })}
+          aria-label=${this._getFabLabel("connect", {
+            ...this.connectFabConfig,
+            style: FAB_STYLE.TEXT_ONLY,
+          })}
           @click=${() => this.connectDialog.showDialog()}
+        >
+          <md-icon
+            slot="icon"
+            style=${this.connectFabConfig.style === FAB_STYLE.TEXT_ONLY
+              ? "display: none"
+              : "display: contents"}
+            >person_add</md-icon
           >
-          <md-icon slot="icon" style=${this.connectFabConfig.style === FAB_STYLE.TEXT_ONLY ? "display: none" : "display: contents"}>person_add</md-icon>
         </md-fab>
-
       </section>
     `;
   }

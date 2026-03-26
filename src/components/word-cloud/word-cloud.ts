@@ -296,7 +296,7 @@ export class WordCloud extends LitElement {
       .sort(() => Math.random() - 0.5);
 
     // 2. Determine groups
-    let groups: RenderableWordCloudWord[][] = [];
+    let groups: RenderableWordCloudWord[][];
 
     switch (this.grouping) {
       case WordCloudGroupings.CATEGORY: {
@@ -410,7 +410,6 @@ export class WordCloud extends LitElement {
           return html`
             <li class=${classMap(classes)} style=${styleMap(styles)}>
               ${word.word}
-              <!-- <sup>${word.weight}</sup> <sub>${word.category}</sub> -->
             </li>
           `;
         })}

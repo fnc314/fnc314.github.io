@@ -1,12 +1,36 @@
-import { CompleteStepUpDialog, OpenStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
+import {
+  CompleteStepUpDialog,
+  StepUpDialog,
+} from "@/components/dialogs/step-up/step-up-dialog";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
-import { type AppConfigs, AppConfigsChange, DEFAULT_APP_CONFIGS, } from "@/types/configs/app-configs";
-import { type FabConfig, FabConfigChange, FabPosition, FabPositionIcons, FabPositions, fabPositionToUi, FabStyles, fabStyleToUi } from "@/types/configs/fab-configs";
-import { ColorScheme, ColorSchemeConfigChange, colorSchemeConfigsToMaterialSchemeName, ColorSchemeContrast, colorSchemeContrastToIcon, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
+import {
+  type AppConfigs,
+  AppConfigsChange,
+  DEFAULT_APP_CONFIGS,
+} from "@/types/configs/app-configs";
+import {
+  type FabConfig,
+  FabConfigChange,
+  FabPosition,
+  FabPositionIcons,
+  FabPositions,
+  fabPositionToUi,
+  FabStyles,
+  fabStyleToUi,
+} from "@/types/configs/fab-configs";
+import {
+  ColorScheme,
+  ColorSchemeConfigChange,
+  colorSchemeConfigsToMaterialSchemeName,
+  ColorSchemeContrast,
+  colorSchemeContrastToIcon,
+  CONFIG_COLOR_CONTRAST_NAMES,
+  CONFIG_COLOR_SCHEME_NAMES,
+} from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, ThemeName } from "@/types/theme/theme";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
@@ -20,7 +44,12 @@ import "@material/web/list/list-item";
 import "@material/web/radio/radio";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
-import { ColorSchemeChangeEvent, DarkModeToggle, ColorScheme as DarkModeToggleColorScheme, PermanentColorSchemeEvent } from "dark-mode-toggle";
+import {
+  ColorSchemeChangeEvent,
+  DarkModeToggle,
+  ColorScheme as DarkModeToggleColorScheme,
+  PermanentColorSchemeEvent,
+} from "dark-mode-toggle";
 import { css, html, LitElement, TemplateResult } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
@@ -39,7 +68,6 @@ export type FormContent = "ui-mode" | "button-settings" | "button-connect";
  */
 @customElement("configs-dialog")
 export class ConfigsDialog extends LitElement {
-
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -49,7 +77,9 @@ export class ConfigsDialog extends LitElement {
         --md-dialog-icon-size: 3rem;
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
-        --md-dialog-container-color: var(--md-sys-color-surface-container-highest);
+        --md-dialog-container-color: var(
+          --md-sys-color-surface-container-highest
+        );
         --md-dialog-container-shape: var(--md-sys-shape-corner-medium);
         --md-dialog-headline-color: var(--md-sys-color-primary);
 
@@ -63,9 +93,15 @@ export class ConfigsDialog extends LitElement {
         --md-radio-selected-hover-icon-color: var(--md-sys-color-error);
         --md-radio-selected-pressed-icon-color: var(--md-sys-color-error);
 
-        --md-outlined-select-text-field-leading-icon-color: var(--md-sys-color-error);
-        --md-outlined-select-text-field-focus-leading-icon-color: var(--md-sys-color-error);
-        --md-outlined-select-text-field-hover-leading-icon-color: var(--md-sys-color-error);
+        --md-outlined-select-text-field-leading-icon-color: var(
+          --md-sys-color-error
+        );
+        --md-outlined-select-text-field-focus-leading-icon-color: var(
+          --md-sys-color-error
+        );
+        --md-outlined-select-text-field-hover-leading-icon-color: var(
+          --md-sys-color-error
+        );
       }
 
       form {
@@ -259,7 +295,8 @@ export class ConfigsDialog extends LitElement {
           width: 100%;
         }
 
-        &.contrast, &.theme {
+        &.contrast,
+        &.theme {
           display: contents;
         }
       }
@@ -289,7 +326,6 @@ export class ConfigsDialog extends LitElement {
       }
 
       fieldset.theme {
-
         md-select-option {
           img {
             width: 2rem;
@@ -299,7 +335,6 @@ export class ConfigsDialog extends LitElement {
       }
 
       fieldset.fab {
-
         fieldset.style {
           display: grid;
           grid-template-areas:
@@ -332,7 +367,7 @@ export class ConfigsDialog extends LitElement {
           }
         }
       }
-    `
+    `,
   ];
 
   @query("#configs-dialog")
@@ -340,7 +375,6 @@ export class ConfigsDialog extends LitElement {
 
   @query("#dark-mode-toggle")
   private _darkModeToggle!: DarkModeToggle;
-
 
   @query("#step-up-dialog")
   private _stepUpDialog!: StepUpDialog;
@@ -358,7 +392,9 @@ export class ConfigsDialog extends LitElement {
   private _stepUpDialogContent = "all custom";
 
   private _handleDialogEvent(event: Event) {
-    this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));
+    this.dispatchEvent(
+      new Event(event.type, { bubbles: true, composed: true }),
+    );
   }
 
   private onAppConfigsChange = (event: Event) => {
@@ -370,8 +406,8 @@ export class ConfigsDialog extends LitElement {
     this._appConfigs = configsService.loadConfigs();
     configsService.addEventListener(
       "app-configs.change",
-      this.onAppConfigsChange
-    )
+      this.onAppConfigsChange,
+    );
   }
 
   /**
@@ -382,7 +418,7 @@ export class ConfigsDialog extends LitElement {
   public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
     this._formContent = formContent;
     return this._configsMDDialog.show();
-  };
+  }
 
   /**
    * Hides the configuration dialog.
@@ -390,9 +426,9 @@ export class ConfigsDialog extends LitElement {
    */
   public hideDialog(): Promise<void> {
     return this._configsMDDialog.close();
-  };
+  }
 
-  private openStepUp = (_: OpenStepUpDialog) => {
+  private openStepUp = () => {
     switch (this._formContent) {
       case "ui-mode":
         this._stepUpDialogContent = "UI Mode";
@@ -403,7 +439,7 @@ export class ConfigsDialog extends LitElement {
         break;
     }
     this._stepUpDialog.dialogContentString = `Are you sure you want to revert ${this._stepUpDialogContent} customizations?`;
-    this._stepUpDialog.showDialog();
+    void this._stepUpDialog.showDialog();
   };
 
   private completeStepUp = (event: CompleteStepUpDialog) => {
@@ -428,24 +464,25 @@ export class ConfigsDialog extends LitElement {
       ...this._appConfigs,
       colorScheme: {
         ...this._appConfigs.colorScheme,
-        name: event.detail.colorScheme.length > 0 ?
-          event.detail.colorScheme.toUpperCase() as ColorScheme :
-          CONFIG_COLOR_SCHEME_NAMES.SYSTEM
-      }
-    }
-    this.onColorThemeModeContrastChange(
-      this._appConfigs.colorScheme
-    );
+        name:
+          event.detail.colorScheme.length > 0
+            ? (event.detail.colorScheme.toUpperCase() as ColorScheme)
+            : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
+      },
+    };
+    this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
   };
 
-  private permanentColorSchemeEventListener = (event: PermanentColorSchemeEvent) => {
+  private permanentColorSchemeEventListener = (
+    event: PermanentColorSchemeEvent,
+  ) => {
     this._appConfigs = {
       ...this._appConfigs,
       colorScheme: {
         ...this._appConfigs.colorScheme,
         persist: event.detail.permanent,
-      }
-    }
+      },
+    };
     configsService.saveConfigs(this._appConfigs);
   };
 
@@ -458,16 +495,10 @@ export class ConfigsDialog extends LitElement {
     );
     document.addEventListener(
       "permanentcolorscheme",
-      this.permanentColorSchemeEventListener
+      this.permanentColorSchemeEventListener,
     );
-    document.addEventListener(
-      "stepUpOpen",
-      this.openStepUp
-    );
-    document.addEventListener(
-      "stepUpComplete",
-      this.completeStepUp
-    );
+    document.addEventListener("stepUpOpen", this.openStepUp);
+    document.addEventListener("stepUpComplete", this.completeStepUp);
   }
 
   override disconnectedCallback(): void {
@@ -479,94 +510,88 @@ export class ConfigsDialog extends LitElement {
     );
     document.removeEventListener(
       "permanentcolorscheme",
-      this.permanentColorSchemeEventListener
+      this.permanentColorSchemeEventListener,
     );
-    document.removeEventListener(
-      "stepUpOpen",
-      this.openStepUp
-    );
-    document.removeEventListener(
-      "stepUpComplete",
-      this.completeStepUp
-    );
+    document.removeEventListener("stepUpOpen", this.openStepUp);
+    document.removeEventListener("stepUpComplete", this.completeStepUp);
   }
 
-  private onFabChange(
-    fab: "settings" | "connect",
-    newFabConfig: FabConfig
-  ) {
-    const newFabConfigs = fab === "settings" ?
-      {
-        fab: {
-          connect: this._appConfigs.fab.connect,
-          settings: newFabConfig
-        }
-      } :
-      {
-        fab: {
-          connect: newFabConfig,
-          settings: this._appConfigs.fab.settings
-        }
-      };
+  private onFabChange(fab: "settings" | "connect", newFabConfig: FabConfig) {
+    const newFabConfigs =
+      fab === "settings"
+        ? {
+            fab: {
+              connect: this._appConfigs.fab.connect,
+              settings: newFabConfig,
+            },
+          }
+        : {
+            fab: {
+              connect: newFabConfig,
+              settings: this._appConfigs.fab.settings,
+            },
+          };
 
     this._appConfigs = {
       ...this._appConfigs,
-      ...newFabConfigs
+      ...newFabConfigs,
     };
 
     configsService.saveConfigs(this._appConfigs);
 
     this.dispatchEvent(
-      new CustomEvent(
-        "fab.change",
-        {
-          bubbles: true,
-          composed: true,
-          detail: {
-            fab,
-            newFabConfig,
-          }
-        }
-      )
+      new CustomEvent("fab.change", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          fab,
+          newFabConfig,
+        },
+      }),
     );
   }
 
   private onColorThemeModeContrastChange(
-    colorScheme: AppConfigs["colorScheme"]
+    colorScheme: AppConfigs["colorScheme"],
   ) {
     this._appConfigs = {
       ...this._appConfigs,
-      colorScheme
+      colorScheme,
     };
 
     configsService.saveConfigs(this._appConfigs);
 
     this.dispatchEvent(
-      new CustomEvent(
-        "color_scheme.change",
-        {
-          bubbles: true,
-          composed: true,
-          detail: this._appConfigs.colorScheme,
-        }
-      )
+      new CustomEvent("color_scheme.change", {
+        bubbles: true,
+        composed: true,
+        detail: this._appConfigs.colorScheme,
+      }),
     );
 
     updateMaterialCSSStyleSheet(
-      themeService.currentThemeConfig()
-        .materialSchemes[
-          colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
-        ]
-    )
+      themeService.currentThemeConfig().materialSchemes[
+        colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
+      ],
+    );
   }
 
-  #renderFabSettingsFieldset(fab: "settings" | "connect", currentConfig: FabConfig): TemplateResult {
+  #renderFabSettingsFieldset(
+    fab: "settings" | "connect",
+    currentConfig: FabConfig,
+  ): TemplateResult {
     const buttonName = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`;
     return html`
-      <fieldset form="configs-dialog-form" class=${`fab ${fab}`}>
+      <fieldset
+        form="configs-dialog-form"
+        class=${`fab ${fab}`}
+      >
         <legend>${buttonName} Button</legend>
 
-        <fieldset form="configs-dialog-form" class="position">
+        <fieldset
+          form="configs-dialog-form"
+          class="position"
+        >
           <legend>Position</legend>
           <md-outlined-select
             label=${`Change ${buttonName} Button Position`}
@@ -574,58 +599,57 @@ export class ConfigsDialog extends LitElement {
             value=${currentConfig.position}
             .hasLeadingIcon=${true}
             @change=${(event: Event) =>
-              this.onFabChange(
-                fab,
-                {
-                  ...currentConfig,
-                  position: (event.target as HTMLSelectElement).value as FabPosition
-                }
-              )
-            }
+              this.onFabChange(fab, {
+                ...currentConfig,
+                position: (event.target as HTMLSelectElement)
+                  .value as FabPosition,
+              })}
             supportingText=${`${buttonName} Button Position`}
-            >
-            ${
-              html`
-                <span slot="leading-icon">${FabPositionIcons[currentConfig.position]}</span>
-              `
-            }
-            ${
-              FabPositions.map((position: FabPosition) => html`
+          >
+            ${html`
+              <span slot="leading-icon"
+                >${FabPositionIcons[currentConfig.position]}</span
+              >
+            `}
+            ${FabPositions.map(
+              (position: FabPosition) => html`
                 <md-select-option
                   ?selected=${currentConfig.position === position}
                   value=${position}
-                  ?disabled=${
-                    fab === "connect" ?
-                      this._appConfigs.fab.settings.position === position :
-                      this._appConfigs.fab.connect.position === position
-                  }
-                  >
-                    ${FabPositionIcons[position]}
-                    <div slot="headline">${fabPositionToUi(position)}</div>
-                  </md-select-option>
-              `)
-            }
+                  ?disabled=${fab === "connect"
+                    ? this._appConfigs.fab.settings.position === position
+                    : this._appConfigs.fab.connect.position === position}
+                >
+                  ${FabPositionIcons[position]}
+                  <div slot="headline">${fabPositionToUi(position)}</div>
+                </md-select-option>
+              `,
+            )}
           </md-outlined-select>
         </fieldset>
 
-        <fieldset form="configs-dialog-form" class="style">
+        <fieldset
+          form="configs-dialog-form"
+          class="style"
+        >
           <legend>Style</legend>
-          ${
-            FabStyles.map((style) => html`
+          ${FabStyles.map(
+            (style) => html`
               <div class="md-radio-label-wrapper">
                 <md-radio
                   name=${`${fab}.style`}
                   id=${`${fab}.style.${style}`}
                   value=${style}
                   ?checked=${currentConfig.style === style}
-                  @change=${() => this.onFabChange(fab, { ...currentConfig, style })}
+                  @change=${() =>
+                    this.onFabChange(fab, { ...currentConfig, style })}
                 ></md-radio>
                 <label for=${`${fab}.style.${style}`}>
                   ${fabStyleToUi(style)}
                 </label>
               </div>
-            `)
-          }
+            `,
+          )}
         </fieldset>
       </fieldset>
     `;
@@ -637,35 +661,42 @@ export class ConfigsDialog extends LitElement {
     };
 
     return html`
-      <fieldset form="configs-dialog-form" class="color_scheme">
+      <fieldset
+        form="configs-dialog-form"
+        class="color_scheme"
+      >
         <legend>UI Theme, Mode, &amp; Contrast</legend>
 
-        <fieldset form="configs-dialog-form" class="theme">
+        <fieldset
+          form="configs-dialog-form"
+          class="theme"
+        >
           <legend>UI Theme</legend>
           <md-outlined-select
             label="Choose UI Theme"
             name="color_scheme.theme"
             value=${this._appConfigs.colorScheme.theme}
-            @change=${(event: Event) => this.onColorThemeModeContrastChange(
-              {
+            @change=${(event: Event) =>
+              this.onColorThemeModeContrastChange({
                 ...this._appConfigs.colorScheme,
                 theme: (event.target as HTMLSelectElement).value as ThemeName,
-              }
-            )}
+              })}
             supportingText=${"Choose from a varity of UI Themes"}
           >
             ${themeToIcon("leading-icon", this._appConfigs.colorScheme.theme)}
-            ${
-              Object.values(THEME_NAMES).map((theme) => html`
+            ${Object.values(THEME_NAMES).map(
+              (theme) => html`
                 <md-select-option
                   ?selected=${this._appConfigs.colorScheme.theme === theme}
                   value=${theme}
-                  >
+                >
                   ${themeToIcon("start", theme)}
-                  <div slot="headline">${theme.charAt(0).toUpperCase() + theme.slice(1)}</div>
+                  <div slot="headline">
+                    ${theme.charAt(0).toUpperCase() + theme.slice(1)}
+                  </div>
                 </md-select-option>
-              `)
-            }
+              `,
+            )}
           </md-outlined-select>
         </fieldset>
 
@@ -683,35 +714,43 @@ export class ConfigsDialog extends LitElement {
           remember="Persist UI Variant"
         ></dark-mode-toggle>
 
-        <fieldset form="configs-dialog-form" class="contrast">
+        <fieldset
+          form="configs-dialog-form"
+          class="contrast"
+        >
           <legend class="color-scheme-legend">UI Contrast</legend>
           <md-outlined-select
             label="Choose UI Contrast"
             name="color_scheme.contrast"
             value=${this._appConfigs.colorScheme.contrast}
-            @change=${(event: Event) => this.onColorThemeModeContrastChange(
-              {
+            @change=${(event: Event) =>
+              this.onColorThemeModeContrastChange({
                 ...this._appConfigs.colorScheme,
-                contrast: (event.target as HTMLSelectElement).value as ColorSchemeContrast,
-              }
-            )}
+                contrast: (event.target as HTMLSelectElement)
+                  .value as ColorSchemeContrast,
+              })}
             supportingText=${"Choose from Normal, Medium, and High Contrast Color Palettes"}
           >
-            ${colorSchemeContrastToIcon("leading-icon", this._appConfigs.colorScheme.contrast)}
-            ${
-              Object.values(CONFIG_COLOR_CONTRAST_NAMES).map((contrast) => html`
+            ${colorSchemeContrastToIcon(
+              "leading-icon",
+              this._appConfigs.colorScheme.contrast,
+            )}
+            ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+              (contrast) => html`
                 <md-select-option
-                  ?selected=${this._appConfigs.colorScheme.contrast === contrast}
+                  ?selected=${this._appConfigs.colorScheme.contrast ===
+                  contrast}
                   value=${contrast}
-                  >
+                >
                   ${colorSchemeContrastToIcon("start", contrast)}
-                  <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
+                  <div slot="headline">
+                    ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
+                  </div>
                 </md-select-option>
-              `)
-            }
+              `,
+            )}
           </md-outlined-select>
         </fieldset>
-
       </fieldset>
     `;
   }
@@ -721,9 +760,15 @@ export class ConfigsDialog extends LitElement {
       case "ui-mode":
         return this.#renderUIFieldset();
       case "button-settings":
-        return this.#renderFabSettingsFieldset("settings", this._appConfigs.fab.settings);
+        return this.#renderFabSettingsFieldset(
+          "settings",
+          this._appConfigs.fab.settings,
+        );
       case "button-connect":
-        return this.#renderFabSettingsFieldset("connect", this._appConfigs.fab.connect);
+        return this.#renderFabSettingsFieldset(
+          "connect",
+          this._appConfigs.fab.connect,
+        );
       default:
         return nothing;
     }
@@ -753,8 +798,9 @@ export class ConfigsDialog extends LitElement {
       <md-dialog
         class="configs-dialog"
         id="configs-dialog"
-        @opened=${this._handleDialogEvent}
-        @closed=${this._handleDialogEvent}>
+        @opened=${(event: Event) => this._handleDialogEvent(event)}
+        @closed=${(event: Event) => this._handleDialogEvent(event)}
+      >
         <md-icon slot="icon">settings</md-icon>
         <div slot="headline">
           <h2 class="md-typescale-headline-medium">${this.dialogTitle()}</h2>
@@ -764,38 +810,32 @@ export class ConfigsDialog extends LitElement {
           slot="content"
           method="dialog"
         >
-
           ${this.dialogContent()}
-
         </form>
         <div slot="actions">
-          <md-text-button
-            @click=${() => this._configsMDDialog.close()}
-            >
+          <md-text-button @click=${() => this._configsMDDialog.close()}>
             Close
           </md-text-button>
           <md-outlined-button
             @click=${() => {
               this.dispatchEvent(
-                new CustomEvent(
-                  "stepUpOpen",
-                  {
-                    bubbles: true,
-                    composed: true,
-                    detail: {}
-                  }
-                )
+                new CustomEvent("stepUpOpen", {
+                  bubbles: true,
+                  composed: true,
+                  detail: {},
+                }),
               );
             }}
-            >
-              Reset Settings
-            </md-outlined-button>
-          <md-filled-button form="configs-dialog-form">Save Settings</md-filled-button>
+          >
+            Reset Settings
+          </md-outlined-button>
+          <md-filled-button form="configs-dialog-form"
+            >Save Settings</md-filled-button
+          >
         </div>
       </md-dialog>
     `;
   }
-
 }
 
 declare global {
@@ -807,6 +847,5 @@ declare global {
     "fab.change": FabConfigChange;
 
     "color_scheme.change": ColorSchemeConfigChange;
-
   }
 }

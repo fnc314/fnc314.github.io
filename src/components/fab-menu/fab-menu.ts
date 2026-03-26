@@ -244,15 +244,16 @@ export class FabMenu extends LitElement {
     this.open = !this.open;
   }
 
-  protected override async update(changedProperties: PropertyValues): Promise<void> {
+  protected override update(changedProperties: PropertyValues): void {
     if (changedProperties.has("open")) {
-      this.open ?
-        document.addEventListener("click", this._handleDocumentClick, { capture: true }) :
+      if (this.open) {
+        document.addEventListener("click", this._handleDocumentClick, { capture: true });
+      } else {
         document.removeEventListener("click", this._handleDocumentClick, { capture: true });
+      }
     }
 
     super.update(changedProperties);
-    await this.updateComplete;
 
     switch (this.size) {
       case "small":
@@ -309,7 +310,7 @@ export class FabMenu extends LitElement {
 
     return html`
       ${this.open ? html`<div class="scrim"></div>` : nothing}
-      ${this.open ? html`<div class="focus-trap-start" tabindex="0" @focus=${this._handleFocusTrap}></div>` : nothing}
+      ${this.open ? html`<div class="focus-trap-start" tabindex="0" @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}></div>` : nothing}
       <div class="fab-container">
         <md-fab
           id="fab-menu-fab"
@@ -318,7 +319,7 @@ export class FabMenu extends LitElement {
           .label=${this.label}
           .ariaLabel=${this.open ? `Close ${this.ariaLabel}` : `Open ${this.ariaLabel}`}
           .ariaExpanded=${this.open ? "true" : "false"}
-          @click=${this._toggle}
+          @click=${() => this._toggle()}
         >
           ${
             when(
@@ -338,7 +339,7 @@ export class FabMenu extends LitElement {
       <ul class="menu-items" role="menu" .ariaLabel=${this.ariaLabel}>
         <slot name="menu-items"></slot>
       </ul>
-      ${this.open ? html`<div class="focus-trap-end" tabindex="0" @focus=${this._handleFocusTrap}></div>` : nothing}
+      ${this.open ? html`<div class="focus-trap-end" tabindex="0" @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}></div>` : nothing}
     `;
   }
 }

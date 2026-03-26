@@ -5,6 +5,19 @@ import { css, html, LitElement, TemplateResult } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 
+interface Connection {
+  label: string;
+  connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "googleDocs" | "pdf", ConnectionInstance>>;
+
+}
+
+interface ConnectionInstance {
+  href: string;
+  start: string;
+  overline: string;
+  text: string;
+}
+
 /**
  * A dialog component that provides various contact methods and social links.
  * It features collapsible sections for different connection categories.
@@ -221,12 +234,12 @@ export class ConnectDialog extends LitElement {
     });
   }
 
-  #rederConnections(connection: typeof Connections.connections[number]): TemplateResult {
+  #rederConnections(connection: Connection): TemplateResult {
     return html`
       <md-list>
         <md-divider></md-divider>
         ${
-          Object.values(connection.connections).map((conn) => html`
+          Object.values(connection.connections).map((conn: ConnectionInstance) => html`
             <md-list-item
               type="link"
               href=${conn.href}
@@ -251,8 +264,8 @@ export class ConnectDialog extends LitElement {
     return html`
       <md-dialog
         id="connect-dialog"
-        @opened=${this._handleDialogEvent}
-        @closed=${this._handleDialogEvent}>
+        @opened=${(event: Event) => this._handleDialogEvent(event)}
+        @closed=${(event: Event) => this._handleDialogEvent(event)}>
         <md-icon slot="icon">person_add</md-icon>
         <div slot="headline">
           <h2 class="md-typescale-headline-medium">Let's Connect</h2>
