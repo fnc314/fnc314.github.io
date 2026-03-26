@@ -14,7 +14,7 @@ import { type MaterialSymbol } from "material-symbols";
  * A floating action button that toggles a menu of actions.
  *
  * @element fab-menu
- * @slot menu-items - The content of the menu, typically `fab-menu-item` elements.
+ * @slot menu-items - The content of the menu, typically {@link FabMenuItem} elements.
  *
  * @cssprop [--fab-menu-transition-duration=200ms] - The duration of the menu's opening and closing animations.
  */

@@ -1,7 +1,10 @@
 import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
+import "@/components/dialogs/configs/configs-dialog.ts";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
+import "@/components/dialogs/connect/connect-dialog.ts";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
-import "@/components/fab-menu/fab-menu-item";
+import "@/components/fab-menu/fab-menu-item.ts";
+import "@/components/fab-menu/fab-menu.ts";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
@@ -16,7 +19,6 @@ import {
 import "@material/web/button/text-button";
 import "@material/web/dialog/dialog";
 import "@material/web/divider/divider";
-import "@material/web/fab/fab";
 import { MdFab } from "@material/web/fab/fab";
 import "@material/web/icon/icon.js";
 import "@material/web/list/list";
