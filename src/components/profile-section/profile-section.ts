@@ -1,9 +1,14 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement } from "lit-element";
+import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("profile-section")
 export class ProfileSection extends LitElement {
+  /**
+   * A reusable section component for profile-related content.
+   * Uses container queries to provide a responsive grid layout that adapts to available space.
+   */
+
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -68,9 +73,14 @@ export class ProfileSection extends LitElement {
     `,
   ];
 
+  /**
+   * The title displayed in the section's header.
+   * Maps to the `section-title` attribute.
+   */
   @property({ type: String, attribute: "section-title" })
   sectionTitle: string = "";
 
+  /** Renders the section header and content slot. */
   override render() {
     return html`
       <section>

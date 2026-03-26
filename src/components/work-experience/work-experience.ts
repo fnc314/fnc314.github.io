@@ -1,9 +1,15 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement, nothing } from "lit-element";
+import { $ } from "bun";
+import { css, html, LitElement, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
+  /**
+   * A component for displaying professional work experience entries.
+   * Supports nesting for sub-roles or specific project assignments under a single employer.
+   */
+
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -149,24 +155,31 @@ export class WorkExperience extends LitElement {
     `,
   ];
 
+  /** If true, adjusts font sizes and layout for a nested appearance. */
   @property({ type: Boolean, attribute: "is-nested" })
   isNested = false;
 
+  /** The title of the professional role or project. */
   @property({ type: String, attribute: "experience-role" })
   experienceRole = "";
 
+  /** The name of the organization or client. */
   @property({ type: String, attribute: "experience-org" })
   experienceOrg = "";
 
+  /** Start date information including machine-readable stamp and display text. */
   @property({ type: Object, attribute: "date-start" })
   dateStart: { stamp: string, text: string } = { stamp: "", text: "" };
 
+  /** End date information including machine-readable stamp and display text. */
   @property({ type: Object, attribute: "date-end" })
   dateEnd: { stamp: string, text: string } = { stamp: "", text: "" };
 
+  /** A list of summary points describing achievements or responsibilities. */
   @property({ type: Array, attribute: "summaries" })
   summaries: { item: string }[] = [];
 
+  /** A list of sub-jobs or project assignments to be rendered as nested experiences. */
   @property({ type: Array, attribute: "jobs" })
   jobs: {
     role: string,
@@ -178,10 +191,13 @@ export class WorkExperience extends LitElement {
     summary: { item: string }[]
   }[] = []
 
+  /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
     const headerRole = this.isNested ?
       html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
       html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
+    const titleScale = this.isNested ? "title-medium" : "title-large";
+    const subScale = this.isNested ? "title-small" : "title-medium";
 
     const headerOrg = this.isNested ?
       html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
@@ -189,18 +205,29 @@ export class WorkExperience extends LitElement {
 
     const headerDates = this.isNested ?
       html`
+    const info = html`
+      <header class="experience-info">
+        ${this.isNested
+          ? html`<h3 class="md-typescale-${titleScale}">${this.experienceRole}</h3>`
+          : html`<h2 class="md-typescale-${titleScale}">${this.experienceRole}</h2>`
+        }
+        <p class="md-typescale-${subScale}">${this.experienceOrg}</p>
         <p>
           <time
             class="md-typescale-title-small"
+            class="md-typescale-${subScale}"
             datetime="${this.dateStart.stamp}"
             >${this.dateStart.text}</time
           >
+            >${this.dateStart.text}</time>
           -
           <time
             class="md-typescale-title-small"
+            class="md-typescale-${subScale}"
             datetime="${this.dateEnd.stamp}"
             >${this.dateEnd.text}</time
           >
+            >${this.dateEnd.text}</time>
         </p>
       ` :
       html`
@@ -218,6 +245,8 @@ export class WorkExperience extends LitElement {
           >
         </p>
       `;
+      </header>
+    `;
 
   const info = html`
     <header class="experience-info">

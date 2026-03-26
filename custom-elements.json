@@ -34,6 +34,7 @@
                 }
               ],
               "name": "onFabChange",
+              "description": "Updates the state and DOM representation of a FAB when its configuration changes.",
               "kind": "method",
               "privacy": "private"
             },
@@ -65,6 +66,7 @@
                 }
               },
               "name": "firstUpdated",
+              "description": "Lifecycle method called after the first update.\nInitializes state from the configuration service and applies initial FAB positions.",
               "kind": "method",
               "privacy": "protected"
             },
@@ -78,6 +80,7 @@
                 }
               ],
               "name": "onColorSchemeChange",
+              "description": "Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.",
               "kind": "method",
               "privacy": "private"
             },
@@ -91,6 +94,7 @@
                 }
               ],
               "name": "onAppConfigsChange",
+              "description": "Syncs the component state with the global application configuration.",
               "kind": "method",
               "privacy": "private"
             },
@@ -109,16 +113,19 @@
                 }
               },
               "name": "uiModeIcon",
+              "description": "Maps a color scheme name to a Material icon name.",
               "kind": "method",
               "privacy": "private"
             },
             {
               "name": "_handleDialogOpened",
+              "description": "Tracks open dialogs to manage body scroll locking.",
               "kind": "method",
               "privacy": "private"
             },
             {
               "name": "_handleDialogClosed",
+              "description": "Tracks closed dialogs to manage body scroll restoration.",
               "kind": "method",
               "privacy": "private"
             },
@@ -132,6 +139,30 @@
                 }
               ],
               "name": "_onFabMenuItemClick",
+              "description": "Handles clicks on FAB menu items.\nCloses the menu and opens the configuration dialog with the requested content.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "config",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "return": {
+                "description": "The label string or an empty string if the style is icon-only."
+              },
+              "name": "_getFabLabel",
+              "description": "Generates the label string for a FAB based on its configuration style.",
               "kind": "method",
               "privacy": "private"
             }
@@ -1412,6 +1443,7 @@
           "members": [
             {
               "name": "sectionTitle",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
               "type": {
                 "text": "string"
               },
@@ -1428,6 +1460,7 @@
           "attributes": [
             {
               "name": "section-title",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
               "type": {
                 "text": "string"
               },
@@ -1821,6 +1854,7 @@
           "members": [
             {
               "name": "isNested",
+              "description": "If true, adjusts font sizes and layout for a nested appearance.",
               "type": {
                 "text": "boolean"
               },
@@ -1830,6 +1864,7 @@
             },
             {
               "name": "experienceRole",
+              "description": "The title of the professional role or project.",
               "type": {
                 "text": "string"
               },
@@ -1839,6 +1874,7 @@
             },
             {
               "name": "experienceOrg",
+              "description": "The name of the organization or client.",
               "type": {
                 "text": "string"
               },
@@ -1848,6 +1884,7 @@
             },
             {
               "name": "dateStart",
+              "description": "Start date information including machine-readable stamp and display text.",
               "type": {
                 "text": "{ stamp: string, text: string }"
               },
@@ -1857,6 +1894,7 @@
             },
             {
               "name": "dateEnd",
+              "description": "End date information including machine-readable stamp and display text.",
               "type": {
                 "text": "{ stamp: string, text: string }"
               },
@@ -1866,6 +1904,7 @@
             },
             {
               "name": "summaries",
+              "description": "A list of summary points describing achievements or responsibilities.",
               "type": {
                 "text": "{ item: string }[]"
               },
@@ -1875,6 +1914,7 @@
             },
             {
               "name": "jobs",
+              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
               "type": {
                 "text": "{\n    role: string,\n    client: string,\n  dates: {\n      start: { stamp: string, text: string },\n      end: { stamp: string, text: string }\n    },\n    summary: { item: string }[]\n  }[]"
               },
@@ -1884,13 +1924,14 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L6"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L7"
           },
           "kind": "class",
           "tagName": "work-experience",
           "attributes": [
             {
               "name": "is-nested",
+              "description": "If true, adjusts font sizes and layout for a nested appearance.",
               "type": {
                 "text": "boolean"
               },
@@ -1899,6 +1940,7 @@
             },
             {
               "name": "experience-role",
+              "description": "The title of the professional role or project.",
               "type": {
                 "text": "string"
               },
@@ -1907,6 +1949,7 @@
             },
             {
               "name": "experience-org",
+              "description": "The name of the organization or client.",
               "type": {
                 "text": "string"
               },
@@ -1915,6 +1958,7 @@
             },
             {
               "name": "date-start",
+              "description": "Start date information including machine-readable stamp and display text.",
               "type": {
                 "text": "{ stamp: string, text: string }"
               },
@@ -1923,6 +1967,7 @@
             },
             {
               "name": "date-end",
+              "description": "End date information including machine-readable stamp and display text.",
               "type": {
                 "text": "{ stamp: string, text: string }"
               },
@@ -1931,6 +1976,7 @@
             },
             {
               "name": "summaries",
+              "description": "A list of summary points describing achievements or responsibilities.",
               "type": {
                 "text": "{ item: string }[]"
               },
@@ -1939,6 +1985,7 @@
             },
             {
               "name": "jobs",
+              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
               "type": {
                 "text": "{\n    role: string,\n    client: string,\n  dates: {\n      start: { stamp: string, text: string },\n      end: { stamp: string, text: string }\n    },\n    summary: { item: string }[]\n  }[]"
               },
