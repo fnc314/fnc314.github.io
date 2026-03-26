@@ -8,6 +8,10 @@ import { type MaterialSymbol } from "material-symbols";
  * An action item within a `fab-menu`.
  *
  * @element fab-menu-item
+ * @cssprop --fab-menu-item-direction=row - The `flex-direction` of the {@link FabMenuItem}
+ * @cssprop --fab-menu-item-justify=flex-end - The Flex `justify-content` of the {@link FabMenuItem}
+ * @cssprop --fab-menu-item-padding-end=0 - The logical `padding-inline-end` value
+ * @cssprop --fab-menu-item-padding-start=0 - The logical `padding-inline-start` value
  */
 @customElement("fab-menu-item")
 export class FabMenuItem extends LitElement {
