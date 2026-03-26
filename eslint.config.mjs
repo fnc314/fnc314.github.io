@@ -1,51 +1,71 @@
 import js from "@eslint/js";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import jsonSchemaValidator from "eslint-plugin-json-schema-validator";
 import lit from "eslint-plugin-lit";
 import wc from "eslint-plugin-wc";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import { fileURLToPath } from "url";
 
-export default tseslint.config(
-  // 1. Global Ignores (Equivalent to .eslintignore)
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
+
+const tsRules = {
+  ...tsPlugin.configs.recommended?.rules,
+  ...tsPlugin.configs["recommended-requiring-type-checking"]?.rules,
+  ...tsPlugin.configs.stylistic?.rules,
+  ...tsPlugin.configs["stylistic-type-checked"]?.rules,
+  ...wc.configs["flat/recommended"]?.rules,
+  ...lit.configs["flat/recommended"]?.rules,
+};
+
+export default [
   {
     name: "app/global-ignores",
     ignores: ["jsconfig.json", "manifest.json", "website/index.js", "old/"],
   },
-  // 2. Base JavaScript Rules
   {
     name: "app/js-recommended",
     ...js.configs.recommended,
-  },
-  // 3. TypeScript and Component Rules
-  {
-    name: "app/typescript",
-    files: ["**/*.ts"],
-    extends: [
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-      wc.configs["flat/recommended"],
-      lit.configs["flat/recommended"],
-    ],
     languageOptions: {
       globals: {
         ...globals.browser,
       },
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
   },
-  // 4. JSON Validation
   {
-    name: "app/json",
-    files: ["**/*.json", "**/*.jsonc", "**/*.json5"],
-    extends: [jsonSchemaValidator.configs["flat/recommended"]],
+    name: "app/typescript",
+    files: ["**/*.ts"],
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+      wc,
+      lit,
+    },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: tsRules,
   },
-  // 5. JavaScript / Config Files (Disable type checking)
+  ...jsonSchemaValidator.configs["flat/recommended"],
   {
     name: "app/javascript-overrides",
     files: ["**/*.js", "**/*.mjs"],
-    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
   },
-);
+];
