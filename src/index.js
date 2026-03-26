@@ -25,29 +25,20 @@ import { Routes } from "./types/components/nav/routes.js";
 import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
-window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", onThemeChange);
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
 
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
 
-  document.adoptedStyleSheets.push(
-    typescaleStyles.styleSheet,
-    MaterialCSSStyleSheet,
-  );
+  document.adoptedStyleSheets.push(typescaleStyles.styleSheet, MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
-    window.location.replace(
-      `${window.location.href}#${Routes.PROFILE}`
-    )
+    window.location.replace(`${window.location.href}#${Routes.PROFILE}`);
   }
 
-  const matScheme = themeService.currentThemeConfig()
-    .materialSchemes[
-      colorSchemeConfigsToMaterialSchemeName(
-        configsService.loadConfigs().colorScheme
-      )
+  const matScheme =
+    themeService.currentThemeConfig().materialSchemes[
+      colorSchemeConfigsToMaterialSchemeName(configsService.loadConfigs().colorScheme)
     ];
   updateMaterialCSSStyleSheet(matScheme);
 

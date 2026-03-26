@@ -1,14 +1,13 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdDialog } from "@material/web/dialog/dialog";
-import { css, html, LitElement, TemplateResult } from "lit-element";
+import { LitElement, TemplateResult, css, html } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 
 interface Connection {
   label: string;
   connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "googleDocs" | "pdf", ConnectionInstance>>;
-
 }
 
 interface ConnectionInstance {
@@ -27,7 +26,7 @@ interface ConnectionInstance {
  */
 @customElement("connect-dialog")
 export class ConnectDialog extends LitElement {
-  static override styles= [
+  static override styles = [
     MaterialTypescaleStyles,
     css`
       :host {
@@ -134,10 +133,10 @@ export class ConnectDialog extends LitElement {
               transform: rotate(-90deg);
             }
 
-            &:focus, &:focus-within, &:hover {
-              background-color: color(
-                from var(--md-sys-color-primary) srgb r g b / .12
-              );
+            &:focus,
+            &:focus-within,
+            &:hover {
+              background-color: color(from var(--md-sys-color-primary) srgb r g b / 0.12);
               transition: background-color 0.1s ease-in-out;
 
               h3 {
@@ -166,7 +165,6 @@ export class ConnectDialog extends LitElement {
             visibility: visible;
           }
           &[open] {
-
             md-icon {
               transform: rotate(0deg);
             }
@@ -179,9 +177,7 @@ export class ConnectDialog extends LitElement {
             md-list-item {
               [slot="start"] {
                 padding: 1rem;
-                background-color: color(
-                  from var(--md-sys-color-primary-fixed-dim) srgb r g b / 0.5
-                );
+                background-color: color(from var(--md-sys-color-primary-fixed-dim) srgb r g b / 0.5);
                 color: var(--md-sys-color-on-primary-fixed);
                 border-radius: var(--md-sys-shape-corner-full);
               }
@@ -194,7 +190,9 @@ export class ConnectDialog extends LitElement {
                 font-family: var(--md-ref-typeface-brand);
               }
 
-              &:hover, &:focus, &:focus-within {
+              &:hover,
+              &:focus,
+              &:focus-within {
                 border-radius: var(--md-sys-shape-corner-small);
               }
             }
@@ -210,9 +208,8 @@ export class ConnectDialog extends LitElement {
           }
         }
       }
-
     `,
-  ]
+  ];
 
   @query("#connect-dialog")
   private _mdDialog!: MdDialog;
@@ -234,24 +231,30 @@ export class ConnectDialog extends LitElement {
     });
   }
 
+  /**
+   * Maps to {@link MdDialog}'s close method
+   * @returns A {@link Promise} resolving when the dialog is dismissed
+   */
+  hideDialog(): Promise<void> {
+    return this._mdDialog.close();
+  }
+
   #rederConnections(connection: Connection): TemplateResult {
     return html`
       <md-list>
         <md-divider></md-divider>
-        ${
-          Object.values(connection.connections).map((conn: ConnectionInstance) => html`
+        ${Object.values(connection.connections).map(
+          (conn: ConnectionInstance) => html`
             <md-list-item
               type="link"
               href=${conn.href}
               target="_blank"
-              >
-                ${unsafeHTML(conn.start)}
-                ${unsafeHTML(conn.overline)}
-                ${unsafeHTML(conn.text)}
+            >
+              ${unsafeHTML(conn.start)} ${unsafeHTML(conn.overline)} ${unsafeHTML(conn.text)}
             </md-list-item>
             <md-divider></md-divider>
-          `)
-        }
+          `,
+        )}
       </md-list>
     `;
   }
@@ -265,33 +268,36 @@ export class ConnectDialog extends LitElement {
       <md-dialog
         id="connect-dialog"
         @opened=${(event: Event) => this._handleDialogEvent(event)}
-        @closed=${(event: Event) => this._handleDialogEvent(event)}>
+        @closed=${(event: Event) => this._handleDialogEvent(event)}
+      >
         <md-icon slot="icon">person_add</md-icon>
         <div slot="headline">
           <h2 class="md-typescale-headline-medium">Let's Connect</h2>
         </div>
-        <div slot="content" class="connect-content">
-          ${
-            Connections.connections.map((connection, index) => html`
-              <details .open=${index === 0} .name=${"connection"}>
+        <div
+          slot="content"
+          class="connect-content"
+        >
+          ${Connections.connections.map(
+            (connection, index) => html`
+              <details
+                .open=${index === 0}
+                .name=${"connection"}
+              >
                 <summary>
-                  <h3 class="md-typescale-title-medium">
-                    ${connection.label}
-                  </h3>
+                  <h3 class="md-typescale-title-medium">${connection.label}</h3>
                   <md-icon>expand_circle_down</md-icon>
                 </summary>
                 <div class="content-wrapper">
-                  <div class="content">
-                    ${this.#rederConnections(connection)}
-                  </div>
+                  <div class="content">${this.#rederConnections(connection)}</div>
                 </div>
               </details>
-            `)
-          }
+            `,
+          )}
         </div>
         <div slot="actions">
           <p class="md-typescale-body-small">
-            ${`Version: ${this.version}`}&nbsp;<br/>${`Date: ${this.date}`}&nbsp;<br/>${`Time: ${this.time}`}
+            ${`Version: ${this.version}`}&nbsp;<br />${`Date: ${this.date}`}&nbsp;<br />${`Time: ${this.time}`}
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>
