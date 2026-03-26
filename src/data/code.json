@@ -2,9 +2,7 @@
   "projects": [
     {
       "name": "project-collections-gradle-settings-plugin",
-      "technologies": [
-        "<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"
-      ],
+      "technologies": ["<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
       "description": "A <pre>gradle.settings(.kts)</pre> plugin streamlining invocations of <pre>Settings.include</pre> for nested collections of sub-projects"
     },
@@ -44,10 +42,15 @@
         "<a href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
         "<a href=\"https://nodejs.org/\" target=\"_blank\">Node/NPM</a>",
         "<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>",
-        "<a href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>"
+        "<a href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>",
+        "<a href=\"https://bun.com/docs\" target=\"_blank\">Bun</a>",
+        "<a href=\"https://rollupjs.org/\" target=\"_blank\">RollUp</a>",
+        "<a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>",
+        "<a href=\"https://prettier.io/\" target=\"_blank\">Prettier</a>",
+        "<a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>"
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",
-      "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a>"
+      "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
     },
     {
       "name": "project_euler",
