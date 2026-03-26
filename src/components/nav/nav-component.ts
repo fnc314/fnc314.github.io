@@ -6,7 +6,10 @@ import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
 
-interface IndexRoute { route: Route, index: number }
+interface IndexRoute {
+  route: Route;
+  index: number;
+}
 
 /**
  * A navigation component that renders primary tabs synchronized with the application's URL hash routes.
@@ -34,12 +37,8 @@ export class NavComponent extends LitElement {
         --md-primary-tab-active-pressed-icon-color: var(--icon-fill-color);
 
         --md-primary-tab-active-label-text-color: var(--icon-fill-color);
-        --md-primary-tab-active-focus-label-text-color: var(
-          --icon-fill-color
-        );
-        --md-primary-tab-active-hover-label-text-color: var(
-          --icon-fill-color
-        );
+        --md-primary-tab-active-focus-label-text-color: var(--icon-fill-color);
+        --md-primary-tab-active-hover-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-pressed-label-text-color: var(
           --icon-fill-color
         );
@@ -92,13 +91,16 @@ export class NavComponent extends LitElement {
          * sliding indicator of the <md-tabs> component.
          */
         transition:
-          font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
+          font-variation-settings var(--nav-component-icon-animation)
+            cubic-bezier(0.3, 0, 0, 1),
           color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
 
         @media (prefers-reduced-motion: reduce) {
           transition:
-            font-variation-settings var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1),
-            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1);
+            font-variation-settings var(--nav-component-icon-animation-reduced)
+              cubic-bezier(0.3, 0, 0, 1),
+            color var(--nav-component-icon-animation-reduced)
+              cubic-bezier(0.3, 0, 0, 1);
         }
       }
 
@@ -225,7 +227,7 @@ export class NavComponent extends LitElement {
           const panel = document.querySelector(
             `#${panelId}[aria-role="tabpanel"]`,
           )!;
-          if (panel) {
+          if (panel && panel instanceof HTMLElement) {
             panels.push(panel);
             panel.toggleAttribute("inert", true);
           }
@@ -287,7 +289,8 @@ export class NavComponent extends LitElement {
       profile: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
+          filled=${this._activeRoute === Routes.PROFILE ||
+          this._exitingRoute === Routes.PROFILE}
           >person</md-icon
         >
         Profile
@@ -295,7 +298,8 @@ export class NavComponent extends LitElement {
       work: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
+          filled=${this._activeRoute === Routes.WORK ||
+          this._exitingRoute === Routes.WORK}
           >engineering</md-icon
         >
         Work
@@ -303,7 +307,8 @@ export class NavComponent extends LitElement {
       code: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
+          filled=${this._activeRoute === Routes.CODE ||
+          this._exitingRoute === Routes.CODE}
           >code_blocks</md-icon
         >
         Code
