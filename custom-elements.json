@@ -7,6 +7,7 @@
       "declarations": [
         {
           "name": "AppShell",
+          "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -173,6 +174,10 @@
           "kind": "class",
           "tagName": "app-shell",
           "slots": [
+            {
+              "name": "",
+              "description": "[app-content] - The place for the dynamic application content"
+            },
             {
               "name": "app-nav"
             },
@@ -1058,7 +1063,7 @@
             {
               "name": "_focusableElements",
               "type": {
-                "text": "(HTMLElement \u0026 { focus: (options?: FocusOptions) =\u003e void; })[]"
+                "text": "(HTMLElement \u0026 { focus: (options?: FocusOptions) =\u003e void })[]"
               },
               "readonly": true,
               "kind": "field",
@@ -1633,7 +1638,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word-cloud/word-cloud.ts#L25"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word-cloud/word-cloud.ts#L34"
           },
           "kind": "class",
           "tagName": "word-cloud",
