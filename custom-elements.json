@@ -906,18 +906,22 @@
           "cssProperties": [
             {
               "name": "--fab-menu-item-direction",
+              "description": "The `flex-direction` of the {@link FabMenuItem}",
               "default": "row"
             },
             {
               "name": "--fab-menu-item-justify",
+              "description": "The Flex `justify-content` of the {@link FabMenuItem}",
               "default": "flex-end"
             },
             {
               "name": "--fab-menu-item-padding-end",
+              "description": "The logical `padding-inline-end` value",
               "default": "0"
             },
             {
               "name": "--fab-menu-item-padding-start",
+              "description": "The logical `padding-inline-start` value",
               "default": "0"
             },
             {
