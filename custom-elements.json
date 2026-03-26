@@ -692,15 +692,6 @@
               "privacy": "private"
             },
             {
-              "name": "headlines",
-              "type": {
-                "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
-              },
-              "default": "{\\n    confirm: html`\u003ch2 class=\"md-typescale-headline-small\"\u003ePlease Confirm\u003c/h2\u003e`,\\n    warning: html`\u003ch2 class=\"md-typescale-headline-small\"\u003eWarning\u003c/h2\u003e`,\\n    attention: html`\u003ch2 class=\"md-typescale-headline-small\"\u003eAttention!\u003c/h2\u003e`,\\n  }",
-              "kind": "field",
-              "privacy": "private"
-            },
-            {
               "name": "icons",
               "type": {
                 "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
@@ -711,7 +702,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L21"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L24"
           },
           "kind": "class",
           "tagName": "step-up-dialog",
@@ -754,6 +745,20 @@
                   }
                 ]
               }
+            }
+          ],
+          "slots": [
+            {
+              "name": "headline",
+              "description": "The {@link MdDialog} headline {@link slot}"
+            },
+            {
+              "name": "content",
+              "description": "The body of the {@link MdDialog}"
+            },
+            {
+              "name": "actions",
+              "description": "The area of dialog action buttons"
             }
           ],
           "cssProperties": [
@@ -1257,7 +1262,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L20"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L23"
           },
           "kind": "class",
           "tagName": "nav-component",

@@ -7,6 +7,12 @@ generate:
 
   output: "./custom-elements.json"
 
+health:
+  disable:
+    - demos
+
+  failBelow: 80
+
 serve:
   no-reload: false
 
@@ -28,3 +34,10 @@ transforms:
   typescript:
     enabled: true
 
+warnings:
+  disable:
+    - lifecycle-lit-methods
+
+  format: json
+
+  verbose: true
