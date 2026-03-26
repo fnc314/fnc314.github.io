@@ -185,7 +185,7 @@ export class AppShell extends LitElement {
       this.connectFabConfig = fabConfig;
     }
 
-    const fabLabel: string = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
+    const fabLabel = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`
     changedFab.label = fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
     changedFab.ariaLabel = fabLabel;
     changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
@@ -193,7 +193,7 @@ export class AppShell extends LitElement {
     if (isSettings) {
       (changedFab as FabMenu).icon = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
     } else {
-      const fabIcon = changedFab.querySelector("md-icon") as MdIcon;
+      const fabIcon = changedFab.querySelector("md-icon")!;
       if (fabIcon) {
         fabIcon.style.display = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
       }

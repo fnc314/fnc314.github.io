@@ -78,7 +78,7 @@ export class ProfileSection extends LitElement {
    * Maps to the `section-title` attribute.
    */
   @property({ type: String, attribute: "section-title" })
-  sectionTitle: string = "";
+  sectionTitle = "";
 
   /** Renders the section header and content slot. */
   override render() {

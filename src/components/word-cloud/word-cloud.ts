@@ -299,9 +299,7 @@ export class WordCloud extends LitElement {
     let groups: RenderableWordCloudWord[][] = [];
 
     switch (this.grouping) {
-      case WordCloudGroupings.CATEGORY:
-        // Group by category, typically want consistent order for categories
-        // e.g. alphabetical or specific order. Let's do alphabetical.
+      case WordCloudGroupings.CATEGORY: {
         const catMap = new Map<string, RenderableWordCloudWord[]>();
         randomized.forEach((w) => {
           if (!catMap.has(w.category)) catMap.set(w.category, []);
@@ -311,8 +309,10 @@ export class WordCloud extends LitElement {
         const catKeys = Array.from(catMap.keys()).sort();
         groups = catKeys.map((k) => catMap.get(k)!);
         break;
+      }
 
-      case WordCloudGroupings.QUARTILE:
+      case WordCloudGroupings.QUARTILE: {
+
         // Fixed order: 1st, 2nd, 3rd, 4th
         const q1 = randomized.filter((w) => w.quartile === "first-quartile");
         const q2 = randomized.filter((w) => w.quartile === "second-quartile");
@@ -320,6 +320,7 @@ export class WordCloud extends LitElement {
         const q4 = randomized.filter((w) => w.quartile === "fourth-quartile");
         groups = [q1, q2, q3, q4];
         break;
+      }
 
       case WordCloudGroupings.UNGROUPED:
       default:

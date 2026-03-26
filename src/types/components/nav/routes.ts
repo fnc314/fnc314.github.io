@@ -10,6 +10,6 @@ export type RouteHashs = `#${Route}`;
 
 export function hashToRoute(hash: string): Route {
   return (
-    Object.values(Routes).find((route) => route === hash) || Routes.PROFILE
+    Object.values(Routes).find((route) => route === hash) ?? Routes.PROFILE
   );
 }

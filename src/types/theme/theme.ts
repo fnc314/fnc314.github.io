@@ -61,11 +61,7 @@ export type ColorString = `#${string}`
 
 export type MaterialSchemeNames = "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
 
-export type ThemeJsonSchemes = {
-  [key in MaterialSchemeNames]: {
-    [key in ColorSchemeRoles]: ColorString
-  }
-}
+export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>
 
 export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
   if (typeof json !== 'object' || json === null) {
@@ -90,17 +86,17 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
   return correctValues;
 }
 
-export type PhotoJson = {
+export interface PhotoJson {
   src: string;
   figcaption: string;
   alt: string;
-};
+}
 
-export type ThemeConfig = {
+export interface ThemeConfig {
   themePhoto: PhotoJson;
   json: ThemeJsonSchemes;
   materialSchemes: MaterialScheme
-};
+}
 
 export const THEME_NAMES = {
   chicago: "chicago" as const,
@@ -112,9 +108,7 @@ export const THEME_NAMES = {
 
 export type ThemeName = typeof THEME_NAMES[keyof typeof THEME_NAMES];
 
-export type PhotosJson = {
-  [key in ThemeName]: PhotoJson;
-};
+export type PhotosJson = Record<ThemeName, PhotoJson>;
 
 export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 

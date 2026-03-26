@@ -94,7 +94,7 @@ export class StepUpDialog extends LitElement {
    * @attr dialogContentString
    */
   @property({ type: String, attribute: "dialogContentString" })
-  dialogContentString: string = "";
+  dialogContentString = "";
 
   @query("#step-up-dialog")
   private _mdDialog!: MdDialog;

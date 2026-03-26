@@ -64,7 +64,7 @@ export class PartialHeader extends LitElement {
    * @attr heading-text
    */
   @property({ type: String, attribute: "heading-text" })
-  headingText: string = "";
+  headingText = "";
 
   /**
    * The color variant theme for the header background and text.

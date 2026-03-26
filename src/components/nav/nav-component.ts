@@ -6,7 +6,7 @@ import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { createRef, ref, Ref } from "lit/directives/ref.js";
 
-type IndexRoute = { route: Route, index: number };
+interface IndexRoute { route: Route, index: number }
 
 /**
  * A navigation component that renders primary tabs synchronized with the application's URL hash routes.
@@ -224,7 +224,7 @@ export class NavComponent extends LitElement {
         if (panelId) {
           const panel = document.querySelector(
             `#${panelId}[aria-role="tabpanel"]`,
-          ) as HTMLElement;
+          )!;
           if (panel) {
             panels.push(panel);
             panel.toggleAttribute("inert", true);

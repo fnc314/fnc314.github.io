@@ -1,6 +1,6 @@
-export type WordCloudWord = {
+export interface WordCloudWord {
   word: string;
-  weight: number | Weights;
+  weight: Weights;
   quartile: WeightQuartile;
   category: WordCloudWordCategory;
   extras: string[];
@@ -40,7 +40,7 @@ export type WordCloudAppearance = (typeof WordCloudAppearances)[keyof typeof Wor
 /** A factory function to create a {@link WordCloudWord} */
 export const makeWordCloudWord = (
   word: string,
-  weight: number | Weights,
+  weight: Weights,
   category: WordCloudWordCategory,
   extras: string[] = [],
 ): WordCloudWord => ({

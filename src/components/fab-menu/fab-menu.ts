@@ -192,14 +192,14 @@ export class FabMenu extends LitElement {
    * @attr label
    */
   @property({ type: String })
-  label: string = "";
+  label = "";
 
   /**
    * The `aria-label` of the FAB.
    * @attr aria-label
    */
   @property({ type: String, attribute: "aria-label" })
-  override ariaLabel: string = "";
+  override ariaLabel = "";
 
   /**
    * The direction in which the menu items should expand.

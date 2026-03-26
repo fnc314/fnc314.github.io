@@ -32,11 +32,11 @@ export const colorSchemeContrastToIcon: (slot: "start" | "leading-icon", contras
     }
   };
 
-export type ColorSchemeConfigs = {
+export interface ColorSchemeConfigs {
   name: ColorScheme;
   contrast: ColorSchemeContrast;
   persist: boolean;
-};
+}
 
 export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: AppConfigs["colorScheme"]) => MaterialSchemeName = (
   colorSchemeSettings: ColorSchemeConfigs

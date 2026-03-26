@@ -346,7 +346,7 @@ export class ConfigsDialog extends LitElement {
   private _stepUpDialog!: StepUpDialog;
 
   @state()
-  private _darkModeEnabled: boolean = false;
+  private _darkModeEnabled = false;
 
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
@@ -355,7 +355,7 @@ export class ConfigsDialog extends LitElement {
   private _formContent: FormContent = "ui-mode";
 
   @state()
-  private _stepUpDialogContent: string = "all custom";
+  private _stepUpDialogContent = "all custom";
 
   private _handleDialogEvent(event: Event) {
     this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));

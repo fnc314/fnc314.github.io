@@ -11,10 +11,10 @@ export const FAB_POSITION_COMPONENTS_HORIZONTAL = {
   END: "END" as const,
 } as const;
 
-export type FabPositionComponent = {
+export interface FabPositionComponent {
   vertical: FabPositionComponentVertical;
   horizontal: FabPositionComponentHorizontal;
-};
+}
 
 export type FabPositionComponentVertical = typeof FAB_POSITION_COMPONENTS_VERTICAL[keyof typeof FAB_POSITION_COMPONENTS_VERTICAL];
 export type FabPositionComponentHorizontal = typeof FAB_POSITION_COMPONENTS_HORIZONTAL[keyof typeof FAB_POSITION_COMPONENTS_HORIZONTAL];
@@ -67,7 +67,7 @@ export const fabStyleToUi = (fabStyle: FabStyle): string => {
 
 export const FabStyles: FabStyle[] = Object.values(FAB_STYLE);
 
-export type FabConfig = { position: FabPosition, style: FabStyle };
+export interface FabConfig { position: FabPosition, style: FabStyle }
 export type FabConfigssRecord = Record<"settings" | "connect", FabConfig>
 
 export type FabConfigChange = CustomEvent<{ fab: "settings" | "connect", newFabConfig: FabConfig }>;

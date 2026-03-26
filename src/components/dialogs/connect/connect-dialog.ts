@@ -206,7 +206,7 @@ export class ConnectDialog extends LitElement {
 
   private date: string = "[VI]{date}[/VI]".split(" @ ").at(0)!;
   private time: string = "[VI]{date}[/VI]".split(" @ ").at(1)!;
-  private version: string = "[VI]{version}[/VI]";
+  private version = "[VI]{version}[/VI]";
 
   /**
    * Shows the connect dialog and applies a custom border to the internal container.
