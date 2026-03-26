@@ -2,13 +2,32 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * A reusable section component for profile-related content.
+ * Uses container queries to provide a responsive grid layout that adapts to available space.
+ *
+ * API
+ * --
+ * @property {string} sectionTitle
+ *   The text shown in the section heading (`<h2>`).
+ *   Corresponds to the attribute `section-title`.
+ *
+ * Slot API
+ * --
+ * <slot name="section-grid-content">: (required)
+ *   Container for section body content. Preserves the responsive grid layout.
+ *
+ * Example:
+ * ```html
+ * <profile-section section-title="Experience">
+ *   <div slot="section-grid-content">
+ *     ...your list, cards, or details...
+ *   </div>
+ * </profile-section>
+ * ```
+ */
 @customElement("profile-section")
 export class ProfileSection extends LitElement {
-  /**
-   * A reusable section component for profile-related content.
-   * Uses container queries to provide a responsive grid layout that adapts to available space.
-   */
-
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -80,13 +99,28 @@ export class ProfileSection extends LitElement {
   @property({ type: String, attribute: "section-title" })
   sectionTitle = "";
 
-  /** Renders the section header and content slot. */
+  /**
+   * Renders the section with a header and named content slot.
+   *
+   * Content consumers should provide a `<slot name="section-grid-content">` node
+   * inside the `<profile-section>` to take part in the responsive grid layout.
+   *
+   * Example:
+   * ```html
+   * <profile-section section-title="Work Experience">
+   *   <div slot="section-grid-content">...cards...</div>
+   * </profile-section>
+   * ```
+   *
+   * Notes:
+   * - The slot is wrapped in a `div` that creates an inner container query.
+   * - Named slot `section-grid-content` ensures content is placed in the second
+   *   cell of the adaptive section grid.
+   */
   override render() {
     return html`
       <section>
-        <h2 class="md-typescale-headline-small">
-          ${this.sectionTitle}
-        </h2>
+        <h2 class="md-typescale-headline-small">${this.sectionTitle}</h2>
         <div>
           <slot name="section-grid-content"></slot>
         </div>

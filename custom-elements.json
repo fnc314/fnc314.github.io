@@ -62,7 +62,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "Promise\u003cvoid\u003e"
+                  "text": "void"
                 }
               },
               "name": "firstUpdated",
@@ -168,7 +168,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L25"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L36"
           },
           "kind": "class",
           "tagName": "app-shell",
@@ -286,14 +286,6 @@
               "privacy": "public"
             },
             {
-              "parameters": [
-                {
-                  "name": "_",
-                  "type": {
-                    "text": "OpenStepUpDialog"
-                  }
-                }
-              ],
               "name": "openStepUp",
               "kind": "method",
               "privacy": "private"
@@ -403,7 +395,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L41"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L70"
           },
           "kind": "class",
           "tagName": "configs-dialog",
@@ -554,7 +546,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L16"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L29"
           },
           "kind": "class",
           "tagName": "connect-dialog",
@@ -1436,6 +1428,7 @@
       "declarations": [
         {
           "name": "ProfileSection",
+          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -1453,7 +1446,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/profile-section/profile-section.ts#L6"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/profile-section/profile-section.ts#L30"
           },
           "kind": "class",
           "tagName": "profile-section",
@@ -1847,6 +1840,7 @@
       "declarations": [
         {
           "name": "WorkExperience",
+          "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -1924,7 +1918,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L7"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L10"
           },
           "kind": "class",
           "tagName": "work-experience",
