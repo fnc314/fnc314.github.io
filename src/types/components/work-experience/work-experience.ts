@@ -11,12 +11,13 @@ export interface Job {
     start: WorkDate;
     end: WorkDate;
   };
-  summary: {item: string}[];
+  summary: { item: string }[];
 }
 
 export interface Experience {
   employer: string;
   role: string;
+  summary: string;
   dates: {
     start: WorkDate;
     end: WorkDate;
@@ -26,8 +27,6 @@ export interface Experience {
 
 export interface WorkData {
   experiences: Experience[];
-
-  resume: Record<string, Record<"format" | "href" | "text", string>>;
 }
 
 export const data = WorkJson as WorkData;

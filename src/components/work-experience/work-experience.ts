@@ -1,14 +1,24 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement, nothing } from "lit";
+import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
+import { LitElement, css, html, nothing } from "lit";
+import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
 
 /**
  * A component for displaying professional work experience entries.
  * Supports nesting for sub-roles or specific project assignments under a single employer.
+ *
+ * @property isNesting=false - Whether this is a nested instance
+ * @property experienceRole="" - The formal role from the {@link WorkExperience} instance
+ * @property experienceOrg="" - The employer formal name
+ * @property experienceSummary="" - An optional summary of the overall role
+ * @property dateStart={ stamp: "", text: "" } - A {@link WorkDate} instance describing employment start date
+ * @property dateEnd={ stamp: "", text: "" } - A {@link WorkDate} instance describing employment end date
+ * @property summaries=[] - An array of `{ item: string }` objects describing the responsibilities
+ * @property jobs=[] - An array of {@link Job}s rendered as nested {@link WorkExperience} instances
  */
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
-
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -85,8 +95,13 @@ export class WorkExperience extends LitElement {
         }
 
         /* Dates */
-        > p:last-child {
+        > p:nth-child(3) {
           color: var(--md-sys-color-secondary);
+        }
+
+        /* Summary */
+        > p:nth-child(4) {
+          color: var(--md-sys-color-on-surface-variant);
         }
       }
 
@@ -116,13 +131,14 @@ export class WorkExperience extends LitElement {
             display: contents;
 
             /* Dates */
-            > p:last-child {
+            > p:nth-child(3) {
               grid-column: 1;
               grid-row: 1;
               text-align: end;
               inset-block-start: 0;
               color: var(--md-sys-color-secondary);
             }
+
             /* Role */
             > h2,
             > h3 {
@@ -130,6 +146,7 @@ export class WorkExperience extends LitElement {
               grid-row: 1;
               color: var(--md-sys-color-primary);
             }
+
             /* Org */
             > p:nth-child(2) {
               grid-column: 2;
@@ -137,13 +154,22 @@ export class WorkExperience extends LitElement {
               font-style: italic;
               color: var(--md-sys-color-tertiary);
             }
+
+            /* Summary */
+            > p:nth-child(4) {
+              grid-column-start: 2;
+              grid-column-end: -1;
+              grid-row-start: 3;
+              grid-row-end: 4;
+              color: var(--md-sys-color-on-surface-variant);
+            }
           }
 
           /* Nested content */
           .nested-experiences {
             container-type: inline-size;
             grid-column: auto / span 2;
-            grid-row: 3;
+            grid-row: 4;
             border-inline-start: none;
             padding-inline-start: 0;
             display: grid;
@@ -166,13 +192,16 @@ export class WorkExperience extends LitElement {
   @property({ type: String, attribute: "experience-org" })
   experienceOrg = "";
 
+  @property({ type: String, attribute: "experience-summary" })
+  experienceSummary = "";
+
   /** Start date information including machine-readable stamp and display text. */
   @property({ type: Object, attribute: "date-start" })
-  dateStart: { stamp: string, text: string } = { stamp: "", text: "" };
+  dateStart: WorkDate = { stamp: "", text: "" };
 
   /** End date information including machine-readable stamp and display text. */
   @property({ type: Object, attribute: "date-end" })
-  dateEnd: { stamp: string, text: string } = { stamp: "", text: "" };
+  dateEnd: WorkDate = { stamp: "", text: "" };
 
   /** A list of summary points describing achievements or responsibilities. */
   @property({ type: Array, attribute: "summaries" })
@@ -180,112 +209,89 @@ export class WorkExperience extends LitElement {
 
   /** A list of sub-jobs or project assignments to be rendered as nested experiences. */
   @property({ type: Array, attribute: "jobs" })
-  jobs: {
-    role: string,
-    client: string,
-  dates: {
-      start: { stamp: string, text: string },
-      end: { stamp: string, text: string }
-    },
-    summary: { item: string }[]
-  }[] = []
+  jobs: Job[] = [];
 
   /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
-    const headerRole = this.isNested ?
-      html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
-      html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
+    const headerRole = this.isNested
+      ? html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>`
+      : html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
 
-    const headerOrg = this.isNested ?
-      html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
-      html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
+    const headerOrg = this.isNested
+      ? html`<p class="md-typescale-title-small">${this.experienceOrg}</p>`
+      : html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
 
-    const headerDates = this.isNested ?
-      html`
-        <p>
-          <time
-            class="md-typescale-title-small"
-            datetime="${this.dateStart.stamp}"
-            >${this.dateStart.text}</time
-          >
-          -
-          <time
-            class="md-typescale-title-small"
-            datetime="${this.dateEnd.stamp}"
-            >${this.dateEnd.text}</time
-          >
-        </p>
-      ` :
-      html`
-        <p>
-          <time
-            class="md-typescale-title-medium"
-            datetime="${this.dateStart.stamp}"
-            >${this.dateStart.text}</time
-          >
-          -
-          <time
-            class="md-typescale-title-medium"
-            datetime="${this.dateEnd.stamp}"
-            >${this.dateEnd.text}</time
-          >
-        </p>
-      `;
+    const headerDates = this.isNested
+      ? html`
+          <p>
+            <time
+              class="md-typescale-title-small"
+              datetime="${this.dateStart.stamp}"
+              >${this.dateStart.text}</time
+            >
+            -
+            <time
+              class="md-typescale-title-small"
+              datetime="${this.dateEnd.stamp}"
+              >${this.dateEnd.text}</time
+            >
+          </p>
+        `
+      : html`
+          <p>
+            <time
+              class="md-typescale-title-medium"
+              datetime="${this.dateStart.stamp}"
+              >${this.dateStart.text}</time
+            >
+            -
+            <time
+              class="md-typescale-title-medium"
+              datetime="${this.dateEnd.stamp}"
+              >${this.dateEnd.text}</time
+            >
+          </p>
+        `;
+
+    const orgSummary = this.experienceSummary
+      ? html`<p class="md-typescale-body-large">${unsafeHTML(this.experienceSummary)}</p>`
+      : nothing;
 
     const info = html`
-      <header class="experience-info">
-        ${headerRole}
-        ${headerOrg}
-        ${headerDates}
-      </header>
+      <header class="experience-info">${headerRole} ${headerOrg} ${headerDates} ${orgSummary}</header>
     `;
 
-    const content = this.jobs.length ?
-      html`
-        <div class="nested-experiences">
-          ${this.jobs.map(
-            (job) => html`
-              <work-experience
-                .isNested="${true}"
-                .dateStart=${job.dates.start}
-                .dateEnd=${job.dates.end}
-                .summaries=${job.summary}
-                experience-role="${job.role}"
-                experience-org="${job.client}"
-              >
-              </work-experience>
-            `,
-          )}
-        </div>
-      ` :
-      nothing;
+    const content = this.jobs.length
+      ? html`
+          <div class="nested-experiences">
+            ${this.jobs.map(
+              (job) => html`
+                <work-experience
+                  .isNested="${true}"
+                  .dateStart=${job.dates.start}
+                  .dateEnd=${job.dates.end}
+                  .summaries=${job.summary}
+                  experience-role="${job.role}"
+                  experience-org="${job.client}"
+                >
+                </work-experience>
+              `,
+            )}
+          </div>
+        `
+      : nothing;
 
-    const summaries = this.summaries.length ?
-      html`
-        <ul class="nested-summary">
-          ${this.summaries.map(
-            (summary) => html`
-              <li class="md-typescale-body-large">${summary.item}</li>
-            `,
-          )}
-        </ul>
-      `
-        :
-      nothing;
+    const summaries = this.summaries.length
+      ? html`
+          <ul class="nested-summary">
+            ${this.summaries.map((summary) => html`<li class="md-typescale-body-large">${summary.item}</li>`)}
+          </ul>
+        `
+      : nothing;
 
-    return this.isNested ?
-      html`
-        <div class="experience-container">
-          ${info}
-          ${summaries}
-        </div>
-      ` :
-      html`
-        <section class="experience-container">
-          ${info}
-          ${content}
-        </section>
-      `;
+    return this.isNested
+      ? html`<div class="experience-container">${info} ${summaries}</div>`
+      : html`<section class="experience-container">${info} ${content}</section>`;
   }
 }
 

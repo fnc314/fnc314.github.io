@@ -21,8 +21,7 @@ export class WorkPartial extends LitElement {
         display: grid;
         grid-template-areas:
           "title"
-          "content"
-          ;
+          "content";
         gap: 1rem;
         grid-template-rows: min-content;
         grid-auto-rows: auto;
@@ -48,14 +47,18 @@ export class WorkPartial extends LitElement {
   override render() {
     return html`
       <article>
-        <partial-header .headerType=${"secondary"} .headingText=${"Work Experience"}></partial-header>
+        <partial-header
+          .headerType=${"secondary"}
+          .headingText=${"Work Experience"}
+        ></partial-header>
         <div class="article-body">
           ${WorkJson.experiences.map(
             (exp) => html`
               <work-experience
                 .isNested="${false}"
-                experience-org="${exp.employer}"
-                experience-role="${exp.role}"
+                .experienceOrg="${exp.employer}"
+                .experienceRole="${exp.role}"
+                .experienceSummary="${exp.summary}"
                 .dateStart="${exp.dates.start}"
                 .dateEnd="${exp.dates.end}"
                 .jobs="${exp.jobs}"

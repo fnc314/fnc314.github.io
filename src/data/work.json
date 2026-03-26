@@ -1,24 +1,9 @@
 {
-  "resume": {
-    "googleDrive": {
-      "format": "googleDrive",
-      "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
-      "text": "Google Drive"
-    },
-    "pdf": {
-      "format": "pdf",
-      "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
-      "text": "PDF Download"
-    }
-  },
   "experiences": [
     {
       "employer": "CGI Technology and Solutions, Inc.",
       "role": "Director, Consulting Expert",
-      "date": {
-        "start": "August 2014",
-        "end": "January 2026"
-      },
+      "summary": "<em>Promoted through progressive leadership roles; most recently serving as an organization-wide expert for mobile application development and system architecture.</em>",
       "dates": {
         "start": {
           "stamp": "2014-08",
@@ -59,7 +44,6 @@
             }
           ]
         },
-
         {
           "client": "PNC Financial Services",
           "role": "Mobile Project Tech Lead, Android",
@@ -217,14 +201,10 @@
         }
       ]
     },
-
     {
       "employer": "Pittsburgh Public Schools",
       "role": "Teacher, Secondary Mathematics",
-      "date": {
-        "start": "September 2007",
-        "end": "August 2012"
-      },
+      "summary": "<em>Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.</em>",
       "dates": {
         "start": {
           "stamp": "2007-09",
