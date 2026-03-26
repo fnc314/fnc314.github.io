@@ -3,6 +3,7 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import jsonSchemaValidator from "eslint-plugin-json-schema-validator";
 import lit from "eslint-plugin-lit";
+import prettier from "eslint-plugin-prettier";
 import wc from "eslint-plugin-wc";
 import globals from "globals";
 import { fileURLToPath } from "url";
@@ -14,8 +15,8 @@ const tsRules = {
   ...tsPlugin.configs["recommended-requiring-type-checking"]?.rules,
   ...tsPlugin.configs.stylistic?.rules,
   ...tsPlugin.configs["stylistic-type-checked"]?.rules,
-  ...wc.configs["flat/recommended"]?.rules,
-  ...lit.configs["flat/recommended"]?.rules,
+  ...(Array.isArray(wc.configs?.["flat/recommended"]) ? wc.configs["flat/recommended"][0]?.rules : wc.configs?.["flat/recommended"]?.rules),
+  ...(Array.isArray(lit.configs?.["flat/recommended"]) ? lit.configs["flat/recommended"][0]?.rules : lit.configs?.["flat/recommended"]?.rules),
 };
 
 export default [
@@ -39,6 +40,7 @@ export default [
       "@typescript-eslint": tsPlugin,
       wc,
       lit,
+      prettier,
     },
     languageOptions: {
       parser: tsParser,
