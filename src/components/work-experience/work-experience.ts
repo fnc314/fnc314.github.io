@@ -1,14 +1,13 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { $ } from "bun";
 import { css, html, LitElement, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * A component for displaying professional work experience entries.
+ * Supports nesting for sub-roles or specific project assignments under a single employer.
+ */
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
-  /**
-   * A component for displaying professional work experience entries.
-   * Supports nesting for sub-roles or specific project assignments under a single employer.
-   */
 
   static override styles = [
     MaterialTypescaleStyles,
@@ -196,8 +195,6 @@ export class WorkExperience extends LitElement {
     const headerRole = this.isNested ?
       html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>` :
       html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
-    const titleScale = this.isNested ? "title-medium" : "title-large";
-    const subScale = this.isNested ? "title-small" : "title-medium";
 
     const headerOrg = this.isNested ?
       html`<p class="md-typescale-title-small">${this.experienceOrg}</p>` :
@@ -205,29 +202,18 @@ export class WorkExperience extends LitElement {
 
     const headerDates = this.isNested ?
       html`
-    const info = html`
-      <header class="experience-info">
-        ${this.isNested
-          ? html`<h3 class="md-typescale-${titleScale}">${this.experienceRole}</h3>`
-          : html`<h2 class="md-typescale-${titleScale}">${this.experienceRole}</h2>`
-        }
-        <p class="md-typescale-${subScale}">${this.experienceOrg}</p>
         <p>
           <time
             class="md-typescale-title-small"
-            class="md-typescale-${subScale}"
             datetime="${this.dateStart.stamp}"
             >${this.dateStart.text}</time
           >
-            >${this.dateStart.text}</time>
           -
           <time
             class="md-typescale-title-small"
-            class="md-typescale-${subScale}"
             datetime="${this.dateEnd.stamp}"
             >${this.dateEnd.text}</time
           >
-            >${this.dateEnd.text}</time>
         </p>
       ` :
       html`
@@ -245,16 +231,14 @@ export class WorkExperience extends LitElement {
           >
         </p>
       `;
+
+    const info = html`
+      <header class="experience-info">
+        ${headerRole}
+        ${headerOrg}
+        ${headerDates}
       </header>
     `;
-
-  const info = html`
-    <header class="experience-info">
-      ${headerRole}
-      ${headerOrg}
-      ${headerDates}
-    </header>
-  `;
 
     const content = this.jobs.length ?
       html`

@@ -379,7 +379,6 @@ export class AppShell extends LitElement {
           id="fab-menu"
           class=${fabPositionClass(this.settingsFabConfig.position)}
           .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          .icon=${"settings"}
           .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings"}
           .variant=${"surface"}
           .label=${settingsLabel}
@@ -410,11 +409,9 @@ export class AppShell extends LitElement {
 
         <md-fab
           id="fab-connect"
-          class="connect"
           class="connect ${fabPositionClass(this.connectFabConfig.position)}"
           .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
           .variant=${"primary"}
-          aria-label="Connect"
           .label=${connectLabel}
           aria-label=${this._getFabLabel("connect", { ...this.connectFabConfig, style: FAB_STYLE.TEXT_ONLY })}
           @click=${() => this.connectDialog.showDialog()}
