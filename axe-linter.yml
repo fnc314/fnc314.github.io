@@ -1,0 +1,14 @@
+global-components:
+  app-shell:
+    el: section
+
+global-libraries:
+  - "@material/web"
+  - lit
+  - lit-element
+  - lit-html
+
+tags: # Disallow all rules other than WCAG 2.1 A, WCAG 2.1 AA, and best practices.
+  - wcag21a
+  - wcag21aa
+  - best-practices
