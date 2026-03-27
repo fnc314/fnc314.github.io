@@ -1,10 +1,10 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { hashToRoute, type Route, Routes } from "@/types/components/nav/routes";
+import { type Route, Routes, hashToRoute } from "@/types/components/nav/routes";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
-import { css, html, LitElement, PropertyValues, TemplateResult } from "lit";
+import { LitElement, PropertyValues, TemplateResult, css, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { createRef, ref, Ref } from "lit/directives/ref.js";
+import { Ref, createRef, ref } from "lit/directives/ref.js";
 
 interface IndexRoute {
   route: Route;
@@ -39,35 +39,21 @@ export class NavComponent extends LitElement {
         --md-primary-tab-active-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-focus-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-hover-label-text-color: var(--icon-fill-color);
-        --md-primary-tab-active-pressed-label-text-color: var(
-          --icon-fill-color
-        );
+        --md-primary-tab-active-pressed-label-text-color: var(--icon-fill-color);
 
         /* Indicator overrides */
         --md-primary-tab-active-indicator-color: var(--icon-fill-color);
         --md-primary-tab-active-indicator-height: 0.5rem;
-        --md-primary-tab-active-indicator-shape: var(
-          --md-sys-shape-corner-medium
-        );
+        --md-primary-tab-active-indicator-shape: var(--md-sys-shape-corner-medium);
 
         /* Container overrides */
-        --md-primary-tab-container-color: var(
-          --md-sys-color-surface-container-high
-        );
+        --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
         --md-primary-tab-container-elevation: var(--md-elevation-level);
         --md-primary-tab-container-height: 5rem;
-        --md-primary-tab-container-shape-start-start: var(
-          --md-sys-shape-corner-extra-small
-        );
-        --md-primary-tab-container-shape-start-end: var(
-          --md-sys-shape-corner-extra-small
-        );
-        --md-primary-tab-container-shape-end-start: var(
-          --md-sys-shape-corner-extra-small
-        );
-        --md-primary-tab-container-shape-end-end: var(
-          --md-sys-shape-corner-extra-small
-        );
+        --md-primary-tab-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-start-end: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-end-start: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape-end-end: var(--md-sys-shape-corner-extra-small);
 
         /* Inactive/Default state overrides */
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
@@ -91,16 +77,13 @@ export class NavComponent extends LitElement {
          * sliding indicator of the <md-tabs> component.
          */
         transition:
-          font-variation-settings var(--nav-component-icon-animation)
-            cubic-bezier(0.3, 0, 0, 1),
+          font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
           color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
 
         @media (prefers-reduced-motion: reduce) {
           transition:
-            font-variation-settings var(--nav-component-icon-animation-reduced)
-              cubic-bezier(0.3, 0, 0, 1),
-            color var(--nav-component-icon-animation-reduced)
-              cubic-bezier(0.3, 0, 0, 1);
+            font-variation-settings var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1),
+            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1);
         }
       }
 
@@ -224,9 +207,7 @@ export class NavComponent extends LitElement {
       if (tab) {
         const panelId = tab.getAttribute("aria-controls");
         if (panelId) {
-          const panel = document.querySelector(
-            `#${panelId}[aria-role="tabpanel"]`,
-          )!;
+          const panel = document.querySelector(`#${panelId}[aria-role="tabpanel"]`)!;
           if (panel && panel instanceof HTMLElement) {
             panels.push(panel);
             panel.toggleAttribute("inert", true);
@@ -250,15 +231,15 @@ export class NavComponent extends LitElement {
   #onTabChange(event: Event) {
     const tabs = event.target as MdTabs;
     const index = tabs.activeTabIndex;
+    const oldRoute = this._activeRoute;
 
     // Update URL hash to match the selected tab
     const route = this.#routes[index];
     if (route) {
       // pushState updates the URL without reloading the page
-      window.history.pushState(null, "", `#${route}`);
+      window.history.pushState({ oldRoute, route }, "", `#${route}`);
     }
 
-    const oldRoute = this._activeRoute;
     this._activeTabIndex = index;
     this._activeRoute = route;
     this.#updateTabState(index);
@@ -289,28 +270,28 @@ export class NavComponent extends LitElement {
       profile: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.PROFILE ||
-          this._exitingRoute === Routes.PROFILE}
-          >person</md-icon
+          filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
         >
+          person
+        </md-icon>
         Profile
       `,
       work: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.WORK ||
-          this._exitingRoute === Routes.WORK}
-          >engineering</md-icon
+          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
         >
+          engineering
+        </md-icon>
         Work
       `,
       code: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.CODE ||
-          this._exitingRoute === Routes.CODE}
-          >code_blocks</md-icon
+          filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
         >
+          code_blocks
+        </md-icon>
         Code
       `,
     };

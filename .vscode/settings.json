@@ -6,6 +6,7 @@
       "**/node_modules/.vite-temp/**"
     ]
   },
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "css.customData": [
     "./dist/vscode.css-custom-data.json"
   ],

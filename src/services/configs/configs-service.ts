@@ -1,51 +1,41 @@
-import { storageService, StorageService } from "@/services/storage/storage-service";
-import { AppConfigsChange, DEFAULT_APP_CONFIGS, type AppConfigs } from "@/types/configs/app-configs";
+import { StorageService, storageService } from "@/services/storage/storage-service";
+import { type AppConfigs, AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 
 export interface ConfigsService extends EventTarget {
-  saveConfigs(
-    configs: AppConfigs
-  ): void
+  saveConfigs(configs: AppConfigs): void;
 
-  loadConfigs(): AppConfigs
+  loadConfigs(): AppConfigs;
 
   resetConfigs(): void;
-};
+}
 
 class ConfigsServiceImpl extends EventTarget implements ConfigsService {
-  #storageService: StorageService
+  #storageService: StorageService;
 
   constructor(storageService: StorageService) {
     super();
     this.#storageService = storageService;
   }
 
-  saveConfigs(
-    configs: AppConfigs
-  ): void {
+  saveConfigs(configs: AppConfigs): void {
     this.#storageService.clearData("configs");
     this.#storageService.clearData("dark-mode-toggle");
     this.#storageService.saveData("configs", JSON.stringify(configs));
     this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
     this.dispatchEvent(
-      new CustomEvent(
-        "app-configs.change",
-        {
-          bubbles: true,
-          composed: true,
-          detail: {
-            appConfigs: configs
-          }
-        }
-      )
+      new CustomEvent("app-configs.change", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          appConfigs: configs,
+        },
+      }),
     );
   }
 
   loadConfigs(): AppConfigs {
     const storedConfigs: AppConfigs = JSON.parse(
-      this.#storageService.getData(
-        "configs",
-        JSON.stringify(DEFAULT_APP_CONFIGS)
-      ).value
+      this.#storageService.getData("configs", JSON.stringify(DEFAULT_APP_CONFIGS)).value,
     ) as AppConfigs;
 
     if (Object.hasOwn(storedConfigs.colorScheme, "theme")) {
@@ -57,7 +47,7 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
       colorScheme: {
         ...storedConfigs.colorScheme,
         theme: DEFAULT_APP_CONFIGS.colorScheme.theme,
-      }
+      },
     };
     this.saveConfigs(updatedConfigs);
     return updatedConfigs;
@@ -66,11 +56,9 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
   resetConfigs(): void {
     this.saveConfigs(DEFAULT_APP_CONFIGS);
   }
-};
+}
 
-export const configsService: ConfigsService = new ConfigsServiceImpl(
-  storageService
-);
+export const configsService: ConfigsService = new ConfigsServiceImpl(storageService);
 
 declare global {
   interface GlobalEventHandlersEventMap {

@@ -16,13 +16,11 @@ import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "./components/index.js";
 import "./partials/index.js";
-import { configsService } from "./services/configs/index.js";
+import { configsService } from "./services/configs/configs-service.js";
 import "./services/index.js";
-import { themeService } from "./services/index.js";
+import { themeService } from "./services/theme/theme-service.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
-import "./theme/theme.js";
 import { Routes } from "./types/components/nav/routes.js";
-import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
@@ -30,10 +28,13 @@ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onT
 const domLoadedListener = (event) => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
 
-  document.adoptedStyleSheets.push(typescaleStyles.styleSheet, MaterialCSSStyleSheet);
+  if (typescaleStyles.styleSheet) {
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  }
+  document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
-    window.location.replace(`${window.location.href}#${Routes.PROFILE}`);
+    window.history.replaceState(null, "", `${window.location.href}#${Routes.PROFILE}`);
   }
 
   const matScheme =

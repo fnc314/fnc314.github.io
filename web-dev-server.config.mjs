@@ -11,9 +11,7 @@ export default {
   appIndex: "index.html",
   rootDir: "./website",
   nodeResolve: {
-    exportConditions: [
-      "development",
-    ]
+    exportConditions: ["development"],
   },
   mimeTypes: {
     "**/*.json": "application/json",
@@ -30,13 +28,8 @@ export default {
     }),
     rollupAdapter(
       json({
-        exclude: [
-          "./assets/*.json",
-          "./assets/**/*.json",
-        ],
-        include: [
-          "./src/partials/**/*.json",
-        ]
+        exclude: ["./src/assets/*.json", "./src/assets/**/*.json"],
+        include: ["./src/data/*.json"],
       }),
     ),
   ],
