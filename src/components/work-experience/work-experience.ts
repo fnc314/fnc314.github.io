@@ -37,17 +37,15 @@ export class WorkExperience extends LitElement {
       }
 
       /* --- SHARED BASE --- */
-      h2 {
-        font-weight: 700;
-      }
-
+      h2,
       h3 {
-        font-weight: 700;
+        font-weight: var(--md-ref-typeface-weight-bold);
+        font-family: var(--md-ref-typeface-brand);
       }
 
       time {
         opacity: 0.8;
-        font-weight: 700;
+        font-weight: var(--md-ref-typeface-weight-bold);
       }
 
       .nested-experiences {
@@ -63,14 +61,13 @@ export class WorkExperience extends LitElement {
       .nested-summary {
         padding-inline: 1.5rem;
         margin-block: unset;
-        grid-row: 3;
+        grid-row: 4;
         grid-column: 2;
 
         li {
           list-style-type: circle;
           list-style-position: outside;
-          margin-block-start: 0.25rem;
-          margin-block-end: 0.5rem;
+          margin-block: 0.5rem;
         }
 
         span.first-word {
@@ -135,25 +132,16 @@ export class WorkExperience extends LitElement {
 
       @container (min-inline-size: 600px) {
         div.experience-container {
-          gap: 0.5rem 1.5rem;
+          gap: 0.5rem 1rem;
         }
         .experience-container {
           display: grid;
-          grid-template-columns: minmax(35ch, min-content) 1fr;
-          gap: 0.5rem 1.5rem;
+          grid-template-columns: minmax(20ch, max-content) 1fr;
+          gap: 0.5rem 1rem;
           align-items: baseline;
 
           .experience-info {
             display: contents;
-
-            /* Dates */
-            > p:nth-child(3) {
-              grid-column: 1;
-              grid-row: 1;
-              text-align: end;
-              inset-block-start: 0;
-              color: var(--md-sys-color-secondary);
-            }
 
             /* Role */
             > h2,
@@ -171,6 +159,15 @@ export class WorkExperience extends LitElement {
               color: var(--md-sys-color-tertiary);
             }
 
+            /* Dates */
+            > p:nth-child(3) {
+              grid-column: 1;
+              grid-row: 1;
+              text-align: end;
+              inset-block-start: 0;
+              color: var(--md-sys-color-secondary);
+            }
+
             /* Summary */
             > p:nth-child(4) {
               grid-column-start: 2;
@@ -178,6 +175,7 @@ export class WorkExperience extends LitElement {
               grid-row-start: 3;
               grid-row-end: 4;
               color: var(--md-sys-color-on-surface-variant);
+              font-style: italic;
             }
           }
 
@@ -241,13 +239,13 @@ export class WorkExperience extends LitElement {
       ? html`
           <p>
             <time
-              class="md-typescale-title-small"
+              class="md-typescale-label-medium"
               datetime="${this.dateStart.stamp}"
               >${this.dateStart.text}</time
             >
             -
             <time
-              class="md-typescale-title-small"
+              class="md-typescale-label-medium"
               datetime="${this.dateEnd.stamp}"
               >${this.dateEnd.text}</time
             >
@@ -256,21 +254,23 @@ export class WorkExperience extends LitElement {
       : html`
           <p>
             <time
-              class="md-typescale-title-medium"
+              class="md-typescale-label-large"
               datetime="${this.dateStart.stamp}"
               >${this.dateStart.text}</time
             >
             -
             <time
-              class="md-typescale-title-medium"
+              class="md-typescale-label-large"
               datetime="${this.dateEnd.stamp}"
               >${this.dateEnd.text}</time
             >
           </p>
         `;
 
-    const orgSummary = this.experienceSummary
-      ? html`<p class="md-typescale-body-large">${unsafeHTML(this.experienceSummary)}</p>`
+    const orgSummary = this.experienceSummary.length
+      ? this.isNested
+        ? html`<p class="md-typescale-label-medium">${unsafeHTML(this.experienceSummary)}</p>`
+        : html`<p class="md-typescale-label-large">${unsafeHTML(this.experienceSummary)}</p>`
       : nothing;
 
     const info = html`
@@ -286,9 +286,10 @@ export class WorkExperience extends LitElement {
                   .isNested="${true}"
                   .dateStart=${job.dates.start}
                   .dateEnd=${job.dates.end}
-                  .summaries=${job.summary}
-                  experience-role="${job.role}"
-                  experience-org="${job.client}"
+                  .summaries=${job.summaries}
+                  .experienceSummary=${job.summary ?? ""}
+                  .experienceRole="${job.role}"
+                  .experienceOrg="${job.client}"
                 >
                 </work-experience>
               `,
@@ -311,7 +312,7 @@ export class WorkExperience extends LitElement {
                   }
                 })
                 .join(" ");
-              return html`<li class="md-typescale-body-large">${unsafeHTML(newContent)}</li>`;
+              return html`<li class="md-typescale-body-medium">${unsafeHTML(newContent)}</li>`;
             })}
           </ul>
         `

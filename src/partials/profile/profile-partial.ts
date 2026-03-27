@@ -113,13 +113,13 @@ export class ProfilePartial extends LitElement {
 
         [slot="section-grid-content"] {
           &::first-line {
-            overflow-wrap: anywhere;
             white-space: pre-wrap;
             word-wrap: break-word;
             text-align: justify;
             text-justify: inter-word;
-            font-size: 150%;
+            font-size: 130%;
             text-indent: 0.5rem;
+            font-family: var(--md-ref-typeface-brand);
           }
 
           @container (min-width: 500px) {

@@ -11,7 +11,8 @@ export interface Job {
     start: WorkDate;
     end: WorkDate;
   };
-  summary: { item: string }[];
+  summary?: string;
+  summaries: { item: string }[];
 }
 
 export interface Experience {

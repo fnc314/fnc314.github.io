@@ -3,7 +3,7 @@
     {
       "employer": "CGI Technology and Solutions, Inc.",
       "role": "Director, Consulting Expert",
-      "summary": "<em>Promoted through progressive leadership roles; most recently serving as an organization-wide expert for mobile application development and system architecture.</em>",
+      "summary": "Promoted through progressive leadership roles; most recently serving as an organization-wide expert for mobile application development and system architecture.",
       "dates": {
         "start": {
           "stamp": "2014-08",
@@ -18,6 +18,7 @@
         {
           "client": "PNC Financial Services",
           "role": "Mobile Redesign Lead Architect",
+          "summary": "",
           "date": {
             "start": "November 2023",
             "end": "June 2025"
@@ -32,7 +33,7 @@
               "text": "June 2025"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Spearheaded the technical foundation for a ground-up native redesign of PNC&apos;s retail banking application, adopting a future-focused, best-practice derived approach that ensures project resilience against unforeseen executive requirement shifts."
             },
@@ -53,6 +54,7 @@
         {
           "client": "PNC Financial Services",
           "role": "Mobile Project Tech Lead, Android",
+          "summary": "",
           "date": {
             "start": "January 2020",
             "end": "November 2023"
@@ -67,7 +69,7 @@
               "text": "November 2023"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Established foundational code maintenance and development patterns that were adopted by the organization’s change management team as institutional policy."
             },
@@ -89,6 +91,7 @@
         {
           "client": "PNC Financial Services",
           "role": "Security & Authentication Tech Lead, Android",
+          "summary": "",
           "date": {
             "start": "August 2019",
             "end": "January 2020"
@@ -103,7 +106,7 @@
               "text": "January 2020"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Built and deployed a new authentication platform while executing a zero-downtime migration strategy affecting 7+ million daily active users."
             },
@@ -119,6 +122,7 @@
         {
           "client": "PNC Financial Services",
           "role": "Web Developer Lead",
+          "summary": "",
           "date": {
             "start": "August 2017",
             "end": "August 2019"
@@ -133,7 +137,7 @@
               "text": "August 2019"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Directed a web development crew of 25+ developers at project peak for the online banking platform redesign, laying the groundwork for organization-wide patterns while coaching teammates on best practices in modern web development."
             }
@@ -143,6 +147,7 @@
         {
           "client": "PNC Financial Services",
           "role": "Web Developer",
+          "summary": "",
           "date": {
             "start": "August 2016",
             "end": "August 2017"
@@ -157,7 +162,7 @@
               "text": "August 2017"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Worked hand-in-hand with designers and product owners to develop the administration portal for the newly launched peer-to-peer payment platform Zelle."
             }
@@ -167,6 +172,7 @@
         {
           "client": "Samsung",
           "role": "Android Developer",
+          "summary": "",
           "date": {
             "start": "January 2015",
             "end": "August 2016"
@@ -181,7 +187,7 @@
               "text": "August 2016"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Delivered an Android FIDO authenticator proof-of-concept that spring-boarded the institutional adoption of Samsung Knox and multi-factor authentication (MFA)."
             }
@@ -191,6 +197,7 @@
         {
           "client": "PPG Industries",
           "role": "Web Developer",
+          "summary": "",
           "date": {
             "start": "January 2015",
             "end": "August 2016"
@@ -205,7 +212,7 @@
               "text": "August 2016"
             }
           },
-          "summary": [
+          "summaries": [
             {
               "item": "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined processes and tool enhancement."
             }
@@ -216,7 +223,7 @@
     {
       "employer": "Pittsburgh Public Schools",
       "role": "Teacher, Secondary Mathematics",
-      "summary": "<em>Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.</em>",
+      "summary": "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
       "dates": {
         "start": {
           "stamp": "2007-09",
