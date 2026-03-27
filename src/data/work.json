@@ -46,7 +46,7 @@
               "item": "Developed a suite of convenience scripts that synchronized developer environments and CI/CD machines within the complexities of PNC&apos;s enterprise environment, effectively eliminating environment-drift and &quot;it works on my machine&quot; debugging cycles across the organization."
             },
             {
-              "item": "Architected an interactive Gradle module-generation workflow that enforced project-wide namespacing and templating. By forbidding manual changes at key directory levels, I ensured that new feature modules &quot;funneled up&quot; into the app without impacting the stability of the core application module."
+              "item": "Architected an interactive Gradle module-generation workflow that enforced project-wide namespacing and templating while ensuring new feature code &quot;funneled up&quot; into the app without impacting the stability of the core application module."
             }
           ]
         },
