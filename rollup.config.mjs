@@ -114,7 +114,6 @@ export default {
           declaration: isDev,
           declarationMap: isDev,
           declarationDir: isDev ? "./website" : undefined,
-          // outDir: "./website",
         },
       }),
       typescriptPaths({
