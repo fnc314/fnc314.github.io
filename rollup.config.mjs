@@ -53,6 +53,12 @@ export default {
       gitInfo.default({
         abbrev: 10,
       }),
+      css({
+        output: "assets/material-symbold.css",
+        include: ["./node_modules/material-symbols/index.css"],
+        name: "styles",
+        fileName: "assets/material-symbold.css",
+      }),
       rollupPluginHTML({
         input: "index.html",
         rootDir: "./src",
@@ -68,6 +74,7 @@ export default {
               `<head>
               <meta charset="utf-8" />
               <link rel="manifest" href="./assets/${manifestJson}" />
+              <link rel="stylesheet" href="./assets/material-symbols.css" />
             `,
             ),
         ],
@@ -99,12 +106,6 @@ export default {
         includeArbitraryNames: true,
         exclude: ["./src/assets/**/*.json"],
         include: ["./src/data/*.json", "./src/theme/**/*.json"],
-      }),
-      css({
-        output: "styles.css",
-        include: ["./src/stylesheets/*.css", "./node_modules/material-symbols/index.css"],
-        name: "styles",
-        fileName: "styles.css",
       }),
       typescript({
         tsconfig: "./tsconfig.json",

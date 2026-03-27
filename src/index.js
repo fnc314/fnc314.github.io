@@ -14,7 +14,6 @@ import "@material/web/select/select-option.js";
 import "@material/web/tabs/primary-tab.js";
 import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-import "material-symbols/index.css";
 import "./components/index.js";
 import "./partials/index.js";
 import { configsService } from "./services/configs/configs-service.js";
