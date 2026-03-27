@@ -1,7 +1,7 @@
-import { MaterialSchemeName } from "@/styles/material-styles";
+import { type MaterialSchemeName } from "@/styles/material-styles";
 import { html } from "lit-element";
-import { TemplateResult, nothing } from "lit-html";
-import { type AppConfigs } from "./../configs/app-configs";
+import { type TemplateResult, nothing } from "lit-html";
+import { type ThemeName } from "./theme";
 
 export const CONFIG_COLOR_SCHEME_NAMES = {
   DARK: "DARK" as const,
@@ -38,11 +38,13 @@ export interface ColorSchemeConfigs {
   name: ColorScheme;
   contrast: ColorSchemeContrast;
   persist: boolean;
+
+  theme: ThemeName;
 }
 
-export const colorSchemeConfigsToMaterialSchemeName: (
-  colorSchemeSettings: AppConfigs["colorScheme"],
-) => MaterialSchemeName = (colorSchemeSettings: ColorSchemeConfigs): MaterialSchemeName => {
+export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
+  colorSchemeSettings: ColorSchemeConfigs,
+): MaterialSchemeName => {
   const variant =
     colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM
       ? colorSchemeSettings.name.toLowerCase()
@@ -59,4 +61,4 @@ export const colorSchemeConfigsToMaterialSchemeName: (
   return `${variant}${contrast}` as MaterialSchemeName;
 };
 
-export type ColorSchemeConfigChange = CustomEvent<AppConfigs["colorScheme"]>;
+export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs>;

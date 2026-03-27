@@ -1,7 +1,7 @@
 import "@/components/fab-menu/fab-menu-item";
 import { FabMenuItem } from "@/components/fab-menu/fab-menu-item";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { PropertyValues } from "@lit/reactive-element";
+import { type PropertyValues } from "@lit/reactive-element";
 import { MdFab } from "@material/web/fab/fab";
 import { MdIcon } from "@material/web/icon/icon";
 import { LitElement, css, html, nothing } from "lit";

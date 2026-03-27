@@ -1,14 +1,14 @@
-import { CompleteStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
+import { type CompleteStepUpDialog, StepUpDialog } from "@/components/dialogs/step-up/step-up-dialog";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
-import { type AppConfigs, AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { type AppConfigs, type AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 import {
   type FabConfig,
-  FabConfigChange,
-  FabPosition,
+  type FabConfigChange,
+  type FabPosition,
   FabPositionIcons,
   FabPositions,
   FabStyles,
@@ -18,13 +18,13 @@ import {
 import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
-  ColorScheme,
-  ColorSchemeConfigChange,
-  ColorSchemeContrast,
+  type ColorScheme,
+  type ColorSchemeConfigChange,
+  type ColorSchemeContrast,
   colorSchemeConfigsToMaterialSchemeName,
   colorSchemeContrastToIcon,
 } from "@/types/theme/color-scheme-configs";
-import { THEME_NAMES, ThemeName } from "@/types/theme/theme";
+import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -38,12 +38,12 @@ import "@material/web/radio/radio";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import {
-  ColorSchemeChangeEvent,
+  type ColorSchemeChangeEvent,
   DarkModeToggle,
-  ColorScheme as DarkModeToggleColorScheme,
-  PermanentColorSchemeEvent,
+  type ColorScheme as DarkModeToggleColorScheme,
+  type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
-import { LitElement, TemplateResult, css, html } from "lit-element";
+import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, query, state } from "lit/decorators.js";

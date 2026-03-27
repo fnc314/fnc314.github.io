@@ -1,20 +1,20 @@
 import "@/components/dialogs/configs/configs-dialog";
-import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
+import { ConfigsDialog, type FormContent } from "@/components/dialogs/configs/configs-dialog";
 import "@/components/dialogs/connect/connect-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
 import "@/components/fab-menu/fab-menu";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
 import { configsService } from "@/services/configs/configs-service";
-import { RouterChange, RouterReverse, routerService } from "@/services/router/router-service";
+import { type RouterChange, type RouterReverse, routerService } from "@/services/router/router-service";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
-import { FAB_STYLE, type FabConfig, FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
+import { FAB_STYLE, type FabConfig, type FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
 import {
   CONFIG_COLOR_SCHEME_NAMES,
-  ColorSchemeConfigChange,
+  type ColorSchemeConfigChange,
   colorSchemeConfigsToMaterialSchemeName,
 } from "@/types/theme/color-scheme-configs";
 import "@material/web/button/text-button";
@@ -24,7 +24,7 @@ import { MdFab } from "@material/web/fab/fab";
 import "@material/web/icon/icon.js";
 import "@material/web/list/list";
 import "@material/web/list/list-item";
-import { LitElement, PropertyValues, css, html } from "lit";
+import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 
 /**

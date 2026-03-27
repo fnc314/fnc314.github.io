@@ -2,8 +2,8 @@ import { ChicagoThemeConfig } from "@/theme/chicago/chicago-theme";
 import { InterThemeConfig } from "@/theme/inter/inter-theme";
 import { RedThemeConfig } from "@/theme/red/red-theme";
 import { SunsetThemeConfig } from "@/theme/sunset/sunset-theme";
-import { ThemeConfigs, ThemeName } from "@/types/theme/theme";
-import { html, TemplateResult } from "lit-html";
+import { type ThemeConfigs, type ThemeName } from "@/types/theme/theme";
+import { type TemplateResult, html } from "lit-html";
 
 export const THEME_CONFIGS: ThemeConfigs = {
   inter: InterThemeConfig,
@@ -14,13 +14,16 @@ export const THEME_CONFIGS: ThemeConfigs = {
 
 export const themeToIcon: (slot: "leading-icon" | "start", theme: ThemeName) => TemplateResult = (
   slot: "leading-icon" | "start",
-  theme: ThemeName
+  theme: ThemeName,
 ) => html`
-  <img .slot=${slot} .src=${THEME_CONFIGS[theme].themePhoto.src} .alt=${THEME_CONFIGS[theme].themePhoto.alt} />
+  <img
+    .slot=${slot}
+    .src=${THEME_CONFIGS[theme].themePhoto.src}
+    .alt=${THEME_CONFIGS[theme].themePhoto.alt}
+  />
 `;
 
 export * from "@/theme/chicago/chicago-theme";
 export * from "@/theme/inter/inter-theme";
 export * from "@/theme/red/red-theme";
 export * from "@/theme/sunset/sunset-theme";
-

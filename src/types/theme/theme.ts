@@ -1,6 +1,6 @@
 import PhotoJsonFileImport from "@/data/photo.json" with { type: "json" };
-import { MaterialScheme } from "@/styles/material-styles";
-import { css, CSSResult, unsafeCSS } from "lit-element";
+import { type MaterialScheme } from "@/styles/material-styles";
+import { CSSResult, css, unsafeCSS } from "lit-element";
 
 export type ColorSchemeRoles =
   | "background"
@@ -51,37 +51,52 @@ export type ColorSchemeRoles =
   | "tertiary"
   | "tertiaryContainer"
   | "tertiaryFixed"
-  | "tertiaryFixedDim"
-  ;
+  | "tertiaryFixedDim";
 
-export type ColorSubValue = `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`
+export type ColorSubValue =
+  `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`;
 export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 
-export type ColorString = `#${string}`
+export type ColorString = `#${string}`;
 
-export type MaterialSchemeNames = "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
+export type MaterialSchemeNames =
+  | "light"
+  | "light-medium-contrast"
+  | "light-high-contrast"
+  | "dark"
+  | "dark-medium-contrast"
+  | "dark-high-contrast";
 
-export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>
+export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
 
 export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
-  if (typeof json !== 'object' || json === null) {
+  if (typeof json !== "object" || json === null) {
     return false;
   }
 
-  const correctKeys = Object.keys(json).every((key) => [
-    "light", "light-medium-contrast", "light-high-contrast", "dark", "dark-medium-contrast", "dark-high-contrast"
-  ].includes(key));
+  const correctKeys = Object.keys(json).every((key) =>
+    [
+      "light",
+      "light-medium-contrast",
+      "light-high-contrast",
+      "dark",
+      "dark-medium-contrast",
+      "dark-high-contrast",
+    ].includes(key),
+  );
 
   if (!correctKeys) {
     return false;
   }
 
-  const correctValues = Object.values(json).flatMap((value) => Object.values(value as Record<string, unknown>)).every((value) => {
-    if (typeof value !== 'string') {
-      return false;
-    }
-    return value.startsWith('#') && value.length === 7;
-  });
+  const correctValues = Object.values(json)
+    .flatMap((value) => Object.values(value as Record<string, unknown>))
+    .every((value) => {
+      if (typeof value !== "string") {
+        return false;
+      }
+      return value.startsWith("#") && value.length === 7;
+    });
 
   return correctValues;
 }
@@ -95,7 +110,7 @@ export interface PhotoJson {
 export interface ThemeConfig {
   themePhoto: PhotoJson;
   json: ThemeJsonSchemes;
-  materialSchemes: MaterialScheme
+  materialSchemes: MaterialScheme;
 }
 
 export const THEME_NAMES = {
@@ -106,7 +121,7 @@ export const THEME_NAMES = {
   sunset: "sunset" as const,
 } as const;
 
-export type ThemeName = typeof THEME_NAMES[keyof typeof THEME_NAMES];
+export type ThemeName = (typeof THEME_NAMES)[keyof typeof THEME_NAMES];
 
 export type PhotosJson = Record<ThemeName, PhotoJson>;
 
@@ -116,28 +131,24 @@ export const PhotoJsonFile: PhotosJson = PhotoJsonFileImport;
 
 export const readScheme = (jsonSchema: object) => css`
   :root {
-    ${
-      unsafeCSS(
-        Object
-          .entries(jsonSchema)
-          .map(([colorRole, colorRGB]) => keyTransform(colorRole, colorRGB as string))
-          .reduce(
-            (acc, curr) => css`${acc}${curr}`,
-            css``
-          )
-      )
-    }
+    ${unsafeCSS(
+      Object.entries(jsonSchema)
+        .map(([colorRole, colorRGB]) => keyTransform(colorRole, colorRGB as string))
+        .reduce(
+          (acc, curr) => css`
+            ${acc}${curr}
+          `,
+          css``,
+        ),
+    )}
   }
 `;
 
-export function keyTransform(
-  jsonKey: string,
-  rgb: string
-): CSSResult {
+export function keyTransform(jsonKey: string, rgb: string): CSSResult {
   const roleNameBase = jsonKey
     .split(/(?=[A-Z])/)
     .map((part) => part.toLowerCase())
     .join("-");
 
   return css`--md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};`;
-};
+}

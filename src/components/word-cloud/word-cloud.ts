@@ -9,7 +9,7 @@ import {
   WordCloudSortings,
   type WordCloudWord,
 } from "@/types/components/word-cloud/word-cloud";
-import { LitElement, PropertyValues, css, html } from "lit";
+import { LitElement, type PropertyValues, css, html } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";

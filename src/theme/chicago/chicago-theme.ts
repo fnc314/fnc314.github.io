@@ -1,9 +1,15 @@
-import { jsonIsThemeJsonSchemes, PhotoJsonFile, readScheme, ThemeJsonSchemes, type ThemeConfig } from "@/types/theme/theme";
+import {
+  PhotoJsonFile,
+  type ThemeConfig,
+  type ThemeJsonSchemes,
+  jsonIsThemeJsonSchemes,
+  readScheme,
+} from "@/types/theme/theme";
 import JsonTheme from "./chicago.material3-expressive-theme.json" with { type: "json" };
 
 export const ChicagoThemeConfig: ThemeConfig = {
   themePhoto: PhotoJsonFile.chicago,
-  json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : {} as ThemeJsonSchemes,
+  json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes),
   materialSchemes: {
     light: readScheme(JsonTheme.schemes.light),
     lightMediumContrast: readScheme(JsonTheme.schemes["light-medium-contrast"]),
@@ -11,5 +17,5 @@ export const ChicagoThemeConfig: ThemeConfig = {
     dark: readScheme(JsonTheme.schemes.dark),
     darkMediumContrast: readScheme(JsonTheme.schemes["dark-medium-contrast"]),
     darkHighContrast: readScheme(JsonTheme.schemes["dark-high-contrast"]),
-  }
+  },
 };

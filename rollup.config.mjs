@@ -8,6 +8,7 @@ import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import process from "node:process";
 import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
+import css from "rollup-plugin-css-only";
 import gitInfo from "rollup-plugin-git-info";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
@@ -98,6 +99,12 @@ export default {
         includeArbitraryNames: true,
         exclude: ["./src/assets/**/*.json"],
         include: ["./src/data/*.json", "./src/theme/**/*.json"],
+      }),
+      css({
+        output: "styles.css",
+        include: ["./src/stylesheets/*.css", "./node_modules/material-symbols/index.css"],
+        name: "styles",
+        fileName: "styles.css",
       }),
       typescript({
         tsconfig: "./tsconfig.json",

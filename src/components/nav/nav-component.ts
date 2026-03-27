@@ -2,9 +2,9 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Route, Routes, hashToRoute } from "@/types/components/nav/routes";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
-import { LitElement, PropertyValues, TemplateResult, css, html } from "lit";
+import { LitElement, type PropertyValues, type TemplateResult, css, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { Ref, createRef, ref } from "lit/directives/ref.js";
+import { type Ref, createRef, ref } from "lit/directives/ref.js";
 
 interface IndexRoute {
   route: Route;

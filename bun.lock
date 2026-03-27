@@ -66,6 +66,7 @@
         "rollup": "4.60.0",
         "rollup-plugin-build-statistics": "0.0.19",
         "rollup-plugin-clear": "2.0.7",
+        "rollup-plugin-css-only": "^4.5.5",
         "rollup-plugin-git-info": "^1.0.0",
         "rollup-plugin-manifest-json": "1.7.0",
         "rollup-plugin-progress": "1.1.2",
@@ -1415,6 +1416,8 @@
     "rollup-plugin-build-statistics": ["rollup-plugin-build-statistics@0.0.19", "", {}, "sha512-gEiiS99X0WN3zgBhe4B5MYzh68ApnjoyUPONb7CDrBqpyQTqfu8I9xPHf4M/bIRBjkD9Cyv14j91G7vjVgqJeg=="],
 
     "rollup-plugin-clear": ["rollup-plugin-clear@2.0.7", "", { "dependencies": { "rimraf": "^2.6.2" } }, "sha512-Hg8NC3JcJBO1ofgyQC0IACpyKn/yhHPGZ3C7R3ubNGWUXy9JXHQrewk4J4hVcZznw6SOKayLsaNae596Rwt8Vg=="],
+
+    "rollup-plugin-css-only": ["rollup-plugin-css-only@4.5.5", "", { "dependencies": { "@rollup/pluginutils": "5" }, "peerDependencies": { "rollup": "<5" } }, "sha512-O2m2Sj8qsAtjUVqZyGTDXJypaOFFNV4knz8OlS6wJBws6XEICIiLsXmI56SbQEmWDqYU5TgRgWmslGj4THofJQ=="],
 
     "rollup-plugin-git-info": ["rollup-plugin-git-info@1.0.0", "", { "dependencies": { "@rollup/plugin-json": "^4.1.0" } }, "sha512-AL2jzfDvOLze+Sakz3yuQjq9wY/wIj3j49yYnhuXtr6qP4qKzD039haPFa8uaLb0rzDBj2P5S8fWvJyYeIjOVw=="],
 

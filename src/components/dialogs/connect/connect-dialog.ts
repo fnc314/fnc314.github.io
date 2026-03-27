@@ -1,7 +1,7 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdDialog } from "@material/web/dialog/dialog";
-import { LitElement, TemplateResult, css, html } from "lit-element";
+import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 import pkg from "./../../../../package.json" with { type: "json" };

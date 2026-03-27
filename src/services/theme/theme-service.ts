@@ -1,17 +1,21 @@
-import { configsService, ConfigsService } from "@/services/configs";
+import { type ConfigsService, configsService } from "@/services/configs";
 import { THEME_CONFIGS } from "@/theme/theme";
-import { ColorSchemeRoles, ColorString, MaterialSchemeNames, ThemeConfig } from "@/types/theme";
-import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorScheme } from "@/types/theme/color-scheme-configs";
+import { type ColorSchemeRoles, type ColorString, type MaterialSchemeNames, type ThemeConfig } from "@/types/theme";
+import {
+  CONFIG_COLOR_CONTRAST_NAMES,
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme,
+} from "@/types/theme/color-scheme-configs";
 
 export interface ThemeService {
   currentThemeConfig(): ThemeConfig;
 
-  currentMaterialSchemeName(): MaterialSchemeNames
+  currentMaterialSchemeName(): MaterialSchemeNames;
 
   metaTagThemeColor(preference: MaterialSchemeNames): string;
 
   themeJson(): Record<ColorSchemeRoles, ColorString>;
-};
+}
 
 class ThemeServiceImpl implements ThemeService {
   #configService: ConfigsService;
@@ -20,10 +24,9 @@ class ThemeServiceImpl implements ThemeService {
   }
 
   #devicePreference(): ColorScheme {
-    return (window.matchMedia("(prefers-color-scheme: dark)").matches ?
-      CONFIG_COLOR_SCHEME_NAMES.DARK :
-      CONFIG_COLOR_SCHEME_NAMES.LIGHT
-    );
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? CONFIG_COLOR_SCHEME_NAMES.DARK
+      : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
   }
 
   currentThemeConfig(): ThemeConfig {
@@ -33,14 +36,15 @@ class ThemeServiceImpl implements ThemeService {
   currentMaterialSchemeName(): MaterialSchemeNames {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
-      appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
-        this.#devicePreference() :
-        appConfigs.colorScheme.name
+      appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+        ? this.#devicePreference()
+        : appConfigs.colorScheme.name
     ).toLowerCase();
 
-    const contrast = appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-      "" :
-      `-${appConfigs.colorScheme.contrast}-contrast`.toLowerCase();
+    const contrast =
+      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL
+        ? ""
+        : `-${appConfigs.colorScheme.contrast}-contrast`.toLowerCase();
 
     return `${schemeMode}${contrast}` as MaterialSchemeNames;
   }
@@ -52,8 +56,6 @@ class ThemeServiceImpl implements ThemeService {
   themeJson(): Record<ColorSchemeRoles, ColorString> {
     return this.currentThemeConfig().json[this.currentMaterialSchemeName()];
   }
-};
+}
 
-export const themeService: ThemeService = new ThemeServiceImpl(
-  configsService
-);
+export const themeService: ThemeService = new ThemeServiceImpl(configsService);

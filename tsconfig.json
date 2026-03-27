@@ -27,6 +27,7 @@
     "useDefineForClassFields": false,
     "checkJs": true,
     "allowArbitraryExtensions": true,
+    "verbatimModuleSyntax": true,
     "plugins": [
       {
         "name": "typescript-lit-html-plugin"

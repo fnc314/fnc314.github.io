@@ -4,7 +4,7 @@ import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
 import "@material/web/icon/icon";
-import { LitElement, TemplateResult, css, html } from "lit-element";
+import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property, query } from "lit/decorators.js";
 
