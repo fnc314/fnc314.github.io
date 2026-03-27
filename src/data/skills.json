@@ -2,9 +2,9 @@
   "skills": {
     "tech": {
       "Mobile": 10,
+      "Gradle": 9,
       "Kotlin": 8,
       "Java": 8,
-      "Gradle": 8,
       "RxJava": 7,
       "Coroutines": 7,
       "JavaScript": 6,
