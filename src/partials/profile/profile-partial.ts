@@ -182,7 +182,7 @@ export class ProfilePartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "figure education"
+            "education education"
             "cloud cloud";
           grid-template-rows: minmax(auto, min-content);
           grid-auto-rows: auto;
