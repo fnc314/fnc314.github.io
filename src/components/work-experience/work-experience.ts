@@ -40,9 +40,11 @@ export class WorkExperience extends LitElement {
       h2 {
         font-weight: 700;
       }
+
       h3 {
         font-weight: 700;
       }
+
       time {
         opacity: 0.8;
         font-weight: 700;
@@ -52,10 +54,12 @@ export class WorkExperience extends LitElement {
         display: flex;
         flex-direction: column;
       }
+
       .nested-experience {
         display: flex;
         flex-direction: column;
       }
+
       .nested-summary {
         padding-inline: 1.5rem;
         margin-block: unset;
@@ -63,9 +67,21 @@ export class WorkExperience extends LitElement {
         grid-column: 2;
 
         li {
-          list-style-type: square;
+          list-style-type: circle;
+          list-style-position: outside;
           margin-block-start: 0.25rem;
           margin-block-end: 0.5rem;
+        }
+
+        span.first-word {
+          font-family: var(--md-ref-typeface-brand);
+          font-weight: var(--md-ref-typeface-weight-bold);
+          font-size: 120%;
+          color: var(--md-sys-color-on-surface-variant);
+        }
+
+        pre {
+          display: inline;
         }
       }
 
@@ -284,7 +300,19 @@ export class WorkExperience extends LitElement {
     const summaries = this.summaries.length
       ? html`
           <ul class="nested-summary">
-            ${this.summaries.map((summary) => html`<li class="md-typescale-body-large">${summary.item}</li>`)}
+            ${this.summaries.map((summary) => {
+              const contentArray = summary.item.split(" ");
+              const newContent = contentArray
+                .map((word, index) => {
+                  if (index === 0) {
+                    return `<span class="first-word">${word}</span>`;
+                  } else {
+                    return word;
+                  }
+                })
+                .join(" ");
+              return html`<li class="md-typescale-body-large">${unsafeHTML(newContent)}</li>`;
+            })}
           </ul>
         `
       : nothing;
