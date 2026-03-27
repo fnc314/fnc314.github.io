@@ -209,7 +209,7 @@ export class ProfilePartial extends LitElement {
             "header   header         header         header"
             "figure   bio            bio            bio"
             "figure   education      education      education"
-            "figure   cloud          cloud          cloud";
+            "cloud   cloud          cloud          cloud";
           grid-template-columns:
             fit-content(30%) minmax(0, 1fr) minmax(0, 1fr)
             minmax(0, 1fr);
