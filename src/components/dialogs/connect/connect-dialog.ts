@@ -4,6 +4,7 @@ import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, TemplateResult, css, html } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
+import pkg from "./../../../../package.json" with { type: "json" };
 
 interface Connection {
   label: string;
@@ -297,7 +298,7 @@ export class ConnectDialog extends LitElement {
         </div>
         <div slot="actions">
           <p class="md-typescale-body-small">
-            ${`Version: ${this.version}`}&nbsp;<br />${`Date: ${this.date}`}&nbsp;<br />${`Time: ${this.time}`}
+            ${`Version: ${this.version}`}<br />${`Date: ${this.date}`}<br />${`Time: ${this.time}`}<br />${`Git SHA: ${pkg.gitAbbrevHash}`}
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>

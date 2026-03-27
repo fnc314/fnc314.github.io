@@ -21,6 +21,7 @@ import "./services/index.js";
 import { themeService } from "./services/theme/theme-service.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import { Routes } from "./types/components/nav/routes.js";
+import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);

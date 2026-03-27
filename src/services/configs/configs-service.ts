@@ -1,5 +1,5 @@
-import { StorageService, storageService } from "@/services/storage/storage-service";
 import { type AppConfigs, AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
+import { StorageService, storageService } from "./../storage/storage-service";
 
 export interface ConfigsService extends EventTarget {
   saveConfigs(configs: AppConfigs): void;

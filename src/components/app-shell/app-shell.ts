@@ -1,15 +1,16 @@
+import "@/components/dialogs/configs/configs-dialog";
 import { ConfigsDialog, FormContent } from "@/components/dialogs/configs/configs-dialog";
-import "@/components/dialogs/configs/configs-dialog.ts";
+import "@/components/dialogs/connect/connect-dialog";
 import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
-import "@/components/dialogs/connect/connect-dialog.ts";
+import "@/components/fab-menu/fab-menu";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
-import "@/components/fab-menu/fab-menu-item.ts";
-import "@/components/fab-menu/fab-menu.ts";
-import { configsService } from "@/services/configs";
+import "@/components/fab-menu/fab-menu-item";
+import { configsService } from "@/services/configs/configs-service";
+import { RouterChange, RouterReverse, routerService } from "@/services/router/router-service";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { type AppConfigs, AppConfigsChange } from "@/types/configs/app-configs";
+import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import { FAB_STYLE, type FabConfig, FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
 import {
   CONFIG_COLOR_SCHEME_NAMES,
@@ -269,16 +270,14 @@ export class AppShell extends LitElement {
 
     document.addEventListener("color_scheme.change", this.onColorSchemeChange);
 
-    // window.addEventListener("hashchange", (ev: HashChangeEvent) => {
-    //   this.fabMenu.open = false;
-    //   void this.connectDialog.hideDialog();
-    //   // if (ev.newURL.endsWith(Routes.SETTINGS)) {
-    //   //   this.fabMenu.open = true;
-    //   // }
-    //   // if (ev.newURL.endsWith(Routes.CONNECT)) {
-    //   //   void this.connectDialog.showDialog();
-    //   // }
-    // });
+    routerService.addEventListener("router.change", (ev: Event) => {
+      const routerChange = ev as RouterChange;
+      console.info(JSON.stringify(routerChange.detail, null, 2));
+    });
+    routerService.addEventListener("router.back", (ev: Event) => {
+      const routerReverse = ev as RouterReverse;
+      console.info(JSON.stringify(routerReverse.detail, null, 2));
+    });
   }
 
   override disconnectedCallback() {

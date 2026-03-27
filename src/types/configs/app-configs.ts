@@ -1,6 +1,10 @@
-import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "@/types/configs/fab-configs";
-import { ColorSchemeConfigs, CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import { THEME_NAMES, type ThemeConfig, ThemeName } from "@/types/theme/theme";
+import {
+  CONFIG_COLOR_CONTRAST_NAMES,
+  CONFIG_COLOR_SCHEME_NAMES,
+  ColorSchemeConfigs,
+} from "@/types/theme/color-scheme-configs";
+import { THEME_NAMES, type ThemeConfig, type ThemeName } from "@/types/theme/theme";
+import { FAB_POSITION, FAB_STYLE, FabConfigssRecord } from "./fab-configs";
 
 export interface AppConfigs {
   colorScheme: ColorSchemeConfigs & { theme: ThemeName };
@@ -26,6 +30,6 @@ export const DEFAULT_APP_CONFIGS: AppConfigs = {
   } as const,
 } as const;
 
-export type AppConfigsSchemeTheme = () => ThemeConfig
+export type AppConfigsSchemeTheme = () => ThemeConfig;
 
 export type AppConfigsChange = CustomEvent<{ appConfigs: AppConfigs }>;

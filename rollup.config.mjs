@@ -8,6 +8,7 @@ import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import process from "node:process";
 import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
+import gitInfo from "rollup-plugin-git-info";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
@@ -39,12 +40,17 @@ export default {
       versionInjector({
         injectInComments: false,
         injectInTags: {
-          dateFormat: "yyyy-mm-dd @ HH:MM:ss",
+          fileRegexp: /\.(js|html|css)$/,
+          tagId: "VI",
+          dateFormat: "yyyy-mm-dd @ HH:MM:ss TT",
         },
         packageJson: "./package.json",
         logger: console,
         logLevel: isDev ? "log" : "error",
         exclude: [],
+      }),
+      gitInfo.default({
+        abbrev: 10,
       }),
       rollupPluginHTML({
         input: "index.html",
@@ -91,7 +97,7 @@ export default {
         namedExports: true,
         includeArbitraryNames: true,
         exclude: ["./src/assets/**/*.json"],
-        include: ["./src/data/**/*.json", "./src/theme/**/*.json"],
+        include: ["./src/data/*.json", "./src/theme/**/*.json"],
       }),
       typescript({
         tsconfig: "./tsconfig.json",
@@ -99,7 +105,8 @@ export default {
           sourceMap: isDev,
           declaration: isDev,
           declarationMap: isDev,
-          outDir: "./website",
+          declarationDir: "./website",
+          // outDir: "./website",
         },
       }),
       typescriptPaths({

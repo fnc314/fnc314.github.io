@@ -66,6 +66,7 @@
         "rollup": "4.60.0",
         "rollup-plugin-build-statistics": "0.0.19",
         "rollup-plugin-clear": "2.0.7",
+        "rollup-plugin-git-info": "^1.0.0",
         "rollup-plugin-manifest-json": "1.7.0",
         "rollup-plugin-progress": "1.1.2",
         "rollup-plugin-summary": "3.0.1",
@@ -1415,6 +1416,8 @@
 
     "rollup-plugin-clear": ["rollup-plugin-clear@2.0.7", "", { "dependencies": { "rimraf": "^2.6.2" } }, "sha512-Hg8NC3JcJBO1ofgyQC0IACpyKn/yhHPGZ3C7R3ubNGWUXy9JXHQrewk4J4hVcZznw6SOKayLsaNae596Rwt8Vg=="],
 
+    "rollup-plugin-git-info": ["rollup-plugin-git-info@1.0.0", "", { "dependencies": { "@rollup/plugin-json": "^4.1.0" } }, "sha512-AL2jzfDvOLze+Sakz3yuQjq9wY/wIj3j49yYnhuXtr6qP4qKzD039haPFa8uaLb0rzDBj2P5S8fWvJyYeIjOVw=="],
+
     "rollup-plugin-manifest-json": ["rollup-plugin-manifest-json@1.7.0", "", {}, "sha512-CaghGuHVszAurNKkvtYhgzT/9yxo3oyBJdjF+0qTGsANetwLdIoI2UP1dEEkkh2Xfg9vr1xcfad1EjhB2aEwOQ=="],
 
     "rollup-plugin-progress": ["rollup-plugin-progress@1.1.2", "", { "dependencies": { "chalk": "^2.4.2" } }, "sha512-6ehSZOMTZdAlRpe45kf56BnIOsDYC2GKWhGlK/Dh/Ae/AMUneMDyKdiv9ZlRrW/HVc986frTZcc2Zka+oF6W7Q=="],
@@ -1813,6 +1816,8 @@
 
     "rollup-plugin-clear/rimraf": ["rimraf@2.7.1", "", { "dependencies": { "glob": "^7.1.3" }, "bin": { "rimraf": "./bin.js" } }, "sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w=="],
 
+    "rollup-plugin-git-info/@rollup/plugin-json": ["@rollup/plugin-json@4.1.0", "", { "dependencies": { "@rollup/pluginutils": "^3.0.8" }, "peerDependencies": { "rollup": "^1.20.0 || ^2.0.0" } }, "sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw=="],
+
     "rollup-plugin-summary/@eslint/js": ["@eslint/js@9.39.4", "", {}, "sha512-nE7DEIchvtiFTwBw4Lfbu59PG+kCofhjsKaCWzxTpt4lfRjRMqG6uMBzKXuEcyXhOHoUp9riAm7/aWYGhXZ9cw=="],
 
     "rollup-plugin-summary/globals": ["globals@15.15.0", "", {}, "sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg=="],
@@ -1923,6 +1928,8 @@
 
     "rollup-plugin-clear/rimraf/glob": ["glob@7.2.3", "", { "dependencies": { "fs.realpath": "^1.0.0", "inflight": "^1.0.4", "inherits": "2", "minimatch": "^3.1.1", "once": "^1.3.0", "path-is-absolute": "^1.0.0" } }, "sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q=="],
 
+    "rollup-plugin-git-info/@rollup/plugin-json/@rollup/pluginutils": ["@rollup/pluginutils@3.1.0", "", { "dependencies": { "@types/estree": "0.0.39", "estree-walker": "^1.0.1", "picomatch": "^2.2.2" }, "peerDependencies": { "rollup": "^1.20.0||^2.0.0" } }, "sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg=="],
+
     "rollup-plugin-version-injector/chalk/ansi-styles": ["ansi-styles@4.3.0", "", { "dependencies": { "color-convert": "^2.0.1" } }, "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg=="],
 
     "rollup-plugin-version-injector/chalk/supports-color": ["supports-color@7.2.0", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="],
@@ -1942,6 +1949,12 @@
     "rimraf/glob/path-scurry/lru-cache": ["lru-cache@11.2.7", "", {}, "sha512-aY/R+aEsRelme17KGQa/1ZSIpLpNYYrhcrepKTZgE+W3WM16YMCaPwOHLHsmopZHELU0Ojin1lPVxKR0MihncA=="],
 
     "rollup-plugin-clear/rimraf/glob/minimatch": ["minimatch@3.1.5", "", { "dependencies": { "brace-expansion": "^1.1.7" } }, "sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w=="],
+
+    "rollup-plugin-git-info/@rollup/plugin-json/@rollup/pluginutils/@types/estree": ["@types/estree@0.0.39", "", {}, "sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw=="],
+
+    "rollup-plugin-git-info/@rollup/plugin-json/@rollup/pluginutils/estree-walker": ["estree-walker@1.0.1", "", {}, "sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg=="],
+
+    "rollup-plugin-git-info/@rollup/plugin-json/@rollup/pluginutils/picomatch": ["picomatch@2.3.2", "", {}, "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA=="],
 
     "rollup-plugin-version-injector/chalk/supports-color/has-flag": ["has-flag@4.0.0", "", {}, "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="],
 
