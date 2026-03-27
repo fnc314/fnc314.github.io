@@ -269,16 +269,16 @@ export class AppShell extends LitElement {
 
     document.addEventListener("color_scheme.change", this.onColorSchemeChange);
 
-    window.addEventListener("hashchange", (ev: HashChangeEvent) => {
-      this.fabMenu.open = false;
-      void this.connectDialog.hideDialog();
-      // if (ev.newURL.endsWith(Routes.SETTINGS)) {
-      //   this.fabMenu.open = true;
-      // }
-      // if (ev.newURL.endsWith(Routes.CONNECT)) {
-      //   void this.connectDialog.showDialog();
-      // }
-    });
+    // window.addEventListener("hashchange", (ev: HashChangeEvent) => {
+    //   this.fabMenu.open = false;
+    //   void this.connectDialog.hideDialog();
+    //   // if (ev.newURL.endsWith(Routes.SETTINGS)) {
+    //   //   this.fabMenu.open = true;
+    //   // }
+    //   // if (ev.newURL.endsWith(Routes.CONNECT)) {
+    //   //   void this.connectDialog.showDialog();
+    //   // }
+    // });
   }
 
   override disconnectedCallback() {
