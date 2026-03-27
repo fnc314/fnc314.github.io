@@ -113,7 +113,7 @@ export default {
           sourceMap: isDev,
           declaration: isDev,
           declarationMap: isDev,
-          declarationDir: "./website",
+          declarationDir: isDev ? "./website" : undefined,
           // outDir: "./website",
         },
       }),
