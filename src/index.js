@@ -25,7 +25,7 @@ import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
 
-const domLoadedListener = (event) => {
+const domLoadedListener = () => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
 
   if (typescaleStyles.styleSheet) {
