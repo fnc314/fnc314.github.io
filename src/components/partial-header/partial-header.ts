@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement } from "lit-element";
+import { LitElement, css, html } from "lit-element";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -55,6 +55,13 @@ export class PartialHeader extends LitElement {
             color: var(--md-sys-color-on-tertiary);
           }
         }
+
+        &.inverse {
+          background-color: var(--md-sys-color-inverse-surface);
+          h1 {
+            color: var(--md-sys-color-inverse-on-surface);
+          }
+        }
       }
     `,
   ];
@@ -72,13 +79,14 @@ export class PartialHeader extends LitElement {
    * @attr header-type
    */
   @property({ type: String, attribute: "header-type" })
-  headerType: "primary" | "secondary" | "tertiary" = "primary";
+  headerType: "primary" | "secondary" | "tertiary" | "inverse" = "primary";
 
   override render() {
     const classes = {
       primary: "primary",
       secondary: "secondary",
       tertiary: "tertiary",
+      inverse: "inverse",
     };
     return html`
       <header class=${classes[this.headerType]}>

@@ -36,8 +36,8 @@ export class ProfilePartial extends LitElement {
           "cloud";
         height: min-content;
         min-height: 100%;
-        grid-template-rows: auto;
-        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+        grid-auto-rows: min-content;
         gap: 1rem;
         padding-inline: 1rem;
       }
@@ -72,11 +72,10 @@ export class ProfilePartial extends LitElement {
 
       .figure {
         grid-area: figure;
-        place-self: center;
         margin: unset;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         gap: 0.5rem;
 

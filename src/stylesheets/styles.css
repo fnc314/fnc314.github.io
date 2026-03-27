@@ -58,7 +58,6 @@ body {
 
   main {
     overflow: hidden;
-    padding-block-end: 1rem;
     grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
@@ -88,8 +87,11 @@ body {
         &:nth-child(3) {
           order: 2;
         }
+
+        &:nth-child(4) {
+          order: 3;
+        }
       }
     }
-
   }
 }
