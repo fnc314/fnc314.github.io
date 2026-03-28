@@ -67,11 +67,16 @@ export class NavComponent extends LitElement {
       }
 
       md-icon {
+        font-family: "Material Symbols Sharp";
         /*
          * We must set the start value for the font variation to ensure that the
          * transition is interpolated correctly by the browser engine.
          */
-        font-variation-settings: "FILL" 0;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 200,
+          "opsz" 48;
         /*
          * The transition duration and easing curve are synced with the
          * sliding indicator of the <md-tabs> component.
@@ -88,7 +93,12 @@ export class NavComponent extends LitElement {
       }
 
       md-icon[filled="true"] {
-        font-variation-settings: "FILL" 1;
+        font-family: "Material Symbols Sharp";
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 300,
+          "GRAD" 200,
+          "opsz" 48;
         color: var(--icon-fill-color);
       }
     `,
@@ -269,24 +279,27 @@ export class NavComponent extends LitElement {
     const mdIconRouteMap: Record<Route, TemplateResult> = {
       profile: html`
         <md-icon
+          class="material-symbols-sharp"
           slot="icon"
           filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
         >
-          person
+          account_box
         </md-icon>
         Profile
       `,
-      work: html`
+      experience: html`
         <md-icon
+          class="material-symbols-sharp"
           slot="icon"
-          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
+          filled=${this._activeRoute === Routes.EXPERIENCE || this._exitingRoute === Routes.EXPERIENCE}
         >
-          engineering
+          view_timeline
         </md-icon>
-        Work
+        Experience
       `,
       code: html`
         <md-icon
+          class="material-symbols-sharp"
           slot="icon"
           filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
         >

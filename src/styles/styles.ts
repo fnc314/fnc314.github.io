@@ -1,10 +1,10 @@
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { THEME_CONFIGS } from "@/theme/theme";
-import { colorSchemeConfigsToMaterialSchemeName, CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import { css, CSSResult } from "lit";
+import { CONFIG_COLOR_SCHEME_NAMES, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
+import { CSSResult, css } from "lit";
 
-export const onThemeChange = (event: MediaQueryListEvent) => {
+export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
 
   const appSettings = configsService.loadConfigs();
@@ -18,16 +18,13 @@ export const onThemeChange = (event: MediaQueryListEvent) => {
   });
 
   updateMaterialCSSStyleSheet(
-    themeService.currentThemeConfig()
-      .materialSchemes[
-        colorSchemeConfigsToMaterialSchemeName(colorScheme)
-      ]
+    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)],
   );
 
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
-export const updateMaterialCSSStyleSheet = (result: CSSResult) => {
+export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result: CSSResult) => {
   MaterialCSSStyleSheet.replaceSync(result.cssText);
 };
 

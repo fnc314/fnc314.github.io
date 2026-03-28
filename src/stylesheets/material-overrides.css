@@ -78,7 +78,7 @@
   --md-sys-shape-corner-small: 0.5rem;
 
   --md-icon-size: 1.5rem;
-  --md-icon-font: "Material Symbols Outlined";
+  --md-icon-font: "Material Symbols Sharp";
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
 }

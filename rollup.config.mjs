@@ -74,7 +74,6 @@ export default {
               `<head>
               <meta charset="utf-8" />
               <link rel="manifest" href="./assets/${manifestJson}" />
-              <link rel="stylesheet" href="./assets/material-symbols.css" />
             `,
             ),
         ],

@@ -4,8 +4,8 @@ import { data as WorkJson } from "@/types/components/work-experience/work-experi
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 
-@customElement("work-partial")
-export class WorkPartial extends LitElement {
+@customElement("experience-partial")
+export class ExperiencePartial extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -49,7 +49,7 @@ export class WorkPartial extends LitElement {
       <article>
         <partial-header
           .headerType=${"secondary"}
-          .headingText=${"Work Experience"}
+          .headingText=${"Experience"}
         ></partial-header>
         <div class="article-body">
           ${WorkJson.experiences.map(
@@ -73,6 +73,6 @@ export class WorkPartial extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "work-partial": WorkPartial;
+    "experience-partial": ExperiencePartial;
   }
 }

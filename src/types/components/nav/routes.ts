@@ -1,8 +1,9 @@
 export const Routes = {
   PROFILE: "profile" as const,
-  WORK: "work" as const,
+  // WORK: "work" as const,
+  EXPERIENCE: "experience" as const,
   CODE: "code" as const,
-  // POSTS: "posts" as const,
+  BLOG: "blog" as const,
   // SETTINGS: "settings" as const,
   // CONNECT: "connect" as const,
 } as const;

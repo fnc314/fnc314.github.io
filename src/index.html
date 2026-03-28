@@ -132,14 +132,15 @@
       href="https://www.fnc314.com"
     />
     <link
-      as="style"
+      as="font"
       rel="preload"
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
       "
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,400..700&display=block"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=block"
     />
+    <!-- &family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,400..700&family=Material+Symbols+Sharp:FILL,opsz,wght@0..1,20..48,400..700 -->
     <link
       rel="stylesheet"
       href="./stylesheets/styles.css"
@@ -147,9 +148,29 @@
       title="Site CSS"
     />
     <link
+      rel="stylesheet"
+      href="./../node_modules/material-symbols/outlined.css"
+      type="text/css"
+      title="Material Symbols Outlined CSS"
+    />
+    <link
       rel="preload"
       as="font"
       href="./../node_modules/material-symbols/material-symbols-outlined.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      href="./../node_modules/material-symbols/sharp.css"
+      type="text/css"
+      title="Material Symbols Sharp CSS"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="./../node_modules/material-symbols/material-symbols-sharp.woff2"
       type="font/woff2"
       crossorigin
     />
@@ -174,16 +195,21 @@
             id="panel-profile"
             aria-labelledby="tab-profile"
           ></profile-partial>
-          <work-partial
+          <experience-partial
             aria-role="tabpanel"
-            id="panel-work"
-            aria-labelledby="tab-work"
-          ></work-partial>
+            id="panel-experience"
+            aria-labelledby="tab-experience"
+          ></experience-partial>
           <code-partial
             aria-role="tabpanel"
             id="panel-code"
             aria-labelledby="tab-code"
           ></code-partial>
+          <blog-partial
+            aria-role="tabpanel"
+            id="panel-blog"
+            aria-labelledby="tab-blog"
+          ></blog-partial>
         </div>
       </main>
     </app-shell>

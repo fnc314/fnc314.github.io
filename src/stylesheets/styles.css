@@ -1,6 +1,3 @@
-@import "./material-overrides.css";
-@import "./material-symbols.css";
-
 :root {
   color-scheme: light dark;
   --hairline-width: 1px;
