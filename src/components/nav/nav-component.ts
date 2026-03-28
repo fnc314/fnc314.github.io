@@ -127,7 +127,7 @@ export class NavComponent extends LitElement {
 
   @state()
   private _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
-    work: createRef(),
+    experience: createRef(),
     code: createRef(),
     profile: createRef(),
   };
