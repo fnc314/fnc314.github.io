@@ -23,19 +23,19 @@
       ]
     },
     {
-      "name": "Work",
-      "short_name": "Work",
+      "name": "Experience",
+      "short_name": "Experience",
       "description": "View work experience of Franco N. Colaizzi",
-      "url": "/#work",
+      "url": "/#experience",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.png",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/experience/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.svg",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/experience/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -141,7 +141,11 @@
     "standalone",
     "browser"
   ],
-  "categories": ["developer", "development", "networking"],
+  "categories": [
+    "developer",
+    "development",
+    "networking"
+  ],
   "start_url": "https://www.fnc314.com/#profile",
   "id": "https://www.fnc314.com"
 }
