@@ -129,9 +129,6 @@ export class NavComponent extends LitElement {
   private _activeRoute: Route = Routes.PROFILE;
 
   @state()
-  private _inlineIconRoute: Route | null = Routes.PROFILE;
-
-  @state()
   private _exitingRoute: Route | null = null;
 
   #inlineIconTimeout = 0;
@@ -195,15 +192,12 @@ export class NavComponent extends LitElement {
         this.#updateTabState(targetIndex);
 
         this._exitingRoute = oldRoute;
-        this._inlineIconRoute = null;
 
         window.clearTimeout(this.#inlineIconTimeout);
         this.#inlineIconTimeout = window.setTimeout(() => {
-          this._inlineIconRoute = route;
           this._exitingRoute = null;
         }, 250);
       } else {
-        this._inlineIconRoute = route;
         this._exitingRoute = null;
       }
     }
@@ -268,11 +262,9 @@ export class NavComponent extends LitElement {
     this.#updateTabState(index);
 
     this._exitingRoute = oldRoute;
-    this._inlineIconRoute = null;
 
     window.clearTimeout(this.#inlineIconTimeout);
     this.#inlineIconTimeout = window.setTimeout(() => {
-      this._inlineIconRoute = route;
       this._exitingRoute = null;
     }, 250);
   }
@@ -281,7 +273,6 @@ export class NavComponent extends LitElement {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
     this._activeRoute = this.#routes[this._activeTabIndex];
-    this._inlineIconRoute = this.#routes[this._activeTabIndex];
     this.#updateTabState(this._activeTabIndex);
   }
 
