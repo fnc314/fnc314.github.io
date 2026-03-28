@@ -3,7 +3,7 @@ export const Routes = {
   // WORK: "work" as const,
   EXPERIENCE: "experience" as const,
   CODE: "code" as const,
-  BLOG: "blog" as const,
+  // BLOG: "blog" as const,
   // SETTINGS: "settings" as const,
   // CONNECT: "connect" as const,
 } as const;
