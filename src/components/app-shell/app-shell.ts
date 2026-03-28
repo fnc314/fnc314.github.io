@@ -372,6 +372,7 @@ export class AppShell extends LitElement {
           .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
           .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings"}
           .variant=${"surface"}
+          .ariaLabel=${settingsLabel === "" ? "Settings" : settingsLabel}
           .label=${settingsLabel}
           .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
         >
@@ -413,8 +414,9 @@ export class AppShell extends LitElement {
           <md-icon
             slot="icon"
             style=${this.connectFabConfig.style === FAB_STYLE.TEXT_ONLY ? "display: none" : "display: contents"}
-            >person_add</md-icon
           >
+            person_add
+          </md-icon>
         </md-fab>
       </section>
     `;

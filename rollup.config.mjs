@@ -38,6 +38,7 @@ export default {
         targets: ["./website"],
         watch: isDev,
       }),
+      css({ output: "bundle.css" }),
       versionInjector({
         injectInComments: false,
         injectInTags: {
@@ -52,12 +53,6 @@ export default {
       }),
       gitInfo.default({
         abbrev: 10,
-      }),
-      css({
-        output: "assets/material-symbold.css",
-        include: ["./node_modules/material-symbols/index.css"],
-        name: "styles",
-        fileName: "assets/material-symbold.css",
       }),
       rollupPluginHTML({
         input: "index.html",
@@ -74,6 +69,9 @@ export default {
               `<head>
               <meta charset="utf-8" />
               <link rel="manifest" href="./assets/${manifestJson}" />
+              <link rel="stylesheet" href="./material-symbols/outlined.css" />
+              <link rel="stylesheet" href="./material-symbols/sharp.css" />
+              <link rel="stylesheet" href="./bundle.css" />
             `,
             ),
         ],
@@ -146,6 +144,11 @@ export default {
           patterns: [".well-known/appspecific/com.chrome.devtools.json"],
           rootDir: "./",
         }),
+      copy({
+        patterns: ["material-symbols/*.{css,woff2}"],
+        rootDir: "./node_modules",
+        exclude: [],
+      }),
     ].filter(Boolean)
   ),
 };

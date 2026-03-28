@@ -19,6 +19,18 @@
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/profile/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/profile/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
         }
       ]
     },
@@ -39,6 +51,18 @@
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
         }
       ]
     },
@@ -56,6 +80,50 @@
         },
         {
           "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "View blog posts from Franco N. Colaizzi",
+      "url": "/#blog",
+      "icons": [
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-filled-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"

@@ -70,7 +70,7 @@ export class ConnectDialog extends LitElement {
           max-height: 100dvh;
         }
 
-        @media (orientation: portrait) {
+        @media (orientation: portrait) and (width <= 600px) {
           min-width: calc(100dvw - 4rem);
           max-width: calc(100dvw - 2rem);
           min-height: calc(100dvh - 6rem);
@@ -93,10 +93,13 @@ export class ConnectDialog extends LitElement {
           border-block-start-width: var(--hairline-width);
           border-block-start-color: var(--md-sys-color-primary);
           border-block-start-style: solid;
+          padding: 1rem;
 
           p {
             color: var(--md-sys-color-on-surface-variant);
             font-family: var(--md-ref-typeface-brand);
+            display: flex;
+            flex-direction: column;
           }
         }
       }
@@ -106,6 +109,7 @@ export class ConnectDialog extends LitElement {
         flex-direction: column;
         justify-content: space-evenly;
         gap: 1rem;
+        padding: 1rem;
 
         details {
           summary {
@@ -179,7 +183,7 @@ export class ConnectDialog extends LitElement {
               [slot="start"] {
                 padding: 1rem;
                 background-color: color(from var(--md-sys-color-primary-fixed-dim) srgb r g b / 0.5);
-                color: var(--md-sys-color-on-primary-fixed);
+                color: var(--md-sys-color-on-primary-fixed-variant);
                 border-radius: var(--md-sys-shape-corner-full);
               }
 
@@ -298,7 +302,10 @@ export class ConnectDialog extends LitElement {
         </div>
         <div slot="actions">
           <p class="md-typescale-body-small">
-            ${`Version: ${this.version}`}<br />${`Date: ${this.date}`}<br />${`Time: ${this.time}`}<br />${`Git SHA: ${pkg.gitAbbrevHash}`}
+            <span>${`Version: ${this.version}`}</span>
+            <span>${`Date: ${this.date}`}</span>
+            <span>${`Time: ${this.time}`}</span>
+            <span>${`Git SHA: ${pkg.gitAbbrevHash}`}</span>
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>

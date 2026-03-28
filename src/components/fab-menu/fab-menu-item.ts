@@ -19,6 +19,7 @@ export class FabMenuItem extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        z-index: 10;
         list-style: none;
         display: flex;
         flex-direction: var(--fab-menu-item-direction, row);
@@ -32,6 +33,8 @@ export class FabMenuItem extends LitElement {
       }
 
       .label-container {
+        --md-elevation-level: 4;
+        position: relative;
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
         padding: 0.5rem 1rem;
@@ -87,7 +90,10 @@ export class FabMenuItem extends LitElement {
   override render() {
     return html`
       ${this.label
-        ? html`<div class="label-container"><span class="md-typescale-label-large">${this.label}</span></div>`
+        ? html` <div class="label-container">
+            <md-elevation></md-elevation>
+            <span class="md-typescale-label-large">${this.label}</span>
+          </div>`
         : ""}
       <md-fab
         size="small"

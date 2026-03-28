@@ -70,7 +70,9 @@ export class CodePartial extends LitElement {
           overflow-wrap: anywhere;
         }
 
-        &:hover, &:focus, &:focus-within {
+        &:hover,
+        &:focus,
+        &:focus-within {
           transform: translateY(-4px);
           --md-elevation-level: 4;
           background-color: var(--md-sys-color-surface-container-high);
@@ -182,7 +184,7 @@ export class CodePartial extends LitElement {
             target="_blank"
             href="${url}"
           >
-            <h2 class="md-typescale-title-large">${name}</h2>
+            <h2 class="md-typescale-headline-small">${name}</h2>
           </a>
         </header>
         <div class="widget-content">
@@ -209,12 +211,11 @@ export class CodePartial extends LitElement {
   override render() {
     return html`
       <article>
-        <partial-header .headerType=${"tertiary"} .headingText=${"Code Projects"}></partial-header>
-        <div class="article-body">
-          ${(CodeJson.projects as Project[]).map((p) =>
-            this.#renderCodeWidget(p),
-          )}
-        </div>
+        <partial-header
+          .headerType=${"tertiary"}
+          .headingText=${"Code Projects"}
+        ></partial-header>
+        <div class="article-body">${(CodeJson.projects as Project[]).map((p) => this.#renderCodeWidget(p))}</div>
       </article>
     `;
   }

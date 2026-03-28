@@ -94,6 +94,7 @@ export class ConfigsDialog extends LitElement {
         flex-direction: column;
         align-items: stretch;
         gap: 2rem;
+        padding: 0.5rem;
       }
 
       md-dialog {
@@ -127,6 +128,7 @@ export class ConfigsDialog extends LitElement {
           display: grid;
           grid-template-columns: auto 1fr auto auto;
           grid-template-areas: "close . reset save";
+          padding: 0.5rem;
 
           md-text-button {
             grid-area: close;
@@ -763,9 +765,9 @@ export class ConfigsDialog extends LitElement {
               );
             }}
           >
-            Reset Settings
+            Reset
           </md-outlined-button>
-          <md-filled-button form="configs-dialog-form">Save Settings</md-filled-button>
+          <md-filled-button form="configs-dialog-form">Save</md-filled-button>
         </div>
       </md-dialog>
     `;

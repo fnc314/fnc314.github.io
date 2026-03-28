@@ -41,19 +41,31 @@ export class NavComponent extends LitElement {
         --md-primary-tab-active-hover-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-pressed-label-text-color: var(--icon-fill-color);
 
+        --md-primary-tab-active-hover-state-layer-color: var(--md-sys-color-surface-container-high);
+        --md-primary-tab-active-pressed-state-layer-color: var(--md-sys-color-surface-container-high);
+        --md-primary-tab-hover-state-layer-color: var(--md-sys-color-primary-fixed);
+        --md-primary-tab-pressed-state-layer-color: var(--md-sys-color-surface-container-high);
+
+        --md-primary-tab-active-hover-state-layer-opacity: 0;
+        --md-primary-tab-active-pressed-state-layer-opacity: 0;
+        --md-primary-tab-hover-state-layer-opacity: 0.5;
+        --md-primary-tab-pressed-state-layer-opacity: 0.5;
+
         /* Indicator overrides */
         --md-primary-tab-active-indicator-color: var(--icon-fill-color);
         --md-primary-tab-active-indicator-height: 0.5rem;
         --md-primary-tab-active-indicator-shape: var(--md-sys-shape-corner-medium);
 
         /* Container overrides */
-        --md-primary-tab-container-color: var(--md-sys-color-surface-container-high);
+        --md-primary-tab-container-color: var(--md-sys-color-surface-container-low);
         --md-primary-tab-container-elevation: var(--md-elevation-level);
         --md-primary-tab-container-height: 5rem;
-        --md-primary-tab-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-start-end: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-end-start: var(--md-sys-shape-corner-extra-small);
-        --md-primary-tab-container-shape-end-end: var(--md-sys-shape-corner-extra-small);
+        --md-primary-tab-container-shape: var(--md-sys-shape-corner-extra-small);
+
+        --md-primary-tab-focus-icon-color: var(--icon-fill-color);
+        --md-primary-tab-hover-icon-color: var(--md-sys-color-on-primary-fixed);
+        --md-primary-tab-focus-label-text-color: var(--icon-fill-color);
+        --md-primary-tab-hover-label-text-color: var(--md-sys-color-on-primary-fixed);
 
         /* Inactive/Default state overrides */
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
@@ -62,19 +74,20 @@ export class NavComponent extends LitElement {
         --md-primary-tab-label-text-color: var(--md-sys-color-primary);
 
         --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
+        --md-primary-tab-pressed-label-text-color: var(--md-sys-color-tertiary);
 
         --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
       }
 
       md-icon {
-        font-family: "Material Symbols Sharp";
+        font-family: "Material Symbols Outlined";
         /*
          * We must set the start value for the font variation to ensure that the
          * transition is interpolated correctly by the browser engine.
          */
         font-variation-settings:
           "FILL" 0,
-          "wght" 300,
+          "wght" 400,
           "GRAD" 200,
           "opsz" 48;
         /*
@@ -93,10 +106,10 @@ export class NavComponent extends LitElement {
       }
 
       md-icon[filled="true"] {
-        font-family: "Material Symbols Sharp";
+        font-family: "Material Symbols Outlined";
         font-variation-settings:
           "FILL" 1,
-          "wght" 300,
+          "wght" 400,
           "GRAD" 200,
           "opsz" 48;
         color: var(--icon-fill-color);
@@ -279,7 +292,6 @@ export class NavComponent extends LitElement {
     const mdIconRouteMap: Record<Route, TemplateResult> = {
       profile: html`
         <md-icon
-          class="material-symbols-sharp"
           slot="icon"
           filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
         >
@@ -289,7 +301,6 @@ export class NavComponent extends LitElement {
       `,
       experience: html`
         <md-icon
-          class="material-symbols-sharp"
           slot="icon"
           filled=${this._activeRoute === Routes.EXPERIENCE || this._exitingRoute === Routes.EXPERIENCE}
         >
@@ -299,7 +310,6 @@ export class NavComponent extends LitElement {
       `,
       code: html`
         <md-icon
-          class="material-symbols-sharp"
           slot="icon"
           filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
         >
@@ -317,7 +327,6 @@ export class NavComponent extends LitElement {
           aria-controls="panel-${route}"
           .role=${"tab"}
           .hasIcon=${true}
-          .inlineIcon=${this._inlineIconRoute === route}
         >
           ${mdIconRouteMap[route]}
         </md-primary-tab>
@@ -340,7 +349,7 @@ export class NavComponent extends LitElement {
   }
 
   override render() {
-    return html` <nav>${this.#renderTabs()}</nav> `;
+    return html`<nav>${this.#renderTabs()}</nav>`;
   }
 }
 

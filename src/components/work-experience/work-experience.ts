@@ -228,12 +228,12 @@ export class WorkExperience extends LitElement {
   /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
     const headerRole = this.isNested
-      ? html`<h3 class="md-typescale-title-medium">${this.experienceRole}</h3>`
-      : html`<h2 class="md-typescale-title-large">${this.experienceRole}</h2>`;
+      ? html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`
+      : html`<h2 class="md-typescale-headline-large">${this.experienceRole}</h2>`;
 
     const headerOrg = this.isNested
-      ? html`<p class="md-typescale-title-small">${this.experienceOrg}</p>`
-      : html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`;
+      ? html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`
+      : html`<p class="md-typescale-title-large">${this.experienceOrg}</p>`;
 
     const headerDates = this.isNested
       ? html`
