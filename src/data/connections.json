@@ -31,6 +31,12 @@
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
           "overline": "<span slot=\"overline\">GitHub</span>",
           "href": "https://www.github.com/fnc314"
+        },
+        "medium": {
+          "start": "<img loading=\"lazy\" role=\"img\" alt=\"Medium logo\" slot=\"start\" src=\"./assets/icons/brand/medium.svg\" />",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314.medium.com</span>",
+          "overline": "<span slot=\"overline\">Medium</span>",
+          "href": "https://fnc314.medium.com"
         }
       }
     },
