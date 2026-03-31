@@ -224,7 +224,7 @@ export class NavComponent extends LitElement {
       if (tab) {
         const panelId = tab.getAttribute("aria-controls");
         if (panelId) {
-          const panel = document.querySelector(`#${panelId}[aria-role="tabpanel"]`)!;
+          const panel = document.querySelector(`#${panelId}[role="tabpanel"]`)!;
           if (panel && panel instanceof HTMLElement) {
             panels.push(panel);
             panel.toggleAttribute("inert", true);
