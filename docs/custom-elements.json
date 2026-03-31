@@ -1501,7 +1501,7 @@
                 "text": "Record<Route, Ref<MdPrimaryTab>>"
               },
               "privacy": "private",
-              "default": "{ experience: createRef(), code: createRef(), profile: createRef(), blog: createRef(), }"
+              "default": "{ work: createRef(), code: createRef(), profile: createRef(), blog: createRef(), }"
             },
             {
               "kind": "field",
@@ -2328,9 +2328,9 @@
           "kind": "variable",
           "name": "Routes",
           "type": {
-            "text": "{\n  PROFILE: \"profile\" as const,\n  EXPERIENCE: \"experience\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
+            "text": "{\n  PROFILE: \"profile\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
           },
-          "default": "{ PROFILE: \"profile\" as const, EXPERIENCE: \"experience\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
+          "default": "{ PROFILE: \"profile\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
         }
       ],
       "exports": [

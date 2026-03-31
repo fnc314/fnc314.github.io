@@ -13,7 +13,7 @@
     "emitDecoratorMetadata": true,
     "pretty": true,
     "rootDir": "./src",
-    "outDir": "./website",
+    "outDir": "./dist",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -41,7 +41,7 @@
         }
       },
       {
-        "name": "@genesiscommunitysuccess/custom-elements-lsp",
+        "name": "@genesiscommunitysuccess/custom-elements-lsp"
         // "srcRouteFromTSServer": "configure this to set the relative path between your project route and your `tsserver.js`",
         // "designSystemPrefix": "configure this to handle a library of components with a prefix",
         // "parser": {
@@ -55,7 +55,7 @@
         // "plugins": ["set plugins here!"]
       }
     ],
-    "types": ["node", "eslint", "rollup", "bun-types", "lit", "prettier", "stylelint", "tailwindcss"],
+    "types": ["node", "eslint", "rollup", "bun", "lit", "prettier", "stylelint", "tailwindcss"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -68,8 +68,6 @@
       "@/root/*": ["./*"]
     }
   },
-  "include": [
-    "./src/**/*.ts",
-  ],
+  "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "website", "old"]
 }

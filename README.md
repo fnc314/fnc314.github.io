@@ -470,16 +470,16 @@
 
 #### Fields
 
-| Name                 | Privacy | Type                               | Default                                                                                    | Description | Inherited From |
-| -------------------- | ------- | ---------------------------------- | ------------------------------------------------------------------------------------------ | ----------- | -------------- |
-| `_activeRoute`       | private | `Route`                            |                                                                                            |             |                |
-| `_activeTabIndex`    | private | `number`                           | `0`                                                                                        |             |                |
-| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                                     |             |                |
-| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ experience: createRef(), code: createRef(), profile: createRef(), blog: createRef(), }` |             |                |
-| `#boundListener`     | private |                                    |                                                                                            |             |                |
-| `#inlineIconTimeout` | private | `number`                           | `0`                                                                                        |             |                |
-| `#routes`            | private | `Route[]`                          |                                                                                            |             |                |
-| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                            |             |                |
+| Name                 | Privacy | Type                               | Default                                                                              | Description | Inherited From |
+| -------------------- | ------- | ---------------------------------- | ------------------------------------------------------------------------------------ | ----------- | -------------- |
+| `_activeRoute`       | private | `Route`                            |                                                                                      |             |                |
+| `_activeTabIndex`    | private | `number`                           | `0`                                                                                  |             |                |
+| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                               |             |                |
+| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ work: createRef(), code: createRef(), profile: createRef(), blog: createRef(), }` |             |                |
+| `#boundListener`     | private |                                    |                                                                                      |             |                |
+| `#inlineIconTimeout` | private | `number`                           | `0`                                                                                  |             |                |
+| `#routes`            | private | `Route[]`                          |                                                                                      |             |                |
+| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                      |             |                |
 
 #### Methods
 
@@ -703,11 +703,11 @@
 
 ### Variables
 
-| Name     | Description | Type                                                                                                                                                                                              |
-| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name     | Description | Type                                                                                                                                                                                  |
+| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Routes` |             | `{
   PROFILE: "profile" as const,
-  EXPERIENCE: "experience" as const,
+  WORK: "work" as const,
   CODE: "code" as const,
   BLOG: "blog" as const,
   // SETTINGS: "settings" as const,

@@ -6,22 +6,21 @@ import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import process from "node:process";
-import postcssLit from "postcss-lit";
-import { defineConfig } from "rollup";
 import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
 import gitInfo from "rollup-plugin-git-info";
 import postcss from "rollup-plugin-postcss";
+import rollupPostCSSLit from "rollup-plugin-postcss-lit";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
-import { typescriptPaths } from "rollup-plugin-typescript-paths";
+import typescriptPaths from "rollup-plugin-typescript-paths";
 import versionInjector from "rollup-plugin-version-injector";
 
 const isDev = process.env.NODE_ENV === "development";
 const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
-const { rollupPostCSSLit } = postcssLit;
 
-export default defineConfig({
+/** @type {import("rollup").RollupOptions} */
+export default {
   logLevel: "debug",
   treeshake: true,
   input: "src/index.html", // Correctly specify the main HTML file as the input
@@ -41,26 +40,20 @@ export default defineConfig({
       targets: ["./website"],
       watch: isDev,
     }),
-    rollupPostCSSLit({
-      globInclude: [
-        "./src/components/**/*.ts",
-        "./src/partials/**/*.ts",
-      ],
-      globExclude: ["./node_modules/**"]
-    }),
     postcss({
       sourceMap: isDev,
       config: {
         path: "./postcss.config.mjs",
         ctx: {},
       },
-      include: [
-        "**/*.css"
-      ],
+      include: ["**/*.css"],
       // Ensure we don't try to process TS files here
-      exclude: ["**/*.ts"]
+      exclude: ["**/*.ts"],
     }),
-
+    rollupPostCSSLit({
+      globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
+      globExclude: ["./node_modules/**"],
+    }),
     copy({
       exclude: [],
       patterns: ["material-symbols-{outlined,sharp}.woff2"],
@@ -84,9 +77,6 @@ export default defineConfig({
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",
-      exclude: [
-        "./old/**/*",
-      ],
       bundleCss: true,
       minifyCss: !isDev,
       minify: !isDev,
@@ -141,7 +131,7 @@ export default defineConfig({
         outDir: isDev ? "./website" : undefined,
       },
     }),
-    typescriptPaths({
+    typescriptPaths.default({
       tsConfigPath: "./tsconfig.json",
     }),
     resolve({
@@ -175,4 +165,4 @@ export default defineConfig({
         rootDir: "./",
       }),
   ],
-});
+};

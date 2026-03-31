@@ -35,31 +35,31 @@
       ]
     },
     {
-      "name": "Experience",
-      "short_name": "Experience",
+      "name": "Work",
+      "short_name": "Work",
       "description": "View work experience of Franco N. Colaizzi",
-      "url": "/#experience",
+      "url": "/#work",
       "icons": [
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-filled-512.png",
+          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-filled-512.svg",
+          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-outline-512.png",
+          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/experience/icon-outline-512.svg",
+          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"

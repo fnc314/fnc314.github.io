@@ -2,6 +2,7 @@
 import "./code/code-partial";
 import "./experience/experience-partial";
 import "./profile/profile-partial";
+import "./work/work-partial";
 
 // export * from "./blog/blog-partial";
 export * from "./code/code-partial";

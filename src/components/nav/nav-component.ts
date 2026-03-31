@@ -27,7 +27,6 @@ export class NavComponent extends LitElement {
       :host {
         --nav-component-icon-animation: 225ms;
         --nav-component-icon-animation-reduced: 1ms;
-
         --md-elevation-level: 4;
 
         /* Active state color overrides */
@@ -36,16 +35,19 @@ export class NavComponent extends LitElement {
         --md-primary-tab-active-hover-icon-color: var(--icon-fill-color);
         --md-primary-tab-active-pressed-icon-color: var(--icon-fill-color);
 
+        /* PrimaryTab - Hover|Pressed, Active?, Label Text Color */
         --md-primary-tab-active-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-focus-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-hover-label-text-color: var(--icon-fill-color);
         --md-primary-tab-active-pressed-label-text-color: var(--icon-fill-color);
 
+        /* PrimaryTab - Hover|Pressed, Active?, State Layer Color */
         --md-primary-tab-active-hover-state-layer-color: var(--md-sys-color-surface-container-high);
         --md-primary-tab-active-pressed-state-layer-color: var(--md-sys-color-surface-container-high);
         --md-primary-tab-hover-state-layer-color: var(--md-sys-color-primary-fixed);
         --md-primary-tab-pressed-state-layer-color: var(--md-sys-color-surface-container-high);
 
+        /* PrimaryTab - Hover|Pressed, Active?, State Layer Opacity */
         --md-primary-tab-active-hover-state-layer-opacity: 0;
         --md-primary-tab-active-pressed-state-layer-opacity: 0;
         --md-primary-tab-hover-state-layer-opacity: 0.5;
@@ -62,38 +64,33 @@ export class NavComponent extends LitElement {
         --md-primary-tab-container-height: 5rem;
         --md-primary-tab-container-shape: var(--md-sys-shape-corner-extra-small);
 
+        /* PrimaryTab - Focus|Hover for icon|label-text */
         --md-primary-tab-focus-icon-color: var(--icon-fill-color);
         --md-primary-tab-hover-icon-color: var(--md-sys-color-on-primary-fixed);
         --md-primary-tab-focus-label-text-color: var(--icon-fill-color);
         --md-primary-tab-hover-label-text-color: var(--md-sys-color-on-primary-fixed);
 
-        /* Inactive/Default state overrides */
+        /* PrimaryTab - Inactive/Default state overrides */
         --md-primary-tab-icon-color: var(--md-sys-color-primary);
         --md-primary-tab-icon-size: 2rem;
         --md-primary-tab-label-font: var(--md-ref-typeface-brand);
         --md-primary-tab-label-text-color: var(--md-sys-color-primary);
 
+        /* PrimaryTab - Pressed */
         --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
         --md-primary-tab-pressed-label-text-color: var(--md-sys-color-tertiary);
 
+        /* Sperate container */
         --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
       }
 
       md-icon {
-        font-family: "Material Symbols Outlined";
-        /*
-         * We must set the start value for the font variation to ensure that the
-         * transition is interpolated correctly by the browser engine.
-         */
+        font-family: var(--md-icon-font-sharp);
         font-variation-settings:
           "FILL" 0,
           "wght" 400,
           "GRAD" 200,
           "opsz" 48;
-        /*
-         * The transition duration and easing curve are synced with the
-         * sliding indicator of the <md-tabs> component.
-         */
         transition:
           font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
           color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
@@ -106,7 +103,7 @@ export class NavComponent extends LitElement {
       }
 
       md-icon[filled="true"] {
-        font-family: "Material Symbols Outlined";
+        font-family: var(--md-icon-font-sharp);
         font-variation-settings:
           "FILL" 1,
           "wght" 400,
@@ -137,7 +134,7 @@ export class NavComponent extends LitElement {
 
   @state()
   private _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
-    experience: createRef(),
+    work: createRef(),
     code: createRef(),
     profile: createRef(),
   };
@@ -290,10 +287,10 @@ export class NavComponent extends LitElement {
         </md-icon>
         Bio
       `,
-      experience: html`
+      work: html`
         <md-icon
           slot="icon"
-          filled=${this._activeRoute === Routes.EXPERIENCE || this._exitingRoute === Routes.EXPERIENCE}
+          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
         >
           view_timeline
         </md-icon>
@@ -315,7 +312,7 @@ export class NavComponent extends LitElement {
         <md-primary-tab
           ${ref(this._tabRefMap[route])}
           .id=${`tab-${route}`}
-          aria-controls="panel-${route}"
+          aria-controls=${`panel-${route}`}
           .role=${"tab"}
           .hasIcon=${true}
         >

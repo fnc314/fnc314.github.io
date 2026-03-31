@@ -1,7 +1,15 @@
 logLevel = "debug"
 
+[run]
+shell = "system"
+silent = false
+
+[console]
+depth = 10
+
 [debug]
-  editor = "code"
+editor = "code"
 
 [install]
-  auto = "auto"
+auto = "auto"
+exact = true

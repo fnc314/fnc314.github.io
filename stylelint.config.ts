@@ -1,20 +1,17 @@
 import { type Config } from "stylelint";
 
 export const config: Config = {
-  extends: [
-    "stylelint-config-standard",
-    "stylelint-prettier/recommended"
-  ],
-
+  extends: ["stylelint-config-standard", "stylelint-prettier/recommended"],
   ignoreFiles: [
-    "./.config/*",
     "./.config/custom-elements-manifest/custom-elements-manifest.config.mjs",
+    "./.config/tailwind/*.ts",
     "./.gemini/*",
     "./.github/*",
     "./.idea/**/*",
     "./.vscode/*",
     "./.well-known/*",
     "./bun-build/*",
+    "./bunfig.toml",
     "./dist/**/*",
     "./docs/**/*",
     "./node_modules/**/*",
@@ -22,26 +19,19 @@ export const config: Config = {
     "./eslint.config.mjs",
     "./postcss.config.mjs",
     "./prettier.config.mts",
-    "./rollup.config.jms",
+    "./rollup.config.mjs",
     "./stylelint.config.ts",
     "./website/*",
   ],
-  plugins: [
-    "stylelint-plugin-use-baseline"
-  ],
+  plugins: ["stylelint-plugin-use-baseline"],
   customSyntax: "postcss-lit",
   rules: {
     "declaration-block-no-redundant-longhand-properties": [
       true,
       {
-        ignoreShorthands: [
-          "grid-template",
-          "grid-template-areas",
-          "grid-template-columns",
-          "grid-template-rows",
-        ]
-      }
-    ]
+        ignoreShorthands: ["grid-template", "grid-template-areas", "grid-template-columns", "grid-template-rows"],
+      },
+    ],
   },
 };
 
