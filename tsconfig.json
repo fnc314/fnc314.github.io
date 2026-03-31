@@ -13,6 +13,7 @@
     "emitDecoratorMetadata": true,
     "pretty": true,
     "rootDir": "./src",
+    "outDir": "./website",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -53,6 +54,12 @@
       "@/root/*": ["./*"]
     }
   },
-  "include": ["src/**/*.ts", "./package.json", "prettier.config.mts", "./config/tailwind.config.ts", "stylelint.config.ts"],
+  "include": [
+    "src/**/*.ts",
+    "./package.json",
+    "./config/tailwind.config.ts",
+    // "./prettier.config.mts",
+    // "./stylelint.config.ts",
+  ],
   "exclude": ["node_modules", "website", "old"]
 }

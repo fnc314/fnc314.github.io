@@ -135,6 +135,7 @@ export default defineConfig({
         declaration: isDev,
         declarationMap: isDev,
         declarationDir: isDev ? "./website" : undefined,
+        outDir: isDev ? "./website" : undefined,
       },
     }),
     typescriptPaths({

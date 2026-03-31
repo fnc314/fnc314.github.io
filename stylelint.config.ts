@@ -1,14 +1,18 @@
 import { type Config } from "stylelint";
 
 export const config: Config = {
-  extends: ["stylelint-config-standard"],
+  extends: [
+    "stylelint-config-standard"
+  ],
   ignoreFiles: [
     "./node_modules/**/*",
     "./dist/**/*",
     "./bun-build/**/*",
     "./website/*",
     "./stylelint.config.ts",
-    "./postcss.config.mjs"
+    "./postcss.config.mjs",
+    "./rollup.config.jms",
+    "./.config/*",
   ],
   rules: {
     "declaration-block-no-redundant-longhand-properties": [
@@ -23,6 +27,6 @@ export const config: Config = {
       }
     ]
   },
-} satisfies Config;
+};
 
 export default config;

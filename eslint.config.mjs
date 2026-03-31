@@ -37,7 +37,7 @@ export default defineConfig([
   },
   {
     name: "app/typescript",
-    files: ["**/*.ts", "**/*.mts", "./.config/*.ts", "./.config/*.mts"],
+    files: ["./src/**/*.ts", "./src/index.js"],
     plugins: {
       "@typescript-eslint": tseslint.plugin,
       wc,
