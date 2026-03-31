@@ -288,7 +288,7 @@ export class NavComponent extends LitElement {
         >
           account_box
         </md-icon>
-        Profile
+        Bio
       `,
       experience: html`
         <md-icon
@@ -297,7 +297,7 @@ export class NavComponent extends LitElement {
         >
           view_timeline
         </md-icon>
-        Experience
+        Work
       `,
       code: html`
         <md-icon
@@ -314,7 +314,7 @@ export class NavComponent extends LitElement {
       (route: Route) => html`
         <md-primary-tab
           ${ref(this._tabRefMap[route])}
-          id="tab-${route}"
+          .id=${`tab-${route}`}
           aria-controls="panel-${route}"
           .role=${"tab"}
           .hasIcon=${true}

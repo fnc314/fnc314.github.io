@@ -66,7 +66,7 @@ body {
       box-sizing: border-box;
       transition: transform 0.3s ease-in-out;
 
-      [aria-role="tabpanel"] {
+      [role="tabpanel"] {
         width: 100%;
         min-width: 0px;
         overflow-x: hidden;

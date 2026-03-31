@@ -8,7 +8,7 @@ import pkg from "./../../../../package.json" with { type: "json" };
 
 interface Connection {
   label: string;
-  connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "googleDocs" | "pdf", ConnectionInstance>>;
+  connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "medium" | "googleDocs" | "pdf", ConnectionInstance>>;
 }
 
 interface ConnectionInstance {
