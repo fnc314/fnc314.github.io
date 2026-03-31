@@ -2,7 +2,8 @@ import { type Config } from "stylelint";
 
 export const config: Config = {
   extends: [
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    "stylelint-prettier/recommended"
   ],
   ignoreFiles: [
     "./.config/*",
@@ -23,6 +24,10 @@ export const config: Config = {
     "./stylelint.config.ts",
     "./website/*",
   ],
+  plugins: [
+    "stylelint-plugin-use-baseline"
+  ],
+  customSyntax: "postcss-lit",
   rules: {
     "declaration-block-no-redundant-longhand-properties": [
       true,
