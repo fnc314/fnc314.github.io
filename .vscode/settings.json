@@ -13,6 +13,19 @@
   "html.customData": [
     "./dist/vscode.html-custom-data.json"
   ],
-  "postcssense.cssPath": "./src/stylesheets/styles.css",
+  "postcssense.cssPath": "./src/index.css",
+  "stylelint.configFile": "./stylelint.config.ts",
+  "stylelint.packageManager": "npm",
+  "stylelint.run": "onSave",
+  "stylelint.snippet": [
+    "css",
+    "postcss",
+  ],
+  "stylelint.validate": [
+    "css",
+    "javascript",
+    "postcss",
+    "typescript",
+  ],
   "tailwindCSS.experimental.configFile": "./.config/tailwind.config.ts"
 }

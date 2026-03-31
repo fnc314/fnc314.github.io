@@ -1,11 +1,9 @@
 :root {
   --md-ref-typeface-brand: monospace;
-  --md-ref-typeface-plain: Roboto, sans-serif;
-
+  --md-ref-typeface-plain: "Roboto", sans-serif;
   --md-ref-typeface-weight-regular: 400;
   --md-ref-typeface-weight-medium: 500;
   --md-ref-typeface-weight-bold: 700;
-
   --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-body-large-line-height: 1.5rem;
   --md-sys-typescale-body-large-size: 1rem;
@@ -68,7 +66,6 @@
   --md-sys-typescale-title-small-line-height: 1.25rem;
   --md-sys-typescale-title-small-size: 0.875rem;
   --md-sys-typescale-title-small-weight: 500;
-
   --md-sys-shape-corner-extra-large: 2rem;
   --md-sys-shape-corner-extra-small: 0.25rem;
   --md-sys-shape-corner-full: 100%;
@@ -76,7 +73,6 @@
   --md-sys-shape-corner-medium: 1rem;
   --md-sys-shape-corner-none: 0;
   --md-sys-shape-corner-small: 0.5rem;
-
   --md-icon-size: 1.5rem;
   --md-icon-font: "Material Symbols Sharp";
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);

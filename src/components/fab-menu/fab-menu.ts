@@ -152,11 +152,11 @@ export class FabMenu extends LitElement {
   open = false;
 
   /**
-   * The icon to display when the menu is closed.
-   * Defaults to 'add'.  An empty {@link string}
+   * The {@link MaterialSymbol} to display when the menu
+   * is closed. Defaults to 'add'. An empty {@link string}
    *   suppresses the icon
+   * @attr icon
    */
-  /** @attr icon */
   @property({ type: String })
   icon: MaterialSymbol | "" = "add";
 

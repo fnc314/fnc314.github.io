@@ -40,7 +40,7 @@
         }
       }
     ],
-    "types": ["node", "eslint", "rollup", "bun-types", "lit", "prettier"],
+    "types": ["node", "eslint", "rollup", "bun-types", "lit", "prettier", "stylelint", "tailwindcss"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -53,6 +53,6 @@
       "@/root/*": ["./*"]
     }
   },
-  "include": ["src/**/*.ts", "./package.json"],
+  "include": ["src/**/*.ts", "./package.json", "prettier.config.mts", "./config/tailwind.config.ts", "stylelint.config.ts"],
   "exclude": ["node_modules", "website", "old"]
 }

@@ -109,7 +109,7 @@ export class WorkExperience extends LitElement {
 
         /* Dates */
         > p:nth-child(3) {
-          color: var(--md-sys-color-secondary);
+          color: var(--md-sys-color-on-surface);
         }
 
         /* Summary */
@@ -165,7 +165,7 @@ export class WorkExperience extends LitElement {
               grid-row: 1;
               text-align: end;
               inset-block-start: 0;
-              color: var(--md-sys-color-secondary);
+              color: var(--md-sys-color-on-surface);
             }
 
             /* Summary */

@@ -10,8 +10,8 @@ import postcssLit from "postcss-lit";
 import { defineConfig } from "rollup";
 import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
-import css from "rollup-plugin-css-only";
 import gitInfo from "rollup-plugin-git-info";
+import postcss from "rollup-plugin-postcss";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import { typescriptPaths } from "rollup-plugin-typescript-paths";
@@ -31,6 +31,10 @@ export default defineConfig({
     name: "com.fnc314.website",
     sourcemap: isDev,
     interop: "auto",
+    sourcemapDebugIds: isDev,
+    strict: true,
+    esModule: true,
+    exports: "auto",
   },
   plugins: [
     clear({
@@ -38,16 +42,34 @@ export default defineConfig({
       watch: isDev,
     }),
     rollupPostCSSLit({
-      globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
-      sourcemap: isDev,
+      globInclude: [
+        "./src/components/**/*.ts",
+        "./src/partials/**/*.ts",
+      ],
+      globExclude: ["./node_modules/**"]
     }),
-    css({
-      output: "bundle.css"
+    postcss({
+      sourceMap: isDev,
+      config: {
+        path: "./postcss.config.mjs",
+        ctx: {},
+      },
+      include: [
+        "**/*.css"
+      ],
+      // Ensure we don't try to process TS files here
+      exclude: ["**/*.ts"]
+    }),
+
+    copy({
+      exclude: [],
+      patterns: ["material-symbols-{outlined,sharp}.woff2"],
+      rootDir: "./node_modules/material-symbols",
     }),
     versionInjector({
       injectInComments: false,
       injectInTags: {
-        fileRegexp: /\.(js|html|css)$/,
+        fileRegexp: /\.(js|ts|html|css)$/,
         tagId: "VI",
         dateFormat: "yyyy-mm-dd @ HH:MM:ss TT",
       },
@@ -74,13 +96,11 @@ export default defineConfig({
             `<head>
             <meta charset="utf-8" />
             <link rel="manifest" href="./assets/${manifestJson}" />
-            <link rel="stylesheet" href="./material-symbols/outlined.css" />
-            <link rel="stylesheet" href="./material-symbols/sharp.css" />
-            <link rel="stylesheet" href="./bundle.css" />
           `,
           ),
       ],
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://www.fnc314.com",
+      strictCSPInlineScripts: !isDev,
     }),
     copy({
       exclude: [],
@@ -124,12 +144,14 @@ export default defineConfig({
       rootDir: "./src",
       browser: true,
     }),
-    commonjs(),
+    commonjs({
+      sourceMap: isDev,
+    }),
     !isDev &&
       terser({
         ecma: 2020,
         module: true,
-        warnings: true,
+        mangle: true,
       }),
     summary({
       showBrotliSize: true,
@@ -140,7 +162,7 @@ export default defineConfig({
       projectName: "fnc314.com",
     }),
     progress({
-      clearLine: false,
+      clearLine: true,
     }),
     isDev &&
       copy({
@@ -148,10 +170,5 @@ export default defineConfig({
         patterns: [".well-known/appspecific/com.chrome.devtools.json"],
         rootDir: "./",
       }),
-    copy({
-      patterns: ["material-symbols/*.{css,woff2}"],
-      rootDir: "./node_modules",
-      exclude: [],
-    }),
   ],
 });

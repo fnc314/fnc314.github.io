@@ -1,9 +1,7 @@
 /** @type {import('postcss-load-config').Config} */
-const config = {
+export default {
   syntax: "postcss-lit",
   plugins: {
-    "@tailwindcss/postcss": {},
-  },
+    "@tailwindcss/postcss": {}
+  }
 };
-
-export default config;

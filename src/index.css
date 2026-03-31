@@ -1,12 +1,14 @@
+@import url("./stylesheets/material-overrides.css");
+
 :root {
   color-scheme: light dark;
+
   --hairline-width: 1px;
   --icon-fill-color: #c12a1c;
   --breakpoint-compact-width-max: 600px;
   --breakpoint-medium-width-max: 900px;
   --breakpoint-large-width-max: 1200px;
   --breakpoint-expanded-width-max: 1500px;
-
   --color-transition-duration: 500ms;
   --color-transition-timing: ease-in-out;
 }
@@ -16,7 +18,6 @@
   padding: 0;
   box-sizing: border-box;
   display: revert;
-
   transition:
     stroke var(--color-transition-duration) var(--color-transition-timing),
     fill var(--color-transition-duration) var(--color-transition-timing),
@@ -27,7 +28,6 @@
 
 html,
 body {
-  font-size: 16px;
   font-family: var(--md-ref-typeface-plain);
   writing-mode: horizontal-tb;
   margin: unset;
@@ -68,7 +68,7 @@ body {
 
       [role="tabpanel"] {
         width: 100%;
-        min-width: 0px;
+        min-width: 0;
         overflow-x: hidden;
         flex-shrink: 0;
         box-sizing: border-box;

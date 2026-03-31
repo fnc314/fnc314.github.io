@@ -14,12 +14,13 @@ import "@material/web/select/select-option.js";
 import "@material/web/tabs/primary-tab.js";
 import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+import "material-symbols/outlined.css";
+import "material-symbols/sharp.css";
 import "./components/index.js";
 import "./partials/index.js";
 import { configsService } from "./services/configs/configs-service.js";
 import "./services/index.js";
 import { themeService } from "./services/theme/theme-service.js";
-import { MaterialOverrides } from "./styles/material-styles.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
 import { Routes } from "./types/components/nav/routes.js";
 import "./types/index.js";
@@ -32,9 +33,6 @@ const domLoadedListener = () => {
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  }
-  if (MaterialOverrides.styleSheet) {
-    document.adoptedStyleSheets.push(MaterialOverrides.styleSheet);
   }
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
