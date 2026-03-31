@@ -40,7 +40,7 @@
         }
       }
     ],
-    "types": ["node", "eslint", "rollup", "bun-types", "lit"],
+    "types": ["node", "eslint", "rollup", "bun-types", "lit", "prettier"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],

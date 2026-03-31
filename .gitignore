@@ -4,3 +4,6 @@ dist
 website
 stats
 bun-build
+src/types/index.ts
+lit-plugin.log
+.idea

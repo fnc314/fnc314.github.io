@@ -13,7 +13,7 @@ const config: Config = {
   tabWidth: 2,
   trailingComma: "all",
   useTabs: false,
-  plugins: ["prettier-plugin-toml"],
+  plugins: ["prettier-plugin-toml", "prettier-plugin-tailwindcss"],
 };
 
 export default config;

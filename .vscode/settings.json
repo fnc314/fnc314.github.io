@@ -12,5 +12,7 @@
   ],
   "html.customData": [
     "./dist/vscode.html-custom-data.json"
-  ]
+  ],
+  "postcssense.cssPath": "./src/stylesheets/styles.css",
+  "tailwindCSS.experimental.configFile": "./.config/tailwind.config.ts"
 }
