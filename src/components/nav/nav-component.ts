@@ -137,6 +137,7 @@ export class NavComponent extends LitElement {
     work: createRef(),
     code: createRef(),
     profile: createRef(),
+    // blog: createRef(),
   };
 
   #routes: Route[] = Object.values(Routes);
@@ -305,6 +306,15 @@ export class NavComponent extends LitElement {
         </md-icon>
         Code
       `,
+      // blog: html`
+      //   <md-icon
+      //     slot="icon"
+      //     filled=${this._activeRoute === Routes.BLOG || this._exitingRoute === Routes.BLOG}
+      //   >
+      //     newsmode
+      //   </md-icon>
+      //   Blog
+      // `,
     };
 
     const tabs: TemplateResult[] = this.#routes.map(
