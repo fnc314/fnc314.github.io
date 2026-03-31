@@ -52,7 +52,7 @@
         "@typescript-eslint/parser": "8.57.2",
         "@wc-toolkit/cem-inheritance": "1.2.2",
         "@wc-toolkit/cem-sorter": "1.0.1",
-        "@wc-toolkit/cem-utilities": "1.5.4",
+        "@wc-toolkit/cem-utilities": "^1.5.4",
         "@wc-toolkit/cem-validator": "1.3.0",
         "@wc-toolkit/jsdoc-tags": "1.1.0",
         "@wc-toolkit/module-path-resolver": "1.0.0",

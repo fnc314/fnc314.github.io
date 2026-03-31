@@ -3,6 +3,11 @@
   "version": 1.1,
   "properties": [
     {
+      "name": "--connect-dialog-content-transition",
+      "description": "The animation duration for expanding/collapsing connection details.",
+      "values": []
+    },
+    {
       "name": "--fab-menu-item-direction",
       "description": "The `flex-direction` of the {@link FabMenuItem}",
       "values": []
@@ -85,11 +90,6 @@
     {
       "name": "--word-cloud-fourth-quartile-line-height",
       "description": "Line height for words in the fourth weight quartile.",
-      "values": []
-    },
-    {
-      "name": "--connect-dialog-content-transition",
-      "description": "The animation duration for expanding/collapsing connection details.",
       "values": []
     }
   ],
