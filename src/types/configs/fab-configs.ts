@@ -93,7 +93,7 @@ export const fabConfigToGrid: (config: FabConfig) => {
   columnEnd: fabPositionComponents(config.position).horizontal === FAB_POSITION_COMPONENTS_HORIZONTAL.START ? 2 : 4,
 });
 
-export const fabPositionClass: (fabPosition: FabPosition) => "StartTop" | "StartBottom" | "EndTop" | "EndBottom" = (
+export const fabPositionClass: (fabPosition: FabPosition) => "start-top" | "start-bottom" | "end-top" | "end-bottom" = (
   fabPosition: FabPosition,
 ) =>
   `${fabPosition

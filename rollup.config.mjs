@@ -166,7 +166,7 @@ export default defineConfig({
       projectName: "fnc314.com",
     }),
     progress({
-      clearLine: true,
+      clearLine: !isDev,
     }),
     isDev &&
       copy({

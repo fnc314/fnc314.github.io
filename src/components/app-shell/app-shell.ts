@@ -98,22 +98,22 @@ export class AppShell extends LitElement {
           }
         }
 
-        .StartTop {
+        .start-top {
           grid-area: StartTop;
           justify-self: start;
         }
 
-        .StartBottom {
+        .start-bottom {
           grid-area: StartBottom;
           justify-self: start;
         }
 
-        .EndTop {
+        .end-top {
           grid-area: EndTop;
           justify-self: end;
         }
 
-        .EndBottom {
+        .end-bottom {
           grid-area: EndBottom;
           justify-self: end;
         }
