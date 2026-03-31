@@ -129,6 +129,7 @@ export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 
 export const PhotoJsonFile: PhotosJson = PhotoJsonFileImport;
 
+// postcss-lit-disable-next-line
 export const readScheme = (jsonSchema: object) => css`
   :root {
     ${unsafeCSS(
@@ -138,7 +139,7 @@ export const readScheme = (jsonSchema: object) => css`
           (acc, curr) => css`
             ${acc}${curr}
           `,
-          css``,
+          unsafeCSS(""),
         ),
     )}
   }

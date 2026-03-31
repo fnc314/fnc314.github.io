@@ -1,6 +1,6 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
-import { LitElement, css, html, nothing } from "lit";
+import { css, html, LitElement, nothing } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
 
@@ -8,7 +8,7 @@ import { customElement, property } from "lit/decorators.js";
  * A component for displaying professional work experience entries.
  * Supports nesting for sub-roles or specific project assignments under a single employer.
  *
- * @property isNesting=false - Whether this is a nested instance
+ * @property isNested=false - Whether this is a nested instance
  * @property experienceRole="" - The formal role from the {@link WorkExperience} instance
  * @property experienceOrg="" - The employer formal name
  * @property experienceSummary="" - An optional summary of the overall role
