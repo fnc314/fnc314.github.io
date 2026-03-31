@@ -7,4 +7,5 @@ stats
 bun-build
 src/types/index.ts
 lit-plugin.log
-.idea
+.idea/*
+!.idea/web-types.json

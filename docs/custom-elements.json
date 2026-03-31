@@ -52,7 +52,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/app-shell/app-shell.ts",
+      "path": "src/components/app-shell/app-shell.js",
       "declarations": [
         {
           "kind": "class",
@@ -311,7 +311,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/blog-post/blog-post.ts",
+      "path": "src/components/blog-post/blog-post.js",
       "declarations": [
         {
           "kind": "class",
@@ -382,7 +382,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/configs/configs-dialog.ts",
+      "path": "src/components/dialogs/configs/configs-dialog.js",
       "declarations": [
         {
           "kind": "class",
@@ -664,7 +664,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/connect/connect-dialog.ts",
+      "path": "src/components/dialogs/connect/connect-dialog.js",
       "declarations": [
         {
           "kind": "class",
@@ -804,7 +804,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/step-up/step-up-dialog.ts",
+      "path": "src/components/dialogs/step-up/step-up-dialog.js",
       "declarations": [
         {
           "kind": "class",
@@ -963,7 +963,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/fab-menu/fab-menu-item.ts",
+      "path": "src/components/fab-menu/fab-menu-item.js",
       "declarations": [
         {
           "kind": "class",
@@ -1089,7 +1089,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/fab-menu/fab-menu.ts",
+      "path": "src/components/fab-menu/fab-menu.js",
       "declarations": [
         {
           "kind": "class",
@@ -1449,7 +1449,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/nav/nav-component.ts",
+      "path": "src/components/nav/nav-component.js",
       "declarations": [
         {
           "kind": "class",
@@ -1634,7 +1634,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/partial-header/partial-header.ts",
+      "path": "src/components/partial-header/partial-header.js",
       "declarations": [
         {
           "kind": "class",
@@ -1715,7 +1715,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/profile-section/profile-section.ts",
+      "path": "src/components/profile-section/profile-section.js",
       "declarations": [
         {
           "kind": "class",
@@ -1775,7 +1775,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/word-cloud/word-cloud.ts",
+      "path": "src/components/word-cloud/word-cloud.js",
       "declarations": [
         {
           "kind": "class",
@@ -2068,7 +2068,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/work-experience/work-experience.ts",
+      "path": "src/components/work-experience/work-experience.js",
       "declarations": [
         {
           "kind": "class",

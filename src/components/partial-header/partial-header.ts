@@ -17,11 +17,12 @@ export class PartialHeader extends LitElement {
       }
 
       header {
+        --md-elevation-level: 2;
+
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        --md-elevation-level: 2;
         border-radius: var(--md-sys-shape-corner-medium);
         margin-block-start: 1rem;
         background-color: var(--md-sys-color-primary);
@@ -37,6 +38,7 @@ export class PartialHeader extends LitElement {
 
         &.primary {
           background-color: var(--md-sys-color-primary);
+
           h1 {
             color: var(--md-sys-color-on-primary);
           }
@@ -44,6 +46,7 @@ export class PartialHeader extends LitElement {
 
         &.secondary {
           background-color: var(--md-sys-color-secondary);
+
           h1 {
             color: var(--md-sys-color-on-secondary);
           }
@@ -51,6 +54,7 @@ export class PartialHeader extends LitElement {
 
         &.tertiary {
           background-color: var(--md-sys-color-tertiary);
+
           h1 {
             color: var(--md-sys-color-on-tertiary);
           }
@@ -58,6 +62,7 @@ export class PartialHeader extends LitElement {
 
         &.inverse {
           background-color: var(--md-sys-color-inverse-surface);
+
           h1 {
             color: var(--md-sys-color-inverse-on-surface);
           }

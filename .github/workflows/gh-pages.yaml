@@ -31,23 +31,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Workspace with Mise
+        uses: jdx/mise-action@v2
         with:
-          bun-version: latest
+          install: true
+          mise-version: latest
 
-      # - name: Rollup Bundle
-      #   uses: actions/setup-node@v6
-      #   with:
-      #     node-version: latest
-      - name: Bun Install
-        run: bun install
+      - name: PNPM Install
+        run: pnpm install
 
-      - name: Bun Build
-        run: bun run tsc
+      - name: PNPM Build
+        run: pnpm run build:tsc
 
-      - name: Bun RollUp
-        run: NODE_ENV="production" bun run rollup -c
+      - name: PNPM RollUp
+        run: pnpm run build:website:prod
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -6,7 +6,7 @@ class RouterServiceImpl extends EventTarget implements RouterService {
   constructor() {
     super();
     window.addEventListener("hashchange", (ev: HashChangeEvent) =>
-      this.dispatchEvent(
+      window.dispatchEvent(
         new CustomEvent("router.change", {
           bubbles: true,
           composed: true,
@@ -18,7 +18,7 @@ class RouterServiceImpl extends EventTarget implements RouterService {
       ),
     );
     window.addEventListener("popstate", (ev: PopStateEvent) => {
-      this.dispatchEvent(
+      window.dispatchEvent(
         new CustomEvent("router.back", {
           bubbles: true,
           composed: true,

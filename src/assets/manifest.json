@@ -61,6 +61,26 @@
           "purpose": "any"
         }
       ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "View blog posts from Franco N. Colaizzi",
+      "url": "/#blog",
+      "icons": [
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
     }
   ],
   "icons": [

@@ -4,11 +4,10 @@ import { cemValidatorPlugin } from "@wc-toolkit/cem-validator";
 import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
 import { modulePathResolverPlugin } from "@wc-toolkit/module-path-resolver";
 import { typeParserPlugin } from "@wc-toolkit/type-parser";
-
 import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example";
 import { readmePlugin } from "cem-plugin-readme";
+import { customElementJetBrainsPlugin } from "custom-element-jet-brains-integration";
 import { customElementVsCodePlugin } from "custom-element-vs-code-integration";
-
 import process from "node:process";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -56,6 +55,8 @@ export default {
     modulePathResolverPlugin({
       debug: isDev,
       skip: !isDev,
+      modulePathTemplate: (modulePath, name, tagName) =>
+        modulePath.replace("./src/", "./website").replace(".ts", ".js")
     }),
     typeParserPlugin({
       debug: isDev,
@@ -81,6 +82,23 @@ export default {
       },
       skip: !isDev,
     }),
+    customElementJetBrainsPlugin({
+      skip: !isDev,
+      outdir: "./.idea",
+      webTypesFileName: "web-types.json",
+      packageJson: true,
+      descriptionSrc: "description",
+      hideSlotDocs: false,
+      hideCssPartsDocs: false,
+      hideCssPropertiesDocs: false,
+      hideEventDocs: false,
+      hideMethodDocs: false,
+      hideLogs: false,
+      excludeCss: false,
+      excludeHtml: false,
+      typesSrc: "type",
+      defaultIcon: "./src/assets/icons/icon.svg",
+    }),
   ],
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
   resolutionOptions: {
@@ -90,7 +108,7 @@ export default {
     tsconfig: {
       configFile: "./tsconfig.json",
     },
-
+    moduleType: true,
     // ... other oxc-resolver options
   },
 };

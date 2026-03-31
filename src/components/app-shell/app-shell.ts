@@ -6,7 +6,7 @@ import "@/components/fab-menu/fab-menu";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
 import { configsService } from "@/services/configs/configs-service";
-import { type RouterChange, type RouterReverse, routerService } from "@/services/router/router-service";
+import { type RouterChange, type RouterReverse } from "@/services/router/router-service";
 import { themeService } from "@/services/theme";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
@@ -270,13 +270,13 @@ export class AppShell extends LitElement {
 
     document.addEventListener("color_scheme.change", this.onColorSchemeChange);
 
-    routerService.addEventListener("router.change", (ev: Event) => {
+    window.addEventListener("router.change", (ev: Event) => {
       const routerChange = ev as RouterChange;
-      console.info(JSON.stringify(routerChange.detail, null, 2));
+      console.info(JSON.stringify({ event: "router.change", change: routerChange.detail }, null, 2));
     });
-    routerService.addEventListener("router.back", (ev: Event) => {
+    window.addEventListener("router.back", (ev: Event) => {
       const routerReverse = ev as RouterReverse;
-      console.info(JSON.stringify(routerReverse.detail, null, 2));
+      console.info(JSON.stringify({ event: "router.back", back: routerReverse.detail }, null, 2));
     });
   }
 

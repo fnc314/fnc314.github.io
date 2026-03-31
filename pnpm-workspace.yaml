@@ -1,0 +1,8 @@
+catalog:
+  stylelint: 17.6.0
+catalogMode: "prefer"
+cleanupUnusedCatalogs: true
+color: "always"
+gitBranchLockfile: true
+packageManagerStrictVersion: true
+savePrefix: ""

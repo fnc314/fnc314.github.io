@@ -244,7 +244,27 @@ export class FabMenu extends LitElement {
     this.open = !this.open;
   }
 
+  protected override firstUpdated(_changedProperties: PropertyValues): void {
+    console.log("FabMenu#firstUpdated", JSON.stringify(_changedProperties, null, 2));
+    super.firstUpdated(_changedProperties);
+    console.log(
+      `FIRSTUPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
+      `FIRSTUPDATED: this.label ${this.label}`,
+      `FIRSTUPDATED: this.icon ${this.icon}`,
+    );
+    const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
+    if (labelSpan) {
+      labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
+    }
+  }
+
   protected override update(changedProperties: PropertyValues): void {
+    console.log("FabMenu#update", JSON.stringify(changedProperties, null, 2));
+    console.log(
+      `UPDATE: Has Label ${changedProperties.has("label")}|Label is ${changedProperties.get("label")}`,
+      `UPDATE: this.label ${this.label}`,
+      `UPDATE: this.icon ${this.icon}`,
+    );
     if (changedProperties.has("open")) {
       if (this.open) {
         document.addEventListener("click", this._handleDocumentClick, { capture: true });
@@ -275,7 +295,16 @@ export class FabMenu extends LitElement {
         });
         break;
     }
+  }
 
+  protected override updated(_changedProperties: PropertyValues<this>): void {
+    super.updated(_changedProperties);
+    console.log("FabMenu#updated", JSON.stringify(_changedProperties, null, 2));
+    console.log(
+      `UPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
+      `UPDATED: this.label ${this.label}`,
+      `UPDATED: this.icon ${this.icon}`,
+    );
     const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
       labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
@@ -288,6 +317,10 @@ export class FabMenu extends LitElement {
     if (button) {
       button.style.paddingInline = "1rem";
     }
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
   }
 
   override disconnectedCallback() {
