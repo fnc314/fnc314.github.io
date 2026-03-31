@@ -8,10 +8,10 @@
   },
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "css.customData": [
-    "./dist/vscode.css-custom-data.json"
+    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
   "html.customData": [
-    "./dist/vscode.html-custom-data.json"
+    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json"
   ],
   "postcssense.cssPath": "./src/index.css",
   "lit-plugin.logging": "verbose",

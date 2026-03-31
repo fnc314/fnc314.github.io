@@ -1,0 +1,247 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/main/docs/customData.schema.json",
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "fab-menu-item",
+      "description": "An action item within a `fab-menu`.\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "The text label displayed next to the FAB item.",
+          "values": []
+        },
+        {
+          "name": "icon",
+          "description": "The icon to display inside the FAB item.",
+          "values": [{ "name": "MaterialSymbol" }, { "name": "\"\"" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "fab-menu",
+      "description": "A floating action button that toggles a menu of actions.\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements.\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations. _(default: 200ms)_",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Whether the menu is currently open.",
+          "values": []
+        },
+        {
+          "name": "icon",
+          "description": "The MaterialSymbol to display when the menu\nis closed. Defaults to 'add'. An empty string\n  suppresses the icon",
+          "values": [{ "name": "MaterialSymbol" }, { "name": "\"\"" }]
+        },
+        {
+          "name": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "values": [{ "name": "MaterialSymbol" }]
+        },
+        {
+          "name": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "values": [
+            { "name": "surface" },
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "label",
+          "description": "The label of the underlying MdFab.\nDefaults to an empty string.",
+          "values": []
+        },
+        {
+          "name": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "values": []
+        },
+        {
+          "name": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "values": [{ "name": "start" }, { "name": "end" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "app-shell",
+      "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-nav** - Where the {@link NavComponent} is placed\n- **app-content** - The place for the dynamic application content",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "blog-post",
+      "description": "\n---\n",
+      "attributes": [
+        { "name": "blogPost", "values": [{ "name": "Partial<BlogPostJson>" }] }
+      ],
+      "references": []
+    },
+    {
+      "name": "nav-component",
+      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "profile-section",
+      "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--\n---\n",
+      "attributes": [
+        {
+          "name": "section-title",
+          "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "word-cloud",
+      "description": "A component that renders a cloud of words with various sorting and grouping options.\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+      "attributes": [
+        {
+          "name": "words",
+          "description": "The list of words to display in the cloud.",
+          "values": [{ "name": "WordCloudWord[]" }]
+        },
+        {
+          "name": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "values": []
+        },
+        {
+          "name": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "values": [{ "name": "WordCloudAppearance" }]
+        },
+        {
+          "name": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "values": [{ "name": "WordCloudGrouping" }]
+        },
+        {
+          "name": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "values": [{ "name": "WordCloudSorting" }]
+        },
+        {
+          "name": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "values": [{ "name": "none" }]
+        },
+        {
+          "name": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "partial-header",
+      "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.\n---\n",
+      "attributes": [
+        {
+          "name": "heading-text",
+          "description": "The text to display within the header.",
+          "values": []
+        },
+        {
+          "name": "header-type",
+          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+          "values": [
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" },
+            { "name": "inverse" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "work-experience",
+      "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.\n---\n",
+      "attributes": [
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "values": []
+        },
+        {
+          "name": "experience-role",
+          "description": "The title of the professional role or project.",
+          "values": []
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "values": []
+        },
+        { "name": "experience-summary", "values": [] },
+        {
+          "name": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "values": [{ "name": "WorkDate" }]
+        },
+        {
+          "name": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "values": [{ "name": "WorkDate" }]
+        },
+        {
+          "name": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "values": [{ "name": "{ item: string }[]" }]
+        },
+        {
+          "name": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "values": [{ "name": "Job[]" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "configs-dialog",
+      "description": "A comprehensive configuration dialog for managing application settings.\nAllows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.\n---\n\n\n### **Events:**\n - **fab.change** - Dispatched when a FAB's position or style is modified.\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **stepUpOpen**\n\n### **Methods:**\n - **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.\n- **hideDialog(): __** - Hides the configuration dialog.",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "connect-dialog",
+      "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n \n\n### **Methods:**\n - **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n- **hideDialog(): __** - Maps to MdDialog's close method\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "step-up-dialog",
+      "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **headline** - The {@link MdDialog} headline {@link slot}\n- **content** - The body of the {@link MdDialog}\n- **actions** - The area of dialog action buttons",
+      "attributes": [
+        {
+          "name": "dialogStyle",
+          "description": "The visual style variant of the dialog, affecting colors and icons.",
+          "values": [{ "name": "ConfirmDialogStyle" }]
+        },
+        {
+          "name": "dialogContentString",
+          "description": "The text content to display in the dialog body.",
+          "values": []
+        }
+      ],
+      "references": []
+    }
+  ]
+}

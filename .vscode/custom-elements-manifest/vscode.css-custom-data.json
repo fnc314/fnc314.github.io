@@ -1,0 +1,97 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode-css-languageservice/main/docs/customData.schema.json",
+  "version": 1.1,
+  "properties": [
+    {
+      "name": "--fab-menu-item-direction",
+      "description": "The `flex-direction` of the {@link FabMenuItem}",
+      "values": []
+    },
+    {
+      "name": "--fab-menu-item-justify",
+      "description": "The Flex `justify-content` of the {@link FabMenuItem}",
+      "values": []
+    },
+    {
+      "name": "--fab-menu-item-padding-end",
+      "description": "The logical `padding-inline-end` value",
+      "values": []
+    },
+    {
+      "name": "--fab-menu-item-padding-start",
+      "description": "The logical `padding-inline-start` value",
+      "values": []
+    },
+    {
+      "name": "--fab-menu-transition-duration",
+      "description": "The duration of the menu's opening and closing animations.",
+      "values": []
+    },
+    {
+      "name": "--nav-component-icon-animation",
+      "description": "The duration of the icon's fill and color transition.",
+      "values": []
+    },
+    {
+      "name": "--nav-component-icon-animation-reduced",
+      "description": "The duration of the icon's transition when motion is reduced.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-animation",
+      "description": "Duration of the entrance animation for each word.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-animation-reduced",
+      "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-first-quartile-font-size",
+      "description": "Font size for words in the first weight quartile (highest weight).",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-first-quartile-line-height",
+      "description": "Line height for words in the first weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-second-quartile-font-size",
+      "description": "Font size for words in the second weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-second-quartile-line-height",
+      "description": "Line height for words in the second weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-third-quartile-font-size",
+      "description": "Font size for words in the third weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-third-quartile-line-height",
+      "description": "Line height for words in the third weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-fourth-quartile-font-size",
+      "description": "Font size for words in the fourth weight quartile (lowest weight).",
+      "values": []
+    },
+    {
+      "name": "--word-cloud-fourth-quartile-line-height",
+      "description": "Line height for words in the fourth weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--connect-dialog-content-transition",
+      "description": "The animation duration for expanding/collapsing connection details.",
+      "values": []
+    }
+  ],
+  "pseudoElements": []
+}

@@ -6,6 +6,7 @@ export const config: Config = {
   ],
   ignoreFiles: [
     "./.config/*",
+    "./.config/custom-elements-manifest/custom-elements-manifest.config.mjs",
     "./.gemini/*",
     "./.github/*",
     "./.idea/**/*",
@@ -15,9 +16,9 @@ export const config: Config = {
     "./dist/*",
     "./node_modules/**/*",
     "./old/**/*",
-    "./custom-elements-manifest.config.mjs",
     "./eslint.config.mjs",
     "./postcss.config.mjs",
+    "./prettier.config.mts",
     "./rollup.config.jms",
     "./stylelint.config.ts",
     "./website/*",

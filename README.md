@@ -16,107 +16,6 @@
 | `js` | `*`  | \*          | src/components/word-cloud/word-cloud           |         |
 | `js` | `*`  | \*          | src/components/work-experience/work-experience |         |
 
-## `src/components/app-shell/app-shell.ts`:
-
-### class: `AppShell`, `app-shell`
-
-#### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-#### Slots
-
-| Name          | Description                                   |
-| ------------- | --------------------------------------------- |
-| `app-nav`     | Where the {@link NavComponent} is placed      |
-| `app-content` | The place for the dynamic application content |
-
-<details><summary>Private API</summary>
-
-#### Fields
-
-| Name                  | Privacy | Type                                       | Default | Description                                                                                                      | Inherited From |
-| --------------------- | ------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
-| `appConfigs`          | private | `AppConfigs`                               |         | The current global application configuration state.                                                              |                |
-| `_uiModeIcon`         | private | `"dark_mode" \| "light_mode" \| "routine"` |         | The icon associated with the current color scheme mode.                                                          |                |
-| `configsDialog`       | private | `ConfigsDialog`                            |         | Reference to the configuration dialog.                                                                           |                |
-| `fabMenu`             | private | `FabMenu`                                  |         | Reference to the FAB menu component.                                                                             |                |
-| `settingsFabConfig`   | private | `FabConfig`                                |         | The configuration for the settings FAB.                                                                          |                |
-| `connectDialog`       | private | `ConnectDialog`                            |         | Reference to the connect dialog.                                                                                 |                |
-| `connectFab`          | private | `MdFab`                                    |         | Reference to the connect FAB.&#xA;This is an MdFab component.                                                    |                |
-| `connectFabConfig`    | private | `FabConfig`                                |         |                                                                                                                  |                |
-| `_openDialogCount`    | private | `number`                                   | `0`     |                                                                                                                  |                |
-| `onFabChangeBind`     | private |                                            |         |                                                                                                                  |                |
-| `onFabConfigBind`     | private |                                            |         |                                                                                                                  |                |
-| `onColorSchemeChange` | private |                                            |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
-| `onAppConfigsChange`  | private |                                            |         | Syncs the component state with the global application configuration.                                             |                |
-
-#### Methods
-
-| Name                  | Privacy | Description                                                                                                          | Parameters                                           | Return | Inherited From |
-| --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------ | -------------- |
-| `onFabChange`         | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    | `fab: "settings" \| "connect", fabConfig: FabConfig` |        |                |
-| `uiModeIcon`          | private | Maps a color scheme name to a Material icon name.                                                                    | `colorScheme: AppConfigs["colorScheme"]`             |        |                |
-| `_handleDialogOpened` | private | Tracks open dialogs to manage body scroll locking.                                                                   |                                                      |        |                |
-| `_handleDialogClosed` | private | Tracks closed dialogs to manage body scroll restoration.                                                             |                                                      |        |                |
-| `_onFabMenuItemClick` | private | Handles clicks on FAB menu items.&#xA;Closes the menu and opens the configuration dialog with the requested content. | `formContent: FormContent`                           |        |                |
-| `_getFabLabel`        | private | Generates the label string for a FAB based on its configuration style.                                               | `fab: string, config: FabConfig`                     |        |                |
-
-</details>
-
-<hr/>
-
-### Exports
-
-| Kind                        | Name        | Declaration | Module                                | Package |
-| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
-| `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
-| `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
-
-## `src/components/blog-post/blog-post.ts`:
-
-### class: `BlogPost`, `blog-post`
-
-#### Superclass
-
-| Name         | Module | Package     |
-| ------------ | ------ | ----------- |
-| `LitElement` |        | lit-element |
-
-#### Fields
-
-| Name       | Privacy | Type                    | Default | Description | Inherited From |
-| ---------- | ------- | ----------------------- | ------- | ----------- | -------------- |
-| `blogPost` |         | `Partial<BlogPostJson>` | `{}`    |             |                |
-
-#### Attributes
-
-| Name       | Field    | Inherited From |
-| ---------- | -------- | -------------- |
-| `blogPost` | blogPost |                |
-
-<details><summary>Private API</summary>
-
-#### Fields
-
-| Name                | Privacy | Type                     | Default | Description | Inherited From |
-| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
-| `darkMode`          | private |                          |         |             |                |
-| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
-
-</details>
-
-<hr/>
-
-### Exports
-
-| Kind                        | Name        | Declaration | Module                                | Package |
-| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
-| `js`                        | `BlogPost`  | BlogPost    | src/components/blog-post/blog-post.ts |         |
-| `custom-element-definition` | `blog-post` | BlogPost    | src/components/blog-post/blog-post.ts |         |
-
 ## `src/components/fab-menu/fab-menu-item.ts`:
 
 ### class: `FabMenuItem`, `fab-menu-item`
@@ -252,9 +151,68 @@
 | `js`                        | `FabMenu`  | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
 | `custom-element-definition` | `fab-menu` | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
 
-## `src/components/partial-header/partial-header.ts`:
+## `src/components/app-shell/app-shell.ts`:
 
-### class: `PartialHeader`, `partial-header`
+### class: `AppShell`, `app-shell`
+
+#### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+#### Slots
+
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `app-nav`     | Where the {@link NavComponent} is placed      |
+| `app-content` | The place for the dynamic application content |
+
+<details><summary>Private API</summary>
+
+#### Fields
+
+| Name                  | Privacy | Type                                       | Default | Description                                                                                                      | Inherited From |
+| --------------------- | ------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
+| `appConfigs`          | private | `AppConfigs`                               |         | The current global application configuration state.                                                              |                |
+| `_uiModeIcon`         | private | `"dark_mode" \| "light_mode" \| "routine"` |         | The icon associated with the current color scheme mode.                                                          |                |
+| `configsDialog`       | private | `ConfigsDialog`                            |         | Reference to the configuration dialog.                                                                           |                |
+| `fabMenu`             | private | `FabMenu`                                  |         | Reference to the FAB menu component.                                                                             |                |
+| `settingsFabConfig`   | private | `FabConfig`                                |         | The configuration for the settings FAB.                                                                          |                |
+| `connectDialog`       | private | `ConnectDialog`                            |         | Reference to the connect dialog.                                                                                 |                |
+| `connectFab`          | private | `MdFab`                                    |         | Reference to the connect FAB.&#xA;This is an MdFab component.                                                    |                |
+| `connectFabConfig`    | private | `FabConfig`                                |         |                                                                                                                  |                |
+| `_openDialogCount`    | private | `number`                                   | `0`     |                                                                                                                  |                |
+| `onFabChangeBind`     | private |                                            |         |                                                                                                                  |                |
+| `onFabConfigBind`     | private |                                            |         |                                                                                                                  |                |
+| `onColorSchemeChange` | private |                                            |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
+| `onAppConfigsChange`  | private |                                            |         | Syncs the component state with the global application configuration.                                             |                |
+
+#### Methods
+
+| Name                  | Privacy | Description                                                                                                          | Parameters                                           | Return | Inherited From |
+| --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------ | -------------- |
+| `onFabChange`         | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    | `fab: "settings" \| "connect", fabConfig: FabConfig` |        |                |
+| `uiModeIcon`          | private | Maps a color scheme name to a Material icon name.                                                                    | `colorScheme: AppConfigs["colorScheme"]`             |        |                |
+| `_handleDialogOpened` | private | Tracks open dialogs to manage body scroll locking.                                                                   |                                                      |        |                |
+| `_handleDialogClosed` | private | Tracks closed dialogs to manage body scroll restoration.                                                             |                                                      |        |                |
+| `_onFabMenuItemClick` | private | Handles clicks on FAB menu items.&#xA;Closes the menu and opens the configuration dialog with the requested content. | `formContent: FormContent`                           |        |                |
+| `_getFabLabel`        | private | Generates the label string for a FAB based on its configuration style.                                               | `fab: string, config: FabConfig`                     |        |                |
+
+</details>
+
+<hr/>
+
+### Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
+| `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
+
+## `src/components/blog-post/blog-post.ts`:
+
+### class: `BlogPost`, `blog-post`
 
 #### Superclass
 
@@ -264,57 +222,35 @@
 
 #### Fields
 
-| Name          | Privacy | Type                                                  | Default     | Description                                                                                                   | Inherited From |
-| ------------- | ------- | ----------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
-| `headingText` |         | `string`                                              | `""`        | The text to display within the header.                                                                        |                |
-| `headerType`  |         | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | `"primary"` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
+| Name       | Privacy | Type                    | Default | Description | Inherited From |
+| ---------- | ------- | ----------------------- | ------- | ----------- | -------------- |
+| `blogPost` |         | `Partial<BlogPostJson>` | `{}`    |             |                |
 
 #### Attributes
 
-| Name           | Field       | Inherited From |
-| -------------- | ----------- | -------------- |
-| `heading-text` | headingText |                |
-| `header-type`  | headerType  |                |
+| Name       | Field    | Inherited From |
+| ---------- | -------- | -------------- |
+| `blogPost` | blogPost |                |
 
-<hr/>
-
-### Exports
-
-| Kind                        | Name             | Declaration   | Module                                          | Package |
-| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
-| `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
-| `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
-
-## `src/components/profile-section/profile-section.ts`:
-
-### class: `ProfileSection`, `profile-section`
-
-#### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+<details><summary>Private API</summary>
 
 #### Fields
 
-| Name           | Privacy | Type     | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                         | Inherited From |
-| -------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `sectionTitle` |         | `string` | `""`    | The text shown in the section heading (\`\<h2>\`). Corresponds to the attribute \`section-title\`. Slot API -- \<slot name="section-grid-content">: (required) Container for section body content. Preserves the responsive grid layout. Example: \`\`\`html \<profile-section section-title="Experience"> \<div slot="section-grid-content"> ...your list, cards, or details... \</div> \</profile-section> \`\`\` |                |
+| Name                | Privacy | Type                     | Default | Description | Inherited From |
+| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
+| `darkMode`          | private |                          |         |             |                |
+| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
 
-#### Attributes
-
-| Name            | Field        | Inherited From |
-| --------------- | ------------ | -------------- |
-| `section-title` | sectionTitle |                |
+</details>
 
 <hr/>
 
 ### Exports
 
-| Kind                        | Name              | Declaration    | Module                                            | Package |
-| --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
-| `js`                        | `ProfileSection`  | ProfileSection | src/components/profile-section/profile-section.ts |         |
-| `custom-element-definition` | `profile-section` | ProfileSection | src/components/profile-section/profile-section.ts |         |
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `js`                        | `BlogPost`  | BlogPost    | src/components/blog-post/blog-post.ts |         |
+| `custom-element-definition` | `blog-post` | BlogPost    | src/components/blog-post/blog-post.ts |         |
 
 ## `src/components/nav/nav-component.ts`:
 
@@ -369,6 +305,37 @@
 | --------------------------- | --------------- | ------------ | ----------------------------------- | ------- |
 | `js`                        | `NavComponent`  | NavComponent | src/components/nav/nav-component.ts |         |
 | `custom-element-definition` | `nav-component` | NavComponent | src/components/nav/nav-component.ts |         |
+
+## `src/components/profile-section/profile-section.ts`:
+
+### class: `ProfileSection`, `profile-section`
+
+#### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+#### Fields
+
+| Name           | Privacy | Type     | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                         | Inherited From |
+| -------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `sectionTitle` |         | `string` | `""`    | The text shown in the section heading (\`\<h2>\`). Corresponds to the attribute \`section-title\`. Slot API -- \<slot name="section-grid-content">: (required) Container for section body content. Preserves the responsive grid layout. Example: \`\`\`html \<profile-section section-title="Experience"> \<div slot="section-grid-content"> ...your list, cards, or details... \</div> \</profile-section> \`\`\` |                |
+
+#### Attributes
+
+| Name            | Field        | Inherited From |
+| --------------- | ------------ | -------------- |
+| `section-title` | sectionTitle |                |
+
+<hr/>
+
+### Exports
+
+| Kind                        | Name              | Declaration    | Module                                            | Package |
+| --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
+| `js`                        | `ProfileSection`  | ProfileSection | src/components/profile-section/profile-section.ts |         |
+| `custom-element-definition` | `profile-section` | ProfileSection | src/components/profile-section/profile-section.ts |         |
 
 ## `src/components/word-cloud/word-cloud.ts`:
 
@@ -449,6 +416,39 @@
 | `js`                        | `WordCloud`  | WordCloud   | src/components/word-cloud/word-cloud.ts |         |
 | `custom-element-definition` | `word-cloud` | WordCloud   | src/components/word-cloud/word-cloud.ts |         |
 
+## `src/components/partial-header/partial-header.ts`:
+
+### class: `PartialHeader`, `partial-header`
+
+#### Superclass
+
+| Name         | Module | Package     |
+| ------------ | ------ | ----------- |
+| `LitElement` |        | lit-element |
+
+#### Fields
+
+| Name          | Privacy | Type                                                  | Default     | Description                                                                                                   | Inherited From |
+| ------------- | ------- | ----------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
+| `headingText` |         | `string`                                              | `""`        | The text to display within the header.                                                                        |                |
+| `headerType`  |         | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | `"primary"` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
+
+#### Attributes
+
+| Name           | Field       | Inherited From |
+| -------------- | ----------- | -------------- |
+| `heading-text` | headingText |                |
+| `header-type`  | headerType  |                |
+
+<hr/>
+
+### Exports
+
+| Kind                        | Name             | Declaration   | Module                                          | Package |
+| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
+| `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
+| `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
+
 ## `src/components/work-experience/work-experience.ts`:
 
 ### class: `WorkExperience`, `work-experience`
@@ -471,7 +471,7 @@
 | `dateEnd`              |         | `WorkDate`           | `{ stamp: "", text: "" }` | End date information including machine-readable stamp and display text.              |                |
 | `summaries`            |         | `{ item: string }[]` | `[]`                      | A list of summary points describing achievements or responsibilities.                |                |
 | `jobs`                 |         | `Job[]`              | `[]`                      | A list of sub-jobs or project assignments to be rendered as nested experiences.      |                |
-| `isNesting=false`      |         |                      |                           | Whether this is a nested instance                                                    |                |
+| `isNested=false`       |         |                      |                           | Whether this is a nested instance                                                    |                |
 | `experienceRole=""`    |         |                      |                           | The formal role from the {@link WorkExperience} instance                             |                |
 | `experienceOrg=""`     |         |                      |                           | The employer formal name                                                             |                |
 | `experienceSummary=""` |         |                      |                           | An optional summary of the overall role                                              |                |
@@ -501,77 +501,6 @@
 | --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
 | `js`                        | `WorkExperience`  | WorkExperience | src/components/work-experience/work-experience.ts |         |
 | `custom-element-definition` | `work-experience` | WorkExperience | src/components/work-experience/work-experience.ts |         |
-
-## `src/components/dialogs/step-up/step-up-dialog.ts`:
-
-### class: `StepUpDialog`, `step-up-dialog`
-
-#### Superclass
-
-| Name         | Module | Package     |
-| ------------ | ------ | ----------- |
-| `LitElement` |        | lit-element |
-
-#### Fields
-
-| Name                  | Privacy | Type                 | Default     | Description                                                         | Inherited From |
-| --------------------- | ------- | -------------------- | ----------- | ------------------------------------------------------------------- | -------------- |
-| `dialogStyle`         |         | `ConfirmDialogStyle` | `"confirm"` | The visual style variant of the dialog, affecting colors and icons. |                |
-| `dialogContentString` |         | `string`             | `""`        | The text content to display in the dialog body.                     |                |
-
-#### Methods
-
-| Name         | Privacy | Description                            | Parameters | Return | Inherited From |
-| ------------ | ------- | -------------------------------------- | ---------- | ------ | -------------- |
-| `showDialog` |         | Shows the step-up confirmation dialog. |            |        |                |
-
-#### Events
-
-| Name             | Type          | Description                                              | Inherited From |
-| ---------------- | ------------- | -------------------------------------------------------- | -------------- |
-| `stepUpComplete` | `CustomEvent` | Dispatched when the user confirms or cancels the action. |                |
-
-#### Attributes
-
-| Name                  | Field               | Inherited From |
-| --------------------- | ------------------- | -------------- |
-| `dialogStyle`         | dialogStyle         |                |
-| `dialogContentString` | dialogContentString |                |
-
-#### Slots
-
-| Name       | Description                                |
-| ---------- | ------------------------------------------ |
-| `headline` | The {@link MdDialog} headline {@link slot} |
-| `content`  | The body of the {@link MdDialog}           |
-| `actions`  | The area of dialog action buttons          |
-
-<details><summary>Private API</summary>
-
-#### Fields
-
-| Name             | Privacy | Type                                         | Default                                                                                                                                                                                                                                                                                                                                                                                                            | Description | Inherited From |
-| ---------------- | ------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | -------------- |
-| `_mdDialog`      | private | `MdDialog`                                   |                                                                                                                                                                                                                                                                                                                                                                                                                    |             |                |
-| `icons`          | private | `Record<ConfirmDialogStyle, TemplateResult>` | ``{ confirm: html`<md-icon slot="icon">check_circle</md-icon>`, warning: html`<md-icon slot="icon">warning</md-icon>`, attention: html`<md-icon slot="icon">report</md-icon>`, }``                                                                                                                                                                                                                                 |             |                |
-| `primaryActions` | private | `Record<ConfirmDialogStyle, TemplateResult>` | ``{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }`` |             |                |
-
-#### Methods
-
-| Name            | Privacy | Description | Parameters                               | Return | Inherited From |
-| --------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
-| `onButtonClick` | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
-
-</details>
-
-<hr/>
-
-### Exports
-
-| Kind                        | Name             | Declaration  | Module                                           | Package |
-| --------------------------- | ---------------- | ------------ | ------------------------------------------------ | ------- |
-| `js`                        | `StepUpDialog`   | StepUpDialog | src/components/dialogs/step-up/step-up-dialog.ts |         |
-| `custom-element-definition` | `step-up-dialog` | StepUpDialog | src/components/dialogs/step-up/step-up-dialog.ts |         |
 
 ## `src/components/dialogs/configs/configs-dialog.ts`:
 
@@ -698,6 +627,77 @@
 | --------------------------- | ---------------- | ------------- | ------------------------------------------------ | ------- |
 | `js`                        | `ConnectDialog`  | ConnectDialog | src/components/dialogs/connect/connect-dialog.ts |         |
 | `custom-element-definition` | `connect-dialog` | ConnectDialog | src/components/dialogs/connect/connect-dialog.ts |         |
+
+## `src/components/dialogs/step-up/step-up-dialog.ts`:
+
+### class: `StepUpDialog`, `step-up-dialog`
+
+#### Superclass
+
+| Name         | Module | Package     |
+| ------------ | ------ | ----------- |
+| `LitElement` |        | lit-element |
+
+#### Fields
+
+| Name                  | Privacy | Type                 | Default     | Description                                                         | Inherited From |
+| --------------------- | ------- | -------------------- | ----------- | ------------------------------------------------------------------- | -------------- |
+| `dialogStyle`         |         | `ConfirmDialogStyle` | `"confirm"` | The visual style variant of the dialog, affecting colors and icons. |                |
+| `dialogContentString` |         | `string`             | `""`        | The text content to display in the dialog body.                     |                |
+
+#### Methods
+
+| Name         | Privacy | Description                            | Parameters | Return | Inherited From |
+| ------------ | ------- | -------------------------------------- | ---------- | ------ | -------------- |
+| `showDialog` |         | Shows the step-up confirmation dialog. |            |        |                |
+
+#### Events
+
+| Name             | Type          | Description                                              | Inherited From |
+| ---------------- | ------------- | -------------------------------------------------------- | -------------- |
+| `stepUpComplete` | `CustomEvent` | Dispatched when the user confirms or cancels the action. |                |
+
+#### Attributes
+
+| Name                  | Field               | Inherited From |
+| --------------------- | ------------------- | -------------- |
+| `dialogStyle`         | dialogStyle         |                |
+| `dialogContentString` | dialogContentString |                |
+
+#### Slots
+
+| Name       | Description                                |
+| ---------- | ------------------------------------------ |
+| `headline` | The {@link MdDialog} headline {@link slot} |
+| `content`  | The body of the {@link MdDialog}           |
+| `actions`  | The area of dialog action buttons          |
+
+<details><summary>Private API</summary>
+
+#### Fields
+
+| Name             | Privacy | Type                                         | Default                                                                                                                                                                                                                                                                                                                                                                                                            | Description | Inherited From |
+| ---------------- | ------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | -------------- |
+| `_mdDialog`      | private | `MdDialog`                                   |                                                                                                                                                                                                                                                                                                                                                                                                                    |             |                |
+| `icons`          | private | `Record<ConfirmDialogStyle, TemplateResult>` | ``{ confirm: html`<md-icon slot="icon">check_circle</md-icon>`, warning: html`<md-icon slot="icon">warning</md-icon>`, attention: html`<md-icon slot="icon">report</md-icon>`, }``                                                                                                                                                                                                                                 |             |                |
+| `primaryActions` | private | `Record<ConfirmDialogStyle, TemplateResult>` | ``{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }`` |             |                |
+
+#### Methods
+
+| Name            | Privacy | Description | Parameters                               | Return | Inherited From |
+| --------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
+| `onButtonClick` | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
+
+</details>
+
+<hr/>
+
+### Exports
+
+| Kind                        | Name             | Declaration  | Module                                           | Package |
+| --------------------------- | ---------------- | ------------ | ------------------------------------------------ | ------- |
+| `js`                        | `StepUpDialog`   | StepUpDialog | src/components/dialogs/step-up/step-up-dialog.ts |         |
+| `custom-element-definition` | `step-up-dialog` | StepUpDialog | src/components/dialogs/step-up/step-up-dialog.ts |         |
 
 ## `src/types/index.ts`:
 
@@ -898,6 +898,54 @@
 | `js` | `readScheme`             | readScheme             | src/types/theme/theme.ts |         |
 | `js` | `keyTransform`           | keyTransform           | src/types/theme/theme.ts |         |
 
+## `src/types/components/nav/routes.ts`:
+
+### Variables
+
+| Name     | Description | Type                                                                                                                                                                                              |
+| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Routes` |             | `{
+  PROFILE: "profile" as const,
+  EXPERIENCE: "experience" as const,
+  CODE: "code" as const,
+  BLOG: "blog" as const,
+  // SETTINGS: "settings" as const,
+  // CONNECT: "connect" as const,
+}` |
+
+<hr/>
+
+### Functions
+
+| Name          | Description | Parameters     | Return  |
+| ------------- | ----------- | -------------- | ------- |
+| `hashToRoute` |             | `hash: string` | `Route` |
+
+<hr/>
+
+### Exports
+
+| Kind | Name          | Declaration | Module                             | Package |
+| ---- | ------------- | ----------- | ---------------------------------- | ------- |
+| `js` | `Routes`      | Routes      | src/types/components/nav/routes.ts |         |
+| `js` | `hashToRoute` | hashToRoute | src/types/components/nav/routes.ts |         |
+
+## `src/types/components/work-experience/work-experience.ts`:
+
+### Variables
+
+| Name   | Description | Type |
+| ------ | ----------- | ---- |
+| `data` |             |      |
+
+<hr/>
+
+### Exports
+
+| Kind | Name   | Declaration | Module                                                  | Package |
+| ---- | ------ | ----------- | ------------------------------------------------------- | ------- |
+| `js` | `data` | data        | src/types/components/work-experience/work-experience.ts |         |
+
 ## `src/types/components/word-cloud/word-cloud.ts`:
 
 ### Variables
@@ -939,51 +987,3 @@
 | `js` | `WordCloudSortings`    | WordCloudSortings    | src/types/components/word-cloud/word-cloud.ts |         |
 | `js` | `WordCloudAppearances` | WordCloudAppearances | src/types/components/word-cloud/word-cloud.ts |         |
 | `js` | `makeWordCloudWord`    | makeWordCloudWord    | src/types/components/word-cloud/word-cloud.ts |         |
-
-## `src/types/components/work-experience/work-experience.ts`:
-
-### Variables
-
-| Name   | Description | Type |
-| ------ | ----------- | ---- |
-| `data` |             |      |
-
-<hr/>
-
-### Exports
-
-| Kind | Name   | Declaration | Module                                                  | Package |
-| ---- | ------ | ----------- | ------------------------------------------------------- | ------- |
-| `js` | `data` | data        | src/types/components/work-experience/work-experience.ts |         |
-
-## `src/types/components/nav/routes.ts`:
-
-### Variables
-
-| Name     | Description | Type                                                                                                                                                                                              |
-| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Routes` |             | `{
-  PROFILE: "profile" as const,
-  EXPERIENCE: "experience" as const,
-  CODE: "code" as const,
-  BLOG: "blog" as const,
-  // SETTINGS: "settings" as const,
-  // CONNECT: "connect" as const,
-}` |
-
-<hr/>
-
-### Functions
-
-| Name          | Description | Parameters     | Return  |
-| ------------- | ----------- | -------------- | ------- |
-| `hashToRoute` |             | `hash: string` | `Route` |
-
-<hr/>
-
-### Exports
-
-| Kind | Name          | Declaration | Module                             | Package |
-| ---- | ------------- | ----------- | ---------------------------------- | ------- |
-| `js` | `Routes`      | Routes      | src/types/components/nav/routes.ts |         |
-| `js` | `hashToRoute` | hashToRoute | src/types/components/nav/routes.ts |         |

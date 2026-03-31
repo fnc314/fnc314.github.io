@@ -5,7 +5,7 @@ generate:
   files:
     - "./src/components/**/*.ts"
 
-  output: "./custom-elements.json"
+  output: "./dist/custom-elements.json"
 
 health:
   disable:
@@ -29,7 +29,7 @@ transforms:
   css:
     enabled: true
     include:
-      - "./src/styles/*.css"
+      - "./src/index.css"
 
   typescript:
     enabled: true

@@ -39,6 +39,20 @@
         "rules": {
           "no-invalid-css": "off"
         }
+      },
+      {
+        "name": "@genesiscommunitysuccess/custom-elements-lsp",
+        // "srcRouteFromTSServer": "configure this to set the relative path between your project route and your `tsserver.js`",
+        // "designSystemPrefix": "configure this to handle a library of components with a prefix",
+        // "parser": {
+        //   "timeout": 2000,
+        //   "src": "configure this to define the source code to parse",
+        //   "dependencies": [
+        //     "configure these globs to find manifest files from your dependencies",
+        //     "and use the ! pattern to ignore manifests"
+        //   ]
+        // },
+        // "plugins": ["set plugins here!"]
       }
     ],
     "types": ["node", "eslint", "rollup", "bun-types", "lit", "prettier", "stylelint", "tailwindcss"],
@@ -56,10 +70,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "./package.json",
-    "./config/tailwind.config.ts",
-    // "./prettier.config.mts",
-    // "./stylelint.config.ts",
   ],
   "exclude": ["node_modules", "website", "old"]
 }
