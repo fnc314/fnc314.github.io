@@ -14,6 +14,10 @@
     "./dist/vscode.html-custom-data.json"
   ],
   "postcssense.cssPath": "./src/index.css",
+  "lit-plugin.logging": "verbose",
+  "lit-plugin.rules.no-expressionless-property-binding": "error",
+  "lit-plugin.rules.no-missing-element-type-definition": "error",
+  "lit-plugin.rules.no-unknown-slot": "error",
   "stylelint.configFile": "./stylelint.config.ts",
   "stylelint.packageManager": "npm",
   "stylelint.run": "onSave",

@@ -50,6 +50,7 @@ export default defineConfig([
         sourceType: "module",
         project: "./tsconfig.json",
         tsconfigRootDir: __dirname,
+        projectServices: true,
       },
       globals: {
         ...globals.browser,

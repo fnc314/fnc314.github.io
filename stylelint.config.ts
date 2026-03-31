@@ -5,14 +5,22 @@ export const config: Config = {
     "stylelint-config-standard"
   ],
   ignoreFiles: [
+    "./.config/*",
+    "./.gemini/*",
+    "./.github/*",
+    "./.idea/**/*",
+    "./.vscode/*",
+    "./.well-known/*",
+    "./bun-build/*",
+    "./dist/*",
     "./node_modules/**/*",
-    "./dist/**/*",
-    "./bun-build/**/*",
-    "./website/*",
-    "./stylelint.config.ts",
+    "./old/**/*",
+    "./custom-elements-manifest.config.mjs",
+    "./eslint.config.mjs",
     "./postcss.config.mjs",
     "./rollup.config.jms",
-    "./.config/*",
+    "./stylelint.config.ts",
+    "./website/*",
   ],
   rules: {
     "declaration-block-no-redundant-longhand-properties": [

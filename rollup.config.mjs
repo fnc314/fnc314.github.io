@@ -84,6 +84,9 @@ export default defineConfig({
     rollupPluginHTML({
       input: "index.html",
       rootDir: "./src",
+      exclude: [
+        "./old/**/*",
+      ],
       bundleCss: true,
       minifyCss: !isDev,
       minify: !isDev,
