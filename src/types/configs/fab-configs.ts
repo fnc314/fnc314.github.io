@@ -95,8 +95,4 @@ export const fabConfigToGrid: (config: FabConfig) => {
 
 export const fabPositionClass: (fabPosition: FabPosition) => "start-top" | "start-bottom" | "end-top" | "end-bottom" = (
   fabPosition: FabPosition,
-) =>
-  `${fabPosition
-    .split("_")
-    .map((p) => `${p.charAt(0)}${p.slice(1).toLowerCase()}`)
-    .join("")}` as "StartTop" | "StartBottom" | "EndTop" | "EndBottom";
+) => `${fabPosition.replace("_", "-").toLowerCase()}` as "start-top" | "start-bottom" | "end-top" | "end-bottom";
