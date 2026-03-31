@@ -36,6 +36,8 @@ jobs:
         with:
           install: true
           mise-version: latest
+
+      - name: Mise Install
         run: mise install
 
       - name: PNPM Install
