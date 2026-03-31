@@ -5,6 +5,7 @@ export const config: Config = {
     "stylelint-config-standard",
     "stylelint-prettier/recommended"
   ],
+
   ignoreFiles: [
     "./.config/*",
     "./.config/custom-elements-manifest/custom-elements-manifest.config.mjs",
@@ -14,9 +15,10 @@ export const config: Config = {
     "./.vscode/*",
     "./.well-known/*",
     "./bun-build/*",
-    "./dist/*",
+    "./dist/**/*",
+    "./docs/**/*",
     "./node_modules/**/*",
-    "./old/**/*",
+    "./old/**/*.{html,css,js}",
     "./eslint.config.mjs",
     "./postcss.config.mjs",
     "./prettier.config.mts",

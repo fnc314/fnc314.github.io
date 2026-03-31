@@ -1,0 +1,13 @@
+.config/
+.gemini/
+.github/
+.idea/
+.vscode/
+.well-known/
+bun-build/
+docs/
+logs/
+node_modules/
+old/
+stats/
+website/
