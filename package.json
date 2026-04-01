@@ -74,8 +74,7 @@
     "lit": "catalog:dependencies",
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
-    "material-symbols": "catalog:dependencies",
-    "stylelint": "catalog:dependencies"
+    "material-symbols": "catalog:dependencies"
   },
   "devDependencies": {
     "@11ty/eleventy": "catalog:devDependencies",
@@ -164,6 +163,7 @@
     "rollup-plugin-summary": "catalog:devDependencies",
     "rollup-plugin-typescript-paths": "catalog:devDependencies",
     "rollup-plugin-version-injector": "catalog:devDependencies",
+    "stylelint": "catalog:devDependencies",
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
     "stylelint-plugin-use-baseline": "catalog:devDependencies",
