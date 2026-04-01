@@ -75,8 +75,7 @@
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
     "material-symbols": "catalog:dependencies",
-    "stylelint": "catalog:dependencies",
-    "tslib": "catalog:dependencies"
+    "stylelint": "catalog:dependencies"
   },
   "devDependencies": {
     "@11ty/eleventy": "catalog:devDependencies",
@@ -171,6 +170,7 @@
     "stylelint-prettier": "catalog:devDependencies",
     "tailwindcss": "catalog:devDependencies",
     "ts-lit-plugin": "catalog:devDependencies",
+    "tslib": "catalog:devDependencies",
     "typedoc": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
