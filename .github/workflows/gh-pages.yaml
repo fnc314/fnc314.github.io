@@ -31,8 +31,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Workspace with Mise
-        uses: jdx/mise-action@v2
+      - name: mise action
+        uses: jdx/mise-action@v4.0.1
         with:
           version: latest
           install: true
