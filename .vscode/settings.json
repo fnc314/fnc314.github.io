@@ -19,7 +19,7 @@
   "lit-plugin.rules.no-missing-element-type-definition": "error",
   "lit-plugin.rules.no-unknown-slot": "error",
   "stylelint.configFile": "./stylelint.config.ts",
-  "stylelint.packageManager": "npm",
+  "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",

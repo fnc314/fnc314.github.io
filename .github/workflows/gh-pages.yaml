@@ -34,17 +34,12 @@ jobs:
       - name: Setup Workspace with Mise
         uses: jdx/mise-action@v2
         with:
+          version: latest
           install: true
-          mise-version: latest
-
-      # - name: Mise Install
-      #   run: mise install
+          log_level: debug
 
       - name: PNPM Install
         run: pnpm install
-
-      - name: PNPM Build
-        run: pnpm run build:tsc
 
       - name: PNPM RollUp
         run: pnpm run build:website:prod
