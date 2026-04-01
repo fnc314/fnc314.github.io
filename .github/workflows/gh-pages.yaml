@@ -31,12 +31,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: mise action
-        uses: jdx/mise-action@v4.0.1
-        with:
-          version: latest
-          install: true
-          log_level: debug
+      # - name: mise action
+      # uses: jdx/mise-action@v4.0.1
+      # with:
+      #   version: latest
+      #   install: true
+      #   log_level: debug
+      - run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
 
       - name: PNPM Install
         run: pnpm install
