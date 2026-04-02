@@ -102,6 +102,7 @@ export class BlogPost extends LitElement {
         --md-elevated-card-container-elevation: 2;
         --md-elevated-card-container-shape: var(--md-sys-shape-corner-medium);
 
+        container-type: inline-size;
         color: var(--blog-post-primary-text-color);
         padding: 1.5rem;
         transition:
@@ -123,43 +124,72 @@ export class BlogPost extends LitElement {
         }
       }
 
-        section {
+      section {
+        display: grid;
+        grid-template-areas:
+          "icon header  header"
+          ".    header  header"
+          ".    summary summary"
+          ".    tags    tags"
+          ;
+        grid-template-columns: 0.25fr 1fr 0.5fr;
+        gap: 0.5rem;
+
+        & > img {
+          grid-area: icon;
+          width: calc(2 * var(--md-icon-size));
+          height: auto;
+          aspect-ratio: 1;
+          place-self: center;
+        }
+
+        header {
+          grid-area: header;
           display: grid;
-          grid-template-areas:
-            "icon .       .       tags"
-            ".    header  header  tags"
-            ".    summary summary tags";
-          grid-template-columns: 0.25fr 1fr 0.5fr;
+          grid-template-columns: subgrid;
+          grid-template-rows: subgrid;
+        }
+
+        h2 {
+          grid-row: 1 / 2;
+          grid-column: 1 / -1;
+          margin: 0;
+        }
+
+        h3 {
+          grid-row: 2 / 3;
+          grid-column: 1 / -1;
+          margin: 0;
+        }
+
+        & > p {
+          grid-area: summary;
+        }
+
+        & > ul.tags {
+          grid-area: tags;
+          display: flex;
+          flex-flow: row wrap;
+          list-style: none;
+          margin: 0;
+          padding: 0;
           gap: 1rem;
+        }
 
-          & > img {
-            grid-area: icon;
-            width: calc(2 * var(--md-icon-size));
-            height: auto;
-            aspect-ratio: 1;
-            place-self: center;
-          }
-
-          & > header {
-            grid-area: header;
-          }
-
-          & > p {
-            grid-area: summary;
-          }
+        @container (min-width: 600px) {
+          grid-template-areas:
+            "icon header  header  tags"
+            ".    header  header  tags"
+            ".    summary summary tags"
+            ;
 
           & > ul.tags {
-            grid-area: tags;
-            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 1rem;
           }
         }
+      }
     `,
   ];
 
@@ -204,9 +234,10 @@ export class BlogPost extends LitElement {
               .src=${`./assets/icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
             />
             <header>
-              <h2 class="md-typescale-headline-medium">${this.blogPost.title}</h2>
+              <h2 class="md-typescale-headline-large">${this.blogPost.series}</h2>
+              <h3 class="md-typescale-title-medium">${this.blogPost.title}</h3>
             </header>
-            <p class="md-typescale-title-medium">${this.blogPost.summary}</p>
+            <p class="md-typescale-body-medium">${this.blogPost.summary}</p>
             <ul class="tags">
               ${this.blogPost.tags?.map((tag) => html` <li><word-tag .word=${tag}></word-tag></li> `)}
             </ul>

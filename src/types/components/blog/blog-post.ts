@@ -1,6 +1,7 @@
 export interface BlogPostJson {
   id: string;
   title: string;
+  series: string;
   summary: string;
   mediumUrl: string;
   tags: string[];
