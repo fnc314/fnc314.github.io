@@ -24,11 +24,11 @@ export const colorSchemeContrastToIcon: (
 ) => TemplateResult = (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => {
   switch (contrast) {
     case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
-      return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;
+      return html`<md-icon slot=${slot}>exposure_zero</md-icon>`;
     case CONFIG_COLOR_CONTRAST_NAMES.MEDIUM:
-      return html`<md-icon slot="${slot}">exposure_plus_1</md-icon>`;
+      return html`<md-icon slot=${slot}>exposure_plus_1</md-icon>`;
     case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
-      return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
+      return html`<md-icon slot=${slot}>exposure_plus_2</md-icon>`;
     default:
       return html`${nothing}`;
   }
