@@ -8,7 +8,7 @@ import {
   type WordCloudSorting,
   WordCloudSortings,
   type WordCloudWord,
-} from "@/types/components/word-cloud/word-cloud";
+} from "@/types/components/word/word-cloud";
 import { LitElement, type PropertyValues, css, html } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { styleMap } from "lit-html/directives/style-map.js";

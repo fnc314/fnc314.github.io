@@ -4,10 +4,10 @@ import lit from "eslint-plugin-lit";
 import wc from "eslint-plugin-wc";
 import { fileURLToPath } from "url";
 
-import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
+import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
-import tseslint from 'typescript-eslint';
+import tseslint from "typescript-eslint";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -17,8 +17,12 @@ const tsRules = {
   ...(tsPlugin.configs["recommended-requiring-type-checking"]?.rules ?? {}),
   ...(tsPlugin.configs.stylistic?.rules ?? {}),
   ...(tsPlugin.configs["stylistic-type-checked"]?.rules ?? {}),
-  ...(Array.isArray(wc.configs?.["flat/recommended"]) ? wc.configs["flat/recommended"][0]?.rules : wc.configs?.["flat/recommended"]?.rules),
-  ...(Array.isArray(lit.configs?.["flat/recommended"]) ? lit.configs["flat/recommended"][0]?.rules : lit.configs?.["flat/recommended"]?.rules),
+  ...(Array.isArray(wc.configs?.["flat/recommended"])
+    ? wc.configs["flat/recommended"][0]?.rules
+    : wc.configs?.["flat/recommended"]?.rules),
+  ...(Array.isArray(lit.configs?.["flat/recommended"])
+    ? lit.configs["flat/recommended"][0]?.rules
+    : lit.configs?.["flat/recommended"]?.rules),
 };
 
 export default defineConfig([
@@ -37,12 +41,12 @@ export default defineConfig([
   },
   {
     name: "app/typescript",
-    files: ["./src/**/*.ts", "./src/index.js"],
     plugins: {
       "@typescript-eslint": tseslint.plugin,
       wc,
       lit,
     },
+    files: ["./src/**/*.ts", "./src/index.js"],
     languageOptions: {
       parser: parser,
       parserOptions: {
@@ -57,6 +61,11 @@ export default defineConfig([
       },
     },
     rules: tsRules,
+    settings: {
+      lit: {
+        elementBaseClasses: ["ClassExtendingLitElement"], // Recognize `ClassExtendingLitElement` as a sub-class of LitElement
+      },
+    },
   },
   {
     name: "app/javascript-overrides",

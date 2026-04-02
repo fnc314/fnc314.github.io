@@ -1,0 +1,188 @@
+{
+  "posts": [
+    {
+      "id": "019d2e6c-355b-5749-7296-9e4d23385fc6",
+      "title": "01. Taming the Elephant Heard - From Mayhem to Micro-Managed",
+      "summary": "From Mayhem to Micro-Managed",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-from-mayhem-to-micro-managed-be02d1f58aa8",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d373f-6a75-c7b4-c630-a259f07cd762",
+      "title": "02. Taming the Elephant Heard - Establishing Existing Order",
+      "summary": "Establishing Existing Order",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-establishing-existing-order-6dc2aa452571",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d373f-8a35-d7d6-72d0-dfdcdfbbcdc2",
+      "title": "03. Taming the Elephant Heard - Plugins Over Copy-Paste",
+      "summary": "Plugins Over Copy-Paste",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d3840-8c09-c722-36a8-2218697f8ef2",
+      "title": "04. Taming the Elephant Heard - Into the Wider Infrastructure",
+      "summary": "Into the Wider Infrastructure",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-into-the-wider-infrastructure-4ffcd2865901",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d3892-b181-07dc-2aeb-e3346efe7a1f",
+      "title": "05. Taming the Elephant Heard - Right Tool for the Job",
+      "summary": "Right Tool for the Job",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-right-tool-for-the-job-27f7f7ea3d57",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d3892-b655-2753-4a5d-41cb13148ffd",
+      "title": "06. Taming the Elephant Heard - Screaming and Scripted Architecture",
+      "summary": "Screaming and Scripted Architecture",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-screaming-and-scripted-architecture-49c449e84e20",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    },
+    {
+      "id": "019d3892-bfa7-8761-de82-94078b4007f4",
+      "title": "07. Taming the Elephant Heard - To Future States and Beyond",
+      "summary": "To Future States and Beyond",
+      "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-to-future-states-and-beyond-...",
+      "tags": [
+        "Gradle",
+        "Android Developer",
+        "Android Gradle Plugin",
+        "Android"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "id": "019d3dc0-ec34-0702-824f-878d614baa9f",
+      "type": "SERIES",
+      "title": "Taming the Elephant Heard",
+      "entries": [
+        {
+          "id": "019d3dc2-78e9-177f-ba40-ba6dc9bbac08",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "01. Taming the Elephant Heard - From Mayhem to Micro-Managed",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-from-mayhem-to-micro-managed-be02d1f58aa8",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc4-1855-67fc-52d5-b41230239eee",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "02. Taming the Elephant Heard - Establishing Existing Order",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-establishing-existing-order-6dc2aa452571",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc4-bede-676a-16af-955978965469",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "03. Taming the Elephant Heard - Plugins Over Copy-Paste",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc5-8e19-e761-caf1-773042bfc568",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "04. Taming the Elephant Heard - Into the Wider Infrastructure",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-into-the-wider-infrastructure-4ffcd2865901",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a426-87e9-b235-77fccdd6ec71",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "05. Taming the Elephant Heard - Right Tool for the Job",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-right-tool-for-the-job-27f7f7ea3d57",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a62b-6727-e638-b64c0d784be8",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "06. Taming the Elephant Heard - Screaming and Scripted Architecture",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-screaming-and-scripted-architecture-49c449e84e20",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a843-97e8-1e28-230f062b2435",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "07. Taming the Elephant Heard - To Future States and Beyond",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-to-future-states-and-beyond-...",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        }
+      ]
+    }
+  ]
+}

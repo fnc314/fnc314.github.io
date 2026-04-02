@@ -51,12 +51,12 @@
           //   "timeout": 2000,
           "src": "./src",
           "dependencies": [
-            //.    "./docs/*.json"
+            "./docs/*.json",
+            "./node_modules/@material/web"
             //     "configure these globs to find manifest files from your dependencies",
             //     "and use the ! pattern to ignore manifests"
           ]
         }
-        // "plugins": ["set plugins here!"]
       }
     ],
     "types": ["node", "eslint", "rollup", "bun", "lit", "prettier", "stylelint", "tailwindcss"],
