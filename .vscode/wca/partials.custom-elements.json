@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "blog-partial",
+      "description": "Properties:\n\n  * `styles` {`any[]`} - ",
+      "attributes": []
+    },
+    {
+      "name": "code-partial",
+      "description": "Properties:\n\n  * `styles` {`any[]`} - ",
+      "attributes": []
+    },
+    {
+      "name": "profile-partial",
+      "description": "Properties:\n\n  * `styles` {`any[]`} - \n\n  * `themeConfig` - \n\n  * `onColorConfigsChange` - ",
+      "attributes": []
+    },
+    {
+      "name": "work-partial",
+      "description": "Properties:\n\n  * `styles` {`any[]`} - ",
+      "attributes": []
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

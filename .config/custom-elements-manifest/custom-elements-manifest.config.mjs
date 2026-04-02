@@ -12,18 +12,19 @@ import process from "node:process";
 
 const isDev = process.env.NODE_ENV === "development";
 
+const fileName = "custom-elements.json"
+const docsDir = "./docs/cem"
+
+/** @type {import("@custom-elements-manifest/analyzer").Config} */
 export default {
   globs: [
     "./src/components/**/*.ts",
     "./src/types/**/*.ts",
     "./src/themes/**/*.ts",
-    "./src/data/*.json",
     "./node_modules/@material/web/**/*.ts",
   ],
-  outdir: "./docs",
-  outfile: "custom-elements.json",
+  outdir: docsDir,
   dev: isDev,
-  verbose: isDev,
   dependencies: true,
   packagejson: true,
   litelement: true,
@@ -35,16 +36,22 @@ export default {
 
   plugins: [
     cemValidatorPlugin({
+      packageJsonPath: "./package.json",
+      cemFileName: fileName,
       logErrors: true,
       debug: isDev,
       skip: !isDev,
     }),
     cemSorterPlugin({
+      fileName: fileName,
+      outdir: docsDir,
       deprecatedLast: true,
       debug: isDev,
       skip: !isDev,
     }),
     cemInheritancePlugin({
+      fileName: fileName,
+      outdir: docsDir,
       debug: isDev,
       skip: !isDev,
     }),
@@ -53,10 +60,11 @@ export default {
       skip: !isDev,
     }),
     modulePathResolverPlugin({
+      fileName: fileName,
+      outdir: docsDir,
       debug: isDev,
       skip: !isDev,
-      modulePathTemplate: (modulePath, name, tagName) =>
-        modulePath.replace("./src/", "./website").replace(".ts", ".js")
+      modulePathTemplate: (modulePath) => modulePath.replace("./src", "./dist").replace(".ts", ".js"),
     }),
     typeParserPlugin({
       debug: isDev,
@@ -99,7 +107,7 @@ export default {
       typesSrc: "type",
       defaultIcon: "./src/assets/icons/icon.svg",
     }),
-  ],
+  ].map((p) => () => p),
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
   resolutionOptions: {
     extensions: [".js", ".ts", ".json"],

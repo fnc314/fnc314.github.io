@@ -7,11 +7,19 @@
     ]
   },
   "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "cem.additionalPackages": [
+    "npm:@material/web"
+  ],
+  "cem.lsp.debugLogging": true,
+  "cem.lsp.executable": "",             // Custom path (empty = use bundled)
+  "cem.lsp.trace.server": "verbose",        // LSP trace level: "off" | "messages" | "verbose"
   "css.customData": [
-    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
+    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",
   ],
   "html.customData": [
-    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json"
+    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
+    "./.vscode/wca/components.custom-elements.json",
+    "./.vscode/wca/partials.custom-elements.json",
   ],
   "postcssense.cssPath": "./src/index.css",
   "lit-plugin.logging": "verbose",
@@ -31,5 +39,5 @@
     "postcss",
     "typescript",
   ],
-  "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts"
+  "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
 }

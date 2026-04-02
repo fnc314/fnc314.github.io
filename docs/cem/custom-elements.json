@@ -1793,6 +1793,143 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/dialogs/connect/connect-dialog.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
+          "name": "ConnectDialog",
+          "cssProperties": [
+            {
+              "description": "The animation duration for expanding/collapsing connection details.",
+              "name": "--connect-dialog-content-transition",
+              "default": "0.3s"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_mdDialog",
+              "type": {
+                "text": "MdDialog"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!"
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!"
+            },
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{version}[/VI]\""
+            },
+            {
+              "kind": "method",
+              "name": "showDialog",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Shows the connect dialog and applies a custom border to the internal container."
+            },
+            {
+              "kind": "method",
+              "name": "hideDialog",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Maps to MdDialog's close method"
+            },
+            {
+              "kind": "method",
+              "name": "#rederConnections",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "connection",
+                  "type": {
+                    "text": "Connection"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleDialogEvent",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "connect-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ConnectDialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-dialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/dialogs/configs/configs-dialog.ts",
       "declarations": [
         {
@@ -2066,143 +2203,6 @@
           "declaration": {
             "name": "ConfigsDialog",
             "module": "src/components/dialogs/configs/configs-dialog.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/dialogs/connect/connect-dialog.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
-          "name": "ConnectDialog",
-          "cssProperties": [
-            {
-              "description": "The animation duration for expanding/collapsing connection details.",
-              "name": "--connect-dialog-content-transition",
-              "default": "0.3s"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "_mdDialog",
-              "type": {
-                "text": "MdDialog"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "date",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!"
-            },
-            {
-              "kind": "field",
-              "name": "time",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!"
-            },
-            {
-              "kind": "field",
-              "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{version}[/VI]\""
-            },
-            {
-              "kind": "method",
-              "name": "showDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Shows the connect dialog and applies a custom border to the internal container."
-            },
-            {
-              "kind": "method",
-              "name": "hideDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Maps to MdDialog's close method"
-            },
-            {
-              "kind": "method",
-              "name": "#rederConnections",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "connection",
-                  "type": {
-                    "text": "Connection"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_handleDialogEvent",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "Event"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit-element"
-          },
-          "tagName": "connect-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ConnectDialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "connect-dialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
           }
         }
       ]
@@ -2926,6 +2926,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/types/components/blog/blog-post.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/components/nav/routes.ts",
       "declarations": [
         {
@@ -2972,12 +2978,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/components/blog/blog-post.ts",
-      "declarations": [],
-      "exports": []
     },
     {
       "kind": "javascript-module",

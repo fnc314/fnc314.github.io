@@ -1,0 +1,2582 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/app-shell/app-shell.js",
+      "declarations": [
+        {
+          "name": "AppShell",
+          "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "onFabChangeBind",
+              "default": "this.onFabChange.bind(this)",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "\"settings\" | \"connect\""
+                  }
+                },
+                {
+                  "name": "fabConfig",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "name": "onFabChange",
+              "description": "Updates the state and DOM representation of a FAB when its configuration changes.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "FabConfigChange"
+                  }
+                }
+              ],
+              "name": "onFabConfigBind",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "PropertyValues"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "firstUpdated",
+              "description": "Lifecycle method called after the first update.\nInitializes state from the configuration service and applies initial FAB positions.",
+              "kind": "method",
+              "privacy": "protected"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "ColorSchemeConfigChange"
+                  }
+                }
+              ],
+              "name": "onColorSchemeChange",
+              "description": "Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "description": "Syncs the component state with the global application configuration.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "\"dark_mode\" | \"light_mode\" | \"routine\""
+                }
+              },
+              "name": "uiModeIcon",
+              "description": "Maps a color scheme name to a Material icon name.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_handleDialogOpened",
+              "description": "Tracks open dialogs to manage body scroll locking.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_handleDialogClosed",
+              "description": "Tracks closed dialogs to manage body scroll restoration.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "formContent",
+                  "type": {
+                    "text": "FormContent"
+                  }
+                }
+              ],
+              "name": "_onFabMenuItemClick",
+              "description": "Handles clicks on FAB menu items.\nCloses the menu and opens the configuration dialog with the requested content.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "config",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "return": {
+                "description": "The label string or an empty string if the style is icon-only."
+              },
+              "name": "_getFabLabel",
+              "description": "Generates the label string for a FAB based on its configuration style.",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L39"
+          },
+          "kind": "class",
+          "tagName": "app-shell",
+          "slots": [
+            {
+              "name": "",
+              "description": "[app-content] - The place for the dynamic application content"
+            },
+            {
+              "name": "app-nav"
+            },
+            {
+              "name": "app-content"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-fab-icon-size",
+              "default": "var(--md-icon-size)"
+            },
+            {
+              "name": "--md-icon-size"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "app-shell",
+          "declaration": {
+            "name": "AppShell",
+            "module": "src/components/app-shell/app-shell.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AppShell",
+          "declaration": {
+            "name": "AppShell",
+            "module": "src/components/app-shell/app-shell.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/blog/blog-post.js",
+      "declarations": [
+        {
+          "name": "BlogPost",
+          "summary": "Represents a published blog record, linking to the artifact",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "blogPost",
+              "type": {
+                "text": "BlogPostJson"
+              },
+              "default": "{} as BlogPostJson",
+              "kind": "field",
+              "attribute": "blogpost"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigChange",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L29"
+          },
+          "kind": "class",
+          "tagName": "blog-post",
+          "attributes": [
+            {
+              "name": "blogpost",
+              "type": {
+                "text": "BlogPostJson"
+              },
+              "default": "{} as BlogPostJson",
+              "fieldName": "blogPost"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--blog-post-animation",
+              "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`,\n\\`:focus-within\\`, and \\`:focus-visible\\` states"
+            },
+            {
+              "name": "--blog-post-primary-text-color",
+              "description": "The color of the primary text"
+            },
+            {
+              "name": "--blog-post-container-color",
+              "description": "The color of the container, {@link md-elevated-card}\nand {@link --md-elevated-card-container-color}"
+            },
+            {
+              "name": "--blog-post-word-tag-container-color",
+              "description": "The color of the container, {@link word-tag}"
+            },
+            {
+              "name": "--md-sys-color-on-primary"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--blog-post-secondary-text-color"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-sys-shape-corner-large"
+            },
+            {
+              "name": "--md-icon-size"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "blog-post",
+          "declaration": {
+            "name": "BlogPost",
+            "module": "src/components/blog/blog-post.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BlogPost",
+          "declaration": {
+            "name": "BlogPost",
+            "module": "src/components/blog/blog-post.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/blog/blog-series.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/configs/configs-dialog.js",
+      "declarations": [
+        {
+          "name": "ConfigsDialog",
+          "description": "A comprehensive configuration dialog for managing application settings.\nAllows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleDialogEvent",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "formContent",
+                  "type": {
+                    "text": "\"ui-mode\" | \"button-settings\" | \"button-connect\"",
+                    "references": [
+                      {
+                        "name": "FormContent",
+                        "module": "src/components/dialogs/configs/configs-dialog.js"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "description": "Shows the configuration dialog.",
+              "kind": "method",
+              "privacy": "public"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "hideDialog",
+              "description": "Hides the configuration dialog.",
+              "kind": "method",
+              "privacy": "public"
+            },
+            {
+              "name": "openStepUp",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CompleteStepUpDialog"
+                  }
+                }
+              ],
+              "name": "completeStepUp",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ colorScheme: ColorScheme }\u003e",
+                    "references": [
+                      {
+                        "name": "ColorSchemeChangeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "colorSchemeChangeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ permanent: boolean }\u003e",
+                    "references": [
+                      {
+                        "name": "PermanentColorSchemeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "permanentColorSchemeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "fab",
+                  "type": {
+                    "text": "\"settings\" | \"connect\""
+                  }
+                },
+                {
+                  "name": "newFabConfig",
+                  "type": {
+                    "text": "FabConfig"
+                  }
+                }
+              ],
+              "name": "onFabChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "name": "onColorThemeModeContrastChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "name": "dialogContent",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "name": "dialogTitle",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L63"
+          },
+          "kind": "class",
+          "tagName": "configs-dialog",
+          "events": [
+            {
+              "name": "fab",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "color_scheme",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-highest"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-error"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-sys-color-surface-container-lowest"
+            },
+            {
+              "name": "--icon-fill-color"
+            },
+            {
+              "name": "--md-sys-color-outline"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "configs-dialog",
+          "declaration": {
+            "name": "ConfigsDialog",
+            "module": "src/components/dialogs/configs/configs-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConfigsDialog",
+          "declaration": {
+            "name": "ConfigsDialog",
+            "module": "src/components/dialogs/configs/configs-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/connect/connect-dialog.js",
+      "declarations": [
+        {
+          "name": "ConnectDialog",
+          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "time",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"[VI]{version}[/VI]\"",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "description": "Shows the connect dialog and applies a custom border to the internal container.",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "hideDialog",
+              "description": "Maps to {@link MdDialog}'s close method",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleDialogEvent",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L29"
+          },
+          "kind": "class",
+          "tagName": "connect-dialog",
+          "cssProperties": [
+            {
+              "name": "--connect-dialog-content-transition",
+              "description": "The animation duration for expanding/collapsing connection details.",
+              "default": "0.3s"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-dialog-container-color"
+            },
+            {
+              "name": "--md-sys-typescale-body-large-size"
+            },
+            {
+              "name": "--md-ref-typeface-weight-bold"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed-dim"
+            },
+            {
+              "name": "--md-sys-color-on-primary-fixed-variant"
+            },
+            {
+              "name": "--md-sys-shape-corner-full"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--md-list-item-leading-image-width"
+            },
+            {
+              "name": "--md-list-item-leading-image-height"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-dialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConnectDialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/step-up/step-up-dialog.js",
+      "declarations": [
+        {
+          "name": "StepUpDialog",
+          "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "dialogStyle",
+              "description": "The visual style variant of the dialog, affecting colors and icons.",
+              "type": {
+                "text": "\"confirm\" | \"warning\" | \"attention\"",
+                "references": [
+                  {
+                    "name": "ConfirmDialogStyle",
+                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                  }
+                ]
+              },
+              "default": "\"confirm\"",
+              "kind": "field",
+              "attribute": "dialogStyle"
+            },
+            {
+              "name": "dialogContentString",
+              "description": "The text content to display in the dialog body.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "dialogContentString"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "showDialog",
+              "description": "Shows the step-up confirmation dialog.",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "isCancel",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "PointerEvent"
+                  }
+                }
+              ],
+              "name": "onButtonClick",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "icons",
+              "type": {
+                "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
+              },
+              "default": "{\\n    confirm: html`\u003cmd-icon slot=\"icon\"\u003echeck_circle\u003c/md-icon\u003e`,\\n    warning: html`\u003cmd-icon slot=\"icon\"\u003ewarning\u003c/md-icon\u003e`,\\n    attention: html`\u003cmd-icon slot=\"icon\"\u003ereport\u003c/md-icon\u003e`,\\n  }",
+              "kind": "field",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L24"
+          },
+          "kind": "class",
+          "tagName": "step-up-dialog",
+          "attributes": [
+            {
+              "name": "dialogStyle",
+              "description": "The visual style variant of the dialog, affecting colors and icons.",
+              "type": {
+                "text": "\"confirm\" | \"warning\" | \"attention\"",
+                "references": [
+                  {
+                    "name": "ConfirmDialogStyle",
+                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                  }
+                ]
+              },
+              "default": "\"confirm\"",
+              "fieldName": "dialogStyle"
+            },
+            {
+              "name": "dialogContentString",
+              "description": "The text content to display in the dialog body.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "dialogContentString"
+            }
+          ],
+          "events": [
+            {
+              "name": "stepUpComplete",
+              "description": "Dispatched when the user confirms or cancels the action.",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "headline",
+              "description": "The {@link MdDialog} headline {@link slot}"
+            },
+            {
+              "name": "content",
+              "description": "The body of the {@link MdDialog}"
+            },
+            {
+              "name": "actions",
+              "description": "The area of dialog action buttons"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-color-surface-variant"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            },
+            {
+              "name": "--md-sys-color-error"
+            },
+            {
+              "name": "--md-sys-color-on-error"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "step-up-dialog",
+          "declaration": {
+            "name": "StepUpDialog",
+            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "StepUpDialog",
+          "declaration": {
+            "name": "StepUpDialog",
+            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/fab-menu/fab-menu-item.js",
+      "declarations": [
+        {
+          "name": "FabMenuItem",
+          "description": "An action item within a `fab-menu`.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "label",
+              "description": "The text label displayed next to the FAB item.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "label"
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display inside the FAB item.",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "icon"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "name": "focus",
+              "description": "Focuses the underlying FAB element.",
+              "kind": "method"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L17"
+          },
+          "kind": "class",
+          "tagName": "fab-menu-item",
+          "attributes": [
+            {
+              "name": "label",
+              "description": "The text label displayed next to the FAB item.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label"
+            },
+            {
+              "name": "icon",
+              "description": "The icon to display inside the FAB item.",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"\"",
+              "fieldName": "icon"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--fab-menu-item-direction",
+              "description": "The `flex-direction` of the {@link FabMenuItem}",
+              "default": "row"
+            },
+            {
+              "name": "--fab-menu-item-justify",
+              "description": "The Flex `justify-content` of the {@link FabMenuItem}",
+              "default": "flex-end"
+            },
+            {
+              "name": "--fab-menu-item-padding-end",
+              "description": "The logical `padding-inline-end` value",
+              "default": "0"
+            },
+            {
+              "name": "--fab-menu-item-padding-start",
+              "description": "The logical `padding-inline-start` value",
+              "default": "0"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-elevation-2"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "fab-menu-item",
+          "declaration": {
+            "name": "FabMenuItem",
+            "module": "src/components/fab-menu/fab-menu-item.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabMenuItem",
+          "declaration": {
+            "name": "FabMenuItem",
+            "module": "src/components/fab-menu/fab-menu-item.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/fab-menu/fab-menu.js",
+      "declarations": [
+        {
+          "name": "FabMenu",
+          "description": "A floating action button that toggles a menu of actions.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "open",
+              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "name": "icon",
+              "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\nsuppresses the icon",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"add\"",
+              "kind": "field",
+              "attribute": "icon"
+            },
+            {
+              "name": "openedIcon",
+              "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+              "type": {
+                "text": "MaterialSymbols[number]",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"close\"",
+              "kind": "field",
+              "attribute": "opened-icon"
+            },
+            {
+              "name": "variant",
+              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "kind": "field",
+              "attribute": "variant"
+            },
+            {
+              "name": "size",
+              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "kind": "field",
+              "attribute": "size"
+            },
+            {
+              "name": "label",
+              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "label"
+            },
+            {
+              "name": "ariaLabel",
+              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "aria-label"
+            },
+            {
+              "name": "direction",
+              "description": "The direction in which the menu items should expand.",
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "kind": "field",
+              "attribute": "direction",
+              "reflects": true
+            },
+            {
+              "name": "_focusableElements",
+              "type": {
+                "text": "(HTMLElement \u0026 { focus: (options?: FocusOptions) =\u003e void })[]"
+              },
+              "readonly": true,
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "FocusEvent"
+                  }
+                }
+              ],
+              "name": "_handleFocusTrap",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "name": "_handleDocumentClick",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_toggle",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "T extends object ? PropertyValueMap\u003cT\u003e : Map\u003cPropertyKey, unknown\u003e",
+                    "references": [
+                      {
+                        "name": "PropertyValues",
+                        "package": "@lit/reactive-element"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "firstUpdated",
+              "kind": "method",
+              "privacy": "protected"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L22"
+          },
+          "kind": "class",
+          "tagName": "fab-menu",
+          "attributes": [
+            {
+              "name": "open",
+              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            },
+            {
+              "name": "icon",
+              "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\nsuppresses the icon",
+              "type": {
+                "text": "MaterialSymbols[number] | \"\"",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"add\"",
+              "fieldName": "icon"
+            },
+            {
+              "name": "opened-icon",
+              "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+              "type": {
+                "text": "MaterialSymbols[number]",
+                "references": [
+                  {
+                    "name": "MaterialSymbol",
+                    "package": "material-symbols"
+                  }
+                ]
+              },
+              "default": "\"close\"",
+              "fieldName": "openedIcon"
+            },
+            {
+              "name": "variant",
+              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "fieldName": "size"
+            },
+            {
+              "name": "label",
+              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "direction",
+              "description": "The direction in which the menu items should expand.",
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "fieldName": "direction"
+            }
+          ],
+          "slots": [
+            {
+              "name": "menu-items",
+              "description": "The content of the menu, typically {@link FabMenuItem} elements."
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--fab-menu-transition-duration",
+              "description": "The duration of the menu's opening and closing animations.",
+              "default": "200ms"
+            },
+            {
+              "name": "--md-icon-size"
+            },
+            {
+              "name": "--md-fab-margin",
+              "default": "0"
+            },
+            {
+              "name": "--md-sys-color-scrim"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "fab-menu",
+          "declaration": {
+            "name": "FabMenu",
+            "module": "src/components/fab-menu/fab-menu.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabMenu",
+          "declaration": {
+            "name": "FabMenu",
+            "module": "src/components/fab-menu/fab-menu.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/nav/nav-component.js",
+      "declarations": [
+        {
+          "name": "NavComponent",
+          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "PropertyValues"
+                  }
+                }
+              ],
+              "name": "firstUpdated",
+              "kind": "method",
+              "privacy": "protected"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L23"
+          },
+          "kind": "class",
+          "tagName": "nav-component",
+          "cssProperties": [
+            {
+              "name": "--nav-component-icon-animation",
+              "description": "The duration of the icon's fill and color transition.",
+              "default": "225ms"
+            },
+            {
+              "name": "--nav-component-icon-animation-reduced",
+              "description": "The duration of the icon's transition when motion is reduced.",
+              "default": "1ms"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-surface-container-low"
+            },
+            {
+              "name": "--md-elevation-level"
+            },
+            {
+              "name": "--md-sys-shape-corner-extra-small"
+            },
+            {
+              "name": "--md-sys-color-on-primary-fixed"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-icon-font-sharp"
+            },
+            {
+              "name": "--icon-fill-color"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "nav-component",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NavComponent",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/partial-header/partial-header.js",
+      "declarations": [
+        {
+          "name": "PartialHeader",
+          "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "headingText",
+              "description": "The text to display within the header.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "heading-text"
+            },
+            {
+              "name": "headerType",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
+              },
+              "default": "\"primary\"",
+              "kind": "field",
+              "attribute": "header-type"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/partial-header/partial-header.ts#L11"
+          },
+          "kind": "class",
+          "tagName": "partial-header",
+          "attributes": [
+            {
+              "name": "heading-text",
+              "description": "The text to display within the header.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "headingText"
+            },
+            {
+              "name": "header-type",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
+              },
+              "default": "\"primary\"",
+              "fieldName": "headerType"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-primary"
+            },
+            {
+              "name": "--md-sys-color-secondary"
+            },
+            {
+              "name": "--md-sys-color-on-secondary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "partial-header",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PartialHeader",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/profile-section/profile-section.js",
+      "declarations": [
+        {
+          "name": "ProfileSection",
+          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "sectionTitle",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "section-title"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/profile-section/profile-section.ts#L30"
+          },
+          "kind": "class",
+          "tagName": "profile-section",
+          "attributes": [
+            {
+              "name": "section-title",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "sectionTitle"
+            }
+          ],
+          "slots": [
+            {
+              "name": "section-grid-content"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-section",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfileSection",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/word-cloud.js",
+      "declarations": [
+        {
+          "name": "WordCloud",
+          "description": "A component that renders a cloud of words with various sorting and grouping options.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "words",
+              "description": "The list of words to display in the cloud.",
+              "type": {
+                "text": "WordCloudWord[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "words"
+            },
+            {
+              "name": "instantClear",
+              "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "instant-clear"
+            },
+            {
+              "name": "appearance",
+              "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+              "type": {
+                "text": "WordCloudAppearance"
+              },
+              "default": "WordCloudAppearances.SEQUENTIAL",
+              "kind": "field",
+              "attribute": "appearance"
+            },
+            {
+              "name": "grouping",
+              "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+              "type": {
+                "text": "WordCloudGrouping"
+              },
+              "default": "WordCloudGroupings.UNGROUPED",
+              "kind": "field",
+              "attribute": "grouping"
+            },
+            {
+              "name": "sorting",
+              "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+              "type": {
+                "text": "WordCloudSorting"
+              },
+              "default": "WordCloudSortings.NONE",
+              "kind": "field",
+              "attribute": "sorting"
+            },
+            {
+              "name": "delay",
+              "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+              "type": {
+                "text": "number | \"none\""
+              },
+              "default": "\"none\"",
+              "kind": "field",
+              "attribute": "delay"
+            },
+            {
+              "name": "threshold",
+              "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+              "type": {
+                "text": "number"
+              },
+              "default": "0.1",
+              "kind": "field",
+              "attribute": "threshold"
+            },
+            {
+              "name": "_intersectionObserver",
+              "type": {
+                "text": "IntersectionObserver"
+              },
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_initIntersectionObserver",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "firstUpdated",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "RenderableWordCloudWord[]"
+                }
+              },
+              "name": "_processWords",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "sorting",
+                  "type": {
+                    "text": "WordCloudSorting"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "((a: RenderableWordCloudWord, b: RenderableWordCloudWord) =\u003e number) | undefined"
+                }
+              },
+              "name": "_getSortFunction",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud.ts#L34"
+          },
+          "kind": "class",
+          "tagName": "word-cloud",
+          "attributes": [
+            {
+              "name": "words",
+              "description": "The list of words to display in the cloud.",
+              "type": {
+                "text": "WordCloudWord[]"
+              },
+              "default": "[]",
+              "fieldName": "words"
+            },
+            {
+              "name": "instant-clear",
+              "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "instantClear"
+            },
+            {
+              "name": "appearance",
+              "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+              "type": {
+                "text": "WordCloudAppearance"
+              },
+              "default": "WordCloudAppearances.SEQUENTIAL",
+              "fieldName": "appearance"
+            },
+            {
+              "name": "grouping",
+              "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+              "type": {
+                "text": "WordCloudGrouping"
+              },
+              "default": "WordCloudGroupings.UNGROUPED",
+              "fieldName": "grouping"
+            },
+            {
+              "name": "sorting",
+              "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+              "type": {
+                "text": "WordCloudSorting"
+              },
+              "default": "WordCloudSortings.NONE",
+              "fieldName": "sorting"
+            },
+            {
+              "name": "delay",
+              "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+              "type": {
+                "text": "number | \"none\""
+              },
+              "default": "\"none\"",
+              "fieldName": "delay"
+            },
+            {
+              "name": "threshold",
+              "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+              "type": {
+                "text": "number"
+              },
+              "default": "0.1",
+              "fieldName": "threshold"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--word-cloud-animation",
+              "description": "Duration of the entrance animation for each word.",
+              "default": "150ms"
+            },
+            {
+              "name": "--word-cloud-animation-reduced",
+              "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+              "default": "1ms"
+            },
+            {
+              "name": "--word-cloud-first-quartile-font-size",
+              "description": "Font size for words in the first weight quartile (highest weight).",
+              "default": "1.75rem"
+            },
+            {
+              "name": "--word-cloud-first-quartile-line-height",
+              "description": "Line height for words in the first weight quartile.",
+              "default": "1.75rem"
+            },
+            {
+              "name": "--word-cloud-second-quartile-font-size",
+              "description": "Font size for words in the second weight quartile.",
+              "default": "1.5rem"
+            },
+            {
+              "name": "--word-cloud-second-quartile-line-height",
+              "description": "Line height for words in the second weight quartile.",
+              "default": "1.5rem"
+            },
+            {
+              "name": "--word-cloud-third-quartile-font-size",
+              "description": "Font size for words in the third weight quartile.",
+              "default": "1.25rem"
+            },
+            {
+              "name": "--word-cloud-third-quartile-line-height",
+              "description": "Line height for words in the third weight quartile.",
+              "default": "1.25rem"
+            },
+            {
+              "name": "--word-cloud-fourth-quartile-font-size",
+              "description": "Font size for words in the fourth weight quartile (lowest weight).",
+              "default": "1rem"
+            },
+            {
+              "name": "--word-cloud-fourth-quartile-line-height",
+              "description": "Line height for words in the fourth weight quartile.",
+              "default": "1rem"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-secondary-container"
+            },
+            {
+              "name": "--md-sys-color-on-secondary-container"
+            },
+            {
+              "name": "--md-sys-color-secondary"
+            },
+            {
+              "name": "--md-sys-color-on-secondary"
+            },
+            {
+              "name": "--md-sys-color-secondary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-secondary-fixed"
+            },
+            {
+              "name": "--md-sys-color-tertiary-container"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary-container"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary"
+            },
+            {
+              "name": "--md-sys-color-tertiary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-tertiary-fixed"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-primary"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed"
+            },
+            {
+              "name": "--md-sys-color-on-primary-fixed"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "word-cloud",
+          "declaration": {
+            "name": "WordCloud",
+            "module": "src/components/word/word-cloud.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloud",
+          "declaration": {
+            "name": "WordCloud",
+            "module": "src/components/word/word-cloud.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/word-tag.js",
+      "declarations": [
+        {
+          "name": "WordTag",
+          "summary": "Displays a word in a simple padded box in which the text color and border are synchronised",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "word",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "word"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag.ts#L23"
+          },
+          "kind": "class",
+          "tagName": "word-tag",
+          "attributes": [
+            {
+              "name": "word",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "word"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--word-tag-color",
+              "description": "The text and border color",
+              "default": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--word-tag-background-color",
+              "description": "The background color",
+              "default": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--word-tag-font-family",
+              "description": "The font family",
+              "default": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--word-tag-font-size",
+              "description": "The font size",
+              "default": "--md-typescale-body-large-font-size"
+            },
+            {
+              "name": "--word-tag-font-weight",
+              "description": "The font weight",
+              "default": "--md-typescale-body-large-font-weight"
+            },
+            {
+              "name": "--word-tag-line-height",
+              "description": "The line height",
+              "default": "--md-typescale-body-large-lingt-height"
+            },
+            {
+              "name": "--word-tag-border-radius",
+              "description": "The corner radius (for all corners)",
+              "default": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--internal-word-tag-color",
+              "default": "var(--word-tag-color, --md-sys-color-on-primary-container)"
+            },
+            {
+              "name": "--internal-word-tag-background-color",
+              "default": "var(--word-tag-background-color, --md-sys-color-primary-container)"
+            },
+            {
+              "name": "--internal-word-tag-font-family",
+              "default": "var(--word-tag-font-family, --md-ref-typeface-brand)"
+            },
+            {
+              "name": "--internal-word-tag-font-size",
+              "default": "var(--word-tag-font-size, --md-sys-typescale-body-large-size)"
+            },
+            {
+              "name": "--internal-word-tag-font-weight",
+              "default": "var(--word-tag-font-weight, --md-sys-typescale-body-large-weight)"
+            },
+            {
+              "name": "--internal-word-tag-line-height",
+              "default": "var(--word-tag-line-height, --md-sys-typescale-body-large-line-height)"
+            },
+            {
+              "name": "--internal-word-tag-border-radius",
+              "default": "var(--word-tag-border-radius, --md-sys-shape-corner-small)"
+            },
+            {
+              "name": "--hairline-width"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "word-tag",
+          "declaration": {
+            "name": "WordTag",
+            "module": "src/components/word/word-tag.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordTag",
+          "declaration": {
+            "name": "WordTag",
+            "module": "src/components/word/word-tag.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/work-experience/work-experience.js",
+      "declarations": [
+        {
+          "name": "WorkExperience",
+          "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "isNested",
+              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "is-nested"
+            },
+            {
+              "name": "experienceRole",
+              "description": "The title of the professional role or project.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "experience-role"
+            },
+            {
+              "name": "experienceOrg",
+              "description": "The name of the organization or client.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "experience-org"
+            },
+            {
+              "name": "experienceSummary",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "experience-summary"
+            },
+            {
+              "name": "dateStart",
+              "description": "Start date information including machine-readable stamp and display text.",
+              "type": {
+                "text": "WorkDate"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "kind": "field",
+              "attribute": "date-start"
+            },
+            {
+              "name": "dateEnd",
+              "description": "End date information including machine-readable stamp and display text.",
+              "type": {
+                "text": "WorkDate"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "kind": "field",
+              "attribute": "date-end"
+            },
+            {
+              "name": "summaries",
+              "description": "A list of summary points describing achievements or responsibilities.",
+              "type": {
+                "text": "{ item: string }[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "summaries"
+            },
+            {
+              "name": "jobs",
+              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+              "type": {
+                "text": "Job[]"
+              },
+              "default": "[]",
+              "kind": "field",
+              "attribute": "jobs"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L21"
+          },
+          "kind": "class",
+          "tagName": "work-experience",
+          "attributes": [
+            {
+              "name": "is-nested",
+              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "isNested"
+            },
+            {
+              "name": "experience-role",
+              "description": "The title of the professional role or project.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "experienceRole"
+            },
+            {
+              "name": "experience-org",
+              "description": "The name of the organization or client.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "experienceOrg"
+            },
+            {
+              "name": "experience-summary",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "experienceSummary"
+            },
+            {
+              "name": "date-start",
+              "description": "Start date information including machine-readable stamp and display text.",
+              "type": {
+                "text": "WorkDate"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "fieldName": "dateStart"
+            },
+            {
+              "name": "date-end",
+              "description": "End date information including machine-readable stamp and display text.",
+              "type": {
+                "text": "WorkDate"
+              },
+              "default": "{ stamp: \"\", text: \"\" }",
+              "fieldName": "dateEnd"
+            },
+            {
+              "name": "summaries",
+              "description": "A list of summary points describing achievements or responsibilities.",
+              "type": {
+                "text": "{ item: string }[]"
+              },
+              "default": "[]",
+              "fieldName": "summaries"
+            },
+            {
+              "name": "jobs",
+              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+              "type": {
+                "text": "Job[]"
+              },
+              "default": "[]",
+              "fieldName": "jobs"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-ref-typeface-weight-bold"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "work-experience",
+          "declaration": {
+            "name": "WorkExperience",
+            "module": "src/components/work-experience/work-experience.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WorkExperience",
+          "declaration": {
+            "name": "WorkExperience",
+            "module": "src/components/work-experience/work-experience.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/partials/blog/blog-partial.js",
+      "declarations": [
+        {
+          "name": "BlogPartial",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/blog/blog-partial.ts#L8"
+          },
+          "kind": "class",
+          "tagName": "blog-partial",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "blog-partial",
+          "declaration": {
+            "name": "BlogPartial",
+            "module": "src/partials/blog/blog-partial.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BlogPartial",
+          "declaration": {
+            "name": "BlogPartial",
+            "module": "src/partials/blog/blog-partial.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/partials/code/code-partial.js",
+      "declarations": [
+        {
+          "name": "CodePartial",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/code/code-partial.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "code-partial",
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-low"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-ref-typeface-plain"
+            },
+            {
+              "name": "--md-sys-color-tertiary"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            },
+            {
+              "name": "--md-sys-shape-corner-extra-small"
+            },
+            {
+              "name": "--code-partial-animation",
+              "default": "100ms"
+            },
+            {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--code-partial-animation-reduced"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "code-partial",
+          "declaration": {
+            "name": "CodePartial",
+            "module": "src/partials/code/code-partial.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CodePartial",
+          "declaration": {
+            "name": "CodePartial",
+            "module": "src/partials/code/code-partial.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/partials/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/partials/profile/profile-partial.js",
+      "declarations": [
+        {
+          "name": "ProfilePartial",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/profile/profile-partial.ts#L17"
+          },
+          "kind": "class",
+          "tagName": "profile-partial",
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            },
+            {
+              "name": "--hairline-width"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-partial",
+          "declaration": {
+            "name": "ProfilePartial",
+            "module": "src/partials/profile/profile-partial.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfilePartial",
+          "declaration": {
+            "name": "ProfilePartial",
+            "module": "src/partials/profile/profile-partial.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/partials/work/work-partial.js",
+      "declarations": [
+        {
+          "name": "ExperiencePartial",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/work/work-partial.ts#L9"
+          },
+          "kind": "class",
+          "tagName": "work-partial",
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "work-partial",
+          "declaration": {
+            "name": "ExperiencePartial",
+            "module": "src/partials/work/work-partial.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ExperiencePartial",
+          "declaration": {
+            "name": "ExperiencePartial",
+            "module": "src/partials/work/work-partial.js"
+          }
+        }
+      ]
+    }
+  ]
+}
