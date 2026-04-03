@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "partial-header",
+      "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.\n\nAttributes:\n\n  * `heading-text` {`string`} - The text to display within the header.\n\n  * `header-type` {`\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"`} - The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `headingText` {`string`} - The text to display within the header.\n\n  * `headerType` {`\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"`} - The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+      "attributes": [
+        {
+          "name": "heading-text",
+          "description": "`heading-text` {`string`} - The text to display within the header.\n\nProperty: headingText\n\nDefault: "
+        },
+        {
+          "name": "header-type",
+          "description": "`header-type` {`\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"`} - The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.\n\nProperty: headerType\n\nDefault: primary",
+          "values": [
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "tertiary"
+            },
+            {
+              "name": "inverse"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

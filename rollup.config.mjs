@@ -50,6 +50,11 @@ export default {
       // Ensure we don't try to process TS files here
       exclude: ["**/*.ts"],
     }),
+    // rollupPostCSSLit({
+    //   include: ["./src/stylesheets/*.css"],
+    //   exclude: ["./node_modules/**"],
+    //   importPackage: "lit",
+    // }),
     rollupPostCSSLit({
       globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
       globExclude: ["./node_modules/**"],

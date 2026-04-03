@@ -1,0 +1,29 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "nav-component",
+      "path": "./../../../../src/components/nav/nav-component.ts",
+      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--nav-component-icon-animation",
+          "description": "The duration of the icon's fill and color transition.",
+          "default": "\"225ms\""
+        },
+        {
+          "name": "--nav-component-icon-animation-reduced",
+          "description": "The duration of the icon's transition when motion is reduced.",
+          "default": "\"1ms\""
+        }
+      ]
+    }
+  ]
+}

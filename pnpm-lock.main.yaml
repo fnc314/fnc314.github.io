@@ -244,6 +244,9 @@ catalogs:
     postcss-lit:
       specifier: 1.4.1
       version: 1.4.1
+    postcss-load-config:
+      specifier: 6.0.1
+      version: 6.0.1
     prettier:
       specifier: 3.8.1
       version: 3.8.1
@@ -586,6 +589,9 @@ importers:
       postcss-lit:
         specifier: catalog:devDependencies
         version: 1.4.1(jiti@2.6.1)(postcss@8.5.8)(yaml@2.8.3)
+      postcss-load-config:
+        specifier: catalog:devDependencies
+        version: 6.0.1(jiti@2.6.1)(postcss@8.5.8)(yaml@2.8.3)
       prettier:
         specifier: catalog:devDependencies
         version: 3.8.1

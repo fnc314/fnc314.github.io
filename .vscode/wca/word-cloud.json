@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "word-cloud",
+      "description": "A component that renders a cloud of words with various sorting and grouping options.\n\nAttributes:\n\n  * `words` {`WordCloudWord[]`} - The list of words to display in the cloud.\n\n  * `instant-clear` {`boolean`} - Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.\n\n  * `appearance` - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n  * `grouping` - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n\n  * `sorting` - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n  * `delay` {`number | \"none\"`} - The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.\n\n  * `threshold` {`number`} - The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `words` {`WordCloudWord[]`} - The list of words to display in the cloud.\n\n  * `instantClear` {`boolean`} - Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.\n\n  * `appearance` - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n  * `grouping` - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n\n  * `sorting` - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n  * `delay` {`number | \"none\"`} - The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.\n\n  * `threshold` {`number`} - The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.\n\n  * `_sortedWords` {`RenderableWordCloudWord[]`} - \n\n  * `_isVisible` {`boolean`} - \n\n  * `_listElement` {`HTMLUListElement`} - \n\n  * `_intersectionObserver` {`IntersectionObserver | undefined`} - ",
+      "attributes": [
+        {
+          "name": "words",
+          "description": "`words` {`WordCloudWord[]`} - The list of words to display in the cloud.\n\nProperty: words\n\nDefault: "
+        },
+        {
+          "name": "instant-clear",
+          "description": "`instant-clear` {`boolean`} - Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.\n\nProperty: instantClear\n\nDefault: false",
+          "valueSet": "v"
+        },
+        {
+          "name": "appearance",
+          "description": "`appearance` - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\nProperty: appearance\n\nDefault: SEQUENTIAL"
+        },
+        {
+          "name": "grouping",
+          "description": "`grouping` - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n\nProperty: grouping\n\nDefault: UNGROUPED"
+        },
+        {
+          "name": "sorting",
+          "description": "`sorting` - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\nProperty: sorting\n\nDefault: NONE"
+        },
+        {
+          "name": "delay",
+          "description": "`delay` {`number | \"none\"`} - The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.\n\nProperty: delay\n\nDefault: none",
+          "values": [
+            {
+              "name": "none"
+            }
+          ]
+        },
+        {
+          "name": "threshold",
+          "description": "`threshold` {`number`} - The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.\n\nProperty: threshold\n\nDefault: 0.1"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

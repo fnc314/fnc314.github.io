@@ -3,13 +3,9 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 
-interface Project {
-  name: string;
-  url: string;
-  description: string;
-  technologies: string[];
-}
-
+/**
+ * @summary The {@link LitElement} for `/#code` route
+ */
 @customElement("code-partial")
 export class CodePartial extends LitElement {
   static override styles = [
@@ -73,8 +69,9 @@ export class CodePartial extends LitElement {
         &:hover,
         &:focus,
         &:focus-within {
-          transform: translateY(-4px);
           --md-elevation-level: 4;
+
+          transform: translateY(-4px);
           background-color: var(--md-sys-color-surface-container-high);
           border-radius: var(--md-sys-shape-corner-medium);
         }
@@ -110,7 +107,7 @@ export class CodePartial extends LitElement {
 
         p {
           margin: 0;
-          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         footer {
@@ -138,7 +135,7 @@ export class CodePartial extends LitElement {
               outline var(--code-partial-animation) ease-in-out,
               border-radius var(--code-partial-animation) ease-in-out;
 
-            &:where(:focus-within, a:focused, :hover, a:hover) {
+            &:where(:focus-within, a:focus, :hover, a:hover) {
               transform: translateY(-4px);
               background-color: var(--md-sys-color-surface);
               color: var(--md-sys-color-on-surface);
@@ -161,13 +158,14 @@ export class CodePartial extends LitElement {
       pre {
         display: inline;
         white-space: pre-wrap;
-        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       @media (prefers-reduced-motion: reduce) {
         .code-widget {
           transition: all var(--code-partial-animation-reduced) ease-in-out;
         }
+
         .tech-stack li {
           transition: all var(--code-partial-animation-reduced) ease-in-out;
         }

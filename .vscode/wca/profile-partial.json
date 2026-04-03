@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "profile-partial",
+      "description": "Properties:\n\n  * `styles` {`any[]`} - \n\n  * `themeConfig` - \n\n  * `onColorConfigsChange` - ",
+      "attributes": []
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

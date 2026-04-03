@@ -1,29 +1,19 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, query } from "lit/decorators.js";
 import pkg from "./../../../../package.json" with { type: "json" };
 
-interface Connection {
-  label: string;
-  connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "medium" | "googleDocs" | "pdf", ConnectionInstance>>;
-}
-
-interface ConnectionInstance {
-  href: string;
-  start: string;
-  overline: string;
-  text: string;
-}
-
 /**
- * A dialog component that provides various contact methods and social links.
- * It features collapsible sections for different connection categories.
+ * @summary A dialog component that provides various contact methods and social links. It
+ *   features collapsible sections for different connection categories.
+ *
+ * @cssprop [--connect-dialog-content-transition=0.3s] - The animation duration for expanding/collapsing connection details.
  *
  * @element connect-dialog
- * @cssprop [--connect-dialog-content-transition=0.3s] - The animation duration for expanding/collapsing connection details.
  */
 @customElement("connect-dialog")
 export class ConnectDialog extends LitElement {
@@ -32,31 +22,24 @@ export class ConnectDialog extends LitElement {
     css`
       :host {
         --connect-dialog-content-transition: 0.3s;
-
         --md-dialog-icon-size: 3rem;
         --md-dialog-icon-color: var(--md-sys-color-primary);
         --md-dialog-icon-font: var(--md-ref-typeface-brand);
         --md-dialog-container-color: var(--md-sys-color-surface-container-high);
         --md-dialog-container-shape: var(--md-sys-shape-corner-medium);
         --md-dialog-headline-color: var(--md-sys-color-primary);
-
         --md-text-button-container-shape: var(--md-sys-shape-corner-small);
         --md-text-button-label-text-color: var(--md-sys-color-on-surface-variant);
-
         --md-list-container-color: var(--md-dialog-container-color);
-
         --md-list-item-label-text-size: var(--md-sys-typescale-body-large-size);
         --md-list-item-label-text-font: var(--md-ref-typeface-brand);
         --md-list-item-label-text-weight: var(--md-ref-typeface-weight-bold);
-
         --md-list-item-supporting-text-color: var(--md-sys-color-primary);
-
         --md-list-item-hover-label-text-color: var(--md-sys-color-on-surface-variant);
         --md-list-item-hover-state-layer-color: var(--md-sys-color-primary);
         --md-list-item-hover-state-layer-opacity: 0.12;
         --md-list-item-pressed-state-layer-color: var(--md-sys-color-primary);
         --md-list-item-pressed-state-layer-opacity: 0.12;
-
         --md-list-item-leading-icon-size: 2rem;
         --md-list-item-leading-image-width: 2rem;
         --md-list-item-leading-image-height: 2rem;
@@ -90,9 +73,7 @@ export class ConnectDialog extends LitElement {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          border-block-start-width: var(--hairline-width);
-          border-block-start-color: var(--md-sys-color-primary);
-          border-block-start-style: solid;
+          border-block-start: var(--hairline-width) solid var(--md-sys-color-primary);
           padding: 1rem;
 
           p {
@@ -141,7 +122,7 @@ export class ConnectDialog extends LitElement {
             &:focus,
             &:focus-within,
             &:hover {
-              background-color: color(from var(--md-sys-color-primary) srgb r g b / 0.12);
+              background-color: color(from var(--md-sys-color-primary) srgb r g b / 12%);
               transition: background-color 0.1s ease-in-out;
 
               h3 {
@@ -169,6 +150,7 @@ export class ConnectDialog extends LitElement {
             grid-template-rows: 1fr;
             visibility: visible;
           }
+
           &[open] {
             md-icon {
               transform: rotate(0deg);
@@ -177,12 +159,13 @@ export class ConnectDialog extends LitElement {
 
           md-list {
             --md-icon-size: var(--md-list-item-leading-image-width);
+
             padding-block: 0;
 
             md-list-item {
               [slot="start"] {
                 padding: 1rem;
-                background-color: color(from var(--md-sys-color-primary-fixed-dim) srgb r g b / 0.5);
+                background-color: color(from var(--md-sys-color-primary-fixed-dim) srgb r g b / 50%);
                 color: var(--md-sys-color-on-primary-fixed-variant);
                 border-radius: var(--md-sys-shape-corner-full);
               }

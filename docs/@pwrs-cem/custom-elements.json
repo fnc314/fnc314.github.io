@@ -252,7 +252,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L29"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L28"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -330,6 +330,123 @@
     {
       "kind": "javascript-module",
       "path": "src/components/blog/blog-series.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code/code-project.js",
+      "declarations": [
+        {
+          "name": "CodeProject",
+          "summary": "Renders a (`GitHub`-hosted) coding project",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{} as CodeProjectData",
+              "kind": "field",
+              "attribute": "codeproject"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project.ts#L16"
+          },
+          "kind": "class",
+          "tagName": "code-project",
+          "attributes": [
+            {
+              "name": "codeproject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{} as CodeProjectData",
+              "fieldName": "codeProject"
+            }
+          ],
+          "slots": [
+            {
+              "name": "title"
+            },
+            {
+              "name": "summary"
+            },
+            {
+              "name": "tech"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "title"
+            },
+            {
+              "name": "summary"
+            },
+            {
+              "name": "tech"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-color-surface-container-low"
+            },
+            {
+              "name": "--code-project-animation",
+              "default": "150ms"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            },
+            {
+              "name": "--md-sys-shape-corner-extra-small"
+            },
+            {
+              "name": "--code-partial-animation"
+            },
+            {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "code-project",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CodeProject",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -2037,10 +2154,28 @@
               "default": "\"\"",
               "kind": "field",
               "attribute": "word"
+            },
+            {
+              "name": "heaviness",
+              "type": {
+                "text": "WordTagHeaviness"
+              },
+              "default": "\"normal\"",
+              "kind": "field",
+              "attribute": "heaviness"
+            },
+            {
+              "name": "hrefUrl",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "hrefurl"
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag.ts#L23"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag.ts#L30"
           },
           "kind": "class",
           "tagName": "word-tag",
@@ -2052,6 +2187,33 @@
               },
               "default": "\"\"",
               "fieldName": "word"
+            },
+            {
+              "name": "heaviness",
+              "type": {
+                "text": "WordTagHeaviness"
+              },
+              "default": "\"normal\"",
+              "fieldName": "heaviness"
+            },
+            {
+              "name": "hrefurl",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "hrefUrl"
+            }
+          ],
+          "slots": [
+            {
+              "name": ""
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "word-tag",
+              "summary": "The same `\u003cspan\u003e` styled by the component"
             }
           ],
           "cssProperties": [
@@ -2078,7 +2240,7 @@
             {
               "name": "--word-tag-font-weight",
               "description": "The font weight",
-              "default": "--md-typescale-body-large-font-weight"
+              "default": "--md-ref-typeface-weight-regular"
             },
             {
               "name": "--word-tag-line-height",
@@ -2091,35 +2253,53 @@
               "default": "--md-sys-shape-corner-small"
             },
             {
+              "name": "--md-sys-color-on-primary-container"
+            },
+            {
+              "name": "--md-sys-color-primary-container"
+            },
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-typescale-body-large-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-large-weight"
+            },
+            {
+              "name": "--md-ref-typeface-weight-regular"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
               "name": "--internal-word-tag-color",
-              "default": "var(--word-tag-color, --md-sys-color-on-primary-container)"
+              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
             },
             {
               "name": "--internal-word-tag-background-color",
-              "default": "var(--word-tag-background-color, --md-sys-color-primary-container)"
+              "default": "var(--word-tag-background-color, var(--md-sys-color-primary-container))"
             },
             {
               "name": "--internal-word-tag-font-family",
-              "default": "var(--word-tag-font-family, --md-ref-typeface-brand)"
+              "default": "var(--word-tag-font-family, var(--md-ref-typeface-brand))"
             },
             {
               "name": "--internal-word-tag-font-size",
-              "default": "var(--word-tag-font-size, --md-sys-typescale-body-large-size)"
+              "default": "var(--word-tag-font-size, var(--md-sys-typescale-body-large-size))"
             },
             {
               "name": "--internal-word-tag-font-weight",
-              "default": "var(--word-tag-font-weight, --md-sys-typescale-body-large-weight)"
+              "default": "var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight))"
             },
             {
               "name": "--internal-word-tag-line-height",
-              "default": "var(--word-tag-line-height, --md-sys-typescale-body-large-line-height)"
+              "default": "var(--word-tag-line-height, var(--md-ref-typeface-weight-regular))"
             },
             {
               "name": "--internal-word-tag-border-radius",
-              "default": "var(--word-tag-border-radius, --md-sys-shape-corner-small)"
-            },
-            {
-              "name": "--hairline-width"
+              "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
             }
           ],
           "customElement": true
@@ -2399,18 +2579,29 @@
       "declarations": [
         {
           "name": "CodePartial",
+          "summary": "The {@link LitElement} for `/#code` route",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/code/code-partial.ts#L14"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/code/code-partial.ts#L11"
           },
           "kind": "class",
           "tagName": "code-partial",
           "cssProperties": [
             {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
               "name": "--md-sys-color-surface-container-low"
+            },
+            {
+              "name": "--code-partial-animation",
+              "default": "100ms"
             },
             {
               "name": "--md-sys-color-surface-container-high"
@@ -2425,26 +2616,7 @@
               "name": "--md-sys-color-tertiary"
             },
             {
-              "name": "--md-sys-color-inverse-surface"
-            },
-            {
-              "name": "--md-sys-color-inverse-on-surface"
-            },
-            {
-              "name": "--md-sys-shape-corner-extra-small"
-            },
-            {
-              "name": "--code-partial-animation",
-              "default": "100ms"
-            },
-            {
-              "name": "--md-sys-color-surface"
-            },
-            {
               "name": "--md-sys-color-on-surface"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
             },
             {
               "name": "--code-partial-animation-reduced"

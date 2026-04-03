@@ -146,6 +146,7 @@
     "lit-analyzer": "catalog:devDependencies",
     "postcss": "catalog:devDependencies",
     "postcss-lit": "catalog:devDependencies",
+    "postcss-load-config": "catalog:devDependencies",
     "prettier": "catalog:devDependencies",
     "prettier-plugin-tailwindcss": "catalog:devDependencies",
     "prettier-plugin-toml": "catalog:devDependencies",

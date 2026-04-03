@@ -20,6 +20,7 @@
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "./.vscode/wca/components.custom-elements.json",
     "./.vscode/wca/partials.custom-elements.json",
+    "./.vscode/wca/**/*.json",
   ],
   "postcssense.cssPath": "./src/index.css",
   "lit-plugin.logging": "verbose",

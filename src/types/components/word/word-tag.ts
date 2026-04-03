@@ -1,0 +1,1 @@
+export type WordTagHeaviness = "normal" | "heavy";

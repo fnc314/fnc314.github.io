@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "word-tag",
+      "description": "Slots:\n\n  * `word-tag` {} - The same word wrapper\n\nAttributes:\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+      "attributes": [
+        {
+          "name": "hrefUrl",
+          "description": "`hrefUrl` {`string`} - \n\nProperty: hrefUrl\n\nDefault: "
+        },
+        {
+          "name": "word",
+          "description": "`word` {string} - The tagged word\n\nProperty: word\n\nDefault: "
+        },
+        {
+          "name": "heaviness",
+          "description": "`heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\nProperty: heaviness\n\nDefault: normal"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

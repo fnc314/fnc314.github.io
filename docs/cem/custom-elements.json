@@ -28,6 +28,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "module": "src/components/code/code-project"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "module": "src/components/dialogs/configs/configs-dialog"
           }
         },
@@ -457,6 +465,65 @@
       "path": "src/components/blog/blog-series.ts",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code/code-project.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeProject",
+          "members": [
+            {
+              "kind": "field",
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "description": "The {@link CodeProjectData} to render",
+              "attribute": "codeProject"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "description": "The {@link CodeProjectData} to render",
+              "fieldName": "codeProject"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "summary": "Renders a (`GitHub`-hosted) coding project",
+          "tagName": "code-project",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CodeProject",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "code-project",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -1119,6 +1186,64 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/profile-section/profile-section.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+          "name": "ProfileSection",
+          "members": [
+            {
+              "kind": "field",
+              "name": "sectionTitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
+              "attribute": "section-title"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "section-title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
+              "fieldName": "sectionTitle"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "profile-section",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProfileSection",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-section",
+          "declaration": {
+            "name": "ProfileSection",
+            "module": "src/components/profile-section/profile-section.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/word/word-cloud.ts",
       "declarations": [
         {
@@ -1440,7 +1565,7 @@
             {
               "description": "The font weight",
               "name": "--word-tag-font-weight",
-              "default": "--md-typescale-body-large-font-weight"
+              "default": "--md-ref-typeface-weight-regular"
             },
             {
               "description": "The line height",
@@ -1453,6 +1578,9 @@
               "default": "--md-sys-shape-corner-small"
             }
           ],
+          "slots": [
+            {}
+          ],
           "members": [
             {
               "kind": "field",
@@ -1463,6 +1591,25 @@
               "default": "\"\"",
               "description": "The tagged word",
               "attribute": "word"
+            },
+            {
+              "kind": "field",
+              "name": "heaviness",
+              "type": {
+                "text": "WordTagHeaviness"
+              },
+              "default": "\"normal\"",
+              "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+              "attribute": "heaviness"
+            },
+            {
+              "kind": "field",
+              "name": "hrefUrl",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "hrefUrl"
             }
           ],
           "attributes": [
@@ -1474,6 +1621,23 @@
               "default": "\"\"",
               "description": "The tagged word",
               "fieldName": "word"
+            },
+            {
+              "name": "heaviness",
+              "type": {
+                "text": "WordTagHeaviness"
+              },
+              "default": "\"normal\"",
+              "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+              "fieldName": "heaviness"
+            },
+            {
+              "name": "hrefUrl",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "hrefUrl"
             }
           ],
           "superclass": {
@@ -1500,64 +1664,6 @@
           "declaration": {
             "name": "WordTag",
             "module": "src/components/word/word-tag.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/profile-section/profile-section.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
-          "name": "ProfileSection",
-          "members": [
-            {
-              "kind": "field",
-              "name": "sectionTitle",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-              "attribute": "section-title"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "section-title",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-              "fieldName": "sectionTitle"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "profile-section",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ProfileSection",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "profile-section",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.ts"
           }
         }
       ]
@@ -1787,143 +1893,6 @@
           "declaration": {
             "name": "WorkExperience",
             "module": "src/components/work-experience/work-experience.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/dialogs/connect/connect-dialog.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
-          "name": "ConnectDialog",
-          "cssProperties": [
-            {
-              "description": "The animation duration for expanding/collapsing connection details.",
-              "name": "--connect-dialog-content-transition",
-              "default": "0.3s"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "_mdDialog",
-              "type": {
-                "text": "MdDialog"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "date",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!"
-            },
-            {
-              "kind": "field",
-              "name": "time",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!"
-            },
-            {
-              "kind": "field",
-              "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "\"[VI]{version}[/VI]\""
-            },
-            {
-              "kind": "method",
-              "name": "showDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Shows the connect dialog and applies a custom border to the internal container."
-            },
-            {
-              "kind": "method",
-              "name": "hideDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Maps to MdDialog's close method"
-            },
-            {
-              "kind": "method",
-              "name": "#rederConnections",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "connection",
-                  "type": {
-                    "text": "Connection"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_handleDialogEvent",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "Event"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit-element"
-          },
-          "tagName": "connect-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ConnectDialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "connect-dialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
           }
         }
       ]
@@ -2203,6 +2172,143 @@
           "declaration": {
             "name": "ConfigsDialog",
             "module": "src/components/dialogs/configs/configs-dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialogs/connect/connect-dialog.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
+          "name": "ConnectDialog",
+          "cssProperties": [
+            {
+              "description": "The animation duration for expanding/collapsing connection details.",
+              "name": "--connect-dialog-content-transition",
+              "default": "0.3s"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_mdDialog",
+              "type": {
+                "text": "MdDialog"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!"
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!"
+            },
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"[VI]{version}[/VI]\""
+            },
+            {
+              "kind": "method",
+              "name": "showDialog",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Shows the connect dialog and applies a custom border to the internal container."
+            },
+            {
+              "kind": "method",
+              "name": "hideDialog",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Maps to MdDialog's close method"
+            },
+            {
+              "kind": "method",
+              "name": "#rederConnections",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "connection",
+                  "type": {
+                    "text": "Connection"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleDialogEvent",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "connect-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ConnectDialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-dialog",
+          "declaration": {
+            "name": "ConnectDialog",
+            "module": "src/components/dialogs/connect/connect-dialog.ts"
           }
         }
       ]
@@ -2932,49 +3038,27 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/nav/routes.ts",
+      "path": "src/types/components/code/code-project.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/work-experience/work-experience.ts",
       "declarations": [
         {
           "kind": "variable",
-          "name": "Routes",
-          "type": {
-            "text": "{\n  PROFILE: \"profile\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
-          },
-          "default": "{ PROFILE: \"profile\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
-        },
-        {
-          "kind": "function",
-          "name": "hashToRoute",
-          "return": {
-            "type": {
-              "text": "Route"
-            }
-          },
-          "parameters": [
-            {
-              "name": "hash",
-              "type": {
-                "text": "string"
-              }
-            }
-          ]
+          "name": "data",
+          "default": "WorkJson"
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Routes",
+          "name": "data",
           "declaration": {
-            "name": "Routes",
-            "module": "src/types/components/nav/routes.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "hashToRoute",
-          "declaration": {
-            "name": "hashToRoute",
-            "module": "src/types/components/nav/routes.ts"
+            "name": "data",
+            "module": "src/types/components/work-experience/work-experience.ts"
           }
         }
       ]
@@ -3088,21 +3172,49 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/work-experience/work-experience.ts",
+      "path": "src/types/components/nav/routes.ts",
       "declarations": [
         {
           "kind": "variable",
-          "name": "data",
-          "default": "WorkJson"
+          "name": "Routes",
+          "type": {
+            "text": "{\n  PROFILE: \"profile\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
+          },
+          "default": "{ PROFILE: \"profile\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
+        },
+        {
+          "kind": "function",
+          "name": "hashToRoute",
+          "return": {
+            "type": {
+              "text": "Route"
+            }
+          },
+          "parameters": [
+            {
+              "name": "hash",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "data",
+          "name": "Routes",
           "declaration": {
-            "name": "data",
-            "module": "src/types/components/work-experience/work-experience.ts"
+            "name": "Routes",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hashToRoute",
+          "declaration": {
+            "name": "hashToRoute",
+            "module": "src/types/components/nav/routes.ts"
           }
         }
       ]

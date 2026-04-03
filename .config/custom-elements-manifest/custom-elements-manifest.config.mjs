@@ -34,6 +34,18 @@ export default {
   //   return program.getSourceFiles().filter((sf) => globs.find((glob) => sf.fileName.includes(glob)));
   // },
 
+  // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
+  resolutionOptions: {
+    extensions: [".js", ".ts", ".json"],
+    mainFields: ["module", "main"],
+    conditionNames: ["import", "require"],
+    tsconfig: {
+      configFile: "./tsconfig.json",
+    },
+    moduleType: true,
+    // ... other oxc-resolver options
+  },
+
   plugins: [
     cemValidatorPlugin({
       packageJsonPath: "./package.json",
@@ -73,7 +85,9 @@ export default {
     jsdocExamplePlugin(),
     readmePlugin({}),
     customElementVsCodePlugin({
-      outdir: "./.vscode/custom-elements-manifest",
+      outdir: "./.vscode/cem",
+      htmlFileName: "./.vscode/cem/vscode.html-custom-data.json",
+      cssFileName: "./.vscode/cem/vscode.css-custom-data.json",
       descriptionSrc: "description",
       hideSlotDocs: false,
       hideCssPartsDocs: false,
@@ -108,15 +122,4 @@ export default {
       defaultIcon: "./src/assets/icons/icon.svg",
     }),
   ].map((p) => () => p),
-  // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
-  resolutionOptions: {
-    extensions: [".js", ".ts", ".json"],
-    mainFields: ["module", "main"],
-    conditionNames: ["import", "require"],
-    tsconfig: {
-      configFile: "./tsconfig.json",
-    },
-    moduleType: true,
-    // ... other oxc-resolver options
-  },
 };

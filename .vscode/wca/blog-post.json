@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "blog-post",
+      "description": "Attributes:\n\n  * `blogPost` - \n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `blogPost` - \n\n  * `darkMode` {`boolean`} - \n\n  * `onAppConfigChange` - \n\n  * `object Object],[object Object],[object Object` - ",
+      "attributes": [
+        {
+          "name": "blogPost",
+          "description": "`blogPost` - \n\nProperty: blogPost\n\nDefault: [object Object]"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}
