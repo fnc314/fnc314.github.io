@@ -23,7 +23,7 @@ import { configsService } from "./services/configs/configs-service.js";
 import "./services/index.js";
 import { themeService } from "./services/theme/theme-service.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
-import { Routes } from "./types/components/nav/routes.js";
+import { ROUTES } from "./types/components/nav/routes.js";
 import "./types/index.js";
 import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
 
@@ -38,7 +38,7 @@ const domLoadedListener = () => {
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
-    window.history.replaceState(null, "", `${window.location.href}#${Routes.PROFILE}`);
+    window.history.replaceState(null, "", `${window.location.href}#${ROUTES.PROFILE}`);
   }
 
   const matScheme =
