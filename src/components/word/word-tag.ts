@@ -48,7 +48,7 @@ export class WordTag extends LitElement {
         --internal-word-tag-font-weight: var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight));
 
         /** @ignore */
-        --internal-word-tag-line-height: var(--word-tag-line-height, var(--md-ref-typeface-weight-regular));
+        --internal-word-tag-line-height: var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height));
 
         /** @ignore */
         --internal-word-tag-border-radius: var(--word-tag-border-radius, var(--md-sys-shape-corner-small));
