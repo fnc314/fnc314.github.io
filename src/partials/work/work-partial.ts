@@ -27,7 +27,6 @@ export class ExperiencePartial extends LitElement {
         grid-template-rows: min-content;
         grid-auto-rows: auto;
         height: min-content;
-        min-height: 100dvh;
         padding-inline: 1rem;
       }
 

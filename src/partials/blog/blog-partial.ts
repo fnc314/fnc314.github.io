@@ -10,9 +10,10 @@ export class BlogPartial extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        display: block;
       }
 
-      section {
+      article {
         display: grid;
         grid-template-areas:
           "header"
@@ -30,8 +31,8 @@ export class BlogPartial extends LitElement {
 
         .posts {
           grid-area: posts;
-          display: grid;
-          grid-template-columns: subgrid;
+          display: flex;
+          flex-flow: column nowrap;
           gap: 1rem;
         }
       }
@@ -40,7 +41,7 @@ export class BlogPartial extends LitElement {
 
   override render() {
     return html`
-      <section>
+      <article>
         <partial-header
           .headerType=${"inverse"}
           .headingText=${"Blog Posts"}
@@ -51,7 +52,7 @@ export class BlogPartial extends LitElement {
               html` <blog-post .blogPost=${post}></blog-post> `,
           )}
         </div>
-      </section>
+      </article>
     `;
   }
 }

@@ -2,15 +2,33 @@
   "projects": [
     {
       "name": "project-collections-gradle-settings-plugin",
-      "technologies": ["<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"],
+      "technologies": [
+        "<a slot=\"word-tag-slot\" href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"
+      ],
+      "tech": [
+        {
+          "name": "Gradle",
+          "url": "https://docs.gradle.org/"
+        }
+      ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
       "description": "A <pre>gradle.settings(.kts)</pre> plugin streamlining invocations of <pre>Settings.include</pre> for nested collections of sub-projects"
     },
     {
       "name": "material-theme-viewer",
       "technologies": [
-        "<a href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
-        "<a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>"
+        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>"
+      ],
+      "tech": [
+        {
+          "name": "HTML/CSS/JS",
+          "url": "https://developer.mozilla.org/"
+        },
+        {
+          "name": "Material Theme Builder",
+          "url": "https://material-foundation.github.io/material-theme-builder/"
+        }
       ],
       "url": "https://github.com/fnc314/material-theme-viewer",
       "description": "Displays the output of <a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a> in a simple tabbed interface"
@@ -18,9 +36,23 @@
     {
       "name": "fnc314-kmp",
       "technologies": [
-        "<a href=\"https://kotlinlang.org/\" target=\"_blank\">Kotlin</a>",
-        "<a href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>",
-        "<a href=\"https://developer.android.com/\" target=\"_blank\">Android</a>"
+        "<a slot=\"word-tag-slot\" href=\"https://kotlinlang.org/\" target=\"_blank\">Kotlin</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://developer.android.com/\" target=\"_blank\">Android</a>"
+      ],
+      "tech": [
+        {
+          "name": "Kotlin",
+          "url": "https://kotlinlang.org/"
+        },
+        {
+          "name": "Gradle",
+          "url": "https://docs.gradle.org/"
+        },
+        {
+          "name": "Android",
+          "url": "https://developer.android.com/"
+        }
       ],
       "url": "https://github.com/fnc314/fnc314-kmp",
       "description": "A <abbr title=\"Kotlin Multiplatform\">KMP</abbr> (Kotlin Multiplatform) sample generated from the <a href=\"https://kmp.jetbrains.com/\" target=\"_blank\">KMP Wizard</a>"
@@ -28,8 +60,18 @@
     {
       "name": "mac-os-env-scripts",
       "technologies": [
-        "<a href=\"https://www.gnu.org/software/bash/\" target=\"_blank\">Bash</a>",
-        "<a href=\"https://ohmyz.sh/\" target=\"_blank\">Oh-My-Zsh</a>"
+        "<a slot=\"word-tag-slot\" href=\"https://www.gnu.org/software/bash/\" target=\"_blank\">Bash</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://ohmyz.sh/\" target=\"_blank\">Oh-My-Zsh</a>"
+      ],
+      "tech": [
+        {
+          "name": "Bash",
+          "url": "https://www.gnu.org/software/bash/"
+        },
+        {
+          "name": "Oh-My-Zsh",
+          "url": "https://ohmyz.sh/"
+        }
       ],
       "url": "https://github.com/fnc314/mac-os-env-scripts",
       "description": "Convenient scripts for <pre>bash</pre> or <pre>zsh</pre> terminals, used on MacOS"
@@ -37,19 +79,77 @@
     {
       "name": "fnc314.github.io",
       "technologies": [
-        "<a href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
-        "<a href=\"https://lit.dev/\" target=\"_blank\">Lit</a>",
-        "<a href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
-        "<a href=\"https://nodejs.org/\" target=\"_blank\">Node</a>",
-        "<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>",
-        "<a href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>",
-        "<a href=\"https://mise.jdx.dev/\" target=\"_blank\">Mise</a>",
-        "<a href=\"https://pnpm.io/\" target=\"_blank\">PNPM</a>",
-        "<a href=\"https://rollupjs.org/\" target=\"_blank\">RollUp</a>",
-        "<a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>",
-        "<a href=\"https://prettier.io/\" target=\"_blank\">Prettier</a>",
-        "<a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>",
-        "<a href=\"https://stylelint.io/\" target=\"_blank\">StyleLint</a>"
+        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://lit.dev/\" target=\"_blank\">Lit</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://nodejs.org/\" target=\"_blank\">Node</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://mise.jdx.dev/\" target=\"_blank\">Mise</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://pnpm.io/\" target=\"_blank\">PNPM</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://rollupjs.org/\" target=\"_blank\">RollUp</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://prettier.io/\" target=\"_blank\">Prettier</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://stylelint.io/\" target=\"_blank\">StyleLint</a>"
+      ],
+      "tech": [
+        {
+          "name": "HTML/CSS/JS",
+          "url": "https://developer.mozilla.org/"
+        },
+        {
+          "name": "Lit",
+          "url": "https://lit.dev/"
+        },
+        {
+          "name": "TypeScript",
+          "url": "https://typescriptlang.org/"
+        },
+        {
+          "name": "Node",
+          "url": "https://nodejs.org/"
+        },
+        {
+          "name": "Web Components",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+        },
+        {
+          "name": "Material Components Web",
+          "url": "https://github.com/material-components/material-web"
+        },
+        {
+          "name": "Mise",
+          "url": "https://mise.jdx.dev/"
+        },
+        {
+          "name": "PNPM",
+          "url": "https://pnpm.io/"
+        },
+        {
+          "name": "RollUp",
+          "url": "https://rollupjs.org/"
+        },
+        {
+          "name": "Material Theme Builder",
+          "url": "https://material-foundation.github.io/material-theme-builder/"
+        },
+        {
+          "name": "Prettier",
+          "url": "https://prettier.io/"
+        },
+        {
+          "name": "ESLint",
+          "url": "https://eslint.org/"
+        },
+        {
+          "name": "StyleLint",
+          "url": "https://stylelint.io/"
+        },
+        {
+          "name": "PostCSS",
+          "url": "https://postcss.org/"
+        }
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",
       "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
@@ -57,8 +157,18 @@
     {
       "name": "project_euler",
       "technologies": [
-        "<a href=\"https://python.org/\" target=\"_blank\">Python</a>",
-        "<a href=\"https://www.ruby-lang.org/en/\" target=\"_blank\">Ruby</a>"
+        "<a slot=\"word-tag-slot\" href=\"https://python.org/\" target=\"_blank\">Python</a>",
+        "<a slot=\"word-tag-slot\" href=\"https://www.ruby-lang.org/en/\" target=\"_blank\">Ruby</a>"
+      ],
+      "tech": [
+        {
+          "name": "Python",
+          "url": "https://python.org/"
+        },
+        {
+          "name": "Ruby",
+          "url": "https://www.ruby-lang.org/en/"
+        }
       ],
       "url": "https://github.com/fnc314/project_euler",
       "description": "Solutions to various <a href=\"https://projecteuler.net/\" target=\"_blank\">Project Euler</a> problems"

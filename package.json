@@ -32,6 +32,7 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "scripts": {
+    "@pwrs:cem:generate": "NODE_ENV=development pnpx @pwrs/cem generate --config ./.config/cem.yaml -v",
     "build": "pnpm rollup -c rollup.config.mjs",
     "build:watch": "pnpm rollup -c rollup.config.mjs --watch",
     "build:dev": "NODE_ENV=development pnpm run build",
@@ -62,7 +63,10 @@
     "test:dev": "pnpm wtr",
     "test:prod": "MODE=prod pnpm wtr",
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
-    "test:watch": "pnpm wtr --watch"
+    "test:watch": "pnpm wtr --watch",
+    "wca:json": "pnpx web-component-analyzer ",
+    "wca:markdown": "",
+    "wca:vscode": "pnpx web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
   },
   "dependencies": {
     "@lit-labs/motion": "catalog:dependencies",

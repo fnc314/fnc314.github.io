@@ -17,7 +17,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: revert;
   transition:
     stroke var(--color-transition-duration) var(--color-transition-timing),
     fill var(--color-transition-duration) var(--color-transition-timing),
@@ -53,7 +52,6 @@ body {
   }
 
   main {
-    overflow: hidden;
     grid-area: main;
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);

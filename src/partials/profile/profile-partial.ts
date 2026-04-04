@@ -34,7 +34,6 @@ export class ProfilePartial extends LitElement {
           "education"
           "cloud";
         height: min-content;
-        min-height: 100%;
         grid-template-rows: min-content;
         grid-auto-rows: min-content;
         gap: 1rem;
