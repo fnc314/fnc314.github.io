@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Route, Routes, hashToRoute } from "@/types/components/nav/routes";
+import { NavComponentConfig, ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
 import { MdPrimaryTab } from "@material/web/tabs/primary-tab.js";
 import { MdTabs } from "@material/web/tabs/tabs.js";
 import { LitElement, type PropertyValues, type TemplateResult, css, html } from "lit";
@@ -123,7 +123,7 @@ export class NavComponent extends LitElement {
   @state({
     hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
   })
-  private _activeRoute: Route = Routes.PROFILE;
+  private _activeRoute: Route = ROUTES.PROFILE;
 
   @state()
   private _exitingRoute: Route | null = null;
@@ -140,7 +140,7 @@ export class NavComponent extends LitElement {
     blog: createRef(),
   };
 
-  #routes: Route[] = Object.values(Routes);
+  #routes: Route[] = Object.values(ROUTES);
 
   #boundListener = this.#handleHashChange.bind(this);
 
@@ -278,45 +278,6 @@ export class NavComponent extends LitElement {
    * Creates a {@link TemplateResult[]} consisting of {@link MdPrimaryTabs} and their child {@link MdIcon}s
    */
   #renderTabs(): TemplateResult {
-    const mdIconRouteMap: Record<Route, TemplateResult> = {
-      profile: html`
-        <md-icon
-          slot="icon"
-          filled=${this._activeRoute === Routes.PROFILE || this._exitingRoute === Routes.PROFILE}
-        >
-          account_box
-        </md-icon>
-        Bio
-      `,
-      work: html`
-        <md-icon
-          slot="icon"
-          filled=${this._activeRoute === Routes.WORK || this._exitingRoute === Routes.WORK}
-        >
-          view_timeline
-        </md-icon>
-        Work
-      `,
-      code: html`
-        <md-icon
-          slot="icon"
-          filled=${this._activeRoute === Routes.CODE || this._exitingRoute === Routes.CODE}
-        >
-          code_blocks
-        </md-icon>
-        Code
-      `,
-      blog: html`
-        <md-icon
-          slot="icon"
-          filled=${this._activeRoute === Routes.BLOG || this._exitingRoute === Routes.BLOG}
-        >
-          newsmode
-        </md-icon>
-        Blog
-      `,
-    };
-
     const tabs: TemplateResult[] = this.#routes.map(
       (route: Route) => html`
         <md-primary-tab
@@ -326,7 +287,13 @@ export class NavComponent extends LitElement {
           .role=${"tab"}
           .hasIcon=${true}
         >
-          ${mdIconRouteMap[route]}
+          <md-icon
+            slot="icon"
+            filled=${this._activeRoute === route || this._exitingRoute === route}
+          >
+            ${NavComponentConfig.tabs[route].mdIcon}
+          </md-icon>
+          ${NavComponentConfig.tabs[route].label}
         </md-primary-tab>
       `,
     );

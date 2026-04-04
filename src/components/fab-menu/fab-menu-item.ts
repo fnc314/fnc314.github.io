@@ -1,6 +1,6 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { MdFab } from "@material/web/fab/fab";
-import { LitElement, css, html } from "lit";
+import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 import { type MaterialSymbol } from "material-symbols";
 
@@ -26,14 +26,16 @@ export class FabMenuItem extends LitElement {
         align-items: center;
         justify-content: var(--fab-menu-item-justify, flex-end);
         gap: 1rem;
-        /* Align center of small FAB (40px) with center of medium FAB (56px) in parent.
-           (56 - 40) / 2 = 8px = 0.5rem */
+
+        /* Align center of small FAB (40px) with center of medium FAB (56px) in parent. (56 - 40) / 2 = 8px = 0.5rem */
+
         padding-inline-end: var(--fab-menu-item-padding-end, 0);
         padding-inline-start: var(--fab-menu-item-padding-start, 0);
       }
 
       .label-container {
         --md-elevation-level: 4;
+
         position: relative;
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
@@ -88,13 +90,16 @@ export class FabMenuItem extends LitElement {
   }
 
   override render() {
+    const label: TemplateResult | typeof nothing = this.label ?
+      html`
+        <div class="label-container">
+          <md-elevation></md-elevation>
+          <span class="md-typescale-label-large">${this.label}</span>
+        </div>
+      ` :
+      nothing;
     return html`
-      ${this.label
-        ? html` <div class="label-container">
-            <md-elevation></md-elevation>
-            <span class="md-typescale-label-large">${this.label}</span>
-          </div>`
-        : ""}
+      ${label}
       <md-fab
         size="small"
         variant="secondary"

@@ -32,9 +32,9 @@
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": true,
     "plugins": [
-      // {
-      //   "name": "typescript-lit-html-plugin"
-      // },
+      {
+        "name": "typescript-lit-html-plugin"
+      },
       {
         "name": "ts-lit-plugin",
         "strict": true,

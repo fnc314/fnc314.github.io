@@ -1,6 +1,7 @@
 import CodeJson from "@/data/code.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { LitElement, css, html } from "lit-element";
+import { type CodeProjectData } from "@/types/components/code/code-project";
+import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 
 /**
@@ -22,8 +23,6 @@ export class CodePartial extends LitElement {
 
       article {
         container-type: inline-size;
-        height: min-content;
-        min-height: 100%;
         display: grid;
         grid-template-rows: min-content auto;
         gap: 1rem;
@@ -37,32 +36,43 @@ export class CodePartial extends LitElement {
       .article-body {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
-        grid-auto-rows: 1fr;
+        grid-auto-rows: auto;
         gap: 1rem;
         padding-block-end: 1rem;
+
+        ul& {
+          list-style-type: none;
+          margin: unset;
+          padding: unset;
+        }
+
+        > li {
+          display: block;
+        }
       }
 
       .code-widget {
+        --md-elevation-level: 2;
+
         display: grid;
         grid-template-areas:
           "header"
           "content"
           "footer";
-        grid-template-rows: 0.5fr minmax(auto, 1fr) 1fr;
+        grid-template-rows: auto auto auto;
         padding: 1rem 2rem;
         position: relative;
         border-radius: var(--md-sys-shape-corner-small);
         border: 1px solid var(--md-sys-color-on-surface);
         gap: 1.5rem;
         background: var(--md-sys-color-surface-container-low);
-        --md-elevation-level: 2;
         transition:
           transform var(--code-partial-animation) ease-in-out,
           background-color var(--code-partial-animation) ease-in-out,
           --md-elevation-level var(--code-partial-animation) ease-in-out,
           border-radius var(--code-partial-animation) ease-in-out;
 
-        * > {
+        & * {
           overflow-wrap: anywhere;
         }
 
@@ -91,7 +101,6 @@ export class CodePartial extends LitElement {
               margin: unset;
               color: var(--md-sys-color-tertiary);
               text-align: center;
-              line-height: 1.5rem;
             }
           }
         }
@@ -173,47 +182,59 @@ export class CodePartial extends LitElement {
     `,
   ];
 
-  #renderCodeWidget({ name, url, description, technologies }: Project) {
+  #renderCodeProject(data: CodeProjectData): TemplateResult {
     return html`
-      <section class="code-widget">
-        <md-elevation></md-elevation>
-        <header>
-          <a
-            target="_blank"
-            href="${url}"
-          >
-            <h2 class="md-typescale-headline-small">${name}</h2>
-          </a>
-        </header>
-        <div class="widget-content">
-          <p
-            class="md-typescale-body-large"
-            .innerHTML=${description}
-          ></p>
-        </div>
-        <footer>
-          <ul class="tech-stack">
-            ${technologies.map(
-              (t) =>
-                html`<li
-                  class="md-typescale-body-medium"
-                  .innerHTML=${t}
-                ></li>`,
-            )}
-          </ul>
-        </footer>
-      </section>
+      <li>
+        <section class="code-widget">
+          <md-elevation></md-elevation>
+          <header>
+            <a
+              target="_blank"
+              href="${data.url}"
+            >
+              <h2 class="md-typescale-headline-small">${data.name}</h2>
+            </a>
+          </header>
+          <div class="widget-content">
+            <p
+              class="md-typescale-body-large"
+              .innerHTML=${data.description}
+            ></p>
+          </div>
+          <footer>
+            <ul class="tech-stack">
+              ${data.technologies.map(
+                (t) =>
+                  html`<li
+                    class="md-typescale-body-medium"
+                    .innerHTML=${t}
+                  ></li>`,
+              )}
+            </ul>
+          </footer>
+        </section>
+      </li>
     `;
   }
 
   override render() {
+    const oldCodeProjects: TemplateResult = html`
+      <ul class="article-body">
+        ${(CodeJson.projects as CodeProjectData[]).map((p) => this.#renderCodeProject(p))}
+      </ul>
+    `;
+    // const newContent: TemplateResult = html`
+    //   <div class="article-body">${
+    //     CodeJson.projects.map((p: CodeProjectData) => html`<code-project .codeProject=${p}></code-project>`)
+    //   }</div>
+    // `;
     return html`
       <article>
         <partial-header
           .headerType=${"tertiary"}
           .headingText=${"Code Projects"}
         ></partial-header>
-        <div class="article-body">${(CodeJson.projects as Project[]).map((p) => this.#renderCodeWidget(p))}</div>
+        ${oldCodeProjects}
       </article>
     `;
   }

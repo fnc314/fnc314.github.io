@@ -24,24 +24,24 @@ export class FabMenu extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
+        /* Initial menu direction. Override with fab-menu[direction="start"] */
+        --menu-direction: end;
+        --fab-menu-transition-duration: 200ms;
+
         display: inline-flex;
         flex-direction: column-reverse;
         align-items: flex-end; /* Align to right side */
         position: relative;
         z-index: 10;
-
-        /* Initial menu direction. Override with fab-menu[direction="start"] */
-        --menu-direction: end;
-
-        --fab-menu-transition-duration: 200ms;
       }
 
       :host([direction="start"]) {
-        align-items: flex-start; /* Align to left side */
         --fab-menu-item-direction: row-reverse;
         --fab-menu-item-padding-end: 0;
         --fab-menu-item-padding-start: 0;
         --fab-menu-item-justify: flex-start;
+
+        align-items: flex-start; /* Align to left side */
       }
 
       .focus-trap-start,
@@ -59,17 +59,16 @@ export class FabMenu extends LitElement {
         list-style: none;
         height: 0;
         margin-inline-end: var(--md-fab-margin, 0);
-
-        transition:
-          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
-          transform var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
-          visibility var(--fab-menu-transition-duration) linear;
-
         opacity: 0;
         visibility: hidden;
         transform: scale(0.8) translateY(20px);
         transform-origin: bottom center;
         pointer-events: none;
+        transition:
+          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+          transform var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+          visibility var(--fab-menu-transition-duration) linear
+          ;
       }
 
       :host([open]) ul.menu-items {
@@ -88,13 +87,13 @@ export class FabMenu extends LitElement {
       }
 
       md-fab {
+        --md-fab-container-elevation: 4;
+
         transition:
           transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
           background-color var(--fab-menu-transition-duration) linear,
-          color var(--fab-menu-transition-duration) linear;
-
-        --md-fab-container-elevation: 4;
-        /* z-index: 2; */
+          color var(--fab-menu-transition-duration) linear
+          ;
 
         /* Reset default margin */
         margin-inline-start: unset;
@@ -129,7 +128,7 @@ export class FabMenu extends LitElement {
       .scrim {
         background: var(--md-sys-color-scrim);
         inset: 0;
-        opacity: 50%;
+        opacity: 0.5;
         pointer-events: none;
         position: fixed;
         z-index: 0;
@@ -242,6 +241,18 @@ export class FabMenu extends LitElement {
 
   private _toggle() {
     this.open = !this.open;
+  }
+
+  protected override async getUpdateComplete(): Promise<boolean> {
+    console.log("FabMenu#getUpdateComplete");
+    const result = await super.getUpdateComplete();
+    await this._fab.updateComplete;
+    const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
+    if (labelSpan) {
+
+      labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
+    }
+    return result;
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {

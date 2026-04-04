@@ -10,7 +10,6 @@ import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
 import gitInfo from "rollup-plugin-git-info";
 import postcss from "rollup-plugin-postcss";
-import rollupPostCSSLit from "rollup-plugin-postcss-lit";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import typescriptPaths from "rollup-plugin-typescript-paths";
@@ -26,8 +25,9 @@ export default {
   input: "src/index.html", // Correctly specify the main HTML file as the input
   output: {
     dir: "./website",
-    format: "es",
-    name: "com.fnc314.website",
+    compact: !isDev,
+    format: "esm",
+    name: "@fnc314/com.fnc314.website",
     sourcemap: isDev,
     interop: "auto",
     sourcemapDebugIds: isDev,
@@ -55,10 +55,10 @@ export default {
     //   exclude: ["./node_modules/**"],
     //   importPackage: "lit",
     // }),
-    rollupPostCSSLit({
-      globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
-      globExclude: ["./node_modules/**"],
-    }),
+    // rollupPostCSSLit({
+    //   globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
+    //   globExclude: ["./node_modules/**"],
+    // }),
     copy({
       exclude: [],
       patterns: ["material-symbols-{outlined,sharp}.woff2"],
@@ -92,8 +92,8 @@ export default {
           html.replace(
             "<head>",
             `<head>
-            <meta charset="utf-8" />
-            <link rel="manifest" href="./assets/${manifestJson}" />
+                <meta charset="utf-8" />
+                <link rel="manifest" href="./assets/${manifestJson}" />
           `,
           ),
       ],
@@ -132,8 +132,8 @@ export default {
         sourceMap: isDev,
         declaration: isDev,
         declarationMap: isDev,
-        declarationDir: isDev ? "./website" : undefined,
-        outDir: isDev ? "./website" : undefined,
+        declarationDir: isDev ? "./website/decl" : undefined,
+        outDir: isDev ? "./website/types" : undefined,
       },
     }),
     typescriptPaths.default({
