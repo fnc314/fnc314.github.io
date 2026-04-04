@@ -21,7 +21,6 @@ export class ProfilePartial extends LitElement {
       :host {
         display: block;
         container-type: inline-size;
-
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
       }
@@ -113,7 +112,7 @@ export class ProfilePartial extends LitElement {
         [slot="section-grid-content"] {
           &::first-line {
             white-space: pre-wrap;
-            word-wrap: break-word;
+            overflow-wrap: break-word;
             text-align: justify;
             text-justify: inter-word;
             font-size: 130%;
@@ -122,10 +121,9 @@ export class ProfilePartial extends LitElement {
           }
 
           @container (min-width: 500px) {
-            column-count: 2;
+            columns: 40cqi 2;
             column-gap: 2rem;
             column-rule: var(--md-sys-color-inverse-on-surface) solid var(--hairline-width);
-            column-width: 40cqi;
           }
         }
       }
@@ -155,7 +153,7 @@ export class ProfilePartial extends LitElement {
         }
       }
 
-      @media screen and (min-width: 600px) {
+      @media screen and (width >= 600px) {
         .education-list-grid {
           place-self: stretch;
 
@@ -167,8 +165,8 @@ export class ProfilePartial extends LitElement {
             span:nth-child(2n - 1) {
               justify-self: flex-end;
               text-align: end;
-              border-inline-end: 0.1rem solid currentColor;
-              border-block-end: 0.1rem solid currentColor;
+              border-inline-end: 0.1rem solid currentcolor;
+              border-block-end: 0.1rem solid currentcolor;
               padding-inline: 0.5rem 0.25rem;
               padding-block-end: 0.25rem;
             }
