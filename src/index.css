@@ -32,7 +32,6 @@ body {
   writing-mode: horizontal-tb;
   margin: unset;
   padding: unset;
-  box-sizing: border-box;
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
 }

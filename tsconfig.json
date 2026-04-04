@@ -51,15 +51,16 @@
           //   "timeout": 2000,
           "src": "./src",
           "dependencies": [
-            "./docs/*.json",
-            "./node_modules/@material/web"
+            "./docs/**/*.json",
+            "./.vscode/**/*.json",
+            "./node_modules/@material/web",
             //     "configure these globs to find manifest files from your dependencies",
             //     "and use the ! pattern to ignore manifests"
           ]
         }
       }
     ],
-    "types": ["node", "eslint", "rollup", "bun", "lit", "prettier", "stylelint", "tailwindcss"],
+    "types": ["node", "eslint", "rollup", "bun", "lit", "prettier", "stylelint", "tailwindcss", "postcss"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],

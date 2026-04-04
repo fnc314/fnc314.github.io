@@ -16,6 +16,7 @@
   "css.customData": [
     "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",
   ],
+  "css.lint.importStatement": "ignore",
   "html.customData": [
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "./.vscode/wca/components.custom-elements.json",

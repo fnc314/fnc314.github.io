@@ -6,11 +6,6 @@ import { LitElement, type PropertyValues, type TemplateResult, css, html } from 
 import { customElement, state } from "lit/decorators.js";
 import { type Ref, createRef, ref } from "lit/directives/ref.js";
 
-interface IndexRoute {
-  route: Route;
-  index: number;
-}
-
 /**
  * A navigation component that renders primary tabs synchronized with the application's URL hash routes.
  *
@@ -93,12 +88,14 @@ export class NavComponent extends LitElement {
           "opsz" 48;
         transition:
           font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
-          color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
+          color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1)
+          ;
 
         @media (prefers-reduced-motion: reduce) {
           transition:
             font-variation-settings var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1),
-            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1);
+            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1)
+            ;
         }
       }
 
@@ -165,7 +162,7 @@ export class NavComponent extends LitElement {
    * Reads {@link window.location.hash} and returns an object containing the {@link Route} and indexing {@link number}
    * @returns IndexRoute
    */
-  #tabIndexAndRouteFromHash(): IndexRoute {
+  #tabIndexAndRouteFromHash(): { index: number; route: Route } {
     const route = hashToRoute(window.location.hash.replace("#", ""));
     const index = this.#routes.indexOf(route);
     return { index, route };
@@ -175,7 +172,7 @@ export class NavComponent extends LitElement {
    * Syncs internal state with the URL hash.
    */
   #handleHashChange() {
-    const { index, route } = this.#tabIndexAndRouteFromHash();
+    const { index, route }: { index: number; route: Route } = this.#tabIndexAndRouteFromHash();
 
     // Default to 0 (profile) if hash is empty or invalid
     const targetIndex = index >= 0 ? index : 0;
@@ -214,6 +211,12 @@ export class NavComponent extends LitElement {
     this.#updateCarousel(index);
   }
 
+
+  /**
+   * Updates external DOM via style manipulations and blind queries
+   *
+   * @param {number} index - The current {@link _activeTabIndex}
+   */
   #updateCarousel(index: number) {
     const panels: HTMLElement[] = [];
     for (const route of this.#routes) {
@@ -242,6 +245,8 @@ export class NavComponent extends LitElement {
 
   /**
    * Handles user clicks on tabs. Updates URL and UI.
+   *
+   * @param {Event} event - The emitted {@link Event} from the HTML
    */
   #onTabChange(event: Event) {
     const tabs = event.target as MdTabs;
