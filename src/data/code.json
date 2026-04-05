@@ -2,9 +2,6 @@
   "projects": [
     {
       "name": "project-collections-gradle-settings-plugin",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>"
-      ],
       "tech": [
         {
           "name": "Gradle",
@@ -16,10 +13,6 @@
     },
     {
       "name": "material-theme-viewer",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>"
-      ],
       "tech": [
         {
           "name": "HTML/CSS/JS",
@@ -35,11 +28,6 @@
     },
     {
       "name": "fnc314-kmp",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://kotlinlang.org/\" target=\"_blank\">Kotlin</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://docs.gradle.org/\" target=\"_blank\">Gradle</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://developer.android.com/\" target=\"_blank\">Android</a>"
-      ],
       "tech": [
         {
           "name": "Kotlin",
@@ -59,10 +47,6 @@
     },
     {
       "name": "mac-os-env-scripts",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://www.gnu.org/software/bash/\" target=\"_blank\">Bash</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://ohmyz.sh/\" target=\"_blank\">Oh-My-Zsh</a>"
-      ],
       "tech": [
         {
           "name": "Bash",
@@ -78,21 +62,6 @@
     },
     {
       "name": "fnc314.github.io",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/\" target=\"_blank\">HTML/CSS/JS</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://lit.dev/\" target=\"_blank\">Lit</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://typescriptlang.org/\" target=\"_blank\">TypeScript</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://nodejs.org/\" target=\"_blank\">Node</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_components\" target=\"_blank\">Web Components</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://github.com/material-components/material-web\" target=\"_blank\">Material Components Web</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://mise.jdx.dev/\" target=\"_blank\">Mise</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://pnpm.io/\" target=\"_blank\">PNPM</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://rollupjs.org/\" target=\"_blank\">RollUp</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://prettier.io/\" target=\"_blank\">Prettier</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://stylelint.io/\" target=\"_blank\">StyleLint</a>"
-      ],
       "tech": [
         {
           "name": "HTML/CSS/JS",
@@ -156,10 +125,6 @@
     },
     {
       "name": "project_euler",
-      "technologies": [
-        "<a slot=\"word-tag-slot\" href=\"https://python.org/\" target=\"_blank\">Python</a>",
-        "<a slot=\"word-tag-slot\" href=\"https://www.ruby-lang.org/en/\" target=\"_blank\">Ruby</a>"
-      ],
       "tech": [
         {
           "name": "Python",

@@ -1,5 +1,6 @@
 import "./app-shell/app-shell";
 import "./blog/blog-post";
+import "./code/code-project";
 import "./dialogs/configs/configs-dialog";
 import "./dialogs/step-up/step-up-dialog";
 import "./fab-menu/fab-menu";
@@ -13,6 +14,7 @@ import "./work-experience/work-experience";
 
 export * from "./app-shell/app-shell";
 export * from "./blog/blog-post";
+export * from "./code/code-project";
 export * from "./dialogs/configs/configs-dialog";
 export * from "./dialogs/step-up/step-up-dialog";
 export * from "./fab-menu/fab-menu";
