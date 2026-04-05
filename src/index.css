@@ -3,6 +3,7 @@
 :root {
   color-scheme: light dark;
 
+  --hover-focus-animation-translate-y: -0.25rem;
   --hairline-width: 1px;
   --icon-fill-color: #c12a1c;
   --breakpoint-compact-width-max: 600px;

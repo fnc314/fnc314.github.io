@@ -7,6 +7,8 @@ import "@material/web/elevation/elevation.js";
 import "@material/web/fab/fab.js";
 import "@material/web/icon/icon.js";
 import "@material/web/labs/card/elevated-card.js";
+import "@material/web/labs/card/filled-card.js";
+import "@material/web/labs/card/outlined-card.js";
 import "@material/web/list/list-item.js";
 import "@material/web/list/list.js";
 import "@material/web/radio/radio.js";
