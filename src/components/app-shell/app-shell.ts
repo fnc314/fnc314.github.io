@@ -60,16 +60,16 @@ export class AppShell extends LitElement {
       }
 
       .fab-container {
-        pointer-events: auto;
+        pointer-events: none;
         cursor: unset;
-        z-index: 1;
-        position: sticky;
+        z-index: 10;
+        position: fixed;
         bottom: 1rem;
         left: 1rem;
         right: 1rem;
         display: grid;
         padding-inline: 1rem;
-        grid-template-rows: min-content;
+        grid-template-rows: repeat(2, min-content);
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
           "StartTop    . EndTop"
@@ -82,6 +82,7 @@ export class AppShell extends LitElement {
 
         fab-menu,
         md-fab {
+          pointer-events: auto;
           align-self: end;
           grid-area: unset;
           justify-self: unset;
