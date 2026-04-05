@@ -107,7 +107,8 @@ export class BlogPost extends LitElement {
           color var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-elevation var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-shape var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out;
+          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out
+          ;
 
         &:hover,
         &:focus,

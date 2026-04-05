@@ -1,6 +1,5 @@
 import CodeJson from "@/data/code.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type CodeProjectData } from "@/types/components/code/code-project";
 import { LitElement, css, html } from "lit-element";
 import { customElement } from "lit/decorators.js";
 
@@ -57,7 +56,12 @@ export class CodePartial extends LitElement {
           .headingText=${"Code Projects"}
         ></partial-header>
         <ul class="article-body">
-          ${(CodeJson.projects as CodeProjectData[]).map((p) => html`<li><code-project .codeProject="${p}"></code-project></li>`)}
+          ${(CodeJson.projects).map((p) => html`
+            <li>
+              <code-project .codeProject="${p}"></code-project>
+            </li>
+            `
+          )}
         </ul>
       </article>
     `;

@@ -148,7 +148,6 @@ export class AppShell extends LitElement {
   /**
    * Reference to the connect FAB.
    * This is an MdFab component.
-   * @query("#fab-connect")
    */
   @query("#fab-connect")
   private connectFab!: MdFab;

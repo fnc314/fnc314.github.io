@@ -4,13 +4,13 @@ import { LitElement, type TemplateResult, css, html } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property, state } from "lit/decorators.js";
 
-
 /**
  * @summary Represents a single (usually GitHub-hosted) demonstration project
  *
  * @property {CodeProjectData} [codeProject={}] - The Rendered {@link CodeProjectData}
  *
  * @cssprop [--code-project-animation=200ms] - The duration of the subtle hover/focus effect
+ * @cssprop [--code-project-rotation=800ms] - The duration of the card rotation effect
  *
  * @export
  * @class CodeProject
@@ -31,9 +31,7 @@ export class CodeProject extends LitElement {
       :host {
         display: block;
         height: 24rem;
-      }
 
-      :root {
         --internal-code-project-animation: var(--code-project-animation, 200ms);
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
 
@@ -48,6 +46,8 @@ export class CodeProject extends LitElement {
         --md-outlined-card-container-elevation: 2;
         --word-tag-border-radius: var(--md-sys-shape-corner-small);
 
+        /* Ensure the card doesn't flatten the 3D space or clip the rotation */
+        overflow: visible;
         width: 100%;
         height: 100%;
         perspective: 1000px; /* The guide's perspective container */
@@ -56,9 +56,18 @@ export class CodeProject extends LitElement {
           --md-outlined-card-container-elevation var(--internal-code-project-animation) ease-in-out
           ;
 
+        /* Material Web components use a 'container' part for the inner surface */
+        &::part(container) {
+          overflow: visible;
+        }
+
         &.flipped {
           --md-outlined-card-container-elevation: 4;
           --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
+
+          .code-project-card-inner {
+            transform: rotateY(180deg);
+          }
         }
       }
 
@@ -84,10 +93,7 @@ export class CodeProject extends LitElement {
         text-align: center;
         transition: transform var(--internal-code-project-rotation) cubic-bezier(0.4, 0, 0.2, 1);
         transform-style: preserve-3d; /* Required for the 3D effect */
-      }
-
-      md-outlined-card.flipped .code-project-card-inner {
-        transform: rotateY(180deg);
+        border-radius: var(--md-outlined-card-container-shape);
       }
 
       section.code-project-card-front {
