@@ -6,21 +6,19 @@ import { LitElement, css, html } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined.js";
 import { customElement, property, state } from "lit/decorators.js";
 
-
 /**
  * @summary Represents a published blog record, linking to the artifact
- *
- * @see BlogPostJson
  *
  * @property {BlogPostJson} [blogPost={}] - The {@link BlogPostJson} record to render
  *
  * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
  *   \`:focus-within\`, and \`:focus-visible\` states
  * @cssprop --blog-post-primary-text-color - The color of the primary text
- * @cssprop --blog-post-container-color - The color of the container, {@link md-elevated-card}
+ * @cssprop --blog-post-container-color - The color of the container, {@link MdElevatedCard}
  *   and {@link --md-elevated-card-container-color}
- * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link word-tag}
+ * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link WordTag}
  *
+ * @see BlogPostJson
  * @export
  * @class BlogPost
  * @extends {LitElement}
@@ -70,8 +68,7 @@ export class BlogPost extends LitElement {
           --blog-post-container-color var(--blog-post-animation) ease-in-out,
           --blog-post-word-tag-container-color var(--blog-post-animation) ease-in-out,
           --word-tag-color var(--blog-post-animation) ease-in-out,
-          --word-tag-background-color var(--blog-post-animation) ease-in-out
-          ;
+          --word-tag-background-color var(--blog-post-animation) ease-in-out;
 
         :hover,
         :focus,
@@ -110,8 +107,7 @@ export class BlogPost extends LitElement {
           color var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-elevation var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-shape var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out
-          ;
+          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out;
 
         &:hover,
         &:focus,
@@ -120,7 +116,7 @@ export class BlogPost extends LitElement {
           --md-elevated-card-container-elevation: 4;
           --md-elevated-card-container-shape: var(--md-sys-shape-corner-large);
 
-          transform: translateY(-4px);
+          transform: translateY(var(--hover-focus-animation-translate-y));
         }
       }
 
@@ -130,8 +126,7 @@ export class BlogPost extends LitElement {
           "icon header  header"
           ".    header  header"
           ".    summary summary"
-          ".    tags    tags"
-          ;
+          ".    tags    tags";
         grid-template-columns: 0.25fr 1fr 0.5fr;
         gap: 0.5rem;
 
@@ -173,15 +168,14 @@ export class BlogPost extends LitElement {
           list-style: none;
           margin: 0;
           padding: 0;
-          gap: 1rem;
+          gap: 2rem;
         }
 
-        @container (min-width: 600px) {
+        @container (width > 600px) {
           grid-template-areas:
             "icon header  header  tags"
             ".    header  header  tags"
-            ".    summary summary tags"
-            ;
+            ".    summary summary tags";
 
           & > ul.tags {
             flex-direction: column;
