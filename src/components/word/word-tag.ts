@@ -11,6 +11,8 @@ import { customElement, property } from "lit/decorators.js";
  * @property {WordTagHeaviness} [heaviness="normal"] - The weight of the tag (text & border), can be
  *  `"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or
  *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)
+ * @property {string} [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
+ *  {@link HTMLAnchorElement}
  *
  * @csspart [word-tag-part] - An optional overriding CSS selector
  *
@@ -53,6 +55,14 @@ export class WordTag extends LitElement {
         /** @ignore */
         --internal-word-tag-border-radius: var(--word-tag-border-radius, var(--md-sys-shape-corner-small));
 
+        /** @ignore */
+        --internal-word-tag-animation-duration: 200ms;
+
+        @media (prefers-reduced-motion: reduce) {
+          --internal-word-tag-animation-duration: 0ms;
+        }
+
+
         display: contents;
       }
 
@@ -66,6 +76,7 @@ export class WordTag extends LitElement {
         border-radius: var(--internal-word-tag-border-radius);
         border-color: var(--internal-word-tag-color);
         border-style: solid;
+        transition: all var(--internal-word-tag-animation-duration) ease-in-out;
       }
     `,
   ];
@@ -89,9 +100,9 @@ export class WordTag extends LitElement {
       <span style=${styleMap(styles)}>${this.word}</span>
     `;
 
-    // return this.hrefUrl === "" ? defaultWordTag : html`<a href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${defaultWordTag}</a>`;
-
-    return defaultWordTag;
+    return this.hrefUrl === "" ?
+      defaultWordTag :
+      html`<a href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${defaultWordTag}</a>`;
   }
 }
 
