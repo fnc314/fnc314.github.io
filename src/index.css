@@ -54,8 +54,8 @@ body {
 
   main {
     grid-area: main;
-    color: var(--md-sys-color-on-surface);
     overflow-x: hidden;
+    color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
 
     .carousel-track {

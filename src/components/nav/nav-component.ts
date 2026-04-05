@@ -120,7 +120,7 @@ export class NavComponent extends LitElement {
   @state({
     hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
   })
-  private _activeRoute: Route = ROUTES.PROFILE;
+  private _activeRoute: Route = ROUTES.INFO;
 
   @state()
   private _exitingRoute: Route | null = null;
@@ -133,17 +133,13 @@ export class NavComponent extends LitElement {
   private _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
     work: createRef(),
     code: createRef(),
-    profile: createRef(),
+    info: createRef(),
     blog: createRef(),
   };
 
   #routes: Route[] = Object.values(ROUTES);
 
   #boundListener = this.#handleHashChange.bind(this);
-
-  constructor() {
-    super();
-  }
 
   override connectedCallback() {
     super.connectedCallback();
@@ -160,10 +156,12 @@ export class NavComponent extends LitElement {
 
   /**
    * Reads {@link window.location.hash} and returns an object containing the {@link Route} and indexing {@link number}
-   * @returns IndexRoute
+   * @returns { index: number, route: Route }
    */
   #tabIndexAndRouteFromHash(): { index: number; route: Route } {
-    const route = hashToRoute(window.location.hash.replace("#", ""));
+    const hash = window.location.hash.replace("#", "").toLowerCase();
+    // Robust lookup by value ensures matching regardless of case or key naming
+    const route = hashToRoute(hash);
     const index = this.#routes.indexOf(route);
     return { index, route };
   }
@@ -174,7 +172,7 @@ export class NavComponent extends LitElement {
   #handleHashChange() {
     const { index, route }: { index: number; route: Route } = this.#tabIndexAndRouteFromHash();
 
-    // Default to 0 (profile) if hash is empty or invalid
+    // Default to 0 (info) if hash is empty or invalid
     const targetIndex = index >= 0 ? index : 0;
 
     if (this._activeTabIndex !== targetIndex) {
@@ -275,20 +273,19 @@ export class NavComponent extends LitElement {
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
     // Apply initial state to DOM after first render
-    this._activeRoute = this.#routes[this._activeTabIndex];
     this.#updateTabState(this._activeTabIndex);
   }
 
   /**
-   * Creates a {@link TemplateResult[]} consisting of {@link MdPrimaryTabs} and their child {@link MdIcon}s
+   * Creates a {@link TemplateResult} consisting of {@link MdTabs}, {@link MdPrimaryTabs}, and {@link MdIcon}s
    */
   #renderTabs(): TemplateResult {
     const tabs: TemplateResult[] = this.#routes.map(
       (route: Route) => html`
         <md-primary-tab
           ${ref(this._tabRefMap[route])}
-          .id=${`tab-${route}`}
           aria-controls=${`panel-${route}`}
+          .id=${`tab-${route}`}
           .role=${"tab"}
           .hasIcon=${true}
         >

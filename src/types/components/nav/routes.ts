@@ -1,7 +1,7 @@
 import type { MaterialSymbol } from "material-symbols";
 
 export const ROUTES = {
-  PROFILE: "profile" as const,
+  INFO: "info" as const,
   WORK: "work" as const,
   CODE: "code" as const,
   BLOG: "blog" as const,
@@ -14,7 +14,7 @@ export type Route = (typeof ROUTES)[keyof typeof ROUTES];
 export type RouteHashs = `#${Route}`;
 
 export function hashToRoute(hash: string): Route {
-  return Object.fromEntries(Object.entries(ROUTES))[hash] ?? ROUTES.PROFILE;
+  return Object.values(ROUTES).find((r) => r === hash) ?? ROUTES.INFO;
 }
 
 interface NavComponentTabConfig {
@@ -29,8 +29,8 @@ type NavComponentConfigs = Record<
 
 export const NavComponentConfig: NavComponentConfigs = {
   tabs: {
-    profile: {
-      label: "Bio",
+    info: {
+      label: "Info",
       mdIcon: "account_box",
     },
     work: {

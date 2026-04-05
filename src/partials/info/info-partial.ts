@@ -13,8 +13,8 @@ import { type ThemeConfig } from "@/types/theme/theme";
 import { LitElement, css, html } from "lit-element";
 import { customElement, state } from "lit/decorators.js";
 
-@customElement("profile-partial")
-export class ProfilePartial extends LitElement {
+@customElement("info-partial")
+export class InfoPartial extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -98,11 +98,6 @@ export class ProfilePartial extends LitElement {
           font-style: italic;
           margin-block: 0.5rem;
         }
-      }
-
-      /* Apply grid-area to the custom elements by class */
-      profile-section {
-        /* align-self: center; */
       }
 
       .bio {
@@ -325,6 +320,6 @@ export class ProfilePartial extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "profile-partial": ProfilePartial;
+    "info-partial": InfoPartial;
   }
 }

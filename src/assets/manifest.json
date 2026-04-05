@@ -3,19 +3,31 @@
   "protocol_handlers": [],
   "shortcuts": [
     {
-      "name": "Profile",
-      "short_name": "Profile",
-      "description": "View profile information on Franco N. Colaizzi",
-      "url": "/#profile",
+      "name": "Info",
+      "short_name": "Info",
+      "description": "View information on Franco N. Colaizzi",
+      "url": "/#info",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-filled-512.png",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/profile/icon-filled-512.svg",
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-filled-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"

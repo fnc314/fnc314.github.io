@@ -40,7 +40,7 @@ const domLoadedListener = () => {
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
-    window.history.replaceState(null, "", `${window.location.href}#${ROUTES.PROFILE}`);
+    window.history.replaceState(null, "", `${window.location.href}#${ROUTES.INFO}`);
   }
 
   const matScheme =
