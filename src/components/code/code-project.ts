@@ -164,7 +164,7 @@ export class CodeProject extends LitElement {
         <md-outlined-button
           @click=${() => this.flipped = !this.flipped}
           >
-          Click to View Back
+          View More
         </md-outlined-button>
       </section>
     `;
@@ -200,7 +200,7 @@ export class CodeProject extends LitElement {
         <md-outlined-button
           @click=${() => this.flipped = !this.flipped}
           >
-          Click to View Front
+          View Less
         </md-outlined-button>
       </section>
     `;
