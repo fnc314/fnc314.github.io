@@ -30,7 +30,7 @@ export class CodeProject extends LitElement {
     css`
       :host {
         display: block;
-        height: 24rem;
+        height: 30rem;
 
         --internal-code-project-animation: var(--code-project-animation, 200ms);
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
@@ -42,9 +42,9 @@ export class CodeProject extends LitElement {
       }
 
       md-outlined-card {
-        --md-outlined-card-container-shape: var(--md-sys-shape-corner-small);
-        --md-outlined-card-container-elevation: 2;
-        --word-tag-border-radius: var(--md-sys-shape-corner-small);
+        --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
+        --md-outlined-card-container-elevation: 4;
+        --word-tag-border-radius: var(--md-sys-shape-corner-medium);
 
         /* Ensure the card doesn't flatten the 3D space or clip the rotation */
         overflow: visible;
@@ -52,8 +52,8 @@ export class CodeProject extends LitElement {
         height: 100%;
         perspective: 1000px; /* The guide's perspective container */
         transition:
-          --md-outlined-card-container-shape var(--internal-code-project-animation) ease-in-out,
-          --md-outlined-card-container-elevation var(--internal-code-project-animation) ease-in-out
+          --md-outlined-card-container-shape var(--internal-code-project-rotation) ease-in-out,
+          --md-outlined-card-container-elevation var(--internal-code-project-rotation) ease-in-out
           ;
 
         /* Material Web components use a 'container' part for the inner surface */
@@ -62,9 +62,6 @@ export class CodeProject extends LitElement {
         }
 
         &.flipped {
-          --md-outlined-card-container-elevation: 4;
-          --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
-
           .code-project-card-inner {
             transform: rotateY(180deg);
           }
@@ -82,7 +79,7 @@ export class CodeProject extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 1rem;
       }
 
@@ -101,7 +98,6 @@ export class CodeProject extends LitElement {
 
         background-color: var(--md-outlined-card-container-color);
         border-radius: inherit;
-        gap: 0.5rem;
 
         header {
           h2 {
@@ -144,9 +140,23 @@ export class CodeProject extends LitElement {
           }
         }
       }
+
+      a {
+        color: var(--md-sys-color-on-surface-variant);
+
+        &.repo-link::before {
+          content: url("./assets/icons/brand/github.svg") / "GitHub logo";
+          display: block;
+        }
+      }
     `
   ];
 
+  /**
+   * Builds the front of the {@link MdOutlinedCard} content
+   *
+   * @returns {TemplateResult}
+   */
   #generateCardFront(): TemplateResult {
     return html`
       <section class="code-project-card code-project-card-front">
@@ -155,12 +165,22 @@ export class CodeProject extends LitElement {
             ${this.codeProject.name}
           </h2>
         </header>
+        <md-divider></md-divider>
         <slot name="code-project-summary" part="code-project-summary">
           <p
             class="md-typescale-body-large"
             .innerHTML=${this.codeProject.description}
           ></p>
         </slot>
+        <md-divider></md-divider>
+        <a
+          .href="${this.codeProject.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="repo-link md-typescale-title-large"
+        >
+          Repo
+        </a>
         <md-outlined-button
           @click=${() => this.flipped = !this.flipped}
           >
@@ -170,18 +190,18 @@ export class CodeProject extends LitElement {
     `;
   }
 
+
+  /**
+   * Builds the back of the {@link MdOutlinedCard} content
+   *
+   * @returns {TemplateResult}
+   */
   #generateCardBack(): TemplateResult {
     return html`
       <section class="code-project-card code-project-card-back">
-        <a
-          .href="${this.codeProject.url}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="md-typescale-title-medium"
-        >
-          Repo
-        </a>
-        <md-divider></md-divider>
+        <h2 class="md-typescale-title-large">
+          Tech Stack
+        </h2>
         <ul part="code-project-tech-stack">
           ${
             this.codeProject.tech
