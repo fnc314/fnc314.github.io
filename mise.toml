@@ -13,4 +13,4 @@ env_shell_expand = true
 terminal_progress = true
 color_theme = "dracula"
 task = { show_full_cmd = true }
-npm = { package_manager = "bun" }
+npm = { package_manager = "pnpm" }
