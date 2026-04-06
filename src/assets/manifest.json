@@ -115,6 +115,18 @@
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.svg",
+          "sizes": "512x512",
+          "type": "image/svg+xml",
+          "purpose": "any"
         }
       ]
     }
