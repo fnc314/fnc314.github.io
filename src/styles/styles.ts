@@ -2,7 +2,7 @@ import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { CONFIG_COLOR_SCHEME_NAMES, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
-import { CSSResult, css } from "lit";
+import { type CSSResult, css } from "lit";
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;

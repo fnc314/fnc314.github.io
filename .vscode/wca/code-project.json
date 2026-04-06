@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "code-project",
-      "description": "Attributes:\n\n  * `codeProject` - \n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `codeProject` - \n\n  * `object Object],[object Object],[object Object` - ",
+      "description": "Attributes:\n\n  * `codeProject` - \n\nProperties:\n\n  * `codeProject` - \n\n  * `flipped` {`boolean`} - \n\n  * `styles` {`any[]`} - \n\n  * `object Object],[object Object` - ",
       "attributes": [
         {
           "name": "codeProject",

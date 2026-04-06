@@ -5,7 +5,9 @@ import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
+import { createRequire } from "node:module";
 import process from "node:process";
+import { defineConfig } from "rollup";
 import buildStatistics from "rollup-plugin-build-statistics";
 import clear from "rollup-plugin-clear";
 import gitInfo from "rollup-plugin-git-info";
@@ -15,14 +17,18 @@ import summary from "rollup-plugin-summary";
 import typescriptPaths from "rollup-plugin-typescript-paths";
 import versionInjector from "rollup-plugin-version-injector";
 
+const require = createRequire(import.meta.url);
+const pkg = require("./package.json");
+
 const isDev = process.env.NODE_ENV === "development";
 const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
 
-/** @type {import("rollup").RollupOptions} */
-export default {
-  logLevel: "debug",
+export default defineConfig({
+  logLevel: isDev ? "debug" : "silent",
   treeshake: true,
   input: "src/index.html", // Correctly specify the main HTML file as the input
+  external: Object.keys(pkg.dependencies),
+  perf: true,
   output: {
     dir: "./website",
     compact: !isDev,
@@ -50,15 +56,6 @@ export default {
       // Ensure we don't try to process TS files here
       exclude: ["**/*.ts"],
     }),
-    // rollupPostCSSLit({
-    //   include: ["./src/stylesheets/*.css"],
-    //   exclude: ["./node_modules/**"],
-    //   importPackage: "lit",
-    // }),
-    // rollupPostCSSLit({
-    //   globInclude: ["./src/components/**/*.ts", "./src/partials/**/*.ts"],
-    //   globExclude: ["./node_modules/**"],
-    // }),
     copy({
       exclude: [],
       patterns: ["material-symbols-{outlined,sharp}.woff2"],
@@ -122,17 +119,16 @@ export default {
       compact: !isDev,
       preferConst: true,
       namedExports: true,
-      includeArbitraryNames: true,
       exclude: ["./src/assets/**/*.json"],
       include: ["./src/data/*.json", "./src/theme/**/*.json"],
     }),
     typescript({
+      sourceMap: isDev,
       tsconfig: "./tsconfig.json",
       compilerOptions: {
-        sourceMap: isDev,
         declaration: isDev,
         declarationMap: isDev,
-        declarationDir: isDev ? "./website/decl" : undefined,
+        declarationDir: isDev ? "./website/types" : undefined,
         outDir: isDev ? "./website/types" : undefined,
       },
     }),
@@ -170,4 +166,4 @@ export default {
         rootDir: "./",
       }),
   ],
-};
+});

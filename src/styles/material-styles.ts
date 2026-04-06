@@ -1,4 +1,4 @@
-import { CSSResult, css } from "lit-element";
+import { type CSSResult, css } from "lit-element";
 
 export { styles as MaterialTypescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 
@@ -15,12 +15,10 @@ export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 export const MaterialOverrides: CSSResult = css`
   :root {
     --md-ref-typeface-brand: monospace;
-    --md-ref-typeface-plain: Roboto, sans-serif;
-
+    --md-ref-typeface-plain: roboto, sans-serif;
     --md-ref-typeface-weight-regular: 400;
     --md-ref-typeface-weight-medium: 500;
     --md-ref-typeface-weight-bold: 700;
-
     --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
     --md-sys-typescale-body-large-line-height: 1.5rem;
     --md-sys-typescale-body-large-size: 1rem;

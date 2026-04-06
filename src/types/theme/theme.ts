@@ -1,6 +1,6 @@
 import PhotoJsonFileImport from "@/data/photo.json" with { type: "json" };
 import { type MaterialScheme } from "@/styles/material-styles";
-import { CSSResult, css, unsafeCSS } from "lit-element";
+import { type CSSResult, css, unsafeCSS } from "lit";
 
 export type ColorSchemeRoles =
   | "background"
@@ -151,5 +151,7 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
     .map((part) => part.toLowerCase())
     .join("-");
 
-  return css`--md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};`;
+  return css`
+    --md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};
+  `;
 }

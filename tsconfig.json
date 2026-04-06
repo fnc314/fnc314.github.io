@@ -22,7 +22,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./dist",
+    "outDir": "./website/types",
     "preserveSymlinks": false,
     "pretty": true,
     "resolveJsonModule": true,
@@ -73,6 +73,6 @@
       "@/root/*": ["./*"]
     }
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.ts", "rollup.config.ts"],
   "exclude": ["node_modules", "website", "old"]
 }

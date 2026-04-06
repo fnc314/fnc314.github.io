@@ -14,8 +14,6 @@ import { customElement, property } from "lit/decorators.js";
  * @property {string} [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
  *  {@link HTMLAnchorElement}
  *
- * @csspart [word-tag-part] - An optional overriding CSS selector
- *
  * @cssprop [--word-tag-color=--md-sys-color-on-primary-container] - The text and border color
  * @cssprop [--word-tag-background-color=--md-sys-color-primary-container] - The background color
  * @cssprop [--word-tag-font-family=--md-ref-typeface-brand] - The font family
