@@ -27,12 +27,12 @@ export default defineConfig({
   logLevel: isDev ? "debug" : "silent",
   treeshake: true,
   input: "src/index.html", // Correctly specify the main HTML file as the input
-  external: Object.keys(pkg.dependencies),
+  //external: Object.keys(pkg.dependencies),
   perf: true,
   output: {
     dir: "./website",
     compact: !isDev,
-    format: "esm",
+    format: "module",
     name: "@fnc314/com.fnc314.website",
     sourcemap: isDev,
     interop: "auto",
@@ -126,6 +126,7 @@ export default defineConfig({
       sourceMap: isDev,
       tsconfig: "./tsconfig.json",
       compilerOptions: {
+        sourceMap: isDev,
         declaration: isDev,
         declarationMap: isDev,
         declarationDir: isDev ? "./website/types" : undefined,
