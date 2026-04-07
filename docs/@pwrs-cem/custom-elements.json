@@ -252,7 +252,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L28"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L27"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -277,29 +277,32 @@
             },
             {
               "name": "--blog-post-container-color",
-              "description": "The color of the container, {@link md-elevated-card}\nand {@link --md-elevated-card-container-color}"
+              "description": "The color of the container, {@link MdElevatedCard}\nand {@link --md-elevated-card-container-color}"
             },
             {
               "name": "--blog-post-word-tag-container-color",
-              "description": "The color of the container, {@link word-tag}"
+              "description": "The color of the container, {@link WordTag}"
             },
             {
-              "name": "--md-sys-color-on-primary"
+              "name": "--md-sys-color-on-secondary"
             },
             {
-              "name": "--md-sys-color-primary"
+              "name": "--md-sys-color-secondary"
             },
             {
-              "name": "--md-sys-color-on-primary-container"
+              "name": "--md-sys-color-on-secondary-container"
             },
             {
               "name": "--blog-post-secondary-text-color"
             },
             {
-              "name": "--md-sys-color-primary-container"
+              "name": "--md-sys-color-secondary-container"
             },
             {
               "name": "--md-sys-shape-corner-large"
+            },
+            {
+              "name": "--hover-focus-animation-translate-y"
             },
             {
               "name": "--md-icon-size"
@@ -329,15 +332,11 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/blog/blog-series.js"
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/code/code-project.js",
       "declarations": [
         {
           "name": "CodeProject",
-          "summary": "Renders a (`GitHub`-hosted) coding project",
+          "summary": "Represents a single (usually GitHub-hosted) demonstration project",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -354,7 +353,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project.ts#L16"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project.ts#L21"
           },
           "kind": "class",
           "tagName": "code-project",
@@ -368,62 +367,43 @@
               "fieldName": "codeProject"
             }
           ],
-          "slots": [
-            {
-              "name": "title"
-            },
-            {
-              "name": "summary"
-            },
-            {
-              "name": "tech"
-            }
-          ],
-          "cssParts": [
-            {
-              "name": "title"
-            },
-            {
-              "name": "summary"
-            },
-            {
-              "name": "tech"
-            }
-          ],
           "cssProperties": [
             {
-              "name": "--md-sys-color-surface-container-low"
+              "name": "--code-project-animation",
+              "description": "The duration of the subtle hover/focus effect",
+              "default": "200ms"
             },
             {
-              "name": "--code-project-animation",
-              "default": "150ms"
+              "name": "--code-project-rotation",
+              "description": "The duration of the card rotation effect",
+              "default": "800ms"
             },
             {
               "name": "--md-sys-shape-corner-medium"
             },
             {
+              "name": "--internal-code-project-rotation"
+            },
+            {
+              "name": "--md-outlined-card-container-shape"
+            },
+            {
               "name": "--md-sys-color-surface-container-high"
             },
             {
-              "name": "--md-sys-color-inverse-surface"
+              "name": "--md-sys-color-surface-container-low"
             },
             {
               "name": "--md-sys-color-inverse-on-surface"
             },
             {
-              "name": "--md-sys-shape-corner-extra-small"
+              "name": "--md-sys-color-inverse-surface"
             },
             {
-              "name": "--code-partial-animation"
+              "name": "--md-outlined-card-container-color"
             },
             {
-              "name": "--md-sys-color-surface"
-            },
-            {
-              "name": "--md-sys-color-on-surface"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
+              "name": "--md-sys-color-on-surface-variant"
             }
           ],
           "customElement": true
@@ -450,7 +430,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/configs/configs-dialog.js",
+      "path": "src/components/dialog/configs/configs-dialog.js",
       "declarations": [
         {
           "name": "ConfigsDialog",
@@ -495,7 +475,7 @@
                     "references": [
                       {
                         "name": "FormContent",
-                        "module": "src/components/dialogs/configs/configs-dialog.js"
+                        "module": "src/components/dialog/configs/configs-dialog.js"
                       }
                     ]
                   }
@@ -632,7 +612,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/configs/configs-dialog.ts#L63"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L64"
           },
           "kind": "class",
           "tagName": "configs-dialog",
@@ -706,7 +686,7 @@
           "name": "configs-dialog",
           "declaration": {
             "name": "ConfigsDialog",
-            "module": "src/components/dialogs/configs/configs-dialog.js"
+            "module": "src/components/dialog/configs/configs-dialog.js"
           }
         },
         {
@@ -714,18 +694,18 @@
           "name": "ConfigsDialog",
           "declaration": {
             "name": "ConfigsDialog",
-            "module": "src/components/dialogs/configs/configs-dialog.js"
+            "module": "src/components/dialog/configs/configs-dialog.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/connect/connect-dialog.js",
+      "path": "src/components/dialog/connect/connect-dialog.js",
       "declarations": [
         {
           "name": "ConnectDialog",
-          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
+          "summary": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -793,7 +773,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/connect/connect-dialog.ts#L29"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L20"
           },
           "kind": "class",
           "tagName": "connect-dialog",
@@ -807,7 +787,13 @@
               "name": "--md-sys-color-surface-container-high"
             },
             {
+              "name": "--hairline-width"
+            },
+            {
               "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
             },
             {
               "name": "--md-dialog-container-color"
@@ -817,12 +803,6 @@
             },
             {
               "name": "--md-ref-typeface-weight-bold"
-            },
-            {
-              "name": "--hairline-width"
-            },
-            {
-              "name": "--md-sys-color-on-surface-variant"
             },
             {
               "name": "--md-sys-color-primary-fixed-dim"
@@ -858,7 +838,7 @@
           "name": "connect-dialog",
           "declaration": {
             "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.js"
+            "module": "src/components/dialog/connect/connect-dialog.js"
           }
         },
         {
@@ -866,14 +846,14 @@
           "name": "ConnectDialog",
           "declaration": {
             "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.js"
+            "module": "src/components/dialog/connect/connect-dialog.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/step-up/step-up-dialog.js",
+      "path": "src/components/dialog/step-up/step-up-dialog.js",
       "declarations": [
         {
           "name": "StepUpDialog",
@@ -890,8 +870,8 @@
                 "text": "\"confirm\" | \"warning\" | \"attention\"",
                 "references": [
                   {
-                    "name": "ConfirmDialogStyle",
-                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                    "name": "StepUpDialogStyle",
+                    "module": "src/components/dialog/step-up/step-up-dialog.js"
                   }
                 ]
               },
@@ -941,7 +921,7 @@
             {
               "name": "icons",
               "type": {
-                "text": "Record\u003cConfirmDialogStyle, TemplateResult\u003e"
+                "text": "Record\u003cStepUpDialogStyle, TemplateResult\u003e"
               },
               "default": "{\\n    confirm: html`\u003cmd-icon slot=\"icon\"\u003echeck_circle\u003c/md-icon\u003e`,\\n    warning: html`\u003cmd-icon slot=\"icon\"\u003ewarning\u003c/md-icon\u003e`,\\n    attention: html`\u003cmd-icon slot=\"icon\"\u003ereport\u003c/md-icon\u003e`,\\n  }",
               "kind": "field",
@@ -949,7 +929,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialogs/step-up/step-up-dialog.ts#L24"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/step-up/step-up-dialog.ts#L27"
           },
           "kind": "class",
           "tagName": "step-up-dialog",
@@ -961,8 +941,8 @@
                 "text": "\"confirm\" | \"warning\" | \"attention\"",
                 "references": [
                   {
-                    "name": "ConfirmDialogStyle",
-                    "module": "src/components/dialogs/step-up/step-up-dialog.js"
+                    "name": "StepUpDialogStyle",
+                    "module": "src/components/dialog/step-up/step-up-dialog.js"
                   }
                 ]
               },
@@ -1010,6 +990,10 @@
           ],
           "cssProperties": [
             {
+              "name": "--md-dialog-container-color",
+              "default": "var(--md-sys-color-surface-container-high)"
+            },
+            {
               "name": "--md-sys-color-surface-container-high"
             },
             {
@@ -1049,7 +1033,7 @@
           "name": "step-up-dialog",
           "declaration": {
             "name": "StepUpDialog",
-            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+            "module": "src/components/dialog/step-up/step-up-dialog.js"
           }
         },
         {
@@ -1057,7 +1041,7 @@
           "name": "StepUpDialog",
           "declaration": {
             "name": "StepUpDialog",
-            "module": "src/components/dialogs/step-up/step-up-dialog.js"
+            "module": "src/components/dialog/step-up/step-up-dialog.js"
           }
         }
       ]
@@ -1373,7 +1357,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L22"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L32"
           },
           "kind": "class",
           "tagName": "fab-menu",
@@ -1465,15 +1449,27 @@
           ],
           "slots": [
             {
-              "name": "menu-items",
-              "description": "The content of the menu, typically {@link FabMenuItem} elements."
+              "name": "",
+              "description": "[menu-items] - The content of the menu, typically {@link FabMenuItem} elements"
+            },
+            {
+              "name": "menu-items"
             }
           ],
           "cssProperties": [
             {
               "name": "--fab-menu-transition-duration",
-              "description": "The duration of the menu's opening and closing animations.",
+              "description": "The duration of the menu's opening and closing animations",
               "default": "200ms"
+            },
+            {
+              "name": "--fab-menu-animation-spec",
+              "description": "The animation spec for {@link FabMenu} `transition`s",
+              "default": "cubic-bezier(0.4,0,0.2,1)"
+            },
+            {
+              "name": "--fab-menu-item-direction",
+              "default": "row-reverse"
             },
             {
               "name": "--md-icon-size"
@@ -1484,6 +1480,12 @@
             },
             {
               "name": "--md-sys-color-scrim"
+            },
+            {
+              "name": "--internal-fab-menu-transition-duration"
+            },
+            {
+              "name": "--internal-fab-menu-animation-spec"
             }
           ],
           "customElement": true
@@ -1539,7 +1541,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L23"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L18"
           },
           "kind": "class",
           "tagName": "nav-component",
@@ -2205,17 +2207,6 @@
               "fieldName": "hrefUrl"
             }
           ],
-          "slots": [
-            {
-              "name": ""
-            }
-          ],
-          "cssParts": [
-            {
-              "name": "word-tag",
-              "summary": "The same `\u003cspan\u003e` styled by the component"
-            }
-          ],
           "cssProperties": [
             {
               "name": "--word-tag-color",
@@ -2265,17 +2256,17 @@
               "name": "--md-sys-typescale-body-large-size"
             },
             {
+              "name": "--internal-word-tag-font-weight",
+              "default": "var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight))"
+            },
+            {
               "name": "--md-sys-typescale-body-large-weight"
             },
             {
-              "name": "--md-ref-typeface-weight-regular"
+              "name": "--md-sys-typescale-body-large-line-height"
             },
             {
               "name": "--md-sys-shape-corner-small"
-            },
-            {
-              "name": "--internal-word-tag-color",
-              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
             },
             {
               "name": "--internal-word-tag-background-color",
@@ -2290,16 +2281,20 @@
               "default": "var(--word-tag-font-size, var(--md-sys-typescale-body-large-size))"
             },
             {
-              "name": "--internal-word-tag-font-weight",
-              "default": "var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight))"
-            },
-            {
               "name": "--internal-word-tag-line-height",
-              "default": "var(--word-tag-line-height, var(--md-ref-typeface-weight-regular))"
+              "default": "var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height))"
             },
             {
               "name": "--internal-word-tag-border-radius",
               "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
+            },
+            {
+              "name": "--internal-word-tag-color",
+              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
+            },
+            {
+              "name": "--internal-word-tag-animation-duration",
+              "default": "200ms"
             }
           ],
           "customElement": true
@@ -2585,41 +2580,20 @@
             "package": "lit"
           },
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/code/code-partial.ts#L11"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/code/code-partial.ts#L10"
           },
           "kind": "class",
           "tagName": "code-partial",
           "cssProperties": [
             {
-              "name": "--md-sys-color-surface"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
-            },
-            {
-              "name": "--md-sys-color-surface-container-low"
-            },
-            {
               "name": "--code-partial-animation",
               "default": "100ms"
             },
             {
-              "name": "--md-sys-color-surface-container-high"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-ref-typeface-plain"
-            },
-            {
-              "name": "--md-sys-color-tertiary"
+              "name": "--md-sys-color-surface"
             },
             {
               "name": "--md-sys-color-on-surface"
-            },
-            {
-              "name": "--code-partial-animation-reduced"
             }
           ],
           "customElement": true
@@ -2650,19 +2624,19 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/partials/profile/profile-partial.js",
+      "path": "src/partials/info/info-partial.js",
       "declarations": [
         {
-          "name": "ProfilePartial",
+          "name": "InfoPartial",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/profile/profile-partial.ts#L17"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/partials/info/info-partial.ts#L17"
           },
           "kind": "class",
-          "tagName": "profile-partial",
+          "tagName": "info-partial",
           "cssProperties": [
             {
               "name": "--md-sys-color-surface"
@@ -2689,18 +2663,18 @@
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "profile-partial",
+          "name": "info-partial",
           "declaration": {
-            "name": "ProfilePartial",
-            "module": "src/partials/profile/profile-partial.js"
+            "name": "InfoPartial",
+            "module": "src/partials/info/info-partial.js"
           }
         },
         {
           "kind": "js",
-          "name": "ProfilePartial",
+          "name": "InfoPartial",
           "declaration": {
-            "name": "ProfilePartial",
-            "module": "src/partials/profile/profile-partial.js"
+            "name": "InfoPartial",
+            "module": "src/partials/info/info-partial.js"
           }
         }
       ]

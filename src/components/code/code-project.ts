@@ -32,11 +32,17 @@ export class CodeProject extends LitElement {
         display: block;
         height: 30rem;
 
+        /* @ignore */
         --internal-code-project-animation: var(--code-project-animation, 200ms);
+
+        /* @ignore */
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
 
         @media (prefers-reduced-motion: reduce) {
+          /* @ignore */
           --internal-code-project-animation: 0ms;
+
+          /* @ignore */
           --internal-code-project-rotation: 0ms;
         }
       }

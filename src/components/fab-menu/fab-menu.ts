@@ -14,9 +14,19 @@ import { type MaterialSymbol } from "material-symbols";
  * A floating action button that toggles a menu of actions.
  *
  * @element fab-menu
- * @slot menu-items - The content of the menu, typically {@link FabMenuItem} elements.
+ * @slot [menu-items] - The content of the menu, typically {@link FabMenuItem} elements
  *
- * @cssprop [--fab-menu-transition-duration=200ms] - The duration of the menu's opening and closing animations.
+ * @property {boolean} [open=false] - Indicator of open/closed state
+ * @property {MaterialSymbol} [icon="add"] - The {@link MaterialSymbol} to display when menu is closed
+ * @property {MaterialSymbol} [icon="close"] - The {@link MaterialSymbol} to display when menu is opened
+ * @property {string} [variant="primary"] - The variant, one of `"primary"`, `"secondary"`, `"tertiary"`, `"surface"`
+ * @property {string} [label=""] - The label to display when both opened and closed
+ * @property {string} [ariaLabel=""] - An override for the `aria-label` attribute
+ * @property {string} [size="medium"] - The size of the underlying {@link MdFab}, one of `"small"`, `"medium"`, `"large"`
+ * @property {string} [direction="end"] - The direction of the menu, one of `"start"`, `"end"`
+ *
+ * @cssprop [--fab-menu-transition-duration=200ms] - The duration of the menu's opening and closing animations
+ * @cssprop [--fab-menu-animation-spec=cubic-bezier(0.4,0,0.2,1)] - The animation spec for {@link FabMenu} `transition`s
  */
 @customElement("fab-menu")
 export class FabMenu extends LitElement {
@@ -26,7 +36,8 @@ export class FabMenu extends LitElement {
       :host {
         /* Initial menu direction. Override with fab-menu[direction="start"] */
         --menu-direction: end;
-        --fab-menu-transition-duration: 200ms;
+        --internal-fab-menu-transition-duration: var(--fab-menu-transition-duration, 200ms);
+        --internal-fab-menu-animation-spec: var(--fab-menu-animation-spec, cubic-bezier(0.4, 0, 0.2, 1));
 
         display: inline-flex;
         flex-direction: column-reverse;
@@ -65,9 +76,9 @@ export class FabMenu extends LitElement {
         transform-origin: bottom center;
         pointer-events: none;
         transition:
-          opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
-          transform var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
-          visibility var(--fab-menu-transition-duration) linear
+          opacity var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
+          transform var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
+          visibility var(--internal-fab-menu-transition-duration) linear
           ;
       }
 
@@ -90,9 +101,9 @@ export class FabMenu extends LitElement {
         --md-fab-container-elevation: 4;
 
         transition:
-          transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
-          background-color var(--fab-menu-transition-duration) linear,
-          color var(--fab-menu-transition-duration) linear
+          transform calc(100ms + var(--internal-fab-menu-transition-duration)) var(--internal-fab-menu-animation-spec),
+          background-color var(--internal-fab-menu-transition-duration) linear,
+          color var(--internal-fab-menu-transition-duration) linear
           ;
 
         /* Reset default margin */
@@ -115,7 +126,7 @@ export class FabMenu extends LitElement {
       .icon-wrapper md-icon {
         grid-area: 1 / 1;
         transition:
-          transform calc(100ms + var(--fab-menu-transition-duration)) cubic-bezier(0.4, 0, 0.2, 1),
+          transform calc(100ms + var(--internal-fab-menu-transition-duration)) var(--internal-fab-menu-animation-spec),
           opacity 0.2s linear;
       }
 
@@ -133,7 +144,7 @@ export class FabMenu extends LitElement {
         overscroll-behavior: contain;
         position: fixed;
         z-index: 0;
-        transition: opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opacity var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec);
       }
     `,
   ];
@@ -238,7 +249,6 @@ export class FabMenu extends LitElement {
       return;
     }
     const path = e.composedPath();
-    console.info(`Composed Click Path on document: ${path}`)
     if (!path.includes(this)) {
       this.open = false;
     }
@@ -304,8 +314,8 @@ export class FabMenu extends LitElement {
         break;
       case "medium":
         this._items.forEach((item: FabMenuItem) => {
-          item.style.setProperty("--fab-menu-item-padding-start", "0.5rem");
-          item.style.setProperty("--fab-menu-item-padding-end", "0.5rem");
+          item.style.setProperty("--fab-menu-item-padding-start", "0.3rem");
+          item.style.setProperty("--fab-menu-item-padding-end", "0.3rem");
         });
         break;
       case "large":
@@ -364,13 +374,17 @@ export class FabMenu extends LitElement {
 
     return html`
       ${this.open ? html`<div class="scrim"></div>` : nothing}
-      ${this.open
-        ? html`<div
-            class="focus-trap-start"
-            tabindex="0"
-            @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
-          ></div>`
-        : nothing}
+      ${
+        this.open ?
+          html`
+            <div
+              class="focus-trap-start"
+              tabindex="0"
+              @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
+            ></div>
+          ` :
+          nothing
+        }
       <div class="fab-container">
         <md-fab
           id="fab-menu-fab"
@@ -381,19 +395,21 @@ export class FabMenu extends LitElement {
           .ariaExpanded=${this.open ? "true" : "false"}
           @click=${() => this._toggle()}
         >
-          ${when(
-            this.icon,
-            () => html`
-              <div
-                class="icon-wrapper"
-                slot="icon"
-              >
-                <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
-                <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
-              </div>
-            `,
-            () => nothing,
-          )}
+          ${
+            when(
+              this.icon,
+              () => html`
+                <div
+                  class="icon-wrapper"
+                  slot="icon"
+                >
+                  <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
+                  <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
+                </div>
+              `,
+              () => nothing,
+            )
+          }
         </md-fab>
       </div>
 
@@ -404,13 +420,17 @@ export class FabMenu extends LitElement {
       >
         <slot name="menu-items"></slot>
       </ul>
-      ${this.open
-        ? html`<div
-            class="focus-trap-end"
-            tabindex="0"
-            @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
-          ></div>`
-        : nothing}
+      ${
+        this.open ?
+          html`
+            <div
+              class="focus-trap-end"
+              tabindex="0"
+              @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
+            ></div>
+          ` :
+          nothing
+        }
     `;
   }
 }

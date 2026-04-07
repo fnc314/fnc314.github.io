@@ -36,7 +36,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "module": "src/components/dialogs/configs/configs-dialog"
+            "module": "src/components/dialog/configs/configs-dialog"
           }
         },
         {
@@ -44,7 +44,15 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "module": "src/components/dialogs/step-up/step-up-dialog"
+            "module": "src/components/dialog/connect/connect-dialog"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "src/components/dialog/step-up/step-up-dialog"
           }
         },
         {
@@ -372,6 +380,94 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/code/code-project.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeProject",
+          "members": [
+            {
+              "kind": "field",
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "attribute": "codeProject"
+            },
+            {
+              "kind": "field",
+              "name": "flipped",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "#generateCardFront",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Builds the front of the MdOutlinedCard content"
+            },
+            {
+              "kind": "method",
+              "name": "#generateCardBack",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Builds the back of the MdOutlinedCard content"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "fieldName": "codeProject"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "summary": "Represents a single (usually GitHub-hosted) demonstration project",
+          "tagName": "code-project",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CodeProject",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "code-project",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/blog/blog-post.ts",
       "declarations": [
         {
@@ -388,11 +484,11 @@
               "name": "--blog-post-primary-text-color"
             },
             {
-              "description": "The color of the container, {@link md-elevated-card} and {@link --md-elevated-card-container-color}",
+              "description": "The color of the container, {@link MdElevatedCard} and {@link --md-elevated-card-container-color}",
               "name": "--blog-post-container-color"
             },
             {
-              "description": "The color of the container, {@link word-tag}",
+              "description": "The color of the container, {@link WordTag}",
               "name": "--blog-post-word-tag-container-color"
             }
           ],
@@ -456,71 +552,6 @@
           "declaration": {
             "name": "BlogPost",
             "module": "src/components/blog/blog-post.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/blog/blog-series.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/code/code-project.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CodeProject",
-          "members": [
-            {
-              "kind": "field",
-              "name": "codeProject",
-              "type": {
-                "text": "CodeProjectData"
-              },
-              "default": "{}",
-              "description": "The {@link CodeProjectData} to render",
-              "attribute": "codeProject"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "codeProject",
-              "type": {
-                "text": "CodeProjectData"
-              },
-              "default": "{}",
-              "description": "The {@link CodeProjectData} to render",
-              "fieldName": "codeProject"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "summary": "Renders a (`GitHub`-hosted) coding project",
-          "tagName": "code-project",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CodeProject",
-          "declaration": {
-            "name": "CodeProject",
-            "module": "src/components/code/code-project.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "code-project",
-          "declaration": {
-            "name": "CodeProject",
-            "module": "src/components/code/code-project.ts"
           }
         }
       ]
@@ -659,14 +690,19 @@
           "name": "FabMenu",
           "cssProperties": [
             {
-              "description": "The duration of the menu's opening and closing animations.",
+              "description": "The duration of the menu's opening and closing animations",
               "name": "--fab-menu-transition-duration",
               "default": "200ms"
+            },
+            {
+              "description": "The animation spec for {@link FabMenu} `transition`s",
+              "name": "--fab-menu-animation-spec",
+              "default": "cubic-bezier(0.4,0,0.2,1)"
             }
           ],
           "slots": [
             {
-              "description": "The content of the menu, typically {@link FabMenuItem} elements.",
+              "description": "The content of the menu, typically {@link FabMenuItem} elements",
               "name": "menu-items"
             }
           ],
@@ -676,6 +712,14 @@
               "name": "_fab",
               "type": {
                 "text": "MdFab"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_scrim",
+              "type": {
+                "text": "HTMLDivElement"
               },
               "privacy": "private"
             },
@@ -695,7 +739,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Whether the menu is currently open.",
+              "description": "Indicator of open/closed state",
               "attribute": "open",
               "reflects": true
             },
@@ -703,10 +747,10 @@
               "kind": "field",
               "name": "icon",
               "type": {
-                "text": "MaterialSymbol | \"\""
+                "text": "MaterialSymbol"
               },
-              "default": "\"add\"",
-              "description": "The MaterialSymbol to display when the menu\nis closed. Defaults to 'add'. An empty string\n  suppresses the icon",
+              "default": "\"close\"",
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
               "attribute": "icon"
             },
             {
@@ -723,20 +767,20 @@
               "kind": "field",
               "name": "variant",
               "type": {
-                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+                "text": "string"
               },
               "default": "\"primary\"",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
               "attribute": "variant"
             },
             {
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "\"small\" | \"medium\" | \"large\""
+                "text": "string"
               },
               "default": "\"medium\"",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
               "attribute": "size"
             },
             {
@@ -746,7 +790,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The label of the underlying MdFab.\nDefaults to an empty string.",
+              "description": "The label to display when both opened and closed",
               "attribute": "label"
             },
             {
@@ -756,17 +800,17 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The `aria-label` of the FAB.",
+              "description": "An override for the `aria-label` attribute",
               "attribute": "aria-label"
             },
             {
               "kind": "field",
               "name": "direction",
               "type": {
-                "text": "\"start\" | \"end\""
+                "text": "string"
               },
               "default": "\"end\"",
-              "description": "The direction in which the menu items should expand.",
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
               "attribute": "direction",
               "reflects": true
             },
@@ -820,17 +864,17 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Whether the menu is currently open.",
+              "description": "Indicator of open/closed state",
               "fieldName": "open",
               "attribute": "open"
             },
             {
               "name": "icon",
               "type": {
-                "text": "MaterialSymbol | \"\""
+                "text": "MaterialSymbol"
               },
-              "default": "\"add\"",
-              "description": "The MaterialSymbol to display when the menu\nis closed. Defaults to 'add'. An empty string\n  suppresses the icon",
+              "default": "\"close\"",
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
               "fieldName": "icon",
               "attribute": "icon"
             },
@@ -847,20 +891,20 @@
             {
               "name": "variant",
               "type": {
-                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+                "text": "string"
               },
               "default": "\"primary\"",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
               "fieldName": "variant",
               "attribute": "variant"
             },
             {
               "name": "size",
               "type": {
-                "text": "\"small\" | \"medium\" | \"large\""
+                "text": "string"
               },
               "default": "\"medium\"",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
               "fieldName": "size",
               "attribute": "size"
             },
@@ -870,7 +914,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The label of the underlying MdFab.\nDefaults to an empty string.",
+              "description": "The label to display when both opened and closed",
               "fieldName": "label",
               "attribute": "label"
             },
@@ -880,17 +924,17 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The `aria-label` of the FAB.",
+              "description": "An override for the `aria-label` attribute",
               "fieldName": "ariaLabel",
               "attribute": "aria-label"
             },
             {
               "name": "direction",
               "type": {
-                "text": "\"start\" | \"end\""
+                "text": "string"
               },
               "default": "\"end\"",
-              "description": "The direction in which the menu items should expand.",
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
               "fieldName": "direction",
               "attribute": "direction"
             }
@@ -993,7 +1037,7 @@
                 "text": "Record<Route, Ref<MdPrimaryTab>>"
               },
               "privacy": "private",
-              "default": "{ work: createRef(), code: createRef(), profile: createRef(), blog: createRef(), }"
+              "default": "{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }"
             },
             {
               "kind": "field",
@@ -1014,7 +1058,7 @@
               "privacy": "private",
               "return": {
                 "type": {
-                  "text": ""
+                  "text": "index"
                 }
               },
               "description": "Reads window.location.hash and returns an object containing the Route and indexing number"
@@ -1048,9 +1092,11 @@
                   "name": "index",
                   "type": {
                     "text": "number"
-                  }
+                  },
+                  "description": "The current {@link _activeTabIndex}"
                 }
-              ]
+              ],
+              "description": "Updates external DOM via style manipulations and blind queries"
             },
             {
               "kind": "method",
@@ -1061,7 +1107,8 @@
                   "name": "event",
                   "type": {
                     "text": "Event"
-                  }
+                  },
+                  "description": "The emitted {@link Event}from the HTML\n   "
                 }
               ],
               "description": "Handles user clicks on tabs. Updates URL and UI."
@@ -1075,7 +1122,7 @@
                   "text": "TemplateResult"
                 }
               },
-              "description": "Creates a TemplateResult[] consisting of MdPrimaryTabs and their child MdIcons"
+              "description": "Creates a TemplateResult consisting of MdTabs, MdPrimaryTabs, and MdIcons"
             }
           ],
           "superclass": {
@@ -1578,9 +1625,6 @@
               "default": "--md-sys-shape-corner-small"
             }
           ],
-          "slots": [
-            {}
-          ],
           "members": [
             {
               "kind": "field",
@@ -1609,6 +1653,7 @@
                 "text": "string"
               },
               "default": "\"\"",
+              "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
               "attribute": "hrefUrl"
             }
           ],
@@ -1637,6 +1682,7 @@
                 "text": "string"
               },
               "default": "\"\"",
+              "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
               "fieldName": "hrefUrl"
             }
           ],
@@ -1899,7 +1945,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/configs/configs-dialog.ts",
+      "path": "src/components/dialog/configs/configs-dialog.ts",
       "declarations": [
         {
           "kind": "class",
@@ -2163,7 +2209,7 @@
           "name": "ConfigsDialog",
           "declaration": {
             "name": "ConfigsDialog",
-            "module": "src/components/dialogs/configs/configs-dialog.ts"
+            "module": "src/components/dialog/configs/configs-dialog.ts"
           }
         },
         {
@@ -2171,18 +2217,18 @@
           "name": "configs-dialog",
           "declaration": {
             "name": "ConfigsDialog",
-            "module": "src/components/dialogs/configs/configs-dialog.ts"
+            "module": "src/components/dialog/configs/configs-dialog.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/connect/connect-dialog.ts",
+      "path": "src/components/dialog/connect/connect-dialog.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.",
+          "description": "",
           "name": "ConnectDialog",
           "cssProperties": [
             {
@@ -2291,7 +2337,8 @@
             "package": "lit-element"
           },
           "tagName": "connect-dialog",
-          "customElement": true
+          "customElement": true,
+          "summary": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories."
         }
       ],
       "exports": [
@@ -2300,7 +2347,7 @@
           "name": "ConnectDialog",
           "declaration": {
             "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
+            "module": "src/components/dialog/connect/connect-dialog.ts"
           }
         },
         {
@@ -2308,18 +2355,18 @@
           "name": "connect-dialog",
           "declaration": {
             "name": "ConnectDialog",
-            "module": "src/components/dialogs/connect/connect-dialog.ts"
+            "module": "src/components/dialog/connect/connect-dialog.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialogs/step-up/step-up-dialog.ts",
+      "path": "src/components/dialog/step-up/step-up-dialog.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.",
+          "description": "A versatile confirmation dialog used to verify user intent before performing\n significant actions like resetting settings.",
           "name": "StepUpDialog",
           "slots": [
             {
@@ -2340,10 +2387,10 @@
               "kind": "field",
               "name": "dialogStyle",
               "type": {
-                "text": "ConfirmDialogStyle"
+                "text": "StepUpDialogStyle"
               },
               "default": "\"confirm\"",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
+              "description": "Determines which {@link StepUpDialogStyle}",
               "attribute": "dialogStyle"
             },
             {
@@ -2353,7 +2400,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The text content to display in the dialog body.",
+              "description": "The central content of the {@link MdDialog}",
               "attribute": "dialogContentString"
             },
             {
@@ -2397,7 +2444,7 @@
               "kind": "field",
               "name": "icons",
               "type": {
-                "text": "Record<ConfirmDialogStyle, TemplateResult>"
+                "text": "Record<StepUpDialogStyle, TemplateResult>"
               },
               "privacy": "private",
               "default": "{ confirm: html`<md-icon slot=\"icon\">check_circle</md-icon>`, warning: html`<md-icon slot=\"icon\">warning</md-icon>`, attention: html`<md-icon slot=\"icon\">report</md-icon>`, }"
@@ -2406,7 +2453,7 @@
               "kind": "field",
               "name": "primaryActions",
               "type": {
-                "text": "Record<ConfirmDialogStyle, TemplateResult>"
+                "text": "Record<StepUpDialogStyle, TemplateResult>"
               },
               "privacy": "private",
               "default": "{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }"
@@ -2425,10 +2472,10 @@
             {
               "name": "dialogStyle",
               "type": {
-                "text": "ConfirmDialogStyle"
+                "text": "StepUpDialogStyle"
               },
               "default": "\"confirm\"",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
+              "description": "Determines which {@link StepUpDialogStyle}",
               "fieldName": "dialogStyle",
               "attribute": "dialogStyle"
             },
@@ -2438,7 +2485,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The text content to display in the dialog body.",
+              "description": "The central content of the {@link MdDialog}",
               "fieldName": "dialogContentString",
               "attribute": "dialogContentString"
             }
@@ -2457,7 +2504,7 @@
           "name": "StepUpDialog",
           "declaration": {
             "name": "StepUpDialog",
-            "module": "src/components/dialogs/step-up/step-up-dialog.ts"
+            "module": "src/components/dialog/step-up/step-up-dialog.ts"
           }
         },
         {
@@ -2465,7 +2512,7 @@
           "name": "step-up-dialog",
           "declaration": {
             "name": "StepUpDialog",
-            "module": "src/components/dialogs/step-up/step-up-dialog.ts"
+            "module": "src/components/dialog/step-up/step-up-dialog.ts"
           }
         }
       ]
@@ -2481,6 +2528,14 @@
           "declaration": {
             "name": "*",
             "module": "src/types/components/blog/blog-post"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "module": "src/types/components/dialog/connect-dialog"
           }
         },
         {
@@ -3032,33 +3087,77 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/blog/blog-post.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/components/code/code-project.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/work-experience/work-experience.ts",
+      "path": "src/types/components/dialog/connect-dialog.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/nav/routes.ts",
       "declarations": [
         {
           "kind": "variable",
-          "name": "data",
-          "default": "WorkJson"
+          "name": "ROUTES",
+          "type": {
+            "text": "{\n  INFO: \"info\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
+          },
+          "default": "{ INFO: \"info\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
+        },
+        {
+          "kind": "function",
+          "name": "hashToRoute",
+          "return": {
+            "type": {
+              "text": "Route"
+            }
+          },
+          "parameters": [
+            {
+              "name": "hash",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "NavComponentConfig",
+          "type": {
+            "text": "NavComponentConfigs"
+          },
+          "default": "{ tabs: { info: { label: \"Info\", mdIcon: \"account_box\", }, work: { label: \"Work\", mdIcon: \"view_timeline\", }, code: { label: \"Code\", mdIcon: \"code_blocks\", }, blog: { label: \"Blog\", mdIcon: \"newsmode\", } } }"
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "data",
+          "name": "ROUTES",
           "declaration": {
-            "name": "data",
-            "module": "src/types/components/work-experience/work-experience.ts"
+            "name": "ROUTES",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hashToRoute",
+          "declaration": {
+            "name": "hashToRoute",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NavComponentConfig",
+          "declaration": {
+            "name": "NavComponentConfig",
+            "module": "src/types/components/nav/routes.ts"
           }
         }
       ]
@@ -3172,52 +3271,30 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/nav/routes.ts",
+      "path": "src/types/components/work-experience/work-experience.ts",
       "declarations": [
         {
           "kind": "variable",
-          "name": "Routes",
-          "type": {
-            "text": "{\n  PROFILE: \"profile\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
-          },
-          "default": "{ PROFILE: \"profile\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
-        },
-        {
-          "kind": "function",
-          "name": "hashToRoute",
-          "return": {
-            "type": {
-              "text": "Route"
-            }
-          },
-          "parameters": [
-            {
-              "name": "hash",
-              "type": {
-                "text": "string"
-              }
-            }
-          ]
+          "name": "data",
+          "default": "WorkJson"
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Routes",
+          "name": "data",
           "declaration": {
-            "name": "Routes",
-            "module": "src/types/components/nav/routes.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "hashToRoute",
-          "declaration": {
-            "name": "hashToRoute",
-            "module": "src/types/components/nav/routes.ts"
+            "name": "data",
+            "module": "src/types/components/work-experience/work-experience.ts"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/blog/blog-post.ts",
+      "declarations": [],
+      "exports": []
     }
   ]
 }
