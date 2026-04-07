@@ -27,7 +27,7 @@
     "pretty": true,
     "resolveJsonModule": true,
     "rootDir": "./src",
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": true,
