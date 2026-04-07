@@ -30,6 +30,7 @@ export class FabMenuItem extends LitElement {
         /* Align center of small FAB (40px) with center of medium FAB (56px) in parent. (56 - 40) / 2 = 8px = 0.5rem */
 
         padding-inline-end: var(--fab-menu-item-padding-end, 0);
+        /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
         padding-inline-start: var(--fab-menu-item-padding-start, 0);
       }
 

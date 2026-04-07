@@ -73,6 +73,6 @@
       "@/root/*": ["./*"]
     }
   },
-  "include": ["./src/**/*.ts", "rollup.config.ts"],
+  "include": ["./src/**/*.{js,ts}", "rollup.config.ts"],
   "exclude": ["node_modules", "website", "old"]
 }
