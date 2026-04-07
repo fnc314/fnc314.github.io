@@ -8,11 +8,14 @@ import { LitElement, type TemplateResult, css, html } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { customElement, property, query } from "lit/decorators.js";
 
-export type ConfirmDialogStyle = "confirm" | "warning" | "attention";
+export type StepUpDialogStyle = "confirm" | "warning" | "attention";
 
 /**
  * A versatile confirmation dialog used to verify user intent before performing
- * significant actions like resetting settings.
+ *  significant actions like resetting settings.
+ *
+ * @property {StepUpDialogStyle} [dialogStyle="confirm"] - Determines which {@link StepUpDialogStyle}
+ * @property {string} [dialogContentString=""] - The central content of the {@link MdDialog}
  *
  * @element step-up-dialog
  * @slot headline - The {@link MdDialog} headline {@link slot}
@@ -26,13 +29,8 @@ export class StepUpDialog extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-      }
-
-      md-dialog {
         --md-dialog-container-color: var(--md-sys-color-surface-container-high);
-
         --md-outlined-button-hover-state-layer-opacity: 0.5;
-
         --md-filled-button-container-elevation: 2;
         --md-filled-button-container-color: var(--md-sys-color-surface-variant);
         --md-filled-button-label-text-color: var(--md-sys-color-on-surface);
@@ -43,13 +41,14 @@ export class StepUpDialog extends LitElement {
         --md-filled-button-focus-container-color: var(--md-sys-color-surface-variant);
         --md-filled-button-focus-outline-color: var(--md-sys-color-on-surface-variant);
         --md-filled-button-focus-label-text-color: var(--md-sys-color-on-surface-variant);
+      }
 
+      md-dialog {
         &.confirm {
           --md-dialog-container-color: var(--md-sys-color-primary-container);
           --md-dialog-supporting-text-color: var(--md-sys-color-on-primary-container);
           --md-dialog-icon-color: var(--md-sys-color-on-primary-container);
           --md-dialog-headline-color: var(--md-sys-color-on-primary-container);
-
           --md-outlined-button-label-text-color: var(--md-sys-color-on-primary-container);
           --md-outlined-button-outline-color: var(--md-sys-color-on-primary-container);
           --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-primary-container);
@@ -61,7 +60,6 @@ export class StepUpDialog extends LitElement {
           --md-dialog-supporting-text-color: var(--md-sys-color-on-tertiary);
           --md-dialog-icon-color: var(--md-sys-color-on-tertiary);
           --md-dialog-headline-color: var(--md-sys-color-on-tertiary);
-
           --md-outlined-button-label-text-color: var(--md-sys-color-on-tertiary);
           --md-outlined-button-outline-color: var(--md-sys-color-on-tertiary);
           --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-tertiary);
@@ -73,7 +71,6 @@ export class StepUpDialog extends LitElement {
           --md-dialog-supporting-text-color: var(--md-sys-color-on-error);
           --md-dialog-icon-color: var(--md-sys-color-on-error);
           --md-dialog-headline-color: var(--md-sys-color-on-error);
-
           --md-outlined-button-label-text-color: var(--md-sys-color-on-error);
           --md-outlined-button-outline-color: var(--md-sys-color-on-error);
           --md-outlined-button-hover-label-text-color: var(--md-sys-color-on-error);
@@ -88,7 +85,7 @@ export class StepUpDialog extends LitElement {
    * @attr dialogStyle
    */
   @property({ type: String, attribute: "dialogStyle" })
-  dialogStyle: ConfirmDialogStyle = "confirm";
+  dialogStyle: StepUpDialogStyle = "confirm";
 
   /**
    * The text content to display in the dialog body.
@@ -124,13 +121,13 @@ export class StepUpDialog extends LitElement {
     await this._mdDialog.close();
   }
 
-  private icons: Record<ConfirmDialogStyle, TemplateResult> = {
+  private icons: Record<StepUpDialogStyle, TemplateResult> = {
     confirm: html`<md-icon slot="icon">check_circle</md-icon>`,
     warning: html`<md-icon slot="icon">warning</md-icon>`,
     attention: html`<md-icon slot="icon">report</md-icon>`,
   };
 
-  private primaryActions: Record<ConfirmDialogStyle, TemplateResult> = {
+  private primaryActions: Record<StepUpDialogStyle, TemplateResult> = {
     confirm: html`
       <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button>
     `,
@@ -161,10 +158,6 @@ export class StepUpDialog extends LitElement {
         break;
     }
 
-    const defaultHeadlineSlotContent: TemplateResult = html`
-      <h2 class="md-typescale-headline-small">${defaultHeadlineSlotText}</h2>
-    `;
-
     return html`
       <md-dialog
         id="step-up-dialog"
@@ -172,7 +165,9 @@ export class StepUpDialog extends LitElement {
         class=${classMap(mdDialogClasses)}
       >
         ${this.icons[this.dialogStyle]}
-        <div slot="headline">${defaultHeadlineSlotContent}</div>
+        <div slot="headline">
+          <h2 class="md-typescale-headline-small">${defaultHeadlineSlotText}</h2>
+        </div>
         <div slot="content">
           <form
             method="dialog"

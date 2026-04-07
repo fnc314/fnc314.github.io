@@ -6,6 +6,10 @@
         {
           "name": "Gradle",
           "url": "https://docs.gradle.org/"
+        },
+        {
+          "name": "Kotlin",
+          "url": "https://kotlinlang.org/"
         }
       ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
@@ -30,16 +34,16 @@
       "name": "fnc314-kmp",
       "tech": [
         {
-          "name": "Kotlin",
-          "url": "https://kotlinlang.org/"
+          "name": "Android",
+          "url": "https://developer.android.com/"
         },
         {
           "name": "Gradle",
           "url": "https://docs.gradle.org/"
         },
         {
-          "name": "Android",
-          "url": "https://developer.android.com/"
+          "name": "Kotlin",
+          "url": "https://kotlinlang.org/"
         }
       ],
       "url": "https://github.com/fnc314/fnc314-kmp",

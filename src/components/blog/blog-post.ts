@@ -41,25 +41,25 @@ export class BlogPost extends LitElement {
         /**
          * @cssprop --blog-post-primary-text-color - The color of the primary text
          */
-        --blog-post-primary-text-color: var(--md-sys-color-on-primary-container);
+        --blog-post-primary-text-color: var(--md-sys-color-on-secondary-container);
 
         /**
          * @cssprop --blog-post-secondary-text-color - The color of the secondary text
          */
-        --blog-post-secondary-text-color: var(--md-sys-color-on-primary);
+        --blog-post-secondary-text-color: var(--md-sys-color-on-secondary);
         --word-tag-color: var(--blog-post-secondary-text-color);
 
         /**
          * @cssprop --blog-post-container-color - The color of the container, {@link md-elevated-card}
          *   and {@link --md-elevated-card-container-color}
          */
-        --blog-post-container-color: var(--md-sys-color-primary-container);
+        --blog-post-container-color: var(--md-sys-color-secondary-container);
         --md-elevated-card-container-color: var(--blog-post-container-color);
 
         /**
          * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link word-tag}
          */
-        --blog-post-word-tag-container-color: var(--md-sys-color-primary);
+        --blog-post-word-tag-container-color: var(--md-sys-color-secondary);
         --word-tag-background-color: var(--blog-post-word-tag-container-color);
 
         transition:
@@ -74,12 +74,12 @@ export class BlogPost extends LitElement {
         :focus,
         :focus-visible,
         :focus-within {
-          --blog-post-primary-text-color: var(--md-sys-color-on-primary);
-          --blog-post-container-color: var(--md-sys-color-primary);
+          --blog-post-primary-text-color: var(--md-sys-color-on-secondary);
+          --blog-post-container-color: var(--md-sys-color-secondary);
           --md-elevated-card-container-color: var(--blog-post-container-color);
-          --blog-post-secondary-text-color: var(--md-sys-color-on-primary-container);
+          --blog-post-secondary-text-color: var(--md-sys-color-on-secondary-container);
           --word-tag-color: var(--blog-post-secondary-text-color);
-          --blog-post-word-tag-container-color: var(--md-sys-color-primary-container);
+          --blog-post-word-tag-container-color: var(--md-sys-color-secondary-container);
           --word-tag-background-color: var(--blog-post-word-tag-container-color);
         }
 
@@ -91,8 +91,7 @@ export class BlogPost extends LitElement {
       }
 
       a {
-        display: contents;
-        color: currentcolor;
+        color: var(--blog-post-primary-text-color);
       }
 
       md-elevated-card {
@@ -125,13 +124,14 @@ export class BlogPost extends LitElement {
         display: grid;
         grid-template-areas:
           "icon header  header"
-          ".    header  header"
+          "icon header  header"
           ".    summary summary"
-          ".    tags    tags";
+          ".    tags    tags"
+          ;
         grid-template-columns: 0.25fr 1fr 0.5fr;
         gap: 0.5rem;
 
-        & > img {
+        img {
           grid-area: icon;
           width: calc(2 * var(--md-icon-size));
           height: auto;
@@ -158,11 +158,12 @@ export class BlogPost extends LitElement {
           margin: 0;
         }
 
-        & > p {
+        p {
           grid-area: summary;
+          margin: 0;
         }
 
-        & > ul.tags {
+        ul.tags {
           grid-area: tags;
           display: flex;
           flex-flow: row wrap;
@@ -175,10 +176,10 @@ export class BlogPost extends LitElement {
         @container (width > 600px) {
           grid-template-areas:
             "icon header  header  tags"
-            ".    header  header  tags"
+            "icon header  header  tags"
             ".    summary summary tags";
 
-          & > ul.tags {
+          ul.tags {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
@@ -216,28 +217,32 @@ export class BlogPost extends LitElement {
   override render() {
     return html`
       <md-elevated-card>
-        <a
-          href=${ifDefined(this.blogPost.mediumUrl)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <section>
-            <img
-              loading="lazy"
-              role="img"
-              alt="Medium logo"
-              .src=${`./assets/icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
-            />
-            <header>
-              <h2 class="md-typescale-headline-large">${this.blogPost.series}</h2>
-              <h3 class="md-typescale-title-medium">${this.blogPost.title}</h3>
-            </header>
-            <p class="md-typescale-body-medium">${this.blogPost.summary}</p>
-            <ul class="tags">
-              ${this.blogPost.tags?.map((tag) => html` <li><word-tag .word=${tag}></word-tag></li> `)}
-            </ul>
-          </section>
-        </a>
+        <section>
+          <img
+            loading="lazy"
+            role="img"
+            alt="Medium logo"
+            .src=${`./assets/icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
+          />
+          <header>
+            <h2 class="md-typescale-headline-large">${this.blogPost.series}</h2>
+            <h3 class="md-typescale-title-medium">${this.blogPost.title}</h3>
+          </header>
+          <p class="md-typescale-body-medium">
+            ${this.blogPost.summary}
+            <br><br>
+            <a
+              href=${ifDefined(this.blogPost.mediumUrl)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            Medium&reg;
+            </a>
+          </p>
+          <ul class="tags">
+            ${this.blogPost.tags?.map((tag) => html` <li><word-tag .word=${tag}></word-tag></li> `)}
+          </ul>
+        </section>
       </md-elevated-card>
     `;
   }

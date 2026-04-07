@@ -1,4 +1,5 @@
 import Connections from "@/data/connections.json" with { type: "json" };
+import { DialogStyles } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
@@ -45,21 +46,9 @@ export class ConnectDialog extends LitElement {
         --md-list-item-leading-image-height: 2rem;
       }
 
+      ${DialogStyles}
+
       md-dialog {
-        @media (orientation: landscape) {
-          min-width: calc(100dvw - 10rem);
-          max-width: calc(100dvw - 2rem);
-          min-height: 90dvh;
-          max-height: 100dvh;
-        }
-
-        @media (orientation: portrait) and (width <= 600px) {
-          min-width: calc(100dvw - 4rem);
-          max-width: calc(100dvw - 2rem);
-          min-height: calc(100dvh - 6rem);
-          max-height: calc(100dvh - 6rem);
-        }
-
         [slot="headline"] {
           padding: 0;
 

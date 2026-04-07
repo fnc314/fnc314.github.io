@@ -130,7 +130,7 @@ export class CodeProject extends LitElement {
         ul {
           display: flex;
           flex-flow: row wrap;
-          gap: 1rem;
+          gap: 2rem;
           justify-content: space-evenly;
           margin: unset;
           padding: unset;

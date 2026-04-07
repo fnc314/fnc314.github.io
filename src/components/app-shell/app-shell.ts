@@ -1,7 +1,7 @@
-import "@/components/dialogs/configs/configs-dialog";
-import { ConfigsDialog, type FormContent } from "@/components/dialogs/configs/configs-dialog";
-import "@/components/dialogs/connect/connect-dialog";
-import { ConnectDialog } from "@/components/dialogs/connect/connect-dialog";
+import "@/components/dialog/configs/configs-dialog";
+import { ConfigsDialog, type FormContent } from "@/components/dialog/configs/configs-dialog";
+import "@/components/dialog/connect/connect-dialog";
+import { ConnectDialog } from "@/components/dialog/connect/connect-dialog";
 import "@/components/fab-menu/fab-menu";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
@@ -371,7 +371,7 @@ export class AppShell extends LitElement {
           class=${fabPositionClass(this.settingsFabConfig.position)}
           .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
           .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings"}
-          .variant=${"surface"}
+          .variant=${"tertiary"}
           .ariaLabel=${settingsLabel === "" ? "Settings" : settingsLabel}
           .label=${settingsLabel}
           .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
