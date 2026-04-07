@@ -129,7 +129,8 @@ export class FabMenu extends LitElement {
         background: var(--md-sys-color-scrim);
         inset: 0;
         opacity: 0.5;
-        pointer-events: none;
+        pointer-events: auto;
+        overscroll-behavior: contain;
         position: fixed;
         z-index: 0;
         transition: opacity var(--fab-menu-transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,6 +140,9 @@ export class FabMenu extends LitElement {
 
   @query("#fab-menu-fab")
   private _fab!: MdFab;
+
+  @query("div.scrim")
+  private _scrim!: HTMLDivElement;
 
   @queryAssignedElements({ slot: "menu-items", flatten: true })
   private readonly _items!: FabMenuItem[];
@@ -234,6 +238,7 @@ export class FabMenu extends LitElement {
       return;
     }
     const path = e.composedPath();
+    console.info(`Composed Click Path on document: ${path}`)
     if (!path.includes(this)) {
       this.open = false;
     }
@@ -262,6 +267,7 @@ export class FabMenu extends LitElement {
       `FIRSTUPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
       `FIRSTUPDATED: this.label ${this.label}`,
       `FIRSTUPDATED: this.icon ${this.icon}`,
+      `Fab: this._fab ${this._fab !== undefined}`,
     );
     const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
@@ -275,13 +281,16 @@ export class FabMenu extends LitElement {
       `UPDATE: Has Label ${changedProperties.has("label")}|Label is ${changedProperties.get("label")}`,
       `UPDATE: this.label ${this.label}`,
       `UPDATE: this.icon ${this.icon}`,
+      `Fab: this._fab ${this._fab !== undefined}`,
+      `UPDATE: this.open ${this.open}`,
+      `UPDATE: changedProperties.has("open") ${changedProperties.has("open")}`
     );
     if (changedProperties.has("open")) {
-      if (this.open) {
-        document.addEventListener("click", this._handleDocumentClick, { capture: true });
-      } else {
+      if (this.open && this._scrim) {
+        this._scrim.addEventListener("click", this._handleDocumentClick, { capture: true });
+      } /* else {
         document.removeEventListener("click", this._handleDocumentClick, { capture: true });
-      }
+      } */
     }
 
     super.update(changedProperties);
@@ -315,6 +324,7 @@ export class FabMenu extends LitElement {
       `UPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
       `UPDATED: this.label ${this.label}`,
       `UPDATED: this.icon ${this.icon}`,
+      `Fab: this._fab ${this._fab !== undefined}`,
     );
     const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
