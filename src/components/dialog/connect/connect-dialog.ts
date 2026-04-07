@@ -1,5 +1,5 @@
 import Connections from "@/data/connections.json" with { type: "json" };
-import { DialogStyles } from "@/styles/components/dialog/dialog";
+import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
@@ -46,7 +46,7 @@ export class ConnectDialog extends LitElement {
         --md-list-item-leading-image-height: 2rem;
       }
 
-      ${DialogStyles}
+      ${DialogSizing}
 
       md-dialog {
         [slot="headline"] {

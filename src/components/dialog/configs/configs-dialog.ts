@@ -1,7 +1,7 @@
 import { type CompleteStepUpDialog, StepUpDialog } from "@/components/dialog/step-up/step-up-dialog";
 import { configsService } from "@/services/configs";
 import { themeService } from "@/services/theme";
-import { DialogStyles } from "@/styles/components/dialog/dialog";
+import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
@@ -64,7 +64,7 @@ export type FormContent = "ui-mode" | "button-settings" | "button-connect";
 export class ConfigsDialog extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
-    DialogStyles,
+    DialogSizing,
     css`
       :host {
         display: block;
