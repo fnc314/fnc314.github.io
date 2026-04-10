@@ -226,6 +226,9 @@ catalogs:
     eslint-plugin-prettier:
       specifier: 5.5.5
       version: 5.5.5
+    eslint-plugin-tsdoc:
+      specifier: 0.5.2
+      version: 0.5.2
     eslint-plugin-wc:
       specifier: 3.1.0
       version: 3.1.0
@@ -325,6 +328,12 @@ catalogs:
     typedoc:
       specifier: 0.28.18
       version: 0.28.18
+    typedoc-material-theme:
+      specifier: 1.4.1
+      version: 1.4.1
+    typedoc-plugin-markdown:
+      specifier: 4.11.0
+      version: 4.11.0
     typescript:
       specifier: 5.9.3
       version: 5.9.3
@@ -571,6 +580,9 @@ importers:
       eslint-plugin-prettier:
         specifier: catalog:devDependencies
         version: 5.5.5(@types/eslint@9.6.1)(eslint@10.1.0(jiti@2.6.1))(prettier@3.8.1)
+      eslint-plugin-tsdoc:
+        specifier: catalog:devDependencies
+        version: 0.5.2(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-wc:
         specifier: catalog:devDependencies
         version: 3.1.0(eslint@10.1.0(jiti@2.6.1))
@@ -670,6 +682,12 @@ importers:
       typedoc:
         specifier: catalog:devDependencies
         version: 0.28.18(typescript@5.9.3)
+      typedoc-material-theme:
+        specifier: catalog:devDependencies
+        version: 1.4.1(typedoc@0.28.18(typescript@5.9.3))
+      typedoc-plugin-markdown:
+        specifier: catalog:devDependencies
+        version: 4.11.0(typedoc@0.28.18(typescript@5.9.3))
       typescript:
         specifier: catalog:devDependencies
         version: 5.9.3
@@ -1340,6 +1358,9 @@ packages:
   '@m00nbyte/rollup-plugin-copy-multiple-assets@1.0.0':
     resolution: {integrity: sha512-D56TQEHyVKysQEV43ibbK1kHSlnANa35j5ANawbEV/SRXmFeatQs7FOz6eXyg54JA9WoGSUoYiR9BIbziPowBg==}
     engines: {node: '>=18.12.0'}
+
+  '@material/material-color-utilities@0.3.0':
+    resolution: {integrity: sha512-ztmtTd6xwnuh2/xu+Vb01btgV8SQWYCaK56CkRK8gEkWe5TuDyBcYJ0wgkMRn+2VcE9KUmhvkz+N9GHrqw/C0g==}
 
   '@material/material-color-utilities@0.4.0':
     resolution: {integrity: sha512-dlq6VExJReb8dhjj3a/yTigr3ncNwoFmL5Iy2ENtbDX03EmNeOEdZ+vsaGrj7RTuO+mB7L58II4LCsl4NpM8uw==}
@@ -8025,6 +8046,18 @@ packages:
   typed-query-selector@2.12.1:
     resolution: {integrity: sha512-uzR+FzI8qrUEIu96oaeBJmd9E7CFEiQ3goA5qCVgc4s5llSubcfGHq9yUstZx/k4s9dXHVKsE35YWoFyvEqEHA==}
 
+  typedoc-material-theme@1.4.1:
+    resolution: {integrity: sha512-/inKZw8SqZPt+pmawpMhDmXCJQyIm+fHFuGChioyJQICZcX2FyzpwZnyPWcZHmJ09upttWFhti4ZI3hESJNkSA==}
+    engines: {node: '>=18.0.0', npm: '>=8.6.0'}
+    peerDependencies:
+      typedoc: ^0.25.13 || ^0.26.x || ^0.27.x || ^0.28.x
+
+  typedoc-plugin-markdown@4.11.0:
+    resolution: {integrity: sha512-2iunh2ALyfyh204OF7h2u0kuQ84xB3jFZtFyUr01nThJkLvR8oGGSSDlyt2gyO4kXhvUxDcVbO0y43+qX+wFbw==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      typedoc: 0.28.x
+
   typedoc@0.28.18:
     resolution: {integrity: sha512-NTWTUOFRQ9+SGKKTuWKUioUkjxNwtS3JDRPVKZAXGHZy2wCA8bdv2iJiyeePn0xkmK+TCCqZFT0X7+2+FLjngA==}
     engines: {node: '>= 18', pnpm: '>= 10'}
@@ -9093,6 +9126,8 @@ snapshots:
       path: 0.12.7
       rollup: 4.60.0
 
+  '@material/material-color-utilities@0.3.0': {}
+
   '@material/material-color-utilities@0.4.0': {}
 
   '@material/web@2.4.1':
@@ -9108,10 +9143,8 @@ snapshots:
       ajv: 8.18.0
       jju: 1.4.0
       resolve: 1.22.11
-    optional: true
 
-  '@microsoft/tsdoc@0.16.0':
-    optional: true
+  '@microsoft/tsdoc@0.16.0': {}
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -10181,13 +10214,12 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
-      '@typescript-eslint/types': 8.56.1
+      '@typescript-eslint/tsconfig-utils': 8.58.0(typescript@5.9.3)
+      '@typescript-eslint/types': 8.58.0
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   '@typescript-eslint/project-service@8.57.2(typescript@5.9.3)':
     dependencies:
@@ -10218,7 +10250,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.56.1
       '@typescript-eslint/visitor-keys': 8.56.1
-    optional: true
 
   '@typescript-eslint/scope-manager@8.57.2':
     dependencies:
@@ -10234,7 +10265,6 @@ snapshots:
   '@typescript-eslint/tsconfig-utils@8.56.1(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
-    optional: true
 
   '@typescript-eslint/tsconfig-utils@8.57.2(typescript@5.9.3)':
     dependencies:
@@ -10243,7 +10273,6 @@ snapshots:
   '@typescript-eslint/tsconfig-utils@8.58.0(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
-    optional: true
 
   '@typescript-eslint/type-utils@5.62.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -10286,13 +10315,11 @@ snapshots:
   '@typescript-eslint/types@5.62.0':
     optional: true
 
-  '@typescript-eslint/types@8.56.1':
-    optional: true
+  '@typescript-eslint/types@8.56.1': {}
 
   '@typescript-eslint/types@8.57.2': {}
 
-  '@typescript-eslint/types@8.58.0':
-    optional: true
+  '@typescript-eslint/types@8.58.0': {}
 
   '@typescript-eslint/typescript-estree@2.34.0(typescript@5.9.3)':
     dependencies:
@@ -10338,7 +10365,6 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   '@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3)':
     dependencies:
@@ -10397,7 +10423,6 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   '@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -10432,7 +10457,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.56.1
       eslint-visitor-keys: 5.0.1
-    optional: true
 
   '@typescript-eslint/visitor-keys@8.57.2':
     dependencies:
@@ -12644,7 +12668,6 @@ snapshots:
       - eslint
       - supports-color
       - typescript
-    optional: true
 
   eslint-plugin-undefined-css-classes@0.1.5(eslint@10.1.0(jiti@2.6.1)):
     dependencies:
@@ -13798,8 +13821,7 @@ snapshots:
 
   jiti@2.6.1: {}
 
-  jju@1.4.0:
-    optional: true
+  jju@1.4.0: {}
 
   js-levenshtein-esm@2.0.0: {}
 
@@ -17208,6 +17230,15 @@ snapshots:
     optional: true
 
   typed-query-selector@2.12.1: {}
+
+  typedoc-material-theme@1.4.1(typedoc@0.28.18(typescript@5.9.3)):
+    dependencies:
+      '@material/material-color-utilities': 0.3.0
+      typedoc: 0.28.18(typescript@5.9.3)
+
+  typedoc-plugin-markdown@4.11.0(typedoc@0.28.18(typescript@5.9.3)):
+    dependencies:
+      typedoc: 0.28.18(typescript@5.9.3)
 
   typedoc@0.28.18(typescript@5.9.3):
     dependencies:

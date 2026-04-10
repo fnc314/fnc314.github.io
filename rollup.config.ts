@@ -129,8 +129,8 @@ export default defineConfig({
         sourceMap: isDev,
         declaration: isDev,
         declarationMap: isDev,
-        declarationDir: isDev ? "./website/types" : undefined,
-        outDir: isDev ? "./website/types" : undefined,
+        declarationDir: "./website/types",
+        outDir: "./website/types",
       },
     }),
     typescriptPaths.default({

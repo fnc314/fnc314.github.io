@@ -1,13 +1,13 @@
+import eslint from "@eslint/js";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import lit from "eslint-plugin-lit";
+import tsdoc from "eslint-plugin-tsdoc";
 import wc from "eslint-plugin-wc";
-import { fileURLToPath } from "url";
-
-import eslint from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import { fileURLToPath } from "url";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -45,8 +45,11 @@ export default defineConfig([
       "@typescript-eslint": tseslint.plugin,
       wc,
       lit,
+      tsdoc,
     },
-    files: ["./src/**/*.ts", "./src/index.js"],
+    files: [
+      "./src/**/*.ts",
+    ],
     languageOptions: {
       parser: parser,
       parserOptions: {
@@ -60,7 +63,10 @@ export default defineConfig([
         ...globals.browser,
       },
     },
-    rules: tsRules,
+    rules: {
+      ...tsRules,
+      "tsdoc/syntax": "warn",
+    },
     settings: {
       lit: {
         elementBaseClasses: ["ClassExtendingLitElement"], // Recognize `ClassExtendingLitElement` as a sub-class of LitElement
