@@ -3,9 +3,9 @@ import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
 import { MdDialog } from "@material/web/dialog/dialog";
-import { LitElement, type TemplateResult, css, html } from "lit-element";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
+import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import pkg from "./../../../../package.json" with { type: "json" };
 
 /**

@@ -1,5 +1,4 @@
-import { html } from "lit-element";
-import { type TemplateResult } from "lit-html";
+import { type TemplateResult, html } from "lit";
 
 export const FAB_POSITION_COMPONENTS_VERTICAL = {
   TOP: "TOP" as const,

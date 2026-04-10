@@ -1,8 +1,8 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
-import { css, html, LitElement, nothing } from "lit";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
+import { LitElement, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * A component for displaying professional work experience entries.

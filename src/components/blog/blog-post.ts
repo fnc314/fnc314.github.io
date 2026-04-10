@@ -2,9 +2,9 @@ import { configsService } from "@/services/configs";
 import { MaterialTypescaleStyles } from "@/styles";
 import { type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES } from "@/types";
 import { type BlogPostJson } from "@/types/components/blog/blog-post";
-import { LitElement, css, html } from "lit-element";
-import { ifDefined } from "lit-html/directives/if-defined.js";
+import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * @summary Represents a published blog record, linking to the artifact

@@ -5,9 +5,9 @@ import { type PropertyValues } from "@lit/reactive-element";
 import { MdFab } from "@material/web/fab/fab";
 import { MdIcon } from "@material/web/icon/icon";
 import { LitElement, css, html, nothing } from "lit";
-import { styleMap } from "lit-html/directives/style-map.js";
-import { when } from "lit-html/directives/when.js";
 import { customElement, property, query, queryAssignedElements } from "lit/decorators.js";
+import { styleMap } from "lit/directives/style-map.js";
+import { when } from "lit/directives/when.js";
 import { type MaterialSymbol } from "material-symbols";
 
 /**

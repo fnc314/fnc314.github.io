@@ -1,6 +1,5 @@
 import { type MaterialSchemeName } from "@/styles/material-styles";
-import { html } from "lit-element";
-import { type TemplateResult, nothing } from "lit-html";
+import { type TemplateResult, html, nothing } from "lit";
 import { type ThemeName } from "./theme";
 
 export const CONFIG_COLOR_SCHEME_NAMES = {

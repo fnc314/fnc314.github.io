@@ -1,18 +1,18 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import {
-  type RenderableWordCloudWord,
-  type WordCloudAppearance,
-  WordCloudAppearances,
-  type WordCloudGrouping,
-  WordCloudGroupings,
-  type WordCloudSorting,
-  WordCloudSortings,
-  type WordCloudWord,
+    type RenderableWordCloudWord,
+    type WordCloudAppearance,
+    WordCloudAppearances,
+    type WordCloudGrouping,
+    WordCloudGroupings,
+    type WordCloudSorting,
+    WordCloudSortings,
+    type WordCloudWord,
 } from "@/types/components/word/word-cloud";
 import { LitElement, type PropertyValues, css, html } from "lit";
-import { classMap } from "lit-html/directives/class-map.js";
-import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property, query, state } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
+import { styleMap } from "lit/directives/style-map.js";
 
 /**
  * A component that renders a cloud of words with various sorting and grouping options.

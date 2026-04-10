@@ -2,7 +2,7 @@ import "@/components/partial-header/partial-header.ts";
 import "@/components/work-experience/work-experience.ts";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { data as WorkJson } from "@/types/components/work-experience/work-experience";
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("work-partial")

@@ -1,8 +1,8 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type WordTagHeaviness } from "@/types/components/word/word-tag";
 import { LitElement, css, html } from "lit";
-import { styleMap } from "lit-html/directives/style-map.js";
 import { customElement, property } from "lit/decorators.js";
+import { styleMap } from "lit/directives/style-map.js";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
@@ -59,7 +59,6 @@ export class WordTag extends LitElement {
         @media (prefers-reduced-motion: reduce) {
           --internal-word-tag-animation-duration: 0ms;
         }
-
 
         display: contents;
       }

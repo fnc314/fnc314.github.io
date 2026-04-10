@@ -44,10 +44,9 @@ import {
   type ColorScheme as DarkModeToggleColorScheme,
   type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
-import { LitElement, type TemplateResult, css, html } from "lit-element";
-import { nothing } from "lit-html";
-import { classMap } from "lit-html/directives/class-map.js";
+import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 
 export type FormContent = "ui-mode" | "button-settings" | "button-connect";
 

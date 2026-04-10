@@ -10,7 +10,7 @@ import { THEME_CONFIGS } from "@/theme/theme";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/types/components/word/word-cloud";
 import { type ColorSchemeConfigChange } from "@/types/theme/color-scheme-configs";
 import { type ThemeConfig } from "@/types/theme/theme";
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
 @customElement("info-partial")

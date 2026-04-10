@@ -1,7 +1,7 @@
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles";
 import { type BlogPostJson } from "@/types/components/blog/blog-post";
-import { LitElement, css, html } from "lit-element";
+import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("blog-partial")

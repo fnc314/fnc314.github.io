@@ -3,7 +3,7 @@ import { InterThemeConfig } from "@/theme/inter/inter-theme";
 import { RedThemeConfig } from "@/theme/red/red-theme";
 import { SunsetThemeConfig } from "@/theme/sunset/sunset-theme";
 import { type ThemeConfigs, type ThemeName } from "@/types/theme/theme";
-import { type TemplateResult, html } from "lit-html";
+import { type TemplateResult, html } from "lit";
 
 export const THEME_CONFIGS: ThemeConfigs = {
   inter: InterThemeConfig,
