@@ -103,7 +103,6 @@
     "@rollup/plugin-typescript": "catalog:devDependencies",
     "@rollup/plugin-url": "catalog:devDependencies",
     "@tailwindcss/postcss": "catalog:devDependencies",
-    "@types/pnpm": "catalog:devDependencies",
     "@types/eslint": "catalog:devDependencies",
     "@types/node": "catalog:devDependencies",
     "@types/prettier": "catalog:devDependencies",
