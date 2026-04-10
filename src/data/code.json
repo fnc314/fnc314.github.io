@@ -1,6 +1,69 @@
 {
   "projects": [
     {
+      "name": "fnc314.github.io",
+      "tech": [
+        {
+          "name": "HTML/CSS/JS",
+          "url": "https://developer.mozilla.org/"
+        },
+        {
+          "name": "Lit",
+          "url": "https://lit.dev/"
+        },
+        {
+          "name": "TypeScript",
+          "url": "https://typescriptlang.org/"
+        },
+        {
+          "name": "Node",
+          "url": "https://nodejs.org/"
+        },
+        {
+          "name": "Web Components",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+        },
+        {
+          "name": "Material Components Web",
+          "url": "https://github.com/material-components/material-web"
+        },
+        {
+          "name": "Mise",
+          "url": "https://mise.jdx.dev/"
+        },
+        {
+          "name": "PNPM",
+          "url": "https://pnpm.io/"
+        },
+        {
+          "name": "RollUp",
+          "url": "https://rollupjs.org/"
+        },
+        {
+          "name": "Material Theme Builder",
+          "url": "https://material-foundation.github.io/material-theme-builder/"
+        },
+        {
+          "name": "Prettier",
+          "url": "https://prettier.io/"
+        },
+        {
+          "name": "ESLint",
+          "url": "https://eslint.org/"
+        },
+        {
+          "name": "StyleLint",
+          "url": "https://stylelint.io/"
+        },
+        {
+          "name": "PostCSS",
+          "url": "https://postcss.org/"
+        }
+      ],
+      "url": "https://github.com/fnc314/fnc314.github.io",
+      "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
+    },
+    {
       "name": "project-collections-gradle-settings-plugin",
       "tech": [
         {
@@ -63,69 +126,6 @@
       ],
       "url": "https://github.com/fnc314/mac-os-env-scripts",
       "description": "Convenient scripts for <pre>bash</pre> or <pre>zsh</pre> terminals, used on MacOS"
-    },
-    {
-      "name": "fnc314.github.io",
-      "tech": [
-        {
-          "name": "HTML/CSS/JS",
-          "url": "https://developer.mozilla.org/"
-        },
-        {
-          "name": "Lit",
-          "url": "https://lit.dev/"
-        },
-        {
-          "name": "TypeScript",
-          "url": "https://typescriptlang.org/"
-        },
-        {
-          "name": "Node",
-          "url": "https://nodejs.org/"
-        },
-        {
-          "name": "Web Components",
-          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
-        },
-        {
-          "name": "Material Components Web",
-          "url": "https://github.com/material-components/material-web"
-        },
-        {
-          "name": "Mise",
-          "url": "https://mise.jdx.dev/"
-        },
-        {
-          "name": "PNPM",
-          "url": "https://pnpm.io/"
-        },
-        {
-          "name": "RollUp",
-          "url": "https://rollupjs.org/"
-        },
-        {
-          "name": "Material Theme Builder",
-          "url": "https://material-foundation.github.io/material-theme-builder/"
-        },
-        {
-          "name": "Prettier",
-          "url": "https://prettier.io/"
-        },
-        {
-          "name": "ESLint",
-          "url": "https://eslint.org/"
-        },
-        {
-          "name": "StyleLint",
-          "url": "https://stylelint.io/"
-        },
-        {
-          "name": "PostCSS",
-          "url": "https://postcss.org/"
-        }
-      ],
-      "url": "https://github.com/fnc314/fnc314.github.io",
-      "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
     },
     {
       "name": "project_euler",
