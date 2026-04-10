@@ -1,0 +1,16 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "code-partial",
+      "path": "./../../../src/partials/code/code-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    }
+  ]
+}

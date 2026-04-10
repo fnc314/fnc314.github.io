@@ -1,0 +1,16 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "work-partial",
+      "path": "./../../../src/partials/work/work-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    }
+  ]
+}

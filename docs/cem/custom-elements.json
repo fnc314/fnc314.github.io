@@ -380,94 +380,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/code/code-project.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CodeProject",
-          "members": [
-            {
-              "kind": "field",
-              "name": "codeProject",
-              "type": {
-                "text": "CodeProjectData"
-              },
-              "default": "{}",
-              "attribute": "codeProject"
-            },
-            {
-              "kind": "field",
-              "name": "flipped",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "private",
-              "default": "false"
-            },
-            {
-              "kind": "method",
-              "name": "#generateCardFront",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Builds the front of the MdOutlinedCard content"
-            },
-            {
-              "kind": "method",
-              "name": "#generateCardBack",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Builds the back of the MdOutlinedCard content"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "codeProject",
-              "type": {
-                "text": "CodeProjectData"
-              },
-              "default": "{}",
-              "fieldName": "codeProject"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "summary": "Represents a single (usually GitHub-hosted) demonstration project",
-          "tagName": "code-project",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CodeProject",
-          "declaration": {
-            "name": "CodeProject",
-            "module": "src/components/code/code-project.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "code-project",
-          "declaration": {
-            "name": "CodeProject",
-            "module": "src/components/code/code-project.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/blog/blog-post.ts",
       "declarations": [
         {
@@ -552,6 +464,94 @@
           "declaration": {
             "name": "BlogPost",
             "module": "src/components/blog/blog-post.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code/code-project.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeProject",
+          "members": [
+            {
+              "kind": "field",
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "attribute": "codeProject"
+            },
+            {
+              "kind": "field",
+              "name": "flipped",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "#generateCardFront",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Builds the front of the MdOutlinedCard content"
+            },
+            {
+              "kind": "method",
+              "name": "#generateCardBack",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Builds the back of the MdOutlinedCard content"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "codeProject",
+              "type": {
+                "text": "CodeProjectData"
+              },
+              "default": "{}",
+              "fieldName": "codeProject"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "summary": "Represents a single (usually GitHub-hosted) demonstration project",
+          "tagName": "code-project",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CodeProject",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "code-project",
+          "declaration": {
+            "name": "CodeProject",
+            "module": "src/components/code/code-project.ts"
           }
         }
       ]
@@ -3087,13 +3087,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/code/code-project.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/components/dialog/connect-dialog.ts",
+      "path": "src/types/components/blog/blog-post.ts",
       "declarations": [],
       "exports": []
     },
@@ -3292,7 +3286,13 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/blog/blog-post.ts",
+      "path": "src/types/components/code/code-project.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/dialog/connect-dialog.ts",
       "declarations": [],
       "exports": []
     }

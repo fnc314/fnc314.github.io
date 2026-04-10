@@ -1,0 +1,16 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "info-partial",
+      "path": "./../../../src/partials/info/info-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    }
+  ]
+}

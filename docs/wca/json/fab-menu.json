@@ -1,0 +1,141 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "fab-menu",
+      "path": "./../../../src/components/fab-menu/fab-menu.ts",
+      "description": "A floating action button that toggles a menu of actions.",
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3821 more ... | \"zoom_out_map\"",
+          "default": "\"add\""
+        },
+        {
+          "name": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3820 more ... | \"zoom_out_map\"",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "string",
+          "default": "\"end\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3821 more ... | \"zoom_out_map\"",
+          "default": "\"add\""
+        },
+        {
+          "name": "openedIcon",
+          "attribute": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3820 more ... | \"zoom_out_map\"",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "attribute": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "ariaLabel",
+          "attribute": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "direction",
+          "attribute": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "string",
+          "default": "\"end\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--fab-menu-transition-duration",
+          "description": "The duration of the menu's opening and closing animations",
+          "default": "\"200ms\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    }
+  ]
+}

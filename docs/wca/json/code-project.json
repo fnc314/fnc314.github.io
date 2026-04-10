@@ -1,0 +1,44 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "code-project",
+      "path": "./../../../src/components/code/code-project.ts",
+      "attributes": [
+        {
+          "name": "codeProject",
+          "type": "CodeProjectData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "codeProject",
+          "attribute": "codeProject",
+          "type": "CodeProjectData",
+          "default": "{}"
+        },
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--code-project-animation",
+          "description": "The duration of the subtle hover/focus effect",
+          "default": "\"200ms\""
+        },
+        {
+          "name": "--code-project-rotation",
+          "description": "The duration of the card rotation effect",
+          "default": "\"800ms\""
+        }
+      ]
+    }
+  ]
+}
