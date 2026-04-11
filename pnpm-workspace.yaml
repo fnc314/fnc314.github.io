@@ -13,9 +13,9 @@ catalogs:
     lit-html: 3.3.2
     material-symbols: 0.44.1
   devDependencies:
+    "@11ty/eleventy": 3.1.5
     "@11ty/eleventy-img": 6.0.4
     "@11ty/eleventy-plugin-syntaxhighlight": 5.0.2
-    "@11ty/eleventy": 3.1.5
     "@addasoft/skeleton-component-generator": 1.1.0
     "@custom-elements-manifest/analyzer": 0.11.0
     "@custom-elements-manifest/find-dependencies": 0.0.7
@@ -52,15 +52,15 @@ catalogs:
     "@wc-toolkit/module-path-resolver": 1.0.0
     "@wc-toolkit/type-parser": 1.2.0
     "@web-types/lit": "2.0.0-3"
+    "@web/dev-server": 0.4.6
     "@web/dev-server-esbuild": 1.0.5
     "@web/dev-server-import-maps": 0.2.1
     "@web/dev-server-rollup": 0.6.4
-    "@web/dev-server": 0.4.6
     "@web/rollup-plugin-copy": 0.5.1
     "@web/rollup-plugin-html": 3.1.0
     "@web/rollup-plugin-import-meta-assets": 2.3.3
-    "@web/test-runner-playwright": 0.11.1
     "@web/test-runner": 0.20.2
+    "@web/test-runner-playwright": 0.11.1
     "@webcomponents/webcomponentsjs": 2.8.0
     autoprefixer: 10.4.27
     cem-plugin-jsdoc-example: 0.0.9
