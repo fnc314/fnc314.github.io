@@ -1,3 +1,19 @@
+catalog:
+  '@esbuild/darwin-arm64': 0.28.0
+  '@esbuild/linux-x64': 0.28.0
+  '@pwrs/cem': 0.9.17
+  '@types/node': 25.6.0
+  '@typescript-eslint/eslint-plugin': 8.58.1
+  '@typescript-eslint/parser': 8.58.1
+  esbuild: 0.28.0
+  eslint: 10.2.0
+  material-symbols: 0.44.1
+  postcss: 8.5.9
+  prettier: 3.8.2
+  rollup: 4.60.1
+  typescript: 6.0.2
+  typescript-eslint: 8.58.1
+  typescript-lit-html-plugin: 0.9.1
 catalogMode: "prefer"
 
 catalogs:

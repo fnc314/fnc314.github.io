@@ -22,7 +22,6 @@ export class NavComponent extends LitElement {
       :host {
         --nav-component-icon-animation: 225ms;
         --nav-component-icon-animation-reduced: 1ms;
-        --md-elevation-level: 4;
 
         /* Active state color overrides */
         --md-primary-tab-active-icon-color: var(--icon-fill-color);
@@ -213,7 +212,7 @@ export class NavComponent extends LitElement {
   /**
    * Updates external DOM via style manipulations and blind queries
    *
-   * @param {number} index - The current {@link _activeTabIndex}
+   * @param index - The current {@link _activeTabIndex}
    */
   #updateCarousel(index: number) {
     const panels: HTMLElement[] = [];
