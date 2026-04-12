@@ -93,6 +93,7 @@
     "@material/material-color-utilities": "catalog:devDependencies",
     "@open-wc/testing": "catalog:devDependencies",
     "@pwrs/cem": "catalog:devDependencies",
+    "@rollup/plugin-alias": "catalog:devDependencies",
     "@rollup/plugin-commonjs": "catalog:devDependencies",
     "@rollup/plugin-html": "catalog:devDependencies",
     "@rollup/plugin-image": "catalog:devDependencies",

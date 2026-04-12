@@ -76,6 +76,9 @@ catalogs:
     '@pwrs/cem':
       specifier: 0.9.17
       version: 0.9.17
+    '@rollup/plugin-alias':
+      specifier: 6.0.0
+      version: 6.0.0
     '@rollup/plugin-commonjs':
       specifier: 29.0.2
       version: 29.0.2
@@ -427,6 +430,9 @@ importers:
       '@pwrs/cem':
         specifier: catalog:devDependencies
         version: 0.9.17
+      '@rollup/plugin-alias':
+        specifier: catalog:devDependencies
+        version: 6.0.0(rollup@4.60.1)
       '@rollup/plugin-commonjs':
         specifier: catalog:devDependencies
         version: 29.0.2(rollup@4.60.1)
@@ -1769,6 +1775,15 @@ packages:
   '@rgrove/parse-xml@4.2.0':
     resolution: {integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==}
     engines: {node: '>=14.0.0'}
+
+  '@rollup/plugin-alias@6.0.0':
+    resolution: {integrity: sha512-tPCzJOtS7uuVZd+xPhoy5W4vThe6KWXNmsFCNktaAh5RTqcLiSfT4huPQIXkgJ6YCOjJHvecOAzQxLFhPxKr+g==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      rollup: '>=4.0.0'
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   '@rollup/plugin-commonjs@29.0.2':
     resolution: {integrity: sha512-S/ggWH1LU7jTyi9DxZOKyxpVd4hF/OZ0JrEbeLjXk/DFXwRny0tjD2c992zOUYQobLrVkRVMDdmHP16HKP7GRg==}
@@ -9568,6 +9583,10 @@ snapshots:
       '@pwrs/cem-win32-x64': 0.9.17
 
   '@rgrove/parse-xml@4.2.0': {}
+
+  '@rollup/plugin-alias@6.0.0(rollup@4.60.1)':
+    optionalDependencies:
+      rollup: 4.60.1
 
   '@rollup/plugin-commonjs@29.0.2(rollup@4.60.1)':
     dependencies:

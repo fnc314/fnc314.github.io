@@ -1,12 +1,12 @@
-import "@/components/partial-header/partial-header.ts";
-import "@/components/work-experience/work-experience.ts";
+import "@/components/partial-header/partial-header";
+import "@/components/work-experience/work-experience";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { data as WorkJson } from "@/types/components/work-experience/work-experience";
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("work-partial")
-export class ExperiencePartial extends LitElement {
+export class WorkPartial extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -73,6 +73,6 @@ export class ExperiencePartial extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "work-partial": ExperiencePartial;
+    "work-partial": WorkPartial;
   }
 }

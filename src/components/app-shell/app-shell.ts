@@ -194,6 +194,11 @@ export class AppShell extends LitElement {
 
     if (isSettings) {
       (changedFab as FabMenu).icon = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
+      if (fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL) {
+        changedFab.style.marginInline = "0.5rem";
+      } else {
+        changedFab.style.marginInline = "";
+      }
     } else {
       const fabIcon = changedFab.querySelector("md-icon")!;
       if (fabIcon) {

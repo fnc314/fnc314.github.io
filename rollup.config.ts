@@ -1,3 +1,4 @@
+import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
@@ -6,6 +7,7 @@ import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
 import { rollupPluginHTML } from "@web/rollup-plugin-html";
 import { createRequire } from "node:module";
+import path from "node:path";
 import process from "node:process";
 import { defineConfig } from "rollup";
 import buildStatistics from "rollup-plugin-build-statistics";
@@ -14,7 +16,6 @@ import gitInfo from "rollup-plugin-git-info";
 import postcss from "rollup-plugin-postcss";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
-import typescriptPaths from "rollup-plugin-typescript-paths";
 import versionInjector from "rollup-plugin-version-injector";
 
 const require = createRequire(import.meta.url);
@@ -115,33 +116,35 @@ export default defineConfig({
       patterns: ["files/**/*.pdf"],
       rootDir: "./src/assets",
     }),
+    alias({
+      entries: [
+        { find: /^@\/(.*)/, replacement: path.resolve(process.cwd(), "src") + "/$1" },
+      ],
+    }),
+    resolve({
+      browser: true,
+      extensions: [".ts", ".js", ".json"],
+    }),
     json({
       compact: !isDev,
       preferConst: true,
       namedExports: true,
-      exclude: ["./src/assets/**/*.json"],
-      include: ["./src/data/*.json", "./src/theme/**/*.json"],
+      exclude: ["**/assets/**/*.json"],
+      include: ["**/data/*.json", "**/theme/**/*.json"],
     }),
     typescript({
       sourceMap: isDev,
       tsconfig: "./tsconfig.json",
+      declaration: isDev,
+      declarationDir: "./website/types",
       compilerOptions: {
-        sourceMap: isDev,
-        declaration: isDev,
-        declarationMap: isDev,
-        declarationDir: "./website/types",
-        outDir: "./website/types",
+        noEmit: false, // Override tsconfig noEmit to allow rollup to receive code
+        emitDeclarationOnly: false,
       },
-    }),
-    typescriptPaths.default({
-      tsConfigPath: "./tsconfig.json",
-    }),
-    resolve({
-      rootDir: "./src",
-      browser: true,
     }),
     commonjs({
       sourceMap: isDev,
+      exclude: ["**/src/**"], // Correctly match absolute paths to your source
     }),
     !isDev &&
       terser({
@@ -155,7 +158,7 @@ export default defineConfig({
       showMinifiedSize: true,
     }),
     buildStatistics({
-      projectName: "fnc314.com",
+      projectName: "@fnc314/com.fnc314.website",
     }),
     progress({
       clearLine: !isDev,
