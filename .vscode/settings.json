@@ -42,4 +42,7 @@
     "typescript",
   ],
   "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "/Users/fnc314/.local/share/mise/shims/node"
+  },
 }
