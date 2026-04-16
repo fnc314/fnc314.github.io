@@ -8,14 +8,14 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  * A component for displaying professional work experience entries.
  * Supports nesting for sub-roles or specific project assignments under a single employer.
  *
- * @property isNested=false - Whether this is a nested instance
- * @property experienceRole="" - The formal role from the {@link WorkExperience} instance
- * @property experienceOrg="" - The employer formal name
- * @property experienceSummary="" - An optional summary of the overall role
- * @property dateStart={ stamp: "", text: "" } - A {@link WorkDate} instance describing employment start date
- * @property dateEnd={ stamp: "", text: "" } - A {@link WorkDate} instance describing employment end date
- * @property summaries=[] - An array of `{ item: string }` objects describing the responsibilities
- * @property jobs=[] - An array of {@link Job}s rendered as nested {@link WorkExperience} instances
+ * @property {boolean} [isNested=false] - Whether this is a nested instance
+ * @property {string} [experienceRole=""] - The formal role from the {@link WorkExperience} instance
+ * @property {string} [experienceOrg=""] - The employer formal name
+ * @property {string} [experienceSummary=""] - An optional summary of the overall role
+ * @property {WorkDate} [dateStart={ stamp: "", text: "" }] - A {@link WorkDate} instance describing employment start date
+ * @property {WorkDate} [dateEnd={ stamp: "", text: "" }] - A {@link WorkDate} instance describing employment end date
+ * @property {Array<{ item: string }>} [summaries=[]] - An array of `{ item: string }` objects describing the responsibilities
+ * @property {Array<Job>} [jobs=[]] - An array of {@link Job}s rendered as nested {@link WorkExperience} instances
  */
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
@@ -24,8 +24,9 @@ export class WorkExperience extends LitElement {
     css`
       :host {
         display: block;
+
         /* For contextual layout */
-        container-type: inline-size;
+        container: experience-container / inline-size;
         box-sizing: border-box;
         width: 100%;
 
@@ -56,6 +57,10 @@ export class WorkExperience extends LitElement {
       .nested-experience {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+        margin-block-start: 0.5rem;
+        padding-inline-start: 1rem;
+        border-inline-start: 2px solid var(--md-sys-color-primary);
       }
 
       .nested-summary {
@@ -118,13 +123,6 @@ export class WorkExperience extends LitElement {
         }
       }
 
-      .nested-experiences {
-        gap: 1rem;
-        margin-block-start: 0.5rem;
-        padding-inline-start: 1rem;
-        border-inline-start: 2px solid var(--md-sys-color-primary);
-      }
-
       .nested-experience-container {
         display: grid;
         grid-template-columns: subgrid;
@@ -134,6 +132,7 @@ export class WorkExperience extends LitElement {
         div.experience-container {
           gap: 0.5rem 1rem;
         }
+
         .experience-container {
           display: grid;
           grid-template-columns: minmax(20ch, max-content) 1fr;
