@@ -28,9 +28,9 @@ import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 
 /**
- * The core layout component for the application.
- * Handles theme switching, FAB configurations, and navigation slotting.
- * Uses Material Design 3 tokens and components.
+ * @summary The core layout component for the application.
+ *   Handles theme switching, FAB configurations, and navigation slotting.
+ *   Uses Material Design 3 tokens and components.
  *
  * @slot [app-nav] - Where the {@link NavComponent} is placed
  * @slot [app-content] - The place for the dynamic application content
@@ -72,7 +72,8 @@ export class AppShell extends LitElement {
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
           "StartTop    . EndTop"
-          "StartBottom . EndBottom";
+          "StartBottom . EndBottom"
+          ;
         gap: 1rem;
 
         md-fab {
@@ -87,7 +88,8 @@ export class AppShell extends LitElement {
           justify-self: unset;
           transition:
             grid-area 0.2s ease-in-out,
-            justify-self 0.2s ease-in-out;
+            justify-self 0.2s ease-in-out
+            ;
 
           md-icon {
             line-height: unset;

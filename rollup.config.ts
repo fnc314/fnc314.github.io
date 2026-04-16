@@ -137,6 +137,7 @@ export default defineConfig({
       tsconfig: "./tsconfig.json",
       declaration: isDev,
       declarationDir: "./website/types",
+      outputToFilesystem: true,
       compilerOptions: {
         noEmit: false, // Override tsconfig noEmit to allow rollup to receive code
         emitDeclarationOnly: false,
