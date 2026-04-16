@@ -49,7 +49,7 @@ export class WorkPartial extends LitElement {
       <article>
         <partial-header
           .headerType=${"secondary"}
-          .headingText=${"Work Experience"}
+          .headingText=${"Work History"}
         ></partial-header>
         <div class="article-body">
           ${WorkJson.experiences.map(
