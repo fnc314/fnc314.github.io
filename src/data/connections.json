@@ -11,9 +11,9 @@
         },
         "email": {
           "start": "<md-icon slot=\"start\">mail</md-icon>",
-          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314@fnc314.com</span>",
+          "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314@gmail.com</span>",
           "overline": "<span slot=\"overline\">Email</span>",
-          "href": "mailto:fnc314@fnc314.com"
+          "href": "mailto:fnc314@gmail.com"
         }
       }
     },
