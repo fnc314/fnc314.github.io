@@ -35,19 +35,19 @@
           },
           "summaries": [
             {
-              "item": "Spearheaded the technical foundation for a ground-up native redesign of PNC&apos;s retail banking application, adopting a future-focused, best-practice derived approach that ensures project resilience against unforeseen executive requirement shifts."
+              "item": "Architected a \"day-zero\" native Android foundation using a modular-first approach, ensuring the codebase remains resilient against shifting executive requirements."
             },
             {
-              "item": "Transformed potential technical debt into intentional architecture by identifying and extending patterns that mandate feature segregation, making haphazard modularization impossible to implement."
+              "item": "Engineered an interactive Gradle module-generation workflow that enforced project-wide namespacing and templated feature segregation to prevent architectural drift."
             },
             {
-              "item": "Enforced industry best practices (design tokens, color roles, linters) and introduced custom onboarding/troubleshooting scripts to facilitate seamless development across the redesigned app and design library."
+              "item": "Coordinated a strict, cross-platform Design System governance protocol, eliminating hardcoded UI values by mandating 100% semantic role-token adoption (colors, spacing, typography) across Design, iOS, and Android teams."
             },
             {
-              "item": "Developed a suite of convenience scripts that synchronized developer environments and CI/CD machines within the complexities of PNC&apos;s enterprise environment, effectively eliminating environment-drift and &quot;it works on my machine&quot; debugging cycles across the organization."
+              "item": "Architected a centralized source-of-truth workflow with enforced PR restrictions, harmonizing component nomenclature and integrating directly with external string management platforms (GL Strings/Applanga)."
             },
             {
-              "item": "Architected an interactive Gradle module-generation workflow that enforced project-wide namespacing and templating while ensuring new feature code &quot;funneled up&quot; into the app without impacting the stability of the core application module."
+              "item": "Crafted a suite of interactive Bash scripts to streamline developer onboarding and feature contributions, automating the generation of templated module skeletons and dynamically configuring CI/CD pipelines to support alternative build tool integrations."
             }
           ]
         },
@@ -71,23 +71,16 @@
           },
           "summaries": [
             {
-              "item": "Established foundational code maintenance and development patterns that were adopted by the organization’s change management team as institutional policy."
+              "item": "Served as Lead Architect for a flagship Android app with 3.5M+ active users, personally overseeing the implementation of a high-security in-app payment processing platform."
             },
             {
-              "item": "Led the technical stack for a flagship Android application supporting 3.5M+ active users, including the architecture and implementation of the in-app mobile payment processing platform."
+              "item": "Designed a series of custom Bash scripts that automated credential setup and environment validation, reducing developer onboarding time significantly."
             },
             {
-              "item": "Served as the primary technical evaluator for third-party integrations; reduced vendor pools from broad fields to 2–3 viable candidates by identifying technical incompatibilities early."
-            },
-            {
-              "item": "Bridged the gap between business and technology by educating executive leadership on the intersection of technical flows (e.g., OS permissions) and business logic."
-            },
-            {
-              "item": "Streamlined onboarding procedures by introducing a series of custom bash scripts guiding users through credential setup, repository access, manager permission requests, and final-state environment validation."
+              "item": "Defined and enforced rigorous repository-wide coding standards, elevating the team's architectural output and technical maturity through meticulous, file-by-file pull request reviews and proactive mentorship."
             }
           ]
         },
-
         {
           "client": "PNC Financial Services",
           "role": "Security & Authentication Tech Lead, Android",
@@ -108,17 +101,13 @@
           },
           "summaries": [
             {
-              "item": "Built and deployed a new authentication platform while executing a zero-downtime migration strategy affecting 7+ million daily active users."
+              "item": "Engineered a new authentication platform and migrated 10M+ active users to a modern Android stack with zero downtime."
             },
             {
-              "item": "Achieved Zelle network integration requirements with QR-code and deep-link integrations."
-            },
-            {
-              "item": "Pioneered a multi-file Version Catalog solution and <pre>.kts</pre> migration that kept <pre>build.gradle.kts</pre> files minimal and auditable, simplifying dependency flow analysis and ensuring consistent app assembly."
+              "item": "Pioneered a multi-file Version Catalog (.toml) and KTS migration, moving the build system to a fully type-safe, auditable Gradle configuration."
             }
           ]
         },
-
         {
           "client": "PNC Financial Services",
           "role": "Web Developer Lead",
@@ -143,7 +132,6 @@
             }
           ]
         },
-
         {
           "client": "PNC Financial Services",
           "role": "Web Developer",
@@ -168,7 +156,6 @@
             }
           ]
         },
-
         {
           "client": "Samsung",
           "role": "Android Developer",
@@ -193,7 +180,6 @@
             }
           ]
         },
-
         {
           "client": "PPG Industries",
           "role": "Web Developer",
