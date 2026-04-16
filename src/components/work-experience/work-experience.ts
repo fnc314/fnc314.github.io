@@ -228,51 +228,35 @@ export class WorkExperience extends LitElement {
       ? html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`
       : html`<h2 class="md-typescale-headline-large">${this.experienceRole}</h2>`;
 
-    const headerOrg = this.isNested
-      ? html`<p class="md-typescale-title-medium">${this.experienceOrg}</p>`
-      : html`<p class="md-typescale-title-large">${this.experienceOrg}</p>`;
+    const org = html`
+      <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>${this.experienceOrg}</p>
+    `;
 
-    const headerDates = this.isNested
+    const dates = html`
+      <p>
+        <time
+          class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}
+          datetime="${this.dateStart.stamp}"
+          >${this.dateStart.text}</time
+        >
+        -
+        <time
+          class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}
+          datetime="${this.dateEnd.stamp}"
+          >${this.dateEnd.text}</time
+        >
+      </p>
+    `;
+
+    const summary = this.experienceSummary.length
       ? html`
-          <p>
-            <time
-              class="md-typescale-label-medium"
-              datetime="${this.dateStart.stamp}"
-              >${this.dateStart.text}</time
-            >
-            -
-            <time
-              class="md-typescale-label-medium"
-              datetime="${this.dateEnd.stamp}"
-              >${this.dateEnd.text}</time
-            >
+          <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>
+            ${unsafeHTML(this.experienceSummary)}
           </p>
         `
-      : html`
-          <p>
-            <time
-              class="md-typescale-label-large"
-              datetime="${this.dateStart.stamp}"
-              >${this.dateStart.text}</time
-            >
-            -
-            <time
-              class="md-typescale-label-large"
-              datetime="${this.dateEnd.stamp}"
-              >${this.dateEnd.text}</time
-            >
-          </p>
-        `;
-
-    const orgSummary = this.experienceSummary.length
-      ? this.isNested
-        ? html`<p class="md-typescale-label-medium">${unsafeHTML(this.experienceSummary)}</p>`
-        : html`<p class="md-typescale-label-large">${unsafeHTML(this.experienceSummary)}</p>`
       : nothing;
 
-    const info = html`
-      <header class="experience-info">${headerRole} ${headerOrg} ${headerDates} ${orgSummary}</header>
-    `;
+    const info = html`<header class="experience-info">${headerRole} ${org} ${dates} ${summary}</header>`;
 
     const content = this.jobs.length
       ? html`
