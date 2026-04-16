@@ -11,6 +11,8 @@ export default {
   debug: true,
   appIndex: "index.html",
   rootDir: "./website",
+  esbuildTarget: "auto",
+  clearTerminalOnReload: false,
   nodeResolve: {
     exportConditions: ["development"],
   },
