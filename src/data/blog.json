@@ -4,7 +4,7 @@
       "id": "019d2e6c-355b-5749-7296-9e4d23385fc6",
       "series": "Taming the Elephant Heard",
       "title": "01. From Mayhem to Micro-Managed",
-      "summary": "Tediously migrate from scattered versions to multiple Version Catalog files.",
+      "summary": "A deep dive into migrating scattered dependencies to a centralized Version Catalog (.toml) and taming fragile build infrastructure in large-scale multi-module applications.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-from-mayhem-to-micro-managed-be02d1f58aa8",
       "tags": [
         "Gradle",
@@ -17,7 +17,7 @@
       "id": "019d373f-6a75-c7b4-c630-a259f07cd762",
       "series": "Taming the Elephant Heard",
       "title": "02. Establishing Existing Order",
-      "summary": "Introducing order and structure to existing code.",
+      "summary": "Strategies for drawing hard architectural boundaries, uncoupling inherited black-box code, and establishing directory-level modularization to speed up parallel feature development.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-establishing-existing-order-6dc2aa452571",
       "tags": [
         "Gradle",
@@ -30,7 +30,7 @@
       "id": "019d373f-8a35-d7d6-72d0-dfdcdfbbcdc2",
       "series": "Taming the Elephant Heard",
       "title": "03. Plugins Over Copy-Paste",
-      "summary": "Formalizing the means by which new and existing code should be configured.",
+      "summary": "Eliminating build.gradle.kts boilerplate by abstracting configuration logic into custom Gradle plugins and extension functions for fine-grained sub-project control.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
       "tags": [
         "Gradle",
@@ -43,7 +43,7 @@
       "id": "019d3840-8c09-c722-36a8-2218697f8ef2",
       "series": "Taming the Elephant Heard",
       "title": "04. Into the Wider Infrastructure",
-      "summary": "Turning focus to streamlining integrations with the wider organization.",
+      "summary": "Navigating resource limits and harmonizing the Android Gradle build with external CI/CD pipelines, platform-agnostic distribution tools, and automated signing processes.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-into-the-wider-infrastructure-4ffcd2865901",
       "tags": [
         "Gradle",
@@ -56,7 +56,7 @@
       "id": "019d3892-b181-07dc-2aeb-e3346efe7a1f",
       "series": "Taming the Elephant Heard",
       "title": "05. Right Tool for the Job",
-      "summary": "Reworking internal techniques to future-proof developer exerience enhancements and external tool support.",
+      "summary": "Leveraging Gradle Composite Builds and automated Dokka integrations to create a deterministic, highly-praised internal tooling ecosystem that eliminates deprecation warnings.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-right-tool-for-the-job-27f7f7ea3d57",
       "tags": [
         "Gradle",
@@ -69,7 +69,7 @@
       "id": "019d3892-b655-2753-4a5d-41cb13148ffd",
       "series": "Taming the Elephant Heard",
       "title": "06. Screaming and Scripted Architecture",
-      "summary": "Establish clear patterns and expectations for all code contributions with scripts to support almost all developer requirements.",
+      "summary": "Achieving a \"DX-Complete\" repository using interactive Bash scripting workflows to automate developer onboarding, standardize contribution patterns, and instantly nuke/restore local environments.",
       "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-screaming-and-scripted-architecture-49c449e84e20",
       "tags": [
         "Gradle",
