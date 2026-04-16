@@ -173,7 +173,7 @@ export class InfoPartial extends LitElement {
           grid-template-areas:
             "header header"
             "figure bio"
-            "education education"
+            "figure education"
             "cloud cloud";
           grid-template-rows: minmax(auto, min-content);
           grid-auto-rows: auto;
@@ -200,7 +200,7 @@ export class InfoPartial extends LitElement {
             "header   header         header         header"
             "figure   bio            bio            bio"
             "figure   education      education      education"
-            "cloud   cloud          cloud          cloud";
+            "cloud    cloud          cloud          cloud";
           grid-template-columns:
             fit-content(30%) minmax(0, 1fr) minmax(0, 1fr)
             minmax(0, 1fr);

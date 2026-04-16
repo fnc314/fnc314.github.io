@@ -28,7 +28,7 @@ export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result:
   MaterialCSSStyleSheet.replaceSync(result.cssText);
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
 
 export const Breakpoints: CSSResult = css`
   :host {
