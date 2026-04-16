@@ -9,6 +9,7 @@ export type MaterialSchemeName =
   | "dark"
   | "darkMediumContrast"
   | "darkHighContrast";
+
 export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 
@@ -81,7 +82,6 @@ export const MaterialOverrides: CSSResult = css`
     --md-sys-typescale-title-small-line-height: 1.25rem;
     --md-sys-typescale-title-small-size: 0.875rem;
     --md-sys-typescale-title-small-weight: 500;
-
     --md-sys-shape-corner-extra-large: 2rem;
     --md-sys-shape-corner-extra-small: 0.25rem;
     --md-sys-shape-corner-full: 100%;
@@ -89,7 +89,6 @@ export const MaterialOverrides: CSSResult = css`
     --md-sys-shape-corner-medium: 1rem;
     --md-sys-shape-corner-none: 0;
     --md-sys-shape-corner-small: 0.5rem;
-
     --md-icon-size: 1.5rem;
     --md-icon-font: "Material Symbols Outlined";
     --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);

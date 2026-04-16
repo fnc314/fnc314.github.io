@@ -5,8 +5,8 @@ import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
- * A component for displaying professional work experience entries.
- * Supports nesting for sub-roles or specific project assignments under a single employer.
+ * @summary A component for displaying professional work experience entries.  Supports nesting
+ *   for sub-roles or specific project assignments under a single employer.
  *
  * @property {boolean} [isNested=false] - Whether this is a nested instance
  * @property {string} [experienceRole=""] - The formal role from the {@link WorkExperience} instance
@@ -169,10 +169,8 @@ export class WorkExperience extends LitElement {
 
             /* Summary */
             > p:nth-child(4) {
-              grid-column-start: 2;
-              grid-column-end: -1;
-              grid-row-start: 3;
-              grid-row-end: 4;
+              grid-column: 2 / -1;
+              grid-row: 3 / 4;
               color: var(--md-sys-color-on-surface-variant);
               font-style: italic;
             }
