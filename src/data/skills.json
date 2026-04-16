@@ -16,6 +16,7 @@
       "Bash": 4,
       "Node": 4,
       "NPM": 4,
+      "PNPM": 3,
       "Python": 3
     },
     "product": {
