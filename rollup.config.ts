@@ -31,16 +31,19 @@ export default defineConfig({
   //external: Object.keys(pkg.dependencies),
   perf: true,
   output: {
-    dir: "./website",
+    assetFileNames: "[name].[hash][extname]",
+    chunkFileNames: "[name].[hash].js",
     compact: !isDev,
-    format: "module",
-    name: "@fnc314/com.fnc314.website",
-    sourcemap: isDev,
-    interop: "auto",
-    sourcemapDebugIds: isDev,
-    strict: true,
+    dir: "./website",
+    entryFileNames: "[name].[hash].js",
     esModule: true,
     exports: "auto",
+    format: "module",
+    interop: "auto",
+    name: "@fnc314/com.fnc314.website",
+    sourcemap: isDev,
+    sourcemapDebugIds: isDev,
+    strict: true,
   },
   plugins: [
     clear({
@@ -117,9 +120,7 @@ export default defineConfig({
       rootDir: "./src/assets",
     }),
     alias({
-      entries: [
-        { find: /^@\/(.*)/, replacement: path.resolve(process.cwd(), "src") + "/$1" },
-      ],
+      entries: [{ find: /^@\/(.*)/, replacement: path.resolve(process.cwd(), "src") + "/$1" }],
     }),
     resolve({
       browser: true,
