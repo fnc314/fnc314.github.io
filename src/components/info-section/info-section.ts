@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { css, html, LitElement } from "lit";
+import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -26,8 +26,8 @@ import { customElement, property } from "lit/decorators.js";
  * </profile-section>
  * ```
  */
-@customElement("profile-section")
-export class ProfileSection extends LitElement {
+@customElement("info-section")
+export class InfoSection extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -44,7 +44,6 @@ export class ProfileSection extends LitElement {
           "section-grid-content";
         gap: 1rem;
         padding: 1rem;
-
         border-radius: var(--md-sys-shape-corner-medium);
         background-color: var(--md-sys-color-inverse-surface);
         color: var(--md-sys-color-inverse-on-surface);
@@ -131,6 +130,6 @@ export class ProfileSection extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "profile-section": ProfileSection;
+    "info-section": InfoSection;
   }
 }

@@ -1,5 +1,5 @@
+import "@/components/info-section/info-section";
 import "@/components/partial-header/partial-header";
-import "@/components/profile-section/profile-section";
 import "@/components/word/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
@@ -257,7 +257,7 @@ export class InfoPartial extends LitElement {
           <figcaption class="md-typescale-label-large">${this.themeConfig.themePhoto.figcaption}</figcaption>
         </figure>
 
-        <profile-section
+        <info-section
           class="bio"
           section-title="Bio"
         >
@@ -267,9 +267,9 @@ export class InfoPartial extends LitElement {
           >
             ${BioJson.bio}
           </p>
-        </profile-section>
+        </info-section>
 
-        <profile-section
+        <info-section
           class="education"
           section-title="Education"
         >
@@ -296,9 +296,9 @@ export class InfoPartial extends LitElement {
               `,
             )}
           </ul>
-        </profile-section>
+        </info-section>
 
-        <profile-section
+        <info-section
           class="cloud"
           section-title="Skills"
         >
@@ -306,13 +306,13 @@ export class InfoPartial extends LitElement {
             slot="section-grid-content"
             .words=${words}
             instant-clear
-            grouping="category"
-            sorting="by-weight"
-            appearance="simultaneous"
+            grouping="quartile"
+            sorting="by-alphabet"
+            appearance="sequential"
             delay="150"
             threshold="0.1"
           ></word-cloud>
-        </profile-section>
+        </info-section>
       </article>
     `;
   }
