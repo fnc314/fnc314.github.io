@@ -1,13 +1,13 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import {
-    type RenderableWordCloudWord,
-    type WordCloudAppearance,
-    WordCloudAppearances,
-    type WordCloudGrouping,
-    WordCloudGroupings,
-    type WordCloudSorting,
-    WordCloudSortings,
-    type WordCloudWord,
+  type RenderableWordCloudWord,
+  type WordCloudAppearance,
+  WordCloudAppearances,
+  type WordCloudGrouping,
+  WordCloudGroupings,
+  type WordCloudSorting,
+  WordCloudSortings,
+  type WordCloudWord,
 } from "@/types/components/word/word-cloud";
 import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -55,8 +55,7 @@ export class WordCloud extends LitElement {
         flex: 1;
         list-style-type: none;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         gap: 0.5rem;
         align-items: center;
         justify-content: space-evenly;
@@ -65,12 +64,11 @@ export class WordCloud extends LitElement {
       }
 
       li {
-        border-radius: var(--md-sys-shape-corner-small);
-        border-color: currentColor;
-        border-width: var(--hairline-width);
-        border-style: solid;
-        font-family: var(--md-ref-typeface-brand);
-        padding: 0.3rem 0.7rem;
+        --word-tag-border-radius: var(--md-sys-shape-corner-medium);
+        --word-tag-font-family: var(--md-ref-typeface-brand);
+
+        will-change: opacity, transform;
+        padding: 0.7rem;
         min-width: 0;
 
         /* Animation Base State */
@@ -79,7 +77,6 @@ export class WordCloud extends LitElement {
         transition:
           opacity var(--word-cloud-animation) ease-out,
           transform var(--word-cloud-animation) cubic-bezier(0.34, 1.56, 0.64, 1);
-        will-change: opacity, transform;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -99,82 +96,82 @@ export class WordCloud extends LitElement {
       }
 
       .first-quartile {
-        font-size: var(--word-cloud-first-quartile-font-size);
-        line-height: var(--word-cloud-first-quartile-line-height);
+        --word-tag-font-size: var(--word-cloud-first-quartile-font-size);
+        --word-tag-line-height: var(--word-cloud-first-quartile-line-height);
 
         &.tech {
-          background-color: var(--md-sys-color-primary-container);
-          color: var(--md-sys-color-on-primary-container);
+          --word-tag-background-color: var(--md-sys-color-primary-container);
+          --word-tag-color: var(--md-sys-color-on-primary-container);
         }
 
         &.practice {
-          background-color: var(--md-sys-color-primary);
-          color: var(--md-sys-color-on-primary);
+          --word-tag-background-color: var(--md-sys-color-primary);
+          --word-tag-color: var(--md-sys-color-on-primary);
         }
 
         &.product {
-          background-color: var(--md-sys-color-primary-fixed);
-          color: var(--md-sys-color-on-primary-fixed);
+          --word-tag-background-color: var(--md-sys-color-primary-fixed);
+          --word-tag-color: var(--md-sys-color-on-primary-fixed);
         }
       }
 
       .second-quartile {
-        font-size: var(--word-cloud-second-quartile-font-size);
-        line-height: var(--word-cloud-second-quartile-line-height);
+        --word-tag-font-size: var(--word-cloud-second-quartile-font-size);
+        --word-tag-line-height: var(--word-cloud-second-quartile-line-height);
 
         &.tech {
-          background-color: var(--md-sys-color-secondary-container);
-          color: var(--md-sys-color-on-secondary-container);
+          --word-tag-background-color: var(--md-sys-color-secondary-container);
+          --word-tag-color: var(--md-sys-color-on-secondary-container);
         }
 
         &.practice {
-          background-color: var(--md-sys-color-secondary);
-          color: var(--md-sys-color-on-secondary);
+          --word-tag-background-color: var(--md-sys-color-secondary);
+          --word-tag-color: var(--md-sys-color-on-secondary);
         }
 
         &.product {
-          background-color: var(--md-sys-color-secondary-fixed);
-          color: var(--md-sys-color-on-secondary-fixed);
+          --word-tag-background-color: var(--md-sys-color-secondary-fixed);
+          --word-tag-color: var(--md-sys-color-on-secondary-fixed);
         }
       }
 
       .third-quartile {
-        font-size: var(--word-cloud-third-quartile-font-size);
-        line-height: var(--word-cloud-third-quartile-line-height);
+        --word-tag-font-size: var(--word-cloud-third-quartile-font-size);
+        --word-tag-line-height: var(--word-cloud-third-quartile-line-height);
 
         &.tech {
-          background-color: var(--md-sys-color-tertiary-container);
-          color: var(--md-sys-color-on-tertiary-container);
+          --word-tag-background-color: var(--md-sys-color-tertiary-container);
+          --word-tag-color: var(--md-sys-color-on-tertiary-container);
         }
 
         &.practice {
-          background-color: var(--md-sys-color-tertiary);
-          color: var(--md-sys-color-on-tertiary);
+          --word-tag-background-color: var(--md-sys-color-tertiary);
+          --word-tag-color: var(--md-sys-color-on-tertiary);
         }
 
         &.product {
-          background-color: var(--md-sys-color-tertiary-fixed);
-          color: var(--md-sys-color-on-tertiary-fixed);
+          --word-tag-background-color: var(--md-sys-color-tertiary-fixed);
+          --word-tag-color: var(--md-sys-color-on-tertiary-fixed);
         }
       }
 
       .fourth-quartile {
-        font-size: var(--word-cloud-fourth-quartile-font-size);
-        line-height: var(--word-cloud-fourth-quartile-line-height);
+        --word-tag-font-size: var(--word-cloud-fourth-quartile-font-size);
+        --word-tag-line-height: var(--word-cloud-fourth-quartile-line-height);
 
         &.tech {
-          color: var(--md-sys-color-primary-container);
-          background-color: var(--md-sys-color-on-primary-container);
+          --word-tag-background-color: var(--md-sys-color-on-primary-container);
+          --word-tag-color: var(--md-sys-color-primary-container);
         }
 
         &.practice {
-          color: var(--md-sys-color-primary);
-          background-color: var(--md-sys-color-on-primary);
+          --word-tag-background-color: var(--md-sys-color-on-primary);
+          --word-tag-color: var(--md-sys-color-primary);
         }
 
         &.product {
-          color: var(--md-sys-color-primary-fixed);
-          background-color: var(--md-sys-color-on-primary-fixed);
+          --word-tag-background-color: var(--md-sys-color-on-primary-fixed);
+          --word-tag-color: var(--md-sys-color-primary-fixed);
         }
       }
     `,
@@ -418,7 +415,7 @@ export class WordCloud extends LitElement {
               class=${classMap(classes)}
               style=${styleMap(styles)}
             >
-              ${word.word}
+              <word-tag .word=${word.word}></word-tag>
             </li>
           `;
         })}
