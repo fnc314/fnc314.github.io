@@ -47,17 +47,17 @@
       "Accessibility": 9,
       "Engineering Management": 9,
       "MVI / MVVM": 9,
-      "Stakeholder Alignment": 9,
       "Technical Mentorship": 9,
-      "Agile": 8,
       "Clean Architecture": 8,
       "FIDO Compliance": 8,
       "Multi-Factor Authentication": 8,
-      "Change Management": 8,
       "CI / CD": 7,
       "Scrum": 6,
       "KanBan": 6,
-      "Dependency Injection": 5
+      "Agile": 5,
+      "Stakeholder Alignment": 5,
+      "Dependency Injection": 5,
+      "Change Management": 4
     }
   }
 }
