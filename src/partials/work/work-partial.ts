@@ -62,6 +62,7 @@ export class WorkPartial extends LitElement {
                 .dateStart="${exp.dates.start}"
                 .dateEnd="${exp.dates.end}"
                 .jobs="${exp.jobs}"
+                .summaries="${exp.summaries ?? []}"
               ></work-experience>
             `,
           )}

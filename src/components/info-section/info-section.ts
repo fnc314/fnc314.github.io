@@ -19,11 +19,11 @@ import { customElement, property } from "lit/decorators.js";
  *
  * Example:
  * ```html
- * <profile-section section-title="Experience">
+ * <info-section section-title="Experience">
  *   <div slot="section-grid-content">
  *     ...your list, cards, or details...
  *   </div>
- * </profile-section>
+ * </info-section>
  * ```
  */
 @customElement("info-section")
@@ -106,9 +106,9 @@ export class InfoSection extends LitElement {
    *
    * Example:
    * ```html
-   * <profile-section section-title="Work Experience">
+   * <info-section section-title="Work Experience">
    *   <div slot="section-grid-content">...cards...</div>
-   * </profile-section>
+   * </info-section>
    * ```
    *
    * Notes:

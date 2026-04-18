@@ -24,6 +24,7 @@ export interface Experience {
     end: WorkDate;
   };
   jobs: Job[];
+  summaries?: { item: string }[];
 }
 
 export interface WorkData {

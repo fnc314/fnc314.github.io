@@ -198,7 +198,8 @@
             }
           ]
         }
-      ]
+      ],
+      "summaries": []
     },
     {
       "employer": "Pittsburgh Public Schools",
@@ -214,7 +215,12 @@
           "text": "August 2012"
         }
       },
-      "jobs": []
+      "jobs": [],
+      "summaries": [
+        {
+          "item": "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth."
+        }
+      ]
     }
   ]
 }

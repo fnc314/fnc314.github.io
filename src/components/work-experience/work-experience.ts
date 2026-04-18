@@ -128,7 +128,7 @@ export class WorkExperience extends LitElement {
         grid-template-columns: subgrid;
       }
 
-      @container (min-inline-size: 600px) {
+      @container experience-container (min-inline-size: 600px) {
         div.experience-container {
           gap: 0.5rem 1rem;
         }
@@ -301,7 +301,7 @@ export class WorkExperience extends LitElement {
 
     return this.isNested
       ? html`<div class="experience-container">${info} ${summaries}</div>`
-      : html`<section class="experience-container">${info} ${content}</section>`;
+      : html`<section class="experience-container">${info} ${content} ${summaries}</section>`;
   }
 }
 
