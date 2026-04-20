@@ -87,6 +87,7 @@
     "@custom-elements-manifest/analyzer": "catalog:devDependencies",
     "@custom-elements-manifest/find-dependencies": "catalog:devDependencies",
     "@custom-elements-manifest/to-markdown": "catalog:devDependencies",
+    "@esbuild/darwin-arm64": "catalog:optionalDependencies",
     "@eslint/js": "catalog:devDependencies",
     "@genesiscommunitysuccess/custom-elements-lsp": "catalog:devDependencies",
     "@m00nbyte/rollup-plugin-copy-multiple-assets": "catalog:devDependencies",
@@ -182,7 +183,7 @@
     "web-component-analyzer": "catalog:devDependencies"
   },
   "optionalDependencies": {
-    "@esbuild/darwin-arm64": "catalog:optionalDependencies",
-    "@esbuild/linux-x64": "catalog:optionalDependencies"
+    "@esbuild/linux-x64": "catalog:optionalDependencies",
+    "@esbuild/darwin-arm64": "catalog:optionalDependencies"
   }
 }
