@@ -36,6 +36,38 @@ url = "https://github.com/pnpm/pnpm/releases/download/v10.33.0/pnpm-macos-x64"
 checksum = "sha256:afc96009dc39fe23a835d65192049e6a995f342496b175585dc2beda7d42d33f"
 url = "https://github.com/pnpm/pnpm/releases/download/v10.33.0/pnpm-win-x64.exe"
 
+[[tools.ruby]]
+version = "4.0.2"
+backend = "core:ruby"
+
+[tools.ruby."platforms.linux-arm64"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.linux-arm64-musl"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.linux-x64"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.linux-x64-musl"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.macos-arm64"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.macos-x64"]
+checksum = "sha256:51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
+
+[tools.ruby."platforms.windows-x64"]
+checksum = "sha256:f6c562d507b272b892055f35ece3cbc65de5f3f2f63d18b7345a602af8c1e655"
+url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.2-1/rubyinstaller-4.0.2-1-x64.7z"
+
 [[tools.usage]]
 version = "3.2.0"
 backend = "aqua:jdx/usage"
