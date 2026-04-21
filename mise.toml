@@ -1,19 +1,29 @@
 [tools]
-node = "25.9.0"
-pnpm = "10.33.0"
-ruby = "4.0.2"
-usage = "3.2.0"
+  node = "25.9.0"
+  pnpm = "10.33.0"
+  ruby = "4.0.2"
+  usage = "3.2.0"
 
 [env]
-_ = { path = "[{{config_root}}/node_modules/.bin]" }
-configureExtensionsUseSymLinks = true
+  _ = {
+    path = "[{{config_root}}/node_modules/.bin]",
+  }
+  configureExtensionsUseSymLinks = true
 
 [settings]
-verbose = true
-status = { show_env = true, show_tools = true, truncate = false }
-color = true
-env_shell_expand = true
-terminal_progress = true
-color_theme = "dracula"
-task = { show_full_cmd = true }
-npm = { package_manager = "pnpm" }
+  verbose = true
+  status = {
+    show_env = true,
+    show_tools = true,
+    truncate = false,
+  }
+  color = true
+  env_shell_expand = true
+  terminal_progress = true
+  color_theme = "dracula"
+  task = {
+    show_full_cmd = true,
+  }
+  npm = {
+    package_manager = "pnpm",
+  }
