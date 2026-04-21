@@ -11,7 +11,7 @@ catalogs:
     lit: 3.3.2
     lit-element: 4.2.2
     lit-html: 3.3.2
-    material-symbols: 0.44.2
+    material-symbols: 0.44.3
   devDependencies:
     "@11ty/eleventy": 3.1.5
     "@11ty/eleventy-img": 6.0.4
@@ -37,7 +37,7 @@ catalogs:
     "@rollup/plugin-terser": 1.0.0
     "@rollup/plugin-typescript": 12.3.0
     "@rollup/plugin-url": 8.0.2
-    "@tailwindcss/postcss": 4.2.2
+    "@tailwindcss/postcss": 4.2.3
     "@types/eslint": 9.6.1
     "@types/node": 25.6.0
     "@types/wordcloud": 1.2.2
@@ -104,7 +104,7 @@ catalogs:
     stylelint-config-standard: 40.0.0
     stylelint-plugin-use-baseline: 1.4.1
     stylelint-prettier: 5.0.3
-    tailwindcss: 4.2.2
+    tailwindcss: 4.2.3
     ts-lit-plugin: 2.0.2
     tslib: 2.8.1
     typedoc: 0.28.19
