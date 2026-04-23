@@ -1,7 +1,8 @@
 [tools]
   node = "25.9.0"
-  pnpm = "10.33.0"
+  pnpm = "10.33.1"
   ruby = "4.0.3"
+  tombi = "0.9.21"
   usage = "3.2.0"
 
 [env]
@@ -11,19 +12,19 @@
   configureExtensionsUseSymLinks = true
 
 [settings]
-  verbose = true
   status = {
     show_env = true,
     show_tools = true,
     truncate = false,
   }
-  color = true
-  env_shell_expand = true
-  terminal_progress = true
-  color_theme = "dracula"
   task = {
     show_full_cmd = true,
   }
   npm = {
     package_manager = "pnpm",
   }
+  verbose = true
+  color = true
+  env_shell_expand = true
+  terminal_progress = true
+  color_theme = "dracula"
