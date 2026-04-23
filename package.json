@@ -74,6 +74,7 @@
     "@material/web": "catalog:dependencies",
     "animate-css-grid": "catalog:dependencies",
     "dark-mode-toggle": "catalog:dependencies",
+    "firebase": "catalog:dependencies",
     "lit": "catalog:dependencies",
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
@@ -183,7 +184,7 @@
     "web-component-analyzer": "catalog:devDependencies"
   },
   "optionalDependencies": {
-    "@esbuild/linux-x64": "catalog:optionalDependencies",
-    "@esbuild/darwin-arm64": "catalog:optionalDependencies"
+    "@esbuild/darwin-arm64": "catalog:optionalDependencies",
+    "@esbuild/linux-x64": "catalog:optionalDependencies"
   }
 }
