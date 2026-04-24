@@ -69,6 +69,11 @@ export type MaterialSchemeNames =
 
 export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
 
+/**
+ * Checks if the provided JSON conforms to the expected theme schemes structure
+ * @param json - Input of an {@link unknown} type, ideally conforming to a Material 3 JSON scheme
+ * @returns A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}
+ */
 export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
   if (typeof json !== "object" || json === null) {
     return false;
@@ -134,7 +139,7 @@ export const readScheme = (jsonSchema: object) => css`
   :root {
     ${unsafeCSS(
       Object.entries(jsonSchema)
-        .map(([colorRole, colorRGB]) => keyTransform(colorRole, colorRGB as string))
+        .map(([colorRole, colorRGB]: [string, string]) => keyTransform(colorRole, colorRGB))
         .reduce(
           (acc, curr) => css`
             ${acc}${curr}
@@ -145,13 +150,24 @@ export const readScheme = (jsonSchema: object) => css`
   }
 `;
 
+/**
+ * Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property
+ *   via {@link css} and {@link unsafeCSS} functions
+ * @param jsonKey - The key from the JSON scheme, e.g., "primaryContainer"
+ * @param rgb - The RGB color value from the JSON scheme, e.g., "#FF0000"
+ * @returns {@link CSSResult} - A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"
+ */
+// postcss-lit-disable-next-line
 export function keyTransform(jsonKey: string, rgb: string): CSSResult {
-  const roleNameBase = jsonKey
+  const roleNameBase: string = jsonKey
     .split(/(?=[A-Z])/)
     .map((part) => part.toLowerCase())
     .join("-");
 
   return css`
+    /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
     --md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};
+    /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
+    --oklch-md-sys-color-${unsafeCSS(roleNameBase)}: oklch(from ${unsafeCSS(rgb)} l c h);
   `;
 }

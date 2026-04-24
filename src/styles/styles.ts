@@ -24,9 +24,8 @@ export const onThemeChange: (event: MediaQueryListEvent) => void = (event: Media
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
-export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result: CSSResult) => {
+export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result: CSSResult) =>
   MaterialCSSStyleSheet.replaceSync(result.cssText);
-};
 
 export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
 

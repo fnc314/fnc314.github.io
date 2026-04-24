@@ -12,8 +12,6 @@ export interface ThemeService {
 
   currentMaterialSchemeName(): MaterialSchemeNames;
 
-  metaTagThemeColor(preference: MaterialSchemeNames): string;
-
   themeJson(): Record<ColorSchemeRoles, ColorString>;
 }
 
@@ -47,10 +45,6 @@ class ThemeServiceImpl implements ThemeService {
         : `-${appConfigs.colorScheme.contrast}-contrast`.toLowerCase();
 
     return `${schemeMode}${contrast}` as MaterialSchemeNames;
-  }
-
-  metaTagThemeColor(preference: MaterialSchemeNames): string {
-    return this.currentThemeConfig().json[preference].primary;
   }
 
   themeJson(): Record<ColorSchemeRoles, ColorString> {
