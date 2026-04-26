@@ -36,6 +36,9 @@ catalogs:
     lit-html:
       specifier: 3.3.2
       version: 3.3.2
+    material-symbols:
+      specifier: 0.44.4
+      version: 0.44.4
   devDependencies:
     '@11ty/eleventy':
       specifier: 3.1.5
@@ -244,6 +247,9 @@ catalogs:
     prettier:
       specifier: 3.8.3
       version: 3.8.3
+    prettier-plugin-tailwindcss:
+      specifier: 0.7.3
+      version: 0.7.3
     prettier-plugin-toml:
       specifier: 2.0.6
       version: 2.0.6
@@ -289,6 +295,9 @@ catalogs:
     rollup-plugin-version-injector:
       specifier: 1.3.3
       version: 1.3.3
+    stylelint:
+      specifier: 17.9.0
+      version: 17.9.0
     stylelint-config-inspector:
       specifier: 2.1.2
       version: 2.1.2
@@ -376,7 +385,7 @@ importers:
         specifier: catalog:dependencies
         version: 3.3.2
       material-symbols:
-        specifier: 0.44.4
+        specifier: catalog:dependencies
         version: 0.44.4
     devDependencies:
       '@11ty/eleventy':
@@ -587,7 +596,7 @@ importers:
         specifier: catalog:devDependencies
         version: 3.8.3
       prettier-plugin-tailwindcss:
-        specifier: 0.7.3
+        specifier: catalog:devDependencies
         version: 0.7.3(prettier@3.8.3)
       prettier-plugin-toml:
         specifier: catalog:devDependencies
@@ -635,7 +644,7 @@ importers:
         specifier: catalog:devDependencies
         version: 1.3.3
       stylelint:
-        specifier: 17.9.0
+        specifier: catalog:devDependencies
         version: 17.9.0(typescript@6.0.3)
       stylelint-config-inspector:
         specifier: catalog:devDependencies
@@ -2751,9 +2760,6 @@ packages:
 
   '@types/spdx-expression-parse@3.0.5':
     resolution: {integrity: sha512-XrojSCTzVxPAfWeAiw8Hg27OW/4jalE7yiohCHRPprqfPyt2oG+Osy1HstUPMF26cEdno3IeEhv31Pzl0wwsQw==}
-
-  '@types/supports-color@8.1.3':
-    resolution: {integrity: sha512-Hy6UMpxhE3j1tLpl27exp1XqHD7n8chAiNPzWfz16LPZoMMoSc4dzLl6w9qijkEb/r5O1ozdu1CWGA2L83ZeZg==}
 
   '@types/svg-tags@1.0.2':
     resolution: {integrity: sha512-D8rhCFfpmWzXvzVqdXo40EXNeropfqp4gvwn8fcVfzYIci8M1C1tk/L26Yacn/U9vaPM7FlS73BNoUtfjAjwAw==}
@@ -10998,9 +11004,6 @@ snapshots:
   '@types/spdx-expression-parse@3.0.5':
     optional: true
 
-  '@types/supports-color@8.1.3':
-    optional: true
-
   '@types/svg-tags@1.0.2': {}
 
   '@types/trusted-types@2.0.7': {}
@@ -17937,7 +17940,6 @@ snapshots:
 
   supports-hyperlinks@3.2.0:
     dependencies:
-      '@types/supports-color': 8.1.3
       has-flag: 4.0.0
       supports-color: 7.2.0
     optional: true
