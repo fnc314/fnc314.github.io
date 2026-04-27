@@ -9,25 +9,25 @@
       "url": "/#info",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-filled-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/info/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-filled-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/info/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-outline-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/info/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/info/icon-outline-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/info/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -41,25 +41,25 @@
       "url": "/#work",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/work/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-filled-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/work/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-outline-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/work/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/work/icon-outline-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/work/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -73,25 +73,25 @@
       "url": "/#code",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-filled-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/code/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-filled-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/code/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-outline-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/code/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/code/icon-outline-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/code/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -105,25 +105,25 @@
       "url": "/#blog",
       "icons": [
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/blog/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.png",
+          "src": "https://fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "https://www.fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.svg",
+          "src": "https://fnc314.com/assets/icons/shortcuts/blog/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -133,13 +133,13 @@
   ],
   "icons": [
     {
-      "src": "https://www.fnc314.com/assets/icons/icon.svg",
+      "src": "https://fnc314.com/assets/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable.svg",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
@@ -147,53 +147,53 @@
     {
       "purpose": "maskable",
       "sizes": "1024x1024",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x1024.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x1024.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "48x48",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x48.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x48.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "72x72",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x72.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x72.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "96x96",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x96.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x96.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "128x128",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x128.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x128.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "192x192",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x192.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x192.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "384x384",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x384.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x384.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "https://www.fnc314.com/assets/icons/maskable/icon-maskable-x512.png",
+      "src": "https://fnc314.com/assets/icons/maskable/icon-maskable-x512.png",
       "type": "image/png"
     }
   ],
-  "scope": "https://www.fnc314.com/",
+  "scope": "https://fnc314.com/",
   "orientation": "any",
   "dir": "ltr",
   "lang": "en",
@@ -214,6 +214,6 @@
     "development",
     "networking"
   ],
-  "start_url": "https://www.fnc314.com/#profile",
-  "id": "https://www.fnc314.com"
+  "start_url": "https://fnc314.com/#profile",
+  "id": "https://fnc314.com"
 }
