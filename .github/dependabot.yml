@@ -1,0 +1,22 @@
+updates:
+  # Maintain dependencies for npm (automatically detects pnpm-lock.yaml)
+  - commit-message:
+      prefix: "deps"
+    directory: "/"
+    labels:
+      - "dependencies update"
+    open-pull-requests-limit: 10
+    package-ecosystem: "npm"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    versioning-strategy: "increase"
+
+  # Maintain dependencies for GitHub Actions
+  - directory: "/"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "weekly"
+
+version: 2
