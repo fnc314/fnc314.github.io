@@ -214,6 +214,6 @@
     "development",
     "networking"
   ],
-  "start_url": "http://localhost:8000/#profile",
+  "start_url": "http://localhost:8000/#info",
   "id": "http://localhost:8000"
 }
