@@ -2,6 +2,7 @@ import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
+import strip from "@rollup/plugin-strip";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { copy } from "@web/rollup-plugin-copy";
@@ -170,6 +171,10 @@ export default defineConfig({
         exclude: [],
         patterns: [".well-known/appspecific/com.chrome.devtools.json"],
         rootDir: "./",
+      }),
+    !isDev &&
+      strip({
+        sourceMap: false,
       }),
   ],
 });

@@ -102,6 +102,7 @@
     "@rollup/plugin-json": "catalog:devDependencies",
     "@rollup/plugin-node-resolve": "catalog:devDependencies",
     "@rollup/plugin-replace": "catalog:devDependencies",
+    "@rollup/plugin-strip": "catalog:devDependencies",
     "@rollup/plugin-terser": "catalog:devDependencies",
     "@rollup/plugin-typescript": "catalog:devDependencies",
     "@rollup/plugin-url": "catalog:devDependencies",

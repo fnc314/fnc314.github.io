@@ -1,4 +1,4 @@
-catalogMode: "prefer"
+catalogMode: "strict"
 
 catalogs:
   dependencies:
@@ -35,6 +35,7 @@ catalogs:
     "@rollup/plugin-json": 6.1.0
     "@rollup/plugin-node-resolve": 16.0.3
     "@rollup/plugin-replace": 6.0.3
+    "@rollup/plugin-strip": 3.0.4
     "@rollup/plugin-terser": 1.0.0
     "@rollup/plugin-typescript": 12.3.0
     "@rollup/plugin-url": 8.0.2
@@ -80,7 +81,7 @@ catalogs:
     globals: 17.5.0
     jiti: 2.6.1
     lit-analyzer: 2.0.3
-    postcss: 8.5.10
+    postcss: 8.5.12
     postcss-lit: 1.4.1
     postcss-load-config: 6.0.1
     prettier: 3.8.3
