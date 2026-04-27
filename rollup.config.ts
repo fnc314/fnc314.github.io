@@ -51,6 +51,13 @@ export default defineConfig({
       targets: ["./website"],
       watch: isDev,
     }),
+    !isDev &&
+      strip({
+        include: ["./src/**/*.ts"],
+        functions: ["console.*", "assert.*"],
+        debugger: true,
+        sourceMap: false,
+      }),
     postcss({
       sourceMap: isDev,
       config: {
@@ -171,10 +178,6 @@ export default defineConfig({
         exclude: [],
         patterns: [".well-known/appspecific/com.chrome.devtools.json"],
         rootDir: "./",
-      }),
-    !isDev &&
-      strip({
-        sourceMap: false,
       }),
   ],
 });
