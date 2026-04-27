@@ -78,8 +78,7 @@ export class FabMenu extends LitElement {
         transition:
           opacity var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
           transform var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
-          visibility var(--internal-fab-menu-transition-duration) linear
-          ;
+          visibility var(--internal-fab-menu-transition-duration) linear;
       }
 
       :host([open]) ul.menu-items {
@@ -103,8 +102,7 @@ export class FabMenu extends LitElement {
         transition:
           transform calc(100ms + var(--internal-fab-menu-transition-duration)) var(--internal-fab-menu-animation-spec),
           background-color var(--internal-fab-menu-transition-duration) linear,
-          color var(--internal-fab-menu-transition-duration) linear
-          ;
+          color var(--internal-fab-menu-transition-duration) linear;
 
         /* Reset default margin */
         margin-inline-start: unset;
@@ -264,7 +262,6 @@ export class FabMenu extends LitElement {
     await this._fab.updateComplete;
     const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-
       labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
     }
     return result;
@@ -293,14 +290,16 @@ export class FabMenu extends LitElement {
       `UPDATE: this.icon ${this.icon}`,
       `Fab: this._fab ${this._fab !== undefined}`,
       `UPDATE: this.open ${this.open}`,
-      `UPDATE: changedProperties.has("open") ${changedProperties.has("open")}`
+      `UPDATE: changedProperties.has("open") ${changedProperties.has("open")}`,
     );
-    if (changedProperties.has("open")) {
-      if (this.open && this._scrim) {
-        this._scrim.addEventListener("click", this._handleDocumentClick, { capture: true });
-      } /* else {
-        document.removeEventListener("click", this._handleDocumentClick, { capture: true });
-      } */
+
+    // It is safer to manage global click listeners on the document
+    // or use the @click handler on the scrim in the template.
+    if (changedProperties.has("open") && this.open) {
+      // Using a microtask to ensure the scrim is rendered before adding the listener
+      this.updateComplete.then(() => {
+        this._scrim?.addEventListener("click", this._handleDocumentClick, { capture: true, once: true });
+      });
     }
 
     super.update(changedProperties);
@@ -374,17 +373,15 @@ export class FabMenu extends LitElement {
 
     return html`
       ${this.open ? html`<div class="scrim"></div>` : nothing}
-      ${
-        this.open ?
-          html`
+      ${this.open
+        ? html`
             <div
               class="focus-trap-start"
               tabindex="0"
               @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
             ></div>
-          ` :
-          nothing
-        }
+          `
+        : nothing}
       <div class="fab-container">
         <md-fab
           id="fab-menu-fab"
@@ -395,21 +392,19 @@ export class FabMenu extends LitElement {
           .ariaExpanded=${this.open ? "true" : "false"}
           @click=${() => this._toggle()}
         >
-          ${
-            when(
-              this.icon,
-              () => html`
-                <div
-                  class="icon-wrapper"
-                  slot="icon"
-                >
-                  <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
-                  <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
-                </div>
-              `,
-              () => nothing,
-            )
-          }
+          ${when(
+            this.icon,
+            () => html`
+              <div
+                class="icon-wrapper"
+                slot="icon"
+              >
+                <md-icon style=${styleMap(mainIconStyle)}>${this.icon}</md-icon>
+                <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
+              </div>
+            `,
+            () => nothing,
+          )}
         </md-fab>
       </div>
 
@@ -420,17 +415,15 @@ export class FabMenu extends LitElement {
       >
         <slot name="menu-items"></slot>
       </ul>
-      ${
-        this.open ?
-          html`
+      ${this.open
+        ? html`
             <div
               class="focus-trap-end"
               tabindex="0"
               @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
             ></div>
-          ` :
-          nothing
-        }
+          `
+        : nothing}
     `;
   }
 }
