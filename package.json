@@ -7,7 +7,7 @@
   "author": "Franco N. Colaizzi",
   "org": "@fnc314",
   "type": "module",
-  "module": "src/index.js",
+  "module": "src/index.ts",
   "private": true,
   "types": "./website",
   "main": "./website/index.js",
