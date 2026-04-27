@@ -297,7 +297,7 @@ export class FabMenu extends LitElement {
     // or use the @click handler on the scrim in the template.
     if (changedProperties.has("open") && this.open) {
       // Using a microtask to ensure the scrim is rendered before adding the listener
-      this.updateComplete.then(() => {
+      void this.updateComplete.then(() => {
         this._scrim?.addEventListener("click", this._handleDocumentClick, { capture: true, once: true });
       });
     }

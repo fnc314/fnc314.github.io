@@ -72,8 +72,7 @@ export class AppShell extends LitElement {
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
           "StartTop    . EndTop"
-          "StartBottom . EndBottom"
-          ;
+          "StartBottom . EndBottom";
         gap: 1rem;
 
         md-fab {
@@ -88,8 +87,7 @@ export class AppShell extends LitElement {
           justify-self: unset;
           transition:
             grid-area 0.2s ease-in-out,
-            justify-self 0.2s ease-in-out
-            ;
+            justify-self 0.2s ease-in-out;
 
           md-icon {
             line-height: unset;
@@ -216,12 +214,10 @@ export class AppShell extends LitElement {
    */
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-    this.appConfigs = configsService.loadConfigs();
-    this._uiModeIcon = this.uiModeIcon(this.appConfigs.colorScheme);
-    this.connectFabConfig = this.appConfigs.fab.connect;
-    this.settingsFabConfig = this.appConfigs.fab.settings;
-    this.onFabChangeBind("settings", this.settingsFabConfig);
-    this.onFabChangeBind("connect", this.connectFabConfig);
+
+    // Note: State properties are already initialized via configsService.loadConfigs()
+    // FAB configurations and positions are managed declaratively in the render() method.
+    // Manual calls here were triggering redundant update cycles.
   }
 
   /**

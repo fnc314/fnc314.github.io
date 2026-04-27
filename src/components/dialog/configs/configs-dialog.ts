@@ -380,6 +380,9 @@ export class ConfigsDialog extends LitElement {
   @state()
   private _stepUpDialogContent = "all custom";
 
+  @state()
+  private _wasOpened = false;
+
   private _handleDialogEvent(event: Event) {
     this.dispatchEvent(new Event(event.type, { bubbles: true, composed: true }));
   }
@@ -401,6 +404,7 @@ export class ConfigsDialog extends LitElement {
    */
   public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
     this._formContent = formContent;
+    this._wasOpened = true;
     return this._configsMDDialog.show();
   }
 
@@ -752,7 +756,7 @@ export class ConfigsDialog extends LitElement {
           slot="content"
           method="dialog"
         >
-          ${this.dialogContent()}
+          ${this._wasOpened ? this.dialogContent() : nothing}
         </form>
         <div slot="actions">
           <md-text-button @click=${() => this._configsMDDialog.close()}> Close </md-text-button>
