@@ -3,7 +3,7 @@
     {
       "employer": "CGI Technologies and Solutions, Inc.",
       "role": "Director, Consulting Expert",
-      "summary": "Promoted through progressive leadership roles; most recently serving as an organization-wide expert for mobile application development and system architecture.",
+      "summary": "",
       "dates": {
         "start": {
           "stamp": "2014-08",
@@ -68,7 +68,7 @@
               "item": "Directed the architectural strategy for a flagship Android app with 3.5M+ active users, personally overseeing the implementation of a high-security in-app payment processing platform."
             },
             {
-              "item": "Designed and deployed a series of custom <pre>bash</pre> scripts that automated credential setup and environment validation, reducing developer onboarding time significantly."
+              "item": "Designed and deployed a series of custom <pre>bash</pre> scripts for CI/CD pipeline automation and environment validation, drastically reducing new-hire developer onboarding time and eliminating environment drift."
             },
             {
               "item": "Established rigorous repository-wide coding standards, elevating the team's architectural output and technical maturity through meticulous, file-by-file pull request reviews and proactive mentorship."
