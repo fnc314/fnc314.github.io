@@ -11,7 +11,7 @@ export default {
   debug: true,
   appIndex: "index.html",
   rootDir: "./website",
-  esbuildTarget: "auto",
+  esbuildTarget: "esnext",
   clearTerminalOnReload: false,
   nodeResolve: {
     exportConditions: ["development"],
@@ -26,7 +26,7 @@ export default {
       js: true,
       ts: true,
       json: false,
-      target: "auto",
+      target: "esnext",
       tsconfig: fileURLToPath(new URL("./tsconfig.json", import.meta.url)),
     }),
     rollupAdapter(

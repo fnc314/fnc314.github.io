@@ -177,7 +177,7 @@ export class WorkExperience extends LitElement {
           }
 
           /* Nested content */
-          .nested-experiences {
+          .nested-experience {
             container-type: inline-size;
             grid-column: auto / span 2;
             grid-row: 4;
@@ -260,7 +260,7 @@ export class WorkExperience extends LitElement {
 
     const content = this.jobs.length
       ? html`
-          <div class="nested-experiences">
+          <div class="nested-experience">
             ${this.jobs.map(
               (job) => html`
                 <work-experience
