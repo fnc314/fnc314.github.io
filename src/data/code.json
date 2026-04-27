@@ -1,6 +1,55 @@
 {
   "projects": [
     {
+      "name": "project-collections-gradle-settings-plugin",
+      "tech": [
+        {
+          "name": "Gradle",
+          "url": "https://docs.gradle.org/"
+        },
+        {
+          "name": "Kotlin",
+          "url": "https://kotlinlang.org/"
+        }
+      ],
+      "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
+      "description": "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate <pre>KTS</pre> configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module Android architectures."
+    },
+    {
+      "name": "mac-os-env-scripts",
+      "tech": [
+        {
+          "name": "Bash",
+          "url": "https://www.gnu.org/software/bash/"
+        },
+        {
+          "name": "Oh-My-Zsh",
+          "url": "https://ohmyz.sh/"
+        }
+      ],
+      "url": "https://github.com/fnc314/mac-os-env-scripts",
+      "description": "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states."
+    },
+    {
+      "name": "fnc314-kmp",
+      "tech": [
+        {
+          "name": "Android",
+          "url": "https://developer.android.com/"
+        },
+        {
+          "name": "Gradle",
+          "url": "https://docs.gradle.org/"
+        },
+        {
+          "name": "Kotlin",
+          "url": "https://kotlinlang.org/"
+        }
+      ],
+      "url": "https://github.com/fnc314/fnc314-kmp",
+      "description": "An exploratory <abbr title=\"Kotlin Multiplatform\">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets."
+    },
+    {
       "name": "fnc314.github.io",
       "tech": [
         {
@@ -64,21 +113,6 @@
       "description": "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
     },
     {
-      "name": "project-collections-gradle-settings-plugin",
-      "tech": [
-        {
-          "name": "Gradle",
-          "url": "https://docs.gradle.org/"
-        },
-        {
-          "name": "Kotlin",
-          "url": "https://kotlinlang.org/"
-        }
-      ],
-      "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
-      "description": "A <pre>gradle.settings(.kts)</pre> plugin streamlining invocations of <pre>Settings.include</pre> for nested collections of sub-projects"
-    },
-    {
       "name": "material-theme-viewer",
       "tech": [
         {
@@ -92,40 +126,6 @@
       ],
       "url": "https://github.com/fnc314/material-theme-viewer",
       "description": "Displays the output of <a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a> in a simple tabbed interface"
-    },
-    {
-      "name": "fnc314-kmp",
-      "tech": [
-        {
-          "name": "Android",
-          "url": "https://developer.android.com/"
-        },
-        {
-          "name": "Gradle",
-          "url": "https://docs.gradle.org/"
-        },
-        {
-          "name": "Kotlin",
-          "url": "https://kotlinlang.org/"
-        }
-      ],
-      "url": "https://github.com/fnc314/fnc314-kmp",
-      "description": "A <abbr title=\"Kotlin Multiplatform\">KMP</abbr> (Kotlin Multiplatform) sample generated from the <a href=\"https://kmp.jetbrains.com/\" target=\"_blank\">KMP Wizard</a>"
-    },
-    {
-      "name": "mac-os-env-scripts",
-      "tech": [
-        {
-          "name": "Bash",
-          "url": "https://www.gnu.org/software/bash/"
-        },
-        {
-          "name": "Oh-My-Zsh",
-          "url": "https://ohmyz.sh/"
-        }
-      ],
-      "url": "https://github.com/fnc314/mac-os-env-scripts",
-      "description": "Convenient scripts for <pre>bash</pre> or <pre>zsh</pre> terminals, used on MacOS"
     },
     {
       "name": "project_euler",
