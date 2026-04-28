@@ -1,7 +1,7 @@
-/** @type {import('postcss-load-config').Config} */
-export default {
-  syntax: "postcss-lit",
+/** @type {import('postcss-load-config').ConfigFn} */
+export default (ctx) => ({
+  syntax: ctx.file?.match(/\.[jt]s$/) ? "postcss-lit" : undefined,
   plugins: {
-    "@tailwindcss/postcss": {}
-  }
-};
+    "@tailwindcss/postcss": {},
+  },
+});
