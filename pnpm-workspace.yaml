@@ -113,7 +113,7 @@ catalogs:
     typedoc-material-theme: 1.4.1
     typedoc-plugin-markdown: 4.11.0
     typescript: 6.0.3
-    typescript-eslint: 8.59.0
+    typescript-eslint: 8.59.1
     typescript-lit-html-plugin: 0.9.1
     web-component-analyzer: 2.0.0
   optionalDependencies:
