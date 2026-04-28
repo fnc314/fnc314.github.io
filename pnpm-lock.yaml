@@ -251,8 +251,8 @@ catalogs:
       specifier: 3.8.3
       version: 3.8.3
     prettier-plugin-tailwindcss:
-      specifier: 0.7.3
-      version: 0.7.3
+      specifier: 0.8.0
+      version: 0.8.0
     prettier-plugin-toml:
       specifier: 2.0.6
       version: 2.0.6
@@ -603,7 +603,7 @@ importers:
         version: 3.8.3
       prettier-plugin-tailwindcss:
         specifier: catalog:devDependencies
-        version: 0.7.3(prettier@3.8.3)
+        version: 0.8.0(prettier@3.8.3)
       prettier-plugin-toml:
         specifier: catalog:devDependencies
         version: 2.0.6(prettier@3.8.3)
@@ -7608,8 +7608,8 @@ packages:
     resolution: {integrity: sha512-SxToR7P8Y2lWmv/kTzVLC1t/GDI2WGjMwNhLLE9qtH8Q13C+aEmuRlzDst4Up4s0Wc8sF2M+J57iB3cMLqftfg==}
     engines: {node: '>=6.0.0'}
 
-  prettier-plugin-tailwindcss@0.7.3:
-    resolution: {integrity: sha512-lckXaWWdo2ZVXoMoUO3WIBiz9hVY+YBEh1gYyMFfrWP9WZW/wpFXQKizHx7WrFQFMkcG0bGShdpp531X1n+qpg==}
+  prettier-plugin-tailwindcss@0.8.0:
+    resolution: {integrity: sha512-V8ITGH87yuBDF6JpEZTOVlUz/saAwqb8f3HRgUj8Lh+tGCcrmorhsLpYqzygwFwK0PE2Ib6Mv3M7T/uE2tZV1g==}
     engines: {node: '>=20.19'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -17369,7 +17369,7 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-tailwindcss@0.7.3(prettier@3.8.3):
+  prettier-plugin-tailwindcss@0.8.0(prettier@3.8.3):
     dependencies:
       prettier: 3.8.3
 
