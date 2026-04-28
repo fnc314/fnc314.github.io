@@ -44,7 +44,7 @@ catalogs:
     "@types/node": 25.6.0
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.59.0
-    "@typescript-eslint/parser": 8.59.0
+    "@typescript-eslint/parser": 8.59.1
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
