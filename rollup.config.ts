@@ -113,7 +113,7 @@ export default defineConfig({
       exclude: [],
       patterns: [
         `assets/${manifestJson}`,
-        "assets/icons/icon.svg",
+        "assets/icons/*.{png,svg,ico}",
         "assets/icons/brand/**/*.svg",
         "assets/icons/components/**/*.{png,svg}",
         "assets/icons/maskable/*.{png,svg}",
