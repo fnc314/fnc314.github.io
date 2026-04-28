@@ -101,7 +101,7 @@ catalogs:
     rollup-plugin-summary: 3.0.1
     rollup-plugin-typescript-paths: 1.5.0
     rollup-plugin-version-injector: 1.3.3
-    stylelint: 17.9.0
+    stylelint: 17.9.1
     stylelint-config-inspector: 2.1.2
     stylelint-config-standard: 40.0.0
     stylelint-plugin-use-baseline: 1.4.1
