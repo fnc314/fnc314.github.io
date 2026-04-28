@@ -1,6 +1,6 @@
 import { type CompleteStepUpDialog, StepUpDialog } from "@/components/dialog/step-up/step-up-dialog";
-import { configsService } from "@/services/configs";
-import { themeService } from "@/services/theme";
+import { configsService } from "@/services/configs/configs-service";
+import { themeService } from "@/services/theme/theme-service";
 import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";

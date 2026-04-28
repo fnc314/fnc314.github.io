@@ -1,7 +1,8 @@
-import { configsService } from "@/services/configs";
+import { configsService } from "@/services/configs/configs-service";
 import { MaterialTypescaleStyles } from "@/styles";
-import { type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES } from "@/types";
 import { type BlogPostJson } from "@/types/components/blog/blog-post";
+import { type AppConfigsChange } from "@/types/configs/app-configs";
+import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -106,8 +107,7 @@ export class BlogPost extends LitElement {
           color var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-elevation var(--blog-post-animation) ease-in-out,
           --md-elevated-card-container-shape var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out
-          ;
+          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out;
 
         &:hover,
         &:focus,
@@ -126,8 +126,7 @@ export class BlogPost extends LitElement {
           "icon header  header"
           "icon header  header"
           ".    summary summary"
-          ".    tags    tags"
-          ;
+          ".    tags    tags";
         grid-template-columns: 0.25fr 1fr 0.5fr;
         gap: 0.5rem;
 
@@ -230,13 +229,13 @@ export class BlogPost extends LitElement {
           </header>
           <p class="md-typescale-body-medium">
             ${this.blogPost.summary}
-            <br><br>
+            <br /><br />
             <a
               href=${ifDefined(this.blogPost.mediumUrl)}
               target="_blank"
               rel="noopener noreferrer"
             >
-            Medium&reg;
+              Medium&reg;
             </a>
           </p>
           <ul class="tags">

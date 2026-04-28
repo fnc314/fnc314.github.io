@@ -1,11 +1,16 @@
-import { type ConfigsService, configsService } from "@/services/configs";
+import { type ConfigsService, configsService } from "@/services/configs/configs-service";
 import { THEME_CONFIGS } from "@/theme/theme";
-import { type ColorSchemeRoles, type ColorString, type MaterialSchemeNames, type ThemeConfig } from "@/types/theme";
 import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme,
 } from "@/types/theme/color-scheme-configs";
+import {
+  type ColorSchemeRoles,
+  type ColorString,
+  type MaterialSchemeNames,
+  type ThemeConfig,
+} from "@/types/theme/theme";
 
 export interface ThemeService {
   currentThemeConfig(): ThemeConfig;

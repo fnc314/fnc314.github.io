@@ -4,7 +4,7 @@ import "@/components/word/word-cloud";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { themeService } from "@/services/theme";
+import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/types/components/word/word-cloud";

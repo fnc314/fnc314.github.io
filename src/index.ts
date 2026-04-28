@@ -19,20 +19,48 @@ import "@material/web/tabs/tabs.js";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
-import "./components/index.js";
-import "./partials/index.js";
-import { configsService } from "./services/configs/configs-service.js";
-import "./services/index.js";
+import "./components/app-shell/app-shell";
+import "./components/blog/blog-post";
+import "./components/code/code-project";
+import "./components/dialog/configs/configs-dialog";
+import "./components/dialog/connect/connect-dialog";
+import "./components/dialog/step-up/step-up-dialog";
+import "./components/fab-menu/fab-menu";
+import "./components/fab-menu/fab-menu-item";
+import "./components/info-section/info-section";
+import "./components/nav/nav-component";
+import "./components/partial-header/partial-header";
+import "./components/word/word-cloud";
+import "./components/word/word-tag";
+import "./components/work-experience/work-experience";
+import "./partials/blog/blog-partial";
+import "./partials/code/code-partial";
+import "./partials/info/info-partial";
+import "./partials/work/work-partial";
+import "./services/configs/configs-service";
+import { configsService } from "./services/configs/configs-service";
+import "./services/router/router-service";
+import "./services/storage/storage-service";
+import "./services/theme/theme-service";
 import { themeService } from "./services/theme/theme-service.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "./styles/styles.js";
+import "./types/components/blog/blog-post";
+import "./types/components/code/code-project";
+import "./types/components/dialog/connect-dialog";
+import "./types/components/nav/routes";
 import { ROUTES } from "./types/components/nav/routes.js";
-import "./types/index.js";
-import { colorSchemeConfigsToMaterialSchemeName } from "./types/index.js";
-
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
+import "./types/components/word/word-cloud";
+import "./types/components/work-experience/work-experience";
+import "./types/configs/app-configs";
+import "./types/configs/fab-configs";
+import "./types/theme/color-scheme-configs";
+import { colorSchemeConfigsToMaterialSchemeName } from "./types/theme/color-scheme-configs";
+import "./types/theme/theme";
 
 const domLoadedListener = () => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);

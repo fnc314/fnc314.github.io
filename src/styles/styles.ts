@@ -1,5 +1,5 @@
-import { configsService } from "@/services/configs";
-import { themeService } from "@/services/theme";
+import { configsService } from "@/services/configs/configs-service";
+import { themeService } from "@/services/theme/theme-service";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { CONFIG_COLOR_SCHEME_NAMES, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import { type CSSResult, css } from "lit";

@@ -7,7 +7,7 @@ import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
 import { configsService } from "@/services/configs/configs-service";
 import { type RouterChange, type RouterReverse } from "@/services/router/router-service";
-import { themeService } from "@/services/theme";
+import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
