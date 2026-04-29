@@ -321,9 +321,9 @@ export class AppShell extends LitElement {
    * Closes the menu and opens the configuration dialog with the requested content.
    * @param formContent - The type of configuration form to display.
    */
-  private async _onFabMenuItemClick(formContent: FormContent) {
+  private _onFabMenuItemClick(formContent: FormContent) {
     this.fabMenu.open = false;
-    await this.configsDialog.showDialog(formContent);
+    void this.configsDialog.showDialog(formContent);
   }
 
   /**

@@ -402,9 +402,10 @@ export class ConfigsDialog extends LitElement {
    * @param formContent - The initial section to display in the dialog. Defaults to "ui-mode".
    * @returns A promise that resolves when the dialog is shown.
    */
-  public showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
+  public async showDialog(formContent: FormContent = "ui-mode"): Promise<void> {
     this._formContent = formContent;
     this._wasOpened = true;
+    await this.updateComplete;
     return this._configsMDDialog.show();
   }
 
