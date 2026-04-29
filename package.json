@@ -182,7 +182,6 @@
     "typedoc-plugin-markdown": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
-    "typescript-lit-html-plugin": "catalog:devDependencies",
     "vite": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },

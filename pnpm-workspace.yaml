@@ -43,7 +43,7 @@ catalogs:
     "@types/eslint": 9.6.1
     "@types/node": 25.6.0
     "@types/wordcloud": 1.2.2
-    "@typescript-eslint/eslint-plugin": 8.59.0
+    "@typescript-eslint/eslint-plugin": 8.59.1
     "@typescript-eslint/parser": 8.59.1
     "@vitejs/devtools": 0.1.15
     "@wc-toolkit/cem-inheritance": 1.2.2
@@ -115,7 +115,6 @@ catalogs:
     typedoc-plugin-markdown: 4.11.0
     typescript: 6.0.3
     typescript-eslint: 8.59.1
-    typescript-lit-html-plugin: 0.9.1
     vite: 8.0.10
     web-component-analyzer: 2.0.0
   optionalDependencies:

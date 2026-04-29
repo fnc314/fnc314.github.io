@@ -61,9 +61,6 @@
     "verbatimModuleSyntax": false,
     "plugins": [
       {
-        "name": "typescript-lit-html-plugin"
-      },
-      {
         "name": "ts-lit-plugin",
         "strict": true
       },
@@ -91,7 +88,7 @@
       "vite/client",
       "rollup",
       "postcss"
-      // "rollup", "lit", "prettier", "stylelint", "tailwindcss", "postcss"
+      // "rollup", "lit", "prettier", "stylelint", "tailwindcss",
     ],
     "typeRoots": ["./node_modules", "./node_modules/@types", "./node_modules/@web/rollup-plugin-copy/dist"],
     "paths": {
