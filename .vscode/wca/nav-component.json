@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "nav-component",
-      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `_activeTabIndex` {`number`} - \n\n  * `_activeRoute` - \n\n  * `_exitingRoute` - \n\n  * `_tabRefMap` - ",
+      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.\n\nProperties:\n\n  * `styles` - \n\n  * `_activeTabIndex` {`number`} - \n\n  * `_activeRoute` - \n\n  * `_exitingRoute` - \n\n  * `_tabRefMap` - ",
       "attributes": []
     }
   ],

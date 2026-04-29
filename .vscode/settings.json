@@ -1,4 +1,17 @@
 {
+  "cem.additionalPackages": [
+    "npm:@material/web"
+  ],
+  "cem.lsp.debugLogging": true,
+  "cem.lsp.executable": "", // Custom path (empty = use bundled)
+  "cem.lsp.trace.server": "verbose", // LSP trace level: "off" | "messages" | "verbose"
+  "css.customData": [
+    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",
+  ],
+  "css.lint.importStatement": "ignore",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "/Users/fnc314/.local/share/mise/shims/node"
+  },
   "debug.javascript.terminalOptions": {
     "resolveSourceMapLocations": [
       "${workspaceFolder}/**",
@@ -6,28 +19,25 @@
       "**/node_modules/.vite-temp/**"
     ]
   },
-  "js/ts.tsdk.path": "node_modules/typescript/lib",
-  "cem.additionalPackages": [
-    "npm:@material/web"
-  ],
-  "cem.lsp.debugLogging": true,
-  "cem.lsp.executable": "",             // Custom path (empty = use bundled)
-  "cem.lsp.trace.server": "verbose",        // LSP trace level: "off" | "messages" | "verbose"
-  "css.customData": [
-    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",
-  ],
-  "css.lint.importStatement": "ignore",
+  "docthis.returnsTag": true,
   "html.customData": [
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "./.vscode/wca/components.custom-elements.json",
     "./.vscode/wca/partials.custom-elements.json",
-    "./.vscode/wca/**/*.json",
+    "./.vscode/wca/src/**/*.custom-elements.json",
+    "./.vscode/wca/*.custom-elements.json",
   ],
-  "postcssense.cssPath": "./src/index.css",
+  "html.suggest.html5": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "lit-html.format.enabled": true,
   "lit-plugin.logging": "verbose",
   "lit-plugin.rules.no-expressionless-property-binding": "error",
   "lit-plugin.rules.no-missing-element-type-definition": "error",
   "lit-plugin.rules.no-unknown-slot": "error",
+  "npm.packageManager": "pnpm",
+  "outline.collapseItems": "alwaysCollapse",
+  "pnpm.packageJson": "package.json",
+  "postcssense.cssPath": "./src/index.css",
   "stylelint.configFile": "./stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
@@ -42,7 +52,5 @@
     "typescript",
   ],
   "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
-  "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "/Users/fnc314/.local/share/mise/shims/node"
-  },
+  "workbench.tree.indent": 4,
 }

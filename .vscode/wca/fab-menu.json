@@ -3,11 +3,11 @@
   "tags": [
     {
       "name": "fab-menu",
-      "description": "A floating action button that toggles a menu of actions.\n\nSlots:\n\n  * `object Object],[object Object],[object Object` {} - \n\nAttributes:\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\n  * `opened-icon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\n  * `size` {`\"medium\" | \"small\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\n  * `open` {boolean} - Whether the menu is currently open.\n\n  * `variant` {string} - The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.\n\n  * `label` {string} - [object Object],[object Object],[object Object]\n\n  * `aria-label` {string} - The `aria-label` of the FAB.\n\n  * `direction` {string} - The direction in which the menu items should expand.\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `_fab` {`MdFab`} - \n\n  * `_scrim` {`HTMLDivElement`} - \n\n  * `_items` {`FabMenuItem[]`} - \n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\n  * `openedIcon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\n  * `size` {`\"medium\" | \"small\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\n  * `_focusableElements` {`(HTMLElement & { focus: (options?: FocusOptions | undefined) => void; })[]`} - \n\n  * `_handleDocumentClick` - \n\n  * `open` {boolean} - Whether the menu is currently open.\n\n  * `variant` {string} - The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.\n\n  * `label` {string} - [object Object],[object Object],[object Object]\n\n  * `ariaLabel` {string} - The `aria-label` of the FAB.\n\n  * `object Object],[object Object],[object Object` - \n\n  * `direction` {string} - The direction in which the menu items should expand.",
+      "description": "A floating action button that toggles a menu of actions.\n\nSlots:\n\n  * `object Object],[object Object],[object Object` {} - \n\nAttributes:\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\n  * `opened-icon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\n  * `size` {`\"small\" | \"medium\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\n  * `open` {boolean} - Whether the menu is currently open.\n\n  * `variant` {string} - The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.\n\n  * `label` {string} - [object Object],[object Object],[object Object]\n\n  * `aria-label` {string} - The `aria-label` of the FAB.\n\n  * `direction` {string} - The direction in which the menu items should expand.\n\nProperties:\n\n  * `styles` - \n\n  * `_fab` - \n\n  * `_scrim` {`HTMLDivElement`} - \n\n  * `_items` - \n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\n  * `openedIcon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\n  * `size` {`\"small\" | \"medium\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\n  * `_focusableElements` - \n\n  * `_handleDocumentClick` - \n\n  * `open` {boolean} - Whether the menu is currently open.\n\n  * `variant` {string} - The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.\n\n  * `label` {string} - [object Object],[object Object],[object Object]\n\n  * `ariaLabel` {string} - The `aria-label` of the FAB.\n\n  * `object Object],[object Object],[object Object` - \n\n  * `direction` {string} - The direction in which the menu items should expand.",
       "attributes": [
         {
           "name": "icon",
-          "description": "`icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\nProperty: icon\n\nDefault: add",
+          "description": "`icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - [object Object],[object Object],[object Object],[object Object],[object Object]\n\nProperty: icon\n\nDefault: add",
           "values": [
             {
               "name": ""
@@ -727,9 +727,6 @@
               "name": "app_registration"
             },
             {
-              "name": "app_spark"
-            },
-            {
               "name": "apparel"
             },
             {
@@ -1306,22 +1303,40 @@
               "name": "battery_charging_20"
             },
             {
+              "name": "battery_charging_20_2"
+            },
+            {
               "name": "battery_charging_30"
+            },
+            {
+              "name": "battery_charging_30_2"
             },
             {
               "name": "battery_charging_50"
             },
             {
+              "name": "battery_charging_50_2"
+            },
+            {
               "name": "battery_charging_60"
             },
             {
+              "name": "battery_charging_60_2"
+            },
+            {
               "name": "battery_charging_80"
+            },
+            {
+              "name": "battery_charging_80_2"
             },
             {
               "name": "battery_charging_90"
             },
             {
               "name": "battery_charging_full"
+            },
+            {
+              "name": "battery_charging_full_2"
             },
             {
               "name": "battery_error"
@@ -1429,6 +1444,12 @@
               "name": "blinds"
             },
             {
+              "name": "blinds_2"
+            },
+            {
+              "name": "blinds_2_closed"
+            },
+            {
               "name": "blinds_closed"
             },
             {
@@ -1487,6 +1508,9 @@
             },
             {
               "name": "bolt"
+            },
+            {
+              "name": "bolt_boost"
             },
             {
               "name": "bomb"
@@ -1949,6 +1973,9 @@
             },
             {
               "name": "car_fan_recirculate"
+            },
+            {
+              "name": "car_fan_recirculate_2"
             },
             {
               "name": "car_gear"
@@ -4063,9 +4090,6 @@
               "name": "fit_width"
             },
             {
-              "name": "fitbit_raquetball"
-            },
-            {
               "name": "fitness_center"
             },
             {
@@ -4519,9 +4543,6 @@
               "name": "frame_source"
             },
             {
-              "name": "frame_spark"
-            },
-            {
               "name": "free_cancellation"
             },
             {
@@ -4649,6 +4670,9 @@
             },
             {
               "name": "garage_door"
+            },
+            {
+              "name": "garage_door_open"
             },
             {
               "name": "garage_home"
@@ -5818,6 +5842,9 @@
               "name": "light_group"
             },
             {
+              "name": "light_group_2"
+            },
+            {
               "name": "light_off"
             },
             {
@@ -5831,6 +5858,9 @@
             },
             {
               "name": "lightning_stand"
+            },
+            {
+              "name": "lightstrip"
             },
             {
               "name": "line_axis"
@@ -5915,6 +5945,9 @@
             },
             {
               "name": "list_alt_check"
+            },
+            {
+              "name": "list_arrow"
             },
             {
               "name": "lists"
@@ -6767,6 +6800,9 @@
             },
             {
               "name": "movie_edit"
+            },
+            {
+              "name": "movie_edit_off"
             },
             {
               "name": "movie_info"
@@ -7822,7 +7858,13 @@
               "name": "pin_end"
             },
             {
+              "name": "pin_history"
+            },
+            {
               "name": "pin_invoke"
+            },
+            {
+              "name": "pin_road"
             },
             {
               "name": "pinboard"
@@ -8794,6 +8836,9 @@
               "name": "sell"
             },
             {
+              "name": "sell_cloud"
+            },
+            {
               "name": "send"
             },
             {
@@ -8971,6 +9016,12 @@
               "name": "severe_cold"
             },
             {
+              "name": "shades"
+            },
+            {
+              "name": "shades_closed"
+            },
+            {
               "name": "shadow"
             },
             {
@@ -9022,6 +9073,9 @@
               "name": "shield"
             },
             {
+              "name": "shield_card"
+            },
+            {
               "name": "shield_lock"
             },
             {
@@ -9035,6 +9089,9 @@
             },
             {
               "name": "shield_question"
+            },
+            {
+              "name": "shield_radar"
             },
             {
               "name": "shield_toggle"
@@ -9361,6 +9418,9 @@
               "name": "sound_sampler"
             },
             {
+              "name": "soundbar"
+            },
+            {
               "name": "soup_kitchen"
             },
             {
@@ -9407,6 +9467,9 @@
             },
             {
               "name": "speaker"
+            },
+            {
+              "name": "speaker_2"
             },
             {
               "name": "speaker_group"
@@ -9472,7 +9535,16 @@
               "name": "speed_1_7x"
             },
             {
+              "name": "speed_2"
+            },
+            {
               "name": "speed_2x"
+            },
+            {
+              "name": "speed_3"
+            },
+            {
+              "name": "speed_4"
             },
             {
               "name": "speed_camera"
@@ -9868,6 +9940,9 @@
               "name": "subway_walk"
             },
             {
+              "name": "subwoofer"
+            },
+            {
               "name": "summarize"
             },
             {
@@ -9989,6 +10064,9 @@
             },
             {
               "name": "switch_left"
+            },
+            {
+              "name": "switch_off"
             },
             {
               "name": "switch_right"
@@ -10516,6 +10594,9 @@
               "name": "touch_double"
             },
             {
+              "name": "touch_double_2"
+            },
+            {
               "name": "touch_long"
             },
             {
@@ -10606,13 +10687,7 @@
               "name": "translate"
             },
             {
-              "name": "translate_cc"
-            },
-            {
               "name": "translate_indic"
-            },
-            {
-              "name": "translate_subtitles"
             },
             {
               "name": "transportation"
@@ -10853,6 +10928,12 @@
             },
             {
               "name": "vacuum"
+            },
+            {
+              "name": "vacuum_2"
+            },
+            {
+              "name": "vacuum_2_on"
             },
             {
               "name": "valve"
@@ -11383,6 +11464,9 @@
               "name": "wifi_channel"
             },
             {
+              "name": "wifi_device"
+            },
+            {
               "name": "wifi_find"
             },
             {
@@ -11503,13 +11587,7 @@
               "name": "your_trips"
             },
             {
-              "name": "youtube_activity_2"
-            },
-            {
               "name": "youtube_searched_for"
-            },
-            {
-              "name": "youtube_video"
             },
             {
               "name": "zone_person_alert"
@@ -11536,7 +11614,7 @@
         },
         {
           "name": "opened-icon",
-          "description": "`opened-icon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3822 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\nProperty: openedIcon\n\nDefault: close",
+          "description": "`opened-icon` {`\"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3848 more ... | \"zoom_out_map\"`} - The icon to display when the menu is open.\nDefaults to 'close'.\n\nProperty: openedIcon\n\nDefault: close",
           "values": [
             {
               "name": "function"
@@ -12253,9 +12331,6 @@
               "name": "app_registration"
             },
             {
-              "name": "app_spark"
-            },
-            {
               "name": "apparel"
             },
             {
@@ -12832,22 +12907,40 @@
               "name": "battery_charging_20"
             },
             {
+              "name": "battery_charging_20_2"
+            },
+            {
               "name": "battery_charging_30"
+            },
+            {
+              "name": "battery_charging_30_2"
             },
             {
               "name": "battery_charging_50"
             },
             {
+              "name": "battery_charging_50_2"
+            },
+            {
               "name": "battery_charging_60"
             },
             {
+              "name": "battery_charging_60_2"
+            },
+            {
               "name": "battery_charging_80"
+            },
+            {
+              "name": "battery_charging_80_2"
             },
             {
               "name": "battery_charging_90"
             },
             {
               "name": "battery_charging_full"
+            },
+            {
+              "name": "battery_charging_full_2"
             },
             {
               "name": "battery_error"
@@ -12955,6 +13048,12 @@
               "name": "blinds"
             },
             {
+              "name": "blinds_2"
+            },
+            {
+              "name": "blinds_2_closed"
+            },
+            {
               "name": "blinds_closed"
             },
             {
@@ -13013,6 +13112,9 @@
             },
             {
               "name": "bolt"
+            },
+            {
+              "name": "bolt_boost"
             },
             {
               "name": "bomb"
@@ -13475,6 +13577,9 @@
             },
             {
               "name": "car_fan_recirculate"
+            },
+            {
+              "name": "car_fan_recirculate_2"
             },
             {
               "name": "car_gear"
@@ -15589,9 +15694,6 @@
               "name": "fit_width"
             },
             {
-              "name": "fitbit_raquetball"
-            },
-            {
               "name": "fitness_center"
             },
             {
@@ -16045,9 +16147,6 @@
               "name": "frame_source"
             },
             {
-              "name": "frame_spark"
-            },
-            {
               "name": "free_cancellation"
             },
             {
@@ -16175,6 +16274,9 @@
             },
             {
               "name": "garage_door"
+            },
+            {
+              "name": "garage_door_open"
             },
             {
               "name": "garage_home"
@@ -17344,6 +17446,9 @@
               "name": "light_group"
             },
             {
+              "name": "light_group_2"
+            },
+            {
               "name": "light_off"
             },
             {
@@ -17357,6 +17462,9 @@
             },
             {
               "name": "lightning_stand"
+            },
+            {
+              "name": "lightstrip"
             },
             {
               "name": "line_axis"
@@ -17441,6 +17549,9 @@
             },
             {
               "name": "list_alt_check"
+            },
+            {
+              "name": "list_arrow"
             },
             {
               "name": "lists"
@@ -18293,6 +18404,9 @@
             },
             {
               "name": "movie_edit"
+            },
+            {
+              "name": "movie_edit_off"
             },
             {
               "name": "movie_info"
@@ -19348,7 +19462,13 @@
               "name": "pin_end"
             },
             {
+              "name": "pin_history"
+            },
+            {
               "name": "pin_invoke"
+            },
+            {
+              "name": "pin_road"
             },
             {
               "name": "pinboard"
@@ -20320,6 +20440,9 @@
               "name": "sell"
             },
             {
+              "name": "sell_cloud"
+            },
+            {
               "name": "send"
             },
             {
@@ -20497,6 +20620,12 @@
               "name": "severe_cold"
             },
             {
+              "name": "shades"
+            },
+            {
+              "name": "shades_closed"
+            },
+            {
               "name": "shadow"
             },
             {
@@ -20548,6 +20677,9 @@
               "name": "shield"
             },
             {
+              "name": "shield_card"
+            },
+            {
               "name": "shield_lock"
             },
             {
@@ -20561,6 +20693,9 @@
             },
             {
               "name": "shield_question"
+            },
+            {
+              "name": "shield_radar"
             },
             {
               "name": "shield_toggle"
@@ -20887,6 +21022,9 @@
               "name": "sound_sampler"
             },
             {
+              "name": "soundbar"
+            },
+            {
               "name": "soup_kitchen"
             },
             {
@@ -20933,6 +21071,9 @@
             },
             {
               "name": "speaker"
+            },
+            {
+              "name": "speaker_2"
             },
             {
               "name": "speaker_group"
@@ -20998,7 +21139,16 @@
               "name": "speed_1_7x"
             },
             {
+              "name": "speed_2"
+            },
+            {
               "name": "speed_2x"
+            },
+            {
+              "name": "speed_3"
+            },
+            {
+              "name": "speed_4"
             },
             {
               "name": "speed_camera"
@@ -21394,6 +21544,9 @@
               "name": "subway_walk"
             },
             {
+              "name": "subwoofer"
+            },
+            {
               "name": "summarize"
             },
             {
@@ -21515,6 +21668,9 @@
             },
             {
               "name": "switch_left"
+            },
+            {
+              "name": "switch_off"
             },
             {
               "name": "switch_right"
@@ -22042,6 +22198,9 @@
               "name": "touch_double"
             },
             {
+              "name": "touch_double_2"
+            },
+            {
               "name": "touch_long"
             },
             {
@@ -22132,13 +22291,7 @@
               "name": "translate"
             },
             {
-              "name": "translate_cc"
-            },
-            {
               "name": "translate_indic"
-            },
-            {
-              "name": "translate_subtitles"
             },
             {
               "name": "transportation"
@@ -22379,6 +22532,12 @@
             },
             {
               "name": "vacuum"
+            },
+            {
+              "name": "vacuum_2"
+            },
+            {
+              "name": "vacuum_2_on"
             },
             {
               "name": "valve"
@@ -22909,6 +23068,9 @@
               "name": "wifi_channel"
             },
             {
+              "name": "wifi_device"
+            },
+            {
               "name": "wifi_find"
             },
             {
@@ -23029,13 +23191,7 @@
               "name": "your_trips"
             },
             {
-              "name": "youtube_activity_2"
-            },
-            {
               "name": "youtube_searched_for"
-            },
-            {
-              "name": "youtube_video"
             },
             {
               "name": "zone_person_alert"
@@ -23062,13 +23218,13 @@
         },
         {
           "name": "size",
-          "description": "`size` {`\"medium\" | \"small\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\nProperty: size\n\nDefault: medium",
+          "description": "`size` {`\"small\" | \"medium\" | \"large\"`} - The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.\n\nProperty: size\n\nDefault: medium",
           "values": [
             {
-              "name": "medium"
+              "name": "small"
             },
             {
-              "name": "small"
+              "name": "medium"
             },
             {
               "name": "large"
@@ -23077,8 +23233,7 @@
         },
         {
           "name": "open",
-          "description": "`open` {boolean} - Whether the menu is currently open.\n\nProperty: open\n\nDefault: false",
-          "valueSet": "v"
+          "description": "`open` {boolean} - Whether the menu is currently open.\n\nProperty: open\n\nDefault: false"
         },
         {
           "name": "variant",

@@ -4,130 +4,11 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "src/components/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/app-shell/app-shell"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/blog/blog-post"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/code/code-project"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/dialog/configs/configs-dialog"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/dialog/connect/connect-dialog"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/dialog/step-up/step-up-dialog"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/fab-menu/fab-menu"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/fab-menu/fab-menu-item"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/nav/nav-component"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/partial-header/partial-header"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/profile-section/profile-section"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/word/word-cloud"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/word/word-tag"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/components/work-experience/work-experience"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/app-shell/app-shell.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
+          "description": "",
           "name": "AppShell",
           "slots": [
             {
@@ -355,6 +236,7 @@
             "name": "LitElement",
             "package": "lit"
           },
+          "summary": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
           "tagName": "app-shell",
           "customElement": true
         }
@@ -442,7 +324,7 @@
           ],
           "superclass": {
             "name": "LitElement",
-            "package": "lit-element"
+            "package": "lit"
           },
           "summary": "Represents a published blog record, linking to the artifact",
           "tagName": "blog-post",
@@ -552,6 +434,329 @@
           "declaration": {
             "name": "CodeProject",
             "module": "src/components/code/code-project.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/info-section/info-section.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+          "name": "InfoSection",
+          "members": [
+            {
+              "kind": "field",
+              "name": "sectionTitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <info-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </info-section> ```",
+              "attribute": "section-title"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "section-title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <info-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </info-section> ```",
+              "fieldName": "sectionTitle"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "info-section",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "InfoSection",
+          "declaration": {
+            "name": "InfoSection",
+            "module": "src/components/info-section/info-section.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "info-section",
+          "declaration": {
+            "name": "InfoSection",
+            "module": "src/components/info-section/info-section.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/nav/nav-component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+          "name": "NavComponent",
+          "cssProperties": [
+            {
+              "description": "The duration of the icon's fill and color transition.",
+              "name": "--nav-component-icon-animation",
+              "default": "225ms"
+            },
+            {
+              "description": "The duration of the icon's transition when motion is reduced.",
+              "name": "--nav-component-icon-animation-reduced",
+              "default": "1ms"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_activeTabIndex",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "_activeRoute",
+              "type": {
+                "text": "Route"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_exitingRoute",
+              "type": {
+                "text": "Route | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#inlineIconTimeout",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#tabsRef",
+              "privacy": "private",
+              "type": {
+                "text": "Ref<MdTabs>"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_tabRefMap",
+              "type": {
+                "text": "Record<Route, Ref<MdPrimaryTab>>"
+              },
+              "privacy": "private",
+              "default": "{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }"
+            },
+            {
+              "kind": "field",
+              "name": "#routes",
+              "privacy": "private",
+              "type": {
+                "text": "Route[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#boundListener",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#tabIndexAndRouteFromHash",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "index"
+                }
+              },
+              "description": "Reads window.location.hash and returns an object containing the Route and indexing number"
+            },
+            {
+              "kind": "method",
+              "name": "#handleHashChange",
+              "privacy": "private",
+              "description": "Syncs internal state with the URL hash."
+            },
+            {
+              "kind": "method",
+              "name": "#updateTabState",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Updates the visual state of tabs and panels based on the index."
+            },
+            {
+              "kind": "method",
+              "name": "#updateCarousel",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  },
+                  "description": "The current {@link _activeTabIndex}"
+                }
+              ],
+              "description": "Updates external DOM via style manipulations and blind queries"
+            },
+            {
+              "kind": "method",
+              "name": "#onTabChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  },
+                  "description": "The emitted {@link Event}from the HTML\n   "
+                }
+              ],
+              "description": "Handles user clicks on tabs. Updates URL and UI."
+            },
+            {
+              "kind": "method",
+              "name": "#renderTabs",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Creates a TemplateResult consisting of MdTabs, MdPrimaryTabs, and MdIcons"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "nav-component",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NavComponent",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "nav-component",
+          "declaration": {
+            "name": "NavComponent",
+            "module": "src/components/nav/nav-component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/partial-header/partial-header.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
+          "name": "PartialHeader",
+          "members": [
+            {
+              "kind": "field",
+              "name": "headingText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text to display within the header.",
+              "attribute": "heading-text"
+            },
+            {
+              "kind": "field",
+              "name": "headerType",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
+              },
+              "default": "\"primary\"",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+              "attribute": "header-type"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "heading-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The text to display within the header.",
+              "fieldName": "headingText",
+              "attribute": "heading-text"
+            },
+            {
+              "name": "header-type",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
+              },
+              "default": "\"primary\"",
+              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+              "fieldName": "headerType",
+              "attribute": "header-type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "partial-header",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PartialHeader",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "partial-header",
+          "declaration": {
+            "name": "PartialHeader",
+            "module": "src/components/partial-header/partial-header.ts"
           }
         }
       ]
@@ -962,329 +1167,6 @@
           "declaration": {
             "name": "FabMenu",
             "module": "src/components/fab-menu/fab-menu.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/nav/nav-component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
-          "name": "NavComponent",
-          "cssProperties": [
-            {
-              "description": "The duration of the icon's fill and color transition.",
-              "name": "--nav-component-icon-animation",
-              "default": "225ms"
-            },
-            {
-              "description": "The duration of the icon's transition when motion is reduced.",
-              "name": "--nav-component-icon-animation-reduced",
-              "default": "1ms"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "_activeTabIndex",
-              "type": {
-                "text": "number"
-              },
-              "privacy": "private",
-              "default": "0"
-            },
-            {
-              "kind": "field",
-              "name": "_activeRoute",
-              "type": {
-                "text": "Route"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_exitingRoute",
-              "type": {
-                "text": "Route | null"
-              },
-              "privacy": "private",
-              "default": "null"
-            },
-            {
-              "kind": "field",
-              "name": "#inlineIconTimeout",
-              "privacy": "private",
-              "type": {
-                "text": "number"
-              },
-              "default": "0"
-            },
-            {
-              "kind": "field",
-              "name": "#tabsRef",
-              "privacy": "private",
-              "type": {
-                "text": "Ref<MdTabs>"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_tabRefMap",
-              "type": {
-                "text": "Record<Route, Ref<MdPrimaryTab>>"
-              },
-              "privacy": "private",
-              "default": "{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }"
-            },
-            {
-              "kind": "field",
-              "name": "#routes",
-              "privacy": "private",
-              "type": {
-                "text": "Route[]"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "#boundListener",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "#tabIndexAndRouteFromHash",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "index"
-                }
-              },
-              "description": "Reads window.location.hash and returns an object containing the Route and indexing number"
-            },
-            {
-              "kind": "method",
-              "name": "#handleHashChange",
-              "privacy": "private",
-              "description": "Syncs internal state with the URL hash."
-            },
-            {
-              "kind": "method",
-              "name": "#updateTabState",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "index",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ],
-              "description": "Updates the visual state of tabs and panels based on the index."
-            },
-            {
-              "kind": "method",
-              "name": "#updateCarousel",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "index",
-                  "type": {
-                    "text": "number"
-                  },
-                  "description": "The current {@link _activeTabIndex}"
-                }
-              ],
-              "description": "Updates external DOM via style manipulations and blind queries"
-            },
-            {
-              "kind": "method",
-              "name": "#onTabChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  },
-                  "description": "The emitted {@link Event}from the HTML\n   "
-                }
-              ],
-              "description": "Handles user clicks on tabs. Updates URL and UI."
-            },
-            {
-              "kind": "method",
-              "name": "#renderTabs",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Creates a TemplateResult consisting of MdTabs, MdPrimaryTabs, and MdIcons"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "nav-component",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "NavComponent",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "nav-component",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/partial-header/partial-header.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
-          "name": "PartialHeader",
-          "members": [
-            {
-              "kind": "field",
-              "name": "headingText",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text to display within the header.",
-              "attribute": "heading-text"
-            },
-            {
-              "kind": "field",
-              "name": "headerType",
-              "type": {
-                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
-              },
-              "default": "\"primary\"",
-              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
-              "attribute": "header-type"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "heading-text",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text to display within the header.",
-              "fieldName": "headingText",
-              "attribute": "heading-text"
-            },
-            {
-              "name": "header-type",
-              "type": {
-                "text": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\""
-              },
-              "default": "\"primary\"",
-              "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
-              "fieldName": "headerType",
-              "attribute": "header-type"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit-element"
-          },
-          "tagName": "partial-header",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "PartialHeader",
-          "declaration": {
-            "name": "PartialHeader",
-            "module": "src/components/partial-header/partial-header.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "partial-header",
-          "declaration": {
-            "name": "PartialHeader",
-            "module": "src/components/partial-header/partial-header.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/profile-section/profile-section.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
-          "name": "ProfileSection",
-          "members": [
-            {
-              "kind": "field",
-              "name": "sectionTitle",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-              "attribute": "section-title"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "section-title",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-              "fieldName": "sectionTitle"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "profile-section",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ProfileSection",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "profile-section",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.ts"
           }
         }
       ]
@@ -1720,7 +1602,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.",
+          "description": "",
           "name": "WorkExperience",
           "members": [
             {
@@ -1730,7 +1612,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "description": "Whether this is a nested instance",
               "attribute": "is-nested"
             },
             {
@@ -1740,7 +1622,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The title of the professional role or project.",
+              "description": "The formal role from the {@link WorkExperience} instance",
               "attribute": "experience-role"
             },
             {
@@ -1750,7 +1632,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The name of the organization or client.",
+              "description": "The employer formal name",
               "attribute": "experience-org"
             },
             {
@@ -1760,6 +1642,7 @@
                 "text": "string"
               },
               "default": "\"\"",
+              "description": "An optional summary of the overall role",
               "attribute": "experience-summary"
             },
             {
@@ -1769,7 +1652,7 @@
                 "text": "WorkDate"
               },
               "default": "{ stamp: \"\", text: \"\" }",
-              "description": "Start date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment start date",
               "attribute": "date-start"
             },
             {
@@ -1779,68 +1662,28 @@
                 "text": "WorkDate"
               },
               "default": "{ stamp: \"\", text: \"\" }",
-              "description": "End date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment end date",
               "attribute": "date-end"
             },
             {
               "kind": "field",
               "name": "summaries",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "Array<{ item: string }>"
               },
               "default": "[]",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
               "attribute": "summaries"
             },
             {
               "kind": "field",
               "name": "jobs",
               "type": {
-                "text": "Job[]"
+                "text": "Array<Job>"
               },
               "default": "[]",
-              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
-              "attribute": "jobs"
-            },
-            {
-              "description": "Whether this is a nested instance",
-              "name": "isNested=false",
-              "kind": "field"
-            },
-            {
-              "description": "The formal role from the {@link WorkExperience} instance",
-              "name": "experienceRole=\"\"",
-              "kind": "field"
-            },
-            {
-              "description": "The employer formal name",
-              "name": "experienceOrg=\"\"",
-              "kind": "field"
-            },
-            {
-              "description": "An optional summary of the overall role",
-              "name": "experienceSummary=\"\"",
-              "kind": "field"
-            },
-            {
-              "description": "stamp: \"\", text: \"\" } - A {@link WorkDate} instance describing employment start date",
-              "name": "dateStart={",
-              "kind": "field"
-            },
-            {
-              "description": "stamp: \"\", text: \"\" } - A {@link WorkDate} instance describing employment end date",
-              "name": "dateEnd={",
-              "kind": "field"
-            },
-            {
-              "description": "An array of `{ item: string }` objects describing the responsibilities",
-              "name": "summaries=[]",
-              "kind": "field"
-            },
-            {
               "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-              "name": "jobs=[]",
-              "kind": "field"
+              "attribute": "jobs"
             }
           ],
           "attributes": [
@@ -1850,7 +1693,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "description": "Whether this is a nested instance",
               "fieldName": "isNested"
             },
             {
@@ -1859,7 +1702,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The title of the professional role or project.",
+              "description": "The formal role from the {@link WorkExperience} instance",
               "fieldName": "experienceRole"
             },
             {
@@ -1868,7 +1711,7 @@
                 "text": "string"
               },
               "default": "\"\"",
-              "description": "The name of the organization or client.",
+              "description": "The employer formal name",
               "fieldName": "experienceOrg"
             },
             {
@@ -1877,6 +1720,7 @@
                 "text": "string"
               },
               "default": "\"\"",
+              "description": "An optional summary of the overall role",
               "fieldName": "experienceSummary"
             },
             {
@@ -1885,7 +1729,7 @@
                 "text": "WorkDate"
               },
               "default": "{ stamp: \"\", text: \"\" }",
-              "description": "Start date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment start date",
               "fieldName": "dateStart"
             },
             {
@@ -1894,25 +1738,25 @@
                 "text": "WorkDate"
               },
               "default": "{ stamp: \"\", text: \"\" }",
-              "description": "End date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment end date",
               "fieldName": "dateEnd"
             },
             {
               "name": "summaries",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "Array<{ item: string }>"
               },
               "default": "[]",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
               "fieldName": "summaries"
             },
             {
               "name": "jobs",
               "type": {
-                "text": "Job[]"
+                "text": "Array<Job>"
               },
               "default": "[]",
-              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+              "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
               "fieldName": "jobs"
             }
           ],
@@ -1920,6 +1764,7 @@
             "name": "LitElement",
             "package": "lit"
           },
+          "summary": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.",
           "tagName": "work-experience",
           "customElement": true
         }
@@ -2010,6 +1855,15 @@
               },
               "privacy": "private",
               "default": "\"all custom\""
+            },
+            {
+              "kind": "field",
+              "name": "_wasOpened",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
             },
             {
               "kind": "method",
@@ -2197,7 +2051,7 @@
           ],
           "superclass": {
             "name": "LitElement",
-            "package": "lit-element"
+            "package": "lit"
           },
           "tagName": "configs-dialog",
           "customElement": true
@@ -2334,7 +2188,7 @@
           ],
           "superclass": {
             "name": "LitElement",
-            "package": "lit-element"
+            "package": "lit"
           },
           "tagName": "connect-dialog",
           "customElement": true,
@@ -2492,7 +2346,7 @@
           ],
           "superclass": {
             "name": "LitElement",
-            "package": "lit-element"
+            "package": "lit"
           },
           "tagName": "step-up-dialog",
           "customElement": true
@@ -2519,78 +2373,15 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/components/blog/blog-post"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/components/dialog/connect-dialog"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/components/nav/routes"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/components/word/word-cloud"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/components/work-experience/work-experience"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/configs"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/theme"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/configs/app-configs.ts",
       "declarations": [
         {
           "kind": "variable",
           "name": "DEFAULT_APP_CONFIGS",
           "type": {
-            "text": "{\n  colorScheme: {\n    theme: THEME_NAMES.inter,\n    name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,\n    contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,\n    persist: false,\n  } as const,\n  fab: {\n    settings: {\n      position: FAB_POSITION.START_BOTTOM,\n      style: FAB_STYLE.ICON_AND_TEXT,\n    } as const,\n    connect: {\n      position: FAB_POSITION.END_BOTTOM,\n      style: FAB_STYLE.ICON_AND_TEXT,\n    } as const,\n  } as const,\n}"
+            "text": "{\n  colorScheme: {\n    theme: THEME_NAMES.sunset,\n    name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,\n    contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,\n    persist: false,\n  } as const,\n  fab: {\n    settings: {\n      position: FAB_POSITION.START_BOTTOM,\n      style: FAB_STYLE.ICON_AND_TEXT,\n    } as const,\n    connect: {\n      position: FAB_POSITION.END_BOTTOM,\n      style: FAB_STYLE.ICON_AND_TEXT,\n    } as const,\n  } as const,\n}"
           },
-          "default": "{ colorScheme: { theme: THEME_NAMES.inter, name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM, contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL, persist: false, } as const, fab: { settings: { position: FAB_POSITION.START_BOTTOM, style: FAB_STYLE.ICON_AND_TEXT, } as const, connect: { position: FAB_POSITION.END_BOTTOM, style: FAB_STYLE.ICON_AND_TEXT, } as const, } as const, }"
+          "default": "{ colorScheme: { theme: THEME_NAMES.sunset, name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM, contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL, persist: false, } as const, fab: { settings: { position: FAB_POSITION.START_BOTTOM, style: FAB_STYLE.ICON_AND_TEXT, } as const, connect: { position: FAB_POSITION.END_BOTTOM, style: FAB_STYLE.ICON_AND_TEXT, } as const, } as const, }"
         }
       ],
       "exports": [
@@ -2834,29 +2625,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/configs/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/configs/app-configs"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/configs/fab-configs"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/theme/color-scheme-configs.ts",
       "declarations": [
         {
@@ -2948,29 +2716,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/theme/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/theme/color-scheme-configs"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "module": "src/types/theme/theme"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/theme/theme.ts",
       "declarations": [
         {
@@ -2978,7 +2723,7 @@
           "name": "jsonIsThemeJsonSchemes",
           "return": {
             "type": {
-              "text": "json is ThemeJsonSchemes"
+              "text": ""
             }
           },
           "parameters": [
@@ -2986,9 +2731,11 @@
               "name": "json",
               "type": {
                 "text": "unknown"
-              }
+              },
+              "description": "Input of an {@link unknown}type, ideally conforming to a Material 3 JSON scheme\n * "
             }
-          ]
+          ],
+          "description": "Checks if the provided JSON conforms to the expected theme schemes structure"
         },
         {
           "kind": "variable",
@@ -3023,7 +2770,7 @@
           "name": "keyTransform",
           "return": {
             "type": {
-              "text": "CSSResult"
+              "text": ""
             }
           },
           "parameters": [
@@ -3031,15 +2778,18 @@
               "name": "jsonKey",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "The key from the JSON scheme, e.g., \"primaryContainer\""
             },
             {
               "name": "rgb",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "The RGB color value from the JSON scheme, e.g., \"#FF0000\""
             }
-          ]
+          ],
+          "description": "Converts jsonKey and corresponding rgb value into a CSS custom property\n  via css and unsafeCSS functions"
         }
       ],
       "exports": [
@@ -3093,68 +2843,9 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/nav/routes.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "ROUTES",
-          "type": {
-            "text": "{\n  INFO: \"info\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
-          },
-          "default": "{ INFO: \"info\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
-        },
-        {
-          "kind": "function",
-          "name": "hashToRoute",
-          "return": {
-            "type": {
-              "text": "Route"
-            }
-          },
-          "parameters": [
-            {
-              "name": "hash",
-              "type": {
-                "text": "string"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "variable",
-          "name": "NavComponentConfig",
-          "type": {
-            "text": "NavComponentConfigs"
-          },
-          "default": "{ tabs: { info: { label: \"Info\", mdIcon: \"account_box\", }, work: { label: \"Work\", mdIcon: \"view_timeline\", }, code: { label: \"Code\", mdIcon: \"code_blocks\", }, blog: { label: \"Blog\", mdIcon: \"newsmode\", } } }"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ROUTES",
-          "declaration": {
-            "name": "ROUTES",
-            "module": "src/types/components/nav/routes.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "hashToRoute",
-          "declaration": {
-            "name": "hashToRoute",
-            "module": "src/types/components/nav/routes.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "NavComponentConfig",
-          "declaration": {
-            "name": "NavComponentConfig",
-            "module": "src/types/components/nav/routes.ts"
-          }
-        }
-      ]
+      "path": "src/types/components/code/code-project.ts",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -3286,9 +2977,68 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/code/code-project.ts",
-      "declarations": [],
-      "exports": []
+      "path": "src/types/components/nav/routes.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ROUTES",
+          "type": {
+            "text": "{\n  INFO: \"info\" as const,\n  WORK: \"work\" as const,\n  CODE: \"code\" as const,\n  BLOG: \"blog\" as const,\n  // SETTINGS: \"settings\" as const,\n  // CONNECT: \"connect\" as const,\n}"
+          },
+          "default": "{ INFO: \"info\" as const, WORK: \"work\" as const, CODE: \"code\" as const, BLOG: \"blog\" as const, // SETTINGS: \"settings\" as const, // CONNECT: \"connect\" as const, }"
+        },
+        {
+          "kind": "function",
+          "name": "hashToRoute",
+          "return": {
+            "type": {
+              "text": "Route"
+            }
+          },
+          "parameters": [
+            {
+              "name": "hash",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "NavComponentConfig",
+          "type": {
+            "text": "NavComponentConfigs"
+          },
+          "default": "{ tabs: { info: { label: \"Info\", mdIcon: \"account_box\", }, work: { label: \"Work\", mdIcon: \"view_timeline\", }, code: { label: \"Code\", mdIcon: \"code_blocks\", }, blog: { label: \"Blog\", mdIcon: \"newsmode\", } } }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ROUTES",
+          "declaration": {
+            "name": "ROUTES",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hashToRoute",
+          "declaration": {
+            "name": "hashToRoute",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NavComponentConfig",
+          "declaration": {
+            "name": "NavComponentConfig",
+            "module": "src/types/components/nav/routes.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",

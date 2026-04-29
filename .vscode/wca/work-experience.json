@@ -3,24 +3,11 @@
   "tags": [
     {
       "name": "work-experience",
-      "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.\n\nAttributes:\n\n  * `is-nested` {`boolean`} - If true, adjusts font sizes and layout for a nested appearance.\n\n  * `experience-role` {`string`} - The title of the professional role or project.\n\n  * `experience-org` {`string`} - The name of the organization or client.\n\n  * `experience-summary` {`string`} - \n\n  * `date-start` - Start date information including machine-readable stamp and display text.\n\n  * `date-end` - End date information including machine-readable stamp and display text.\n\n  * `summaries` {`{ item: string; }[]`} - A list of summary points describing achievements or responsibilities.\n\n  * `jobs` {`Job[]`} - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `isNested` {`boolean`} - If true, adjusts font sizes and layout for a nested appearance.\n\n  * `experienceRole` {`string`} - The title of the professional role or project.\n\n  * `experienceOrg` {`string`} - The name of the organization or client.\n\n  * `experienceSummary` {`string`} - \n\n  * `dateStart` - Start date information including machine-readable stamp and display text.\n\n  * `dateEnd` - End date information including machine-readable stamp and display text.\n\n  * `summaries` {`{ item: string; }[]`} - A list of summary points describing achievements or responsibilities.\n\n  * `jobs` {`Job[]`} - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\n  * `isNested=false` - Whether this is a nested instance\n\n  * `experienceOrg=\"\"` - The employer formal name\n\n  * `experienceSummary=\"\"` - An optional summary of the overall role\n\n  * `object Object],[object Object],[object Object` - \n\n  * `summaries=[]` - An array of `{ item: string }` objects describing the responsibilities\n\n  * `object Object],[object Object],[object Object],[object Object],[object Object` - ",
+      "description": "Attributes:\n\n  * `experience-role` {`string`} - The title of the professional role or project.\n\n  * `date-start` - Start date information including machine-readable stamp and display text.\n\n  * `date-end` - End date information including machine-readable stamp and display text.\n\n  * `summaries` - A list of summary points describing achievements or responsibilities.\n\n  * `jobs` - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\n  * `is-nested` {boolean} - If true, adjusts font sizes and layout for a nested appearance.\n\n  * `experience-org` {string} - The name of the organization or client.\n\n  * `experience-summary` {string} - An optional summary of the overall role\n\nProperties:\n\n  * `styles` - \n\n  * `experienceRole` {`string`} - The title of the professional role or project.\n\n  * `dateStart` - Start date information including machine-readable stamp and display text.\n\n  * `dateEnd` - End date information including machine-readable stamp and display text.\n\n  * `summaries` - A list of summary points describing achievements or responsibilities.\n\n  * `jobs` - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\n  * `isNested` {boolean} - If true, adjusts font sizes and layout for a nested appearance.\n\n  * `experienceOrg` {string} - The name of the organization or client.\n\n  * `experienceSummary` {string} - An optional summary of the overall role\n\n  * `object Object],[object Object],[object Object` - \n\n  * `object Object],[object Object],[object Object],[object Object],[object Object` - ",
       "attributes": [
-        {
-          "name": "is-nested",
-          "description": "`is-nested` {`boolean`} - If true, adjusts font sizes and layout for a nested appearance.\n\nProperty: isNested\n\nDefault: false",
-          "valueSet": "v"
-        },
         {
           "name": "experience-role",
           "description": "`experience-role` {`string`} - The title of the professional role or project.\n\nProperty: experienceRole\n\nDefault: "
-        },
-        {
-          "name": "experience-org",
-          "description": "`experience-org` {`string`} - The name of the organization or client.\n\nProperty: experienceOrg\n\nDefault: "
-        },
-        {
-          "name": "experience-summary",
-          "description": "`experience-summary` {`string`} - \n\nProperty: experienceSummary\n\nDefault: "
         },
         {
           "name": "date-start",
@@ -32,11 +19,23 @@
         },
         {
           "name": "summaries",
-          "description": "`summaries` {`{ item: string; }[]`} - A list of summary points describing achievements or responsibilities.\n\nProperty: summaries\n\nDefault: "
+          "description": "`summaries` - A list of summary points describing achievements or responsibilities.\n\nProperty: summaries\n\nDefault: "
         },
         {
           "name": "jobs",
-          "description": "`jobs` {`Job[]`} - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\nProperty: jobs\n\nDefault: "
+          "description": "`jobs` - A list of sub-jobs or project assignments to be rendered as nested experiences.\n\nProperty: jobs\n\nDefault: "
+        },
+        {
+          "name": "is-nested",
+          "description": "`is-nested` {boolean} - If true, adjusts font sizes and layout for a nested appearance.\n\nProperty: isNested\n\nDefault: false"
+        },
+        {
+          "name": "experience-org",
+          "description": "`experience-org` {string} - The name of the organization or client.\n\nProperty: experienceOrg\n\nDefault: "
+        },
+        {
+          "name": "experience-summary",
+          "description": "`experience-summary` {string} - An optional summary of the overall role\n\nProperty: experienceSummary\n\nDefault: "
         }
       ]
     }

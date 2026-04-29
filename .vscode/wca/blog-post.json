@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "blog-post",
-      "description": "Attributes:\n\n  * `blogPost` - \n\nProperties:\n\n  * `styles` {`any[]`} - \n\n  * `blogPost` - \n\n  * `darkMode` {`boolean`} - \n\n  * `onAppConfigChange` - \n\n  * `object Object],[object Object],[object Object` - ",
+      "description": "Attributes:\n\n  * `blogPost` - \n\nProperties:\n\n  * `styles` - \n\n  * `blogPost` - \n\n  * `darkMode` {`boolean`} - \n\n  * `onAppConfigChange` - \n\n  * `object Object],[object Object],[object Object` - ",
       "attributes": [
         {
           "name": "blogPost",

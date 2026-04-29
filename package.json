@@ -11,7 +11,7 @@
   "private": true,
   "types": "./website",
   "main": "./website/index.js",
-  "customElements": "./docs/cem/custom-elements.json",
+  "customElements": "docs/cem/custom-elements.json",
   "gitAbbrevHash": "",
   "gitBranch": "",
   "gitCommitHash": "",
@@ -63,9 +63,9 @@
     "test:prod": "MODE=prod pnpm wtr",
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
     "test:watch": "pnpm wtr --watch",
-    "wca:json": "pnpx web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
-    "wca:markdown": "pnpx web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
-    "wca:vscode": "pnpx web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
+    "wca:json": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
+    "wca:markdown": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
+    "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
   },
   "dependencies": {
     "@lit-labs/motion": "catalog:dependencies",
@@ -183,6 +183,8 @@
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
     "vite": "catalog:devDependencies",
+    "vite-plugin-cem": "catalog:devDependencies",
+    "vite-plugin-pwa": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },
   "optionalDependencies": {

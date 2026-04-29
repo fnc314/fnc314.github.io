@@ -12,10 +12,10 @@ import process from "node:process";
 
 const isDev = process.env.NODE_ENV === "development";
 
-const fileName = "custom-elements.json"
-const docsDir = "./docs/cem"
+const fileName = "custom-elements.json";
+const docsDir = "./docs/cem";
 
-/** @type {import("@custom-elements-manifest/analyzer").Config} */
+/** @type {import("@custom-elements-manifest/analyzer").Config & { plugins: any[]  }} */
 export default {
   globs: [
     "./src/components/**/*.ts",
@@ -121,5 +121,5 @@ export default {
       typesSrc: "type",
       defaultIcon: "./src/assets/icons/icon.svg",
     }),
-  ].map((p) => () => p),
+  ].map((plugin) => () => plugin),
 };
