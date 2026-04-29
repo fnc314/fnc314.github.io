@@ -88,7 +88,7 @@
       "vite/client",
       "rollup",
       "postcss"
-      // "rollup", "lit", "prettier", "stylelint", "tailwindcss",
+      // "lit", "prettier", "stylelint", "tailwindcss",
     ],
     "typeRoots": ["./node_modules", "./node_modules/@types", "./node_modules/@web/rollup-plugin-copy/dist"],
     "paths": {
