@@ -6,7 +6,6 @@ import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import pkg from "./../../../../package.json" with { type: "json" };
 
 /**
  * @summary A dialog component that provides various contact methods and social links. It
@@ -277,7 +276,7 @@ export class ConnectDialog extends LitElement {
             <span>${`Version: ${this.version}`}</span>
             <span>${`Date: ${this.date}`}</span>
             <span>${`Time: ${this.time}`}</span>
-            <span>${`Git SHA: ${pkg.gitAbbrevHash}`}</span>
+            <span>${`Git SHA: ${import.meta.env.VITE_GIT_COMMIT_HASH}`}</span>
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>
