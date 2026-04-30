@@ -18,7 +18,7 @@
   "gitDate": "",
   "gitVersion": "",
   "web-types": "./.idea/web-types.json",
-  "packageManager": "pnpm@10.33.1+sha512.05ba3c1d5d1c18f68df06470d74055e62d41fc110a0c660db1b2dfb2785327f04cf0f68345d4609bc52089e7fa0343c31593b2f9594e2c5d5da426230acc9820",
+  "packageManager": "pnpm@10.33.2",
   "keywords": [
     "website",
     "homepage",
@@ -169,7 +169,6 @@
     "rollup-plugin-summary": "catalog:devDependencies",
     "rollup-plugin-typescript-paths": "catalog:devDependencies",
     "rollup-plugin-version-injector": "catalog:devDependencies",
-    "serialize-javascript": "catalog:devDependencies",
     "stylelint": "catalog:devDependencies",
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
@@ -193,6 +192,7 @@
     "@esbuild/linux-x64": "catalog:optionalDependencies"
   },
   "overrides": {
-    "lodash": "catalog:overrides"
+    "lodash": "catalog:overrides",
+    "serialize-javascript": "catalog:overrides"
   }
 }

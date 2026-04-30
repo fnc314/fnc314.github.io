@@ -1,7 +1,7 @@
 [tools]
   node = "25.9.0"
-  pnpm = "10.33.1"
-  tombi = "0.9.24"
+  pnpm = "10.33.2"
+  tombi = "0.10.0"
   usage = "3.2.0"
 
 [env]

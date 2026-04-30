@@ -33,36 +33,36 @@ checksum = "sha256:929552b8305effac843ba7b4270c437aefb702fc3fbd73fcd1bffd35d4ac2
 url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-win-x64.zip"
 
 [[tools.pnpm]]
-version = "10.33.1"
+version = "10.33.2"
 backend = "aqua:pnpm/pnpm"
 
 [tools.pnpm."platforms.linux-arm64"]
-checksum = "sha256:ed8aa7901cf325f4cf5019405bdd6bf988426e4b23d08fe9b12ea4df7046f23e"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-arm64"
+checksum = "sha256:0828e5ee23be89d22bd53cc36e93c181ce9d5c47d75f9fe9bf4bdc7a65c66322"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-linux-arm64"
 
 [tools.pnpm."platforms.linux-arm64-musl"]
-checksum = "sha256:ed8aa7901cf325f4cf5019405bdd6bf988426e4b23d08fe9b12ea4df7046f23e"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-arm64"
+checksum = "sha256:0828e5ee23be89d22bd53cc36e93c181ce9d5c47d75f9fe9bf4bdc7a65c66322"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-linux-arm64"
 
 [tools.pnpm."platforms.linux-x64"]
-checksum = "sha256:fba950842532edd365e949b74643b64e6311089a45532dbe1e8f909a247fe3e9"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-x64"
+checksum = "sha256:39d7b6600239712bc9581ea219b17ffef46ba60998779cb717be2e068be029ef"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-linux-x64"
 
 [tools.pnpm."platforms.linux-x64-musl"]
-checksum = "sha256:fba950842532edd365e949b74643b64e6311089a45532dbe1e8f909a247fe3e9"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-x64"
+checksum = "sha256:39d7b6600239712bc9581ea219b17ffef46ba60998779cb717be2e068be029ef"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-linux-x64"
 
 [tools.pnpm."platforms.macos-arm64"]
-checksum = "sha256:909ced0038b00881d4d620ba2018c5d9691de373deea8e3c84b722b44324e47c"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-macos-arm64"
+checksum = "sha256:a99a4d5d0e6bd3728949c24ff74a2f2f2d07f73bc48fd308e4eea75d8e72acdc"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-macos-arm64"
 
 [tools.pnpm."platforms.macos-x64"]
-checksum = "sha256:afdad60b83f4f482f4c95cc79325f29aef776d0922a324f023a312f40e0cc7d3"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-macos-x64"
+checksum = "sha256:3b66abb865f4e7a82393861f0f3784d67a704a31a4021739874d4b7910793dca"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-macos-x64"
 
 [tools.pnpm."platforms.windows-x64"]
-checksum = "sha256:67b23fd8c6800566b1cc04c446b170ff6e7977250084e4d8df9bfdbd8e6f4d02"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-win-x64.exe"
+checksum = "sha256:3d1af71e9da7081efd58f95942e1f7e2107bf8fcdae03eb2331c0b6cea59510b"
+url = "https://github.com/pnpm/pnpm/releases/download/v10.33.2/pnpm-win-x64.exe"
 
 [[tools.ruby]]
 version = "4.0.3"
@@ -97,36 +97,36 @@ checksum = "sha256:a4094317397511e09242be1c95b32c8700fe91ebca713fb4e190de595eea5
 url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.3-1/rubyinstaller-4.0.3-1-x64.7z"
 
 [[tools.tombi]]
-version = "0.9.24"
+version = "0.10.0"
 backend = "aqua:tombi-toml/tombi"
 
 [tools.tombi."platforms.linux-arm64"]
-checksum = "sha256:abf65df01b3a16e059c18b5b8fdb9931c0b941a5bebb4f577cfd4ca46c05011d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:26bc3d7f3ef20ab2d9a06c2bc35fb1521c7a509b369d15fa6ee222f665ba614a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-arm64-musl"]
-checksum = "sha256:abf65df01b3a16e059c18b5b8fdb9931c0b941a5bebb4f577cfd4ca46c05011d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:26bc3d7f3ef20ab2d9a06c2bc35fb1521c7a509b369d15fa6ee222f665ba614a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64"]
-checksum = "sha256:b1e7cec2c165fd5cf2f6c97e607a4ac8870120c3d1163ad6e354198fc67443d5"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:05cb1ad7c0231770d769d890345a4525573a289c30a62157445b8841fbc8a87f"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64-musl"]
-checksum = "sha256:b1e7cec2c165fd5cf2f6c97e607a4ac8870120c3d1163ad6e354198fc67443d5"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:05cb1ad7c0231770d769d890345a4525573a289c30a62157445b8841fbc8a87f"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.macos-arm64"]
-checksum = "sha256:860ebb82ec47049239fb52a20c537489100ec1a3a1c1f42d59a5dde647c88d78"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:070348dce9fee9117dd48780deb02a24f6eda6030677d28360c9766b434b5c9b"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.macos-x64"]
-checksum = "sha256:d07b4241de3e58dbdc93304cc2575a694f0468b2323f6dc312809329b6e1574f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:2a841b9a8fee2e3db503f11d56ae626ec0b2570da57c8d62a2ee26170481c534"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.windows-x64"]
-checksum = "sha256:ed619035f4669802a10eac25944f1706b3993bf44727e056ac290d7c9b3b2336"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:bcfbf9febe82601819ed0b01504eae85de63986d5b197db4ebdb1a0639844ee6"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.usage]]
 version = "3.2.0"
