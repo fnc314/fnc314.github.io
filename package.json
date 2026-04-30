@@ -191,5 +191,8 @@
   "optionalDependencies": {
     "@esbuild/darwin-arm64": "catalog:optionalDependencies",
     "@esbuild/linux-x64": "catalog:optionalDependencies"
+  },
+  "overrides": {
+    "lodash": "catalog:overrides"
   }
 }
