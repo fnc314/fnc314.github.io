@@ -54,6 +54,7 @@
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": false,
+    "rootDir": "./src",
     "sourceMap": false,
     "strict": true,
     "tsBuildInfoFile": "./stats/.tsbuildinfo",
@@ -86,6 +87,7 @@
       "node",
       "eslint",
       "vite/client",
+      "vite-plugin-pwa/client",
       "rollup",
       "postcss"
       // "lit", "prettier", "stylelint", "tailwindcss",
