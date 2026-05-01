@@ -1,8 +1,8 @@
 [tools]
   node = "25.9.0"
-  pnpm = "10.33.2"
+  pnpm = "11.0.3"
   tombi = "0.10.1"
-  usage = "3.2.0"
+  usage = "3.2.1"
 
 [env]
   _ = {
