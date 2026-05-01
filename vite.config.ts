@@ -3,6 +3,7 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import versionInjector from "rollup-plugin-version-injector";
+import visualizer from "rollup-plugin-visualizer";
 import { type UserConfig, defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
 
@@ -103,6 +104,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
           exclude: [],
         }),
       },
+      visualizer(),
     ],
   };
 

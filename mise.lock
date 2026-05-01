@@ -97,36 +97,36 @@ checksum = "sha256:a4094317397511e09242be1c95b32c8700fe91ebca713fb4e190de595eea5
 url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.3-1/rubyinstaller-4.0.3-1-x64.7z"
 
 [[tools.tombi]]
-version = "0.10.0"
+version = "0.10.1"
 backend = "aqua:tombi-toml/tombi"
 
 [tools.tombi."platforms.linux-arm64"]
-checksum = "sha256:26bc3d7f3ef20ab2d9a06c2bc35fb1521c7a509b369d15fa6ee222f665ba614a"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:d22273331c5d8eed13d4d04f9c632ca3c0eaa01a7c03c63f856a67a24a55994d"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-arm64-musl"]
-checksum = "sha256:26bc3d7f3ef20ab2d9a06c2bc35fb1521c7a509b369d15fa6ee222f665ba614a"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:d22273331c5d8eed13d4d04f9c632ca3c0eaa01a7c03c63f856a67a24a55994d"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64"]
-checksum = "sha256:05cb1ad7c0231770d769d890345a4525573a289c30a62157445b8841fbc8a87f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:c58931575a5033ac851d050a51c2bbb193b6980b4ce06169c76789e6079fcd2f"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64-musl"]
-checksum = "sha256:05cb1ad7c0231770d769d890345a4525573a289c30a62157445b8841fbc8a87f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:c58931575a5033ac851d050a51c2bbb193b6980b4ce06169c76789e6079fcd2f"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.macos-arm64"]
-checksum = "sha256:070348dce9fee9117dd48780deb02a24f6eda6030677d28360c9766b434b5c9b"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:73bcea0c4fc7cd413b5724795e1ed1c466a69534e641fb6aee421487f09d37a5"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.macos-x64"]
-checksum = "sha256:2a841b9a8fee2e3db503f11d56ae626ec0b2570da57c8d62a2ee26170481c534"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:0fe1000af463e5a39c0ee5aa5aa54fd5ebcd15d60440fc124c0437594de0f28b"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.windows-x64"]
-checksum = "sha256:bcfbf9febe82601819ed0b01504eae85de63986d5b197db4ebdb1a0639844ee6"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:ad7e71c5de3e96fee8f67b5ac54a4ce32347ffdab6b85e1d7be8c857b5b6438b"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-pc-windows-msvc.zip"
 
 [[tools.usage]]
 version = "3.2.0"

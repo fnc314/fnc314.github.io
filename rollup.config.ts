@@ -18,6 +18,7 @@ import postcss from "rollup-plugin-postcss";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
 import versionInjector from "rollup-plugin-version-injector";
+import visualizer from "rollup-plugin-visualizer";
 
 const require = createRequire(import.meta.url);
 const pkg = require("./package.json");
@@ -179,5 +180,6 @@ export default defineConfig({
         patterns: [".well-known/appspecific/com.chrome.devtools.json"],
         rootDir: "./",
       }),
+    visualizer(),
   ],
 });

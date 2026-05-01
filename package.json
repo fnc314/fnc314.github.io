@@ -169,6 +169,7 @@
     "rollup-plugin-summary": "catalog:devDependencies",
     "rollup-plugin-typescript-paths": "catalog:devDependencies",
     "rollup-plugin-version-injector": "catalog:devDependencies",
+    "rollup-plugin-visualizer": "catalog:devDependencies",
     "stylelint": "catalog:devDependencies",
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
