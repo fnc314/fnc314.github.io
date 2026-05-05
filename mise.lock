@@ -33,36 +33,36 @@ checksum = "sha256:929552b8305effac843ba7b4270c437aefb702fc3fbd73fcd1bffd35d4ac2
 url = "https://nodejs.org/dist/v25.9.0/node-v25.9.0-win-x64.zip"
 
 [[tools.pnpm]]
-version = "10.33.1"
+version = "11.0.3"
 backend = "aqua:pnpm/pnpm"
 
 [tools.pnpm."platforms.linux-arm64"]
-checksum = "sha256:ed8aa7901cf325f4cf5019405bdd6bf988426e4b23d08fe9b12ea4df7046f23e"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-arm64"
+checksum = "sha256:1bd8ffddbbd1d7ea179351c8c1dc620990a17550a8597e8961d08c64c9854d55"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-linux-arm64.tar.gz"
 
 [tools.pnpm."platforms.linux-arm64-musl"]
-checksum = "sha256:ed8aa7901cf325f4cf5019405bdd6bf988426e4b23d08fe9b12ea4df7046f23e"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-arm64"
+checksum = "sha256:57a778a4b782234f34cc749f8609576effa7ccecfba43717181eb69eed4000b1"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-linux-arm64-musl.tar.gz"
 
 [tools.pnpm."platforms.linux-x64"]
-checksum = "sha256:fba950842532edd365e949b74643b64e6311089a45532dbe1e8f909a247fe3e9"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-x64"
+checksum = "sha256:5c236f22568453e76f05c2c0a37b483d326ddb3c7759f3b7a7f13a8860109771"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-linux-x64.tar.gz"
 
 [tools.pnpm."platforms.linux-x64-musl"]
-checksum = "sha256:fba950842532edd365e949b74643b64e6311089a45532dbe1e8f909a247fe3e9"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-linux-x64"
+checksum = "sha256:c90e8a251a60e808e5f65d5365224fa5143275db6c7cb8ac8396ccb30e07ab93"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-linux-x64-musl.tar.gz"
 
 [tools.pnpm."platforms.macos-arm64"]
-checksum = "sha256:909ced0038b00881d4d620ba2018c5d9691de373deea8e3c84b722b44324e47c"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-macos-arm64"
+checksum = "sha256:a24f12a75b371acfbb69cee3ffd54dd7865daa25323d4f12bb22be12edff0ed2"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-darwin-arm64.tar.gz"
 
 [tools.pnpm."platforms.macos-x64"]
-checksum = "sha256:afdad60b83f4f482f4c95cc79325f29aef776d0922a324f023a312f40e0cc7d3"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-macos-x64"
+checksum = "sha256:c05a97abd756b6cd8ca1c1e70bca14eddc1b129b4e5b8cd2131474615e57483a"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-darwin-x64.tar.gz"
 
 [tools.pnpm."platforms.windows-x64"]
-checksum = "sha256:67b23fd8c6800566b1cc04c446b170ff6e7977250084e4d8df9bfdbd8e6f4d02"
-url = "https://github.com/pnpm/pnpm/releases/download/v10.33.1/pnpm-win-x64.exe"
+checksum = "sha256:1acab0c306c08e26be5b702c19466d14f6aa44797a7166191e81138f50291741"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.3/pnpm-win32-x64.zip"
 
 [[tools.ruby]]
 version = "4.0.3"
@@ -97,65 +97,65 @@ checksum = "sha256:a4094317397511e09242be1c95b32c8700fe91ebca713fb4e190de595eea5
 url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.3-1/rubyinstaller-4.0.3-1-x64.7z"
 
 [[tools.tombi]]
-version = "0.9.24"
+version = "0.10.4"
 backend = "aqua:tombi-toml/tombi"
 
 [tools.tombi."platforms.linux-arm64"]
-checksum = "sha256:abf65df01b3a16e059c18b5b8fdb9931c0b941a5bebb4f577cfd4ca46c05011d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:0aac20f61dc0ead3eab386ecaf176ad19b8734e02a2efc031bbaeefc3ace7661"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-arm64-musl"]
-checksum = "sha256:abf65df01b3a16e059c18b5b8fdb9931c0b941a5bebb4f577cfd4ca46c05011d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:0aac20f61dc0ead3eab386ecaf176ad19b8734e02a2efc031bbaeefc3ace7661"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64"]
-checksum = "sha256:b1e7cec2c165fd5cf2f6c97e607a4ac8870120c3d1163ad6e354198fc67443d5"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2988df7c5ac115dc20ebd42f45ba039df0b8cda110b444f419bec814db2c880a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64-musl"]
-checksum = "sha256:b1e7cec2c165fd5cf2f6c97e607a4ac8870120c3d1163ad6e354198fc67443d5"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2988df7c5ac115dc20ebd42f45ba039df0b8cda110b444f419bec814db2c880a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.macos-arm64"]
-checksum = "sha256:860ebb82ec47049239fb52a20c537489100ec1a3a1c1f42d59a5dde647c88d78"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:efff1d4fd57364c1b6f0ab7045006ed58d6fdf79925022213d44f4e0993a37a1"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.macos-x64"]
-checksum = "sha256:d07b4241de3e58dbdc93304cc2575a694f0468b2323f6dc312809329b6e1574f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:f3ba04e491d0e2dbf42ecf6fc5d0e0c54d2b71cc74c8a4f59d34717a57544d15"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.windows-x64"]
-checksum = "sha256:ed619035f4669802a10eac25944f1706b3993bf44727e056ac290d7c9b3b2336"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.9.24/tombi-cli-0.9.24-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:150c3b9f0ddb3a16faec88980df034889f618d671bdeecec4a49e45f507a4a7d"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-pc-windows-msvc.zip"
 
 [[tools.usage]]
-version = "3.2.0"
+version = "3.3.0"
 backend = "aqua:jdx/usage"
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:9cc22814763948582a31b054e6aa3adfc7a820a3cafb82b317dd4a8931277c0f"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:9cc22814763948582a31b054e6aa3adfc7a820a3cafb82b317dd4a8931277c0f"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:7f48ee228ae95b07c193ec61def326575682b37032473c5af4b3b93a114aec81"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:7f48ee228ae95b07c193ec61def326575682b37032473c5af4b3b93a114aec81"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:f0a566bc05fc485b23a339abddbaef04225e7730574dbb603fdc021e084d26f9"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:f0a566bc05fc485b23a339abddbaef04225e7730574dbb603fdc021e084d26f9"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:9aba23a5d549695cfb5f034849e143205ccf972e5b5d42c24acd32e084d7a165"
-url = "https://github.com/jdx/usage/releases/download/v3.2.0/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:628b8743d552f2cff2dee2b783a4827ef555409def3fb9ec536117d96cda2018"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-pc-windows-msvc.zip"

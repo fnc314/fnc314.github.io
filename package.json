@@ -169,6 +169,7 @@
     "rollup-plugin-summary": "catalog:devDependencies",
     "rollup-plugin-typescript-paths": "catalog:devDependencies",
     "rollup-plugin-version-injector": "catalog:devDependencies",
+    "rollup-plugin-visualizer": "catalog:devDependencies",
     "stylelint": "catalog:devDependencies",
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
@@ -190,5 +191,9 @@
   "optionalDependencies": {
     "@esbuild/darwin-arm64": "catalog:optionalDependencies",
     "@esbuild/linux-x64": "catalog:optionalDependencies"
+  },
+  "overrides": {
+    "lodash": "catalog:overrides",
+    "serialize-javascript": "catalog:overrides"
   }
 }
