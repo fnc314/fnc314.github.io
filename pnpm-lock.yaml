@@ -3387,6 +3387,9 @@ packages:
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
 
+  '@types/boolbase@1.0.3':
+    resolution: {integrity: sha512-82A4AP0cokcm2I9YO1a0TudbJkE6SUjfJjQhxiHer5ZYOzD82YBHCK9ORvKYf4hrYf5479/CUpT2RcspAwJ7OQ==}
+
   '@types/braces@3.0.5':
     resolution: {integrity: sha512-SQFof9H+LXeWNz8wDe7oN5zu7ket0qwMu5vZubW4GCJ8Kkeh6nBWUz87+KTz/G3Kqsrp0j/W253XJb3KMEeg3w==}
 
@@ -3499,6 +3502,9 @@ packages:
   '@types/koa@2.15.0':
     resolution: {integrity: sha512-7QFsywoE5URbuVnG3loe03QXuGajrnotr3gQkXcEBShORai23MePfFYdhz90FEtBBpkyIYQbVD+evKtloCgX3g==}
 
+  '@types/levn@0.4.0':
+    resolution: {integrity: sha512-W8bv6H08EA6qnAjht3KSLRQjzJSqjw4pze1q4Dp9mQ/j+kXP+5+pckAKS+c1e+NGcDYG1TrhzHmlQK++Ueml4w==}
+
   '@types/lodash.throttle@4.1.9':
     resolution: {integrity: sha512-PCPVfpfueguWZQB7pJQK890F2scYKoDUL3iM522AptHWn7d5NQmeS/LTEHIcLr5PaTzl3dK2Z0xSUHHTHwaL5g==}
 
@@ -3516,6 +3522,9 @@ packages:
 
   '@types/micromatch@4.0.10':
     resolution: {integrity: sha512-5jOhFDElqr4DKTrTEbnW8DZ4Hz5LRUEmyrGpCMrD/NphYv3nUnaF08xmSLx1rGGnyEs/kFnhiw6dCgcDqMr5PQ==}
+
+  '@types/mime-types@3.0.1':
+    resolution: {integrity: sha512-xRMsfuQbnRq1Ef+C+RKaENOxXX87Ygl38W1vDfPHRku02TgQr+Qd8iivLtAMcR0KF5/29xlnFihkTlbqFrGOVQ==}
 
   '@types/minimatch@3.0.5':
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
@@ -3554,6 +3563,9 @@ packages:
     resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
     deprecated: This is a stub types definition. prettier provides its own type definitions, so you do not need this installed.
 
+  '@types/pretty@2.0.3':
+    resolution: {integrity: sha512-xR96pShNlrxLd3gZqzCnbaAmbYhiRYjW51CDFjektZemqpBZBAAkMwxm4gBraJP/xSgKcsQhLXdlXOwDNWo4VQ==}
+
   '@types/qs@6.15.0':
     resolution: {integrity: sha512-JawvT8iBVWpzTrz3EGw9BTQFg3BQNmwERdKE22vlTxawwtbyUSlMppvZYKLZzB5zgACXdXxbD3m1bXaMqP/9ow==}
 
@@ -3584,6 +3596,9 @@ packages:
   '@types/serve-static@2.2.0':
     resolution: {integrity: sha512-8mam4H1NHLtu7nmtalF7eyBH14QyOASmcxHhSfEoRyr0nP/YdoesEtU+uSRvMe96TW/HPTtkoKqQLl53N7UXMQ==}
 
+  '@types/sharp@0.30.5':
+    resolution: {integrity: sha512-EhO29617AIBqxoVtpd1qdBanWpspk/kD2B6qTFRJ31Q23Rdf+DNU1xlHSwtqvwq1vgOqBwq1i38SX+HGCymIQg==}
+
   '@types/sinon-chai@3.2.12':
     resolution: {integrity: sha512-9y0Gflk3b0+NhQZ/oxGtaAJDvRywCa5sIyaVnounqLvmf93yBF4EgIRspePtkMs3Tr844nCclYMlcCNmLCvjuQ==}
 
@@ -3599,6 +3614,9 @@ packages:
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
+  '@types/type-check@0.3.31':
+    resolution: {integrity: sha512-rwwZFfTn+yNiqbQerMS19sVaC0pVJh9BPg6WCplfD5ME9tkOaL9L5pY/hXq/qKQkn4p7q34TWemCNpdRfF2ihw==}
+
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
@@ -3607,6 +3625,12 @@ packages:
 
   '@types/validate-npm-package-name@4.0.2':
     resolution: {integrity: sha512-lrpDziQipxCEeK5kWxvljWYhUvOiB2A9izZd9B2AFarYAkqZshb4lPbRs7zKEic6eGtH8V/2qJW+dPp9OtF6bw==}
+
+  '@types/whatwg-encoding@2.0.3':
+    resolution: {integrity: sha512-7TJfeaSFIWAKQ4ZynOb5zV3xzJQEEmL0U0j+uH7tnqfL97apXDTwMo0dB2uAWXAbr2dRRi5/eO9jV9dK/1GkiA==}
+
+  '@types/whatwg-mimetype@3.0.2':
+    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
 
   '@types/wordcloud@1.2.2':
     resolution: {integrity: sha512-UMKd/doXE3karDUd5l+2LqFKUU4SmuPWOT/VA22OrPOUGMlb8/qQvSf+DBLQf/sd8UphuBGxOK/jB/1BB5oQRw==}
@@ -11754,6 +11778,7 @@ snapshots:
   '@eslint/config-array@0.21.2':
     dependencies:
       '@eslint/object-schema': 2.1.7
+      '@types/minimatch': 3.0.5
       debug: 4.4.3
       minimatch: 3.1.5
     transitivePeerDependencies:
@@ -11814,18 +11839,21 @@ snapshots:
   '@eslint/plugin-kit@0.4.1':
     dependencies:
       '@eslint/core': 0.17.0
+      '@types/levn': 0.4.0
       levn: 0.4.1
     optional: true
 
   '@eslint/plugin-kit@0.6.1':
     dependencies:
       '@eslint/core': 1.2.1
+      '@types/levn': 0.4.0
       levn: 0.4.1
     optional: true
 
   '@eslint/plugin-kit@0.7.1':
     dependencies:
       '@eslint/core': 1.2.1
+      '@types/levn': 0.4.0
       levn: 0.4.1
 
   '@esm-bundle/chai@4.3.4-fix.0':
@@ -13364,6 +13392,8 @@ snapshots:
       '@types/connect': 3.4.38
       '@types/node': 25.6.0
 
+  '@types/boolbase@1.0.3': {}
+
   '@types/braces@3.0.5':
     optional: true
 
@@ -13437,7 +13467,6 @@ snapshots:
   '@types/esquery@1.5.4':
     dependencies:
       '@types/estree': 1.0.8
-    optional: true
 
   '@types/esrecurse@4.3.1': {}
 
@@ -13504,6 +13533,10 @@ snapshots:
       '@types/koa-compose': 3.2.9
       '@types/node': 25.6.0
 
+  '@types/levn@0.4.0':
+    dependencies:
+      '@types/type-check': 0.3.31
+
   '@types/lodash.throttle@4.1.9':
     dependencies:
       '@types/lodash': 4.17.24
@@ -13525,6 +13558,8 @@ snapshots:
     dependencies:
       '@types/braces': 3.0.5
     optional: true
+
+  '@types/mime-types@3.0.1': {}
 
   '@types/minimatch@3.0.5':
     optional: true
@@ -13572,6 +13607,8 @@ snapshots:
     dependencies:
       prettier: 3.8.3
 
+  '@types/pretty@2.0.3': {}
+
   '@types/qs@6.15.0': {}
 
   '@types/range-parser@1.2.7': {}
@@ -13602,6 +13639,10 @@ snapshots:
       '@types/http-errors': 2.0.5
       '@types/node': 25.6.0
 
+  '@types/sharp@0.30.5':
+    dependencies:
+      '@types/node': 25.6.0
+
   '@types/sinon-chai@3.2.12':
     dependencies:
       '@types/chai': 5.2.3
@@ -13618,12 +13659,18 @@ snapshots:
 
   '@types/trusted-types@2.0.7': {}
 
+  '@types/type-check@0.3.31': {}
+
   '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
 
   '@types/validate-npm-package-name@4.0.2':
     optional: true
+
+  '@types/whatwg-encoding@2.0.3': {}
+
+  '@types/whatwg-mimetype@3.0.2': {}
 
   '@types/wordcloud@1.2.2': {}
 
@@ -15135,6 +15182,7 @@ snapshots:
 
   cheerio-select@2.1.0:
     dependencies:
+      '@types/boolbase': 1.0.3
       boolbase: 1.0.0
       css-select: 5.2.2
       css-what: 6.2.2
@@ -15144,6 +15192,7 @@ snapshots:
 
   cheerio@1.2.0:
     dependencies:
+      '@types/whatwg-mimetype': 3.0.2
       cheerio-select: 2.1.0
       dom-serializer: 2.0.0
       domhandler: 5.0.3
@@ -15822,6 +15871,7 @@ snapshots:
 
   encoding-sniffer@0.2.1:
     dependencies:
+      '@types/whatwg-encoding': 2.0.3
       iconv-lite: 0.6.3
       whatwg-encoding: 3.1.1
 
@@ -16750,6 +16800,7 @@ snapshots:
       '@humanfs/node': 0.16.8
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.4.3
+      '@types/esquery': 1.5.4
       '@types/estree': 1.0.8
       ajv: 6.14.0
       cross-spawn: 7.0.6
@@ -16789,6 +16840,7 @@ snapshots:
       '@humanfs/node': 0.16.8
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.4.3
+      '@types/esquery': 1.5.4
       '@types/estree': 1.0.8
       ajv: 6.14.0
       chalk: 4.1.2
@@ -19814,6 +19866,8 @@ snapshots:
 
   pwa-asset-generator@8.1.4:
     dependencies:
+      '@types/mime-types': 3.0.1
+      '@types/pretty': 2.0.3
       cheerio: 1.2.0
       chrome-launcher: 1.2.1
       find-process: 2.1.1
@@ -20411,6 +20465,7 @@ snapshots:
 
   sharp-ico@0.1.5:
     dependencies:
+      '@types/sharp': 0.30.5
       decode-ico: 0.4.1
       ico-endec: 0.1.6
       sharp: 0.33.5
