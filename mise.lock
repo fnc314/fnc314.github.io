@@ -97,65 +97,65 @@ checksum = "sha256:a4094317397511e09242be1c95b32c8700fe91ebca713fb4e190de595eea5
 url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.3-1/rubyinstaller-4.0.3-1-x64.7z"
 
 [[tools.tombi]]
-version = "0.10.1"
+version = "0.10.4"
 backend = "aqua:tombi-toml/tombi"
 
 [tools.tombi."platforms.linux-arm64"]
-checksum = "sha256:d22273331c5d8eed13d4d04f9c632ca3c0eaa01a7c03c63f856a67a24a55994d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:0aac20f61dc0ead3eab386ecaf176ad19b8734e02a2efc031bbaeefc3ace7661"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-arm64-musl"]
-checksum = "sha256:d22273331c5d8eed13d4d04f9c632ca3c0eaa01a7c03c63f856a67a24a55994d"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:0aac20f61dc0ead3eab386ecaf176ad19b8734e02a2efc031bbaeefc3ace7661"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64"]
-checksum = "sha256:c58931575a5033ac851d050a51c2bbb193b6980b4ce06169c76789e6079fcd2f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2988df7c5ac115dc20ebd42f45ba039df0b8cda110b444f419bec814db2c880a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.linux-x64-musl"]
-checksum = "sha256:c58931575a5033ac851d050a51c2bbb193b6980b4ce06169c76789e6079fcd2f"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2988df7c5ac115dc20ebd42f45ba039df0b8cda110b444f419bec814db2c880a"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.tombi."platforms.macos-arm64"]
-checksum = "sha256:73bcea0c4fc7cd413b5724795e1ed1c466a69534e641fb6aee421487f09d37a5"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:efff1d4fd57364c1b6f0ab7045006ed58d6fdf79925022213d44f4e0993a37a1"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.macos-x64"]
-checksum = "sha256:0fe1000af463e5a39c0ee5aa5aa54fd5ebcd15d60440fc124c0437594de0f28b"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:f3ba04e491d0e2dbf42ecf6fc5d0e0c54d2b71cc74c8a4f59d34717a57544d15"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-apple-darwin.tar.gz"
 
 [tools.tombi."platforms.windows-x64"]
-checksum = "sha256:ad7e71c5de3e96fee8f67b5ac54a4ce32347ffdab6b85e1d7be8c857b5b6438b"
-url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:150c3b9f0ddb3a16faec88980df034889f618d671bdeecec4a49e45f507a4a7d"
+url = "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-pc-windows-msvc.zip"
 
 [[tools.usage]]
-version = "3.2.1"
+version = "3.3.0"
 backend = "aqua:jdx/usage"
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:c5a237c272e3b08d05a698aa37e6775ab36152e12e74084363c7a230d9fc7070"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:c5a237c272e3b08d05a698aa37e6775ab36152e12e74084363c7a230d9fc7070"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:55a0c94c35bb9e2c5cbc223973667cd450759cd3410d4c5836ef2fdfd95adc57"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:aea16298c6fa7d13e10a04ce7a9e7c743a1d49151a7065aa3f80697c56a89452"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:aea16298c6fa7d13e10a04ce7a9e7c743a1d49151a7065aa3f80697c56a89452"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:9a4316d633243aa54308ff3bf6970923b18c105dea34fbc3009d51889e1dd03f"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:94c0b8a913618e24c0bc8002a688112210ec3f5e8bbb5431a2687eed9fad2dff"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:94c0b8a913618e24c0bc8002a688112210ec3f5e8bbb5431a2687eed9fad2dff"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:ab6c69a6541e18ffca7bd950dd4cc867ea9267d0f91115c13aa650cde6634d62"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-universal-apple-darwin.tar.gz"
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:9ac550ddcb67c1bb30e76fbf04126d50704004fc7850e7fa1aaa6994ce4601f5"
-url = "https://github.com/jdx/usage/releases/download/v3.2.1/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:628b8743d552f2cff2dee2b783a4827ef555409def3fb9ec536117d96cda2018"
+url = "https://github.com/jdx/usage/releases/download/v3.3.0/usage-x86_64-pc-windows-msvc.zip"
