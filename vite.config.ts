@@ -6,6 +6,7 @@ import versionInjector from "rollup-plugin-version-injector";
 import visualizer from "rollup-plugin-visualizer";
 import { type UserConfig, defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
+import { VitePWA } from "vite-plugin-pwa";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -18,6 +19,10 @@ const getGitInfo = () => {
 };
 
 export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => {
+  console.log(`Running Vite with command: ${command}, mode: ${mode}, isSsrBuild: ${isSsrBuild}, isPreview: ${isPreview}`);
+
+  const isProduction = mode === "production";
+
   const userConfig: UserConfig =
     command === "serve"
       ? {
@@ -56,7 +61,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
       "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(getGitInfo()),
     },
     base: "/",
-    publicDir: "",
+    publicDir: path.resolve(__dirname, "src/assets"),
     assetsInclude: [
       path.resolve(__dirname, "src/assets/files/pdfs/*.pdf"),
       path.resolve(__dirname, "src/assets/images/**/*.jpg"),
@@ -67,11 +72,11 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
         "@": path.resolve(__dirname, "src"),
       },
       tsconfigPaths: true,
-      extensions: [".ts", ".js", ".mjs", ".json", ".css"],
+      extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
     },
     build: {
       ...userConfig.build,
-      outDir: path.resolve(__dirname, "website"),
+      outDir: path.resolve(__dirname, "dist"),
       assetsDir: "./assets",
       license: true,
       manifest: true,
@@ -87,6 +92,15 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
     appType: "spa",
     plugins: [
       ...(userConfig.plugins || []),
+      VitePWA({
+        manifest: {
+          name: "fnc314.com",
+        },
+        pwaAssets: {
+          disabled: false,
+          config: path.resolve(__dirname, "pwa-assets.config.mjs"),
+        }
+      }),
       VitePluginCustomElementsManifest({
         config: path.resolve(__dirname, ".config/custom-elements-manifest/custom-elements-manifest.config.mjs"),
       }),
@@ -104,7 +118,15 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
           exclude: [],
         }),
       },
-      visualizer(),
+      visualizer({
+        title: "Vite Bundle Visualizer",
+        filename: path.resolve(__dirname, "stats/vite.visualizer.html"),
+        sourcemap: true,
+        template: "network",
+        gzipSize: true,
+        brotliSize: true,
+        projectRoot: path.resolve(__dirname, "src"),
+      }),
     ],
   };
 

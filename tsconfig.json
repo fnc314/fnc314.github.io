@@ -1,5 +1,5 @@
 {
-  "include": ["./src/*", "src/**/*"],
+  "include": ["src/**/*"],
   "files": ["src/env.d.ts"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
@@ -88,6 +88,7 @@
       "eslint",
       "vite/client",
       "vite-plugin-pwa/client",
+      "vite-plugin-pwa/pwa-assets",
       "rollup",
       "postcss"
       // "lit", "prettier", "stylelint", "tailwindcss",

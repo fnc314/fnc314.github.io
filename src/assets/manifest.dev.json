@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "scope": "http://localhost:8000/",
+  "scope": "/",
   "orientation": "any",
   "dir": "ltr",
   "lang": "en",
@@ -33,25 +33,25 @@
       "url": "/#info",
       "icons": [
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/info/icon-filled-512.png",
+          "src": "/assets/icons/shortcuts/info/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/info/icon-filled-512.svg",
+          "src": "/assets/icons/shortcuts/info/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/info/icon-outline-512.png",
+          "src": "/assets/icons/shortcuts/info/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/info/icon-outline-512.svg",
+          "src": "/assets/icons/shortcuts/info/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -65,25 +65,25 @@
       "url": "/#work",
       "icons": [
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-filled-512.png",
+          "src": "/assets/icons/shortcuts/work/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-filled-512.svg",
+          "src": "/assets/icons/shortcuts/work/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-outline-512.png",
+          "src": "/assets/icons/shortcuts/work/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/work/icon-outline-512.svg",
+          "src": "/assets/icons/shortcuts/work/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -97,25 +97,25 @@
       "url": "/#code",
       "icons": [
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-filled-512.png",
+          "src": "/assets/icons/shortcuts/code/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-filled-512.svg",
+          "src": "/assets/icons/shortcuts/code/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-outline-512.png",
+          "src": "/assets/icons/shortcuts/code/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/code/icon-outline-512.svg",
+          "src": "/assets/icons/shortcuts/code/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -129,25 +129,25 @@
       "url": "/#blog",
       "icons": [
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-filled-512.png",
+          "src": "/assets/icons/shortcuts/blog/icon-filled-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-filled-512.svg",
+          "src": "/assets/icons/shortcuts/blog/icon-filled-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-outline-512.png",
+          "src": "/assets/icons/shortcuts/blog/icon-outline-512.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any"
         },
         {
-          "src": "http://localhost:8000/assets/icons/shortcuts/blog/icon-outline-512.svg",
+          "src": "/assets/icons/shortcuts/blog/icon-outline-512.svg",
           "sizes": "512x512",
           "type": "image/svg+xml",
           "purpose": "any"
@@ -181,13 +181,13 @@
       "purpose": "maskable"
     },
     {
-      "src": "http://localhost:8000/assets/icons/icon.svg",
+      "src": "/assets/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable.svg",
+      "src": "/assets/icons/maskable/icon-maskable.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
@@ -195,49 +195,49 @@
     {
       "purpose": "maskable",
       "sizes": "1024x1024",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x1024.png",
+      "src": "/assets/icons/maskable/icon-maskable-x1024.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "48x48",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x48.png",
+      "src": "/assets/icons/maskable/icon-maskable-x48.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "72x72",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x72.png",
+      "src": "/assets/icons/maskable/icon-maskable-x72.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "96x96",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x96.png",
+      "src": "/assets/icons/maskable/icon-maskable-x96.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "128x128",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x128.png",
+      "src": "/assets/icons/maskable/icon-maskable-x128.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "192x192",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x192.png",
+      "src": "/assets/icons/maskable/icon-maskable-x192.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "384x384",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x384.png",
+      "src": "/assets/icons/maskable/icon-maskable-x384.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "http://localhost:8000/assets/icons/maskable/icon-maskable-x512.png",
+      "src": "/assets/icons/maskable/icon-maskable-x512.png",
       "type": "image/png"
     }
   ]

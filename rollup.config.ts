@@ -144,7 +144,7 @@ export default defineConfig({
     }),
     typescript({
       sourceMap: isDev,
-      tsconfig: "./tsconfig.json",
+      tsconfig: path.resolve(process.cwd(), "./tsconfig.json"),
       declaration: isDev,
       declarationDir: "./website/types",
       outputToFilesystem: true,
@@ -180,6 +180,15 @@ export default defineConfig({
         patterns: [".well-known/appspecific/com.chrome.devtools.json"],
         rootDir: "./",
       }),
-    visualizer(),
+    isDev &&
+      visualizer({
+        title: "Rollup Bundle Visualizer",
+        filename: "stats/rollup.visualizer.html",
+        sourcemap: true,
+        template: "treemap-3d",
+        gzipSize: true,
+        brotliSize: true,
+        projectRoot: "src",
+      }),
   ],
 });
