@@ -114,7 +114,7 @@ catalogs:
     typedoc-material-theme: 1.4.1
     typedoc-plugin-markdown: 4.11.0
     typescript: 6.0.3
-    typescript-eslint: 8.59.1
+    typescript-eslint: 8.59.2
     vite: 8.0.10
     vite-plugin-cem: 0.8.5
     vite-plugin-pwa: 1.2.0
