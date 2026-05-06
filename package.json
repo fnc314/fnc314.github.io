@@ -65,6 +65,7 @@
     "test:prod": "MODE=prod pnpm wtr",
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
     "test:watch": "pnpm wtr --watch",
+    "typedoc:gen": "pnpm typedoc --showConfig --options ./.config/typedoc/typedoc.config.mjs",
     "wca:json": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
     "wca:markdown": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
     "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"

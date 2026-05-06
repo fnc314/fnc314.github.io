@@ -105,7 +105,7 @@ export default defineConfig({
                 <meta charset="utf-8" />
                 <link rel="manifest" href="./assets/${manifestJson}" />
           `,
-          ),
+          )
       ],
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://www.fnc314.com",
       strictCSPInlineScripts: !isDev,
@@ -121,12 +121,12 @@ export default defineConfig({
         "assets/icons/shortcuts/**/icon-*-512.{svg,png}",
         "assets/images/themes/**/*.{jpg,png}",
       ],
-      rootDir: "./src",
+      rootDir: "./",
     }),
     copy({
       exclude: [],
       patterns: ["files/**/*.pdf"],
-      rootDir: "./src/assets",
+      rootDir: "./assets",
     }),
     alias({
       entries: [{ find: /^@\/(.*)/, replacement: path.resolve(process.cwd(), "src") + "/$1" }],

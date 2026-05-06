@@ -7,6 +7,7 @@ import visualizer from "rollup-plugin-visualizer";
 import { type UserConfig, defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
 import { VitePWA } from "vite-plugin-pwa";
+import manifest from "./assets/manifest.json" with { type: "json" };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -61,11 +62,11 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
       "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(getGitInfo()),
     },
     base: "/",
-    publicDir: path.resolve(__dirname, "src/assets"),
+    publicDir: path.resolve(__dirname, "assets"),
     assetsInclude: [
-      path.resolve(__dirname, "src/assets/files/pdfs/*.pdf"),
-      path.resolve(__dirname, "src/assets/images/**/*.jpg"),
-      path.resolve(__dirname, "src/assets/icons/**/*.{ico,svg,png}"),
+      path.resolve(__dirname, "assets/files/pdfs/*.pdf"),
+      path.resolve(__dirname, "assets/images/**/*.jpg"),
+      path.resolve(__dirname, "assets/icons/**/*.{ico,svg,png}"),
     ],
     resolve: {
       alias: {
@@ -94,11 +95,12 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
       ...(userConfig.plugins || []),
       VitePWA({
         manifest: {
+          ...manifest,
           name: "fnc314.com",
         },
         pwaAssets: {
           disabled: false,
-          config: path.resolve(__dirname, "pwa-assets.config.mjs"),
+          config: path.resolve(__dirname, "pwa-assets.config.ts"),
         }
       }),
       VitePluginCustomElementsManifest({
@@ -121,7 +123,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
       visualizer({
         title: "Vite Bundle Visualizer",
         filename: path.resolve(__dirname, "stats/vite.visualizer.html"),
-        sourcemap: true,
+        sourcemap: (userConfig.build?.sourcemap === true) || !isProduction,
         template: "network",
         gzipSize: true,
         brotliSize: true,
