@@ -1,0 +1,53 @@
+import { LogLevel } from "typedoc";
+
+/** @type {Partial<import("typedoc").TypeDocOptions>} */
+export default {
+  // $schema: "https://typedoc.org/schema.json",
+  // help: true,
+  // showConfig: true,
+  // theme: "material-theme",
+  // version: true,
+  cacheBust: true,
+  cleanOutputDir: true,
+  cname: "www.fnc314.com",
+  commentStyle: "all",
+  darkHighlightTheme: "material-theme-darker",
+  entryPoints: [
+    "./../../src/**/*.{js,ts}",
+  ],
+  entryPointStrategy: "expand",
+  excludeNotDocumented: true,
+  excludePrivate: false,
+  excludePrivateClassFields: false,
+  excludeProtected: false,
+  favicon: "./../../src/assets/icons/icon.svg",
+  githubPages: true,
+  highlightLanguages: [
+    "css",
+    "html",
+    "javascript",
+    "js",
+    "ts",
+    "typescript",
+  ],
+  includeVersion: true,
+  json: "./../../docs/typedoc/typedoc.json",
+  lang: "en",
+  lightHighlightTheme: "material-theme-lighter",
+  logLevel: LogLevel.Verbose,
+  markdownLinkExternal: true,
+  name: "@fnc314/com.fnc314.website",
+  out: "./docs/typedoc",
+  plugin: [
+    "typedoc-material-theme"
+  ],
+  pretty: true,
+  readme: "./../../README.md",
+  searchInComments: true,
+  searchInDocuments: true,
+  sortEntryPoints: true,
+  sourceLinkExternal: true,
+  tsconfig: "./../../tsconfig.json",
+  typePrintWidth: 2,
+  validation: true,
+};
