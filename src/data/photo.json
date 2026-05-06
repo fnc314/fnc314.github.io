@@ -1,21 +1,21 @@
 {
   "inter": {
-    "src": "./assets/images/themes/inter/profile-photo.jpg",
+    "src": "./images/themes/inter/profile-photo.jpg",
     "figcaption": "Me in Abruzzo, Italy in 2025",
     "alt": "Profile Photo of Franco N. Colaizzi with a blurred background of Abruzzo, Italy from 2025"
   },
   "chicago": {
-    "src": "./assets/images/themes/chicago/profile-photo.jpg",
+    "src": "./images/themes/chicago/profile-photo.jpg",
     "figcaption": "Me at Willis Tower Observation Deck in Chicago, USA in 2024",
     "alt": "Profile Photo of Franco N. Colaizzi at Willis Tower Observation Deck in Chicago, USA from 2024"
   },
   "red": {
-    "src": "./assets/images/themes/red/profile-photo.jpg",
+    "src": "./images/themes/red/profile-photo.jpg",
     "figcaption": "Color coordination demonstration walking in Pittsburgh in 2024",
     "alt": "Profile Photo of Franco N. Colaizzi demonstrating color coordination in Pittsburgh from 2024"
   },
   "sunset": {
-    "src": "./assets/images/themes/sunset/profile-photo.jpg",
+    "src": "./images/themes/sunset/profile-photo.jpg",
     "figcaption": "Me in Los Angeles, USA celebrating my birthday in 2024",
     "alt": "Profile Photo of Franco N. Colaizzi in front of the sunset in Los Angeles, USA from 2024"
   }

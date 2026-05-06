@@ -7,8 +7,11 @@ export default defineConfig({
   preset: minimal2023Preset,
   headLinkOptions: {
     preset: "2023",
+    includeId: true,
   },
   images: [
-    "src/assets/icons/icon.svg"
-  ]
+    "assets/icons/icon.svg"
+  ],
+  logLevel: "info",
+
 });

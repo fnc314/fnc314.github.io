@@ -6,7 +6,7 @@ import versionInjector from "rollup-plugin-version-injector";
 import visualizer from "rollup-plugin-visualizer";
 import { type UserConfig, defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
-import { VitePWA } from "vite-plugin-pwa";
+import { ManifestOptions, VitePWA } from "vite-plugin-pwa";
 import manifest from "./assets/manifest.json" with { type: "json" };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,7 +20,7 @@ const getGitInfo = () => {
 };
 
 export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => {
-  console.log(`Running Vite with command: ${command}, mode: ${mode}, isSsrBuild: ${isSsrBuild}, isPreview: ${isPreview}`);
+  console.log(`Running Vite in ${__dirname} with command: ${command}, mode: ${mode}, isSsrBuild: ${isSsrBuild}, isPreview: ${isPreview}`);
 
   const isProduction = mode === "production";
 
@@ -94,16 +94,26 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
     plugins: [
       ...(userConfig.plugins || []),
       VitePWA({
+        devOptions: {
+          enabled: !isProduction,
+        },
         manifest: {
-          ...manifest,
+          ...(manifest as Partial<ManifestOptions>),
           name: "fnc314.com",
         },
+        manifestFilename: isProduction ? "manifest.json" : "manifest.dev.json",
+        minify: isProduction,
         pwaAssets: {
           disabled: false,
-          config: path.resolve(__dirname, "pwa-assets.config.ts"),
-        }
+          injectThemeColor: false,
+          overrideManifestIcons: true,
+          config: path.resolve(__dirname, ".config/pwa-assets/pwa-assets.config.ts"),
+        },
+        srcDir: path.resolve(__dirname, "assets"),
       }),
       VitePluginCustomElementsManifest({
+        output: path.resolve(__dirname, "dist/custom-elements-manifest.json"),
+        packageJson: true,
         config: path.resolve(__dirname, ".config/custom-elements-manifest/custom-elements-manifest.config.mjs"),
       }),
       {

@@ -13,7 +13,7 @@
   "private": true,
   "types": "./website",
   "main": "./website/index.js",
-  "customElements": "docs/cem/custom-elements.json",
+  "customElements": "docs/custom-elements-manifest/custom-elements.json",
   "gitAbbrevHash": "",
   "gitBranch": "",
   "gitCommitHash": "",

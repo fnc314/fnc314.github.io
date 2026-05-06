@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+#MISE description="Run update-custom-elements"
+#MISE alias="uce"
+
+echo "Running update-custom-elements"
+echo
+echo "@pwrs:cem:generate"
+pnpm run @pwrs:cem:generate
+echo
+echo "cem-analyze"
+pnpm run cem-analyze
+echo
+echo "wca:json"
+pnpm run wca:json
+echo
+echo "wca:markdown"
+pnpm run wca:markdown
+echo
+echo "wca:vscode"
+pnpm run wca:vscode
+echo
+echo "typedoc"
+pnpm run typedoc:gen
+echo
+echo "DONE"
+
+# See https://mise.jdx.dev/tasks/file-tasks.html for more information

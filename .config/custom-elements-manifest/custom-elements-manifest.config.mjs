@@ -12,8 +12,8 @@ import process from "node:process";
 
 const isDev = process.env.NODE_ENV === "development";
 
-const fileName = "custom-elements.json";
-const docsDir = "./docs/cem";
+const fileName = "custom-elements-manifest.json";
+const docsDir = "./docs/custom-elements-manifest";
 
 /** @type {import("@custom-elements-manifest/analyzer").Config & { plugins: any[]  }} */
 export default {
@@ -52,38 +52,35 @@ export default {
       cemFileName: fileName,
       logErrors: true,
       debug: isDev,
-      skip: !isDev,
     }),
     cemSorterPlugin({
       fileName: fileName,
       outdir: docsDir,
       deprecatedLast: true,
       debug: isDev,
-      skip: !isDev,
     }),
     cemInheritancePlugin({
       fileName: fileName,
       outdir: docsDir,
       debug: isDev,
-      skip: !isDev,
     }),
     jsDocTagsPlugin({
       debug: isDev,
-      skip: !isDev,
     }),
     modulePathResolverPlugin({
       fileName: fileName,
       outdir: docsDir,
       debug: isDev,
-      skip: !isDev,
       modulePathTemplate: (modulePath) => modulePath.replace("./src", "./dist").replace(".ts", ".js"),
     }),
     typeParserPlugin({
       debug: isDev,
-      skip: !isDev,
     }),
     jsdocExamplePlugin(),
-    readmePlugin({}),
+    readmePlugin({
+      from: process.cwd(),
+      headingOffset: 0,
+    }),
     customElementVsCodePlugin({
       outdir: "./.vscode/cem",
       htmlFileName: "./.vscode/cem/vscode.html-custom-data.json",
@@ -102,10 +99,8 @@ export default {
         events: "Events",
         methods: "Methods",
       },
-      skip: !isDev,
     }),
     customElementJetBrainsPlugin({
-      skip: !isDev,
       outdir: "./.idea",
       webTypesFileName: "web-types.json",
       packageJson: true,
@@ -119,7 +114,7 @@ export default {
       excludeCss: false,
       excludeHtml: false,
       typesSrc: "type",
-      defaultIcon: "./src/assets/icons/icon.svg",
+      defaultIcon: "./assets/icons/icon.svg",
     }),
   ].map((plugin) => () => plugin),
 };

@@ -12,7 +12,7 @@ catalogs:
     lit: 3.3.2
     lit-element: 4.2.2
     lit-html: 3.3.2
-    material-symbols: 0.44.4
+    material-symbols: 0.44.5
   devDependencies:
     "@11ty/eleventy": 3.1.5
     "@11ty/eleventy-img": 6.0.4

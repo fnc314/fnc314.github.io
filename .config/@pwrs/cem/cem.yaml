@@ -6,7 +6,7 @@ generate:
     - ./src/components/**/*.ts
     - ./src/partials/**/*.ts
 
-  output: ./docs/custom-elements.json
+  output: ./docs/@pwrs/cem/custom-elements.json
 
 health:
   disable:
