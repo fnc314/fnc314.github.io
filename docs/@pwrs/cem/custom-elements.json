@@ -7,7 +7,7 @@
       "declarations": [
         {
           "name": "AppShell",
-          "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
+          "summary": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -51,25 +51,6 @@
               "name": "onFabConfigBind",
               "kind": "method",
               "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "_changedProperties",
-                  "type": {
-                    "text": "PropertyValues"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "firstUpdated",
-              "description": "Lifecycle method called after the first update.\nInitializes state from the configuration service and applies initial FAB positions.",
-              "kind": "method",
-              "privacy": "protected"
             },
             {
               "parameters": [
@@ -252,7 +233,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L27"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L28"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -282,30 +263,6 @@
             {
               "name": "--blog-post-word-tag-container-color",
               "description": "The color of the container, {@link WordTag}"
-            },
-            {
-              "name": "--md-sys-color-on-secondary"
-            },
-            {
-              "name": "--md-sys-color-secondary"
-            },
-            {
-              "name": "--md-sys-color-on-secondary-container"
-            },
-            {
-              "name": "--blog-post-secondary-text-color"
-            },
-            {
-              "name": "--md-sys-color-secondary-container"
-            },
-            {
-              "name": "--md-sys-shape-corner-large"
-            },
-            {
-              "name": "--hover-focus-animation-translate-y"
-            },
-            {
-              "name": "--md-icon-size"
             }
           ],
           "customElement": true
@@ -612,7 +569,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L64"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L63"
           },
           "kind": "class",
           "tagName": "configs-dialog",
@@ -773,7 +730,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L20"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L19"
           },
           "kind": "class",
           "tagName": "connect-dialog",
@@ -1330,30 +1287,6 @@
               "name": "_toggle",
               "kind": "method",
               "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "_changedProperties",
-                  "type": {
-                    "text": "T extends object ? PropertyValueMap\u003cT\u003e : Map\u003cPropertyKey, unknown\u003e",
-                    "references": [
-                      {
-                        "name": "PropertyValues",
-                        "package": "@lit/reactive-element"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "firstUpdated",
-              "kind": "method",
-              "privacy": "protected"
             }
           ],
           "source": {
@@ -1512,7 +1445,80 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/index.js"
+      "path": "src/components/info-section/info-section.js",
+      "declarations": [
+        {
+          "name": "InfoSection",
+          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "sectionTitle",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "kind": "field",
+              "attribute": "section-title"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/info-section/info-section.ts#L30"
+          },
+          "kind": "class",
+          "tagName": "info-section",
+          "attributes": [
+            {
+              "name": "section-title",
+              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "sectionTitle"
+            }
+          ],
+          "slots": [
+            {
+              "name": "section-grid-content"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-inverse-surface"
+            },
+            {
+              "name": "--md-sys-color-inverse-on-surface"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "info-section",
+          "declaration": {
+            "name": "InfoSection",
+            "module": "src/components/info-section/info-section.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InfoSection",
+          "declaration": {
+            "name": "InfoSection",
+            "module": "src/components/info-section/info-section.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -1525,21 +1531,6 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "members": [
-            {
-              "parameters": [
-                {
-                  "name": "_changedProperties",
-                  "type": {
-                    "text": "PropertyValues"
-                  }
-                }
-              ],
-              "name": "firstUpdated",
-              "kind": "method",
-              "privacy": "protected"
-            }
-          ],
           "source": {
             "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L18"
           },
@@ -1726,83 +1717,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/profile-section/profile-section.js",
-      "declarations": [
-        {
-          "name": "ProfileSection",
-          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "members": [
-            {
-              "name": "sectionTitle",
-              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "kind": "field",
-              "attribute": "section-title"
-            }
-          ],
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/profile-section/profile-section.ts#L30"
-          },
-          "kind": "class",
-          "tagName": "profile-section",
-          "attributes": [
-            {
-              "name": "section-title",
-              "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "fieldName": "sectionTitle"
-            }
-          ],
-          "slots": [
-            {
-              "name": "section-grid-content"
-            }
-          ],
-          "cssProperties": [
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-sys-color-inverse-surface"
-            },
-            {
-              "name": "--md-sys-color-inverse-on-surface"
-            }
-          ],
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "profile-section",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ProfileSection",
-          "declaration": {
-            "name": "ProfileSection",
-            "module": "src/components/profile-section/profile-section.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/word/word-cloud.js",
       "declarations": [
         {
@@ -1895,10 +1809,6 @@
               "name": "_initIntersectionObserver",
               "kind": "method",
               "privacy": "private"
-            },
-            {
-              "name": "firstUpdated",
-              "kind": "method"
             },
             {
               "return": {
@@ -2051,10 +1961,7 @@
               "default": "1rem"
             },
             {
-              "name": "--md-sys-shape-corner-small"
-            },
-            {
-              "name": "--hairline-width"
+              "name": "--md-sys-shape-corner-medium"
             },
             {
               "name": "--md-ref-typeface-brand"
@@ -2096,22 +2003,22 @@
               "name": "--md-sys-color-on-tertiary-fixed"
             },
             {
-              "name": "--md-sys-color-primary-container"
-            },
-            {
               "name": "--md-sys-color-on-primary-container"
             },
             {
-              "name": "--md-sys-color-primary"
+              "name": "--md-sys-color-primary-container"
             },
             {
               "name": "--md-sys-color-on-primary"
             },
             {
-              "name": "--md-sys-color-primary-fixed"
+              "name": "--md-sys-color-primary"
             },
             {
               "name": "--md-sys-color-on-primary-fixed"
+            },
+            {
+              "name": "--md-sys-color-primary-fixed"
             }
           ],
           "customElement": true
@@ -2325,7 +2232,7 @@
       "declarations": [
         {
           "name": "WorkExperience",
-          "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.",
+          "summary": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -2620,10 +2527,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/partials/index.js"
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/partials/info/info-partial.js",
       "declarations": [
         {
@@ -2684,7 +2587,7 @@
       "path": "src/partials/work/work-partial.js",
       "declarations": [
         {
-          "name": "ExperiencePartial",
+          "name": "WorkPartial",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -2710,16 +2613,1212 @@
           "kind": "custom-element-definition",
           "name": "work-partial",
           "declaration": {
-            "name": "ExperiencePartial",
+            "name": "WorkPartial",
             "module": "src/partials/work/work-partial.js"
           }
         },
         {
           "kind": "js",
-          "name": "ExperiencePartial",
+          "name": "WorkPartial",
           "declaration": {
-            "name": "ExperiencePartial",
+            "name": "WorkPartial",
             "module": "src/partials/work/work-partial.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/services/configs/configs-service.js",
+      "declarations": [
+        {
+          "name": "configsService",
+          "type": {
+            "text": ": ConfigsService"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/configs/configs-service.ts#L61"
+          }
+        },
+        {
+          "name": "ConfigsServiceImpl",
+          "superclass": {
+            "name": "EventTarget"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "configs",
+                  "type": {
+                    "text": "AppConfigs"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "saveConfigs",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "AppConfigs"
+                }
+              },
+              "name": "loadConfigs",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "resetConfigs",
+              "kind": "method"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/configs/configs-service.ts#L12"
+          },
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "configsService",
+          "declaration": {
+            "name": "configsService",
+            "module": "src/services/configs/configs-service.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/services/router/router-service.js",
+      "declarations": [
+        {
+          "name": "routerService",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/router/router-service.ts#L38"
+          }
+        },
+        {
+          "name": "RouterServiceImpl",
+          "superclass": {
+            "name": "EventTarget"
+          },
+          "members": [
+            {
+              "return": {
+                "type": {
+                  "text": "Promise\u003cvoid\u003e"
+                }
+              },
+              "name": "thing",
+              "kind": "method"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/router/router-service.ts#L5"
+          },
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "routerService",
+          "declaration": {
+            "name": "routerService",
+            "module": "src/services/router/router-service.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/services/storage/storage-service.js",
+      "declarations": [
+        {
+          "name": "storageService",
+          "type": {
+            "text": ": StorageService"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/storage/storage-service.ts#L29"
+          }
+        },
+        {
+          "name": "StorageServiceImpl",
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "data",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "saveData",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "defaultValue",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "{ value: string; isDefault: boolean; }"
+                }
+              },
+              "name": "getData",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "clearData",
+              "kind": "method"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/storage/storage-service.ts#L9"
+          },
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "storageService",
+          "declaration": {
+            "name": "storageService",
+            "module": "src/services/storage/storage-service.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/services/theme/theme-service.js",
+      "declarations": [
+        {
+          "name": "themeService",
+          "type": {
+            "text": ": ThemeService"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/theme/theme-service.ts#L60"
+          }
+        },
+        {
+          "name": "ThemeServiceImpl",
+          "members": [
+            {
+              "return": {
+                "type": {
+                  "text": "ThemeConfig"
+                }
+              },
+              "name": "currentThemeConfig",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "MaterialSchemeNames"
+                }
+              },
+              "name": "currentMaterialSchemeName",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Record\u003cColorSchemeRoles, ColorString\u003e"
+                }
+              },
+              "name": "themeJson",
+              "kind": "method"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/services/theme/theme-service.ts#L23"
+          },
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "themeService",
+          "declaration": {
+            "name": "themeService",
+            "module": "src/services/theme/theme-service.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/components/dialog/dialog.js",
+      "declarations": [
+        {
+          "name": "DialogSizing",
+          "description": "Sizing for \\`\u003cmd-dialog\u003e\\`s",
+          "type": {
+            "text": "CSSResult"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/components/dialog/dialog.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DialogSizing",
+          "declaration": {
+            "name": "DialogSizing",
+            "module": "src/styles/components/dialog/dialog.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/material-styles.js",
+      "declarations": [
+        {
+          "name": "MaterialOverrides",
+          "type": {
+            "text": ": CSSResult"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/material-styles.ts#L16"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MaterialTypescaleStyles",
+          "declaration": {
+            "name": "styles",
+            "module": "typography/md-typescale-styles.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "MaterialOverrides",
+          "declaration": {
+            "name": "MaterialOverrides",
+            "module": "src/styles/material-styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/styles.js",
+      "declarations": [
+        {
+          "name": "MaterialCSSStyleSheet",
+          "type": {
+            "text": ": CSSStyleSheet"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L30"
+          }
+        },
+        {
+          "name": "Breakpoints",
+          "type": {
+            "text": ": CSSResult"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L32"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "event",
+              "type": {
+                "text": "MediaQueryListEvent"
+              }
+            }
+          ],
+          "name": "onThemeChange",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L7"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "result",
+              "type": {
+                "text": "CSSResult"
+              }
+            }
+          ],
+          "name": "updateMaterialCSSStyleSheet",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L27"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "onThemeChange",
+          "declaration": {
+            "name": "onThemeChange",
+            "module": "src/styles/styles.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "updateMaterialCSSStyleSheet",
+          "declaration": {
+            "name": "updateMaterialCSSStyleSheet",
+            "module": "src/styles/styles.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "MaterialCSSStyleSheet",
+          "declaration": {
+            "name": "MaterialCSSStyleSheet",
+            "module": "src/styles/styles.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Breakpoints",
+          "declaration": {
+            "name": "Breakpoints",
+            "module": "src/styles/styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/chicago/chicago-theme.js",
+      "declarations": [
+        {
+          "name": "ChicagoThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/chicago/chicago-theme.ts#L10"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ChicagoThemeConfig",
+          "declaration": {
+            "name": "ChicagoThemeConfig",
+            "module": "src/theme/chicago/chicago-theme.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/inter/inter-theme.js",
+      "declarations": [
+        {
+          "name": "InterThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/inter/inter-theme.ts#L10"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "InterThemeConfig",
+          "declaration": {
+            "name": "InterThemeConfig",
+            "module": "src/theme/inter/inter-theme.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/red/red-theme.js",
+      "declarations": [
+        {
+          "name": "RedThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/red/red-theme.ts#L10"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RedThemeConfig",
+          "declaration": {
+            "name": "RedThemeConfig",
+            "module": "src/theme/red/red-theme.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/sunset/sunset-theme.js",
+      "declarations": [
+        {
+          "name": "SunsetThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/sunset/sunset-theme.ts#L10"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SunsetThemeConfig",
+          "declaration": {
+            "name": "SunsetThemeConfig",
+            "module": "src/theme/sunset/sunset-theme.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/theme.js",
+      "declarations": [
+        {
+          "name": "THEME_CONFIGS",
+          "type": {
+            "text": ": ThemeConfigs"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/theme.ts#L8"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "slot",
+              "type": {
+                "text": "\"leading-icon\" | \"start\""
+              }
+            }
+          ],
+          "name": "themeToIcon",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/theme/theme.ts#L15"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "THEME_CONFIGS",
+          "declaration": {
+            "name": "THEME_CONFIGS",
+            "module": "src/theme/theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "themeToIcon",
+          "declaration": {
+            "name": "themeToIcon",
+            "module": "src/theme/theme.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/blog/blog-post.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/code/code-project.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/dialog/connect-dialog.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/nav/routes.js",
+      "declarations": [
+        {
+          "name": "ROUTES",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/nav/routes.ts#L3"
+          }
+        },
+        {
+          "name": "NavComponentConfig",
+          "type": {
+            "text": ": NavComponentConfigs"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/nav/routes.ts#L30"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "hash",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "name": "hashToRoute",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/nav/routes.ts#L16"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ROUTES",
+          "declaration": {
+            "name": "ROUTES",
+            "module": "src/types/components/nav/routes.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hashToRoute",
+          "declaration": {
+            "name": "hashToRoute",
+            "module": "src/types/components/nav/routes.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NavComponentConfig",
+          "declaration": {
+            "name": "NavComponentConfig",
+            "module": "src/types/components/nav/routes.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/word/word-cloud.js",
+      "declarations": [
+        {
+          "name": "WordCloudGroupings",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L15"
+          }
+        },
+        {
+          "name": "WordCloudSortings",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L23"
+          }
+        },
+        {
+          "name": "WordCloudAppearances",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L33"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "word",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "name": "makeWordCloudWord",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L41"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordCloudGroupings",
+          "declaration": {
+            "name": "WordCloudGroupings",
+            "module": "src/types/components/word/word-cloud.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudSortings",
+          "declaration": {
+            "name": "WordCloudSortings",
+            "module": "src/types/components/word/word-cloud.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudAppearances",
+          "declaration": {
+            "name": "WordCloudAppearances",
+            "module": "src/types/components/word/word-cloud.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "makeWordCloudWord",
+          "declaration": {
+            "name": "makeWordCloudWord",
+            "module": "src/types/components/word/word-cloud.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/word/word-tag.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/components/work-experience/work-experience.js",
+      "declarations": [
+        {
+          "name": "data",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/work-experience/work-experience.ts#L34"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "data",
+          "declaration": {
+            "name": "data",
+            "module": "src/types/components/work-experience/work-experience.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/configs/app-configs.js",
+      "declarations": [
+        {
+          "name": "DEFAULT_APP_CONFIGS",
+          "type": {
+            "text": ": AppConfigs"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/app-configs.ts#L14"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DEFAULT_APP_CONFIGS",
+          "declaration": {
+            "name": "DEFAULT_APP_CONFIGS",
+            "module": "src/types/configs/app-configs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/configs/fab-configs.js",
+      "declarations": [
+        {
+          "name": "FAB_POSITION_COMPONENTS_VERTICAL",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L3"
+          }
+        },
+        {
+          "name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L8"
+          }
+        },
+        {
+          "name": "FAB_POSITION",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L23"
+          }
+        },
+        {
+          "name": "FabPositions",
+          "type": {
+            "text": ": FabPosition[]"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L31"
+          }
+        },
+        {
+          "name": "FabPositionIcons",
+          "type": {
+            "text": ": Record\u003cFabPosition, TemplateResult\u003e"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L33"
+          }
+        },
+        {
+          "name": "FAB_STYLE",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L52"
+          }
+        },
+        {
+          "name": "FabStyles",
+          "type": {
+            "text": ": FabStyle[]"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L73"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "fabPosition",
+              "type": {
+                "text": "FabPosition"
+              }
+            }
+          ],
+          "name": "fabPositionToUi",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L40"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "fabPosition",
+              "type": {
+                "text": "FabPosition"
+              }
+            }
+          ],
+          "name": "fabPositionComponents",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L46"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "fabStyle",
+              "type": {
+                "text": "FabStyle"
+              }
+            }
+          ],
+          "name": "fabStyleToUi",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L60"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "config",
+              "type": {
+                "text": "FabConfig"
+              }
+            }
+          ],
+          "name": "fabConfigToGrid",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L83"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "fabPosition",
+              "type": {
+                "text": "FabPosition"
+              }
+            }
+          ],
+          "name": "fabPositionClass",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L95"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FAB_POSITION_COMPONENTS_VERTICAL",
+          "declaration": {
+            "name": "FAB_POSITION_COMPONENTS_VERTICAL",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+          "declaration": {
+            "name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FAB_POSITION",
+          "declaration": {
+            "name": "FAB_POSITION",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabPositions",
+          "declaration": {
+            "name": "FabPositions",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabPositionIcons",
+          "declaration": {
+            "name": "FabPositionIcons",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fabPositionToUi",
+          "declaration": {
+            "name": "fabPositionToUi",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fabPositionComponents",
+          "declaration": {
+            "name": "fabPositionComponents",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FAB_STYLE",
+          "declaration": {
+            "name": "FAB_STYLE",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fabStyleToUi",
+          "declaration": {
+            "name": "fabStyleToUi",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FabStyles",
+          "declaration": {
+            "name": "FabStyles",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fabConfigToGrid",
+          "declaration": {
+            "name": "fabConfigToGrid",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fabPositionClass",
+          "declaration": {
+            "name": "fabPositionClass",
+            "module": "src/types/configs/fab-configs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/theme/color-scheme-configs.js",
+      "declarations": [
+        {
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/color-scheme-configs.ts#L5"
+          }
+        },
+        {
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/color-scheme-configs.ts#L11"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "slot",
+              "type": {
+                "text": "\"start\" | \"leading-icon\""
+              }
+            }
+          ],
+          "name": "colorSchemeContrastToIcon",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/color-scheme-configs.ts#L20"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "colorSchemeSettings",
+              "type": {
+                "text": "ColorSchemeConfigs"
+              }
+            }
+          ],
+          "name": "colorSchemeConfigsToMaterialSchemeName",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/color-scheme-configs.ts#L44"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_SCHEME_NAMES",
+            "module": "src/types/theme/color-scheme-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_CONTRAST_NAMES",
+            "module": "src/types/theme/color-scheme-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "colorSchemeContrastToIcon",
+          "declaration": {
+            "name": "colorSchemeContrastToIcon",
+            "module": "src/types/theme/color-scheme-configs.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "colorSchemeConfigsToMaterialSchemeName",
+          "declaration": {
+            "name": "colorSchemeConfigsToMaterialSchemeName",
+            "module": "src/types/theme/color-scheme-configs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/theme/theme.js",
+      "declarations": [
+        {
+          "name": "THEME_NAMES",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L121"
+          }
+        },
+        {
+          "name": "PhotoJsonFile",
+          "type": {
+            "text": ": PhotosJson"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L135"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "json",
+              "description": "- Input of an  type, ideally conforming to a Material 3 JSON scheme",
+              "type": {
+                "text": "unknown"
+              }
+            }
+          ],
+          "return": {
+            "description": "A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}"
+          },
+          "name": "jsonIsThemeJsonSchemes",
+          "description": "Checks if the provided JSON conforms to the expected theme schemes structure",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L77"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "jsonIsThemeJsonSchemes",
+          "declaration": {
+            "name": "jsonIsThemeJsonSchemes",
+            "module": "src/types/theme/theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "THEME_NAMES",
+          "declaration": {
+            "name": "THEME_NAMES",
+            "module": "src/types/theme/theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PhotoJsonFile",
+          "declaration": {
+            "name": "PhotoJsonFile",
+            "module": "src/types/theme/theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "readScheme",
+          "declaration": {
+            "name": "readScheme",
+            "module": "src/types/theme/theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "keyTransform",
+          "declaration": {
+            "name": "keyTransform",
+            "module": "src/types/theme/theme.js"
           }
         }
       ]

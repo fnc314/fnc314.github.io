@@ -7,7 +7,7 @@
   "author": "Franco N. Colaizzi",
   "org": "@fnc314",
   "readme": "README.md",
-  "icon": "./src/assets/icons/icon.svg",
+  "icon": "./assets/icons/icon.svg",
   "type": "module",
   "module": "src/index.ts",
   "private": true,
@@ -34,7 +34,7 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "scripts": {
-    "@pwrs:cem:generate": "NODE_ENV=development pnpx @pwrs/cem generate --config ./.config/cem.yaml -v",
+    "@pwrs:cem:generate": "NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -v",
     "build": "pnpm rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript $ROLLUP_FLAGS",
     "build:dev": "NODE_ENV=development pnpm run build",
     "build:tsc": "pnpm tsc",

@@ -33,6 +33,8 @@ export default {
     "css",
     "html",
     "javascript",
+    "json",
+    "lit",
     "typescript",
   ],
   includeVersion: true,
@@ -50,10 +52,10 @@ export default {
     includeGroups: true,
   },
   out: `${process.cwd()}/docs/typedoc`,
-  packageOptions: {
-    includeVersion: true,
-    disableSources: false,
-  },
+  // packageOptions: {
+  //   includeVersion: true,
+  //   disableSources: false,
+  // },
   plugin: [
     "typedoc-material-theme"
   ],
@@ -64,7 +66,6 @@ export default {
   readme: `${process.cwd()}/README.md`,
   searchInComments: true,
   searchInDocuments: true,
-  sidebarLinks: {},
   sortEntryPoints: true,
   sourceLinkExternal: true,
   theme: "material-theme",
@@ -72,5 +73,12 @@ export default {
   typePrintWidth: 2,
   useFirstParagraphOfCommentAsSummary: true,
   useTsLinkResolution: true,
-  validation: true,
+  validation: {
+    invalidLink: true,
+    invalidPath: true,
+    notDocumented: true,
+    notExported: true,
+    rewrittenLink: true,
+    unusedMergeModuleWith: true,
+  },
 };

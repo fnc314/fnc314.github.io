@@ -1,0 +1,43 @@
+additionalPackages:
+  - npm:@material/web
+
+generate:
+  files:
+    - ./src/**/**/*.ts
+
+  output: ./docs/@pwrs/cem/custom-elements.json
+
+health:
+  disable:
+    - demos
+
+  failBelow: 80
+
+serve:
+  no-reload: false
+
+  port: 8888
+
+  watchIgnore:
+    - ./website/**
+    - ./node_modules/**
+    - ./dist/**
+
+sourceControlRootUrl: https://github.com/fnc314/fnc314.github.io/tree/main/
+
+transforms:
+  css:
+    enabled: true
+    include:
+      - ./src/index.css
+
+  typescript:
+    enabled: true
+
+warnings:
+  disable:
+    - lifecycle-lit-methods
+
+  format: json
+
+  verbose: true
