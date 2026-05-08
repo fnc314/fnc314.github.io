@@ -1,7 +1,7 @@
 import process from "node:process";
 import { LogLevel } from "typedoc";
 
-/** @type {Partial<import("typedoc").TypeDocOptions>} */
+/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
 export default {
   // $schema: "https://typedoc.org/schema.json",
   // help: true,
@@ -16,7 +16,7 @@ export default {
   displayBasePath: "",
   emit: "both",
   entryPoints: [
-    `${process.cwd()}/src/**/*.{js,ts}`,
+    `${process.cwd()}/src/*`,
   ],
   entryPointStrategy: "expand",
   exclude: [
@@ -27,8 +27,21 @@ export default {
   excludePrivate: false,
   excludePrivateClassFields: false,
   excludeProtected: false,
+  externalSymbolLinkMappings: {
+    "@material/web": {
+      "MdDialog": "https://github.com/material-components/material-web/tree/main/docs/components/dialog.md",
+      "MdFab": "https://github.com/material-components/material-web/tree/main/docs/components/fab.md",
+      "MdTabs": "https://github.com/material-components/material-web/blob/main/docs/components/tabs.md",
+      "MdPrimaryTabs": "https://github.com/material-components/material-web/blob/main/docs/components/tabs.md",
+    },
+    "material-symbols": {
+      "MaterialSymbol": "https://github.com/marella/material-symbols/tree/main/material-symbols",
+    }
+  },
   favicon: `${process.cwd()}/assets/icons/icon.svg`,
+  formatWithPrettier: true,
   githubPages: true,
+  gitRevision: "{branch}",
   headings: {
     document: true,
     readme: true,
@@ -41,15 +54,14 @@ export default {
     "lit",
     "typescript",
   ],
-  html: `${process.cwd()}/docs/typedoc`,
   includeHierarchySummary: true,
   includeVersion: true,
   jsDocCompatibility: true,
-  json: `${process.cwd()}/docs/typedoc/typedoc.json`,
   lang: "en",
   lightHighlightTheme: "material-theme-lighter",
   logLevel: LogLevel.Verbose,
   markdownLinkExternal: true,
+  mergeReadme: true,
   name: "@fnc314/com.fnc314.website",
   navigation: {
     compactFolders: false,
@@ -57,23 +69,40 @@ export default {
     includeFolders: true,
     includeGroups: true,
   },
-  out: `${process.cwd()}/docs/typedoc`,
+  outputs: [
+    {
+      name: "html",
+      path: `${process.cwd()}/docs/typedoc/html`,
+    },
+    {
+      name: "json",
+      path: `${process.cwd()}/docs/typedoc/json`,
+    },
+    {
+      name: "markdown",
+      path: `${process.cwd()}/docs/typedoc/markdown`,
+    }
+  ],
   // packageOptions: {
   //   includeVersion: true,
   //   disableSources: false,
   // },
   plugin: [
     "typedoc-color-chip",
-    "typedoc-material-theme",
+    "typedoc-github-wiki-theme",
+    // "typedoc-material-theme",
     "typedoc-plugin-coverage",
     "typedoc-plugin-extras",
+    "typedoc-plugin-frontmatter",
+    "typedoc-plugin-markdown",
     "typedoc-plugin-mdn-links",
+    "typedoc-plugin-version-header",
   ],
   pretty: true,
   projectDocuments: [
-    `${process.cwd()}/docs/wca/markdown/*.md`
+    `${process.cwd()}/docs/wca/markdown/*.md`,
   ],
-  readme: `${process.cwd()}/README.md`,
+  readme: `${process.cwd()}/docs/wca/markdown/README.md`,
   searchInComments: true,
   searchInDocuments: true,
   skipErrorChecking: true,

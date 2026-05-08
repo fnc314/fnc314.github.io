@@ -1,5 +1,5 @@
 [tools]
-  node = "25.9.0"
+  node = "26.1.0"
   pnpm = "11.0.8"
   tombi = "0.10.6"
   usage = "3.3.0"

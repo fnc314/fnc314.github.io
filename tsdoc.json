@@ -1,4 +1,53 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
-  "tagDefinitions": []
+  "tagDefinitions": [
+    {
+      "tagName": "@attr",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@class",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@cssprop",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@element",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@export",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@extends",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@fires",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@property",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@slot",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@summary",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@type",
+      "syntaxKind": "block"
+    },
+    {
+      "tagName": "@typedef",
+      "syntaxKind": "block"
+    }
+  ]
 }

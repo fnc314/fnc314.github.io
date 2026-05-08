@@ -21,11 +21,7 @@
   "gitVersion": "",
   "web-types": "./.idea/web-types.json",
   "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912",
-  "keywords": [
-    "website",
-    "homepage",
-    "fnc314"
-  ],
+  "keywords": ["website", "homepage", "fnc314"],
   "bugs": {
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
@@ -48,6 +44,10 @@
     "cem-analyze:watch": "NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs --watch",
     "deploy": "rm -rfv website && pnpm run build:website:prod",
     "deploy:test": "ROLLUP_FLAGS=\"--logLevel debug\" pnpm run deploy",
+    "dx:@pwrs:cem:generate": "pnpm run @pwrs:cem:generate",
+    "dx:cem-analyze": "pnpm run cem-analyze",
+    "dx:typedoc": "pnpm run typedoc:gen",
+    "dx:wca": "pnpm run wca:json:file && pnpm run wca:json:files && pnpm run wca:markdown:file && pnpm run wca:markdown:files && pnpm run wca:vscode",
     "format": "pnpm prettier \"./src/**/*.{css,html,js,json,ts}\" --ignore-path ./.prettierignore --write",
     "lint": "pnpm run lint:lit-analyzer && pnpm run lint:eslint",
     "lint:eslint": "pnpm eslint 'src/**/*.ts'",
@@ -66,9 +66,10 @@
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
     "test:watch": "pnpm wtr --watch",
     "typedoc:gen": "pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs",
-    "wca:json": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json && pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
     "wca:json:file": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
-    "wca:markdown": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
+    "wca:json:files": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
+    "wca:markdown:file": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/markdown/README.md --format markdown",
+    "wca:markdown:files": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
     "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
   },
   "dependencies": {
@@ -186,11 +187,14 @@
     "tslib": "catalog:devDependencies",
     "typedoc": "catalog:devDependencies",
     "typedoc-color-chip": "catalog:devDependencies",
+    "typedoc-github-wiki-theme": "catalog:devDependencies",
     "typedoc-material-theme": "catalog:devDependencies",
     "typedoc-plugin-coverage": "catalog:devDependencies",
     "typedoc-plugin-extras": "catalog:devDependencies",
+    "typedoc-plugin-frontmatter": "catalog:devDependencies",
     "typedoc-plugin-markdown": "catalog:devDependencies",
     "typedoc-plugin-mdn-links": "catalog:devDependencies",
+    "typedoc-plugin-version-header": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
     "vite": "catalog:devDependencies",

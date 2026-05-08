@@ -16,14 +16,17 @@ echo
 echo "cem-analyze"
 pnpm run cem-analyze
 echo
-echo "wca:json"
-pnpm run wca:json
-echo
 echo "wca:json:file"
 pnpm run wca:json:file
 echo
-echo "wca:markdown"
-pnpm run wca:markdown
+echo "wca:json:files"
+pnpm run wca:json:files
+echo
+echo "wca:markdown:file"
+pnpm run wca:markdown:file
+echo
+echo "wca:markdown:files"
+pnpm run wca:markdown:files
 echo
 echo "wca:vscode"
 pnpm run wca:vscode

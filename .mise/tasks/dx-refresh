@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+#MISE description="Run dx-refresh"
+#MISE alias="dxr"
+
+echo "Running dx-refresh"
+echo
+rm -rfv docs
+echo
+echo "Recreate Mise Task Docs"
+mkdir -p docs/mise/tasks
+mise generate task-docs -m -o docs/mise/tasks
+echo
+echo "dx:@pwrs:cem:generate"
+pnpm run dx:@pwrs:cem:generate
+echo
+echo "dx:cem-analyze"
+pnpm run dx:cem-analyze
+echo
+echo "dx:wca"
+pnpm run dx:wca
+echo
+echo "dx:typedoc"
+pnpm run dx:typedoc
+echo
+echo "DONE"
+
+# See https://mise.jdx.dev/tasks/file-tasks.html for more information
