@@ -1,3 +1,13 @@
+allowBuilds:
+  '@firebase/util': false
+  '@genesiscommunitysuccess/custom-elements-lsp': false
+  '@pwrs/cem': true
+  esbuild: false
+  protobufjs: false
+  rs-module-lexer: false
+  secp256k1: false
+  sharp: false
+  unrs-resolver: false
 catalogMode: "strict"
 
 catalogs:
@@ -114,8 +124,12 @@ catalogs:
     ts-lit-plugin: 2.0.2
     tslib: 2.8.1
     typedoc: 0.28.19
+    typedoc-color-chip: 0.0.2
     typedoc-material-theme: 1.4.1
+    typedoc-plugin-coverage: 4.0.3
+    typedoc-plugin-extras: 4.0.1
     typedoc-plugin-markdown: 4.11.0
+    typedoc-plugin-mdn-links: 5.1.1
     typescript: 6.0.3
     typescript-eslint: 8.59.2
     vite: 8.0.10

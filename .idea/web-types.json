@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
   "name": "@fnc314/fnc314.github.io",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description-markup": "markdown",
-  "default-icon": "./src/assets/icons/icon.svg",
+  "default-icon": "./assets/icons/icon.svg",
   "contributions": {
     "html": {
       "elements": [
@@ -27,25 +27,48 @@
         },
         {
           "name": "blog-post",
-          "description": "\n---\n",
+          "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link MdElevatedCard} and {@link --md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link WordTag} _(default: undefined)_",
           "doc-url": "",
           "attributes": [
             {
               "name": "blogPost",
-              "value": { "type": "Partial<BlogPostJson>", "default": "{}" }
+              "description": "The {@link BlogPostJson} record to render",
+              "value": { "type": "BlogPostJson", "default": "{}" }
             }
           ],
           "events": [],
           "js": {
             "properties": [
-              { "name": "blogPost", "type": "Partial<BlogPostJson>" }
+              {
+                "name": "blogPost",
+                "description": "The {@link BlogPostJson} record to render",
+                "type": "BlogPostJson"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "code-project",
+          "description": "Represents a single (usually GitHub-hosted) demonstration project\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "codeProject",
+              "value": { "type": "CodeProjectData", "default": "{}" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              { "name": "codeProject", "type": "CodeProjectData" }
             ],
             "events": []
           }
         },
         {
           "name": "configs-dialog",
-          "description": "A comprehensive configuration dialog for managing application settings.\nAllows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.\n---\n\n\n### **Events:**\n - ****\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **fab.change** - Dispatched when a FAB's position or style is modified.\n- **stepUpOpen**\n\n### **Methods:**\n - **hideDialog(): __** - Hides the configuration dialog.\n- **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.",
+          "description": "\n---\n\n\n### **Events:**\n - ****\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **fab.change** - Dispatched when a FAB's position or style is modified.\n- **stepUpOpen**\n\n### **Methods:**\n - **hideDialog(): __** - Hides the configuration dialog.\n- **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.",
           "doc-url": "",
           "attributes": [],
           "events": [
@@ -82,7 +105,7 @@
         },
         {
           "name": "connect-dialog",
-          "description": "A dialog component that provides various contact methods and social links.\nIt features collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n - ****\n\n### **Methods:**\n - **hideDialog(): __** - Maps to MdDialog's close method\n- **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
+          "description": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n - ****\n\n### **Methods:**\n - **hideDialog(): __** - Maps to MdDialog's close method\n- **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
           "doc-url": "",
           "attributes": [],
           "events": [{ "name": "", "type": "Event" }],
@@ -93,21 +116,18 @@
         },
         {
           "name": "step-up-dialog",
-          "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **actions** - The area of dialog action buttons\n- **content** - The body of the {@link MdDialog}\n- **headline** - The {@link MdDialog} headline {@link slot}",
+          "description": "\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **actions** - The area of dialog action buttons\n- **content** - The body of the {@link MdDialog}\n- **headline** - The {@link MdDialog} headline {@link slot}",
           "doc-url": "",
           "attributes": [
             {
               "name": "dialogContentString",
-              "description": "The text content to display in the dialog body.",
+              "description": "The central content of the {@link MdDialog}",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "dialogStyle",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
-              "value": {
-                "type": "ConfirmDialogStyle",
-                "default": "\"confirm\""
-              }
+              "description": "Determines which {@link StepUpDialogStyle}",
+              "value": { "type": "StepUpDialogStyle", "default": "\"confirm\"" }
             }
           ],
           "slots": [
@@ -135,13 +155,13 @@
             "properties": [
               {
                 "name": "dialogContentString",
-                "description": "The text content to display in the dialog body.",
+                "description": "The central content of the {@link MdDialog}",
                 "type": "string"
               },
               {
                 "name": "dialogStyle",
-                "description": "The visual style variant of the dialog, affecting colors and icons.",
-                "type": "ConfirmDialogStyle"
+                "description": "Determines which {@link StepUpDialogStyle}",
+                "type": "StepUpDialogStyle"
               }
             ],
             "events": [
@@ -155,7 +175,7 @@
         },
         {
           "name": "fab-menu-item",
-          "description": "An action item within a `fab-menu`.\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
+          "description": "\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
           "doc-url": "",
           "attributes": [
             {
@@ -188,32 +208,32 @@
         },
         {
           "name": "fab-menu",
-          "description": "A floating action button that toggles a menu of actions.\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements.\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations. _(default: 200ms)_",
+          "description": "\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
           "doc-url": "",
           "attributes": [
             {
               "name": "aria-label",
-              "description": "The `aria-label` of the FAB.",
+              "description": "An override for the `aria-label` attribute",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "direction",
-              "description": "The direction in which the menu items should expand.",
-              "value": { "type": "\"start\" | \"end\"", "default": "\"end\"" }
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+              "value": { "type": "string", "default": "\"end\"" }
             },
             {
               "name": "icon",
-              "description": "The MaterialSymbol to display when the menu\nis closed. Defaults to 'add'. An empty string\n  suppresses the icon",
-              "value": { "type": "MaterialSymbol | \"\"", "default": "\"add\"" }
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
+              "value": { "type": "MaterialSymbol", "default": "\"close\"" }
             },
             {
               "name": "label",
-              "description": "The label of the underlying MdFab.\nDefaults to an empty string.",
+              "description": "The label to display when both opened and closed",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "open",
-              "description": "Whether the menu is currently open.",
+              "description": "Indicator of open/closed state",
               "value": { "type": "boolean", "default": "false" }
             },
             {
@@ -223,25 +243,19 @@
             },
             {
               "name": "size",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-              "value": {
-                "type": "\"small\" | \"medium\" | \"large\"",
-                "default": "\"medium\""
-              }
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+              "value": { "type": "string", "default": "\"medium\"" }
             },
             {
               "name": "variant",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-              "value": {
-                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
-                "default": "\"primary\""
-              }
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+              "value": { "type": "string", "default": "\"primary\"" }
             }
           ],
           "slots": [
             {
               "name": "menu-items",
-              "description": "The content of the menu, typically {@link FabMenuItem} elements."
+              "description": "The content of the menu, typically {@link FabMenuItem} elements"
             }
           ],
           "events": [],
@@ -249,27 +263,27 @@
             "properties": [
               {
                 "name": "ariaLabel",
-                "description": "The `aria-label` of the FAB.",
+                "description": "An override for the `aria-label` attribute",
                 "type": "string"
               },
               {
                 "name": "direction",
-                "description": "The direction in which the menu items should expand.",
-                "type": "\"start\" | \"end\""
+                "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+                "type": "string"
               },
               {
                 "name": "icon",
-                "description": "The MaterialSymbol to display when the menu\nis closed. Defaults to 'add'. An empty string\n  suppresses the icon",
-                "type": "MaterialSymbol | \"\""
+                "description": "The {@link MaterialSymbol} to display when menu is opened",
+                "type": "MaterialSymbol"
               },
               {
                 "name": "label",
-                "description": "The label of the underlying MdFab.\nDefaults to an empty string.",
+                "description": "The label to display when both opened and closed",
                 "type": "string"
               },
               {
                 "name": "open",
-                "description": "Whether the menu is currently open.",
+                "description": "Indicator of open/closed state",
                 "type": "boolean"
               },
               {
@@ -279,13 +293,36 @@
               },
               {
                 "name": "size",
-                "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-                "type": "\"small\" | \"medium\" | \"large\""
+                "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+                "type": "string"
               },
               {
                 "name": "variant",
-                "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+                "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+                "type": "string"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "info-section",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "section-title",
+              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <info-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </info-section> ```",
+              "value": { "type": "string", "default": "\"\"" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "sectionTitle",
+                "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <info-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </info-section> ```",
+                "type": "string"
               }
             ],
             "events": []
@@ -293,7 +330,7 @@
         },
         {
           "name": "nav-component",
-          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
+          "description": "\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
           "doc-url": "",
           "attributes": [],
           "events": [],
@@ -301,7 +338,7 @@
         },
         {
           "name": "partial-header",
-          "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.\n---\n",
+          "description": "\n---\n",
           "doc-url": "",
           "attributes": [
             {
@@ -336,31 +373,8 @@
           }
         },
         {
-          "name": "profile-section",
-          "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--\n---\n",
-          "doc-url": "",
-          "attributes": [
-            {
-              "name": "section-title",
-              "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-              "value": { "type": "string", "default": "\"\"" }
-            }
-          ],
-          "events": [],
-          "js": {
-            "properties": [
-              {
-                "name": "sectionTitle",
-                "description": "The text shown in the section heading (`<h2>`). Corresponds to the attribute `section-title`. Slot API -- <slot name=\"section-grid-content\">: (required) Container for section body content. Preserves the responsive grid layout. Example: ```html <profile-section section-title=\"Experience\"> <div slot=\"section-grid-content\"> ...your list, cards, or details... </div> </profile-section> ```",
-                "type": "string"
-              }
-            ],
-            "events": []
-          }
-        },
-        {
           "name": "word-cloud",
-          "description": "A component that renders a cloud of words with various sorting and grouping options.\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+          "description": "\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
           "doc-url": "",
           "attributes": [
             {
@@ -443,13 +457,56 @@
           }
         },
         {
+          "name": "word-tag",
+          "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "heaviness",
+              "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+              "value": { "type": "WordTagHeaviness", "default": "\"normal\"" }
+            },
+            {
+              "name": "hrefUrl",
+              "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
+              "value": { "type": "string", "default": "\"\"" }
+            },
+            {
+              "name": "word",
+              "description": "The tagged word",
+              "value": { "type": "string", "default": "\"\"" }
+            }
+          ],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "heaviness",
+                "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+                "type": "WordTagHeaviness"
+              },
+              {
+                "name": "hrefUrl",
+                "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
+                "type": "string"
+              },
+              {
+                "name": "word",
+                "description": "The tagged word",
+                "type": "string"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
           "name": "work-experience",
-          "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.\n---\n",
+          "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n",
           "doc-url": "",
           "attributes": [
             {
               "name": "date-end",
-              "description": "End date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment end date",
               "value": {
                 "type": "WorkDate",
                 "default": "{ stamp: \"\", text: \"\" }"
@@ -457,7 +514,7 @@
             },
             {
               "name": "date-start",
-              "description": "Start date information including machine-readable stamp and display text.",
+              "description": "A {@link WorkDate} instance describing employment start date",
               "value": {
                 "type": "WorkDate",
                 "default": "{ stamp: \"\", text: \"\" }"
@@ -465,32 +522,33 @@
             },
             {
               "name": "experience-org",
-              "description": "The name of the organization or client.",
+              "description": "The employer formal name",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "experience-role",
-              "description": "The title of the professional role or project.",
+              "description": "The formal role from the {@link WorkExperience} instance",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "experience-summary",
+              "description": "An optional summary of the overall role",
               "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "is-nested",
-              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "description": "Whether this is a nested instance",
               "value": { "type": "boolean", "default": "false" }
             },
             {
               "name": "jobs",
-              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
-              "value": { "type": "Job[]", "default": "[]" }
+              "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
+              "value": { "type": "Array<Job>", "default": "[]" }
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
-              "value": { "type": "{ item: string }[]", "default": "[]" }
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
+              "value": { "type": "Array<{ item: string }>", "default": "[]" }
             }
           ],
           "events": [],
@@ -498,71 +556,43 @@
             "properties": [
               {
                 "name": "dateEnd",
-                "description": "End date information including machine-readable stamp and display text.",
+                "description": "A {@link WorkDate} instance describing employment end date",
                 "type": "WorkDate"
-              },
-              {
-                "name": "dateEnd={",
-                "description": "stamp: \"\", text: \"\" } - A {@link WorkDate} instance describing employment end date"
               },
               {
                 "name": "dateStart",
-                "description": "Start date information including machine-readable stamp and display text.",
+                "description": "A {@link WorkDate} instance describing employment start date",
                 "type": "WorkDate"
               },
               {
-                "name": "dateStart={",
-                "description": "stamp: \"\", text: \"\" } - A {@link WorkDate} instance describing employment start date"
-              },
-              {
                 "name": "experienceOrg",
-                "description": "The name of the organization or client.",
+                "description": "The employer formal name",
                 "type": "string"
-              },
-              {
-                "name": "experienceOrg=\"\"",
-                "description": "The employer formal name"
               },
               {
                 "name": "experienceRole",
-                "description": "The title of the professional role or project.",
+                "description": "The formal role from the {@link WorkExperience} instance",
                 "type": "string"
               },
               {
-                "name": "experienceRole=\"\"",
-                "description": "The formal role from the {@link WorkExperience} instance"
-              },
-              { "name": "experienceSummary", "type": "string" },
-              {
-                "name": "experienceSummary=\"\"",
-                "description": "An optional summary of the overall role"
+                "name": "experienceSummary",
+                "description": "An optional summary of the overall role",
+                "type": "string"
               },
               {
                 "name": "isNested",
-                "description": "If true, adjusts font sizes and layout for a nested appearance.",
+                "description": "Whether this is a nested instance",
                 "type": "boolean"
               },
               {
-                "name": "isNested=false",
-                "description": "Whether this is a nested instance"
-              },
-              {
                 "name": "jobs",
-                "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
-                "type": "Job[]"
-              },
-              {
-                "name": "jobs=[]",
-                "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances"
+                "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
+                "type": "Array<Job>"
               },
               {
                 "name": "summaries",
-                "description": "A list of summary points describing achievements or responsibilities.",
-                "type": "{ item: string }[]"
-              },
-              {
-                "name": "summaries=[]",
-                "description": "An array of `{ item: string }` objects describing the responsibilities"
+                "description": "An array of `{ item: string }` objects describing the responsibilities",
+                "type": "Array<{ item: string }>"
               }
             ],
             "events": []
@@ -572,6 +602,22 @@
     },
     "css": {
       "properties": [
+        {
+          "name": "--blog-post-animation",
+          "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states"
+        },
+        {
+          "name": "--blog-post-primary-text-color",
+          "description": "The color of the primary text"
+        },
+        {
+          "name": "--blog-post-container-color",
+          "description": "The color of the container, {@link MdElevatedCard} and {@link --md-elevated-card-container-color}"
+        },
+        {
+          "name": "--blog-post-word-tag-container-color",
+          "description": "The color of the container, {@link WordTag}"
+        },
         {
           "name": "--connect-dialog-content-transition",
           "description": "The animation duration for expanding/collapsing connection details."
@@ -594,7 +640,11 @@
         },
         {
           "name": "--fab-menu-transition-duration",
-          "description": "The duration of the menu's opening and closing animations."
+          "description": "The duration of the menu's opening and closing animations"
+        },
+        {
+          "name": "--fab-menu-animation-spec",
+          "description": "The animation spec for {@link FabMenu} `transition`s"
         },
         {
           "name": "--nav-component-icon-animation",
@@ -643,6 +693,22 @@
         {
           "name": "--word-cloud-fourth-quartile-line-height",
           "description": "Line height for words in the fourth weight quartile."
+        },
+        {
+          "name": "--word-tag-color",
+          "description": "The text and border color"
+        },
+        {
+          "name": "--word-tag-background-color",
+          "description": "The background color"
+        },
+        { "name": "--word-tag-font-family", "description": "The font family" },
+        { "name": "--word-tag-font-size", "description": "The font size" },
+        { "name": "--word-tag-font-weight", "description": "The font weight" },
+        { "name": "--word-tag-line-height", "description": "The line height" },
+        {
+          "name": "--word-tag-border-radius",
+          "description": "The corner radius (for all corners)"
         }
       ],
       "pseudo-elements": []

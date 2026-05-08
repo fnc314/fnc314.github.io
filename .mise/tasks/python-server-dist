@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #MISE description="Run python-server-dist"
 #MISE alias="python@dist"
 

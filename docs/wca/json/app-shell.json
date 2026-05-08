@@ -4,7 +4,6 @@
     {
       "name": "app-shell",
       "path": "./../../../src/components/app-shell/app-shell.ts",
-      "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
       "properties": [
         {
           "name": "styles",

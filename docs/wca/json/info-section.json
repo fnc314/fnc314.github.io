@@ -1,0 +1,32 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "info-section",
+      "path": "./../../../src/components/info-section/info-section.ts",
+      "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+      "attributes": [
+        {
+          "name": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "sectionTitle",
+          "attribute": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "app-shell",
+      "path": "./../../../src/components/app-shell/app-shell.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "app-content",
+          "description": "The place for the dynamic application content"
+        }
+      ]
+    },
+    {
+      "name": "blog-post",
+      "path": "./../../../src/components/blog/blog-post.ts",
+      "attributes": [
+        {
+          "name": "blogPost",
+          "type": "BlogPostJson",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "blogPost",
+          "attribute": "blogPost",
+          "type": "BlogPostJson",
+          "default": "{}"
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--blog-post-animation",
+          "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`,\n\\`:focus-within\\`, and \\`:focus-visible\\` states"
+        },
+        {
+          "name": "--blog-post-primary-text-color",
+          "description": "The color of the primary text"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "code-project",
+      "path": "./../../../src/components/code/code-project.ts",
+      "attributes": [
+        {
+          "name": "codeProject",
+          "type": "CodeProjectData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "codeProject",
+          "attribute": "codeProject",
+          "type": "CodeProjectData",
+          "default": "{}"
+        },
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--code-project-animation",
+          "description": "The duration of the subtle hover/focus effect",
+          "default": "\"200ms\""
+        },
+        {
+          "name": "--code-project-rotation",
+          "description": "The duration of the card rotation effect",
+          "default": "\"800ms\""
+        }
+      ]
+    },
+    {
+      "name": "fab-menu-item",
+      "path": "./../../../src/components/fab-menu/fab-menu-item.ts",
+      "description": "An action item within a `fab-menu`.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "The text label displayed next to the FAB item.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "icon",
+          "description": "The icon to display inside the FAB item.",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "The text label displayed next to the FAB item.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "description": "The icon to display inside the FAB item.",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
+          "default": "\"\""
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "object Object],[object Object"
+        },
+        {
+          "name": "--fab-menu-item-padding-end",
+          "description": "The logical `padding-inline-end` value",
+          "default": "0"
+        },
+        {
+          "name": "--fab-menu-item-padding-start",
+          "description": "The logical `padding-inline-start` value",
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "fab-menu",
+      "path": "./../../../src/components/fab-menu/fab-menu.ts",
+      "description": "A floating action button that toggles a menu of actions.",
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
+          "default": "\"add\""
+        },
+        {
+          "name": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3850 more ... | \"zoom_out_map\"",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "string",
+          "default": "\"end\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
+          "default": "\"add\""
+        },
+        {
+          "name": "openedIcon",
+          "attribute": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3850 more ... | \"zoom_out_map\"",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "attribute": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "ariaLabel",
+          "attribute": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "direction",
+          "attribute": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "string",
+          "default": "\"end\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--fab-menu-transition-duration",
+          "description": "The duration of the menu's opening and closing animations",
+          "default": "\"200ms\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "info-section",
+      "path": "./../../../src/components/info-section/info-section.ts",
+      "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+      "attributes": [
+        {
+          "name": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "sectionTitle",
+          "attribute": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "nav-component",
+      "path": "./../../../src/components/nav/nav-component.ts",
+      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--nav-component-icon-animation",
+          "description": "The duration of the icon's fill and color transition.",
+          "default": "\"225ms\""
+        },
+        {
+          "name": "--nav-component-icon-animation-reduced",
+          "description": "The duration of the icon's transition when motion is reduced.",
+          "default": "\"1ms\""
+        }
+      ]
+    },
+    {
+      "name": "partial-header",
+      "path": "./../../../src/components/partial-header/partial-header.ts",
+      "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
+      "attributes": [
+        {
+          "name": "heading-text",
+          "description": "The text to display within the header.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "header-type",
+          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
+          "default": "\"primary\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "headingText",
+          "attribute": "heading-text",
+          "description": "The text to display within the header.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "headerType",
+          "attribute": "header-type",
+          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
+          "default": "\"primary\""
+        }
+      ]
+    },
+    {
+      "name": "word-cloud",
+      "path": "./../../../src/components/word/word-cloud.ts",
+      "description": "A component that renders a cloud of words with various sorting and grouping options.",
+      "attributes": [
+        {
+          "name": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "words",
+          "attribute": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instantClear",
+          "attribute": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "attribute": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "attribute": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "attribute": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "attribute": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "attribute": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-cloud-animation",
+          "description": "Duration of the entrance animation for each word.",
+          "default": "\"150ms\""
+        },
+        {
+          "name": "--word-cloud-animation-reduced",
+          "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+          "default": "\"1ms\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-font-size",
+          "description": "Font size for words in the first weight quartile (highest weight).",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-line-height",
+          "description": "Line height for words in the first weight quartile.",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-font-size",
+          "description": "Font size for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-line-height",
+          "description": "Line height for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-font-size",
+          "description": "Font size for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-line-height",
+          "description": "Line height for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-font-size",
+          "description": "Font size for words in the fourth weight quartile (lowest weight).",
+          "default": "\"1rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-line-height",
+          "description": "Line height for words in the fourth weight quartile.",
+          "default": "\"1rem\""
+        }
+      ]
+    },
+    {
+      "name": "word-tag",
+      "path": "./../../../src/components/word/word-tag.ts",
+      "attributes": [
+        {
+          "name": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "hrefUrl",
+          "attribute": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "attribute": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "attribute": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-tag-color",
+          "description": "The text and border color",
+          "default": "\"--md-sys-color-on-primary-container\""
+        },
+        {
+          "name": "--word-tag-background-color",
+          "description": "The background color",
+          "default": "\"--md-sys-color-primary-container\""
+        },
+        {
+          "name": "--word-tag-font-family",
+          "description": "The font family",
+          "default": "\"--md-ref-typeface-brand\""
+        },
+        {
+          "name": "--word-tag-font-size",
+          "description": "The font size",
+          "default": "\"--md-typescale-body-large-font-size\""
+        },
+        {
+          "name": "--word-tag-font-weight",
+          "description": "The font weight",
+          "default": "\"--md-ref-typeface-weight-regular\""
+        },
+        {
+          "name": "--word-tag-line-height",
+          "description": "The line height",
+          "default": "\"--md-typescale-body-large-lingt-height\""
+        },
+        {
+          "name": "--word-tag-border-radius",
+          "description": "The corner radius (for all corners)",
+          "default": "\"--md-sys-shape-corner-small\""
+        }
+      ]
+    },
+    {
+      "name": "work-experience",
+      "path": "./../../../src/components/work-experience/work-experience.ts",
+      "attributes": [
+        {
+          "name": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "experienceRole",
+          "attribute": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "dateStart",
+          "attribute": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "dateEnd",
+          "attribute": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "attribute": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "attribute": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "isNested",
+          "attribute": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experienceOrg",
+          "attribute": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experienceSummary",
+          "attribute": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "blog-partial",
+      "path": "./../../../src/partials/blog/blog-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "code-partial",
+      "path": "./../../../src/partials/code/code-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "info-partial",
+      "path": "./../../../src/partials/info/info-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "work-partial",
+      "path": "./../../../src/partials/work/work-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    }
+  ]
+}

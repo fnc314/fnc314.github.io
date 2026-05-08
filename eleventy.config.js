@@ -18,7 +18,7 @@ export default function (eleventyConfig) {
     codeAttributes: {},
   });
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    extensions: ["ts"],
+    extensions: ["html", "md"],
 
     // output image formats
     formats: ["avif", "webp", "jpeg"],

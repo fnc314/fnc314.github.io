@@ -4,24 +4,26 @@ import { cemValidatorPlugin } from "@wc-toolkit/cem-validator";
 import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
 import { modulePathResolverPlugin } from "@wc-toolkit/module-path-resolver";
 import { typeParserPlugin } from "@wc-toolkit/type-parser";
-import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example";
-import { readmePlugin } from "cem-plugin-readme";
+import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example"; // Reverted to named import as per previous error
+import { readmePlugin } from "cem-plugin-readme"; // Reverted to named import as per previous error
 import { customElementJetBrainsPlugin } from "custom-element-jet-brains-integration";
 import { customElementVsCodePlugin } from "custom-element-vs-code-integration";
 import process from "node:process";
+
+/** @typedef {import('@custom-elements-manifest/analyzer').Config} Config */
+/** @typedef {import('@custom-elements-manifest/analyzer').Plugin} Plugin */
 
 const isDev = process.env.NODE_ENV === "development";
 
 const fileName = "custom-elements-manifest.json";
 const docsDir = "./docs/custom-elements-manifest";
 
-/** @type {import("@custom-elements-manifest/analyzer").Config & { plugins: any[]  }} */
-export default {
+/** @type {Config} */
+const config = {
   globs: [
     "./src/components/**/*.ts",
     "./src/types/**/*.ts",
     "./src/themes/**/*.ts",
-    "./node_modules/@material/web/**/*.ts",
   ],
   outdir: docsDir,
   dev: isDev,
@@ -46,7 +48,7 @@ export default {
     // ... other oxc-resolver options
   },
 
-  plugins: [
+  plugins: /** @type {any} */ ([
     cemValidatorPlugin({
       packageJsonPath: "./package.json",
       cemFileName: fileName,
@@ -71,7 +73,7 @@ export default {
       fileName: fileName,
       outdir: docsDir,
       debug: isDev,
-      modulePathTemplate: (modulePath) => modulePath.replace("./src", "./dist").replace(".ts", ".js"),
+      // modulePathTemplate: (modulePath) => modulePath.replace("./src", "./dist").replace(".ts", ".js"),
     }),
     typeParserPlugin({
       debug: isDev,
@@ -79,13 +81,14 @@ export default {
     jsdocExamplePlugin(),
     readmePlugin({
       from: process.cwd(),
+      to: "README.md",
       headingOffset: 0,
     }),
     customElementVsCodePlugin({
       outdir: "./.vscode/cem",
-      htmlFileName: "./.vscode/cem/vscode.html-custom-data.json",
-      cssFileName: "./.vscode/cem/vscode.css-custom-data.json",
-      descriptionSrc: "description",
+      htmlFileName: "vscode.html-custom-data.json",
+      cssFileName: "vscode.css-custom-data.json",
+      descriptionSrc: "summary",
       hideSlotDocs: false,
       hideCssPartsDocs: false,
       hideCssPropertiesDocs: false,
@@ -104,7 +107,7 @@ export default {
       outdir: "./.idea",
       webTypesFileName: "web-types.json",
       packageJson: true,
-      descriptionSrc: "description",
+      descriptionSrc: "summary",
       hideSlotDocs: false,
       hideCssPartsDocs: false,
       hideCssPropertiesDocs: false,
@@ -116,5 +119,7 @@ export default {
       typesSrc: "type",
       defaultIcon: "./assets/icons/icon.svg",
     }),
-  ].map((plugin) => () => plugin),
+  ].filter((p) => p !== undefined)), // Keep filter to ensure no 'undefined' values are passed
 };
+
+export default config;

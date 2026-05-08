@@ -4,28 +4,10 @@
     {
       "name": "work-experience",
       "path": "./../../../src/components/work-experience/work-experience.ts",
-      "description": "A component for displaying professional work experience entries.\nSupports nesting for sub-roles or specific project assignments under a single employer.",
       "attributes": [
-        {
-          "name": "is-nested",
-          "description": "If true, adjusts font sizes and layout for a nested appearance.",
-          "type": "boolean",
-          "default": "false"
-        },
         {
           "name": "experience-role",
           "description": "The title of the professional role or project.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "experience-org",
-          "description": "The name of the organization or client.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "experience-summary",
           "type": "string",
           "default": "\"\""
         },
@@ -52,6 +34,24 @@
           "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
           "type": "Job[]",
           "default": "[]"
+        },
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
         }
       ],
       "properties": [
@@ -61,29 +61,9 @@
           "default": "[\"MaterialTypescaleStyles\",null]"
         },
         {
-          "name": "isNested",
-          "attribute": "is-nested",
-          "description": "If true, adjusts font sizes and layout for a nested appearance.",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
           "name": "experienceRole",
           "attribute": "experience-role",
           "description": "The title of the professional role or project.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "experienceOrg",
-          "attribute": "experience-org",
-          "description": "The name of the organization or client.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "experienceSummary",
-          "attribute": "experience-summary",
           "type": "string",
           "default": "\"\""
         },
@@ -116,23 +96,28 @@
           "default": "[]"
         },
         {
-          "name": "isNested=false",
-          "description": "Whether this is a nested instance"
+          "name": "isNested",
+          "attribute": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
         },
         {
-          "name": "experienceOrg=\"\"",
-          "description": "The employer formal name"
+          "name": "experienceOrg",
+          "attribute": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
         },
         {
-          "name": "experienceSummary=\"\"",
-          "description": "An optional summary of the overall role"
+          "name": "experienceSummary",
+          "attribute": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
         },
         {
           "name": "object Object],[object Object],[object Object"
-        },
-        {
-          "name": "summaries=[]",
-          "description": "An array of `{ item: string }` objects describing the responsibilities"
         },
         {
           "name": "object Object],[object Object],[object Object],[object Object],[object Object"

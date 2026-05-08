@@ -1,0 +1,266 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>NavComponent | @fnc314/com.fnc314.website - v1.0.7</title><link rel="icon" href="../assets/favicon.svg?cache=1778211988149" type="image/svg+xml"/><meta name="description" content="Documentation for @fnc314/com.fnc314.website"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css?cache=1778211988149"/><link rel="stylesheet" href="../assets/highlight.css?cache=1778211988149"/><script defer src="../assets/main.js?cache=1778211988149"></script><script async src="../assets/icons.js?cache=1778211988149" id="tsd-icons-script"></script><script async src="../assets/search.js?cache=1778211988149" id="tsd-search-script"></script><script async src="../assets/navigation.js?cache=1778211988149" id="tsd-nav-script"></script><style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #f6be46;
+    --md-sys-color-on-primary: #412d00;
+    --md-sys-color-primary-container: #5d4200;
+    --md-sys-color-on-primary-container: #ffdea3;
+    --md-sys-color-secondary: #d9c4a0;
+    --md-sys-color-on-secondary: #3b2f15;
+    --md-sys-color-secondary-container: #53452a;
+    --md-sys-color-on-secondary-container: #f6e0bb;
+    --md-sys-color-tertiary: #b2cfa8;
+    --md-sys-color-on-tertiary: #1e361a;
+    --md-sys-color-tertiary-container: #344d2f;
+    --md-sys-color-on-tertiary-container: #cdebc2;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffb4ab;
+    --md-sys-color-background: #1e1b16;
+    --md-sys-color-on-background: #e9e1d9;
+    --md-sys-color-surface: #1e1b16;
+    --md-sys-color-on-surface: #e9e1d9;
+    --md-sys-color-surface-variant: #4e4639;
+    --md-sys-color-on-surface-variant: #d1c5b4;
+    --md-sys-color-outline: #9a8f80;
+    --md-sys-color-outline-variant: #4e4639;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #e9e1d9;
+    --md-sys-color-inverse-on-surface: #34302a;
+    --md-sys-color-inverse-primary: #7a5900;
+    --md-sys-color-surface-dim: #16130e;
+    --md-sys-color-surface-bright: #3d3933;
+    --md-sys-color-surface-container-lowest: #110e09;
+    --md-sys-color-surface-container-low: #1e1b16;
+    --md-sys-color-surface-container: #221f1a;
+    --md-sys-color-surface-container-high: #2d2924;
+    --md-sys-color-surface-container-highest: #38342e
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #f6be46;
+  --md-sys-color-on-primary: #412d00;
+  --md-sys-color-primary-container: #5d4200;
+  --md-sys-color-on-primary-container: #ffdea3;
+  --md-sys-color-secondary: #d9c4a0;
+  --md-sys-color-on-secondary: #3b2f15;
+  --md-sys-color-secondary-container: #53452a;
+  --md-sys-color-on-secondary-container: #f6e0bb;
+  --md-sys-color-tertiary: #b2cfa8;
+  --md-sys-color-on-tertiary: #1e361a;
+  --md-sys-color-tertiary-container: #344d2f;
+  --md-sys-color-on-tertiary-container: #cdebc2;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffb4ab;
+  --md-sys-color-background: #1e1b16;
+  --md-sys-color-on-background: #e9e1d9;
+  --md-sys-color-surface: #1e1b16;
+  --md-sys-color-on-surface: #e9e1d9;
+  --md-sys-color-surface-variant: #4e4639;
+  --md-sys-color-on-surface-variant: #d1c5b4;
+  --md-sys-color-outline: #9a8f80;
+  --md-sys-color-outline-variant: #4e4639;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #e9e1d9;
+  --md-sys-color-inverse-on-surface: #34302a;
+  --md-sys-color-inverse-primary: #7a5900;
+  --md-sys-color-surface-dim: #16130e;
+  --md-sys-color-surface-bright: #3d3933;
+  --md-sys-color-surface-container-lowest: #110e09;
+  --md-sys-color-surface-container-low: #1e1b16;
+  --md-sys-color-surface-container: #221f1a;
+  --md-sys-color-surface-container-high: #2d2924;
+  --md-sys-color-surface-container-highest: #38342e
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #7a5900;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffdea3;
+    --md-sys-color-on-primary-container: #261900;
+    --md-sys-color-secondary: #6c5c3f;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #f6e0bb;
+    --md-sys-color-on-secondary-container: #251a04;
+    --md-sys-color-tertiary: #4b6545;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #cdebc2;
+    --md-sys-color-on-tertiary-container: #092007;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #1e1b16;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #1e1b16;
+    --md-sys-color-surface-variant: #ede1cf;
+    --md-sys-color-on-surface-variant: #4e4639;
+    --md-sys-color-outline: #7f7667;
+    --md-sys-color-outline-variant: #d1c5b4;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #34302a;
+    --md-sys-color-inverse-on-surface: #f8efe7;
+    --md-sys-color-inverse-primary: #f6be46;
+    --md-sys-color-surface-dim: #e1d9d0;
+    --md-sys-color-surface-bright: #fff8f2;
+    --md-sys-color-surface-container-lowest: #ffffff;
+    --md-sys-color-surface-container-low: #fbf2e9;
+    --md-sys-color-surface-container: #f5ede4;
+    --md-sys-color-surface-container-high: #efe7de;
+    --md-sys-color-surface-container-highest: #e9e1d9
+  }
+}
+:root[data-theme="light"] {
+  --md-sys-color-primary: #7a5900;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdea3;
+  --md-sys-color-on-primary-container: #261900;
+  --md-sys-color-secondary: #6c5c3f;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #f6e0bb;
+  --md-sys-color-on-secondary-container: #251a04;
+  --md-sys-color-tertiary: #4b6545;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #cdebc2;
+  --md-sys-color-on-tertiary-container: #092007;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #1e1b16;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #1e1b16;
+  --md-sys-color-surface-variant: #ede1cf;
+  --md-sys-color-on-surface-variant: #4e4639;
+  --md-sys-color-outline: #7f7667;
+  --md-sys-color-outline-variant: #d1c5b4;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #34302a;
+  --md-sys-color-inverse-on-surface: #f8efe7;
+  --md-sys-color-inverse-primary: #f6be46;
+  --md-sys-color-surface-dim: #e1d9d0;
+  --md-sys-color-surface-bright: #fff8f2;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #fbf2e9;
+  --md-sys-color-surface-container: #f5ede4;
+  --md-sys-color-surface-container-high: #efe7de;
+  --md-sys-color-surface-container-highest: #e9e1d9
+}
+</style><link rel="stylesheet" href="../assets/material-style.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="../index.html" class="title">@fnc314/com.fnc314.website - v1.0.7</a><div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb" aria-label="Breadcrumb"><li><a href="../modules/.._.._src_components_nav_nav-component.html">../../src/components/nav/nav-component</a></li><li><a href="" aria-current="page">NavComponent</a></li></ul><h1>Class NavComponent</h1></div><section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography"><p>A navigation component that renders primary tabs synchronized with the application's URL hash routes.</p>
+</div><div class="tsd-comment tsd-typography"><div class="tsd-tag-element"><h4 class="tsd-anchor-link" id="element">Element<a href="#element" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>nav-component</p>
+</div><div class="tsd-tag-cssprop"><h4 class="tsd-anchor-link" id="cssprop">Cssprop<a href="#cssprop" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>[--nav-component-icon-animation=225ms] - The duration of the icon's fill and color transition.</p>
+</div><div class="tsd-tag-cssprop"><h4 class="tsd-anchor-link" id="cssprop-1">Cssprop<a href="#cssprop-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p>[--nav-component-icon-animation-reduced=1ms] - The duration of the icon's transition when motion is reduced.</p>
+</div></div></section><section class="tsd-panel tsd-hierarchy" data-refl="210"><h4>Hierarchy</h4><ul class="tsd-hierarchy"><li class="tsd-hierarchy-item"><span class="tsd-signature-type">LitElement</span><ul class="tsd-hierarchy"><li class="tsd-hierarchy-item"><span class="tsd-hierarchy-target">NavComponent</span></li></ul></li></ul></section><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L18" class="external" target="_blank">../../src/components/nav/nav-component.ts:18</a></li></ul></aside><section class="tsd-panel-group tsd-index-group"><section class="tsd-panel tsd-index-panel"><details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h5 class="tsd-index-heading uppercase">Index</h5></summary><div class="tsd-accordion-details"><section class="tsd-index-section"><h3 class="tsd-index-heading">Other</h3><div class="tsd-index-list"><a href="#_activetabindex" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>active<wbr/>Tab<wbr/>Index</span></a>
+<a href="#tabindexandroutefromhash" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#tab<wbr/>Index<wbr/>And<wbr/>Route<wbr/>From<wbr/>Hash</span></a>
+<a href="#handlehashchange" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#handle<wbr/>Hash<wbr/>Change</span></a>
+<a href="#updatetabstate" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#update<wbr/>Tab<wbr/>State</span></a>
+<a href="#updatecarousel" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#update<wbr/>Carousel</span></a>
+<a href="#ontabchange" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#on<wbr/>Tab<wbr/>Change</span></a>
+<a href="#rendertabs" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#render<wbr/>Tabs</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">lifecycle</h3><div class="tsd-index-list"><a href="#connectedcallback" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>connected<wbr/>Callback</span></a>
+<a href="#disconnectedcallback" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>disconnected<wbr/>Callback</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">rendering</h3><div class="tsd-index-list"><a href="#render" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>render</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">styles</h3><div class="tsd-index-list"><a href="#styles" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>styles</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">updates</h3><div class="tsd-index-list"><a href="#firstupdated" class="tsd-index-link tsd-is-protected"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>first<wbr/>Updated</span></a>
+</div></section></div></details></section></section><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Other"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>Other</h2></summary><section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="_activetabindex"><code class="tsd-tag">Private</code><span>_<wbr/>active<wbr/>Tab<wbr/>Index</span><a href="#_activetabindex" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">_activeTabIndex</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div><div class="tsd-comment tsd-typography"><p>Track the active index as state</p>
+</div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L117" class="external" target="_blank">../../src/components/nav/nav-component.ts:117</a></li></ul></aside></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="tabindexandroutefromhash"><code class="tsd-tag">Private</code><span>#tab<wbr/>Index<wbr/>And<wbr/>Route<wbr/>From<wbr/>Hash</span><a href="#tabindexandroutefromhash" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="tabindexandroutefromhash-1"><span class="tsd-kind-call-signature">&quot;#tabIndexAndRouteFromHash&quot;</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{</span><br/>    <span class="tsd-kind-property">index</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <span class="tsd-kind-property">route</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span><a href="#tabindexandroutefromhash-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Reads <a href="https://developer.mozilla.org/docs/Web/API/Location/hash">Location.hash</a> and returns an object containing the Route and indexing number</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{</span><br/>    <span class="tsd-kind-property">index</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <span class="tsd-kind-property">route</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Route</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L160" class="external" target="_blank">../../src/components/nav/nav-component.ts:160</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="handlehashchange"><code class="tsd-tag">Private</code><span>#handle<wbr/>Hash<wbr/>Change</span><a href="#handlehashchange" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="handlehashchange-1"><span class="tsd-kind-call-signature">&quot;#handleHashChange&quot;</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#handlehashchange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Syncs internal state with the URL hash.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L171" class="external" target="_blank">../../src/components/nav/nav-component.ts:171</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="updatetabstate"><code class="tsd-tag">Private</code><span>#update<wbr/>Tab<wbr/>State</span><a href="#updatetabstate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="updatetabstate-1"><span class="tsd-kind-call-signature">&quot;#updateTabState&quot;</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">index</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#updatetabstate-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Updates the visual state of tabs and panels based on the index.</p>
+</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">index</span>: <span class="tsd-signature-type">number</span></span></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L201" class="external" target="_blank">../../src/components/nav/nav-component.ts:201</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="updatecarousel"><code class="tsd-tag">Private</code><span>#update<wbr/>Carousel</span><a href="#updatecarousel" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="updatecarousel-1"><span class="tsd-kind-call-signature">&quot;#updateCarousel&quot;</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">index</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#updatecarousel-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Updates external DOM via style manipulations and blind queries</p>
+</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">index</span>: <span class="tsd-signature-type">number</span></span><div class="tsd-comment tsd-typography"><p>The current <a href="#_activetabindex" class="tsd-kind-property">_activeTabIndex</a></p>
+</div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L217" class="external" target="_blank">../../src/components/nav/nav-component.ts:217</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="ontabchange"><code class="tsd-tag">Private</code><span>#on<wbr/>Tab<wbr/>Change</span><a href="#ontabchange" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="ontabchange-1"><span class="tsd-kind-call-signature">&quot;#onTabChange&quot;</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">event</span><span class="tsd-signature-symbol">:</span> <a href="https://developer.mozilla.org/docs/Web/API/Event" class="tsd-signature-type external" target="_blank">Event</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#ontabchange-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Handles user clicks on tabs. Updates URL and UI.</p>
+</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">event</span>: <a href="https://developer.mozilla.org/docs/Web/API/Event" class="tsd-signature-type external" target="_blank">Event</a></span><div class="tsd-comment tsd-typography"><p>The emitted <a href="https://developer.mozilla.org/docs/Web/API/Event">Event</a> from the HTML</p>
+</div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L248" class="external" target="_blank">../../src/components/nav/nav-component.ts:248</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member tsd-is-private"><h3 class="tsd-anchor-link" id="rendertabs"><code class="tsd-tag">Private</code><span>#render<wbr/>Tabs</span><a href="#rendertabs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-private"><li class=""><div class="tsd-signature tsd-anchor-link" id="rendertabs-1"><span class="tsd-kind-call-signature">&quot;#renderTabs&quot;</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TemplateResult</span><a href="#rendertabs-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Creates a TemplateResult consisting of MdTabs, MdPrimaryTabs, and MdIcons</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TemplateResult</span></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L281" class="external" target="_blank">../../src/components/nav/nav-component.ts:281</a></li></ul></aside></div></li></ul></section></section></details><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-lifecycle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>lifecycle</h2></summary><section><section class="tsd-panel tsd-member"><h3 class="tsd-anchor-link" id="connectedcallback"><span>connected<wbr/>Callback</span><a href="#connectedcallback" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link" id="connectedcallback-1"><span class="tsd-kind-call-signature">connectedCallback</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#connectedcallback-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Invoked when the component is added to the document's DOM.</p>
+<p>In <code>connectedCallback()</code> you should setup tasks that should only occur when
+the element is connected to the document. The most common of these is
+adding event listeners to nodes external to the element, like a keydown
+event handler added to the window.</p>
+<pre><code class="ts"><span class="hl-0">connectedCallback</span><span class="hl-1">() </span><span class="hl-2">{</span><br/><span class="hl-3">  </span><span class="hl-1">super</span><span class="hl-2">.</span><span class="hl-0">connectedCallback</span><span class="hl-3">()</span><span class="hl-2">;</span><br/><span class="hl-3">  </span><span class="hl-0">addEventListener</span><span class="hl-3">(</span><span class="hl-2">&#39;</span><span class="hl-4">keydown</span><span class="hl-2">&#39;</span><span class="hl-2">,</span><span class="hl-3"> </span><span class="hl-2">this.</span><span class="hl-1">_handleKeydown</span><span class="hl-3">)</span><span class="hl-2">;</span><br/><span class="hl-2">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Typically, anything done in <code>connectedCallback()</code> should be undone when the
+element is disconnected, in <code>disconnectedCallback()</code>.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><p>Overrides LitElement.connectedCallback</p><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L143" class="external" target="_blank">../../src/components/nav/nav-component.ts:143</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><h3 class="tsd-anchor-link" id="disconnectedcallback"><span>disconnected<wbr/>Callback</span><a href="#disconnectedcallback" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link" id="disconnectedcallback-1"><span class="tsd-kind-call-signature">disconnectedCallback</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#disconnectedcallback-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Invoked when the component is removed from the document's DOM.</p>
+<p>This callback is the main signal to the element that it may no longer be
+used. <code>disconnectedCallback()</code> should ensure that nothing is holding a
+reference to the element (such as event listeners added to nodes external
+to the element), so that it is free to be garbage collected.</p>
+<pre><code class="ts"><span class="hl-0">disconnectedCallback</span><span class="hl-1">() </span><span class="hl-2">{</span><br/><span class="hl-3">  </span><span class="hl-1">super</span><span class="hl-2">.</span><span class="hl-0">disconnectedCallback</span><span class="hl-3">()</span><span class="hl-2">;</span><br/><span class="hl-3">  </span><span class="hl-1">window</span><span class="hl-2">.</span><span class="hl-0">removeEventListener</span><span class="hl-3">(</span><span class="hl-2">&#39;</span><span class="hl-4">keydown</span><span class="hl-2">&#39;</span><span class="hl-2">,</span><span class="hl-3"> </span><span class="hl-2">this.</span><span class="hl-1">_handleKeydown</span><span class="hl-3">)</span><span class="hl-2">;</span><br/><span class="hl-2">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>An element may be re-connected after being disconnected.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><p>Overrides LitElement.disconnectedCallback</p><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L151" class="external" target="_blank">../../src/components/nav/nav-component.ts:151</a></li></ul></aside></div></li></ul></section></section></details><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-rendering"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>rendering</h2></summary><section><section class="tsd-panel tsd-member"><h3 class="tsd-anchor-link" id="render"><span>render</span><a href="#render" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link" id="render-1"><span class="tsd-kind-call-signature">render</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TemplateResult</span><span class="tsd-signature-symbol">&lt;</span><br/>    <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">&gt;</span><a href="#render-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Invoked on each update to perform rendering tasks. This method may return
+any value renderable by lit-html's <code>ChildPart</code> - typically a
+<code>TemplateResult</code>. Setting properties inside this method will <em>not</em> trigger
+the element to update.</p>
+</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TemplateResult</span><span class="tsd-signature-symbol">&lt;</span><br/>    <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources"><p>Overrides LitElement.render</p><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L317" class="external" target="_blank">../../src/components/nav/nav-component.ts:317</a></li></ul></aside></div></li></ul></section></section></details><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-styles"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>styles</h2></summary><section><section class="tsd-panel tsd-member"><h3 class="tsd-anchor-link" id="styles"><code class="tsd-tag">Static</code><span>styles</span><a href="#styles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><div class="tsd-signature"><span class="tsd-kind-property">styles</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CSSResult</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div><div class="tsd-comment tsd-typography"><p>Array of styles to apply to the element. The styles should be defined
+using the css tag function, via constructible stylesheets, or
+imported from native CSS module scripts.</p>
+<p>Note on Content Security Policy:</p>
+<p>Element styles are implemented with <code>&lt;style&gt;</code> tags when the browser doesn't
+support adopted StyleSheets. To use such <code>&lt;style&gt;</code> tags with the style-src
+CSP directive, the style-src value must either include 'unsafe-inline' or
+<code>nonce-&lt;base64-value&gt;</code> with <code>&lt;base64-value&gt;</code> replaced be a server-generated
+nonce.</p>
+<p>To provide a nonce to use on generated <code>&lt;style&gt;</code> elements, set
+<code>window.litNonce</code> to a server-generated nonce in your page's HTML, before
+loading application code:</p>
+<pre><code class="html"><span class="hl-2">&lt;</span><span class="hl-3">script</span><span class="hl-2">&gt;</span><br/><span class="hl-2">  </span><span class="hl-5">// Generated and unique per request:</span><br/><span class="hl-1">  window</span><span class="hl-2">.</span><span class="hl-1">litNonce </span><span class="hl-2">=</span><span class="hl-1"> </span><span class="hl-2">&#39;</span><span class="hl-4">a1b2c3d4</span><span class="hl-2">&#39;</span><span class="hl-2">;</span><br/><span class="hl-2">&lt;/</span><span class="hl-3">script</span><span class="hl-2">&gt;</span>
+</code><button type="button">Copy</button></pre>
+
+</div><div class="tsd-comment tsd-typography"><div class="tsd-tag-nocollapse"><h4 class="tsd-anchor-link" id="nocollapse">Nocollapse<a href="#nocollapse" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4></div></div><aside class="tsd-sources"><p>Overrides LitElement.styles</p><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L19" class="external" target="_blank">../../src/components/nav/nav-component.ts:19</a></li></ul></aside></section></section></details><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-updates"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h2>updates</h2></summary><section><section class="tsd-panel tsd-member tsd-is-protected"><h3 class="tsd-anchor-link" id="firstupdated"><code class="tsd-tag">Protected</code><span>first<wbr/>Updated</span><a href="#firstupdated" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures tsd-is-protected"><li class=""><div class="tsd-signature tsd-anchor-link" id="firstupdated-1"><span class="tsd-kind-call-signature">firstUpdated</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">_changedProperties</span><span class="tsd-signature-symbol">:</span><br/>        <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">PropertyValueMap</span><span class="tsd-signature-symbol">&lt;</span><br/>            <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">,</span><br/>        <span class="tsd-signature-symbol">&gt;</span><br/>        <span class="tsd-signature-symbol">|</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map" class="tsd-signature-type external" target="_blank">Map</a><span class="tsd-signature-symbol">&lt;</span><br/>            <span class="tsd-signature-type">PropertyKey</span><span class="tsd-signature-symbol">,</span><br/>            <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">,</span><br/>        <span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#firstupdated-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><p>Invoked when the element is first updated. Implement to perform one time
+work on the element after update.</p>
+<pre><code class="ts"><span class="hl-0">firstUpdated</span><span class="hl-1">() </span><span class="hl-2">{</span><br/><span class="hl-3">  </span><span class="hl-2">this.</span><span class="hl-1">renderRoot</span><span class="hl-2">.</span><span class="hl-0">getElementById</span><span class="hl-3">(</span><span class="hl-2">&#39;</span><span class="hl-4">my-text-area</span><span class="hl-2">&#39;</span><span class="hl-3">)</span><span class="hl-2">.</span><span class="hl-0">focus</span><span class="hl-3">()</span><span class="hl-2">;</span><br/><span class="hl-2">}</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Setting properties inside this method will trigger the element to update
+again after this update cycle completes.</p>
+</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">_changedProperties</span>: <br/>    <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">PropertyValueMap</span><span class="tsd-signature-symbol">&lt;</span><br/>        <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-signature-symbol">&gt;</span><br/>    <span class="tsd-signature-symbol">|</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map" class="tsd-signature-type external" target="_blank">Map</a><span class="tsd-signature-symbol">&lt;</span><br/>        <span class="tsd-signature-type">PropertyKey</span><span class="tsd-signature-symbol">,</span><br/>        <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-signature-symbol">&gt;</span></span><div class="tsd-comment tsd-typography"><p>Map of changed properties with old values</p>
+</div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources"><p>Overrides LitElement.firstUpdated</p><ul><li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/56ab5043bb04a7414fbb8b31f386b7674992dcc0/src/components/nav/nav-component.ts#L272" class="external" target="_blank">../../src/components/nav/nav-component.ts:272</a></li></ul></aside></div></li></ul></section></section></details></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Other"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Other</summary><div><a href="#_activetabindex" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>_<wbr/>active<wbr/>Tab<wbr/>Index</span></a><a href="#tabindexandroutefromhash" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#tab<wbr/>Index<wbr/>And<wbr/>Route<wbr/>From<wbr/>Hash</span></a><a href="#handlehashchange" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#handle<wbr/>Hash<wbr/>Change</span></a><a href="#updatetabstate" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#update<wbr/>Tab<wbr/>State</span></a><a href="#updatecarousel" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#update<wbr/>Carousel</span></a><a href="#ontabchange" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#on<wbr/>Tab<wbr/>Change</span></a><a href="#rendertabs" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#render<wbr/>Tabs</span></a></div></details><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-lifecycle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>lifecycle</summary><div><a href="#connectedcallback"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>connected<wbr/>Callback</span></a><a href="#disconnectedcallback"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>disconnected<wbr/>Callback</span></a></div></details><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-rendering"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>rendering</summary><div><a href="#render"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>render</span></a></div></details><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-styles"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>styles</summary><div><a href="#styles"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>styles</span></a></div></details><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-updates"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>updates</summary><div><a href="#firstupdated" class="tsd-is-protected"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>first<wbr/>Updated</span></a></div></details></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../modules.html">@fnc314/com.fnc314.website - v1.0.7</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><style id="td-color-chip-styles">.tsd-color-chip {
+  white-space: break-spaces;
+  background-color: var(--code-background);
+  border-radius: 6px;
+  margin: 0;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.tsd-color-chip-swatch {
+  display: inline-block;
+  margin-left: 0.25rem;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 0.0625rem #d1d9e0b3 solid;
+  background-color: var(--tsd-color-chip-color);
+}
+</style><script>
+          try {
+            const generateLinkElement = document.querySelector(".tsd-generator a");
+            const link = document.createElement("a");
+            Object.assign(link, {
+              href: "https://github.com/dmnsgn/typedoc-material-theme",
+              target: "_blank",
+              rel: "noreferrer",
+              innerText: "typedoc-material-theme."
+            });
+            generateLinkElement.insertAdjacentElement("afterend", link);
+            generateLinkElement.insertAdjacentText("afterend", " with ");
+          } catch (error) {
+
+          }
+        </script></body></html>

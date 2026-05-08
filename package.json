@@ -20,7 +20,7 @@
   "gitDate": "",
   "gitVersion": "",
   "web-types": "./.idea/web-types.json",
-  "packageManager": "pnpm@10.33.2",
+  "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912",
   "keywords": [
     "website",
     "homepage",
@@ -65,8 +65,9 @@
     "test:prod": "MODE=prod pnpm wtr",
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
     "test:watch": "pnpm wtr --watch",
-    "typedoc:gen": "pnpm typedoc --showConfig --options ./.config/typedoc/typedoc.config.mjs",
-    "wca:json": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
+    "typedoc:gen": "pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs",
+    "wca:json": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json && pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
+    "wca:json:file": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
     "wca:markdown": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
     "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
   },
@@ -184,8 +185,12 @@
     "ts-lit-plugin": "catalog:devDependencies",
     "tslib": "catalog:devDependencies",
     "typedoc": "catalog:devDependencies",
+    "typedoc-color-chip": "catalog:devDependencies",
     "typedoc-material-theme": "catalog:devDependencies",
+    "typedoc-plugin-coverage": "catalog:devDependencies",
+    "typedoc-plugin-extras": "catalog:devDependencies",
     "typedoc-plugin-markdown": "catalog:devDependencies",
+    "typedoc-plugin-mdn-links": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
     "vite": "catalog:devDependencies",
@@ -198,6 +203,7 @@
     "@esbuild/linux-x64": "catalog:optionalDependencies"
   },
   "overrides": {
+    "@custom-elements-manifest/analyzer": "catalog:devDependencies",
     "lodash": "catalog:overrides",
     "serialize-javascript": "catalog:overrides"
   }

@@ -19,6 +19,10 @@ export default {
     `${process.cwd()}/src/**/*.{js,ts}`,
   ],
   entryPointStrategy: "expand",
+  exclude: [
+    "**/node_modules/**",
+  ],
+  excludeExternals: true,
   excludeNotDocumented: true,
   excludePrivate: false,
   excludePrivateClassFields: false,
@@ -37,6 +41,8 @@ export default {
     "lit",
     "typescript",
   ],
+  html: `${process.cwd()}/docs/typedoc`,
+  includeHierarchySummary: true,
   includeVersion: true,
   jsDocCompatibility: true,
   json: `${process.cwd()}/docs/typedoc/typedoc.json`,
@@ -57,7 +63,11 @@ export default {
   //   disableSources: false,
   // },
   plugin: [
-    "typedoc-material-theme"
+    "typedoc-color-chip",
+    "typedoc-material-theme",
+    "typedoc-plugin-coverage",
+    "typedoc-plugin-extras",
+    "typedoc-plugin-mdn-links",
   ],
   pretty: true,
   projectDocuments: [
@@ -66,9 +76,14 @@ export default {
   readme: `${process.cwd()}/README.md`,
   searchInComments: true,
   searchInDocuments: true,
+  skipErrorChecking: true,
+  sort: [
+    "visibility",
+    "source-order",
+    "alphabetical",
+  ],
   sortEntryPoints: true,
   sourceLinkExternal: true,
-  theme: "material-theme",
   tsconfig: `${process.cwd()}/tsconfig.json`,
   typePrintWidth: 2,
   useFirstParagraphOfCommentAsSummary: true,

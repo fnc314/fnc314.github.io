@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*", ".config/**/*.mjs", ".config/**/*.ts"],
   "files": ["src/env.d.ts"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
@@ -88,9 +88,7 @@
       "eslint",
       "vite/client",
       "vite-plugin-pwa/client",
-      "vite-plugin-pwa/pwa-assets",
-      "rollup",
-      "postcss"
+      "vite-plugin-pwa/pwa-assets"
       // "lit", "prettier", "stylelint", "tailwindcss",
     ],
     "typeRoots": ["./node_modules", "./node_modules/@types", "./node_modules/@web/rollup-plugin-copy/dist"],

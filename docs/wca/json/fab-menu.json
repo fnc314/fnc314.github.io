@@ -9,13 +9,13 @@
         {
           "name": "icon",
           "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
-          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3821 more ... | \"zoom_out_map\"",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
           "default": "\"add\""
         },
         {
           "name": "opened-icon",
           "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
-          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3820 more ... | \"zoom_out_map\"",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3850 more ... | \"zoom_out_map\"",
           "default": "\"close\""
         },
         {
@@ -65,14 +65,14 @@
           "name": "icon",
           "attribute": "icon",
           "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
-          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3821 more ... | \"zoom_out_map\"",
+          "type": "\"\" | \"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | ... 3851 more ... | \"zoom_out_map\"",
           "default": "\"add\""
         },
         {
           "name": "openedIcon",
           "attribute": "opened-icon",
           "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
-          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3820 more ... | \"zoom_out_map\"",
+          "type": "\"function\" | \"settings\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | \"18mp\" | \"19mp\" | \"1k\" | \"1k_plus\" | \"1x_mobiledata\" | ... 3850 more ... | \"zoom_out_map\"",
           "default": "\"close\""
         },
         {
