@@ -3,7 +3,7 @@
     "npm:@material/web"
   ],
   "cem.lsp.debugLogging": true,
-  "cem.lsp.executable": "", // Custom path (empty = use bundled)
+  "cem.lsp.executable": "/Users/fnc314/Code/websites/fnc314.github.io/node_modules/@pwrs/cem-darwin-arm64/cem",
   "cem.lsp.trace.server": "verbose", // LSP trace level: "off" | "messages" | "verbose"
   "css.customData": [
     "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",

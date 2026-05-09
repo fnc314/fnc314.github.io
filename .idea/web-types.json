@@ -219,12 +219,15 @@
             {
               "name": "direction",
               "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
-              "value": { "type": "string", "default": "\"end\"" }
+              "value": { "type": "\"start\" | \"end\"", "default": "\"end\"" }
             },
             {
               "name": "icon",
               "description": "The {@link MaterialSymbol} to display when menu is opened",
-              "value": { "type": "MaterialSymbol", "default": "\"close\"" }
+              "value": {
+                "type": "MaterialSymbol | \"\"",
+                "default": "\"close\""
+              }
             },
             {
               "name": "label",
@@ -244,12 +247,18 @@
             {
               "name": "size",
               "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
-              "value": { "type": "string", "default": "\"medium\"" }
+              "value": {
+                "type": "\"small\" | \"medium\" | \"large\"",
+                "default": "\"medium\""
+              }
             },
             {
               "name": "variant",
               "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
-              "value": { "type": "string", "default": "\"primary\"" }
+              "value": {
+                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
+                "default": "\"primary\""
+              }
             }
           ],
           "slots": [
@@ -269,12 +278,12 @@
               {
                 "name": "direction",
                 "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
-                "type": "string"
+                "type": "\"start\" | \"end\""
               },
               {
                 "name": "icon",
                 "description": "The {@link MaterialSymbol} to display when menu is opened",
-                "type": "MaterialSymbol"
+                "type": "MaterialSymbol | \"\""
               },
               {
                 "name": "label",
@@ -294,12 +303,12 @@
               {
                 "name": "size",
                 "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
-                "type": "string"
+                "type": "\"small\" | \"medium\" | \"large\""
               },
               {
                 "name": "variant",
                 "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
-                "type": "string"
+                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
               }
             ],
             "events": []

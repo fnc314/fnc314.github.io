@@ -424,16 +424,16 @@
 
 ### Fields
 
-| Name         | Privacy | Type             | Default     | Description                                                                             | Inherited From |
-| ------------ | ------- | ---------------- | ----------- | --------------------------------------------------------------------------------------- | -------------- |
-| `ariaLabel`  |         | `string`         | `""`        | An override for the \`aria-label\` attribute                                            |                |
-| `direction`  |         | `string`         | `"end"`     | The direction of the menu, one of \`"start"\`, \`"end"\`                                |                |
-| `icon`       |         | `MaterialSymbol` | `"close"`   | The {@link MaterialSymbol} to display when menu is opened                               |                |
-| `label`      |         | `string`         | `""`        | The label to display when both opened and closed                                        |                |
-| `open`       |         | `boolean`        | `false`     | Indicator of open/closed state                                                          |                |
-| `openedIcon` |         | `MaterialSymbol` | `"close"`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                     |                |
-| `size`       |         | `string`         | `"medium"`  | The size of the underlying {@link MdFab}, one of \`"small"\`, \`"medium"\`, \`"large"\` |                |
-| `variant`    |         | `string`         | `"primary"` | The variant, one of \`"primary"\`, \`"secondary"\`, \`"tertiary"\`, \`"surface"\`       |                |
+| Name         | Privacy | Type                                                  | Default     | Description                                                                             | Inherited From |
+| ------------ | ------- | ----------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------- | -------------- |
+| `ariaLabel`  |         | `string`                                              | `""`        | An override for the \`aria-label\` attribute                                            |                |
+| `direction`  |         | `"start" \| "end"`                                    | `"end"`     | The direction of the menu, one of \`"start"\`, \`"end"\`                                |                |
+| `icon`       |         | `MaterialSymbol \| ""`                                | `"close"`   | The {@link MaterialSymbol} to display when menu is opened                               |                |
+| `label`      |         | `string`                                              | `""`        | The label to display when both opened and closed                                        |                |
+| `open`       |         | `boolean`                                             | `false`     | Indicator of open/closed state                                                          |                |
+| `openedIcon` |         | `MaterialSymbol`                                      | `"close"`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                     |                |
+| `size`       |         | `"small" \| "medium" \| "large"`                      | `"medium"`  | The size of the underlying {@link MdFab}, one of \`"small"\`, \`"medium"\`, \`"large"\` |                |
+| `variant`    |         | `"surface" \| "primary" \| "secondary" \| "tertiary"` | `"primary"` | The variant, one of \`"primary"\`, \`"secondary"\`, \`"tertiary"\`, \`"surface"\`       |                |
 
 ### Attributes
 
@@ -465,13 +465,13 @@
 
 ### Fields
 
-| Name                   | Privacy | Type                                                            | Default | Description | Inherited From |
-| ---------------------- | ------- | --------------------------------------------------------------- | ------- | ----------- | -------------- |
-| `_fab`                 | private | `MdFab`                                                         |         |             |                |
-| `_focusableElements`   | private | `(HTMLElement & { focus: (options?: FocusOptions) => void })[]` |         |             |                |
-| `_handleDocumentClick` | private |                                                                 |         |             |                |
-| `_items`               | private | `FabMenuItem[]`                                                 |         |             |                |
-| `_scrim`               | private | `HTMLDivElement`                                                |         |             |                |
+| Name                   | Privacy | Type                                                           | Default | Description | Inherited From |
+| ---------------------- | ------- | -------------------------------------------------------------- | ------- | ----------- | -------------- |
+| `_fab`                 | private | `MdFab`                                                        |         |             |                |
+| `_focusableElements`   | private | `(HTMLElement&{ focus: (options?: FocusOptions) => void; })[]` |         |             |                |
+| `_handleDocumentClick` | private |                                                                |         |             |                |
+| `_items`               | private | `FabMenuItem[]`                                                |         |             |                |
+| `_scrim`               | private | `HTMLDivElement`                                               |         |             |                |
 
 ### Methods
 
@@ -561,7 +561,7 @@
 | --------------------------- | ------- | ------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
 | `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                    |                 |                  |                |
 | `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                           | `event: Event`  |                  |                |
-| `#renderTabs`               | private | Creates a TemplateResult consisting of MdTabs, MdPrimaryTabs, and MdIcons                  |                 | `TemplateResult` |                |
+| `#renderTabs`               | private | Creates a TemplateResult consisting of MdTabs, MdPrimaryTab, and MdIcons                   |                 | `TemplateResult` |                |
 | `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing number |                 | `index`          |                |
 | `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                             | `index: number` |                  |                |
 | `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                            | `index: number` |                  |                |

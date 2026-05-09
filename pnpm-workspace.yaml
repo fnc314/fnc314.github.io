@@ -18,11 +18,11 @@ catalogs:
     "@material/web": 2.4.1
     animate-css-grid: 1.5.1
     dark-mode-toggle: 0.18.0
-    firebase: 12.12.1
+    firebase: 12.13.0
     lit: 3.3.2
     lit-element: 4.2.2
     lit-html: 3.3.2
-    material-symbols: 0.44.5
+    material-symbols: 0.44.6
   devDependencies:
     "@11ty/eleventy": 3.1.5
     "@11ty/eleventy-img": 6.0.4
@@ -37,7 +37,7 @@ catalogs:
     "@m00nbyte/rollup-plugin-copy-multiple-assets": 1.0.0
     "@material/material-color-utilities": 0.4.0
     "@open-wc/testing": 4.0.0
-    "@pwrs/cem": 0.10.2
+    "@pwrs/cem": 0.10.3
     "@rollup/plugin-alias": 6.0.0
     "@rollup/plugin-commonjs": 29.0.2
     "@rollup/plugin-html": 2.0.0
@@ -51,12 +51,12 @@ catalogs:
     "@rollup/plugin-url": 8.0.2
     "@tailwindcss/postcss": 4.2.4
     "@types/eslint": 9.6.1
-    "@types/node": 25.6.0
+    "@types/node": 25.6.2
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.59.2
     "@typescript-eslint/parser": 8.59.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.1.18
+    "@vitejs/devtools": 0.1.21
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
@@ -135,7 +135,7 @@ catalogs:
     typedoc-plugin-version-header: 1.0.0
     typescript: 6.0.3
     typescript-eslint: 8.59.2
-    vite: 8.0.10
+    vite: 8.0.11
     vite-plugin-cem: 0.8.5
     vite-plugin-pwa: 1.3.0
     web-component-analyzer: 2.0.0

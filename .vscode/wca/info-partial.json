@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "info-partial",
-      "description": "Properties:\n\n  * `styles` - \n\n  * `themeConfig` - \n\n  * `onColorConfigsChange` - ",
+      "description": "Properties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `themeConfig` - \n\n  * `onColorConfigsChange` - ",
       "attributes": []
     }
   ],

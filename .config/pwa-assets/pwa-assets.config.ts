@@ -3,6 +3,7 @@ import {
   minimal2023Preset,
 } from "@vite-pwa/assets-generator/config";
 
+console.error(`Current is ${process.cwd()}`)
 export default defineConfig({
   preset: minimal2023Preset,
   headLinkOptions: {
@@ -13,5 +14,5 @@ export default defineConfig({
     "assets/icons/icon.svg"
   ],
   logLevel: "info",
-
+  // overrideAssets: false,
 });
