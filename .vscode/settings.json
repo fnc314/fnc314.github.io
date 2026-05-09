@@ -22,10 +22,7 @@
   "docthis.returnsTag": true,
   "html.customData": [
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
-    "./.vscode/wca/components.custom-elements.json",
-    "./.vscode/wca/partials.custom-elements.json",
-    "./.vscode/wca/src/**/*.custom-elements.json",
-    "./.vscode/wca/*.custom-elements.json",
+    "./.vscode/wca/*.json",
   ],
   "html.suggest.html5": true,
   "js/ts.tsdk.path": "node_modules/typescript/lib",
