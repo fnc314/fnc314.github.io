@@ -39,7 +39,7 @@ catalogs:
     "@rollup/plugin-terser": 1.0.0
     "@rollup/plugin-typescript": 12.3.0
     "@rollup/plugin-url": 8.0.2
-    "@tailwindcss/postcss": 4.2.4
+    "@tailwindcss/postcss": 4.3.0
     "@types/eslint": 9.6.1
     "@types/node": 25.6.0
     "@types/wordcloud": 1.2.2
