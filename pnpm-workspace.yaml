@@ -41,7 +41,7 @@ catalogs:
     "@rollup/plugin-url": 8.0.2
     "@tailwindcss/postcss": 4.2.4
     "@types/eslint": 9.6.1
-    "@types/node": 25.6.0
+    "@types/node": 25.7.0
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.59.2
     "@typescript-eslint/parser": 8.59.2
