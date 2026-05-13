@@ -341,8 +341,8 @@ catalogs:
       specifier: 40.0.0
       version: 40.0.0
     stylelint-plugin-use-baseline:
-      specifier: 1.4.1
-      version: 1.4.1
+      specifier: 1.4.2
+      version: 1.4.2
     stylelint-prettier:
       specifier: 5.0.3
       version: 5.0.3
@@ -732,7 +732,7 @@ importers:
         version: 40.0.0(stylelint@17.11.0(typescript@6.0.3))
       stylelint-plugin-use-baseline:
         specifier: catalog:devDependencies
-        version: 1.4.1(stylelint@17.11.0(typescript@6.0.3))
+        version: 1.4.2(stylelint@17.11.0(typescript@6.0.3))
       stylelint-prettier:
         specifier: catalog:devDependencies
         version: 5.0.3(prettier@3.8.3)(stylelint@17.11.0(typescript@6.0.3))
@@ -10070,6 +10070,11 @@ packages:
 
   stylelint-plugin-use-baseline@1.4.1:
     resolution: {integrity: sha512-mR48HQISd+6avPBVEucHncuGGZ0IBSUQ5b6QWcFVKSXhkfA3PPtgxKn1oEKMlfkBihJ7m+L/sK1jNT3zPuJ88Q==}
+    peerDependencies:
+      stylelint: ^16.0.2 || ^17.0.0
+
+  stylelint-plugin-use-baseline@1.4.2:
+    resolution: {integrity: sha512-VTPqkL1Cmy+6cjbLobXo0DUyANgHyHJuJ6nuPQOXnwpu3ovK7wD6tkk79boWA18Ter0C8uvWOU5TaiQsJhoZmA==}
     peerDependencies:
       stylelint: ^16.0.2 || ^17.0.0
 
@@ -22206,6 +22211,15 @@ snapshots:
     optional: true
 
   stylelint-plugin-use-baseline@1.4.1(stylelint@17.11.0(typescript@6.0.3)):
+    dependencies:
+      css-tree: 3.2.1
+      is-plain-object: 5.0.0
+      postcss: 8.5.14
+      postcss-value-parser: 4.2.0
+      stylelint: 17.11.0(typescript@6.0.3)
+    optional: true
+
+  stylelint-plugin-use-baseline@1.4.2(stylelint@17.11.0(typescript@6.0.3)):
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0

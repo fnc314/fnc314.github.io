@@ -118,7 +118,7 @@ catalogs:
     stylelint: 17.11.0
     stylelint-config-inspector: 2.1.2
     stylelint-config-standard: 40.0.0
-    stylelint-plugin-use-baseline: 1.4.1
+    stylelint-plugin-use-baseline: 1.4.2
     stylelint-prettier: 5.0.3
     tailwindcss: 4.3.0
     ts-lit-plugin: 2.0.2
