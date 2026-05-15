@@ -11,16 +11,16 @@
   "type": "module",
   "module": "src/index.ts",
   "private": true,
-  "types": "./website",
+  "types": "./out",
   "main": "./website/index.js",
-  "customElements": "docs/custom-elements-manifest/custom-elements.json",
+  "customElements": "dist/custom-elements.json",
   "gitAbbrevHash": "",
   "gitBranch": "",
   "gitCommitHash": "",
   "gitDate": "",
   "gitVersion": "",
   "web-types": "./.idea/web-types.json",
-  "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38",
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
   "keywords": [
     "website",
     "homepage",
@@ -70,11 +70,11 @@
     "test:prod:watch": "MODE=prod pnpm wtr --watch",
     "test:watch": "pnpm wtr --watch",
     "typedoc:gen": "pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs",
-    "wca:json:file": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
-    "wca:json:files": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/json --format json",
-    "wca:markdown:file": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outFile ./docs/wca/markdown/README.md --format markdown",
-    "wca:markdown:files": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
-    "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes}/**/*.ts --outDir .vscode/wca --format vscode"
+    "wca:json:file": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outFile ./docs/wca/json/web-component-analyzer.json --format json",
+    "wca:json:files": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir ./docs/wca/json --format json",
+    "wca:markdown:file": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outFile ./docs/wca/markdown/README.md --format markdown",
+    "wca:markdown:files": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
+    "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir .vscode/wca --format vscode"
   },
   "dependencies": {
     "@lit-labs/motion": "catalog:dependencies",
@@ -159,6 +159,7 @@
     "globals": "catalog:devDependencies",
     "jiti": "catalog:devDependencies",
     "lit-analyzer": "catalog:devDependencies",
+    "node": "catalog:devDependencies",
     "postcss": "catalog:devDependencies",
     "postcss-lit": "catalog:devDependencies",
     "postcss-load-config": "catalog:devDependencies",
@@ -204,6 +205,7 @@
     "vite": "catalog:devDependencies",
     "vite-plugin-cem": "catalog:devDependencies",
     "vite-plugin-pwa": "catalog:devDependencies",
+    "vite-plugin-version-mark": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },
   "optionalDependencies": {
@@ -212,7 +214,30 @@
   },
   "overrides": {
     "@custom-elements-manifest/analyzer": "catalog:devDependencies",
+    "@rollup/plugin-json": "catalog:devDependencies",
+    "@typescript-eslint/eslint-plugin": "catalog:devDependencies",
+    "@typescript-eslint/parser": "catalog:devDependencies",
+    "eslint": "catalog:devDependencies",
     "lodash": "catalog:overrides",
-    "serialize-javascript": "catalog:overrides"
+    "nanoid": "catalog:overrides",
+    "postcss": "catalog:devDependencies",
+    "rollup": "catalog:devDependencies",
+    "serialize-javascript": "catalog:overrides",
+    "stylelint": "catalog:devDependencies",
+    "typedoc": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "typescript": "6",
+        "eslint": "10",
+        "stylelint": "17",
+        "rollup": "4",
+        "@custom-elements-manifest/analyzer": "0.11",
+        "typedoc": "0.28",
+        "nanoid": "3 || 5"
+      }
+    }
   }
 }
