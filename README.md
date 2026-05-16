@@ -10,10 +10,10 @@
 
 ### Slots
 
-| Name          | Description                                   |
-| ------------- | --------------------------------------------- |
-| `app-content` | The place for the dynamic application content |
-| `app-nav`     | Where the {@link NavComponent} is placed      |
+| Name          | Description                                                         |
+| ------------- | ------------------------------------------------------------------- |
+| `app-content` | The place for the dynamic application content                       |
+| `app-nav`     | Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed |
 
 <details><summary>Private API</summary>
 
@@ -81,12 +81,12 @@
 
 ### CSS Properties
 
-| Name                                   | Default | Description                                                                                                                |
-| -------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `--blog-post-animation`                |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states |
-| `--blog-post-primary-text-color`       |         | The color of the primary text                                                                                              |
-| `--blog-post-container-color`          |         | The color of the container, {@link MdElevatedCard} and {@link --md-elevated-card-container-color}                          |
-| `--blog-post-word-tag-container-color` |         | The color of the container, {@link WordTag}                                                                                |
+| Name                                   | Default | Description                                                                                                                   |
+| -------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `--blog-post-animation`                |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states    |
+| `--blog-post-primary-text-color`       |         | The color of the primary text                                                                                                 |
+| `--blog-post-container-color`          |         | The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} |
+| `--blog-post-word-tag-container-color` |         | The color of the container, {@link @fnc314/com.fnc314.website!WordTag}                                                        |
 
 <details><summary>Private API</summary>
 
@@ -140,10 +140,10 @@
 
 ### Methods
 
-| Name                 | Privacy | Description                                    | Parameters | Return           | Inherited From |
-| -------------------- | ------- | ---------------------------------------------- | ---------- | ---------------- | -------------- |
-| `#generateCardBack`  | private | Builds the back of the MdOutlinedCard content  |            | `TemplateResult` |                |
-| `#generateCardFront` | private | Builds the front of the MdOutlinedCard content |            | `TemplateResult` |                |
+| Name                 | Privacy | Description                                                  | Parameters | Return           | Inherited From |
+| -------------------- | ------- | ------------------------------------------------------------ | ---------- | ---------------- | -------------- |
+| `#generateCardBack`  | private | Builds the back of the @material/web!MdOutlinedCard content  |            | `TemplateResult` |                |
+| `#generateCardFront` | private | Builds the front of the @material/web!MdOutlinedCard content |            | `TemplateResult` |                |
 
 </details>
 
@@ -224,6 +224,7 @@
 | --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
 | `custom-element-definition` | `configs-dialog` | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
 | `js`                        | `ConfigsDialog`  | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
+| `js`                        | `FormContent`    | FormContent   | @/types/components/dialog/configs-dialog        |         |
 
 # `src/components/dialog/connect/connect-dialog.ts`:
 
@@ -557,14 +558,14 @@
 
 ### Methods
 
-| Name                        | Privacy | Description                                                                                | Parameters      | Return           | Inherited From |
-| --------------------------- | ------- | ------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
-| `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                    |                 |                  |                |
-| `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                           | `event: Event`  |                  |                |
-| `#renderTabs`               | private | Creates a TemplateResult consisting of MdTabs, MdPrimaryTab, and MdIcons                   |                 | `TemplateResult` |                |
-| `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing number |                 | `index`          |                |
-| `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                             | `index: number` |                  |                |
-| `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                            | `index: number` |                  |                |
+| Name                        | Privacy | Description                                                                                                        | Parameters      | Return           | Inherited From |
+| --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
+| `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
+| `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                                                   | `event: Event`  |                  |                |
+| `#renderTabs`               | private | Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons |                 | `TemplateResult` |                |
+| `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing Number                         |                 |                  |                |
+| `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                                                     | `index: number` |                  |                |
+| `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                                                    | `index: number` |                  |                |
 
 </details>
 
@@ -781,6 +782,186 @@
 | `custom-element-definition` | `work-experience` | WorkExperience | src/components/work-experience/work-experience.ts |         |
 | `js`                        | `WorkExperience`  | WorkExperience | src/components/work-experience/work-experience.ts |         |
 
+# `src/partials/blog/blog-partial.ts`:
+
+## class: `BlogPartial`, `blog-partial`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                            | Package |
+| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
+| `custom-element-definition` | `blog-partial` | BlogPartial | src/partials/blog/blog-partial.ts |         |
+| `js`                        | `BlogPartial`  | BlogPartial | src/partials/blog/blog-partial.ts |         |
+
+# `src/partials/code/code-partial.ts`:
+
+## class: `CodePartial`, `code-partial`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                            | Package |
+| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
+| `custom-element-definition` | `code-partial` | CodePartial | src/partials/code/code-partial.ts |         |
+| `js`                        | `CodePartial`  | CodePartial | src/partials/code/code-partial.ts |         |
+
+# `src/partials/info/info-partial.ts`:
+
+## class: `InfoPartial`, `info-partial`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                   | Privacy | Type          | Default | Description | Inherited From |
+| ---------------------- | ------- | ------------- | ------- | ----------- | -------------- |
+| `onColorConfigsChange` | private |               |         |             |                |
+| `themeConfig`          | private | `ThemeConfig` |         |             |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                            | Package |
+| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
+| `custom-element-definition` | `info-partial` | InfoPartial | src/partials/info/info-partial.ts |         |
+| `js`                        | `InfoPartial`  | InfoPartial | src/partials/info/info-partial.ts |         |
+
+# `src/partials/work/work-partial.ts`:
+
+## class: `WorkPartial`, `work-partial`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                            | Package |
+| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
+| `custom-element-definition` | `work-partial` | WorkPartial | src/partials/work/work-partial.ts |         |
+| `js`                        | `WorkPartial`  | WorkPartial | src/partials/work/work-partial.ts |         |
+
+# `src/theme/chicago/chicago-theme.ts`:
+
+## Variables
+
+| Name                 | Description | Type          |
+| -------------------- | ----------- | ------------- |
+| `ChicagoThemeConfig` |             | `ThemeConfig` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                 | Declaration        | Module                             | Package |
+| ---- | -------------------- | ------------------ | ---------------------------------- | ------- |
+| `js` | `ChicagoThemeConfig` | ChicagoThemeConfig | src/theme/chicago/chicago-theme.ts |         |
+
+# `src/theme/inter/inter-theme.ts`:
+
+## Variables
+
+| Name               | Description | Type          |
+| ------------------ | ----------- | ------------- |
+| `InterThemeConfig` |             | `ThemeConfig` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name               | Declaration      | Module                         | Package |
+| ---- | ------------------ | ---------------- | ------------------------------ | ------- |
+| `js` | `InterThemeConfig` | InterThemeConfig | src/theme/inter/inter-theme.ts |         |
+
+# `src/theme/red/red-theme.ts`:
+
+## Variables
+
+| Name             | Description | Type          |
+| ---------------- | ----------- | ------------- |
+| `RedThemeConfig` |             | `ThemeConfig` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                     | Package |
+| ---- | ---------------- | -------------- | -------------------------- | ------- |
+| `js` | `RedThemeConfig` | RedThemeConfig | src/theme/red/red-theme.ts |         |
+
+# `src/theme/sunset/sunset-theme.ts`:
+
+## Variables
+
+| Name                | Description | Type          |
+| ------------------- | ----------- | ------------- |
+| `SunsetThemeConfig` |             | `ThemeConfig` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                           | Package |
+| ---- | ------------------- | ----------------- | -------------------------------- | ------- |
+| `js` | `SunsetThemeConfig` | SunsetThemeConfig | src/theme/sunset/sunset-theme.ts |         |
+
+# `src/theme/theme.ts`:
+
+## Variables
+
+| Name            | Description | Type           |
+| --------------- | ----------- | -------------- |
+| `THEME_CONFIGS` |             | `ThemeConfigs` |
+
+<hr/>
+
+## Functions
+
+| Name          | Description | Parameters                                          | Return |
+| ------------- | ----------- | --------------------------------------------------- | ------ |
+| `themeToIcon` |             | `slot: "leading-icon" \| "start", theme: ThemeName` |        |
+
+<hr/>
+
+## Exports
+
+| Kind | Name            | Declaration    | Module             | Package                       |
+| ---- | --------------- | -------------- | ------------------ | ----------------------------- |
+| `js` | `*`             | \*             |                    | @/theme/chicago/chicago-theme |
+| `js` | `*`             | \*             |                    | @/theme/inter/inter-theme     |
+| `js` | `*`             | \*             |                    | @/theme/red/red-theme         |
+| `js` | `*`             | \*             |                    | @/theme/sunset/sunset-theme   |
+| `js` | `THEME_CONFIGS` | THEME\_CONFIGS | src/theme/theme.ts |                               |
+| `js` | `themeToIcon`   | themeToIcon    | src/theme/theme.ts |                               |
+
 # `src/types/components/nav/routes.ts`:
 
 ## Variables
@@ -910,31 +1091,20 @@
 
 ## Variables
 
-| Name                                 | Description | Type                                                                                                                                                                  |
-| ------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `FAB_POSITION`                       |             | `{
-  START_TOP: "START_TOP" as const,
-  START_BOTTOM: "START_BOTTOM" as const,
-  END_TOP: "END_TOP" as const,
-  END_BOTTOM: "END_BOTTOM" as const,
-}`                 |
-| `FAB_POSITION_COMPONENTS_HORIZONTAL` |             | `{
-  START: "START" as const,
-  END: "END" as const,
-}`                                                                                                               |
-| `FAB_POSITION_COMPONENTS_VERTICAL`   |             | `{
-  TOP: "TOP" as const,
-  BOTTOM: "BOTTOM" as const,
-}`                                                                                                             |
-| `FAB_STYLE`                          |             | `{
+| Name                                 | Description                                                                                                                                                              | Type                                                                                                                                                                  |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FAB_POSITION`                       | The complete collection of possible @material/web!MdFab positions.  Cross-product of FAB\_POSITION\_COMPONENTS\_HORIZONTAL&#xA;  and FAB\_POSITION\_COMPONENTS\_VERTICAL | `{ readonly START_TOP: "START_TOP"; readonly START_BOTTOM: "START_BOTTOM"; readonly END_TOP: "END_TOP"; readonly END_BOTTOM: "END_BOTTOM"; }`                         |
+| `FAB_POSITION_COMPONENTS_HORIZONTAL` | The hotizontal position of a given @material/web!MdFab                                                                                                                   | `{ readonly START: "START"; readonly END: "END"; }`                                                                                                                   |
+| `FAB_POSITION_COMPONENTS_VERTICAL`   | The vertical position of a given @material/web!MdFab                                                                                                                     | `{ readonly TOP: "TOP"; readonly BOTTOM: "BOTTOM"; }`                                                                                                                 |
+| `FAB_STYLE`                          |                                                                                                                                                                          | `{
   ICON_ONLY: "ICON_ONLY" as const,
   ICON_AND_TEXT: "ICON_AND_TEXT" as const,
   ICON_ONLY_SMALL: "ICON_ONLY_SMALL" as const,
   TEXT_ONLY: "TEXT_ONLY" as const,
 }` |
-| `FabPositionIcons`                   |             | `Record<FabPosition, TemplateResult>`                                                                                                                                 |
-| `FabPositions`                       |             | `FabPosition[]`                                                                                                                                                       |
-| `FabStyles`                          |             | `FabStyle[]`                                                                                                                                                          |
+| `FabPositionIcons`                   | \\\<FabPosition, TemplateResult\\>                                                                                                                                       | `Record`                                                                                                                                                              |
+| `FabPositions`                       |                                                                                                                                                                          | `FabPosition[]`                                                                                                                                                       |
+| `FabStyles`                          |                                                                                                                                                                          | `FabStyle[]`                                                                                                                                                          |
 
 <hr/>
 
@@ -966,6 +1136,14 @@
 | `js` | `fabPositionToUi`                    | fabPositionToUi                       | src/types/configs/fab-configs.ts |         |
 | `js` | `FabStyles`                          | FabStyles                             | src/types/configs/fab-configs.ts |         |
 | `js` | `fabStyleToUi`                       | fabStyleToUi                          | src/types/configs/fab-configs.ts |         |
+
+# `src/types/material-symbols.ts`:
+
+## Exports
+
+| Kind | Name             | Declaration    | Module           | Package |
+| ---- | ---------------- | -------------- | ---------------- | ------- |
+| `js` | `MaterialSymbol` | MaterialSymbol | material-symbols |         |
 
 # `src/types/theme/color-scheme-configs.ts`:
 

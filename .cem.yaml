@@ -1,7 +1,11 @@
 additionalPackages:
-  - npm:@material/web
+  - "npm:@material/web@2.4.1"
+  - "npm:material-symbols@0.44.6"
 
 generate:
+  exclude:
+    - ./src/data/**/*.json
+
   files:
     - ./src/**/**/*.ts
 
@@ -16,7 +20,7 @@ health:
 serve:
   no-reload: false
 
-  port: 8888
+  port: 9997
 
   watchIgnore:
     - ./website/**

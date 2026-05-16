@@ -1,6 +1,5 @@
 {
-  "include": ["src/**/*", ".config/**/*.mjs", ".config/**/*.ts"],
-  "files": ["src/env.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
     "enable": true
@@ -46,7 +45,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./website/types",
+    "outDir": "./out",
     "preserveSymlinks": false,
     "pretty": true,
     "removeComments": true,
@@ -57,6 +56,7 @@
     "rootDir": "./src",
     "sourceMap": false,
     "strict": true,
+    "skipLibCheck": true,
     "tsBuildInfoFile": "./stats/.tsbuildinfo",
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": false,
