@@ -13,14 +13,14 @@
   "private": true,
   "types": "./out",
   "main": "./website/index.js",
-  "customElements": "dist/custom-elements.json",
+  "customElements": "dist/vite/development/custom-elements.json",
   "gitAbbrevHash": "",
   "gitBranch": "",
   "gitCommitHash": "",
   "gitDate": "",
   "gitVersion": "",
   "web-types": "./.idea/web-types.json",
-  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
+  "packageManager": "pnpm@11.1.3+sha512.c85357fe17ca12dd23dd7071822666dfd7e3cb76fe214e3370b5ea2fb34f2a231185509b63e717f3cd0acb38dd3f8d82bcd5e8172400ae678b70ea4fbed0896d",
   "keywords": [
     "website",
     "homepage",
@@ -74,13 +74,15 @@
     "wca:json:files": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir ./docs/wca/json --format json",
     "wca:markdown:file": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outFile ./docs/wca/markdown/README.md --format markdown",
     "wca:markdown:files": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir ./docs/wca/markdown --format markdown",
-    "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir .vscode/wca --format vscode"
+    "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir .vscode/wca --format vscode",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
+    "@open-wc/lit-helpers": "catalog:dependencies",
     "animate-css-grid": "catalog:dependencies",
     "dark-mode-toggle": "catalog:dependencies",
     "firebase": "catalog:dependencies",
@@ -149,10 +151,12 @@
     "custom-element-jet-brains-integration": "catalog:devDependencies",
     "custom-element-vs-code-integration": "catalog:devDependencies",
     "custom-elements-manifest": "catalog:devDependencies",
+    "diff": "catalog:devDependencies",
     "esbuild": "catalog:devDependencies",
     "eslint": "catalog:devDependencies",
     "eslint-plugin-json-schema-validator": "catalog:devDependencies",
     "eslint-plugin-lit": "catalog:devDependencies",
+    "eslint-plugin-lit-a11y": "catalog:devDependencies",
     "eslint-plugin-prettier": "catalog:devDependencies",
     "eslint-plugin-tsdoc": "catalog:devDependencies",
     "eslint-plugin-wc": "catalog:devDependencies",
@@ -163,9 +167,6 @@
     "postcss": "catalog:devDependencies",
     "postcss-lit": "catalog:devDependencies",
     "postcss-load-config": "catalog:devDependencies",
-    "prettier": "catalog:devDependencies",
-    "prettier-plugin-tailwindcss": "catalog:devDependencies",
-    "prettier-plugin-toml": "catalog:devDependencies",
     "pwa-asset-generator": "catalog:devDependencies",
     "rimraf": "catalog:devDependencies",
     "rollup": "catalog:devDependencies",
@@ -202,10 +203,11 @@
     "typedoc-plugin-version-header": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
-    "vite": "catalog:devDependencies",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.21",
     "vite-plugin-cem": "catalog:devDependencies",
     "vite-plugin-pwa": "catalog:devDependencies",
     "vite-plugin-version-mark": "catalog:devDependencies",
+    "vite-plus": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },
   "optionalDependencies": {
@@ -226,18 +228,5 @@
     "stylelint": "catalog:devDependencies",
     "typedoc": "catalog:devDependencies",
     "typescript": "catalog:devDependencies"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "typescript": "6",
-        "eslint": "10",
-        "stylelint": "17",
-        "rollup": "4",
-        "@custom-elements-manifest/analyzer": "0.11",
-        "typedoc": "0.28",
-        "nanoid": "3 || 5"
-      }
-    }
   }
 }
