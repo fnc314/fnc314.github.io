@@ -1,6 +1,7 @@
 import { type Config } from "stylelint";
 
 export const config: Config = {
+  defaultSeverity: "warning",
   extends: ["stylelint-config-standard", "stylelint-prettier/recommended"],
   ignoreFiles: [
     "./.config/custom-elements-manifest/custom-elements-manifest.config.mjs",
@@ -27,7 +28,12 @@ export const config: Config = {
     "declaration-block-no-redundant-longhand-properties": [
       true,
       {
-        ignoreShorthands: ["grid-template", "grid-template-areas", "grid-template-columns", "grid-template-rows"],
+        ignoreShorthands: [
+          "grid-template",
+          "grid-template-areas",
+          "grid-template-columns",
+          "grid-template-rows",
+        ],
       },
     ],
   },

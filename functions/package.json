@@ -1,0 +1,36 @@
+{
+  "name": "@fnc314/com-fnc314-website.functions",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Firebase Cloud Functions for www.fnc314.com",
+  "author": "Franco N. Colaizzi",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "pnpm run build && firebase emulators:start --only functions",
+    "shell": "pnpm run build && firebase functions:shell",
+    "start": "pnpm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "catalog:functionsDependencies",
+    "firebase-functions": "catalog:functionsDependencies"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "catalog:devDependencies",
+    "@typescript-eslint/parser": "catalog:devDependencies",
+    "eslint": "catalog:devDependencies",
+    "eslint-config-google": "catalog:devDependencies",
+    "eslint-plugin-import": "catalog:devDependencies",
+    "firebase-functions-test": "catalog:functionsDevDependencies",
+    "typescript": "catalog:devDependencies"
+  },
+  "engines": {
+    "node": "26.1.0"
+  },
+  "org": "@fnc314"
+}
