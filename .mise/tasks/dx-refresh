@@ -14,7 +14,7 @@ echo "dx:@pwrs:cem:generate"
 pnpm run dx:@pwrs:cem:generate
 echo
 echo "dx:cem-analyze"
-pnpm run dx:cem-analyze
+pnpm run dx:cem-analyze &> ./logs/dx-cem-analyze.log
 echo
 echo "dx:wca"
 pnpm run dx:wca

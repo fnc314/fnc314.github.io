@@ -3,10 +3,10 @@
     "npm:@material/web"
   ],
   "cem.lsp.debugLogging": true,
-  "cem.lsp.executable": "/Users/fnc314/Code/websites/fnc314.github.io/node_modules/@pwrs/cem-darwin-arm64/cem",
-  "cem.lsp.trace.server": "verbose", // LSP trace level: "off" | "messages" | "verbose"
+  "cem.lsp.executable": "",
+  "cem.lsp.trace.server": "verbose",
   "css.customData": [
-    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json",
+    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
@@ -22,32 +22,69 @@
   "docthis.returnsTag": true,
   "html.customData": [
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
-    "./.vscode/wca/*.json",
+    "./.vscode/wca/*.json"
   ],
   "html.suggest.html5": true,
-  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "./node_modules/typescript/lib",
   "lit-html.format.enabled": true,
   "lit-plugin.logging": "verbose",
   "lit-plugin.rules.no-expressionless-property-binding": "error",
   "lit-plugin.rules.no-missing-element-type-definition": "error",
   "lit-plugin.rules.no-unknown-slot": "error",
   "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
   "pnpm.packageJson": "package.json",
+  "pnpm-vscode-helper.enableCodelen": true,
   "postcssense.cssPath": "./src/index.css",
   "stylelint.configFile": "./stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",
-    "postcss",
+    "postcss"
   ],
   "stylelint.validate": [
     "css",
     "javascript",
     "postcss",
-    "typescript",
+    "typescript"
   ],
   "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
   "workbench.tree.indent": 4,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "oxc.fmt.configPath": "./vite.config.ts",
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/flutter/ephemeral": true,
+    "**/Flutter/ephemeral": true,
+    "**/.symlinks": true,
+    "**/.plugin_symlinks": true,
+    "**/CVS": true,
+    "**/.ruby-lsp": true
+  },
+  "jdk.jdkhome": "/Users/fnc314/.local/share/mise/installs/java/26.0.1",
+  "java.jdt.ls.java.home": "/Users/fnc314/.local/share/mise/installs/java/26.0.1",
+  "java.import.gradle.java.home": "/Users/fnc314/.local/share/mise/installs/java/26.0.1"
 }

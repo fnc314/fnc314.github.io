@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "fab-menu-item",
-      "description": "An action item within a `fab-menu`.\n\nAttributes:\n\n  * `label` {`string`} - The text label displayed next to the FAB item.\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3852 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_fab` - \n\n  * `label` {`string`} - The text label displayed next to the FAB item.\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3852 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.",
+      "description": "An action item within a `fab-menu`.\n\nAttributes:\n\n  * `label` {`string`} - The text label displayed next to the FAB item.\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3855 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_fab` - \n\n  * `label` {`string`} - The text label displayed next to the FAB item.\n\n  * `icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3855 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.",
       "attributes": [
         {
           "name": "label",
@@ -11,7 +11,7 @@
         },
         {
           "name": "icon",
-          "description": "`icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3852 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.\n\nProperty: icon\n\nDefault: ",
+          "description": "`icon` {`\"\" | \"function\" | \"settings\" | \"dark_mode\" | \"light_mode\" | \"routine\" | \"123\" | \"360\" | \"10k\" | \"10mp\" | \"11mp\" | \"12mp\" | \"13mp\" | \"14mp\" | \"15mp\" | \"16mp\" | \"17mp\" | \"18_up_rating\" | ... 3855 more ... | \"zoom_out_map\"`} - The icon to display inside the FAB item.\n\nProperty: icon\n\nDefault: ",
           "values": [
             {
               "name": ""
@@ -1434,6 +1434,9 @@
             },
             {
               "name": "biotech"
+            },
+            {
+              "name": "bitbucket"
             },
             {
               "name": "blanket"
@@ -4730,6 +4733,9 @@
               "name": "gite"
             },
             {
+              "name": "gitlab"
+            },
+            {
               "name": "glass_cup"
             },
             {
@@ -5445,6 +5451,9 @@
             },
             {
               "name": "ink_highlighter_move"
+            },
+            {
+              "name": "ink_highlighter_off"
             },
             {
               "name": "ink_marker"

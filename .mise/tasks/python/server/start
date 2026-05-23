@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+#MISE description="Start Python server at provided directory on given port"
+#MISE alias="python-server"
+#USAGE arg "<directory>" "The directory to serve (default: dist)" default="dist"
+#USAGE flag "-p, --port" "The port to serve on (default: 9999)" default="9999"
+
+echo "Starting Python server at directory '${usage_directory?}' on port ${usage_port?}"
+python3.14 -m http.server --directory "${usage_directory?}" "${usage_port?}"

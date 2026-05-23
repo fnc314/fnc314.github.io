@@ -55,7 +55,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./out",
+    // "outDir": "./out",
     "preserveSymlinks": false,
     "pretty": true,
     "removeComments": true,
@@ -99,8 +99,8 @@
       "vite-plus/client",
       "vite-plugin-pwa/client",
       "vite-plugin-pwa/pwa-assets",
-      "custom-elements-manifest/schema"
-      // "lit", "prettier", "stylelint", "tailwindcss",
+      "custom-elements-manifest/schema",
+      "unplugin-info/client",
     ],
     "typeRoots": [
       "./node_modules",
