@@ -21,6 +21,8 @@
   "apphosting": {
     "backendId": "com-fnc314-website",
     "rootDir": "src",
-    "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log", "functions"]
+    "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log", "functions"],
+    "alwaysDeployFromSource": false,
+    "localBuild": true
   }
 }
