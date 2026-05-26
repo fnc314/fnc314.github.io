@@ -2,6 +2,7 @@
 .DS_Store
 .idea/*
 .rollup.cache
+bin
 bun-build
 dist
 lit-plugin.log

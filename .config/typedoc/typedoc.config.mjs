@@ -27,9 +27,9 @@ export default {
   ],
   entryPointStrategy: "expand",
   enumMembersFormat: "htmlTable",
-  exclude: ["**/node_modules/**", "**/*#styles", "**/dist/**"], // Exclude all members named 'styles'
+  exclude: ["**/node_modules/**", "**/dist/**"],
   excludeExternals: true,
-  excludeNotDocumented: false,
+  excludeNotDocumented: true,
   excludePrivate: false,
   excludePrivateClassFields: false,
   excludeProtected: false,

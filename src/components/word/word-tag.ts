@@ -28,6 +28,7 @@ import { styleMap } from "lit/directives/style-map.js";
  */
 @customElement("word-tag")
 export class WordTag extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

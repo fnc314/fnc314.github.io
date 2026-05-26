@@ -15,9 +15,9 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
  *   \`:focus-within\`, and \`:focus-visible\` states
  * @cssprop --blog-post-primary-text-color - The color of the primary text
- * @cssprop --blog-post-container-color - The color of the container, {@link MdElevatedCard}
- *   and {@link --md-elevated-card-container-color}
- * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link WordTag}
+ * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!MdElevatedCard}
+ *   and {@link @material/web!--md-elevated-card-container-color}
+ * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link @fnc314/com.fnc314.website!WordTag}
  *
  * @see BlogPostJson
  * @export
@@ -26,6 +26,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
  */
 @customElement("blog-post")
 export class BlogPost extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -51,8 +52,8 @@ export class BlogPost extends LitElement {
         --word-tag-color: var(--blog-post-secondary-text-color);
 
         /**
-         * @cssprop --blog-post-container-color - The color of the container, {@link md-elevated-card}
-         *   and {@link --md-elevated-card-container-color}
+         * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!md-elevated-card}
+         *   and {@link @material/web!--md-elevated-card-container-color}
          */
         --blog-post-container-color: var(--md-sys-color-secondary-container);
         --md-elevated-card-container-color: var(--blog-post-container-color);
@@ -221,7 +222,7 @@ export class BlogPost extends LitElement {
             loading="lazy"
             role="img"
             alt="Medium logo"
-            .src=${`./assets/icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
+            .src=${`./icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
           />
           <header>
             <h2 class="md-typescale-headline-large">${this.blogPost.series}</h2>

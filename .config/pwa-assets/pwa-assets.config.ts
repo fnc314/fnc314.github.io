@@ -2,6 +2,7 @@ import {
   defineConfig,
   minimal2023Preset,
 } from "@vite-pwa/assets-generator/config";
+import process from "node:process";
 
 console.error(`Current is ${process.cwd()}`)
 export default defineConfig({
@@ -11,8 +12,9 @@ export default defineConfig({
     includeId: true,
   },
   images: [
-    "assets/icons/icon.svg"
+    "static/icons/icon.svg"
   ],
   logLevel: "info",
+
   // overrideAssets: false,
 });

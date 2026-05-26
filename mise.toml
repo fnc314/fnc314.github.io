@@ -1,10 +1,9 @@
 [tools]
   node = "26.2.0"
-  pkl = "0.31.1"
-  pnpm = "11.2.2"
-  tombi = "0.11.6"
+"npm:vite" = "8.0.14"
+  pnpm = "11.3.0"
+  tombi = "0.11.7"
   usage = "3.3.0"
-vp = "0.1.22"
 
 [env]
   _ = {
@@ -14,7 +13,6 @@ vp = "0.1.22"
 
 [settings]
   status = {
-    show_env = true,
     show_tools = true,
     truncate = false,
   }
@@ -24,7 +22,6 @@ vp = "0.1.22"
   npm = {
     package_manager = "pnpm",
   }
-  verbose = true
   color = true
   env_shell_expand = true
   terminal_progress = true

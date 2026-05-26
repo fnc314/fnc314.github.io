@@ -96,7 +96,7 @@
     "types": [
       "node",
       "eslint",
-      "vite-plus/client",
+      "vite/client",
       "vite-plugin-pwa/client",
       "vite-plugin-pwa/pwa-assets",
       "custom-elements-manifest/schema",

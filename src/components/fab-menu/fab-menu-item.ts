@@ -15,6 +15,7 @@ import { type MaterialSymbol } from "material-symbols";
  */
 @customElement("fab-menu-item")
 export class FabMenuItem extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

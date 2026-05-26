@@ -15,6 +15,7 @@ import { customElement, state } from "lit/decorators.js";
 
 @customElement("info-partial")
 export class InfoPartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

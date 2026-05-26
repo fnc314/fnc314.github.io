@@ -7,6 +7,7 @@ import { customElement } from "lit/decorators.js";
 
 @customElement("work-partial")
 export class WorkPartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

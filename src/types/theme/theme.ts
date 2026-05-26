@@ -2,7 +2,7 @@ import PhotoJsonFileImport from "@/data/photo.json" with { type: "json" };
 import { type MaterialScheme } from "@/styles/material-styles";
 import { type CSSResult, css, unsafeCSS } from "lit";
 
-export type ColorSchemeRoles =
+export type ColorSchemeRoles=
   | "background"
   | "error"
   | "errorContainer"
@@ -51,23 +51,25 @@ export type ColorSchemeRoles =
   | "tertiary"
   | "tertiaryContainer"
   | "tertiaryFixed"
-  | "tertiaryFixedDim";
+  | "tertiaryFixedDim"
+  ;
 
-export type ColorSubValue =
-  `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`;
-export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
+export type ColorSubValue=
+  `${"A"|"B"|"C"|"D"|"E"|"F"|"0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"}`;
+export type ColorValue=`${ColorSubValue}${ColorSubValue}`;
 
-export type ColorString = `#${string}`;
+export type ColorString=`#${string}`;
 
-export type MaterialSchemeNames =
+export type MaterialSchemeNames=
   | "light"
   | "light-medium-contrast"
   | "light-high-contrast"
   | "dark"
   | "dark-medium-contrast"
-  | "dark-high-contrast";
+  | "dark-high-contrast"
+  ;
 
-export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
+export type ThemeJsonSchemes=Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
 
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
@@ -79,7 +81,7 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
     return false;
   }
 
-  const correctKeys = Object.keys(json).every((key) =>
+  const correctKeys=Object.keys(json).every((key) =>
     [
       "light",
       "light-medium-contrast",
@@ -94,13 +96,13 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
     return false;
   }
 
-  const correctValues = Object.values(json)
+  const correctValues=Object.values(json)
     .flatMap((value) => Object.values(value as Record<string, unknown>))
     .every((value) => {
-      if (typeof value !== "string") {
+      if (typeof value!=="string") {
         return false;
       }
-      return value.startsWith("#") && value.length === 7;
+      return value.startsWith("#")&&value.length===7;
     });
 
   return correctValues;
@@ -118,7 +120,7 @@ export interface ThemeConfig {
   materialSchemes: MaterialScheme;
 }
 
-export const THEME_NAMES = {
+export const THEME_NAMES={
   chicago: "chicago" as const,
   inter: "inter" as const,
   red: "red" as const,
@@ -126,27 +128,27 @@ export const THEME_NAMES = {
   sunset: "sunset" as const,
 } as const;
 
-export type ThemeName = (typeof THEME_NAMES)[keyof typeof THEME_NAMES];
+export type ThemeName=(typeof THEME_NAMES)[keyof typeof THEME_NAMES];
 
-export type PhotosJson = Record<ThemeName, PhotoJson>;
+export type PhotosJson=Record<ThemeName, PhotoJson>;
 
-export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
+export type ThemeConfigs=Record<ThemeName, ThemeConfig>;
 
-export const PhotoJsonFile: PhotosJson = PhotoJsonFileImport;
+export const PhotoJsonFile: PhotosJson=PhotoJsonFileImport;
 
 // postcss-lit-disable-next-line
-export const readScheme = (jsonSchema: object) => css`
+export const readScheme=(jsonSchema: object) => css`
   :root {
     ${unsafeCSS(
-      Object.entries(jsonSchema)
-        .map(([colorRole, colorRGB]: [string, string]) => keyTransform(colorRole, colorRGB))
-        .reduce(
-          (acc, curr) => css`
+  Object.entries(jsonSchema)
+    .map(([colorRole, colorRGB]: [string, string]) => keyTransform(colorRole, colorRGB))
+    .reduce(
+      (acc, curr) => css`
             ${acc}${curr}
           `,
-          unsafeCSS(""),
-        ),
-    )}
+      unsafeCSS(""),
+    ),
+)}
   }
 `;
 
@@ -159,7 +161,7 @@ export const readScheme = (jsonSchema: object) => css`
  */
 // postcss-lit-disable-next-line
 export function keyTransform(jsonKey: string, rgb: string): CSSResult {
-  const roleNameBase: string = jsonKey
+  const roleNameBase: string=jsonKey
     .split(/(?=[A-Z])/)
     .map((part) => part.toLowerCase())
     .join("-");

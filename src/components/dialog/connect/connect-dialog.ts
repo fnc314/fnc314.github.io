@@ -17,6 +17,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  */
 @customElement("connect-dialog")
 export class ConnectDialog extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -276,7 +277,7 @@ export class ConnectDialog extends LitElement {
             <span>${`Version: ${this.version}`}</span>
             <span>${`Date: ${this.date}`}</span>
             <span>${`Time: ${this.time}`}</span>
-            <span>${`Git SHA: ${import.meta.env.VITE_GIT_COMMIT_HASH}`}</span>
+            <span>${`Git SHA: ${/* import.meta.env.VITE_GIT_COMMIT_HASH ?? */ "unknown"}`}</span>
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>

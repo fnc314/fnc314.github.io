@@ -32,6 +32,7 @@ import { styleMap } from "lit/directives/style-map.js";
  */
 @customElement("word-cloud")
 export class WordCloud extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

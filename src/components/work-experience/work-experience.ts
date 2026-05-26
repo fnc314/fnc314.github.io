@@ -19,6 +19,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  */
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

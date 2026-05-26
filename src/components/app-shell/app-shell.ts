@@ -32,11 +32,12 @@ import { customElement, query, state } from "lit/decorators.js";
  *   Handles theme switching, FAB configurations, and navigation slotting.
  *   Uses Material Design 3 tokens and components.
  *
- * @slot [app-nav] - Where the {@link NavComponent} is placed
+ * @slot [app-nav] - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed
  * @slot [app-content] - The place for the dynamic application content
  */
 @customElement("app-shell")
 export class AppShell extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

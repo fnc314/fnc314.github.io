@@ -25,6 +25,7 @@ export class CodeProject extends LitElement {
   @state()
   private flipped = false;
 
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -151,7 +152,7 @@ export class CodeProject extends LitElement {
         color: var(--md-sys-color-on-surface-variant);
 
         &.repo-link::before {
-          content: url("./assets/icons/brand/github.svg") / "GitHub logo";
+          content: url("./icons/brand/github.svg") / "GitHub logo";
           display: block;
         }
       }
@@ -159,7 +160,7 @@ export class CodeProject extends LitElement {
   ];
 
   /**
-   * Builds the front of the {@link MdOutlinedCard} content
+   * Builds the front of the {@link @material/web!MdOutlinedCard} content
    *
    * @returns {TemplateResult}
    */
@@ -198,7 +199,7 @@ export class CodeProject extends LitElement {
 
 
   /**
-   * Builds the back of the {@link MdOutlinedCard} content
+   * Builds the back of the {@link @material/web!MdOutlinedCard} content
    *
    * @returns {TemplateResult}
    */
