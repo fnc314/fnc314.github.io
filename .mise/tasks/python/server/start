@@ -2,7 +2,13 @@
 #MISE description="Start Python server at provided directory on given port"
 #MISE alias="python-server"
 #USAGE arg "<directory>" "The directory to serve (default: dist)" default="dist"
-#USAGE flag "-p --port [port]" "The port to serve on (default: 9999)" default="9999"
+#USAGE flag "-p --port [port]" help="The port to serve on (default: 9999)" long_help="Sets the port for python -m http.server and updates LOCAL_BUILD_PYTHON_SERVER_PORT via mise set to keep vite produced manifest.json assets in sync" env="LOCAL_BUILD_PYTHON_SERVER_PORT" default="9999"
 
 echo "Starting Python server at directory '${usage_directory?}' on port ${usage_port:-9999}"
-python -m http.server -d "${usage_directory?}" "${usage_port:-9999}"
+echo
+echo "Updating \`LOCAL_BUILD_PYTHON_SERVER_PORT\`"
+echo
+export LOCAL_BUILD_PYTHON_SERVER_PORT=${usage_port:-9999}
+mise set LOCAL_BUILD_PYTHON_SERVER_PORT=${usage_port:-9999}
+echo
+python -m http.server -d "${usage_directory?}" "$LOCAL_BUILD_PYTHON_SERVER_PORT"

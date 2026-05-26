@@ -176,17 +176,6 @@ export default defineConfig({
         module: true,
         mangle: true,
       }),
-    summary({
-      showBrotliSize: true,
-      showGzippedSize: true,
-      showMinifiedSize: true,
-    }),
-    buildStatistics({
-      projectName: "@fnc314/com.fnc314.website",
-    }),
-    progress({
-      clearLine: !isDev,
-    }),
     isDev &&
       copy({
         exclude: [],
@@ -201,7 +190,20 @@ export default defineConfig({
         template: "treemap-3d",
         gzipSize: true,
         brotliSize: true,
-        projectRoot: "src",
+        projectRoot: ".",
       }),
+    summary({
+      showBrotliSize: true,
+      showGzippedSize: true,
+      showMinifiedSize: true,
+    }),
+    buildStatistics({
+      projectName: "@fnc314/com.fnc314.website",
+      // summaryLogFilename: `rollup/${process.env.NODE_ENV || "development"}/build/stats/summary/${new Date().toISOString()}`
+      // summaryLogFilename: `rollup.${process.env.NODE_ENV || "development"}.build.stats.summary.${new Date().toISOString()}`
+    }),
+    progress({
+      clearLine: !isDev,
+    }),
   ],
 });

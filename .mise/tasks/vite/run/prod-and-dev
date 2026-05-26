@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+#MISE description="Execute `vite build` for both production and development"
+#MISE alias="vite-prod-dev"
+
+mise set BUILD_ENVIRONMENT="local"
+NODE_ENV=development pnpm vite build -m development
+NODE_ENV=production pnpm vite build -m production
+mise set BUILD_ENVIRONMENT=""

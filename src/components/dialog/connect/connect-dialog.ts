@@ -6,6 +6,8 @@ import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { sha as gitSha } from "~build/git";
+import { version as buildVersion } from "~build/package";
 
 /**
  * @summary A dialog component that provides various contact methods and social links. It
@@ -193,7 +195,7 @@ export class ConnectDialog extends LitElement {
 
   private date: string = "[VI]{date}[/VI]".split(" @ ").at(0)!;
   private time: string = "[VI]{date}[/VI]".split(" @ ").at(1)!;
-  private version = "[VI]{version}[/VI]";
+  private version = buildVersion;
 
   /**
    * Shows the connect dialog and applies a custom border to the internal container.
@@ -277,7 +279,7 @@ export class ConnectDialog extends LitElement {
             <span>${`Version: ${this.version}`}</span>
             <span>${`Date: ${this.date}`}</span>
             <span>${`Time: ${this.time}`}</span>
-            <span>${`Git SHA: ${/* import.meta.env.VITE_GIT_COMMIT_HASH ?? */ "unknown"}`}</span>
+            <span>${`Git SHA: ${gitSha.substring(0, 7)}`}</span>
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>
