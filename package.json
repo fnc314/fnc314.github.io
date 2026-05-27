@@ -170,6 +170,7 @@
     "prettier": "catalog:devDependencies",
     "pwa-asset-generator": "catalog:devDependencies",
     "rimraf": "catalog:devDependencies",
+    "rolldown-plugin-copy": "catalog:devDependencies",
     "rollup": "catalog:devDependencies",
     "rollup-plugin-build-statistics": "catalog:devDependencies",
     "rollup-plugin-clear": "catalog:devDependencies",
@@ -207,6 +208,7 @@
     "unplugin-info": "catalog:devDependencies",
     "vite": "catalog:devDependencies",
     "vite-plugin-cem": "catalog:devDependencies",
+    "vite-plugin-cp": "catalog:devDependencies",
     "vite-plugin-pwa": "catalog:devDependencies",
     "vite-plugin-version-mark": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"

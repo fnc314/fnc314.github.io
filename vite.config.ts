@@ -1,6 +1,5 @@
 import { DevTools } from "@vitejs/devtools";
 import { execSync } from "node:child_process";
-import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -9,14 +8,62 @@ import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
 import { defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
+import cp from "vite-plugin-cp";
 import { type ManifestOptions, VitePWA } from "vite-plugin-pwa";
 import { vitePluginVersionMark } from "vite-plugin-version-mark";
 import manifest from "./manifest.json" with { type: "json" };
 import packageJson from "./package.json" with { type: "json" };
 
+interface DynamicConfigs {
+  isProduction: boolean;
+  isLocalBuild: boolean;
+  outDirSuffix: string;
+  outDir: string;
+  publicDir: string;
+  base: string;
+  pwa: {
+    manifest: {
+      scope: string;
+      start_url: string;
+    }
+  }
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const require = createRequire(import.meta.url);
+
+/**
+ * Creates {@link DynamicConfigs} from {@link process.env} and the `-m` parameter for `vite`
+ *
+ * @param {NodeJS.ProcessEnv} processEnv
+ * @param {(string | "development" | "production")} mode
+ * @returns {*}  {DynamicConfigs}
+ */
+function createDynamicConfig(
+  processEnv: NodeJS.ProcessEnv,
+  mode: string | "development" | "production",
+): DynamicConfigs {
+  const isProduction = processEnv.NODE_ENV === "production" && mode === "production";
+  const isLocalBuild = processEnv.BUILD_ENVIRONMENT === "local";
+  const outDirSuffix = `vite/${isProduction ? "production" : "development"}`;
+
+  const base = isLocalBuild ? `/${outDirSuffix}/` : "/";
+  const pwa_manifest_scope = isProduction ? "https://www.fnc314.com/" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}${base}`;
+  const pwa = {
+    manifest: {
+      scope: pwa_manifest_scope,
+      start_url: `${pwa_manifest_scope}#info`
+    }
+  };
+  return {
+    isProduction,
+    isLocalBuild,
+    outDirSuffix,
+    outDir: path.resolve(__dirname, `dist/${outDirSuffix}`),
+    publicDir: path.resolve(__dirname, "static"),
+    base,
+    pwa
+  };
+}
 
 const getGitInfo = () => {
   try {
@@ -27,26 +74,15 @@ const getGitInfo = () => {
 };
 
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
-  const isProduction = process.env.NODE_ENV === "production" && mode === "production";
-  const outDirSuffix = `vite/${isProduction ? "production" : "development"}`;
-  const outDir = path.resolve(__dirname, `dist/${outDirSuffix}`);
-  const publicDir = path.resolve(__dirname, "static");
-  const base = process.env.BUILD_ENVIRONMENT === "local" ? `/${outDirSuffix}/` : "/";
+  const dynamicConfig: DynamicConfigs = createDynamicConfig(process.env, mode);
 
   console.log(
     `
 
     VITE
-    Command >${command}<
-    mode >${mode}<
-    Preview? ${isPreview}
-    SSR Build? (Server-Side Rendering) ${isSsrBuild}
+    Dynamic Configs
+    ${JSON.stringify(dynamicConfig, null, 2)}
 
-    base >${base}<
-    outDir >${outDir}<
-    publicDir >${publicDir}<
-    NODE_ENV >${process.env.NODE_ENV}<
-    isProduction >${isProduction}<
     CWD
       \`process.cwd()\` - ${process.cwd()}
       \`path.resolve(__dirname)\` - ${path.resolve(__dirname)}
@@ -61,13 +97,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     define: {
       "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(getGitInfo()),
     },
-    base,
-    publicDir,
+    base: dynamicConfig.base,
+    publicDir: dynamicConfig.publicDir,
     assetsInclude: [
       "files/pdfs/*.pdf",
       "images/**/*.jpg",
       "icons/**/*.{ico,svg,png",
-    ].map((p) => path.resolve(publicDir, p)),
+    ].map((p) => path.resolve(dynamicConfig.publicDir, p)),
     optimizeDeps: {},
     resolve: {
       alias: {
@@ -77,9 +113,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
     },
     build: {
-      minify: isProduction,
-      sourcemap: !isProduction,
-      outDir,
+      minify: dynamicConfig.isProduction,
+      sourcemap: !dynamicConfig.isProduction,
+      outDir: dynamicConfig.outDir,
       assetsDir: "./assets",
       license: true,
       manifest: true,
@@ -91,18 +127,26 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         experimental: {
           viteMode: true,
         },
+        logLevel: "debug",
         platform: "browser",
       },
     },
     css: {
-      devSourcemap: !isProduction,
+      devSourcemap: !dynamicConfig.isProduction,
       postcss: path.resolve(__dirname, "postcss.config.mjs"),
     },
     envDir: path.resolve(__dirname, ".env"),
     appType: "spa",
     logLevel: "info",
+    server: {
+      forwardConsole: true,
+      origin: dynamicConfig.pwa.manifest.scope,
+    },
+    preview: {
+
+    },
     plugins: [
-      ...(!isProduction
+      ...(!dynamicConfig.isProduction
         ? [
           DevTools({
             builtinDevTools: true,
@@ -122,19 +166,32 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         }
       }),
       VitePWA({
+        base: `${dynamicConfig.base}`,
         devOptions: {
-          enabled: !isProduction,
+          enabled: dynamicConfig.isLocalBuild,
         },
         manifest: {
           ...(manifest as Partial<ManifestOptions>),
           name: "fnc314.com",
-          id: isProduction ? "https://www.fnc314.com" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}`,
-          start_url: "/#info",
-          scope: isProduction ? "https://www.fnc314.com" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}`,
+          id: dynamicConfig.pwa.manifest.scope,
+          scope: dynamicConfig.pwa.manifest.scope,
+          start_url: dynamicConfig.pwa.manifest.start_url,
+          icons: (manifest.icons || []).map((icon) => ({
+            ...icon,
+            src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
+          })),
+          shortcuts: (manifest.shortcuts || []).map((shortcut) => ({
+            ...shortcut,
+            url: shortcut.url.replace("https://fnc314.com/", dynamicConfig.pwa.manifest.scope),
+            icons: (shortcut.icons || []).map((icon) => ({
+              ...icon,
+              src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
+            })),
+          })),
         },
         manifestFilename: "manifest.json",
-        minify: isProduction,
-        outDir,
+        minify: dynamicConfig.isProduction,
+        outDir: dynamicConfig.outDir,
         pwaAssets: {
           disabled: false,
           injectThemeColor: false,
@@ -143,14 +200,14 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         },
         srcDir: path.resolve(__dirname, "static"),
       }),
-      !isProduction &&
+      !dynamicConfig.isProduction &&
       VitePluginCustomElementsManifest({
         config: path.resolve(
           __dirname,
           ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
         ),
         lit: true,
-        dev: !isProduction,
+        dev: !dynamicConfig.isProduction,
         //output: path.resolve(__dirname, "docs/custom-elements-manifest/custom-elements-manifest.json"),
         //endpoint: path.resolve(__dirname, "docs/custom-elements-manifest/custom-elements-manifest.json"),
         packageJson: true,
@@ -196,12 +253,14 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       visualizer({
         title: "Vite Bundle Visualizer",
         filename: path.resolve(__dirname, `stats/vite/visualizer/${new Date().toISOString()}.html`),
-        sourcemap: !isProduction,
+        sourcemap: !dynamicConfig.isProduction,
         template: "network",
         gzipSize: true,
         brotliSize: true,
         projectRoot: path.resolve(__dirname),
       }),
+      cp({
+      })
     ],
   };
 });
