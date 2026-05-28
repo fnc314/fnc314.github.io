@@ -4,10 +4,9 @@ import { cemValidatorPlugin } from "@wc-toolkit/cem-validator";
 import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
 import { modulePathResolverPlugin } from "@wc-toolkit/module-path-resolver";
 import { typeParserPlugin } from "@wc-toolkit/type-parser";
+import BetterLitTypesPlugin from 'cem-plugin-better-lit-types';
 import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example";
 import { readmePlugin } from "cem-plugin-readme";
-import { customElementJetBrainsPlugin } from "custom-element-jet-brains-integration";
-import { customElementVsCodePlugin } from "custom-element-vs-code-integration";
 import path from "node:path";
 import process from "node:process";
 
@@ -28,6 +27,8 @@ const isDev = process.env.NODE_ENV === "development";
 const docsDir = resolvePath("docs/custom-elements-manifest");
 const customElementsManifestFileName = resolvePath("docs/custom-elements-manifest", "custom-elements-manifest.json");
 
+const customElementsManifestJSON = resolvePath("docs", "custom-elements-manifest", "custom-elements.json")
+
 console.warn(
   `Final Config is ${JSON.stringify({ customElementsManifestFileName, docsDir }, null, 2)}`
 );
@@ -40,6 +41,7 @@ export default {
     "src/partials/**/*.ts",
     "src/theme/**/*.ts",
     "src/types/**/*.ts",
+    "src/index.ts",
   ],
   exclude: [
     "src/data/**/*.json",
@@ -52,6 +54,9 @@ export default {
 
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
   resolutionOptions: {
+    allowPackageExportsInDirectoryResolve: true,
+    buildinModules: true,
+    nodePath: true,
     extensions: [".ts", ".js"],
     mainFields: ["module", "main"],
     conditionNames: ["import", "require"],
@@ -63,87 +68,90 @@ export default {
   },
 
   plugins: [
+    BetterLitTypesPlugin,
     cemValidatorPlugin({
       packageJsonPath: resolvePath("package.json"),
-      cemFileName: resolvePath("docs/custom-elements-manifest", "custom-elements-manifest.json"),
+      cemFileName: customElementsManifestJSON,
       logErrors: true,
-      debug: isDev,
-      rules: {
-        manifest: {
-          schemaVersion: "error",
-        }, // Removed undefined property to prevent validator crashes
-      },
+      debug: true,
+      // rules: {
+      //   manifest: {
+      //     schemaVersion: "error",
+      //   }, // Removed undefined property to prevent validator crashes
+      // },
     }),
     jsdocExamplePlugin(),
     cemSorterPlugin({
-      fileName: resolvePath("docs/custom-elements-manifest", "custom-elements-manifest.json"),
+      fileName: customElementsManifestJSON,
       outdir: docsDir,
       deprecatedLast: true,
-      debug: isDev,
+      debug: true,
     }),
     cemInheritancePlugin({
-      fileName: resolvePath("docs/custom-elements-manifest", "custom-elements-manifest.json"),
+      fileName: customElementsManifestJSON,
       outdir: docsDir,
-      debug: isDev,
+      debug: true,
     }),
     jsDocTagsPlugin({
-      debug: isDev,
+      debug: true,
     }),
     modulePathResolverPlugin({
-      fileName: resolvePath("docs/custom-elements-manifest", "custom-elements-manifest.json"),
+      fileName: customElementsManifestJSON,
+      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/types").replace(".ts", ".js"),
       outdir: docsDir,
-      debug: isDev,
+      debug: true,
     }),
     typeParserPlugin({
       debug: isDev,
       parseObjectTypes: "full",
       parseParameters: true,
+      propertyName: "parsedType",
     }),
     readmePlugin({
       from: process.cwd(),
-      to: "README.md",
+      to: "docs/custom-elements-manifest/README.md",
       headingOffset: 0,
     }),
-    customElementVsCodePlugin({
-      outdir: "./.vscode/custom-elements-manifest",
-      htmlFileName: "vscode.html-custom-data.json",
-      cssFileName: "vscode.css-custom-data.json",
-      descriptionSrc: "summary",
-      hideSlotDocs: false,
-      hideCssPartsDocs: false,
-      hideCssPropertiesDocs: false,
-      hideEventDocs: false,
-      hideMethodDocs: false,
-      hideLogs: false,
-      labels: {
-        slots: "Slots",
-        cssParts: "CSS Parts",
-        cssProperties: "CSS Properties",
-        events: "Events",
-        methods: "Methods",
-      },
-    }),
-    customElementJetBrainsPlugin({
-      outdir: "./.idea",
-      webTypesFileName: "web-types.json",
-      descriptionSrc: "summary",
-      packageJson: true,
-      hideSlotDocs: false,
-      hideCssPartsDocs: false,
-      hideCssPropertiesDocs: false,
-      hideEventDocs: false,
-      hideMethodDocs: false,
-      hideLogs: false,
-      excludeCss: false,
-      excludeHtml: false,
-      labels: {
-        slots: "Slots",
-        cssParts: "CSS Parts",
-        cssProperties: "CSS Properties",
-        events: "Events",
-        methods: "Methods",
-      },
-      defaultIcon: "./assets/icons/icon.svg",
-    }),
+    // customElementVsCodePlugin({
+    //   outdir: "./.vscode/custom-elements-manifest",
+    //   htmlFileName: "vscode.html-custom-data.json",
+    //   cssFileName: "vscode.css-custom-data.json",
+    //   // descriptionSrc: "summary",
+    //   hideSlotDocs: false,
+    //   hideCssPartsDocs: false,
+    //   hideCssPropertiesDocs: false,
+    //   hideEventDocs: false,
+    //   hideMethodDocs: false,
+    //   hideLogs: false,
+    //   labels: {
+    //     slots: "Slots",
+    //     cssParts: "CSS Parts",
+    //     cssProperties: "CSS Properties",
+    //     events: "Events",
+    //     methods: "Methods",
+    //   },
+    // }),
+    // customElementJetBrainsPlugin({
+    //   outdir: "./.idea",
+    //   webTypesFileName: "web-types.json",
+    //   // descriptionSrc: "summary",
+    //   packageJson: true,
+    //   hideSlotDocs: false,
+    //   hideCssPartsDocs: false,
+    //   hideCssPropertiesDocs: false,
+    //   hideEventDocs: false,
+    //   hideMethodDocs: false,
+    //   hideLogs: false,
+    //   excludeCss: false,
+    //   excludeHtml: false,
+    //   labels: {
+    //     slots: "Slots",
+    //     cssParts: "CSS Parts",
+    //     cssProperties: "CSS Properties",
+    //     events: "Events",
+    //     methods: "Methods",
+    //   },
+    //   defaultIcon: "./static/icons/icon.svg",
+    // }),
   ].filter((p) => p !== undefined),
 };

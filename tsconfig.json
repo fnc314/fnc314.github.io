@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
     "enable": true
@@ -35,9 +35,9 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "checkJs": true,
-    "declaration": false,
-    // "declarationDir": "./website/types",
-    "declarationMap": false,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "declarationMap": true,
     "emitBOM": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -47,7 +47,7 @@
     "incremental": true,
     "inlineSources": false,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitOverride": true,
@@ -55,7 +55,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    // "outDir": "./out",
+    "outDir": "./dist/types",
     "preserveSymlinks": false,
     "pretty": true,
     "removeComments": true,
@@ -64,7 +64,7 @@
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": false,
     "rootDir": "./src",
-    "sourceMap": false,
+    "sourceMap": true,
     "strict": true,
     "skipLibCheck": true,
     "tsBuildInfoFile": "./stats/.tsbuildinfo",
@@ -101,12 +101,13 @@
       "vite-plugin-pwa/pwa-assets",
       "custom-elements-manifest/schema",
       "unplugin-info/client",
+      "material-symbols"
     ],
-    "typeRoots": [
-      "./node_modules",
-      "./node_modules/@types",
-      "./node_modules/@web/rollup-plugin-copy/dist"
-    ],
+    // "typeRoots": [
+    //   "./node_modules",
+    //   "./node_modules/@types",
+    //   "./node_modules/@web/rollup-plugin-copy/dist"
+    // ],
     "paths": {
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],

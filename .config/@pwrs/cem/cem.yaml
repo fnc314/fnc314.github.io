@@ -1,12 +1,15 @@
 additionalPackages:
-  - npm:@material/web
+  - "npm:@material/web@2.4.1"
+  - "npm:material-symbols@0.44.10"
 
 generate:
-  files:
-    - ./src/components/**/*.ts
-    - ./src/partials/**/*.ts
+  exclude:
+    - ../../../src/data/**/*.json
 
-  output: ./docs/@pwrs/cem/custom-elements.json
+  files:
+    - ../../../src/**/**/*.ts
+
+  output: ../../../docs/@pwrs/cem/custom-elements.json
 
 health:
   disable:
@@ -17,12 +20,12 @@ health:
 serve:
   no-reload: false
 
-  port: 8888
+  port: 9997
 
   watchIgnore:
-    - ./website/**
-    - ./node_modules/**
-    - ./old/**
+    - ../../../website/**
+    - ../../../node_modules/**
+    - ../../../dist/**
 
 sourceControlRootUrl: https://github.com/fnc314/fnc314.github.io/tree/main/
 
@@ -30,7 +33,7 @@ transforms:
   css:
     enabled: true
     include:
-      - ./src/index.css
+      - ../../../src/index.css
 
   typescript:
     enabled: true

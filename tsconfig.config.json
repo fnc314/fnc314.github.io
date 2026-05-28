@@ -3,7 +3,7 @@
   "compilerOptions": {
     "checkJs": false,
     "noEmit": false,
-    "outDir": "./out",
+    "outDir": "./dist/types",
     "rootDir": "./",
   },
   "include": [

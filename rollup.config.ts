@@ -17,7 +17,6 @@ import gitInfo from "rollup-plugin-git-info";
 import postcss from "rollup-plugin-postcss";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
-import versionInjector from "rollup-plugin-version-injector";
 import visualizer from "rollup-plugin-visualizer";
 import InfoPlugin from "unplugin-info/rollup";
 
@@ -85,18 +84,6 @@ export default defineConfig({
         optionalDependencies: true,
         overrides: true,
       }
-    }),
-    versionInjector({
-      injectInComments: false,
-      injectInTags: {
-        fileRegexp: /\.(js|ts|html|css)$/,
-        tagId: "VI",
-        dateFormat: "yyyy-mm-dd @ HH:MM:ss TT",
-      },
-      packageJson: "./package.json",
-      logger: console,
-      logLevel: isDev ? "log" : "error",
-      exclude: [],
     }),
     gitInfo.default({
       abbrev: 10,

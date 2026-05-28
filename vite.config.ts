@@ -3,7 +3,6 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
-import versionInjector from "rollup-plugin-version-injector";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
 import { defineConfig } from "vite";
@@ -76,6 +75,32 @@ const getGitInfo = () => {
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   const dynamicConfig: DynamicConfigs = createDynamicConfig(process.env, mode);
 
+  const debugPlugins = [
+    DevTools({
+      builtinDevTools: true,
+      build: {
+        withApp: true,
+      },
+    }),
+    VitePluginCustomElementsManifest({
+      config: path.resolve(
+        __dirname,
+        ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
+      ),
+      lit: true,
+      dev: !dynamicConfig.isProduction,
+      packageJson: true,
+    }),
+    cp({
+      targets: [
+        {
+          src: ".well-known/appspecific/com.chrome.devtools.json",
+          dest: `${dynamicConfig.outDir}/.well-known/appspecific`,
+        }
+      ],
+    })
+  ];
+
   console.log(
     `
 
@@ -140,29 +165,27 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     logLevel: "info",
     server: {
       forwardConsole: true,
-      origin: dynamicConfig.pwa.manifest.scope,
+      origin: dynamicConfig.pwa.manifest.scope.slice(9, -1),
     },
     preview: {
 
     },
     plugins: [
-      ...(!dynamicConfig.isProduction
-        ? [
-          DevTools({
-            builtinDevTools: true,
-            build: {
-              withApp: true,
-            },
-          }),
-        ]
-        : []),
       Info({
+        github: "https://github.com/fnc314/fnc314.github.io",
+        root: ".",
         cloudflare: false,
         package: {
           dependencies: true,
           devDependencies: true,
           optionalDependencies: true,
           overrides: true,
+        },
+        console: {
+          environment: [
+            "development",
+            "production",
+          ],
         }
       }),
       VitePWA({
@@ -200,25 +223,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         },
         srcDir: path.resolve(__dirname, "static"),
       }),
-      !dynamicConfig.isProduction &&
-      VitePluginCustomElementsManifest({
-        config: path.resolve(
-          __dirname,
-          ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
-        ),
-        lit: true,
-        dev: !dynamicConfig.isProduction,
-        //output: path.resolve(__dirname, "docs/custom-elements-manifest/custom-elements-manifest.json"),
-        //endpoint: path.resolve(__dirname, "docs/custom-elements-manifest/custom-elements-manifest.json"),
-        packageJson: true,
-      }),
       vitePluginVersionMark({
         name: "@fnc314/fnc314.github.io",
-        ifGitSHA: true,
         ifShortSHA: true,
         version: packageJson.version,
         ifLog: true,
         ifMeta: true,
+        ifGlobal: true,
         command: {
           commands: [
             {
@@ -235,21 +246,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           format: "v{version}-{shortSHA}",
           parallel: true,
         },
+        outputFile: (version: string) => ({
+          path: `vite-plugin-version-mark.json`,
+          content: JSON.stringify({ dynamicConfig, packageJson, gitShaVersion: version }, null, 2)
+        })
       }),
-      {
-        name: "version-injector",
-        ...versionInjector({
-          injectInComments: false,
-          injectInTags: {
-            fileRegexp: /\.(js|ts|html|css)$/,
-            tagId: "VI",
-            dateFormat: "yyyy-mm-dd @ HH:MM:ss TT",
-          },
-          packageJson: "./package.json",
-          logger: console,
-          exclude: [],
-        }),
-      },
       visualizer({
         title: "Vite Bundle Visualizer",
         filename: path.resolve(__dirname, `stats/vite/visualizer/${new Date().toISOString()}.html`),
@@ -259,8 +260,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         brotliSize: true,
         projectRoot: path.resolve(__dirname),
       }),
-      cp({
-      })
+      ...(!dynamicConfig.isProduction ? debugPlugins : [])
     ],
   };
 });
