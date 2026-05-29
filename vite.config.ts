@@ -79,7 +79,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     DevTools({
       builtinDevTools: true,
       build: {
-        withApp: true,
+        withApp: false,
       },
     }),
     VitePluginCustomElementsManifest({
@@ -101,12 +101,18 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     })
   ];
 
-  console.log(
+  console.error(
     `
 
     VITE
     Dynamic Configs
     ${JSON.stringify(dynamicConfig, null, 2)}
+
+    params
+    MODE - ${mode}
+    COMMAND - ${command}
+    IS_SSR_BUILD - ${isSsrBuild}
+    IS_PREVIEW - ${isPreview}
 
     CWD
       \`process.cwd()\` - ${process.cwd()}
@@ -116,6 +122,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   );
 
   return {
+    devtools: {
+      enabled: !dynamicConfig.isProduction,
+    },
     html: {},
     json: {},
     root: path.resolve(__dirname),
@@ -165,7 +174,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     logLevel: "info",
     server: {
       forwardConsole: true,
-      origin: dynamicConfig.pwa.manifest.scope.slice(9, -1),
+      origin: dynamicConfig.pwa.manifest.scope.slice(0, -1),
+      port: parseInt(process.env.LOCAL_BUILD_PYTHON_SERVER_PORT || "9999"),
+      strictPort: true,
     },
     preview: {
 
@@ -218,7 +229,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         pwaAssets: {
           disabled: false,
           injectThemeColor: false,
-          overrideManifestIcons: true,
+          overrideManifestIcons: false,
           config: path.resolve(__dirname, ".config/pwa-assets/pwa-assets.config.ts"),
         },
         srcDir: path.resolve(__dirname, "static"),
