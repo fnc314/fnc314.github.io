@@ -2,7 +2,7 @@
   firebase = "15.19.0"
   node = "26.2.0"
   "npm:vite" = "8.0.14"
-  pnpm = "11.4.0"
+  pnpm = "11.5.0"
   tombi = "0.11.7"
   usage = "3.3.0"
 
