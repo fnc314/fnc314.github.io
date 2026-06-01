@@ -10,7 +10,7 @@
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "$HOME/.local/share/mise/shims/node"
+    "pwa-node": "/Users/fnc314/.local/share/mise/shims/node"
   },
   "debug.javascript.terminalOptions": {
     "resolveSourceMapLocations": [
@@ -84,8 +84,8 @@
     "**/CVS": true,
     "**/.ruby-lsp": true
   },
-  "jdk.jdkhome": "$HOME/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "java.jdt.ls.java.home": "$HOME/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "java.import.gradle.java.home": "$HOME/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "jdk.jdkhome": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.jdt.ls.java.home": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.import.gradle.java.home": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono"
 }
