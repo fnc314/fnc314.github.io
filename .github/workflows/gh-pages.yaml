@@ -22,13 +22,13 @@ jobs:
       - name: PNPM Install
         run: pnpm install
 
-      - name: PNPM RollUp
-        run: pnpm run build:website:prod
+      - name: Mise Build
+        run: mise run github:deploy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: ./website
+          path: ./dist/vite/production
 
   # Deployment job
   deploy:
