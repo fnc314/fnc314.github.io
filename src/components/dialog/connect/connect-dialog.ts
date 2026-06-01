@@ -1,7 +1,7 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
+import { type Connection, type ConnectionInstance } from "./connect-dialog.types";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";

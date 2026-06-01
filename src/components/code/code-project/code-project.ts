@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type CodeProjectData } from "@/types/components/code/code-project";
+import { type CodeProjectData } from "./code-project.types";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";

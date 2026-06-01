@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type StepUpDialogStyle } from "@/types/components/dialog/step-up-dialog";
+import { type StepUpDialogStyle } from "./step-up-dialog.types";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";

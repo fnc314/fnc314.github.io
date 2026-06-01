@@ -5,7 +5,7 @@ import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
-import { type FormContent } from "@/types/components/dialog/configs-dialog";
+import { type FormContent } from "./configs-dialog.types";
 import { type AppConfigs, type AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 import {
   type FabConfig,
@@ -47,7 +47,7 @@ import {
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-export { type FormContent } from "@/types/components/dialog/configs-dialog";
+export { type FormContent } from "./configs-dialog.types";
 
 /**
  * @summary A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,

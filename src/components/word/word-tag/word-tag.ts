@@ -1,5 +1,5 @@
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type WordTagHeaviness } from "@/types/components/word/word-tag";
+import { type WordTagHeaviness } from "./word-tag.types";
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
