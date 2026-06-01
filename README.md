@@ -1,4 +1,4 @@
-# `src/components/app-shell/app-shell.ts`:
+# `docs/types/components/app-shell/app-shell.js`:
 
 ## class: `AppShell`, `app-shell`
 
@@ -19,21 +19,13 @@
 
 ### Fields
 
-| Name                  | Privacy | Type                                       | Default | Description                                                                                                      | Inherited From |
-| --------------------- | ------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
-| `_openDialogCount`    | private | `number`                                   | `0`     |                                                                                                                  |                |
-| `_uiModeIcon`         | private | `"dark_mode" \| "light_mode" \| "routine"` |         | The icon associated with the current color scheme mode.                                                          |                |
-| `appConfigs`          | private | `AppConfigs`                               |         | The current global application configuration state.                                                              |                |
-| `configsDialog`       | private | `ConfigsDialog`                            |         | Reference to the configuration dialog.                                                                           |                |
-| `connectDialog`       | private | `ConnectDialog`                            |         | Reference to the connect dialog.                                                                                 |                |
-| `connectFab`          | private | `MdFab`                                    |         | Reference to the connect FAB.&#xA;This is an MdFab component.                                                    |                |
-| `connectFabConfig`    | private | `FabConfig`                                |         |                                                                                                                  |                |
-| `fabMenu`             | private | `FabMenu`                                  |         | Reference to the FAB menu component.                                                                             |                |
-| `onAppConfigsChange`  | private |                                            |         | Syncs the component state with the global application configuration.                                             |                |
-| `onColorSchemeChange` | private |                                            |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
-| `onFabChangeBind`     | private |                                            |         |                                                                                                                  |                |
-| `onFabConfigBind`     | private |                                            |         |                                                                                                                  |                |
-| `settingsFabConfig`   | private | `FabConfig`                                |         | The configuration for the settings FAB.                                                                          |                |
+| Name               | Privacy | Type    | Default | Description                                                   | Inherited From |
+| ------------------ | ------- | ------- | ------- | ------------------------------------------------------------- | -------------- |
+| `_openDialogCount` | private |         |         |                                                               |                |
+| `configsDialog`    | private |         |         | Reference to the configuration dialog.                        |                |
+| `connectDialog`    | private |         |         | Reference to the connect dialog.                              |                |
+| `connectFab`       | private | `MdFab` |         | Reference to the connect FAB.&#xA;This is an MdFab component. |                |
+| `fabMenu`          | private |         |         | A floating action button that toggles a menu of actions.      |                |
 
 ### Methods
 
@@ -43,7 +35,15 @@
 | `_handleDialogClosed` | private | Tracks closed dialogs to manage body scroll restoration.                                                             |                                                      |        |                |
 | `_handleDialogOpened` | private | Tracks open dialogs to manage body scroll locking.                                                                   |                                                      |        |                |
 | `_onFabMenuItemClick` | private | Handles clicks on FAB menu items.&#xA;Closes the menu and opens the configuration dialog with the requested content. | `formContent: FormContent`                           |        |                |
+| `_uiModeIcon`         | private | The icon associated with the current color scheme mode.                                                              |                                                      |        |                |
+| `appConfigs`          | private | The current global application configuration state.                                                                  |                                                      |        |                |
+| `connectFabConfig`    | private |                                                                                                                      |                                                      |        |                |
+| `onAppConfigsChange`  | private | Syncs the component state with the global application configuration.                                                 | `event`                                              |        |                |
+| `onColorSchemeChange` | private | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color.     | `event`                                              |        |                |
 | `onFabChange`         | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    | `fab: "settings" \| "connect", fabConfig: FabConfig` |        |                |
+| `onFabChangeBind`     | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    |                                                      |        |                |
+| `onFabConfigBind`     | private |                                                                                                                      |                                                      |        |                |
+| `settingsFabConfig`   | private | The configuration for the settings FAB.                                                                              |                                                      |        |                |
 | `uiModeIcon`          | private | Maps a color scheme name to a Material icon name.                                                                    | `colorScheme: AppConfigs["colorScheme"]`             |        |                |
 
 </details>
@@ -57,7 +57,7 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
-# `src/components/blog/blog-post.ts`:
+# `docs/types/components/blog/blog-post.js`:
 
 ## class: `BlogPost`, `blog-post`
 
@@ -67,11 +67,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name       | Privacy | Type           | Default | Description                               | Inherited From |
-| ---------- | ------- | -------------- | ------- | ----------------------------------------- | -------------- |
-| `blogPost` |         | `BlogPostJson` | `{}`    | The {@link BlogPostJson} record to render |                |
+| Name       | Privacy | Description                               | Parameters | Return | Inherited From |
+| ---------- | ------- | ----------------------------------------- | ---------- | ------ | -------------- |
+| `blogPost` |         | The {@link BlogPostJson} record to render |            |        |                |
 
 ### Attributes
 
@@ -90,12 +90,12 @@
 
 <details><summary>Private API</summary>
 
-### Fields
+### Methods
 
-| Name                | Privacy | Type                     | Default | Description | Inherited From |
-| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
-| `darkMode`          | private |                          |         |             |                |
-| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
+| Name                | Privacy | Description | Parameters | Return | Inherited From |
+| ------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `darkMode`          | private |             |            |        |                |
+| `onAppConfigChange` | private |             |            |        |                |
 
 </details>
 
@@ -108,7 +108,7 @@
 | `custom-element-definition` | `blog-post` | BlogPost    | src/components/blog/blog-post.ts |         |
 | `js`                        | `BlogPost`  | BlogPost    | src/components/blog/blog-post.ts |         |
 
-# `src/components/code/code-project.ts`:
+# `docs/types/components/code/code-project.js`:
 
 ## class: `CodeProject`, `code-project`
 
@@ -118,11 +118,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name          | Privacy | Type              | Default | Description | Inherited From |
-| ------------- | ------- | ----------------- | ------- | ----------- | -------------- |
-| `codeProject` |         | `CodeProjectData` | `{}`    |             |                |
+| Name          | Privacy | Description | Parameters | Return | Inherited From |
+| ------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `codeProject` |         |             |            |        |                |
 
 ### Attributes
 
@@ -134,9 +134,9 @@
 
 ### Fields
 
-| Name      | Privacy | Type      | Default | Description | Inherited From |
-| --------- | ------- | --------- | ------- | ----------- | -------------- |
-| `flipped` | private | `boolean` | `false` |             |                |
+| Name      | Privacy | Type | Default | Description | Inherited From |
+| --------- | ------- | ---- | ------- | ----------- | -------------- |
+| `flipped` | private |      |         |             |                |
 
 ### Methods
 
@@ -156,7 +156,7 @@
 | `custom-element-definition` | `code-project` | CodeProject | src/components/code/code-project.ts |         |
 | `js`                        | `CodeProject`  | CodeProject | src/components/code/code-project.ts |         |
 
-# `src/components/dialog/configs/configs-dialog.ts`:
+# `docs/types/components/dialog/configs/configs-dialog.js`:
 
 ## class: `ConfigsDialog`, `configs-dialog`
 
@@ -186,33 +186,33 @@
 
 ### Fields
 
-| Name                                | Privacy | Type             | Default        | Description | Inherited From |
-| ----------------------------------- | ------- | ---------------- | -------------- | ----------- | -------------- |
-| `_appConfigs`                       | private | `AppConfigs`     |                |             |                |
-| `_configsMDDialog`                  | private | `MdDialog`       |                |             |                |
-| `_darkModeEnabled`                  | private | `boolean`        | `false`        |             |                |
-| `_darkModeToggle`                   | private | `DarkModeToggle` |                |             |                |
-| `_formContent`                      | private | `FormContent`    | `"ui-mode"`    |             |                |
-| `_stepUpDialog`                     | private | `StepUpDialog`   |                |             |                |
-| `_stepUpDialogContent`              | private | `string`         | `"all custom"` |             |                |
-| `_wasOpened`                        | private | `boolean`        | `false`        |             |                |
-| `colorSchemeChangeEventListener`    | private |                  |                |             |                |
-| `completeStepUp`                    | private |                  |                |             |                |
-| `onAppConfigsChange`                | private |                  |                |             |                |
-| `openStepUp`                        | private |                  |                |             |                |
-| `permanentColorSchemeEventListener` | private |                  |                |             |                |
+| Name                   | Privacy | Type             | Default      | Description | Inherited From |
+| ---------------------- | ------- | ---------------- | ------------ | ----------- | -------------- |
+| `_configsMDDialog`     | private | `MdDialog`       |              |             |                |
+| `_darkModeEnabled`     | private |                  |              |             |                |
+| `_darkModeToggle`      | private | `DarkModeToggle` |              |             |                |
+| `_formContent`         | private |                  | `ui-mode`    |             |                |
+| `_stepUpDialog`        | private |                  |              |             |                |
+| `_stepUpDialogContent` | private |                  | `all custom` |             |                |
+| `_wasOpened`           | private |                  |              |             |                |
+| `openStepUp`           | private |                  |              |             |                |
 
 ### Methods
 
-| Name                             | Privacy | Description | Parameters                                               | Return                             | Inherited From |
-| -------------------------------- | ------- | ----------- | -------------------------------------------------------- | ---------------------------------- | -------------- |
-| `_handleDialogEvent`             | private |             | `event: Event`                                           |                                    |                |
-| `#renderFabSettingsFieldset`     | private |             | `fab: "settings" \| "connect", currentConfig: FabConfig` | `TemplateResult`                   |                |
-| `#renderUIFieldset`              | private |             |                                                          | `TemplateResult`                   |                |
-| `dialogContent`                  | private |             |                                                          | `TemplateResult \| typeof nothing` |                |
-| `dialogTitle`                    | private |             |                                                          | `string`                           |                |
-| `onColorThemeModeContrastChange` | private |             | `colorScheme: AppConfigs["colorScheme"]`                 |                                    |                |
-| `onFabChange`                    | private |             | `fab: "settings" \| "connect", newFabConfig: FabConfig`  |                                    |                |
+| Name                                | Privacy | Description | Parameters                                               | Return                             | Inherited From |
+| ----------------------------------- | ------- | ----------- | -------------------------------------------------------- | ---------------------------------- | -------------- |
+| `_appConfigs`                       | private |             |                                                          |                                    |                |
+| `_handleDialogEvent`                | private |             | `event: Event`                                           |                                    |                |
+| `#renderFabSettingsFieldset`        | private |             | `fab: "settings" \| "connect", currentConfig: FabConfig` | `TemplateResult`                   |                |
+| `#renderUIFieldset`                 | private |             |                                                          | `TemplateResult`                   |                |
+| `colorSchemeChangeEventListener`    | private |             |                                                          |                                    |                |
+| `completeStepUp`                    | private |             |                                                          |                                    |                |
+| `dialogContent`                     | private |             |                                                          | `TemplateResult \| typeof nothing` |                |
+| `dialogTitle`                       | private |             |                                                          | `string`                           |                |
+| `onAppConfigsChange`                | private |             |                                                          |                                    |                |
+| `onColorThemeModeContrastChange`    | private |             | `colorScheme: AppConfigs["colorScheme"]`                 |                                    |                |
+| `onFabChange`                       | private |             | `fab: "settings" \| "connect", newFabConfig: FabConfig`  |                                    |                |
+| `permanentColorSchemeEventListener` | private |             |                                                          |                                    |                |
 
 </details>
 
@@ -226,7 +226,7 @@
 | `js`                        | `ConfigsDialog`  | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
 | `js`                        | `FormContent`    | FormContent   | @/types/components/dialog/configs-dialog        |         |
 
-# `src/components/dialog/connect/connect-dialog.ts`:
+# `docs/types/components/dialog/connect/connect-dialog.js`:
 
 ## class: `ConnectDialog`, `connect-dialog`
 
@@ -259,12 +259,9 @@
 
 ### Fields
 
-| Name        | Privacy | Type       | Default                                 | Description | Inherited From |
-| ----------- | ------- | ---------- | --------------------------------------- | ----------- | -------------- |
-| `_mdDialog` | private | `MdDialog` |                                         |             |                |
-| `date`      | private | `string`   | `"[VI]{date}[/VI]".split(" @ ").at(0)!` |             |                |
-| `time`      | private | `string`   | `"[VI]{date}[/VI]".split(" @ ").at(1)!` |             |                |
-| `version`   | private | `string`   | `"[VI]{version}[/VI]"`                  |             |                |
+| Name        | Privacy | Type       | Default | Description | Inherited From |
+| ----------- | ------- | ---------- | ------- | ----------- | -------------- |
+| `_mdDialog` | private | `MdDialog` |         |             |                |
 
 ### Methods
 
@@ -272,6 +269,9 @@
 | -------------------- | ------- | ----------- | ------------------------ | ---------------- | -------------- |
 | `_handleDialogEvent` | private |             | `event: Event`           |                  |                |
 | `#rederConnections`  | private |             | `connection: Connection` | `TemplateResult` |                |
+| `date`               | private |             |                          |                  |                |
+| `time`               | private |             |                          |                  |                |
+| `version`            | private |             |                          |                  |                |
 
 </details>
 
@@ -284,7 +284,7 @@
 | `custom-element-definition` | `connect-dialog` | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
 | `js`                        | `ConnectDialog`  | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
 
-# `src/components/dialog/step-up/step-up-dialog.ts`:
+# `docs/types/components/dialog/step-up/step-up-dialog.js`:
 
 ## class: `StepUpDialog`, `step-up-dialog`
 
@@ -296,10 +296,10 @@
 
 ### Fields
 
-| Name                  | Privacy | Type                | Default     | Description                                 | Inherited From |
-| --------------------- | ------- | ------------------- | ----------- | ------------------------------------------- | -------------- |
-| `dialogContentString` |         | `string`            | `""`        | The central content of the {@link MdDialog} |                |
-| `dialogStyle`         |         | `StepUpDialogStyle` | `"confirm"` | Determines which {@link StepUpDialogStyle}  |                |
+| Name                  | Privacy | Type | Default   | Description                                                         | Inherited From |
+| --------------------- | ------- | ---- | --------- | ------------------------------------------------------------------- | -------------- |
+| `dialogContentString` |         |      |           | The text content to display in the dialog body.                     |                |
+| `dialogStyle`         |         |      | `confirm` | The visual style variant of the dialog, affecting colors and icons. |                |
 
 ### Methods
 
@@ -332,17 +332,17 @@
 
 ### Fields
 
-| Name             | Privacy | Type                                        | Default                                                                                                                                                                                                                                                                                                                                                                                                            | Description | Inherited From |
-| ---------------- | ------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | -------------- |
-| `_mdDialog`      | private | `MdDialog`                                  |                                                                                                                                                                                                                                                                                                                                                                                                                    |             |                |
-| `icons`          | private | `Record<StepUpDialogStyle, TemplateResult>` | ``{ confirm: html`<md-icon slot="icon">check_circle</md-icon>`, warning: html`<md-icon slot="icon">warning</md-icon>`, attention: html`<md-icon slot="icon">report</md-icon>`, }``                                                                                                                                                                                                                                 |             |                |
-| `primaryActions` | private | `Record<StepUpDialogStyle, TemplateResult>` | ``{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }`` |             |                |
+| Name        | Privacy | Type       | Default | Description | Inherited From |
+| ----------- | ------- | ---------- | ------- | ----------- | -------------- |
+| `_mdDialog` | private | `MdDialog` |         |             |                |
 
 ### Methods
 
-| Name            | Privacy | Description | Parameters                               | Return | Inherited From |
-| --------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
-| `onButtonClick` | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
+| Name             | Privacy | Description | Parameters                               | Return | Inherited From |
+| ---------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
+| `icons`          | private |             |                                          |        |                |
+| `onButtonClick`  | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
+| `primaryActions` | private |             |                                          |        |                |
 
 </details>
 
@@ -355,7 +355,7 @@
 | `custom-element-definition` | `step-up-dialog` | StepUpDialog | src/components/dialog/step-up/step-up-dialog.ts |         |
 | `js`                        | `StepUpDialog`   | StepUpDialog | src/components/dialog/step-up/step-up-dialog.ts |         |
 
-# `src/components/fab-menu/fab-menu-item.ts`:
+# `docs/types/components/fab-menu/fab-menu-item.js`:
 
 ## class: `FabMenuItem`, `fab-menu-item`
 
@@ -369,8 +369,8 @@
 
 | Name    | Privacy | Type                   | Default | Description                                    | Inherited From |
 | ------- | ------- | ---------------------- | ------- | ---------------------------------------------- | -------------- |
-| `icon`  |         | `MaterialSymbol \| ""` | `""`    | The icon to display inside the FAB item.       |                |
-| `label` |         | `string`               | `""`    | The text label displayed next to the FAB item. |                |
+| `icon`  |         | `MaterialSymbol \| ""` |         | The icon to display inside the FAB item.       |                |
+| `label` |         |                        |         | The text label displayed next to the FAB item. |                |
 
 ### Methods
 
@@ -413,7 +413,7 @@
 | `custom-element-definition` | `fab-menu-item` | FabMenuItem | src/components/fab-menu/fab-menu-item.ts |         |
 | `js`                        | `FabMenuItem`   | FabMenuItem | src/components/fab-menu/fab-menu-item.ts |         |
 
-# `src/components/fab-menu/fab-menu.ts`:
+# `docs/types/components/fab-menu/fab-menu.js`:
 
 ## class: `FabMenu`, `fab-menu`
 
@@ -425,16 +425,16 @@
 
 ### Fields
 
-| Name         | Privacy | Type                                                  | Default     | Description                                                                             | Inherited From |
-| ------------ | ------- | ----------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------- | -------------- |
-| `ariaLabel`  |         | `string`                                              | `""`        | An override for the \`aria-label\` attribute                                            |                |
-| `direction`  |         | `"start" \| "end"`                                    | `"end"`     | The direction of the menu, one of \`"start"\`, \`"end"\`                                |                |
-| `icon`       |         | `MaterialSymbol \| ""`                                | `"close"`   | The {@link MaterialSymbol} to display when menu is opened                               |                |
-| `label`      |         | `string`                                              | `""`        | The label to display when both opened and closed                                        |                |
-| `open`       |         | `boolean`                                             | `false`     | Indicator of open/closed state                                                          |                |
-| `openedIcon` |         | `MaterialSymbol`                                      | `"close"`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                     |                |
-| `size`       |         | `"small" \| "medium" \| "large"`                      | `"medium"`  | The size of the underlying {@link MdFab}, one of \`"small"\`, \`"medium"\`, \`"large"\` |                |
-| `variant`    |         | `"surface" \| "primary" \| "secondary" \| "tertiary"` | `"primary"` | The variant, one of \`"primary"\`, \`"secondary"\`, \`"tertiary"\`, \`"surface"\`       |                |
+| Name         | Privacy | Type                   | Default   | Description                                                                                                                             | Inherited From |
+| ------------ | ------- | ---------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `ariaLabel`  |         |                        |           | The \`aria-label\` of the FAB.                                                                                                          |                |
+| `direction`  |         |                        | `end`     | The direction in which the menu items should expand.                                                                                    |                |
+| `icon`       |         | `MaterialSymbol \| ""` | `add`     | The {@link MaterialSymbol} to display when the menu&#xA;is closed. Defaults to 'add'. An empty {@link string}&#xA;  suppresses the icon |                |
+| `label`      |         |                        |           | The label of the underlying {@link MdFab}.&#xA;Defaults to an empty string.                                                             |                |
+| `open`       |         |                        |           | Whether the menu is currently open.                                                                                                     |                |
+| `openedIcon` |         | `MaterialSymbol`       | `close`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                                                                     |                |
+| `size`       |         |                        | `medium`  | The size of the FAB.&#xA;Can be 'small', 'medium', or 'large'.&#xA;Defaults to 'medium'.                                                |                |
+| `variant`    |         |                        | `primary` | The variant of the FAB.&#xA;Can be 'surface', 'primary', 'secondary', or 'tertiary'.&#xA;Defaults to 'primary'.                         |                |
 
 ### Attributes
 
@@ -466,21 +466,21 @@
 
 ### Fields
 
-| Name                   | Privacy | Type                                                           | Default | Description | Inherited From |
-| ---------------------- | ------- | -------------------------------------------------------------- | ------- | ----------- | -------------- |
-| `_fab`                 | private | `MdFab`                                                        |         |             |                |
-| `_focusableElements`   | private | `(HTMLElement&{ focus: (options?: FocusOptions) => void; })[]` |         |             |                |
-| `_handleDocumentClick` | private |                                                                |         |             |                |
-| `_items`               | private | `FabMenuItem[]`                                                |         |             |                |
-| `_scrim`               | private | `HTMLDivElement`                                               |         |             |                |
+| Name                 | Privacy | Type             | Default | Description | Inherited From |
+| -------------------- | ------- | ---------------- | ------- | ----------- | -------------- |
+| `_fab`               | private | `MdFab`          |         |             |                |
+| `_focusableElements` | private |                  |         |             |                |
+| `_items`             | private |                  |         |             |                |
+| `_scrim`             | private | `HTMLDivElement` |         |             |                |
 
 ### Methods
 
-| Name                | Privacy   | Description | Parameters      | Return             | Inherited From |
-| ------------------- | --------- | ----------- | --------------- | ------------------ | -------------- |
-| `_handleFocusTrap`  | private   |             | `e: FocusEvent` |                    |                |
-| `_toggle`           | private   |             |                 |                    |                |
-| `getUpdateComplete` | protected |             |                 | `Promise<boolean>` |                |
+| Name                   | Privacy   | Description | Parameters      | Return             | Inherited From |
+| ---------------------- | --------- | ----------- | --------------- | ------------------ | -------------- |
+| `_handleDocumentClick` | private   |             |                 |                    |                |
+| `_handleFocusTrap`     | private   |             | `e: FocusEvent` |                    |                |
+| `_toggle`              | private   |             |                 |                    |                |
+| `getUpdateComplete`    | protected |             |                 | `Promise<boolean>` |                |
 
 </details>
 
@@ -493,7 +493,7 @@
 | `custom-element-definition` | `fab-menu` | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
 | `js`                        | `FabMenu`  | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
 
-# `src/components/info-section/info-section.ts`:
+# `docs/types/components/info-section/info-section.js`:
 
 ## class: `InfoSection`, `info-section`
 
@@ -505,9 +505,9 @@
 
 ### Fields
 
-| Name           | Privacy | Type     | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                   | Inherited From |
-| -------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `sectionTitle` |         | `string` | `""`    | The text shown in the section heading (\`\<h2>\`). Corresponds to the attribute \`section-title\`. Slot API -- \<slot name="section-grid-content">: (required) Container for section body content. Preserves the responsive grid layout. Example: \`\`\`html \<info-section section-title="Experience"> \<div slot="section-grid-content"> ...your list, cards, or details... \</div> \</info-section> \`\`\` |                |
+| Name           | Privacy | Type | Default | Description                                                                               | Inherited From |
+| -------------- | ------- | ---- | ------- | ----------------------------------------------------------------------------------------- | -------------- |
+| `sectionTitle` |         |      |         | The title displayed in the section's header.&#xA;Maps to the \`section-title\` attribute. |                |
 
 ### Attributes
 
@@ -524,7 +524,7 @@
 | `custom-element-definition` | `info-section` | InfoSection | src/components/info-section/info-section.ts |         |
 | `js`                        | `InfoSection`  | InfoSection | src/components/info-section/info-section.ts |         |
 
-# `src/components/nav/nav-component.ts`:
+# `docs/types/components/nav/nav-component.js`:
 
 ## class: `NavComponent`, `nav-component`
 
@@ -545,25 +545,25 @@
 
 ### Fields
 
-| Name                 | Privacy | Type                               | Default                                                                           | Description | Inherited From |
-| -------------------- | ------- | ---------------------------------- | --------------------------------------------------------------------------------- | ----------- | -------------- |
-| `_activeRoute`       | private | `Route`                            |                                                                                   |             |                |
-| `_activeTabIndex`    | private | `number`                           | `0`                                                                               |             |                |
-| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                            |             |                |
-| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }` |             |                |
-| `#boundListener`     | private |                                    |                                                                                   |             |                |
-| `#inlineIconTimeout` | private | `number`                           | `0`                                                                               |             |                |
-| `#routes`            | private | `Route[]`                          |                                                                                   |             |                |
-| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                   |             |                |
+| Name                 | Privacy | Type            | Default | Description | Inherited From |
+| -------------------- | ------- | --------------- | ------- | ----------- | -------------- |
+| `_activeTabIndex`    | private |                 |         |             |                |
+| `_exitingRoute`      | private | `Route \| null` |         |             |                |
+| `#inlineIconTimeout` | private |                 |         |             |                |
 
 ### Methods
 
 | Name                        | Privacy | Description                                                                                                        | Parameters      | Return           | Inherited From |
 | --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
+| `_activeRoute`              | private |                                                                                                                    |                 |                  |                |
+| `_tabRefMap`                | private |                                                                                                                    |                 |                  |                |
+| `#boundListener`            | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
 | `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
 | `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                                                   | `event: Event`  |                  |                |
 | `#renderTabs`               | private | Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons |                 | `TemplateResult` |                |
+| `#routes`                   | private |                                                                                                                    |                 |                  |                |
 | `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing Number                         |                 |                  |                |
+| `#tabsRef`                  | private |                                                                                                                    |                 |                  |                |
 | `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                                                     | `index: number` |                  |                |
 | `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                                                    | `index: number` |                  |                |
 
@@ -578,7 +578,7 @@
 | `custom-element-definition` | `nav-component` | NavComponent | src/components/nav/nav-component.ts |         |
 | `js`                        | `NavComponent`  | NavComponent | src/components/nav/nav-component.ts |         |
 
-# `src/components/partial-header/partial-header.ts`:
+# `docs/types/components/partial-header/partial-header.js`:
 
 ## class: `PartialHeader`, `partial-header`
 
@@ -590,10 +590,10 @@
 
 ### Fields
 
-| Name          | Privacy | Type                                                  | Default     | Description                                                                                                   | Inherited From |
-| ------------- | ------- | ----------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
-| `headerType`  |         | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | `"primary"` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
-| `headingText` |         | `string`                                              | `""`        | The text to display within the header.                                                                        |                |
+| Name          | Privacy | Type | Default   | Description                                                                                                   | Inherited From |
+| ------------- | ------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
+| `headerType`  |         |      | `primary` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
+| `headingText` |         |      |           | The text to display within the header.                                                                        |                |
 
 ### Attributes
 
@@ -611,7 +611,7 @@
 | `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
 | `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
 
-# `src/components/word/word-cloud.ts`:
+# `docs/types/components/word/word-cloud.js`:
 
 ## class: `WordCloud`, `word-cloud`
 
@@ -623,16 +623,21 @@
 
 ### Fields
 
-| Name           | Privacy | Type                        | Default  | Description                                                                                                                                                                    | Inherited From |
-| -------------- | ------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `_sortedWords` |         | `RenderableWordCloudWord[]` | `[]`     |                                                                                                                                                                                |                |
-| `appearance`   |         | `WordCloudAppearance`       |          | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).                 |                |
-| `delay`        |         | `number \| "none"`          | `"none"` | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
-| `grouping`     |         | `WordCloudGrouping`         |          | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                                    |                |
-| `instantClear` |         | `boolean`                   | `false`  | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
-| `sorting`      |         | `WordCloudSorting`          |          | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.           |                |
-| `threshold`    |         | `number`                    | `0.1`    | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
-| `words`        |         | `WordCloudWord[]`           | `[]`     | The list of words to display in the cloud.                                                                                                                                     |                |
+| Name           | Privacy | Type               | Default | Description                                                                                                                                                                    | Inherited From |
+| -------------- | ------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `_sortedWords` |         |                    | ``      |                                                                                                                                                                                |                |
+| `delay`        |         | `number \| "none"` | `none`  | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
+| `instantClear` |         |                    |         | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
+| `threshold`    |         |                    | `0.1`   | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
+| `words`        |         |                    | ``      | The list of words to display in the cloud.                                                                                                                                     |                |
+
+### Methods
+
+| Name         | Privacy | Description                                                                                                                                                          | Parameters | Return | Inherited From |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `appearance` |         | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).       |            |        |                |
+| `grouping`   |         | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                          |            |        |                |
+| `sorting`    |         | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'. |            |        |                |
 
 ### Attributes
 
@@ -665,11 +670,11 @@
 
 ### Fields
 
-| Name                    | Privacy | Type                                | Default | Description | Inherited From |
-| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
-| `_intersectionObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
-| `_isVisible`            | private | `boolean`                           | `false` |             |                |
-| `_listElement`          | private | `HTMLUListElement`                  |         |             |                |
+| Name                    | Privacy | Type               | Default | Description | Inherited From |
+| ----------------------- | ------- | ------------------ | ------- | ----------- | -------------- |
+| `_intersectionObserver` | private |                    |         |             |                |
+| `_isVisible`            | private |                    |         |             |                |
+| `_listElement`          | private | `HTMLUListElement` |         |             |                |
 
 ### Methods
 
@@ -690,7 +695,7 @@
 | `custom-element-definition` | `word-cloud` | WordCloud   | src/components/word/word-cloud.ts |         |
 | `js`                        | `WordCloud`  | WordCloud   | src/components/word/word-cloud.ts |         |
 
-# `src/components/word/word-tag.ts`:
+# `docs/types/components/word/word-tag.js`:
 
 ## class: `WordTag`, `word-tag`
 
@@ -702,11 +707,11 @@
 
 ### Fields
 
-| Name        | Privacy | Type               | Default    | Description                                                                                                                                                                                               | Inherited From |
-| ----------- | ------- | ------------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `heaviness` |         | `WordTagHeaviness` | `"normal"` | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--hairline-width\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --hairline-width\`) |                |
-| `hrefUrl`   |         | `string`           | `""`       | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                     |                |
-| `word`      |         | `string`           | `""`       | The tagged word                                                                                                                                                                                           |                |
+| Name        | Privacy | Type | Default  | Description                                                                                                                                                                                               | Inherited From |
+| ----------- | ------- | ---- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `heaviness` |         |      | `normal` | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--hairline-width\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --hairline-width\`) |                |
+| `hrefUrl`   |         |      |          | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                     |                |
+| `word`      |         |      |          | The tagged word                                                                                                                                                                                           |                |
 
 ### Attributes
 
@@ -737,7 +742,7 @@
 | `custom-element-definition` | `word-tag` | WordTag     | src/components/word/word-tag.ts |         |
 | `js`                        | `WordTag`  | WordTag     | src/components/word/word-tag.ts |         |
 
-# `src/components/work-experience/work-experience.ts`:
+# `docs/types/components/work-experience/work-experience.js`:
 
 ## class: `WorkExperience`, `work-experience`
 
@@ -749,16 +754,16 @@
 
 ### Fields
 
-| Name                | Privacy | Type                      | Default                   | Description                                                                  | Inherited From |
-| ------------------- | ------- | ------------------------- | ------------------------- | ---------------------------------------------------------------------------- | -------------- |
-| `dateEnd`           |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment end date                   |                |
-| `dateStart`         |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment start date                 |                |
-| `experienceOrg`     |         | `string`                  | `""`                      | The employer formal name                                                     |                |
-| `experienceRole`    |         | `string`                  | `""`                      | The formal role from the {@link WorkExperience} instance                     |                |
-| `experienceSummary` |         | `string`                  | `""`                      | An optional summary of the overall role                                      |                |
-| `isNested`          |         | `boolean`                 | `false`                   | Whether this is a nested instance                                            |                |
-| `jobs`              |         | `Array<Job>`              | `[]`                      | An array of {@link Job}s rendered as nested {@link WorkExperience} instances |                |
-| `summaries`         |         | `Array<{ item: string }>` | `[]`                      | An array of \`{ item: string }\` objects describing the responsibilities     |                |
+| Name                | Privacy | Type | Default                   | Description                                                                     | Inherited From |
+| ------------------- | ------- | ---- | ------------------------- | ------------------------------------------------------------------------------- | -------------- |
+| `dateEnd`           |         |      | `{ stamp: "", text: "" }` | End date information including machine-readable stamp and display text.         |                |
+| `dateStart`         |         |      | `{ stamp: "", text: "" }` | Start date information including machine-readable stamp and display text.       |                |
+| `experienceOrg`     |         |      |                           | The name of the organization or client.                                         |                |
+| `experienceRole`    |         |      |                           | The title of the professional role or project.                                  |                |
+| `experienceSummary` |         |      |                           | An optional summary of the overall role                                         |                |
+| `isNested`          |         |      |                           | If true, adjusts font sizes and layout for a nested appearance.                 |                |
+| `jobs`              |         |      | ``                        | A list of sub-jobs or project assignments to be rendered as nested experiences. |                |
+| `summaries`         |         |      | ``                        | A list of summary points describing achievements or responsibilities.           |                |
 
 ### Attributes
 
@@ -782,7 +787,7 @@
 | `custom-element-definition` | `work-experience` | WorkExperience | src/components/work-experience/work-experience.ts |         |
 | `js`                        | `WorkExperience`  | WorkExperience | src/components/work-experience/work-experience.ts |         |
 
-# `src/partials/blog/blog-partial.ts`:
+# `docs/types/partials/blog/blog-partial.js`:
 
 ## class: `BlogPartial`, `blog-partial`
 
@@ -801,7 +806,7 @@
 | `custom-element-definition` | `blog-partial` | BlogPartial | src/partials/blog/blog-partial.ts |         |
 | `js`                        | `BlogPartial`  | BlogPartial | src/partials/blog/blog-partial.ts |         |
 
-# `src/partials/code/code-partial.ts`:
+# `docs/types/partials/code/code-partial.js`:
 
 ## class: `CodePartial`, `code-partial`
 
@@ -820,7 +825,7 @@
 | `custom-element-definition` | `code-partial` | CodePartial | src/partials/code/code-partial.ts |         |
 | `js`                        | `CodePartial`  | CodePartial | src/partials/code/code-partial.ts |         |
 
-# `src/partials/info/info-partial.ts`:
+# `docs/types/partials/info/info-partial.js`:
 
 ## class: `InfoPartial`, `info-partial`
 
@@ -832,12 +837,12 @@
 
 <details><summary>Private API</summary>
 
-### Fields
+### Methods
 
-| Name                   | Privacy | Type          | Default | Description | Inherited From |
-| ---------------------- | ------- | ------------- | ------- | ----------- | -------------- |
-| `onColorConfigsChange` | private |               |         |             |                |
-| `themeConfig`          | private | `ThemeConfig` |         |             |                |
+| Name                   | Privacy | Description | Parameters | Return | Inherited From |
+| ---------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `onColorConfigsChange` | private |             |            |        |                |
+| `themeConfig`          | private |             |            |        |                |
 
 </details>
 
@@ -850,7 +855,7 @@
 | `custom-element-definition` | `info-partial` | InfoPartial | src/partials/info/info-partial.ts |         |
 | `js`                        | `InfoPartial`  | InfoPartial | src/partials/info/info-partial.ts |         |
 
-# `src/partials/work/work-partial.ts`:
+# `docs/types/partials/work/work-partial.js`:
 
 ## class: `WorkPartial`, `work-partial`
 

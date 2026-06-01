@@ -1,0 +1,101 @@
+<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../../README.md)
+
+---
+
+[@fnc314/com.fnc314.website](../../../../../README.md) / [src/types/components/word/word-cloud](../word-cloud.md) / makeWordCloudWord
+
+# Function: makeWordCloudWord()
+
+&gt; **makeWordCloudWord**(`word`: `string`, `weight`: `Weights`, `category`: `WordCloudWordCategory`, `extras?`: `string`[]): `WordCloudWord`
+
+Defined in: [src/types/components/word/word-cloud.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/components/word/word-cloud.ts#L41)
+
+A factory function to create a WordCloudWord
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`word`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`weight`
+
+</td>
+<td>
+
+`Weights`
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`category`
+
+</td>
+<td>
+
+`WordCloudWordCategory`
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`extras`
+
+</td>
+<td>
+
+`string`[]
+
+</td>
+<td>
+
+`[]`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`WordCloudWord`
+
+</body></html>

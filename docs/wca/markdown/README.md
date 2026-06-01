@@ -27,30 +27,6 @@
 | `object Object],[object Object],[object Object],[object Object` |                                                  |
 
 
-# code-project
-
-## Properties
-
-| Property                        | Attribute     | Type              | Default |
-|---------------------------------|---------------|-------------------|---------|
-| `codeProject`                   | `codeProject` | `CodeProjectData` | {}      |
-| `object Object],[object Object` |               |                   |         |
-
-## Methods
-
-| Method               | Type                 | Description                                     |
-|----------------------|----------------------|-------------------------------------------------|
-| `#generateCardBack`  | `(): TemplateResult` | [object Object],[object Object],[object Object] |
-| `#generateCardFront` | `(): TemplateResult` | [object Object],[object Object],[object Object] |
-
-## CSS Custom Properties
-
-| Property                   | Default | Description                                   |
-|----------------------------|---------|-----------------------------------------------|
-| `--code-project-animation` | "200ms" | The duration of the subtle hover/focus effect |
-| `--code-project-rotation`  | "800ms" | The duration of the card rotation effect      |
-
-
 # fab-menu-item
 
 An action item within a `fab-menu`.
@@ -59,7 +35,7 @@ An action item within a `fab-menu`.
 
 | Property | Attribute | Type                                             | Default | Description                                    |
 |----------|-----------|--------------------------------------------------|---------|------------------------------------------------|
-| `icon`   | `icon`    | `"" \| "function" \| "settings" \| "123" \| "360" \| "10k" \| "10mp" \| "11mp" \| "12mp" \| "13mp" \| "14mp" \| "15mp" \| "16mp" \| "17mp" \| "18_up_rating" \| "18mp" \| "19mp" \| "1k" \| "1k_plus" \| ... 3851 more ... \| "zoom_out_map"` | ""      | The icon to display inside the FAB item.       |
+| `icon`   | `icon`    | `"" \| "function" \| "settings" \| "123" \| "360" \| "10k" \| "10mp" \| "11mp" \| "12mp" \| "13mp" \| "14mp" \| "15mp" \| "16mp" \| "17mp" \| "18_up_rating" \| "18mp" \| "19mp" \| "1k" \| "1k_plus" \| ... 3863 more ... \| "zoom_out_map"` | ""      | The icon to display inside the FAB item.       |
 | `label`  | `label`   | `string`                                         | ""      | The text label displayed next to the FAB item. |
 
 ## Methods
@@ -86,14 +62,14 @@ A floating action button that toggles a menu of actions.
 | Property                                        | Attribute     | Type                                             | Default   | Description                                      |
 |-------------------------------------------------|---------------|--------------------------------------------------|-----------|--------------------------------------------------|
 | `ariaLabel`                                     | `aria-label`  | `string`                                         | ""        | The `aria-label` of the FAB.                     |
-| `direction`                                     | `direction`   | `string`                                         | "end"     | The direction in which the menu items should expand. |
-| `icon`                                          | `icon`        | `"" \| "function" \| "settings" \| "123" \| "360" \| "10k" \| "10mp" \| "11mp" \| "12mp" \| "13mp" \| "14mp" \| "15mp" \| "16mp" \| "17mp" \| "18_up_rating" \| "18mp" \| "19mp" \| "1k" \| "1k_plus" \| ... 3851 more ... \| "zoom_out_map"` | "add"     | [object Object],[object Object],[object Object],[object Object],[object Object] |
+| `direction`                                     | `direction`   | `"start" \| "end"`                               | "end"     | The direction in which the menu items should expand. |
+| `icon`                                          | `icon`        |                                                  | "add"     | [object Object],[object Object],[object Object],[object Object],[object Object] |
 | `label`                                         | `label`       | `string`                                         | ""        | [object Object],[object Object],[object Object]  |
 | `object Object],[object Object],[object Object` |               |                                                  |           |                                                  |
 | `open`                                          | `open`        | `boolean`                                        | false     | Whether the menu is currently open.              |
-| `openedIcon`                                    | `opened-icon` | `"function" \| "settings" \| "123" \| "360" \| "10k" \| "10mp" \| "11mp" \| "12mp" \| "13mp" \| "14mp" \| "15mp" \| "16mp" \| "17mp" \| "18_up_rating" \| "18mp" \| "19mp" \| "1k" \| "1k_plus" \| "1x_mobiledata" \| ... 3850 more ... \| "zoom_out_map"` | "close"   | The icon to display when the menu is open.<br />Defaults to 'close'. |
+| `openedIcon`                                    | `opened-icon` | `MaterialSymbol`                                 | "close"   | The icon to display when the menu is open.<br />Defaults to 'close'. |
 | `size`                                          | `size`        | `"small" \| "medium" \| "large"`                 | "medium"  | The size of the FAB.<br />Can be 'small', 'medium', or 'large'.<br />Defaults to 'medium'. |
-| `variant`                                       | `variant`     | `string`                                         | "primary" | The variant of the FAB.<br />Can be 'surface', 'primary', 'secondary', or 'tertiary'.<br />Defaults to 'primary'. |
+| `variant`                                       | `variant`     | `"surface" \| "primary" \| "secondary" \| "tertiary"` | "primary" | The variant of the FAB.<br />Can be 'surface', 'primary', 'secondary', or 'tertiary'.<br />Defaults to 'primary'. |
 
 ## Slots
 
@@ -130,14 +106,14 @@ A navigation component that renders primary tabs synchronized with the applicati
 
 ## Methods
 
-| Method                      | Type                                  | Description                                      |
-|-----------------------------|---------------------------------------|--------------------------------------------------|
-| `#handleHashChange`         | `(): void`                            | Syncs internal state with the URL hash.          |
-| `#onTabChange`              | `(event: Event): void`                | Handles user clicks on tabs. Updates URL and UI.<br /><br />**event**: [object Object],[object Object],[object Object] |
-| `#renderTabs`               | `(): TemplateResult`                  | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#tabIndexAndRouteFromHash` | `():  index  : number, route: Route ` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#updateCarousel`           | `(index: number): void`               | Updates external DOM via style manipulations and blind queries<br /><br />**index**: [object Object],[object Object] |
-| `#updateTabState`           | `(index: number): void`               | Updates the visual state of tabs and panels based on the index. |
+| Method                      | Type                                   | Description                                      |
+|-----------------------------|----------------------------------------|--------------------------------------------------|
+| `#handleHashChange`         | `(): void`                             | Syncs internal state with the URL hash.          |
+| `#onTabChange`              | `(event: Event): void`                 | Handles user clicks on tabs. Updates URL and UI.<br /><br />**event**: [object Object],[object Object],[object Object] |
+| `#renderTabs`               | `(): TemplateResult`                   | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
+| `#tabIndexAndRouteFromHash` | `(): { index: number; route: Route; }` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
+| `#updateCarousel`           | `(index: number): void`                | Updates external DOM via style manipulations and blind queries<br /><br />**index**: [object Object],[object Object] |
+| `#updateTabState`           | `(index: number): void`                | Updates the visual state of tabs and panels based on the index. |
 
 ## CSS Custom Properties
 
@@ -189,30 +165,6 @@ A component that renders a cloud of words with various sorting and grouping opti
 | `--word-cloud-second-quartile-line-height` | "1.5rem"  | Line height for words in the second weight quartile. |
 | `--word-cloud-third-quartile-font-size`    | "1.25rem" | Font size for words in the third weight quartile. |
 | `--word-cloud-third-quartile-line-height`  | "1.25rem" | Line height for words in the third weight quartile. |
-
-
-# word-tag
-
-## Properties
-
-| Property                                         | Attribute   | Type               | Default  | Description                                      |
-|--------------------------------------------------|-------------|--------------------|----------|--------------------------------------------------|
-| `heaviness`                                      | `heaviness` | `WordTagHeaviness` | "normal" | The weight of the tag (text & border), can be<br />`"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or<br />`"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`) |
-| `hrefUrl`                                        | `hrefUrl`   | `string`           | ""       |                                                  |
-| `object Object],[object Object],[object Object],[object Object` |             |                    |          |                                                  |
-| `word`                                           | `word`      | `string`           | ""       | The tagged word                                  |
-
-## CSS Custom Properties
-
-| Property                      | Default                                  | Description                         |
-|-------------------------------|------------------------------------------|-------------------------------------|
-| `--word-tag-background-color` | "--md-sys-color-primary-container"       | The background color                |
-| `--word-tag-border-radius`    | "--md-sys-shape-corner-small"            | The corner radius (for all corners) |
-| `--word-tag-color`            | "--md-sys-color-on-primary-container"    | The text and border color           |
-| `--word-tag-font-family`      | "--md-ref-typeface-brand"                | The font family                     |
-| `--word-tag-font-size`        | "--md-typescale-body-large-font-size"    | The font size                       |
-| `--word-tag-font-weight`      | "--md-ref-typeface-weight-regular"       | The font weight                     |
-| `--word-tag-line-height`      | "--md-typescale-body-large-lingt-height" | The line height                     |
 
 
 # work-experience

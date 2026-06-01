@@ -1,0 +1,600 @@
+[
+  {
+    "title": "Documents",
+    "children": [
+      {
+        "title": "docs/wca/markdown/app-shell",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/app-shell.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/blog-partial",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/blog-partial.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/blog-post",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/blog-post.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/code-partial",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/code-partial.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/fab-menu",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/fab-menu.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/fab-menu-item",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/fab-menu-item.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/info-partial",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/info-partial.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/info-section",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/info-section.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/nav-component",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/nav-component.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/partial-header",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/partial-header.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/README",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/word-cloud",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/word-cloud.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/work-experience",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/work-experience.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/work-partial",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/work-partial.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "src",
+    "children": [
+      {
+        "title": "components",
+        "children": [
+          {
+            "title": "app-shell",
+            "children": [
+              {
+                "title": "app-shell",
+                "kind": 2,
+                "path": "src/components/app-shell/app-shell.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "AppShell",
+                        "kind": 128,
+                        "path": "src/components/app-shell/app-shell/AppShell.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "blog",
+            "children": [
+              {
+                "title": "blog-post",
+                "kind": 2,
+                "path": "src/components/blog/blog-post.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "BlogPost",
+                        "kind": 128,
+                        "path": "src/components/blog/blog-post/BlogPost.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "code",
+            "children": [
+              {
+                "title": "code-project",
+                "children": [
+                  {
+                    "title": "code-project",
+                    "kind": 2,
+                    "path": "src/components/code/code-project/code-project.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "CodeProject",
+                            "kind": 128,
+                            "path": "src/components/code/code-project/code-project/CodeProject.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "dialog",
+            "children": [
+              {
+                "title": "configs",
+                "children": [
+                  {
+                    "title": "configs-dialog",
+                    "kind": 2,
+                    "path": "src/components/dialog/configs/configs-dialog.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ConfigsDialog",
+                            "kind": 128,
+                            "path": "src/components/dialog/configs/configs-dialog/ConfigsDialog.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "connect",
+                "children": [
+                  {
+                    "title": "connect-dialog",
+                    "kind": 2,
+                    "path": "src/components/dialog/connect/connect-dialog.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ConnectDialog",
+                            "kind": 128,
+                            "path": "src/components/dialog/connect/connect-dialog/ConnectDialog.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "step-up",
+                "children": [
+                  {
+                    "title": "step-up-dialog",
+                    "kind": 2,
+                    "path": "src/components/dialog/step-up/step-up-dialog.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "StepUpDialog",
+                            "kind": 128,
+                            "path": "src/components/dialog/step-up/step-up-dialog/StepUpDialog.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "fab-menu",
+            "children": [
+              {
+                "title": "fab-menu-item",
+                "kind": 2,
+                "path": "src/components/fab-menu/fab-menu-item.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "FabMenuItem",
+                        "kind": 128,
+                        "path": "src/components/fab-menu/fab-menu-item/FabMenuItem.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "fab-menu",
+                "kind": 2,
+                "path": "src/components/fab-menu/fab-menu.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "FabMenu",
+                        "kind": 128,
+                        "path": "src/components/fab-menu/fab-menu/FabMenu.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "info-section",
+            "children": [
+              {
+                "title": "info-section",
+                "kind": 2,
+                "path": "src/components/info-section/info-section.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "InfoSection",
+                        "kind": 128,
+                        "path": "src/components/info-section/info-section/InfoSection.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "nav",
+            "children": [
+              {
+                "title": "nav-component",
+                "kind": 2,
+                "path": "src/components/nav/nav-component.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "NavComponent",
+                        "kind": 128,
+                        "path": "src/components/nav/nav-component/NavComponent.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "partial-header",
+            "children": [
+              {
+                "title": "partial-header",
+                "kind": 2,
+                "path": "src/components/partial-header/partial-header.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "PartialHeader",
+                        "kind": 128,
+                        "path": "src/components/partial-header/partial-header/PartialHeader.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "word",
+            "children": [
+              {
+                "title": "word-cloud",
+                "kind": 2,
+                "path": "src/components/word/word-cloud.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "WordCloud",
+                        "kind": 128,
+                        "path": "src/components/word/word-cloud/WordCloud.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "word-tag",
+                "children": [
+                  {
+                    "title": "word-tag",
+                    "kind": 2,
+                    "path": "src/components/word/word-tag/word-tag.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "WordTag",
+                            "kind": 128,
+                            "path": "src/components/word/word-tag/word-tag/WordTag.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "work-experience",
+            "children": [
+              {
+                "title": "work-experience",
+                "kind": 2,
+                "path": "src/components/work-experience/work-experience.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "WorkExperience",
+                        "kind": 128,
+                        "path": "src/components/work-experience/work-experience/WorkExperience.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "partials",
+        "children": [
+          {
+            "title": "code",
+            "children": [
+              {
+                "title": "code-partial",
+                "kind": 2,
+                "path": "src/partials/code/code-partial.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Classes",
+                    "children": [
+                      {
+                        "title": "CodePartial",
+                        "kind": 128,
+                        "path": "src/partials/code/code-partial/CodePartial.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "types",
+        "children": [
+          {
+            "title": "components",
+            "children": [
+              {
+                "title": "word",
+                "children": [
+                  {
+                    "title": "word-cloud",
+                    "kind": 2,
+                    "path": "src/types/components/word/word-cloud.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Functions",
+                        "children": [
+                          {
+                            "title": "makeWordCloudWord",
+                            "kind": 64,
+                            "path": "src/types/components/word/word-cloud/makeWordCloudWord.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "configs",
+            "children": [
+              {
+                "title": "fab-configs",
+                "kind": 2,
+                "path": "src/types/configs/fab-configs.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "FabPositionComponentVertical",
+                        "kind": 2097152,
+                        "path": "src/types/configs/fab-configs/FabPositionComponentVertical.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "FabPositionComponentHorizontal",
+                        "kind": 2097152,
+                        "path": "src/types/configs/fab-configs/FabPositionComponentHorizontal.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Variables",
+                    "children": [
+                      {
+                        "title": "FAB_POSITION_COMPONENTS_VERTICAL",
+                        "kind": 32,
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_VERTICAL.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+                        "kind": 32,
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_HORIZONTAL.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "FAB_POSITION",
+                        "kind": 32,
+                        "path": "src/types/configs/fab-configs/FAB_POSITION.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "FabPositionIcons",
+                        "kind": 32,
+                        "path": "src/types/configs/fab-configs/FabPositionIcons.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "theme",
+            "children": [
+              {
+                "title": "theme",
+                "kind": 2,
+                "path": "src/types/theme/theme.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Functions",
+                    "children": [
+                      {
+                        "title": "jsonIsThemeJsonSchemes",
+                        "kind": 64,
+                        "path": "src/types/theme/theme/jsonIsThemeJsonSchemes.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "readScheme",
+                        "kind": 64,
+                        "path": "src/types/theme/theme/readScheme.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "keyTransform",
+                        "kind": 64,
+                        "path": "src/types/theme/theme/keyTransform.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

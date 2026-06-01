@@ -69,7 +69,7 @@ export default {
       MaterialSymbol: "https://github.com/marella/material-symbols/tree/main/material-symbols",
     },
   },
-  favicon: `${process.cwd()}/assets/icons/icon.svg`,
+  favicon: `${process.cwd()}/static/icons/icon.svg`,
   flattenOutputFiles: true,
   footerLastModified: true,
   footerTypedocVersion: true,

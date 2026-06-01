@@ -9,7 +9,11 @@ Start Python server at provided directory on given port
 
 #### `[directory]`
 
+Sets the directory for python -m http.server and updates LOCAL_BUILD_PYTHON_SERVER_DIR via mise set to keep vite produced manifest.json assets in sync
+
 **Default:** `dist`
+
+**Environment Variable:** `LOCAL_BUILD_PYTHON_SERVER_DIR`
 
 ### Flags
 

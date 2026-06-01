@@ -7,7 +7,6 @@
       "declarations": [
         {
           "name": "AppShell",
-          "summary": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -156,10 +155,6 @@
           "tagName": "app-shell",
           "slots": [
             {
-              "name": "",
-              "description": "[app-content] - The place for the dynamic application content"
-            },
-            {
               "name": "app-nav"
             },
             {
@@ -258,11 +253,7 @@
             },
             {
               "name": "--blog-post-container-color",
-              "description": "The color of the container, {@link MdElevatedCard}\nand {@link --md-elevated-card-container-color}"
-            },
-            {
-              "name": "--blog-post-word-tag-container-color",
-              "description": "The color of the container, {@link WordTag}"
+              "description": "The color of the container, {@link @material/web!MdElevatedCard}\nand {@link @material/web!--md-elevated-card-container-color}\n@cssprop --blog-post-word-tag-container-color - The color of the container, {@link @fnc314/com.fnc314.website!WordTag}"
             }
           ],
           "customElement": true
@@ -289,7 +280,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/code/code-project.js",
+      "path": "src/components/code/code-project/code-project.js",
       "declarations": [
         {
           "name": "CodeProject",
@@ -310,7 +301,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project.ts#L21"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L21"
           },
           "kind": "class",
           "tagName": "code-project",
@@ -372,7 +363,7 @@
           "name": "code-project",
           "declaration": {
             "name": "CodeProject",
-            "module": "src/components/code/code-project.js"
+            "module": "src/components/code/code-project/code-project.js"
           }
         },
         {
@@ -380,10 +371,14 @@
           "name": "CodeProject",
           "declaration": {
             "name": "CodeProject",
-            "module": "src/components/code/code-project.js"
+            "module": "src/components/code/code-project/code-project.js"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code/code-project/code-project.types.js"
     },
     {
       "kind": "javascript-module",
@@ -391,7 +386,7 @@
       "declarations": [
         {
           "name": "ConfigsDialog",
-          "description": "A comprehensive configuration dialog for managing application settings.\nAllows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
+          "summary": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -432,7 +427,7 @@
                     "references": [
                       {
                         "name": "FormContent",
-                        "module": "src/components/dialog/configs/configs-dialog.js"
+                        "module": "src/components/dialog/configs/configs-dialog.types.js"
                       }
                     ]
                   }
@@ -569,7 +564,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L63"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L61"
           },
           "kind": "class",
           "tagName": "configs-dialog",
@@ -658,6 +653,10 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/dialog/configs/configs-dialog.types.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/dialog/connect/connect-dialog.js",
       "declarations": [
         {
@@ -669,29 +668,26 @@
           },
           "members": [
             {
-              "name": "date",
+              "name": "formattedDate",
               "type": {
                 "text": "string"
               },
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(0)!",
+              "default": "new Intl.DateTimeFormat(navigator.languages, {\\n    month: \"2-digit\",\\n    day: \"2-digit\",\\n    year: \"numeric\",\\n  }).format(time)",
               "kind": "field",
               "privacy": "private"
             },
             {
-              "name": "time",
+              "name": "formattedTime",
               "type": {
                 "text": "string"
               },
-              "default": "\"[VI]{date}[/VI]\".split(\" @ \").at(1)!",
+              "default": "new Intl.DateTimeFormat(navigator.languages, {\\n    hour: \"2-digit\",\\n    minute: \"2-digit\",\\n    second: \"2-digit\",\\n  }).format(time)",
               "kind": "field",
               "privacy": "private"
             },
             {
               "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"[VI]{version}[/VI]\"",
+              "default": "buildVersion",
               "kind": "field",
               "privacy": "private"
             },
@@ -730,7 +726,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L19"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L22"
           },
           "kind": "class",
           "tagName": "connect-dialog",
@@ -810,11 +806,15 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/dialog/connect/connect-dialog.types.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/dialog/step-up/step-up-dialog.js",
       "declarations": [
         {
           "name": "StepUpDialog",
-          "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.",
+          "summary": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -828,7 +828,7 @@
                 "references": [
                   {
                     "name": "StepUpDialogStyle",
-                    "module": "src/components/dialog/step-up/step-up-dialog.js"
+                    "module": "src/components/dialog/step-up/step-up-dialog.types.js"
                   }
                 ]
               },
@@ -886,7 +886,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/step-up/step-up-dialog.ts#L27"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/step-up/step-up-dialog.ts#L26"
           },
           "kind": "class",
           "tagName": "step-up-dialog",
@@ -899,7 +899,7 @@
                 "references": [
                   {
                     "name": "StepUpDialogStyle",
-                    "module": "src/components/dialog/step-up/step-up-dialog.js"
+                    "module": "src/components/dialog/step-up/step-up-dialog.types.js"
                   }
                 ]
               },
@@ -1002,6 +1002,10 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dialog/step-up/step-up-dialog.types.js"
     },
     {
       "kind": "javascript-module",
@@ -1169,13 +1173,7 @@
               "name": "icon",
               "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\nsuppresses the icon",
               "type": {
-                "text": "MaterialSymbols[number] | \"\"",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol | \"\""
               },
               "default": "\"add\"",
               "kind": "field",
@@ -1185,13 +1183,7 @@
               "name": "openedIcon",
               "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
               "type": {
-                "text": "MaterialSymbols[number]",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol"
               },
               "default": "\"close\"",
               "kind": "field",
@@ -1251,7 +1243,7 @@
             {
               "name": "_focusableElements",
               "type": {
-                "text": "(HTMLElement \u0026 { focus: (options?: FocusOptions) =\u003e void })[]"
+                "text": "(HTMLElement\u0026{ focus: (options?: FocusOptions) =\u003e void; })[]"
               },
               "readonly": true,
               "kind": "field",
@@ -1308,13 +1300,7 @@
               "name": "icon",
               "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\nsuppresses the icon",
               "type": {
-                "text": "MaterialSymbols[number] | \"\"",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol | \"\""
               },
               "default": "\"add\"",
               "fieldName": "icon"
@@ -1323,13 +1309,7 @@
               "name": "opened-icon",
               "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
               "type": {
-                "text": "MaterialSymbols[number]",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol"
               },
               "default": "\"close\"",
               "fieldName": "openedIcon"
@@ -1384,9 +1364,6 @@
             {
               "name": "",
               "description": "[menu-items] - The content of the menu, typically {@link FabMenuItem} elements"
-            },
-            {
-              "name": "menu-items"
             }
           ],
           "cssProperties": [
@@ -1415,10 +1392,12 @@
               "name": "--md-sys-color-scrim"
             },
             {
-              "name": "--internal-fab-menu-transition-duration"
+              "name": "--internal-fab-menu-transition-duration",
+              "default": "var(--fab-menu-transition-duration, 200ms)"
             },
             {
-              "name": "--internal-fab-menu-animation-spec"
+              "name": "--internal-fab-menu-animation-spec",
+              "default": "var(--fab-menu-animation-spec, cubic-bezier(0.4, 0, 0.2, 1))"
             }
           ],
           "customElement": true
@@ -2045,7 +2024,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/word/word-tag.js",
+      "path": "src/components/word/word-tag/word-tag.js",
       "declarations": [
         {
           "name": "WordTag",
@@ -2067,7 +2046,13 @@
             {
               "name": "heaviness",
               "type": {
-                "text": "WordTagHeaviness"
+                "text": "\"normal\" | \"heavy\"",
+                "references": [
+                  {
+                    "name": "WordTagHeaviness",
+                    "module": "src/components/word/word-tag/word-tag.types.js"
+                  }
+                ]
               },
               "default": "\"normal\"",
               "kind": "field",
@@ -2084,7 +2069,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag.ts#L30"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag/word-tag.ts#L30"
           },
           "kind": "class",
           "tagName": "word-tag",
@@ -2100,7 +2085,13 @@
             {
               "name": "heaviness",
               "type": {
-                "text": "WordTagHeaviness"
+                "text": "\"normal\" | \"heavy\"",
+                "references": [
+                  {
+                    "name": "WordTagHeaviness",
+                    "module": "src/components/word/word-tag/word-tag.types.js"
+                  }
+                ]
               },
               "default": "\"normal\"",
               "fieldName": "heaviness"
@@ -2213,7 +2204,7 @@
           "name": "word-tag",
           "declaration": {
             "name": "WordTag",
-            "module": "src/components/word/word-tag.js"
+            "module": "src/components/word/word-tag/word-tag.js"
           }
         },
         {
@@ -2221,10 +2212,14 @@
           "name": "WordTag",
           "declaration": {
             "name": "WordTag",
-            "module": "src/components/word/word-tag.js"
+            "module": "src/components/word/word-tag/word-tag.js"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/word-tag/word-tag.types.js"
     },
     {
       "kind": "javascript-module",
@@ -3218,14 +3213,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/code/code-project.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/components/dialog/connect-dialog.js"
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/components/nav/routes.js",
       "declarations": [
         {
@@ -3366,10 +3353,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/word/word-tag.js"
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/components/work-experience/work-experience.js",
       "declarations": [
         {
@@ -3423,23 +3406,32 @@
       "declarations": [
         {
           "name": "FAB_POSITION_COMPONENTS_VERTICAL",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L3"
-          }
-        },
-        {
-          "name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+          "description": "The vertical position of a given ",
+          "type": {
+            "text": "{ readonly TOP: \"TOP\"; readonly BOTTOM: \"BOTTOM\"; }"
+          },
           "kind": "variable",
           "source": {
             "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L8"
           }
         },
         {
-          "name": "FAB_POSITION",
+          "name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
+          "description": "The hotizontal position of a given ",
+          "type": {
+            "text": "{ readonly START: \"START\"; readonly END: \"END\"; }"
+          },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L23"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L18"
+          }
+        },
+        {
+          "name": "FAB_POSITION",
+          "description": "The complete collection of possible {@link @material/web!MdFab} positions.  Cross-product of {@link FAB_POSITION_COMPONENTS_HORIZONTAL}\nand {@link FAB_POSITION_COMPONENTS_VERTICAL}\n\n@type {{ readonly START_TOP: \"START_TOP\"; readonly START_BOTTOM: \"START_BOTTOM\"; readonly END_TOP: \"END_TOP\"; readonly END_BOTTOM: \"END_BOTTOM\"; }}",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L48"
           }
         },
         {
@@ -3449,24 +3441,25 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L31"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L56"
           }
         },
         {
           "name": "FabPositionIcons",
+          "description": "Maps {@link FAB_POSITION} to a particular ",
           "type": {
             "text": ": Record\u003cFabPosition, TemplateResult\u003e"
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L33"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L64"
           }
         },
         {
           "name": "FAB_STYLE",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L52"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L83"
           }
         },
         {
@@ -3476,7 +3469,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L73"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L104"
           }
         },
         {
@@ -3491,7 +3484,7 @@
           "name": "fabPositionToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L40"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L71"
           }
         },
         {
@@ -3506,7 +3499,7 @@
           "name": "fabPositionComponents",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L46"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L77"
           }
         },
         {
@@ -3521,7 +3514,7 @@
           "name": "fabStyleToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L60"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L91"
           }
         },
         {
@@ -3536,7 +3529,7 @@
           "name": "fabConfigToGrid",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L83"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L114"
           }
         },
         {
@@ -3551,7 +3544,7 @@
           "name": "fabPositionClass",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L95"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L126"
           }
         }
       ],
@@ -3656,6 +3649,10 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/types/material-symbols.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/theme/color-scheme-configs.js",
       "declarations": [
         {
@@ -3746,7 +3743,7 @@
           "name": "THEME_NAMES",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L121"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L123"
           }
         },
         {
@@ -3756,7 +3753,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L135"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L137"
           }
         },
         {
@@ -3776,7 +3773,7 @@
           "description": "Checks if the provided JSON conforms to the expected theme schemes structure",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L77"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/theme/theme.ts#L79"
           }
         }
       ],
