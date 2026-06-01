@@ -5,10 +5,7 @@
 .rolldown
 .rollup.cache
 bin
-dist/out/
-dist/rollup/
-dist/types/**/*.d.ts.map
-dist/vite/
+dist/
 lit-plugin.log
 logs
 node_modules/
