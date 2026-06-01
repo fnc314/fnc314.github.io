@@ -29,6 +29,9 @@
     "firebase-functions-test": "catalog:functionsDevDependencies",
     "typescript": "catalog:devDependencies"
   },
+  "overrides": {
+    "uuid": "catalog:overrides"
+  },
   "engines": {
     "node": "26.3.0"
   },

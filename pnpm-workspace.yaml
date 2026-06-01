@@ -167,6 +167,7 @@ catalogs:
     lodash: 4.18.1
     nanoid: 5.1.11
     serialize-javascript: 7.0.5
+    uuid: 14.0.0
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:

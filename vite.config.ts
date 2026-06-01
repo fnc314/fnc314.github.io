@@ -113,6 +113,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     COMMAND - ${command}
     IS_SSR_BUILD - ${isSsrBuild}
     IS_PREVIEW - ${isPreview}
+    NODE_ENV - ${process.env.NODE_ENV}
 
     CWD
       \`process.cwd()\` - ${process.cwd()}
@@ -164,6 +165,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         logLevel: "debug",
         platform: "browser",
       },
+      reportCompressedSize: true,
     },
     css: {
       devSourcemap: !dynamicConfig.isProduction,

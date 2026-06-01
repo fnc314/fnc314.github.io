@@ -86,9 +86,6 @@
     "material-symbols": "catalog:dependencies"
   },
   "devDependencies": {
-    "@11ty/eleventy": "catalog:devDependencies",
-    "@11ty/eleventy-img": "catalog:devDependencies",
-    "@11ty/eleventy-plugin-syntaxhighlight": "catalog:devDependencies",
     "@addasoft/skeleton-component-generator": "catalog:devDependencies",
     "@custom-elements-manifest/analyzer": "catalog:devDependencies",
     "@custom-elements-manifest/find-dependencies": "catalog:devDependencies",
@@ -178,7 +175,6 @@
     "rollup-plugin-manifest-json": "catalog:devDependencies",
     "rollup-plugin-postcss": "catalog:devDependencies",
     "rollup-plugin-postcss-lit": "catalog:devDependencies",
-    "rollup-plugin-prettier": "catalog:devDependencies",
     "rollup-plugin-progress": "catalog:devDependencies",
     "rollup-plugin-summary": "catalog:devDependencies",
     "rollup-plugin-typescript-paths": "catalog:devDependencies",

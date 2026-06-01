@@ -1,0 +1,8 @@
+{
+  "jdk.jdkhome": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.jdt.ls.java.home": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.import.gradle.java.home": "/Users/fnc314/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "/Users/fnc314/.local/share/mise/shims/node"
+  }
+}
