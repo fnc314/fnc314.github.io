@@ -44,8 +44,11 @@ export default {
     "src/index.ts",
   ],
   exclude: [
+    "**/*.json",
     "src/data/**/*.json",
+    "~build/*",
   ],
+  fast: false,
   outdir: path.resolve(process.cwd(), docsDir),
   dev: isDev,
   dependencies: true,
@@ -55,11 +58,15 @@ export default {
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
   resolutionOptions: {
     allowPackageExportsInDirectoryResolve: true,
-    buildinModules: true,
+    builtinModules: true,
     nodePath: true,
     extensions: [".ts", ".js"],
     mainFields: ["module", "main"],
     conditionNames: ["import", "require"],
+    alias: {
+      "@": path.resolve(process.cwd(), "src"),
+      "~build": path.resolve(process.cwd(), "node_modules") // Dummy path to silence virtual module warnings
+    },
     tsconfig: {
       configFile: path.resolve(process.cwd(), "tsconfig.json"),
     },
@@ -97,13 +104,12 @@ export default {
     }),
     modulePathResolverPlugin({
       fileName: customElementsManifestJSON,
-      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/types").replace(".ts", ".js"),
+      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/out").replace(".ts", ".js"),
       outdir: docsDir,
       debug: true,
     }),
     typeParserPlugin({
       debug: isDev,
-      parseObjectTypes: "full",
       parseParameters: true,
       propertyName: "parsedType",
     }),
