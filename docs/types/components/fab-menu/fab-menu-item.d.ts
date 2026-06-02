@@ -16,4 +16,3 @@ declare global {
         "fab-menu-item": FabMenuItem;
     }
 }
-//# sourceMappingURL=fab-menu-item.d.ts.map

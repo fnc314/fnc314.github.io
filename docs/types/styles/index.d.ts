@@ -2,4 +2,3 @@
 import "./styles";
 export * from "./material-styles";
 export * from "./styles";
-//# sourceMappingURL=index.d.ts.map

@@ -10,4 +10,3 @@ declare global {
         "partial-header": PartialHeader;
     }
 }
-//# sourceMappingURL=partial-header.d.ts.map

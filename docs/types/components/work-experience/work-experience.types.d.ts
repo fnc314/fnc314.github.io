@@ -31,4 +31,3 @@ export interface WorkData {
     experiences: Experience[];
 }
 export declare const data: WorkData;
-//# sourceMappingURL=work-experience.types.d.ts.map

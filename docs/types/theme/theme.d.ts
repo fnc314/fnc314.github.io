@@ -6,4 +6,3 @@ export * from "@/theme/chicago/chicago-theme";
 export * from "@/theme/inter/inter-theme";
 export * from "@/theme/red/red-theme";
 export * from "@/theme/sunset/sunset-theme";
-//# sourceMappingURL=theme.d.ts.map

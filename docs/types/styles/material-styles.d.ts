@@ -4,4 +4,3 @@ export type MaterialSchemeName = "light" | "lightMediumContrast" | "lightHighCon
 export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 export declare const MaterialOverrides: CSSResult;
-//# sourceMappingURL=material-styles.d.ts.map

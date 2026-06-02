@@ -6,12 +6,10 @@
 .rollup.cache
 bin
 dist/
-dist/types
-dist/types/**/*.d.ts.map
-!dist/types/**/*.d.ts
+docs/types/**/*.d.ts.map
+!docs/types/**/*.d.ts
 lit-plugin.log
 logs
 node_modules/
-out
 stats
 website

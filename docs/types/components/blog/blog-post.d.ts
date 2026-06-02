@@ -16,4 +16,3 @@ declare global {
         "blog-post": BlogPost;
     }
 }
-//# sourceMappingURL=blog-post.d.ts.map

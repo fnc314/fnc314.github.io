@@ -8,4 +8,3 @@ declare global {
         "code-partial": CodePartial;
     }
 }
-//# sourceMappingURL=code-partial.d.ts.map

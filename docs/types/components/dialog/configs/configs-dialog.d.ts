@@ -51,4 +51,3 @@ declare global {
         "color_scheme.change": ColorSchemeConfigChange;
     }
 }
-//# sourceMappingURL=configs-dialog.d.ts.map

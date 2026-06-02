@@ -64,6 +64,12 @@ function createDynamicConfig(
   };
 }
 
+/**
+ * Calls through to {@link execSync} to generate the current git hash from
+ *   the external CLI
+ *
+ * @returns {string} The result of the `git` command, or an empty string
+ */
 const getGitInfo = () => {
   try {
     return execSync("git rev-parse --short=10 HEAD").toString().trim();
@@ -80,6 +86,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       builtinDevTools: true,
       build: {
         withApp: false,
+        outDir: dynamicConfig.outDir,
       },
     }),
     VitePluginCustomElementsManifest({
@@ -125,6 +132,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   return {
     devtools: {
       enabled: !dynamicConfig.isProduction,
+      environments: [
+        "development",
+      ]
     },
     html: {},
     json: {},
@@ -266,7 +276,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       }),
       visualizer({
         title: "Vite Bundle Visualizer",
-        filename: path.resolve(__dirname, `stats/vite/visualizer/${new Date().toISOString()}.html`),
+        filename: path.resolve(__dirname, `stats/vite/visualizer/${mode}-${process.env.NODE_ENV}/${new Date().toISOString()}.html`),
         sourcemap: !dynamicConfig.isProduction,
         template: "network",
         gzipSize: true,

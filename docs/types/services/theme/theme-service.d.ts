@@ -5,4 +5,3 @@ export interface ThemeService {
     themeJson(): Record<ColorSchemeRoles, ColorString>;
 }
 export declare const themeService: ThemeService;
-//# sourceMappingURL=theme-service.d.ts.map

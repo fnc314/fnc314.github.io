@@ -31,4 +31,3 @@ export declare const makeWordCloudWord: (word: string, weight: Weights, category
 export type RenderableWordCloudWord = WordCloudWord & {
     delay?: number;
 };
-//# sourceMappingURL=word-cloud.types.d.ts.map

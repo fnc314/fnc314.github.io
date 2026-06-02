@@ -8,4 +8,3 @@ export interface ConnectionInstance {
     overline: string;
     text: string;
 }
-//# sourceMappingURL=connect-dialog.types.d.ts.map
