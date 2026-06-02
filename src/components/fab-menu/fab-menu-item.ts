@@ -3,6 +3,7 @@ import { type MaterialSymbol } from "@/types/material-symbols";
 import { MdFab } from "@material/web/fab/fab";
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
+export type { MaterialSymbol } from "@/types/material-symbols";
 
 /**
  * An action item within a `fab-menu`.

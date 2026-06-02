@@ -6,6 +6,7 @@ import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+export type { BlogPostJson } from "@/components/blog/blog-post.types";
 
 /**
  * @summary Represents a published blog record, linking to the artifact

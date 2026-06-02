@@ -9,6 +9,7 @@ import { LitElement, css, html, nothing } from "lit";
 import { customElement, property, query, queryAssignedElements } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { when } from "lit/directives/when.js";
+export type { MaterialSymbol } from "@/types/material-symbols";
 
 /**
  * A floating action button that toggles a menu of actions.

@@ -69,12 +69,6 @@
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/word-cloud",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/word-cloud.md",
-        "isDeprecated": false
-      },
-      {
         "title": "docs/wca/markdown/work-experience",
         "kind": 8388608,
         "path": "docs/wca/markdown/work-experience.md",
@@ -368,18 +362,42 @@
             "children": [
               {
                 "title": "word-cloud",
-                "kind": 2,
-                "path": "src/components/word/word-cloud.md",
-                "isDeprecated": false,
                 "children": [
                   {
-                    "title": "Classes",
+                    "title": "word-cloud",
+                    "kind": 2,
+                    "path": "src/components/word/word-cloud/word-cloud.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "WordCloud",
-                        "kind": 128,
-                        "path": "src/components/word/word-cloud/WordCloud.md",
-                        "isDeprecated": false
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "WordCloud",
+                            "kind": 128,
+                            "path": "src/components/word/word-cloud/word-cloud/WordCloud.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "word-cloud.types",
+                    "kind": 2,
+                    "path": "src/components/word/word-cloud/word-cloud.types.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Functions",
+                        "children": [
+                          {
+                            "title": "makeWordCloudWord",
+                            "kind": 64,
+                            "path": "src/components/word/word-cloud/word-cloud.types/makeWordCloudWord.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
                   }
@@ -469,35 +487,6 @@
       {
         "title": "types",
         "children": [
-          {
-            "title": "components",
-            "children": [
-              {
-                "title": "word",
-                "children": [
-                  {
-                    "title": "word-cloud",
-                    "kind": 2,
-                    "path": "src/types/components/word/word-cloud.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Functions",
-                        "children": [
-                          {
-                            "title": "makeWordCloudWord",
-                            "kind": 64,
-                            "path": "src/types/components/word/word-cloud/makeWordCloudWord.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "title": "configs",
             "children": [

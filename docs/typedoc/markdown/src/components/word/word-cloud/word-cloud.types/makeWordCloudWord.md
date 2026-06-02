@@ -2,13 +2,13 @@
 
 ---
 
-[@fnc314/com.fnc314.website](../../../../../README.md) / [src/types/components/word/word-cloud](../word-cloud.md) / makeWordCloudWord
+[@fnc314/com.fnc314.website](../../../../../README.md) / [src/components/word/word-cloud/word-cloud.types](../word-cloud.types.md) / makeWordCloudWord
 
 # Function: makeWordCloudWord()
 
 &gt; **makeWordCloudWord**(`word`: `string`, `weight`: `Weights`, `category`: `WordCloudWordCategory`, `extras?`: `string`[]): `WordCloudWord`
 
-Defined in: [src/types/components/word/word-cloud.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/components/word/word-cloud.ts#L41)
+Defined in: [src/components/word/word-cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.types.ts#L41)
 
 A factory function to create a WordCloudWord
 

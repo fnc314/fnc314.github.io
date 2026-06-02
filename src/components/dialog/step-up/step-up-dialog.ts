@@ -1,5 +1,5 @@
+import { type StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type StepUpDialogStyle } from "./step-up-dialog.types";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
@@ -8,6 +8,7 @@ import "@material/web/icon/icon";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+export type { StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 
 /**
  * @summary A versatile confirmation dialog used to verify user intent before performing

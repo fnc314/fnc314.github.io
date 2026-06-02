@@ -3,6 +3,26 @@
   "version": 1.1,
   "properties": [
     {
+      "name": "--blog-post-animation",
+      "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states",
+      "values": []
+    },
+    {
+      "name": "--blog-post-primary-text-color",
+      "description": "The color of the primary text",
+      "values": []
+    },
+    {
+      "name": "--blog-post-container-color",
+      "description": "The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color}",
+      "values": []
+    },
+    {
+      "name": "--blog-post-word-tag-container-color",
+      "description": "The color of the container, {@link @fnc314/com.fnc314.website!WordTag}",
+      "values": []
+    },
+    {
       "name": "--connect-dialog-content-transition",
       "description": "The animation duration for expanding/collapsing connection details.",
       "values": []
@@ -29,7 +49,12 @@
     },
     {
       "name": "--fab-menu-transition-duration",
-      "description": "The duration of the menu's opening and closing animations.",
+      "description": "The duration of the menu's opening and closing animations",
+      "values": []
+    },
+    {
+      "name": "--fab-menu-animation-spec",
+      "description": "The animation spec for {@link FabMenu} `transition`s",
       "values": []
     },
     {
@@ -90,6 +115,41 @@
     {
       "name": "--word-cloud-fourth-quartile-line-height",
       "description": "Line height for words in the fourth weight quartile.",
+      "values": []
+    },
+    {
+      "name": "--word-tag-color",
+      "description": "The text and border color",
+      "values": []
+    },
+    {
+      "name": "--word-tag-background-color",
+      "description": "The background color",
+      "values": []
+    },
+    {
+      "name": "--word-tag-font-family",
+      "description": "The font family",
+      "values": []
+    },
+    {
+      "name": "--word-tag-font-size",
+      "description": "The font size",
+      "values": []
+    },
+    {
+      "name": "--word-tag-font-weight",
+      "description": "The font weight",
+      "values": []
+    },
+    {
+      "name": "--word-tag-line-height",
+      "description": "The line height",
+      "values": []
+    },
+    {
+      "name": "--word-tag-border-radius",
+      "description": "The corner radius (for all corners)",
       "values": []
     }
   ],

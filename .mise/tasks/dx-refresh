@@ -10,7 +10,7 @@ echo "Recreate Mise Task Docs"
 mkdir -p docs/mise/tasks
 mise generate task-docs -m -o docs/mise/tasks
 echo
-echo "Recreate TypeScript `.d.ts` files"
+echo "Recreate TypeScript \`.d.ts\` files"
 pnpm tsc --declaration --declarationMap false -p .
 echo
 echo "dx:@pwrs:cem:generate"

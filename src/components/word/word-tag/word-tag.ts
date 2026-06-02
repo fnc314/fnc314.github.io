@@ -3,6 +3,7 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
+export type { WordTagHeaviness } from "@/components/word/word-tag/word-tag.types";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised

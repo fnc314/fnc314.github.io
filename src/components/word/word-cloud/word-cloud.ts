@@ -1,3 +1,10 @@
+export type {
+  RenderableWordCloudWord,
+  WordCloudAppearance,
+  WordCloudGrouping,
+  WordCloudSorting,
+  WordCloudWord
+} from "@/components/word/word-cloud/word-cloud.types";
 import {
   type RenderableWordCloudWord,
   type WordCloudAppearance,

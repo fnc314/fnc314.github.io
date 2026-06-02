@@ -1,4 +1,4 @@
-# `dist/types/components/app-shell/app-shell.js`:
+# `dist/out/components/app-shell/app-shell.js`:
 
 ## class: `AppShell`, `app-shell`
 
@@ -19,13 +19,21 @@
 
 ### Fields
 
-| Name               | Privacy | Type    | Default | Description                                                   | Inherited From |
-| ------------------ | ------- | ------- | ------- | ------------------------------------------------------------- | -------------- |
-| `_openDialogCount` | private |         |         |                                                               |                |
-| `configsDialog`    | private |         |         | Reference to the configuration dialog.                        |                |
-| `connectDialog`    | private |         |         | Reference to the connect dialog.                              |                |
-| `connectFab`       | private | `MdFab` |         | Reference to the connect FAB.&#xA;This is an MdFab component. |                |
-| `fabMenu`          | private |         |         | A floating action button that toggles a menu of actions.      |                |
+| Name                  | Privacy | Type                                       | Default | Description                                                                                                      | Inherited From |
+| --------------------- | ------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
+| `_openDialogCount`    | private | `number`                                   | `0`     |                                                                                                                  |                |
+| `_uiModeIcon`         | private | `"dark_mode" \| "light_mode" \| "routine"` |         | The icon associated with the current color scheme mode.                                                          |                |
+| `appConfigs`          | private | `AppConfigs`                               |         | The current global application configuration state.                                                              |                |
+| `configsDialog`       | private | `ConfigsDialog`                            |         | Reference to the configuration dialog.                                                                           |                |
+| `connectDialog`       | private | `ConnectDialog`                            |         | Reference to the connect dialog.                                                                                 |                |
+| `connectFab`          | private | `MdFab`                                    |         | Reference to the connect FAB.&#xA;This is an MdFab component.                                                    |                |
+| `connectFabConfig`    | private | `FabConfig`                                |         |                                                                                                                  |                |
+| `fabMenu`             | private | `FabMenu`                                  |         | Reference to the FAB menu component.                                                                             |                |
+| `onAppConfigsChange`  | private |                                            |         | Syncs the component state with the global application configuration.                                             |                |
+| `onColorSchemeChange` | private |                                            |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
+| `onFabChangeBind`     | private |                                            |         |                                                                                                                  |                |
+| `onFabConfigBind`     | private |                                            |         |                                                                                                                  |                |
+| `settingsFabConfig`   | private | `FabConfig`                                |         | The configuration for the settings FAB.                                                                          |                |
 
 ### Methods
 
@@ -35,15 +43,7 @@
 | `_handleDialogClosed` | private | Tracks closed dialogs to manage body scroll restoration.                                                             |                                                      |        |                |
 | `_handleDialogOpened` | private | Tracks open dialogs to manage body scroll locking.                                                                   |                                                      |        |                |
 | `_onFabMenuItemClick` | private | Handles clicks on FAB menu items.&#xA;Closes the menu and opens the configuration dialog with the requested content. | `formContent: FormContent`                           |        |                |
-| `_uiModeIcon`         | private | The icon associated with the current color scheme mode.                                                              |                                                      |        |                |
-| `appConfigs`          | private | The current global application configuration state.                                                                  |                                                      |        |                |
-| `connectFabConfig`    | private |                                                                                                                      |                                                      |        |                |
-| `onAppConfigsChange`  | private | Syncs the component state with the global application configuration.                                                 | `event`                                              |        |                |
-| `onColorSchemeChange` | private | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color.     | `event`                                              |        |                |
 | `onFabChange`         | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    | `fab: "settings" \| "connect", fabConfig: FabConfig` |        |                |
-| `onFabChangeBind`     | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    |                                                      |        |                |
-| `onFabConfigBind`     | private |                                                                                                                      |                                                      |        |                |
-| `settingsFabConfig`   | private | The configuration for the settings FAB.                                                                              |                                                      |        |                |
 | `uiModeIcon`          | private | Maps a color scheme name to a Material icon name.                                                                    | `colorScheme: AppConfigs["colorScheme"]`             |        |                |
 
 </details>
@@ -57,7 +57,7 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
-# `dist/types/components/blog/blog-post.js`:
+# `dist/out/components/blog/blog-post.js`:
 
 ## class: `BlogPost`, `blog-post`
 
@@ -67,11 +67,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Methods
+### Fields
 
-| Name       | Privacy | Description                               | Parameters | Return | Inherited From |
-| ---------- | ------- | ----------------------------------------- | ---------- | ------ | -------------- |
-| `blogPost` |         | The {@link BlogPostJson} record to render |            |        |                |
+| Name       | Privacy | Type           | Default | Description                               | Inherited From |
+| ---------- | ------- | -------------- | ------- | ----------------------------------------- | -------------- |
+| `blogPost` |         | `BlogPostJson` | `{}`    | The {@link BlogPostJson} record to render |                |
 
 ### Attributes
 
@@ -90,12 +90,12 @@
 
 <details><summary>Private API</summary>
 
-### Methods
+### Fields
 
-| Name                | Privacy | Description | Parameters | Return | Inherited From |
-| ------------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| `darkMode`          | private |             |            |        |                |
-| `onAppConfigChange` | private |             |            |        |                |
+| Name                | Privacy | Type                     | Default | Description | Inherited From |
+| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
+| `darkMode`          | private |                          |         |             |                |
+| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
 
 </details>
 
@@ -103,12 +103,13 @@
 
 ## Exports
 
-| Kind                        | Name        | Declaration | Module                           | Package |
-| --------------------------- | ----------- | ----------- | -------------------------------- | ------- |
-| `custom-element-definition` | `blog-post` | BlogPost    | src/components/blog/blog-post.ts |         |
-| `js`                        | `BlogPost`  | BlogPost    | src/components/blog/blog-post.ts |         |
+| Kind                        | Name           | Declaration  | Module                            | Package |
+| --------------------------- | -------------- | ------------ | --------------------------------- | ------- |
+| `custom-element-definition` | `blog-post`    | BlogPost     | src/components/blog/blog-post.ts  |         |
+| `js`                        | `BlogPost`     | BlogPost     | src/components/blog/blog-post.ts  |         |
+| `js`                        | `BlogPostJson` | BlogPostJson | @/components/blog/blog-post.types |         |
 
-# `dist/types/components/code/code-project/code-project.js`:
+# `dist/out/components/code/code-project/code-project.js`:
 
 ## class: `CodeProject`, `code-project`
 
@@ -118,11 +119,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Methods
+### Fields
 
-| Name          | Privacy | Description | Parameters | Return | Inherited From |
-| ------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| `codeProject` |         |             |            |        |                |
+| Name          | Privacy | Type              | Default | Description | Inherited From |
+| ------------- | ------- | ----------------- | ------- | ----------- | -------------- |
+| `codeProject` |         | `CodeProjectData` | `{}`    |             |                |
 
 ### Attributes
 
@@ -134,9 +135,9 @@
 
 ### Fields
 
-| Name      | Privacy | Type | Default | Description | Inherited From |
-| --------- | ------- | ---- | ------- | ----------- | -------------- |
-| `flipped` | private |      |         |             |                |
+| Name      | Privacy | Type      | Default | Description | Inherited From |
+| --------- | ------- | --------- | ------- | ----------- | -------------- |
+| `flipped` | private | `boolean` | `false` |             |                |
 
 ### Methods
 
@@ -151,12 +152,13 @@
 
 ## Exports
 
-| Kind                        | Name           | Declaration | Module                                           | Package |
-| --------------------------- | -------------- | ----------- | ------------------------------------------------ | ------- |
-| `custom-element-definition` | `code-project` | CodeProject | src/components/code/code-project/code-project.ts |         |
-| `js`                        | `CodeProject`  | CodeProject | src/components/code/code-project/code-project.ts |         |
+| Kind                        | Name              | Declaration     | Module                                            | Package |
+| --------------------------- | ----------------- | --------------- | ------------------------------------------------- | ------- |
+| `custom-element-definition` | `code-project`    | CodeProject     | src/components/code/code-project/code-project.ts  |         |
+| `js`                        | `CodeProject`     | CodeProject     | src/components/code/code-project/code-project.ts  |         |
+| `js`                        | `CodeProjectData` | CodeProjectData | @/components/code/code-project/code-project.types |         |
 
-# `dist/types/components/dialog/configs/configs-dialog.js`:
+# `dist/out/components/dialog/configs/configs-dialog.js`:
 
 ## class: `ConfigsDialog`, `configs-dialog`
 
@@ -226,7 +228,7 @@
 | `js`                        | `ConfigsDialog`  | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
 | `js`                        | `FormContent`    | FormContent   | ./configs-dialog.types                          |         |
 
-# `dist/types/components/dialog/connect/connect-dialog.js`:
+# `dist/out/components/dialog/connect/connect-dialog.js`:
 
 ## class: `ConnectDialog`, `connect-dialog`
 
@@ -284,7 +286,7 @@
 | `custom-element-definition` | `connect-dialog` | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
 | `js`                        | `ConnectDialog`  | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
 
-# `dist/types/components/dialog/step-up/step-up-dialog.js`:
+# `dist/out/components/dialog/step-up/step-up-dialog.js`:
 
 ## class: `StepUpDialog`, `step-up-dialog`
 
@@ -350,12 +352,13 @@
 
 ## Exports
 
-| Kind                        | Name             | Declaration  | Module                                          | Package |
-| --------------------------- | ---------------- | ------------ | ----------------------------------------------- | ------- |
-| `custom-element-definition` | `step-up-dialog` | StepUpDialog | src/components/dialog/step-up/step-up-dialog.ts |         |
-| `js`                        | `StepUpDialog`   | StepUpDialog | src/components/dialog/step-up/step-up-dialog.ts |         |
+| Kind                        | Name                | Declaration       | Module                                           | Package |
+| --------------------------- | ------------------- | ----------------- | ------------------------------------------------ | ------- |
+| `custom-element-definition` | `step-up-dialog`    | StepUpDialog      | src/components/dialog/step-up/step-up-dialog.ts  |         |
+| `js`                        | `StepUpDialog`      | StepUpDialog      | src/components/dialog/step-up/step-up-dialog.ts  |         |
+| `js`                        | `StepUpDialogStyle` | StepUpDialogStyle | @/components/dialog/step-up/step-up-dialog.types |         |
 
-# `dist/types/components/fab-menu/fab-menu-item.js`:
+# `dist/out/components/fab-menu/fab-menu-item.js`:
 
 ## class: `FabMenuItem`, `fab-menu-item`
 
@@ -408,12 +411,13 @@
 
 ## Exports
 
-| Kind                        | Name            | Declaration | Module                                   | Package |
-| --------------------------- | --------------- | ----------- | ---------------------------------------- | ------- |
-| `custom-element-definition` | `fab-menu-item` | FabMenuItem | src/components/fab-menu/fab-menu-item.ts |         |
-| `js`                        | `FabMenuItem`   | FabMenuItem | src/components/fab-menu/fab-menu-item.ts |         |
+| Kind                        | Name             | Declaration    | Module                                   | Package |
+| --------------------------- | ---------------- | -------------- | ---------------------------------------- | ------- |
+| `custom-element-definition` | `fab-menu-item`  | FabMenuItem    | src/components/fab-menu/fab-menu-item.ts |         |
+| `js`                        | `FabMenuItem`    | FabMenuItem    | src/components/fab-menu/fab-menu-item.ts |         |
+| `js`                        | `MaterialSymbol` | MaterialSymbol | @/types/material-symbols                 |         |
 
-# `dist/types/components/fab-menu/fab-menu.js`:
+# `dist/out/components/fab-menu/fab-menu.js`:
 
 ## class: `FabMenu`, `fab-menu`
 
@@ -488,12 +492,13 @@
 
 ## Exports
 
-| Kind                        | Name       | Declaration | Module                              | Package |
-| --------------------------- | ---------- | ----------- | ----------------------------------- | ------- |
-| `custom-element-definition` | `fab-menu` | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
-| `js`                        | `FabMenu`  | FabMenu     | src/components/fab-menu/fab-menu.ts |         |
+| Kind                        | Name             | Declaration    | Module                              | Package |
+| --------------------------- | ---------------- | -------------- | ----------------------------------- | ------- |
+| `custom-element-definition` | `fab-menu`       | FabMenu        | src/components/fab-menu/fab-menu.ts |         |
+| `js`                        | `FabMenu`        | FabMenu        | src/components/fab-menu/fab-menu.ts |         |
+| `js`                        | `MaterialSymbol` | MaterialSymbol | @/types/material-symbols            |         |
 
-# `dist/types/components/info-section/info-section.js`:
+# `dist/out/components/info-section/info-section.js`:
 
 ## class: `InfoSection`, `info-section`
 
@@ -505,9 +510,9 @@
 
 ### Fields
 
-| Name           | Privacy | Type | Default | Description                                                                               | Inherited From |
-| -------------- | ------- | ---- | ------- | ----------------------------------------------------------------------------------------- | -------------- |
-| `sectionTitle` |         |      |         | The title displayed in the section's header.&#xA;Maps to the \`section-title\` attribute. |                |
+| Name           | Privacy | Type     | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                   | Inherited From |
+| -------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `sectionTitle` |         | `string` | `""`    | The text shown in the section heading (\`\<h2>\`). Corresponds to the attribute \`section-title\`. Slot API -- \<slot name="section-grid-content">: (required) Container for section body content. Preserves the responsive grid layout. Example: \`\`\`html \<info-section section-title="Experience"> \<div slot="section-grid-content"> ...your list, cards, or details... \</div> \</info-section> \`\`\` |                |
 
 ### Attributes
 
@@ -524,7 +529,7 @@
 | `custom-element-definition` | `info-section` | InfoSection | src/components/info-section/info-section.ts |         |
 | `js`                        | `InfoSection`  | InfoSection | src/components/info-section/info-section.ts |         |
 
-# `dist/types/components/nav/nav-component.js`:
+# `dist/out/components/nav/nav-component.js`:
 
 ## class: `NavComponent`, `nav-component`
 
@@ -545,25 +550,25 @@
 
 ### Fields
 
-| Name                 | Privacy | Type            | Default | Description | Inherited From |
-| -------------------- | ------- | --------------- | ------- | ----------- | -------------- |
-| `_activeTabIndex`    | private |                 |         |             |                |
-| `_exitingRoute`      | private | `Route \| null` |         |             |                |
-| `#inlineIconTimeout` | private |                 |         |             |                |
+| Name                 | Privacy | Type                               | Default                                                                           | Description | Inherited From |
+| -------------------- | ------- | ---------------------------------- | --------------------------------------------------------------------------------- | ----------- | -------------- |
+| `_activeRoute`       | private | `Route`                            |                                                                                   |             |                |
+| `_activeTabIndex`    | private | `number`                           | `0`                                                                               |             |                |
+| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                            |             |                |
+| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }` |             |                |
+| `#boundListener`     | private |                                    |                                                                                   |             |                |
+| `#inlineIconTimeout` | private | `number`                           | `0`                                                                               |             |                |
+| `#routes`            | private | `Route[]`                          |                                                                                   |             |                |
+| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                   |             |                |
 
 ### Methods
 
 | Name                        | Privacy | Description                                                                                                        | Parameters      | Return           | Inherited From |
 | --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
-| `_activeRoute`              | private |                                                                                                                    |                 |                  |                |
-| `_tabRefMap`                | private |                                                                                                                    |                 |                  |                |
-| `#boundListener`            | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
 | `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
 | `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                                                   | `event: Event`  |                  |                |
 | `#renderTabs`               | private | Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons |                 | `TemplateResult` |                |
-| `#routes`                   | private |                                                                                                                    |                 |                  |                |
 | `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing Number                         |                 |                  |                |
-| `#tabsRef`                  | private |                                                                                                                    |                 |                  |                |
 | `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                                                     | `index: number` |                  |                |
 | `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                                                    | `index: number` |                  |                |
 
@@ -578,7 +583,7 @@
 | `custom-element-definition` | `nav-component` | NavComponent | src/components/nav/nav-component.ts |         |
 | `js`                        | `NavComponent`  | NavComponent | src/components/nav/nav-component.ts |         |
 
-# `dist/types/components/partial-header/partial-header.js`:
+# `dist/out/components/partial-header/partial-header.js`:
 
 ## class: `PartialHeader`, `partial-header`
 
@@ -590,10 +595,10 @@
 
 ### Fields
 
-| Name          | Privacy | Type | Default   | Description                                                                                                   | Inherited From |
-| ------------- | ------- | ---- | --------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
-| `headerType`  |         |      | `primary` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
-| `headingText` |         |      |           | The text to display within the header.                                                                        |                |
+| Name          | Privacy | Type                                                  | Default     | Description                                                                                                   | Inherited From |
+| ------------- | ------- | ----------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- | -------------- |
+| `headerType`  |         | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | `"primary"` | The color variant theme for the header background and text.&#xA;Can be 'primary', 'secondary', or 'tertiary'. |                |
+| `headingText` |         | `string`                                              | `""`        | The text to display within the header.                                                                        |                |
 
 ### Attributes
 
@@ -611,7 +616,7 @@
 | `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
 | `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
 
-# `dist/types/components/word/word-cloud.js`:
+# `dist/out/components/word/word-cloud/word-cloud.js`:
 
 ## class: `WordCloud`, `word-cloud`
 
@@ -623,21 +628,16 @@
 
 ### Fields
 
-| Name           | Privacy | Type               | Default | Description                                                                                                                                                                    | Inherited From |
-| -------------- | ------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `_sortedWords` |         |                    | ``      |                                                                                                                                                                                |                |
-| `delay`        |         | `number \| "none"` | `none`  | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
-| `instantClear` |         |                    |         | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
-| `threshold`    |         |                    | `0.1`   | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
-| `words`        |         |                    | ``      | The list of words to display in the cloud.                                                                                                                                     |                |
-
-### Methods
-
-| Name         | Privacy | Description                                                                                                                                                          | Parameters | Return | Inherited From |
-| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
-| `appearance` |         | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).       |            |        |                |
-| `grouping`   |         | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                          |            |        |                |
-| `sorting`    |         | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'. |            |        |                |
+| Name           | Privacy | Type                        | Default  | Description                                                                                                                                                                    | Inherited From |
+| -------------- | ------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `_sortedWords` |         | `RenderableWordCloudWord[]` | `[]`     |                                                                                                                                                                                |                |
+| `appearance`   |         | `WordCloudAppearance`       |          | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).                 |                |
+| `delay`        |         | `number \| "none"`          | `"none"` | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
+| `grouping`     |         | `WordCloudGrouping`         |          | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                                    |                |
+| `instantClear` |         | `boolean`                   | `false`  | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
+| `sorting`      |         | `WordCloudSorting`          |          | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.           |                |
+| `threshold`    |         | `number`                    | `0.1`    | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
+| `words`        |         | `WordCloudWord[]`           | `[]`     | The list of words to display in the cloud.                                                                                                                                     |                |
 
 ### Attributes
 
@@ -670,11 +670,11 @@
 
 ### Fields
 
-| Name                    | Privacy | Type               | Default | Description | Inherited From |
-| ----------------------- | ------- | ------------------ | ------- | ----------- | -------------- |
-| `_intersectionObserver` | private |                    |         |             |                |
-| `_isVisible`            | private |                    |         |             |                |
-| `_listElement`          | private | `HTMLUListElement` |         |             |                |
+| Name                    | Privacy | Type                                | Default | Description | Inherited From |
+| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
+| `_intersectionObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
+| `_isVisible`            | private | `boolean`                           | `false` |             |                |
+| `_listElement`          | private | `HTMLUListElement`                  |         |             |                |
 
 ### Methods
 
@@ -690,318 +690,17 @@
 
 ## Exports
 
-| Kind                        | Name         | Declaration | Module                            | Package |
-| --------------------------- | ------------ | ----------- | --------------------------------- | ------- |
-| `custom-element-definition` | `word-cloud` | WordCloud   | src/components/word/word-cloud.ts |         |
-| `js`                        | `WordCloud`  | WordCloud   | src/components/word/word-cloud.ts |         |
-
-# `dist/types/components/word/word-tag/word-tag.js`:
-
-## class: `WordTag`, `word-tag`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### Fields
-
-| Name        | Privacy | Type | Default  | Description                                                                                                                                                                                               | Inherited From |
-| ----------- | ------- | ---- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `heaviness` |         |      | `normal` | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--hairline-width\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --hairline-width\`) |                |
-| `hrefUrl`   |         |      |          | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                     |                |
-| `word`      |         |      |          | The tagged word                                                                                                                                                                                           |                |
-
-### Attributes
-
-| Name        | Field     | Inherited From |
-| ----------- | --------- | -------------- |
-| `heaviness` | heaviness |                |
-| `hrefUrl`   | hrefUrl   |                |
-| `word`      | word      |                |
-
-### CSS Properties
-
-| Name                          | Default                                  | Description                         |
-| ----------------------------- | ---------------------------------------- | ----------------------------------- |
-| `--word-tag-color`            | `--md-sys-color-on-primary-container`    | The text and border color           |
-| `--word-tag-background-color` | `--md-sys-color-primary-container`       | The background color                |
-| `--word-tag-font-family`      | `--md-ref-typeface-brand`                | The font family                     |
-| `--word-tag-font-size`        | `--md-typescale-body-large-font-size`    | The font size                       |
-| `--word-tag-font-weight`      | `--md-ref-typeface-weight-regular`       | The font weight                     |
-| `--word-tag-line-height`      | `--md-typescale-body-large-lingt-height` | The line height                     |
-| `--word-tag-border-radius`    | `--md-sys-shape-corner-small`            | The corner radius (for all corners) |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name       | Declaration | Module                                   | Package |
-| --------------------------- | ---------- | ----------- | ---------------------------------------- | ------- |
-| `custom-element-definition` | `word-tag` | WordTag     | src/components/word/word-tag/word-tag.ts |         |
-| `js`                        | `WordTag`  | WordTag     | src/components/word/word-tag/word-tag.ts |         |
-
-# `dist/types/components/work-experience/work-experience.js`:
-
-## class: `WorkExperience`, `work-experience`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### Fields
-
-| Name                | Privacy | Type | Default                   | Description                                                                     | Inherited From |
-| ------------------- | ------- | ---- | ------------------------- | ------------------------------------------------------------------------------- | -------------- |
-| `dateEnd`           |         |      | `{ stamp: "", text: "" }` | End date information including machine-readable stamp and display text.         |                |
-| `dateStart`         |         |      | `{ stamp: "", text: "" }` | Start date information including machine-readable stamp and display text.       |                |
-| `experienceOrg`     |         |      |                           | The name of the organization or client.                                         |                |
-| `experienceRole`    |         |      |                           | The title of the professional role or project.                                  |                |
-| `experienceSummary` |         |      |                           | An optional summary of the overall role                                         |                |
-| `isNested`          |         |      |                           | If true, adjusts font sizes and layout for a nested appearance.                 |                |
-| `jobs`              |         |      | ``                        | A list of sub-jobs or project assignments to be rendered as nested experiences. |                |
-| `summaries`         |         |      | ``                        | A list of summary points describing achievements or responsibilities.           |                |
-
-### Attributes
-
-| Name                 | Field             | Inherited From |
-| -------------------- | ----------------- | -------------- |
-| `date-end`           | dateEnd           |                |
-| `date-start`         | dateStart         |                |
-| `experience-org`     | experienceOrg     |                |
-| `experience-role`    | experienceRole    |                |
-| `experience-summary` | experienceSummary |                |
-| `is-nested`          | isNested          |                |
-| `jobs`               | jobs              |                |
-| `summaries`          | summaries         |                |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name              | Declaration    | Module                                            | Package |
-| --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
-| `custom-element-definition` | `work-experience` | WorkExperience | src/components/work-experience/work-experience.ts |         |
-| `js`                        | `WorkExperience`  | WorkExperience | src/components/work-experience/work-experience.ts |         |
-
-# `dist/types/partials/blog/blog-partial.js`:
-
-## class: `BlogPartial`, `blog-partial`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name           | Declaration | Module                            | Package |
-| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
-| `custom-element-definition` | `blog-partial` | BlogPartial | src/partials/blog/blog-partial.ts |         |
-| `js`                        | `BlogPartial`  | BlogPartial | src/partials/blog/blog-partial.ts |         |
-
-# `dist/types/partials/code/code-partial.js`:
-
-## class: `CodePartial`, `code-partial`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name           | Declaration | Module                            | Package |
-| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
-| `custom-element-definition` | `code-partial` | CodePartial | src/partials/code/code-partial.ts |         |
-| `js`                        | `CodePartial`  | CodePartial | src/partials/code/code-partial.ts |         |
-
-# `dist/types/partials/info/info-partial.js`:
-
-## class: `InfoPartial`, `info-partial`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-<details><summary>Private API</summary>
-
-### Methods
-
-| Name                   | Privacy | Description | Parameters | Return | Inherited From |
-| ---------------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| `onColorConfigsChange` | private |             |            |        |                |
-| `themeConfig`          | private |             |            |        |                |
-
-</details>
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name           | Declaration | Module                            | Package |
-| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
-| `custom-element-definition` | `info-partial` | InfoPartial | src/partials/info/info-partial.ts |         |
-| `js`                        | `InfoPartial`  | InfoPartial | src/partials/info/info-partial.ts |         |
-
-# `dist/types/partials/work/work-partial.js`:
-
-## class: `WorkPartial`, `work-partial`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name           | Declaration | Module                            | Package |
-| --------------------------- | -------------- | ----------- | --------------------------------- | ------- |
-| `custom-element-definition` | `work-partial` | WorkPartial | src/partials/work/work-partial.ts |         |
-| `js`                        | `WorkPartial`  | WorkPartial | src/partials/work/work-partial.ts |         |
-
-# `src/theme/chicago/chicago-theme.ts`:
-
-## Variables
-
-| Name                 | Description | Type          |
-| -------------------- | ----------- | ------------- |
-| `ChicagoThemeConfig` |             | `ThemeConfig` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                 | Declaration        | Module                             | Package |
-| ---- | -------------------- | ------------------ | ---------------------------------- | ------- |
-| `js` | `ChicagoThemeConfig` | ChicagoThemeConfig | src/theme/chicago/chicago-theme.ts |         |
-
-# `src/theme/inter/inter-theme.ts`:
-
-## Variables
-
-| Name               | Description | Type          |
-| ------------------ | ----------- | ------------- |
-| `InterThemeConfig` |             | `ThemeConfig` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name               | Declaration      | Module                         | Package |
-| ---- | ------------------ | ---------------- | ------------------------------ | ------- |
-| `js` | `InterThemeConfig` | InterThemeConfig | src/theme/inter/inter-theme.ts |         |
-
-# `src/theme/red/red-theme.ts`:
-
-## Variables
-
-| Name             | Description | Type          |
-| ---------------- | ----------- | ------------- |
-| `RedThemeConfig` |             | `ThemeConfig` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name             | Declaration    | Module                     | Package |
-| ---- | ---------------- | -------------- | -------------------------- | ------- |
-| `js` | `RedThemeConfig` | RedThemeConfig | src/theme/red/red-theme.ts |         |
-
-# `src/theme/sunset/sunset-theme.ts`:
-
-## Variables
-
-| Name                | Description | Type          |
-| ------------------- | ----------- | ------------- |
-| `SunsetThemeConfig` |             | `ThemeConfig` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                | Declaration       | Module                           | Package |
-| ---- | ------------------- | ----------------- | -------------------------------- | ------- |
-| `js` | `SunsetThemeConfig` | SunsetThemeConfig | src/theme/sunset/sunset-theme.ts |         |
-
-# `src/theme/theme.ts`:
-
-## Variables
-
-| Name            | Description | Type           |
-| --------------- | ----------- | -------------- |
-| `THEME_CONFIGS` |             | `ThemeConfigs` |
-
-<hr/>
-
-## Functions
-
-| Name          | Description | Parameters                                          | Return |
-| ------------- | ----------- | --------------------------------------------------- | ------ |
-| `themeToIcon` |             | `slot: "leading-icon" \| "start", theme: ThemeName` |        |
-
-<hr/>
-
-## Exports
-
-| Kind | Name            | Declaration    | Module             | Package                       |
-| ---- | --------------- | -------------- | ------------------ | ----------------------------- |
-| `js` | `*`             | \*             |                    | @/theme/chicago/chicago-theme |
-| `js` | `*`             | \*             |                    | @/theme/inter/inter-theme     |
-| `js` | `*`             | \*             |                    | @/theme/red/red-theme         |
-| `js` | `*`             | \*             |                    | @/theme/sunset/sunset-theme   |
-| `js` | `THEME_CONFIGS` | THEME\_CONFIGS | src/theme/theme.ts |                               |
-| `js` | `themeToIcon`   | themeToIcon    | src/theme/theme.ts |                               |
-
-# `src/types/components/nav/routes.ts`:
-
-## Variables
-
-| Name                 | Description | Type                                                                                                                                                                            |
-| -------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NavComponentConfig` |             | `NavComponentConfigs`                                                                                                                                                           |
-| `ROUTES`             |             | `{
-  INFO: "info" as const,
-  WORK: "work" as const,
-  CODE: "code" as const,
-  BLOG: "blog" as const,
-  // SETTINGS: "settings" as const,
-  // CONNECT: "connect" as const,
-}` |
-
-<hr/>
-
-## Functions
-
-| Name          | Description | Parameters     | Return  |
-| ------------- | ----------- | -------------- | ------- |
-| `hashToRoute` |             | `hash: string` | `Route` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                 | Declaration        | Module                             | Package |
-| ---- | -------------------- | ------------------ | ---------------------------------- | ------- |
-| `js` | `hashToRoute`        | hashToRoute        | src/types/components/nav/routes.ts |         |
-| `js` | `NavComponentConfig` | NavComponentConfig | src/types/components/nav/routes.ts |         |
-| `js` | `ROUTES`             | ROUTES             | src/types/components/nav/routes.ts |         |
-
-# `src/types/components/word/word-cloud.ts`:
+| Kind                        | Name                      | Declaration             | Module                                        | Package |
+| --------------------------- | ------------------------- | ----------------------- | --------------------------------------------- | ------- |
+| `js`                        | `RenderableWordCloudWord` | RenderableWordCloudWord | @/components/word/word-cloud/word-cloud.types |         |
+| `custom-element-definition` | `word-cloud`              | WordCloud               | src/components/word/word-cloud/word-cloud.ts  |         |
+| `js`                        | `WordCloud`               | WordCloud               | src/components/word/word-cloud/word-cloud.ts  |         |
+| `js`                        | `WordCloudAppearance`     | WordCloudAppearance     | @/components/word/word-cloud/word-cloud.types |         |
+| `js`                        | `WordCloudGrouping`       | WordCloudGrouping       | @/components/word/word-cloud/word-cloud.types |         |
+| `js`                        | `WordCloudSorting`        | WordCloudSorting        | @/components/word/word-cloud/word-cloud.types |         |
+| `js`                        | `WordCloudWord`           | WordCloudWord           | @/components/word/word-cloud/word-cloud.types |         |
+
+# `src/components/word/word-cloud/word-cloud.types.ts`:
 
 ## Variables
 
@@ -1036,14 +735,109 @@
 
 ## Exports
 
-| Kind | Name                   | Declaration          | Module                                  | Package |
-| ---- | ---------------------- | -------------------- | --------------------------------------- | ------- |
-| `js` | `makeWordCloudWord`    | makeWordCloudWord    | src/types/components/word/word-cloud.ts |         |
-| `js` | `WordCloudAppearances` | WordCloudAppearances | src/types/components/word/word-cloud.ts |         |
-| `js` | `WordCloudGroupings`   | WordCloudGroupings   | src/types/components/word/word-cloud.ts |         |
-| `js` | `WordCloudSortings`    | WordCloudSortings    | src/types/components/word/word-cloud.ts |         |
+| Kind | Name                   | Declaration          | Module                                             | Package |
+| ---- | ---------------------- | -------------------- | -------------------------------------------------- | ------- |
+| `js` | `makeWordCloudWord`    | makeWordCloudWord    | src/components/word/word-cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudAppearances` | WordCloudAppearances | src/components/word/word-cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudGroupings`   | WordCloudGroupings   | src/components/word/word-cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudSortings`    | WordCloudSortings    | src/components/word/word-cloud/word-cloud.types.ts |         |
 
-# `src/types/components/work-experience/work-experience.ts`:
+# `dist/out/components/word/word-tag/word-tag.js`:
+
+## class: `WordTag`, `word-tag`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name        | Privacy | Type               | Default    | Description                                                                                                                                                                                               | Inherited From |
+| ----------- | ------- | ------------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `heaviness` |         | `WordTagHeaviness` | `"normal"` | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--hairline-width\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --hairline-width\`) |                |
+| `hrefUrl`   |         | `string`           | `""`       | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                     |                |
+| `word`      |         | `string`           | `""`       | The tagged word                                                                                                                                                                                           |                |
+
+### Attributes
+
+| Name        | Field     | Inherited From |
+| ----------- | --------- | -------------- |
+| `heaviness` | heaviness |                |
+| `hrefUrl`   | hrefUrl   |                |
+| `word`      | word      |                |
+
+### CSS Properties
+
+| Name                          | Default                                  | Description                         |
+| ----------------------------- | ---------------------------------------- | ----------------------------------- |
+| `--word-tag-color`            | `--md-sys-color-on-primary-container`    | The text and border color           |
+| `--word-tag-background-color` | `--md-sys-color-primary-container`       | The background color                |
+| `--word-tag-font-family`      | `--md-ref-typeface-brand`                | The font family                     |
+| `--word-tag-font-size`        | `--md-typescale-body-large-font-size`    | The font size                       |
+| `--word-tag-font-weight`      | `--md-ref-typeface-weight-regular`       | The font weight                     |
+| `--word-tag-line-height`      | `--md-typescale-body-large-lingt-height` | The line height                     |
+| `--word-tag-border-radius`    | `--md-sys-shape-corner-small`            | The corner radius (for all corners) |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name               | Declaration      | Module                                    | Package |
+| --------------------------- | ------------------ | ---------------- | ----------------------------------------- | ------- |
+| `custom-element-definition` | `word-tag`         | WordTag          | src/components/word/word-tag/word-tag.ts  |         |
+| `js`                        | `WordTag`          | WordTag          | src/components/word/word-tag/word-tag.ts  |         |
+| `js`                        | `WordTagHeaviness` | WordTagHeaviness | @/components/word/word-tag/word-tag.types |         |
+
+# `dist/out/components/work-experience/work-experience.js`:
+
+## class: `WorkExperience`, `work-experience`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name                | Privacy | Type                      | Default                   | Description                                                                  | Inherited From |
+| ------------------- | ------- | ------------------------- | ------------------------- | ---------------------------------------------------------------------------- | -------------- |
+| `dateEnd`           |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment end date                   |                |
+| `dateStart`         |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment start date                 |                |
+| `experienceOrg`     |         | `string`                  | `""`                      | The employer formal name                                                     |                |
+| `experienceRole`    |         | `string`                  | `""`                      | The formal role from the {@link WorkExperience} instance                     |                |
+| `experienceSummary` |         | `string`                  | `""`                      | An optional summary of the overall role                                      |                |
+| `isNested`          |         | `boolean`                 | `false`                   | Whether this is a nested instance                                            |                |
+| `jobs`              |         | `Array<Job>`              | `[]`                      | An array of {@link Job}s rendered as nested {@link WorkExperience} instances |                |
+| `summaries`         |         | `Array<{ item: string }>` | `[]`                      | An array of \`{ item: string }\` objects describing the responsibilities     |                |
+
+### Attributes
+
+| Name                 | Field             | Inherited From |
+| -------------------- | ----------------- | -------------- |
+| `date-end`           | dateEnd           |                |
+| `date-start`         | dateStart         |                |
+| `experience-org`     | experienceOrg     |                |
+| `experience-role`    | experienceRole    |                |
+| `experience-summary` | experienceSummary |                |
+| `is-nested`          | isNested          |                |
+| `jobs`               | jobs              |                |
+| `summaries`          | summaries         |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name              | Declaration    | Module                                             | Package |
+| --------------------------- | ----------------- | -------------- | -------------------------------------------------- | ------- |
+| `js`                        | `Job`             | Job            | @/components/work-experience/work-experience.types |         |
+| `custom-element-definition` | `work-experience` | WorkExperience | src/components/work-experience/work-experience.ts  |         |
+| `js`                        | `WorkDate`        | WorkDate       | @/components/work-experience/work-experience.types |         |
+| `js`                        | `WorkExperience`  | WorkExperience | src/components/work-experience/work-experience.ts  |         |
+
+# `src/components/work-experience/work-experience.types.ts`:
 
 ## Variables
 
@@ -1057,169 +851,4 @@
 
 | Kind | Name   | Declaration | Module                                                  | Package |
 | ---- | ------ | ----------- | ------------------------------------------------------- | ------- |
-| `js` | `data` | data        | src/types/components/work-experience/work-experience.ts |         |
-
-# `src/types/configs/app-configs.ts`:
-
-## Variables
-
-| Name                  | Description | Type                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| --------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DEFAULT_APP_CONFIGS` |             | `{
-  colorScheme: {
-    theme: THEME_NAMES.sunset,
-    name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
-    contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,
-    persist: false,
-  } as const,
-  fab: {
-    settings: {
-      position: FAB_POSITION.START_BOTTOM,
-      style: FAB_STYLE.ICON_AND_TEXT,
-    } as const,
-    connect: {
-      position: FAB_POSITION.END_BOTTOM,
-      style: FAB_STYLE.ICON_AND_TEXT,
-    } as const,
-  } as const,
-}` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                  | Declaration           | Module                           | Package |
-| ---- | --------------------- | --------------------- | -------------------------------- | ------- |
-| `js` | `DEFAULT_APP_CONFIGS` | DEFAULT\_APP\_CONFIGS | src/types/configs/app-configs.ts |         |
-
-# `src/types/configs/fab-configs.ts`:
-
-## Variables
-
-| Name                                 | Description                                                                                                                                                              | Type                                                                                                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `FAB_POSITION`                       | The complete collection of possible @material/web!MdFab positions.  Cross-product of FAB\_POSITION\_COMPONENTS\_HORIZONTAL&#xA;  and FAB\_POSITION\_COMPONENTS\_VERTICAL | `{ readonly START_TOP: "START_TOP"; readonly START_BOTTOM: "START_BOTTOM"; readonly END_TOP: "END_TOP"; readonly END_BOTTOM: "END_BOTTOM"; }`                         |
-| `FAB_POSITION_COMPONENTS_HORIZONTAL` | The hotizontal position of a given @material/web!MdFab                                                                                                                   | `{ readonly START: "START"; readonly END: "END"; }`                                                                                                                   |
-| `FAB_POSITION_COMPONENTS_VERTICAL`   | The vertical position of a given @material/web!MdFab                                                                                                                     | `{ readonly TOP: "TOP"; readonly BOTTOM: "BOTTOM"; }`                                                                                                                 |
-| `FAB_STYLE`                          |                                                                                                                                                                          | `{
-  ICON_ONLY: "ICON_ONLY" as const,
-  ICON_AND_TEXT: "ICON_AND_TEXT" as const,
-  ICON_ONLY_SMALL: "ICON_ONLY_SMALL" as const,
-  TEXT_ONLY: "TEXT_ONLY" as const,
-}` |
-| `FabPositionIcons`                   | \\\<FabPosition, TemplateResult\\>                                                                                                                                       | `Record`                                                                                                                                                              |
-| `FabPositions`                       |                                                                                                                                                                          | `FabPosition[]`                                                                                                                                                       |
-| `FabStyles`                          |                                                                                                                                                                          | `FabStyle[]`                                                                                                                                                          |
-
-<hr/>
-
-## Functions
-
-| Name                    | Description | Parameters                 | Return   |
-| ----------------------- | ----------- | -------------------------- | -------- |
-| `fabConfigToGrid`       |             | `config: FabConfig`        |          |
-| `fabPositionClass`      |             | `fabPosition: FabPosition` |          |
-| `fabPositionComponents` |             | `fabPosition: FabPosition` |          |
-| `fabPositionToUi`       |             | `fabPosition: FabPosition` | `string` |
-| `fabStyleToUi`          |             | `fabStyle: FabStyle`       | `string` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                                 | Declaration                           | Module                           | Package |
-| ---- | ------------------------------------ | ------------------------------------- | -------------------------------- | ------- |
-| `js` | `FAB_POSITION`                       | FAB\_POSITION                         | src/types/configs/fab-configs.ts |         |
-| `js` | `FAB_POSITION_COMPONENTS_HORIZONTAL` | FAB\_POSITION\_COMPONENTS\_HORIZONTAL | src/types/configs/fab-configs.ts |         |
-| `js` | `FAB_POSITION_COMPONENTS_VERTICAL`   | FAB\_POSITION\_COMPONENTS\_VERTICAL   | src/types/configs/fab-configs.ts |         |
-| `js` | `FAB_STYLE`                          | FAB\_STYLE                            | src/types/configs/fab-configs.ts |         |
-| `js` | `fabConfigToGrid`                    | fabConfigToGrid                       | src/types/configs/fab-configs.ts |         |
-| `js` | `fabPositionClass`                   | fabPositionClass                      | src/types/configs/fab-configs.ts |         |
-| `js` | `fabPositionComponents`              | fabPositionComponents                 | src/types/configs/fab-configs.ts |         |
-| `js` | `FabPositionIcons`                   | FabPositionIcons                      | src/types/configs/fab-configs.ts |         |
-| `js` | `FabPositions`                       | FabPositions                          | src/types/configs/fab-configs.ts |         |
-| `js` | `fabPositionToUi`                    | fabPositionToUi                       | src/types/configs/fab-configs.ts |         |
-| `js` | `FabStyles`                          | FabStyles                             | src/types/configs/fab-configs.ts |         |
-| `js` | `fabStyleToUi`                       | fabStyleToUi                          | src/types/configs/fab-configs.ts |         |
-
-# `src/types/material-symbols.ts`:
-
-## Exports
-
-| Kind | Name             | Declaration    | Module           | Package |
-| ---- | ---------------- | -------------- | ---------------- | ------- |
-| `js` | `MaterialSymbol` | MaterialSymbol | material-symbols |         |
-
-# `src/types/theme/color-scheme-configs.ts`:
-
-## Variables
-
-| Name                          | Description | Type                                                                                     |
-| ----------------------------- | ----------- | ---------------------------------------------------------------------------------------- |
-| `CONFIG_COLOR_CONTRAST_NAMES` |             | `{
-  NORMAL: "NORMAL" as const,
-  MEDIUM: "MEDIUM" as const,
-  HIGH: "HIGH" as const,
-}` |
-| `CONFIG_COLOR_SCHEME_NAMES`   |             | `{
-  DARK: "DARK" as const,
-  LIGHT: "LIGHT" as const,
-  SYSTEM: "SYSTEM" as const,
-}`   |
-
-<hr/>
-
-## Functions
-
-| Name                                     | Description | Parameters                                                       | Return               |
-| ---------------------------------------- | ----------- | ---------------------------------------------------------------- | -------------------- |
-| `colorSchemeConfigsToMaterialSchemeName` |             | `colorSchemeSettings: ColorSchemeConfigs`                        | `MaterialSchemeName` |
-| `colorSchemeContrastToIcon`              |             | `slot: "start" \| "leading-icon", contrast: ColorSchemeContrast` |                      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                                     | Declaration                            | Module                                  | Package |
-| ---- | ---------------------------------------- | -------------------------------------- | --------------------------------------- | ------- |
-| `js` | `colorSchemeConfigsToMaterialSchemeName` | colorSchemeConfigsToMaterialSchemeName | src/types/theme/color-scheme-configs.ts |         |
-| `js` | `colorSchemeContrastToIcon`              | colorSchemeContrastToIcon              | src/types/theme/color-scheme-configs.ts |         |
-| `js` | `CONFIG_COLOR_CONTRAST_NAMES`            | CONFIG\_COLOR\_CONTRAST\_NAMES         | src/types/theme/color-scheme-configs.ts |         |
-| `js` | `CONFIG_COLOR_SCHEME_NAMES`              | CONFIG\_COLOR\_SCHEME\_NAMES           | src/types/theme/color-scheme-configs.ts |         |
-
-# `src/types/theme/theme.ts`:
-
-## Variables
-
-| Name            | Description | Type                                                                                                                                                  |
-| --------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PhotoJsonFile` |             | `PhotosJson`                                                                                                                                          |
-| `THEME_NAMES`   |             | `{
-  chicago: "chicago" as const,
-  inter: "inter" as const,
-  red: "red" as const,
-  // skyline: "skyline" as const,
-  sunset: "sunset" as const,
-}` |
-
-<hr/>
-
-## Functions
-
-| Name                     | Description                                                                                                   | Parameters                     | Return |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------------------ | ------ |
-| `jsonIsThemeJsonSchemes` | Checks if the provided JSON conforms to the expected theme schemes structure                                  | `json: unknown`                |        |
-| `keyTransform`           | Converts jsonKey and corresponding rgb value into a CSS custom property&#xA;  via css and unsafeCSS functions | `jsonKey: string, rgb: string` |        |
-| `readScheme`             |                                                                                                               | `jsonSchema: object`           |        |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                     | Declaration            | Module                   | Package |
-| ---- | ------------------------ | ---------------------- | ------------------------ | ------- |
-| `js` | `jsonIsThemeJsonSchemes` | jsonIsThemeJsonSchemes | src/types/theme/theme.ts |         |
-| `js` | `keyTransform`           | keyTransform           | src/types/theme/theme.ts |         |
-| `js` | `PhotoJsonFile`          | PhotoJsonFile          | src/types/theme/theme.ts |         |
-| `js` | `readScheme`             | readScheme             | src/types/theme/theme.ts |         |
-| `js` | `THEME_NAMES`            | THEME\_NAMES           | src/types/theme/theme.ts |         |
+| `js` | `data` | data        | src/components/work-experience/work-experience.types.ts |         |

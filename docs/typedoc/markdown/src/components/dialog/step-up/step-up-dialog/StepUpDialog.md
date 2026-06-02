@@ -6,7 +6,7 @@
 
 # Class: StepUpDialog
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:26](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L26)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:27](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L27)
 
 ## Element
 
@@ -42,7 +42,7 @@ stepUpComplete - Dispatched when the user confirms or cancels the action.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:28](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L28)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:29](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L29)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -56,7 +56,7 @@ Defined in: [src/components/dialog/step-up/step-up-dialog.ts:28](https://github.
 
 &gt; **dialogStyle**: `StepUpDialogStyle` = `"confirm"`
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:88](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L88)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:89](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L89)
 
 Determines which StepUpDialogStyle
 
@@ -66,7 +66,7 @@ Determines which StepUpDialogStyle
 
 &gt; **dialogContentString**: `string` = `""`
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:95](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L95)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:96](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L96)
 
 The central content of the [MdDialog](https://github.com/material-components/material-web/tree/main/docs/components/dialog.md)
 
@@ -76,7 +76,7 @@ The central content of the [MdDialog](https://github.com/material-components/mat
 
 &gt; **showDialog**(): [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`void`\&gt;
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:104](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L104)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:105](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L105)
 
 Shows the step-up confirmation dialog.
 
@@ -92,7 +92,7 @@ A promise that resolves when the dialog is shown.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/dialog/step-up/step-up-dialog.ts:142](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L142)
+Defined in: [src/components/dialog/step-up/step-up-dialog.ts:143](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/dialog/step-up/step-up-dialog.ts#L143)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../../README.md) / [src/components/word/word-cloud](../word-cloud.md) / WordCloud
+[@fnc314/com.fnc314.website](../../../../../README.md) / [src/components/word/word-cloud/word-cloud](../word-cloud.md) / WordCloud
 
 # Class: WordCloud
 
-Defined in: [src/components/word/word-cloud.ts:34](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L34)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L41)
 
 A component that renders a cloud of words with various sorting and grouping options.
 
@@ -56,7 +56,7 @@ word-cloud
 
 ## Hierarchy
 
-[View Summary](../../../../hierarchy.md)
+[View Summary](../../../../../hierarchy.md)
 
 ### Extends
 
@@ -68,7 +68,7 @@ word-cloud
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/word/word-cloud.ts:36](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L36)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:43](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L43)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -82,7 +82,7 @@ Defined in: [src/components/word/word-cloud.ts:36](https://github.com/fnc314/fnc
 
 &gt; **words**: `WordCloudWord`[] = `[]`
 
-Defined in: [src/components/word/word-cloud.ts:186](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L186)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:193](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L193)
 
 The list of words to display in the cloud.
 
@@ -96,7 +96,7 @@ words
 
 &gt; **instantClear**: `boolean` = `false`
 
-Defined in: [src/components/word/word-cloud.ts:194](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L194)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:201](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L201)
 
 Whether to clear the word cloud instantly when it is no longer visible.
 When true, the cloud resets instantly to opacity 0 instead of fading out.
@@ -111,7 +111,7 @@ instant-clear
 
 &gt; **appearance**: `WordCloudAppearance` = `WordCloudAppearances.SEQUENTIAL`
 
-Defined in: [src/components/word/word-cloud.ts:203](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L203)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:210](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L210)
 
 Controls the order in which words are animated/displayed.
 
@@ -127,7 +127,7 @@ appearance
 
 &gt; **grouping**: `WordCloudGrouping` = `WordCloudGroupings.UNGROUPED`
 
-Defined in: [src/components/word/word-cloud.ts:212](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L212)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:219](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L219)
 
 Controls how words are grouped together within the cloud.
 
@@ -143,7 +143,7 @@ grouping
 
 &gt; **sorting**: `WordCloudSorting` = `WordCloudSortings.NONE`
 
-Defined in: [src/components/word/word-cloud.ts:221](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L221)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:228](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L228)
 
 Controls how words are sorted within their groupings.
 
@@ -159,7 +159,7 @@ sorting
 
 &gt; **delay**: `number` \| `"none"` = `"none"`
 
-Defined in: [src/components/word/word-cloud.ts:230](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L230)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:237](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L237)
 
 The delay in milliseconds between word appearances when using sequential mode.
 
@@ -175,7 +175,7 @@ delay
 
 &gt; **threshold**: `number` = `0.1`
 
-Defined in: [src/components/word/word-cloud.ts:239](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L239)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:246](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L246)
 
 The intersection observer threshold for visibility detection.
 
@@ -191,7 +191,7 @@ threshold
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/word/word-cloud.ts:254](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L254)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:261](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L261)
 
 Invoked when the component is added to the document's DOM.
 
@@ -224,7 +224,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/word/word-cloud.ts:294](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L294)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:301](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L301)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -256,7 +256,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/word/word-cloud.ts:391](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L391)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:398](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L398)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -277,7 +277,7 @@ the element to update.
 
 &gt; **updated**(`changedProperties`: `PropertyValueMap`\&lt;`WordCloud`\&gt;): `void`
 
-Defined in: [src/components/word/word-cloud.ts:259](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L259)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:266](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L266)
 
 Invoked whenever the element is updated. Implement to perform
 post-updating tasks via DOM APIs, for example, focusing an element.
@@ -324,7 +324,7 @@ again after this update cycle completes.
 
 &gt; **firstUpdated**(): `void`
 
-Defined in: [src/components/word/word-cloud.ts:290](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud.ts#L290)
+Defined in: [src/components/word/word-cloud/word-cloud.ts:297](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.ts#L297)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.

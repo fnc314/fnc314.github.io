@@ -6,7 +6,7 @@
 
 # Class: WordTag
 
-Defined in: [src/components/word/word-tag/word-tag.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L30)
+Defined in: [src/components/word/word-tag/word-tag.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L31)
 
 ## Cssprop
 
@@ -54,7 +54,7 @@ WordTag
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/word/word-tag/word-tag.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L32)
+Defined in: [src/components/word/word-tag/word-tag.ts:33](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L33)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -68,7 +68,7 @@ Defined in: [src/components/word/word-tag/word-tag.ts:32](https://github.com/fnc
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/word/word-tag/word-tag.ts:91](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L91)
+Defined in: [src/components/word/word-tag/word-tag.ts:92](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L92)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

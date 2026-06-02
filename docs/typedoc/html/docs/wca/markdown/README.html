@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en" data-base="../../../"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><title>docs/wca/markdown/README | @fnc314/com.fnc314.website - v1.0.8</title><link rel="icon" href="../../../assets/favicon.svg?cache=1780347420086" type="image/svg+xml"><meta name="description" content="TypeDoc site for @fnc314/com.fnc314.website"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../assets/style.css?cache=1780347420086"><link rel="stylesheet" href="../../../assets/highlight.css?cache=1780347420086"><script defer="" src="../../../assets/main.js?cache=1780347420086"></script><script async="" src="../../../assets/icons.js?cache=1780347420086" id="tsd-icons-script"></script><script async="" src="../../../assets/search.js?cache=1780347420086" id="tsd-search-script"></script><script async="" src="../../../assets/navigation.js?cache=1780347420086" id="tsd-nav-script"></script><style>
+<!DOCTYPE html><html class="default" lang="en" data-base="../../../"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><title>docs/wca/markdown/README | @fnc314/com.fnc314.website - v1.0.8</title><link rel="icon" href="../../../assets/favicon.svg?cache=1780432728402" type="image/svg+xml"><meta name="description" content="TypeDoc site for @fnc314/com.fnc314.website"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../assets/style.css?cache=1780432728402"><link rel="stylesheet" href="../../../assets/highlight.css?cache=1780432728402"><script defer="" src="../../../assets/main.js?cache=1780432728402"></script><script async="" src="../../../assets/icons.js?cache=1780432728402" id="tsd-icons-script"></script><script async="" src="../../../assets/search.js?cache=1780432728402" id="tsd-search-script"></script><script async="" src="../../../assets/navigation.js?cache=1780432728402" id="tsd-nav-script"></script><style>
 @media (prefers-color-scheme: dark) {
   :root {
     --md-sys-color-primary: #f6be46;
@@ -246,7 +246,7 @@
 <tr>
 <td><code>icon</code></td>
 <td><code>icon</code></td>
-<td><code>"" | "function" | "settings" | "123" | "360" | "10k" | "10mp" | "11mp" | "12mp" | "13mp" | "14mp" | "15mp" | "16mp" | "17mp" | "18_up_rating" | "18mp" | "19mp" | "1k" | "1k_plus" | ... 3863 more ... | "zoom_out_map"</code></td>
+<td></td>
 <td>“”</td>
 <td>The icon to display inside the FAB item.</td>
 </tr>
@@ -538,135 +538,8 @@ Uses container queries to provide a responsive grid layout that adapts to availa
 </tr>
 </tbody>
 </table>
-<h1 id="word-cloud" class="tsd-anchor-link">word-cloud<a href="#word-cloud" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h1>
-<p>A component that renders a cloud of words with various sorting and grouping options.</p>
-<h2 id="properties-5" class="tsd-anchor-link">Properties<a href="#properties-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Attribute</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>appearance</code></td>
-<td><code>appearance</code></td>
-<td><code>WordCloudAppearance</code></td>
-<td>“SEQUENTIAL”</td>
-<td>Controls the order in which words are animated/displayed.<br><br>Can be ‘sequential’ (words appear one by one) or ‘simultaneous’ (words appear all at once).</td>
-</tr>
-<tr>
-<td><code>delay</code></td>
-<td><code>delay</code></td>
-<td><code>number | "none"</code></td>
-<td>“none”</td>
-<td>The delay in milliseconds between word appearances when using sequential mode.<br><br>Set to “none” to use the component’s internal default delays.</td>
-</tr>
-<tr>
-<td><code>grouping</code></td>
-<td><code>grouping</code></td>
-<td><code>WordCloudGrouping</code></td>
-<td>“UNGROUPED”</td>
-<td>Controls how words are grouped together within the cloud.<br><br>Supported modes: ‘category’, ‘quartile’, or ‘ungrouped’.</td>
-</tr>
-<tr>
-<td><code>instantClear</code></td>
-<td><code>instant-clear</code></td>
-<td><code>boolean</code></td>
-<td>false</td>
-<td>Whether to clear the word cloud instantly when it is no longer visible.<br>When true, the cloud resets instantly to opacity 0 instead of fading out.</td>
-</tr>
-<tr>
-<td><code>sorting</code></td>
-<td><code>sorting</code></td>
-<td><code>WordCloudSorting</code></td>
-<td>“NONE”</td>
-<td>Controls how words are sorted within their groupings.<br><br>Supported modes: ‘by-weight’, ‘by-weight-reversed’, ‘by-alphabet’, ‘by-alphabet-reversed’, or ‘none’.</td>
-</tr>
-<tr>
-<td><code>threshold</code></td>
-<td><code>threshold</code></td>
-<td><code>number</code></td>
-<td>0.1</td>
-<td>The intersection observer threshold for visibility detection.<br><br>A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.</td>
-</tr>
-<tr>
-<td><code>words</code></td>
-<td><code>words</code></td>
-<td><code>WordCloudWord[]</code></td>
-<td>[]</td>
-<td>The list of words to display in the cloud.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="css-custom-properties-4" class="tsd-anchor-link">CSS Custom Properties<a href="#css-custom-properties-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h2>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--word-cloud-animation</code></td>
-<td>“150ms”</td>
-<td>Duration of the entrance animation for each word.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-animation-reduced</code></td>
-<td>“1ms”</td>
-<td>Duration of the entrance animation when prefers-reduced-motion is active.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-first-quartile-font-size</code></td>
-<td>“1.75rem”</td>
-<td>Font size for words in the first weight quartile (highest weight).</td>
-</tr>
-<tr>
-<td><code>--word-cloud-first-quartile-line-height</code></td>
-<td>“1.75rem”</td>
-<td>Line height for words in the first weight quartile.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-fourth-quartile-font-size</code></td>
-<td>“1rem”</td>
-<td>Font size for words in the fourth weight quartile (lowest weight).</td>
-</tr>
-<tr>
-<td><code>--word-cloud-fourth-quartile-line-height</code></td>
-<td>“1rem”</td>
-<td>Line height for words in the fourth weight quartile.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-second-quartile-font-size</code></td>
-<td>“1.5rem”</td>
-<td>Font size for words in the second weight quartile.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-second-quartile-line-height</code></td>
-<td>“1.5rem”</td>
-<td>Line height for words in the second weight quartile.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-third-quartile-font-size</code></td>
-<td>“1.25rem”</td>
-<td>Font size for words in the third weight quartile.</td>
-</tr>
-<tr>
-<td><code>--word-cloud-third-quartile-line-height</code></td>
-<td>“1.25rem”</td>
-<td>Line height for words in the third weight quartile.</td>
-</tr>
-</tbody>
-</table>
 <h1 id="work-experience" class="tsd-anchor-link">work-experience<a href="#work-experience" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h1>
-<h2 id="properties-6" class="tsd-anchor-link">Properties<a href="#properties-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h2 id="properties-5" class="tsd-anchor-link">Properties<a href="#properties-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <table>
 <thead>
 <tr>
@@ -754,10 +627,10 @@ Uses container queries to provide a responsive grid layout that adapts to availa
 <h1 id="code-partial" class="tsd-anchor-link">code-partial<a href="#code-partial" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h1>
 <h1 id="info-partial" class="tsd-anchor-link">info-partial<a href="#info-partial" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h1>
 <h1 id="work-partial" class="tsd-anchor-link">work-partial<a href="#work-partial" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h1>
-</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../../../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked=""><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open="" class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../../../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#app-shell"><span>app-<wbr>shell</span></a><ul><li><a href="#slots"><span>Slots</span></a></li></ul><a href="#blog-post"><span>blog-<wbr>post</span></a><ul><li><a href="#properties"><span>Properties</span></a></li><li><a href="#css-custom-properties"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#fab-menu-item"><span>fab-<wbr>menu-<wbr>item</span></a><ul><li><a href="#properties-1"><span>Properties</span></a></li><li><a href="#methods"><span>Methods</span></a></li><li><a href="#css-custom-properties-1"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#fab-menu"><span>fab-<wbr>menu</span></a><ul><li><a href="#properties-2"><span>Properties</span></a></li><li><a href="#slots-1"><span>Slots</span></a></li><li><a href="#css-custom-properties-2"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#info-section"><span>info-<wbr>section</span></a><a href="#api"><span>API</span></a><ul><li><a href="#properties-3"><span>Properties</span></a></li></ul><a href="#nav-component"><span>nav-<wbr>component</span></a><ul><li><a href="#methods-1"><span>Methods</span></a></li><li><a href="#css-custom-properties-3"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#partial-header"><span>partial-<wbr>header</span></a><ul><li><a href="#properties-4"><span>Properties</span></a></li></ul><a href="#word-cloud"><span>word-<wbr>cloud</span></a><ul><li><a href="#properties-5"><span>Properties</span></a></li><li><a href="#css-custom-properties-4"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#work-experience"><span>work-<wbr>experience</span></a><ul><li><a href="#properties-6"><span>Properties</span></a></li></ul><a href="#blog-partial"><span>blog-<wbr>partial</span></a><a href="#code-partial"><span>code-<wbr>partial</span></a><a href="#info-partial"><span>info-<wbr>partial</span></a><a href="#work-partial"><span>work-<wbr>partial</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../../../modules.html">@fnc314/com.fnc314.website - v1.0.8</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a> v0.28.19<br>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../../../assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked=""><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open="" class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../../../assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#app-shell"><span>app-<wbr>shell</span></a><ul><li><a href="#slots"><span>Slots</span></a></li></ul><a href="#blog-post"><span>blog-<wbr>post</span></a><ul><li><a href="#properties"><span>Properties</span></a></li><li><a href="#css-custom-properties"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#fab-menu-item"><span>fab-<wbr>menu-<wbr>item</span></a><ul><li><a href="#properties-1"><span>Properties</span></a></li><li><a href="#methods"><span>Methods</span></a></li><li><a href="#css-custom-properties-1"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#fab-menu"><span>fab-<wbr>menu</span></a><ul><li><a href="#properties-2"><span>Properties</span></a></li><li><a href="#slots-1"><span>Slots</span></a></li><li><a href="#css-custom-properties-2"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#info-section"><span>info-<wbr>section</span></a><a href="#api"><span>API</span></a><ul><li><a href="#properties-3"><span>Properties</span></a></li></ul><a href="#nav-component"><span>nav-<wbr>component</span></a><ul><li><a href="#methods-1"><span>Methods</span></a></li><li><a href="#css-custom-properties-3"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#partial-header"><span>partial-<wbr>header</span></a><ul><li><a href="#properties-4"><span>Properties</span></a></li></ul><a href="#work-experience"><span>work-<wbr>experience</span></a><ul><li><a href="#properties-5"><span>Properties</span></a></li></ul><a href="#blog-partial"><span>blog-<wbr>partial</span></a><a href="#code-partial"><span>code-<wbr>partial</span></a><a href="#info-partial"><span>info-<wbr>partial</span></a><a href="#work-partial"><span>work-<wbr>partial</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../../../modules.html">@fnc314/com.fnc314.website - v1.0.8</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a> v0.28.19<br>
             <span id="generation-date"></span>
             <script>
-                window.GENERATION_DATE = 1780347420331;
+                window.GENERATION_DATE = 1780432728616;
 
                 (() => {
                     

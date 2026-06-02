@@ -228,7 +228,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L28"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L29"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -280,6 +280,10 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/blog/blog-post.types.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/code/code-project/code-project.js",
       "declarations": [
         {
@@ -301,7 +305,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L21"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L22"
           },
           "kind": "class",
           "tagName": "code-project",
@@ -824,13 +828,7 @@
               "name": "dialogStyle",
               "description": "The visual style variant of the dialog, affecting colors and icons.",
               "type": {
-                "text": "\"confirm\" | \"warning\" | \"attention\"",
-                "references": [
-                  {
-                    "name": "StepUpDialogStyle",
-                    "module": "src/components/dialog/step-up/step-up-dialog.types.js"
-                  }
-                ]
+                "text": "StepUpDialogStyle"
               },
               "default": "\"confirm\"",
               "kind": "field",
@@ -886,7 +884,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/step-up/step-up-dialog.ts#L26"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/step-up/step-up-dialog.ts#L27"
           },
           "kind": "class",
           "tagName": "step-up-dialog",
@@ -895,13 +893,7 @@
               "name": "dialogStyle",
               "description": "The visual style variant of the dialog, affecting colors and icons.",
               "type": {
-                "text": "\"confirm\" | \"warning\" | \"attention\"",
-                "references": [
-                  {
-                    "name": "StepUpDialogStyle",
-                    "module": "src/components/dialog/step-up/step-up-dialog.types.js"
-                  }
-                ]
+                "text": "StepUpDialogStyle"
               },
               "default": "\"confirm\"",
               "fieldName": "dialogStyle"
@@ -1033,13 +1025,7 @@
               "name": "icon",
               "description": "The icon to display inside the FAB item.",
               "type": {
-                "text": "MaterialSymbols[number] | \"\"",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol | \"\""
               },
               "default": "\"\"",
               "kind": "field",
@@ -1060,7 +1046,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L17"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L18"
           },
           "kind": "class",
           "tagName": "fab-menu-item",
@@ -1078,13 +1064,7 @@
               "name": "icon",
               "description": "The icon to display inside the FAB item.",
               "type": {
-                "text": "MaterialSymbols[number] | \"\"",
-                "references": [
-                  {
-                    "name": "MaterialSymbol",
-                    "package": "material-symbols"
-                  }
-                ]
+                "text": "MaterialSymbol | \"\""
               },
               "default": "\"\"",
               "fieldName": "icon"
@@ -1282,7 +1262,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L32"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L33"
           },
           "kind": "class",
           "tagName": "fab-menu",
@@ -1696,7 +1676,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/word/word-cloud.js",
+      "path": "src/components/word/word-cloud/word-cloud.js",
       "declarations": [
         {
           "name": "WordCloud",
@@ -1819,7 +1799,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud.ts#L34"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud/word-cloud.ts#L41"
           },
           "kind": "class",
           "tagName": "word-cloud",
@@ -2009,7 +1989,7 @@
           "name": "word-cloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "src/components/word/word-cloud.js"
+            "module": "src/components/word/word-cloud/word-cloud.js"
           }
         },
         {
@@ -2017,7 +1997,83 @@
           "name": "WordCloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "src/components/word/word-cloud.js"
+            "module": "src/components/word/word-cloud/word-cloud.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/word-cloud/word-cloud.types.js",
+      "declarations": [
+        {
+          "name": "WordCloudGroupings",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud/word-cloud.types.ts#L15"
+          }
+        },
+        {
+          "name": "WordCloudSortings",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud/word-cloud.types.ts#L23"
+          }
+        },
+        {
+          "name": "WordCloudAppearances",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud/word-cloud.types.ts#L33"
+          }
+        },
+        {
+          "parameters": [
+            {
+              "name": "word",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "name": "makeWordCloudWord",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-cloud/word-cloud.types.ts#L41"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordCloudGroupings",
+          "declaration": {
+            "name": "WordCloudGroupings",
+            "module": "src/components/word/word-cloud/word-cloud.types.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudSortings",
+          "declaration": {
+            "name": "WordCloudSortings",
+            "module": "src/components/word/word-cloud/word-cloud.types.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudAppearances",
+          "declaration": {
+            "name": "WordCloudAppearances",
+            "module": "src/components/word/word-cloud/word-cloud.types.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "makeWordCloudWord",
+          "declaration": {
+            "name": "makeWordCloudWord",
+            "module": "src/components/word/word-cloud/word-cloud.types.js"
           }
         }
       ]
@@ -2046,13 +2102,7 @@
             {
               "name": "heaviness",
               "type": {
-                "text": "\"normal\" | \"heavy\"",
-                "references": [
-                  {
-                    "name": "WordTagHeaviness",
-                    "module": "src/components/word/word-tag/word-tag.types.js"
-                  }
-                ]
+                "text": "WordTagHeaviness"
               },
               "default": "\"normal\"",
               "kind": "field",
@@ -2069,7 +2119,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag/word-tag.ts#L30"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/word/word-tag/word-tag.ts#L31"
           },
           "kind": "class",
           "tagName": "word-tag",
@@ -2085,13 +2135,7 @@
             {
               "name": "heaviness",
               "type": {
-                "text": "\"normal\" | \"heavy\"",
-                "references": [
-                  {
-                    "name": "WordTagHeaviness",
-                    "module": "src/components/word/word-tag/word-tag.types.js"
-                  }
-                ]
+                "text": "WordTagHeaviness"
               },
               "default": "\"normal\"",
               "fieldName": "heaviness"
@@ -2314,7 +2358,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L21"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.ts#L22"
           },
           "kind": "class",
           "tagName": "work-experience",
@@ -2429,6 +2473,29 @@
           "declaration": {
             "name": "WorkExperience",
             "module": "src/components/work-experience/work-experience.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/work-experience/work-experience.types.js",
+      "declarations": [
+        {
+          "name": "data",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/work-experience/work-experience.types.ts#L34"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "data",
+          "declaration": {
+            "name": "data",
+            "module": "src/components/work-experience/work-experience.types.js"
           }
         }
       ]
@@ -3209,10 +3276,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/types/components/blog/blog-post.js"
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/types/components/nav/routes.js",
       "declarations": [
         {
@@ -3271,105 +3334,6 @@
           "declaration": {
             "name": "NavComponentConfig",
             "module": "src/types/components/nav/routes.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/components/word/word-cloud.js",
-      "declarations": [
-        {
-          "name": "WordCloudGroupings",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L15"
-          }
-        },
-        {
-          "name": "WordCloudSortings",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L23"
-          }
-        },
-        {
-          "name": "WordCloudAppearances",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L33"
-          }
-        },
-        {
-          "parameters": [
-            {
-              "name": "word",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "name": "makeWordCloudWord",
-          "kind": "function",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/word/word-cloud.ts#L41"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "WordCloudGroupings",
-          "declaration": {
-            "name": "WordCloudGroupings",
-            "module": "src/types/components/word/word-cloud.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WordCloudSortings",
-          "declaration": {
-            "name": "WordCloudSortings",
-            "module": "src/types/components/word/word-cloud.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WordCloudAppearances",
-          "declaration": {
-            "name": "WordCloudAppearances",
-            "module": "src/types/components/word/word-cloud.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "makeWordCloudWord",
-          "declaration": {
-            "name": "makeWordCloudWord",
-            "module": "src/types/components/word/word-cloud.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/components/work-experience/work-experience.js",
-      "declarations": [
-        {
-          "name": "data",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/components/work-experience/work-experience.ts#L34"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "data",
-          "declaration": {
-            "name": "data",
-            "module": "src/types/components/work-experience/work-experience.js"
           }
         }
       ]

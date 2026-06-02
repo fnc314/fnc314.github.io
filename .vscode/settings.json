@@ -1,4 +1,16 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
   "cem.additionalPackages": [
     "npm:@material/web"
   ],
@@ -6,7 +18,7 @@
   "cem.lsp.executable": "",
   "cem.lsp.trace.server": "verbose",
   "css.customData": [
-    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
+    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
@@ -20,12 +32,34 @@
     ]
   },
   "docthis.returnsTag": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "file",
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": false,
+    "**/.hg": true,
+    "**/.plugin_symlinks": true,
+    "**/.ruby-lsp": true,
+    "**/.svn": true,
+    "**/.symlinks": true,
+    "**/CVS": true,
+    "**/flutter/ephemeral": true,
+    "**/Flutter/ephemeral": true,
+    "**/Thumbs.db": true
+  },
   "html.customData": [
-    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
-    "./.vscode/wca/*.json"
+    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.html-custom-data.json",
+    "${workspaceFolder}/.vscode/wca/*.json"
   ],
   "html.suggest.html5": true,
-  "js/ts.tsdk.path": "./node_modules/typescript/lib",
+  "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.jdt.ls.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "jdk.jdkhome": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "js/ts.tsdk.path": "${workspaceFolder}/node_modules/typescript/lib",
   "lit-html.format.enabled": true,
   "lit-plugin.logging": "verbose",
   "lit-plugin.rules.no-expressionless-property-binding": "error",
@@ -34,10 +68,11 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
-  "pnpm.packageJson": "package.json",
+  "oxc.fmt.configPath": "${workspaceFolder}/vite.config.ts",
   "pnpm-vscode-helper.enableCodelen": true,
-  "postcssense.cssPath": "./src/index.css",
-  "stylelint.configFile": "./stylelint.config.ts",
+  "pnpm.packageJson": "${workspaceFolder}/package.json",
+  "postcssense.cssPath": "${workspaceFolder}/src/index.css",
+  "stylelint.configFile": "${workspaceFolder}/stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
@@ -50,42 +85,7 @@
     "postcss",
     "typescript"
   ],
-  "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
-  "workbench.tree.indent": 4,
-  "editor.defaultFormatter": "oxc.oxc-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
-  },
-  "oxc.fmt.configPath": "./vite.config.ts",
-  "editor.formatOnSave": false,
-  "editor.formatOnSaveMode": "file",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.oxc": "explicit"
-  },
-  "files.exclude": {
-    "**/.git": false,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/flutter/ephemeral": true,
-    "**/Flutter/ephemeral": true,
-    "**/.symlinks": true,
-    "**/.plugin_symlinks": true,
-    "**/CVS": true,
-    "**/.ruby-lsp": true
-  },
-  "jdk.jdkhome": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "java.jdt.ls.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono"
+  "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "workbench.tree.indent": 4
 }
