@@ -1,4 +1,3 @@
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import {
   type RenderableWordCloudWord,
   type WordCloudAppearance,
@@ -8,7 +7,8 @@ import {
   type WordCloudSorting,
   WordCloudSortings,
   type WordCloudWord,
-} from "@/types/components/word/word-cloud";
+} from "@/components/word/word-cloud/word-cloud.types";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";

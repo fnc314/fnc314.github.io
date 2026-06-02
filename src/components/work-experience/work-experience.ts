@@ -1,5 +1,5 @@
+import { type Job, type WorkDate } from "@/components/work-experience/work-experience.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
 import { LitElement, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";

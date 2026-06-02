@@ -1,6 +1,6 @@
+import { type BlogPostJson } from "@/components/blog/blog-post.types";
 import { configsService } from "@/services/configs/configs-service";
 import { MaterialTypescaleStyles } from "@/styles";
-import { type BlogPostJson } from "@/types/components/blog/blog-post";
 import { type AppConfigsChange } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
