@@ -57,3 +57,10 @@ traceability:
 
 `word-tag`, `code-project`, `connect-dialog`, `step-up-dialog`, and `configs-dialog`'s own
 `FormContent` type each have exactly one consumer and can be colocated cleanly.
+
+## 2026-06-02 @ 16:15:00 | DX Infrastructure | CEM Analysis Failures
+
+- [ ] **Fix `tsconfig.json` paths**: Ensure all `compilerOptions.paths` values are arrays (e.g. `"@/*": ["src/*"]`) to fix N-API resolver crash.
+- [ ] **Resolve Circular JSON crash**: Update `.config/custom-elements-manifest/custom-elements-manifest.config.mjs` to exclude `src/index.ts` from globs.
+- [ ] **Export `MaterialSymbol`**: Add `export type { MaterialSymbol }` to `fab-menu.ts` and `fab-menu-item.ts`.
+- [ ] **Update CEM Schema**: Set `schemaVersion` to `2.1.0` in CEM config to satisfy validator.
