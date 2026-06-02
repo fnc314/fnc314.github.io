@@ -6,6 +6,9 @@
 .rollup.cache
 bin
 dist/
+dist/types
+dist/types/**/*.d.ts.map
+!dist/types/**/*.d.ts
 lit-plugin.log
 logs
 node_modules/

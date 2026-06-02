@@ -1,5 +1,6 @@
-﻿import { LitElement, type TemplateResult } from "lit";
-import { type MaterialSymbol } from "material-symbols";
+﻿import { type MaterialSymbol } from "@/types/material-symbols";
+import { LitElement, type TemplateResult } from "lit";
+export type { MaterialSymbol } from "@/types/material-symbols";
 export declare class FabMenuItem extends LitElement {
     static styles: import("lit").CSSResult[];
     constructor();
@@ -15,3 +16,4 @@ declare global {
         "fab-menu-item": FabMenuItem;
     }
 }
+//# sourceMappingURL=fab-menu-item.d.ts.map

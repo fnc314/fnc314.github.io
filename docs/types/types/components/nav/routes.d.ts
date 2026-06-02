@@ -15,3 +15,4 @@ interface NavComponentTabConfig {
 type NavComponentConfigs = Record<"tabs", Record<Route, NavComponentTabConfig>>;
 export declare const NavComponentConfig: NavComponentConfigs;
 export {};
+//# sourceMappingURL=routes.d.ts.map

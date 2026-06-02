@@ -16,3 +16,4 @@ declare global {
         "nav-component": NavComponent;
     }
 }
+//# sourceMappingURL=nav-component.d.ts.map

@@ -1,9 +1,10 @@
-﻿import { type StepUpDialogStyle } from "./step-up-dialog.types";
+﻿import { type StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
 import "@material/web/dialog/dialog";
 import "@material/web/icon/icon";
 import { LitElement, type TemplateResult } from "lit";
+export type { StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 export declare class StepUpDialog extends LitElement {
     static styles: import("lit").CSSResult[];
     dialogStyle: StepUpDialogStyle;
@@ -29,3 +30,4 @@ declare global {
         stepUpComplete: CompleteStepUpDialog;
     }
 }
+//# sourceMappingURL=step-up-dialog.d.ts.map

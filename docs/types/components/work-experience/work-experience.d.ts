@@ -1,5 +1,6 @@
-﻿import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
+﻿import { type Job, type WorkDate } from "@/components/work-experience/work-experience.types";
 import { LitElement } from "lit";
+export type { Job, WorkDate } from "@/components/work-experience/work-experience.types";
 export declare class WorkExperience extends LitElement {
     static styles: import("lit").CSSResult[];
     isNested: boolean;
@@ -19,3 +20,4 @@ declare global {
         "work-experience": WorkExperience;
     }
 }
+//# sourceMappingURL=work-experience.d.ts.map

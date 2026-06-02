@@ -1,5 +1,6 @@
-﻿import { type WordTagHeaviness } from "./word-tag.types";
+﻿import { type WordTagHeaviness } from "@/components/word/word-tag/word-tag.types";
 import { LitElement } from "lit";
+export type { WordTagHeaviness } from "@/components/word/word-tag/word-tag.types";
 export declare class WordTag extends LitElement {
     static styles: import("lit").CSSResult[];
     word: string;
@@ -12,3 +13,4 @@ declare global {
         "word-tag": WordTag;
     }
 }
+//# sourceMappingURL=word-tag.d.ts.map

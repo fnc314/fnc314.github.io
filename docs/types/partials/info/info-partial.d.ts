@@ -1,6 +1,6 @@
 ﻿import "@/components/info-section/info-section";
 import "@/components/partial-header/partial-header";
-import "@/components/word/word-cloud";
+import "@/components/word/word-cloud/word-cloud";
 import { LitElement } from "lit";
 export declare class InfoPartial extends LitElement {
     static styles: import("lit").CSSResult[];
@@ -16,3 +16,4 @@ declare global {
         "info-partial": InfoPartial;
     }
 }
+//# sourceMappingURL=info-partial.d.ts.map

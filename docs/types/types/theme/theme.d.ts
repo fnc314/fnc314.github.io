@@ -29,3 +29,4 @@ export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 export declare const PhotoJsonFile: PhotosJson;
 export declare const readScheme: (jsonSchema: object) => CSSResult;
 export declare function keyTransform(jsonKey: string, rgb: string): CSSResult;
+//# sourceMappingURL=theme.d.ts.map

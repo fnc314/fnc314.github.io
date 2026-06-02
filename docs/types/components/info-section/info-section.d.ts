@@ -9,3 +9,4 @@ declare global {
         "info-section": InfoSection;
     }
 }
+//# sourceMappingURL=info-section.d.ts.map

@@ -22,3 +22,4 @@ export interface ColorSchemeConfigs {
 }
 export declare const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName;
 export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs>;
+//# sourceMappingURL=color-scheme-configs.d.ts.map

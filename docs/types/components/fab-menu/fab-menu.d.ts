@@ -2,6 +2,7 @@
 import { type MaterialSymbol } from "@/types/material-symbols";
 import { type PropertyValues } from "@lit/reactive-element";
 import { LitElement } from "lit";
+export type { MaterialSymbol } from "@/types/material-symbols";
 export declare class FabMenu extends LitElement {
     static styles: import("lit").CSSResult[];
     private _fab;
@@ -32,3 +33,4 @@ declare global {
         "fab-menu": FabMenu;
     }
 }
+//# sourceMappingURL=fab-menu.d.ts.map

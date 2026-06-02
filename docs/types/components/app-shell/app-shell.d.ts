@@ -41,3 +41,4 @@ declare global {
         "app-shell": AppShell;
     }
 }
+//# sourceMappingURL=app-shell.d.ts.map

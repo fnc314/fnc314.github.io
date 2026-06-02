@@ -8,3 +8,4 @@ export interface CodeProjectTech {
     name: string;
     url: string;
 }
+//# sourceMappingURL=code-project.types.d.ts.map

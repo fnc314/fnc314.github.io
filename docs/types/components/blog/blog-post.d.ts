@@ -1,5 +1,6 @@
-﻿import { type BlogPostJson } from "@/types/components/blog/blog-post";
+﻿import { type BlogPostJson } from "@/components/blog/blog-post.types";
 import { LitElement } from "lit";
+export type { BlogPostJson } from "@/components/blog/blog-post.types";
 export declare class BlogPost extends LitElement {
     static styles: import("lit").CSSResult[];
     blogPost: BlogPostJson;
@@ -15,3 +16,4 @@ declare global {
         "blog-post": BlogPost;
     }
 }
+//# sourceMappingURL=blog-post.d.ts.map
