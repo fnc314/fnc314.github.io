@@ -71,7 +71,7 @@
   "oxc.fmt.configPath": "${workspaceFolder}/vite.config.ts",
   "pnpm-vscode-helper.enableCodelen": true,
   "pnpm.packageJson": "${workspaceFolder}/package.json",
-  "postcssense.cssPath": "${workspaceFolder}/src/index.css",
+  "postcssense.cssPath": "./src/index.css",
   "stylelint.configFile": "${workspaceFolder}/stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
@@ -87,5 +87,8 @@
   ],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "workbench.tree.indent": 4
+  "workbench.tree.indent": 4,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
