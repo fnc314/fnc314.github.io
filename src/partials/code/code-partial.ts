@@ -8,6 +8,7 @@ import { customElement } from "lit/decorators.js";
  */
 @customElement("code-partial")
 export class CodePartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

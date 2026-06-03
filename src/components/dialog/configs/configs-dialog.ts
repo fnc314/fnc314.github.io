@@ -5,6 +5,7 @@ import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
+import { type FormContent } from "./configs-dialog.types";
 import { type AppConfigs, type AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 import {
   type FabConfig,
@@ -41,19 +42,16 @@ import "@material/web/select/select-option";
 import {
   type ColorSchemeChangeEvent,
   DarkModeToggle,
-  type ColorScheme as DarkModeToggleColorScheme,
   type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-
-export type FormContent = "ui-mode" | "button-settings" | "button-connect";
+export { type FormContent } from "./configs-dialog.types";
 
 /**
- * A comprehensive configuration dialog for managing application settings.
- * Allows users to toggle dark mode, change color themes, adjust contrast,
- * and customize Floating Action Button (FAB) behaviors.
+ * @summary A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,
+ *   and customize Floating Action Button (FAB) behaviors.
  *
  * @element configs-dialog
  * @fires fab.change - Dispatched when a FAB's position or style is modified.
@@ -61,6 +59,7 @@ export type FormContent = "ui-mode" | "button-settings" | "button-connect";
  */
 @customElement("configs-dialog")
 export class ConfigsDialog extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     DialogSizing,
@@ -147,9 +146,9 @@ export class ConfigsDialog extends LitElement {
         display: contents;
 
         --dark-mode-toggle-icon-size: 2rem;
-        --dark-mode-toggle-dark-icon: url("./../../../../../assets/icons/components/configs-dialog/dark-mode.svg");
-        --dark-mode-toggle-light-icon: url("./../../../../../assets/icons/components/configs-dialog/light-mode.svg");
-        --dark-mode-toggle-system-icon: url("./../../../../../assets/icons/components/configs-dialog/system.svg");
+        --dark-mode-toggle-dark-icon: url("./icons/components/configs-dialog/dark-mode.svg");
+        --dark-mode-toggle-light-icon: url("./icons/components/configs-dialog/light-mode.svg");
+        --dark-mode-toggle-system-icon: url("./icons/components/configs-dialog/system.svg");
         --dark-mode-toggle-checkbox-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" height="24px" width="24px" fill="%23c12a1c"><path d="M212.31-140Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21h535.38Q778-820 799-799q21 21 21 51.31v535.38Q820-182 799-161q-21 21-51.31 21H212.31Zm0-60h535.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-535.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H212.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v535.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85Z"/></svg>');
         --dark-mode-toggle-remember-icon-checked: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" height="24px" width="24px" fill="%23c12a1c"><path d="m424-410.15-92.92-92.93q-8.31-8.3-20.89-8.5-12.57-.19-21.27 8.5-8.69 8.7-8.69 21.08 0 12.38 8.69 21.08l109.77 109.77q10.85 10.84 25.31 10.84 14.46 0 25.31-10.84l222.54-222.54q8.3-8.31 8.5-20.89.19-12.57-8.5-21.27-8.7-8.69-21.08-8.69-12.38 0-21.08 8.69L424-410.15ZM212.31-140Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21h535.38Q778-820 799-799q21 21 21 51.31v535.38Q820-182 799-161q-21 21-51.31 21H212.31Zm0-60h535.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-535.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H212.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v535.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM200-760v560-560Z"/></svg>');
         --dark-mode-toggle-remember-icon-unchecked: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" height="24px" width="24px" fill="%23c12a1c"><path d="M212.31-140Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21h535.38Q778-820 799-799q21 21 21 51.31v535.38Q820-182 799-161q-21 21-51.31 21H212.31Zm0-60h535.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-535.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H212.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v535.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85Z"/></svg>');
@@ -218,7 +217,7 @@ export class ConfigsDialog extends LitElement {
           }
 
           &::part(systemThreeWayLabel) {
-            --dark-mode-toggle-system-icon: url("./../../../../../assets/icons/components/configs-dialog/system-filled.svg");
+            --dark-mode-toggle-system-icon: url("./icons/components/configs-dialog/system-filled.svg");
 
             color: var(--icon-fill-color);
           }
@@ -230,7 +229,7 @@ export class ConfigsDialog extends LitElement {
           }
 
           &::part(lightThreeWayLabel) {
-            --dark-mode-toggle-light-icon: url("./../../../../../assets/icons/components/configs-dialog/light-mode-filled.svg");
+            --dark-mode-toggle-light-icon: url("./icons/components/configs-dialog/light-mode-filled.svg");
 
             color: var(--icon-fill-color);
           }
@@ -242,7 +241,7 @@ export class ConfigsDialog extends LitElement {
           }
 
           &::part(darkThreeWayLabel) {
-            --dark-mode-toggle-dark-icon: url("./../../../../../assets/icons/components/configs-dialog/dark-mode-filled.svg");
+            --dark-mode-toggle-dark-icon: url("./icons/components/configs-dialog/dark-mode-filled.svg");
 
             color: var(--icon-fill-color);
           }
@@ -665,7 +664,7 @@ export class ConfigsDialog extends LitElement {
           class="variant ${classMap(classes)}"
           id="dark-mode-toggle"
           permanent
-          mode=${this._appConfigs.colorScheme.name.toLowerCase() as DarkModeToggleColorScheme}
+          mode=${this._appConfigs.colorScheme.name.toLowerCase()}
           appearance="three-way"
           legend="Choose UI Variant"
           system="System"

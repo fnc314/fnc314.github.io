@@ -1,0 +1,525 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "app-shell",
+      "path": "./../../../src/components/app-shell/app-shell.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "app-content",
+          "description": "The place for the dynamic application content"
+        }
+      ]
+    },
+    {
+      "name": "blog-post",
+      "path": "./../../../src/components/blog/blog-post.ts",
+      "attributes": [
+        {
+          "name": "blogPost",
+          "type": "BlogPostJson",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "blogPost",
+          "attribute": "blogPost",
+          "type": "BlogPostJson",
+          "default": "{}"
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--blog-post-animation",
+          "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`,\n\\`:focus-within\\`, and \\`:focus-visible\\` states"
+        },
+        {
+          "name": "--blog-post-primary-text-color",
+          "description": "The color of the primary text"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "fab-menu-item",
+      "path": "./../../../src/components/fab-menu/fab-menu-item.ts",
+      "description": "An action item within a `fab-menu`.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "The text label displayed next to the FAB item.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "icon",
+          "description": "The icon to display inside the FAB item.",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "The text label displayed next to the FAB item.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "description": "The icon to display inside the FAB item.",
+          "default": "\"\""
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "object Object],[object Object"
+        },
+        {
+          "name": "--fab-menu-item-padding-end",
+          "description": "The logical `padding-inline-end` value",
+          "default": "0"
+        },
+        {
+          "name": "--fab-menu-item-padding-start",
+          "description": "The logical `padding-inline-start` value",
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "fab-menu",
+      "path": "./../../../src/components/fab-menu/fab-menu.ts",
+      "description": "A floating action button that toggles a menu of actions.",
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "default": "\"add\""
+        },
+        {
+          "name": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "MaterialSymbol",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "\"start\" | \"end\"",
+          "default": "\"end\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
+          "default": "\"add\""
+        },
+        {
+          "name": "openedIcon",
+          "attribute": "opened-icon",
+          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
+          "type": "MaterialSymbol",
+          "default": "\"close\""
+        },
+        {
+          "name": "size",
+          "attribute": "size",
+          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
+          "type": "\"small\" | \"medium\" | \"large\"",
+          "default": "\"medium\""
+        },
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Whether the menu is currently open.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
+          "default": "\"primary\""
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "[object Object],[object Object],[object Object]",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "ariaLabel",
+          "attribute": "aria-label",
+          "description": "The `aria-label` of the FAB.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "direction",
+          "attribute": "direction",
+          "description": "The direction in which the menu items should expand.",
+          "type": "\"start\" | \"end\"",
+          "default": "\"end\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--fab-menu-transition-duration",
+          "description": "The duration of the menu's opening and closing animations",
+          "default": "\"200ms\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "info-section",
+      "path": "./../../../src/components/info-section/info-section.ts",
+      "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
+      "attributes": [
+        {
+          "name": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "sectionTitle",
+          "attribute": "section-title",
+          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "nav-component",
+      "path": "./../../../src/components/nav/nav-component.ts",
+      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--nav-component-icon-animation",
+          "description": "The duration of the icon's fill and color transition.",
+          "default": "\"225ms\""
+        },
+        {
+          "name": "--nav-component-icon-animation-reduced",
+          "description": "The duration of the icon's transition when motion is reduced.",
+          "default": "\"1ms\""
+        }
+      ]
+    },
+    {
+      "name": "partial-header",
+      "path": "./../../../src/components/partial-header/partial-header.ts",
+      "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
+      "attributes": [
+        {
+          "name": "heading-text",
+          "description": "The text to display within the header.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "header-type",
+          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
+          "default": "\"primary\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "headingText",
+          "attribute": "heading-text",
+          "description": "The text to display within the header.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "headerType",
+          "attribute": "header-type",
+          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
+          "default": "\"primary\""
+        }
+      ]
+    },
+    {
+      "name": "work-experience",
+      "path": "./../../../src/components/work-experience/work-experience.ts",
+      "attributes": [
+        {
+          "name": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "experienceRole",
+          "attribute": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "dateStart",
+          "attribute": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "dateEnd",
+          "attribute": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "attribute": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "attribute": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "isNested",
+          "attribute": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experienceOrg",
+          "attribute": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experienceSummary",
+          "attribute": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "blog-partial",
+      "path": "./../../../src/partials/blog/blog-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "code-partial",
+      "path": "./../../../src/partials/code/code-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "info-partial",
+      "path": "./../../../src/partials/info/info-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
+      "name": "work-partial",
+      "path": "./../../../src/partials/work/work-partial.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import "@/components/fab-menu/fab-menu-item";
 import { FabMenuItem } from "@/components/fab-menu/fab-menu-item";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { type MaterialSymbol } from "@/types/material-symbols";
 import { type PropertyValues } from "@lit/reactive-element";
 import { MdFab } from "@material/web/fab/fab";
 import { MdIcon } from "@material/web/icon/icon";
@@ -8,7 +9,7 @@ import { LitElement, css, html, nothing } from "lit";
 import { customElement, property, query, queryAssignedElements } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { when } from "lit/directives/when.js";
-import { type MaterialSymbol } from "material-symbols";
+export type { MaterialSymbol } from "@/types/material-symbols";
 
 /**
  * A floating action button that toggles a menu of actions.
@@ -16,27 +17,36 @@ import { type MaterialSymbol } from "material-symbols";
  * @element fab-menu
  * @slot [menu-items] - The content of the menu, typically {@link FabMenuItem} elements
  *
- * @property {boolean} [open=false] - Indicator of open/closed state
- * @property {MaterialSymbol} [icon="add"] - The {@link MaterialSymbol} to display when menu is closed
- * @property {MaterialSymbol} [icon="close"] - The {@link MaterialSymbol} to display when menu is opened
- * @property {string} [variant="primary"] - The variant, one of `"primary"`, `"secondary"`, `"tertiary"`, `"surface"`
- * @property {string} [label=""] - The label to display when both opened and closed
- * @property {string} [ariaLabel=""] - An override for the `aria-label` attribute
- * @property {string} [size="medium"] - The size of the underlying {@link MdFab}, one of `"small"`, `"medium"`, `"large"`
- * @property {string} [direction="end"] - The direction of the menu, one of `"start"`, `"end"`
+ * @property [open=false] - Indicator of open/closed state
+ * @property [icon="add"] - The {@link MaterialSymbol} to display when menu is closed
+ * @property [icon="close"] - The {@link MaterialSymbol} to display when menu is opened
+ * @property [variant="primary"] - The variant, one of `"primary"`, `"secondary"`, `"tertiary"`, `"surface"`
+ * @property [label=""] - The label to display when both opened and closed
+ * @property [ariaLabel=""] - An override for the `aria-label` attribute
+ * @property [size="medium"] - The size of the underlying {@link MdFab}, one of `"small"`, `"medium"`, `"large"`
+ * @property [direction="end"] - The direction of the menu, one of `"start"`, `"end"`
  *
  * @cssprop [--fab-menu-transition-duration=200ms] - The duration of the menu's opening and closing animations
  * @cssprop [--fab-menu-animation-spec=cubic-bezier(0.4,0,0.2,1)] - The animation spec for {@link FabMenu} `transition`s
  */
 @customElement("fab-menu")
 export class FabMenu extends LitElement {
-  static override styles = [
+  /** {@link lit!css} */
+  static override styles=[
     MaterialTypescaleStyles,
     css`
       :host {
         /* Initial menu direction. Override with fab-menu[direction="start"] */
         --menu-direction: end;
+
+        /**
+         * @cssprop [--fab-menu-transition-duration]
+         */
         --internal-fab-menu-transition-duration: var(--fab-menu-transition-duration, 200ms);
+
+        /**
+         * @cssprop [--fab-menu-animation-spec]
+         */
         --internal-fab-menu-animation-spec: var(--fab-menu-animation-spec, cubic-bezier(0.4, 0, 0.2, 1));
 
         display: inline-flex;
@@ -158,7 +168,7 @@ export class FabMenu extends LitElement {
 
   /**
    * Whether the menu is currently open.
-   * @attr open
+   * @property open
    */
   @property({ type: Boolean, reflect: true })
   open = false;
@@ -167,7 +177,7 @@ export class FabMenu extends LitElement {
    * The {@link MaterialSymbol} to display when the menu
    * is closed. Defaults to 'add'. An empty {@link string}
    *   suppresses the icon
-   * @attr icon
+   * @property icon
    */
   @property({ type: String })
   icon: MaterialSymbol | "" = "add";
@@ -175,7 +185,7 @@ export class FabMenu extends LitElement {
   /**
    * The icon to display when the menu is open.
    * Defaults to 'close'.
-   * @attr opened-icon
+   * @property opened-icon
    */
   @property({ type: String, attribute: "opened-icon" })
   openedIcon: MaterialSymbol = "close";
@@ -184,7 +194,7 @@ export class FabMenu extends LitElement {
    * The variant of the FAB.
    * Can be 'surface', 'primary', 'secondary', or 'tertiary'.
    * Defaults to 'primary'.
-   * @attr variant
+   * @property variant
    */
   @property({ type: String })
   variant: "surface" | "primary" | "secondary" | "tertiary" = "primary";
@@ -193,7 +203,7 @@ export class FabMenu extends LitElement {
    * The size of the FAB.
    * Can be 'small', 'medium', or 'large'.
    * Defaults to 'medium'.
-   * @attr size
+   * @property size
    */
   @property({ type: String })
   size: "small" | "medium" | "large" = "medium";
@@ -201,26 +211,26 @@ export class FabMenu extends LitElement {
   /**
    * The label of the underlying {@link MdFab}.
    * Defaults to an empty string.
-   * @attr label
+   * @property label
    */
   @property({ type: String })
   label = "";
 
   /**
    * The `aria-label` of the FAB.
-   * @attr aria-label
+   * @property aria-label
    */
   @property({ type: String, attribute: "aria-label" })
   override ariaLabel = "";
 
   /**
    * The direction in which the menu items should expand.
-   * @attr direction
+   * @property direction
    */
   @property({ type: String, reflect: true })
   direction: "start" | "end" = "end";
 
-  private get _focusableElements(): (HTMLElement & { focus: (options?: FocusOptions) => void })[] {
+  private get _focusableElements(): (HTMLElement&{ focus: (options?: FocusOptions) => void; })[] {
     if (!this.open) {
       return [];
     }
@@ -229,40 +239,40 @@ export class FabMenu extends LitElement {
   }
 
   private _handleFocusTrap(e: FocusEvent) {
-    const focusableElements = this._focusableElements;
-    if (focusableElements.length === 0) {
+    const focusableElements=this._focusableElements;
+    if (focusableElements.length===0) {
       return;
     }
 
-    const isStart = (e.target as HTMLElement).classList.contains("focus-trap-start");
+    const isStart=(e.target as HTMLElement).classList.contains("focus-trap-start");
     if (isStart) {
-      focusableElements[focusableElements.length - 1].focus();
+      focusableElements[focusableElements.length-1].focus();
     } else {
       focusableElements[0].focus();
     }
   }
 
-  private _handleDocumentClick = (e: MouseEvent) => {
+  private _handleDocumentClick=(e: MouseEvent) => {
     if (!this.open) {
       return;
     }
-    const path = e.composedPath();
+    const path=e.composedPath();
     if (!path.includes(this)) {
-      this.open = false;
+      this.open=false;
     }
   };
 
   private _toggle() {
-    this.open = !this.open;
+    this.open=!this.open;
   }
 
   protected override async getUpdateComplete(): Promise<boolean> {
     console.log("FabMenu#getUpdateComplete");
-    const result = await super.getUpdateComplete();
+    const result=await super.getUpdateComplete();
     await this._fab.updateComplete;
-    const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
+    const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
     }
     return result;
   }
@@ -274,11 +284,11 @@ export class FabMenu extends LitElement {
       `FIRSTUPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
       `FIRSTUPDATED: this.label ${this.label}`,
       `FIRSTUPDATED: this.icon ${this.icon}`,
-      `Fab: this._fab ${this._fab !== undefined}`,
+      `Fab: this._fab ${this._fab!==undefined}`,
     );
-    const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
+    const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
     }
   }
 
@@ -288,14 +298,14 @@ export class FabMenu extends LitElement {
       `UPDATE: Has Label ${changedProperties.has("label")}|Label is ${changedProperties.get("label")}`,
       `UPDATE: this.label ${this.label}`,
       `UPDATE: this.icon ${this.icon}`,
-      `Fab: this._fab ${this._fab !== undefined}`,
+      `Fab: this._fab ${this._fab!==undefined}`,
       `UPDATE: this.open ${this.open}`,
       `UPDATE: changedProperties.has("open") ${changedProperties.has("open")}`,
     );
 
     // It is safer to manage global click listeners on the document
     // or use the @click handler on the scrim in the template.
-    if (changedProperties.has("open") && this.open) {
+    if (changedProperties.has("open")&&this.open) {
       // Using a microtask to ensure the scrim is rendered before adding the listener
       void this.updateComplete.then(() => {
         this._scrim?.addEventListener("click", this._handleDocumentClick, { capture: true, once: true });
@@ -333,19 +343,19 @@ export class FabMenu extends LitElement {
       `UPDATED: Has Label ${_changedProperties.has("label")}|Label is ${_changedProperties.get("label")}`,
       `UPDATED: this.label ${this.label}`,
       `UPDATED: this.icon ${this.icon}`,
-      `Fab: this._fab ${this._fab !== undefined}`,
+      `Fab: this._fab ${this._fab!==undefined}`,
     );
-    const labelSpan: HTMLSpanElement | null | undefined = this._fab.shadowRoot?.querySelector("span.label");
+    const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart = this.icon && this.label ? "0.5rem" : "0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
     }
-    const fabButtonIcon: MdIcon | null | undefined = this._fab.shadowRoot?.querySelector("button slot[name='icon']");
+    const fabButtonIcon: MdIcon|null|undefined=this._fab.shadowRoot?.querySelector("button slot[name='icon']");
     if (fabButtonIcon) {
-      fabButtonIcon.style.display = this.icon ? "contents" : "none";
+      fabButtonIcon.style.display=this.icon? "contents":"none";
     }
-    const button: HTMLButtonElement | null | undefined = this._fab.shadowRoot?.querySelector("button");
+    const button: HTMLButtonElement|null|undefined=this._fab.shadowRoot?.querySelector("button");
     if (button) {
-      button.style.paddingInline = "1rem";
+      button.style.paddingInline="1rem";
     }
   }
 
@@ -360,19 +370,19 @@ export class FabMenu extends LitElement {
 
   override render() {
     // Main icon: rotates 0 to 90, scale 1 to 0.5, opacity 1 to 0
-    const mainIconStyle = {
-      transform: `rotate(${this.open ? 90 : 0}deg) scale(${this.open ? 0.5 : 1})`,
-      opacity: this.open ? "0" : "1",
+    const mainIconStyle={
+      transform: `rotate(${this.open? 90:0}deg) scale(${this.open? 0.5:1})`,
+      opacity: this.open? "0":"1",
     };
 
     // Opened icon: rotates -90 to 0, scale 0.5 to 1, opacity 0 to 1
-    const openedIconStyle = {
-      transform: `rotate(${this.open ? 0 : -90}deg) scale(${this.open ? 1 : 0.5})`,
-      opacity: this.open ? "1" : "0",
+    const openedIconStyle={
+      transform: `rotate(${this.open? 0:-90}deg) scale(${this.open? 1:0.5})`,
+      opacity: this.open? "1":"0",
     };
 
     return html`
-      ${this.open ? html`<div class="scrim"></div>` : nothing}
+      ${this.open? html`<div class="scrim"></div>`:nothing}
       ${this.open
         ? html`
             <div
@@ -381,20 +391,20 @@ export class FabMenu extends LitElement {
               @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
             ></div>
           `
-        : nothing}
+        :nothing}
       <div class="fab-container">
         <md-fab
           id="fab-menu-fab"
-          .variant=${this.open ? "tertiary" : this.variant}
+          .variant=${this.open? "tertiary":this.variant}
           .size=${this.size}
           .label=${this.label}
-          .ariaLabel=${this.open ? `Close ${this.ariaLabel}` : `Open ${this.ariaLabel}`}
-          .ariaExpanded=${this.open ? "true" : "false"}
+          .ariaLabel=${this.open? `Close ${this.ariaLabel}`:`Open ${this.ariaLabel}`}
+          .ariaExpanded=${this.open? "true":"false"}
           @click=${() => this._toggle()}
         >
           ${when(
-            this.icon,
-            () => html`
+          this.icon,
+          () => html`
               <div
                 class="icon-wrapper"
                 slot="icon"
@@ -403,8 +413,8 @@ export class FabMenu extends LitElement {
                 <md-icon style=${styleMap(openedIconStyle)}>${this.openedIcon}</md-icon>
               </div>
             `,
-            () => nothing,
-          )}
+          () => nothing,
+        )}
         </md-fab>
       </div>
 
@@ -423,7 +433,7 @@ export class FabMenu extends LitElement {
               @focus=${(e: FocusEvent) => this._handleFocusTrap(e)}
             ></div>
           `
-        : nothing}
+        :nothing}
     `;
   }
 }

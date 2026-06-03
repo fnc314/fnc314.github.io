@@ -1,12 +1,13 @@
 import "@/components/partial-header/partial-header";
 import "@/components/work-experience/work-experience";
+import { data as WorkJson } from "@/components/work-experience/work-experience.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { data as WorkJson } from "@/types/components/work-experience/work-experience";
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("work-partial")
 export class WorkPartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

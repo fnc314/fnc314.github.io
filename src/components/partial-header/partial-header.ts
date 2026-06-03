@@ -9,6 +9,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("partial-header")
 export class PartialHeader extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

@@ -1,11 +1,12 @@
+import { type BlogPostJson } from "@/components/blog/blog-post.types";
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles";
-import { type BlogPostJson } from "@/types/components/blog/blog-post";
 import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("blog-partial")
 export class BlogPartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

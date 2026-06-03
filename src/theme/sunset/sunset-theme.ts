@@ -1,3 +1,4 @@
+import JsonTheme from "@/theme/sunset/sunset.material3-expressive-theme.json" with { type: "json" };
 import {
   PhotoJsonFile,
   type ThemeConfig,
@@ -5,7 +6,6 @@ import {
   jsonIsThemeJsonSchemes,
   readScheme,
 } from "@/types/theme/theme";
-import JsonTheme from "./sunset.material3-expressive-theme.json" with { type: "json" };
 
 export const SunsetThemeConfig: ThemeConfig = {
   themePhoto: PhotoJsonFile.sunset,
