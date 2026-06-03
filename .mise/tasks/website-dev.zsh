@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="Run `pnpm run build:website:watch` and `pnpm run serve` concurrently to develop the website"
 #MISE alias="wd"
 

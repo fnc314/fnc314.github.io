@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="Start Python server at provided directory on given port"
 #MISE alias="python-server"
 #USAGE arg "<directory>" help="The directory to serve (default: dist)" long_help="Sets the directory for python -m http.server and updates LOCAL_BUILD_PYTHON_SERVER_DIR via mise set to keep vite produced manifest.json assets in sync" env="LOCAL_BUILD_PYTHON_SERVER_DIR" default="dist"

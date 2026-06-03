@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="Run update-custom-elements"
 #MISE alias="uce"
 

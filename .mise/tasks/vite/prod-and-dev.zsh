@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="Execute `vite build` for both production and development"
 #MISE alias="vite-prod-dev"
 

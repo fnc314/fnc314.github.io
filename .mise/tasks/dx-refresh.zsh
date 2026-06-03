@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="Run dx-refresh"
 #MISE alias="dxr"
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {

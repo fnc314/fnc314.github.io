@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 #MISE description="The Mise Task to use for GitHub Actions"
 #MISE alias="github-deploy"
 
