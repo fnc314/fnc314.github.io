@@ -1,4 +1,7 @@
 {
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
@@ -18,7 +21,7 @@
   "cem.lsp.executable": "",
   "cem.lsp.trace.server": "verbose",
   "css.customData": [
-    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
+    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
@@ -26,7 +29,7 @@
   },
   "debug.javascript.terminalOptions": {
     "resolveSourceMapLocations": [
-      "${workspaceFolder}/**",
+      "./**",
       "!**/node_modules/**",
       "**/node_modules/.vite-temp/**"
     ]
@@ -52,14 +55,14 @@
     "**/Thumbs.db": true
   },
   "html.customData": [
-    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.html-custom-data.json",
-    "${workspaceFolder}/.vscode/wca/*.json"
+    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
+    "./.vscode/wca/*.json"
   ],
   "html.suggest.html5": true,
   "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
   "java.jdt.ls.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
   "jdk.jdkhome": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "js/ts.tsdk.path": "${workspaceFolder}/node_modules/typescript/lib",
+  "js/ts.tsdk.path": "./node_modules/typescript/lib",
   "lit-html.format.enabled": true,
   "lit-plugin.logging": "verbose",
   "lit-plugin.rules.no-expressionless-property-binding": "error",
@@ -68,11 +71,11 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
-  "oxc.fmt.configPath": "${workspaceFolder}/vite.config.ts",
+  "oxc.fmt.configPath": "./vite.config.ts",
   "pnpm-vscode-helper.enableCodelen": true,
-  "pnpm.packageJson": "${workspaceFolder}/package.json",
+  "pnpm.packageJson": "./package.json",
   "postcssense.cssPath": "./src/index.css",
-  "stylelint.configFile": "${workspaceFolder}/stylelint.config.ts",
+  "stylelint.configFile": "./stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
@@ -85,10 +88,7 @@
     "postcss",
     "typescript"
   ],
-  "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
+  "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "workbench.tree.indent": 4,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  }
+  "workbench.tree.indent": 4
 }
