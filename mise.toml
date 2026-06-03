@@ -4,7 +4,7 @@
   "npm:vite" = "8.0.16"
   pnpm = "11.5.1"
   tombi = "0.11.7"
-  usage = "3.3.0"
+  usage = "3.4.0"
 
 [env]
   _ = {
