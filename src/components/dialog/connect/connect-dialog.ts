@@ -1,7 +1,6 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Connection, type ConnectionInstance } from "./connect-dialog.types";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";
@@ -9,6 +8,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
 import time from "~build/time";
+import { type Connection, type ConnectionInstance } from "./connect-dialog.types";
 
 /**
  * @summary A dialog component that provides various contact methods and social links. It
@@ -53,10 +53,10 @@ export class ConnectDialog extends LitElement {
 
       md-dialog {
         [slot="headline"] {
-          padding: 0;
+          padding: var(--spacing-reset);
 
           h2 {
-            margin-block: 0.25rem;
+            margin-block: var(--spacing-margin-xxs);
           }
         }
 
@@ -66,7 +66,7 @@ export class ConnectDialog extends LitElement {
           justify-content: space-between;
           align-items: center;
           border-block-start: var(--hairline-width) solid var(--md-sys-color-primary);
-          padding: 1rem;
+          padding: var(--spacing-padding-s);
 
           p {
             color: var(--md-sys-color-on-surface-variant);
@@ -81,8 +81,8 @@ export class ConnectDialog extends LitElement {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        gap: 1rem;
-        padding: 1rem;
+        gap: var(--spacing-margin-s);
+        padding: var(--spacing-padding-s);
 
         details {
           summary {
@@ -94,7 +94,7 @@ export class ConnectDialog extends LitElement {
             justify-content: space-between;
             align-items: center;
             color: var(--md-sys-color-primary);
-            padding-inline: 0.25rem;
+            padding-inline: var(--spacing-padding-xxs);
             border-radius: var(--md-sys-shape-corner-small);
 
             &::-webkit-details-marker {
@@ -156,7 +156,7 @@ export class ConnectDialog extends LitElement {
 
             md-list-item {
               [slot="start"] {
-                padding: 1rem;
+                padding: var(--spacing-padding-s);
                 background-color: color(from var(--md-sys-color-primary-fixed-dim) srgb r g b / 50%);
                 color: var(--md-sys-color-on-primary-fixed-variant);
                 border-radius: var(--md-sys-shape-corner-full);

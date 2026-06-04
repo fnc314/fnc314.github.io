@@ -59,14 +59,14 @@ export class WorkExperience extends LitElement {
       .nested-experience {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        margin-block-start: 0.5rem;
-        padding-inline-start: 1rem;
+        gap: var(--spacing-margin-s);
+        margin-block-start: var(--spacing-margin-xs);
+        padding-inline-start: var(--spacing-padding-s);
         border-inline-start: 2px solid var(--md-sys-color-primary);
       }
 
       .nested-summary {
-        padding-inline: 1.5rem;
+        padding-inline: var(--spacing-padding-m);
         margin-block: unset;
         grid-row: 4;
         grid-column: 2;
@@ -74,7 +74,7 @@ export class WorkExperience extends LitElement {
         li {
           list-style-type: circle;
           list-style-position: outside;
-          margin-block: 0.5rem;
+          margin-block: var(--spacing-margin-xs);
         }
 
         span.first-word {
@@ -93,15 +93,15 @@ export class WorkExperience extends LitElement {
       .experience-container {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        padding-block: 0.5rem;
+        gap: var(--spacing-margin-xs);
+        padding-block: var(--spacing-padding-xs);
       }
 
       .experience-info,
       .nested-experience-info {
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: var(--spacing-margin-xxs);
 
         > h2,
         > h3 {
@@ -132,13 +132,13 @@ export class WorkExperience extends LitElement {
 
       @container experience-container (min-inline-size: 600px) {
         div.experience-container {
-          gap: 0.5rem 1rem;
+          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
         }
 
         .experience-container {
           display: grid;
           grid-template-columns: minmax(20ch, max-content) 1fr;
-          gap: 0.5rem 1rem;
+          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
           align-items: baseline;
 
           .experience-info {

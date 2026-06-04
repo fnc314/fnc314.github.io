@@ -31,6 +31,8 @@ export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materia
 
 export const Breakpoints: CSSResult = css`
   :host {
+    --breakpoint-mobile-max: 736px;
+    --breakpoint-tablet-max: 1200px;
     --breakpoint-compact-width-max: 600px;
     --breakpoint-medium-width-max: 900px;
     --breakpoint-large-width-max: 1200px;

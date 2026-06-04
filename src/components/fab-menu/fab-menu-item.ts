@@ -27,7 +27,7 @@ export class FabMenuItem extends LitElement {
         flex-direction: var(--fab-menu-item-direction, row);
         align-items: center;
         justify-content: var(--fab-menu-item-justify, flex-end);
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
 
         /* Align center of small FAB (40px) with center of medium FAB (56px) in parent. (56 - 40) / 2 = 8px = 0.5rem */
 
@@ -42,7 +42,7 @@ export class FabMenuItem extends LitElement {
         position: relative;
         background-color: var(--md-sys-color-surface-container-high);
         color: var(--md-sys-color-on-surface-variant);
-        padding: 0.5rem 1rem;
+        padding: var(--spacing-padding-xs) var(--spacing-padding-s);
         border-radius: var(--md-sys-shape-corner-medium);
         box-shadow: var(--md-sys-elevation-2);
         opacity: 1;

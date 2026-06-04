@@ -66,10 +66,15 @@ export class WordTag extends LitElement {
       }
 
       span {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         color: var(--internal-word-tag-color);
         background-color: var(--internal-word-tag-background-color);
         font-family: var(--internal-word-tag-font-family);
-        padding: 0.5rem;
+        padding: var(--spacing-padding-xs);
         font-size: var(--internal-word-tag-font-size);
         line-height: var(--internal-word-tag-line-height);
         border-radius: var(--internal-word-tag-border-radius);

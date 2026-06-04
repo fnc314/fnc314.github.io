@@ -46,6 +46,7 @@ export class WordCloud extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
+        container-type: inline-size;
 
         --word-cloud-animation: 150ms;
         --word-cloud-animation-reduced: 1ms;
@@ -57,6 +58,23 @@ export class WordCloud extends LitElement {
         --word-cloud-third-quartile-line-height: 1.25rem;
         --word-cloud-fourth-quartile-font-size: 1rem;
         --word-cloud-fourth-quartile-line-height: 1rem;
+      }
+
+      @container (max-width: 500px) {
+        :host {
+          --word-cloud-first-quartile-font-size: 1.25rem;
+          --word-cloud-first-quartile-line-height: 1.25rem;
+          --word-cloud-second-quartile-font-size: 1.1rem;
+          --word-cloud-second-quartile-line-height: 1.1rem;
+          --word-cloud-third-quartile-font-size: 0.95rem;
+          --word-cloud-third-quartile-line-height: 0.95rem;
+          --word-cloud-fourth-quartile-font-size: 0.8rem;
+          --word-cloud-fourth-quartile-line-height: 0.8rem;
+        }
+
+        li {
+          padding: var(--spacing-padding-xxs) !important;
+        }
       }
 
       ul {
@@ -76,7 +94,7 @@ export class WordCloud extends LitElement {
         --word-tag-font-family: var(--md-ref-typeface-brand);
 
         will-change: opacity, transform;
-        padding: 0.7rem;
+        padding: var(--spacing-padding-xs);
         min-width: 0;
 
         /* Animation Base State */

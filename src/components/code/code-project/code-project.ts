@@ -82,13 +82,13 @@ export class CodeProject extends LitElement {
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding: 1.5rem;
+        padding: var(--spacing-padding-m);
         backface-visibility: hidden; /* Hides the reverse side of the element */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
       }
 
       div.code-project-card-inner {
@@ -109,13 +109,13 @@ export class CodeProject extends LitElement {
 
         header {
           h2 {
-            margin: 0;
+            margin: var(--spacing-reset);
           }
         }
 
         slot[name="code-project-summary"] {
           p {
-            margin: 0;
+            margin: var(--spacing-reset);
           }
 
           pre {
@@ -138,7 +138,7 @@ export class CodeProject extends LitElement {
         ul {
           display: flex;
           flex-flow: row wrap;
-          gap: 2rem;
+          gap: var(--spacing-margin-l);
           justify-content: space-evenly;
           margin: unset;
           padding: unset;

@@ -25,13 +25,13 @@ export class PartialHeader extends LitElement {
         justify-content: center;
         position: relative;
         border-radius: var(--md-sys-shape-corner-medium);
-        margin-block-start: 1rem;
+        margin-block-start: var(--spacing-margin-s);
         background-color: var(--md-sys-color-primary);
 
         h1 {
           text-align: center;
           margin-inline: auto;
-          margin-block: 1rem;
+          margin-block: var(--spacing-margin-s);
           color: var(--md-sys-color-on-primary);
           font-variant-caps: small-caps;
           width: 100%;

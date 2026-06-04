@@ -5,7 +5,6 @@ import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { themeToIcon } from "@/theme/theme";
-import { type FormContent } from "./configs-dialog.types";
 import { type AppConfigs, type AppConfigsChange, DEFAULT_APP_CONFIGS } from "@/types/configs/app-configs";
 import {
   type FabConfig,
@@ -47,6 +46,7 @@ import {
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+import { type FormContent } from "./configs-dialog.types";
 export { type FormContent } from "./configs-dialog.types";
 
 /**
@@ -90,8 +90,8 @@ export class ConfigsDialog extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 2rem;
-        padding: 0.5rem;
+        gap: var(--spacing-margin-l);
+        padding: var(--spacing-padding-xs);
       }
 
       md-dialog {
@@ -112,12 +112,12 @@ export class ConfigsDialog extends LitElement {
           justify-content: center;
           align-items: center;
           text-align: center;
-          padding: 0;
-          margin: 0;
+          padding: var(--spacing-reset);
+          margin: var(--spacing-reset);
 
           h2 {
-            padding: 0;
-            margin-block: 0.5rem;
+            padding: var(--spacing-reset);
+            margin-block: var(--spacing-margin-xs);
           }
         }
 
@@ -125,7 +125,7 @@ export class ConfigsDialog extends LitElement {
           display: grid;
           grid-template-columns: auto 1fr auto auto;
           grid-template-areas: "close . reset save";
-          padding: 0.5rem;
+          padding: var(--spacing-padding-xs);
 
           md-text-button {
             grid-area: close;
@@ -171,7 +171,7 @@ export class ConfigsDialog extends LitElement {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 0.5rem;
+          gap: var(--spacing-margin-xs);
           padding-inline: unset;
           padding-block: unset;
         }
@@ -183,9 +183,9 @@ export class ConfigsDialog extends LitElement {
           border-color: var(--md-sys-color-on-surface-variant);
           border-width: var(--hairline-width);
           border-style: solid;
-          margin-block-start: 0.5rem;
+          margin-block-start: var(--spacing-margin-xs);
           display: inline-flex;
-          padding: 0;
+          padding: var(--spacing-reset);
           overflow: hidden;
         }
 
@@ -204,7 +204,7 @@ export class ConfigsDialog extends LitElement {
         &::part(darkThreeWayLabel),
         &::part(lightThreeWayLabel),
         &::part(systemThreeWayLabel) {
-          padding: 1rem;
+          padding: var(--spacing-padding-s);
           position: relative;
           z-index: 1;
           flex: 1;
@@ -271,10 +271,10 @@ export class ConfigsDialog extends LitElement {
         position: relative;
         border-color: var(--md-sys-color-outline);
         border-radius: var(--md-sys-shape-corner-small);
-        padding: 1rem;
+          padding: var(--spacing-padding-s);
 
         label md-radio {
-          margin-inline-end: 0.5rem;
+            margin-inline-end: var(--spacing-margin-xs);
         }
 
         md-outlined-select {
@@ -294,12 +294,12 @@ export class ConfigsDialog extends LitElement {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: stretch;
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
 
         fieldset {
           border-color: var(--md-sys-color-outline);
           border-radius: var(--md-sys-shape-corner-small);
-          padding-block: 1.5rem;
+          padding-block: var(--spacing-padding-m);
         }
       }
 
@@ -330,7 +330,7 @@ export class ConfigsDialog extends LitElement {
             "IconOnlySmall TextOnly";
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: repeat(2, 1fr);
-          gap: 1rem;
+          gap: var(--spacing-margin-s);
 
           legend {
             grid-area: legend;

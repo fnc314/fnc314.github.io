@@ -24,11 +24,11 @@ export class WorkPartial extends LitElement {
         grid-template-areas:
           "title"
           "content";
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
         grid-template-rows: min-content;
         grid-auto-rows: auto;
         height: min-content;
-        padding-inline: 1rem;
+        padding-inline: var(--spacing-padding-s);
       }
 
       partial-header {
@@ -40,7 +40,7 @@ export class WorkPartial extends LitElement {
         grid-area: content;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
       }
     `,
   ];

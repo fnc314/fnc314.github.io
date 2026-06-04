@@ -103,7 +103,7 @@ export class BlogPost extends LitElement {
 
         container-type: inline-size;
         color: var(--blog-post-primary-text-color);
-        padding: 1.5rem;
+        padding: var(--spacing-padding-m);
         transition:
           transform var(--blog-post-animation) ease-in-out,
           color var(--blog-post-animation) ease-in-out,
@@ -130,7 +130,7 @@ export class BlogPost extends LitElement {
           ".    summary summary"
           ".    tags    tags";
         grid-template-columns: 0.25fr 1fr 0.5fr;
-        gap: 0.5rem;
+        gap: var(--spacing-margin-xs);
 
         img {
           grid-area: icon;
@@ -150,18 +150,18 @@ export class BlogPost extends LitElement {
         h2 {
           grid-row: 1 / 2;
           grid-column: 1 / -1;
-          margin: 0;
+          margin: var(--spacing-reset);
         }
 
         h3 {
           grid-row: 2 / 3;
           grid-column: 1 / -1;
-          margin: 0;
+          margin: var(--spacing-reset);
         }
 
         p {
           grid-area: summary;
-          margin: 0;
+          margin: var(--spacing-reset);
         }
 
         ul.tags {
@@ -169,9 +169,9 @@ export class BlogPost extends LitElement {
           display: flex;
           flex-flow: row wrap;
           list-style: none;
-          margin: 0;
-          padding: 0;
-          gap: 2rem;
+          margin: var(--spacing-reset);
+          padding: var(--spacing-reset);
+          gap: var(--spacing-margin-l);
         }
 
         @container (width > 600px) {

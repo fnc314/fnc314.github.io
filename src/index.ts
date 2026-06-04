@@ -1,4 +1,5 @@
 import "@/components/app-shell/app-shell";
+import "@/components/bento-layout/bento-layout";
 import "@/components/blog/blog-post";
 import "@/components/blog/blog-post.types";
 import "@/components/code/code-project/code-project";
@@ -15,16 +16,13 @@ import "@/components/word/word-cloud/word-cloud.types";
 import "@/components/word/word-tag/word-tag";
 import "@/components/work-experience/work-experience";
 import "@/components/work-experience/work-experience.types";
-import "@/partials/blog/blog-partial";
-import "@/partials/code/code-partial";
-import "@/partials/info/info-partial";
-import "@/partials/work/work-partial";
 import "@/services/configs/configs-service";
 import { configsService } from "@/services/configs/configs-service";
 import "@/services/router/router-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service.js";
+import { spacingTokens } from "@/styles/spacing.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles.js";
 import "@/types/components/nav/routes";
 import { ROUTES } from "@/types/components/nav/routes.js";
@@ -63,10 +61,20 @@ const domLoadedListener = () => {
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
+  document.adoptedStyleSheets.push(spacingTokens.styleSheet);
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
     window.history.replaceState(null, "", `${window.location.href}#${ROUTES.INFO}`);
+  } else {
+    setTimeout(() => {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      const targetId = hash === "info" ? "bio" : hash;
+      const el = document.getElementById(targetId) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 500);
   }
 
   const matScheme =

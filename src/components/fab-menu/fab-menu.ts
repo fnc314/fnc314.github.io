@@ -74,9 +74,9 @@ export class FabMenu extends LitElement {
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-end;
-        gap: 1rem;
+        gap: var(--spacing-margin-s);
         margin-bottom: 0;
-        padding: 0;
+        padding: var(--spacing-reset);
         list-style: none;
         height: 0;
         margin-inline-end: var(--md-fab-margin, 0);
@@ -97,7 +97,7 @@ export class FabMenu extends LitElement {
         transform: scale(1) translateY(0);
         pointer-events: auto;
         height: auto;
-        margin-bottom: 1rem;
+        margin-bottom: var(--spacing-margin-s);
       }
 
       .fab-container {
@@ -272,7 +272,7 @@ export class FabMenu extends LitElement {
     await this._fab.updateComplete;
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
     }
     return result;
   }
@@ -288,7 +288,7 @@ export class FabMenu extends LitElement {
     );
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
     }
   }
 
@@ -323,14 +323,14 @@ export class FabMenu extends LitElement {
         break;
       case "medium":
         this._items.forEach((item: FabMenuItem) => {
-          item.style.setProperty("--fab-menu-item-padding-start", "0.3rem");
-          item.style.setProperty("--fab-menu-item-padding-end", "0.3rem");
+          item.style.setProperty("--fab-menu-item-padding-start", "var(--spacing-padding-xxs)");
+          item.style.setProperty("--fab-menu-item-padding-end", "var(--spacing-padding-xxs)");
         });
         break;
       case "large":
         this._items.forEach((item: FabMenuItem) => {
-          item.style.setProperty("--fab-menu-item-padding-start", "1rem");
-          item.style.setProperty("--fab-menu-item-padding-end", "1rem");
+          item.style.setProperty("--fab-menu-item-padding-start", "var(--spacing-padding-s)");
+          item.style.setProperty("--fab-menu-item-padding-end", "var(--spacing-padding-s)");
         });
         break;
     }
@@ -347,7 +347,7 @@ export class FabMenu extends LitElement {
     );
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "0.5rem":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
     }
     const fabButtonIcon: MdIcon|null|undefined=this._fab.shadowRoot?.querySelector("button slot[name='icon']");
     if (fabButtonIcon) {
@@ -355,7 +355,7 @@ export class FabMenu extends LitElement {
     }
     const button: HTMLButtonElement|null|undefined=this._fab.shadowRoot?.querySelector("button");
     if (button) {
-      button.style.paddingInline="1rem";
+      button.style.paddingInline="var(--spacing-padding-s)";
     }
   }
 

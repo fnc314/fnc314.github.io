@@ -7,7 +7,8 @@ import { customElement, state } from "lit/decorators.js";
 import { type Ref, createRef, ref } from "lit/directives/ref.js";
 
 /**
- * A navigation component that renders primary tabs synchronized with the application's URL hash routes.
+ * A navigation component that renders primary tabs synchronized with the application's bento layout sections.
+ * Uses an IntersectionObserver to perform scroll spy and highlight the active card.
  *
  * @element nav-component
  *
@@ -50,7 +51,7 @@ export class NavComponent extends LitElement {
 
         /* Indicator overrides */
         --md-primary-tab-active-indicator-color: var(--icon-fill-color);
-        --md-primary-tab-active-indicator-height: 0.5rem;
+        --md-primary-tab-active-indicator-height: var(--spacing-padding-xs);
         --md-primary-tab-active-indicator-shape: var(--md-sys-shape-corner-medium);
 
         /* Container overrides */
@@ -75,12 +76,19 @@ export class NavComponent extends LitElement {
         --md-primary-tab-pressed-icon-color: var(--md-sys-color-tertiary);
         --md-primary-tab-pressed-label-text-color: var(--md-sys-color-tertiary);
 
-        /* Sperate container */
+        /* Separate container */
         --md-primary-tab-with-icon-and-label-text-container-height: 5rem;
       }
 
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+      }
+
       md-icon {
-        font-family: var(--md-icon-font-sharp);
+        font-family: var(--md-icon-font);
         font-variation-settings:
           "FILL" 0,
           "wght" 400,
@@ -88,19 +96,16 @@ export class NavComponent extends LitElement {
           "opsz" 48;
         transition:
           font-variation-settings var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1),
-          color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1)
-          ;
+          color var(--nav-component-icon-animation) cubic-bezier(0.3, 0, 0, 1);
 
         @media (prefers-reduced-motion: reduce) {
           transition:
             font-variation-settings var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1),
-            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1)
-            ;
+            color var(--nav-component-icon-animation-reduced) cubic-bezier(0.3, 0, 0, 1);
         }
       }
 
       md-icon[filled="true"] {
-        font-family: var(--md-icon-font-sharp);
         font-variation-settings:
           "FILL" 1,
           "wght" 400,
@@ -111,23 +116,18 @@ export class NavComponent extends LitElement {
     `,
   ];
 
-  // Track the active index as state
-  @state({
-    hasChanged: (newValue: number, oldValue: number) => newValue !== oldValue,
-  })
+  @state()
   private _activeTabIndex = 0;
 
-  @state({
-    hasChanged: (newValue: Route, oldValue: Route) => newValue !== oldValue,
-  })
+  @state()
   private _activeRoute: Route = ROUTES.INFO;
 
   @state()
   private _exitingRoute: Route | null = null;
 
-  #inlineIconTimeout = 0;
+  private _inlineIconTimeout = 0;
 
-  #tabsRef: Ref<MdTabs> = createRef();
+  private _tabsRef: Ref<MdTabs> = createRef();
 
   @state()
   private _tabRefMap: Record<Route, Ref<MdPrimaryTab>> = {
@@ -137,42 +137,83 @@ export class NavComponent extends LitElement {
     blog: createRef(),
   };
 
-  #routes: Route[] = Object.values(ROUTES);
+  private _routes: Route[] = Object.values(ROUTES);
 
-  #boundListener = this.#handleHashChange.bind(this);
+  private _boundListener = this._handleHashChange.bind(this);
+
+  private _scrollSpyObserver?: IntersectionObserver;
 
   override connectedCallback() {
     super.connectedCallback();
-    // Listen for URL changes
-    window.addEventListener("hashchange", this.#boundListener);
-    // Handle the initial URL on load
-    this.#boundListener();
+    window.addEventListener("hashchange", this._boundListener);
+    this._boundListener();
+
+    // Setup scroll spy to detect section visibility
+    this._setupScrollSpy();
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("hashchange", this.#boundListener);
+    window.removeEventListener("hashchange", this._boundListener);
+    this._scrollSpyObserver?.disconnect();
   }
 
-  /**
-   * Reads {@link window.location.hash} and returns an object containing the {@link Route} and indexing {@link Number}
-   * @returns \{ index: number, route: Route \}
-   */
-  #tabIndexAndRouteFromHash(): { index: number; route: Route } {
+  private _setupScrollSpy() {
+    this._scrollSpyObserver = new IntersectionObserver(
+      (entries) => {
+        // Find visible section
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          const id = visibleEntry.target.id;
+          const route = this._routeFromElementId(id);
+          if (route) {
+            const index = this._routes.indexOf(route);
+            if (index >= 0 && this._activeTabIndex !== index) {
+              this._activeTabIndex = index;
+              this._activeRoute = route;
+              const tabs = this._tabsRef.value;
+              if (tabs) {
+                tabs.activeTabIndex = index;
+              }
+            }
+          }
+        }
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px", // trigger when section occupies central viewport area
+        threshold: 0.15,
+      }
+    );
+
+    // Observe layout element targets after initial render delay
+    setTimeout(() => {
+      const targets = ["bio", "work", "code", "blog"];
+      targets.forEach((id) => {
+        const el = document.getElementById(id) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(id);
+        if (el) {
+          this._scrollSpyObserver?.observe(el);
+        }
+      });
+    }, 500);
+  }
+
+  private _routeFromElementId(id: string): Route | null {
+    if (id === "bio") return ROUTES.INFO;
+    if (id === "work") return ROUTES.WORK;
+    if (id === "code") return ROUTES.CODE;
+    if (id === "blog") return ROUTES.BLOG;
+    return null;
+  }
+
+  private _tabIndexAndRouteFromHash(): { index: number; route: Route } {
     const hash = window.location.hash.replace("#", "").toLowerCase();
-    // Robust lookup by value ensures matching regardless of case or key naming
     const route = hashToRoute(hash);
-    const index = this.#routes.indexOf(route);
+    const index = this._routes.indexOf(route);
     return { index, route };
   }
 
-  /**
-   * Syncs internal state with the URL hash.
-   */
-  #handleHashChange() {
-    const { index, route }: { index: number; route: Route } = this.#tabIndexAndRouteFromHash();
-
-    // Default to 0 (info) if hash is empty or invalid
+  private _handleHashChange() {
+    const { index, route }: { index: number; route: Route } = this._tabIndexAndRouteFromHash();
     const targetIndex = index >= 0 ? index : 0;
 
     if (this._activeTabIndex !== targetIndex) {
@@ -180,14 +221,12 @@ export class NavComponent extends LitElement {
       this._activeTabIndex = targetIndex;
       this._activeRoute = route;
 
-      // If the component is already rendered, update the UI immediately
       if (this.hasUpdated) {
-        this.#updateTabState(targetIndex);
-
+        this._updateTabState(targetIndex);
         this._exitingRoute = oldRoute;
 
-        window.clearTimeout(this.#inlineIconTimeout);
-        this.#inlineIconTimeout = window.setTimeout(() => {
+        window.clearTimeout(this._inlineIconTimeout);
+        this._inlineIconTimeout = window.setTimeout(() => {
           this._exitingRoute = null;
         }, 250);
       } else {
@@ -196,91 +235,46 @@ export class NavComponent extends LitElement {
     }
   }
 
-  /**
-   * Updates the visual state of tabs and panels based on the index.
-   */
-  #updateTabState(index: number) {
-    const tabs = this.#tabsRef.value;
+  private _updateTabState(index: number) {
+    const tabs = this._tabsRef.value;
     if (!tabs) return;
-
-    // Sync the md-tabs component
     tabs.activeTabIndex = index;
-
-    this.#updateCarousel(index);
   }
 
-
-  /**
-   * Updates external DOM via style manipulations and blind queries
-   *
-   * @param index - The current {@link _activeTabIndex}
-   */
-  #updateCarousel(index: number) {
-    const panels: HTMLElement[] = [];
-    for (const route of this.#routes) {
-      const tabRef = this._tabRefMap[route];
-      const tab = tabRef.value;
-      if (tab) {
-        const panelId = tab.getAttribute("aria-controls");
-        if (panelId) {
-          const panel = document.querySelector(`#${panelId}[role="tabpanel"]`)!;
-          if (panel && panel instanceof HTMLElement) {
-            panels.push(panel);
-            panel.toggleAttribute("inert", true);
-          }
-        }
-      }
-    }
-
-    if (panels.length === 0) return;
-    panels[index].toggleAttribute("inert", false);
-
-    const container = document.getElementById("tabs-container");
-    if (!container) return;
-
-    container.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  /**
-   * Handles user clicks on tabs. Updates URL and UI.
-   *
-   * @param {Event} event - The emitted {@link Event} from the HTML
-   */
-  #onTabChange(event: Event) {
+  private _onTabChange(event: Event) {
     const tabs = event.target as MdTabs;
     const index = tabs.activeTabIndex;
     const oldRoute = this._activeRoute;
+    const route = this._routes[index];
 
-    // Update URL hash to match the selected tab
-    const route = this.#routes[index];
     if (route) {
-      // pushState updates the URL without reloading the page
       window.history.pushState({ oldRoute, route }, "", `#${route}`);
+      this._activeTabIndex = index;
+      this._activeRoute = route;
+      this._updateTabState(index);
+
+      // Scroll smoothly to target element
+      const targetId = route === ROUTES.INFO ? "bio" : route;
+      const el = document.getElementById(targetId) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      this._exitingRoute = oldRoute;
+      window.clearTimeout(this._inlineIconTimeout);
+      this._inlineIconTimeout = window.setTimeout(() => {
+        this._exitingRoute = null;
+      }, 250);
     }
-
-    this._activeTabIndex = index;
-    this._activeRoute = route;
-    this.#updateTabState(index);
-
-    this._exitingRoute = oldRoute;
-
-    window.clearTimeout(this.#inlineIconTimeout);
-    this.#inlineIconTimeout = window.setTimeout(() => {
-      this._exitingRoute = null;
-    }, 250);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues) {
     super.firstUpdated(_changedProperties);
-    // Apply initial state to DOM after first render
-    this.#updateTabState(this._activeTabIndex);
+    this._updateTabState(this._activeTabIndex);
   }
 
-  /**
-   * Creates a {@link TemplateResult} consisting of {@link @material/web!MdTabs}, {@link @material/web!MdPrimaryTab}, and {@link @material/web!MdIcon}s
-   */
-  #renderTabs(): TemplateResult {
-    const tabs: TemplateResult[] = this.#routes.map(
+  private _renderTabs(): TemplateResult {
+    const tabs: TemplateResult[] = this._routes.map(
       (route: Route) => html`
         <md-primary-tab
           ${ref(this._tabRefMap[route])}
@@ -302,10 +296,10 @@ export class NavComponent extends LitElement {
 
     return html`
       <md-tabs
-        ${ref(this.#tabsRef)}
+        ${ref(this._tabsRef)}
         id="nav-md-tabs"
         aria-label="Primary Nav Tabs"
-        @change=${(event: Event) => this.#onTabChange(event)}
+        @change=${(event: Event) => this._onTabChange(event)}
         .activeTabIndex=${this._activeTabIndex}
         .autoActivate=${true}
         .role=${"tablist"}
@@ -316,7 +310,7 @@ export class NavComponent extends LitElement {
   }
 
   override render() {
-    return html`<nav>${this.#renderTabs()}</nav>`;
+    return html`<nav>${this._renderTabs()}</nav>`;
   }
 }
 

@@ -6,6 +6,8 @@
   --hover-focus-animation-translate-y: -0.25rem;
   --hairline-width: 1px;
   --icon-fill-color: #c12a1c;
+  --breakpoint-mobile-max: 736px;
+  --breakpoint-tablet-max: 1200px;
   --breakpoint-compact-width-max: 600px;
   --breakpoint-medium-width-max: 900px;
   --breakpoint-large-width-max: 1200px;
@@ -60,37 +62,25 @@ body {
     color: var(--md-sys-color-on-surface);
     background-color: var(--md-sys-color-surface);
 
-    .carousel-track {
-      height: 100%;
+    bento-layout {
       width: 100%;
-      display: flex;
-      box-sizing: border-box;
-      transition: transform 0.3s ease-in-out;
-
-      [role="tabpanel"] {
-        width: 100%;
-        min-width: 0;
-        overflow-x: hidden;
-        flex-shrink: 0;
-        box-sizing: border-box;
-        padding-bottom: var(--fab-buffer-height);
-
-        &:nth-child(1) {
-          order: 0;
-        }
-
-        &:nth-child(2) {
-          order: 1;
-        }
-
-        &:nth-child(3) {
-          order: 2;
-        }
-
-        &:nth-child(4) {
-          order: 3;
-        }
-      }
+      height: 100%;
     }
   }
+}
+
+[data-debug-font="inter"] {
+  --md-ref-typeface-plain: 'Inter', sans-serif;
+  --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-medium-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-small-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-large-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-medium-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-small-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-medium-font: var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-small-font: var(--md-ref-typeface-plain);
+}
+
+[data-debug-icons="sharp"] {
+  --md-icon-font: "Material Symbols Sharp" !important;
 }

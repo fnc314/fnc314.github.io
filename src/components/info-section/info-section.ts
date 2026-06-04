@@ -43,8 +43,8 @@ export class InfoSection extends LitElement {
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
-        gap: 1rem;
-        padding: 1rem;
+        gap: var(--spacing-margin-s);
+        padding: var(--spacing-padding-s);
         border-radius: var(--md-sys-shape-corner-medium);
         background-color: var(--md-sys-color-inverse-surface);
         color: var(--md-sys-color-inverse-on-surface);
@@ -53,7 +53,7 @@ export class InfoSection extends LitElement {
       h2 {
         grid-area: section-grid-title;
         place-self: center;
-        padding-block: 1rem;
+        padding-block: var(--spacing-padding-s);
         margin: unset;
       }
 
@@ -86,7 +86,7 @@ export class InfoSection extends LitElement {
 
       @container (min-width: 900px) {
         section {
-          column-gap: 1rem;
+          column-gap: var(--spacing-margin-s);
         }
       }
     `,
