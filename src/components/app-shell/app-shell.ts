@@ -40,6 +40,17 @@ export class AppShell extends LitElement {
   private _boundListener = this._handleHashChange.bind(this);
   private _scrollSpyObserver?: IntersectionObserver;
 
+  @state()
+  private _activeRoute: Route = ROUTES.INFO;
+
+  @state()
+  private _exitingRoute: Route | null = null;
+
+  private _inlineIconTimeout = 0;
+  private _routes: Route[] = Object.values(ROUTES);
+  private _boundListener = this._handleHashChange.bind(this);
+  private _scrollSpyObserver?: IntersectionObserver;
+
   /**
    * Lifecycle method called after the first update.
    */
