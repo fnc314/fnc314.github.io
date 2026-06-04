@@ -1,5 +1,5 @@
 [tools]
-  firebase = "15.19.0"
+  firebase = "15.19.1"
   node = "26.3.0"
   "npm:vite" = "8.0.16"
   pnpm = "11.5.1"

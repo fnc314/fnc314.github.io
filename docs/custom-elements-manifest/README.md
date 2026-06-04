@@ -57,6 +57,85 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
+# `src/components/bento-layout/bento-layout.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `bentoLayoutStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `bentoLayoutStyles` | bentoLayoutStyles | src/components/bento-layout/bento-layout.styles.ts |         |
+
+# `dist/out/components/bento-layout/bento-layout.js`:
+
+## class: `BentoLayout`, `bento-layout`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Events
+
+| Name                  | Type          | Description | Inherited From |
+| --------------------- | ------------- | ----------- | -------------- |
+| `color_scheme.change` | `CustomEvent` |             |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy | Type                    | Default      | Description | Inherited From |
+| -------------------- | ------- | ----------------------- | ------------ | ----------- | -------------- |
+| `_appConfigs`        | private | `AppConfigs`            |              |             |                |
+| `_debugFont`         | private | `"roboto" \| "inter"`   | `"roboto"`   |             |                |
+| `_debugIcons`        | private | `"outlined" \| "sharp"` | `"outlined"` |             |                |
+| `_themeConfig`       | private | `ThemeConfig`           |              |             |                |
+| `formattedDate`      | private | `string`                |              |             |                |
+| `formattedTime`      | private | `string`                |              |             |                |
+| `onAppConfigsChange` | private |                         |              |             |                |
+
+### Methods
+
+| Name                         | Privacy | Description                                  | Parameters                               | Return           | Inherited From |
+| ---------------------------- | ------- | -------------------------------------------- | ---------------------------------------- | ---------------- | -------------- |
+| `_dispatchColorSchemeChange` | private |                                              | `colorScheme: AppConfigs["colorScheme"]` |                  |                |
+| `_onContrastChange`          | private |                                              | `event: Event`                           |                  |                |
+| `_onModeToggle`              | private |                                              |                                          |                  |                |
+| `_onThemeChange`             | private |                                              | `event: Event`                           |                  |                |
+| `_openAdvancedSettings`      | private |                                              |                                          |                  |                |
+| `_openConnectDialog`         | private |                                              |                                          |                  |                |
+| `_toggleDebugFont`           | private |                                              |                                          |                  |                |
+| `_toggleDebugIcons`          | private |                                              |                                          |                  |                |
+| `renderBioCard`              | private | Renders the Bio card.                        |                                          | `TemplateResult` |                |
+| `renderBlogCard`             | private | Renders the Blog Posts card.                 |                                          | `TemplateResult` |                |
+| `renderCodeCard`             | private | Renders the Code Projects card.              |                                          | `TemplateResult` |                |
+| `renderConfigsCard`          | private | Renders the Settings configurations card.    |                                          | `TemplateResult` |                |
+| `renderConnectCard`          | private | Renders the Connect contacts card.           |                                          | `TemplateResult` |                |
+| `renderEducationCard`        | private | Renders the Education card.                  |                                          | `TemplateResult` |                |
+| `renderProfileCard`          | private | Renders the Profile & Avatar card.           |                                          | `TemplateResult` |                |
+| `renderSkillsCard`           | private | Renders the Skills Card with the word cloud. |                                          | `TemplateResult` |                |
+| `renderWorkCard`             | private | Renders the Work History card.               |                                          | `TemplateResult` |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                                      | Package |
+| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
+| `custom-element-definition` | `bento-layout` | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
+| `js`                        | `BentoLayout`  | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
+
 # `dist/out/components/blog/blog-post.js`:
 
 ## class: `BlogPost`, `blog-post`
@@ -188,16 +267,16 @@
 
 ### Fields
 
-| Name                   | Privacy | Type             | Default      | Description | Inherited From |
-| ---------------------- | ------- | ---------------- | ------------ | ----------- | -------------- |
-| `_configsMDDialog`     | private | `MdDialog`       |              |             |                |
-| `_darkModeEnabled`     | private |                  |              |             |                |
-| `_darkModeToggle`      | private | `DarkModeToggle` |              |             |                |
-| `_formContent`         | private |                  | `ui-mode`    |             |                |
-| `_stepUpDialog`        | private |                  |              |             |                |
-| `_stepUpDialogContent` | private |                  | `all custom` |             |                |
-| `_wasOpened`           | private |                  |              |             |                |
-| `openStepUp`           | private |                  |              |             |                |
+| Name                   | Privacy | Type       | Default      | Description | Inherited From |
+| ---------------------- | ------- | ---------- | ------------ | ----------- | -------------- |
+| `_configsMDDialog`     | private | `MdDialog` |              |             |                |
+| `_darkModeEnabled`     | private |            |              |             |                |
+| `_darkModeToggle`      | private |            |              |             |                |
+| `_formContent`         | private |            | `ui-mode`    |             |                |
+| `_stepUpDialog`        | private |            |              |             |                |
+| `_stepUpDialogContent` | private |            | `all custom` |             |                |
+| `_wasOpened`           | private |            |              |             |                |
+| `openStepUp`           | private |            |              |             |                |
 
 ### Methods
 
@@ -550,27 +629,29 @@
 
 ### Fields
 
-| Name                 | Privacy | Type                               | Default                                                                           | Description | Inherited From |
-| -------------------- | ------- | ---------------------------------- | --------------------------------------------------------------------------------- | ----------- | -------------- |
-| `_activeRoute`       | private | `Route`                            |                                                                                   |             |                |
-| `_activeTabIndex`    | private | `number`                           | `0`                                                                               |             |                |
-| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                            |             |                |
-| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }` |             |                |
-| `#boundListener`     | private |                                    |                                                                                   |             |                |
-| `#inlineIconTimeout` | private | `number`                           | `0`                                                                               |             |                |
-| `#routes`            | private | `Route[]`                          |                                                                                   |             |                |
-| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                   |             |                |
+| Name                 | Privacy | Type                                | Default                                                                           | Description | Inherited From |
+| -------------------- | ------- | ----------------------------------- | --------------------------------------------------------------------------------- | ----------- | -------------- |
+| `_activeRoute`       | private | `Route`                             |                                                                                   |             |                |
+| `_activeTabIndex`    | private | `number`                            | `0`                                                                               |             |                |
+| `_boundListener`     | private |                                     |                                                                                   |             |                |
+| `_exitingRoute`      | private | `Route \| null`                     | `null`                                                                            |             |                |
+| `_inlineIconTimeout` | private | `number`                            | `0`                                                                               |             |                |
+| `_routes`            | private | `Route[]`                           |                                                                                   |             |                |
+| `_scrollSpyObserver` | private | `IntersectionObserver \| undefined` |                                                                                   |             |                |
+| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>`  | `{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }` |             |                |
+| `_tabsRef`           | private | `Ref<MdTabs>`                       |                                                                                   |             |                |
 
 ### Methods
 
-| Name                        | Privacy | Description                                                                                                        | Parameters      | Return           | Inherited From |
-| --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
-| `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
-| `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                                                   | `event: Event`  |                  |                |
-| `#renderTabs`               | private | Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons |                 | `TemplateResult` |                |
-| `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing Number                         |                 |                  |                |
-| `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                                                     | `index: number` |                  |                |
-| `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                                                    | `index: number` |                  |                |
+| Name                        | Privacy | Description | Parameters      | Return                            | Inherited From |
+| --------------------------- | ------- | ----------- | --------------- | --------------------------------- | -------------- |
+| `_handleHashChange`         | private |             |                 |                                   |                |
+| `_onTabChange`              | private |             | `event: Event`  |                                   |                |
+| `_renderTabs`               | private |             |                 | `TemplateResult`                  |                |
+| `_routeFromElementId`       | private |             | `id: string`    | `Route \| null`                   |                |
+| `_setupScrollSpy`           | private |             |                 |                                   |                |
+| `_tabIndexAndRouteFromHash` | private |             |                 | `{ index: number; route: Route }` |                |
+| `_updateTabState`           | private |             | `index: number` |                                   |                |
 
 </details>
 
@@ -615,6 +696,49 @@
 | --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
 | `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
 | `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
+
+# `dist/out/components/ui-mode-toggle/ui-mode-toggle.js`:
+
+## class: `UiModeToggle`, `ui-mode-toggle`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name        | Privacy | Type | Default  | Description                            | Inherited From |
+| ----------- | ------- | ---- | -------- | -------------------------------------- | -------------- |
+| `mode`      |         |      | `system` | The current color scheme mode.         |                |
+| `permanent` |         |      |          | Whether the color scheme is persisted. |                |
+
+### Attributes
+
+| Name        | Field     | Inherited From |
+| ----------- | --------- | -------------- |
+| `mode`      | mode      |                |
+| `permanent` | permanent |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name              | Privacy | Type             | Default | Description | Inherited From |
+| ----------------- | ------- | ---------------- | ------- | ----------- | -------------- |
+| `_darkModeToggle` | private | `DarkModeToggle` |         |             |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name             | Declaration  | Module                                          | Package |
+| --------------------------- | ---------------- | ------------ | ----------------------------------------------- | ------- |
+| `custom-element-definition` | `ui-mode-toggle` | UiModeToggle | src/components/ui-mode-toggle/ui-mode-toggle.ts |         |
+| `js`                        | `UiModeToggle`   | UiModeToggle | src/components/ui-mode-toggle/ui-mode-toggle.ts |         |
 
 # `dist/out/components/word/word-cloud/word-cloud.js`:
 

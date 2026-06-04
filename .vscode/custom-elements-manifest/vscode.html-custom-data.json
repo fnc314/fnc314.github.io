@@ -9,6 +9,12 @@
       "references": []
     },
     {
+      "name": "bento-layout",
+      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "blog-post",
       "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link @fnc314/com.fnc314.website!WordTag} _(default: undefined)_",
       "attributes": [
@@ -156,6 +162,23 @@
         {
           "name": "heading-text",
           "description": "The text to display within the header.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "ui-mode-toggle",
+      "description": "A toggle component for switching between dark, light, and system color schemes.\n---\n",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "The current color scheme mode.",
+          "values": []
+        },
+        {
+          "name": "permanent",
+          "description": "Whether the color scheme is persisted.",
           "values": []
         }
       ],

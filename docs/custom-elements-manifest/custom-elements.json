@@ -264,6 +264,294 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "bentoLayoutStyles",
+          "default": "css` :host { display: block; width: 100%; color: var(--md-sys-color-on-surface); background-color: var(--md-sys-color-surface); padding-bottom: var(--spacing-padding-xl); } .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--spacing-margin-l); width: 100%; max-width: 1400px; margin: var(--spacing-reset) auto; padding: var(--spacing-padding-m); grid-auto-flow: dense; } /* Bento Card base styling with premium glassmorphism and animations */ .bento-card { -webkit-backdrop-filter: blur(12px); border-radius: var(--md-sys-shape-corner-large); background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%); backdrop-filter: blur(12px); border: var(--hairline-width) solid var(--md-sys-color-outline-variant); padding: var(--spacing-padding-m); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-margin-s); box-shadow: var(--md-elevation-level-1); } .bento-card:hover { transform: translateY(-4px); box-shadow: var(--md-elevation-level-3); border-color: var(--md-sys-color-outline); background-color: var(--md-sys-color-surface-container-high); } .bento-card h2 { margin: var(--spacing-reset); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant); padding-bottom: var(--spacing-padding-xs); } /* Desktop Grid assignments (>=1200px) */ @media screen and (min-width: 1201px) { .card-profile { grid-column: span 4; grid-row: span 2; } .card-bio { grid-column: span 8; } .card-configs { grid-column: span 4; } .card-connect { grid-column: span 4; } .card-education { grid-column: span 4; } .card-skills { grid-column: span 8; } .card-work { grid-column: span 12; } .card-code { grid-column: span 6; } .card-blog { grid-column: span 6; } } /* Tablet Grid assignments (737px to 1200px) */ @media screen and (max-width: 1200px) and (min-width: 737px) { .bento-grid { grid-template-columns: repeat(6, 1fr); } .bento-card { grid-column: span 3; grid-row: span 1; } .card-skills { grid-column: span 6; } .card-education { grid-column: span 6; } .card-work { grid-column: span 6; } .card-code { grid-column: span 6; } .card-blog { grid-column: span 6; } } /* Mobile layout (<=736px) */ @media screen and (max-width: 736px) { .bento-grid { grid-template-columns: 1fr; gap: var(--spacing-margin-s); padding: var(--spacing-padding-s); } .bento-card { grid-column: span 1 !important; grid-row: span 1 !important; } } /* Card components internal styling */ .profile-details { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-margin-xs); } .profile-picture { width: 100%; max-width: 180px; height: auto; border-radius: var(--md-sys-shape-corner-medium); object-fit: cover; border: 2px solid var(--md-sys-color-primary); } .profile-figcaption { font-style: italic; color: var(--md-sys-color-on-surface-variant); } .bio-content p { margin: var(--spacing-reset); line-height: 1.6; text-align: justify; } .education-list { list-style-type: none; padding: var(--spacing-reset); margin: var(--spacing-reset); display: flex; flex-direction: column; gap: var(--spacing-margin-s); } .education-item { border-left: 2px solid var(--md-sys-color-primary); padding-left: var(--spacing-padding-s); } .education-item span { display: block; } .connections-list { display: flex; flex-direction: column; gap: var(--spacing-margin-xs); } .connection-link { display: flex; align-items: center; gap: var(--spacing-margin-xs); text-decoration: none; color: var(--md-sys-color-primary); padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); transition: background-color 0.2s ease; } .connection-link:hover { background-color: color(from var(--md-sys-color-primary) srgb r g b / 10%); } .configs-form { display: flex; flex-direction: column; gap: var(--spacing-margin-s); } .form-field { display: flex; flex-direction: column; gap: var(--spacing-margin-xxs); } .form-field label { font-size: 0.85rem; color: var(--md-sys-color-on-surface-variant); font-weight: 500; } .form-field select, .form-field button { padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-outline); background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); font-family: inherit; font-size: 0.95rem; } .form-field-top-margin { margin-top: var(--spacing-margin-xs); } .button-primary-outline { border-color: var(--md-sys-color-primary); color: var(--md-sys-color-primary); cursor: pointer; } .debugger-row { display: flex; gap: var(--spacing-margin-xs); align-items: center; justify-content: space-between; padding-top: var(--spacing-padding-xs); border-top: 1px dashed var(--md-sys-color-outline-variant); } .debugger-toggle { cursor: pointer; padding: var(--spacing-padding-xxs) var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: 1px solid var(--md-sys-color-primary); background: transparent; color: var(--md-sys-color-primary); font-size: 0.8rem; font-weight: bold; transition: all 0.2s; } .debugger-toggle.active { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); } .scrollable-list { max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: var(--spacing-margin-s); padding-right: var(--spacing-padding-xs); } /* Custom scrollbar for premium look */ .scrollable-list::-webkit-scrollbar { width: 6px; } .scrollable-list::-webkit-scrollbar-track { background: transparent; } .scrollable-list::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-full); } .scrollable-list::-webkit-scrollbar-thumb:hover { background: var(--md-sys-color-outline); } .category-label { margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary); } .connect-button-wrapper { margin-top: var(--spacing-margin-s); } .full-width-primary-outline-button { width: 100%; padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-primary); background-color: transparent; color: var(--md-sys-color-primary); font-family: inherit; font-size: 0.95rem; cursor: pointer; } .code-project-wrapper, .blog-post-wrapper { display: block; margin-bottom: var(--spacing-margin-xs); } .version-tag { font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); text-align: center; margin-top: auto; border-top: 1px solid var(--md-sys-color-outline-variant); padding-top: var(--spacing-padding-xs); } `",
+          "summary": "Styles for the BentoLayout component."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoLayoutStyles",
+          "declaration": {
+            "name": "bentoLayoutStyles",
+            "module": "src/components/bento-layout/bento-layout.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/bento-layout/bento-layout.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BentoLayout",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_appConfigs",
+              "type": {
+                "text": "AppConfigs"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_debugFont",
+              "type": {
+                "text": "\"roboto\" | \"inter\""
+              },
+              "privacy": "private",
+              "default": "\"roboto\""
+            },
+            {
+              "kind": "field",
+              "name": "_debugIcons",
+              "type": {
+                "text": "\"outlined\" | \"sharp\""
+              },
+              "privacy": "private",
+              "default": "\"outlined\""
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchColorSchemeChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onContrastChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onModeToggle",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onThemeChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_openAdvancedSettings",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_openConnectDialog",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_themeConfig",
+              "type": {
+                "text": "ThemeConfig"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_toggleDebugFont",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_toggleDebugIcons",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formattedDate",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formattedTime",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "onAppConfigsChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderBioCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Bio card."
+            },
+            {
+              "kind": "method",
+              "name": "renderBlogCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Blog Posts card."
+            },
+            {
+              "kind": "method",
+              "name": "renderCodeCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Code Projects card."
+            },
+            {
+              "kind": "method",
+              "name": "renderConfigsCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Settings configurations card."
+            },
+            {
+              "kind": "method",
+              "name": "renderConnectCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Connect contacts card."
+            },
+            {
+              "kind": "method",
+              "name": "renderEducationCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Education card."
+            },
+            {
+              "kind": "method",
+              "name": "renderProfileCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Profile & Avatar card."
+            },
+            {
+              "kind": "method",
+              "name": "renderSkillsCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Skills Card with the word cloud."
+            },
+            {
+              "kind": "method",
+              "name": "renderWorkCard",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "description": "Renders the Work History card."
+            }
+          ],
+          "events": [
+            {
+              "name": "color_scheme.change",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bento-layout",
+          "customElement": true,
+          "summary": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.",
+          "modulePath": "src/components/bento-layout/bento-layout.ts",
+          "definitionPath": "src/components/bento-layout/bento-layout.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bento-layout",
+          "declaration": {
+            "name": "BentoLayout",
+            "module": "src/components/bento-layout/bento-layout.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BentoLayout",
+          "declaration": {
+            "name": "BentoLayout",
+            "module": "src/components/bento-layout/bento-layout.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "dist/out/components/blog/blog-post.js",
       "declarations": [
         {
@@ -514,10 +802,27 @@
             {
               "kind": "field",
               "name": "_darkModeToggle",
-              "type": {
-                "text": "DarkModeToggle"
+              "type": "object",
+              "privacy": "private",
+              "properties": {
+                "mode": {
+                  "description": "The current color scheme mode.",
+                  "enum": [
+                    "dark",
+                    "light",
+                    "system"
+                  ],
+                  "type": "string",
+                  "default": "system"
+                },
+                "permanent": {
+                  "description": "Whether the color scheme is persisted.",
+                  "type": "boolean",
+                  "default": false
+                },
+                "_darkModeToggle": {}
               },
-              "privacy": "private"
+              "additionalProperties": false
             },
             {
               "kind": "field",
@@ -1648,7 +1953,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
+          "description": "A navigation component that renders primary tabs synchronized with the application's bento layout sections.\nUses an IntersectionObserver to perform scroll spy and highlight the active card.",
           "name": "NavComponent",
           "cssProperties": [
             {
@@ -1682,12 +1987,103 @@
             },
             {
               "kind": "field",
+              "name": "_boundListener",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
               "name": "_exitingRoute",
               "type": {
                 "text": "Route | null"
               },
               "privacy": "private",
               "default": "null"
+            },
+            {
+              "kind": "method",
+              "name": "_handleHashChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_inlineIconTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "method",
+              "name": "_onTabChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderTabs",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_routeFromElementId",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Route | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "_routes",
+              "type": {
+                "text": "Route[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_scrollSpyObserver",
+              "type": {
+                "text": "IntersectionObserver | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_setupScrollSpy",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_tabIndexAndRouteFromHash",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "{ index: number; route: Route }"
+                }
+              }
             },
             {
               "kind": "field",
@@ -1700,95 +2096,15 @@
             },
             {
               "kind": "field",
-              "name": "#boundListener",
+              "name": "_tabsRef",
+              "type": {
+                "text": "Ref<MdTabs>"
+              },
               "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "#handleHashChange",
-              "privacy": "private",
-              "description": "Syncs internal state with the URL hash."
-            },
-            {
-              "kind": "field",
-              "name": "#inlineIconTimeout",
-              "privacy": "private",
-              "type": {
-                "text": "number"
-              },
-              "default": "0"
-            },
-            {
-              "kind": "method",
-              "name": "#onTabChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  },
-                  "description": "The emitted {@link Event}from the HTML\n   "
-                }
-              ],
-              "description": "Handles user clicks on tabs. Updates URL and UI."
-            },
-            {
-              "kind": "method",
-              "name": "#renderTabs",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons"
-            },
-            {
-              "kind": "field",
-              "name": "#routes",
-              "privacy": "private",
-              "type": {
-                "text": "Route[]"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "#tabIndexAndRouteFromHash",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Reads window.location.hash and returns an object containing the Route and indexing Number"
-            },
-            {
-              "kind": "field",
-              "name": "#tabsRef",
-              "privacy": "private",
-              "type": {
-                "text": "Ref<MdTabs>"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "#updateCarousel",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "index",
-                  "type": {
-                    "text": "number"
-                  },
-                  "description": "The current {@link _activeTabIndex}"
-                }
-              ],
-              "description": "Updates external DOM via style manipulations and blind queries"
-            },
-            {
-              "kind": "method",
-              "name": "#updateTabState",
+              "name": "_updateTabState",
               "privacy": "private",
               "parameters": [
                 {
@@ -1797,8 +2113,7 @@
                     "text": "number"
                   }
                 }
-              ],
-              "description": "Updates the visual state of tabs and panels based on the index."
+              ]
             }
           ],
           "superclass": {
@@ -1907,6 +2222,96 @@
           "declaration": {
             "name": "PartialHeader",
             "module": "src/components/partial-header/partial-header.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/ui-mode-toggle/ui-mode-toggle.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "UiModeToggle",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_darkModeToggle",
+              "type": {
+                "text": "DarkModeToggle"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": "string",
+              "default": "system",
+              "description": "The current color scheme mode.",
+              "attribute": "mode",
+              "enum": [
+                "dark",
+                "light",
+                "system"
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "permanent",
+              "type": "boolean",
+              "default": false,
+              "description": "Whether the color scheme is persisted.",
+              "attribute": "permanent"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "mode",
+              "type": "string",
+              "default": "system",
+              "description": "The current color scheme mode.",
+              "fieldName": "mode",
+              "enum": [
+                "dark",
+                "light",
+                "system"
+              ]
+            },
+            {
+              "name": "permanent",
+              "type": "boolean",
+              "default": false,
+              "description": "Whether the color scheme is persisted.",
+              "fieldName": "permanent"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "ui-mode-toggle",
+          "customElement": true,
+          "summary": "A toggle component for switching between dark, light, and system color schemes.",
+          "modulePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+          "definitionPath": "src/components/ui-mode-toggle/ui-mode-toggle.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-mode-toggle",
+          "declaration": {
+            "name": "UiModeToggle",
+            "module": "src/components/ui-mode-toggle/ui-mode-toggle.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "UiModeToggle",
+          "declaration": {
+            "name": "UiModeToggle",
+            "module": "src/components/ui-mode-toggle/ui-mode-toggle.ts"
           }
         }
       ]
