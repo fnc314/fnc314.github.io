@@ -16,6 +16,7 @@ import { type Ref, createRef, ref } from "lit/directives/ref.js";
  */
 @customElement("nav-component")
 export class NavComponent extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -154,8 +155,8 @@ export class NavComponent extends LitElement {
   }
 
   /**
-   * Reads {@link window.location.hash} and returns an object containing the {@link Route} and indexing {@link number}
-   * @returns { index: number, route: Route }
+   * Reads {@link window.location.hash} and returns an object containing the {@link Route} and indexing {@link Number}
+   * @returns \{ index: number, route: Route \}
    */
   #tabIndexAndRouteFromHash(): { index: number; route: Route } {
     const hash = window.location.hash.replace("#", "").toLowerCase();
@@ -276,7 +277,7 @@ export class NavComponent extends LitElement {
   }
 
   /**
-   * Creates a {@link TemplateResult} consisting of {@link MdTabs}, {@link MdPrimaryTabs}, and {@link MdIcon}s
+   * Creates a {@link TemplateResult} consisting of {@link @material/web!MdTabs}, {@link @material/web!MdPrimaryTab}, and {@link @material/web!MdIcon}s
    */
   #renderTabs(): TemplateResult {
     const tabs: TemplateResult[] = this.#routes.map(

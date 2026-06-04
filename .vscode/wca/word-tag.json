@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "word-tag",
-      "description": "Attributes:\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\nProperties:\n\n  * `styles` - \n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\n  * `object Object],[object Object],[object Object],[object Object` - ",
+      "description": "Attributes:\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\n  * `object Object],[object Object],[object Object],[object Object` - ",
       "attributes": [
         {
           "name": "hrefUrl",

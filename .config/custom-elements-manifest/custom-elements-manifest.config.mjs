@@ -4,91 +4,127 @@ import { cemValidatorPlugin } from "@wc-toolkit/cem-validator";
 import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
 import { modulePathResolverPlugin } from "@wc-toolkit/module-path-resolver";
 import { typeParserPlugin } from "@wc-toolkit/type-parser";
+import BetterLitTypesPlugin from "cem-plugin-better-lit-types";
 import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example";
 import { readmePlugin } from "cem-plugin-readme";
 import { customElementJetBrainsPlugin } from "custom-element-jet-brains-integration";
 import { customElementVsCodePlugin } from "custom-element-vs-code-integration";
+import path from "node:path";
 import process from "node:process";
+
+/** @typedef {import('@custom-elements-manifest/analyzer').Config} Config */
+/** @typedef {import('@custom-elements-manifest/analyzer').Plugin} Plugin */
+
+/**
+ * Resolves a path relative to {@link process.cwd()}
+ * @param {string[]} segments Path segments to resolve
+ * @returns {string} Resolved absolute path
+ */
+function resolvePath(...segments) {
+  return path.resolve(process.cwd(), ...segments);
+}
 
 const isDev = process.env.NODE_ENV === "development";
 
-const fileName = "custom-elements.json";
-const docsDir = "./docs/cem";
+const docsDir = "docs/custom-elements-manifest";
+const customElementsManifestFileName = "custom-elements-manifest.json";
 
-/** @type {import("@custom-elements-manifest/analyzer").Config & { plugins: any[]  }} */
+const customElementsManifestJSON = resolvePath("docs", "custom-elements-manifest", "custom-elements.json")
+
+console.warn(
+  `Final Config is ${JSON.stringify({ customElementsManifestFileName, docsDir }, null, 2)}`
+);
+
+/** @type {import('@custom-elements-manifest/analyzer').Config & import('@custom-elements-manifest/analyzer').Plugin} */
+// @ts-ignore
 export default {
   globs: [
-    "./src/components/**/*.ts",
-    "./src/types/**/*.ts",
-    "./src/themes/**/*.ts",
-    "./node_modules/@material/web/**/*.ts",
+    "src/components/**/*.ts",
   ],
+  exclude: [
+    "**/*.json",
+    "src/data/**/*.json",
+    "src/index.ts",
+    "~build/*",
+  ],
+  fast: false,
   outdir: docsDir,
   dev: isDev,
-  dependencies: true,
+  dependencies: false,
   packagejson: true,
   litelement: true,
 
-  // overrideModuleCreation({ ts, globs }) {
-  //   const program = getTsProgram(ts, globs, "tsconfig.json");
-  //   return program.getSourceFiles().filter((sf) => globs.find((glob) => sf.fileName.includes(glob)));
-  // },
-
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
   resolutionOptions: {
-    extensions: [".js", ".ts", ".json"],
+    extensions: [".ts", ".js", ".json"],
     mainFields: ["module", "main"],
     conditionNames: ["import", "require"],
-    tsconfig: {
-      configFile: "./tsconfig.json",
+    alias: {
+      "@": [path.resolve(process.cwd(), "src")],
+      "~build/git": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
+      "~build/package": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
+      "~build/time": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
+      "~build": [path.resolve(process.cwd(), "node_modules")]
     },
-    moduleType: true,
-    // ... other oxc-resolver options
+    tsconfig: {
+      configFile: path.resolve(process.cwd(), "tsconfig.json"),
+    },
   },
 
   plugins: [
     cemValidatorPlugin({
-      packageJsonPath: "./package.json",
-      cemFileName: fileName,
+      packageJsonPath: resolvePath("package.json"),
+      cemFileName: customElementsManifestJSON,
       logErrors: true,
-      debug: isDev,
-      skip: !isDev,
+      debug: true,
+      // rules: {
+      //   manifest: {
+      //     schemaVersion: "error",
+      //   }, // Removed undefined property to prevent validator crashes
+      // },
+      rules: {
+        manifest: {
+          schemaVersion: "warning",
+        },
+      },
     }),
+    jsdocExamplePlugin(),
     cemSorterPlugin({
-      fileName: fileName,
+      fileName: customElementsManifestJSON,
       outdir: docsDir,
       deprecatedLast: true,
-      debug: isDev,
-      skip: !isDev,
+      debug: true,
     }),
     cemInheritancePlugin({
-      fileName: fileName,
+      fileName: customElementsManifestJSON,
       outdir: docsDir,
-      debug: isDev,
-      skip: !isDev,
+      debug: true,
     }),
     jsDocTagsPlugin({
-      debug: isDev,
-      skip: !isDev,
+      debug: true,
     }),
     modulePathResolverPlugin({
-      fileName: fileName,
+      fileName: customElementsManifestJSON,
+      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/out").replace(".ts", ".js"),
       outdir: docsDir,
-      debug: isDev,
-      skip: !isDev,
-      modulePathTemplate: (modulePath) => modulePath.replace("./src", "./dist").replace(".ts", ".js"),
+      debug: true,
     }),
     typeParserPlugin({
       debug: isDev,
-      skip: !isDev,
+      parseParameters: true,
+      propertyName: "parsedType",
     }),
-    jsdocExamplePlugin(),
-    readmePlugin({}),
+    BetterLitTypesPlugin,
+    readmePlugin({
+      from: process.cwd(),
+      to: "docs/custom-elements-manifest/README.md",
+      headingOffset: 0,
+    }),
     customElementVsCodePlugin({
-      outdir: "./.vscode/cem",
-      htmlFileName: "./.vscode/cem/vscode.html-custom-data.json",
-      cssFileName: "./.vscode/cem/vscode.css-custom-data.json",
-      descriptionSrc: "description",
+      outdir: "./.vscode/custom-elements-manifest",
+      htmlFileName: "vscode.html-custom-data.json",
+      cssFileName: "vscode.css-custom-data.json",
+      descriptionSrc: "summary",
       hideSlotDocs: false,
       hideCssPartsDocs: false,
       hideCssPropertiesDocs: false,
@@ -102,14 +138,12 @@ export default {
         events: "Events",
         methods: "Methods",
       },
-      skip: !isDev,
     }),
     customElementJetBrainsPlugin({
-      skip: !isDev,
       outdir: "./.idea",
       webTypesFileName: "web-types.json",
+      descriptionSrc: "summary",
       packageJson: true,
-      descriptionSrc: "description",
       hideSlotDocs: false,
       hideCssPartsDocs: false,
       hideCssPropertiesDocs: false,
@@ -118,8 +152,14 @@ export default {
       hideLogs: false,
       excludeCss: false,
       excludeHtml: false,
-      typesSrc: "type",
-      defaultIcon: "./src/assets/icons/icon.svg",
+      labels: {
+        slots: "Slots",
+        cssParts: "CSS Parts",
+        cssProperties: "CSS Properties",
+        events: "Events",
+        methods: "Methods",
+      },
+      defaultIcon: "./static/icons/icon.svg",
     }),
-  ].map((plugin) => () => plugin),
+  ].filter((p) => p !== undefined),
 };

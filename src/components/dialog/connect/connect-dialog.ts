@@ -1,12 +1,14 @@
 import Connections from "@/data/connections.json" with { type: "json" };
 import { DialogSizing } from "@/styles/components/dialog/dialog";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Connection, type ConnectionInstance } from "@/types/components/dialog/connect-dialog";
+import { type Connection, type ConnectionInstance } from "./connect-dialog.types";
 import { MdDialog } from "@material/web/dialog/dialog";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, query } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import pkg from "./../../../../package.json" with { type: "json" };
+import { abbreviatedSha as gitSha } from "~build/git";
+import { version as buildVersion } from "~build/package";
+import time from "~build/time";
 
 /**
  * @summary A dialog component that provides various contact methods and social links. It
@@ -18,6 +20,7 @@ import pkg from "./../../../../package.json" with { type: "json" };
  */
 @customElement("connect-dialog")
 export class ConnectDialog extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -191,9 +194,18 @@ export class ConnectDialog extends LitElement {
   @query("#connect-dialog")
   private _mdDialog!: MdDialog;
 
-  private date: string = "[VI]{date}[/VI]".split(" @ ").at(0)!;
-  private time: string = "[VI]{date}[/VI]".split(" @ ").at(1)!;
-  private version = "[VI]{version}[/VI]";
+  private formattedDate: string = new Intl.DateTimeFormat(navigator.languages, {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+  }).format(time);
+  private formattedTime: string = new Intl.DateTimeFormat(navigator.languages, {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).format(time);
+
+  private version = buildVersion;
 
   /**
    * Shows the connect dialog and applies a custom border to the internal container.
@@ -275,9 +287,9 @@ export class ConnectDialog extends LitElement {
         <div slot="actions">
           <p class="md-typescale-body-small">
             <span>${`Version: ${this.version}`}</span>
-            <span>${`Date: ${this.date}`}</span>
-            <span>${`Time: ${this.time}`}</span>
-            <span>${`Git SHA: ${pkg.gitAbbrevHash}`}</span>
+            <span>${`Date: ${this.formattedDate}`}</span>
+            <span>${`Time: ${this.formattedTime}`}</span>
+            <span>${`Git SHA: ${gitSha}`}</span>
           </p>
           <md-text-button @click=${() => this._mdDialog.close()}>Close</md-text-button>
         </div>

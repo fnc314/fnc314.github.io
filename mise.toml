@@ -1,18 +1,22 @@
 [tools]
-  node = "25.9.0"
-  pnpm = "11.0.3"
-  tombi = "0.10.4"
-  usage = "3.3.0"
+  firebase = "15.19.0"
+  node = "26.3.0"
+  "npm:vite" = "8.0.16"
+  pnpm = "11.5.1"
+  tombi = "0.11.7"
+  usage = "3.4.0"
 
 [env]
   _ = {
     path = "[{{config_root}}/node_modules/.bin]",
   }
   configureExtensionsUseSymLinks = true
+  LOCAL_BUILD_PYTHON_SERVER_PORT = "9997"
+  BUILD_ENVIRONMENT = ""
+  LOCAL_BUILD_PYTHON_SERVER_DIR = "dist/vite/development"
 
 [settings]
   status = {
-    show_env = true,
     show_tools = true,
     truncate = false,
   }
@@ -22,8 +26,10 @@
   npm = {
     package_manager = "pnpm",
   }
-  verbose = true
   color = true
   env_shell_expand = true
   terminal_progress = true
   color_theme = "dracula"
+
+[task_config]
+  dir = "{{cwd}}"

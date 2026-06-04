@@ -1,18 +1,28 @@
+allowBuilds:
+  "@firebase/util": false
+  "@genesiscommunitysuccess/custom-elements-lsp": false
+  "@pwrs/cem": true
+  esbuild: false
+  protobufjs: false
+  rs-module-lexer: false
+  secp256k1: false
+  sharp: false
+  unrs-resolver: false
 catalogMode: "strict"
-
 catalogs:
   dependencies:
     "@lit-labs/motion": 1.1.0
     "@lit-labs/router": 0.1.4
     "@lit/reactive-element": 2.1.2
     "@material/web": 2.4.1
+    "@open-wc/lit-helpers": 0.7.0
     animate-css-grid: 1.5.1
     dark-mode-toggle: 0.18.0
-    firebase: 12.12.1
-    lit: 3.3.2
+    firebase: 12.14.0
+    lit: 3.3.3
     lit-element: 4.2.2
-    lit-html: 3.3.2
-    material-symbols: 0.44.4
+    lit-html: 3.3.3
+    material-symbols: 0.44.11
   devDependencies:
     "@11ty/eleventy": 3.1.5
     "@11ty/eleventy-img": 6.0.4
@@ -22,14 +32,18 @@ catalogs:
     "@custom-elements-manifest/find-dependencies": 0.0.7
     "@custom-elements-manifest/to-markdown": 0.1.0
     "@esbuild/darwin-arm64": 0.28.0
+    '@eslint/eslintrc': 3.3.5
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
+    '@lit-labs/cli': 0.6.6
+    '@lit-labs/cli-localize': 0.2.2
+    '@lit-labs/gen-manifest': 0.3.6
     "@m00nbyte/rollup-plugin-copy-multiple-assets": 1.0.0
     "@material/material-color-utilities": 0.4.0
     "@open-wc/testing": 4.0.0
-    "@pwrs/cem": 0.10.1
+    "@pwrs/cem": 0.10.5
     "@rollup/plugin-alias": 6.0.0
-    "@rollup/plugin-commonjs": 29.0.2
+    "@rollup/plugin-commonjs": 29.0.3
     "@rollup/plugin-html": 2.0.0
     "@rollup/plugin-image": 3.0.3
     "@rollup/plugin-json": 6.1.0
@@ -39,21 +53,21 @@ catalogs:
     "@rollup/plugin-terser": 1.0.0
     "@rollup/plugin-typescript": 12.3.0
     "@rollup/plugin-url": 8.0.2
-    "@tailwindcss/postcss": 4.2.4
+    "@tailwindcss/postcss": 4.3.0
     "@types/eslint": 9.6.1
-    "@types/node": 25.6.0
+    "@types/node": 25.9.1
     "@types/wordcloud": 1.2.2
-    "@typescript-eslint/eslint-plugin": 8.59.2
-    "@typescript-eslint/parser": 8.59.2
+    "@typescript-eslint/eslint-plugin": 8.60.1
+    "@typescript-eslint/parser": 8.60.1
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.1.18
+    "@vitejs/devtools": 0.3.1
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
     "@wc-toolkit/cem-validator": 1.3.0
-    "@wc-toolkit/jsdoc-tags": 1.2.0
+    "@wc-toolkit/jsdoc-tags": 1.2.1
     "@wc-toolkit/module-path-resolver": 1.0.0
-    "@wc-toolkit/type-parser": 1.2.0
+    "@wc-toolkit/type-parser": 1.2.1
     "@web-types/lit": "2.0.0-3"
     "@web/dev-server": 0.4.6
     "@web/dev-server-esbuild": 1.0.5
@@ -66,6 +80,7 @@ catalogs:
     "@web/test-runner-playwright": 0.11.1
     "@webcomponents/webcomponentsjs": 2.8.0
     autoprefixer: 10.5.0
+    cem-plugin-better-lit-types: 0.2.1
     cem-plugin-jsdoc-example: 0.0.9
     cem-plugin-readme: 0.1.4
     cem-plugin-readonly: 0.0.5
@@ -73,24 +88,31 @@ catalogs:
     custom-element-jet-brains-integration: 1.7.0
     custom-element-vs-code-integration: 1.5.0
     custom-elements-manifest: 2.1.0
+    diff: 9.0.0
     esbuild: 0.28.0
-    eslint: 10.3.0
+    eslint: 10.4.1
+    eslint-config-google: 0.14.0
+    eslint-plugin-import: 2.32.0
     eslint-plugin-json-schema-validator: 6.2.0
-    eslint-plugin-lit: 2.2.1
-    eslint-plugin-prettier: 5.5.5
+    eslint-plugin-lit: 2.3.1
+    eslint-plugin-lit-a11y: 5.1.1
+    eslint-plugin-prettier: 5.5.6
     eslint-plugin-tsdoc: 0.5.2
     eslint-plugin-wc: 3.1.0
     globals: 17.6.0
     jiti: 2.7.0
     lit-analyzer: 2.0.3
-    postcss: 8.5.14
+    node: runtime:26.3.0
+    postcss: 8.5.15
     postcss-lit: 1.4.1
     postcss-load-config: 6.0.1
     prettier: 3.8.3
     prettier-plugin-tailwindcss: 0.8.0
     prettier-plugin-toml: 2.0.6
+    pwa-asset-generator: 8.1.5
     rimraf: 6.1.3
-    rollup: 4.60.3
+    rolldown-plugin-copy: 0.2.0
+    rollup: 4.61.0
     rollup-plugin-build-statistics: 0.0.19
     rollup-plugin-clear: 2.0.7
     rollup-plugin-css-only: 4.5.5
@@ -104,36 +126,90 @@ catalogs:
     rollup-plugin-typescript-paths: 1.5.0
     rollup-plugin-version-injector: 1.3.3
     rollup-plugin-visualizer: 7.0.1
-    stylelint: 17.11.0
-    stylelint-config-inspector: 2.1.2
+    stylelint: 17.12.0
+    stylelint-config-inspector: 2.3.3
     stylelint-config-standard: 40.0.0
-    stylelint-plugin-use-baseline: 1.4.1
+    stylelint-plugin-use-baseline: 1.4.2
     stylelint-prettier: 5.0.3
-    tailwindcss: 4.2.4
+    tailwindcss: 4.3.0
     ts-lit-plugin: 2.0.2
     tslib: 2.8.1
     typedoc: 0.28.19
+    typedoc-color-chip: 0.0.2
+    typedoc-github-wiki-theme: 2.1.0
     typedoc-material-theme: 1.4.1
-    typedoc-plugin-markdown: 4.11.0
+    typedoc-plugin-coverage: 4.0.3
+    typedoc-plugin-extras: 4.0.1
+    typedoc-plugin-frontmatter: 1.3.1
+    typedoc-plugin-markdown: 4.12.0
+    typedoc-plugin-mdn-links: 5.1.1
+    typedoc-plugin-version-header: 1.0.0
     typescript: 6.0.3
-    typescript-eslint: 8.59.2
-    vite: 8.0.12
+    typescript-eslint: 8.60.1
+    unplugin-info: 1.3.2
+    vite: 8.0.16
     vite-plugin-cem: 0.8.5
+    vite-plugin-cp: 6.0.3
     vite-plugin-pwa: 1.3.0
+    vite-plugin-version-mark: 0.2.2
+    vite-plus: 0.1.22
+    vitest: 4.1.7
     web-component-analyzer: 2.0.0
+  functionsDependencies:
+    firebase-admin: 13.10.0
+    firebase-functions: 7.2.5
+  functionsDevDependencies:
+    firebase-functions-test: 3.5.0
   optionalDependencies:
     "@esbuild/darwin-arm64": 0.28.0
     "@esbuild/linux-x64": 0.28.0
   overrides:
     lodash: 4.18.1
+    nanoid: 5.1.11
     serialize-javascript: 7.0.5
-
+    uuid: 14.0.0
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:
-  "@pnpm/plugin-types-fixer": 0.1.0+sha512-bLww63gRHi7siYTqFJb5qNdcXadU0jv20Et6z5AryMZ7FlLolbEJOrXLpg8+amQZNHHNW1dfFUBGVw/9ezQbFg==
+  "@pnpm/plugin-types-fixer": 0.1.0
 lockfile: true
-nodeVersion: "25.9.0"
+minimumReleaseAgeExclude:
+  - '@firebase/ai@2.13.0'
+  - '@firebase/app-check-compat@0.4.4'
+  - '@firebase/app-check@0.11.4'
+  - '@firebase/app-compat@0.5.13'
+  - '@firebase/app@0.14.13'
+  - '@firebase/auth-compat@0.6.7'
+  - '@firebase/auth@1.13.2'
+  - '@firebase/data-connect@0.7.1'
+  - '@firebase/firestore-compat@0.4.10'
+  - '@firebase/firestore@4.15.0'
+  - '@firebase/functions-compat@0.4.5'
+  - '@firebase/functions@0.13.5'
+  - '@firebase/messaging-compat@0.2.27'
+  - '@firebase/messaging-interop-types@0.2.5'
+  - '@firebase/messaging@0.13.0'
+  - '@firebase/remote-config-compat@0.2.25'
+  - '@firebase/remote-config@0.8.4'
+  - firebase@12.14.0
+  - vite@8.0.16
+nodeVersion: "26.3.0"
 packageManagerStrictVersion: true
+packages:
+  - "functions"
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    "@custom-elements-manifest/analyzer": "0.11.0"
+    eslint: "10.4.0"
+    nanoid: "3 || 5"
+    rollup: "4.60.4"
+    stylelint: "17.11.1"
+    typedoc: "0.28.19"
+    typescript: "6.0.3"
+    vite: "*"
+    vitest: "*"
 savePrefix: ""
-useNodeVersion: "25.9.0"
+useNodeVersion: "26.3.0"

@@ -28,6 +28,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("info-section")
 export class InfoSection extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

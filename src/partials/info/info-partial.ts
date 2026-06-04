@@ -1,13 +1,13 @@
 import "@/components/info-section/info-section";
 import "@/components/partial-header/partial-header";
-import "@/components/word/word-cloud";
+import "@/components/word/word-cloud/word-cloud";
+import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { THEME_CONFIGS } from "@/theme/theme";
-import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/types/components/word/word-cloud";
 import { type ColorSchemeConfigChange } from "@/types/theme/color-scheme-configs";
 import { type ThemeConfig } from "@/types/theme/theme";
 import { LitElement, css, html } from "lit";
@@ -15,6 +15,7 @@ import { customElement, state } from "lit/decorators.js";
 
 @customElement("info-partial")
 export class InfoPartial extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

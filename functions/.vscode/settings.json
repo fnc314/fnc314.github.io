@@ -1,0 +1,8 @@
+{
+  "jdk.jdkhome": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.jdt.ls.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "~/.local/share/mise/shims/node"
+  }
+}

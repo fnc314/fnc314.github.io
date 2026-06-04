@@ -4,14 +4,14 @@ A navigation component that renders primary tabs synchronized with the applicati
 
 ## Methods
 
-| Method                      | Type                                  | Description                                      |
-|-----------------------------|---------------------------------------|--------------------------------------------------|
-| `#handleHashChange`         | `(): void`                            | Syncs internal state with the URL hash.          |
-| `#onTabChange`              | `(event: Event): void`                | Handles user clicks on tabs. Updates URL and UI.<br /><br />**event**: [object Object],[object Object],[object Object] |
-| `#renderTabs`               | `(): TemplateResult`                  | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#tabIndexAndRouteFromHash` | `():  index  : number, route: Route ` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#updateCarousel`           | `(index: number): void`               | Updates external DOM via style manipulations and blind queries<br /><br />**index**: [object Object],[object Object] |
-| `#updateTabState`           | `(index: number): void`               | Updates the visual state of tabs and panels based on the index. |
+| Method                      | Type                                   | Description                                      |
+|-----------------------------|----------------------------------------|--------------------------------------------------|
+| `#handleHashChange`         | `(): void`                             | Syncs internal state with the URL hash.          |
+| `#onTabChange`              | `(event: Event): void`                 | Handles user clicks on tabs. Updates URL and UI.<br /><br />**event**: [object Object],[object Object],[object Object] |
+| `#renderTabs`               | `(): TemplateResult`                   | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
+| `#tabIndexAndRouteFromHash` | `(): { index: number; route: Route; }` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
+| `#updateCarousel`           | `(index: number): void`                | Updates external DOM via style manipulations and blind queries<br /><br />**index**: [object Object],[object Object] |
+| `#updateTabState`           | `(index: number): void`                | Updates the visual state of tabs and panels based on the index. |
 
 ## CSS Custom Properties
 

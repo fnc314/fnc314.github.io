@@ -1,10 +1,20 @@
 import { type TemplateResult, html } from "lit";
 
+/**
+ * The vertical position of a given {@link @material/web!MdFab}
+ *
+ * @type {{ readonly TOP: "TOP"; readonly BOTTOM: "BOTTOM"; }}
+ */
 export const FAB_POSITION_COMPONENTS_VERTICAL = {
   TOP: "TOP" as const,
   BOTTOM: "BOTTOM" as const,
 } as const;
 
+/**
+ * The hotizontal position of a given {@link @material/web!MdFab}
+ *
+ * @type {{ readonly START: "START"; readonly END: "END"; }}
+ */
 export const FAB_POSITION_COMPONENTS_HORIZONTAL = {
   START: "START" as const,
   END: "END" as const,
@@ -15,11 +25,26 @@ export interface FabPositionComponent {
   horizontal: FabPositionComponentHorizontal;
 }
 
+
+/**
+ * {@link FAB_POSITION_COMPONENTS_VERTICAL}
+ */
 export type FabPositionComponentVertical =
   (typeof FAB_POSITION_COMPONENTS_VERTICAL)[keyof typeof FAB_POSITION_COMPONENTS_VERTICAL];
+
+/**
+ * {@link FAB_POSITION_COMPONENTS_HORIZONTAL}
+ */
 export type FabPositionComponentHorizontal =
   (typeof FAB_POSITION_COMPONENTS_HORIZONTAL)[keyof typeof FAB_POSITION_COMPONENTS_HORIZONTAL];
 
+
+/**
+ * The complete collection of possible {@link @material/web!MdFab} positions.  Cross-product of {@link FAB_POSITION_COMPONENTS_HORIZONTAL}
+ *   and {@link FAB_POSITION_COMPONENTS_VERTICAL}
+ *
+ * @type {{ readonly START_TOP: "START_TOP"; readonly START_BOTTOM: "START_BOTTOM"; readonly END_TOP: "END_TOP"; readonly END_BOTTOM: "END_BOTTOM"; }}
+ */
 export const FAB_POSITION = {
   START_TOP: "START_TOP" as const,
   START_BOTTOM: "START_BOTTOM" as const,
@@ -30,6 +55,12 @@ export const FAB_POSITION = {
 export type FabPosition = (typeof FAB_POSITION)[keyof typeof FAB_POSITION];
 export const FabPositions: FabPosition[] = Object.values(FAB_POSITION);
 
+
+/**
+ * Maps {@link FAB_POSITION} to a particular {@link @material/web!MdFab}
+ *
+ * @type Record\<FabPosition, TemplateResult\>
+ */
 export const FabPositionIcons: Record<FabPosition, TemplateResult> = {
   START_TOP: html`<md-icon slot="start">subheader</md-icon>`, // The missing `position_top_left` to match the others
   END_TOP: html`<md-icon slot="start">position_top_right</md-icon>`,

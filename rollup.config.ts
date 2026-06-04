@@ -17,25 +17,28 @@ import gitInfo from "rollup-plugin-git-info";
 import postcss from "rollup-plugin-postcss";
 import progress from "rollup-plugin-progress";
 import summary from "rollup-plugin-summary";
-import versionInjector from "rollup-plugin-version-injector";
+import visualizer from "rollup-plugin-visualizer";
+import InfoPlugin from "unplugin-info/rollup";
 
 const require = createRequire(import.meta.url);
 const pkg = require("./package.json");
 
+
 const isDev = process.env.NODE_ENV === "development";
 const manifestJson = isDev ? "manifest.dev.json" : "manifest.json";
+const outputDir = path.resolve(process.cwd(), `dist/rollup/${process.env.NODE_ENV ?? "development"}`)
 
 export default defineConfig({
   logLevel: isDev ? "debug" : "silent",
   treeshake: true,
-  input: "src/index.html", // Correctly specify the main HTML file as the input
+  input: "index.html", // Correctly specify the main HTML file as the input
   //external: Object.keys(pkg.dependencies),
   perf: true,
   output: {
     assetFileNames: "[name].[hash][extname]",
     chunkFileNames: "[name].[hash].js",
     compact: !isDev,
-    dir: "./website",
+    dir: outputDir,
     entryFileNames: "[name].[hash].js",
     esModule: true,
     exports: "auto",
@@ -48,7 +51,7 @@ export default defineConfig({
   },
   plugins: [
     clear({
-      targets: ["./website"],
+      targets: [outputDir],
       watch: isDev,
     }),
     !isDev &&
@@ -73,24 +76,21 @@ export default defineConfig({
       patterns: ["material-symbols-{outlined,sharp}.woff2"],
       rootDir: "./node_modules/material-symbols",
     }),
-    versionInjector({
-      injectInComments: false,
-      injectInTags: {
-        fileRegexp: /\.(js|ts|html|css)$/,
-        tagId: "VI",
-        dateFormat: "yyyy-mm-dd @ HH:MM:ss TT",
-      },
-      packageJson: "./package.json",
-      logger: console,
-      logLevel: isDev ? "log" : "error",
-      exclude: [],
+    InfoPlugin({
+      cloudflare: false,
+      package: {
+        dependencies: true,
+        devDependencies: true,
+        optionalDependencies: true,
+        overrides: true,
+      }
     }),
     gitInfo.default({
       abbrev: 10,
     }),
     rollupPluginHTML({
       input: "index.html",
-      rootDir: "./src",
+      rootDir: process.cwd(),
       bundleCss: true,
       minifyCss: !isDev,
       minify: !isDev,
@@ -102,9 +102,9 @@ export default defineConfig({
             "<head>",
             `<head>
                 <meta charset="utf-8" />
-                <link rel="manifest" href="./assets/${manifestJson}" />
+                <link rel="manifest" href="./static/${manifestJson}" />
           `,
-          ),
+          )
       ],
       absoluteBaseUrl: isDev ? "http://localhost:8000" : "https://www.fnc314.com",
       strictCSPInlineScripts: !isDev,
@@ -112,20 +112,20 @@ export default defineConfig({
     copy({
       exclude: [],
       patterns: [
-        `assets/${manifestJson}`,
-        "assets/icons/*.{png,svg,ico}",
-        "assets/icons/brand/**/*.svg",
-        "assets/icons/components/**/*.{png,svg}",
-        "assets/icons/maskable/*.{png,svg}",
-        "assets/icons/shortcuts/**/icon-*-512.{svg,png}",
-        "assets/images/themes/**/*.{jpg,png}",
+        `${manifestJson}`,
+        "icons/*.{png,svg,ico}",
+        "icons/brand/**/*.svg",
+        "icons/components/**/*.{png,svg}",
+        "icons/maskable/*.{png,svg}",
+        "icons/shortcuts/**/icon-*-512.{svg,png}",
+        "images/themes/**/*.{jpg,png}",
       ],
-      rootDir: "./src",
+      rootDir: "./static",
     }),
     copy({
       exclude: [],
       patterns: ["files/**/*.pdf"],
-      rootDir: "./src/assets",
+      rootDir: "./static",
     }),
     alias({
       entries: [{ find: /^@\/(.*)/, replacement: path.resolve(process.cwd(), "src") + "/$1" }],
@@ -138,18 +138,19 @@ export default defineConfig({
       compact: !isDev,
       preferConst: true,
       namedExports: true,
-      exclude: ["**/assets/**/*.json"],
+      exclude: ["**/static/**/*.json"],
       include: ["**/data/*.json", "**/theme/**/*.json"],
     }),
     typescript({
       sourceMap: isDev,
-      tsconfig: "./tsconfig.json",
+      tsconfig: path.resolve(process.cwd(), "./tsconfig.json"),
       declaration: isDev,
-      declarationDir: "./website/types",
+      declarationDir: `${outputDir}/types`,
       outputToFilesystem: true,
       compilerOptions: {
         noEmit: false, // Override tsconfig noEmit to allow rollup to receive code
         emitDeclarationOnly: false,
+        outDir: `${outputDir}/types`,
       },
     }),
     commonjs({
@@ -162,6 +163,22 @@ export default defineConfig({
         module: true,
         mangle: true,
       }),
+    isDev &&
+      copy({
+        exclude: [],
+        patterns: [".well-known/appspecific/com.chrome.devtools.json"],
+        rootDir: "./",
+      }),
+    isDev &&
+      visualizer({
+        title: "Rollup Bundle Visualizer",
+        filename: `stats/rollup/visualizer/${new Date().toISOString()}.html`,
+        sourcemap: true,
+        template: "treemap-3d",
+        gzipSize: true,
+        brotliSize: true,
+        projectRoot: ".",
+      }),
     summary({
       showBrotliSize: true,
       showGzippedSize: true,
@@ -169,15 +186,11 @@ export default defineConfig({
     }),
     buildStatistics({
       projectName: "@fnc314/com.fnc314.website",
+      // summaryLogFilename: `rollup/${process.env.NODE_ENV || "development"}/build/stats/summary/${new Date().toISOString()}`
+      // summaryLogFilename: `rollup.${process.env.NODE_ENV || "development"}.build.stats.summary.${new Date().toISOString()}`
     }),
     progress({
       clearLine: !isDev,
     }),
-    isDev &&
-      copy({
-        exclude: [],
-        patterns: [".well-known/appspecific/com.chrome.devtools.json"],
-        rootDir: "./",
-      }),
   ],
 });

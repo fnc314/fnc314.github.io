@@ -1,8 +1,9 @@
+import { type Job, type WorkDate } from "@/components/work-experience/work-experience.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Job, type WorkDate } from "@/types/components/work-experience/work-experience";
 import { LitElement, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
+export type { Job, WorkDate } from "@/components/work-experience/work-experience.types";
 
 /**
  * @summary A component for displaying professional work experience entries.  Supports nesting
@@ -19,6 +20,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  */
 @customElement("work-experience")
 export class WorkExperience extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

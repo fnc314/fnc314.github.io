@@ -12,23 +12,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Mise Instsall
-        run: |
-          curl https://mise.run | sh
-          echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
-          echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
-          mise install
+      - name: Mise Install
+        uses: jdx/mise-action@v3
+        with:
+          cache: true
+          experimental: true
+          install: true
 
       - name: PNPM Install
         run: pnpm install
 
-      - name: PNPM RollUp
-        run: pnpm run build:website:prod
+      - name: Mise Build
+        run: mise run github:deploy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: ./website
+          path: ./dist/vite/production
 
   # Deployment job
   deploy:
@@ -41,7 +41,9 @@ jobs:
       - id: deployment
         name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v5
+
 name: Deploy Custom GitHub Pages dependencies preinstalled
+
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 on:
@@ -53,6 +55,7 @@ on:
   workflow_dispatch:
 
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+
 permissions:
   contents: read
   id-token: write

@@ -1,3 +1,4 @@
+import { type StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import "@material/web/button/filled-button";
 import "@material/web/button/outlined-button";
@@ -7,11 +8,10 @@ import "@material/web/icon/icon";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-
-export type StepUpDialogStyle = "confirm" | "warning" | "attention";
+export type { StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 
 /**
- * A versatile confirmation dialog used to verify user intent before performing
+ * @summary A versatile confirmation dialog used to verify user intent before performing
  *  significant actions like resetting settings.
  *
  * @property {StepUpDialogStyle} [dialogStyle="confirm"] - Determines which {@link StepUpDialogStyle}
@@ -25,6 +25,7 @@ export type StepUpDialogStyle = "confirm" | "warning" | "attention";
  */
 @customElement("step-up-dialog")
 export class StepUpDialog extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
