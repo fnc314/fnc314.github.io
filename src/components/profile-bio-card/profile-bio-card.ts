@@ -3,12 +3,11 @@ import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import BioJson from "@/data/bio.json" with { type: "json" };
-import { themeService } from "@/services/theme/theme-service"; // Will need this to get themePhoto details
+import { themeService } from "@/services/theme/theme-service";
 
 /**
- * @summary A responsive card component that displays a profile photo, name, and biography.
- *          It adapts its layout for desktop/tablet (3-column: Image | Text | Text)
- *          and mobile (centered image above 2-column text).
+ * @summary A responsive card component that displays a profile photo and biography
+ *          using an internal grid layout for optimal space distribution.
  *
  * @element profile-bio-card
  * @property {Object} themePhoto - An object containing `src`, `alt`, and `figcaption` for the profile picture.
@@ -21,61 +20,56 @@ export class ProfileBioCard extends LitElement {
     css`
       :host {
         display: block;
+        height: 100%;
       }
 
+      /* Base Mobile Grid (3x2: Row x Column) */
       .profile-bio-container {
         display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-margin-s);
-        align-items: start; /* Align items to the start of the grid cell */
+        height: 100%;
       }
 
-      /* Default to mobile layout: centered image above text */
       .profile-photo-area {
+        grid-row: span 2;
+        grid-column: span 2;
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        gap: var(--spacing-margin-xs);
+        justify-content: center;
       }
 
       .profile-picture {
         width: 100%;
-        max-width: 180px;
-        height: auto;
-        border-radius: var(--md-sys-shape-corner-medium);
+        height: 100%;
         object-fit: cover;
+        border-radius: var(--md-sys-shape-corner-medium);
         border: 2px solid var(--md-sys-color-primary);
       }
 
-      .profile-figcaption {
-        font-style: italic;
-        color: var(--md-sys-color-on-surface-variant);
+      .bio-text-area {
+        grid-row: span 1;
+        grid-column: span 2;
+        overflow-y: auto;
       }
 
-      .bio-content p {
-        margin: var(--spacing-reset);
-        line-height: 1.6;
-        text-align: justify;
-      }
-
-      /* Desktop/Tablet Grid assignments (>=737px, assuming 3 columns for profile/bio) */
+      /* Desktop/Tablet Grid (3x3) */
       @media screen and (min-width: 737px) {
         .profile-bio-container {
-          grid-template-columns: 1fr 2fr; /* Image | Bio Text */
+          grid-template-rows: repeat(3, 1fr);
+          grid-template-columns: repeat(3, 1fr);
         }
 
         .profile-photo-area {
-          grid-column: span 1;
-          align-items: start;
-          text-align: left;
-        }
-
-        .profile-picture {
-          max-width: 100%; /* Adjust for grid column */
+          grid-row: span 2;
+          grid-column: span 3;
         }
 
         .bio-text-area {
-          grid-column: span 1;
+          grid-row: span 1;
+          grid-column: span 3;
         }
       }
     `,
@@ -91,7 +85,6 @@ export class ProfileBioCard extends LitElement {
     return html`
       <div class="profile-bio-container">
         <div class="profile-photo-area">
-          <h2 class="md-typescale-title-large">Franco N. Colaizzi</h2>
           <picture>
             <source srcset=${this.themePhoto.src} type="image/jpeg" />
             <img
@@ -101,9 +94,6 @@ export class ProfileBioCard extends LitElement {
               alt=${this.themePhoto.alt}
             />
           </picture>
-          <figcaption class="profile-figcaption md-typescale-label-large">
-            ${this.themePhoto.figcaption}
-          </figcaption>
         </div>
         <div class="bio-text-area">
           <h2 class="md-typescale-title-large">Biography</h2>

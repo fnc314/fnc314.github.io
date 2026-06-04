@@ -14,6 +14,8 @@ export type { MaterialSymbol } from "@/types/material-symbols";
 /**
  * A floating action button that toggles a menu of actions.
  *
+ * @deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.
+ *
  * @element fab-menu
  * @slot [menu-items] - The content of the menu, typically {@link FabMenuItem} elements
  *
