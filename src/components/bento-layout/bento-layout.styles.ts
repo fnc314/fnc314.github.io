@@ -60,21 +60,8 @@ export const bentoLayoutStyles = css`
     padding-bottom: var(--spacing-padding-xs);
   }
 
-  /* Desktop Grid assignments (>=1200px) */
-  @media screen and (min-width: 1201px) {
-    .card-profile { grid-column: span 4; grid-row: span 2; }
-    .card-bio { grid-column: span 8; }
-    .card-configs { grid-column: span 4; }
-    .card-connect { grid-column: span 4; }
-    .card-education { grid-column: span 4; }
-    .card-skills { grid-column: span 8; }
-    .card-work { grid-column: span 12; }
-    .card-code { grid-column: span 6; }
-    .card-blog { grid-column: span 6; }
-  }
-
   /* Tablet Grid assignments (737px to 1200px) */
-  @media screen and (max-width: 1200px) and (min-width: 737px) {
+  @media screen and ((width <= 1200px) and (width >= 737px)) {
     .bento-grid {
       grid-template-columns: repeat(6, 1fr);
     }
@@ -91,7 +78,7 @@ export const bentoLayoutStyles = css`
   }
 
   /* Mobile layout (<=736px) */
-  @media screen and (max-width: 736px) {
+  @media screen and (width <= 736px) {
     .bento-grid {
       grid-template-columns: 1fr;
       gap: var(--spacing-margin-s);

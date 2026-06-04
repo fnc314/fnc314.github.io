@@ -18,33 +18,33 @@ import { configsService } from "@/services/configs/configs-service";
 import "@/services/router/router-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
-import { themeService } from "@/services/theme/theme-service.js";
-import { spacingTokens } from "@/styles/spacing.js";
-import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles.js";
-
+import { themeService } from "@/services/theme/theme-service";
+import { Breakpoints } from "@/styles/breakpoints";
+import { spacingTokens } from "@/styles/spacing";
+import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
 import "@/types/configs/fab-configs";
 import "@/types/theme/color-scheme-configs";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import "@/types/theme/theme";
-import "@material/web/button/filled-button.js";
-import "@material/web/button/outlined-button.js";
-import "@material/web/button/text-button.js";
-import "@material/web/dialog/dialog.js";
-import "@material/web/divider/divider.js";
-import "@material/web/elevation/elevation.js";
-import "@material/web/fab/fab.js";
-import "@material/web/icon/icon.js";
-import "@material/web/labs/card/elevated-card.js";
-import "@material/web/labs/card/filled-card.js";
-import "@material/web/labs/card/outlined-card.js";
-import "@material/web/list/list-item.js";
-import "@material/web/list/list.js";
-import "@material/web/radio/radio.js";
-import "@material/web/select/outlined-select.js";
-import "@material/web/select/select-option.js";
-import "@material/web/tabs/primary-tab.js";
-import "@material/web/tabs/tabs.js";
+import "@material/web/button/filled-button";
+import "@material/web/button/outlined-button";
+import "@material/web/button/text-button";
+import "@material/web/dialog/dialog";
+import "@material/web/divider/divider";
+import "@material/web/elevation/elevation";
+import "@material/web/fab/fab";
+import "@material/web/icon/icon";
+import "@material/web/labs/card/elevated-card";
+import "@material/web/labs/card/filled-card";
+import "@material/web/labs/card/outlined-card";
+import "@material/web/list/list";
+import "@material/web/list/list-item";
+import "@material/web/radio/radio";
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
+import "@material/web/tabs/primary-tab";
+import "@material/web/tabs/tabs";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -57,7 +57,15 @@ const domLoadedListener = () => {
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
-  document.adoptedStyleSheets.push(spacingTokens.styleSheet!);
+
+  if (Breakpoints.styleSheet) {
+    document.adoptedStyleSheets.push(Breakpoints.styleSheet);
+  }
+
+  if (spacingTokens.styleSheet) {
+    document.adoptedStyleSheets.push(spacingTokens.styleSheet);
+  }
+
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
