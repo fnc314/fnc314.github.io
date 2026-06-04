@@ -23,4 +23,3 @@ export interface BlogsJsonEntry {
     mediumUrl: string;
     tags: string[];
 }
-//# sourceMappingURL=blog-post.types.d.ts.map

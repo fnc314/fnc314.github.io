@@ -16,4 +16,3 @@ declare global {
         "bento-layout": BentoLayout;
     }
 }
-//# sourceMappingURL=bento-layout.d.ts.map

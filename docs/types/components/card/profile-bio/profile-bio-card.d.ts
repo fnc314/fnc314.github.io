@@ -10,4 +10,3 @@ declare global {
         "profile-bio-card": ProfileBioCard;
     }
 }
-//# sourceMappingURL=profile-bio-card.d.ts.map

@@ -1169,14 +1169,6 @@
 												"types": [
 													{
 														"type": "literal",
-														"value": "settings"
-													},
-													{
-														"type": "literal",
-														"value": "connect"
-													},
-													{
-														"type": "literal",
 														"value": "work"
 													},
 													{
@@ -1190,6 +1182,14 @@
 													{
 														"type": "literal",
 														"value": "profile-photo-bio"
+													},
+													{
+														"type": "literal",
+														"value": "settings"
+													},
+													{
+														"type": "literal",
+														"value": "connect"
 													},
 													{
 														"type": "literal",
@@ -3920,58 +3920,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "settings"
-									},
-									{
-										"type": "literal",
-										"value": "light"
-									},
-									{
-										"type": "literal",
-										"value": "error"
-									},
-									{
-										"type": "literal",
-										"value": "shadow"
-									},
-									{
-										"type": "literal",
-										"value": "start"
-									},
-									{
-										"type": "literal",
-										"value": "bubbles"
-									},
-									{
-										"type": "literal",
-										"value": "cancel"
-									},
-									{
-										"type": "literal",
-										"value": "close"
-									},
-									{
-										"type": "literal",
-										"value": "input"
-									},
-									{
-										"type": "literal",
-										"value": "pause"
-									},
-									{
-										"type": "literal",
-										"value": "resize"
-									},
-									{
-										"type": "literal",
-										"value": "select"
-									},
-									{
-										"type": "literal",
-										"value": "storage"
-									},
-									{
-										"type": "literal",
 										"value": "info"
 									},
 									{
@@ -3981,6 +3929,18 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "weight"
+									},
+									{
+										"type": "literal",
+										"value": "settings"
+									},
+									{
+										"type": "literal",
+										"value": "light"
 									},
 									{
 										"type": "literal",
@@ -6288,6 +6248,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "bubbles"
+									},
+									{
+										"type": "literal",
 										"value": "bucket_check"
 									},
 									{
@@ -6493,6 +6457,10 @@
 									{
 										"type": "literal",
 										"value": "camping"
+									},
+									{
+										"type": "literal",
+										"value": "cancel"
 									},
 									{
 										"type": "literal",
@@ -7069,6 +7037,10 @@
 									{
 										"type": "literal",
 										"value": "clock_loader_90"
+									},
+									{
+										"type": "literal",
+										"value": "close"
 									},
 									{
 										"type": "literal",
@@ -8805,6 +8777,10 @@
 									{
 										"type": "literal",
 										"value": "eraser_size_5"
+									},
+									{
+										"type": "literal",
+										"value": "error"
 									},
 									{
 										"type": "literal",
@@ -11241,6 +11217,10 @@
 									{
 										"type": "literal",
 										"value": "inpatient"
+									},
+									{
+										"type": "literal",
+										"value": "input"
 									},
 									{
 										"type": "literal",
@@ -14064,6 +14044,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "pause"
+									},
+									{
+										"type": "literal",
 										"value": "pause_circle"
 									},
 									{
@@ -15252,6 +15236,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "resize"
+									},
+									{
+										"type": "literal",
 										"value": "resize_window"
 									},
 									{
@@ -15724,6 +15712,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "select"
+									},
+									{
+										"type": "literal",
 										"value": "select_all"
 									},
 									{
@@ -16005,6 +15997,10 @@
 									{
 										"type": "literal",
 										"value": "shades_closed"
+									},
+									{
+										"type": "literal",
+										"value": "shadow"
 									},
 									{
 										"type": "literal",
@@ -16984,6 +16980,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "start"
+									},
+									{
+										"type": "literal",
 										"value": "stat_0"
 									},
 									{
@@ -17085,6 +17085,10 @@
 									{
 										"type": "literal",
 										"value": "stop_screen_share"
+									},
+									{
+										"type": "literal",
+										"value": "storage"
 									},
 									{
 										"type": "literal",
@@ -19189,10 +19193,6 @@
 									{
 										"type": "literal",
 										"value": "weekend"
-									},
-									{
-										"type": "literal",
-										"value": "weight"
 									},
 									{
 										"type": "literal",
@@ -19957,58 +19957,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "settings"
-									},
-									{
-										"type": "literal",
-										"value": "light"
-									},
-									{
-										"type": "literal",
-										"value": "error"
-									},
-									{
-										"type": "literal",
-										"value": "shadow"
-									},
-									{
-										"type": "literal",
-										"value": "start"
-									},
-									{
-										"type": "literal",
-										"value": "bubbles"
-									},
-									{
-										"type": "literal",
-										"value": "cancel"
-									},
-									{
-										"type": "literal",
-										"value": "close"
-									},
-									{
-										"type": "literal",
-										"value": "input"
-									},
-									{
-										"type": "literal",
-										"value": "pause"
-									},
-									{
-										"type": "literal",
-										"value": "resize"
-									},
-									{
-										"type": "literal",
-										"value": "select"
-									},
-									{
-										"type": "literal",
-										"value": "storage"
-									},
-									{
-										"type": "literal",
 										"value": "info"
 									},
 									{
@@ -20018,6 +19966,18 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "weight"
+									},
+									{
+										"type": "literal",
+										"value": "settings"
+									},
+									{
+										"type": "literal",
+										"value": "light"
 									},
 									{
 										"type": "literal",
@@ -22325,6 +22285,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "bubbles"
+									},
+									{
+										"type": "literal",
 										"value": "bucket_check"
 									},
 									{
@@ -22530,6 +22494,10 @@
 									{
 										"type": "literal",
 										"value": "camping"
+									},
+									{
+										"type": "literal",
+										"value": "cancel"
 									},
 									{
 										"type": "literal",
@@ -23106,6 +23074,10 @@
 									{
 										"type": "literal",
 										"value": "clock_loader_90"
+									},
+									{
+										"type": "literal",
+										"value": "close"
 									},
 									{
 										"type": "literal",
@@ -24842,6 +24814,10 @@
 									{
 										"type": "literal",
 										"value": "eraser_size_5"
+									},
+									{
+										"type": "literal",
+										"value": "error"
 									},
 									{
 										"type": "literal",
@@ -27278,6 +27254,10 @@
 									{
 										"type": "literal",
 										"value": "inpatient"
+									},
+									{
+										"type": "literal",
+										"value": "input"
 									},
 									{
 										"type": "literal",
@@ -30101,6 +30081,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "pause"
+									},
+									{
+										"type": "literal",
 										"value": "pause_circle"
 									},
 									{
@@ -31289,6 +31273,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "resize"
+									},
+									{
+										"type": "literal",
 										"value": "resize_window"
 									},
 									{
@@ -31761,6 +31749,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "select"
+									},
+									{
+										"type": "literal",
 										"value": "select_all"
 									},
 									{
@@ -32042,6 +32034,10 @@
 									{
 										"type": "literal",
 										"value": "shades_closed"
+									},
+									{
+										"type": "literal",
+										"value": "shadow"
 									},
 									{
 										"type": "literal",
@@ -33021,6 +33017,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "start"
+									},
+									{
+										"type": "literal",
 										"value": "stat_0"
 									},
 									{
@@ -33122,6 +33122,10 @@
 									{
 										"type": "literal",
 										"value": "stop_screen_share"
+									},
+									{
+										"type": "literal",
+										"value": "storage"
 									},
 									{
 										"type": "literal",
@@ -35226,10 +35230,6 @@
 									{
 										"type": "literal",
 										"value": "weekend"
-									},
-									{
-										"type": "literal",
-										"value": "weight"
 									},
 									{
 										"type": "literal",
@@ -35550,58 +35550,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "settings"
-									},
-									{
-										"type": "literal",
-										"value": "light"
-									},
-									{
-										"type": "literal",
-										"value": "error"
-									},
-									{
-										"type": "literal",
-										"value": "shadow"
-									},
-									{
-										"type": "literal",
-										"value": "start"
-									},
-									{
-										"type": "literal",
-										"value": "bubbles"
-									},
-									{
-										"type": "literal",
-										"value": "cancel"
-									},
-									{
-										"type": "literal",
-										"value": "close"
-									},
-									{
-										"type": "literal",
-										"value": "input"
-									},
-									{
-										"type": "literal",
-										"value": "pause"
-									},
-									{
-										"type": "literal",
-										"value": "resize"
-									},
-									{
-										"type": "literal",
-										"value": "select"
-									},
-									{
-										"type": "literal",
-										"value": "storage"
-									},
-									{
-										"type": "literal",
 										"value": "info"
 									},
 									{
@@ -35611,6 +35559,18 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "weight"
+									},
+									{
+										"type": "literal",
+										"value": "settings"
+									},
+									{
+										"type": "literal",
+										"value": "light"
 									},
 									{
 										"type": "literal",
@@ -37918,6 +37878,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "bubbles"
+									},
+									{
+										"type": "literal",
 										"value": "bucket_check"
 									},
 									{
@@ -38123,6 +38087,10 @@
 									{
 										"type": "literal",
 										"value": "camping"
+									},
+									{
+										"type": "literal",
+										"value": "cancel"
 									},
 									{
 										"type": "literal",
@@ -38699,6 +38667,10 @@
 									{
 										"type": "literal",
 										"value": "clock_loader_90"
+									},
+									{
+										"type": "literal",
+										"value": "close"
 									},
 									{
 										"type": "literal",
@@ -40435,6 +40407,10 @@
 									{
 										"type": "literal",
 										"value": "eraser_size_5"
+									},
+									{
+										"type": "literal",
+										"value": "error"
 									},
 									{
 										"type": "literal",
@@ -42871,6 +42847,10 @@
 									{
 										"type": "literal",
 										"value": "inpatient"
+									},
+									{
+										"type": "literal",
+										"value": "input"
 									},
 									{
 										"type": "literal",
@@ -45694,6 +45674,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "pause"
+									},
+									{
+										"type": "literal",
 										"value": "pause_circle"
 									},
 									{
@@ -46882,6 +46866,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "resize"
+									},
+									{
+										"type": "literal",
 										"value": "resize_window"
 									},
 									{
@@ -47354,6 +47342,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "select"
+									},
+									{
+										"type": "literal",
 										"value": "select_all"
 									},
 									{
@@ -47635,6 +47627,10 @@
 									{
 										"type": "literal",
 										"value": "shades_closed"
+									},
+									{
+										"type": "literal",
+										"value": "shadow"
 									},
 									{
 										"type": "literal",
@@ -48614,6 +48610,10 @@
 									},
 									{
 										"type": "literal",
+										"value": "start"
+									},
+									{
+										"type": "literal",
 										"value": "stat_0"
 									},
 									{
@@ -48715,6 +48715,10 @@
 									{
 										"type": "literal",
 										"value": "stop_screen_share"
+									},
+									{
+										"type": "literal",
+										"value": "storage"
 									},
 									{
 										"type": "literal",
@@ -50819,10 +50823,6 @@
 									{
 										"type": "literal",
 										"value": "weekend"
-									},
-									{
-										"type": "literal",
-										"value": "weight"
 									},
 									{
 										"type": "literal",
@@ -51167,15 +51167,15 @@
 								"types": [
 									{
 										"type": "literal",
+										"value": "surface"
+									},
+									{
+										"type": "literal",
 										"value": "primary"
 									},
 									{
 										"type": "literal",
 										"value": "secondary"
-									},
-									{
-										"type": "literal",
-										"value": "surface"
 									},
 									{
 										"type": "literal",
@@ -55479,269 +55479,75 @@
 			]
 		},
 		{
-			"id": 463,
-			"name": "src/partials/code/code-partial",
+			"id": 475,
+			"name": "src/styles/components/dialog/dialog",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 464,
-					"name": "CodePartial",
+					"id": 476,
+					"name": "DialogSizing",
 					"variant": "declaration",
-					"kind": 128,
-					"flags": {},
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
 					"comment": {
-						"summary": [],
-						"blockTags": [
+						"summary": [
 							{
-								"tag": "@summary",
-								"content": [
-									{
-										"kind": "text",
-										"text": "The "
-									},
-									{
-										"kind": "inline-tag",
-										"tag": "@link",
-										"text": "LitElement",
-										"target": "https://lit.dev/docs/api/LitElement/"
-									},
-									{
-										"kind": "text",
-										"text": " for "
-									},
-									{
-										"kind": "code",
-										"text": "`/#code`"
-									},
-									{
-										"kind": "text",
-										"text": " route"
-									}
-								]
+								"kind": "text",
+								"text": "Sizing for `<md-dialog>`s"
 							}
 						]
 					},
-					"children": [
-						{
-							"id": 465,
-							"name": "styles",
-							"variant": "declaration",
-							"kind": 1024,
-							"flags": {
-								"isStatic": true
-							},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@link",
-										"text": "lit!css",
-										"target": "https://lit.dev/docs/api/styles/#css"
-									}
-								]
-							},
-							"sources": [
-								{
-									"fileName": "src/partials/code/code-partial.ts",
-									"line": 12,
-									"character": 18,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/partials/code/code-partial.ts#L12"
-								}
-							],
-							"type": {
-								"type": "array",
-								"elementType": {
-									"type": "reference",
-									"target": {
-										"packageName": "@lit/reactive-element",
-										"packagePath": "src/css-tag.ts",
-										"qualifiedName": "CSSResult"
-									},
-									"name": "CSSResult",
-									"package": "@lit/reactive-element"
-								}
-							},
-							"defaultValue": "...",
-							"overwrites": {
-								"type": "reference",
-								"target": -1,
-								"name": "LitElement.styles"
-							}
-						},
-						{
-							"id": 468,
-							"name": "render",
-							"variant": "declaration",
-							"kind": 2048,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/partials/code/code-partial.ts",
-									"line": 52,
-									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/partials/code/code-partial.ts#L52"
-								}
-							],
-							"signatures": [
-								{
-									"id": 469,
-									"name": "render",
-									"variant": "signature",
-									"kind": 4096,
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Invoked on each update to perform rendering tasks. This method may return\nany value renderable by lit-html's "
-											},
-											{
-												"kind": "code",
-												"text": "`ChildPart`"
-											},
-											{
-												"kind": "text",
-												"text": " - typically a\n"
-											},
-											{
-												"kind": "code",
-												"text": "`TemplateResult`"
-											},
-											{
-												"kind": "text",
-												"text": ". Setting properties inside this method will *not* trigger\nthe element to update."
-											}
-										],
-										"blockTags": [
-											{
-												"tag": "@category",
-												"content": [
-													{
-														"kind": "text",
-														"text": "rendering"
-													}
-												]
-											}
-										]
-									},
-									"sources": [
-										{
-											"fileName": "src/partials/code/code-partial.ts",
-											"line": 52,
-											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/partials/code/code-partial.ts#L52"
-										}
-									],
-									"type": {
-										"type": "reference",
-										"target": {
-											"packageName": "lit-html",
-											"packagePath": "src/lit-html.ts",
-											"qualifiedName": "TemplateResult"
-										},
-										"typeArguments": [
-											{
-												"type": "literal",
-												"value": 1
-											}
-										],
-										"name": "TemplateResult",
-										"package": "lit-html",
-										"externalUrl": "https://lit.dev/docs/api/templates/#TemplateResult"
-									},
-									"overwrites": {
-										"type": "reference",
-										"target": -1,
-										"name": "LitElement.render"
-									}
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"target": -1,
-								"name": "LitElement.render"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"children": [
-								465
-							]
-						},
-						{
-							"title": "Methods",
-							"children": [
-								468
-							]
-						}
-					],
-					"categories": [
-						{
-							"title": "Other",
-							"children": [
-								465
-							]
-						},
-						{
-							"title": "rendering",
-							"children": [
-								468
-							]
-						}
-					],
 					"sources": [
 						{
-							"fileName": "src/partials/code/code-partial.ts",
-							"line": 10,
+							"fileName": "src/styles/components/dialog/dialog.ts",
+							"line": 8,
 							"character": 13,
-							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/partials/code/code-partial.ts#L10"
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/components/dialog/dialog.ts#L8"
 						}
 					],
-					"extendedTypes": [
-						{
-							"type": "reference",
-							"target": {
-								"packageName": "lit-element",
-								"packagePath": "src/lit-element.ts",
-								"qualifiedName": "LitElement"
-							},
-							"name": "LitElement",
-							"package": "lit-element",
-							"externalUrl": "https://lit.dev/docs/api/LitElement/"
-						}
-					]
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@lit/reactive-element",
+							"packagePath": "src/css-tag.ts",
+							"qualifiedName": "CSSResult"
+						},
+						"name": "CSSResult",
+						"package": "@lit/reactive-element"
+					},
+					"defaultValue": "..."
 				}
 			],
 			"groups": [
 				{
-					"title": "Classes",
+					"title": "Variables",
 					"children": [
-						464
+						476
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "src/partials/code/code-partial.ts",
+					"fileName": "src/styles/components/dialog/dialog.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/partials/code/code-partial.ts#L1"
+					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/components/dialog/dialog.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 520,
+			"id": 504,
 			"name": "src/types/configs/fab-configs",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 521,
+					"id": 505,
 					"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -55773,14 +55579,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 522,
+							"id": 506,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 523,
+									"id": 507,
 									"name": "TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55802,7 +55608,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 524,
+									"id": 508,
 									"name": "BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55828,8 +55634,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										523,
-										524
+										507,
+										508
 									]
 								}
 							]
@@ -55838,7 +55644,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 525,
+					"id": 509,
 					"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -55870,14 +55676,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 526,
+							"id": 510,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 527,
+									"id": 511,
 									"name": "START",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55899,7 +55705,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 528,
+									"id": 512,
 									"name": "END",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55925,8 +55731,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										527,
-										528
+										511,
+										512
 									]
 								}
 							]
@@ -55935,7 +55741,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 532,
+					"id": 516,
 					"name": "FabPositionComponentVertical",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -55946,7 +55752,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 521
+								"target": 505
 							}
 						]
 					},
@@ -55967,7 +55773,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 521,
+									"target": 505,
 									"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -55977,7 +55783,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 521,
+								"target": 505,
 								"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -55985,7 +55791,7 @@
 					}
 				},
 				{
-					"id": 533,
+					"id": 517,
 					"name": "FabPositionComponentHorizontal",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -55996,7 +55802,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 525
+								"target": 509
 							}
 						]
 					},
@@ -56017,7 +55823,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 525,
+									"target": 509,
 									"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -56027,7 +55833,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 525,
+								"target": 509,
 								"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -56035,7 +55841,7 @@
 					}
 				},
 				{
-					"id": 534,
+					"id": 518,
 					"name": "FAB_POSITION",
 					"variant": "declaration",
 					"kind": 32,
@@ -56062,7 +55868,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 525
+								"target": 509
 							},
 							{
 								"kind": "text",
@@ -56072,7 +55878,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 521
+								"target": 505
 							}
 						]
 					},
@@ -56087,14 +55893,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 535,
+							"id": 519,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 536,
+									"id": 520,
 									"name": "START_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -56116,7 +55922,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 537,
+									"id": 521,
 									"name": "START_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -56138,7 +55944,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 538,
+									"id": 522,
 									"name": "END_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -56160,7 +55966,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 539,
+									"id": 523,
 									"name": "END_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -56186,10 +55992,10 @@
 								{
 									"title": "Properties",
 									"children": [
-										536,
-										537,
-										538,
-										539
+										520,
+										521,
+										522,
+										523
 									]
 								}
 							]
@@ -56198,7 +56004,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 542,
+					"id": 526,
 					"name": "FabPositionIcons",
 					"variant": "declaration",
 					"kind": 32,
@@ -56215,7 +56021,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION",
-								"target": 534
+								"target": 518
 							},
 							{
 								"kind": "text",
@@ -56274,17 +56080,17 @@
 				{
 					"title": "Type Aliases",
 					"children": [
-						532,
-						533
+						516,
+						517
 					]
 				},
 				{
 					"title": "Variables",
 					"children": [
-						521,
-						525,
-						534,
-						542
+						505,
+						509,
+						518,
+						526
 					]
 				}
 			],
@@ -56298,14 +56104,14 @@
 			]
 		},
 		{
-			"id": 611,
+			"id": 595,
 			"name": "src/types/theme/theme",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 612,
+					"id": 596,
 					"name": "jsonIsThemeJsonSchemes",
 					"variant": "declaration",
 					"kind": 64,
@@ -56320,7 +56126,7 @@
 					],
 					"signatures": [
 						{
-							"id": 613,
+							"id": 597,
 							"name": "jsonIsThemeJsonSchemes",
 							"variant": "signature",
 							"kind": 4096,
@@ -56364,7 +56170,7 @@
 							],
 							"parameters": [
 								{
-									"id": 614,
+									"id": 598,
 									"name": "json",
 									"variant": "param",
 									"kind": 32768,
@@ -56407,7 +56213,7 @@
 					]
 				},
 				{
-					"id": 643,
+					"id": 627,
 					"name": "readScheme",
 					"variant": "declaration",
 					"kind": 64,
@@ -56422,7 +56228,7 @@
 					],
 					"signatures": [
 						{
-							"id": 644,
+							"id": 628,
 							"name": "readScheme",
 							"variant": "signature",
 							"kind": 4096,
@@ -56445,7 +56251,7 @@
 							],
 							"parameters": [
 								{
-									"id": 645,
+									"id": 629,
 									"name": "jsonSchema",
 									"variant": "param",
 									"kind": 32768,
@@ -56470,7 +56276,7 @@
 					]
 				},
 				{
-					"id": 615,
+					"id": 599,
 					"name": "keyTransform",
 					"variant": "declaration",
 					"kind": 64,
@@ -56485,7 +56291,7 @@
 					],
 					"signatures": [
 						{
-							"id": 616,
+							"id": 600,
 							"name": "keyTransform",
 							"variant": "signature",
 							"kind": 4096,
@@ -56508,7 +56314,7 @@
 							],
 							"parameters": [
 								{
-									"id": 617,
+									"id": 601,
 									"name": "jsonKey",
 									"variant": "param",
 									"kind": 32768,
@@ -56519,7 +56325,7 @@
 									}
 								},
 								{
-									"id": 618,
+									"id": 602,
 									"name": "rgb",
 									"variant": "param",
 									"kind": 32768,
@@ -56548,9 +56354,9 @@
 				{
 					"title": "Functions",
 					"children": [
-						612,
-						643,
-						615
+						596,
+						627,
+						599
 					]
 				}
 			],
@@ -58497,9 +58303,9 @@
 		406,
 		444,
 		222,
-		463,
-		520,
-		611
+		475,
+		504,
+		595
 	],
 	"groups": [
 		{
@@ -58540,9 +58346,9 @@
 				406,
 				444,
 				222,
-				463,
-				520,
-				611
+				475,
+				504,
+				595
 			]
 		}
 	],
@@ -60347,172 +60153,157 @@
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.render"
 		},
-		"463": {
+		"475": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/partials/code/code-partial.ts",
+			"packagePath": "src/styles/components/dialog/dialog.ts",
 			"qualifiedName": ""
 		},
-		"464": {
+		"476": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/partials/code/code-partial.ts",
-			"qualifiedName": "CodePartial"
+			"packagePath": "src/styles/components/dialog/dialog.ts",
+			"qualifiedName": "DialogSizing"
 		},
-		"465": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/partials/code/code-partial.ts",
-			"qualifiedName": "CodePartial.styles"
-		},
-		"468": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/partials/code/code-partial.ts",
-			"qualifiedName": "CodePartial.render"
-		},
-		"469": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/partials/code/code-partial.ts",
-			"qualifiedName": "CodePartial.render"
-		},
-		"520": {
+		"504": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": ""
 		},
-		"521": {
+		"505": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION_COMPONENTS_VERTICAL"
 		},
-		"522": {
+		"506": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"523": {
+		"507": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.TOP"
 		},
-		"524": {
+		"508": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.BOTTOM"
 		},
-		"525": {
+		"509": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION_COMPONENTS_HORIZONTAL"
 		},
-		"526": {
+		"510": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"527": {
+		"511": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START"
 		},
-		"528": {
+		"512": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END"
 		},
-		"532": {
+		"516": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionComponentVertical"
 		},
-		"533": {
+		"517": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionComponentHorizontal"
 		},
-		"534": {
+		"518": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION"
 		},
-		"535": {
+		"519": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"536": {
+		"520": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START_TOP"
 		},
-		"537": {
+		"521": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START_BOTTOM"
 		},
-		"538": {
+		"522": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END_TOP"
 		},
-		"539": {
+		"523": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END_BOTTOM"
 		},
-		"542": {
+		"526": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionIcons"
 		},
-		"611": {
+		"595": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": ""
 		},
-		"612": {
+		"596": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
-		"613": {
+		"597": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
-		"614": {
+		"598": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "json"
 		},
-		"615": {
+		"599": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "keyTransform"
 		},
-		"616": {
+		"600": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "keyTransform"
 		},
-		"617": {
+		"601": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonKey"
 		},
-		"618": {
+		"602": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "rgb"
 		},
-		"643": {
+		"627": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "readScheme"
 		},
-		"644": {
+		"628": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "readScheme"
 		},
-		"645": {
+		"629": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonSchema"
@@ -60561,22 +60352,23 @@
 			"39": "src/components/word/word-cloud/word-cloud.types.ts",
 			"40": "src/components/word/word-tag/word-tag.ts",
 			"41": "src/components/word/word-tag/word-tag.types.ts",
-			"42": "src/partials/blog/blog-partial.ts",
-			"43": "src/partials/code/code-partial.ts",
-			"44": "src/partials/info/info-partial.ts",
-			"45": "src/partials/work/work-partial.ts",
-			"46": "src/theme/theme.ts",
-			"47": "src/theme/chicago/chicago-theme.ts",
-			"48": "src/theme/inter/inter-theme.ts",
-			"49": "src/theme/red/red-theme.ts",
-			"50": "src/theme/sunset/sunset-theme.ts",
-			"51": "src/types/material-symbols.ts",
-			"52": "src/types/configs/app-configs.ts",
-			"53": "src/types/configs/fab-configs.ts",
-			"54": "src/types/theme/color-scheme-configs.ts",
-			"55": "src/types/theme/theme.ts",
-			"56": "src/types/components/nav/routes.ts",
-			"57": "docs/wca/markdown"
+			"42": "src/styles/index.ts",
+			"43": "src/styles/material-styles.ts",
+			"44": "src/styles/spacing.ts",
+			"45": "src/styles/styles.ts",
+			"46": "src/styles/components/dialog/dialog.ts",
+			"47": "src/theme/theme.ts",
+			"48": "src/theme/chicago/chicago-theme.ts",
+			"49": "src/theme/inter/inter-theme.ts",
+			"50": "src/theme/red/red-theme.ts",
+			"51": "src/theme/sunset/sunset-theme.ts",
+			"52": "src/types/material-symbols.ts",
+			"53": "src/types/configs/app-configs.ts",
+			"54": "src/types/configs/fab-configs.ts",
+			"55": "src/types/theme/color-scheme-configs.ts",
+			"56": "src/types/theme/theme.ts",
+			"57": "src/types/components/nav/routes.ts",
+			"58": "docs/wca/markdown"
 		},
 		"reflections": {
 			"1": 0,
@@ -60609,10 +60401,10 @@
 			"38": 368,
 			"39": 406,
 			"40": 444,
-			"43": 463,
-			"53": 520,
-			"55": 611,
-			"57": 0
+			"46": 475,
+			"54": 504,
+			"56": 595,
+			"58": 0
 		}
 	}
 }

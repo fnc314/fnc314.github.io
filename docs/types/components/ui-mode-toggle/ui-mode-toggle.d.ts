@@ -20,4 +20,3 @@ declare global {
         "ui-mode-toggle": UiModeToggle;
     }
 }
-//# sourceMappingURL=ui-mode-toggle.d.ts.map

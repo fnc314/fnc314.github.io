@@ -8,4 +8,3 @@ declare global {
         "blog-partial": BlogPartial;
     }
 }
-//# sourceMappingURL=blog-partial.d.ts.map

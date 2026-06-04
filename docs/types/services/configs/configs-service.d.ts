@@ -10,4 +10,3 @@ declare global {
         "app-configs.change": AppConfigsChange;
     }
 }
-//# sourceMappingURL=configs-service.d.ts.map

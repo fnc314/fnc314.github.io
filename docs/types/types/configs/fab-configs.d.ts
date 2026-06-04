@@ -49,4 +49,3 @@ export declare const fabConfigToGrid: (config: FabConfig) => {
     columnEnd: number;
 };
 export declare const fabPositionClass: (fabPosition: FabPosition) => "start-top" | "start-bottom" | "end-top" | "end-bottom";
-//# sourceMappingURL=fab-configs.d.ts.map

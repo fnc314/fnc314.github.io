@@ -41,4 +41,3 @@ import "@material/web/tabs/primary-tab.js";
 import "@material/web/tabs/tabs.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
-//# sourceMappingURL=index.d.ts.map

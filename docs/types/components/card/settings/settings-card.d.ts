@@ -21,4 +21,3 @@ declare global {
         "settings-card": SettingsCard;
     }
 }
-//# sourceMappingURL=settings-card.d.ts.map

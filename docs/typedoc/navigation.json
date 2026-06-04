@@ -5,85 +5,85 @@
       {
         "title": "docs/wca/markdown/app-shell",
         "kind": 8388608,
-        "path": "docs/wca/markdown/app-shell.md",
+        "path": "docs/wca/markdown/app-shell/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/bento-layout",
         "kind": 8388608,
-        "path": "docs/wca/markdown/bento-layout.md",
+        "path": "docs/wca/markdown/bento-layout/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/blog-partial",
         "kind": 8388608,
-        "path": "docs/wca/markdown/blog-partial.md",
+        "path": "docs/wca/markdown/blog-partial/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/blog-post",
         "kind": 8388608,
-        "path": "docs/wca/markdown/blog-post.md",
+        "path": "docs/wca/markdown/blog-post/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/code-partial",
         "kind": 8388608,
-        "path": "docs/wca/markdown/code-partial.md",
+        "path": "docs/wca/markdown/code-partial/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/fab-menu",
         "kind": 8388608,
-        "path": "docs/wca/markdown/fab-menu.md",
+        "path": "docs/wca/markdown/fab-menu/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/fab-menu-item",
         "kind": 8388608,
-        "path": "docs/wca/markdown/fab-menu-item.md",
+        "path": "docs/wca/markdown/fab-menu-item/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/info-partial",
         "kind": 8388608,
-        "path": "docs/wca/markdown/info-partial.md",
+        "path": "docs/wca/markdown/info-partial/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/info-section",
         "kind": 8388608,
-        "path": "docs/wca/markdown/info-section.md",
+        "path": "docs/wca/markdown/info-section/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/partial-header",
         "kind": 8388608,
-        "path": "docs/wca/markdown/partial-header.md",
+        "path": "docs/wca/markdown/partial-header/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/README",
         "kind": 8388608,
-        "path": "docs/wca/markdown/README.md",
+        "path": "docs/wca/markdown/README/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/ui-mode-toggle",
         "kind": 8388608,
-        "path": "docs/wca/markdown/ui-mode-toggle.md",
+        "path": "docs/wca/markdown/ui-mode-toggle/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/work-experience",
         "kind": 8388608,
-        "path": "docs/wca/markdown/work-experience.md",
+        "path": "docs/wca/markdown/work-experience/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/work-partial",
         "kind": 8388608,
-        "path": "docs/wca/markdown/work-partial.md",
+        "path": "docs/wca/markdown/work-partial/README.md",
         "isDeprecated": false
       }
     ]
@@ -100,7 +100,7 @@
               {
                 "title": "app-shell",
                 "kind": 2,
-                "path": "src/components/app-shell/app-shell.md",
+                "path": "src/components/app-shell/app-shell/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -109,7 +109,7 @@
                       {
                         "title": "AppShell",
                         "kind": 128,
-                        "path": "src/components/app-shell/app-shell/AppShell.md",
+                        "path": "src/components/app-shell/app-shell/AppShell/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -124,7 +124,7 @@
               {
                 "title": "bento-layout",
                 "kind": 2,
-                "path": "src/components/bento-layout/bento-layout.md",
+                "path": "src/components/bento-layout/bento-layout/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -133,7 +133,7 @@
                       {
                         "title": "BentoLayout",
                         "kind": 128,
-                        "path": "src/components/bento-layout/bento-layout/BentoLayout.md",
+                        "path": "src/components/bento-layout/bento-layout/BentoLayout/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -148,7 +148,7 @@
               {
                 "title": "blog-post",
                 "kind": 2,
-                "path": "src/components/blog/blog-post.md",
+                "path": "src/components/blog/blog-post/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -157,7 +157,7 @@
                       {
                         "title": "BlogPost",
                         "kind": 128,
-                        "path": "src/components/blog/blog-post/BlogPost.md",
+                        "path": "src/components/blog/blog-post/BlogPost/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -175,7 +175,7 @@
                   {
                     "title": "profile-bio-card",
                     "kind": 2,
-                    "path": "src/components/card/profile-bio/profile-bio-card.md",
+                    "path": "src/components/card/profile-bio/profile-bio-card/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -184,7 +184,7 @@
                           {
                             "title": "ProfileBioCard",
                             "kind": 128,
-                            "path": "src/components/card/profile-bio/profile-bio-card/ProfileBioCard.md",
+                            "path": "src/components/card/profile-bio/profile-bio-card/ProfileBioCard/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -199,7 +199,7 @@
                   {
                     "title": "settings-card",
                     "kind": 2,
-                    "path": "src/components/card/settings/settings-card.md",
+                    "path": "src/components/card/settings/settings-card/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -208,7 +208,7 @@
                           {
                             "title": "SettingsCard",
                             "kind": 128,
-                            "path": "src/components/card/settings/settings-card/SettingsCard.md",
+                            "path": "src/components/card/settings/settings-card/SettingsCard/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -228,7 +228,7 @@
                   {
                     "title": "code-project",
                     "kind": 2,
-                    "path": "src/components/code/code-project/code-project.md",
+                    "path": "src/components/code/code-project/code-project/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -237,7 +237,7 @@
                           {
                             "title": "CodeProject",
                             "kind": 128,
-                            "path": "src/components/code/code-project/code-project/CodeProject.md",
+                            "path": "src/components/code/code-project/code-project/CodeProject/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -257,7 +257,7 @@
                   {
                     "title": "step-up-dialog",
                     "kind": 2,
-                    "path": "src/components/dialog/step-up/step-up-dialog.md",
+                    "path": "src/components/dialog/step-up/step-up-dialog/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -266,7 +266,7 @@
                           {
                             "title": "StepUpDialog",
                             "kind": 128,
-                            "path": "src/components/dialog/step-up/step-up-dialog/StepUpDialog.md",
+                            "path": "src/components/dialog/step-up/step-up-dialog/StepUpDialog/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -283,7 +283,7 @@
               {
                 "title": "fab-menu-item",
                 "kind": 2,
-                "path": "src/components/fab-menu/fab-menu-item.md",
+                "path": "src/components/fab-menu/fab-menu-item/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -292,7 +292,7 @@
                       {
                         "title": "FabMenuItem",
                         "kind": 128,
-                        "path": "src/components/fab-menu/fab-menu-item/FabMenuItem.md",
+                        "path": "src/components/fab-menu/fab-menu-item/FabMenuItem/README.md",
                         "isDeprecated": true
                       }
                     ]
@@ -302,7 +302,7 @@
               {
                 "title": "fab-menu",
                 "kind": 2,
-                "path": "src/components/fab-menu/fab-menu.md",
+                "path": "src/components/fab-menu/fab-menu/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -311,7 +311,7 @@
                       {
                         "title": "FabMenu",
                         "kind": 128,
-                        "path": "src/components/fab-menu/fab-menu/FabMenu.md",
+                        "path": "src/components/fab-menu/fab-menu/FabMenu/README.md",
                         "isDeprecated": true
                       }
                     ]
@@ -326,7 +326,7 @@
               {
                 "title": "info-section",
                 "kind": 2,
-                "path": "src/components/info-section/info-section.md",
+                "path": "src/components/info-section/info-section/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -335,7 +335,7 @@
                       {
                         "title": "InfoSection",
                         "kind": 128,
-                        "path": "src/components/info-section/info-section/InfoSection.md",
+                        "path": "src/components/info-section/info-section/InfoSection/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -350,7 +350,7 @@
               {
                 "title": "partial-header",
                 "kind": 2,
-                "path": "src/components/partial-header/partial-header.md",
+                "path": "src/components/partial-header/partial-header/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -359,7 +359,7 @@
                       {
                         "title": "PartialHeader",
                         "kind": 128,
-                        "path": "src/components/partial-header/partial-header/PartialHeader.md",
+                        "path": "src/components/partial-header/partial-header/PartialHeader/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -374,7 +374,7 @@
               {
                 "title": "ui-mode-toggle",
                 "kind": 2,
-                "path": "src/components/ui-mode-toggle/ui-mode-toggle.md",
+                "path": "src/components/ui-mode-toggle/ui-mode-toggle/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -383,7 +383,7 @@
                       {
                         "title": "UiModeToggle",
                         "kind": 128,
-                        "path": "src/components/ui-mode-toggle/ui-mode-toggle/UiModeToggle.md",
+                        "path": "src/components/ui-mode-toggle/ui-mode-toggle/UiModeToggle/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -401,7 +401,7 @@
                   {
                     "title": "word-cloud",
                     "kind": 2,
-                    "path": "src/components/word/word-cloud/word-cloud.md",
+                    "path": "src/components/word/word-cloud/word-cloud/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -410,7 +410,7 @@
                           {
                             "title": "WordCloud",
                             "kind": 128,
-                            "path": "src/components/word/word-cloud/word-cloud/WordCloud.md",
+                            "path": "src/components/word/word-cloud/word-cloud/WordCloud/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -420,7 +420,7 @@
                   {
                     "title": "word-cloud.types",
                     "kind": 2,
-                    "path": "src/components/word/word-cloud/word-cloud.types.md",
+                    "path": "src/components/word/word-cloud/word-cloud.types/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -429,7 +429,7 @@
                           {
                             "title": "makeWordCloudWord",
                             "kind": 64,
-                            "path": "src/components/word/word-cloud/word-cloud.types/makeWordCloudWord.md",
+                            "path": "src/components/word/word-cloud/word-cloud.types/makeWordCloudWord/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -444,7 +444,7 @@
                   {
                     "title": "word-tag",
                     "kind": 2,
-                    "path": "src/components/word/word-tag/word-tag.md",
+                    "path": "src/components/word/word-tag/word-tag/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -453,7 +453,7 @@
                           {
                             "title": "WordTag",
                             "kind": 128,
-                            "path": "src/components/word/word-tag/word-tag/WordTag.md",
+                            "path": "src/components/word/word-tag/word-tag/WordTag/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -470,7 +470,7 @@
               {
                 "title": "work-experience",
                 "kind": 2,
-                "path": "src/components/work-experience/work-experience.md",
+                "path": "src/components/work-experience/work-experience/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -479,7 +479,7 @@
                       {
                         "title": "WorkExperience",
                         "kind": 128,
-                        "path": "src/components/work-experience/work-experience/WorkExperience.md",
+                        "path": "src/components/work-experience/work-experience/WorkExperience/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -491,25 +491,30 @@
         ]
       },
       {
-        "title": "partials",
+        "title": "styles",
         "children": [
           {
-            "title": "code",
+            "title": "components",
             "children": [
               {
-                "title": "code-partial",
-                "kind": 2,
-                "path": "src/partials/code/code-partial.md",
-                "isDeprecated": false,
+                "title": "dialog",
                 "children": [
                   {
-                    "title": "Classes",
+                    "title": "dialog",
+                    "kind": 2,
+                    "path": "src/styles/components/dialog/dialog/README.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "CodePartial",
-                        "kind": 128,
-                        "path": "src/partials/code/code-partial/CodePartial.md",
-                        "isDeprecated": false
+                        "title": "Variables",
+                        "children": [
+                          {
+                            "title": "DialogSizing",
+                            "kind": 32,
+                            "path": "src/styles/components/dialog/dialog/DialogSizing/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
                   }
@@ -528,7 +533,7 @@
               {
                 "title": "fab-configs",
                 "kind": 2,
-                "path": "src/types/configs/fab-configs.md",
+                "path": "src/types/configs/fab-configs/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -537,13 +542,13 @@
                       {
                         "title": "FabPositionComponentVertical",
                         "kind": 2097152,
-                        "path": "src/types/configs/fab-configs/FabPositionComponentVertical.md",
+                        "path": "src/types/configs/fab-configs/FabPositionComponentVertical/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FabPositionComponentHorizontal",
                         "kind": 2097152,
-                        "path": "src/types/configs/fab-configs/FabPositionComponentHorizontal.md",
+                        "path": "src/types/configs/fab-configs/FabPositionComponentHorizontal/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -554,25 +559,25 @@
                       {
                         "title": "FAB_POSITION_COMPONENTS_VERTICAL",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_VERTICAL.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_VERTICAL/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FAB_POSITION_COMPONENTS_HORIZONTAL",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_HORIZONTAL.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_HORIZONTAL/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FAB_POSITION",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FabPositionIcons",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FabPositionIcons.md",
+                        "path": "src/types/configs/fab-configs/FabPositionIcons/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -587,7 +592,7 @@
               {
                 "title": "theme",
                 "kind": 2,
-                "path": "src/types/theme/theme.md",
+                "path": "src/types/theme/theme/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -596,19 +601,19 @@
                       {
                         "title": "jsonIsThemeJsonSchemes",
                         "kind": 64,
-                        "path": "src/types/theme/theme/jsonIsThemeJsonSchemes.md",
+                        "path": "src/types/theme/theme/jsonIsThemeJsonSchemes/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "readScheme",
                         "kind": 64,
-                        "path": "src/types/theme/theme/readScheme.md",
+                        "path": "src/types/theme/theme/readScheme/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "keyTransform",
                         "kind": 64,
-                        "path": "src/types/theme/theme/keyTransform.md",
+                        "path": "src/types/theme/theme/keyTransform/README.md",
                         "isDeprecated": false
                       }
                     ]

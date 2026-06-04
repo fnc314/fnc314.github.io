@@ -20,4 +20,3 @@ declare global {
         "work-experience": WorkExperience;
     }
 }
-//# sourceMappingURL=work-experience.d.ts.map
