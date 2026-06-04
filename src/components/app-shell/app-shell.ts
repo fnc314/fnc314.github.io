@@ -1,7 +1,4 @@
-import "@/components/dialog/configs/configs-dialog";
-import { ConfigsDialog, type FormContent } from "@/components/dialog/configs/configs-dialog";
-import "@/components/dialog/connect/connect-dialog";
-import { ConnectDialog } from "@/components/dialog/connect/connect-dialog";
+
 import "@/components/fab-menu/fab-menu";
 import { FabMenu } from "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
@@ -130,10 +127,6 @@ export class AppShell extends LitElement {
   @state()
   private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(this.appConfigs.colorScheme);
 
-  /** Reference to the configuration dialog. */
-  @query("#configs-dialog")
-  private configsDialog!: ConfigsDialog;
-
   /** Reference to the FAB menu component. */
   @query("#fab-menu")
   private fabMenu!: FabMenu;
@@ -141,10 +134,6 @@ export class AppShell extends LitElement {
   /** The configuration for the settings FAB. */
   @state()
   private settingsFabConfig: FabConfig = this.appConfigs.fab.settings;
-
-  /** Reference to the connect dialog. */
-  @query("#connect-dialog")
-  private connectDialog!: ConnectDialog;
 
   /**
    * Reference to the connect FAB.
@@ -317,15 +306,7 @@ export class AppShell extends LitElement {
     }
   }
 
-  /**
-   * Handles clicks on FAB menu items.
-   * Closes the menu and opens the configuration dialog with the requested content.
-   * @param formContent - The type of configuration form to display.
-   */
-  private _onFabMenuItemClick(formContent: FormContent) {
-    this.fabMenu.open = false;
-    void this.configsDialog.showDialog(formContent);
-  }
+
 
   /**
    * Generates the label string for a FAB based on its configuration style.
@@ -351,17 +332,7 @@ export class AppShell extends LitElement {
       <slot name="app-nav"></slot>
       <slot name="app-content"></slot>
 
-      <configs-dialog
-        id="configs-dialog"
-        @opened=${() => this._handleDialogOpened()}
-        @closed=${() => this._handleDialogClosed()}
-      ></configs-dialog>
 
-      <connect-dialog
-        id="connect-dialog"
-        @opened=${() => this._handleDialogOpened()}
-        @closed=${() => this._handleDialogClosed()}
-      ></connect-dialog>
 
       <section class="fab-container">
         <fab-menu
@@ -374,27 +345,7 @@ export class AppShell extends LitElement {
           .label=${settingsLabel}
           .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
         >
-          <fab-menu-item
-            slot="menu-items"
-            .icon=${"settings"}
-            .label=${"Settings Button"}
-            @click=${() => this._onFabMenuItemClick("button-settings")}
-          >
-          </fab-menu-item>
-          <fab-menu-item
-            slot="menu-items"
-            .icon=${"person_add"}
-            .label=${"Connect Button"}
-            @click=${() => this._onFabMenuItemClick("button-connect")}
-          >
-          </fab-menu-item>
-          <fab-menu-item
-            slot="menu-items"
-            .icon=${this._uiModeIcon}
-            .label=${"UI Mode"}
-            @click=${() => this._onFabMenuItemClick("ui-mode")}
-          >
-          </fab-menu-item>
+
         </fab-menu>
 
         <md-fab
@@ -407,7 +358,6 @@ export class AppShell extends LitElement {
             ...this.connectFabConfig,
             style: FAB_STYLE.TEXT_ONLY,
           })}
-          @click=${() => this.connectDialog.showDialog()}
         >
           <md-icon
             slot="icon"

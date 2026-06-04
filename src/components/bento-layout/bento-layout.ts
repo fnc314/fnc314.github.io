@@ -30,6 +30,26 @@ import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
 import time from "~build/time";
 
+import "../profile-bio-card/profile-bio-card";
+import "../ui-mode-toggle/ui-mode-toggle";
+
+interface BentoBoxConfig {
+  type: "profile-photo-bio" | "work" | "code" | "blog" | "settings" | "connect" | "education" | "skills";
+  columnSpan?: number;
+  rowSpan?: number;
+}
+
+const BENTO_BOX_LAYOUT_CONFIG: BentoBoxConfig[] = [
+  { type: "profile-photo-bio", columnSpan: 4, rowSpan: 2 },
+  { type: "skills", columnSpan: 8 },
+  { type: "education", columnSpan: 4 },
+  { type: "work", columnSpan: 12 },
+  { type: "code", columnSpan: 6 },
+  { type: "blog", columnSpan: 6 },
+  { type: "connect", columnSpan: 4 },
+  { type: "settings", columnSpan: 4 },
+];
+
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
  *   Consolidates profile photo, bio, configurations, contact info, skills, education,
@@ -99,34 +119,7 @@ export class BentoLayout extends LitElement {
         padding-bottom: var(--spacing-padding-xs);
       }
 
-      /* Desktop Grid assignments (>=1200px) */
-      @media screen and (min-width: 1201px) {
-        .card-profile { grid-column: span 4; grid-row: span 2; }
-        .card-bio { grid-column: span 8; }
-        .card-configs { grid-column: span 4; }
-        .card-connect { grid-column: span 4; }
-        .card-education { grid-column: span 4; }
-        .card-skills { grid-column: span 8; }
-        .card-work { grid-column: span 12; }
-        .card-code { grid-column: span 6; }
-        .card-blog { grid-column: span 6; }
-      }
 
-      /* Tablet Grid assignments (737px to 1200px) */
-      @media screen and (max-width: 1200px) and (min-width: 737px) {
-        .bento-grid {
-          grid-template-columns: repeat(6, 1fr);
-        }
-        .card-profile { grid-column: span 3; }
-        .card-bio { grid-column: span 3; }
-        .card-configs { grid-column: span 3; }
-        .card-connect { grid-column: span 3; }
-        .card-skills { grid-column: span 6; }
-        .card-education { grid-column: span 6; }
-        .card-work { grid-column: span 6; }
-        .card-code { grid-column: span 6; }
-        .card-blog { grid-column: span 6; }
-      }
 
       /* Mobile layout (<=736px) */
       @media screen and (max-width: 736px) {
@@ -362,19 +355,9 @@ export class BentoLayout extends LitElement {
     configsService.removeEventListener("app-configs.change", this.onAppConfigsChange);
   }
 
-  private _openAdvancedSettings() {
-    const dialog = document.querySelector("app-shell")?.shadowRoot?.querySelector("#configs-dialog") as any;
-    if (dialog) {
-      dialog.showDialog("ui-mode");
-    }
-  }
 
-  private _openConnectDialog() {
-    const dialog = document.querySelector("app-shell")?.shadowRoot?.querySelector("#connect-dialog") as any;
-    if (dialog) {
-      dialog.showDialog();
-    }
-  }
+
+
 
   private _onThemeChange(event: Event) {
     const value = (event.target as HTMLSelectElement).value as ThemeName;
@@ -448,282 +431,225 @@ export class BentoLayout extends LitElement {
     document.body.setAttribute("data-debug-icons", nextIcons);
   }
 
-  /**
-   * Renders the Profile & Avatar card.
-   */
-  private renderProfileCard(): TemplateResult {
-    return html`
-      <section id="bio" class="bento-card card-profile" aria-labelledby="profile-title">
-        <h2 id="profile-title" class="md-typescale-title-large">Franco N. Colaizzi</h2>
-        <div class="profile-details">
-          <picture>
-            <source srcset=${this._themeConfig.themePhoto.src} type="image/jpeg" />
-            <img
-              class="profile-picture"
-              loading="lazy"
-              src=${this._themeConfig.themePhoto.src}
-              alt=${this._themeConfig.themePhoto.alt}
-            />
-          </picture>
-          <figcaption class="profile-figcaption md-typescale-label-large">
-            ${this._themeConfig.themePhoto.figcaption}
-          </figcaption>
-        </div>
-      </section>
-    `;
-  }
-
-  /**
-   * Renders the Bio card.
-   */
-  private renderBioCard(): TemplateResult {
-    return html`
-      <section class="bento-card card-bio" aria-labelledby="bio-title">
-        <h2 id="bio-title" class="md-typescale-title-large">Biography</h2>
-        <div class="bio-content md-typescale-body-large">
-          <p>${BioJson.bio}</p>
-        </div>
-      </section>
-    `;
-  }
-
-  /**
-   * Renders the Skills Card with the word cloud.
-   */
-  private renderSkillsCard(): TemplateResult {
-    const words = Object.keys(SkillsJson.skills).flatMap((proficiency) =>
+  // Helper for skills
+  private getSkillsForWordCloud() {
+    return Object.keys(SkillsJson.skills).flatMap((proficiency) =>
       Object.entries(SkillsJson.skills[proficiency as keyof typeof SkillsJson.skills]).map(([word, weight]) =>
         makeWordCloudWord(word, weight as Weights, proficiency as WordCloudWordCategory),
       ),
     );
-
-    return html`
-      <section class="bento-card card-skills" aria-labelledby="skills-title">
-        <h2 id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
-        <word-cloud
-          .words=${words}
-          instant-clear
-          grouping="quartile"
-          sorting="by-alphabet"
-          appearance="sequential"
-          delay="50"
-          threshold="0.05"
-        ></word-cloud>
-      </section>
-    `;
   }
 
   /**
-   * Renders the Education card.
+   * Centralized method to render a bento box card based on its type and configuration.
+   * @param box The type of bento box to render.
+   * @param config The grid configuration for the bento box (columnSpan, rowSpan).
+   * @returns A TemplateResult representing the rendered bento box.
    */
-  private renderEducationCard(): TemplateResult {
-    return html`
-      <section class="bento-card card-education" aria-labelledby="education-title">
-        <h2 id="education-title" class="md-typescale-title-large">Education</h2>
-        <ul class="education-list">
-          ${EducationJson.education.map(
-            (edu) => html`
-              <li class="education-item">
-                <span class="md-typescale-title-medium">${edu.institute}</span>
-                <span class="md-typescale-body-medium">${edu.location}</span>
-                <span class="md-typescale-title-small">${edu.degree}</span>
-                <span class="md-typescale-body-small">${edu.graduationDate.label}</span>
-              </li>
-            `,
-          )}
-        </ul>
-      </section>
+  private renderBentoBox(box: BentoBoxConfig["type"], config: { columnSpan?: number; rowSpan?: number }): TemplateResult {
+    const style = html`
+      <style>
+        .card-${box} {
+          grid-column: span ${config.columnSpan ?? 1};
+          grid-row: span ${config.rowSpan ?? 1};
+        }
+      </style>
     `;
-  }
 
-  /**
-   * Renders the Settings configurations card.
-   */
-  private renderConfigsCard(): TemplateResult {
-    return html`
-      <section id="settings" class="bento-card card-configs" aria-labelledby="configs-title">
-        <h2 id="configs-title" class="md-typescale-title-large">App Settings</h2>
-        <div class="configs-form">
-          <div class="form-field">
-            <label for="theme-select">UI Theme</label>
-            <select id="theme-select" @change=${this._onThemeChange}>
-              ${Object.values(THEME_NAMES).map(
-                (theme) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
-                    ${theme.charAt(0).toUpperCase() + theme.slice(1)}
-                  </option>
+    switch (box) {
+      case "profile-photo-bio":
+        return html`
+          ${style}
+          <section id="bio" class="bento-card card-profile-photo-bio" aria-labelledby="profile-title">
+            <profile-bio-card></profile-bio-card>
+          </section>
+        `;
+      case "skills":
+        return html`
+          ${style}
+          <section class="bento-card card-skills" aria-labelledby="skills-title">
+            <h2 id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
+            <word-cloud
+              .words=${this.getSkillsForWordCloud()}
+              instant-clear
+              grouping="quartile"
+              sorting="by-alphabet"
+              appearance="sequential"
+              delay="50"
+              threshold="0.05"
+            ></word-cloud>
+          </section>
+        `;
+      case "education":
+        return html`
+          ${style}
+          <section class="bento-card card-education" aria-labelledby="education-title">
+            <h2 id="education-title" class="md-typescale-title-large">Education</h2>
+            <ul class="education-list">
+              ${EducationJson.education.map(
+                (edu) => html`
+                  <li class="education-item">
+                    <span class="md-typescale-title-medium">${edu.institute}</span>
+                    <span class="md-typescale-body-medium">${edu.location}</span>
+                    <span class="md-typescale-title-small">${edu.degree}</span>
+                    <span class="md-typescale-body-small">${edu.graduationDate.label}</span>
+                  </li>
                 `,
               )}
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="contrast-select">UI Contrast</label>
-            <select id="contrast-select" @change=${this._onContrastChange}>
-              ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-                (contrast) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
-                    ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
-                  </option>
-                `,
-              )}
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Color Mode: ${this._appConfigs.colorScheme.name}</label>
-            <button @click=${this._onModeToggle}>
-              Toggle Theme Mode
-            </button>
-          </div>
-
-          <div class="form-field" style="margin-top: 0.5rem;">
-            <button style="border-color: var(--md-sys-color-primary); color: var(--md-sys-color-primary); cursor: pointer;" @click=${this._openAdvancedSettings}>
-              Open Modal Settings Dialog
-            </button>
-          </div>
-
-          <div class="debugger-row">
-            <span class="md-typescale-label-medium">Debugger Font:</span>
-            <button
-              class="debugger-toggle ${classMap({ active: this._debugFont === "inter" })}"
-              @click=${this._toggleDebugFont}
-            >
-              Inter
-            </button>
-          </div>
-
-          <div class="debugger-row">
-            <span class="md-typescale-label-medium">Debugger Icons:</span>
-            <button
-              class="debugger-toggle ${classMap({ active: this._debugIcons === "sharp" })}"
-              @click=${this._toggleDebugIcons}
-            >
-              Sharp
-            </button>
-          </div>
-        </div>
-      </section>
-    `;
-  }
-
-  /**
-   * Renders the Connect contacts card.
-   */
-  private renderConnectCard(): TemplateResult {
-    return html`
-      <section id="connect" class="bento-card card-connect" aria-labelledby="connect-title">
-        <h2 id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
-        <div class="connections-list">
-          ${Connections.connections.map(
-            (category) => html`
-              <span class="md-typescale-title-small" style="margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary)">
-                ${category.label}
-              </span>
-              ${Object.values(category.connections).map(
-                (conn) => html`
-                  <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
-                    ${unsafeHTML(conn.text)}
-                  </a>
-                `,
-              )}
-            `,
-          )}
-        </div>
-
-        <div style="margin-top: var(--spacing-margin-s);">
-          <button style="width: 100%; padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-primary); background-color: transparent; color: var(--md-sys-color-primary); font-family: inherit; font-size: 0.95rem; cursor: pointer;" @click=${this._openConnectDialog}>
-            Open Modal Connect Overlay
-          </button>
-        </div>
-
-        <div class="version-tag">
-          <div>Version: ${buildVersion}</div>
-          <div>SHA: ${gitSha}</div>
-        </div>
-      </section>
-    `;
-  }
-
-  /**
-   * Renders the Work History card.
-   */
-  private renderWorkCard(): TemplateResult {
-    return html`
-      <section id="work" class="bento-card card-work" aria-labelledby="work-title">
-        <h2 id="work-title" class="md-typescale-title-large">Work History</h2>
-        <div class="scrollable-list">
-          ${WorkJson.experiences.map(
-            (exp) => html`
-              <work-experience
-                .isNested="${false}"
-                .experienceOrg="${exp.employer}"
-                .experienceRole="${exp.role}"
-                .experienceSummary="${exp.summary}"
-                .dateStart="${exp.dates.start}"
-                .dateEnd="${exp.dates.end}"
-                .jobs="${exp.jobs}"
-                .summaries="${exp.summaries ?? []}"
-              ></work-experience>
-            `,
-          )}
-        </div>
-      </section>
-    `;
-  }
-
-  /**
-   * Renders the Code Projects card.
-   */
-  private renderCodeCard(): TemplateResult {
-    return html`
-      <section id="code" class="bento-card card-code" aria-labelledby="code-title">
-        <h2 id="code-title" class="md-typescale-title-large">Code Projects</h2>
-        <div class="scrollable-list">
-          ${CodeJson.projects.map(
-            (p) => html`
-              <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
-                <code-project .codeProject="${p}"></code-project>
+            </ul>
+          </section>
+        `;
+      case "settings":
+        return html`
+          ${style}
+          <section id="settings" class="bento-card card-settings" aria-labelledby="configs-title">
+            <h2 id="configs-title" class="md-typescale-title-large">App Settings</h2>
+            <div class="configs-form">
+              <div class="form-field">
+                <label for="theme-select">UI Theme</label>
+                <select id="theme-select" @change=${this._onThemeChange}>
+                  ${Object.values(THEME_NAMES).map(
+                    (theme) => html`
+                      <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
+                        ${theme.charAt(0).toUpperCase() + theme.slice(1)}
+                      </option>
+                    `,
+                  )}
+                </select>
               </div>
-            `,
-          )}
-        </div>
-      </section>
-    `;
-  }
 
-  /**
-   * Renders the Blog Posts card.
-   */
-  private renderBlogCard(): TemplateResult {
-    return html`
-      <section id="blog" class="bento-card card-blog" aria-labelledby="blog-title">
-        <h2 id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
-        <div class="scrollable-list">
-          ${BlogJson.posts.map(
-            (post: BlogPostJson) => html`
-              <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
-                <blog-post .blogPost=${post}></blog-post>
+              <div class="form-field">
+                <label for="contrast-select">UI Contrast</label>
+                <select id="contrast-select" @change=${this._onContrastChange}>
+                  ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+                    (contrast) => html`
+                      <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
+                        ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
+                      </option>
+                    `,
+                  )}
+                </select>
               </div>
-            `,
-          )}
-        </div>
-      </section>
-    `;
-  }
 
+              <ui-mode-toggle></ui-mode-toggle>
+
+
+
+              <div class="debugger-row">
+                <span class="md-typescale-label-medium">Debugger Font:</span>
+                <button
+                  class="debugger-toggle ${classMap({ active: this._debugFont === "inter" })}"
+                  @click=${this._toggleDebugFont}
+                >
+                  Inter
+                </button>
+              </div>
+
+              <div class="debugger-row">
+                <span class="md-typescale-label-medium">Debugger Icons:</span>
+                <button
+                  class="debugger-toggle ${classMap({ active: this._debugIcons === "sharp" })}"
+                  @click=${this._toggleDebugIcons}
+                >
+                  Sharp
+                </button>
+              </div>
+            </div>
+          </section>
+        `;
+      case "connect":
+        return html`
+          ${style}
+          <section id="connect" class="bento-card card-connect" aria-labelledby="connect-title">
+            <h2 id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
+            <div class="connections-list">
+              ${Connections.connections.map(
+                (category) => html`
+                  <span class="md-typescale-title-small" style="margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary)">
+                    ${category.label}
+                  </span>
+                  ${Object.values(category.connections).map(
+                    (conn) => html`
+                      <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
+                        ${unsafeHTML(conn.text)}
+                      </a>
+                    `,
+                  )}
+                `,
+              )}
+            </div>
+
+
+
+            <div class="version-tag">
+              <div>Version: ${buildVersion}</div>
+              <div>SHA: ${gitSha}</div>
+            </div>
+          </section>
+        `;
+      case "work":
+        return html`
+          ${style}
+          <section id="work" class="bento-card card-work" aria-labelledby="work-title">
+            <h2 id="work-title" class="md-typescale-title-large">Work History</h2>
+            <div class="scrollable-list">
+              ${WorkJson.experiences.map(
+                (exp) => html`
+                  <work-experience
+                    .isNested="${false}"
+                    .experienceOrg="${exp.employer}"
+                    .experienceRole="${exp.role}"
+                    .experienceSummary="${exp.summary}"
+                    .dateStart="${exp.dates.start}"
+                    .dateEnd="${exp.dates.end}"
+                    .jobs="${exp.jobs}"
+                    .summaries="${exp.summaries ?? []}"
+                  ></work-experience>
+                `,
+              )}
+            </div>
+          </section>
+        `;
+      case "code":
+        return html`
+          ${style}
+          <section id="code" class="bento-card card-code" aria-labelledby="code-title">
+            <h2 id="code-title" class="md-typescale-title-large">Code Projects</h2>
+            <div class="scrollable-list">
+              ${CodeJson.projects.map(
+                (p) => html`
+                  <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
+                    <code-project .codeProject="${p}"></code-project>
+                  </div>
+                `,
+              )}
+            </div>
+          </section>
+        `;
+      case "blog":
+        return html`
+          ${style}
+          <section id="blog" class="bento-card card-blog" aria-labelledby="blog-title">
+            <h2 id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
+            <div class="scrollable-list">
+              ${BlogJson.posts.map(
+                (post: BlogPostJson) => html`
+                  <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
+                    <blog-post .blogPost=${post}></blog-post>
+                  </div>
+                `,
+              )}
+            </div>
+          </section>
+        `;
+      default:
+        return html``;
+    }
+  }
   override render() {
     return html`
       <div class="bento-grid" role="main">
-        ${this.renderProfileCard()}
-        ${this.renderBioCard()}
-        ${this.renderConfigsCard()}
-        ${this.renderConnectCard()}
-        ${this.renderSkillsCard()}
-        ${this.renderEducationCard()}
-        ${this.renderWorkCard()}
-        ${this.renderCodeCard()}
-        ${this.renderBlogCard()}
+        ${BENTO_BOX_LAYOUT_CONFIG.map(boxConfig => this.renderBentoBox(boxConfig.type, boxConfig))}
       </div>
     `;
   }

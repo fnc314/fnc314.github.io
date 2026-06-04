@@ -3,8 +3,6 @@ import "@/components/bento-layout/bento-layout";
 import "@/components/blog/blog-post";
 import "@/components/blog/blog-post.types";
 import "@/components/code/code-project/code-project";
-import "@/components/dialog/configs/configs-dialog";
-import "@/components/dialog/connect/connect-dialog";
 import "@/components/dialog/step-up/step-up-dialog";
 import "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
