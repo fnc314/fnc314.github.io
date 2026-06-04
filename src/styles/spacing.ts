@@ -1,4 +1,4 @@
-import { css } from 'lit';
+import { type CSSResult, css } from 'lit';
 
 /**
  * Spacing tokens for the Bento Box UI.
@@ -8,7 +8,7 @@ import { css } from 'lit';
  *
  * @packageDocumentation
  */
-export const spacingTokens = css`
+export const spacingTokens: CSSResult = css`
   :root {
     --spacing-reset: 0;
 

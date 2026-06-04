@@ -1,3 +1,4 @@
+import { bentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BlogPostJson } from "@/components/blog/blog-post";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
 import { data as WorkJson } from "@/components/work-experience/work-experience.types";
@@ -41,6 +42,7 @@ import time from "~build/time";
 export class BentoLayout extends LitElement {
   /** {@link lit!css} */
   static override styles = [
+    bentoLayoutStyles,
     MaterialTypescaleStyles,
     css`
       :host {
@@ -57,7 +59,7 @@ export class BentoLayout extends LitElement {
         gap: var(--spacing-margin-l);
         width: 100%;
         max-width: 1400px;
-        margin: 0 auto;
+        margin: var(--spacing-reset) auto;
         padding: var(--spacing-padding-m);
         grid-auto-flow: dense;
       }
@@ -222,7 +224,7 @@ export class BentoLayout extends LitElement {
       }
 
       .form-field label {
-        font-size: 0.85rem;
+        font-size: var(--md-sys-typescale-label-large-size);
         color: var(--md-sys-color-on-surface-variant);
         font-weight: 500;
       }
@@ -254,7 +256,7 @@ export class BentoLayout extends LitElement {
         border: 1px solid var(--md-sys-color-primary);
         background: transparent;
         color: var(--md-sys-color-primary);
-        font-size: 0.8rem;
+        font-size: var(--md-sys-typescale-label-medium-size);
         font-weight: bold;
         transition: all 0.2s;
       }
@@ -293,7 +295,7 @@ export class BentoLayout extends LitElement {
       }
 
       .version-tag {
-        font-size: 0.75rem;
+        font-size: var(--md-sys-typescale-body-small-size);
         color: var(--md-sys-color-on-surface-variant);
         text-align: center;
         margin-top: auto;

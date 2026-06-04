@@ -99,6 +99,7 @@ The following replacements are required in component source files once accessibl
 - [x] **`word-tag.ts`**: Verified and updated with spacing tokens.
 - [x] **`info-partial.ts`**: Verified and updated with spacing tokens.
 - [x] **`work-partial.ts`**: Verified and updated with spacing tokens.
+- [x] **`bento-layout.ts`**: Refactored inline styles to use classes and moved to `bento-layout.styles.ts`.
 - [x] **`code-partial.ts`**: Verified and updated with spacing tokens.
 - [x] **`blog-partial.ts`**: Verified and updated with spacing tokens.
 - [x] **`configs-dialog.ts`**: Complete.

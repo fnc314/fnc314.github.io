@@ -61,7 +61,7 @@ const domLoadedListener = () => {
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
-  document.adoptedStyleSheets.push(spacingTokens.styleSheet);
+  document.adoptedStyleSheets.push(spacingTokens.styleSheet!);
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
