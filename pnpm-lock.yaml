@@ -353,8 +353,8 @@ catalogs:
       specifier: 17.12.0
       version: 17.12.0
     stylelint-config-inspector:
-      specifier: 2.3.3
-      version: 2.3.3
+      specifier: 2.3.4
+      version: 2.3.4
     stylelint-config-standard:
       specifier: 40.0.0
       version: 40.0.0
@@ -776,7 +776,7 @@ importers:
         version: 17.12.0(typescript@6.0.3)
       stylelint-config-inspector:
         specifier: catalog:devDependencies
-        version: 2.3.3(stylelint@17.12.0(typescript@6.0.3))
+        version: 2.3.4(stylelint@17.12.0(typescript@6.0.3))
       stylelint-config-standard:
         specifier: catalog:devDependencies
         version: 40.0.0(stylelint@17.12.0(typescript@6.0.3))
@@ -9333,8 +9333,8 @@ packages:
     peerDependencies:
       postcss: ^8.2.15
 
-  stylelint-config-inspector@2.3.3:
-    resolution: {integrity: sha512-h1Sy6dyrZAvxrq8y2p3VDGOTZm5WCUu0RwOdwDKOF8LL+AVYBejWKRhMd6tBNnrnI78cbV+r0O869isRZMK7ZA==}
+  stylelint-config-inspector@2.3.4:
+    resolution: {integrity: sha512-pJugCci15CNvB6WPLrZRCZJkk2gHRrn1JhaHPUUATEHILz35TraUxsepKIKR1UWTZ+n+dZNYIKsORkukVBRZmg==}
     engines: {node: '>=20.19.0', npm: '>=10.0.0'}
     hasBin: true
     peerDependencies:
@@ -20307,7 +20307,7 @@ snapshots:
       postcss: 8.5.15
       postcss-selector-parser: 6.1.2
 
-  stylelint-config-inspector@2.3.3(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-config-inspector@2.3.4(stylelint@17.12.0(typescript@6.0.3)):
     dependencies:
       '@types/ws': 8.18.1
       ansis: 4.3.1
