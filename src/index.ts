@@ -7,7 +7,6 @@ import "@/components/dialog/step-up/step-up-dialog";
 import "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
 import "@/components/info-section/info-section";
-import "@/components/nav/nav-component";
 import "@/components/partial-header/partial-header";
 import "@/components/word/word-cloud/word-cloud";
 import "@/components/word/word-cloud/word-cloud.types";
@@ -22,8 +21,7 @@ import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service.js";
 import { spacingTokens } from "@/styles/spacing.js";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles.js";
-import "@/types/components/nav/routes";
-import { ROUTES } from "@/types/components/nav/routes.js";
+
 import "@/types/configs/app-configs";
 import "@/types/configs/fab-configs";
 import "@/types/theme/color-scheme-configs";
@@ -63,7 +61,7 @@ const domLoadedListener = () => {
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   if (window.location.hash === "") {
-    window.history.replaceState(null, "", `${window.location.href}#${ROUTES.INFO}`);
+    window.history.replaceState(null, "", `${window.location.href}#bio`);
   } else {
     setTimeout(() => {
       const hash = window.location.hash.replace("#", "").toLowerCase();

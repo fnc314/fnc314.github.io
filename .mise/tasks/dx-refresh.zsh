@@ -1,12 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 #MISE description="Run dx-refresh"
 #MISE alias="dxr"
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {
 #USAGE   choices "none" "log-all" "mise-tasks" "typescript-types" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
 
-local LOG_STEP="${usage_logstep:=none}"
-local MASTER_LOG
+declare LOG_STEP="${usage_logstep:=none}"
+declare MASTER_LOG
 
 if [[ "$LOG_STEP" == "log-all" ]]; then
   MASTER_LOG="./logs/dx-refresh/$(date +%Y%m%d-%H%M%S).log"

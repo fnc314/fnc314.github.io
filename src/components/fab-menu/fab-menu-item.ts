@@ -8,6 +8,8 @@ export type { MaterialSymbol } from "@/types/material-symbols";
 /**
  * An action item within a `fab-menu`.
  *
+ * @deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.
+ *
  * @element fab-menu-item
  * @cssprop [--fab-menu-item-direction=row] - The `flex-direction` of the {@link FabMenuItem}
  * @cssprop [--fab-menu-item-justify=flex-end] - The Flex `justify-content` of the {@link FabMenuItem}

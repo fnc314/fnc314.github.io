@@ -5,12 +5,13 @@ import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
+import { NavComponentConfig, ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
 import {
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorSchemeConfigChange,
   colorSchemeConfigsToMaterialSchemeName,
 } from "@/types/theme/color-scheme-configs";
-import { LitElement, type PropertyValues, css, html } from "lit";
+import { LitElement, type PropertyValues, css, html, type TemplateResult } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
 /**
@@ -45,11 +46,76 @@ export class AppShell extends LitElement {
   @state()
   private _openDialogCount = 0;
 
+  @state()
+  private _activeRoute: Route = ROUTES.INFO;
+
+  @state()
+  private _exitingRoute: Route | null = null;
+
+  private _inlineIconTimeout = 0;
+  private _routes: Route[] = Object.values(ROUTES);
+  private _boundListener = this._handleHashChange.bind(this);
+  private _scrollSpyObserver?: IntersectionObserver;
+
   /**
    * Lifecycle method called after the first update.
    */
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
+    this._setupScrollSpy();
+  }
+
+  private _setupScrollSpy() {
+    this._scrollSpyObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          const id = visibleEntry.target.id;
+          const route = this._routeFromElementId(id);
+          if (route && this._activeRoute !== route) {
+            this._activeRoute = route;
+          }
+        }
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    setTimeout(() => {
+      const targets = ["bio", "work", "code", "blog"];
+      targets.forEach((id) => {
+        const el = document.getElementById(id) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(id);
+        if (el) {
+          this._scrollSpyObserver?.observe(el);
+        }
+      });
+    }, 500);
+  }
+
+  private _routeFromElementId(id: string): Route | null {
+    if (id === "bio") return ROUTES.INFO;
+    if (id === "work") return ROUTES.WORK;
+    if (id === "code") return ROUTES.CODE;
+    if (id === "blog") return ROUTES.BLOG;
+    return null;
+  }
+
+  private _handleHashChange() {
+    const hash = window.location.hash.replace("#", "").toLowerCase();
+    const route = hashToRoute(hash);
+    if (route && this._activeRoute !== route) {
+        const oldRoute = this._activeRoute;
+        this._activeRoute = route;
+        if (this.hasUpdated) {
+            this._exitingRoute = oldRoute;
+            window.clearTimeout(this._inlineIconTimeout);
+            this._inlineIconTimeout = window.setTimeout(() => {
+            this._exitingRoute = null;
+            }, 250);
+        }
+    }
   }
 
   /**
@@ -75,8 +141,9 @@ export class AppShell extends LitElement {
   override connectedCallback() {
     super.connectedCallback();
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
-
     document.addEventListener("color_scheme.change", this.onColorSchemeChange);
+    window.addEventListener("hashchange", this._boundListener);
+    this._boundListener();
 
     window.addEventListener("router.change", (ev: Event) => {
       const routerChange = ev as RouterChange;
@@ -91,6 +158,8 @@ export class AppShell extends LitElement {
   override disconnectedCallback() {
     super.disconnectedCallback();
     document.removeEventListener("color_scheme.change", this.onColorSchemeChange);
+    window.removeEventListener("hashchange", this._boundListener);
+    this._scrollSpyObserver?.disconnect();
   }
 
   /**
