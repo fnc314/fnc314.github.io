@@ -64,3 +64,46 @@ traceability:
 - [ ] **Resolve Circular JSON crash**: Update `.config/custom-elements-manifest/custom-elements-manifest.config.mjs` to exclude `src/index.ts` from globs.
 - [ ] **Export `MaterialSymbol`**: Add `export type { MaterialSymbol }` to `fab-menu.ts` and `fab-menu-item.ts`.
 - [ ] **Update CEM Schema**: Set `schemaVersion` to `2.1.0` in CEM config to satisfy validator.
+
+## 2026-06-03 @ 10:00:00 | Bento Migration | Redundant Dependencies
+
+Following the migration to the Bento Box layout, the following components/packages
+should be audited for removal once inline cards fully replace their functionality:
+
+- [ ] **@material/web/tabs**: Evaluate if `nav-component` still requires the full Tabs suite or if a lighter custom implementation suffices for scroll-spy.
+- [ ] **@material/web/dialog**: Audit `configs-dialog` and `connect-dialog` usage vs. the new inline bento cards.
+
+## 2026-06-03 @ 10:15:00 | Bento Verification | Mobile Responsiveness
+
+Audit of the `word-cloud` and `word-tag` components on small viewports (Galaxy S22 Ultra):
+
+- [ ] **Responsive Font Scaling**: Refactor quartile font-sizes (e.g., `--word-cloud-first-quartile-font-size`) to use `clamp()` or media queries for viewports `< 600px`. The current `1.75rem` is too large for portrait mobile layouts.
+
+## 2026-06-03 @ 11:30:00 | Styling Toolkit | Spacing Token Migration
+
+Defined `--spacing-padding-*` and `--spacing-margin-*` tokens. `bento-layout.ts` is 100% complete.
+The following replacements are required in component source files once accessible:
+
+- [x] **`blog-post.ts`**: Verified and updated with spacing tokens.
+- [x] **`info-section.ts`**: Verified and updated with spacing tokens.
+- [x] **`work-experience.ts`**: Verified and updated with spacing tokens.
+- [x] **`code-project.ts`**: Verified and updated with spacing tokens.
+- [x] **`configs-dialog.ts`**: Verified and updated with spacing tokens.
+- [x] **`connect-dialog.ts`**: Verified and updated with spacing tokens.
+- [x] **`step-up-dialog.ts`**: Verified (no direct spacing changes needed).
+- [x] **`fab-menu-item.ts`**: Verified and updated with spacing tokens.
+- [x] **`fab-menu.ts`**: Verified and updated with spacing tokens.
+- [x] **`nav-component.ts`**: Verified (no direct spacing changes needed).
+- [x] **`partial-header.ts`**: Verified and updated with spacing tokens.
+- [x] **`word-cloud.ts`**: Verified and updated with spacing tokens.
+- [x] **`word-tag.ts`**: Verified and updated with spacing tokens.
+- [x] **`info-partial.ts`**: Verified and updated with spacing tokens.
+- [x] **`work-partial.ts`**: Verified and updated with spacing tokens.
+- [x] **`code-partial.ts`**: Verified and updated with spacing tokens.
+- [x] **`blog-partial.ts`**: Verified and updated with spacing tokens.
+- [x] **`configs-dialog.ts`**: Complete.
+- [x] **`connect-dialog.ts`**: Complete.
+- [x] **`info-partial.ts`**: Complete.
+- [x] **`work-partial.ts`**: Complete.
+- [x] **`code-partial.ts`**: Complete.
+- [x] **`blog-partial.ts`**: Complete.
