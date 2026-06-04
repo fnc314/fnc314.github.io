@@ -7,3 +7,4 @@
     clearData(key: string): void;
 }
 export declare const storageService: StorageService;
+//# sourceMappingURL=storage-service.d.ts.map

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: PartialHeader
 
-Defined in: [src/components/partial-header/partial-header.ts:11](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/partial-header/partial-header.ts#L11)
+Defined in: [src/components/partial-header/partial-header.ts:11](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/partial-header/partial-header.ts#L11)
 
 A header component used for section titles with support for primary, secondary, and tertiary Material color variants.
 
@@ -28,7 +28,7 @@ partial-header
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/partial-header/partial-header.ts:13](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/partial-header/partial-header.ts#L13)
+Defined in: [src/components/partial-header/partial-header.ts:13](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/partial-header/partial-header.ts#L13)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -42,7 +42,7 @@ Defined in: [src/components/partial-header/partial-header.ts:13](https://github.
 
 &gt; **headingText**: `string` = `""`
 
-Defined in: [src/components/partial-header/partial-header.ts:80](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/partial-header/partial-header.ts#L80)
+Defined in: [src/components/partial-header/partial-header.ts:80](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/partial-header/partial-header.ts#L80)
 
 The text to display within the header.
 
@@ -56,7 +56,7 @@ heading-text
 
 &gt; **headerType**: `"primary"` \| `"secondary"` \| `"tertiary"` \| `"inverse"` = `"primary"`
 
-Defined in: [src/components/partial-header/partial-header.ts:88](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/partial-header/partial-header.ts#L88)
+Defined in: [src/components/partial-header/partial-header.ts:88](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/partial-header/partial-header.ts#L88)
 
 The color variant theme for the header background and text.
 Can be 'primary', 'secondary', or 'tertiary'.
@@ -71,7 +71,7 @@ header-type
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/partial-header/partial-header.ts:90](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/partial-header/partial-header.ts#L90)
+Defined in: [src/components/partial-header/partial-header.ts:90](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/partial-header/partial-header.ts#L90)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

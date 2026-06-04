@@ -41,7 +41,7 @@ echo
 
 [[ "$LOG_STEP" == "typescript-types" || "$LOG_STEP" == "log-all" ]] && create_log "typescript-types"
 echo "Recreate TypeScript \`.d.ts\` files"
-pnpm tsc --declaration --declarationMap false -p .
+pnpm tsc --declaration --declarationMap false -p ./tsconfig.no-test.json
 echo
 
 [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"

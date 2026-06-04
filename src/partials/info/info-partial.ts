@@ -215,8 +215,9 @@ export class InfoPartial extends LitElement {
   @state()
   private themeConfig: ThemeConfig = themeService.currentThemeConfig();
 
-  private onColorConfigsChange = ((event: ColorSchemeConfigChange) => {
-    this.themeConfig = THEME_CONFIGS[event.detail.theme];
+  private onColorConfigsChange = ((event: Event) => {
+    const customEvent = event as ColorSchemeConfigChange;
+    this.themeConfig = THEME_CONFIGS[customEvent.detail.theme];
   }).bind(this);
 
   constructor() {

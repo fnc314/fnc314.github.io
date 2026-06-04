@@ -16,3 +16,4 @@ declare global {
         "info-partial": InfoPartial;
     }
 }
+//# sourceMappingURL=info-partial.d.ts.map

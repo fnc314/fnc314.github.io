@@ -10,3 +10,4 @@ export type AppConfigsSchemeTheme = () => ThemeConfig;
 export type AppConfigsChange = CustomEvent<{
     appConfigs: AppConfigs;
 }>;
+//# sourceMappingURL=app-configs.d.ts.map

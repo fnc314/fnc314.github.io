@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "ui-mode-toggle",
+      "description": "Events:\n\n  * `color_scheme.change` - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,\npropagating the new `AppConfigs[\"colorScheme\"]` details.\n\n  * `colorschemechange` {} - Event from `dark-mode-toggle` when the scheme changes.\n\n  * `permanentcolorscheme` {} - Event from `dark-mode-toggle` when the persistence changes.\n\nAttributes:\n\n  * `mode` {\"light\" | \"dark\" | \"system\"} - Reflects the currently active color scheme mode.\n\n  * `permanent` {boolean} - Controls whether the selected color scheme preference is persisted across sessions.\n\nProperties:\n\n  * `styles` - \n\n  * `_darkModeToggle` - \n\n  * `onAppConfigsChange` - \n\n  * `colorSchemeChangeEventListener` - \n\n  * `permanentColorSchemeEventListener` - \n\n  * `mode` {\"light\" | \"dark\" | \"system\"} - Reflects the currently active color scheme mode.\n\n  * `permanent` {boolean} - Controls whether the selected color scheme preference is persisted across sessions.\n\n  * `_appConfigs` - ",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "`mode` {\"light\" | \"dark\" | \"system\"} - Reflects the currently active color scheme mode.\n\nProperty: mode\n\nDefault: system",
+          "values": [
+            {
+              "name": "light"
+            },
+            {
+              "name": "dark"
+            },
+            {
+              "name": "system"
+            }
+          ]
+        },
+        {
+          "name": "permanent",
+          "description": "`permanent` {boolean} - Controls whether the selected color scheme preference is persisted across sessions.\n\nProperty: permanent\n\nDefault: false"
+        },
+        {
+          "name": "oncolor_scheme.change",
+          "description": "`color_scheme.change` - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,\npropagating the new `AppConfigs[\"colorScheme\"]` details."
+        },
+        {
+          "name": "oncolorschemechange",
+          "description": "`colorschemechange` {} - Event from `dark-mode-toggle` when the scheme changes."
+        },
+        {
+          "name": "onpermanentcolorscheme",
+          "description": "`permanentcolorscheme` {} - Event from `dark-mode-toggle` when the persistence changes."
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

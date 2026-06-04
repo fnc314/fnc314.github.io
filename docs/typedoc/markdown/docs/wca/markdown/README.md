@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../README.md)
 
 ---
 
@@ -12,6 +12,8 @@
 | ----------------------------------------------- | --------------------------------------------- |
 | `app-content`                                   | The place for the dynamic application content |
 | `object Object],[object Object],[object Object` |                                               |
+
+# bento-layout
 
 # blog-post
 
@@ -100,28 +102,6 @@ Uses container queries to provide a responsive grid layout that adapts to availa
 | -------------- | --------------- | -------- | ------- | -------------------------------------------------------------------------------------- |
 | `sectionTitle` | `section-title` | `string` | ""      | The title displayed in the section's header.<br>Maps to the `section-title` attribute. |
 
-# nav-component
-
-A navigation component that renders primary tabs synchronized with the application's URL hash routes.
-
-## Methods
-
-| Method                      | Type                                   | Description                                                                                                                                     |
-| --------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `#handleHashChange`         | `(): void`                             | Syncs internal state with the URL hash.                                                                                                         |
-| `#onTabChange`              | `(event: Event): void`                 | Handles user clicks on tabs. Updates URL and UI.<br><br>**event**: [object Object],[object Object],[object Object]                              |
-| `#renderTabs`               | `(): TemplateResult`                   | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#tabIndexAndRouteFromHash` | `(): { index: number; route: Route; }` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]                                                 |
-| `#updateCarousel`           | `(index: number): void`                | Updates external DOM via style manipulations and blind queries<br><br>**index**: [object Object],[object Object]                                |
-| `#updateTabState`           | `(index: number): void`                | Updates the visual state of tabs and panels based on the index.                                                                                 |
-
-## CSS Custom Properties
-
-| Property                                 | Default | Description                                                   |
-| ---------------------------------------- | ------- | ------------------------------------------------------------- |
-| `--nav-component-icon-animation`         | "225ms" | The duration of the icon's fill and color transition.         |
-| `--nav-component-icon-animation-reduced` | "1ms"   | The duration of the icon's transition when motion is reduced. |
-
 # partial-header
 
 A header component used for section titles with support for primary, secondary, and tertiary Material color variants.
@@ -132,6 +112,29 @@ A header component used for section titles with support for primary, secondary, 
 | ------------- | -------------- | ----------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
 | `headerType`  | `header-type`  | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | "primary" | The color variant theme for the header background and text.<br>Can be 'primary', 'secondary', or 'tertiary'. |
 | `headingText` | `heading-text` | `string`                                              | ""        | The text to display within the header.                                                                       |
+
+# ui-mode-toggle
+
+## Properties
+
+| Property    | Attribute   | Type                            | Default  | Description                                                                         |
+| ----------- | ----------- | ------------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| `mode`      | `mode`      | `"light" \| "dark" \| "system"` | "system" | Reflects the currently active color scheme mode.                                    |
+| `permanent` | `permanent` | `boolean`                       | false    | Controls whether the selected color scheme preference is persisted across sessions. |
+
+## Methods
+
+| Method  | Type       | Description                                        |
+| ------- | ---------- | -------------------------------------------------- |
+| `reset` | `(): void` | Resets the UI mode toggle to its default settings. |
+
+## Events
+
+| Event                  | Type               | Description                                                                                                                                      |
+| ---------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
+| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
 
 # work-experience
 
@@ -158,4 +161,4 @@ A header component used for section titles with support for primary, secondary, 
 
 # work-partial
 
-</body></html>
+</any></body></html>

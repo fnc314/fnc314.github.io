@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **FabPositionComponentVertical** = _typeof_ [`FAB_POSITION_COMPONENTS_VERTICAL`](FAB_POSITION_COMPONENTS_VERTICAL.md)\[keyof _typeof_ [`FAB_POSITION_COMPONENTS_VERTICAL`](FAB_POSITION_COMPONENTS_VERTICAL.md)\]
 
-Defined in: [src/types/configs/fab-configs.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L32)
+Defined in: [src/types/configs/fab-configs.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L32)
 
 [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
 

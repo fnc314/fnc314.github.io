@@ -53,7 +53,9 @@
           "description": "The logical `padding-inline-start` value",
           "default": "0"
         }
-      ]
+      ],
+      "deprecated": true,
+      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
     }
   ]
 }

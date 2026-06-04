@@ -10,3 +10,4 @@ declare global {
         "work-partial": WorkPartial;
     }
 }
+//# sourceMappingURL=work-partial.d.ts.map

@@ -2,36 +2,21 @@ import { bentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles
 import { type BlogPostJson } from "@/components/blog/blog-post";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
 import { data as WorkJson } from "@/components/work-experience/work-experience.types";
-import BioJson from "@/data/bio.json" with { type: "json" };
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import CodeJson from "@/data/code.json" with { type: "json" };
 import Connections from "@/data/connections.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { configsService } from "@/services/configs/configs-service";
-import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { THEME_CONFIGS } from "@/theme/theme";
-import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
-import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  type ColorSchemeContrast,
-  colorSchemeConfigsToMaterialSchemeName
-} from "@/types/theme/color-scheme-configs";
-import { THEME_NAMES, type ThemeConfig, type ThemeName } from "@/types/theme/theme";
 import { LitElement, type TemplateResult, css, html } from "lit";
-import { customElement, state } from "lit/decorators.js";
-import { classMap } from "lit/directives/class-map.js";
+import { customElement } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
-import time from "~build/time";
 
-import "../profile-bio-card/profile-bio-card";
-import "../ui-mode-toggle/ui-mode-toggle";
+import "@/components/card/profile-bio/profile-bio-card";
+import "@/components/card/settings/settings-card";
+import "@/components/ui-mode-toggle/ui-mode-toggle";
 
 interface BentoBoxConfig {
   type: "profile-photo-bio" | "work" | "code" | "blog" | "settings" | "connect" | "education" | "skills";
@@ -298,138 +283,18 @@ export class BentoLayout extends LitElement {
     `,
   ];
 
-  @state()
-  private _appConfigs: AppConfigs = configsService.loadConfigs();
-
-  @state()
-  private _themeConfig: ThemeConfig = themeService.currentThemeConfig();
-
-  // Design Debugger states
-  @state()
-  private _debugFont: "roboto" | "inter" = "roboto";
-
-  @state()
-  private _debugIcons: "outlined" | "sharp" = "outlined";
-
-  private onAppConfigsChange = (event: Event) => {
-    this._appConfigs = (event as AppConfigsChange).detail.appConfigs;
-    this._themeConfig = THEME_CONFIGS[this._appConfigs.colorScheme.theme];
-  };
-
-  private formattedDate: string = new Intl.DateTimeFormat(navigator.languages, {
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  }).format(time);
-
-  private formattedTime: string = new Intl.DateTimeFormat(navigator.languages, {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  }).format(time);
-
   constructor() {
     super();
   }
 
   override connectedCallback() {
     super.connectedCallback();
-    configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
-
-    // Apply initial debugger configurations to body/documentElement
-    const savedFont = localStorage.getItem("debugger:font") as "roboto" | "inter";
-    const savedIcons = localStorage.getItem("debugger:icons") as "outlined" | "sharp";
-
-    if (savedFont) {
-      this._debugFont = savedFont;
-      document.body.setAttribute("data-debug-font", savedFont);
-    }
-    if (savedIcons) {
-      this._debugIcons = savedIcons;
-      document.body.setAttribute("data-debug-icons", savedIcons);
-    }
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener("app-configs.change", this.onAppConfigsChange);
   }
 
-
-
-
-
-  private _onThemeChange(event: Event) {
-    const value = (event.target as HTMLSelectElement).value as ThemeName;
-    const newColorScheme = {
-      ...this._appConfigs.colorScheme,
-      theme: value,
-    };
-    this._dispatchColorSchemeChange(newColorScheme);
-  }
-
-  private _onContrastChange(event: Event) {
-    const value = (event.target as HTMLSelectElement).value as ColorSchemeContrast;
-    const newColorScheme = {
-      ...this._appConfigs.colorScheme,
-      contrast: value,
-    };
-    this._dispatchColorSchemeChange(newColorScheme);
-  }
-
-  private _onModeToggle() {
-    let nextMode: ColorScheme;
-    if (this._appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM) {
-      nextMode = CONFIG_COLOR_SCHEME_NAMES.LIGHT;
-    } else if (this._appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.LIGHT) {
-      nextMode = CONFIG_COLOR_SCHEME_NAMES.DARK;
-    } else {
-      nextMode = CONFIG_COLOR_SCHEME_NAMES.SYSTEM;
-    }
-
-    const newColorScheme = {
-      ...this._appConfigs.colorScheme,
-      name: nextMode,
-    };
-    this._dispatchColorSchemeChange(newColorScheme);
-  }
-
-  private _dispatchColorSchemeChange(colorScheme: AppConfigs["colorScheme"]) {
-    this._appConfigs = {
-      ...this._appConfigs,
-      colorScheme,
-    };
-
-    configsService.saveConfigs(this._appConfigs);
-
-    this.dispatchEvent(
-      new CustomEvent("color_scheme.change", {
-        bubbles: true,
-        composed: true,
-        detail: this._appConfigs.colorScheme,
-      }),
-    );
-
-    updateMaterialCSSStyleSheet(
-      themeService.currentThemeConfig().materialSchemes[
-        colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
-      ],
-    );
-  }
-
-  private _toggleDebugFont() {
-    const nextFont = this._debugFont === "roboto" ? "inter" : "roboto";
-    this._debugFont = nextFont;
-    localStorage.setItem("debugger:font", nextFont);
-    document.body.setAttribute("data-debug-font", nextFont);
-  }
-
-  private _toggleDebugIcons() {
-    const nextIcons = this._debugIcons === "outlined" ? "sharp" : "outlined";
-    this._debugIcons = nextIcons;
-    localStorage.setItem("debugger:icons", nextIcons);
-    document.body.setAttribute("data-debug-icons", nextIcons);
-  }
 
   // Helper for skills
   private getSkillsForWordCloud() {
@@ -504,57 +369,7 @@ export class BentoLayout extends LitElement {
           ${style}
           <section id="settings" class="bento-card card-settings" aria-labelledby="configs-title">
             <h2 id="configs-title" class="md-typescale-title-large">App Settings</h2>
-            <div class="configs-form">
-              <div class="form-field">
-                <label for="theme-select">UI Theme</label>
-                <select id="theme-select" @change=${this._onThemeChange}>
-                  ${Object.values(THEME_NAMES).map(
-                    (theme) => html`
-                      <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
-                        ${theme.charAt(0).toUpperCase() + theme.slice(1)}
-                      </option>
-                    `,
-                  )}
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="contrast-select">UI Contrast</label>
-                <select id="contrast-select" @change=${this._onContrastChange}>
-                  ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-                    (contrast) => html`
-                      <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
-                        ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
-                      </option>
-                    `,
-                  )}
-                </select>
-              </div>
-
-              <ui-mode-toggle></ui-mode-toggle>
-
-
-
-              <div class="debugger-row">
-                <span class="md-typescale-label-medium">Debugger Font:</span>
-                <button
-                  class="debugger-toggle ${classMap({ active: this._debugFont === "inter" })}"
-                  @click=${this._toggleDebugFont}
-                >
-                  Inter
-                </button>
-              </div>
-
-              <div class="debugger-row">
-                <span class="md-typescale-label-medium">Debugger Icons:</span>
-                <button
-                  class="debugger-toggle ${classMap({ active: this._debugIcons === "sharp" })}"
-                  @click=${this._toggleDebugIcons}
-                >
-                  Sharp
-                </button>
-              </div>
-            </div>
+            <settings-card></settings-card>
           </section>
         `;
       case "connect":

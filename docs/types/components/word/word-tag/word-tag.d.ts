@@ -13,3 +13,4 @@ declare global {
         "word-tag": WordTag;
     }
 }
+//# sourceMappingURL=word-tag.d.ts.map

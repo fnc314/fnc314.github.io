@@ -23,11 +23,6 @@
       "values": []
     },
     {
-      "name": "--connect-dialog-content-transition",
-      "description": "The animation duration for expanding/collapsing connection details.",
-      "values": []
-    },
-    {
       "name": "--fab-menu-item-direction",
       "description": "The `flex-direction` of the {@link FabMenuItem}",
       "values": []
@@ -55,16 +50,6 @@
     {
       "name": "--fab-menu-animation-spec",
       "description": "The animation spec for {@link FabMenu} `transition`s",
-      "values": []
-    },
-    {
-      "name": "--nav-component-icon-animation",
-      "description": "The duration of the icon's fill and color transition.",
-      "values": []
-    },
-    {
-      "name": "--nav-component-icon-animation-reduced",
-      "description": "The duration of the icon's transition when motion is reduced.",
       "values": []
     },
     {

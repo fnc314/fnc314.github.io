@@ -22,3 +22,4 @@ declare global {
     }
 }
 export {};
+//# sourceMappingURL=router-service.d.ts.map

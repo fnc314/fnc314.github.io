@@ -4,14 +4,12 @@ import { type RouterChange, type RouterReverse } from "@/services/router/router-
 import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
-import { NavComponentConfig, ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
+import { ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
 import {
-  CONFIG_COLOR_SCHEME_NAMES,
   type ColorSchemeConfigChange,
-  colorSchemeConfigsToMaterialSchemeName,
+  colorSchemeConfigsToMaterialSchemeName
 } from "@/types/theme/color-scheme-configs";
-import { LitElement, type PropertyValues, css, html, type TemplateResult } from "lit";
+import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
 /**
@@ -35,25 +33,10 @@ export class AppShell extends LitElement {
     `,
   ];
 
-  /** The current global application configuration state. */
-  @state()
-  private appConfigs: AppConfigs = configsService.loadConfigs();
-
-  /** The icon associated with the current color scheme mode. */
-  @state()
-  private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(this.appConfigs.colorScheme);
-
-  @state()
-  private _openDialogCount = 0;
-
   @state()
   private _activeRoute: Route = ROUTES.INFO;
 
-  @state()
-  private _exitingRoute: Route | null = null;
-
   private _inlineIconTimeout = 0;
-  private _routes: Route[] = Object.values(ROUTES);
   private _boundListener = this._handleHashChange.bind(this);
   private _scrollSpyObserver?: IntersectionObserver;
 
@@ -86,7 +69,7 @@ export class AppShell extends LitElement {
     setTimeout(() => {
       const targets = ["bio", "work", "code", "blog"];
       targets.forEach((id) => {
-        const el = document.getElementById(id) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(id);
+        const el = document.getElementById(id) ?? document.querySelector("bento-layout")?.shadowRoot?.getElementById(id);
         if (el) {
           this._scrollSpyObserver?.observe(el);
         }
@@ -106,14 +89,10 @@ export class AppShell extends LitElement {
     const hash = window.location.hash.replace("#", "").toLowerCase();
     const route = hashToRoute(hash);
     if (route && this._activeRoute !== route) {
-        const oldRoute = this._activeRoute;
         this._activeRoute = route;
         if (this.hasUpdated) {
-            this._exitingRoute = oldRoute;
-            window.clearTimeout(this._inlineIconTimeout);
-            this._inlineIconTimeout = window.setTimeout(() => {
-            this._exitingRoute = null;
-            }, 250);
+          window.clearTimeout(this._inlineIconTimeout);
+          this._inlineIconTimeout = window.setTimeout(() => {}, 250);
         }
     }
   }
@@ -123,20 +102,18 @@ export class AppShell extends LitElement {
    * Updates the UI icon, Material theme variables, and meta theme color.
    * @param event - The color scheme configuration change event.
    */
-  private onColorSchemeChange = (event: ColorSchemeConfigChange) => {
-    this._uiModeIcon = this.uiModeIcon(event.detail);
+  private onColorSchemeChange = (event: Event) => {
+    const customEvent = event as ColorSchemeConfigChange;
     const themeConfig = themeService.currentThemeConfig();
-    updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(event.detail)]);
+    updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
     document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
   };
 
   /**
    * Syncs the component state with the global application configuration.
-   * @param event - AppConfigsChange event.
+   * @param _event - AppConfigsChange event.
    */
-  private onAppConfigsChange = (event: Event) => {
-    this.appConfigs = (event as AppConfigsChange).detail.appConfigs;
-  };
+  private onAppConfigsChange = (_event: Event) => {};
 
   override connectedCallback() {
     super.connectedCallback();
@@ -160,38 +137,6 @@ export class AppShell extends LitElement {
     document.removeEventListener("color_scheme.change", this.onColorSchemeChange);
     window.removeEventListener("hashchange", this._boundListener);
     this._scrollSpyObserver?.disconnect();
-  }
-
-  /**
-   * Maps a color scheme name to a Material icon name.
-   * @param colorScheme - The current color scheme configuration.
-   * @returns The string identifier for the MdIcon.
-   */
-  private uiModeIcon(colorScheme: AppConfigs["colorScheme"]): "dark_mode" | "light_mode" | "routine" {
-    switch (colorScheme.name) {
-      case CONFIG_COLOR_SCHEME_NAMES.DARK:
-        return "dark_mode";
-      case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
-        return "light_mode";
-      case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
-        return "routine";
-    }
-  }
-
-  /** Tracks open dialogs to manage body scroll locking. */
-  private _handleDialogOpened() {
-    this._openDialogCount++;
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-  }
-
-  /** Tracks closed dialogs to manage body scroll restoration. */
-  private _handleDialogClosed() {
-    this._openDialogCount--;
-    if (this._openDialogCount === 0) {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-    }
   }
 
   /**

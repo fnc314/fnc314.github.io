@@ -4,13 +4,13 @@
   "tags": [
     {
       "name": "app-shell",
-      "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
+      "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
       "attributes": [],
       "references": []
     },
     {
       "name": "bento-layout",
-      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n",
       "attributes": [],
       "references": []
     },
@@ -27,6 +27,29 @@
       "references": []
     },
     {
+      "name": "profile-bio-card",
+      "description": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.\n---\n\n\n### **Methods:**\n - **bioText()** - The biography text to display.\n- **themePhoto()** - An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+      "attributes": [
+        {
+          "name": "bioText",
+          "description": "The biography text to display.",
+          "values": []
+        },
+        {
+          "name": "themePhoto",
+          "description": "An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "settings-card",
+      "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "code-project",
       "description": "Represents a single (usually GitHub-hosted) demonstration project\n---\n",
       "attributes": [
@@ -35,37 +58,25 @@
       "references": []
     },
     {
-      "name": "configs-dialog",
-      "description": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.\n---\n\n\n### **Events:**\n - ****\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **fab.change** - Dispatched when a FAB's position or style is modified.\n- **stepUpOpen**\n\n### **Methods:**\n - **hideDialog(): __** - Hides the configuration dialog.\n- **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "connect-dialog",
-      "description": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n - ****\n\n### **Methods:**\n - **hideDialog(): __** - Maps to MdDialog's close method\n- **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "step-up-dialog",
       "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **actions** - The area of dialog action buttons\n- **content** - The body of the {@link MdDialog}\n- **headline** - The {@link MdDialog} headline {@link slot}",
       "attributes": [
         {
           "name": "dialogContentString",
-          "description": "The text content to display in the dialog body.",
+          "description": "The central content of the {@link MdDialog}",
           "values": []
         },
         {
           "name": "dialogStyle",
-          "description": "The visual style variant of the dialog, affecting colors and icons.",
-          "values": []
+          "description": "Determines which {@link StepUpDialogStyle}",
+          "values": [{ "name": "StepUpDialogStyle" }]
         }
       ],
       "references": []
     },
     {
       "name": "fab-menu-item",
-      "description": "\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
+      "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
       "attributes": [
         {
           "name": "icon",
@@ -82,31 +93,31 @@
     },
     {
       "name": "fab-menu",
-      "description": "\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
+      "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
       "attributes": [
         {
           "name": "aria-label",
-          "description": "The `aria-label` of the FAB.",
+          "description": "An override for the `aria-label` attribute",
           "values": []
         },
         {
           "name": "direction",
-          "description": "The direction in which the menu items should expand.",
-          "values": []
+          "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+          "values": [{ "name": "start" }, { "name": "end" }]
         },
         {
           "name": "icon",
-          "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
+          "description": "The {@link MaterialSymbol} to display when menu is opened",
           "values": [{ "name": "MaterialSymbol" }, { "name": "\"\"" }]
         },
         {
           "name": "label",
-          "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+          "description": "The label to display when both opened and closed",
           "values": []
         },
         {
           "name": "open",
-          "description": "Whether the menu is currently open.",
+          "description": "Indicator of open/closed state",
           "values": []
         },
         {
@@ -116,13 +127,22 @@
         },
         {
           "name": "size",
-          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-          "values": []
+          "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
         },
         {
           "name": "variant",
-          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-          "values": []
+          "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+          "values": [
+            { "name": "surface" },
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" }
+          ]
         }
       ],
       "references": []
@@ -137,12 +157,6 @@
           "values": []
         }
       ],
-      "references": []
-    },
-    {
-      "name": "nav-component",
-      "description": "\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
-      "attributes": [],
       "references": []
     },
     {
@@ -169,16 +183,16 @@
     },
     {
       "name": "ui-mode-toggle",
-      "description": "A toggle component for switching between dark, light, and system color schemes.\n---\n",
+      "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application's global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n - **reset(): _void_** - Resets the UI mode toggle to its default settings.",
       "attributes": [
         {
           "name": "mode",
-          "description": "The current color scheme mode.",
+          "description": "Reflects the currently active color scheme mode.",
           "values": []
         },
         {
           "name": "permanent",
-          "description": "Whether the color scheme is persisted.",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
           "values": []
         }
       ],

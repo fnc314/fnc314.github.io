@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **jsonIsThemeJsonSchemes**(`json`: `unknown`): `json is ThemeJsonSchemes`
 
-Defined in: [src/types/theme/theme.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/theme/theme.ts#L79)
+Defined in: [src/types/theme/theme.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L79)
 
 Checks if the provided JSON conforms to the expected theme schemes structure
 

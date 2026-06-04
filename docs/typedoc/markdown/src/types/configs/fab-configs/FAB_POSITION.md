@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; `const` **FAB_POSITION**: \{ `START_TOP`: `"START_TOP"`; `START_BOTTOM`: `"START_BOTTOM"`; `END_TOP`: `"END_TOP"`; `END_BOTTOM`: `"END_BOTTOM"`; \}
 
-Defined in: [src/types/configs/fab-configs.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L48)
+Defined in: [src/types/configs/fab-configs.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L48)
 
 The complete collection of possible [@material/web!MdFab](https://github.com/material-components/material-web/tree/main/docs/components/fab.md) positions. Cross-product of [FAB_POSITION_COMPONENTS_HORIZONTAL](FAB_POSITION_COMPONENTS_HORIZONTAL.md)
 and [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
@@ -37,7 +37,7 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L49)
+[src/types/configs/fab-configs.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L49)
 
 </td>
 </tr>
@@ -54,7 +54,7 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:50](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L50)
+[src/types/configs/fab-configs.ts:50](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L50)
 
 </td>
 </tr>
@@ -71,7 +71,7 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:51](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L51)
+[src/types/configs/fab-configs.ts:51](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L51)
 
 </td>
 </tr>
@@ -88,7 +88,7 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](FAB_POSITION_COMPONENTS_VERTICAL.md)
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:52](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/types/configs/fab-configs.ts#L52)
+[src/types/configs/fab-configs.ts:52](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L52)
 
 </td>
 </tr>

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: InfoSection
 
-Defined in: [src/components/info-section/info-section.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/info-section/info-section.ts#L30)
+Defined in: [src/components/info-section/info-section.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/info-section/info-section.ts#L30)
 
 A reusable section component for profile-related content.
 Uses container queries to provide a responsive grid layout that adapts to available space.
@@ -69,7 +69,7 @@ Uses container queries to provide a responsive grid layout that adapts to availa
 </td>
 <td>
 
-[src/components/info-section/info-section.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/info-section/info-section.ts#L32)
+[src/components/info-section/info-section.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/info-section/info-section.ts#L32)
 
 </td>
 </tr>
@@ -121,7 +121,7 @@ Example:
 </td>
 <td>
 
-[src/components/info-section/info-section.ts:100](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/info-section/info-section.ts#L100)
+[src/components/info-section/info-section.ts:100](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/info-section/info-section.ts#L100)
 
 </td>
 </tr>
@@ -134,7 +134,7 @@ Example:
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/info-section/info-section.ts:120](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/info-section/info-section.ts#L120)
+Defined in: [src/components/info-section/info-section.ts:120](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/info-section/info-section.ts#L120)
 
 Renders the section with a header and named content slot.
 

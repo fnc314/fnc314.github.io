@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
   "name": "@fnc314/fnc314.github.io",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description-markup": "markdown",
   "default-icon": "./static/icons/icon.svg",
   "contributions": {
@@ -9,7 +9,7 @@
       "elements": [
         {
           "name": "app-shell",
-          "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
+          "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
           "doc-url": "",
           "attributes": [],
           "slots": [
@@ -27,14 +27,11 @@
         },
         {
           "name": "bento-layout",
-          "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+          "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n",
           "doc-url": "",
           "attributes": [],
-          "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }],
-          "js": {
-            "properties": [],
-            "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }]
-          }
+          "events": [],
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "blog-post",
@@ -60,6 +57,36 @@
           }
         },
         {
+          "name": "profile-bio-card",
+          "description": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.\n---\n\n\n### **Methods:**\n - **bioText()** - The biography text to display.\n- **themePhoto()** - An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "bioText",
+              "description": "The biography text to display.",
+              "value": { "type": "string" }
+            },
+            {
+              "name": "themePhoto",
+              "description": "An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+              "value": { "type": "string" }
+            }
+          ],
+          "events": [],
+          "js": { "properties": [], "events": [] }
+        },
+        {
+          "name": "settings-card",
+          "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+          "doc-url": "",
+          "attributes": [],
+          "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }],
+          "js": {
+            "properties": [],
+            "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }]
+          }
+        },
+        {
           "name": "code-project",
           "description": "Represents a single (usually GitHub-hosted) demonstration project\n---\n",
           "doc-url": "",
@@ -78,67 +105,19 @@
           }
         },
         {
-          "name": "configs-dialog",
-          "description": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.\n---\n\n\n### **Events:**\n - ****\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **fab.change** - Dispatched when a FAB's position or style is modified.\n- **stepUpOpen**\n\n### **Methods:**\n - **hideDialog(): __** - Hides the configuration dialog.\n- **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.",
-          "doc-url": "",
-          "attributes": [],
-          "events": [
-            { "name": "", "type": "Event" },
-            {
-              "name": "color_scheme.change",
-              "type": "CustomEvent",
-              "description": "Dispatched when the UI theme, mode, or contrast is changed."
-            },
-            {
-              "name": "fab.change",
-              "type": "CustomEvent",
-              "description": "Dispatched when a FAB's position or style is modified."
-            },
-            { "name": "stepUpOpen", "type": "CustomEvent" }
-          ],
-          "js": {
-            "properties": [],
-            "events": [
-              { "name": "", "type": "Event" },
-              {
-                "name": "color_scheme.change",
-                "type": "CustomEvent",
-                "description": "Dispatched when the UI theme, mode, or contrast is changed."
-              },
-              {
-                "name": "fab.change",
-                "type": "CustomEvent",
-                "description": "Dispatched when a FAB's position or style is modified."
-              },
-              { "name": "stepUpOpen", "type": "CustomEvent" }
-            ]
-          }
-        },
-        {
-          "name": "connect-dialog",
-          "description": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n - ****\n\n### **Methods:**\n - **hideDialog(): __** - Maps to MdDialog's close method\n- **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
-          "doc-url": "",
-          "attributes": [],
-          "events": [{ "name": "", "type": "Event" }],
-          "js": {
-            "properties": [],
-            "events": [{ "name": "", "type": "Event" }]
-          }
-        },
-        {
           "name": "step-up-dialog",
           "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **actions** - The area of dialog action buttons\n- **content** - The body of the {@link MdDialog}\n- **headline** - The {@link MdDialog} headline {@link slot}",
           "doc-url": "",
           "attributes": [
             {
               "name": "dialogContentString",
-              "description": "The text content to display in the dialog body.",
-              "value": { "type": "string", "default": "" }
+              "description": "The central content of the {@link MdDialog}",
+              "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "dialogStyle",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
-              "value": { "type": "string", "default": "confirm" }
+              "description": "Determines which {@link StepUpDialogStyle}",
+              "value": { "type": "StepUpDialogStyle", "default": "\"confirm\"" }
             }
           ],
           "slots": [
@@ -166,11 +145,13 @@
             "properties": [
               {
                 "name": "dialogContentString",
-                "description": "The text content to display in the dialog body."
+                "description": "The central content of the {@link MdDialog}",
+                "type": "string"
               },
               {
                 "name": "dialogStyle",
-                "description": "The visual style variant of the dialog, affecting colors and icons."
+                "description": "Determines which {@link StepUpDialogStyle}",
+                "type": "StepUpDialogStyle"
               }
             ],
             "events": [
@@ -184,7 +165,7 @@
         },
         {
           "name": "fab-menu-item",
-          "description": "\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
+          "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
           "doc-url": "",
           "attributes": [
             {
@@ -216,48 +197,57 @@
         },
         {
           "name": "fab-menu",
-          "description": "\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
+          "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
           "doc-url": "",
           "attributes": [
             {
               "name": "aria-label",
-              "description": "The `aria-label` of the FAB.",
-              "value": { "type": "string", "default": "" }
+              "description": "An override for the `aria-label` attribute",
+              "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "direction",
-              "description": "The direction in which the menu items should expand.",
-              "value": { "type": "string", "default": "end" }
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+              "value": { "type": "\"start\" | \"end\"", "default": "\"end\"" }
             },
             {
               "name": "icon",
-              "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
-              "value": { "type": "MaterialSymbol | \"\"", "default": "add" }
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
+              "value": {
+                "type": "MaterialSymbol | \"\"",
+                "default": "\"close\""
+              }
             },
             {
               "name": "label",
-              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
-              "value": { "type": "string", "default": "" }
+              "description": "The label to display when both opened and closed",
+              "value": { "type": "string", "default": "\"\"" }
             },
             {
               "name": "open",
-              "description": "Whether the menu is currently open.",
-              "value": { "type": "string", "default": false }
+              "description": "Indicator of open/closed state",
+              "value": { "type": "boolean", "default": "false" }
             },
             {
               "name": "opened-icon",
               "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
-              "value": { "type": "MaterialSymbol", "default": "close" }
+              "value": { "type": "MaterialSymbol", "default": "\"close\"" }
             },
             {
               "name": "size",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-              "value": { "type": "string", "default": "medium" }
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+              "value": {
+                "type": "\"small\" | \"medium\" | \"large\"",
+                "default": "\"medium\""
+              }
             },
             {
               "name": "variant",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-              "value": { "type": "string", "default": "primary" }
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+              "value": {
+                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
+                "default": "\"primary\""
+              }
             }
           ],
           "slots": [
@@ -271,24 +261,28 @@
             "properties": [
               {
                 "name": "ariaLabel",
-                "description": "The `aria-label` of the FAB."
+                "description": "An override for the `aria-label` attribute",
+                "type": "string"
               },
               {
                 "name": "direction",
-                "description": "The direction in which the menu items should expand."
+                "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+                "type": "\"start\" | \"end\""
               },
               {
                 "name": "icon",
-                "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
+                "description": "The {@link MaterialSymbol} to display when menu is opened",
                 "type": "MaterialSymbol | \"\""
               },
               {
                 "name": "label",
-                "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string."
+                "description": "The label to display when both opened and closed",
+                "type": "string"
               },
               {
                 "name": "open",
-                "description": "Whether the menu is currently open."
+                "description": "Indicator of open/closed state",
+                "type": "boolean"
               },
               {
                 "name": "openedIcon",
@@ -297,11 +291,13 @@
               },
               {
                 "name": "size",
-                "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'."
+                "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+                "type": "\"small\" | \"medium\" | \"large\""
               },
               {
                 "name": "variant",
-                "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'."
+                "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+                "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
               }
             ],
             "events": []
@@ -329,14 +325,6 @@
             ],
             "events": []
           }
-        },
-        {
-          "name": "nav-component",
-          "description": "\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
-          "doc-url": "",
-          "attributes": [],
-          "events": [],
-          "js": { "properties": [], "events": [] }
         },
         {
           "name": "partial-header",
@@ -376,33 +364,61 @@
         },
         {
           "name": "ui-mode-toggle",
-          "description": "A toggle component for switching between dark, light, and system color schemes.\n---\n",
+          "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application's global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n - **reset(): _void_** - Resets the UI mode toggle to its default settings.",
           "doc-url": "",
           "attributes": [
             {
               "name": "mode",
-              "description": "The current color scheme mode.",
+              "description": "Reflects the currently active color scheme mode.",
               "value": { "type": "string", "default": "system" }
             },
             {
               "name": "permanent",
-              "description": "Whether the color scheme is persisted.",
+              "description": "Controls whether the selected color scheme preference is persisted across sessions.",
               "value": { "type": "string", "default": false }
             }
           ],
-          "events": [],
+          "events": [
+            {
+              "name": "color_scheme.change",
+              "type": "CustomEvent",
+              "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details."
+            },
+            {
+              "name": "colorschemechange",
+              "description": "Event from `dark-mode-toggle` when the scheme changes."
+            },
+            {
+              "name": "permanentcolorscheme",
+              "description": "Event from `dark-mode-toggle` when the persistence changes."
+            }
+          ],
           "js": {
             "properties": [
               {
                 "name": "mode",
-                "description": "The current color scheme mode."
+                "description": "Reflects the currently active color scheme mode."
               },
               {
                 "name": "permanent",
-                "description": "Whether the color scheme is persisted."
+                "description": "Controls whether the selected color scheme preference is persisted across sessions."
               }
             ],
-            "events": []
+            "events": [
+              {
+                "name": "color_scheme.change",
+                "type": "CustomEvent",
+                "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details."
+              },
+              {
+                "name": "colorschemechange",
+                "description": "Event from `dark-mode-toggle` when the scheme changes."
+              },
+              {
+                "name": "permanentcolorscheme",
+                "description": "Event from `dark-mode-toggle` when the persistence changes."
+              }
+            ]
           }
         },
         {
@@ -652,10 +668,6 @@
           "description": "The color of the container, {@link @fnc314/com.fnc314.website!WordTag}"
         },
         {
-          "name": "--connect-dialog-content-transition",
-          "description": "The animation duration for expanding/collapsing connection details."
-        },
-        {
           "name": "--fab-menu-item-direction",
           "description": "The `flex-direction` of the {@link FabMenuItem}"
         },
@@ -678,14 +690,6 @@
         {
           "name": "--fab-menu-animation-spec",
           "description": "The animation spec for {@link FabMenu} `transition`s"
-        },
-        {
-          "name": "--nav-component-icon-animation",
-          "description": "The duration of the icon's fill and color transition."
-        },
-        {
-          "name": "--nav-component-icon-animation-reduced",
-          "description": "The duration of the icon's transition when motion is reduced."
         },
         {
           "name": "--word-cloud-animation",

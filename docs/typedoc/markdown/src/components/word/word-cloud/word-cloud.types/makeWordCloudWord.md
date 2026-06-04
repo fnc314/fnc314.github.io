@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **makeWordCloudWord**(`word`: `string`, `weight`: `Weights`, `category`: `WordCloudWordCategory`, `extras?`: `string`[]): `WordCloudWord`
 
-Defined in: [src/components/word/word-cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-cloud/word-cloud.types.ts#L41)
+Defined in: [src/components/word/word-cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-cloud/word-cloud.types.ts#L41)
 
 A factory function to create a WordCloudWord
 

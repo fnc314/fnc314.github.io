@@ -27,7 +27,7 @@ export default {
   ],
   entryPointStrategy: "expand",
   enumMembersFormat: "htmlTable",
-  exclude: ["**/node_modules/**", "**/dist/**"],
+  exclude: ["**/node_modules/**", "**/dist/**", "src/**/*.test.ts"],
   excludeExternals: true,
   excludeNotDocumented: true,
   excludePrivate: false,

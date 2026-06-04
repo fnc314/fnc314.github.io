@@ -134,7 +134,9 @@
         {
           "name": "object Object],[object Object],[object Object"
         }
-      ]
+      ],
+      "deprecated": true,
+      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
     }
   ]
 }

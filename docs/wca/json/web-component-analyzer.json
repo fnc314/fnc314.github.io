@@ -23,6 +23,18 @@
       ]
     },
     {
+      "name": "bento-layout",
+      "path": "./../../../src/components/bento-layout/bento-layout.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"bentoLayoutStyles\",\"MaterialTypescaleStyles\",null]"
+        }
+      ]
+    },
+    {
       "name": "blog-post",
       "path": "./../../../src/components/blog/blog-post.ts",
       "attributes": [
@@ -118,7 +130,9 @@
           "description": "The logical `padding-inline-start` value",
           "default": "0"
         }
-      ]
+      ],
+      "deprecated": true,
+      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
     },
     {
       "name": "fab-menu",
@@ -253,7 +267,9 @@
         {
           "name": "object Object],[object Object],[object Object"
         }
-      ]
+      ],
+      "deprecated": true,
+      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
     },
     {
       "name": "info-section",
@@ -280,31 +296,6 @@
           "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
           "type": "string",
           "default": "\"\""
-        }
-      ]
-    },
-    {
-      "name": "nav-component",
-      "path": "./../../../src/components/nav/nav-component.ts",
-      "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        }
-      ],
-      "cssProperties": [
-        {
-          "name": "--nav-component-icon-animation",
-          "description": "The duration of the icon's fill and color transition.",
-          "default": "\"225ms\""
-        },
-        {
-          "name": "--nav-component-icon-animation-reduced",
-          "description": "The duration of the icon's transition when motion is reduced.",
-          "default": "\"1ms\""
         }
       ]
     },
@@ -346,6 +337,59 @@
           "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
           "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
           "default": "\"primary\""
+        }
+      ]
+    },
+    {
+      "name": "ui-mode-toggle",
+      "path": "./../../../src/components/ui-mode-toggle/ui-mode-toggle.ts",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "mode",
+          "attribute": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "attribute": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "color_scheme.change",
+          "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,\npropagating the new `AppConfigs[\"colorScheme\"]` details."
+        },
+        {
+          "name": "colorschemechange",
+          "description": "Event from `dark-mode-toggle` when the scheme changes."
+        },
+        {
+          "name": "permanentcolorscheme",
+          "description": "Event from `dark-mode-toggle` when the persistence changes."
         }
       ]
     },

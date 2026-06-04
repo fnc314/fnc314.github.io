@@ -22,62 +22,26 @@
           ],
           "members": [
             {
-              "kind": "method",
-              "name": "_getFabLabel",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": "The FAB identifier."
-                },
-                {
-                  "name": "config",
-                  "type": {
-                    "text": "FabConfig"
-                  },
-                  "description": "The FAB configuration."
-                }
-              ],
-              "description": "Generates the label string for a FAB based on its configuration style.",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_handleDialogClosed",
-              "privacy": "private",
-              "description": "Tracks closed dialogs to manage body scroll restoration."
-            },
-            {
-              "kind": "method",
-              "name": "_handleDialogOpened",
-              "privacy": "private",
-              "description": "Tracks open dialogs to manage body scroll locking."
-            },
-            {
-              "kind": "method",
-              "name": "_onFabMenuItemClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "formContent",
-                  "type": {
-                    "text": "FormContent"
-                  },
-                  "description": "The type of configuration form to display."
-                }
-              ],
-              "description": "Handles clicks on FAB menu items.\nCloses the menu and opens the configuration dialog with the requested content."
+              "kind": "field",
+              "name": "_activeRoute",
+              "type": {
+                "text": "Route"
+              },
+              "privacy": "private"
             },
             {
               "kind": "field",
-              "name": "_openDialogCount",
+              "name": "_boundListener",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_handleHashChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_inlineIconTimeout",
               "type": {
                 "text": "number"
               },
@@ -85,66 +49,35 @@
               "default": "0"
             },
             {
-              "kind": "field",
-              "name": "_uiModeIcon",
-              "type": {
-                "text": "\"dark_mode\" | \"light_mode\" | \"routine\""
-              },
+              "kind": "method",
+              "name": "_routeFromElementId",
               "privacy": "private",
-              "description": "The icon associated with the current color scheme mode."
+              "return": {
+                "type": {
+                  "text": "Route | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
             },
             {
               "kind": "field",
-              "name": "appConfigs",
+              "name": "_scrollSpyObserver",
               "type": {
-                "text": "AppConfigs"
-              },
-              "privacy": "private",
-              "description": "The current global application configuration state."
-            },
-            {
-              "kind": "field",
-              "name": "configsDialog",
-              "type": {
-                "text": "ConfigsDialog"
-              },
-              "privacy": "private",
-              "description": "Reference to the configuration dialog."
-            },
-            {
-              "kind": "field",
-              "name": "connectDialog",
-              "type": {
-                "text": "ConnectDialog"
-              },
-              "privacy": "private",
-              "description": "Reference to the connect dialog."
-            },
-            {
-              "kind": "field",
-              "name": "connectFab",
-              "type": {
-                "text": "MdFab"
-              },
-              "privacy": "private",
-              "description": "Reference to the connect FAB.\nThis is an MdFab component."
-            },
-            {
-              "kind": "field",
-              "name": "connectFabConfig",
-              "type": {
-                "text": "FabConfig"
+                "text": "IntersectionObserver | undefined"
               },
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "fabMenu",
-              "type": {
-                "text": "FabMenu"
-              },
-              "privacy": "private",
-              "description": "Reference to the FAB menu component."
+              "kind": "method",
+              "name": "_setupScrollSpy",
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -154,7 +87,7 @@
               "parameters": [
                 {
                   "description": "AppConfigsChange event.",
-                  "name": "event"
+                  "name": "_event"
                 }
               ]
             },
@@ -169,74 +102,13 @@
                   "name": "event"
                 }
               ]
-            },
-            {
-              "kind": "method",
-              "name": "onFabChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "\"settings\" | \"connect\""
-                  },
-                  "description": "Which FAB is being updated ('settings' or 'connect')."
-                },
-                {
-                  "name": "fabConfig",
-                  "type": {
-                    "text": "FabConfig"
-                  },
-                  "description": "The new configuration settings for the FAB."
-                }
-              ],
-              "description": "Updates the state and DOM representation of a FAB when its configuration changes."
-            },
-            {
-              "kind": "field",
-              "name": "onFabChangeBind",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "onFabConfigBind",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "settingsFabConfig",
-              "type": {
-                "text": "FabConfig"
-              },
-              "privacy": "private",
-              "description": "The configuration for the settings FAB."
-            },
-            {
-              "kind": "method",
-              "name": "uiModeIcon",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "colorScheme",
-                  "type": {
-                    "text": "AppConfigs[\"colorScheme\"]"
-                  },
-                  "description": "The current color scheme configuration."
-                }
-              ],
-              "description": "Maps a color scheme name to a Material icon name."
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "summary": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.",
+          "summary": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.",
           "tagName": "app-shell",
           "customElement": true,
           "modulePath": "src/components/app-shell/app-shell.ts",
@@ -294,230 +166,36 @@
           "name": "BentoLayout",
           "members": [
             {
-              "kind": "field",
-              "name": "_appConfigs",
-              "type": {
-                "text": "AppConfigs"
-              },
+              "kind": "method",
+              "name": "getSkillsForWordCloud",
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "_debugFont",
-              "type": {
-                "text": "\"roboto\" | \"inter\""
-              },
-              "privacy": "private",
-              "default": "\"roboto\""
-            },
-            {
-              "kind": "field",
-              "name": "_debugIcons",
-              "type": {
-                "text": "\"outlined\" | \"sharp\""
-              },
-              "privacy": "private",
-              "default": "\"outlined\""
-            },
-            {
               "kind": "method",
-              "name": "_dispatchColorSchemeChange",
+              "name": "renderBentoBox",
               "privacy": "private",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
               "parameters": [
                 {
-                  "name": "colorScheme",
+                  "name": "box",
                   "type": {
-                    "text": "AppConfigs[\"colorScheme\"]"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onContrastChange",
-              "privacy": "private",
-              "parameters": [
+                    "text": "BentoBoxConfig[\"type\"]"
+                  },
+                  "description": "The type of bento box to render."
+                },
                 {
-                  "name": "event",
+                  "name": "config",
                   "type": {
-                    "text": "Event"
-                  }
+                    "text": "{ columnSpan?: number; rowSpan?: number }"
+                  },
+                  "description": "The grid configuration for the bento box (columnSpan, rowSpan)."
                 }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onModeToggle",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_onThemeChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_openAdvancedSettings",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_openConnectDialog",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_themeConfig",
-              "type": {
-                "text": "ThemeConfig"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_toggleDebugFont",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_toggleDebugIcons",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "formattedDate",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "formattedTime",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "onAppConfigsChange",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "renderBioCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Bio card."
-            },
-            {
-              "kind": "method",
-              "name": "renderBlogCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Blog Posts card."
-            },
-            {
-              "kind": "method",
-              "name": "renderCodeCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Code Projects card."
-            },
-            {
-              "kind": "method",
-              "name": "renderConfigsCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Settings configurations card."
-            },
-            {
-              "kind": "method",
-              "name": "renderConnectCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Connect contacts card."
-            },
-            {
-              "kind": "method",
-              "name": "renderEducationCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Education card."
-            },
-            {
-              "kind": "method",
-              "name": "renderProfileCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Profile & Avatar card."
-            },
-            {
-              "kind": "method",
-              "name": "renderSkillsCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Skills Card with the word cloud."
-            },
-            {
-              "kind": "method",
-              "name": "renderWorkCard",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "description": "Renders the Work History card."
-            }
-          ],
-          "events": [
-            {
-              "name": "color_scheme.change",
-              "type": {
-                "text": "CustomEvent"
-              }
+              ],
+              "description": "Centralized method to render a bento box card based on its type and configuration."
             }
           ],
           "superclass": {
@@ -658,6 +336,245 @@
     },
     {
       "kind": "javascript-module",
+      "path": "dist/out/components/card/profile-bio/profile-bio-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ProfileBioCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "bioText",
+              "type": "string",
+              "description": "The biography text to display.",
+              "attribute": "bioText"
+            },
+            {
+              "kind": "method",
+              "name": "themePhoto",
+              "type": "object",
+              "description": "An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+              "attribute": "themePhoto",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "figcaption": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "attributes": [
+            {
+              "name": "bioText",
+              "type": "string",
+              "description": "The biography text to display.",
+              "fieldName": "bioText",
+              "kind": "method"
+            },
+            {
+              "name": "themePhoto",
+              "type": "object",
+              "description": "An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+              "fieldName": "themePhoto",
+              "kind": "method",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "figcaption": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "profile-bio-card",
+          "customElement": true,
+          "summary": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.",
+          "modulePath": "src/components/card/profile-bio/profile-bio-card.ts",
+          "definitionPath": "src/components/card/profile-bio/profile-bio-card.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-bio-card",
+          "declaration": {
+            "name": "ProfileBioCard",
+            "module": "src/components/card/profile-bio/profile-bio-card.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfileBioCard",
+          "declaration": {
+            "name": "ProfileBioCard",
+            "module": "src/components/card/profile-bio/profile-bio-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/card/settings/settings-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SettingsCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "_appConfigs",
+              "type": "object",
+              "privacy": "private",
+              "properties": {
+                "colorScheme": {
+                  "$ref": "#/definitions/ColorSchemeConfigs"
+                },
+                "fab": {
+                  "$ref": "#/definitions/FabConfigssRecord"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "kind": "method",
+              "name": "_debugFont",
+              "type": "string",
+              "privacy": "private",
+              "enum": [
+                "inter",
+                "roboto"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_debugIcons",
+              "type": "string",
+              "privacy": "private",
+              "enum": [
+                "outlined",
+                "sharp"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchColorSchemeChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onContrastChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onThemeChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleDebugFont",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_toggleDebugIcons",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "formattedDate",
+              "type": "string",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "onAppConfigsChange",
+              "privacy": "private",
+              "type": "object",
+              "additionalProperties": false
+            }
+          ],
+          "events": [
+            {
+              "name": "color_scheme.change",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "settings-card",
+          "customElement": true,
+          "summary": "A card component for managing application settings, including theme, contrast, and UI mode.",
+          "modulePath": "src/components/card/settings/settings-card.ts",
+          "definitionPath": "src/components/card/settings/settings-card.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "settings-card",
+          "declaration": {
+            "name": "SettingsCard",
+            "module": "src/components/card/settings/settings-card.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SettingsCard",
+          "declaration": {
+            "name": "SettingsCard",
+            "module": "src/components/card/settings/settings-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "dist/out/components/code/code-project/code-project.js",
       "declarations": [
         {
@@ -762,491 +679,9 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/out/components/dialog/configs/configs-dialog.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ConfigsDialog",
-          "members": [
-            {
-              "kind": "method",
-              "name": "_appConfigs",
-              "type": "object",
-              "privacy": "private",
-              "properties": {
-                "colorScheme": {
-                  "$ref": "#/definitions/ColorSchemeConfigs"
-                },
-                "fab": {
-                  "$ref": "#/definitions/FabConfigssRecord"
-                }
-              },
-              "additionalProperties": false
-            },
-            {
-              "kind": "field",
-              "name": "_configsMDDialog",
-              "type": {
-                "text": "MdDialog"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_darkModeEnabled",
-              "type": "boolean",
-              "privacy": "private",
-              "default": false
-            },
-            {
-              "kind": "field",
-              "name": "_darkModeToggle",
-              "type": "object",
-              "privacy": "private",
-              "properties": {
-                "mode": {
-                  "description": "The current color scheme mode.",
-                  "enum": [
-                    "dark",
-                    "light",
-                    "system"
-                  ],
-                  "type": "string",
-                  "default": "system"
-                },
-                "permanent": {
-                  "description": "Whether the color scheme is persisted.",
-                  "type": "boolean",
-                  "default": false
-                },
-                "_darkModeToggle": {}
-              },
-              "additionalProperties": false
-            },
-            {
-              "kind": "field",
-              "name": "_formContent",
-              "type": "string",
-              "privacy": "private",
-              "default": "ui-mode",
-              "enum": [
-                "button-connect",
-                "button-settings",
-                "ui-mode"
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_handleDialogEvent",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "_stepUpDialog",
-              "type": "object",
-              "privacy": "private",
-              "properties": {
-                "dialogStyle": {
-                  "$ref": "#/definitions/StepUpDialogStyle",
-                  "description": "The visual style variant of the dialog, affecting colors and icons.",
-                  "default": "confirm"
-                },
-                "dialogContentString": {
-                  "description": "The text content to display in the dialog body.",
-                  "type": "string",
-                  "default": ""
-                },
-                "_mdDialog": {},
-                "icons": {
-                  "$ref": "#/definitions/Record<StepUpDialogStyle,TemplateResult>"
-                },
-                "primaryActions": {
-                  "$ref": "#/definitions/Record<StepUpDialogStyle,TemplateResult>"
-                }
-              },
-              "additionalProperties": false
-            },
-            {
-              "kind": "field",
-              "name": "_stepUpDialogContent",
-              "type": "string",
-              "privacy": "private",
-              "default": "all custom"
-            },
-            {
-              "kind": "field",
-              "name": "_wasOpened",
-              "type": "boolean",
-              "privacy": "private",
-              "default": false
-            },
-            {
-              "kind": "method",
-              "name": "#renderFabSettingsFieldset",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "\"settings\" | \"connect\""
-                  }
-                },
-                {
-                  "name": "currentConfig",
-                  "type": {
-                    "text": "FabConfig"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "#renderUIFieldset",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "colorSchemeChangeEventListener",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
-            },
-            {
-              "kind": "method",
-              "name": "completeStepUp",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
-            },
-            {
-              "kind": "method",
-              "name": "dialogContent",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult | typeof nothing"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "dialogTitle",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "hideDialog",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Hides the configuration dialog."
-            },
-            {
-              "kind": "method",
-              "name": "onAppConfigsChange",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
-            },
-            {
-              "kind": "method",
-              "name": "onColorThemeModeContrastChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "colorScheme",
-                  "type": {
-                    "text": "AppConfigs[\"colorScheme\"]"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "onFabChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "\"settings\" | \"connect\""
-                  }
-                },
-                {
-                  "name": "newFabConfig",
-                  "type": {
-                    "text": "FabConfig"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "openStepUp",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
-            },
-            {
-              "kind": "method",
-              "name": "permanentColorSchemeEventListener",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
-            },
-            {
-              "kind": "method",
-              "name": "showDialog",
-              "privacy": "public",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "formContent",
-                  "default": "\"ui-mode\"",
-                  "type": {
-                    "text": "FormContent"
-                  },
-                  "description": "The initial section to display in the dialog. Defaults to \"ui-mode\"."
-                }
-              ],
-              "description": "Shows the configuration dialog."
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "Event"
-              },
-              "name": ""
-            },
-            {
-              "name": "color_scheme.change",
-              "type": {
-                "text": "CustomEvent"
-              },
-              "description": "Dispatched when the UI theme, mode, or contrast is changed."
-            },
-            {
-              "name": "fab.change",
-              "type": {
-                "text": "CustomEvent"
-              },
-              "description": "Dispatched when a FAB's position or style is modified."
-            },
-            {
-              "name": "stepUpOpen",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "configs-dialog",
-          "customElement": true,
-          "summary": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
-          "modulePath": "src/components/dialog/configs/configs-dialog.ts",
-          "definitionPath": "src/components/dialog/configs/configs-dialog.ts"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "configs-dialog",
-          "declaration": {
-            "name": "ConfigsDialog",
-            "module": "src/components/dialog/configs/configs-dialog.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ConfigsDialog",
-          "declaration": {
-            "name": "ConfigsDialog",
-            "module": "src/components/dialog/configs/configs-dialog.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "FormContent",
-          "declaration": {
-            "name": "FormContent",
-            "module": "./configs-dialog.types"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/dialog/configs/configs-dialog.types.ts",
       "declarations": [],
       "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/out/components/dialog/connect/connect-dialog.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ConnectDialog",
-          "cssProperties": [
-            {
-              "description": "The animation duration for expanding/collapsing connection details.",
-              "name": "--connect-dialog-content-transition",
-              "default": "0.3s"
-            }
-          ],
-          "members": [
-            {
-              "kind": "method",
-              "name": "_handleDialogEvent",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "_mdDialog",
-              "type": {
-                "text": "MdDialog"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "#rederConnections",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "connection",
-                  "type": {
-                    "text": "Connection"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "formattedDate",
-              "type": "string",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "formattedTime",
-              "type": "string",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "hideDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Maps to MdDialog's close method"
-            },
-            {
-              "kind": "method",
-              "name": "showDialog",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "Shows the connect dialog and applies a custom border to the internal container."
-            },
-            {
-              "kind": "method",
-              "name": "version",
-              "privacy": "private",
-              "default": "buildVersion",
-              "type": "string"
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "Event"
-              },
-              "name": ""
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "connect-dialog",
-          "customElement": true,
-          "summary": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.",
-          "modulePath": "src/components/dialog/connect/connect-dialog.ts",
-          "definitionPath": "src/components/dialog/connect/connect-dialog.ts"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "connect-dialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialog/connect/connect-dialog.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ConnectDialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialog/connect/connect-dialog.ts"
-          }
-        }
-      ]
     },
     {
       "kind": "javascript-module",
@@ -1288,36 +723,31 @@
             {
               "kind": "field",
               "name": "dialogContentString",
-              "type": "string",
-              "default": "",
-              "description": "The text content to display in the dialog body.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The central content of the {@link MdDialog}",
               "attribute": "dialogContentString"
             },
             {
               "kind": "field",
               "name": "dialogStyle",
-              "type": "string",
-              "default": "confirm",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
-              "attribute": "dialogStyle",
-              "enum": [
-                "attention",
-                "confirm",
-                "warning"
-              ]
+              "type": {
+                "text": "StepUpDialogStyle"
+              },
+              "default": "\"confirm\"",
+              "description": "Determines which {@link StepUpDialogStyle}",
+              "attribute": "dialogStyle"
             },
             {
-              "kind": "method",
+              "kind": "field",
               "name": "icons",
-              "type": "object",
-              "privacy": "private",
-              "default": "{ confirm: html`<md-icon slot=\"icon\">check_circle</md-icon>`, warning: html`<md-icon slot=\"icon\">warning</md-icon>`, attention: html`<md-icon slot=\"icon\">report</md-icon>`, }",
-              "properties": {
-                "confirm": {},
-                "warning": {},
-                "attention": {}
+              "type": {
+                "text": "Record<StepUpDialogStyle, TemplateResult>"
               },
-              "additionalProperties": false
+              "privacy": "private",
+              "default": "{ confirm: html`<md-icon slot=\"icon\">check_circle</md-icon>`, warning: html`<md-icon slot=\"icon\">warning</md-icon>`, attention: html`<md-icon slot=\"icon\">report</md-icon>`, }"
             },
             {
               "kind": "method",
@@ -1339,17 +769,13 @@
               ]
             },
             {
-              "kind": "method",
+              "kind": "field",
               "name": "primaryActions",
-              "type": "object",
-              "privacy": "private",
-              "default": "{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }",
-              "properties": {
-                "confirm": {},
-                "warning": {},
-                "attention": {}
+              "type": {
+                "text": "Record<StepUpDialogStyle, TemplateResult>"
               },
-              "additionalProperties": false
+              "privacy": "private",
+              "default": "{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }"
             },
             {
               "kind": "method",
@@ -1374,24 +800,23 @@
           "attributes": [
             {
               "name": "dialogContentString",
-              "type": "string",
-              "default": "",
-              "description": "The text content to display in the dialog body.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The central content of the {@link MdDialog}",
               "fieldName": "dialogContentString",
               "attribute": "dialogContentString"
             },
             {
               "name": "dialogStyle",
-              "type": "string",
-              "default": "confirm",
-              "description": "The visual style variant of the dialog, affecting colors and icons.",
+              "type": {
+                "text": "StepUpDialogStyle"
+              },
+              "default": "\"confirm\"",
+              "description": "Determines which {@link StepUpDialogStyle}",
               "fieldName": "dialogStyle",
-              "attribute": "dialogStyle",
-              "enum": [
-                "attention",
-                "confirm",
-                "warning"
-              ]
+              "attribute": "dialogStyle"
             }
           ],
           "superclass": {
@@ -1535,6 +960,7 @@
             "name": "LitElement",
             "package": "lit"
           },
+          "deprecated": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0.",
           "tagName": "fab-menu-item",
           "customElement": true,
           "modulePath": "src/components/fab-menu/fab-menu-item.ts",
@@ -1606,26 +1032,16 @@
             {
               "kind": "field",
               "name": "_focusableElements",
-              "type": "array",
+              "type": {
+                "text": "(HTMLElement&{ focus: (options?: FocusOptions) => void; })[]"
+              },
               "privacy": "private",
-              "readonly": true,
-              "items": {
-                "additionalProperties": false,
-                "type": "object",
-                "properties": {
-                  "focus": {
-                    "type": "object",
-                    "additionalProperties": false
-                  }
-                }
-              }
+              "readonly": true
             },
             {
-              "kind": "method",
+              "kind": "field",
               "name": "_handleDocumentClick",
-              "privacy": "private",
-              "type": "object",
-              "additionalProperties": false
+              "privacy": "private"
             },
             {
               "kind": "method",
@@ -1643,26 +1059,11 @@
             {
               "kind": "field",
               "name": "_items",
-              "type": "array",
+              "type": {
+                "text": "FabMenuItem[]"
+              },
               "privacy": "private",
-              "readonly": true,
-              "items": {
-                "description": "An action item within a `fab-menu`.",
-                "type": "object",
-                "properties": {
-                  "_fab": {},
-                  "label": {
-                    "description": "The text label displayed next to the FAB item.",
-                    "type": "string",
-                    "default": ""
-                  },
-                  "icon": {
-                    "description": "The icon to display inside the FAB item.",
-                    "default": ""
-                  }
-                },
-                "additionalProperties": false
-              }
+              "readonly": true
             },
             {
               "kind": "field",
@@ -1680,23 +1081,23 @@
             {
               "kind": "field",
               "name": "ariaLabel",
-              "type": "string",
-              "default": "",
-              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "An override for the `aria-label` attribute",
               "attribute": "aria-label"
             },
             {
               "kind": "field",
               "name": "direction",
-              "type": "string",
-              "default": "end",
-              "description": "The direction in which the menu items should expand.",
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
               "attribute": "direction",
-              "reflects": true,
-              "enum": [
-                "end",
-                "start"
-              ]
+              "reflects": true
             },
             {
               "kind": "method",
@@ -1714,24 +1115,28 @@
               "type": {
                 "text": "MaterialSymbol | \"\""
               },
-              "default": "add",
-              "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
+              "default": "\"close\"",
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
               "attribute": "icon"
             },
             {
               "kind": "field",
               "name": "label",
-              "type": "string",
-              "default": "",
-              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The label to display when both opened and closed",
               "attribute": "label"
             },
             {
               "kind": "field",
               "name": "open",
-              "type": "boolean",
-              "default": false,
-              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator of open/closed state",
               "attribute": "open",
               "reflects": true
             },
@@ -1741,78 +1146,75 @@
               "type": {
                 "text": "MaterialSymbol"
               },
-              "default": "close",
+              "default": "\"close\"",
               "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
               "attribute": "opened-icon"
             },
             {
               "kind": "field",
               "name": "size",
-              "type": "string",
-              "default": "medium",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-              "attribute": "size",
-              "enum": [
-                "large",
-                "medium",
-                "small"
-              ]
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+              "attribute": "size"
             },
             {
               "kind": "field",
               "name": "variant",
-              "type": "string",
-              "default": "primary",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-              "attribute": "variant",
-              "enum": [
-                "primary",
-                "secondary",
-                "surface",
-                "tertiary"
-              ]
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+              "attribute": "variant"
             }
           ],
           "attributes": [
             {
               "name": "aria-label",
-              "type": "string",
-              "default": "",
-              "description": "The `aria-label` of the FAB.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "An override for the `aria-label` attribute",
               "fieldName": "ariaLabel"
             },
             {
               "name": "direction",
-              "type": "string",
-              "default": "end",
-              "description": "The direction in which the menu items should expand.",
-              "fieldName": "direction",
-              "enum": [
-                "end",
-                "start"
-              ]
+              "type": {
+                "text": "\"start\" | \"end\""
+              },
+              "default": "\"end\"",
+              "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+              "fieldName": "direction"
             },
             {
               "name": "icon",
               "type": {
                 "text": "MaterialSymbol | \"\""
               },
-              "default": "add",
-              "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
+              "default": "\"close\"",
+              "description": "The {@link MaterialSymbol} to display when menu is opened",
               "fieldName": "icon"
             },
             {
               "name": "label",
-              "type": "string",
-              "default": "",
-              "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "description": "The label to display when both opened and closed",
               "fieldName": "label"
             },
             {
               "name": "open",
-              "type": "boolean",
-              "default": false,
-              "description": "Whether the menu is currently open.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator of open/closed state",
               "fieldName": "open"
             },
             {
@@ -1820,40 +1222,34 @@
               "type": {
                 "text": "MaterialSymbol"
               },
-              "default": "close",
+              "default": "\"close\"",
               "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
               "fieldName": "openedIcon"
             },
             {
               "name": "size",
-              "type": "string",
-              "default": "medium",
-              "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-              "fieldName": "size",
-              "enum": [
-                "large",
-                "medium",
-                "small"
-              ]
+              "type": {
+                "text": "\"small\" | \"medium\" | \"large\""
+              },
+              "default": "\"medium\"",
+              "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+              "fieldName": "size"
             },
             {
               "name": "variant",
-              "type": "string",
-              "default": "primary",
-              "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-              "fieldName": "variant",
-              "enum": [
-                "primary",
-                "secondary",
-                "surface",
-                "tertiary"
-              ]
+              "type": {
+                "text": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\""
+              },
+              "default": "\"primary\"",
+              "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+              "fieldName": "variant"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
+          "deprecated": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0.",
           "tagName": "fab-menu",
           "customElement": true,
           "modulePath": "src/components/fab-menu/fab-menu.ts",
@@ -1949,204 +1345,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/out/components/nav/nav-component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A navigation component that renders primary tabs synchronized with the application's bento layout sections.\nUses an IntersectionObserver to perform scroll spy and highlight the active card.",
-          "name": "NavComponent",
-          "cssProperties": [
-            {
-              "description": "The duration of the icon's fill and color transition.",
-              "name": "--nav-component-icon-animation",
-              "default": "225ms"
-            },
-            {
-              "description": "The duration of the icon's transition when motion is reduced.",
-              "name": "--nav-component-icon-animation-reduced",
-              "default": "1ms"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "_activeRoute",
-              "type": {
-                "text": "Route"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_activeTabIndex",
-              "type": {
-                "text": "number"
-              },
-              "privacy": "private",
-              "default": "0"
-            },
-            {
-              "kind": "field",
-              "name": "_boundListener",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_exitingRoute",
-              "type": {
-                "text": "Route | null"
-              },
-              "privacy": "private",
-              "default": "null"
-            },
-            {
-              "kind": "method",
-              "name": "_handleHashChange",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_inlineIconTimeout",
-              "type": {
-                "text": "number"
-              },
-              "privacy": "private",
-              "default": "0"
-            },
-            {
-              "kind": "method",
-              "name": "_onTabChange",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_renderTabs",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "TemplateResult"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_routeFromElementId",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "Route | null"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "id",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "_routes",
-              "type": {
-                "text": "Route[]"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_scrollSpyObserver",
-              "type": {
-                "text": "IntersectionObserver | undefined"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_setupScrollSpy",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_tabIndexAndRouteFromHash",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "{ index: number; route: Route }"
-                }
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_tabRefMap",
-              "type": {
-                "text": "Record<Route, Ref<MdPrimaryTab>>"
-              },
-              "privacy": "private",
-              "default": "{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }"
-            },
-            {
-              "kind": "field",
-              "name": "_tabsRef",
-              "type": {
-                "text": "Ref<MdTabs>"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_updateTabState",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "index",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "nav-component",
-          "customElement": true,
-          "modulePath": "src/components/nav/nav-component.ts",
-          "definitionPath": "src/components/nav/nav-component.ts"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "nav-component",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "NavComponent",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "dist/out/components/partial-header/partial-header.js",
       "declarations": [
         {
@@ -2236,6 +1434,21 @@
           "name": "UiModeToggle",
           "members": [
             {
+              "kind": "method",
+              "name": "_appConfigs",
+              "type": "object",
+              "privacy": "private",
+              "properties": {
+                "colorScheme": {
+                  "$ref": "#/definitions/ColorSchemeConfigs"
+                },
+                "fab": {
+                  "$ref": "#/definitions/FabConfigssRecord"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
               "kind": "field",
               "name": "_darkModeToggle",
               "type": {
@@ -2244,11 +1457,18 @@
               "privacy": "private"
             },
             {
+              "kind": "method",
+              "name": "colorSchemeChangeEventListener",
+              "privacy": "private",
+              "type": "object",
+              "additionalProperties": false
+            },
+            {
               "kind": "field",
               "name": "mode",
               "type": "string",
               "default": "system",
-              "description": "The current color scheme mode.",
+              "description": "Reflects the currently active color scheme mode.",
               "attribute": "mode",
               "enum": [
                 "dark",
@@ -2257,12 +1477,67 @@
               ]
             },
             {
+              "kind": "method",
+              "name": "onAppConfigsChange",
+              "privacy": "private",
+              "type": "object",
+              "additionalProperties": false
+            },
+            {
+              "kind": "method",
+              "name": "onColorThemeModeContrastChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ]
+            },
+            {
               "kind": "field",
               "name": "permanent",
               "type": "boolean",
               "default": false,
-              "description": "Whether the color scheme is persisted.",
+              "description": "Controls whether the selected color scheme preference is persisted across sessions.",
               "attribute": "permanent"
+            },
+            {
+              "kind": "method",
+              "name": "permanentColorSchemeEventListener",
+              "privacy": "private",
+              "type": "object",
+              "additionalProperties": false
+            },
+            {
+              "kind": "method",
+              "name": "reset",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "description": "Resets the UI mode toggle to its default settings."
+            }
+          ],
+          "events": [
+            {
+              "name": "color_scheme.change",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details."
+            },
+            {
+              "description": "Event from `dark-mode-toggle` when the scheme changes.",
+              "name": "colorschemechange"
+            },
+            {
+              "description": "Event from `dark-mode-toggle` when the persistence changes.",
+              "name": "permanentcolorscheme"
             }
           ],
           "attributes": [
@@ -2270,7 +1545,7 @@
               "name": "mode",
               "type": "string",
               "default": "system",
-              "description": "The current color scheme mode.",
+              "description": "Reflects the currently active color scheme mode.",
               "fieldName": "mode",
               "enum": [
                 "dark",
@@ -2282,7 +1557,7 @@
               "name": "permanent",
               "type": "boolean",
               "default": false,
-              "description": "Whether the color scheme is persisted.",
+              "description": "Controls whether the selected color scheme preference is persisted across sessions.",
               "fieldName": "permanent"
             }
           ],
@@ -2292,7 +1567,7 @@
           },
           "tagName": "ui-mode-toggle",
           "customElement": true,
-          "summary": "A toggle component for switching between dark, light, and system color schemes.",
+          "summary": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application's global `configsService` for state management\nand `themeService` for dynamic theme application.",
           "modulePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
           "definitionPath": "src/components/ui-mode-toggle/ui-mode-toggle.ts"
         }

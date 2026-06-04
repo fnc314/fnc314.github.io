@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: WordTag
 
-Defined in: [src/components/word/word-tag/word-tag.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L31)
+Defined in: [src/components/word/word-tag/word-tag.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-tag/word-tag.ts#L31)
 
 ## Cssprop
 
@@ -54,7 +54,7 @@ WordTag
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/word/word-tag/word-tag.ts:33](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L33)
+Defined in: [src/components/word/word-tag/word-tag.ts:33](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-tag/word-tag.ts#L33)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -68,7 +68,7 @@ Defined in: [src/components/word/word-tag/word-tag.ts:33](https://github.com/fnc
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/word/word-tag/word-tag.ts:92](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/word/word-tag/word-tag.ts#L92)
+Defined in: [src/components/word/word-tag/word-tag.ts:97](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-tag/word-tag.ts#L97)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

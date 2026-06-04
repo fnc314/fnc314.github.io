@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v1.0.8**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: WorkExperience
 
-Defined in: [src/components/work-experience/work-experience.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L22)
+Defined in: [src/components/work-experience/work-experience.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L22)
 
 ## Hierarchy
 
@@ -64,7 +64,7 @@ Defined in: [src/components/work-experience/work-experience.ts:22](https://githu
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L24)
+[src/components/work-experience/work-experience.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L24)
 
 </td>
 </tr>
@@ -101,7 +101,7 @@ Whether this is a nested instance
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:198](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L198)
+[src/components/work-experience/work-experience.ts:198](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L198)
 
 </td>
 </tr>
@@ -138,7 +138,7 @@ The formal role from the WorkExperience instance
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:202](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L202)
+[src/components/work-experience/work-experience.ts:202](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L202)
 
 </td>
 </tr>
@@ -175,7 +175,7 @@ The employer formal name
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:206](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L206)
+[src/components/work-experience/work-experience.ts:206](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L206)
 
 </td>
 </tr>
@@ -212,7 +212,7 @@ A WorkDate instance describing employment start date
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:213](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L213)
+[src/components/work-experience/work-experience.ts:213](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L213)
 
 </td>
 </tr>
@@ -249,7 +249,7 @@ A WorkDate instance describing employment end date
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:217](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L217)
+[src/components/work-experience/work-experience.ts:217](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L217)
 
 </td>
 </tr>
@@ -286,7 +286,7 @@ An array of `{ item: string }` objects describing the responsibilities
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:221](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L221)
+[src/components/work-experience/work-experience.ts:221](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L221)
 
 </td>
 </tr>
@@ -323,7 +323,7 @@ An array of Jobs rendered as nested WorkExperience instances
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:225](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L225)
+[src/components/work-experience/work-experience.ts:225](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L225)
 
 </td>
 </tr>
@@ -336,7 +336,7 @@ An array of Jobs rendered as nested WorkExperience instances
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/work-experience/work-experience.ts:228](https://github.com/fnc314/fnc314.github.io/blob/feature/vite/src/components/work-experience/work-experience.ts#L228)
+Defined in: [src/components/work-experience/work-experience.ts:228](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L228)
 
 Renders the experience entry, conditionally applying styles based on nesting level.
 
