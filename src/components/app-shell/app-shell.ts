@@ -1,32 +1,21 @@
 
-import "@/components/fab-menu/fab-menu";
-import { FabMenu } from "@/components/fab-menu/fab-menu";
-import "@/components/fab-menu/fab-menu-item";
 import { configsService } from "@/services/configs/configs-service";
 import { type RouterChange, type RouterReverse } from "@/services/router/router-service";
 import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
-import { FAB_STYLE, type FabConfig, type FabConfigChange, fabPositionClass } from "@/types/configs/fab-configs";
 import {
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorSchemeConfigChange,
   colorSchemeConfigsToMaterialSchemeName,
 } from "@/types/theme/color-scheme-configs";
-import "@material/web/button/text-button";
-import "@material/web/dialog/dialog";
-import "@material/web/divider/divider";
-import { MdFab } from "@material/web/fab/fab";
-import "@material/web/icon/icon.js";
-import "@material/web/list/list";
-import "@material/web/list/list-item";
 import { LitElement, type PropertyValues, css, html } from "lit";
-import { customElement, query, state } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 
 /**
  * @summary The core layout component for the application.
- *   Handles theme switching, FAB configurations, and navigation slotting.
+ *   Handles theme switching and navigation slotting.
  *   Uses Material Design 3 tokens and components.
  *
  * @slot [app-nav] - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed
@@ -39,82 +28,8 @@ export class AppShell extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        --md-fab-icon-size: var(--md-icon-size);
-        --md-fab-large-icon-size: calc(1.5 * var(--md-icon-size));
-        --md-fab-small-icon-size: calc(0.75 * var(--md-icon-size));
-
         /* This allows the body's grid layout to apply to our slotted children */
         display: contents;
-      }
-
-      md-dialog {
-        [slot="headline"] {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-      }
-
-      .fab-container {
-        pointer-events: none;
-        cursor: unset;
-        z-index: 10;
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        display: grid;
-        padding-inline: 1rem;
-        grid-template-rows: repeat(2, min-content);
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas:
-          "StartTop    . EndTop"
-          "StartBottom . EndBottom";
-        gap: 1rem;
-
-        md-fab {
-          z-index: 2;
-        }
-
-        fab-menu,
-        md-fab {
-          pointer-events: auto;
-          align-self: end;
-          grid-area: unset;
-          justify-self: unset;
-          transition:
-            grid-area 0.2s ease-in-out,
-            justify-self 0.2s ease-in-out;
-
-          md-icon {
-            line-height: unset;
-          }
-
-          .fab.extended {
-            padding-inline: 1rem;
-          }
-        }
-
-        .start-top {
-          grid-area: StartTop;
-          justify-self: start;
-        }
-
-        .start-bottom {
-          grid-area: StartBottom;
-          justify-self: start;
-        }
-
-        .end-top {
-          grid-area: EndTop;
-          justify-self: end;
-        }
-
-        .end-bottom {
-          grid-area: EndBottom;
-          justify-self: end;
-        }
       }
     `,
   ];
@@ -127,106 +42,14 @@ export class AppShell extends LitElement {
   @state()
   private _uiModeIcon: "dark_mode" | "light_mode" | "routine" = this.uiModeIcon(this.appConfigs.colorScheme);
 
-  /** Reference to the FAB menu component. */
-  @query("#fab-menu")
-  private fabMenu!: FabMenu;
-
-  /** The configuration for the settings FAB. */
-  @state()
-  private settingsFabConfig: FabConfig = this.appConfigs.fab.settings;
-
-  /**
-   * Reference to the connect FAB.
-   * This is an MdFab component.
-   */
-  @query("#fab-connect")
-  private connectFab!: MdFab;
-
-  @state()
-  private connectFabConfig: FabConfig = this.appConfigs.fab.connect;
-
   @state()
   private _openDialogCount = 0;
 
-  private onFabChangeBind = this.onFabChange.bind(this);
-
-  /**
-   * Updates the state and DOM representation of a FAB when its configuration changes.
-   *
-   * @param fab - Which FAB is being updated ('settings' or 'connect').
-   * @param fabConfig - The new configuration settings for the FAB.
-   */
-  private onFabChange(fab: "settings" | "connect", fabConfig: FabConfig) {
-    console.info(`FabConfig Change:\n${JSON.stringify({ fab, fabConfig }, null, 1)}`);
-
-    // similar logic means this flag can be helpful
-    const isSettings: boolean = fab === "settings";
-    // target MdFab/FabMenu
-    const changedFab: MdFab | FabMenu = isSettings ? this.fabMenu : this.connectFab;
-
-    // remove positioning class
-    changedFab.classList.remove(
-      fabPositionClass((isSettings ? this.settingsFabConfig : this.connectFabConfig).position),
-    );
-
-    if (fab === "settings") {
-      this.settingsFabConfig = fabConfig;
-    } else {
-      this.connectFabConfig = fabConfig;
-    }
-
-    const fabLabel = `${fab.charAt(0).toUpperCase()}${fab.slice(1)}`;
-    changedFab.label =
-      fabConfig.style === FAB_STYLE.ICON_AND_TEXT || fabConfig.style === FAB_STYLE.TEXT_ONLY ? fabLabel : "";
-    changedFab.ariaLabel = fabLabel;
-    changedFab.size = fabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium";
-
-    if (isSettings) {
-      (changedFab as FabMenu).icon = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings";
-    } else {
-      const fabIcon = changedFab.querySelector("md-icon")!;
-      if (fabIcon) {
-        fabIcon.style.display = fabConfig.style === FAB_STYLE.TEXT_ONLY ? "none" : "contents";
-      }
-    }
-
-    changedFab.classList.add(fabPositionClass(fabConfig.position));
-  }
-
-  private onFabConfigBind = (event: FabConfigChange) =>
-    this.onFabChangeBind(event.detail.fab, event.detail.newFabConfig);
-
   /**
    * Lifecycle method called after the first update.
-   * Initializes state from the configuration service and applies initial FAB positions.
-   *
-   * @param _changedProperties - Map of changed properties.
    */
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-
-    // Note: State properties are already initialized via configsService.loadConfigs()
-    // FAB configurations and positions are managed declaratively in the render() method.
-    // Manual calls here were triggering redundant update cycles.
-  }
-
-  /**
-   * Lifecycle method called after every update.
-   * Performs manual Shadow DOM adjustments for specific Material Web component styles
-   * that cannot be easily reached via CSS Custom Properties.
-   *
-   * @param changedProperties - Map of changed properties.
-   */
-  protected override updated(changedProperties: PropertyValues): void {
-    super.updated(changedProperties);
-    const label: HTMLSpanElement | null | undefined = this.connectFab.shadowRoot?.querySelector("span.label");
-    if (label) {
-      label.style.paddingInlineStart = this.connectFabConfig.style === FAB_STYLE.ICON_AND_TEXT ? "0.5rem" : "0";
-    }
-    const button: HTMLButtonElement | null | undefined = this.connectFab.shadowRoot?.querySelector("button");
-    if (button) {
-      button.style.paddingInline = "1rem";
-    }
   }
 
   /**
@@ -253,8 +76,6 @@ export class AppShell extends LitElement {
     super.connectedCallback();
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
 
-    document.addEventListener("fab.change", this.onFabConfigBind);
-
     document.addEventListener("color_scheme.change", this.onColorSchemeChange);
 
     window.addEventListener("router.change", (ev: Event) => {
@@ -269,8 +90,6 @@ export class AppShell extends LitElement {
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener("fab.change", this.onFabConfigBind);
-
     document.removeEventListener("color_scheme.change", this.onColorSchemeChange);
   }
 
@@ -306,68 +125,21 @@ export class AppShell extends LitElement {
     }
   }
 
-
-
-  /**
-   * Generates the label string for a FAB based on its configuration style.
-   *
-   * @param fab - The FAB identifier.
-   * @param config - The FAB configuration.
-   * @returns The label string or an empty string if the style is icon-only.
-   */
-  private _getFabLabel(fab: string, config: FabConfig) {
-    const showLabel = config.style === FAB_STYLE.ICON_AND_TEXT || config.style === FAB_STYLE.TEXT_ONLY;
-    return showLabel ? `${fab.charAt(0).toUpperCase()}${fab.slice(1)}` : "";
-  }
-
   /**
    * Renders the application shell.
-   * Includes navigation and content slots, global dialogs, and floating action buttons.
+   * Includes navigation and content slots.
    */
   override render() {
-    const settingsLabel = this._getFabLabel("settings", this.settingsFabConfig);
-    const connectLabel = this._getFabLabel("connect", this.connectFabConfig);
-
     return html`
       <slot name="app-nav"></slot>
       <slot name="app-content"></slot>
-
-
-
-      <section class="fab-container">
-        <fab-menu
-          id="fab-menu"
-          class=${fabPositionClass(this.settingsFabConfig.position)}
-          .size=${this.settingsFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          .icon=${this.settingsFabConfig.style === FAB_STYLE.TEXT_ONLY ? "" : "settings"}
-          .variant=${"tertiary"}
-          .ariaLabel=${settingsLabel === "" ? "Settings" : settingsLabel}
-          .label=${settingsLabel}
-          .direction=${this.settingsFabConfig.position.startsWith("START") ? "start" : "end"}
-        >
-
-        </fab-menu>
-
-        <md-fab
-          id="fab-connect"
-          class="connect ${fabPositionClass(this.connectFabConfig.position)}"
-          .size=${this.connectFabConfig.style === FAB_STYLE.ICON_ONLY_SMALL ? "small" : "medium"}
-          .variant=${"primary"}
-          .label=${connectLabel}
-          aria-label=${this._getFabLabel("connect", {
-            ...this.connectFabConfig,
-            style: FAB_STYLE.TEXT_ONLY,
-          })}
-        >
-          <md-icon
-            slot="icon"
-            style=${this.connectFabConfig.style === FAB_STYLE.TEXT_ONLY ? "display: none" : "display: contents"}
-          >
-            person_add
-          </md-icon>
-        </md-fab>
-      </section>
     `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "app-shell": AppShell;
   }
 }
 

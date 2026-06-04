@@ -2,6 +2,8 @@
 
 Enhance the Bento Box UI implemented in Phase 2 to update the `package.json#version` to `2.0.0`, further clean up deprecated widgets, update documentation and `TODO.md`, and refine `profile-bio-card.ts`.
 
+Before starting anything, Update [`tasks.md](./tasks.md) with detailed steps (and sub-steps, where applicable) and, as progress is made, mark entries as complete.
+
 ## Goals
 
 1. **Update `package.json#version`:** Update `package.json` at `version` to `"2.0.0"`.
