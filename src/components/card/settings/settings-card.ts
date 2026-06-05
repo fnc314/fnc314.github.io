@@ -70,14 +70,25 @@ export class SettingsCard extends LitElement {
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
 
-  private formattedDate: string = new Intl.DateTimeFormat(navigator.languages, {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  }).format(time);
+  /**
+   * Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}
+   *   on {@link time} to render the user presented timestamp
+   *
+   * @private
+   * @type {string}
+   * @memberof SettingsCard
+   */
+  private formattedDate: string = new Intl.DateTimeFormat(
+    navigator.languages,
+    {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    }
+  ).format(time);
 
   override connectedCallback() {
     super.connectedCallback();
@@ -139,29 +150,31 @@ export class SettingsCard extends LitElement {
     return html`
       <div class="configs-form">
         <div class="form-field">
-            <label for="theme-select">UI Theme</label>
-            <select id="theme-select" @change=${this._onThemeChange}>
-              ${Object.values(THEME_NAMES).map(
-                (theme) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
-                    ${theme.charAt(0).toUpperCase() + theme.slice(1)}
-                  </option>
-                `,
-              )}
-            </select>
+          <label for="theme-select">UI Theme</label>
+          <select id="theme-select" @change=${this._onThemeChange}>
+            ${Object.values(THEME_NAMES).map(
+              (theme) => html`
+                <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
+                  ${theme.charAt(0).toUpperCase() + theme.slice(1)}
+                </option>
+              `,
+            )}
+          </select>
         </div>
+
         <div class="form-field">
-            <label for="contrast-select">UI Contrast</label>
-            <select id="contrast-select" @change=${this._onContrastChange}>
-              ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-                (contrast) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
-                    ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
-                  </option>
-                `,
-              )}
-            </select>
+          <label for="contrast-select">UI Contrast</label>
+          <select id="contrast-select" @change=${this._onContrastChange}>
+            ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+              (contrast) => html`
+                <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
+                  ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
+                </option>
+              `,
+            )}
+          </select>
         </div>
+
         <ui-mode-toggle></ui-mode-toggle>
 
         <div class="version-tag">
