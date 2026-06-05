@@ -24,12 +24,12 @@ import { classMap } from "lit/directives/class-map.js";
  *   and `themeService` for dynamic theme application.
  *
  * @element ui-mode-toggle
- * @fires color_scheme.change - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,
- *   propagating the new `AppConfigs["colorScheme"]` details.
  *
  * @property {"light" | "dark" | "system"} mode - Reflects the currently active color scheme mode.
  * @property {boolean} permanent - Controls whether the selected color scheme preference is persisted across sessions.
  *
+ * @fires color_scheme.change - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,
+ *   propagating the new `AppConfigs["colorScheme"]` details.
  * @fires colorschemechange - Event from `dark-mode-toggle` when the scheme changes.
  * @fires permanentcolorscheme - Event from `dark-mode-toggle` when the persistence changes.
  *
