@@ -35,7 +35,7 @@ export const bentoLayoutStyles = css`
   /* Mobile layout (<=736px) */
   @media screen and (width <= 736px) {
     .bento-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: var(--spacing-margin-xs);
       padding: var(--spacing-padding-xxs);
     }

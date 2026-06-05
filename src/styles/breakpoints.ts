@@ -1,37 +1,3 @@
-import { type CSSResult, css } from "lit";
-
-/**
- * The {@link CSSResult} dedicated, explicitly, to the
- *   {@link --breakpoint-label} custom CSS `@property`
- *
- * @type {CSSResult}
- */
-export const Breakpoints: CSSResult = css`
-  @property --breakpoint-label {
-    syntax: "unknown | mobile | tablet | desktop";
-    inherits: true;
-    initial-value: unknown;
-  };
-
-  @media screen and (width <= 736px) {
-    :root {
-      --breakpoint-label: mobile;
-    }
-  }
-
-  @media screen and (width >= 1201px) {
-    :root {
-      --breakpoint-label: desktop;
-    }
-  }
-
-  @media screen and (width >= 737px) and (width <= 1200px) {
-    :root {
-      --breakpoint-label: tablet;
-    }
-  }
-`;
-
 /**
  * Values for the {@link --breakpoint-label} custom CSS `@property`
  *

@@ -19,7 +19,6 @@ import "@/services/router/router-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service";
-import { Breakpoints } from "@/styles/breakpoints";
 import { spacingTokens } from "@/styles/spacing";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
@@ -56,10 +55,6 @@ const domLoadedListener = () => {
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  }
-
-  if (Breakpoints.styleSheet) {
-    document.adoptedStyleSheets.push(Breakpoints.styleSheet);
   }
 
   if (spacingTokens.styleSheet) {

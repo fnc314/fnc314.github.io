@@ -12,7 +12,7 @@ import CodeJson from "@/data/code.json" with { type: "json" };
 import Connections from "@/data/connections.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { BREAKPOINT_NAMES, type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
+import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
@@ -40,26 +40,25 @@ export class BentoLayout extends LitElement {
    * @private
    * @type {Breakpoint}
    */
-  @state({
-    hasChanged(value: Breakpoint, oldValue: Breakpoint): boolean {
-      console.info(
-        `
+  @state()
+  private _currentBreakpoint: Breakpoint = readBreakpoint();
+  set currentBreakpoint(value: Breakpoint) {
+    console.log(
+      `
+      SETTER
 
-        @state called
-        newValue: ${value}
-          Length: ${value?.length}
-        oldValue: ${oldValue}
-          Length: ${oldValue?.length}
+      Current ${this._currentBreakpoint}
+      New ${value}
+      `
+    );
+    this._currentBreakpoint = value;
+  }
 
-        `
-      );
-      if (!value?.length || !BREAKPOINT_NAMES.includes(value)) {
-        return false;
-      }
-      return value !== oldValue;
-    }
-  })
-  private _currentBreakpoint: Breakpoint = "unknown";
+  @state()
+  private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
+  set bentoBoxConfigs(value: BentoBoxConfig[]) {
+    this._bentoBoxConfigs = value;
+  }
 
   /**
    * The callback passed to {@link window.addEventListener} and
@@ -68,6 +67,7 @@ export class BentoLayout extends LitElement {
   private _onWindowResize: () => void = () => {
     console.info(
       `
+      onWindowResize
       Current _breakpointLabel ${this._currentBreakpoint}
       Read Breakpoint ${readBreakpoint()}
       `
@@ -75,6 +75,7 @@ export class BentoLayout extends LitElement {
     this._currentBreakpoint = readBreakpoint();
     console.info(
       `
+      onWindowResize
       New _breakpointLabel ${this._currentBreakpoint}
       `
     );
@@ -114,13 +115,14 @@ export class BentoLayout extends LitElement {
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
 
     const { row, column, breakpoint }: GridPosition = config.placementForBreakpoint(
-      this._currentBreakpoint
+      readBreakpoint()
     );
 
     console.info(
       `Inputs to 'renderBentoBox' ${
         JSON.stringify({
           breakpointLabel: this._currentBreakpoint,
+          read: readBreakpoint(),
           config,
           breakpoint,
           row,
@@ -128,6 +130,8 @@ export class BentoLayout extends LitElement {
         })
       }`
     );
+
+    this._currentBreakpoint = breakpoint;
 
     const style = html`
       <style>
@@ -284,10 +288,9 @@ export class BentoLayout extends LitElement {
   }
 
   override render() {
-    this._onWindowResize();
     return html`
       <div class="bento-grid" role="main" id="bento-root">
-        ${BentoBoxConfigs().map(boxConfig => this.renderBentoBox(boxConfig))}
+        ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
       </div>
     `;
   }
