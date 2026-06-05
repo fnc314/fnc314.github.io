@@ -52,7 +52,7 @@ export class SettingsCard extends LitElement {
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
         font-family: inherit;
-        font-size: 0.95rem;
+        font-size: var(--md-sys-typescale-body-medium-size);
       }
 
       .version-tag {

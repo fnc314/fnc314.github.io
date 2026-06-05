@@ -110,7 +110,7 @@ export class InfoPartial extends LitElement {
             overflow-wrap: break-word;
             text-align: justify;
             text-justify: inter-word;
-            font-size: 130%;
+            font-size: var(--md-sys-typescale-headline-small-size);
             text-indent: 0.5rem;
             font-family: var(--md-ref-typeface-brand);
           }

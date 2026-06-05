@@ -172,7 +172,7 @@ export const bentoLayoutStyles = css`
   }
 
   .form-field label {
-    font-size: 0.85rem;
+    font-size: var(--md-sys-typescale-label-medium-size);
     color: var(--md-sys-color-on-surface-variant);
     font-weight: 500;
   }
@@ -185,7 +185,7 @@ export const bentoLayoutStyles = css`
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: var(--md-sys-typescale-body-medium-size);
   }
 
   .form-field-top-margin {
@@ -214,7 +214,7 @@ export const bentoLayoutStyles = css`
     border: 1px solid var(--md-sys-color-primary);
     background: transparent;
     color: var(--md-sys-color-primary);
-    font-size: 0.8rem;
+    font-size: var(--md-sys-typescale-label-small-size);
     font-weight: bold;
     transition: all 0.2s;
   }
@@ -268,7 +268,7 @@ export const bentoLayoutStyles = css`
     background-color: transparent;
     color: var(--md-sys-color-primary);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: var(--md-sys-typescale-body-medium-size);
     cursor: pointer;
   }
 
@@ -279,7 +279,7 @@ export const bentoLayoutStyles = css`
   }
 
   .version-tag {
-    font-size: 0.75rem;
+    font-size: var(--md-sys-typescale-body-small-size);
     color: var(--md-sys-color-on-surface-variant);
     text-align: center;
     margin-top: auto;

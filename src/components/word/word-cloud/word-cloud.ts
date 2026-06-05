@@ -50,26 +50,26 @@ export class WordCloud extends LitElement {
 
         --word-cloud-animation: 150ms;
         --word-cloud-animation-reduced: 1ms;
-        --word-cloud-first-quartile-font-size: 1.75rem;
-        --word-cloud-first-quartile-line-height: 1.75rem;
-        --word-cloud-second-quartile-font-size: 1.5rem;
-        --word-cloud-second-quartile-line-height: 1.5rem;
-        --word-cloud-third-quartile-font-size: 1.25rem;
-        --word-cloud-third-quartile-line-height: 1.25rem;
-        --word-cloud-fourth-quartile-font-size: 1rem;
-        --word-cloud-fourth-quartile-line-height: 1rem;
+        --word-cloud-first-quartile-font-size: var(--md-sys-typescale-headline-medium-size);
+        --word-cloud-first-quartile-line-height: var(--md-sys-typescale-headline-medium-line-height);
+        --word-cloud-second-quartile-font-size: var(--md-sys-typescale-headline-small-size);
+        --word-cloud-second-quartile-line-height: var(--md-sys-typescale-headline-small-line-height);
+        --word-cloud-third-quartile-font-size: var(--md-sys-typescale-title-large-size);
+        --word-cloud-third-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
+        --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-medium-size);
+        --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
       }
 
       @container (max-width: 500px) {
         :host {
-          --word-cloud-first-quartile-font-size: 1.25rem;
-          --word-cloud-first-quartile-line-height: 1.25rem;
-          --word-cloud-second-quartile-font-size: 1.1rem;
-          --word-cloud-second-quartile-line-height: 1.1rem;
-          --word-cloud-third-quartile-font-size: 0.95rem;
-          --word-cloud-third-quartile-line-height: 0.95rem;
-          --word-cloud-fourth-quartile-font-size: 0.8rem;
-          --word-cloud-fourth-quartile-line-height: 0.8rem;
+          --word-cloud-first-quartile-font-size: var(--md-sys-typescale-title-large-size);
+          --word-cloud-first-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
+          --word-cloud-second-quartile-font-size: var(--md-sys-typescale-title-medium-size);
+          --word-cloud-second-quartile-line-height: var(--md-sys-typescale-title-medium-line-height);
+          --word-cloud-third-quartile-font-size: var(--md-sys-typescale-body-medium-size);
+          --word-cloud-third-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
+          --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-small-size);
+          --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-small-line-height);
         }
 
         li {

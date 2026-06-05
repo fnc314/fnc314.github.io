@@ -80,7 +80,7 @@ export class WorkExperience extends LitElement {
         span.first-word {
           font-family: var(--md-ref-typeface-brand);
           font-weight: var(--md-ref-typeface-weight-bold);
-          font-size: 120%;
+          font-size: var(--md-sys-typescale-title-small-size);
           color: var(--md-sys-color-on-surface-variant);
         }
 
