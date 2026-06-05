@@ -74,7 +74,7 @@ const domLoadedListener = () => {
     setTimeout(() => {
       const hash = window.location.hash.replace("#", "").toLowerCase();
       const targetId = hash === "info" ? "bio" : hash;
-      const el = document.getElementById(targetId) || document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
+      const el = document.getElementById(targetId) ?? document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
