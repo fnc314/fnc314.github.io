@@ -15,6 +15,11 @@ import "@/components/blog/blog-post";
 export class BlogCard extends LitElement {
   static override styles = [blogCardStyles];
 
+  override connectedCallback() {
+    super.connectedCallback();
+    this.id = "blog";
+  }
+
   override render() {
     return html`
       <bento-card class="blog-container" aria-labelledby="blog-title" scrollable>

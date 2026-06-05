@@ -11,6 +11,7 @@ import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
 import time from "~build/time";
 
+import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
 
 /**
@@ -28,11 +29,18 @@ export class SettingsCard extends LitElement {
         height: 100%;
       }
 
-      .configs-form {
+      .settings-container {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-margin-s);
         height: 100%;
+      }
+
+      .configs-form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-margin-s);
+        flex: 1;
         justify-content: space-between;
       }
 
@@ -92,6 +100,7 @@ export class SettingsCard extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
+    this.id = "settings";
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
   }
 
@@ -148,40 +157,43 @@ export class SettingsCard extends LitElement {
 
   override render() {
     return html`
-      <div class="configs-form">
-        <div class="form-field">
-          <label for="theme-select">UI Theme</label>
-          <select id="theme-select" @change=${this._onThemeChange}>
-            ${Object.values(THEME_NAMES).map(
-              (theme) => html`
-                <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
-                  ${theme.charAt(0).toUpperCase() + theme.slice(1)}
-                </option>
-              `,
-            )}
-          </select>
-        </div>
+      <bento-card class="settings-container" aria-labelledby="settings-title" scrollable>
+        <h2 id="settings-title" class="md-typescale-title-large">Settings</h2>
+        <div class="configs-form">
+          <div class="form-field">
+            <label for="theme-select">UI Theme</label>
+            <select id="theme-select" @change=${this._onThemeChange}>
+              ${Object.values(THEME_NAMES).map(
+                (theme) => html`
+                  <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
+                    ${theme.charAt(0).toUpperCase() + theme.slice(1)}
+                  </option>
+                `,
+              )}
+            </select>
+          </div>
 
-        <div class="form-field">
-          <label for="contrast-select">UI Contrast</label>
-          <select id="contrast-select" @change=${this._onContrastChange}>
-            ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-              (contrast) => html`
-                <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
-                  ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
-                </option>
-              `,
-            )}
-          </select>
-        </div>
+          <div class="form-field">
+            <label for="contrast-select">UI Contrast</label>
+            <select id="contrast-select" @change=${this._onContrastChange}>
+              ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+                (contrast) => html`
+                  <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
+                    ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
+                  </option>
+                `,
+              )}
+            </select>
+          </div>
 
-        <ui-mode-toggle></ui-mode-toggle>
+          <ui-mode-toggle></ui-mode-toggle>
 
-        <div class="version-tag">
-          <div>Version: ${buildVersion} (Built: ${this.formattedDate})</div>
-          <div>SHA: ${gitSha}</div>
+          <div class="version-tag">
+            <div>Version: ${buildVersion} (Built: ${this.formattedDate})</div>
+            <div>SHA: ${gitSha}</div>
+          </div>
         </div>
-      </div>
+      </bento-card>
     `;
   }
 }

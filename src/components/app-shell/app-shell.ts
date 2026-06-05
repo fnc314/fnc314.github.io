@@ -145,7 +145,6 @@ export class AppShell extends LitElement {
    */
   override render() {
     return html`
-      <slot name="app-nav"></slot>
       <slot name="app-content"></slot>
     `;
   }

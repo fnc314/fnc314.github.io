@@ -1,8 +1,9 @@
-import { css, LitElement, type TemplateResult, html, nothing } from "lit";
+import { css, LitElement, type TemplateResult, html, nothing, type PropertyValues } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
 
 // New components
 import "@/components/card/bento/bento-card";
@@ -68,6 +69,9 @@ export class BentoLayout extends LitElement {
   @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
+  private _scrollSpyObserver?: IntersectionObserver;
+  private _activeRoute: Route = ROUTES.INFO;
+
   private _onWindowResize = () => {
     this._currentBreakpoint = readBreakpoint();
   };
@@ -78,9 +82,52 @@ export class BentoLayout extends LitElement {
     window.addEventListener("resize", this._onWindowResize);
   }
 
+  protected override firstUpdated(_changedProperties: PropertyValues): void {
+    super.firstUpdated(_changedProperties);
+    this._setupScrollSpy();
+  }
+
+  private _setupScrollSpy() {
+    this._scrollSpyObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          const id = visibleEntry.target.id;
+          const route = this._routeFromElementId(id);
+          if (route && this._activeRoute !== route) {
+            this._activeRoute = route;
+          }
+        }
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    setTimeout(() => {
+      const targets = ["bio", "work", "code", "blog"];
+      targets.forEach((id) => {
+        const el = this.shadowRoot?.getElementById(id);
+        if (el) {
+          this._scrollSpyObserver?.observe(el);
+        }
+      });
+    }, 500);
+  }
+
+  private _routeFromElementId(id: string): Route | null {
+    if (id === "bio") return ROUTES.INFO;
+    if (id === "work") return ROUTES.WORK;
+    if (id === "code") return ROUTES.CODE;
+    if (id === "blog") return ROUTES.BLOG;
+    return null;
+  }
+
   override disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener("resize", this._onWindowResize);
+    this._scrollSpyObserver?.disconnect();
   }
 
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {

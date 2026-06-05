@@ -14,6 +14,11 @@ import "@/components/work-experience/work-experience";
 export class WorkCard extends LitElement {
   static override styles = [workCardStyles];
 
+  override connectedCallback() {
+    super.connectedCallback();
+    this.id = "work";
+  }
+
   override render() {
     return html`
       <bento-card class="work-container" aria-labelledby="work-title" scrollable>

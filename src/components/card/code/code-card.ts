@@ -14,6 +14,11 @@ import { codeCardStyles } from "./code-card.styles";
 export class CodeCard extends LitElement {
   static override styles = [codeCardStyles];
 
+  override connectedCallback() {
+    super.connectedCallback();
+    this.id = "code";
+  }
+
   override render() {
     return html`
       <bento-card class="code-container" aria-labelledby="code-title" scrollable>

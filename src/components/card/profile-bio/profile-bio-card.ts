@@ -52,6 +52,7 @@ export class ProfileBioCard extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
+    this.id = "bio";
     configsService.addEventListener("app-configs.change", this._onConfigChange);
   }
 

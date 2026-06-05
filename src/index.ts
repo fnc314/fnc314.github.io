@@ -78,6 +78,26 @@ const domLoadedListener = () => {
   updateMaterialCSSStyleSheet(matScheme);
 
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+
+  // Migrated from AppShell
+  document.addEventListener("color_scheme.change", (event: Event) => {
+    const customEvent = event as any; // ColorSchemeConfigChange
+    const themeConfig = themeService.currentThemeConfig();
+    updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
+    document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+  });
+
+  window.addEventListener("hashchange", () => {
+    // Logic from AppShell's _handleHashChange if necessary, 
+    // but the scroll logic in domLoadedListener seems to handle the initial case.
+  });
+
+  window.addEventListener("router.change", (ev: Event) => {
+    console.info(JSON.stringify({ event: "router.change", change: (ev as any).detail }, null, 2));
+  });
+  window.addEventListener("router.back", (ev: Event) => {
+    console.info(JSON.stringify({ event: "router.back", back: (ev as any).detail }, null, 2));
+  });
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);

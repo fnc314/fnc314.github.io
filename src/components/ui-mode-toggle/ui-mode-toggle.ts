@@ -123,8 +123,6 @@ export class UiModeToggle extends LitElement {
 
           &::part(systemThreeWayLabel) {
             --dark-mode-toggle-system-icon: url("./icons/components/configs-dialog/system-filled.svg");
-
-            color: var(--icon-fill-color);
           }
         }
 
@@ -135,8 +133,6 @@ export class UiModeToggle extends LitElement {
 
           &::part(lightThreeWayLabel) {
             --dark-mode-toggle-light-icon: url("./icons/components/configs-dialog/light-mode-filled.svg");
-
-            color: var(--icon-fill-color);
           }
         }
 
@@ -147,8 +143,6 @@ export class UiModeToggle extends LitElement {
 
           &::part(darkThreeWayLabel) {
             --dark-mode-toggle-dark-icon: url("./icons/components/configs-dialog/dark-mode-filled.svg");
-
-            color: var(--icon-fill-color);
           }
         }
 
