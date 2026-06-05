@@ -12,10 +12,10 @@ import CodeJson from "@/data/code.json" with { type: "json" };
 import Connections from "@/data/connections.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { readBreakpoint } from "@/styles/breakpoints";
+import { BREAKPOINT_NAMES, type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type TemplateResult, html, nothing } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
@@ -34,18 +34,63 @@ export class BentoLayout extends LitElement {
     bentoLayoutStyles,
   ];
 
-  constructor() {
-    super();
-  }
+  /**
+   * The {@link Breakpoint} as calculated by {@link readBreakpoint}
+   *
+   * @private
+   * @type {Breakpoint}
+   */
+  @state({
+    hasChanged(value: Breakpoint, oldValue: Breakpoint): boolean {
+      console.info(
+        `
 
-  override connectedCallback() {
+        @state called
+        newValue: ${value}
+          Length: ${value?.length}
+        oldValue: ${oldValue}
+          Length: ${oldValue?.length}
+
+        `
+      );
+      if (!value?.length || !BREAKPOINT_NAMES.includes(value)) {
+        return false;
+      }
+      return value !== oldValue;
+    }
+  })
+  private _currentBreakpoint: Breakpoint = "unknown";
+
+  /**
+   * The callback passed to {@link window.addEventListener} and
+   *   {@link window.removeEventListener}
+   */
+  private _onWindowResize: () => void = () => {
+    console.info(
+      `
+      Current _breakpointLabel ${this._currentBreakpoint}
+      Read Breakpoint ${readBreakpoint()}
+      `
+    );
+    this._currentBreakpoint = readBreakpoint();
+    console.info(
+      `
+      New _breakpointLabel ${this._currentBreakpoint}
+      `
+    );
+  };
+
+  protected override connectedCallback() {
     super.connectedCallback();
+    console.info(`ConnectedCallback ${this._currentBreakpoint}`);
+    this._onWindowResize();
+    window.addEventListener("resize", this._onWindowResize);
   }
 
-  override disconnectedCallback() {
+  protected override disconnectedCallback() {
     super.disconnectedCallback();
+    window.removeEventListener("resize", this._onWindowResize);
   }
-
 
   /**
    * Retrieves the list of skills formatted for the word cloud.
@@ -69,20 +114,20 @@ export class BentoLayout extends LitElement {
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
 
     const { row, column, breakpoint }: GridPosition = config.placementForBreakpoint(
-      readBreakpoint(window.document.documentElement)
+      this._currentBreakpoint
     );
 
     console.info(
       `Inputs to 'renderBentoBox' ${
         JSON.stringify({
-          renderRoot: window.document.documentElement,
+          breakpointLabel: this._currentBreakpoint,
           config,
           breakpoint,
           row,
           column,
         })
       }`
-    )
+    );
 
     const style = html`
       <style>
@@ -100,6 +145,7 @@ export class BentoLayout extends LitElement {
         return html`
           ${style}
           <bento-card id="bio" class="card-profile-photo-bio" aria-labelledby="profile-title">
+            <h2 id="profile-bio-title" class="md-typescale-title-large">Franco N. Colaizzi</h2>
             <profile-bio-card></profile-bio-card>
           </bento-card>
         `;
@@ -238,8 +284,9 @@ export class BentoLayout extends LitElement {
   }
 
   override render() {
+    this._onWindowResize();
     return html`
-      <div class="bento-grid" role="main">
+      <div class="bento-grid" role="main" id="bento-root">
         ${BentoBoxConfigs().map(boxConfig => this.renderBentoBox(boxConfig))}
       </div>
     `;

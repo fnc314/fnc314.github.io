@@ -1,9 +1,9 @@
-import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import { themeService } from "@/services/theme/theme-service";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { LitElement, css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary A responsive card component that displays a profile photo and biography
@@ -56,7 +56,7 @@ export class ProfileBioCard extends LitElement {
       }
 
       /* Desktop/Tablet Grid (3x3) */
-      @media screen and (min-width: 737px) {
+      @media screen and (width >= 737px) {
         .profile-bio-container {
           grid-template-rows: repeat(3, 1fr);
           grid-template-columns: repeat(3, 1fr);
@@ -96,7 +96,7 @@ export class ProfileBioCard extends LitElement {
           </picture>
         </div>
         <div class="bio-text-area">
-          <h2 class="md-typescale-title-large">Biography</h2>
+          <h2 class="md-typescale-title-medium">Bio</h2>
           <div class="bio-content md-typescale-body-large">
             <p>${unsafeHTML(this.bioText)}</p>
           </div>

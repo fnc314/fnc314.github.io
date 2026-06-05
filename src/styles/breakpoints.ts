@@ -10,12 +10,8 @@ export const Breakpoints: CSSResult = css`
   @property --breakpoint-label {
     syntax: "unknown | mobile | tablet | desktop";
     inherits: true;
-    initial-value: "desktop";
+    initial-value: unknown;
   };
-
-  :root {
-    --breakpoint-label: unknown;
-  }
 
   @media screen and (width <= 736px) {
     :root {
@@ -42,6 +38,7 @@ export const Breakpoints: CSSResult = css`
  * @typedef {Breakpoint}
  */
 export type Breakpoint = "unknown" | "mobile" | "tablet" | "desktop";
+export const BREAKPOINT_NAMES: Breakpoint[] = ["unknown", "mobile", "tablet", "desktop"];
 
 /**
  * Reads from {@link window} the current value of {@link --breakpoint-label}
@@ -51,8 +48,7 @@ export type Breakpoint = "unknown" | "mobile" | "tablet" | "desktop";
  *   is invoked
  * @returns {Breakpoint}
  */
-export const readBreakpoint: (element: HTMLElement) => Breakpoint = (element: HTMLElement) => window
-  .getComputedStyle(element)
-  .getPropertyValue("--breakpoint-label")
-  .trim().replace(/"/g, "") as Breakpoint
-  ?? "mobile";
+export const readBreakpoint: () => Breakpoint = () => window
+  .getComputedStyle(window.document.documentElement)
+  .getPropertyValue("--breakpoint-label") as Breakpoint
+  ?? "unknown";

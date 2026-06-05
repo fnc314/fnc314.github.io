@@ -30,24 +30,14 @@ export const bentoLayoutStyles = css`
     .bento-grid {
       grid-template-columns: repeat(6, 1fr);
     }
-
-    bento-card {
-      grid-column: span 3;
-      grid-row: span 1;
-    }
   }
 
   /* Mobile layout (<=736px) */
   @media screen and (width <= 736px) {
     .bento-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-margin-s);
-      padding: var(--spacing-padding-s);
-    }
-
-    bento-card {
-      grid-column: span 1 !important;
-      grid-row: span 1 !important;
+      gap: var(--spacing-margin-xs);
+      padding: var(--spacing-padding-xxs);
     }
   }
 
