@@ -32,6 +32,8 @@ export class SettingsCard extends LitElement {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-margin-s);
+        height: 100%;
+        justify-content: space-between;
       }
 
       .form-field {
@@ -77,34 +79,10 @@ export class SettingsCard extends LitElement {
     year: "numeric",
   }).format(time);
 
-  @state()
-  private _debugFont: "roboto" | "inter" = (localStorage.getItem("debugger:font") as "roboto" | "inter") || "roboto";
-
-  @state()
-  private _debugIcons: "outlined" | "sharp" = (localStorage.getItem("debugger:icons") as "outlined" | "sharp") || "outlined";
-
   override connectedCallback() {
     super.connectedCallback();
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
-    // Apply initial debugger configurations to body/documentElement
-    document.body.setAttribute("data-debug-font", this._debugFont);
-    document.body.setAttribute("data-debug-icons", this._debugIcons);
   }
-
-  private _toggleDebugFont() {
-    const nextFont = this._debugFont === "roboto" ? "inter" : "roboto";
-    this._debugFont = nextFont;
-    localStorage.setItem("debugger:font", nextFont);
-    document.body.setAttribute("data-debug-font", nextFont);
-  }
-
-  private _toggleDebugIcons() {
-    const nextIcons = this._debugIcons === "outlined" ? "sharp" : "outlined";
-    this._debugIcons = nextIcons;
-    localStorage.setItem("debugger:icons", nextIcons);
-    document.body.setAttribute("data-debug-icons", nextIcons);
-  }
-
 
   override disconnectedCallback() {
     super.disconnectedCallback();
@@ -185,26 +163,6 @@ export class SettingsCard extends LitElement {
             </select>
         </div>
         <ui-mode-toggle></ui-mode-toggle>
-
-        <div class="debugger-row">
-          <span class="md-typescale-label-medium">Debugger Font:</span>
-          <button
-            class="debugger-toggle ${this._debugFont === "inter" ? "active" : ""}"
-            @click=${this._toggleDebugFont}
-          >
-            Inter
-          </button>
-        </div>
-
-        <div class="debugger-row">
-          <span class="md-typescale-label-medium">Debugger Icons:</span>
-          <button
-            class="debugger-toggle ${this._debugIcons === "sharp" ? "active" : ""}"
-            @click=${this._toggleDebugIcons}
-          >
-            Sharp
-          </button>
-        </div>
 
         <div class="version-tag">
           <div>Version: ${buildVersion} (Built: ${this.formattedDate})</div>

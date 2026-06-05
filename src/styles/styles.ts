@@ -2,7 +2,7 @@ import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
 import { THEME_CONFIGS } from "@/theme/theme";
 import { CONFIG_COLOR_SCHEME_NAMES, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
-import { type CSSResult, css } from "lit";
+import { type CSSResult } from "lit";
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
@@ -28,14 +28,3 @@ export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result:
   MaterialCSSStyleSheet.replaceSync(result.cssText);
 
 export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
-
-export const Breakpoints: CSSResult = css`
-  :host {
-    --breakpoint-mobile-max: 736px;
-    --breakpoint-tablet-max: 1200px;
-    --breakpoint-compact-width-max: 600px;
-    --breakpoint-medium-width-max: 900px;
-    --breakpoint-large-width-max: 1200px;
-    --breakpoint-expanded-width-max: 1800px;
-  }
-`;

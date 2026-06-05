@@ -68,19 +68,3 @@ body {
     }
   }
 }
-
-[data-debug-font="inter"] {
-  --md-ref-typeface-plain: 'Inter', sans-serif;
-  --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-body-medium-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-body-small-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-label-large-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-label-medium-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-label-small-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-title-medium-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-title-small-font: var(--md-ref-typeface-plain);
-}
-
-[data-debug-icons="sharp"] {
-  --md-icon-font: "Material Symbols Sharp" !important;
-}

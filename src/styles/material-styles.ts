@@ -16,7 +16,7 @@ export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 export const MaterialOverrides: CSSResult = css`
   :root {
     --md-ref-typeface-brand: monospace;
-    --md-ref-typeface-plain: roboto, sans-serif;
+    --md-ref-typeface-plain: inter, sans-serif;
     --md-ref-typeface-weight-regular: 400;
     --md-ref-typeface-weight-medium: 500;
     --md-ref-typeface-weight-bold: 700;
