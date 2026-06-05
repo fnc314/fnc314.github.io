@@ -19,7 +19,6 @@ import "@/services/router/router-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service";
-import { spacingTokens } from "@/styles/spacing";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
 import "@/types/configs/fab-configs";
@@ -55,10 +54,6 @@ const domLoadedListener = () => {
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  }
-
-  if (spacingTokens.styleSheet) {
-    document.adoptedStyleSheets.push(spacingTokens.styleSheet);
   }
 
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);

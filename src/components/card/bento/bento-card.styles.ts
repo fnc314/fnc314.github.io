@@ -55,4 +55,10 @@ export const bentoCardStyles = css`
       padding-bottom: var(--spacing-padding-xs);
     }
   }
+
+  .scrollable {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: var(--spacing-padding-xs);
+  }
 `;

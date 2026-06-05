@@ -1,5 +1,6 @@
 @import url("./stylesheets/material-overrides.css");
 @import url("./stylesheets/breakpoints.css");
+@import url("./stylesheets/spacing.css");
 
 :root {
   color-scheme: light dark;
@@ -19,8 +20,8 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: var(--spacing-reset);
+  padding: var(--spacing-reset);
   box-sizing: border-box;
   transition:
     stroke var(--color-transition-duration) var(--color-transition-timing),

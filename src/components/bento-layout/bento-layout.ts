@@ -1,89 +1,79 @@
-import { bentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
+import { css, LitElement, type TemplateResult, html, nothing } from "lit";
+import { customElement, state } from "lit/decorators.js";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
-import { type BlogPostJson } from "@/components/blog/blog-post";
+import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
+import { MaterialTypescaleStyles } from "@/styles/material-styles";
+
+// New components
 import "@/components/card/bento/bento-card";
 import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
-import "@/components/ui-mode-toggle/ui-mode-toggle";
-import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
-import { data as WorkJson } from "@/components/work-experience/work-experience.types";
-import BlogJson from "@/data/blog.json" with { type: "json" };
-import CodeJson from "@/data/code.json" with { type: "json" };
-import Connections from "@/data/connections.json" with { type: "json" };
-import EducationJson from "@/data/education.json" with { type: "json" };
-import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { LitElement, type TemplateResult, html, nothing } from "lit";
-import { customElement, state } from "lit/decorators.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import "@/components/card/skills/skills-card";
+import "@/components/card/education/education-card";
+import "@/components/card/connect/connect-card";
+import "@/components/card/work/work-card";
+import "@/components/card/code/code-card";
+import "@/components/card/blog/blog-card";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
  *   Consolidates profile photo, bio, configurations, contact info, skills, education,
  *   work experience, code projects, and blog posts into individual grid cards.
- *   Provides inline theme adjustments and design comparison controls.
  *
  * @element bento-layout
  */
 @customElement("bento-layout")
 export class BentoLayout extends LitElement {
-  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
-    bentoLayoutStyles,
+    css`
+      :host {
+        display: block;
+        width: 100%;
+        color: var(--md-sys-color-on-surface);
+        background-color: var(--md-sys-color-surface);
+        padding-bottom: var(--spacing-padding-xl);
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--spacing-margin-l);
+        width: 100%;
+        max-width: 1400px;
+        margin: var(--spacing-reset) auto;
+        padding: var(--spacing-padding-m);
+        grid-auto-flow: dense;
+      }
+
+      @media screen and ((width <= 1200px) and (width >= 737px)) {
+        .bento-grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+
+      @media screen and (width <= 736px) {
+        .bento-grid {
+          grid-template-columns: 1fr;
+          gap: var(--spacing-margin-xs);
+          padding: var(--spacing-padding-xxs);
+        }
+      }
+    `
   ];
 
-  /**
-   * The {@link Breakpoint} as calculated by {@link readBreakpoint}
-   *
-   * @private
-   * @type {Breakpoint}
-   */
   @state()
   private _currentBreakpoint: Breakpoint = readBreakpoint();
-  set currentBreakpoint(value: Breakpoint) {
-    console.log(
-      `
-      SETTER
-
-      Current ${this._currentBreakpoint}
-      New ${value}
-      `
-    );
-    this._currentBreakpoint = value;
-  }
-
+  
   @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
-  set bentoBoxConfigs(value: BentoBoxConfig[]) {
-    this._bentoBoxConfigs = value;
-  }
 
-  /**
-   * The callback passed to {@link window.addEventListener} and
-   *   {@link window.removeEventListener}
-   */
-  private _onWindowResize: () => void = () => {
-    console.info(
-      `
-      onWindowResize
-      Current _breakpointLabel ${this._currentBreakpoint}
-      Read Breakpoint ${readBreakpoint()}
-      `
-    );
+  private _onWindowResize = () => {
     this._currentBreakpoint = readBreakpoint();
-    console.info(
-      `
-      onWindowResize
-      New _breakpointLabel ${this._currentBreakpoint}
-      `
-    );
   };
 
   override connectedCallback() {
     super.connectedCallback();
-    console.info(`ConnectedCallback ${this._currentBreakpoint}`);
     this._onWindowResize();
     window.addEventListener("resize", this._onWindowResize);
   }
@@ -93,45 +83,10 @@ export class BentoLayout extends LitElement {
     window.removeEventListener("resize", this._onWindowResize);
   }
 
-  /**
-   * Retrieves the list of skills formatted for the word cloud.
-   *
-   * @private
-   * @memberof BentoLayout
-   */
-  private getSkillsForWordCloud() {
-    return Object.keys(SkillsJson.skills).flatMap((proficiency) =>
-      Object.entries(SkillsJson.skills[proficiency as keyof typeof SkillsJson.skills]).map(([word, weight]) =>
-        makeWordCloudWord(word, weight as Weights, proficiency as WordCloudWordCategory),
-      ),
-    );
-  }
-
-  /**
-   * Centralized method to render a bento box card based on its type and configuration.
-   * @param config - The configuration for the bento box
-   * @returns A TemplateResult representing the rendered bento box.
-   */
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
-
-    const { row, column, breakpoint }: GridPosition = config.placementForBreakpoint(
+    const { row, column }: GridPosition = config.placementForBreakpoint(
       readBreakpoint()
     );
-
-    console.info(
-      `Inputs to 'renderBentoBox' ${
-        JSON.stringify({
-          breakpointLabel: this._currentBreakpoint,
-          read: readBreakpoint(),
-          config,
-          breakpoint,
-          row,
-          column,
-        })
-      }`
-    );
-
-    this._currentBreakpoint = breakpoint;
 
     const style = html`
       <style>
@@ -144,147 +99,37 @@ export class BentoLayout extends LitElement {
       </style>
     `;
 
+    let cardContent: TemplateResult;
     switch (config.type) {
       case "profile-photo-bio":
-        return html`
-          ${style}
-          <bento-card id="bio" class="card-profile-photo-bio" aria-labelledby="profile-title">
-            <h2 id="profile-bio-title" class="md-typescale-title-large">Franco N. Colaizzi</h2>
-            <profile-bio-card></profile-bio-card>
-          </bento-card>
-        `;
-
+        cardContent = html`<profile-bio-card></profile-bio-card>`;
+        break;
       case "skills":
-        return html`
-          ${style}
-          <bento-card class="card-skills" aria-labelledby="skills-title">
-            <h2 id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
-            <word-cloud
-              .words=${this.getSkillsForWordCloud()}
-              instant-clear
-              grouping="quartile"
-              sorting="by-alphabet"
-              appearance="sequential"
-              delay="50"
-              threshold="0.05"
-            ></word-cloud>
-          </bento-card>
-        `;
-
+        cardContent = html`<skills-card></skills-card>`;
+        break;
       case "education":
-        return html`
-          ${style}
-          <bento-card class="card-education" aria-labelledby="education-title">
-            <h2 id="education-title" class="md-typescale-title-large">Education</h2>
-            <ul class="education-list">
-              ${EducationJson.education.map(
-                (edu) => html`
-                  <li class="education-item">
-                    <span class="md-typescale-title-medium">${edu.institute}</span>
-                    <span class="md-typescale-body-medium">${edu.location}</span>
-                    <span class="md-typescale-title-small">${edu.degree}</span>
-                    <span class="md-typescale-body-small">${edu.graduationDate.label}</span>
-                  </li>
-                `,
-              )}
-            </ul>
-          </bento-card>
-        `;
-
+        cardContent = html`<education-card></education-card>`;
+        break;
       case "settings":
-        return html`
-          ${style}
-          <bento-card id="settings" class="card-settings" aria-labelledby="configs-title">
-            <h2 id="configs-title" class="md-typescale-title-large">App Settings</h2>
-            <settings-card></settings-card>
-          </bento-card>
-        `;
-
+        cardContent = html`<settings-card></settings-card>`;
+        break;
       case "connect":
-        return html`
-          ${style}
-          <bento-card id="connect" class="card-connect" aria-labelledby="connect-title">
-            <h2 id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
-            <div class="connections-list">
-              ${Connections.connections.map(
-                (category) => html`
-                  <span class="md-typescale-title-small" style="margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary)">
-                    ${category.label}
-                  </span>
-                  ${Object.values(category.connections).map(
-                    (conn) => html`
-                      <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
-                        ${unsafeHTML(conn.text)}
-                      </a>
-                    `,
-                  )}
-                `,
-              )}
-            </div>
-          </bento-card>
-        `;
-
+        cardContent = html`<connect-card></connect-card>`;
+        break;
       case "work":
-        return html`
-          ${style}
-          <bento-card id="work" class="card-work" aria-labelledby="work-title">
-            <h2 id="work-title" class="md-typescale-title-large">Work History</h2>
-            <div class="scrollable-list">
-              ${WorkJson.experiences.map(
-                (exp) => html`
-                  <work-experience
-                    .isNested="${false}"
-                    .experienceOrg="${exp.employer}"
-                    .experienceRole="${exp.role}"
-                    .experienceSummary="${exp.summary}"
-                    .dateStart="${exp.dates.start}"
-                    .dateEnd="${exp.dates.end}"
-                    .jobs="${exp.jobs}"
-                    .summaries="${exp.summaries ?? []}"
-                  ></work-experience>
-                `,
-              )}
-            </div>
-          </bento-card>
-        `;
-
+        cardContent = html`<work-card></work-card>`;
+        break;
       case "code":
-        return html`
-          ${style}
-          <bento-card id="code" class="card-code" aria-labelledby="code-title">
-            <h2 id="code-title" class="md-typescale-title-large">Code Projects</h2>
-            <div class="scrollable-list">
-              ${CodeJson.projects.map(
-                (p) => html`
-                  <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
-                    <code-project .codeProject="${p}"></code-project>
-                  </div>
-                `,
-              )}
-            </div>
-          </bento-card>
-        `;
-
+        cardContent = html`<code-card></code-card>`;
+        break;
       case "blog":
-        return html`
-          ${style}
-          <bento-card id="blog" class="card-blog" aria-labelledby="blog-title">
-            <h2 id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
-            <div class="scrollable-list">
-              ${BlogJson.posts.map(
-                (post: BlogPostJson) => html`
-                  <div style="display: block; margin-bottom: var(--spacing-margin-xs);">
-                    <blog-post .blogPost=${post}></blog-post>
-                  </div>
-                `,
-              )}
-            </div>
-          </bento-card>
-        `;
-
+        cardContent = html`<blog-card></blog-card>`;
+        break;
       default:
         return html`${nothing}`;
     }
+
+    return html`${style}<div class="card-${config.type}">${cardContent}</div>`;
   }
 
   override render() {

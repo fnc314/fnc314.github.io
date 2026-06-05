@@ -1,17 +1,15 @@
 import BioJson from "@/data/bio.json" with { type: "json" };
-import { themeService } from "@/services/theme/theme-service";
+import PhotoJson from "@/data/photo.json" with { type: "json" };
+import { configsService } from "@/services/configs/configs-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
- * @summary A responsive card component that displays a profile photo and biography
- *          using an internal grid layout for optimal space distribution.
+ * @summary A responsive card component that displays a profile photo and biography.
  *
  * @element profile-bio-card
- * @property {Object} themePhoto - An object containing `src`, `alt`, and `figcaption` for the profile picture.
- * @property {string} bioText - The biography text to display.
  */
 @customElement("profile-bio-card")
 export class ProfileBioCard extends LitElement {
@@ -23,85 +21,73 @@ export class ProfileBioCard extends LitElement {
         height: 100%;
       }
 
-      /* Base Mobile Grid (3x2: Row x Column) */
       .profile-bio-container {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-margin-s);
-        height: 100%;
-      }
-
-      .profile-photo-area {
-        grid-row: span 2;
-        grid-column: span 2;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: var(--spacing-margin-s);
       }
 
       .profile-picture {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        max-height: 300px;
+        object-fit: contain;
         border-radius: var(--md-sys-shape-corner-medium);
         border: 2px solid var(--md-sys-color-primary);
       }
-
-      .bio-text-area {
-        grid-row: span 1;
-        grid-column: span 2;
-        overflow-y: auto;
-      }
-
-      /* Desktop/Tablet Grid (3x3) */
-      @media screen and (width >= 737px) {
-        .profile-bio-container {
-          grid-template-rows: repeat(3, 1fr);
-          grid-template-columns: repeat(3, 1fr);
-        }
-
-        .profile-photo-area {
-          grid-row: span 2;
-          grid-column: span 3;
-        }
-
-        .bio-text-area {
-          grid-row: span 1;
-          grid-column: span 3;
-        }
+      
+      .profile-figcaption {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-small-size);
+        text-align: center;
+        margin-top: var(--spacing-margin-xs);
       }
     `,
   ];
 
   @property({ type: Object })
-  themePhoto = themeService.currentThemeConfig().themePhoto;
+  private _photoData = PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson];
 
   @property({ type: String })
   bioText: string = BioJson.bio;
 
+  override connectedCallback() {
+    super.connectedCallback();
+    configsService.addEventListener("app-configs.change", this._onConfigChange);
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback();
+    configsService.removeEventListener("app-configs.change", this._onConfigChange);
+  }
+
+  private _onConfigChange = () => {
+    const themeName = configsService.loadConfigs().colorScheme.theme;
+    this._photoData = PhotoJson[themeName as keyof typeof PhotoJson];
+    this.requestUpdate();
+  };
+
   override render() {
     return html`
-      <div class="profile-bio-container">
-        <div class="profile-photo-area">
-          <picture>
-            <source srcset=${this.themePhoto.src} type="image/jpeg" />
+      <bento-card class="profile-bio-wrapper" aria-labelledby="profile-title" scrollable>
+        <h2 id="profile-title" class="md-typescale-title-large">Franco N. Colaizzi</h2>
+        <div class="profile-bio-container">
+          <figure>
             <img
               class="profile-picture"
               loading="lazy"
-              src=${this.themePhoto.src}
-              alt=${this.themePhoto.alt}
+              src=${this._photoData.src}
+              alt=${this._photoData.alt}
             />
-          </picture>
-        </div>
-        <div class="bio-text-area">
-          <h2 class="md-typescale-title-medium">Bio</h2>
-          <div class="bio-content md-typescale-body-large">
-            <p>${unsafeHTML(this.bioText)}</p>
+            <figcaption class="profile-figcaption">${this._photoData.figcaption}</figcaption>
+          </figure>
+          <div class="bio-text-area">
+            <h3 class="md-typescale-title-medium">Bio</h3>
+            <div class="bio-content md-typescale-body-large">
+              <p>${unsafeHTML(this.bioText)}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </bento-card>
     `;
   }
 }

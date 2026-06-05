@@ -19,6 +19,9 @@ Refactor `@src/components/bento-layout/bento-layout.ts` to delegate the content 
   - Include unit tests using `@open-wc/testing`.
 - Update `BentoLayout.renderBentoBox` to use these new components instead of rendering content inline.
 - Enhance `bento-card` to include any scrolling styles like `.scrollable-list`
+- For each `card` being built, devise scalable experiences to make the single-column mobile layout more appealing and usable.  This means cut down on the nested scrolling, or introduce horizontal scrolling for things like `code-card` or `blog-card`.
+- For any `*-card`, make sure that the `scrollable` logic is in sync with the `bento-card`, structurally and that the *content* of a `bento-card` takes up most of the `bento-card` (look at `settings-card` for a good idea of space distribution).
+- Review the theme switching mechanism and determine why the `profile-bio-card` does *not* update the image upon theme change.  This worked before.
 
 ## Technical Considerations
 
