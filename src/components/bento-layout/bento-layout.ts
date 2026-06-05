@@ -1,6 +1,7 @@
 import { bentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type BlogPostJson } from "@/components/blog/blog-post";
+import "@/components/card/bento/bento-card";
 import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
@@ -11,7 +12,7 @@ import CodeJson from "@/data/code.json" with { type: "json" };
 import Connections from "@/data/connections.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { Breakpoints, readBreakpoint } from "@/styles/breakpoints";
+import { readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type TemplateResult, html, nothing } from "lit";
 import { customElement } from "lit/decorators.js";
@@ -29,7 +30,6 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 export class BentoLayout extends LitElement {
   /** {@link lit!css} */
   static override styles = [
-    Breakpoints,
     MaterialTypescaleStyles,
     bentoLayoutStyles,
   ];
@@ -99,15 +99,15 @@ export class BentoLayout extends LitElement {
       case "profile-photo-bio":
         return html`
           ${style}
-          <section id="bio" class="bento-card card-profile-photo-bio" aria-labelledby="profile-title">
+          <bento-card id="bio" class="card-profile-photo-bio" aria-labelledby="profile-title">
             <profile-bio-card></profile-bio-card>
-          </section>
+          </bento-card>
         `;
 
       case "skills":
         return html`
           ${style}
-          <section class="bento-card card-skills" aria-labelledby="skills-title">
+          <bento-card class="card-skills" aria-labelledby="skills-title">
             <h2 id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
             <word-cloud
               .words=${this.getSkillsForWordCloud()}
@@ -118,13 +118,13 @@ export class BentoLayout extends LitElement {
               delay="50"
               threshold="0.05"
             ></word-cloud>
-          </section>
+          </bento-card>
         `;
 
       case "education":
         return html`
           ${style}
-          <section class="bento-card card-education" aria-labelledby="education-title">
+          <bento-card class="card-education" aria-labelledby="education-title">
             <h2 id="education-title" class="md-typescale-title-large">Education</h2>
             <ul class="education-list">
               ${EducationJson.education.map(
@@ -138,22 +138,22 @@ export class BentoLayout extends LitElement {
                 `,
               )}
             </ul>
-          </section>
+          </bento-card>
         `;
 
       case "settings":
         return html`
           ${style}
-          <section id="settings" class="bento-card card-settings" aria-labelledby="configs-title">
+          <bento-card id="settings" class="card-settings" aria-labelledby="configs-title">
             <h2 id="configs-title" class="md-typescale-title-large">App Settings</h2>
             <settings-card></settings-card>
-          </section>
+          </bento-card>
         `;
 
       case "connect":
         return html`
           ${style}
-          <section id="connect" class="bento-card card-connect" aria-labelledby="connect-title">
+          <bento-card id="connect" class="card-connect" aria-labelledby="connect-title">
             <h2 id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
             <div class="connections-list">
               ${Connections.connections.map(
@@ -171,13 +171,13 @@ export class BentoLayout extends LitElement {
                 `,
               )}
             </div>
-          </section>
+          </bento-card>
         `;
 
       case "work":
         return html`
           ${style}
-          <section id="work" class="bento-card card-work" aria-labelledby="work-title">
+          <bento-card id="work" class="card-work" aria-labelledby="work-title">
             <h2 id="work-title" class="md-typescale-title-large">Work History</h2>
             <div class="scrollable-list">
               ${WorkJson.experiences.map(
@@ -195,13 +195,13 @@ export class BentoLayout extends LitElement {
                 `,
               )}
             </div>
-          </section>
+          </bento-card>
         `;
 
       case "code":
         return html`
           ${style}
-          <section id="code" class="bento-card card-code" aria-labelledby="code-title">
+          <bento-card id="code" class="card-code" aria-labelledby="code-title">
             <h2 id="code-title" class="md-typescale-title-large">Code Projects</h2>
             <div class="scrollable-list">
               ${CodeJson.projects.map(
@@ -212,13 +212,13 @@ export class BentoLayout extends LitElement {
                 `,
               )}
             </div>
-          </section>
+          </bento-card>
         `;
 
       case "blog":
         return html`
           ${style}
-          <section id="blog" class="bento-card card-blog" aria-labelledby="blog-title">
+          <bento-card id="blog" class="card-blog" aria-labelledby="blog-title">
             <h2 id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
             <div class="scrollable-list">
               ${BlogJson.posts.map(
@@ -229,7 +229,7 @@ export class BentoLayout extends LitElement {
                 `,
               )}
             </div>
-          </section>
+          </bento-card>
         `;
 
       default:

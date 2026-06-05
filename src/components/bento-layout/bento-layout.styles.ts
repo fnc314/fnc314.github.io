@@ -25,48 +25,13 @@ export const bentoLayoutStyles = css`
     grid-auto-flow: dense;
   }
 
-  /* Bento Card base styling with premium glassmorphism and animations */
-  .bento-card {
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: var(--md-sys-shape-corner-large);
-    background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%);
-    backdrop-filter: blur(12px);
-    border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
-    padding: var(--spacing-padding-m);
-    transition:
-      transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.25s ease,
-      border-color 0.25s ease,
-      background-color 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-margin-s);
-    box-shadow: var(--md-elevation-level-1);
-  }
-
-  .bento-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--md-elevation-level-3);
-    border-color: var(--md-sys-color-outline);
-    background-color: var(--md-sys-color-surface-container-high);
-  }
-
-  .bento-card h2 {
-    margin: var(--spacing-reset);
-    color: var(--md-sys-color-primary);
-    font-family: var(--md-ref-typeface-brand);
-    border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
-    padding-bottom: var(--spacing-padding-xs);
-  }
-
   /* Tablet Grid assignments (737px to 1200px) */
   @media screen and ((width <= 1200px) and (width >= 737px)) {
     .bento-grid {
       grid-template-columns: repeat(6, 1fr);
     }
 
-    .bento-card {
+    bento-card {
       grid-column: span 3;
       grid-row: span 1;
     }
@@ -75,12 +40,12 @@ export const bentoLayoutStyles = css`
   /* Mobile layout (<=736px) */
   @media screen and (width <= 736px) {
     .bento-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-margin-s);
       padding: var(--spacing-padding-s);
     }
 
-    .bento-card {
+    bento-card {
       grid-column: span 1 !important;
       grid-row: span 1 !important;
     }
