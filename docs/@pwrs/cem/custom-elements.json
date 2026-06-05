@@ -140,22 +140,46 @@
           },
           "members": [
             {
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "Breakpoint"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "Breakpoint"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "name": "hasChanged",
+              "kind": "method"
+            },
+            {
+              "name": "_onWindowResize",
+              "description": "The callback passed to {@link window.addEventListener} and\n{@link window.removeEventListener}",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
               "name": "getSkillsForWordCloud",
+              "description": "Retrieves the list of skills formatted for the word cloud.",
               "kind": "method",
               "privacy": "private"
             },
             {
               "parameters": [
                 {
-                  "name": "box",
-                  "type": {
-                    "text": "BentoBoxConfig[\"type\"]"
-                  }
-                },
-                {
                   "name": "config",
                   "type": {
-                    "text": "{ columnSpan?: number; rowSpan?: number }"
+                    "text": "BentoBoxConfig"
                   }
                 }
               ],
@@ -171,102 +195,10 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L47"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L30"
           },
           "kind": "class",
           "tagName": "bento-layout",
-          "cssProperties": [
-            {
-              "name": "--spacing-padding-xl"
-            },
-            {
-              "name": "--spacing-margin-l"
-            },
-            {
-              "name": "--md-sys-shape-corner-large"
-            },
-            {
-              "name": "--md-sys-color-surface-container-low"
-            },
-            {
-              "name": "--spacing-padding-m"
-            },
-            {
-              "name": "--md-elevation-level-1"
-            },
-            {
-              "name": "--md-elevation-level-3"
-            },
-            {
-              "name": "--md-sys-color-surface-container-high"
-            },
-            {
-              "name": "--md-ref-typeface-brand"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--spacing-reset"
-            },
-            {
-              "name": "--spacing-padding-s"
-            },
-            {
-              "name": "--spacing-margin-xxs"
-            },
-            {
-              "name": "--md-sys-typescale-label-large-size"
-            },
-            {
-              "name": "--hairline-width"
-            },
-            {
-              "name": "--md-sys-color-surface"
-            },
-            {
-              "name": "--md-sys-color-on-surface"
-            },
-            {
-              "name": "--spacing-margin-xs"
-            },
-            {
-              "name": "--spacing-padding-xxs"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
-            },
-            {
-              "name": "--md-sys-typescale-label-medium-size"
-            },
-            {
-              "name": "--md-sys-color-primary"
-            },
-            {
-              "name": "--md-sys-color-on-primary"
-            },
-            {
-              "name": "--spacing-margin-s"
-            },
-            {
-              "name": "--md-sys-shape-corner-full"
-            },
-            {
-              "name": "--md-sys-color-outline"
-            },
-            {
-              "name": "--md-sys-typescale-body-small-size"
-            },
-            {
-              "name": "--md-sys-color-on-surface-variant"
-            },
-            {
-              "name": "--md-sys-color-outline-variant"
-            },
-            {
-              "name": "--spacing-padding-xs"
-            }
-          ],
           "customElement": true
         }
       ],
@@ -316,6 +248,30 @@
     {
       "kind": "javascript-module",
       "path": "src/components/bento-layout/bento-layout.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.types.js",
+      "declarations": [
+        {
+          "name": "BentoBoxConfigs",
+          "description": "Produces an {@link Array} of {@link BentoBoxConfig} instances used to populate\n{@link BentoLayout}.",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L52"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BentoBoxConfigs",
+          "declaration": {
+            "name": "BentoBoxConfigs",
+            "module": "src/components/bento-layout/bento-layout.types.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -406,6 +362,78 @@
     {
       "kind": "javascript-module",
       "path": "src/components/blog/blog-post.types.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.js",
+      "declarations": [
+        {
+          "name": "BentoCard",
+          "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted `h2` elements as section headers.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.ts#L22"
+          },
+          "kind": "class",
+          "tagName": "bento-card",
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bento-card",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BentoCard",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.styles.js",
+      "declarations": [
+        {
+          "name": "bentoCardStyles",
+          "summary": "Styles for the BentoCard component.\n\nImplements glassmorphism using `backdrop-filter` and semi-transparent background colors\nderived from Material Design 3 surface tokens. Provides interaction feedback via\nCSS transitions on hover, including elevation (shadow), border color shifts, and translation.\n\nIncludes specific styling for slotted `h2` elements to ensure visual consistency\nfor section headers within the bento grid layout.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.styles.ts#L15"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoCardStyles",
+          "declaration": {
+            "name": "bentoCardStyles",
+            "module": "src/components/card/bento/bento-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.test.js"
     },
     {
       "kind": "javascript-module",
@@ -506,21 +534,12 @@
           "members": [
             {
               "name": "formattedDate",
+              "description": "Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}\non {@link time} to render the user presented timestamp",
               "type": {
                 "text": "string"
               },
-              "default": "new Intl.DateTimeFormat(navigator.languages, {\\n    month: \"2-digit\",\\n    day: \"2-digit\",\\n    year: \"numeric\",\\n  }).format(time)",
+              "default": "new Intl.DateTimeFormat(\\n    navigator.languages,\\n    {\\n      hour: \"2-digit\",\\n      minute: \"2-digit\",\\n      second: \"2-digit\",\\n      month: \"2-digit\",\\n      day: \"2-digit\",\\n      year: \"numeric\",\\n    }\\n  ).format(time)",
               "kind": "field",
-              "privacy": "private"
-            },
-            {
-              "name": "_toggleDebugFont",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "name": "_toggleDebugIcons",
-              "kind": "method",
               "privacy": "private"
             },
             {
@@ -608,6 +627,9 @@
             },
             {
               "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-size"
             },
             {
               "name": "--md-sys-typescale-body-small-size"
@@ -2032,6 +2054,42 @@
               "default": "1rem"
             },
             {
+              "name": "--md-sys-typescale-headline-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-headline-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-size"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-line-height"
+            },
+            {
               "name": "--spacing-padding-xxs"
             },
             {
@@ -2570,6 +2628,9 @@
               "name": "--md-ref-typeface-weight-bold"
             },
             {
+              "name": "--md-sys-typescale-title-small-size"
+            },
+            {
               "name": "--spacing-padding-xs"
             },
             {
@@ -2753,6 +2814,9 @@
             },
             {
               "name": "--spacing-padding-xs"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-size"
             },
             {
               "name": "--md-ref-typeface-brand"
@@ -3116,27 +3180,66 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/styles/components/dialog/dialog.js",
+      "path": "src/styles/breakpoints.js",
       "declarations": [
         {
-          "name": "DialogSizing",
-          "description": "Sizing for \\`\u003cmd-dialog\u003e\\`s",
+          "name": "Breakpoints",
+          "description": "The {@link CSSResult} dedicated, explicitly, to the\n{@link --breakpoint-label} custom CSS `@property`",
           "type": {
             "text": "CSSResult"
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/components/dialog/dialog.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L9"
+          }
+        },
+        {
+          "name": "BREAKPOINT_NAMES",
+          "type": {
+            "text": ": Breakpoint[]"
+          },
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L41"
+          }
+        },
+        {
+          "return": {
+            "type": {
+              "text": "Breakpoint"
+            }
+          },
+          "name": "readBreakpoint",
+          "description": "Reads from {@link window} the current value of {@link --breakpoint-label}\nCSS `@property`",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L51"
           }
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "DialogSizing",
+          "name": "Breakpoints",
           "declaration": {
-            "name": "DialogSizing",
-            "module": "src/styles/components/dialog/dialog.js"
+            "name": "Breakpoints",
+            "module": "src/styles/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINT_NAMES",
+          "declaration": {
+            "name": "BREAKPOINT_NAMES",
+            "module": "src/styles/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "readBreakpoint",
+          "declaration": {
+            "name": "readBreakpoint",
+            "module": "src/styles/breakpoints.js"
           }
         }
       ]
@@ -3221,16 +3324,6 @@
           }
         },
         {
-          "name": "Breakpoints",
-          "type": {
-            "text": ": CSSResult"
-          },
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L32"
-          }
-        },
-        {
           "parameters": [
             {
               "name": "event",
@@ -3283,14 +3376,6 @@
           "name": "MaterialCSSStyleSheet",
           "declaration": {
             "name": "MaterialCSSStyleSheet",
-            "module": "src/styles/styles.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Breakpoints",
-          "declaration": {
-            "name": "Breakpoints",
             "module": "src/styles/styles.js"
           }
         }

@@ -6,7 +6,7 @@
 
 # Class: BentoLayout
 
-Defined in: [src/components/bento-layout/bento-layout.ts:47](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L47)
+Defined in: [src/components/bento-layout/bento-layout.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30)
 
 ## Element
 
@@ -26,7 +26,7 @@ bento-layout
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/bento-layout/bento-layout.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L49)
+Defined in: [src/components/bento-layout/bento-layout.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L32)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -36,25 +36,54 @@ Defined in: [src/components/bento-layout/bento-layout.ts:49](https://github.com/
 
 ---
 
+### \_currentBreakpoint
+
+&gt; `private` **\_currentBreakpoint**: [`Breakpoint`](../../../../styles/breakpoints/Breakpoint/README.md) = `"unknown"`
+
+Defined in: [src/components/bento-layout/bento-layout.ts:62](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L62)
+
+The [Breakpoint](../../../../styles/breakpoints/Breakpoint/README.md) as calculated by [readBreakpoint](../../../../styles/breakpoints/readBreakpoint/README.md)
+
+---
+
+### \_onWindowResize
+
+&gt; `private` **\_onWindowResize**: () =&gt; `void`
+
+Defined in: [src/components/bento-layout/bento-layout.ts:68](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L68)
+
+The callback passed to window.addEventListener and
+window.removeEventListener
+
+#### Returns
+
+`void`
+
+---
+
 ### getSkillsForWordCloud()
 
 &gt; `private` **getSkillsForWordCloud**(): `WordCloudWord`[]
 
-Defined in: [src/components/bento-layout/bento-layout.ts:300](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L300)
+Defined in: [src/components/bento-layout/bento-layout.ts:101](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L101)
 
-Helper for skills
+Retrieves the list of skills formatted for the word cloud.
 
 #### Returns
 
 `WordCloudWord`[]
 
+#### Memberof
+
+BentoLayout
+
 ---
 
 ### renderBentoBox()
 
-&gt; `private` **renderBentoBox**(`box`: `"work"` \| `"code"` \| `"blog"` \| `"profile-photo-bio"` \| `"settings"` \| `"connect"` \| `"education"` \| `"skills"`, `config`: \{ `columnSpan?`: `number`; `rowSpan?`: `number`; \}): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
+&gt; `private` **renderBentoBox**(`config`: [`BentoBoxConfig`](../../bento-layout.types/BentoBoxConfig/README.md)): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/bento-layout/bento-layout.ts:314](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L314)
+Defined in: [src/components/bento-layout/bento-layout.ts:114](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L114)
 
 Centralized method to render a bento box card based on its type and configuration.
 
@@ -72,68 +101,17 @@ Centralized method to render a bento box card based on its type and configuratio
 <tr>
 <td>
 
-`box`
-
-</td>
-<td>
-
-`"work"` \| `"code"` \| `"blog"` \| `"profile-photo-bio"` \| `"settings"` \| `"connect"` \| `"education"` \| `"skills"`
-
-</td>
-<td>
-
-The type of bento box to render.
-
-</td>
-</tr>
-<tr>
-<td>
-
 `config`
 
 </td>
 <td>
 
-\{ `columnSpan?`: `number`; `rowSpan?`: `number`; \}
+[`BentoBoxConfig`](../../bento-layout.types/BentoBoxConfig/README.md)
 
 </td>
 <td>
 
-The grid configuration for the bento box (columnSpan, rowSpan).
-
-</td>
-</tr>
-<tr>
-<td>
-
-`config.columnSpan?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-‐
-
-</td>
-</tr>
-<tr>
-<td>
-
-`config.rowSpan?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-‐
+The configuration for the bento box
 
 </td>
 </tr>
@@ -152,7 +130,7 @@ A TemplateResult representing the rendered bento box.
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:290](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L290)
+Defined in: [src/components/bento-layout/bento-layout.ts:83](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L83)
 
 Invoked when the component is added to the document's DOM.
 
@@ -185,7 +163,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:294](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L294)
+Defined in: [src/components/bento-layout/bento-layout.ts:90](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L90)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -217,7 +195,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/bento-layout/bento-layout.ts:464](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L464)
+Defined in: [src/components/bento-layout/bento-layout.ts:286](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L286)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

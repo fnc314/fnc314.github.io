@@ -27,6 +27,12 @@
       "references": []
     },
     {
+      "name": "bento-card",
+      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted `h2` elements as section headers.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "profile-bio-card",
       "description": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.\n---\n\n\n### **Methods:**\n - **bioText()** - The biography text to display.\n- **themePhoto()** - An object containing `src`, `alt`, and `figcaption` for the profile picture.",
       "attributes": [

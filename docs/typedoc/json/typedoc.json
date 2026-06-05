@@ -751,9 +751,9 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 49,
+									"line": 32,
 									"character": 18,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L49"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L32"
 								}
 							],
 							"type": {
@@ -777,7 +777,7 @@
 							}
 						},
 						{
-							"id": 56,
+							"id": 60,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -785,14 +785,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 290,
+									"line": 83,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L290"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L83"
 								}
 							],
 							"signatures": [
 								{
-									"id": 57,
+									"id": 61,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -851,9 +851,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 290,
+											"line": 83,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L290"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L83"
 										}
 									],
 									"type": {
@@ -874,7 +874,7 @@
 							}
 						},
 						{
-							"id": 58,
+							"id": 62,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -882,14 +882,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 294,
+									"line": 90,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L294"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L90"
 								}
 							],
 							"signatures": [
 								{
-									"id": 59,
+									"id": 63,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -932,9 +932,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 294,
+											"line": 90,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L294"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L90"
 										}
 									],
 									"type": {
@@ -963,9 +963,9 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 464,
+									"line": 286,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L464"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L286"
 								}
 							],
 							"signatures": [
@@ -1013,9 +1013,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 464,
+											"line": 286,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L464"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L286"
 										}
 									],
 									"type": {
@@ -1049,7 +1049,128 @@
 							}
 						},
 						{
-							"id": 60,
+							"id": 56,
+							"name": "_currentBreakpoint",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "Breakpoint",
+										"target": 479
+									},
+									{
+										"kind": "text",
+										"text": " as calculated by "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "readBreakpoint",
+										"target": 481
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/components/bento-layout/bento-layout.ts",
+									"line": 62,
+									"character": 10,
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L62"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 479,
+								"name": "Breakpoint",
+								"package": "@fnc314/fnc314.github.io"
+							},
+							"defaultValue": "\"unknown\""
+						},
+						{
+							"id": 57,
+							"name": "_onWindowResize",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "The callback passed to "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "window.addEventListener",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.dom.d.ts",
+											"qualifiedName": "addEventListener"
+										}
+									},
+									{
+										"kind": "text",
+										"text": " and\n  "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "window.removeEventListener",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.dom.d.ts",
+											"qualifiedName": "removeEventListener"
+										}
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/components/bento-layout/bento-layout.ts",
+									"line": 68,
+									"character": 10,
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L68"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 58,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"signatures": [
+										{
+											"id": 59,
+											"name": "__type",
+											"variant": "signature",
+											"kind": 4096,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									]
+								}
+							},
+							"defaultValue": "..."
+						},
+						{
+							"id": 64,
 							"name": "getSkillsForWordCloud",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1059,32 +1180,45 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 300,
+									"line": 101,
 									"character": 10,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L300"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L101"
 								}
 							],
 							"signatures": [
 								{
-									"id": 61,
+									"id": 65,
 									"name": "getSkillsForWordCloud",
 									"variant": "signature",
 									"kind": 4096,
-									"flags": {},
+									"flags": {
+										"isPrivate": true
+									},
 									"comment": {
 										"summary": [
 											{
 												"kind": "text",
-												"text": "Helper for skills"
+												"text": "Retrieves the list of skills formatted for the word cloud."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@memberof",
+												"content": [
+													{
+														"kind": "text",
+														"text": "BentoLayout"
+													}
+												]
 											}
 										]
 									},
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 300,
+											"line": 101,
 											"character": 10,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L300"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L101"
 										}
 									],
 									"type": {
@@ -1100,7 +1234,7 @@
 							]
 						},
 						{
-							"id": 62,
+							"id": 66,
 							"name": "renderBentoBox",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1110,14 +1244,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 314,
+									"line": 114,
 									"character": 10,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L314"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L114"
 								}
 							],
 							"signatures": [
 								{
-									"id": 63,
+									"id": 67,
 									"name": "renderBentoBox",
 									"variant": "signature",
 									"kind": 4096,
@@ -1144,66 +1278,14 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 314,
+											"line": 114,
 											"character": 10,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L314"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L114"
 										}
 									],
 									"parameters": [
 										{
-											"id": 64,
-											"name": "box",
-											"variant": "param",
-											"kind": 32768,
-											"flags": {},
-											"comment": {
-												"summary": [
-													{
-														"kind": "text",
-														"text": "The type of bento box to render."
-													}
-												]
-											},
-											"type": {
-												"type": "union",
-												"types": [
-													{
-														"type": "literal",
-														"value": "work"
-													},
-													{
-														"type": "literal",
-														"value": "code"
-													},
-													{
-														"type": "literal",
-														"value": "blog"
-													},
-													{
-														"type": "literal",
-														"value": "profile-photo-bio"
-													},
-													{
-														"type": "literal",
-														"value": "settings"
-													},
-													{
-														"type": "literal",
-														"value": "connect"
-													},
-													{
-														"type": "literal",
-														"value": "education"
-													},
-													{
-														"type": "literal",
-														"value": "skills"
-													}
-												]
-											}
-										},
-										{
-											"id": 65,
+											"id": 68,
 											"name": "config",
 											"variant": "param",
 											"kind": 32768,
@@ -1212,72 +1294,15 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The grid configuration for the bento box (columnSpan, rowSpan)."
+														"text": "The configuration for the bento box"
 													}
 												]
 											},
 											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 66,
-													"name": "__type",
-													"variant": "declaration",
-													"kind": 65536,
-													"flags": {},
-													"children": [
-														{
-															"id": 67,
-															"name": "columnSpan",
-															"variant": "declaration",
-															"kind": 1024,
-															"flags": {
-																"isOptional": true
-															},
-															"sources": [
-																{
-																	"fileName": "src/components/bento-layout/bento-layout.ts",
-																	"line": 314,
-																	"character": 64,
-																	"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L314"
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 68,
-															"name": "rowSpan",
-															"variant": "declaration",
-															"kind": 1024,
-															"flags": {
-																"isOptional": true
-															},
-															"sources": [
-																{
-																	"fileName": "src/components/bento-layout/bento-layout.ts",
-																	"line": 314,
-																	"character": 85,
-																	"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L314"
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"groups": [
-														{
-															"title": "Properties",
-															"children": [
-																67,
-																68
-															]
-														}
-													]
-												}
+												"type": "reference",
+												"target": 80,
+												"name": "BentoBoxConfig",
+												"package": "@fnc314/fnc314.github.io"
 											}
 										}
 									],
@@ -1300,17 +1325,19 @@
 						{
 							"title": "Properties",
 							"children": [
-								53
+								53,
+								56,
+								57
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								56,
-								58,
-								69,
 								60,
-								62
+								62,
+								69,
+								64,
+								66
 							]
 						}
 					],
@@ -1319,15 +1346,17 @@
 							"title": "Other",
 							"children": [
 								53,
-								60,
-								62
+								56,
+								57,
+								64,
+								66
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								56,
-								58
+								60,
+								62
 							]
 						},
 						{
@@ -1340,9 +1369,9 @@
 					"sources": [
 						{
 							"fileName": "src/components/bento-layout/bento-layout.ts",
-							"line": 47,
+							"line": 30,
 							"character": 13,
-							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L47"
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30"
 						}
 					],
 					"extendedTypes": [
@@ -1379,13 +1408,361 @@
 		},
 		{
 			"id": 71,
-			"name": "src/components/blog/blog-post",
+			"name": "src/components/bento-layout/bento-layout.types",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
 					"id": 72,
+					"name": "GridPlacement",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Defines the 2 "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "number"
+							},
+							{
+								"kind": "text",
+								"text": "s needed to place something\n  on a "
+							},
+							{
+								"kind": "code",
+								"text": "`grid`"
+							},
+							{
+								"kind": "text",
+								"text": "\n\n GridPlacement"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.types.ts",
+							"line": 9,
+							"character": 17,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L9"
+						}
+					]
+				},
+				{
+					"id": 75,
+					"name": "GridPosition",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "A pair of "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "GridPlacement",
+								"target": 72
+							},
+							{
+								"kind": "text",
+								"text": "s for the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "row",
+								"target": {
+									"packageName": "@fnc314/fnc314.github.io",
+									"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+									"qualifiedName": "GridPosition.row"
+								}
+							},
+							{
+								"kind": "text",
+								"text": " and "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "column",
+								"target": {
+									"packageName": "@fnc314/fnc314.github.io",
+									"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+									"qualifiedName": "GridPosition.column"
+								}
+							},
+							{
+								"kind": "text",
+								"text": "\n  dimensions\n\n GridPosition"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.types.ts",
+							"line": 21,
+							"character": 17,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L21"
+						}
+					]
+				},
+				{
+					"id": 79,
+					"name": "BentoBoxType",
+					"variant": "declaration",
+					"kind": 2097152,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The finite "
+							},
+							{
+								"kind": "code",
+								"text": "`bento-box`"
+							},
+							{
+								"kind": "text",
+								"text": " instances"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@export",
+								"content": []
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.types.ts",
+							"line": 33,
+							"character": 12,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L33"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "profile-photo-bio"
+							},
+							{
+								"type": "literal",
+								"value": "work"
+							},
+							{
+								"type": "literal",
+								"value": "code"
+							},
+							{
+								"type": "literal",
+								"value": "blog"
+							},
+							{
+								"type": "literal",
+								"value": "settings"
+							},
+							{
+								"type": "literal",
+								"value": "connect"
+							},
+							{
+								"type": "literal",
+								"value": "education"
+							},
+							{
+								"type": "literal",
+								"value": "skills"
+							}
+						]
+					}
+				},
+				{
+					"id": 80,
+					"name": "BentoBoxConfig",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Defines the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "BentoBoxType",
+								"target": 79
+							},
+							{
+								"kind": "text",
+								"text": " coupled with a "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "GridPosition",
+								"target": 75
+							},
+							{
+								"kind": "text",
+								"text": " used\n  to place a particular "
+							},
+							{
+								"kind": "code",
+								"text": "`bento-box`"
+							},
+							{
+								"kind": "text",
+								"text": ".\n\n BentoBoxConfig"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.types.ts",
+							"line": 41,
+							"character": 17,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L41"
+						}
+					]
+				},
+				{
+					"id": 85,
+					"name": "BentoBoxConfigs",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Produces an "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Array",
+								"target": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array"
+							},
+							{
+								"kind": "text",
+								"text": " of "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "BentoBoxConfig",
+								"target": 80
+							},
+							{
+								"kind": "text",
+								"text": " instances used to populate\n  "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "BentoLayout"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.types.ts",
+							"line": 52,
+							"character": 13,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L52"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 86,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"signatures": [
+								{
+									"id": 87,
+									"name": "__type",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"target": 80,
+											"name": "BentoBoxConfig",
+											"package": "@fnc314/fnc314.github.io"
+										}
+									}
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						72,
+						75,
+						80
+					]
+				},
+				{
+					"title": "Type Aliases",
+					"children": [
+						79
+					]
+				},
+				{
+					"title": "Variables",
+					"children": [
+						85
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/components/bento-layout/bento-layout.types.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 88,
+			"name": "src/components/blog/blog-post",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 89,
 					"name": "BlogPost",
 					"variant": "declaration",
 					"kind": 128,
@@ -1482,7 +1859,7 @@
 					},
 					"children": [
 						{
-							"id": 73,
+							"id": 90,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1528,7 +1905,7 @@
 							}
 						},
 						{
-							"id": 82,
+							"id": 99,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1543,7 +1920,7 @@
 							],
 							"signatures": [
 								{
-									"id": 83,
+									"id": 100,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -1625,7 +2002,7 @@
 							}
 						},
 						{
-							"id": 84,
+							"id": 101,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1640,7 +2017,7 @@
 							],
 							"signatures": [
 								{
-									"id": 85,
+									"id": 102,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -1706,7 +2083,7 @@
 							}
 						},
 						{
-							"id": 86,
+							"id": 103,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1721,7 +2098,7 @@
 							],
 							"signatures": [
 								{
-									"id": 87,
+									"id": 104,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -1804,15 +2181,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								73
+								90
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								82,
-								84,
-								86
+								99,
+								101,
+								103
 							]
 						}
 					],
@@ -1820,20 +2197,20 @@
 						{
 							"title": "Other",
 							"children": [
-								73
+								90
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								82,
-								84
+								99,
+								101
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								86
+								103
 							]
 						}
 					],
@@ -1864,7 +2241,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						72
+						89
 					]
 				}
 			],
@@ -1878,14 +2255,285 @@
 			]
 		},
 		{
-			"id": 270,
+			"id": 289,
+			"name": "src/components/card/bento/bento-card",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 290,
+					"name": "BentoCard",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@summary",
+								"content": [
+									{
+										"kind": "text",
+										"text": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted "
+									},
+									{
+										"kind": "code",
+										"text": "`h2`"
+									},
+									{
+										"kind": "text",
+										"text": " elements as section headers."
+									}
+								]
+							},
+							{
+								"tag": "@element",
+								"content": [
+									{
+										"kind": "text",
+										"text": "bento-card"
+									}
+								]
+							},
+							{
+								"tag": "@slot",
+								"content": [
+									{
+										"kind": "text",
+										"text": "- Default slot for card content. Slotted "
+									},
+									{
+										"kind": "code",
+										"text": "`h2`"
+									},
+									{
+										"kind": "text",
+										"text": " elements receive standardized header styling."
+									}
+								]
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 291,
+							"name": "styles",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isStatic": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "lit!css",
+										"target": "https://lit.dev/docs/api/styles/#css"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/components/card/bento/bento-card.ts",
+									"line": 24,
+									"character": 18,
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L24"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": {
+										"packageName": "@lit/reactive-element",
+										"packagePath": "src/css-tag.ts",
+										"qualifiedName": "CSSResult"
+									},
+									"name": "CSSResult",
+									"package": "@lit/reactive-element"
+								}
+							},
+							"defaultValue": "...",
+							"overwrites": {
+								"type": "reference",
+								"target": -1,
+								"name": "LitElement.styles"
+							}
+						},
+						{
+							"id": 294,
+							"name": "render",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/components/card/bento/bento-card.ts",
+									"line": 26,
+									"character": 11,
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L26"
+								}
+							],
+							"signatures": [
+								{
+									"id": 295,
+									"name": "render",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Invoked on each update to perform rendering tasks. This method may return\nany value renderable by lit-html's "
+											},
+											{
+												"kind": "code",
+												"text": "`ChildPart`"
+											},
+											{
+												"kind": "text",
+												"text": " - typically a\n"
+											},
+											{
+												"kind": "code",
+												"text": "`TemplateResult`"
+											},
+											{
+												"kind": "text",
+												"text": ". Setting properties inside this method will *not* trigger\nthe element to update."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@category",
+												"content": [
+													{
+														"kind": "text",
+														"text": "rendering"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "src/components/card/bento/bento-card.ts",
+											"line": 26,
+											"character": 11,
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L26"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "lit-html",
+											"packagePath": "src/lit-html.ts",
+											"qualifiedName": "TemplateResult"
+										},
+										"typeArguments": [
+											{
+												"type": "literal",
+												"value": 1
+											}
+										],
+										"name": "TemplateResult",
+										"package": "lit-html",
+										"externalUrl": "https://lit.dev/docs/api/templates/#TemplateResult"
+									},
+									"overwrites": {
+										"type": "reference",
+										"target": -1,
+										"name": "LitElement.render"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"target": -1,
+								"name": "LitElement.render"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								291
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								294
+							]
+						}
+					],
+					"categories": [
+						{
+							"title": "Other",
+							"children": [
+								291
+							]
+						},
+						{
+							"title": "rendering",
+							"children": [
+								294
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/components/card/bento/bento-card.ts",
+							"line": 22,
+							"character": 13,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L22"
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": {
+								"packageName": "lit-element",
+								"packagePath": "src/lit-element.ts",
+								"qualifiedName": "LitElement"
+							},
+							"name": "LitElement",
+							"package": "lit-element",
+							"externalUrl": "https://lit.dev/docs/api/LitElement/"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						290
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/components/card/bento/bento-card.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 297,
 			"name": "src/components/card/profile-bio/profile-bio-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 271,
+					"id": 298,
 					"name": "ProfileBioCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -1915,7 +2563,7 @@
 					},
 					"children": [
 						{
-							"id": 272,
+							"id": 299,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2035,7 +2683,7 @@
 							}
 						},
 						{
-							"id": 277,
+							"id": 304,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2050,7 +2698,7 @@
 							],
 							"signatures": [
 								{
-									"id": 278,
+									"id": 305,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -2133,13 +2781,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								272
+								299
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								277
+								304
 							]
 						}
 					],
@@ -2147,13 +2795,13 @@
 						{
 							"title": "rendering",
 							"children": [
-								277
+								304
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								272
+								299
 							]
 						}
 					],
@@ -2184,7 +2832,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						271
+						298
 					]
 				}
 			],
@@ -2198,14 +2846,14 @@
 			]
 		},
 		{
-			"id": 279,
+			"id": 306,
 			"name": "src/components/card/settings/settings-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 280,
+					"id": 307,
 					"name": "SettingsCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -2235,7 +2883,7 @@
 					},
 					"children": [
 						{
-							"id": 281,
+							"id": 308,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2355,7 +3003,7 @@
 							}
 						},
 						{
-							"id": 288,
+							"id": 313,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2363,14 +3011,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/card/settings/settings-card.ts",
-									"line": 78,
+									"line": 93,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L78"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L93"
 								}
 							],
 							"signatures": [
 								{
-									"id": 289,
+									"id": 314,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -2429,9 +3077,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/card/settings/settings-card.ts",
-											"line": 78,
+											"line": 93,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L78"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L93"
 										}
 									],
 									"type": {
@@ -2452,7 +3100,7 @@
 							}
 						},
 						{
-							"id": 294,
+							"id": 315,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2460,14 +3108,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/card/settings/settings-card.ts",
-									"line": 101,
+									"line": 98,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L101"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L98"
 								}
 							],
 							"signatures": [
 								{
-									"id": 295,
+									"id": 316,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -2510,9 +3158,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/card/settings/settings-card.ts",
-											"line": 101,
+											"line": 98,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L101"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L98"
 										}
 									],
 									"type": {
@@ -2533,7 +3181,7 @@
 							}
 						},
 						{
-							"id": 308,
+							"id": 329,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2541,14 +3189,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/card/settings/settings-card.ts",
-									"line": 152,
+									"line": 149,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L152"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L149"
 								}
 							],
 							"signatures": [
 								{
-									"id": 309,
+									"id": 330,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -2591,9 +3239,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/card/settings/settings-card.ts",
-											"line": 152,
+											"line": 149,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L152"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L149"
 										}
 									],
 									"type": {
@@ -2625,42 +3273,124 @@
 								"target": -1,
 								"name": "LitElement.render"
 							}
+						},
+						{
+							"id": 312,
+							"name": "formattedDate",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPrivate": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Creates an "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "Intl.DateTimeFormat",
+										"target": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"
+									},
+									{
+										"kind": "text",
+										"text": " and calls "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "Intl.DateTimeFormat.format",
+										"target": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format"
+									},
+									{
+										"kind": "text",
+										"text": "\n  on "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "time",
+										"target": {
+											"packageName": "unplugin-info",
+											"packagePath": "client.d.ts",
+											"qualifiedName": "time"
+										}
+									},
+									{
+										"kind": "text",
+										"text": " to render the user presented timestamp"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@memberof",
+										"content": [
+											{
+												"kind": "text",
+												"text": "SettingsCard"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "src/components/card/settings/settings-card.ts",
+									"line": 81,
+									"character": 10,
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L81"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "..."
 						}
 					],
 					"groups": [
 						{
 							"title": "Properties",
 							"children": [
-								281
+								308,
+								312
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								288,
-								294,
-								308
+								313,
+								315,
+								329
 							]
 						}
 					],
 					"categories": [
 						{
+							"title": "Other",
+							"children": [
+								312
+							]
+						},
+						{
 							"title": "lifecycle",
 							"children": [
-								288,
-								294
+								313,
+								315
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								308
+								329
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								281
+								308
 							]
 						}
 					],
@@ -2691,7 +3421,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						280
+						307
 					]
 				}
 			],
@@ -2705,14 +3435,14 @@
 			]
 		},
 		{
-			"id": 310,
+			"id": 331,
 			"name": "src/components/code/code-project/code-project",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 311,
+					"id": 332,
 					"name": "CodeProject",
 					"variant": "declaration",
 					"kind": 128,
@@ -2760,7 +3490,7 @@
 					},
 					"children": [
 						{
-							"id": 312,
+							"id": 333,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2806,7 +3536,7 @@
 							}
 						},
 						{
-							"id": 321,
+							"id": 342,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2821,7 +3551,7 @@
 							],
 							"signatures": [
 								{
-									"id": 322,
+									"id": 343,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -2900,7 +3630,7 @@
 							}
 						},
 						{
-							"id": 317,
+							"id": 338,
 							"name": "#generateCardFront",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2917,7 +3647,7 @@
 							],
 							"signatures": [
 								{
-									"id": 318,
+									"id": 339,
 									"name": "#generateCardFront",
 									"variant": "signature",
 									"kind": 4096,
@@ -2969,7 +3699,7 @@
 							]
 						},
 						{
-							"id": 319,
+							"id": 340,
 							"name": "#generateCardBack",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2986,7 +3716,7 @@
 							],
 							"signatures": [
 								{
-									"id": 320,
+									"id": 341,
 									"name": "#generateCardBack",
 									"variant": "signature",
 									"kind": 4096,
@@ -3042,15 +3772,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								312
+								333
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								321,
-								317,
-								319
+								342,
+								338,
+								340
 							]
 						}
 					],
@@ -3058,15 +3788,15 @@
 						{
 							"title": "Other",
 							"children": [
-								312,
-								317,
-								319
+								333,
+								338,
+								340
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								321
+								342
 							]
 						}
 					],
@@ -3097,7 +3827,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						311
+						332
 					]
 				}
 			],
@@ -3111,14 +3841,14 @@
 			]
 		},
 		{
-			"id": 343,
+			"id": 364,
 			"name": "src/components/dialog/step-up/step-up-dialog",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 344,
+					"id": 365,
 					"name": "StepUpDialog",
 					"variant": "declaration",
 					"kind": 128,
@@ -3206,7 +3936,7 @@
 					},
 					"children": [
 						{
-							"id": 345,
+							"id": 366,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3252,7 +3982,7 @@
 							}
 						},
 						{
-							"id": 348,
+							"id": 369,
 							"name": "dialogStyle",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3292,7 +4022,7 @@
 							"defaultValue": "\"confirm\""
 						},
 						{
-							"id": 349,
+							"id": 370,
 							"name": "dialogContentString",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3326,7 +4056,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 351,
+							"id": 372,
 							"name": "showDialog",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3341,7 +4071,7 @@
 							],
 							"signatures": [
 								{
-									"id": 352,
+									"id": 373,
 									"name": "showDialog",
 									"variant": "signature",
 									"kind": 4096,
@@ -3394,7 +4124,7 @@
 							]
 						},
 						{
-							"id": 359,
+							"id": 380,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3409,7 +4139,7 @@
 							],
 							"signatures": [
 								{
-									"id": 360,
+									"id": 381,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -3492,16 +4222,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								345,
-								348,
-								349
+								366,
+								369,
+								370
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								351,
-								359
+								372,
+								380
 							]
 						}
 					],
@@ -3509,16 +4239,16 @@
 						{
 							"title": "Other",
 							"children": [
-								345,
-								348,
-								349,
-								351
+								366,
+								369,
+								370,
+								372
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								359
+								380
 							]
 						}
 					],
@@ -3549,7 +4279,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						344
+						365
 					]
 				}
 			],
@@ -3563,14 +4293,14 @@
 			]
 		},
 		{
-			"id": 112,
+			"id": 129,
 			"name": "src/components/fab-menu/fab-menu-item",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 113,
+					"id": 130,
 					"name": "FabMenuItem",
 					"variant": "declaration",
 					"kind": 128,
@@ -3628,7 +4358,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 113
+										"target": 130
 									}
 								]
 							},
@@ -3651,7 +4381,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 113
+										"target": 130
 									}
 								]
 							},
@@ -3693,7 +4423,7 @@
 					},
 					"children": [
 						{
-							"id": 114,
+							"id": 131,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3739,7 +4469,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 134,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3754,7 +4484,7 @@
 							],
 							"signatures": [
 								{
-									"id": 118,
+									"id": 135,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -3836,7 +4566,7 @@
 							}
 						},
 						{
-							"id": 120,
+							"id": 137,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3875,7 +4605,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 121,
+							"id": 138,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3929,6 +4659,14 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "mobile"
+									},
+									{
+										"type": "literal",
+										"value": "tablet"
 									},
 									{
 										"type": "literal",
@@ -12532,10 +13270,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "mobile"
-									},
-									{
-										"type": "literal",
 										"value": "mobile_2"
 									},
 									{
@@ -17577,10 +18311,6 @@
 									{
 										"type": "literal",
 										"value": "table_view"
-									},
-									{
-										"type": "literal",
-										"value": "tablet"
 									},
 									{
 										"type": "literal",
@@ -19483,7 +20213,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 122,
+							"id": 139,
 							"name": "focus",
 							"variant": "declaration",
 							"kind": 2048,
@@ -19498,7 +20228,7 @@
 							],
 							"signatures": [
 								{
-									"id": 123,
+									"id": 140,
 									"name": "focus",
 									"variant": "signature",
 									"kind": 4096,
@@ -19521,7 +20251,7 @@
 									],
 									"parameters": [
 										{
-											"id": 124,
+											"id": 141,
 											"name": "options",
 											"variant": "param",
 											"kind": 32768,
@@ -19566,7 +20296,7 @@
 							}
 						},
 						{
-							"id": 125,
+							"id": 142,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -19581,7 +20311,7 @@
 							],
 							"signatures": [
 								{
-									"id": 126,
+									"id": 143,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -19664,17 +20394,17 @@
 						{
 							"title": "Properties",
 							"children": [
-								114,
-								120,
-								121
+								131,
+								137,
+								138
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								117,
-								122,
-								125
+								134,
+								139,
+								142
 							]
 						}
 					],
@@ -19682,22 +20412,22 @@
 						{
 							"title": "Other",
 							"children": [
-								114,
-								120,
-								121,
-								122
+								131,
+								137,
+								138,
+								139
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								117
+								134
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								125
+								142
 							]
 						}
 					],
@@ -19728,7 +20458,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						113
+						130
 					]
 				}
 			],
@@ -19742,14 +20472,14 @@
 			]
 		},
 		{
-			"id": 127,
+			"id": 144,
 			"name": "src/components/fab-menu/fab-menu",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 128,
+					"id": 145,
 					"name": "FabMenu",
 					"variant": "declaration",
 					"kind": 128,
@@ -19791,7 +20521,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 113
+										"target": 130
 									},
 									{
 										"kind": "text",
@@ -19819,7 +20549,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenu",
-										"target": 128
+										"target": 145
 									},
 									{
 										"kind": "text",
@@ -19839,7 +20569,7 @@
 					},
 					"children": [
 						{
-							"id": 129,
+							"id": 146,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -19885,7 +20615,7 @@
 							}
 						},
 						{
-							"id": 135,
+							"id": 152,
 							"name": "open",
 							"variant": "declaration",
 							"kind": 1024,
@@ -19913,7 +20643,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 136,
+							"id": 153,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -19966,6 +20696,14 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "mobile"
+									},
+									{
+										"type": "literal",
+										"value": "tablet"
 									},
 									{
 										"type": "literal",
@@ -28569,10 +29307,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "mobile"
-									},
-									{
-										"type": "literal",
 										"value": "mobile_2"
 									},
 									{
@@ -33614,10 +34348,6 @@
 									{
 										"type": "literal",
 										"value": "table_view"
-									},
-									{
-										"type": "literal",
-										"value": "tablet"
 									},
 									{
 										"type": "literal",
@@ -35520,7 +36250,7 @@
 							"defaultValue": "\"add\""
 						},
 						{
-							"id": 137,
+							"id": 154,
 							"name": "openedIcon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -35559,6 +36289,14 @@
 									{
 										"type": "literal",
 										"value": "code"
+									},
+									{
+										"type": "literal",
+										"value": "mobile"
+									},
+									{
+										"type": "literal",
+										"value": "tablet"
 									},
 									{
 										"type": "literal",
@@ -44162,10 +44900,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "mobile"
-									},
-									{
-										"type": "literal",
 										"value": "mobile_2"
 									},
 									{
@@ -49210,10 +49944,6 @@
 									},
 									{
 										"type": "literal",
-										"value": "tablet"
-									},
-									{
-										"type": "literal",
 										"value": "tablet_android"
 									},
 									{
@@ -51113,7 +51843,7 @@
 							"defaultValue": "\"close\""
 						},
 						{
-							"id": 138,
+							"id": 155,
 							"name": "variant",
 							"variant": "declaration",
 							"kind": 1024,
@@ -51186,7 +51916,7 @@
 							"defaultValue": "\"primary\""
 						},
 						{
-							"id": 139,
+							"id": 156,
 							"name": "size",
 							"variant": "declaration",
 							"kind": 1024,
@@ -51257,7 +51987,7 @@
 							"defaultValue": "\"medium\""
 						},
 						{
-							"id": 140,
+							"id": 157,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -51285,7 +52015,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 141,
+							"id": 158,
 							"name": "ariaLabel",
 							"variant": "declaration",
 							"kind": 1024,
@@ -51326,7 +52056,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 159,
 							"name": "direction",
 							"variant": "declaration",
 							"kind": 1024,
@@ -51375,7 +52105,7 @@
 							"defaultValue": "\"end\""
 						},
 						{
-							"id": 169,
+							"id": 186,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51390,7 +52120,7 @@
 							],
 							"signatures": [
 								{
-									"id": 170,
+									"id": 187,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -51472,7 +52202,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 188,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51487,7 +52217,7 @@
 							],
 							"signatures": [
 								{
-									"id": 172,
+									"id": 189,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -51553,7 +52283,7 @@
 							}
 						},
 						{
-							"id": 173,
+							"id": 190,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51568,7 +52298,7 @@
 							],
 							"signatures": [
 								{
-									"id": 174,
+									"id": 191,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -51647,7 +52377,7 @@
 							}
 						},
 						{
-							"id": 158,
+							"id": 175,
 							"name": "getUpdateComplete",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51664,7 +52394,7 @@
 							],
 							"signatures": [
 								{
-									"id": 159,
+									"id": 176,
 									"name": "getUpdateComplete",
 									"variant": "signature",
 									"kind": 4096,
@@ -51764,7 +52494,7 @@
 							}
 						},
 						{
-							"id": 160,
+							"id": 177,
 							"name": "firstUpdated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51781,7 +52511,7 @@
 							],
 							"signatures": [
 								{
-									"id": 161,
+									"id": 178,
 									"name": "firstUpdated",
 									"variant": "signature",
 									"kind": 4096,
@@ -51823,7 +52553,7 @@
 									],
 									"parameters": [
 										{
-											"id": 162,
+											"id": 179,
 											"name": "_changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -51904,7 +52634,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 180,
 							"name": "update",
 							"variant": "declaration",
 							"kind": 2048,
@@ -51921,7 +52651,7 @@
 							],
 							"signatures": [
 								{
-									"id": 164,
+									"id": 181,
 									"name": "update",
 									"variant": "signature",
 									"kind": 4096,
@@ -51963,7 +52693,7 @@
 									],
 									"parameters": [
 										{
-											"id": 165,
+											"id": 182,
 											"name": "changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -52044,7 +52774,7 @@
 							}
 						},
 						{
-							"id": 166,
+							"id": 183,
 							"name": "updated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -52061,7 +52791,7 @@
 							],
 							"signatures": [
 								{
-									"id": 167,
+									"id": 184,
 									"name": "updated",
 									"variant": "signature",
 									"kind": 4096,
@@ -52095,7 +52825,7 @@
 									],
 									"parameters": [
 										{
-											"id": 168,
+											"id": 185,
 											"name": "_changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -52118,7 +52848,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"target": 128,
+														"target": 145,
 														"name": "FabMenu",
 														"package": "@fnc314/fnc314.github.io"
 													}
@@ -52150,27 +52880,27 @@
 						{
 							"title": "Properties",
 							"children": [
-								129,
-								135,
-								136,
-								137,
-								138,
-								139,
-								140,
-								141,
-								142
+								146,
+								152,
+								153,
+								154,
+								155,
+								156,
+								157,
+								158,
+								159
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								169,
-								171,
-								173,
-								158,
-								160,
-								163,
-								166
+								186,
+								188,
+								190,
+								175,
+								177,
+								180,
+								183
 							]
 						}
 					],
@@ -52178,37 +52908,37 @@
 						{
 							"title": "Other",
 							"children": [
-								129,
-								135,
-								136,
-								137,
-								138,
-								139,
-								140,
-								141,
-								142
+								146,
+								152,
+								153,
+								154,
+								155,
+								156,
+								157,
+								158,
+								159
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								169,
-								171
+								186,
+								188
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								173
+								190
 							]
 						},
 						{
 							"title": "updates",
 							"children": [
-								158,
-								160,
-								163,
-								166
+								175,
+								177,
+								180,
+								183
 							]
 						}
 					],
@@ -52239,7 +52969,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						128
+						145
 					]
 				}
 			],
@@ -52253,14 +52983,14 @@
 			]
 		},
 		{
-			"id": 175,
+			"id": 192,
 			"name": "src/components/info-section/info-section",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 176,
+					"id": 193,
 					"name": "InfoSection",
 					"variant": "declaration",
 					"kind": 128,
@@ -52275,7 +53005,7 @@
 					},
 					"children": [
 						{
-							"id": 177,
+							"id": 194,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -52321,7 +53051,7 @@
 							}
 						},
 						{
-							"id": 180,
+							"id": 197,
 							"name": "sectionTitle",
 							"variant": "declaration",
 							"kind": 1024,
@@ -52369,7 +53099,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 181,
+							"id": 198,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -52384,7 +53114,7 @@
 							],
 							"signatures": [
 								{
-									"id": 182,
+									"id": 199,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -52480,14 +53210,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								177,
-								180
+								194,
+								197
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								181
+								198
 							]
 						}
 					],
@@ -52518,7 +53248,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						176
+						193
 					]
 				}
 			],
@@ -52532,14 +53262,14 @@
 			]
 		},
 		{
-			"id": 183,
+			"id": 200,
 			"name": "src/components/partial-header/partial-header",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 184,
+					"id": 201,
 					"name": "PartialHeader",
 					"variant": "declaration",
 					"kind": 128,
@@ -52565,7 +53295,7 @@
 					},
 					"children": [
 						{
-							"id": 185,
+							"id": 202,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -52611,7 +53341,7 @@
 							}
 						},
 						{
-							"id": 188,
+							"id": 205,
 							"name": "headingText",
 							"variant": "declaration",
 							"kind": 1024,
@@ -52650,7 +53380,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 189,
+							"id": 206,
 							"name": "headerType",
 							"variant": "declaration",
 							"kind": 1024,
@@ -52706,7 +53436,7 @@
 							"defaultValue": "\"primary\""
 						},
 						{
-							"id": 190,
+							"id": 207,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -52721,7 +53451,7 @@
 							],
 							"signatures": [
 								{
-									"id": 191,
+									"id": 208,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -52804,15 +53534,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								185,
-								188,
-								189
+								202,
+								205,
+								206
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								190
+								207
 							]
 						}
 					],
@@ -52820,15 +53550,15 @@
 						{
 							"title": "Other",
 							"children": [
-								185,
-								188,
-								189
+								202,
+								205,
+								206
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								190
+								207
 							]
 						}
 					],
@@ -52859,7 +53589,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						184
+						201
 					]
 				}
 			],
@@ -52873,14 +53603,14 @@
 			]
 		},
 		{
-			"id": 193,
+			"id": 210,
 			"name": "src/components/ui-mode-toggle/ui-mode-toggle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 194,
+					"id": 211,
 					"name": "UiModeToggle",
 					"variant": "declaration",
 					"kind": 128,
@@ -53002,7 +53732,7 @@
 					},
 					"children": [
 						{
-							"id": 195,
+							"id": 212,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53122,7 +53852,7 @@
 							}
 						},
 						{
-							"id": 202,
+							"id": 219,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -53137,7 +53867,7 @@
 							],
 							"signatures": [
 								{
-									"id": 203,
+									"id": 220,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -53219,7 +53949,7 @@
 							}
 						},
 						{
-							"id": 204,
+							"id": 221,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -53234,7 +53964,7 @@
 							],
 							"signatures": [
 								{
-									"id": 205,
+									"id": 222,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -53300,7 +54030,7 @@
 							}
 						},
 						{
-							"id": 218,
+							"id": 235,
 							"name": "reset",
 							"variant": "declaration",
 							"kind": 2048,
@@ -53317,7 +54047,7 @@
 							],
 							"signatures": [
 								{
-									"id": 219,
+									"id": 236,
 									"name": "reset",
 									"variant": "signature",
 									"kind": 4096,
@@ -53346,7 +54076,7 @@
 							]
 						},
 						{
-							"id": 220,
+							"id": 237,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -53361,7 +54091,7 @@
 							],
 							"signatures": [
 								{
-									"id": 221,
+									"id": 238,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -53438,16 +54168,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								195
+								212
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								202,
-								204,
-								218,
-								220
+								219,
+								221,
+								235,
+								237
 							]
 						}
 					],
@@ -53455,26 +54185,26 @@
 						{
 							"title": "Other",
 							"children": [
-								218
+								235
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								202,
-								204
+								219,
+								221
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								220
+								237
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								195
+								212
 							]
 						}
 					],
@@ -53505,7 +54235,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						194
+						211
 					]
 				}
 			],
@@ -53519,14 +54249,14 @@
 			]
 		},
 		{
-			"id": 368,
+			"id": 389,
 			"name": "src/components/word/word-cloud/word-cloud",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 369,
+					"id": 390,
 					"name": "WordCloud",
 					"variant": "declaration",
 					"kind": 128,
@@ -53642,7 +54372,7 @@
 					},
 					"children": [
 						{
-							"id": 370,
+							"id": 391,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53688,7 +54418,7 @@
 							}
 						},
 						{
-							"id": 373,
+							"id": 394,
 							"name": "words",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53732,7 +54462,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 374,
+							"id": 395,
 							"name": "instantClear",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53771,7 +54501,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 375,
+							"id": 396,
 							"name": "appearance",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53812,7 +54542,7 @@
 							"defaultValue": "WordCloudAppearances.SEQUENTIAL"
 						},
 						{
-							"id": 376,
+							"id": 397,
 							"name": "grouping",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53853,7 +54583,7 @@
 							"defaultValue": "WordCloudGroupings.UNGROUPED"
 						},
 						{
-							"id": 377,
+							"id": 398,
 							"name": "sorting",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53894,7 +54624,7 @@
 							"defaultValue": "WordCloudSortings.NONE"
 						},
 						{
-							"id": 378,
+							"id": 399,
 							"name": "delay",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53942,7 +54672,7 @@
 							"defaultValue": "\"none\""
 						},
 						{
-							"id": 379,
+							"id": 400,
 							"name": "threshold",
 							"variant": "declaration",
 							"kind": 1024,
@@ -53981,7 +54711,7 @@
 							"defaultValue": "0.1"
 						},
 						{
-							"id": 384,
+							"id": 405,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -53996,7 +54726,7 @@
 							],
 							"signatures": [
 								{
-									"id": 385,
+									"id": 406,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -54078,7 +54808,7 @@
 							}
 						},
 						{
-							"id": 386,
+							"id": 407,
 							"name": "updated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54093,7 +54823,7 @@
 							],
 							"signatures": [
 								{
-									"id": 387,
+									"id": 408,
 									"name": "updated",
 									"variant": "signature",
 									"kind": 4096,
@@ -54127,7 +54857,7 @@
 									],
 									"parameters": [
 										{
-											"id": 388,
+											"id": 409,
 											"name": "changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -54142,7 +54872,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"target": 369,
+														"target": 390,
 														"name": "WordCloud",
 														"package": "@fnc314/fnc314.github.io"
 													}
@@ -54170,7 +54900,7 @@
 							}
 						},
 						{
-							"id": 391,
+							"id": 412,
 							"name": "firstUpdated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54185,7 +54915,7 @@
 							],
 							"signatures": [
 								{
-									"id": 392,
+									"id": 413,
 									"name": "firstUpdated",
 									"variant": "signature",
 									"kind": 4096,
@@ -54243,7 +54973,7 @@
 							}
 						},
 						{
-							"id": 393,
+							"id": 414,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54258,7 +54988,7 @@
 							],
 							"signatures": [
 								{
-									"id": 394,
+									"id": 415,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -54324,7 +55054,7 @@
 							}
 						},
 						{
-							"id": 404,
+							"id": 425,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54339,7 +55069,7 @@
 							],
 							"signatures": [
 								{
-									"id": 405,
+									"id": 426,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -54422,24 +55152,24 @@
 						{
 							"title": "Properties",
 							"children": [
-								370,
-								373,
-								374,
-								375,
-								376,
-								377,
-								378,
-								379
+								391,
+								394,
+								395,
+								396,
+								397,
+								398,
+								399,
+								400
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								384,
-								386,
-								391,
-								393,
-								404
+								405,
+								407,
+								412,
+								414,
+								425
 							]
 						}
 					],
@@ -54447,34 +55177,34 @@
 						{
 							"title": "Other",
 							"children": [
-								370,
-								373,
-								374,
-								375,
-								376,
-								377,
-								378,
-								379
+								391,
+								394,
+								395,
+								396,
+								397,
+								398,
+								399,
+								400
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								384,
-								393
+								405,
+								414
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								404
+								425
 							]
 						},
 						{
 							"title": "updates",
 							"children": [
-								386,
-								391
+								407,
+								412
 							]
 						}
 					],
@@ -54505,7 +55235,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						369
+						390
 					]
 				}
 			],
@@ -54519,14 +55249,14 @@
 			]
 		},
 		{
-			"id": 406,
+			"id": 427,
 			"name": "src/components/word/word-cloud/word-cloud.types",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 435,
+					"id": 456,
 					"name": "makeWordCloudWord",
 					"variant": "declaration",
 					"kind": 64,
@@ -54541,7 +55271,7 @@
 					],
 					"signatures": [
 						{
-							"id": 436,
+							"id": 457,
 							"name": "makeWordCloudWord",
 							"variant": "signature",
 							"kind": 4096,
@@ -54574,7 +55304,7 @@
 							],
 							"parameters": [
 								{
-									"id": 437,
+									"id": 458,
 									"name": "word",
 									"variant": "param",
 									"kind": 32768,
@@ -54585,7 +55315,7 @@
 									}
 								},
 								{
-									"id": 438,
+									"id": 459,
 									"name": "weight",
 									"variant": "param",
 									"kind": 32768,
@@ -54598,7 +55328,7 @@
 									}
 								},
 								{
-									"id": 439,
+									"id": 460,
 									"name": "category",
 									"variant": "param",
 									"kind": 32768,
@@ -54611,7 +55341,7 @@
 									}
 								},
 								{
-									"id": 440,
+									"id": 461,
 									"name": "extras",
 									"variant": "param",
 									"kind": 32768,
@@ -54640,7 +55370,7 @@
 				{
 					"title": "Functions",
 					"children": [
-						435
+						456
 					]
 				}
 			],
@@ -54654,14 +55384,14 @@
 			]
 		},
 		{
-			"id": 444,
+			"id": 465,
 			"name": "src/components/word/word-tag/word-tag",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 445,
+					"id": 466,
 					"name": "WordTag",
 					"variant": "declaration",
 					"kind": 128,
@@ -54754,7 +55484,7 @@
 					},
 					"children": [
 						{
-							"id": 446,
+							"id": 467,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54800,7 +55530,7 @@
 							}
 						},
 						{
-							"id": 452,
+							"id": 473,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54815,7 +55545,7 @@
 							],
 							"signatures": [
 								{
-									"id": 453,
+									"id": 474,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -54898,13 +55628,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								446
+								467
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								452
+								473
 							]
 						}
 					],
@@ -54912,13 +55642,13 @@
 						{
 							"title": "Other",
 							"children": [
-								446
+								467
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								452
+								473
 							]
 						}
 					],
@@ -54949,7 +55679,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						445
+						466
 					]
 				}
 			],
@@ -54963,14 +55693,14 @@
 			]
 		},
 		{
-			"id": 222,
+			"id": 239,
 			"name": "src/components/work-experience/work-experience",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 223,
+					"id": 240,
 					"name": "WorkExperience",
 					"variant": "declaration",
 					"kind": 128,
@@ -54991,7 +55721,7 @@
 					},
 					"children": [
 						{
-							"id": 224,
+							"id": 241,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55037,7 +55767,7 @@
 							}
 						},
 						{
-							"id": 227,
+							"id": 244,
 							"name": "isNested",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55065,7 +55795,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 228,
+							"id": 245,
 							"name": "experienceRole",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55080,7 +55810,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "WorkExperience",
-										"target": 223
+										"target": 240
 									},
 									{
 										"kind": "text",
@@ -55103,7 +55833,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 229,
+							"id": 246,
 							"name": "experienceOrg",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55131,7 +55861,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 231,
+							"id": 248,
 							"name": "dateStart",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55175,7 +55905,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 232,
+							"id": 249,
 							"name": "dateEnd",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55219,7 +55949,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 233,
+							"id": 250,
 							"name": "summaries",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55253,14 +55983,14 @@
 								"elementType": {
 									"type": "reflection",
 									"declaration": {
-										"id": 234,
+										"id": 251,
 										"name": "__type",
 										"variant": "declaration",
 										"kind": 65536,
 										"flags": {},
 										"children": [
 											{
-												"id": 235,
+												"id": 252,
 												"name": "item",
 												"variant": "declaration",
 												"kind": 1024,
@@ -55283,7 +56013,7 @@
 											{
 												"title": "Properties",
 												"children": [
-													235
+													252
 												]
 											}
 										]
@@ -55293,7 +56023,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 236,
+							"id": 253,
 							"name": "jobs",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55322,7 +56052,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "WorkExperience",
-										"target": 223
+										"target": 240
 									},
 									{
 										"kind": "text",
@@ -55350,7 +56080,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 237,
+							"id": 254,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -55365,7 +56095,7 @@
 							],
 							"signatures": [
 								{
-									"id": 238,
+									"id": 255,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -55421,20 +56151,20 @@
 						{
 							"title": "Properties",
 							"children": [
-								224,
-								227,
-								228,
-								229,
-								231,
-								232,
-								233,
-								236
+								241,
+								244,
+								245,
+								246,
+								248,
+								249,
+								250,
+								253
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								237
+								254
 							]
 						}
 					],
@@ -55465,7 +56195,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						223
+						240
 					]
 				}
 			],
@@ -55479,15 +56209,15 @@
 			]
 		},
 		{
-			"id": 475,
-			"name": "src/styles/components/dialog/dialog",
+			"id": 477,
+			"name": "src/styles/breakpoints",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 476,
-					"name": "DialogSizing",
+					"id": 478,
+					"name": "Breakpoints",
 					"variant": "declaration",
 					"kind": 32,
 					"flags": {
@@ -55497,16 +56227,43 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Sizing for `<md-dialog>`s"
+								"text": "The "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "CSSResult",
+								"target": {
+									"packageName": "@lit/reactive-element",
+									"packagePath": "src/css-tag.ts",
+									"qualifiedName": "CSSResult"
+								}
+							},
+							{
+								"kind": "text",
+								"text": " dedicated, explicitly, to the\n  "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "--breakpoint-label"
+							},
+							{
+								"kind": "text",
+								"text": " custom CSS "
+							},
+							{
+								"kind": "code",
+								"text": "`@property`"
 							}
 						]
 					},
 					"sources": [
 						{
-							"fileName": "src/styles/components/dialog/dialog.ts",
-							"line": 8,
+							"fileName": "src/styles/breakpoints.ts",
+							"line": 9,
 							"character": 13,
-							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/components/dialog/dialog.ts#L8"
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L9"
 						}
 					],
 					"type": {
@@ -55520,34 +56277,185 @@
 						"package": "@lit/reactive-element"
 					},
 					"defaultValue": "..."
+				},
+				{
+					"id": 479,
+					"name": "Breakpoint",
+					"variant": "declaration",
+					"kind": 2097152,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Values for the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "--breakpoint-label"
+							},
+							{
+								"kind": "text",
+								"text": " custom CSS "
+							},
+							{
+								"kind": "code",
+								"text": "`@property`"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/styles/breakpoints.ts",
+							"line": 40,
+							"character": 12,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L40"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "unknown"
+							},
+							{
+								"type": "literal",
+								"value": "mobile"
+							},
+							{
+								"type": "literal",
+								"value": "tablet"
+							},
+							{
+								"type": "literal",
+								"value": "desktop"
+							}
+						]
+					}
+				},
+				{
+					"id": 481,
+					"name": "readBreakpoint",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Reads from "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "window",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.dom.d.ts",
+									"qualifiedName": "window"
+								}
+							},
+							{
+								"kind": "text",
+								"text": " the current value of "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "--breakpoint-label"
+							},
+							{
+								"kind": "text",
+								"text": "\n  CSS "
+							},
+							{
+								"kind": "code",
+								"text": "`@property`"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/styles/breakpoints.ts",
+							"line": 51,
+							"character": 13,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L51"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 482,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"signatures": [
+								{
+									"id": 483,
+									"name": "__type",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": []
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": 479,
+										"name": "Breakpoint",
+										"package": "@fnc314/fnc314.github.io"
+									}
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
 				}
 			],
 			"groups": [
 				{
+					"title": "Type Aliases",
+					"children": [
+						479
+					]
+				},
+				{
 					"title": "Variables",
 					"children": [
-						476
+						478,
+						481
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "src/styles/components/dialog/dialog.ts",
+					"fileName": "src/styles/breakpoints.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/components/dialog/dialog.ts#L1"
+					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 504,
+			"id": 529,
 			"name": "src/types/configs/fab-configs",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 505,
+					"id": 530,
 					"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -55579,14 +56487,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 506,
+							"id": 531,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 507,
+									"id": 532,
 									"name": "TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55608,7 +56516,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 508,
+									"id": 533,
 									"name": "BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55634,8 +56542,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										507,
-										508
+										532,
+										533
 									]
 								}
 							]
@@ -55644,7 +56552,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 509,
+					"id": 534,
 					"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -55676,14 +56584,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 510,
+							"id": 535,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 511,
+									"id": 536,
 									"name": "START",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55705,7 +56613,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 512,
+									"id": 537,
 									"name": "END",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55731,8 +56639,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										511,
-										512
+										536,
+										537
 									]
 								}
 							]
@@ -55741,7 +56649,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 516,
+					"id": 541,
 					"name": "FabPositionComponentVertical",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -55752,7 +56660,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 505
+								"target": 530
 							}
 						]
 					},
@@ -55773,7 +56681,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 505,
+									"target": 530,
 									"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -55783,7 +56691,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 505,
+								"target": 530,
 								"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -55791,7 +56699,7 @@
 					}
 				},
 				{
-					"id": 517,
+					"id": 542,
 					"name": "FabPositionComponentHorizontal",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -55802,7 +56710,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 509
+								"target": 534
 							}
 						]
 					},
@@ -55823,7 +56731,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 509,
+									"target": 534,
 									"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -55833,7 +56741,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 509,
+								"target": 534,
 								"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -55841,7 +56749,7 @@
 					}
 				},
 				{
-					"id": 518,
+					"id": 543,
 					"name": "FAB_POSITION",
 					"variant": "declaration",
 					"kind": 32,
@@ -55868,7 +56776,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 509
+								"target": 534
 							},
 							{
 								"kind": "text",
@@ -55878,7 +56786,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 505
+								"target": 530
 							}
 						]
 					},
@@ -55893,14 +56801,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 519,
+							"id": 544,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 520,
+									"id": 545,
 									"name": "START_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55922,7 +56830,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 521,
+									"id": 546,
 									"name": "START_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55944,7 +56852,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 522,
+									"id": 547,
 									"name": "END_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55966,7 +56874,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 523,
+									"id": 548,
 									"name": "END_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -55992,10 +56900,10 @@
 								{
 									"title": "Properties",
 									"children": [
-										520,
-										521,
-										522,
-										523
+										545,
+										546,
+										547,
+										548
 									]
 								}
 							]
@@ -56004,7 +56912,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 526,
+					"id": 551,
 					"name": "FabPositionIcons",
 					"variant": "declaration",
 					"kind": 32,
@@ -56021,7 +56929,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION",
-								"target": 518
+								"target": 543
 							},
 							{
 								"kind": "text",
@@ -56080,17 +56988,17 @@
 				{
 					"title": "Type Aliases",
 					"children": [
-						516,
-						517
+						541,
+						542
 					]
 				},
 				{
 					"title": "Variables",
 					"children": [
-						505,
-						509,
-						518,
-						526
+						530,
+						534,
+						543,
+						551
 					]
 				}
 			],
@@ -56104,14 +57012,14 @@
 			]
 		},
 		{
-			"id": 595,
+			"id": 620,
 			"name": "src/types/theme/theme",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 596,
+					"id": 621,
 					"name": "jsonIsThemeJsonSchemes",
 					"variant": "declaration",
 					"kind": 64,
@@ -56126,7 +57034,7 @@
 					],
 					"signatures": [
 						{
-							"id": 597,
+							"id": 622,
 							"name": "jsonIsThemeJsonSchemes",
 							"variant": "signature",
 							"kind": 4096,
@@ -56170,7 +57078,7 @@
 							],
 							"parameters": [
 								{
-									"id": 598,
+									"id": 623,
 									"name": "json",
 									"variant": "param",
 									"kind": 32768,
@@ -56213,7 +57121,7 @@
 					]
 				},
 				{
-					"id": 627,
+					"id": 652,
 					"name": "readScheme",
 					"variant": "declaration",
 					"kind": 64,
@@ -56228,7 +57136,7 @@
 					],
 					"signatures": [
 						{
-							"id": 628,
+							"id": 653,
 							"name": "readScheme",
 							"variant": "signature",
 							"kind": 4096,
@@ -56251,7 +57159,7 @@
 							],
 							"parameters": [
 								{
-									"id": 629,
+									"id": 654,
 									"name": "jsonSchema",
 									"variant": "param",
 									"kind": 32768,
@@ -56276,7 +57184,7 @@
 					]
 				},
 				{
-					"id": 599,
+					"id": 624,
 					"name": "keyTransform",
 					"variant": "declaration",
 					"kind": 64,
@@ -56291,7 +57199,7 @@
 					],
 					"signatures": [
 						{
-							"id": 600,
+							"id": 625,
 							"name": "keyTransform",
 							"variant": "signature",
 							"kind": 4096,
@@ -56314,7 +57222,7 @@
 							],
 							"parameters": [
 								{
-									"id": 601,
+									"id": 626,
 									"name": "jsonKey",
 									"variant": "param",
 									"kind": 32768,
@@ -56325,7 +57233,7 @@
 									}
 								},
 								{
-									"id": 602,
+									"id": 627,
 									"name": "rgb",
 									"variant": "param",
 									"kind": 32768,
@@ -56354,9 +57262,9 @@
 				{
 					"title": "Functions",
 					"children": [
-						596,
-						627,
-						599
+						621,
+						652,
+						624
 					]
 				}
 			],
@@ -58290,22 +59198,24 @@
 		15,
 		51,
 		71,
-		270,
-		279,
-		310,
-		343,
-		112,
-		127,
-		175,
-		183,
-		193,
-		368,
-		406,
-		444,
-		222,
-		475,
-		504,
-		595
+		88,
+		289,
+		297,
+		306,
+		331,
+		364,
+		129,
+		144,
+		192,
+		200,
+		210,
+		389,
+		427,
+		465,
+		239,
+		477,
+		529,
+		620
 	],
 	"groups": [
 		{
@@ -58333,22 +59243,24 @@
 				15,
 				51,
 				71,
-				270,
-				279,
-				310,
-				343,
-				112,
-				127,
-				175,
-				183,
-				193,
-				368,
-				406,
-				444,
-				222,
-				475,
-				504,
-				595
+				88,
+				289,
+				297,
+				306,
+				331,
+				364,
+				129,
+				144,
+				192,
+				200,
+				210,
+				389,
+				427,
+				465,
+				239,
+				477,
+				529,
+				620
 			]
 		}
 	],
@@ -59321,67 +60233,67 @@
 		"56": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.connectedCallback"
+			"qualifiedName": "BentoLayout._currentBreakpoint"
 		},
 		"57": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.connectedCallback"
+			"qualifiedName": "BentoLayout._onWindowResize"
 		},
 		"58": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.disconnectedCallback"
+			"qualifiedName": "__type"
 		},
 		"59": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.disconnectedCallback"
+			"qualifiedName": "__type"
 		},
 		"60": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.getSkillsForWordCloud"
+			"qualifiedName": "BentoLayout.connectedCallback"
 		},
 		"61": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.getSkillsForWordCloud"
+			"qualifiedName": "BentoLayout.connectedCallback"
 		},
 		"62": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.renderBentoBox"
+			"qualifiedName": "BentoLayout.disconnectedCallback"
 		},
 		"63": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.renderBentoBox"
+			"qualifiedName": "BentoLayout.disconnectedCallback"
 		},
 		"64": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "box"
+			"qualifiedName": "BentoLayout.getSkillsForWordCloud"
 		},
 		"65": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "config"
+			"qualifiedName": "BentoLayout.getSkillsForWordCloud"
 		},
 		"66": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "BentoLayout.renderBentoBox"
 		},
 		"67": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "__type.columnSpan"
+			"qualifiedName": "BentoLayout.renderBentoBox"
 		},
 		"68": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "__type.rowSpan"
+			"qualifiedName": "config"
 		},
 		"69": {
 			"packageName": "@fnc314/fnc314.github.io",
@@ -59395,915 +60307,1005 @@
 		},
 		"71": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/blog/blog-post.ts",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": ""
 		},
 		"72": {
 			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "GridPlacement"
+		},
+		"75": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "GridPosition"
+		},
+		"79": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "BentoBoxType"
+		},
+		"80": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "BentoBoxConfig"
+		},
+		"85": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "BentoBoxConfigs"
+		},
+		"86": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "__type"
+		},
+		"87": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "__type"
+		},
+		"88": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/blog/blog-post.ts",
+			"qualifiedName": ""
+		},
+		"89": {
+			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost"
 		},
-		"73": {
+		"90": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.styles"
 		},
-		"82": {
+		"99": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.connectedCallback"
 		},
-		"83": {
+		"100": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.connectedCallback"
 		},
-		"84": {
+		"101": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.disconnectedCallback"
 		},
-		"85": {
+		"102": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.disconnectedCallback"
 		},
-		"86": {
+		"103": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.render"
 		},
-		"87": {
+		"104": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.render"
 		},
-		"112": {
+		"129": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": ""
 		},
-		"113": {
+		"130": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem"
 		},
-		"114": {
+		"131": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.styles"
 		},
-		"117": {
+		"134": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.connectedCallback"
 		},
-		"118": {
+		"135": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.connectedCallback"
 		},
-		"120": {
+		"137": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.label"
 		},
-		"121": {
+		"138": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.icon"
 		},
-		"122": {
+		"139": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.focus"
 		},
-		"123": {
+		"140": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.focus"
 		},
-		"124": {
+		"141": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "options"
 		},
-		"125": {
+		"142": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.render"
 		},
-		"126": {
+		"143": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.render"
 		},
-		"127": {
+		"144": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": ""
 		},
-		"128": {
+		"145": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu"
 		},
-		"129": {
+		"146": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.styles"
 		},
-		"135": {
+		"152": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.open"
 		},
-		"136": {
+		"153": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.icon"
 		},
-		"137": {
+		"154": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.openedIcon"
 		},
-		"138": {
+		"155": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.variant"
 		},
-		"139": {
+		"156": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.size"
 		},
-		"140": {
+		"157": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.label"
 		},
-		"141": {
+		"158": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.ariaLabel"
 		},
-		"142": {
+		"159": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.direction"
 		},
-		"158": {
+		"175": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.getUpdateComplete"
 		},
-		"159": {
+		"176": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.getUpdateComplete"
 		},
-		"160": {
+		"177": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.firstUpdated"
 		},
-		"161": {
+		"178": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.firstUpdated"
 		},
-		"162": {
+		"179": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "_changedProperties"
 		},
-		"163": {
+		"180": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.update"
 		},
-		"164": {
+		"181": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.update"
 		},
-		"165": {
+		"182": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "changedProperties"
 		},
-		"166": {
+		"183": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.updated"
 		},
-		"167": {
+		"184": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.updated"
 		},
-		"168": {
+		"185": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "_changedProperties"
 		},
-		"169": {
+		"186": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.connectedCallback"
 		},
-		"170": {
+		"187": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.connectedCallback"
 		},
-		"171": {
+		"188": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.disconnectedCallback"
 		},
-		"172": {
+		"189": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.disconnectedCallback"
 		},
-		"173": {
+		"190": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.render"
 		},
-		"174": {
+		"191": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.render"
 		},
-		"175": {
+		"192": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": ""
 		},
-		"176": {
+		"193": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection"
 		},
-		"177": {
+		"194": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection.styles"
 		},
-		"180": {
+		"197": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection.sectionTitle"
 		},
-		"181": {
+		"198": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection.render"
 		},
-		"182": {
+		"199": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection.render"
 		},
-		"183": {
+		"200": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": ""
 		},
-		"184": {
+		"201": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader"
 		},
-		"185": {
+		"202": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.styles"
 		},
-		"188": {
+		"205": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.headingText"
 		},
-		"189": {
+		"206": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.headerType"
 		},
-		"190": {
+		"207": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.render"
 		},
-		"191": {
+		"208": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.render"
 		},
-		"193": {
+		"210": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
 			"qualifiedName": ""
 		},
-		"194": {
+		"211": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
 			"qualifiedName": "UiModeToggle"
 		},
-		"195": {
+		"212": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
 			"qualifiedName": "UiModeToggle.styles"
 		},
-		"202": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.connectedCallback"
-		},
-		"203": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.connectedCallback"
-		},
-		"204": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.disconnectedCallback"
-		},
-		"205": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.disconnectedCallback"
-		},
-		"218": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.reset"
-		},
 		"219": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.reset"
+			"qualifiedName": "UiModeToggle.connectedCallback"
 		},
 		"220": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.render"
+			"qualifiedName": "UiModeToggle.connectedCallback"
 		},
 		"221": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.render"
+			"qualifiedName": "UiModeToggle.disconnectedCallback"
 		},
 		"222": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.disconnectedCallback"
+		},
+		"235": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.reset"
+		},
+		"236": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.reset"
+		},
+		"237": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.render"
+		},
+		"238": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.render"
+		},
+		"239": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": ""
 		},
-		"223": {
+		"240": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience"
 		},
-		"224": {
+		"241": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.styles"
 		},
-		"227": {
+		"244": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.isNested"
 		},
-		"228": {
+		"245": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.experienceRole"
 		},
-		"229": {
+		"246": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.experienceOrg"
 		},
-		"231": {
+		"248": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.dateStart"
 		},
-		"232": {
+		"249": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.dateEnd"
 		},
-		"233": {
+		"250": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.summaries"
 		},
-		"234": {
+		"251": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "__type"
 		},
-		"235": {
+		"252": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "__type.item"
 		},
-		"236": {
+		"253": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.jobs"
 		},
-		"237": {
+		"254": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.render"
 		},
-		"238": {
+		"255": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.render"
 		},
-		"270": {
+		"289": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": ""
+		},
+		"290": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard"
+		},
+		"291": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard.styles"
+		},
+		"294": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard.render"
+		},
+		"295": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard.render"
+		},
+		"297": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": ""
 		},
-		"271": {
+		"298": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard"
 		},
-		"272": {
+		"299": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard.styles"
 		},
-		"277": {
+		"304": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard.render"
 		},
-		"278": {
+		"305": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard.render"
 		},
-		"279": {
+		"306": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": ""
 		},
-		"280": {
+		"307": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard"
 		},
-		"281": {
+		"308": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.styles"
 		},
-		"288": {
+		"312": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/settings/settings-card.ts",
+			"qualifiedName": "SettingsCard.formattedDate"
+		},
+		"313": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.connectedCallback"
 		},
-		"289": {
+		"314": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.connectedCallback"
 		},
-		"294": {
+		"315": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.disconnectedCallback"
 		},
-		"295": {
+		"316": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.disconnectedCallback"
 		},
-		"308": {
+		"329": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.render"
 		},
-		"309": {
+		"330": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.render"
 		},
-		"310": {
+		"331": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": ""
 		},
-		"311": {
+		"332": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject"
 		},
-		"312": {
+		"333": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.styles"
 		},
-		"317": {
+		"338": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.#generateCardFront"
 		},
-		"318": {
+		"339": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.#generateCardFront"
 		},
-		"319": {
+		"340": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.#generateCardBack"
 		},
-		"320": {
+		"341": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.#generateCardBack"
 		},
-		"321": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.render"
-		},
-		"322": {
+		"342": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.render"
 		},
 		"343": {
 			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/code/code-project/code-project.ts",
+			"qualifiedName": "CodeProject.render"
+		},
+		"364": {
+			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": ""
 		},
-		"344": {
+		"365": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog"
 		},
-		"345": {
+		"366": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.styles"
 		},
-		"348": {
+		"369": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.dialogStyle"
 		},
-		"349": {
+		"370": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.dialogContentString"
 		},
-		"351": {
+		"372": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.showDialog"
 		},
-		"352": {
+		"373": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.showDialog"
 		},
-		"359": {
+		"380": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.render"
 		},
-		"360": {
+		"381": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.render"
 		},
-		"368": {
+		"389": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": ""
 		},
-		"369": {
+		"390": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud"
 		},
-		"370": {
+		"391": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.styles"
 		},
-		"373": {
+		"394": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.words"
 		},
-		"374": {
+		"395": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.instantClear"
 		},
-		"375": {
+		"396": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.appearance"
 		},
-		"376": {
+		"397": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.grouping"
 		},
-		"377": {
+		"398": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.sorting"
 		},
-		"378": {
+		"399": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.delay"
 		},
-		"379": {
+		"400": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.threshold"
 		},
-		"384": {
+		"405": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.connectedCallback"
 		},
-		"385": {
+		"406": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.connectedCallback"
 		},
-		"386": {
+		"407": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.updated"
 		},
-		"387": {
+		"408": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.updated"
 		},
-		"388": {
+		"409": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "changedProperties"
 		},
-		"391": {
+		"412": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.firstUpdated"
 		},
-		"392": {
+		"413": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.firstUpdated"
 		},
-		"393": {
+		"414": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.disconnectedCallback"
 		},
-		"394": {
+		"415": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.disconnectedCallback"
 		},
-		"404": {
+		"425": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.render"
 		},
-		"405": {
+		"426": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.render"
 		},
-		"406": {
+		"427": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": ""
 		},
-		"435": {
+		"456": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "makeWordCloudWord"
 		},
-		"436": {
+		"457": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "makeWordCloudWord"
 		},
-		"437": {
+		"458": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "word"
 		},
-		"438": {
+		"459": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "weight"
 		},
-		"439": {
+		"460": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "category"
 		},
-		"440": {
+		"461": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "extras"
 		},
-		"444": {
+		"465": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": ""
 		},
-		"445": {
+		"466": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag"
 		},
-		"446": {
+		"467": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.styles"
 		},
-		"452": {
+		"473": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.render"
 		},
-		"453": {
+		"474": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.render"
 		},
-		"475": {
+		"477": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/styles/components/dialog/dialog.ts",
+			"packagePath": "src/styles/breakpoints.ts",
 			"qualifiedName": ""
 		},
-		"476": {
+		"478": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/styles/components/dialog/dialog.ts",
-			"qualifiedName": "DialogSizing"
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "Breakpoints"
 		},
-		"504": {
+		"479": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "Breakpoint"
+		},
+		"481": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "readBreakpoint"
+		},
+		"482": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "__type"
+		},
+		"483": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "__type"
+		},
+		"529": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": ""
 		},
-		"505": {
+		"530": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION_COMPONENTS_VERTICAL"
 		},
-		"506": {
+		"531": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"507": {
+		"532": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.TOP"
 		},
-		"508": {
+		"533": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.BOTTOM"
 		},
-		"509": {
+		"534": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION_COMPONENTS_HORIZONTAL"
 		},
-		"510": {
+		"535": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"511": {
+		"536": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START"
 		},
-		"512": {
+		"537": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END"
 		},
-		"516": {
+		"541": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionComponentVertical"
 		},
-		"517": {
+		"542": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionComponentHorizontal"
 		},
-		"518": {
+		"543": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FAB_POSITION"
 		},
-		"519": {
+		"544": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object"
 		},
-		"520": {
+		"545": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START_TOP"
 		},
-		"521": {
+		"546": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.START_BOTTOM"
 		},
-		"522": {
+		"547": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END_TOP"
 		},
-		"523": {
+		"548": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END_BOTTOM"
 		},
-		"526": {
+		"551": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionIcons"
 		},
-		"595": {
+		"620": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": ""
 		},
-		"596": {
+		"621": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
-		"597": {
+		"622": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
-		"598": {
+		"623": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "json"
 		},
-		"599": {
+		"624": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "keyTransform"
 		},
-		"600": {
+		"625": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "keyTransform"
 		},
-		"601": {
+		"626": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonKey"
 		},
-		"602": {
+		"627": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "rgb"
 		},
-		"627": {
+		"652": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "readScheme"
 		},
-		"628": {
+		"653": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "readScheme"
 		},
-		"629": {
+		"654": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonSchema"
@@ -60329,46 +61331,50 @@
 			"16": "src/components/bento-layout/bento-layout.styles.ts",
 			"17": "src/components/bento-layout/bento-layout.test.ts",
 			"18": "src/components/bento-layout/bento-layout.ts",
-			"19": "src/components/blog/blog-post.ts",
-			"20": "src/components/blog/blog-post.types.ts",
-			"21": "src/components/fab-menu/fab-menu-item.ts",
-			"22": "src/components/fab-menu/fab-menu.ts",
-			"23": "src/components/info-section/info-section.ts",
-			"24": "src/components/partial-header/partial-header.ts",
-			"25": "src/components/ui-mode-toggle/ui-mode-toggle.test.ts",
-			"26": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"27": "src/components/work-experience/work-experience.ts",
-			"28": "src/components/work-experience/work-experience.types.ts",
-			"29": "src/components/card/profile-bio/profile-bio-card.test.ts",
-			"30": "src/components/card/profile-bio/profile-bio-card.ts",
-			"31": "src/components/card/settings/settings-card.ts",
-			"32": "src/components/code/code-project/code-project.ts",
-			"33": "src/components/code/code-project/code-project.types.ts",
-			"34": "src/components/dialog/configs/configs-dialog.types.ts",
-			"35": "src/components/dialog/connect/connect-dialog.types.ts",
-			"36": "src/components/dialog/step-up/step-up-dialog.ts",
-			"37": "src/components/dialog/step-up/step-up-dialog.types.ts",
-			"38": "src/components/word/word-cloud/word-cloud.ts",
-			"39": "src/components/word/word-cloud/word-cloud.types.ts",
-			"40": "src/components/word/word-tag/word-tag.ts",
-			"41": "src/components/word/word-tag/word-tag.types.ts",
-			"42": "src/styles/index.ts",
-			"43": "src/styles/material-styles.ts",
-			"44": "src/styles/spacing.ts",
-			"45": "src/styles/styles.ts",
-			"46": "src/styles/components/dialog/dialog.ts",
-			"47": "src/theme/theme.ts",
-			"48": "src/theme/chicago/chicago-theme.ts",
-			"49": "src/theme/inter/inter-theme.ts",
-			"50": "src/theme/red/red-theme.ts",
-			"51": "src/theme/sunset/sunset-theme.ts",
-			"52": "src/types/material-symbols.ts",
-			"53": "src/types/configs/app-configs.ts",
-			"54": "src/types/configs/fab-configs.ts",
-			"55": "src/types/theme/color-scheme-configs.ts",
-			"56": "src/types/theme/theme.ts",
-			"57": "src/types/components/nav/routes.ts",
-			"58": "docs/wca/markdown"
+			"19": "src/components/bento-layout/bento-layout.types.ts",
+			"20": "src/components/blog/blog-post.ts",
+			"21": "src/components/blog/blog-post.types.ts",
+			"22": "src/components/fab-menu/fab-menu-item.ts",
+			"23": "src/components/fab-menu/fab-menu.ts",
+			"24": "src/components/info-section/info-section.ts",
+			"25": "src/components/partial-header/partial-header.ts",
+			"26": "src/components/ui-mode-toggle/ui-mode-toggle.test.ts",
+			"27": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"28": "src/components/work-experience/work-experience.ts",
+			"29": "src/components/work-experience/work-experience.types.ts",
+			"30": "src/components/card/bento/bento-card.styles.ts",
+			"31": "src/components/card/bento/bento-card.test.ts",
+			"32": "src/components/card/bento/bento-card.ts",
+			"33": "src/components/card/profile-bio/profile-bio-card.test.ts",
+			"34": "src/components/card/profile-bio/profile-bio-card.ts",
+			"35": "src/components/card/settings/settings-card.ts",
+			"36": "src/components/code/code-project/code-project.ts",
+			"37": "src/components/code/code-project/code-project.types.ts",
+			"38": "src/components/dialog/configs/configs-dialog.types.ts",
+			"39": "src/components/dialog/connect/connect-dialog.types.ts",
+			"40": "src/components/dialog/step-up/step-up-dialog.ts",
+			"41": "src/components/dialog/step-up/step-up-dialog.types.ts",
+			"42": "src/components/word/word-cloud/word-cloud.ts",
+			"43": "src/components/word/word-cloud/word-cloud.types.ts",
+			"44": "src/components/word/word-tag/word-tag.ts",
+			"45": "src/components/word/word-tag/word-tag.types.ts",
+			"46": "src/styles/breakpoints.ts",
+			"47": "src/styles/index.ts",
+			"48": "src/styles/material-styles.ts",
+			"49": "src/styles/spacing.ts",
+			"50": "src/styles/styles.ts",
+			"51": "src/theme/theme.ts",
+			"52": "src/theme/chicago/chicago-theme.ts",
+			"53": "src/theme/inter/inter-theme.ts",
+			"54": "src/theme/red/red-theme.ts",
+			"55": "src/theme/sunset/sunset-theme.ts",
+			"56": "src/types/material-symbols.ts",
+			"57": "src/types/configs/app-configs.ts",
+			"58": "src/types/configs/fab-configs.ts",
+			"59": "src/types/theme/color-scheme-configs.ts",
+			"60": "src/types/theme/theme.ts",
+			"61": "src/types/components/nav/routes.ts",
+			"62": "docs/wca/markdown"
 		},
 		"reflections": {
 			"1": 0,
@@ -60388,23 +61394,25 @@
 			"15": 15,
 			"18": 51,
 			"19": 71,
-			"21": 112,
-			"22": 127,
-			"23": 175,
-			"24": 183,
-			"26": 193,
-			"27": 222,
-			"30": 270,
-			"31": 279,
-			"32": 310,
-			"36": 343,
-			"38": 368,
-			"39": 406,
-			"40": 444,
-			"46": 475,
-			"54": 504,
-			"56": 595,
-			"58": 0
+			"20": 88,
+			"22": 129,
+			"23": 144,
+			"24": 192,
+			"25": 200,
+			"27": 210,
+			"28": 239,
+			"32": 289,
+			"34": 297,
+			"35": 306,
+			"36": 331,
+			"40": 364,
+			"42": 389,
+			"43": 427,
+			"44": 465,
+			"46": 477,
+			"58": 529,
+			"60": 620,
+			"62": 0
 		}
 	}
 }

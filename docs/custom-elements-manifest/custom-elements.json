@@ -141,7 +141,7 @@
         {
           "kind": "variable",
           "name": "bentoLayoutStyles",
-          "default": "css` :host { display: block; width: 100%; color: var(--md-sys-color-on-surface); background-color: var(--md-sys-color-surface); padding-bottom: var(--spacing-padding-xl); } .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--spacing-margin-l); width: 100%; max-width: 1400px; margin: var(--spacing-reset) auto; padding: var(--spacing-padding-m); grid-auto-flow: dense; } /* Bento Card base styling with premium glassmorphism and animations */ .bento-card { -webkit-backdrop-filter: blur(12px); border-radius: var(--md-sys-shape-corner-large); background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%); backdrop-filter: blur(12px); border: var(--hairline-width) solid var(--md-sys-color-outline-variant); padding: var(--spacing-padding-m); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-margin-s); box-shadow: var(--md-elevation-level-1); } .bento-card:hover { transform: translateY(-4px); box-shadow: var(--md-elevation-level-3); border-color: var(--md-sys-color-outline); background-color: var(--md-sys-color-surface-container-high); } .bento-card h2 { margin: var(--spacing-reset); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant); padding-bottom: var(--spacing-padding-xs); } /* Desktop Grid assignments (>=1200px) */ @media screen and (min-width: 1201px) { .card-profile { grid-column: span 4; grid-row: span 2; } .card-bio { grid-column: span 8; } .card-configs { grid-column: span 4; } .card-connect { grid-column: span 4; } .card-education { grid-column: span 4; } .card-skills { grid-column: span 8; } .card-work { grid-column: span 12; } .card-code { grid-column: span 6; } .card-blog { grid-column: span 6; } } /* Tablet Grid assignments (737px to 1200px) */ @media screen and (max-width: 1200px) and (min-width: 737px) { .bento-grid { grid-template-columns: repeat(6, 1fr); } .bento-card { grid-column: span 3; grid-row: span 1; } .card-skills { grid-column: span 6; } .card-education { grid-column: span 6; } .card-work { grid-column: span 6; } .card-code { grid-column: span 6; } .card-blog { grid-column: span 6; } } /* Mobile layout (<=736px) */ @media screen and (max-width: 736px) { .bento-grid { grid-template-columns: 1fr; gap: var(--spacing-margin-s); padding: var(--spacing-padding-s); } .bento-card { grid-column: span 1 !important; grid-row: span 1 !important; } } /* Card components internal styling */ .profile-details { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-margin-xs); } .profile-picture { width: 100%; max-width: 180px; height: auto; border-radius: var(--md-sys-shape-corner-medium); object-fit: cover; border: 2px solid var(--md-sys-color-primary); } .profile-figcaption { font-style: italic; color: var(--md-sys-color-on-surface-variant); } .bio-content p { margin: var(--spacing-reset); line-height: 1.6; text-align: justify; } .education-list { list-style-type: none; padding: var(--spacing-reset); margin: var(--spacing-reset); display: flex; flex-direction: column; gap: var(--spacing-margin-s); } .education-item { border-left: 2px solid var(--md-sys-color-primary); padding-left: var(--spacing-padding-s); } .education-item span { display: block; } .connections-list { display: flex; flex-direction: column; gap: var(--spacing-margin-xs); } .connection-link { display: flex; align-items: center; gap: var(--spacing-margin-xs); text-decoration: none; color: var(--md-sys-color-primary); padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); transition: background-color 0.2s ease; } .connection-link:hover { background-color: color(from var(--md-sys-color-primary) srgb r g b / 10%); } .configs-form { display: flex; flex-direction: column; gap: var(--spacing-margin-s); } .form-field { display: flex; flex-direction: column; gap: var(--spacing-margin-xxs); } .form-field label { font-size: 0.85rem; color: var(--md-sys-color-on-surface-variant); font-weight: 500; } .form-field select, .form-field button { padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-outline); background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); font-family: inherit; font-size: 0.95rem; } .form-field-top-margin { margin-top: var(--spacing-margin-xs); } .button-primary-outline { border-color: var(--md-sys-color-primary); color: var(--md-sys-color-primary); cursor: pointer; } .debugger-row { display: flex; gap: var(--spacing-margin-xs); align-items: center; justify-content: space-between; padding-top: var(--spacing-padding-xs); border-top: 1px dashed var(--md-sys-color-outline-variant); } .debugger-toggle { cursor: pointer; padding: var(--spacing-padding-xxs) var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: 1px solid var(--md-sys-color-primary); background: transparent; color: var(--md-sys-color-primary); font-size: 0.8rem; font-weight: bold; transition: all 0.2s; } .debugger-toggle.active { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); } .scrollable-list { max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: var(--spacing-margin-s); padding-right: var(--spacing-padding-xs); } /* Custom scrollbar for premium look */ .scrollable-list::-webkit-scrollbar { width: 6px; } .scrollable-list::-webkit-scrollbar-track { background: transparent; } .scrollable-list::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-full); } .scrollable-list::-webkit-scrollbar-thumb:hover { background: var(--md-sys-color-outline); } .category-label { margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary); } .connect-button-wrapper { margin-top: var(--spacing-margin-s); } .full-width-primary-outline-button { width: 100%; padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-primary); background-color: transparent; color: var(--md-sys-color-primary); font-family: inherit; font-size: 0.95rem; cursor: pointer; } .code-project-wrapper, .blog-post-wrapper { display: block; margin-bottom: var(--spacing-margin-xs); } .version-tag { font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); text-align: center; margin-top: auto; border-top: 1px solid var(--md-sys-color-outline-variant); padding-top: var(--spacing-padding-xs); } `",
+          "default": "css` :host { display: block; width: 100%; color: var(--md-sys-color-on-surface); background-color: var(--md-sys-color-surface); padding-bottom: var(--spacing-padding-xl); } .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--spacing-margin-l); width: 100%; max-width: 1400px; margin: var(--spacing-reset) auto; padding: var(--spacing-padding-m); grid-auto-flow: dense; } /* Tablet Grid assignments (737px to 1200px) */ @media screen and ((width <= 1200px) and (width >= 737px)) { .bento-grid { grid-template-columns: repeat(6, 1fr); } } /* Mobile layout (<=736px) */ @media screen and (width <= 736px) { .bento-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-margin-xs); padding: var(--spacing-padding-xxs); } } .bio-content p { margin: var(--spacing-reset); line-height: 1.6; text-align: justify; } .education-list { list-style-type: none; padding: var(--spacing-reset); margin: var(--spacing-reset); display: flex; flex-direction: column; gap: var(--spacing-margin-s); } .education-item { border-left: 2px solid var(--md-sys-color-primary); padding-left: var(--spacing-padding-s); } .education-item span { display: block; } .connections-list { display: flex; flex-direction: column; gap: var(--spacing-margin-xs); } .connection-link { display: flex; align-items: center; gap: var(--spacing-margin-xs); text-decoration: none; color: var(--md-sys-color-primary); padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); transition: background-color 0.2s ease; } .connection-link:hover { background-color: color(from var(--md-sys-color-primary) srgb r g b / 10%); } .scrollable-list { max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: var(--spacing-margin-s); padding-right: var(--spacing-padding-xs); } /* Custom scrollbar for premium look */ .scrollable-list::-webkit-scrollbar { width: 6px; } .scrollable-list::-webkit-scrollbar-track { background: transparent; } .scrollable-list::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-full); } .scrollable-list::-webkit-scrollbar-thumb:hover { background: var(--md-sys-color-outline); } .category-label { margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary); } .connect-button-wrapper { margin-top: var(--spacing-margin-s); } .full-width-primary-outline-button { width: 100%; padding: var(--spacing-padding-xs); border-radius: var(--md-sys-shape-corner-small); border: var(--hairline-width) solid var(--md-sys-color-primary); background-color: transparent; color: var(--md-sys-color-primary); font-family: inherit; font-size: var(--md-sys-typescale-body-medium-size); cursor: pointer; } .code-project-wrapper, .blog-post-wrapper { display: block; margin-bottom: var(--spacing-margin-xs); } .version-tag { font-size: var(--md-sys-typescale-body-small-size); color: var(--md-sys-color-on-surface-variant); text-align: center; margin-top: auto; border-top: 1px solid var(--md-sys-color-outline-variant); padding-top: var(--spacing-padding-xs); } `",
           "summary": "Styles for the BentoLayout component."
         }
       ],
@@ -166,9 +166,29 @@
           "name": "BentoLayout",
           "members": [
             {
+              "kind": "field",
+              "name": "_currentBreakpoint",
+              "type": {
+                "text": "Breakpoint"
+              },
+              "privacy": "private",
+              "default": "\"unknown\"",
+              "description": "The Breakpoint as calculated by readBreakpoint"
+            },
+            {
+              "kind": "field",
+              "name": "_onWindowResize",
+              "type": {
+                "text": "() => void"
+              },
+              "privacy": "private",
+              "description": "The callback passed to window.addEventListener and\n  window.removeEventListener"
+            },
+            {
               "kind": "method",
               "name": "getSkillsForWordCloud",
-              "privacy": "private"
+              "privacy": "private",
+              "description": "Retrieves the list of skills formatted for the word cloud."
             },
             {
               "kind": "method",
@@ -181,18 +201,11 @@
               },
               "parameters": [
                 {
-                  "name": "box",
-                  "type": {
-                    "text": "BentoBoxConfig[\"type\"]"
-                  },
-                  "description": "The type of bento box to render."
-                },
-                {
                   "name": "config",
                   "type": {
-                    "text": "{ columnSpan?: number; rowSpan?: number }"
+                    "text": "BentoBoxConfig"
                   },
-                  "description": "The grid configuration for the bento box (columnSpan, rowSpan)."
+                  "description": "The configuration for the bento box"
                 }
               ],
               "description": "Centralized method to render a bento box card based on its type and configuration."
@@ -224,6 +237,30 @@
           "declaration": {
             "name": "BentoLayout",
             "module": "src/components/bento-layout/bento-layout.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.types.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "BentoBoxConfigs",
+          "description": "Produces an Array of BentoBoxConfig instances used to populate\n  BentoLayout.",
+          "type": {
+            "text": "BentoBoxConfig[]"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BentoBoxConfigs",
+          "declaration": {
+            "name": "BentoBoxConfigs",
+            "module": "src/components/bento-layout/bento-layout.types.ts"
           }
         }
       ]
@@ -333,6 +370,73 @@
       "path": "src/components/blog/blog-post.types.ts",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "bentoCardStyles",
+          "default": "css` :host { display: block; height: 100%; width: 100%; } .bento-card { -webkit-backdrop-filter: blur(12px); border-radius: var(--md-sys-shape-corner-large); background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%); backdrop-filter: blur(12px); border: var(--hairline-width) solid var(--md-sys-color-outline-variant); padding: var(--spacing-padding-m); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-margin-s); box-shadow: var(--md-elevation-level-1); height: 100%; box-sizing: border-box; &:hover { transform: translateY(-4px); box-shadow: var(--md-elevation-level-3); border-color: var(--md-sys-color-outline); background-color: var(--md-sys-color-surface-container-high); } /* Style slotted h2 elements using nesting */ & ::slotted(h2) { margin: var(--spacing-reset); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant); padding-bottom: var(--spacing-padding-xs); } } `",
+          "summary": "Styles for the BentoCard component.\n\nImplements glassmorphism using `backdrop-filter` and semi-transparent background colors\nderived from Material Design 3 surface tokens. Provides interaction feedback via\nCSS transitions on hover, including elevation (shadow), border color shifts, and translation.\n\nIncludes specific styling for slotted `h2` elements to ensure visual consistency\nfor section headers within the bento grid layout."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoCardStyles",
+          "declaration": {
+            "name": "bentoCardStyles",
+            "module": "src/components/card/bento/bento-card.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/card/bento/bento-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BentoCard",
+          "slots": [
+            {
+              "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling.",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bento-card",
+          "customElement": true,
+          "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted `h2` elements as section headers.",
+          "modulePath": "src/components/card/bento/bento-card.ts",
+          "definitionPath": "src/components/card/bento/bento-card.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bento-card",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BentoCard",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -454,26 +558,6 @@
             },
             {
               "kind": "method",
-              "name": "_debugFont",
-              "type": "string",
-              "privacy": "private",
-              "enum": [
-                "inter",
-                "roboto"
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_debugIcons",
-              "type": "string",
-              "privacy": "private",
-              "enum": [
-                "outlined",
-                "sharp"
-              ]
-            },
-            {
-              "kind": "method",
               "name": "_dispatchColorSchemeChange",
               "privacy": "private",
               "parameters": [
@@ -513,19 +597,10 @@
             },
             {
               "kind": "method",
-              "name": "_toggleDebugFont",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_toggleDebugIcons",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
               "name": "formattedDate",
-              "type": "string",
-              "privacy": "private"
+              "type": "{string}",
+              "privacy": "private",
+              "description": "Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}\n  on {@link time} to render the user presented timestamp"
             },
             {
               "kind": "method",

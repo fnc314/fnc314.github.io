@@ -20,13 +20,28 @@ settings-card
 
 - [`LitElement`](https://lit.dev/docs/api/LitElement/)
 
+## Other
+
+### formattedDate
+
+&gt; `private` **formattedDate**: `string`
+
+Defined in: [src/components/card/settings/settings-card.ts:81](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L81)
+
+Creates an [Intl.DateTimeFormat](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) and calls [Intl.DateTimeFormat.format](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format)
+on time to render the user presented timestamp
+
+#### Memberof
+
+SettingsCard
+
 ## lifecycle
 
 ### connectedCallback()
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/card/settings/settings-card.ts:78](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L78)
+Defined in: [src/components/card/settings/settings-card.ts:93](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L93)
 
 Invoked when the component is added to the document's DOM.
 
@@ -59,7 +74,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/card/settings/settings-card.ts:101](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L101)
+Defined in: [src/components/card/settings/settings-card.ts:98](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L98)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -91,7 +106,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/settings/settings-card.ts:152](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L152)
+Defined in: [src/components/card/settings/settings-card.ts:149](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L149)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

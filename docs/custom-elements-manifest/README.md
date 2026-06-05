@@ -75,12 +75,19 @@
 
 <details><summary>Private API</summary>
 
+### Fields
+
+| Name                 | Privacy | Type         | Default     | Description                                                                           | Inherited From |
+| -------------------- | ------- | ------------ | ----------- | ------------------------------------------------------------------------------------- | -------------- |
+| `_currentBreakpoint` | private | `Breakpoint` | `"unknown"` | The Breakpoint as calculated by readBreakpoint                                        |                |
+| `_onWindowResize`    | private | `() => void` |             | The callback passed to window\.addEventListener and&#xA;  window\.removeEventListener |                |
+
 ### Methods
 
-| Name                    | Privacy | Description                                                                        | Parameters                                                                       | Return | Inherited From |
-| ----------------------- | ------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------ | -------------- |
-| `getSkillsForWordCloud` | private |                                                                                    |                                                                                  |        |                |
-| `renderBentoBox`        | private | Centralized method to render a bento box card based on its type and configuration. | `box: BentoBoxConfig["type"], config: { columnSpan?: number; rowSpan?: number }` |        |                |
+| Name                    | Privacy | Description                                                                        | Parameters               | Return | Inherited From |
+| ----------------------- | ------- | ---------------------------------------------------------------------------------- | ------------------------ | ------ | -------------- |
+| `getSkillsForWordCloud` | private | Retrieves the list of skills formatted for the word cloud.                         |                          |        |                |
+| `renderBentoBox`        | private | Centralized method to render a bento box card based on its type and configuration. | `config: BentoBoxConfig` |        |                |
 
 </details>
 
@@ -92,6 +99,22 @@
 | --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
 | `custom-element-definition` | `bento-layout` | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
 | `js`                        | `BentoLayout`  | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
+
+# `src/components/bento-layout/bento-layout.types.ts`:
+
+## Functions
+
+| Name              | Description                                                                       | Parameters | Return |
+| ----------------- | --------------------------------------------------------------------------------- | ---------- | ------ |
+| `BentoBoxConfigs` | Produces an Array of BentoBoxConfig instances used to populate&#xA;  BentoLayout. |            |        |
+
+<hr/>
+
+## Exports
+
+| Kind | Name              | Declaration     | Module                                            | Package |
+| ---- | ----------------- | --------------- | ------------------------------------------------- | ------- |
+| `js` | `BentoBoxConfigs` | BentoBoxConfigs | src/components/bento-layout/bento-layout.types.ts |         |
 
 # `dist/out/components/blog/blog-post.js`:
 
@@ -144,6 +167,47 @@
 | `custom-element-definition` | `blog-post`    | BlogPost     | src/components/blog/blog-post.ts  |         |
 | `js`                        | `BlogPost`     | BlogPost     | src/components/blog/blog-post.ts  |         |
 | `js`                        | `BlogPostJson` | BlogPostJson | @/components/blog/blog-post.types |         |
+
+# `src/components/card/bento/bento-card.styles.ts`:
+
+## Variables
+
+| Name              | Description | Type |
+| ----------------- | ----------- | ---- |
+| `bentoCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name              | Declaration     | Module                                         | Package |
+| ---- | ----------------- | --------------- | ---------------------------------------------- | ------- |
+| `js` | `bentoCardStyles` | bentoCardStyles | src/components/card/bento/bento-card.styles.ts |         |
+
+# `dist/out/components/card/bento/bento-card.js`:
+
+## class: `BentoCard`, `bento-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Slots
+
+| Name | Description                                                                                 |
+| ---- | ------------------------------------------------------------------------------------------- |
+|      | Default slot for card content. Slotted \`h2\` elements receive standardized header styling. |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name         | Declaration | Module                                  | Package |
+| --------------------------- | ------------ | ----------- | --------------------------------------- | ------- |
+| `custom-element-definition` | `bento-card` | BentoCard   | src/components/card/bento/bento-card.ts |         |
+| `js`                        | `BentoCard`  | BentoCard   | src/components/card/bento/bento-card.ts |         |
 
 # `dist/out/components/card/profile-bio/profile-bio-card.js`:
 
@@ -198,18 +262,14 @@
 
 ### Methods
 
-| Name                         | Privacy | Description | Parameters                               | Return | Inherited From |
-| ---------------------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
-| `_appConfigs`                | private |             |                                          |        |                |
-| `_debugFont`                 | private |             |                                          |        |                |
-| `_debugIcons`                | private |             |                                          |        |                |
-| `_dispatchColorSchemeChange` | private |             | `colorScheme: AppConfigs["colorScheme"]` |        |                |
-| `_onContrastChange`          | private |             | `event: Event`                           |        |                |
-| `_onThemeChange`             | private |             | `event: Event`                           |        |                |
-| `_toggleDebugFont`           | private |             |                                          |        |                |
-| `_toggleDebugIcons`          | private |             |                                          |        |                |
-| `formattedDate`              | private |             |                                          |        |                |
-| `onAppConfigsChange`         | private |             |                                          |        |                |
+| Name                         | Privacy | Description                                                                                                                                      | Parameters                               | Return | Inherited From |
+| ---------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | ------ | -------------- |
+| `_appConfigs`                | private |                                                                                                                                                  |                                          |        |                |
+| `_dispatchColorSchemeChange` | private |                                                                                                                                                  | `colorScheme: AppConfigs["colorScheme"]` |        |                |
+| `_onContrastChange`          | private |                                                                                                                                                  | `event: Event`                           |        |                |
+| `_onThemeChange`             | private |                                                                                                                                                  | `event: Event`                           |        |                |
+| `formattedDate`              | private | Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}&#xA;  on {@link time} to render the user presented timestamp |                                          |        |                |
+| `onAppConfigsChange`         | private |                                                                                                                                                  |                                          |        |                |
 
 </details>
 

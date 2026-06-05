@@ -80,14 +80,14 @@ export class BentoLayout extends LitElement {
     );
   };
 
-  protected override connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     console.info(`ConnectedCallback ${this._currentBreakpoint}`);
     this._onWindowResize();
     window.addEventListener("resize", this._onWindowResize);
   }
 
-  protected override disconnectedCallback() {
+  override disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener("resize", this._onWindowResize);
   }

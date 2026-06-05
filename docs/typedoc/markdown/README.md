@@ -180,7 +180,9 @@ A header component used for section titles with support for primary, secondary, 
 
 - [src/components/app-shell/app-shell](src/components/app-shell/app-shell/README.md)
 - [src/components/bento-layout/bento-layout](src/components/bento-layout/bento-layout/README.md)
+- [src/components/bento-layout/bento-layout.types](src/components/bento-layout/bento-layout.types/README.md)
 - [src/components/blog/blog-post](src/components/blog/blog-post/README.md)
+- [src/components/card/bento/bento-card](src/components/card/bento/bento-card/README.md)
 - [src/components/card/profile-bio/profile-bio-card](src/components/card/profile-bio/profile-bio-card/README.md)
 - [src/components/card/settings/settings-card](src/components/card/settings/settings-card/README.md)
 - [src/components/code/code-project/code-project](src/components/code/code-project/code-project/README.md)
@@ -194,7 +196,7 @@ A header component used for section titles with support for primary, secondary, 
 - [src/components/word/word-cloud/word-cloud.types](src/components/word/word-cloud/word-cloud.types/README.md)
 - [src/components/word/word-tag/word-tag](src/components/word/word-tag/word-tag/README.md)
 - [src/components/work-experience/work-experience](src/components/work-experience/work-experience/README.md)
-- [src/styles/components/dialog/dialog](src/styles/components/dialog/dialog/README.md)
+- [src/styles/breakpoints](src/styles/breakpoints/README.md)
 - [src/types/configs/fab-configs](src/types/configs/fab-configs/README.md)
 - [src/types/theme/theme](src/types/theme/theme/README.md)
   </any></body></html>

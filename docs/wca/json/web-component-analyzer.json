@@ -30,7 +30,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"bentoLayoutStyles\",\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
         }
       ]
     },
