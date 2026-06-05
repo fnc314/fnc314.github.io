@@ -2,44 +2,57 @@ import { type CSSResult, css } from "lit";
 
 /**
  * The {@link CSSResult} dedicated, explicitly, to the
- *   {@link --breakpoint} custom CSS `@property`
+ *   {@link --breakpoint-label} custom CSS `@property`
  *
  * @type {CSSResult}
  */
 export const Breakpoints: CSSResult = css`
-  @property --breakpoint {
-    syntax: "mobile | tablet | desktop";
+  @property --breakpoint-label {
+    syntax: "unknown | mobile | tablet | desktop";
     inherits: true;
-    initial-value: mobile;
+    initial-value: "desktop";
   };
 
-  html {
-    --breakpoint: mobile;
+  :root {
+    --breakpoint-label: unknown;
   }
 
-  @media screen and (width >= 1201px) {
-    html {
-      --breakpoint: desktop;
+  @media screen and (width <= 736px) {
+    :root {
+      --breakpoint-label: mobile;
     }
   }
 
-  @media  screen and (width >= 737px) and (width <= 1200px) {
-    html {
-      --breakpoint: tablet;
+  @media screen and (width >= 1201px) {
+    :root {
+      --breakpoint-label: desktop;
+    }
+  }
+
+  @media screen and (width >= 737px) and (width <= 1200px) {
+    :root {
+      --breakpoint-label: tablet;
     }
   }
 `;
 
 /**
- * Values for the {@link --breakpoint} custom CSS `@property`
+ * Values for the {@link --breakpoint-label} custom CSS `@property`
+ *
  * @typedef {Breakpoint}
  */
-export type Breakpoint = "mobile" | "tablet" | "desktop";
+export type Breakpoint = "unknown" | "mobile" | "tablet" | "desktop";
 
 /**
- * Reads from {@link window} the current value of {@link --breakpoint} CSS `@property`
+ * Reads from {@link window} the current value of {@link --breakpoint-label}
+ *   CSS `@property`
+ *
+ * @param element - An {@link HTMLElement} upon which {@link window.getComputedStyle}
+ *   is invoked
  * @returns {Breakpoint}
  */
-export const readBreakpoint: () => Breakpoint = () => window.getComputedStyle(
-  document.documentElement
-).getPropertyValue("--breakpoint") as Breakpoint;
+export const readBreakpoint: (element: HTMLElement) => Breakpoint = (element: HTMLElement) => window
+  .getComputedStyle(element)
+  .getPropertyValue("--breakpoint-label")
+  .trim().replace(/"/g, "") as Breakpoint
+  ?? "mobile";

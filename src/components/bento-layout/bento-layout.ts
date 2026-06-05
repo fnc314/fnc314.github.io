@@ -1,5 +1,5 @@
 import { bentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
-import { BENTO_BOX_LAYOUT_CONFIG, type BentoBoxConfig, type BentoBoxType } from "@/components/bento-layout/bento-layout.types";
+import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type BlogPostJson } from "@/components/blog/blog-post";
 import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
@@ -11,6 +11,7 @@ import CodeJson from "@/data/code.json" with { type: "json" };
 import Connections from "@/data/connections.json" with { type: "json" };
 import EducationJson from "@/data/education.json" with { type: "json" };
 import SkillsJson from "@/data/skills.json" with { type: "json" };
+import { Breakpoints, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type TemplateResult, html, nothing } from "lit";
 import { customElement } from "lit/decorators.js";
@@ -28,6 +29,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 export class BentoLayout extends LitElement {
   /** {@link lit!css} */
   static override styles = [
+    Breakpoints,
     bentoLayoutStyles,
     MaterialTypescaleStyles,
   ];
@@ -61,24 +63,38 @@ export class BentoLayout extends LitElement {
 
   /**
    * Centralized method to render a bento box card based on its type and configuration.
-   * @param box - The type of bento box to render.
-   * @param config - The grid configuration for the bento box (columnSpan, rowSpan).
+   * @param config - The configuration for the bento box
    * @returns A TemplateResult representing the rendered bento box.
    */
-  private renderBentoBox(box: BentoBoxType, config: Omit<BentoBoxConfig, "type">): TemplateResult {
+  private renderBentoBox(config: BentoBoxConfig): TemplateResult {
+
+    const { row, column, breakpoint }: GridPosition = config.placementForBreakpoint(
+      readBreakpoint(document.documentElement)
+    );
+
+    console.info(
+      `Inputs to 'renderBentoBox' ${
+        JSON.stringify({
+          config,
+          breakpoint,
+          row,
+          column,
+        })
+      }`
+    )
+
     const style = html`
       <style>
-        .card-${box} {
-          grid-column-start: ${config.column.start};
-          grid-column-end: ${config.column.end};
-          grid-row-start: ${config.row.start};
-          grid-row-end: ${config.row.end};
-          outline: solid 1px red;
+        .card-${config.type} {
+          grid-column-start: ${column.start};
+          grid-column-end: ${column.end};
+          grid-row-start: ${row.start};
+          grid-row-end: ${row.end};
         }
       </style>
     `;
 
-    switch (box) {
+    switch (config.type) {
       case "profile-photo-bio":
         return html`
           ${style}
@@ -219,10 +235,11 @@ export class BentoLayout extends LitElement {
         return html`${nothing}`;
     }
   }
+
   override render() {
     return html`
       <div class="bento-grid" role="main">
-        ${BENTO_BOX_LAYOUT_CONFIG.map(boxConfig => this.renderBentoBox(boxConfig.type, boxConfig))}
+        ${BentoBoxConfigs().map(boxConfig => this.renderBentoBox(boxConfig))}
       </div>
     `;
   }

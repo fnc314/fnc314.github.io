@@ -70,11 +70,6 @@ export const bentoLayoutStyles = css`
       grid-column: span 3;
       grid-row: span 1;
     }
-    .card-skills { grid-column: span 6; }
-    .card-education { grid-column: span 6; }
-    .card-work { grid-column: span 6; }
-    .card-code { grid-column: span 6; }
-    .card-blog { grid-column: span 6; }
   }
 
   /* Mobile layout (<=736px) */
@@ -89,29 +84,6 @@ export const bentoLayoutStyles = css`
       grid-column: span 1 !important;
       grid-row: span 1 !important;
     }
-  }
-
-  /* Card components internal styling */
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--spacing-margin-xs);
-  }
-
-  .profile-picture {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    border-radius: var(--md-sys-shape-corner-medium);
-    object-fit: cover;
-    border: 2px solid var(--md-sys-color-primary);
-  }
-
-  .profile-figcaption {
-    font-style: italic;
-    color: var(--md-sys-color-on-surface-variant);
   }
 
   .bio-content p {

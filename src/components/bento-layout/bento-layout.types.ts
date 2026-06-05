@@ -1,3 +1,5 @@
+import { type Breakpoint } from "@/styles/breakpoints";
+
 /**
  * Defines the 2 {@link number}s needed to place something
  *   on a `grid`
@@ -10,6 +12,19 @@ export interface GridPlacement {
 }
 
 /**
+ * A pair of {@link GridPlacement}s for the {@link row} and {@link column}
+ *   dimensions
+ *
+ * @interface GridPosition
+ * @typedef {GridPosition}
+ */
+export interface GridPosition {
+  breakpoint: Breakpoint;
+  row: GridPlacement;
+  column: GridPlacement;
+}
+
+/**
  * The finite `bento-box` instances
  *
  * @export
@@ -18,62 +33,141 @@ export interface GridPlacement {
 export type BentoBoxType = "profile-photo-bio" | "work" | "code" | "blog" | "settings" | "connect" | "education" | "skills";
 
 /**
- * Defines the {@link BentoBoxType} coupled with a pair of {@link GridPlacement}s
- *   for {@link BentoBoxConfig["row"]} and {@link BentoBoxConfig["column"]} definitions
+ * Defines the {@link BentoBoxType} coupled with a {@link GridPosition} used
+ *   to place a particular `bento-box`.
  *
  * @interface BentoBoxConfig
  */
 export interface BentoBoxConfig {
   type: BentoBoxType;
-  row: GridPlacement;
-  column: GridPlacement;
+  placementForBreakpoint(breakpoint: Breakpoint): GridPosition;
 }
 
 /**
- * An {@link Array} of {@link BentoBoxConfig} instances used to populate
- *   {@link BentoLayout}
+ * Produces an {@link Array} of {@link BentoBoxConfig} instances used to populate
+ *   {@link BentoLayout}.
  *
  * @type {BentoBoxConfig[]}
  */
-export const BENTO_BOX_LAYOUT_CONFIG: BentoBoxConfig[] = [
+export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   {
     type: "profile-photo-bio",
-    row: { start: 1, end: 2 },
-    column: { start: 1, end: 6 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 1, end: 2 }, column: { start: 1, end: 6 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 1, end: 2 }, column: { start: 1, end: 6 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 1, end: 2 }, column: { start: 1, end: 6 } };
+      }
+    }
   },
   {
     type: "work",
-    row: { start: 1, end: 2 },
-    column: { start: 6, end: -1 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 2, end: 3 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 1, end: 2 }, column: { start: 1, end: -1 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 1, end: 2 }, column: { start: 6, end: -1 } };
+      }
+    }
   },
   {
     type: "blog",
-    row: { start: 2, end: 3 },
-    column: { start: 1, end: -1 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 3, end: 4 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
+      }
+    }
   },
   {
     type: "code",
-    row: { start: 3, end: 4 },
-    column: { start: 1, end: -1 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 4, end: 5 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+      }
+    }
   },
   {
     type: "skills",
-    row: { start: 4, end: 6 },
-    column: { start: 1, end: -1 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 5, end: 6 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 5, end: 7 }, column: { start: 1, end: -1 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 4, end: 6 }, column: { start: 1, end: -1 } };
+      }
+    }
   },
   {
     type: "education",
-    row: { start: 6, end: 7 },
-    column: { start: 2, end: 5 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 6, end: 7 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: 4 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 2, end: 5 } };
+      }
+    }
   },
   {
     type: "connect",
-    row: { start: 6, end: 7 },
-    column: { start: 5, end: 8 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 7, end: 8 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 4, end: 7 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 5, end: 8 } };
+      }
+    }
   },
   {
     type: "settings",
-    row: { start: 6, end: 7 },
-    column: { start: 8, end: 12 }
+    placementForBreakpoint(breakpoint: Breakpoint) {
+      switch (breakpoint) {
+        case "mobile":
+          return { breakpoint: "mobile", row: { start: 8, end: 9 }, column: { start: 1, end: 2 } };
+        case "tablet":
+          return { breakpoint: "tablet", row: { start: 8, end: 9 }, column: { start: 1, end: 7 } };
+        case "desktop":
+        case "unknown":
+        default:
+          return { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 8, end: 12 } };
+      }
+    }
   },
-];
+]);
