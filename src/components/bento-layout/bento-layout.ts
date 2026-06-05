@@ -30,8 +30,8 @@ export class BentoLayout extends LitElement {
   /** {@link lit!css} */
   static override styles = [
     Breakpoints,
-    bentoLayoutStyles,
     MaterialTypescaleStyles,
+    bentoLayoutStyles,
   ];
 
   constructor() {
@@ -69,12 +69,13 @@ export class BentoLayout extends LitElement {
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
 
     const { row, column, breakpoint }: GridPosition = config.placementForBreakpoint(
-      readBreakpoint(document.documentElement)
+      readBreakpoint(window.document.documentElement)
     );
 
     console.info(
       `Inputs to 'renderBentoBox' ${
         JSON.stringify({
+          renderRoot: window.document.documentElement,
           config,
           breakpoint,
           row,
