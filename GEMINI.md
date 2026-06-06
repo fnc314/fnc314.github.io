@@ -6,29 +6,10 @@ This project is the personal website of Franco N. Colaizzi. It is a sophisticate
 
 - **Framework:** Lit (Web Components)
 - **Design System:** Material Design 3
-- **Build System:** Rollup, with Vite-related tooling for development and PWA support.
+- **Build System:** Mise-driven, Vite-orchestrated builds where CLIs are wrapped in tasks from relative `.mise/tasks/` directories and sub-directories. Dependencies are managed by PNPM and exclusively use `--save-catalog-name=dependencies|devDependencies|...` in call dependency installs
 - **Language:** TypeScript
 
 ## Key Commands
-
-### Development
-
-- `pnpm serve`: Starts the development server (`web-dev-server`).
-- `pnpm build:website:watch`: Builds the project in watch mode for local development.
-
-### Build & Deploy
-
-- `pnpm build`: Executes the production build via Rollup.
-- `pnpm deploy`: Cleans the `website/` directory and performs a production build.
-
-### Linting & Formatting
-
-- `pnpm lint`: Runs `lit-analyzer` and `eslint`.
-- `pnpm format`: Runs `prettier` to format source files.
-
-### Testing
-
-- `pnpm test`: Runs the test suite using `web-test-runner` in both development and production modes.
 
 ### Documentation & Metadata
 
@@ -38,7 +19,8 @@ This project is the personal website of Franco N. Colaizzi. It is a sophisticate
 
 ## Development Conventions
 
-- **File Structure:** Components are organized within `src/components/`, with data residing in `src/data/` and themes in `src/theme/`.
+- **File Structure:** Components are organized within `src/components/`, with data residing in `src/data/`
 - **Styling:** Primarily uses Material Design variables and custom CSS properties. Tailwind CSS is used for some utility styling.
 - **Standards:** Strictly TypeScript, using Lit conventions for web components.
 - **CEM:** Custom Elements Manifest is utilized extensively to document component APIs, which powers IDE support and documentation generation.
+- **TypeDoc:** Document everything extensively with `JSDoc`/`TSDoc` tags and annotations

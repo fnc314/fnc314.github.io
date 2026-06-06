@@ -39,11 +39,18 @@ A `package.json` file will be created in `design-tokens/` with the following str
 }
 ```
 
-#### 1.3 Install Style Dictionary
+#### 1.3 Install Dependencies
 
-`style-dictionary` will be added to the `devDependencies` of the root `package.json` using `pnpm add -D --save-catalog-name=devDependencies style-dictionary`. The reference in the `design-tokens/package.json` `devDependencies` will then point to this catalog entry.
+Dependencies will be added to the `design-tokens/package.json` using `pnpm add -D --save-catalog-name=devDependencies <package-name>` from the project root, ensuring the command only modifies `design-tokens/package.json` by using proper workspace targeting or executing from the `design-tokens/` directory.
 
-#### 1.4 Configure Style Dictionary
+#### 1.4 Configure Orchestration
+
+- Create `design-tokens/vite.config.ts` to orchestrate build steps.
+- Create `.mise/tasks/` in `design-tokens/` for all CLI calls related to this package.
+- All `mise` tasks must be `.zsh` files.
+- No `mise` task should affect a `src` directory "above" it in the folder hierarchy.
+
+#### 1.5 Configure Style Dictionary
 
 A new directory `.config/style-dictionary/` will be created at the project root. This directory will contain `config.mjs` for Style Dictionary.
 
@@ -93,7 +100,7 @@ export default {
 
 *Note: The `source` array includes placeholders for files that will be generated in Phase 2.*
 
-#### 1.5 Create `design-tokens/mise.toml`
+#### 1.6 Create `design-tokens/mise.toml`
 
 This file will define a `mise` task for generating design tokens within the `design-tokens` package.
 
@@ -102,9 +109,9 @@ This file will define a `mise` task for generating design tokens within the `des
 generate = { cmd = "bash .mise/tasks/generate.zsh", aliases = ["gen"] }
 ```
 
-#### 1.6 Create `design-tokens/.mise/tasks/generate.zsh`
+#### 1.7 Create `design-tokens/.mise/tasks/generate.zsh`
 
-This script will execute Style Dictionary to build the design tokens.
+This script will execute Style Dictionary via `vite` to build the design tokens.
 
 ```zsh
 #!/usr/bin/env zsh
@@ -112,7 +119,7 @@ This script will execute Style Dictionary to build the design tokens.
 #MISE alias="gen-tokens"
 
 echo "Generating design tokens for @fnc314/design-tokens..."
-pnpx style-dictionary build --config ./.config/style-dictionary/config.mjs
+pnpm vite ... # Orchestration logic here
 echo "Design tokens generated successfully."
 ```
 
