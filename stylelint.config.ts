@@ -5,14 +5,9 @@ export const config: Config = {
   extends: [
     "stylelint-config-standard",
     "stylelint-config-alphabetical-order",
-    "stylelint-prettier/recommended"
+    "stylelint-plugin-rhythmguard/configs/strict",
+    "stylelint-prettier/recommended",
   ],
-  languageOptions: {
-    directionality: {
-      block: "top-to-bottom",
-      inline: "left-to-right",
-    }
-  },
   ignoreFiles: [
     ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
     ".config/tailwind/*.ts",
@@ -33,8 +28,35 @@ export const config: Config = {
     "vite.config.ts",
     "website/**/*.ts",
   ],
-  plugins: ["stylelint-plugin-use-baseline"],
+  languageOptions: {
+    directionality: {
+      block: "top-to-bottom",
+      inline: "left-to-right",
+    }
+  },
+  overrides: [
+    {
+      files: ["src/**/*.ts", "src/**/*.css"],
+      customSyntax: "postcss-lit",
+    }
+  ],
+  plugins: [
+    "stylelint-plugin-use-baseline",
+    "stylelint-use-nesting",
+    "stylelint-declaration-strict-value",
+  ],
   rules: {
+    "scale-unlimited/declaration-strict-value": [
+      ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
+      {
+        expandOf: {
+          padding: ["padding", "padding-left", "padding-right", "padding-top", "padding-bottom"],
+          margin: ["margin", "margin-left", "margin-right", "margin-top", "margin-bottom"],
+        },
+        ignoreValues: ["0", "inherit", "transparent", "initial", "none", "unset"],
+        message: "Use design tokens for ${property}. See https://fnc314.github.io/docs/design-tokens/ for guidance."
+      }
+    ],
     "declaration-block-no-redundant-longhand-properties": [
       true,
       {
@@ -46,13 +68,7 @@ export const config: Config = {
         ],
       },
     ],
-  },
-  overrides: [
-    {
-      files: ["src/**/*.ts"],
-      customSyntax: "postcss-lit",
-    }
-  ]
+  }
 };
 
 export default config;

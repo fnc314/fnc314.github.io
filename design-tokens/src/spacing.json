@@ -1,0 +1,21 @@
+{
+  "spacing": {
+    "reset": { "value": "0" },
+    "padding": {
+      "xxs": { "value": "0.25rem" },
+      "xs": { "value": "0.5rem" },
+      "s": { "value": "1rem" },
+      "m": { "value": "1.5rem" },
+      "l": { "value": "2rem" },
+      "xl": { "value": "3rem" }
+    },
+    "margin": {
+      "xxs": { "value": "0.2rem" },
+      "xs": { "value": "0.4rem" },
+      "s": { "value": "0.8rem" },
+      "m": { "value": "1.2rem" },
+      "l": { "value": "1.6rem" },
+      "xl": { "value": "2.4rem" }
+    }
+  }
+}

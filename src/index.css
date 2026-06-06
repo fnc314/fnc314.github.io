@@ -1,22 +1,14 @@
-@import url("./stylesheets/material-overrides.css");
-@import url("./stylesheets/breakpoints.css");
-@import url("./stylesheets/spacing.css");
+@import url("@fnc314/design-tokens/dist/css/_variables.css");
 
 :root {
   color-scheme: light dark;
 
-  --hover-focus-animation-translate-y: -0.25rem;
-  --hairline-width: 1px;
-  --icon-fill-color: #c12a1c;
-  --breakpoint-mobile-max: 736px;
-  --breakpoint-tablet-max: 1200px;
-  --breakpoint-compact-width-max: 600px;
-  --breakpoint-medium-width-max: 900px;
-  --breakpoint-large-width-max: 1200px;
-  --breakpoint-expanded-width-max: 1500px;
-  --color-transition-duration: 500ms;
-  --color-transition-timing: ease-in-out;
-  --fab-buffer-height: 10rem;
+  --hover-focus-animation-translate-y: var(--global-hover-focus-animation-translate-y);
+  --hairline-width: var(--global-hairline-width);
+  --icon-fill-color: var(--global-icon-fill-color);
+  --color-transition-duration: var(--global-transition-color-duration);
+  --color-transition-timing: var(--global-transition-color-timing);
+  --fab-buffer-height: var(--global-fab-buffer-height);
 }
 
 * {

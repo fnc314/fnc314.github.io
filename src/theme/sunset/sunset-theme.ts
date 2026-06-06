@@ -1,4 +1,4 @@
-import JsonTheme from "@/theme/sunset/sunset.material3-expressive-theme.json" with { type: "json" };
+import JsonTheme from "@fnc314/design-tokens/src/themes/sunset.mtb.json" with { type: "json" };
 import {
   PhotoJsonFile,
   type ThemeConfig,

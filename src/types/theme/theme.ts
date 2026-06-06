@@ -1,4 +1,4 @@
-import PhotoJsonFileImport from "@/data/photo.json" with { type: "json" };
+import PhotoJsonFileImport from "@fnc314/design-tokens/src/photo.json" with { type: "json" };
 import { type MaterialScheme } from "@/styles/material-styles";
 import { type CSSResult, css, unsafeCSS } from "lit";
 

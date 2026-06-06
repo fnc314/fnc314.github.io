@@ -1,0 +1,24 @@
+{
+  "name": "@fnc314/design-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
+  "author": "Franco N. Colaizzi",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "style-dictionary": "catalog:devDependencies"
+  },
+  "keywords": [
+    "design-tokens",
+    "style-dictionary"
+  ],
+  "engines": {
+    "node": "26.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "sys": {
+    "shape": {
+      "corner": {
+        "extraLarge": { "value": "2rem" },
+        "extraSmall": { "value": "0.25rem" },
+        "full": { "value": "100%" },
+        "large": { "value": "1.5rem" },
+        "medium": { "value": "1rem" },
+        "none": { "value": "0" },
+        "small": { "value": "0.5rem" }
+      }
+    }
+  }
+}
