@@ -10,6 +10,9 @@ allowBuilds:
   unrs-resolver: false
 catalog:
   stylelint-declaration-strict-value: 1.11.1
+  ts-node: 10.9.2
+  tsx: 4.22.4
+  typescript: 6.0.3
 catalogMode: "strict"
 catalogs:
   dependencies:
@@ -139,6 +142,7 @@ catalogs:
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
     tailwindcss: 4.3.0
+    tsx: 4.22.4
     ts-lit-plugin: 2.0.2
     tslib: 2.8.1
     typedoc: 0.28.19

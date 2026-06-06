@@ -1,6 +1,6 @@
 import { type Config } from "stylelint";
 
-export const config: Config = {
+const config: Config = {
   defaultSeverity: "warning",
   extends: [
     "stylelint-config-standard",
@@ -27,6 +27,7 @@ export const config: Config = {
     "stylelint.config.ts",
     "vite.config.ts",
     "website/**/*.ts",
+    "src/**/*.d.ts",
   ],
   languageOptions: {
     directionality: {
@@ -36,7 +37,7 @@ export const config: Config = {
   },
   overrides: [
     {
-      files: ["src/**/*.ts", "src/**/*.css"],
+      files: ["src/**/*.ts"],
       customSyntax: "postcss-lit",
     }
   ],
@@ -49,12 +50,8 @@ export const config: Config = {
     "scale-unlimited/declaration-strict-value": [
       ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
       {
-        expandOf: {
-          padding: ["padding", "padding-left", "padding-right", "padding-top", "padding-bottom"],
-          margin: ["margin", "margin-left", "margin-right", "margin-top", "margin-bottom"],
-        },
-        ignoreValues: ["0", "inherit", "transparent", "initial", "none", "unset"],
-        message: "Use design tokens for ${property}. See https://fnc314.github.io/docs/design-tokens/ for guidance."
+        "ignoreValues": ["0", "inherit", "transparent", "initial", "none", "unset"],
+        "message": "Use design tokens for ${property}. See https://fnc314.github.io/docs/design-tokens/ for guidance."
       }
     ],
     "declaration-block-no-redundant-longhand-properties": [
@@ -71,4 +68,4 @@ export const config: Config = {
   }
 };
 
-export default config;
+export default config satisfies Config;

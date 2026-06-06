@@ -11,8 +11,8 @@
 ### Phase 2: Migration of Existing Tokens and Consumption
 
 -   [x] Move `src/theme/**/*.material3-expressive-theme.json` to `design-tokens/src/themes/`.
-- [x] Create `design-tokens/src/themes/images/` and move `static/images/themes/*` into it.
--   [ ] Update Style Dictionary configuration (`.config/style-dictionary/config.mjs`) to include a custom action or platform to copy images from `design-tokens/src/themes/images/` to `design-tokens/dist/images/`.
+- [-] Create `design-tokens/src/themes/images/` and move `static/images/themes/*` into it. (Abandoned: No colocation of resources)
+- [-] Update Style Dictionary configuration (`.config/style-dictionary/config.mjs`) to include a custom action or platform to copy images from `design-tokens/src/themes/images/` to `design-tokens/dist/images/`. (Abandoned: No colocation of resources)
 -   [x] Convert `src/stylesheets/spacing.css` into Style Dictionary compatible JSON (`design-tokens/src/spacing.json`). Delete original file.
 -   [x] Convert `src/stylesheets/breakpoints.css` into Style Dictionary compatible JSON (`design-tokens/src/breakpoints.json`). Delete original file.
 -   [x] Extract typeface, typescale, shape, and icon size declarations from `src/stylesheets/material-overrides.css` and `src/styles/material-styles.ts` into Style Dictionary compatible JSON files (e.g., `design-tokens/src/typography.json`, `design-tokens/src/shapes.json`, `design-tokens/src/icons.json`). Delete original `src/stylesheets/material-overrides.css` and update `src/styles/material-styles.ts` to consume generated tokens.
@@ -24,7 +24,7 @@
 
 ### Phase 3: Stylelint Enforcement
 
--   [ ] Install `stylelint-value-no-udl` or `stylelint-use-var` plugin.
--   [ ] Update `stylelint.config.ts` to enforce usage of `var(--md-sys-color-...)`, `var(--spacing-...)`, `var(--md-typescale-...)`, etc., for relevant CSS properties, leveraging `postcss-lit` for TypeScript files.
--   [ ] Create `changes/dev-tools/design-tokens/follow_ups.md` to document non-compliant existing values.
--   [ ] Create `design-tokens/.mise/tasks/dev-ex/design-tokens/lint.zsh` to run stylelint checks.
+-   [x] Install `stylelint-value-no-udl` or `stylelint-use-var` plugin.
+-   [x] Update `stylelint.config.ts` to enforce usage of design tokens, leveraging `postcss-lit` for TypeScript files.
+-   [x] Create `changes/dev-tools/design-tokens/follow_ups.md` to document non-compliant existing values.
+-   [x] Create `design-tokens/.mise/tasks/dev-ex/design-tokens/lint.zsh` to run stylelint checks.

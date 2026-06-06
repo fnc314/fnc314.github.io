@@ -30,6 +30,12 @@ catalogs:
     stylelint-declaration-strict-value:
       specifier: 1.11.1
       version: 1.11.1
+    ts-node:
+      specifier: 10.9.2
+      version: 10.9.2
+    typescript:
+      specifier: 6.0.3
+      version: 6.0.3
   dependencies:
     '@lit-labs/motion':
       specifier: 1.1.0
@@ -287,9 +293,6 @@ catalogs:
     globals:
       specifier: 17.6.0
       version: 17.6.0
-    jiti:
-      specifier: 2.7.0
-      version: 2.7.0
     lit-analyzer:
       specifier: 2.0.3
       version: 2.0.3
@@ -392,6 +395,9 @@ catalogs:
     tslib:
       specifier: 2.8.1
       version: 2.8.1
+    tsx:
+      specifier: 4.22.4
+      version: 4.22.4
     typedoc:
       specifier: 0.28.19
       version: 0.28.19
@@ -724,9 +730,6 @@ importers:
       globals:
         specifier: catalog:devDependencies
         version: 17.6.0
-      jiti:
-        specifier: catalog:devDependencies
-        version: 2.7.0
       lit-analyzer:
         specifier: catalog:devDependencies
         version: 2.0.3
@@ -738,10 +741,10 @@ importers:
         version: 8.5.15
       postcss-lit:
         specifier: catalog:devDependencies
-        version: 1.4.1(jiti@2.7.0)(postcss@8.5.15)(yaml@2.9.0)
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0)
       postcss-load-config:
         specifier: catalog:devDependencies
-        version: 6.0.1(jiti@2.7.0)(postcss@8.5.15)(yaml@2.9.0)
+        version: 6.0.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0)
       prettier:
         specifier: catalog:devDependencies
         version: 3.8.3
@@ -829,9 +832,15 @@ importers:
       ts-lit-plugin:
         specifier: catalog:devDependencies
         version: 2.0.2
+      ts-node:
+        specifier: 'catalog:'
+        version: 10.9.2(@types/node@25.9.1)(typescript@6.0.3)
       tslib:
         specifier: catalog:devDependencies
         version: 2.8.1
+      tsx:
+        specifier: catalog:devDependencies
+        version: 4.22.4
       typedoc:
         specifier: catalog:devDependencies
         version: 0.28.19(typescript@6.0.3)
@@ -863,7 +872,7 @@ importers:
         specifier: catalog:devDependencies
         version: 1.0.0(typedoc@0.28.19(typescript@6.0.3))
       typescript:
-        specifier: catalog:devDependencies
+        specifier: 'catalog:'
         version: 6.0.3
       typescript-eslint:
         specifier: catalog:devDependencies
@@ -873,7 +882,7 @@ importers:
         version: 1.3.2(@nuxt/kit@4.4.6)(@nuxt/schema@4.4.6)(esbuild@0.28.0)(rollup@4.61.1)(vite@8.0.16)
       vite:
         specifier: catalog:devDependencies
-        version: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+        version: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       vite-plugin-cem:
         specifier: catalog:devDependencies
         version: 0.8.5(vite@8.0.16)
@@ -10025,6 +10034,11 @@ packages:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
     engines: {node: '>=0.6.x'}
 
+  tsx@4.22.4:
+    resolution: {integrity: sha512-X8EX+XV4QR5xCsrgxaED954zTDfY8KqlDtskKEL0cHhyS/P8b4IFOvGDQpsC9Q1XnLq915wEfwwY/zzskCtmhg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
@@ -11669,7 +11683,6 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
-    optional: true
 
   '@csstools/color-helpers@5.1.0': {}
 
@@ -12817,7 +12830,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-    optional: true
 
   '@js-sdsl/ordered-map@4.4.2':
     optional: true
@@ -13891,17 +13903,13 @@ snapshots:
       magic-string: 0.30.21
       string.prototype.matchall: 4.0.12
 
-  '@tsconfig/node10@1.0.12':
-    optional: true
+  '@tsconfig/node10@1.0.12': {}
 
-  '@tsconfig/node12@1.0.11':
-    optional: true
+  '@tsconfig/node12@1.0.11': {}
 
-  '@tsconfig/node14@1.0.3':
-    optional: true
+  '@tsconfig/node14@1.0.3': {}
 
-  '@tsconfig/node16@1.0.4':
-    optional: true
+  '@tsconfig/node16@1.0.4': {}
 
   '@tybys/wasm-util@0.10.2':
     dependencies:
@@ -14055,8 +14063,7 @@ snapshots:
 
   '@types/deep-eql@4.0.2': {}
 
-  '@types/diff@4.0.2':
-    optional: true
+  '@types/diff@4.0.2': {}
 
   '@types/diff@5.2.3': {}
 
@@ -14844,7 +14851,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.2
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - bufferutil
@@ -14918,7 +14925,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.2
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       vue: 3.5.35(typescript@6.0.3)
       ws: 8.21.0
     transitivePeerDependencies:
@@ -15330,7 +15337,6 @@ snapshots:
   acorn-walk@8.3.5:
     dependencies:
       acorn: 8.16.0
-    optional: true
 
   acorn@7.4.1: {}
 
@@ -15409,8 +15415,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.2
 
-  arg@4.1.3:
-    optional: true
+  arg@4.1.3: {}
 
   argparse@1.0.10:
     dependencies:
@@ -16177,8 +16182,7 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  create-require@1.1.1:
-    optional: true
+  create-require@1.1.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -16469,8 +16473,7 @@ snapshots:
       leven: 3.1.0
       lodash.deburr: 4.1.0
 
-  diff@4.0.4:
-    optional: true
+  diff@4.0.4: {}
 
   diff@5.2.2: {}
 
@@ -18999,8 +19002,7 @@ snapshots:
     dependencies:
       semver: 7.8.1
 
-  make-error@1.3.6:
-    optional: true
+  make-error@1.3.6: {}
 
   make-synchronized@0.4.2: {}
 
@@ -19961,14 +19963,14 @@ snapshots:
     dependencies:
       postcss: 8.5.15
 
-  postcss-lit@1.4.1(jiti@2.7.0)(postcss@8.5.15)(yaml@2.9.0):
+  postcss-lit@1.4.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       '@babel/generator': 7.29.1
       '@babel/parser': 7.29.3
       '@babel/traverse': 7.29.0
       lilconfig: 3.1.3
       postcss: 8.5.15
-      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.15)(yaml@2.9.0)
+      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -19983,12 +19985,13 @@ snapshots:
       postcss: 8.5.15
       ts-node: 10.9.2(@types/node@25.9.1)(typescript@6.0.3)
 
-  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.15)(yaml@2.9.0):
+  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 2.7.0
       postcss: 8.5.15
+      tsx: 4.22.4
       yaml: 2.9.0
 
   postcss-merge-longhand@5.1.7(postcss@8.5.15):
@@ -21527,7 +21530,6 @@ snapshots:
       typescript: 6.0.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-    optional: true
 
   ts-simple-type@2.0.0-next.0: {}
 
@@ -21549,6 +21551,12 @@ snapshots:
   tslib@2.8.1: {}
 
   tsscmp@1.0.6: {}
+
+  tsx@4.22.4:
+    dependencies:
+      esbuild: 0.28.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   tunnel-agent@0.6.0:
     dependencies:
@@ -21840,7 +21848,7 @@ snapshots:
       '@nuxt/schema': 4.4.6
       esbuild: 0.28.0
       rollup: 4.61.1
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -21951,8 +21959,7 @@ snapshots:
       kleur: 4.1.5
       sade: 1.8.1
 
-  v8-compile-cache-lib@3.0.1:
-    optional: true
+  v8-compile-cache-lib@3.0.1: {}
 
   v8-to-istanbul@9.3.0:
     dependencies:
@@ -21984,7 +21991,7 @@ snapshots:
       '@types/glob': 8.1.0
       glob: 8.1.0
       typescript: 5.7.3
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
 
   vite-plugin-cp@6.0.3:
     dependencies:
@@ -22002,7 +22009,7 @@ snapshots:
       debug: 4.4.3
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.17
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       workbox-build: 7.4.1(@types/babel__core@7.20.5)
       workbox-window: 7.4.1
     optionalDependencies:
@@ -22014,9 +22021,9 @@ snapshots:
     dependencies:
       '@nuxt/kit': 4.4.6
       '@nuxt/schema': 4.4.6
-      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
 
-  vite@8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0):
+  vite@8.0.16(@types/node@25.9.1)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -22030,6 +22037,7 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.7.0
       terser: 5.48.0
+      tsx: 4.22.4
       yaml: 2.9.0
 
   vp-runtime-helper@1.0.10:
@@ -22422,8 +22430,7 @@ snapshots:
 
   ylru@1.4.0: {}
 
-  yn@3.1.1:
-    optional: true
+  yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
 

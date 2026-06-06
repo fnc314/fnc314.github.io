@@ -194,10 +194,6 @@ The images located in `static/images/themes/` correspond to the moved theme JSON
 
 - Install `stylelint-value-no-udl` (use-design-token-linter) or `stylelint-use-var` plugin for enforcing variable usage.
 - Add new rules to `stylelint.config.ts` to enforce the usage of design tokens for specific properties.
-  - Colors: `color`, `background-color`, `border-color`, etc. should use `var(--md-sys-color-...)`.
-  - Spacing: `margin`, `padding`, `gap` should use `var(--spacing-...)`.
-  - Typography: `font-size`, `line-height`, `font-family`, `font-weight` should use `var(--md-typescale-...)` or `var(--md-ref-typeface-...)`.
-  - Shapes: `border-radius` should use `var(--md-sys-shape-corner-...)`.
 - Ensure these rules apply correctly within `postcss-lit` blocks in TypeScript files.
 
 #### 3.2 Document Non-Compliant Values
