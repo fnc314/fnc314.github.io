@@ -2,7 +2,7 @@
   syntax: "unknown | mobile | tablet | desktop";
   inherits: true;
   initial-value: unknown;
-};
+}
 
 :root {
   --breakpoint-label: unknown;

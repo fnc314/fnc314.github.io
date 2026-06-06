@@ -181,6 +181,7 @@
     "rollup-plugin-version-injector": "catalog:devDependencies",
     "rollup-plugin-visualizer": "catalog:devDependencies",
     "stylelint": "catalog:devDependencies",
+    "stylelint-config-alphabetical-order": "catalog:devDependencies",
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
     "stylelint-plugin-use-baseline": "catalog:devDependencies",

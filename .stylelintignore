@@ -5,9 +5,9 @@
 .vscode/
 .well-known/
 bun-build/
+dist/
 docs/
 logs/
 node_modules/
-old/
 stats/
 website/

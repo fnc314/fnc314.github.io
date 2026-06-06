@@ -29,60 +29,76 @@ export class BentoLayout extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: block;
-        width: 100%;
-        color: var(--md-sys-color-on-surface);
+        /**
+         * Mobile styles use \\\`flex\\\` so this is only used when
+         *   \\\`@media screen and (width >= 769px)\\\`
+         * Tablet -> 769 <= 1200 -> 6
+         * Desktop -> >= 1201 -> 12
+         */
+        --bento-layout-column-count: 1;
+
         background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
+        display: block;
         padding-bottom: var(--spacing-padding-xl);
+        width: 100%;
       }
 
       .bento-grid {
+        align-items: stretch;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         gap: var(--spacing-margin-s);
         padding: var(--spacing-padding-xs);
       }
 
       h1 {
-        text-align: center;
-        border-radius: var(--md-sys-shape-corner-large);
-        color: var(--md-sys-color-on-primary-fixed);
         background-color: var(--md-sys-color-primary-fixed);
         border-color: var(--md-sys-color-on-primary-fixed);
+        border-radius: var(--md-sys-shape-corner-large);
         border-width: var(--hairline-width);
-        width: 65%;
-        padding-block: var(--spacing-padding-l);
+        color: var(--md-sys-color-on-primary-fixed);
         margin-inline: auto;
+        padding-block: var(--spacing-padding-l);
+        text-align: center;
+        width: 65%;
       }
 
       @media screen and ((width <= 1200px) and (width >= 769px)) {
+        :host {
+          --bento-layout-column-count: 6;
+        }
+
         .bento-grid {
           align-items: unset;
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
           gap: var(--spacing-margin-m);
           grid-auto-flow: dense;
+          grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
           padding: var(--spacing-padding-s);
         }
 
         h1 {
-          grid-area: span 1 / span 7;
+          grid-area: span 1 / span var(--bento-layout-column-count);
         }
       }
 
       @media screen and (width >= 1201px) {
+        :host {
+          --bento-layout-column-count: 12;
+        }
+
         .bento-grid {
           display: grid;
-          grid-template-columns: repeat(12, 1fr);
           gap: var(--spacing-margin-l);
+          grid-auto-flow: dense;
+          grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
           margin: var(--spacing-reset) auto;
           padding: var(--spacing-padding-m);
-          grid-auto-flow: dense;
         }
 
         h1 {
-          grid-area: span 1 / span 12;
+          grid-area: span 1 / span var(--bento-layout-column-count);
         }
       }
     `
