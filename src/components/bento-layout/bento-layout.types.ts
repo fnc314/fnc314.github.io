@@ -18,7 +18,7 @@ export interface GridPlacement {
  * @interface GridPosition
  * @typedef {GridPosition}
  */
-export type GridPosition {
+export type GridPosition = {
   breakpoint: Omit<Breakpoint, "mobile">;
   row: GridPlacement;
   column: GridPlacement;
@@ -57,7 +57,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 3 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 4 } };
         case "desktop":
           return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 7 } };
         case "unknown":
@@ -73,7 +73,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 3, end: -1 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 4, end: -1 } };
         case "desktop":
           return { breakpoint, row: { start: 2, end: 3 }, column: { start: 7, end: -1 } };
         case "unknown":
@@ -89,7 +89,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: 4 } };
         case "desktop":
           return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: 7 } };
         case "unknown":
@@ -105,7 +105,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 4, end: -1 } };
         case "desktop":
           return { breakpoint, row: { start: 3, end: 4 }, column: { start: 7, end: -1 } };
         case "unknown":
@@ -121,7 +121,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
         case "desktop":
           return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
         case "unknown":
@@ -137,7 +137,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 4 } };
+          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: 4 } };
         case "desktop":
           return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: 5 } };
         case "unknown":
@@ -153,7 +153,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 4, end: 7 } };
+          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 4, end: 7 } };
         case "desktop":
           return { breakpoint, row: { start: 5, end: 6 }, column: { start: 5, end: 9 } };
         case "unknown":
@@ -169,7 +169,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint };
         case "tablet":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 7 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: -1 } };
         case "desktop":
           return { breakpoint, row: { start: 5, end: 6 }, column: { start: 9, end: 13 } };
         case "unknown":

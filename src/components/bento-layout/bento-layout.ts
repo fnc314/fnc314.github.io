@@ -46,7 +46,6 @@ export class BentoLayout extends LitElement {
 
       h1 {
         text-align: center;
-        grid-area: span 1 / span 12;
         border-radius: var(--md-sys-shape-corner-large);
         color: var(--md-sys-color-on-primary-fixed);
         background-color: var(--md-sys-color-primary-fixed);
@@ -69,6 +68,10 @@ export class BentoLayout extends LitElement {
           width: 100%;
           max-width: 1400px;
         }
+
+        h1 {
+          grid-area: span 1 / span 7;
+        }
       }
 
       @media screen and (width >= 1201px) {
@@ -81,6 +84,10 @@ export class BentoLayout extends LitElement {
           grid-auto-flow: dense;
           width: 100%;
           max-width: 1400px;
+        }
+
+        h1 {
+          grid-area: span 1 / span 12;
         }
       }
     `
@@ -154,22 +161,23 @@ export class BentoLayout extends LitElement {
   }
 
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
-    const { row, column }: GridPosition = config.placementForBreakpoint(
+    const position: GridPosition = config.placementForBreakpoint(
       readBreakpoint()
     );
 
-    console.info(`this._currentBreakpoint: ${this._currentBreakpoint}|readBreakpoint: ${readBreakpoint()}`);
-
-    const style = this._currentBreakpoint !== "mobile" ? html`
-      <style>
-        .card-${config.type} {
-          grid-column-start: ${column.start};
-          grid-column-end: ${column.end};
-          grid-row-start: ${row.start};
-          grid-row-end: ${row.end};
-        }
-      </style>
-    ` : html`${nothing}`;
+    let style: TemplateResult = html`${nothing}`;
+    if ("column" in position && "row" in position) {
+      style = html`
+        <style>
+          .card-${config.type} {
+            grid-column-start: ${position.column.start};
+            grid-column-end: ${position.column.end};
+            grid-row-start: ${position.row.start};
+            grid-row-end: ${position.row.end};
+          }
+        </style>
+      `;
+    }
 
     let cardContent: TemplateResult;
     switch (config.type) {
