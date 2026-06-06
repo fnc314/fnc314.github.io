@@ -40,8 +40,8 @@ export class BentoLayout extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: var(--spacing-margin-xs);
-        padding: var(--spacing-padding-xxs);
+        gap: var(--spacing-margin-s);
+        padding: var(--spacing-padding-xs);
       }
 
       h1 {
@@ -62,11 +62,9 @@ export class BentoLayout extends LitElement {
           display: grid;
           grid-template-columns: repeat(6, 1fr);
           gap: var(--spacing-margin-l);
-          margin: var(--spacing-reset) auto;
-          padding: var(--spacing-padding-m);
           grid-auto-flow: dense;
           width: 100%;
-          max-width: 1400px;
+          max-width: 1200px;
         }
 
         h1 {
