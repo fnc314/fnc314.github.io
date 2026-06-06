@@ -18,11 +18,11 @@ export interface GridPlacement {
  * @interface GridPosition
  * @typedef {GridPosition}
  */
-export interface GridPosition {
-  breakpoint: Breakpoint;
+export type GridPosition {
+  breakpoint: Omit<Breakpoint, "mobile">;
   row: GridPlacement;
   column: GridPlacement;
-}
+} | { breakpoint: "mobile" }
 
 /**
  * The finite `bento-box` instances
@@ -55,7 +55,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 3 } };
         case "desktop":
@@ -71,7 +71,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 2, end: 3 }, column: { start: 3, end: -1 } };
         case "desktop":
@@ -87,7 +87,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
         case "desktop":
@@ -103,7 +103,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
         case "desktop":
@@ -119,7 +119,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
         case "desktop":
@@ -135,7 +135,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 7, end: 8 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 4 } };
         case "desktop":
@@ -151,7 +151,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 8, end: 9 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 6, end: 7 }, column: { start: 4, end: 7 } };
         case "desktop":
@@ -167,7 +167,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 9, end: 10 }, column: { start: 1, end: -1 } };
+          return { breakpoint };
         case "tablet":
           return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 7 } };
         case "desktop":
