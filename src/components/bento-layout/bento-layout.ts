@@ -37,14 +37,11 @@ export class BentoLayout extends LitElement {
       }
 
       .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: var(--spacing-margin-l);
-        width: 100%;
-        max-width: 1400px;
-        margin: var(--spacing-reset) auto;
-        padding: var(--spacing-padding-m);
-        grid-auto-flow: dense;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-margin-xs);
+        padding: var(--spacing-padding-xxs);
       }
 
       h1 {
@@ -60,17 +57,30 @@ export class BentoLayout extends LitElement {
         margin-inline: auto;
       }
 
-      @media screen and ((width <= 1200px) and (width >= 768px)) {
+      @media screen and ((width <= 1200px) and (width >= 769px)) {
         .bento-grid {
+          align-items: unset;
+          display: grid;
           grid-template-columns: repeat(6, 1fr);
+          gap: var(--spacing-margin-l);
+          margin: var(--spacing-reset) auto;
+          padding: var(--spacing-padding-m);
+          grid-auto-flow: dense;
+          width: 100%;
+          max-width: 1400px;
         }
       }
 
-      @media screen and (width <= 767px) {
+      @media screen and (width >= 1201px) {
         .bento-grid {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-margin-xs);
-          padding: var(--spacing-padding-xxs);
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: var(--spacing-margin-l);
+          margin: var(--spacing-reset) auto;
+          padding: var(--spacing-padding-m);
+          grid-auto-flow: dense;
+          width: 100%;
+          max-width: 1400px;
         }
       }
     `
@@ -148,7 +158,9 @@ export class BentoLayout extends LitElement {
       readBreakpoint()
     );
 
-    const style = html`
+    console.info(`this._currentBreakpoint: ${this._currentBreakpoint}|readBreakpoint: ${readBreakpoint()}`);
+
+    const style = this._currentBreakpoint !== "mobile" ? html`
       <style>
         .card-${config.type} {
           grid-column-start: ${column.start};
@@ -157,7 +169,7 @@ export class BentoLayout extends LitElement {
           grid-row-end: ${row.end};
         }
       </style>
-    `;
+    ` : html`${nothing}`;
 
     let cardContent: TemplateResult;
     switch (config.type) {
