@@ -34,7 +34,7 @@ export class ProfileBioCard extends LitElement {
         border-radius: var(--md-sys-shape-corner-medium);
         border: 2px solid var(--md-sys-color-primary);
       }
-      
+
       .profile-figcaption {
         color: var(--md-sys-color-on-surface-variant);
         font-size: var(--md-sys-typescale-body-small-size);
@@ -70,7 +70,7 @@ export class ProfileBioCard extends LitElement {
   override render() {
     return html`
       <bento-card class="profile-bio-wrapper" aria-labelledby="profile-title" scrollable>
-        <h2 id="profile-title" class="md-typescale-title-large">Franco N. Colaizzi</h2>
+        <h2 id="profile-title" class="md-typescale-title-large">Info</h2>
         <div class="profile-bio-container">
           <figure>
             <img
@@ -82,7 +82,6 @@ export class ProfileBioCard extends LitElement {
             <figcaption class="profile-figcaption">${this._photoData.figcaption}</figcaption>
           </figure>
           <div class="bio-text-area">
-            <h3 class="md-typescale-title-medium">Bio</h3>
             <div class="bio-content md-typescale-body-large">
               <p>${unsafeHTML(this.bioText)}</p>
             </div>
