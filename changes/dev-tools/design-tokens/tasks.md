@@ -11,7 +11,7 @@
 ### Phase 2: Migration of Existing Tokens and Consumption
 
 -   [x] Move `src/theme/**/*.material3-expressive-theme.json` to `design-tokens/src/themes/`.
--   [ ] Create `design-tokens/src/themes/images/` and move `static/images/themes/*` into it.
+- [x] Create `design-tokens/src/themes/images/` and move `static/images/themes/*` into it.
 -   [ ] Update Style Dictionary configuration (`.config/style-dictionary/config.mjs`) to include a custom action or platform to copy images from `design-tokens/src/themes/images/` to `design-tokens/dist/images/`.
 -   [x] Convert `src/stylesheets/spacing.css` into Style Dictionary compatible JSON (`design-tokens/src/spacing.json`). Delete original file.
 -   [x] Convert `src/stylesheets/breakpoints.css` into Style Dictionary compatible JSON (`design-tokens/src/breakpoints.json`). Delete original file.

@@ -9,6 +9,14 @@ This project is the personal website of Franco N. Colaizzi. It is a sophisticate
 - **Build System:** Mise-driven, Vite-orchestrated builds where CLIs are wrapped in tasks from relative `.mise/tasks/` directories and sub-directories. Dependencies are managed by PNPM and exclusively use `--save-catalog-name=dependencies|devDependencies|...` in call dependency installs
 - **Language:** TypeScript
 
+## Design System
+
+Design tokens are managed in a dedicated `@fnc314/design-tokens` package:
+
+- **Orchestration:** All design token builds are performed via `vite` from within the `@fnc314/design-tokens/` directory.
+- **Workflow:** Standardized through `mise` tasks residing in `./.mise/tasks/` or `design-tokens/.mise/tasks/`. No `mise` task should modify any `src` folder located "above" its definition directory.
+- **Enforcement:** Exclusive use of design tokens (as CSS variables) is strictly enforced via `stylelint` (leveraging `stylelint-value-no-udl`). Build breaks on violations.
+
 ## Key Commands
 
 ### Documentation & Metadata
