@@ -59,6 +59,5 @@ export const bentoCardStyles = css`
   .scrollable {
     overflow-y: auto;
     flex-grow: 1;
-    padding-right: var(--spacing-padding-xs);
   }
 `;

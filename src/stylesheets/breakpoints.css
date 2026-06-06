@@ -8,13 +8,13 @@
   --breakpoint-label: unknown;
 }
 
-@media screen and (width <= 736px) {
+@media screen and (width <= 768px) {
   :root {
     --breakpoint-label: mobile;
   }
 }
 
-@media screen and (width >= 737px) and (width <= 1200px) {
+@media screen and (width >= 769px) and (width <= 1200px) {
   :root {
     --breakpoint-label: tablet;
   }

@@ -87,11 +87,6 @@ const domLoadedListener = () => {
     document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
   });
 
-  window.addEventListener("hashchange", () => {
-    // Logic from AppShell's _handleHashChange if necessary, 
-    // but the scroll logic in domLoadedListener seems to handle the initial case.
-  });
-
   window.addEventListener("router.change", (ev: Event) => {
     console.info(JSON.stringify({ event: "router.change", change: (ev as any).detail }, null, 2));
   });

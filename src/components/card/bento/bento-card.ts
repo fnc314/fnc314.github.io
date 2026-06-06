@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { bentoCardStyles } from "./bento-card.styles";
 import { classMap } from "lit/directives/class-map.js";
+import { bentoCardStyles } from "./bento-card.styles";
 
 /**
  * @summary BentoCard - A reusable card component for the bento grid.
@@ -27,7 +27,7 @@ export class BentoCard extends LitElement {
   static override styles = [bentoCardStyles];
 
   @property({ type: Boolean })
-  scrollable: boolean = false;
+  scrollable = false;
 
   override render() {
     const classes = {

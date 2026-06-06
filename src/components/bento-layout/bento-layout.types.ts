@@ -55,14 +55,14 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 1, end: 3 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 3 } };
         case "desktop":
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 1, end: 6 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 6 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 1, end: 6 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: 6 } };
       }
     }
   },
@@ -73,12 +73,12 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 3, end: -1 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 3, end: -1 } };
         case "desktop":
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 6, end: -1 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 6, end: -1 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 1, end: 2 }, column: { start: 3, end: -1 } };
+          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 3, end: -1 } };
       }
     }
   },
@@ -91,10 +91,10 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "tablet":
           return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
         case "desktop":
-          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 2, end: 3 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
       }
     }
   },
@@ -107,10 +107,10 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "tablet":
           return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
         case "desktop":
-          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 3, end: 4 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 4, end: 5 }, column: { start: 1, end: -1 } };
       }
     }
   },
@@ -121,12 +121,12 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 5, end: 7 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
         case "desktop":
-          return { breakpoint, row: { start: 4, end: 6 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 4, end: 6 }, column: { start: 1, end: -1 } };
+          return { breakpoint, row: { start: 5, end: 6 }, column: { start: 1, end: -1 } };
       }
     }
   },
@@ -137,12 +137,12 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 7, end: 8 }, column: { start: 1, end: 4 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 4 } };
         case "desktop":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 2, end: 5 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 5 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 2, end: 5 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 5 } };
       }
     }
   },
@@ -153,12 +153,12 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint, row: { start: 7, end: 8 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 7, end: 8 }, column: { start: 4, end: 7 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 4, end: 7 } };
         case "desktop":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 5, end: 8 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 5, end: 9 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 5, end: 8 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 5, end: 9 } };
       }
     }
   },
@@ -169,12 +169,12 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
         case "mobile":
           return { breakpoint, row: { start: 8, end: 9 }, column: { start: 1, end: -1 } };
         case "tablet":
-          return { breakpoint, row: { start: 8, end: 9 }, column: { start: 1, end: 7 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 1, end: 7 } };
         case "desktop":
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 8, end: 12 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 9, end: 13 } };
         case "unknown":
         default:
-          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 8, end: 12 } };
+          return { breakpoint, row: { start: 6, end: 7 }, column: { start: 9, end: 13 } };
       }
     }
   },

@@ -1,20 +1,20 @@
-import { css, LitElement, type TemplateResult, html, nothing, type PropertyValues } from "lit";
-import { customElement, state } from "lit/decorators.js";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { ROUTES, type Route, hashToRoute } from "@/types/components/nav/routes";
+import { ROUTES, type Route } from "@/types/components/nav/routes";
+import { LitElement, type PropertyValues, type TemplateResult, css, html, nothing } from "lit";
+import { customElement, state } from "lit/decorators.js";
 
 // New components
 import "@/components/card/bento/bento-card";
+import "@/components/card/blog/blog-card";
+import "@/components/card/code/code-card";
+import "@/components/card/connect/connect-card";
+import "@/components/card/education/education-card";
 import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
 import "@/components/card/skills/skills-card";
-import "@/components/card/education/education-card";
-import "@/components/card/connect/connect-card";
 import "@/components/card/work/work-card";
-import "@/components/card/code/code-card";
-import "@/components/card/blog/blog-card";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
@@ -47,13 +47,26 @@ export class BentoLayout extends LitElement {
         grid-auto-flow: dense;
       }
 
-      @media screen and ((width <= 1200px) and (width >= 737px)) {
+      h1 {
+        text-align: center;
+        grid-area: span 1 / span 12;
+        border-radius: var(--md-sys-shape-corner-large);
+        color: var(--md-sys-color-on-primary-fixed);
+        background-color: var(--md-sys-color-primary-fixed);
+        border-color: var(--md-sys-color-on-primary-fixed);
+        border-width: var(--hairline-width);
+        width: 65%;
+        padding-block: var(--spacing-padding-l);
+        margin-inline: auto;
+      }
+
+      @media screen and ((width <= 1200px) and (width >= 768px)) {
         .bento-grid {
           grid-template-columns: repeat(6, 1fr);
         }
       }
 
-      @media screen and (width <= 736px) {
+      @media screen and (width <= 767px) {
         .bento-grid {
           grid-template-columns: 1fr;
           gap: var(--spacing-margin-xs);
@@ -65,7 +78,7 @@ export class BentoLayout extends LitElement {
 
   @state()
   private _currentBreakpoint: Breakpoint = readBreakpoint();
-  
+
   @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
@@ -182,6 +195,7 @@ export class BentoLayout extends LitElement {
   override render() {
     return html`
       <div class="bento-grid" role="main" id="bento-root">
+        <h1>Franco N. Colaizzi</h1>
         ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
       </div>
     `;

@@ -1,5 +1,5 @@
-import { css } from "lit";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { css } from "lit";
 
 /**
  * @summary Styles for the BlogCard component.
@@ -25,7 +25,7 @@ export const blogCardStyles = css`
     gap: var(--spacing-margin-xs);
   }
 
-  @media screen and (width <= 736px) {
+  @media screen and (width <= 768px) {
     .blog-list {
       flex-direction: row;
       overflow-x: auto;
