@@ -54,4 +54,21 @@ describe("BentoCard Component", () => {
     const styles = getComputedStyle(h2!);
     expect(styles.borderBottomStyle).to.equal("dashed");
   });
+
+  it("should reflect the expanded property to the details element", async () => {
+    const el = await fixture<BentoCard>(html`<bento-card expanded></bento-card>`);
+    const details = el.shadowRoot?.querySelector("details");
+    expect(details?.open).to.be.true;
+
+    el.expanded = false;
+    await el.updateComplete;
+    expect(details?.open).to.be.false;
+  });
+
+  it("should apply interaction classes based on properties", async () => {
+    const el = await fixture<BentoCard>(html`<bento-card enableHover enableFocus></bento-card>`);
+    const container = el.shadowRoot?.querySelector(".bento-card");
+    expect(container?.classList.contains("enable-hover")).to.be.true;
+    expect(container?.classList.contains("enable-focus")).to.be.true;
+  });
 });

@@ -2,8 +2,10 @@ import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/compo
 import { readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { ROUTES, type Route } from "@/types/components/nav/routes";
-import { LitElement, type PropertyValues, type TemplateResult, css, html, nothing } from "lit";
+import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
+import { styleMap } from "lit/directives/style-map.js";
+import { bentoLayoutStyles } from "./bento-layout.styles";
 
 // New components
 import "@/components/card/bento/bento-card";
@@ -27,81 +29,7 @@ import "@/components/card/work/work-card";
 export class BentoLayout extends LitElement {
   static override styles = [
     MaterialTypescaleStyles,
-    css`
-      :host {
-        /**
-         * Mobile styles use \\\`flex\\\` so this is only used when
-         *   \\\`@media screen and (width >= 769px)\\\`
-         * Tablet -> 769 <= 1200 -> 6
-         * Desktop -> >= 1201 -> 12
-         */
-        --bento-layout-column-count: 1;
-
-        background-color: var(--md-sys-color-surface);
-        color: var(--md-sys-color-on-surface);
-        display: block;
-        padding-bottom: var(--spacing-padding-xl);
-        width: 100%;
-      }
-
-      .bento-grid {
-        align-items: stretch;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-margin-s);
-        padding: var(--spacing-padding-xs);
-      }
-
-      h1 {
-        background-color: var(--md-sys-color-primary-fixed);
-        border-color: var(--md-sys-color-on-primary-fixed);
-        border-radius: var(--md-sys-shape-corner-large);
-        border-width: var(--hairline-width);
-        color: var(--md-sys-color-on-primary-fixed);
-        margin-inline: auto;
-        padding-block: var(--spacing-padding-l);
-        text-align: center;
-        width: 65%;
-      }
-
-      @media screen and ((width <= 1200px) and (width >= 769px)) {
-        :host {
-          --bento-layout-column-count: 6;
-        }
-
-        .bento-grid {
-          align-items: unset;
-          display: grid;
-          gap: var(--spacing-margin-m);
-          grid-auto-flow: dense;
-          grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
-          padding: var(--spacing-padding-s);
-        }
-
-        h1 {
-          grid-area: span 1 / span var(--bento-layout-column-count);
-        }
-      }
-
-      @media screen and (width >= 1201px) {
-        :host {
-          --bento-layout-column-count: 12;
-        }
-
-        .bento-grid {
-          display: grid;
-          gap: var(--spacing-margin-l);
-          grid-auto-flow: dense;
-          grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
-          margin: var(--spacing-reset) auto;
-          padding: var(--spacing-padding-m);
-        }
-
-        h1 {
-          grid-area: span 1 / span var(--bento-layout-column-count);
-        }
-      }
-    `
+    bentoLayoutStyles,
   ];
 
   @state()
@@ -166,16 +94,9 @@ export class BentoLayout extends LitElement {
       readBreakpoint()
     );
 
-    let style: TemplateResult = html`${nothing}`;
+    let gridArea = "";
     if ("column" in position && "row" in position) {
-      const gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
-      style = html`
-        <style>
-          .card-${config.type} {
-            grid-area: ${gridArea};
-          }
-        </style>
-      `;
+      gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
     }
 
     let cardContent: TemplateResult;
@@ -208,7 +129,14 @@ export class BentoLayout extends LitElement {
         return html`${nothing}`;
     }
 
-    return html`${style}<div class="card-${config.type}">${cardContent}</div>`;
+    return html`
+      <div
+        class="card-${config.type}"
+        style=${styleMap({ gridArea: gridArea || undefined })}
+      >
+        ${cardContent}
+      </div>
+    `;
   }
 
   override render() {

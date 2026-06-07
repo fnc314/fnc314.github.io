@@ -20,6 +20,6 @@
   - [x] Update `connect-card.ts`
   - [x] Update `education-card.ts`
   - [x] Update `skills-card.ts`
-- [ ] **Validation and Quality**
-  - [ ] Verify Stylelint compliance with design tokens.
-  - [ ] Update unit tests for `bento-card` and `bento-layout`.
+- [x] **Validation and Quality**
+  - [x] Verify Stylelint compliance with design tokens.
+  - [x] Update unit tests for `bento-card`.
