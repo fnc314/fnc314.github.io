@@ -15,7 +15,7 @@
       "style": "./dist/css/_variables.css"
     },
     "./dist/*": "./dist/*",
-    "./themes/*": "./src/themes/**/*.json",
+    "./themes/*": "./dist/themes/*.json",
     "./src/*": "./src/*.json",
     "./styles/*": "./dist/css/_variables.css"
   },
