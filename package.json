@@ -47,7 +47,7 @@
     "dx:cem-analyze": "pnpm run cem-analyze",
     "dx:typedoc": "pnpm run typedoc:gen",
     "dx:wca": "pnpm run wca:json:file && pnpm run wca:json:files && pnpm run wca:markdown:file && pnpm run wca:markdown:files && pnpm run wca:vscode",
-    "format": "pnpm prettier \"./src/**/*.{css,html,js,json,ts}\" --ignore-path ./.prettierignore --write --config ./.config/prettier/prettier.config.mts",
+    "format": "pnpm prettier \"./src/**/*.{css,html,js,json,ts}\" --ignore-path ./.config/prettier/.prettierignore --write --config ./.config/prettier/prettier.config.mts",
     "lint": "pnpm run lint:lit-analyzer && pnpm run lint:eslint",
     "lint:eslint": "pnpm eslint 'src/**/*.ts' -c ./.config/eslint/eslint.config.mjs",
     "lint:eslint:fix": "pnpm eslint 'src/**/*.ts' --fix -c ./.config/eslint/eslint.config.mjs",
