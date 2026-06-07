@@ -47,22 +47,6 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
-# `src/components/bento-layout/bento-layout.styles.ts`:
-
-## Variables
-
-| Name                | Description | Type |
-| ------------------- | ----------- | ---- |
-| `bentoLayoutStyles` |             |      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                | Declaration       | Module                                             | Package |
-| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
-| `js` | `bentoLayoutStyles` | bentoLayoutStyles | src/components/bento-layout/bento-layout.styles.ts |         |
-
 # `dist/out/components/bento-layout/bento-layout.js`:
 
 ## class: `BentoLayout`, `bento-layout`
@@ -77,17 +61,19 @@
 
 ### Fields
 
-| Name                 | Privacy | Type         | Default     | Description                                                                           | Inherited From |
-| -------------------- | ------- | ------------ | ----------- | ------------------------------------------------------------------------------------- | -------------- |
-| `_currentBreakpoint` | private | `Breakpoint` | `"unknown"` | The Breakpoint as calculated by readBreakpoint                                        |                |
-| `_onWindowResize`    | private | `() => void` |             | The callback passed to window\.addEventListener and&#xA;  window\.removeEventListener |                |
+| Name                 | Privacy | Type                                | Default | Description | Inherited From |
+| -------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
+| `_activeRoute`       | private | `Route`                             |         |             |                |
+| `_bentoBoxConfigs`   | private | `BentoBoxConfig[]`                  |         |             |                |
+| `_scrollSpyObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
 
 ### Methods
 
-| Name                    | Privacy | Description                                                                        | Parameters               | Return | Inherited From |
-| ----------------------- | ------- | ---------------------------------------------------------------------------------- | ------------------------ | ------ | -------------- |
-| `getSkillsForWordCloud` | private | Retrieves the list of skills formatted for the word cloud.                         |                          |        |                |
-| `renderBentoBox`        | private | Centralized method to render a bento box card based on its type and configuration. | `config: BentoBoxConfig` |        |                |
+| Name                  | Privacy | Description | Parameters               | Return           | Inherited From |
+| --------------------- | ------- | ----------- | ------------------------ | ---------------- | -------------- |
+| `_routeFromElementId` | private |             | `id: string`             | `Route \| null`  |                |
+| `_setupScrollSpy`     | private |             |                          |                  |                |
+| `renderBentoBox`      | private |             | `config: BentoBoxConfig` | `TemplateResult` |                |
 
 </details>
 
@@ -126,11 +112,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name       | Privacy | Type           | Default | Description                               | Inherited From |
-| ---------- | ------- | -------------- | ------- | ----------------------------------------- | -------------- |
-| `blogPost` |         | `BlogPostJson` | `{}`    | The {@link BlogPostJson} record to render |                |
+| Name       | Privacy | Description                               | Parameters | Return | Inherited From |
+| ---------- | ------- | ----------------------------------------- | ---------- | ------ | -------------- |
+| `blogPost` |         | The {@link BlogPostJson} record to render |            |        |                |
 
 ### Attributes
 
@@ -149,12 +135,12 @@
 
 <details><summary>Private API</summary>
 
-### Fields
+### Methods
 
-| Name                | Privacy | Type                     | Default | Description | Inherited From |
-| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
-| `darkMode`          | private |                          |         |             |                |
-| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
+| Name                | Privacy | Description | Parameters | Return | Inherited From |
+| ------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `darkMode`          | private |             |            |        |                |
+| `onAppConfigChange` | private |             |            |        |                |
 
 </details>
 
@@ -194,11 +180,40 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
+### Fields
+
+| Name          | Privacy | Type | Default | Description                                                                                                                                | Inherited From |
+| ------------- | ------- | ---- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `enableFocus` |         |      |         | Whether to enable enhanced border and shadow styling on focus-within.&#xA;Defaults to false.                                               |                |
+| `enableHover` |         |      |         | Whether to enable the lift-on-hover effect.&#xA;Defaults to false to minimize visual motion in dense layout grids.                         |                |
+| `expanded`    |         |      |         | Reflects and controls the open state of the underlying \`\<details>\` element.&#xA;When true, the card is expanded and content is visible. |                |
+| `scrollable`  |         |      |         | Enables internal vertical scrolling for content.                                                                                           |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+| `scrollable`  | scrollable  |                |
+
 ### Slots
 
-| Name | Description                                                                                 |
-| ---- | ------------------------------------------------------------------------------------------- |
-|      | Default slot for card content. Slotted \`h2\` elements receive standardized header styling. |
+| Name     | Description                                                                                 |
+| -------- | ------------------------------------------------------------------------------------------- |
+|          | Default slot for card content. Slotted \`h2\` elements receive standardized header styling. |
+| `header` | Content to be displayed in the card's header/summary area.                                  |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name            | Privacy | Description                                                                                                                                          | Parameters | Return | Inherited From |
+| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `_handleToggle` | private | Synchronizes the \`expanded\` property with the state of the \`\<details>\` element&#xA;whenever the user interacts with the toggle icon or summary. | `e: Event` |        |                |
+
+</details>
 
 <hr/>
 
@@ -208,6 +223,210 @@
 | --------------------------- | ------------ | ----------- | --------------------------------------- | ------- |
 | `custom-element-definition` | `bento-card` | BentoCard   | src/components/card/bento/bento-card.ts |         |
 | `js`                        | `BentoCard`  | BentoCard   | src/components/card/bento/bento-card.ts |         |
+
+# `src/components/card/blog/blog-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `blogCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `blogCardStyles` | blogCardStyles | src/components/card/blog/blog-card.styles.ts |         |
+
+# `dist/out/components/card/blog/blog-card.js`:
+
+## class: `BlogCard`, `blog-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `blog-card` | BlogCard    | src/components/card/blog/blog-card.ts |         |
+| `js`                        | `BlogCard`  | BlogCard    | src/components/card/blog/blog-card.ts |         |
+
+# `src/components/card/code/code-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `codeCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `codeCardStyles` | codeCardStyles | src/components/card/code/code-card.styles.ts |         |
+
+# `dist/out/components/card/code/code-card.js`:
+
+## class: `CodeCard`, `code-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `code-card` | CodeCard    | src/components/card/code/code-card.ts |         |
+| `js`                        | `CodeCard`  | CodeCard    | src/components/card/code/code-card.ts |         |
+
+# `src/components/card/connect/connect-card.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `connectCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `connectCardStyles` | connectCardStyles | src/components/card/connect/connect-card.styles.ts |         |
+
+# `dist/out/components/card/connect/connect-card.js`:
+
+## class: `ConnectCard`, `connect-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                                      | Package |
+| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
+| `custom-element-definition` | `connect-card` | ConnectCard | src/components/card/connect/connect-card.ts |         |
+| `js`                        | `ConnectCard`  | ConnectCard | src/components/card/connect/connect-card.ts |         |
+
+# `src/components/card/education/education-card.styles.ts`:
+
+## Variables
+
+| Name                  | Description | Type |
+| --------------------- | ----------- | ---- |
+| `educationCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                  | Declaration         | Module                                                 | Package |
+| ---- | --------------------- | ------------------- | ------------------------------------------------------ | ------- |
+| `js` | `educationCardStyles` | educationCardStyles | src/components/card/education/education-card.styles.ts |         |
+
+# `dist/out/components/card/education/education-card.js`:
+
+## class: `EducationCard`, `education-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name             | Declaration   | Module                                          | Package |
+| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
+| `custom-element-definition` | `education-card` | EducationCard | src/components/card/education/education-card.ts |         |
+| `js`                        | `EducationCard`  | EducationCard | src/components/card/education/education-card.ts |         |
 
 # `dist/out/components/card/profile-bio/profile-bio-card.js`:
 
@@ -219,19 +438,40 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
 ### Methods
 
-| Name         | Privacy | Description                                                                        | Parameters | Return | Inherited From |
-| ------------ | ------- | ---------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
-| `bioText`    |         | The biography text to display.                                                     |            |        |                |
-| `themePhoto` |         | An object containing \`src\`, \`alt\`, and \`figcaption\` for the profile picture. |            |        |                |
+| Name      | Privacy | Description | Parameters | Return | Inherited From |
+| --------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `bioText` |         |             |            |        |                |
 
 ### Attributes
 
-| Name         | Field      | Inherited From |
-| ------------ | ---------- | -------------- |
-| `bioText`    | bioText    |                |
-| `themePhoto` | themePhoto |                |
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `_photoData`  | \_photoData |                |
+| `bioText`     | bioText     |                |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name              | Privacy | Description | Parameters | Return | Inherited From |
+| ----------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `_onConfigChange` | private |             |            |        |                |
+| `_photoData`      | private |             |            |        |                |
+
+</details>
 
 <hr/>
 
@@ -252,11 +492,27 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
 ### Events
 
 | Name                  | Type          | Description | Inherited From |
 | --------------------- | ------------- | ----------- | -------------- |
 | `color_scheme.change` | `CustomEvent` |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
 
 <details><summary>Private API</summary>
 
@@ -282,6 +538,118 @@
 | `custom-element-definition` | `settings-card` | SettingsCard | src/components/card/settings/settings-card.ts |         |
 | `js`                        | `SettingsCard`  | SettingsCard | src/components/card/settings/settings-card.ts |         |
 
+# `src/components/card/skills/skills-card.styles.ts`:
+
+## Variables
+
+| Name               | Description | Type |
+| ------------------ | ----------- | ---- |
+| `skillsCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name               | Declaration      | Module                                           | Package |
+| ---- | ------------------ | ---------------- | ------------------------------------------------ | ------- |
+| `js` | `skillsCardStyles` | skillsCardStyles | src/components/card/skills/skills-card.styles.ts |         |
+
+# `dist/out/components/card/skills/skills-card.js`:
+
+## class: `SkillsCard`, `skills-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name                    | Privacy | Description | Parameters | Return | Inherited From |
+| ----------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `getSkillsForWordCloud` | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name          | Declaration | Module                                    | Package |
+| --------------------------- | ------------- | ----------- | ----------------------------------------- | ------- |
+| `custom-element-definition` | `skills-card` | SkillsCard  | src/components/card/skills/skills-card.ts |         |
+| `js`                        | `SkillsCard`  | SkillsCard  | src/components/card/skills/skills-card.ts |         |
+
+# `src/components/card/work/work-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `workCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `workCardStyles` | workCardStyles | src/components/card/work/work-card.styles.ts |         |
+
+# `dist/out/components/card/work/work-card.js`:
+
+## class: `WorkCard`, `work-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `work-card` | WorkCard    | src/components/card/work/work-card.ts |         |
+| `js`                        | `WorkCard`  | WorkCard    | src/components/card/work/work-card.ts |         |
+
 # `dist/out/components/code/code-project/code-project.js`:
 
 ## class: `CodeProject`, `code-project`
@@ -292,11 +660,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name          | Privacy | Type              | Default | Description | Inherited From |
-| ------------- | ------- | ----------------- | ------- | ----------- | -------------- |
-| `codeProject` |         | `CodeProjectData` | `{}`    |             |                |
+| Name          | Privacy | Description | Parameters | Return | Inherited From |
+| ------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `codeProject` |         |             |            |        |                |
 
 ### Attributes
 
@@ -308,9 +676,9 @@
 
 ### Fields
 
-| Name      | Privacy | Type      | Default | Description | Inherited From |
-| --------- | ------- | --------- | ------- | ----------- | -------------- |
-| `flipped` | private | `boolean` | `false` |             |                |
+| Name      | Privacy | Type | Default | Description | Inherited From |
+| --------- | ------- | ---- | ------- | ----------- | -------------- |
+| `flipped` | private |      |         |             |                |
 
 ### Methods
 
@@ -686,16 +1054,21 @@
 
 ### Fields
 
-| Name           | Privacy | Type                        | Default  | Description                                                                                                                                                                    | Inherited From |
-| -------------- | ------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `_sortedWords` |         | `RenderableWordCloudWord[]` | `[]`     |                                                                                                                                                                                |                |
-| `appearance`   |         | `WordCloudAppearance`       |          | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).                 |                |
-| `delay`        |         | `number \| "none"`          | `"none"` | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
-| `grouping`     |         | `WordCloudGrouping`         |          | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                                    |                |
-| `instantClear` |         | `boolean`                   | `false`  | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
-| `sorting`      |         | `WordCloudSorting`          |          | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.           |                |
-| `threshold`    |         | `number`                    | `0.1`    | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
-| `words`        |         | `WordCloudWord[]`           | `[]`     | The list of words to display in the cloud.                                                                                                                                     |                |
+| Name           | Privacy | Type               | Default | Description                                                                                                                                                                    | Inherited From |
+| -------------- | ------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `_sortedWords` |         |                    | ``      |                                                                                                                                                                                |                |
+| `delay`        |         | `number \| "none"` | `none`  | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
+| `instantClear` |         |                    |         | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
+| `threshold`    |         |                    | `0.1`   | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
+| `words`        |         |                    | ``      | The list of words to display in the cloud.                                                                                                                                     |                |
+
+### Methods
+
+| Name         | Privacy | Description                                                                                                                                                          | Parameters | Return | Inherited From |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `appearance` |         | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).       |            |        |                |
+| `grouping`   |         | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                          |            |        |                |
+| `sorting`    |         | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'. |            |        |                |
 
 ### Attributes
 
@@ -728,11 +1101,11 @@
 
 ### Fields
 
-| Name                    | Privacy | Type                                | Default | Description | Inherited From |
-| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
-| `_intersectionObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
-| `_isVisible`            | private | `boolean`                           | `false` |             |                |
-| `_listElement`          | private | `HTMLUListElement`                  |         |             |                |
+| Name                    | Privacy | Type               | Default | Description | Inherited From |
+| ----------------------- | ------- | ------------------ | ------- | ----------- | -------------- |
+| `_intersectionObserver` | private |                    |         |             |                |
+| `_isVisible`            | private |                    |         |             |                |
+| `_listElement`          | private | `HTMLUListElement` |         |             |                |
 
 ### Methods
 
@@ -860,16 +1233,16 @@
 
 ### Fields
 
-| Name                | Privacy | Type                      | Default                   | Description                                                                  | Inherited From |
-| ------------------- | ------- | ------------------------- | ------------------------- | ---------------------------------------------------------------------------- | -------------- |
-| `dateEnd`           |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment end date                   |                |
-| `dateStart`         |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment start date                 |                |
-| `experienceOrg`     |         | `string`                  | `""`                      | The employer formal name                                                     |                |
-| `experienceRole`    |         | `string`                  | `""`                      | The formal role from the {@link WorkExperience} instance                     |                |
-| `experienceSummary` |         | `string`                  | `""`                      | An optional summary of the overall role                                      |                |
-| `isNested`          |         | `boolean`                 | `false`                   | Whether this is a nested instance                                            |                |
-| `jobs`              |         | `Array<Job>`              | `[]`                      | An array of {@link Job}s rendered as nested {@link WorkExperience} instances |                |
-| `summaries`         |         | `Array<{ item: string }>` | `[]`                      | An array of \`{ item: string }\` objects describing the responsibilities     |                |
+| Name                | Privacy | Type | Default                   | Description                                                                     | Inherited From |
+| ------------------- | ------- | ---- | ------------------------- | ------------------------------------------------------------------------------- | -------------- |
+| `dateEnd`           |         |      | `{ stamp: "", text: "" }` | End date information including machine-readable stamp and display text.         |                |
+| `dateStart`         |         |      | `{ stamp: "", text: "" }` | Start date information including machine-readable stamp and display text.       |                |
+| `experienceOrg`     |         |      |                           | The name of the organization or client.                                         |                |
+| `experienceRole`    |         |      |                           | The title of the professional role or project.                                  |                |
+| `experienceSummary` |         |      |                           | An optional summary of the overall role                                         |                |
+| `isNested`          |         |      |                           | If true, adjusts font sizes and layout for a nested appearance.                 |                |
+| `jobs`              |         |      | ``                        | A list of sub-jobs or project assignments to be rendered as nested experiences. |                |
+| `summaries`         |         |      | ``                        | A list of summary points describing achievements or responsibilities.           |                |
 
 ### Attributes
 

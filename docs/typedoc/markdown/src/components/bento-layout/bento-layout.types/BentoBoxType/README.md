@@ -8,7 +8,7 @@
 
 &gt; **BentoBoxType** = `"profile-photo-bio"` \| `"work"` \| `"code"` \| `"blog"` \| `"settings"` \| `"connect"` \| `"education"` \| `"skills"`
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L33)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:34](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L34)
 
 The finite `bento-box` instances
 

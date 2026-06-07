@@ -12,6 +12,5 @@
 
 ## Variables
 
-- [Breakpoints](Breakpoints/README.md)
 - [readBreakpoint](readBreakpoint/README.md)
 </body></html>

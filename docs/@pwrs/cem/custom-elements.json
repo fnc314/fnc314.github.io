@@ -99,9 +99,6 @@
           "tagName": "app-shell",
           "slots": [
             {
-              "name": "app-nav"
-            },
-            {
               "name": "app-content"
             }
           ],
@@ -133,44 +130,49 @@
       "declarations": [
         {
           "name": "BentoLayout",
-          "summary": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.",
+          "summary": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
           "members": [
             {
+              "name": "_scrollSpyObserver",
+              "type": {
+                "text": "IntersectionObserver"
+              },
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_activeRoute",
+              "type": {
+                "text": "Route"
+              },
+              "default": "ROUTES.INFO",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_setupScrollSpy",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
               "parameters": [
                 {
-                  "name": "value",
+                  "name": "id",
                   "type": {
-                    "text": "Breakpoint"
-                  }
-                },
-                {
-                  "name": "oldValue",
-                  "type": {
-                    "text": "Breakpoint"
+                    "text": "string"
                   }
                 }
               ],
               "return": {
                 "type": {
-                  "text": "boolean"
+                  "text": "Route | null"
                 }
               },
-              "name": "hasChanged",
-              "kind": "method"
-            },
-            {
-              "name": "_onWindowResize",
-              "description": "The callback passed to {@link window.addEventListener} and\n{@link window.removeEventListener}",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "name": "getSkillsForWordCloud",
-              "description": "Retrieves the list of skills formatted for the word cloud.",
+              "name": "_routeFromElementId",
               "kind": "method",
               "privacy": "private"
             },
@@ -189,13 +191,12 @@
                 }
               },
               "name": "renderBentoBox",
-              "description": "Centralized method to render a bento box card based on its type and configuration.",
               "kind": "method",
               "privacy": "private"
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L30"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L27"
           },
           "kind": "class",
           "tagName": "bento-layout",
@@ -223,30 +224,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/bento-layout/bento-layout.styles.js",
-      "declarations": [
-        {
-          "name": "bentoLayoutStyles",
-          "summary": "Styles for the BentoLayout component.",
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.styles.ts#L8"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "bentoLayoutStyles",
-          "declaration": {
-            "name": "bentoLayoutStyles",
-            "module": "src/components/bento-layout/bento-layout.styles.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/bento-layout/bento-layout.test.js"
     },
     {
@@ -258,7 +235,7 @@
           "description": "Produces an {@link Array} of {@link BentoBoxConfig} instances used to populate\n{@link BentoLayout}.",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L52"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L54"
           }
         }
       ],
@@ -309,7 +286,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L29"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L30"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -369,17 +346,114 @@
       "declarations": [
         {
           "name": "BentoCard",
-          "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted `h2` elements as section headers.",
+          "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `\u003cdetails\u003e` and `\u003csummary\u003e` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
+          "members": [
+            {
+              "name": "scrollable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "scrollable"
+            },
+            {
+              "name": "expanded",
+              "description": "Reflects and controls the open state of the underlying `\u003cdetails\u003e` element.\nWhen true, the card is expanded and content is visible.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded",
+              "reflects": true
+            },
+            {
+              "name": "enableHover",
+              "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleToggle",
+              "description": "Synchronizes the `expanded` property with the state of the `\u003cdetails\u003e` element\nwhenever the user interacts with the toggle icon or summary.",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.ts#L22"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.ts#L30"
           },
           "kind": "class",
           "tagName": "bento-card",
+          "attributes": [
+            {
+              "name": "scrollable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "scrollable"
+            },
+            {
+              "name": "expanded",
+              "description": "Reflects and controls the open state of the underlying `\u003cdetails\u003e` element.\nWhen true, the card is expanded and content is visible.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
           "slots": [
+            {
+              "name": "header",
+              "description": "Content to be displayed in the card's header/summary area."
+            },
             {
               "name": "",
               "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
@@ -437,21 +511,506 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/card/profile-bio/profile-bio-card.js",
+      "path": "src/components/card/blog/blog-card.js",
       "declarations": [
         {
-          "name": "ProfileBioCard",
-          "summary": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.",
+          "name": "BlogCard",
+          "summary": "BlogCard - A card component displaying blog posts.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
           "members": [
             {
-              "name": "themePhoto",
-              "default": "themeService.currentThemeConfig().themePhoto",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
               "kind": "field",
-              "attribute": "themephoto"
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.ts#L15"
+          },
+          "kind": "class",
+          "tagName": "blog-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "blog-card",
+          "declaration": {
+            "name": "BlogCard",
+            "module": "src/components/card/blog/blog-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BlogCard",
+          "declaration": {
+            "name": "BlogCard",
+            "module": "src/components/card/blog/blog-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/blog/blog-card.styles.js",
+      "declarations": [
+        {
+          "name": "blogCardStyles",
+          "summary": "Styles for the BlogCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "blogCardStyles",
+          "declaration": {
+            "name": "blogCardStyles",
+            "module": "src/components/card/blog/blog-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/blog/blog-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.js",
+      "declarations": [
+        {
+          "name": "CodeCard",
+          "summary": "CodeCard - A card component displaying code projects.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "code-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "code-card",
+          "declaration": {
+            "name": "CodeCard",
+            "module": "src/components/card/code/code-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CodeCard",
+          "declaration": {
+            "name": "CodeCard",
+            "module": "src/components/card/code/code-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.styles.js",
+      "declarations": [
+        {
+          "name": "codeCardStyles",
+          "summary": "Styles for the CodeCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "codeCardStyles",
+          "declaration": {
+            "name": "codeCardStyles",
+            "module": "src/components/card/code/code-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.js",
+      "declarations": [
+        {
+          "name": "ConnectCard",
+          "summary": "ConnectCard - A card component displaying contact/connection links.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "connect-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-card",
+          "declaration": {
+            "name": "ConnectCard",
+            "module": "src/components/card/connect/connect-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConnectCard",
+          "declaration": {
+            "name": "ConnectCard",
+            "module": "src/components/card/connect/connect-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.styles.js",
+      "declarations": [
+        {
+          "name": "connectCardStyles",
+          "summary": "Styles for the ConnectCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "connectCardStyles",
+          "declaration": {
+            "name": "connectCardStyles",
+            "module": "src/components/card/connect/connect-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.js",
+      "declarations": [
+        {
+          "name": "EducationCard",
+          "summary": "EducationCard - A card component displaying education history.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.ts#L13"
+          },
+          "kind": "class",
+          "tagName": "education-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "education-card",
+          "declaration": {
+            "name": "EducationCard",
+            "module": "src/components/card/education/education-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "EducationCard",
+          "declaration": {
+            "name": "EducationCard",
+            "module": "src/components/card/education/education-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.styles.js",
+      "declarations": [
+        {
+          "name": "educationCardStyles",
+          "summary": "Styles for the EducationCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "educationCardStyles",
+          "declaration": {
+            "name": "educationCardStyles",
+            "module": "src/components/card/education/education-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/profile-bio/profile-bio-card.js",
+      "declarations": [
+        {
+          "name": "ProfileBioCard",
+          "summary": "A responsive card component that displays a profile photo and biography.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "_photoData",
+              "default": "PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson]",
+              "kind": "field",
+              "privacy": "private",
+              "attribute": "_photodata"
             },
             {
               "name": "bioText",
@@ -461,18 +1020,50 @@
               "default": "BioJson.bio",
               "kind": "field",
               "attribute": "biotext"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "name": "_onConfigChange",
+              "kind": "method",
+              "privacy": "private"
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/profile-bio/profile-bio-card.ts#L17"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/profile-bio/profile-bio-card.ts#L15"
           },
           "kind": "class",
           "tagName": "profile-bio-card",
           "attributes": [
             {
-              "name": "themephoto",
-              "default": "themeService.currentThemeConfig().themePhoto",
-              "fieldName": "themePhoto"
+              "name": "_photodata",
+              "default": "PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson]",
+              "fieldName": "_photoData"
             },
             {
               "name": "biotext",
@@ -481,6 +1072,30 @@
               },
               "default": "BioJson.bio",
               "fieldName": "bioText"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
             }
           ],
           "cssProperties": [
@@ -492,6 +1107,15 @@
             },
             {
               "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--spacing-margin-xs"
             }
           ],
           "customElement": true
@@ -532,6 +1156,33 @@
             "package": "lit"
           },
           "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
             {
               "name": "formattedDate",
               "description": "Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}\non {@link time} to render the user presented timestamp",
@@ -596,10 +1247,36 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/settings/settings-card.ts#L22"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/settings/settings-card.ts#L23"
           },
           "kind": "class",
           "tagName": "settings-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
           "cssProperties": [
             {
               "name": "--spacing-margin-s"
@@ -665,6 +1342,253 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.js",
+      "declarations": [
+        {
+          "name": "SkillsCard",
+          "summary": "SkillsCard - A card component displaying a skill word cloud.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "name": "getSkillsForWordCloud",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.ts#L15"
+          },
+          "kind": "class",
+          "tagName": "skills-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "skills-card",
+          "declaration": {
+            "name": "SkillsCard",
+            "module": "src/components/card/skills/skills-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SkillsCard",
+          "declaration": {
+            "name": "SkillsCard",
+            "module": "src/components/card/skills/skills-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.styles.js",
+      "declarations": [
+        {
+          "name": "skillsCardStyles",
+          "summary": "Styles for the SkillsCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "skillsCardStyles",
+          "declaration": {
+            "name": "skillsCardStyles",
+            "module": "src/components/card/skills/skills-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.js",
+      "declarations": [
+        {
+          "name": "WorkCard",
+          "summary": "WorkCard - A card component displaying work experience.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "work-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "work-card",
+          "declaration": {
+            "name": "WorkCard",
+            "module": "src/components/card/work/work-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WorkCard",
+          "declaration": {
+            "name": "WorkCard",
+            "module": "src/components/card/work/work-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.styles.js",
+      "declarations": [
+        {
+          "name": "workCardStyles",
+          "summary": "Styles for the WorkCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.styles.ts#L8"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "workCardStyles",
+          "declaration": {
+            "name": "workCardStyles",
+            "module": "src/components/card/work/work-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/code/code-project/code-project.js",
       "declarations": [
         {
@@ -686,7 +1610,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L22"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L23"
           },
           "kind": "class",
           "tagName": "code-project",
@@ -712,7 +1636,19 @@
               "default": "800ms"
             },
             {
+              "name": "--motion-duration-short"
+            },
+            {
+              "name": "--motion-elevation-level-4"
+            },
+            {
               "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--spacing-margin-xxs"
+            },
+            {
+              "name": "--motion-elevation-level-6"
             },
             {
               "name": "--spacing-padding-m"
@@ -722,6 +1658,9 @@
             },
             {
               "name": "--internal-code-project-rotation"
+            },
+            {
+              "name": "--motion-easing-standard"
             },
             {
               "name": "--md-outlined-card-container-shape"
@@ -1777,9 +2716,6 @@
             },
             {
               "name": "--spacing-padding-s"
-            },
-            {
-              "name": "--icon-fill-color"
             }
           ],
           "customElement": true
@@ -3183,24 +4119,13 @@
       "path": "src/styles/breakpoints.js",
       "declarations": [
         {
-          "name": "Breakpoints",
-          "description": "The {@link CSSResult} dedicated, explicitly, to the\n{@link --breakpoint-label} custom CSS `@property`",
-          "type": {
-            "text": "CSSResult"
-          },
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L9"
-          }
-        },
-        {
           "name": "BREAKPOINT_NAMES",
           "type": {
             "text": ": Breakpoint[]"
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L41"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L8"
           }
         },
         {
@@ -3213,19 +4138,11 @@
           "description": "Reads from {@link window} the current value of {@link --breakpoint-label}\nCSS `@property`",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L51"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L18"
           }
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "Breakpoints",
-          "declaration": {
-            "name": "Breakpoints",
-            "module": "src/styles/breakpoints.js"
-          }
-        },
         {
           "kind": "js",
           "name": "BREAKPOINT_NAMES",
@@ -3250,19 +4167,31 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/styles/material-styles.js",
+      "path": "src/styles/interaction-styles.js",
       "declarations": [
         {
-          "name": "MaterialOverrides",
-          "type": {
-            "text": ": CSSResult"
-          },
+          "name": "InteractionStyles",
+          "description": "Standardized interaction utility styles for hover and focus states.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/material-styles.ts#L16"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/interaction-styles.ts#L6"
           }
         }
       ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "InteractionStyles",
+          "declaration": {
+            "name": "InteractionStyles",
+            "module": "src/styles/interaction-styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/material-styles.js",
       "exports": [
         {
           "kind": "js",
@@ -3270,41 +4199,6 @@
           "declaration": {
             "name": "styles",
             "module": "typography/md-typescale-styles.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "MaterialOverrides",
-          "declaration": {
-            "name": "MaterialOverrides",
-            "module": "src/styles/material-styles.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/styles/spacing.js",
-      "declarations": [
-        {
-          "name": "spacingTokens",
-          "description": "Spacing tokens for the Bento Box UI.\n\nWe provide two distinct sets of tokens to distinguish between\ninner component space (padding) and outer layout space (margin/gap).",
-          "type": {
-            "text": ": CSSResult"
-          },
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/spacing.ts#L11"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "spacingTokens",
-          "declaration": {
-            "name": "spacingTokens",
-            "module": "src/styles/spacing.js"
           }
         }
       ]

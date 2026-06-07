@@ -6,7 +6,7 @@
 
 # Class: SettingsCard
 
-Defined in: [src/components/card/settings/settings-card.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L22)
+Defined in: [src/components/card/settings/settings-card.ts:23](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L23)
 
 ## Element
 
@@ -26,7 +26,7 @@ settings-card
 
 &gt; `private` **formattedDate**: `string`
 
-Defined in: [src/components/card/settings/settings-card.ts:81](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L81)
+Defined in: [src/components/card/settings/settings-card.ts:98](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L98)
 
 Creates an [Intl.DateTimeFormat](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) and calls [Intl.DateTimeFormat.format](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format)
 on time to render the user presented timestamp
@@ -41,7 +41,7 @@ SettingsCard
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/card/settings/settings-card.ts:93](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L93)
+Defined in: [src/components/card/settings/settings-card.ts:110](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L110)
 
 Invoked when the component is added to the document's DOM.
 
@@ -74,7 +74,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/card/settings/settings-card.ts:98](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L98)
+Defined in: [src/components/card/settings/settings-card.ts:116](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L116)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -106,7 +106,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/settings/settings-card.ts:149](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L149)
+Defined in: [src/components/card/settings/settings-card.ts:167](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L167)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -127,7 +127,7 @@ the element to update.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/card/settings/settings-card.ts:23](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L23)
+Defined in: [src/components/card/settings/settings-card.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/settings/settings-card.ts#L24)
 
 Array of styles to apply to the element. The styles should be defined
 using the css tag function, via constructible stylesheets, or

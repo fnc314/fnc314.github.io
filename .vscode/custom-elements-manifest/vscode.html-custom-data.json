@@ -10,57 +10,135 @@
     },
     {
       "name": "bento-layout",
-      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\nProvides inline theme adjustments and design comparison controls.\n---\n",
+      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\n---\n",
       "attributes": [],
       "references": []
     },
     {
       "name": "blog-post",
-      "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link @fnc314/com.fnc314.website!WordTag} _(default: undefined)_",
+      "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **Methods:**\n - **blogPost()** - The {@link BlogPostJson} record to render\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link @fnc314/com.fnc314.website!WordTag} _(default: undefined)_",
       "attributes": [
         {
           "name": "blogPost",
           "description": "The {@link BlogPostJson} record to render",
-          "values": [{ "name": "BlogPostJson" }]
+          "values": []
         }
       ],
       "references": []
     },
     {
       "name": "bento-card",
-      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Elevates and shifts on hover to provide visual feedback.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Header Styling**: Automatically styles slotted `h2` elements as section headers.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "profile-bio-card",
-      "description": "A responsive card component that displays a profile photo and biography\nusing an internal grid layout for optimal space distribution.\n---\n\n\n### **Methods:**\n - **bioText()** - The biography text to display.\n- **themePhoto()** - An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
       "attributes": [
         {
-          "name": "bioText",
-          "description": "The biography text to display.",
+          "name": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
           "values": []
         },
         {
-          "name": "themePhoto",
-          "description": "An object containing `src`, `alt`, and `figcaption` for the profile picture.",
+          "name": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+          "values": []
+        },
+        {
+          "name": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen true, the card is expanded and content is visible.",
+          "values": []
+        },
+        {
+          "name": "scrollable",
+          "description": "Enables internal vertical scrolling for content.",
           "values": []
         }
       ],
       "references": []
     },
     {
+      "name": "blog-card",
+      "description": "BlogCard - A card component displaying blog posts.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "code-card",
+      "description": "CodeCard - A card component displaying code projects.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "connect-card",
+      "description": "ConnectCard - A card component displaying contact/connection links.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "education-card",
+      "description": "EducationCard - A card component displaying education history.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "profile-bio-card",
+      "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+      "attributes": [
+        { "name": "_photoData", "values": [] },
+        { "name": "bioText", "values": [] },
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
       "name": "settings-card",
       "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
-      "attributes": [],
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "skills-card",
+      "description": "SkillsCard - A card component displaying a skill word cloud.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "work-card",
+      "description": "WorkCard - A card component displaying work experience.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
       "references": []
     },
     {
       "name": "code-project",
       "description": "Represents a single (usually GitHub-hosted) demonstration project\n---\n",
-      "attributes": [
-        { "name": "codeProject", "values": [{ "name": "CodeProjectData" }] }
-      ],
+      "attributes": [{ "name": "codeProject", "values": [] }],
       "references": []
     },
     {
@@ -206,12 +284,12 @@
     },
     {
       "name": "word-cloud",
-      "description": "\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+      "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
       "attributes": [
         {
           "name": "appearance",
           "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
-          "values": [{ "name": "WordCloudAppearance" }]
+          "values": []
         },
         {
           "name": "delay",
@@ -221,7 +299,7 @@
         {
           "name": "grouping",
           "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
-          "values": [{ "name": "WordCloudGrouping" }]
+          "values": []
         },
         {
           "name": "instant-clear",
@@ -231,7 +309,7 @@
         {
           "name": "sorting",
           "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
-          "values": [{ "name": "WordCloudSorting" }]
+          "values": []
         },
         {
           "name": "threshold",
@@ -241,7 +319,7 @@
         {
           "name": "words",
           "description": "The list of words to display in the cloud.",
-          "values": [{ "name": "WordCloudWord[]" }]
+          "values": []
         }
       ],
       "references": []
@@ -270,22 +348,22 @@
       "attributes": [
         {
           "name": "date-end",
-          "description": "A {@link WorkDate} instance describing employment end date",
-          "values": [{ "name": "WorkDate" }]
+          "description": "End date information including machine-readable stamp and display text.",
+          "values": []
         },
         {
           "name": "date-start",
-          "description": "A {@link WorkDate} instance describing employment start date",
-          "values": [{ "name": "WorkDate" }]
+          "description": "Start date information including machine-readable stamp and display text.",
+          "values": []
         },
         {
           "name": "experience-org",
-          "description": "The employer formal name",
+          "description": "The name of the organization or client.",
           "values": []
         },
         {
           "name": "experience-role",
-          "description": "The formal role from the {@link WorkExperience} instance",
+          "description": "The title of the professional role or project.",
           "values": []
         },
         {
@@ -295,18 +373,18 @@
         },
         {
           "name": "is-nested",
-          "description": "Whether this is a nested instance",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
           "values": []
         },
         {
           "name": "jobs",
-          "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-          "values": [{ "name": "Array<Job>" }]
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "values": []
         },
         {
           "name": "summaries",
-          "description": "An array of `{ item: string }` objects describing the responsibilities",
-          "values": [{ "name": "Array<{ item: string }>" }]
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "values": []
         }
       ],
       "references": []

@@ -2,19 +2,25 @@ import { expect, fixture, html } from "@open-wc/testing";
 import "./bento-card";
 import { BentoCard } from "./bento-card";
 
+/**
+ * @summary Unit tests for the BentoCard component.
+ *
+ * Verifies correct rendering of glassmorphism effects, slotting behavior for headers and content,
+ * and the application of standardized header styling.
+ */
 describe("BentoCard Component", () => {
   it("should be defined as a custom element", () => {
     const el = document.createElement("bento-card");
     expect(el).to.be.instanceOf(BentoCard);
   });
 
-  it("should render a slot for content", async () => {
+  it("should render slots for header and main content", async () => {
     const el = await fixture<BentoCard>(html`
       <bento-card>
         <div id="test-content">Content</div>
       </bento-card>
     `);
-    const slot = el.shadowRoot?.querySelector("slot");
+    const slot = el.shadowRoot?.querySelector("slot:not([name])");
     expect(slot).to.exist;
 
     const assignedNodes = slot?.assignedNodes();

@@ -1,4 +1,4 @@
-import { type CSSResult, css } from "lit";
+import { type CSSResult } from "lit";
 
 export { styles as MaterialTypescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 
@@ -12,4 +12,3 @@ export type MaterialSchemeName =
 
 export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
-

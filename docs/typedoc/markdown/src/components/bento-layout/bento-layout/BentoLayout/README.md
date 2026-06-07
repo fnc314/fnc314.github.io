@@ -6,7 +6,7 @@
 
 # Class: BentoLayout
 
-Defined in: [src/components/bento-layout/bento-layout.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30)
+Defined in: [src/components/bento-layout/bento-layout.ts:27](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L27)
 
 ## Element
 
@@ -20,117 +20,13 @@ bento-layout
 
 - [`LitElement`](https://lit.dev/docs/api/LitElement/)
 
-## Other
-
-### styles
-
-&gt; `static` **styles**: `CSSResult`[]
-
-Defined in: [src/components/bento-layout/bento-layout.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L32)
-
-[lit!css](https://lit.dev/docs/api/styles/#css)
-
-#### Overrides
-
-`LitElement.styles`
-
----
-
-### \_currentBreakpoint
-
-&gt; `private` **\_currentBreakpoint**: [`Breakpoint`](../../../../styles/breakpoints/Breakpoint/README.md) = `"unknown"`
-
-Defined in: [src/components/bento-layout/bento-layout.ts:62](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L62)
-
-The [Breakpoint](../../../../styles/breakpoints/Breakpoint/README.md) as calculated by [readBreakpoint](../../../../styles/breakpoints/readBreakpoint/README.md)
-
----
-
-### \_onWindowResize
-
-&gt; `private` **\_onWindowResize**: () =&gt; `void`
-
-Defined in: [src/components/bento-layout/bento-layout.ts:68](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L68)
-
-The callback passed to window.addEventListener and
-window.removeEventListener
-
-#### Returns
-
-`void`
-
----
-
-### getSkillsForWordCloud()
-
-&gt; `private` **getSkillsForWordCloud**(): `WordCloudWord`[]
-
-Defined in: [src/components/bento-layout/bento-layout.ts:101](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L101)
-
-Retrieves the list of skills formatted for the word cloud.
-
-#### Returns
-
-`WordCloudWord`[]
-
-#### Memberof
-
-BentoLayout
-
----
-
-### renderBentoBox()
-
-&gt; `private` **renderBentoBox**(`config`: [`BentoBoxConfig`](../../bento-layout.types/BentoBoxConfig/README.md)): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
-
-Defined in: [src/components/bento-layout/bento-layout.ts:114](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L114)
-
-Centralized method to render a bento box card based on its type and configuration.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`config`
-
-</td>
-<td>
-
-[`BentoBoxConfig`](../../bento-layout.types/BentoBoxConfig/README.md)
-
-</td>
-<td>
-
-The configuration for the bento box
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-[`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
-
-A TemplateResult representing the rendered bento box.
-
 ## lifecycle
 
 ### connectedCallback()
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:83](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L83)
+Defined in: [src/components/bento-layout/bento-layout.ts:113](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L113)
 
 Invoked when the component is added to the document's DOM.
 
@@ -163,7 +59,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:90](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L90)
+Defined in: [src/components/bento-layout/bento-layout.ts:159](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L159)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -195,7 +91,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/bento-layout/bento-layout.ts:286](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L286)
+Defined in: [src/components/bento-layout/bento-layout.ts:214](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L214)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -210,4 +106,99 @@ the element to update.
 
 `LitElement.render`
 
-</body></html>
+## styles
+
+### styles
+
+&gt; `static` **styles**: `CSSResult`[]
+
+Defined in: [src/components/bento-layout/bento-layout.ts:28](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L28)
+
+Array of styles to apply to the element. The styles should be defined
+using the css tag function, via constructible stylesheets, or
+imported from native CSS module scripts.
+
+Note on Content Security Policy:
+
+Element styles are implemented with `<style>` tags when the browser doesn't
+support adopted StyleSheets. To use such `<style>` tags with the style-src
+CSP directive, the style-src value must either include 'unsafe-inline' or
+`nonce-<base64-value>` with `<base64-value>` replaced be a server-generated
+nonce.
+
+To provide a nonce to use on generated `<style>` elements, set
+`window.litNonce` to a server-generated nonce in your page's HTML, before
+loading application code:
+
+```html
+<script>
+  // Generated and unique per request:
+  window.litNonce = "a1b2c3d4";
+</script>
+```
+
+#### Nocollapse
+
+#### Overrides
+
+`LitElement.styles`
+
+## updates
+
+### firstUpdated()
+
+> `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>): `void`
+
+Defined in: [src/components/bento-layout/bento-layout.ts:117](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L117)
+
+Invoked when the element is first updated. Implement to perform one time
+work on the element after update.
+
+```ts
+firstUpdated() {
+  this.renderRoot.getElementById('my-text-area').focus();
+}
+```
+
+Setting properties inside this method will trigger the element to update
+again after this update cycle completes.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`_changedProperties`
+
+</td>
+<td>
+
+`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+
+</td>
+<td>
+
+Map of changed properties with old values
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+`LitElement.firstUpdated`
+</style></body></html>

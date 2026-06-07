@@ -6,7 +6,7 @@
 
 # Class: CodeProject
 
-Defined in: [src/components/code/code-project/code-project.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L22)
+Defined in: [src/components/code/code-project/code-project.ts:23](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L23)
 
 ## Cssprop
 
@@ -34,7 +34,7 @@ CodeProject
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/code/code-project/code-project.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L30)
+Defined in: [src/components/code/code-project/code-project.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L31)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -48,7 +48,7 @@ Defined in: [src/components/code/code-project/code-project.ts:30](https://github
 
 &gt; `private` **#generateCardFront**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/code/code-project/code-project.ts:168](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L168)
+Defined in: [src/components/code/code-project/code-project.ts:180](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L180)
 
 Builds the front of the [@material/web!MdOutlinedCard](https://github.com/material-components/material-web/blob/main/labs/card/outlined-card.ts) content
 
@@ -62,7 +62,7 @@ Builds the front of the [@material/web!MdOutlinedCard](https://github.com/materi
 
 &gt; `private` **#generateCardBack**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/code/code-project/code-project.ts:207](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L207)
+Defined in: [src/components/code/code-project/code-project.ts:219](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L219)
 
 Builds the back of the [@material/web!MdOutlinedCard](https://github.com/material-components/material-web/blob/main/labs/card/outlined-card.ts) content
 
@@ -76,7 +76,7 @@ Builds the back of the [@material/web!MdOutlinedCard](https://github.com/materia
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/code/code-project/code-project.ts:237](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L237)
+Defined in: [src/components/code/code-project/code-project.ts:249](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/code-project/code-project.ts#L249)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

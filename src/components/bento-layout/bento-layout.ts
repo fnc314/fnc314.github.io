@@ -1,5 +1,5 @@
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
-import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
+import { readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { ROUTES, type Route } from "@/types/components/nav/routes";
 import { LitElement, type PropertyValues, type TemplateResult, css, html, nothing } from "lit";
@@ -105,22 +105,13 @@ export class BentoLayout extends LitElement {
   ];
 
   @state()
-  private _currentBreakpoint: Breakpoint = readBreakpoint();
-
-  @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
   private _scrollSpyObserver?: IntersectionObserver;
   private _activeRoute: Route = ROUTES.INFO;
 
-  private _onWindowResize = () => {
-    this._currentBreakpoint = readBreakpoint();
-  };
-
   override connectedCallback() {
     super.connectedCallback();
-    this._onWindowResize();
-    window.addEventListener("resize", this._onWindowResize);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
@@ -167,7 +158,6 @@ export class BentoLayout extends LitElement {
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("resize", this._onWindowResize);
     this._scrollSpyObserver?.disconnect();
   }
 

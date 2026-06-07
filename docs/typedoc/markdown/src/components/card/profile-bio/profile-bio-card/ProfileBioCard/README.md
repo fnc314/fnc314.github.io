@@ -6,7 +6,7 @@
 
 # Class: ProfileBioCard
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L17)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:15](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L15)
 
 ## Element
 
@@ -20,13 +20,78 @@ profile-bio-card
 
 - [`LitElement`](https://lit.dev/docs/api/LitElement/)
 
+## lifecycle
+
+### connectedCallback()
+
+&gt; **connectedCallback**(): `void`
+
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:62](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L62)
+
+Invoked when the component is added to the document's DOM.
+
+In `connectedCallback()` you should setup tasks that should only occur when
+the element is connected to the document. The most common of these is
+adding event listeners to nodes external to the element, like a keydown
+event handler added to the window.
+
+```ts
+connectedCallback() {
+  super.connectedCallback();
+  addEventListener('keydown', this._handleKeydown);
+}
+```
+
+Typically, anything done in `connectedCallback()` should be undone when the
+element is disconnected, in `disconnectedCallback()`.
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+`LitElement.connectedCallback`
+
+---
+
+### disconnectedCallback()
+
+&gt; **disconnectedCallback**(): `void`
+
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:68](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L68)
+
+Invoked when the component is removed from the document's DOM.
+
+This callback is the main signal to the element that it may no longer be
+used. `disconnectedCallback()` should ensure that nothing is holding a
+reference to the element (such as event listeners added to nodes external
+to the element), so that it is free to be garbage collected.
+
+```ts
+disconnectedCallback() {
+  super.disconnectedCallback();
+  window.removeEventListener('keydown', this._handleKeydown);
+}
+```
+
+An element may be re-connected after being disconnected.
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+`LitElement.disconnectedCallback`
+
 ## rendering
 
 ### render()
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:84](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L84)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L79)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -47,7 +112,7 @@ the element to update.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:18](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L18)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:16](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L16)
 
 Array of styles to apply to the element. The styles should be defined
 using the css tag function, via constructible stylesheets, or

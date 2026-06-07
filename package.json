@@ -13,14 +13,10 @@
   "private": true,
   "types": "./out",
   "main": "./website/index.js",
-  "customElements": "dist/vite/development/custom-elements.json",
+  "customElements": "docs/custom-elements-manifest/custom-elements.json",
   "web-types": "./.idea/web-types.json",
   "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
-  "keywords": [
-    "website",
-    "homepage",
-    "fnc314"
-  ],
+  "keywords": ["website", "homepage", "fnc314"],
   "bugs": {
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },

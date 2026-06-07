@@ -44,7 +44,7 @@ to align with the application's Material Design 3 aesthetic.
 
 &gt; **reset**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:265](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L265)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:259](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L259)
 
 Resets the UI mode toggle to its default settings.
 
@@ -58,7 +58,7 @@ Resets the UI mode toggle to its default settings.
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:194](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L194)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:188](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L188)
 
 Invoked when the component is added to the document's DOM.
 
@@ -91,7 +91,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:201](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L201)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:195](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L195)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -123,7 +123,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:270](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L270)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:264](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L264)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

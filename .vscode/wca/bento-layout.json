@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "bento-layout",
-      "description": "Properties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_currentBreakpoint` {Breakpoint} - [object Object],[object Object],[object Object],[object Object]\n\n  * `_onWindowResize` - [object Object],[object Object],[object Object],[object Object]",
+      "description": "Properties:\n\n  * `styles` - \n\n  * `_bentoBoxConfigs` - \n\n  * `_scrollSpyObserver` - \n\n  * `_activeRoute` - ",
       "attributes": []
     }
   ],

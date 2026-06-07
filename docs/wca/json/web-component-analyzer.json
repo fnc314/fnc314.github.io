@@ -28,9 +28,8 @@
       "properties": [
         {
           "name": "styles",
-          "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
+          "default": "[\"MaterialTypescaleStyles\",null]"
         }
       ]
     },
@@ -49,7 +48,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",null]"
         },
         {
           "name": "blogPost",
