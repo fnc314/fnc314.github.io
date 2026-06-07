@@ -29,15 +29,39 @@ export class BentoCard extends LitElement {
   @property({ type: Boolean })
   scrollable = false;
 
+  @property({ type: Boolean, reflect: true })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
+  private _handleToggle(e: Event) {
+    this.expanded = (e.target as HTMLDetailsElement).open;
+  }
+
   override render() {
     const classes = {
       "bento-card": true,
       "scrollable": this.scrollable,
+      "enable-hover": this.enableHover,
+      "enable-focus": this.enableFocus,
     };
+
     return html`
-      <div class="${classMap(classes)}" role="region">
-        <slot></slot>
-      </div>
+      <details class="${classMap(classes)}" ?open=${this.expanded} @toggle=${this._handleToggle}>
+        <summary>
+          <slot name="header"></slot>
+          <md-icon class="indicator">expand_more</md-icon>
+        </summary>
+        <div class="expansion-wrapper">
+          <div class="expansion-content">
+            <slot></slot>
+          </div>
+        </div>
+      </details>
     `;
   }
 }

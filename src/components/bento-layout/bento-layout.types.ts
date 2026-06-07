@@ -22,6 +22,7 @@ export type GridPosition = {
   breakpoint: Omit<Breakpoint, "mobile">;
   row: GridPlacement;
   column: GridPlacement;
+  area?: string;
 } | { breakpoint: "mobile" }
 
 /**
@@ -40,6 +41,7 @@ export type BentoBoxType = "profile-photo-bio" | "work" | "code" | "blog" | "set
  */
 export interface BentoBoxConfig {
   type: BentoBoxType;
+  expanded?: boolean;
   placementForBreakpoint(breakpoint: Breakpoint): GridPosition;
 }
 
@@ -52,6 +54,7 @@ export interface BentoBoxConfig {
 export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   {
     type: "profile-photo-bio",
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -68,6 +71,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "work",
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -84,6 +88,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "blog",
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -100,6 +105,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "code",
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":

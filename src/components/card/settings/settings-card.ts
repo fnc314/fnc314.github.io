@@ -6,7 +6,7 @@ import { type AppConfigs } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
 import { LitElement, css, html } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
 import time from "~build/time";
@@ -77,6 +77,15 @@ export class SettingsCard extends LitElement {
 
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
+
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
 
   /**
    * Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}
@@ -157,8 +166,15 @@ export class SettingsCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="settings-container" aria-labelledby="settings-title" scrollable>
-        <h2 id="settings-title" class="md-typescale-title-large">Settings</h2>
+      <bento-card
+        class="settings-container"
+        aria-labelledby="settings-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="settings-title" class="md-typescale-title-large">Settings</h2>
         <div class="configs-form">
           <div class="form-field">
             <label for="theme-select">UI Theme</label>

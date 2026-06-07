@@ -1,10 +1,10 @@
-import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { skillsCardStyles } from "./skills-card.styles";
-import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
-import SkillsJson from "@/data/skills.json" with { type: "json" };
 import "@/components/card/bento/bento-card";
 import "@/components/word/word-cloud/word-cloud";
+import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
+import SkillsJson from "@/data/skills.json" with { type: "json" };
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { skillsCardStyles } from "./skills-card.styles";
 
 /**
  * @summary SkillsCard - A card component displaying a skill word cloud.
@@ -14,6 +14,15 @@ import "@/components/word/word-cloud/word-cloud";
 @customElement("skills-card")
 export class SkillsCard extends LitElement {
   static override styles = [skillsCardStyles];
+
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
 
   private getSkillsForWordCloud() {
     return Object.keys(SkillsJson.skills).flatMap((proficiency) =>
@@ -25,8 +34,15 @@ export class SkillsCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="skills-container" aria-labelledby="skills-title" scrollable>
-        <h2 id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
+      <bento-card
+        class="skills-container"
+        aria-labelledby="skills-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
         <word-cloud
           .words=${this.getSkillsForWordCloud()}
           instant-clear

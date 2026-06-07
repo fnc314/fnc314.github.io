@@ -2,7 +2,7 @@ import "@/components/card/bento/bento-card";
 import "@/components/code/code-project/code-project";
 import CodeJson from "@/data/code.json" with { type: "json" };
 import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { codeCardStyles } from "./code-card.styles";
 
 /**
@@ -14,6 +14,15 @@ import { codeCardStyles } from "./code-card.styles";
 export class CodeCard extends LitElement {
   static override styles = [codeCardStyles];
 
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
   override connectedCallback() {
     super.connectedCallback();
     this.id = "code";
@@ -21,8 +30,15 @@ export class CodeCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="code-container" aria-labelledby="code-title" scrollable>
-        <h2 id="code-title" class="md-typescale-title-large">Code Projects</h2>
+      <bento-card
+        class="code-container"
+        aria-labelledby="code-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="code-title" class="md-typescale-title-large">Code Projects</h2>
         <div class="code-list">
           ${CodeJson.projects.map(
             (p) => html`

@@ -50,6 +50,15 @@ export class ProfileBioCard extends LitElement {
   @property({ type: String })
   bioText: string = BioJson.bio;
 
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
   override connectedCallback() {
     super.connectedCallback();
     this.id = "bio";
@@ -69,8 +78,15 @@ export class ProfileBioCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="profile-bio-wrapper" aria-labelledby="profile-title" scrollable>
-        <h2 id="profile-title" class="md-typescale-title-large">Info</h2>
+      <bento-card
+        class="profile-bio-wrapper"
+        aria-labelledby="profile-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="profile-title" class="md-typescale-title-large">Info</h2>
         <div class="profile-bio-container">
           <figure>
             <img

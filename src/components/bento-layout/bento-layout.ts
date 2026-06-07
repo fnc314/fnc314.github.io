@@ -178,13 +178,11 @@ export class BentoLayout extends LitElement {
 
     let style: TemplateResult = html`${nothing}`;
     if ("column" in position && "row" in position) {
+      const gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
       style = html`
         <style>
           .card-${config.type} {
-            grid-column-start: ${position.column.start};
-            grid-column-end: ${position.column.end};
-            grid-row-start: ${position.row.start};
-            grid-row-end: ${position.row.end};
+            grid-area: ${gridArea};
           }
         </style>
       `;
@@ -193,28 +191,28 @@ export class BentoLayout extends LitElement {
     let cardContent: TemplateResult;
     switch (config.type) {
       case "profile-photo-bio":
-        cardContent = html`<profile-bio-card></profile-bio-card>`;
+        cardContent = html`<profile-bio-card .expanded=${config.expanded}></profile-bio-card>`;
         break;
       case "skills":
-        cardContent = html`<skills-card></skills-card>`;
+        cardContent = html`<skills-card .expanded=${config.expanded}></skills-card>`;
         break;
       case "education":
-        cardContent = html`<education-card></education-card>`;
+        cardContent = html`<education-card .expanded=${config.expanded}></education-card>`;
         break;
       case "settings":
-        cardContent = html`<settings-card></settings-card>`;
+        cardContent = html`<settings-card .expanded=${config.expanded}></settings-card>`;
         break;
       case "connect":
-        cardContent = html`<connect-card></connect-card>`;
+        cardContent = html`<connect-card .expanded=${config.expanded}></connect-card>`;
         break;
       case "work":
-        cardContent = html`<work-card></work-card>`;
+        cardContent = html`<work-card .expanded=${config.expanded}></work-card>`;
         break;
       case "code":
-        cardContent = html`<code-card></code-card>`;
+        cardContent = html`<code-card .expanded=${config.expanded}></code-card>`;
         break;
       case "blog":
-        cardContent = html`<blog-card></blog-card>`;
+        cardContent = html`<blog-card .expanded=${config.expanded}></blog-card>`;
         break;
       default:
         return html`${nothing}`;

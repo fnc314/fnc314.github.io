@@ -1,9 +1,9 @@
-import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { workCardStyles } from "./work-card.styles";
-import { data as WorkJson } from "@/components/work-experience/work-experience.types";
 import "@/components/card/bento/bento-card";
 import "@/components/work-experience/work-experience";
+import { data as WorkJson } from "@/components/work-experience/work-experience.types";
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { workCardStyles } from "./work-card.styles";
 
 /**
  * @summary WorkCard - A card component displaying work experience.
@@ -14,6 +14,15 @@ import "@/components/work-experience/work-experience";
 export class WorkCard extends LitElement {
   static override styles = [workCardStyles];
 
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
   override connectedCallback() {
     super.connectedCallback();
     this.id = "work";
@@ -21,8 +30,15 @@ export class WorkCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="work-container" aria-labelledby="work-title" scrollable>
-        <h2 id="work-title" class="md-typescale-title-large">Work History</h2>
+      <bento-card
+        class="work-container"
+        aria-labelledby="work-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="work-title" class="md-typescale-title-large">Work History</h2>
         ${WorkJson.experiences.map(
           (exp) => html`
             <work-experience

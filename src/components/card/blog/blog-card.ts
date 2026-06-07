@@ -1,10 +1,10 @@
-import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { blogCardStyles } from "./blog-card.styles";
-import { type BlogPostJson } from "@/components/blog/blog-post";
-import BlogJson from "@/data/blog.json" with { type: "json" };
-import "@/components/card/bento/bento-card";
 import "@/components/blog/blog-post";
+import { type BlogPostJson } from "@/components/blog/blog-post";
+import "@/components/card/bento/bento-card";
+import BlogJson from "@/data/blog.json" with { type: "json" };
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { blogCardStyles } from "./blog-card.styles";
 
 /**
  * @summary BlogCard - A card component displaying blog posts.
@@ -15,6 +15,15 @@ import "@/components/blog/blog-post";
 export class BlogCard extends LitElement {
   static override styles = [blogCardStyles];
 
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
   override connectedCallback() {
     super.connectedCallback();
     this.id = "blog";
@@ -22,8 +31,15 @@ export class BlogCard extends LitElement {
 
   override render() {
     return html`
-      <bento-card class="blog-container" aria-labelledby="blog-title" scrollable>
-        <h2 id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
+      <bento-card
+        class="blog-container"
+        aria-labelledby="blog-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
         <div class="blog-list">
           ${BlogJson.posts.map(
             (post: BlogPostJson) => html`

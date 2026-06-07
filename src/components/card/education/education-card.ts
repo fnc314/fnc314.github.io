@@ -1,8 +1,8 @@
-import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
-import { educationCardStyles } from "./education-card.styles";
-import EducationJson from "@/data/education.json" with { type: "json" };
 import "@/components/card/bento/bento-card";
+import EducationJson from "@/data/education.json" with { type: "json" };
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { educationCardStyles } from "./education-card.styles";
 
 /**
  * @summary EducationCard - A card component displaying education history.
@@ -13,10 +13,26 @@ import "@/components/card/bento/bento-card";
 export class EducationCard extends LitElement {
   static override styles = [educationCardStyles];
 
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
   override render() {
     return html`
-      <bento-card class="education-container" aria-labelledby="education-title" scrollable>
-        <h2 id="education-title" class="md-typescale-title-large">Education</h2>
+      <bento-card
+        class="education-container"
+        aria-labelledby="education-title"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+      >
+        <h2 slot="header" id="education-title" class="md-typescale-title-large">Education</h2>
         <ul class="education-list">
           ${EducationJson.education.map(
             (edu) => html`
