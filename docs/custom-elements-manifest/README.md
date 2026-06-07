@@ -47,6 +47,22 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
+# `src/components/bento-layout/bento-layout.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `bentoLayoutStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `bentoLayoutStyles` | bentoLayoutStyles | src/components/bento-layout/bento-layout.styles.ts |         |
+
 # `dist/out/components/bento-layout/bento-layout.js`:
 
 ## class: `BentoLayout`, `bento-layout`
@@ -126,12 +142,11 @@
 
 ### CSS Properties
 
-| Name                                   | Default | Description                                                                                                                   |
-| -------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `--blog-post-animation`                |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states    |
-| `--blog-post-primary-text-color`       |         | The color of the primary text                                                                                                 |
-| `--blog-post-container-color`          |         | The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} |
-| `--blog-post-word-tag-container-color` |         | The color of the container, {@link @fnc314/com.fnc314.website!WordTag}                                                        |
+| Name                             | Default | Description                                                                                                                   |
+| -------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `--blog-post-animation`          |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states    |
+| `--blog-post-primary-text-color` |         | The color of the primary text                                                                                                 |
+| `--blog-post-container-color`    |         | The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} |
 
 <details><summary>Private API</summary>
 

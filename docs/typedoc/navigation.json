@@ -122,6 +122,25 @@
             "title": "bento-layout",
             "children": [
               {
+                "title": "bento-layout.styles",
+                "kind": 2,
+                "path": "src/components/bento-layout/bento-layout.styles/README.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Variables",
+                    "children": [
+                      {
+                        "title": "bentoLayoutStyles",
+                        "kind": 32,
+                        "path": "src/components/bento-layout/bento-layout.styles/bentoLayoutStyles/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "title": "bento-layout",
                 "kind": 2,
                 "path": "src/components/bento-layout/bento-layout/README.md",

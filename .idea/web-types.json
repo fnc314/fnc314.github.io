@@ -35,7 +35,7 @@
         },
         {
           "name": "blog-post",
-          "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **Methods:**\n - **blogPost()** - The {@link BlogPostJson} record to render\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link @fnc314/com.fnc314.website!WordTag} _(default: undefined)_",
+          "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **Methods:**\n - **blogPost()** - The {@link BlogPostJson} record to render\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_",
           "doc-url": "",
           "attributes": [
             {
@@ -883,10 +883,6 @@
         {
           "name": "--blog-post-container-color",
           "description": "The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color}"
-        },
-        {
-          "name": "--blog-post-word-tag-container-color",
-          "description": "The color of the container, {@link @fnc314/com.fnc314.website!WordTag}"
         },
         {
           "name": "--fab-menu-item-direction",

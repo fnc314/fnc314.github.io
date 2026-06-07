@@ -18,11 +18,6 @@
       "values": []
     },
     {
-      "name": "--blog-post-word-tag-container-color",
-      "description": "The color of the container, {@link @fnc314/com.fnc314.website!WordTag}",
-      "values": []
-    },
-    {
       "name": "--fab-menu-item-direction",
       "description": "The `flex-direction` of the {@link FabMenuItem}",
       "values": []

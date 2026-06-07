@@ -6,7 +6,7 @@
 
 # Class: BentoLayout
 
-Defined in: [src/components/bento-layout/bento-layout.ts:27](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L27)
+Defined in: [src/components/bento-layout/bento-layout.ts:29](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L29)
 
 ## Element
 
@@ -26,7 +26,7 @@ bento-layout
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:113](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L113)
+Defined in: [src/components/bento-layout/bento-layout.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L41)
 
 Invoked when the component is added to the document's DOM.
 
@@ -59,7 +59,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:159](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L159)
+Defined in: [src/components/bento-layout/bento-layout.ts:87](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L87)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -91,7 +91,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/bento-layout/bento-layout.ts:214](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L214)
+Defined in: [src/components/bento-layout/bento-layout.ts:142](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L142)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -112,7 +112,7 @@ the element to update.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/bento-layout/bento-layout.ts:28](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L28)
+Defined in: [src/components/bento-layout/bento-layout.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30)
 
 Array of styles to apply to the element. The styles should be defined
 using the css tag function, via constructible stylesheets, or
@@ -149,7 +149,7 @@ loading application code:
 
 > `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:117](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L117)
+Defined in: [src/components/bento-layout/bento-layout.ts:45](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L45)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.

@@ -6,7 +6,7 @@
 
 # Class: BlogPost
 
-Defined in: [src/components/blog/blog-post.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L30)
+Defined in: [src/components/blog/blog-post.ts:29](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L29)
 
 ## Cssprop
 
@@ -21,10 +21,6 @@ Defined in: [src/components/blog/blog-post.ts:30](https://github.com/fnc314/fnc3
 
 --blog-post-container-color - The color of the container, [@material/web!MdElevatedCard](https://github.com/material-components/material-web/blob/main/labs/card/elevated-card.ts)
 and [@material/web!--md-elevated-card-container-color](https://github.com/material-components/material-web/blob/main/tokens/_md-comp-elevated-card.scss#L20)
-
-## Cssprop
-
---blog-post-word-tag-container-color - The color of the container, [@fnc314/com.fnc314.website!WordTag](/Users/fnc314/Code/websites/fnc314.github.io/src/components/word/word-tag.ts)
 
 ## See
 
@@ -48,7 +44,7 @@ BlogPost
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/blog/blog-post.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L32)
+Defined in: [src/components/blog/blog-post.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L31)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -62,7 +58,7 @@ Defined in: [src/components/blog/blog-post.ts:32](https://github.com/fnc314/fnc3
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/blog/blog-post.ts:215](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L215)
+Defined in: [src/components/blog/blog-post.ts:198](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L198)
 
 Invoked when the component is added to the document's DOM.
 
@@ -95,7 +91,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/blog/blog-post.ts:220](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L220)
+Defined in: [src/components/blog/blog-post.ts:203](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L203)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -127,7 +123,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/blog/blog-post.ts:225](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L225)
+Defined in: [src/components/blog/blog-post.ts:208](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L208)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

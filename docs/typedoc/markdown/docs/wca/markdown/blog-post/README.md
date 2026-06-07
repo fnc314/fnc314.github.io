@@ -19,7 +19,6 @@
 | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `--blog-post-animation`                                         | The duration of the animation for `:focus`, `:hover`,<br>`:focus-within`, and `:focus-visible` states |
 | `--blog-post-primary-text-color`                                | The color of the primary text                                                                         |
-| `object Object],[object Object`                                 |                                                                                                       |
 | `object Object],[object Object],[object Object],[object Object` |                                                                                                       |
 
 </body></html>

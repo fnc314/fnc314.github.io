@@ -8,7 +8,7 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
         }
       ]
     }

@@ -196,7 +196,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L27"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L29"
           },
           "kind": "class",
           "tagName": "bento-layout",
@@ -218,6 +218,30 @@
           "declaration": {
             "name": "BentoLayout",
             "module": "src/components/bento-layout/bento-layout.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.styles.js",
+      "declarations": [
+        {
+          "name": "bentoLayoutStyles",
+          "summary": "Styles for the BentoLayout component.\n\nOrchestrates the responsive grid layout for the bento box UI.\nSupports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.styles.ts#L9"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoLayoutStyles",
+          "declaration": {
+            "name": "bentoLayoutStyles",
+            "module": "src/components/bento-layout/bento-layout.styles.js"
           }
         }
       ]
@@ -286,7 +310,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L30"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/blog/blog-post.ts#L29"
           },
           "kind": "class",
           "tagName": "blog-post",
@@ -311,7 +335,7 @@
             },
             {
               "name": "--blog-post-container-color",
-              "description": "The color of the container, {@link @material/web!MdElevatedCard}\nand {@link @material/web!--md-elevated-card-container-color}\n@cssprop --blog-post-word-tag-container-color - The color of the container, {@link @fnc314/com.fnc314.website!WordTag}"
+              "description": "The color of the container, {@link @material/web!MdElevatedCard}\nand {@link @material/web!--md-elevated-card-container-color}\n\n@see BlogPostJson"
             }
           ],
           "customElement": true

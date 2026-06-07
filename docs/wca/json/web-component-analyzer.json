@@ -29,7 +29,7 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
         }
       ]
     },
@@ -71,9 +71,6 @@
         },
         {
           "name": "object Object],[object Object],[object Object],[object Object"
-        },
-        {
-          "name": "object Object],[object Object"
         }
       ]
     },

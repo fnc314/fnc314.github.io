@@ -28,7 +28,6 @@
 | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `--blog-post-animation`                                         | The duration of the animation for `:focus`, `:hover`,<br>`:focus-within`, and `:focus-visible` states |
 | `--blog-post-primary-text-color`                                | The color of the primary text                                                                         |
-| `object Object],[object Object`                                 |                                                                                                       |
 | `object Object],[object Object],[object Object],[object Object` |                                                                                                       |
 
 # fab-menu-item
@@ -179,6 +178,7 @@ A header component used for section titles with support for primary, secondary, 
 ## Modules
 
 - [src/components/app-shell/app-shell](src/components/app-shell/app-shell/README.md)
+- [src/components/bento-layout/bento-layout.styles](src/components/bento-layout/bento-layout.styles/README.md)
 - [src/components/bento-layout/bento-layout](src/components/bento-layout/bento-layout/README.md)
 - [src/components/bento-layout/bento-layout.types](src/components/bento-layout/bento-layout.types/README.md)
 - [src/components/blog/blog-post](src/components/blog/blog-post/README.md)

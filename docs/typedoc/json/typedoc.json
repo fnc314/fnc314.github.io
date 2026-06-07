@@ -694,14 +694,81 @@
 			]
 		},
 		{
-			"id": 49,
+			"id": 48,
+			"name": "src/components/bento-layout/bento-layout.styles",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 49,
+					"name": "bentoLayoutStyles",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@summary",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Styles for the BentoLayout component.\n\nOrchestrates the responsive grid layout for the bento box UI.\nSupports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts."
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "src/components/bento-layout/bento-layout.styles.ts",
+							"line": 9,
+							"character": 13,
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.styles.ts#L9"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@lit/reactive-element",
+							"packagePath": "src/css-tag.ts",
+							"qualifiedName": "CSSResult"
+						},
+						"name": "CSSResult",
+						"package": "@lit/reactive-element"
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						49
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/components/bento-layout/bento-layout.styles.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.styles.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 51,
 			"name": "src/components/bento-layout/bento-layout",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 50,
+					"id": 52,
 					"name": "BentoLayout",
 					"variant": "declaration",
 					"kind": 128,
@@ -731,7 +798,7 @@
 					},
 					"children": [
 						{
-							"id": 51,
+							"id": 53,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -825,9 +892,9 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 28,
+									"line": 30,
 									"character": 18,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L28"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30"
 								}
 							],
 							"type": {
@@ -851,7 +918,7 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 59,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -859,14 +926,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 113,
+									"line": 41,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L113"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L41"
 								}
 							],
 							"signatures": [
 								{
-									"id": 58,
+									"id": 60,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -925,9 +992,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 113,
+											"line": 41,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L113"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L41"
 										}
 									],
 									"type": {
@@ -948,7 +1015,7 @@
 							}
 						},
 						{
-							"id": 67,
+							"id": 69,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -956,14 +1023,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 159,
+									"line": 87,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L159"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L87"
 								}
 							],
 							"signatures": [
 								{
-									"id": 68,
+									"id": 70,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -1006,9 +1073,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 159,
+											"line": 87,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L159"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L87"
 										}
 									],
 									"type": {
@@ -1029,7 +1096,7 @@
 							}
 						},
 						{
-							"id": 72,
+							"id": 74,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1037,14 +1104,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 214,
+									"line": 142,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L214"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L142"
 								}
 							],
 							"signatures": [
 								{
-									"id": 73,
+									"id": 75,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -1087,9 +1154,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 214,
+											"line": 142,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L214"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L142"
 										}
 									],
 									"type": {
@@ -1123,7 +1190,7 @@
 							}
 						},
 						{
-							"id": 59,
+							"id": 61,
 							"name": "firstUpdated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1133,14 +1200,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/bento-layout/bento-layout.ts",
-									"line": 117,
+									"line": 45,
 									"character": 21,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L117"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L45"
 								}
 							],
 							"signatures": [
 								{
-									"id": 60,
+									"id": 62,
 									"name": "firstUpdated",
 									"variant": "signature",
 									"kind": 4096,
@@ -1175,14 +1242,14 @@
 									"sources": [
 										{
 											"fileName": "src/components/bento-layout/bento-layout.ts",
-											"line": 117,
+											"line": 45,
 											"character": 21,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L117"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L45"
 										}
 									],
 									"parameters": [
 										{
-											"id": 61,
+											"id": 63,
 											"name": "_changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -1267,16 +1334,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								51
+								53
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								57,
-								67,
-								72,
-								59
+								59,
+								69,
+								74,
+								61
 							]
 						}
 					],
@@ -1284,35 +1351,35 @@
 						{
 							"title": "lifecycle",
 							"children": [
-								57,
-								67
+								59,
+								69
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								72
+								74
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								51
+								53
 							]
 						},
 						{
 							"title": "updates",
 							"children": [
-								59
+								61
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/components/bento-layout/bento-layout.ts",
-							"line": 27,
+							"line": 29,
 							"character": 13,
-							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L27"
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L29"
 						}
 					],
 					"extendedTypes": [
@@ -1334,7 +1401,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						50
+						52
 					]
 				}
 			],
@@ -1348,14 +1415,14 @@
 			]
 		},
 		{
-			"id": 74,
+			"id": 76,
 			"name": "src/components/bento-layout/bento-layout.types",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 75,
+					"id": 77,
 					"name": "GridPlacement",
 					"variant": "declaration",
 					"kind": 256,
@@ -1395,7 +1462,7 @@
 					]
 				},
 				{
-					"id": 78,
+					"id": 80,
 					"name": "GridPosition",
 					"variant": "declaration",
 					"kind": 256,
@@ -1410,7 +1477,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "GridPlacement",
-								"target": 75
+								"target": 77
 							},
 							{
 								"kind": "text",
@@ -1446,7 +1513,7 @@
 					]
 				},
 				{
-					"id": 80,
+					"id": 82,
 					"name": "BentoBoxType",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -1520,7 +1587,7 @@
 					}
 				},
 				{
-					"id": 81,
+					"id": 83,
 					"name": "BentoBoxConfig",
 					"variant": "declaration",
 					"kind": 256,
@@ -1535,7 +1602,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "BentoBoxType",
-								"target": 80
+								"target": 82
 							},
 							{
 								"kind": "text",
@@ -1545,7 +1612,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "GridPosition",
-								"target": 78
+								"target": 80
 							},
 							{
 								"kind": "text",
@@ -1571,7 +1638,7 @@
 					]
 				},
 				{
-					"id": 87,
+					"id": 89,
 					"name": "BentoBoxConfigs",
 					"variant": "declaration",
 					"kind": 32,
@@ -1598,7 +1665,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "BentoBoxConfig",
-								"target": 81
+								"target": 83
 							},
 							{
 								"kind": "text",
@@ -1626,14 +1693,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 88,
+							"id": 90,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"signatures": [
 								{
-									"id": 89,
+									"id": 91,
 									"name": "__type",
 									"variant": "signature",
 									"kind": 4096,
@@ -1642,7 +1709,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 81,
+											"target": 83,
 											"name": "BentoBoxConfig",
 											"package": "@fnc314/fnc314.github.io"
 										}
@@ -1658,21 +1725,21 @@
 				{
 					"title": "Interfaces",
 					"children": [
-						75,
-						78,
-						81
+						77,
+						80,
+						83
 					]
 				},
 				{
 					"title": "Type Aliases",
 					"children": [
-						80
+						82
 					]
 				},
 				{
 					"title": "Variables",
 					"children": [
-						87
+						89
 					]
 				}
 			],
@@ -1686,14 +1753,14 @@
 			]
 		},
 		{
-			"id": 90,
+			"id": 92,
 			"name": "src/components/blog/blog-post",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 91,
+					"id": 93,
 					"name": "BlogPost",
 					"variant": "declaration",
 					"kind": 128,
@@ -1754,21 +1821,6 @@
 								]
 							},
 							{
-								"tag": "@cssprop",
-								"content": [
-									{
-										"kind": "text",
-										"text": "--blog-post-word-tag-container-color - The color of the container, "
-									},
-									{
-										"kind": "inline-tag",
-										"tag": "@link",
-										"text": "@fnc314/com.fnc314.website!WordTag",
-										"target": "/Users/fnc314/Code/websites/fnc314.github.io/src/components/word/word-tag.ts"
-									}
-								]
-							},
-							{
 								"tag": "@see",
 								"content": [
 									{
@@ -1790,7 +1842,7 @@
 					},
 					"children": [
 						{
-							"id": 92,
+							"id": 94,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -1810,9 +1862,9 @@
 							"sources": [
 								{
 									"fileName": "src/components/blog/blog-post.ts",
-									"line": 32,
+									"line": 31,
 									"character": 18,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L32"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L31"
 								}
 							],
 							"type": {
@@ -1836,7 +1888,7 @@
 							}
 						},
 						{
-							"id": 101,
+							"id": 103,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1844,14 +1896,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/blog/blog-post.ts",
-									"line": 215,
+									"line": 198,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L215"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L198"
 								}
 							],
 							"signatures": [
 								{
-									"id": 102,
+									"id": 104,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -1910,9 +1962,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/blog/blog-post.ts",
-											"line": 215,
+											"line": 198,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L215"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L198"
 										}
 									],
 									"type": {
@@ -1933,7 +1985,7 @@
 							}
 						},
 						{
-							"id": 103,
+							"id": 105,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -1941,14 +1993,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/blog/blog-post.ts",
-									"line": 220,
+									"line": 203,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L220"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L203"
 								}
 							],
 							"signatures": [
 								{
-									"id": 104,
+									"id": 106,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -1991,9 +2043,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/blog/blog-post.ts",
-											"line": 220,
+											"line": 203,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L220"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L203"
 										}
 									],
 									"type": {
@@ -2014,7 +2066,7 @@
 							}
 						},
 						{
-							"id": 105,
+							"id": 107,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2022,14 +2074,14 @@
 							"sources": [
 								{
 									"fileName": "src/components/blog/blog-post.ts",
-									"line": 225,
+									"line": 208,
 									"character": 11,
-									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L225"
+									"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L208"
 								}
 							],
 							"signatures": [
 								{
-									"id": 106,
+									"id": 108,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -2072,9 +2124,9 @@
 									"sources": [
 										{
 											"fileName": "src/components/blog/blog-post.ts",
-											"line": 225,
+											"line": 208,
 											"character": 11,
-											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L225"
+											"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L208"
 										}
 									],
 									"type": {
@@ -2112,15 +2164,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								92
+								94
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								101,
 								103,
-								105
+								105,
+								107
 							]
 						}
 					],
@@ -2128,29 +2180,29 @@
 						{
 							"title": "Other",
 							"children": [
-								92
+								94
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								101,
-								103
+								103,
+								105
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								105
+								107
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/components/blog/blog-post.ts",
-							"line": 30,
+							"line": 29,
 							"character": 13,
-							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L30"
+							"url": "https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L29"
 						}
 					],
 					"extendedTypes": [
@@ -2172,7 +2224,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						91
+						93
 					]
 				}
 			],
@@ -2186,14 +2238,14 @@
 			]
 		},
 		{
-			"id": 291,
+			"id": 293,
 			"name": "src/components/card/bento/bento-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 292,
+					"id": 294,
 					"name": "BentoCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -2289,7 +2341,7 @@
 					},
 					"children": [
 						{
-							"id": 293,
+							"id": 295,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2335,7 +2387,7 @@
 							}
 						},
 						{
-							"id": 297,
+							"id": 299,
 							"name": "expanded",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2363,7 +2415,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 298,
+							"id": 300,
 							"name": "enableHover",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2391,7 +2443,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 299,
+							"id": 301,
 							"name": "enableFocus",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2419,7 +2471,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 303,
+							"id": 305,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2434,7 +2486,7 @@
 							],
 							"signatures": [
 								{
-									"id": 304,
+									"id": 306,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -2513,7 +2565,7 @@
 							}
 						},
 						{
-							"id": 300,
+							"id": 302,
 							"name": "_handleToggle",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2530,7 +2582,7 @@
 							],
 							"signatures": [
 								{
-									"id": 301,
+									"id": 303,
 									"name": "_handleToggle",
 									"variant": "signature",
 									"kind": 4096,
@@ -2569,7 +2621,7 @@
 									],
 									"parameters": [
 										{
-											"id": 302,
+											"id": 304,
 											"name": "e",
 											"variant": "param",
 											"kind": 32768,
@@ -2615,17 +2667,17 @@
 						{
 							"title": "Properties",
 							"children": [
-								293,
-								297,
-								298,
-								299
+								295,
+								299,
+								300,
+								301
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								303,
-								300
+								305,
+								302
 							]
 						}
 					],
@@ -2633,17 +2685,17 @@
 						{
 							"title": "Other",
 							"children": [
-								293,
-								297,
-								298,
+								295,
 								299,
-								300
+								300,
+								301,
+								302
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								303
+								305
 							]
 						}
 					],
@@ -2674,7 +2726,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						292
+						294
 					]
 				}
 			],
@@ -2688,14 +2740,14 @@
 			]
 		},
 		{
-			"id": 308,
+			"id": 310,
 			"name": "src/components/card/blog/blog-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 309,
+					"id": 311,
 					"name": "BlogCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -2725,7 +2777,7 @@
 					},
 					"children": [
 						{
-							"id": 310,
+							"id": 312,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2845,7 +2897,7 @@
 							}
 						},
 						{
-							"id": 316,
+							"id": 318,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2860,7 +2912,7 @@
 							],
 							"signatures": [
 								{
-									"id": 317,
+									"id": 319,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -2942,7 +2994,7 @@
 							}
 						},
 						{
-							"id": 318,
+							"id": 320,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -2957,7 +3009,7 @@
 							],
 							"signatures": [
 								{
-									"id": 319,
+									"id": 321,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -3040,14 +3092,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								310
+								312
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								316,
-								318
+								318,
+								320
 							]
 						}
 					],
@@ -3055,19 +3107,19 @@
 						{
 							"title": "lifecycle",
 							"children": [
-								316
+								318
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								318
+								320
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								310
+								312
 							]
 						}
 					],
@@ -3098,7 +3150,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						309
+						311
 					]
 				}
 			],
@@ -3112,14 +3164,14 @@
 			]
 		},
 		{
-			"id": 323,
+			"id": 325,
 			"name": "src/components/card/code/code-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 324,
+					"id": 326,
 					"name": "CodeCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -3149,7 +3201,7 @@
 					},
 					"children": [
 						{
-							"id": 325,
+							"id": 327,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3269,7 +3321,7 @@
 							}
 						},
 						{
-							"id": 331,
+							"id": 333,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3284,7 +3336,7 @@
 							],
 							"signatures": [
 								{
-									"id": 332,
+									"id": 334,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -3366,7 +3418,7 @@
 							}
 						},
 						{
-							"id": 333,
+							"id": 335,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3381,7 +3433,7 @@
 							],
 							"signatures": [
 								{
-									"id": 334,
+									"id": 336,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -3464,14 +3516,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								325
+								327
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								331,
-								333
+								333,
+								335
 							]
 						}
 					],
@@ -3479,19 +3531,19 @@
 						{
 							"title": "lifecycle",
 							"children": [
-								331
+								333
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								333
+								335
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								325
+								327
 							]
 						}
 					],
@@ -3522,7 +3574,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						324
+						326
 					]
 				}
 			],
@@ -3536,14 +3588,14 @@
 			]
 		},
 		{
-			"id": 338,
+			"id": 340,
 			"name": "src/components/card/connect/connect-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 339,
+					"id": 341,
 					"name": "ConnectCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -3573,7 +3625,7 @@
 					},
 					"children": [
 						{
-							"id": 340,
+							"id": 342,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3693,7 +3745,7 @@
 							}
 						},
 						{
-							"id": 346,
+							"id": 348,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -3708,7 +3760,7 @@
 							],
 							"signatures": [
 								{
-									"id": 347,
+									"id": 349,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -3791,13 +3843,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								340
+								342
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								346
+								348
 							]
 						}
 					],
@@ -3805,13 +3857,13 @@
 						{
 							"title": "rendering",
 							"children": [
-								346
+								348
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								340
+								342
 							]
 						}
 					],
@@ -3842,7 +3894,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						339
+						341
 					]
 				}
 			],
@@ -3856,14 +3908,14 @@
 			]
 		},
 		{
-			"id": 351,
+			"id": 353,
 			"name": "src/components/card/education/education-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 352,
+					"id": 354,
 					"name": "EducationCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -3893,7 +3945,7 @@
 					},
 					"children": [
 						{
-							"id": 353,
+							"id": 355,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4013,7 +4065,7 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 361,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4028,7 +4080,7 @@
 							],
 							"signatures": [
 								{
-									"id": 360,
+									"id": 362,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -4111,13 +4163,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								353
+								355
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								359
+								361
 							]
 						}
 					],
@@ -4125,13 +4177,13 @@
 						{
 							"title": "rendering",
 							"children": [
-								359
+								361
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								353
+								355
 							]
 						}
 					],
@@ -4162,7 +4214,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						352
+						354
 					]
 				}
 			],
@@ -4176,14 +4228,14 @@
 			]
 		},
 		{
-			"id": 362,
+			"id": 364,
 			"name": "src/components/card/profile-bio/profile-bio-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 363,
+					"id": 365,
 					"name": "ProfileBioCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -4213,7 +4265,7 @@
 					},
 					"children": [
 						{
-							"id": 364,
+							"id": 366,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4333,7 +4385,7 @@
 							}
 						},
 						{
-							"id": 388,
+							"id": 390,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4348,7 +4400,7 @@
 							],
 							"signatures": [
 								{
-									"id": 389,
+									"id": 391,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -4430,7 +4482,7 @@
 							}
 						},
 						{
-							"id": 390,
+							"id": 392,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4445,7 +4497,7 @@
 							],
 							"signatures": [
 								{
-									"id": 391,
+									"id": 393,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -4511,7 +4563,7 @@
 							}
 						},
 						{
-							"id": 394,
+							"id": 396,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4526,7 +4578,7 @@
 							],
 							"signatures": [
 								{
-									"id": 395,
+									"id": 397,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -4609,15 +4661,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								364
+								366
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								388,
 								390,
-								394
+								392,
+								396
 							]
 						}
 					],
@@ -4625,20 +4677,20 @@
 						{
 							"title": "lifecycle",
 							"children": [
-								388,
-								390
+								390,
+								392
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								394
+								396
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								364
+								366
 							]
 						}
 					],
@@ -4669,7 +4721,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						363
+						365
 					]
 				}
 			],
@@ -4683,14 +4735,14 @@
 			]
 		},
 		{
-			"id": 396,
+			"id": 398,
 			"name": "src/components/card/settings/settings-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 397,
+					"id": 399,
 					"name": "SettingsCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -4720,7 +4772,7 @@
 					},
 					"children": [
 						{
-							"id": 398,
+							"id": 400,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -4840,7 +4892,7 @@
 							}
 						},
 						{
-							"id": 406,
+							"id": 408,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4855,7 +4907,7 @@
 							],
 							"signatures": [
 								{
-									"id": 407,
+									"id": 409,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -4937,7 +4989,7 @@
 							}
 						},
 						{
-							"id": 408,
+							"id": 410,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -4952,7 +5004,7 @@
 							],
 							"signatures": [
 								{
-									"id": 409,
+									"id": 411,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -5018,7 +5070,7 @@
 							}
 						},
 						{
-							"id": 422,
+							"id": 424,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -5033,7 +5085,7 @@
 							],
 							"signatures": [
 								{
-									"id": 423,
+									"id": 425,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -5112,7 +5164,7 @@
 							}
 						},
 						{
-							"id": 405,
+							"id": 407,
 							"name": "formattedDate",
 							"variant": "declaration",
 							"kind": 1024,
@@ -5191,16 +5243,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								398,
-								405
+								400,
+								407
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								406,
 								408,
-								422
+								410,
+								424
 							]
 						}
 					],
@@ -5208,26 +5260,26 @@
 						{
 							"title": "Other",
 							"children": [
-								405
+								407
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								406,
-								408
+								408,
+								410
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								422
+								424
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								398
+								400
 							]
 						}
 					],
@@ -5258,7 +5310,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						397
+						399
 					]
 				}
 			],
@@ -5272,14 +5324,14 @@
 			]
 		},
 		{
-			"id": 427,
+			"id": 429,
 			"name": "src/components/card/skills/skills-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 428,
+					"id": 430,
 					"name": "SkillsCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -5309,7 +5361,7 @@
 					},
 					"children": [
 						{
-							"id": 429,
+							"id": 431,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -5429,7 +5481,7 @@
 							}
 						},
 						{
-							"id": 437,
+							"id": 439,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -5444,7 +5496,7 @@
 							],
 							"signatures": [
 								{
-									"id": 438,
+									"id": 440,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -5527,13 +5579,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								429
+								431
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								437
+								439
 							]
 						}
 					],
@@ -5541,13 +5593,13 @@
 						{
 							"title": "rendering",
 							"children": [
-								437
+								439
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								429
+								431
 							]
 						}
 					],
@@ -5578,7 +5630,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						428
+						430
 					]
 				}
 			],
@@ -5592,14 +5644,14 @@
 			]
 		},
 		{
-			"id": 442,
+			"id": 444,
 			"name": "src/components/card/work/work-card",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 443,
+					"id": 445,
 					"name": "WorkCard",
 					"variant": "declaration",
 					"kind": 128,
@@ -5629,7 +5681,7 @@
 					},
 					"children": [
 						{
-							"id": 444,
+							"id": 446,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -5749,7 +5801,7 @@
 							}
 						},
 						{
-							"id": 450,
+							"id": 452,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -5764,7 +5816,7 @@
 							],
 							"signatures": [
 								{
-									"id": 451,
+									"id": 453,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -5846,7 +5898,7 @@
 							}
 						},
 						{
-							"id": 452,
+							"id": 454,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -5861,7 +5913,7 @@
 							],
 							"signatures": [
 								{
-									"id": 453,
+									"id": 455,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -5944,14 +5996,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								444
+								446
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								450,
-								452
+								452,
+								454
 							]
 						}
 					],
@@ -5959,19 +6011,19 @@
 						{
 							"title": "lifecycle",
 							"children": [
-								450
+								452
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								452
+								454
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								444
+								446
 							]
 						}
 					],
@@ -6002,7 +6054,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						443
+						445
 					]
 				}
 			],
@@ -6016,14 +6068,14 @@
 			]
 		},
 		{
-			"id": 454,
+			"id": 456,
 			"name": "src/components/code/code-project/code-project",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 455,
+					"id": 457,
 					"name": "CodeProject",
 					"variant": "declaration",
 					"kind": 128,
@@ -6071,7 +6123,7 @@
 					},
 					"children": [
 						{
-							"id": 456,
+							"id": 458,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -6117,7 +6169,7 @@
 							}
 						},
 						{
-							"id": 465,
+							"id": 467,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -6132,7 +6184,7 @@
 							],
 							"signatures": [
 								{
-									"id": 466,
+									"id": 468,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -6211,7 +6263,7 @@
 							}
 						},
 						{
-							"id": 461,
+							"id": 463,
 							"name": "#generateCardFront",
 							"variant": "declaration",
 							"kind": 2048,
@@ -6228,7 +6280,7 @@
 							],
 							"signatures": [
 								{
-									"id": 462,
+									"id": 464,
 									"name": "#generateCardFront",
 									"variant": "signature",
 									"kind": 4096,
@@ -6280,7 +6332,7 @@
 							]
 						},
 						{
-							"id": 463,
+							"id": 465,
 							"name": "#generateCardBack",
 							"variant": "declaration",
 							"kind": 2048,
@@ -6297,7 +6349,7 @@
 							],
 							"signatures": [
 								{
-									"id": 464,
+									"id": 466,
 									"name": "#generateCardBack",
 									"variant": "signature",
 									"kind": 4096,
@@ -6353,15 +6405,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								456
+								458
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								465,
-								461,
-								463
+								467,
+								463,
+								465
 							]
 						}
 					],
@@ -6369,15 +6421,15 @@
 						{
 							"title": "Other",
 							"children": [
-								456,
-								461,
-								463
+								458,
+								463,
+								465
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								465
+								467
 							]
 						}
 					],
@@ -6408,7 +6460,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						455
+						457
 					]
 				}
 			],
@@ -6422,14 +6474,14 @@
 			]
 		},
 		{
-			"id": 487,
+			"id": 489,
 			"name": "src/components/dialog/step-up/step-up-dialog",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 488,
+					"id": 490,
 					"name": "StepUpDialog",
 					"variant": "declaration",
 					"kind": 128,
@@ -6517,7 +6569,7 @@
 					},
 					"children": [
 						{
-							"id": 489,
+							"id": 491,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -6563,7 +6615,7 @@
 							}
 						},
 						{
-							"id": 492,
+							"id": 494,
 							"name": "dialogStyle",
 							"variant": "declaration",
 							"kind": 1024,
@@ -6603,7 +6655,7 @@
 							"defaultValue": "\"confirm\""
 						},
 						{
-							"id": 493,
+							"id": 495,
 							"name": "dialogContentString",
 							"variant": "declaration",
 							"kind": 1024,
@@ -6637,7 +6689,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 495,
+							"id": 497,
 							"name": "showDialog",
 							"variant": "declaration",
 							"kind": 2048,
@@ -6652,7 +6704,7 @@
 							],
 							"signatures": [
 								{
-									"id": 496,
+									"id": 498,
 									"name": "showDialog",
 									"variant": "signature",
 									"kind": 4096,
@@ -6705,7 +6757,7 @@
 							]
 						},
 						{
-							"id": 503,
+							"id": 505,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -6720,7 +6772,7 @@
 							],
 							"signatures": [
 								{
-									"id": 504,
+									"id": 506,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -6803,16 +6855,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								489,
-								492,
-								493
+								491,
+								494,
+								495
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								495,
-								503
+								497,
+								505
 							]
 						}
 					],
@@ -6820,16 +6872,16 @@
 						{
 							"title": "Other",
 							"children": [
-								489,
-								492,
-								493,
-								495
+								491,
+								494,
+								495,
+								497
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								503
+								505
 							]
 						}
 					],
@@ -6860,7 +6912,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						488
+						490
 					]
 				}
 			],
@@ -6874,14 +6926,14 @@
 			]
 		},
 		{
-			"id": 131,
+			"id": 133,
 			"name": "src/components/fab-menu/fab-menu-item",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 132,
+					"id": 134,
 					"name": "FabMenuItem",
 					"variant": "declaration",
 					"kind": 128,
@@ -6939,7 +6991,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 132
+										"target": 134
 									}
 								]
 							},
@@ -6962,7 +7014,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 132
+										"target": 134
 									}
 								]
 							},
@@ -7004,7 +7056,7 @@
 					},
 					"children": [
 						{
-							"id": 133,
+							"id": 135,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -7050,7 +7102,7 @@
 							}
 						},
 						{
-							"id": 136,
+							"id": 138,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -7065,7 +7117,7 @@
 							],
 							"signatures": [
 								{
-									"id": 137,
+									"id": 139,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -7147,7 +7199,7 @@
 							}
 						},
 						{
-							"id": 139,
+							"id": 141,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -7186,7 +7238,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 140,
+							"id": 142,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -22794,7 +22846,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 141,
+							"id": 143,
 							"name": "focus",
 							"variant": "declaration",
 							"kind": 2048,
@@ -22809,7 +22861,7 @@
 							],
 							"signatures": [
 								{
-									"id": 142,
+									"id": 144,
 									"name": "focus",
 									"variant": "signature",
 									"kind": 4096,
@@ -22832,7 +22884,7 @@
 									],
 									"parameters": [
 										{
-											"id": 143,
+											"id": 145,
 											"name": "options",
 											"variant": "param",
 											"kind": 32768,
@@ -22877,7 +22929,7 @@
 							}
 						},
 						{
-							"id": 144,
+							"id": 146,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -22892,7 +22944,7 @@
 							],
 							"signatures": [
 								{
-									"id": 145,
+									"id": 147,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -22975,17 +23027,17 @@
 						{
 							"title": "Properties",
 							"children": [
-								133,
-								139,
-								140
+								135,
+								141,
+								142
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								136,
-								141,
-								144
+								138,
+								143,
+								146
 							]
 						}
 					],
@@ -22993,22 +23045,22 @@
 						{
 							"title": "Other",
 							"children": [
-								133,
-								139,
-								140,
-								141
+								135,
+								141,
+								142,
+								143
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								136
+								138
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								144
+								146
 							]
 						}
 					],
@@ -23039,7 +23091,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						132
+						134
 					]
 				}
 			],
@@ -23053,14 +23105,14 @@
 			]
 		},
 		{
-			"id": 146,
+			"id": 148,
 			"name": "src/components/fab-menu/fab-menu",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 147,
+					"id": 149,
 					"name": "FabMenu",
 					"variant": "declaration",
 					"kind": 128,
@@ -23102,7 +23154,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenuItem",
-										"target": 132
+										"target": 134
 									},
 									{
 										"kind": "text",
@@ -23130,7 +23182,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "FabMenu",
-										"target": 147
+										"target": 149
 									},
 									{
 										"kind": "text",
@@ -23150,7 +23202,7 @@
 					},
 					"children": [
 						{
-							"id": 148,
+							"id": 150,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -23196,7 +23248,7 @@
 							}
 						},
 						{
-							"id": 154,
+							"id": 156,
 							"name": "open",
 							"variant": "declaration",
 							"kind": 1024,
@@ -23224,7 +23276,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 155,
+							"id": 157,
 							"name": "icon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -38831,7 +38883,7 @@
 							"defaultValue": "\"add\""
 						},
 						{
-							"id": 156,
+							"id": 158,
 							"name": "openedIcon",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54424,7 +54476,7 @@
 							"defaultValue": "\"close\""
 						},
 						{
-							"id": 157,
+							"id": 159,
 							"name": "variant",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54497,7 +54549,7 @@
 							"defaultValue": "\"primary\""
 						},
 						{
-							"id": 158,
+							"id": 160,
 							"name": "size",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54568,7 +54620,7 @@
 							"defaultValue": "\"medium\""
 						},
 						{
-							"id": 159,
+							"id": 161,
 							"name": "label",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54596,7 +54648,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 160,
+							"id": 162,
 							"name": "ariaLabel",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54637,7 +54689,7 @@
 							}
 						},
 						{
-							"id": 161,
+							"id": 163,
 							"name": "direction",
 							"variant": "declaration",
 							"kind": 1024,
@@ -54686,7 +54738,7 @@
 							"defaultValue": "\"end\""
 						},
 						{
-							"id": 188,
+							"id": 190,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54701,7 +54753,7 @@
 							],
 							"signatures": [
 								{
-									"id": 189,
+									"id": 191,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -54783,7 +54835,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 192,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54798,7 +54850,7 @@
 							],
 							"signatures": [
 								{
-									"id": 191,
+									"id": 193,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -54864,7 +54916,7 @@
 							}
 						},
 						{
-							"id": 192,
+							"id": 194,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54879,7 +54931,7 @@
 							],
 							"signatures": [
 								{
-									"id": 193,
+									"id": 195,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -54958,7 +55010,7 @@
 							}
 						},
 						{
-							"id": 177,
+							"id": 179,
 							"name": "getUpdateComplete",
 							"variant": "declaration",
 							"kind": 2048,
@@ -54975,7 +55027,7 @@
 							],
 							"signatures": [
 								{
-									"id": 178,
+									"id": 180,
 									"name": "getUpdateComplete",
 									"variant": "signature",
 									"kind": 4096,
@@ -55075,7 +55127,7 @@
 							}
 						},
 						{
-							"id": 179,
+							"id": 181,
 							"name": "firstUpdated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -55092,7 +55144,7 @@
 							],
 							"signatures": [
 								{
-									"id": 180,
+									"id": 182,
 									"name": "firstUpdated",
 									"variant": "signature",
 									"kind": 4096,
@@ -55134,7 +55186,7 @@
 									],
 									"parameters": [
 										{
-											"id": 181,
+											"id": 183,
 											"name": "_changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -55215,7 +55267,7 @@
 							}
 						},
 						{
-							"id": 182,
+							"id": 184,
 							"name": "update",
 							"variant": "declaration",
 							"kind": 2048,
@@ -55232,7 +55284,7 @@
 							],
 							"signatures": [
 								{
-									"id": 183,
+									"id": 185,
 									"name": "update",
 									"variant": "signature",
 									"kind": 4096,
@@ -55274,7 +55326,7 @@
 									],
 									"parameters": [
 										{
-											"id": 184,
+											"id": 186,
 											"name": "changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -55355,7 +55407,7 @@
 							}
 						},
 						{
-							"id": 185,
+							"id": 187,
 							"name": "updated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -55372,7 +55424,7 @@
 							],
 							"signatures": [
 								{
-									"id": 186,
+									"id": 188,
 									"name": "updated",
 									"variant": "signature",
 									"kind": 4096,
@@ -55406,7 +55458,7 @@
 									],
 									"parameters": [
 										{
-											"id": 187,
+											"id": 189,
 											"name": "_changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -55429,7 +55481,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"target": 147,
+														"target": 149,
 														"name": "FabMenu",
 														"package": "@fnc314/fnc314.github.io"
 													}
@@ -55461,27 +55513,27 @@
 						{
 							"title": "Properties",
 							"children": [
-								148,
-								154,
-								155,
+								150,
 								156,
 								157,
 								158,
 								159,
 								160,
-								161
+								161,
+								162,
+								163
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								188,
 								190,
 								192,
-								177,
+								194,
 								179,
-								182,
-								185
+								181,
+								184,
+								187
 							]
 						}
 					],
@@ -55489,37 +55541,37 @@
 						{
 							"title": "Other",
 							"children": [
-								148,
-								154,
-								155,
+								150,
 								156,
 								157,
 								158,
 								159,
 								160,
-								161
+								161,
+								162,
+								163
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								188,
-								190
+								190,
+								192
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								192
+								194
 							]
 						},
 						{
 							"title": "updates",
 							"children": [
-								177,
 								179,
-								182,
-								185
+								181,
+								184,
+								187
 							]
 						}
 					],
@@ -55550,7 +55602,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						147
+						149
 					]
 				}
 			],
@@ -55564,14 +55616,14 @@
 			]
 		},
 		{
-			"id": 194,
+			"id": 196,
 			"name": "src/components/info-section/info-section",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 195,
+					"id": 197,
 					"name": "InfoSection",
 					"variant": "declaration",
 					"kind": 128,
@@ -55586,7 +55638,7 @@
 					},
 					"children": [
 						{
-							"id": 196,
+							"id": 198,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55632,7 +55684,7 @@
 							}
 						},
 						{
-							"id": 199,
+							"id": 201,
 							"name": "sectionTitle",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55680,7 +55732,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 200,
+							"id": 202,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -55695,7 +55747,7 @@
 							],
 							"signatures": [
 								{
-									"id": 201,
+									"id": 203,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -55791,14 +55843,14 @@
 						{
 							"title": "Properties",
 							"children": [
-								196,
-								199
+								198,
+								201
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								200
+								202
 							]
 						}
 					],
@@ -55829,7 +55881,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						195
+						197
 					]
 				}
 			],
@@ -55843,14 +55895,14 @@
 			]
 		},
 		{
-			"id": 202,
+			"id": 204,
 			"name": "src/components/partial-header/partial-header",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 203,
+					"id": 205,
 					"name": "PartialHeader",
 					"variant": "declaration",
 					"kind": 128,
@@ -55876,7 +55928,7 @@
 					},
 					"children": [
 						{
-							"id": 204,
+							"id": 206,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55922,7 +55974,7 @@
 							}
 						},
 						{
-							"id": 207,
+							"id": 209,
 							"name": "headingText",
 							"variant": "declaration",
 							"kind": 1024,
@@ -55961,7 +56013,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 208,
+							"id": 210,
 							"name": "headerType",
 							"variant": "declaration",
 							"kind": 1024,
@@ -56017,7 +56069,7 @@
 							"defaultValue": "\"primary\""
 						},
 						{
-							"id": 209,
+							"id": 211,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -56032,7 +56084,7 @@
 							],
 							"signatures": [
 								{
-									"id": 210,
+									"id": 212,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -56115,15 +56167,15 @@
 						{
 							"title": "Properties",
 							"children": [
-								204,
-								207,
-								208
+								206,
+								209,
+								210
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								209
+								211
 							]
 						}
 					],
@@ -56131,15 +56183,15 @@
 						{
 							"title": "Other",
 							"children": [
-								204,
-								207,
-								208
+								206,
+								209,
+								210
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								209
+								211
 							]
 						}
 					],
@@ -56170,7 +56222,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						203
+						205
 					]
 				}
 			],
@@ -56184,14 +56236,14 @@
 			]
 		},
 		{
-			"id": 212,
+			"id": 214,
 			"name": "src/components/ui-mode-toggle/ui-mode-toggle",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 213,
+					"id": 215,
 					"name": "UiModeToggle",
 					"variant": "declaration",
 					"kind": 128,
@@ -56313,7 +56365,7 @@
 					},
 					"children": [
 						{
-							"id": 214,
+							"id": 216,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -56433,7 +56485,7 @@
 							}
 						},
 						{
-							"id": 221,
+							"id": 223,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -56448,7 +56500,7 @@
 							],
 							"signatures": [
 								{
-									"id": 222,
+									"id": 224,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -56530,7 +56582,7 @@
 							}
 						},
 						{
-							"id": 223,
+							"id": 225,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -56545,7 +56597,7 @@
 							],
 							"signatures": [
 								{
-									"id": 224,
+									"id": 226,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -56611,7 +56663,7 @@
 							}
 						},
 						{
-							"id": 237,
+							"id": 239,
 							"name": "reset",
 							"variant": "declaration",
 							"kind": 2048,
@@ -56628,7 +56680,7 @@
 							],
 							"signatures": [
 								{
-									"id": 238,
+									"id": 240,
 									"name": "reset",
 									"variant": "signature",
 									"kind": 4096,
@@ -56657,7 +56709,7 @@
 							]
 						},
 						{
-							"id": 239,
+							"id": 241,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -56672,7 +56724,7 @@
 							],
 							"signatures": [
 								{
-									"id": 240,
+									"id": 242,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -56749,16 +56801,16 @@
 						{
 							"title": "Properties",
 							"children": [
-								214
+								216
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								221,
 								223,
-								237,
-								239
+								225,
+								239,
+								241
 							]
 						}
 					],
@@ -56766,26 +56818,26 @@
 						{
 							"title": "Other",
 							"children": [
-								237
+								239
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								221,
-								223
+								223,
+								225
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								239
+								241
 							]
 						},
 						{
 							"title": "styles",
 							"children": [
-								214
+								216
 							]
 						}
 					],
@@ -56816,7 +56868,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						213
+						215
 					]
 				}
 			],
@@ -56830,14 +56882,14 @@
 			]
 		},
 		{
-			"id": 512,
+			"id": 514,
 			"name": "src/components/word/word-cloud/word-cloud",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 513,
+					"id": 515,
 					"name": "WordCloud",
 					"variant": "declaration",
 					"kind": 128,
@@ -56953,7 +57005,7 @@
 					},
 					"children": [
 						{
-							"id": 514,
+							"id": 516,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -56999,7 +57051,7 @@
 							}
 						},
 						{
-							"id": 517,
+							"id": 519,
 							"name": "words",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57043,7 +57095,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 518,
+							"id": 520,
 							"name": "instantClear",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57082,7 +57134,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 519,
+							"id": 521,
 							"name": "appearance",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57123,7 +57175,7 @@
 							"defaultValue": "WordCloudAppearances.SEQUENTIAL"
 						},
 						{
-							"id": 520,
+							"id": 522,
 							"name": "grouping",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57164,7 +57216,7 @@
 							"defaultValue": "WordCloudGroupings.UNGROUPED"
 						},
 						{
-							"id": 521,
+							"id": 523,
 							"name": "sorting",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57205,7 +57257,7 @@
 							"defaultValue": "WordCloudSortings.NONE"
 						},
 						{
-							"id": 522,
+							"id": 524,
 							"name": "delay",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57253,7 +57305,7 @@
 							"defaultValue": "\"none\""
 						},
 						{
-							"id": 523,
+							"id": 525,
 							"name": "threshold",
 							"variant": "declaration",
 							"kind": 1024,
@@ -57292,7 +57344,7 @@
 							"defaultValue": "0.1"
 						},
 						{
-							"id": 528,
+							"id": 530,
 							"name": "connectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -57307,7 +57359,7 @@
 							],
 							"signatures": [
 								{
-									"id": 529,
+									"id": 531,
 									"name": "connectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -57389,7 +57441,7 @@
 							}
 						},
 						{
-							"id": 530,
+							"id": 532,
 							"name": "updated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -57404,7 +57456,7 @@
 							],
 							"signatures": [
 								{
-									"id": 531,
+									"id": 533,
 									"name": "updated",
 									"variant": "signature",
 									"kind": 4096,
@@ -57438,7 +57490,7 @@
 									],
 									"parameters": [
 										{
-											"id": 532,
+											"id": 534,
 											"name": "changedProperties",
 											"variant": "param",
 											"kind": 32768,
@@ -57453,7 +57505,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"target": 513,
+														"target": 515,
 														"name": "WordCloud",
 														"package": "@fnc314/fnc314.github.io"
 													}
@@ -57481,7 +57533,7 @@
 							}
 						},
 						{
-							"id": 535,
+							"id": 537,
 							"name": "firstUpdated",
 							"variant": "declaration",
 							"kind": 2048,
@@ -57496,7 +57548,7 @@
 							],
 							"signatures": [
 								{
-									"id": 536,
+									"id": 538,
 									"name": "firstUpdated",
 									"variant": "signature",
 									"kind": 4096,
@@ -57554,7 +57606,7 @@
 							}
 						},
 						{
-							"id": 537,
+							"id": 539,
 							"name": "disconnectedCallback",
 							"variant": "declaration",
 							"kind": 2048,
@@ -57569,7 +57621,7 @@
 							],
 							"signatures": [
 								{
-									"id": 538,
+									"id": 540,
 									"name": "disconnectedCallback",
 									"variant": "signature",
 									"kind": 4096,
@@ -57635,7 +57687,7 @@
 							}
 						},
 						{
-							"id": 548,
+							"id": 550,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -57650,7 +57702,7 @@
 							],
 							"signatures": [
 								{
-									"id": 549,
+									"id": 551,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -57733,24 +57785,24 @@
 						{
 							"title": "Properties",
 							"children": [
-								514,
-								517,
-								518,
+								516,
 								519,
 								520,
 								521,
 								522,
-								523
+								523,
+								524,
+								525
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								528,
 								530,
-								535,
+								532,
 								537,
-								548
+								539,
+								550
 							]
 						}
 					],
@@ -57758,34 +57810,34 @@
 						{
 							"title": "Other",
 							"children": [
-								514,
-								517,
-								518,
+								516,
 								519,
 								520,
 								521,
 								522,
-								523
+								523,
+								524,
+								525
 							]
 						},
 						{
 							"title": "lifecycle",
 							"children": [
-								528,
-								537
+								530,
+								539
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								548
+								550
 							]
 						},
 						{
 							"title": "updates",
 							"children": [
-								530,
-								535
+								532,
+								537
 							]
 						}
 					],
@@ -57816,7 +57868,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						513
+						515
 					]
 				}
 			],
@@ -57830,14 +57882,14 @@
 			]
 		},
 		{
-			"id": 550,
+			"id": 552,
 			"name": "src/components/word/word-cloud/word-cloud.types",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 579,
+					"id": 581,
 					"name": "makeWordCloudWord",
 					"variant": "declaration",
 					"kind": 64,
@@ -57852,7 +57904,7 @@
 					],
 					"signatures": [
 						{
-							"id": 580,
+							"id": 582,
 							"name": "makeWordCloudWord",
 							"variant": "signature",
 							"kind": 4096,
@@ -57885,7 +57937,7 @@
 							],
 							"parameters": [
 								{
-									"id": 581,
+									"id": 583,
 									"name": "word",
 									"variant": "param",
 									"kind": 32768,
@@ -57896,7 +57948,7 @@
 									}
 								},
 								{
-									"id": 582,
+									"id": 584,
 									"name": "weight",
 									"variant": "param",
 									"kind": 32768,
@@ -57909,7 +57961,7 @@
 									}
 								},
 								{
-									"id": 583,
+									"id": 585,
 									"name": "category",
 									"variant": "param",
 									"kind": 32768,
@@ -57922,7 +57974,7 @@
 									}
 								},
 								{
-									"id": 584,
+									"id": 586,
 									"name": "extras",
 									"variant": "param",
 									"kind": 32768,
@@ -57951,7 +58003,7 @@
 				{
 					"title": "Functions",
 					"children": [
-						579
+						581
 					]
 				}
 			],
@@ -57965,14 +58017,14 @@
 			]
 		},
 		{
-			"id": 588,
+			"id": 590,
 			"name": "src/components/word/word-tag/word-tag",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 589,
+					"id": 591,
 					"name": "WordTag",
 					"variant": "declaration",
 					"kind": 128,
@@ -58065,7 +58117,7 @@
 					},
 					"children": [
 						{
-							"id": 590,
+							"id": 592,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58111,7 +58163,7 @@
 							}
 						},
 						{
-							"id": 596,
+							"id": 598,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -58126,7 +58178,7 @@
 							],
 							"signatures": [
 								{
-									"id": 597,
+									"id": 599,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -58209,13 +58261,13 @@
 						{
 							"title": "Properties",
 							"children": [
-								590
+								592
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								596
+								598
 							]
 						}
 					],
@@ -58223,13 +58275,13 @@
 						{
 							"title": "Other",
 							"children": [
-								590
+								592
 							]
 						},
 						{
 							"title": "rendering",
 							"children": [
-								596
+								598
 							]
 						}
 					],
@@ -58260,7 +58312,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						589
+						591
 					]
 				}
 			],
@@ -58274,14 +58326,14 @@
 			]
 		},
 		{
-			"id": 241,
+			"id": 243,
 			"name": "src/components/work-experience/work-experience",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 242,
+					"id": 244,
 					"name": "WorkExperience",
 					"variant": "declaration",
 					"kind": 128,
@@ -58302,7 +58354,7 @@
 					},
 					"children": [
 						{
-							"id": 243,
+							"id": 245,
 							"name": "styles",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58348,7 +58400,7 @@
 							}
 						},
 						{
-							"id": 246,
+							"id": 248,
 							"name": "isNested",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58376,7 +58428,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 247,
+							"id": 249,
 							"name": "experienceRole",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58391,7 +58443,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "WorkExperience",
-										"target": 242
+										"target": 244
 									},
 									{
 										"kind": "text",
@@ -58414,7 +58466,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 248,
+							"id": 250,
 							"name": "experienceOrg",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58442,7 +58494,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 250,
+							"id": 252,
 							"name": "dateStart",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58486,7 +58538,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 251,
+							"id": 253,
 							"name": "dateEnd",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58530,7 +58582,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 252,
+							"id": 254,
 							"name": "summaries",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58564,14 +58616,14 @@
 								"elementType": {
 									"type": "reflection",
 									"declaration": {
-										"id": 253,
+										"id": 255,
 										"name": "__type",
 										"variant": "declaration",
 										"kind": 65536,
 										"flags": {},
 										"children": [
 											{
-												"id": 254,
+												"id": 256,
 												"name": "item",
 												"variant": "declaration",
 												"kind": 1024,
@@ -58594,7 +58646,7 @@
 											{
 												"title": "Properties",
 												"children": [
-													254
+													256
 												]
 											}
 										]
@@ -58604,7 +58656,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 255,
+							"id": 257,
 							"name": "jobs",
 							"variant": "declaration",
 							"kind": 1024,
@@ -58633,7 +58685,7 @@
 										"kind": "inline-tag",
 										"tag": "@link",
 										"text": "WorkExperience",
-										"target": 242
+										"target": 244
 									},
 									{
 										"kind": "text",
@@ -58661,7 +58713,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 256,
+							"id": 258,
 							"name": "render",
 							"variant": "declaration",
 							"kind": 2048,
@@ -58676,7 +58728,7 @@
 							],
 							"signatures": [
 								{
-									"id": 257,
+									"id": 259,
 									"name": "render",
 									"variant": "signature",
 									"kind": 4096,
@@ -58732,20 +58784,20 @@
 						{
 							"title": "Properties",
 							"children": [
-								243,
-								246,
-								247,
+								245,
 								248,
+								249,
 								250,
-								251,
 								252,
-								255
+								253,
+								254,
+								257
 							]
 						},
 						{
 							"title": "Methods",
 							"children": [
-								256
+								258
 							]
 						}
 					],
@@ -58776,7 +58828,7 @@
 				{
 					"title": "Classes",
 					"children": [
-						242
+						244
 					]
 				}
 			],
@@ -58790,14 +58842,14 @@
 			]
 		},
 		{
-			"id": 600,
+			"id": 602,
 			"name": "src/styles/breakpoints",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 601,
+					"id": 603,
 					"name": "Breakpoint",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -58854,7 +58906,7 @@
 					}
 				},
 				{
-					"id": 603,
+					"id": 605,
 					"name": "readBreakpoint",
 					"variant": "declaration",
 					"kind": 32,
@@ -58907,14 +58959,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 604,
+							"id": 606,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"signatures": [
 								{
-									"id": 605,
+									"id": 607,
 									"name": "__type",
 									"variant": "signature",
 									"kind": 4096,
@@ -58930,7 +58982,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"target": 601,
+										"target": 603,
 										"name": "Breakpoint",
 										"package": "@fnc314/fnc314.github.io"
 									}
@@ -58945,13 +58997,13 @@
 				{
 					"title": "Type Aliases",
 					"children": [
-						601
+						603
 					]
 				},
 				{
 					"title": "Variables",
 					"children": [
-						603
+						605
 					]
 				}
 			],
@@ -58965,14 +59017,14 @@
 			]
 		},
 		{
-			"id": 607,
+			"id": 609,
 			"name": "src/styles/interaction-styles",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 608,
+					"id": 610,
 					"name": "InteractionStyles",
 					"variant": "declaration",
 					"kind": 32,
@@ -59012,7 +59064,7 @@
 				{
 					"title": "Variables",
 					"children": [
-						608
+						610
 					]
 				}
 			],
@@ -59026,14 +59078,14 @@
 			]
 		},
 		{
-			"id": 650,
+			"id": 652,
 			"name": "src/types/configs/fab-configs",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 651,
+					"id": 653,
 					"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -59065,14 +59117,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 652,
+							"id": 654,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 653,
+									"id": 655,
 									"name": "TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59094,7 +59146,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 654,
+									"id": 656,
 									"name": "BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59120,8 +59172,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										653,
-										654
+										655,
+										656
 									]
 								}
 							]
@@ -59130,7 +59182,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 655,
+					"id": 657,
 					"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 					"variant": "declaration",
 					"kind": 32,
@@ -59162,14 +59214,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 656,
+							"id": 658,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 657,
+									"id": 659,
 									"name": "START",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59191,7 +59243,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 658,
+									"id": 660,
 									"name": "END",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59217,8 +59269,8 @@
 								{
 									"title": "Properties",
 									"children": [
-										657,
-										658
+										659,
+										660
 									]
 								}
 							]
@@ -59227,7 +59279,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 662,
+					"id": 664,
 					"name": "FabPositionComponentVertical",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -59238,7 +59290,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 651
+								"target": 653
 							}
 						]
 					},
@@ -59259,7 +59311,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 651,
+									"target": 653,
 									"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -59269,7 +59321,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 651,
+								"target": 653,
 								"name": "FAB_POSITION_COMPONENTS_VERTICAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -59277,7 +59329,7 @@
 					}
 				},
 				{
-					"id": 663,
+					"id": 665,
 					"name": "FabPositionComponentHorizontal",
 					"variant": "declaration",
 					"kind": 2097152,
@@ -59288,7 +59340,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 655
+								"target": 657
 							}
 						]
 					},
@@ -59309,7 +59361,7 @@
 								"type": "query",
 								"queryType": {
 									"type": "reference",
-									"target": 655,
+									"target": 657,
 									"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 									"package": "@fnc314/fnc314.github.io"
 								}
@@ -59319,7 +59371,7 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"target": 655,
+								"target": 657,
 								"name": "FAB_POSITION_COMPONENTS_HORIZONTAL",
 								"package": "@fnc314/fnc314.github.io"
 							}
@@ -59327,7 +59379,7 @@
 					}
 				},
 				{
-					"id": 664,
+					"id": 666,
 					"name": "FAB_POSITION",
 					"variant": "declaration",
 					"kind": 32,
@@ -59354,7 +59406,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_HORIZONTAL",
-								"target": 655
+								"target": 657
 							},
 							{
 								"kind": "text",
@@ -59364,7 +59416,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION_COMPONENTS_VERTICAL",
-								"target": 651
+								"target": 653
 							}
 						]
 					},
@@ -59379,14 +59431,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 665,
+							"id": 667,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
 							"flags": {},
 							"children": [
 								{
-									"id": 666,
+									"id": 668,
 									"name": "START_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59408,7 +59460,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 667,
+									"id": 669,
 									"name": "START_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59430,7 +59482,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 668,
+									"id": 670,
 									"name": "END_TOP",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59452,7 +59504,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 669,
+									"id": 671,
 									"name": "END_BOTTOM",
 									"variant": "declaration",
 									"kind": 1024,
@@ -59478,10 +59530,10 @@
 								{
 									"title": "Properties",
 									"children": [
-										666,
-										667,
 										668,
-										669
+										669,
+										670,
+										671
 									]
 								}
 							]
@@ -59490,7 +59542,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 672,
+					"id": 674,
 					"name": "FabPositionIcons",
 					"variant": "declaration",
 					"kind": 32,
@@ -59507,7 +59559,7 @@
 								"kind": "inline-tag",
 								"tag": "@link",
 								"text": "FAB_POSITION",
-								"target": 664
+								"target": 666
 							},
 							{
 								"kind": "text",
@@ -59566,17 +59618,17 @@
 				{
 					"title": "Type Aliases",
 					"children": [
-						662,
-						663
+						664,
+						665
 					]
 				},
 				{
 					"title": "Variables",
 					"children": [
-						651,
-						655,
-						664,
-						672
+						653,
+						657,
+						666,
+						674
 					]
 				}
 			],
@@ -59590,14 +59642,14 @@
 			]
 		},
 		{
-			"id": 741,
+			"id": 743,
 			"name": "src/types/theme/theme",
 			"variant": "declaration",
 			"kind": 2,
 			"flags": {},
 			"children": [
 				{
-					"id": 742,
+					"id": 744,
 					"name": "jsonIsThemeJsonSchemes",
 					"variant": "declaration",
 					"kind": 64,
@@ -59612,7 +59664,7 @@
 					],
 					"signatures": [
 						{
-							"id": 743,
+							"id": 745,
 							"name": "jsonIsThemeJsonSchemes",
 							"variant": "signature",
 							"kind": 4096,
@@ -59656,7 +59708,7 @@
 							],
 							"parameters": [
 								{
-									"id": 744,
+									"id": 746,
 									"name": "json",
 									"variant": "param",
 									"kind": 32768,
@@ -59699,7 +59751,7 @@
 					]
 				},
 				{
-					"id": 773,
+					"id": 775,
 					"name": "readScheme",
 					"variant": "declaration",
 					"kind": 64,
@@ -59714,7 +59766,7 @@
 					],
 					"signatures": [
 						{
-							"id": 774,
+							"id": 776,
 							"name": "readScheme",
 							"variant": "signature",
 							"kind": 4096,
@@ -59737,7 +59789,7 @@
 							],
 							"parameters": [
 								{
-									"id": 775,
+									"id": 777,
 									"name": "jsonSchema",
 									"variant": "param",
 									"kind": 32768,
@@ -59762,7 +59814,7 @@
 					]
 				},
 				{
-					"id": 745,
+					"id": 747,
 					"name": "keyTransform",
 					"variant": "declaration",
 					"kind": 64,
@@ -59777,7 +59829,7 @@
 					],
 					"signatures": [
 						{
-							"id": 746,
+							"id": 748,
 							"name": "keyTransform",
 							"variant": "signature",
 							"kind": 4096,
@@ -59800,7 +59852,7 @@
 							],
 							"parameters": [
 								{
-									"id": 747,
+									"id": 749,
 									"name": "jsonKey",
 									"variant": "param",
 									"kind": 32768,
@@ -59811,7 +59863,7 @@
 									}
 								},
 								{
-									"id": 748,
+									"id": 750,
 									"name": "rgb",
 									"variant": "param",
 									"kind": 32768,
@@ -59840,9 +59892,9 @@
 				{
 					"title": "Functions",
 					"children": [
-						742,
-						773,
-						745
+						744,
+						775,
+						747
 					]
 				}
 			],
@@ -59985,14 +60037,6 @@
 				{
 					"kind": "text",
 					"text": "                 | The color of the primary text                    |\n| "
-				},
-				{
-					"kind": "code",
-					"text": "`object Object],[object Object`"
-				},
-				{
-					"kind": "text",
-					"text": "                  |                                                  |\n| "
 				},
 				{
 					"kind": "code",
@@ -60583,14 +60627,6 @@
 				{
 					"kind": "text",
 					"text": "                 | The color of the primary text                    |\n| "
-				},
-				{
-					"kind": "code",
-					"text": "`object Object],[object Object`"
-				},
-				{
-					"kind": "text",
-					"text": "                  |                                                  |\n| "
 				},
 				{
 					"kind": "code",
@@ -61774,33 +61810,34 @@
 		13,
 		14,
 		15,
-		49,
-		74,
-		90,
-		291,
-		308,
-		323,
-		338,
-		351,
-		362,
-		396,
-		427,
-		442,
-		454,
-		487,
-		131,
-		146,
-		194,
-		202,
-		212,
-		512,
-		550,
-		588,
-		241,
-		600,
-		607,
-		650,
-		741
+		48,
+		51,
+		76,
+		92,
+		293,
+		310,
+		325,
+		340,
+		353,
+		364,
+		398,
+		429,
+		444,
+		456,
+		489,
+		133,
+		148,
+		196,
+		204,
+		214,
+		514,
+		552,
+		590,
+		243,
+		602,
+		609,
+		652,
+		743
 	],
 	"groups": [
 		{
@@ -61826,33 +61863,34 @@
 			"title": "Modules",
 			"children": [
 				15,
-				49,
-				74,
-				90,
-				291,
-				308,
-				323,
-				338,
-				351,
-				362,
-				396,
-				427,
-				442,
-				454,
-				487,
-				131,
-				146,
-				194,
-				202,
-				212,
-				512,
-				550,
-				588,
-				241,
-				600,
-				607,
-				650,
-				741
+				48,
+				51,
+				76,
+				92,
+				293,
+				310,
+				325,
+				340,
+				353,
+				364,
+				398,
+				429,
+				444,
+				456,
+				489,
+				133,
+				148,
+				196,
+				204,
+				214,
+				514,
+				552,
+				590,
+				243,
+				602,
+				609,
+				652,
+				743
 			]
 		}
 	],
@@ -61938,14 +61976,6 @@
 		{
 			"kind": "text",
 			"text": "                 | The color of the primary text                    |\n| "
-		},
-		{
-			"kind": "code",
-			"text": "`object Object],[object Object`"
-		},
-		{
-			"kind": "text",
-			"text": "                  |                                                  |\n| "
 		},
 		{
 			"kind": "code",
@@ -62807,172 +62837,177 @@
 			"packagePath": "src/components/app-shell/app-shell.ts",
 			"qualifiedName": "AppShell.render"
 		},
-		"49": {
+		"48": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"packagePath": "src/components/bento-layout/bento-layout.styles.ts",
 			"qualifiedName": ""
 		},
-		"50": {
+		"49": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout"
+			"packagePath": "src/components/bento-layout/bento-layout.styles.ts",
+			"qualifiedName": "bentoLayoutStyles"
 		},
 		"51": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": ""
+		},
+		"52": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": "BentoLayout"
+		},
+		"53": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
 			"qualifiedName": "BentoLayout.styles"
-		},
-		"57": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.connectedCallback"
-		},
-		"58": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.connectedCallback"
 		},
 		"59": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.firstUpdated"
+			"qualifiedName": "BentoLayout.connectedCallback"
 		},
 		"60": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.firstUpdated"
+			"qualifiedName": "BentoLayout.connectedCallback"
 		},
 		"61": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": "BentoLayout.firstUpdated"
+		},
+		"62": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": "BentoLayout.firstUpdated"
+		},
+		"63": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
 			"qualifiedName": "_changedProperties"
 		},
-		"67": {
+		"69": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
 			"qualifiedName": "BentoLayout.disconnectedCallback"
 		},
-		"68": {
+		"70": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.ts",
 			"qualifiedName": "BentoLayout.disconnectedCallback"
-		},
-		"72": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.render"
-		},
-		"73": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.ts",
-			"qualifiedName": "BentoLayout.render"
 		},
 		"74": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": "BentoLayout.render"
+		},
+		"75": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/bento-layout/bento-layout.ts",
+			"qualifiedName": "BentoLayout.render"
+		},
+		"76": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": ""
 		},
-		"75": {
+		"77": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": "GridPlacement"
 		},
-		"78": {
+		"80": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": "GridPosition"
 		},
-		"80": {
+		"82": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": "BentoBoxType"
 		},
-		"81": {
+		"83": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": "BentoBoxConfig"
 		},
-		"87": {
+		"89": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
 			"qualifiedName": "BentoBoxConfigs"
 		},
-		"88": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
-			"qualifiedName": "__type"
-		},
-		"89": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
-			"qualifiedName": "__type"
-		},
 		"90": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "__type"
 		},
 		"91": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost"
+			"packagePath": "src/components/bento-layout/bento-layout.types.ts",
+			"qualifiedName": "__type"
 		},
 		"92": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
+			"qualifiedName": ""
+		},
+		"93": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/blog/blog-post.ts",
+			"qualifiedName": "BlogPost"
+		},
+		"94": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.styles"
-		},
-		"101": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost.connectedCallback"
-		},
-		"102": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost.connectedCallback"
 		},
 		"103": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost.disconnectedCallback"
+			"qualifiedName": "BlogPost.connectedCallback"
 		},
 		"104": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost.disconnectedCallback"
+			"qualifiedName": "BlogPost.connectedCallback"
 		},
 		"105": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
-			"qualifiedName": "BlogPost.render"
+			"qualifiedName": "BlogPost.disconnectedCallback"
 		},
 		"106": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/blog/blog-post.ts",
+			"qualifiedName": "BlogPost.disconnectedCallback"
+		},
+		"107": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/blog/blog-post.ts",
 			"qualifiedName": "BlogPost.render"
 		},
-		"131": {
+		"108": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": ""
-		},
-		"132": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem"
+			"packagePath": "src/components/blog/blog-post.ts",
+			"qualifiedName": "BlogPost.render"
 		},
 		"133": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.styles"
+			"qualifiedName": ""
 		},
-		"136": {
+		"134": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.connectedCallback"
+			"qualifiedName": "FabMenuItem"
 		},
-		"137": {
+		"135": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
+			"qualifiedName": "FabMenuItem.styles"
+		},
+		"138": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
 			"qualifiedName": "FabMenuItem.connectedCallback"
@@ -62980,1129 +63015,1134 @@
 		"139": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.label"
-		},
-		"140": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.icon"
+			"qualifiedName": "FabMenuItem.connectedCallback"
 		},
 		"141": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.focus"
+			"qualifiedName": "FabMenuItem.label"
 		},
 		"142": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.focus"
+			"qualifiedName": "FabMenuItem.icon"
 		},
 		"143": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "options"
+			"qualifiedName": "FabMenuItem.focus"
 		},
 		"144": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.render"
+			"qualifiedName": "FabMenuItem.focus"
 		},
 		"145": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
-			"qualifiedName": "FabMenuItem.render"
+			"qualifiedName": "options"
 		},
 		"146": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
+			"qualifiedName": "FabMenuItem.render"
 		},
 		"147": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu"
+			"packagePath": "src/components/fab-menu/fab-menu-item.ts",
+			"qualifiedName": "FabMenuItem.render"
 		},
 		"148": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": ""
+		},
+		"149": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": "FabMenu"
+		},
+		"150": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.styles"
-		},
-		"154": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.open"
-		},
-		"155": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.icon"
 		},
 		"156": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.openedIcon"
+			"qualifiedName": "FabMenu.open"
 		},
 		"157": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.variant"
+			"qualifiedName": "FabMenu.icon"
 		},
 		"158": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.size"
+			"qualifiedName": "FabMenu.openedIcon"
 		},
 		"159": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.label"
+			"qualifiedName": "FabMenu.variant"
 		},
 		"160": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.ariaLabel"
+			"qualifiedName": "FabMenu.size"
 		},
 		"161": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": "FabMenu.label"
+		},
+		"162": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": "FabMenu.ariaLabel"
+		},
+		"163": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
 			"qualifiedName": "FabMenu.direction"
-		},
-		"177": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.getUpdateComplete"
-		},
-		"178": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.getUpdateComplete"
 		},
 		"179": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.firstUpdated"
+			"qualifiedName": "FabMenu.getUpdateComplete"
 		},
 		"180": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.firstUpdated"
+			"qualifiedName": "FabMenu.getUpdateComplete"
 		},
 		"181": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "_changedProperties"
+			"qualifiedName": "FabMenu.firstUpdated"
 		},
 		"182": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.update"
+			"qualifiedName": "FabMenu.firstUpdated"
 		},
 		"183": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.update"
+			"qualifiedName": "_changedProperties"
 		},
 		"184": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "changedProperties"
+			"qualifiedName": "FabMenu.update"
 		},
 		"185": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.updated"
+			"qualifiedName": "FabMenu.update"
 		},
 		"186": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.updated"
+			"qualifiedName": "changedProperties"
 		},
 		"187": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "_changedProperties"
+			"qualifiedName": "FabMenu.updated"
 		},
 		"188": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.connectedCallback"
+			"qualifiedName": "FabMenu.updated"
 		},
 		"189": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.connectedCallback"
+			"qualifiedName": "_changedProperties"
 		},
 		"190": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.disconnectedCallback"
+			"qualifiedName": "FabMenu.connectedCallback"
 		},
 		"191": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.disconnectedCallback"
+			"qualifiedName": "FabMenu.connectedCallback"
 		},
 		"192": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.render"
+			"qualifiedName": "FabMenu.disconnectedCallback"
 		},
 		"193": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/fab-menu/fab-menu.ts",
-			"qualifiedName": "FabMenu.render"
+			"qualifiedName": "FabMenu.disconnectedCallback"
 		},
 		"194": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/info-section/info-section.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": "FabMenu.render"
 		},
 		"195": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/info-section/info-section.ts",
-			"qualifiedName": "InfoSection"
+			"packagePath": "src/components/fab-menu/fab-menu.ts",
+			"qualifiedName": "FabMenu.render"
 		},
 		"196": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
+			"qualifiedName": ""
+		},
+		"197": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/info-section/info-section.ts",
+			"qualifiedName": "InfoSection"
+		},
+		"198": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/info-section/info-section.ts",
 			"qualifiedName": "InfoSection.styles"
-		},
-		"199": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/info-section/info-section.ts",
-			"qualifiedName": "InfoSection.sectionTitle"
-		},
-		"200": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/info-section/info-section.ts",
-			"qualifiedName": "InfoSection.render"
 		},
 		"201": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/info-section/info-section.ts",
-			"qualifiedName": "InfoSection.render"
+			"qualifiedName": "InfoSection.sectionTitle"
 		},
 		"202": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/partial-header/partial-header.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/info-section/info-section.ts",
+			"qualifiedName": "InfoSection.render"
 		},
 		"203": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/partial-header/partial-header.ts",
-			"qualifiedName": "PartialHeader"
+			"packagePath": "src/components/info-section/info-section.ts",
+			"qualifiedName": "InfoSection.render"
 		},
 		"204": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
+			"qualifiedName": ""
+		},
+		"205": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/partial-header/partial-header.ts",
+			"qualifiedName": "PartialHeader"
+		},
+		"206": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.styles"
-		},
-		"207": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/partial-header/partial-header.ts",
-			"qualifiedName": "PartialHeader.headingText"
-		},
-		"208": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/partial-header/partial-header.ts",
-			"qualifiedName": "PartialHeader.headerType"
 		},
 		"209": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
-			"qualifiedName": "PartialHeader.render"
+			"qualifiedName": "PartialHeader.headingText"
 		},
 		"210": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/partial-header/partial-header.ts",
+			"qualifiedName": "PartialHeader.headerType"
+		},
+		"211": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/partial-header/partial-header.ts",
 			"qualifiedName": "PartialHeader.render"
 		},
 		"212": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": ""
-		},
-		"213": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle"
+			"packagePath": "src/components/partial-header/partial-header.ts",
+			"qualifiedName": "PartialHeader.render"
 		},
 		"214": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": ""
+		},
+		"215": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle"
+		},
+		"216": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
 			"qualifiedName": "UiModeToggle.styles"
-		},
-		"221": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.connectedCallback"
-		},
-		"222": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.connectedCallback"
 		},
 		"223": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.disconnectedCallback"
+			"qualifiedName": "UiModeToggle.connectedCallback"
 		},
 		"224": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.connectedCallback"
+		},
+		"225": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
 			"qualifiedName": "UiModeToggle.disconnectedCallback"
 		},
-		"237": {
+		"226": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.reset"
-		},
-		"238": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.reset"
+			"qualifiedName": "UiModeToggle.disconnectedCallback"
 		},
 		"239": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.render"
+			"qualifiedName": "UiModeToggle.reset"
 		},
 		"240": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"qualifiedName": "UiModeToggle.render"
+			"qualifiedName": "UiModeToggle.reset"
 		},
 		"241": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.render"
 		},
 		"242": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience"
+			"packagePath": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"qualifiedName": "UiModeToggle.render"
 		},
 		"243": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
+			"qualifiedName": ""
+		},
+		"244": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/work-experience/work-experience.ts",
+			"qualifiedName": "WorkExperience"
+		},
+		"245": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.styles"
-		},
-		"246": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.isNested"
-		},
-		"247": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.experienceRole"
 		},
 		"248": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.experienceOrg"
+			"qualifiedName": "WorkExperience.isNested"
+		},
+		"249": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/work-experience/work-experience.ts",
+			"qualifiedName": "WorkExperience.experienceRole"
 		},
 		"250": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.dateStart"
-		},
-		"251": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.dateEnd"
+			"qualifiedName": "WorkExperience.experienceOrg"
 		},
 		"252": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.summaries"
+			"qualifiedName": "WorkExperience.dateStart"
 		},
 		"253": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "WorkExperience.dateEnd"
 		},
 		"254": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "__type.item"
+			"qualifiedName": "WorkExperience.summaries"
 		},
 		"255": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.jobs"
+			"qualifiedName": "__type"
 		},
 		"256": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
-			"qualifiedName": "WorkExperience.render"
+			"qualifiedName": "__type.item"
 		},
 		"257": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/work-experience/work-experience.ts",
+			"qualifiedName": "WorkExperience.jobs"
+		},
+		"258": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/work-experience/work-experience.ts",
 			"qualifiedName": "WorkExperience.render"
 		},
-		"291": {
+		"259": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": ""
-		},
-		"292": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard"
+			"packagePath": "src/components/work-experience/work-experience.ts",
+			"qualifiedName": "WorkExperience.render"
 		},
 		"293": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": ""
+		},
+		"294": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard"
+		},
+		"295": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
 			"qualifiedName": "BentoCard.styles"
-		},
-		"297": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard.expanded"
-		},
-		"298": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard.enableHover"
 		},
 		"299": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard.enableFocus"
+			"qualifiedName": "BentoCard.expanded"
 		},
 		"300": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard._handleToggle"
+			"qualifiedName": "BentoCard.enableHover"
 		},
 		"301": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard._handleToggle"
+			"qualifiedName": "BentoCard.enableFocus"
 		},
 		"302": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "e"
+			"qualifiedName": "BentoCard._handleToggle"
 		},
 		"303": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
-			"qualifiedName": "BentoCard.render"
+			"qualifiedName": "BentoCard._handleToggle"
 		},
 		"304": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "e"
+		},
+		"305": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/bento/bento-card.ts",
 			"qualifiedName": "BentoCard.render"
 		},
-		"308": {
+		"306": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/blog/blog-card.ts",
-			"qualifiedName": ""
-		},
-		"309": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/blog/blog-card.ts",
-			"qualifiedName": "BlogCard"
+			"packagePath": "src/components/card/bento/bento-card.ts",
+			"qualifiedName": "BentoCard.render"
 		},
 		"310": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/blog/blog-card.ts",
+			"qualifiedName": ""
+		},
+		"311": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/blog/blog-card.ts",
+			"qualifiedName": "BlogCard"
+		},
+		"312": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/blog/blog-card.ts",
 			"qualifiedName": "BlogCard.styles"
-		},
-		"316": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/blog/blog-card.ts",
-			"qualifiedName": "BlogCard.connectedCallback"
-		},
-		"317": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/blog/blog-card.ts",
-			"qualifiedName": "BlogCard.connectedCallback"
 		},
 		"318": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/blog/blog-card.ts",
-			"qualifiedName": "BlogCard.render"
+			"qualifiedName": "BlogCard.connectedCallback"
 		},
 		"319": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/blog/blog-card.ts",
+			"qualifiedName": "BlogCard.connectedCallback"
+		},
+		"320": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/blog/blog-card.ts",
 			"qualifiedName": "BlogCard.render"
 		},
-		"323": {
+		"321": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/code/code-card.ts",
-			"qualifiedName": ""
-		},
-		"324": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/code/code-card.ts",
-			"qualifiedName": "CodeCard"
+			"packagePath": "src/components/card/blog/blog-card.ts",
+			"qualifiedName": "BlogCard.render"
 		},
 		"325": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/code/code-card.ts",
+			"qualifiedName": ""
+		},
+		"326": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/code/code-card.ts",
+			"qualifiedName": "CodeCard"
+		},
+		"327": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/code/code-card.ts",
 			"qualifiedName": "CodeCard.styles"
-		},
-		"331": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/code/code-card.ts",
-			"qualifiedName": "CodeCard.connectedCallback"
-		},
-		"332": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/code/code-card.ts",
-			"qualifiedName": "CodeCard.connectedCallback"
 		},
 		"333": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/code/code-card.ts",
-			"qualifiedName": "CodeCard.render"
+			"qualifiedName": "CodeCard.connectedCallback"
 		},
 		"334": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/code/code-card.ts",
+			"qualifiedName": "CodeCard.connectedCallback"
+		},
+		"335": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/code/code-card.ts",
 			"qualifiedName": "CodeCard.render"
 		},
-		"338": {
+		"336": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/connect/connect-card.ts",
-			"qualifiedName": ""
-		},
-		"339": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/connect/connect-card.ts",
-			"qualifiedName": "ConnectCard"
+			"packagePath": "src/components/card/code/code-card.ts",
+			"qualifiedName": "CodeCard.render"
 		},
 		"340": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/connect/connect-card.ts",
-			"qualifiedName": "ConnectCard.styles"
-		},
-		"346": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/connect/connect-card.ts",
-			"qualifiedName": "ConnectCard.render"
-		},
-		"347": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/connect/connect-card.ts",
-			"qualifiedName": "ConnectCard.render"
-		},
-		"351": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/education/education-card.ts",
 			"qualifiedName": ""
 		},
-		"352": {
+		"341": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/education/education-card.ts",
-			"qualifiedName": "EducationCard"
+			"packagePath": "src/components/card/connect/connect-card.ts",
+			"qualifiedName": "ConnectCard"
+		},
+		"342": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/connect/connect-card.ts",
+			"qualifiedName": "ConnectCard.styles"
+		},
+		"348": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/connect/connect-card.ts",
+			"qualifiedName": "ConnectCard.render"
+		},
+		"349": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/connect/connect-card.ts",
+			"qualifiedName": "ConnectCard.render"
 		},
 		"353": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/education/education-card.ts",
-			"qualifiedName": "EducationCard.styles"
+			"qualifiedName": ""
 		},
-		"359": {
+		"354": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/education/education-card.ts",
-			"qualifiedName": "EducationCard.render"
+			"qualifiedName": "EducationCard"
 		},
-		"360": {
+		"355": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/education/education-card.ts",
+			"qualifiedName": "EducationCard.styles"
+		},
+		"361": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/education/education-card.ts",
 			"qualifiedName": "EducationCard.render"
 		},
 		"362": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": ""
-		},
-		"363": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard"
+			"packagePath": "src/components/card/education/education-card.ts",
+			"qualifiedName": "EducationCard.render"
 		},
 		"364": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
+			"qualifiedName": ""
+		},
+		"365": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
+			"qualifiedName": "ProfileBioCard"
+		},
+		"366": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard.styles"
-		},
-		"388": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard.connectedCallback"
-		},
-		"389": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard.connectedCallback"
 		},
 		"390": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard.disconnectedCallback"
+			"qualifiedName": "ProfileBioCard.connectedCallback"
 		},
 		"391": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
+			"qualifiedName": "ProfileBioCard.connectedCallback"
+		},
+		"392": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
 			"qualifiedName": "ProfileBioCard.disconnectedCallback"
 		},
-		"394": {
+		"393": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard.render"
-		},
-		"395": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
-			"qualifiedName": "ProfileBioCard.render"
+			"qualifiedName": "ProfileBioCard.disconnectedCallback"
 		},
 		"396": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
+			"qualifiedName": "ProfileBioCard.render"
 		},
 		"397": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": "SettingsCard"
+			"packagePath": "src/components/card/profile-bio/profile-bio-card.ts",
+			"qualifiedName": "ProfileBioCard.render"
 		},
 		"398": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
+			"qualifiedName": ""
+		},
+		"399": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/settings/settings-card.ts",
+			"qualifiedName": "SettingsCard"
+		},
+		"400": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.styles"
-		},
-		"405": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": "SettingsCard.formattedDate"
-		},
-		"406": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": "SettingsCard.connectedCallback"
 		},
 		"407": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": "SettingsCard.connectedCallback"
+			"qualifiedName": "SettingsCard.formattedDate"
 		},
 		"408": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
-			"qualifiedName": "SettingsCard.disconnectedCallback"
+			"qualifiedName": "SettingsCard.connectedCallback"
 		},
 		"409": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
+			"qualifiedName": "SettingsCard.connectedCallback"
+		},
+		"410": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.disconnectedCallback"
 		},
-		"422": {
+		"411": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/settings/settings-card.ts",
+			"qualifiedName": "SettingsCard.disconnectedCallback"
+		},
+		"424": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.render"
 		},
-		"423": {
+		"425": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/settings/settings-card.ts",
 			"qualifiedName": "SettingsCard.render"
-		},
-		"427": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/skills/skills-card.ts",
-			"qualifiedName": ""
-		},
-		"428": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/skills/skills-card.ts",
-			"qualifiedName": "SkillsCard"
 		},
 		"429": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/skills/skills-card.ts",
-			"qualifiedName": "SkillsCard.styles"
-		},
-		"437": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/skills/skills-card.ts",
-			"qualifiedName": "SkillsCard.render"
-		},
-		"438": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/skills/skills-card.ts",
-			"qualifiedName": "SkillsCard.render"
-		},
-		"442": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/work/work-card.ts",
 			"qualifiedName": ""
 		},
-		"443": {
+		"430": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/work/work-card.ts",
-			"qualifiedName": "WorkCard"
+			"packagePath": "src/components/card/skills/skills-card.ts",
+			"qualifiedName": "SkillsCard"
+		},
+		"431": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/skills/skills-card.ts",
+			"qualifiedName": "SkillsCard.styles"
+		},
+		"439": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/skills/skills-card.ts",
+			"qualifiedName": "SkillsCard.render"
+		},
+		"440": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/skills/skills-card.ts",
+			"qualifiedName": "SkillsCard.render"
 		},
 		"444": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/work/work-card.ts",
+			"qualifiedName": ""
+		},
+		"445": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/work/work-card.ts",
+			"qualifiedName": "WorkCard"
+		},
+		"446": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/card/work/work-card.ts",
 			"qualifiedName": "WorkCard.styles"
-		},
-		"450": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/work/work-card.ts",
-			"qualifiedName": "WorkCard.connectedCallback"
-		},
-		"451": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/card/work/work-card.ts",
-			"qualifiedName": "WorkCard.connectedCallback"
 		},
 		"452": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/work/work-card.ts",
-			"qualifiedName": "WorkCard.render"
+			"qualifiedName": "WorkCard.connectedCallback"
 		},
 		"453": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/card/work/work-card.ts",
-			"qualifiedName": "WorkCard.render"
+			"qualifiedName": "WorkCard.connectedCallback"
 		},
 		"454": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": ""
+			"packagePath": "src/components/card/work/work-card.ts",
+			"qualifiedName": "WorkCard.render"
 		},
 		"455": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject"
+			"packagePath": "src/components/card/work/work-card.ts",
+			"qualifiedName": "WorkCard.render"
 		},
 		"456": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
+			"qualifiedName": ""
+		},
+		"457": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/code/code-project/code-project.ts",
+			"qualifiedName": "CodeProject"
+		},
+		"458": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.styles"
-		},
-		"461": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.#generateCardFront"
-		},
-		"462": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.#generateCardFront"
 		},
 		"463": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.#generateCardBack"
+			"qualifiedName": "CodeProject.#generateCardFront"
 		},
 		"464": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.#generateCardBack"
+			"qualifiedName": "CodeProject.#generateCardFront"
 		},
 		"465": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
-			"qualifiedName": "CodeProject.render"
+			"qualifiedName": "CodeProject.#generateCardBack"
 		},
 		"466": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/code/code-project/code-project.ts",
+			"qualifiedName": "CodeProject.#generateCardBack"
+		},
+		"467": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/code/code-project/code-project.ts",
 			"qualifiedName": "CodeProject.render"
 		},
-		"487": {
+		"468": {
 			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
-			"qualifiedName": ""
-		},
-		"488": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
-			"qualifiedName": "StepUpDialog"
+			"packagePath": "src/components/code/code-project/code-project.ts",
+			"qualifiedName": "CodeProject.render"
 		},
 		"489": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
+			"qualifiedName": ""
+		},
+		"490": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
+			"qualifiedName": "StepUpDialog"
+		},
+		"491": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.styles"
 		},
-		"492": {
+		"494": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.dialogStyle"
 		},
-		"493": {
+		"495": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.dialogContentString"
 		},
-		"495": {
+		"497": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.showDialog"
 		},
-		"496": {
+		"498": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.showDialog"
 		},
-		"503": {
+		"505": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.render"
 		},
-		"504": {
+		"506": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/dialog/step-up/step-up-dialog.ts",
 			"qualifiedName": "StepUpDialog.render"
-		},
-		"512": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": ""
-		},
-		"513": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud"
 		},
 		"514": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": ""
+		},
+		"515": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud"
+		},
+		"516": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.styles"
-		},
-		"517": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.words"
-		},
-		"518": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.instantClear"
 		},
 		"519": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.appearance"
+			"qualifiedName": "WordCloud.words"
 		},
 		"520": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.grouping"
+			"qualifiedName": "WordCloud.instantClear"
 		},
 		"521": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.sorting"
+			"qualifiedName": "WordCloud.appearance"
 		},
 		"522": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.delay"
+			"qualifiedName": "WordCloud.grouping"
 		},
 		"523": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.sorting"
+		},
+		"524": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.delay"
+		},
+		"525": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.threshold"
-		},
-		"528": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.connectedCallback"
-		},
-		"529": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.connectedCallback"
 		},
 		"530": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.updated"
+			"qualifiedName": "WordCloud.connectedCallback"
 		},
 		"531": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.updated"
+			"qualifiedName": "WordCloud.connectedCallback"
 		},
 		"532": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.updated"
+		},
+		"533": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.updated"
+		},
+		"534": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "changedProperties"
-		},
-		"535": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.firstUpdated"
-		},
-		"536": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.firstUpdated"
 		},
 		"537": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.disconnectedCallback"
+			"qualifiedName": "WordCloud.firstUpdated"
 		},
 		"538": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.firstUpdated"
+		},
+		"539": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
 			"qualifiedName": "WordCloud.disconnectedCallback"
 		},
-		"548": {
+		"540": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.render"
-		},
-		"549": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
-			"qualifiedName": "WordCloud.render"
+			"qualifiedName": "WordCloud.disconnectedCallback"
 		},
 		"550": {
 			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.render"
+		},
+		"551": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.ts",
+			"qualifiedName": "WordCloud.render"
+		},
+		"552": {
+			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": ""
-		},
-		"579": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
-			"qualifiedName": "makeWordCloudWord"
-		},
-		"580": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
-			"qualifiedName": "makeWordCloudWord"
 		},
 		"581": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
-			"qualifiedName": "word"
+			"qualifiedName": "makeWordCloudWord"
 		},
 		"582": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
-			"qualifiedName": "weight"
+			"qualifiedName": "makeWordCloudWord"
 		},
 		"583": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
-			"qualifiedName": "category"
+			"qualifiedName": "word"
 		},
 		"584": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
+			"qualifiedName": "weight"
+		},
+		"585": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
+			"qualifiedName": "category"
+		},
+		"586": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-cloud/word-cloud.types.ts",
 			"qualifiedName": "extras"
-		},
-		"588": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-tag/word-tag.ts",
-			"qualifiedName": ""
-		},
-		"589": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/components/word/word-tag/word-tag.ts",
-			"qualifiedName": "WordTag"
 		},
 		"590": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
+			"qualifiedName": ""
+		},
+		"591": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-tag/word-tag.ts",
+			"qualifiedName": "WordTag"
+		},
+		"592": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.styles"
 		},
-		"596": {
+		"598": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.render"
 		},
-		"597": {
+		"599": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/components/word/word-tag/word-tag.ts",
 			"qualifiedName": "WordTag.render"
 		},
-		"600": {
+		"602": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/breakpoints.ts",
 			"qualifiedName": ""
 		},
-		"601": {
+		"603": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/breakpoints.ts",
 			"qualifiedName": "Breakpoint"
 		},
-		"603": {
+		"605": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/breakpoints.ts",
 			"qualifiedName": "readBreakpoint"
 		},
-		"604": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/styles/breakpoints.ts",
-			"qualifiedName": "__type"
-		},
-		"605": {
+		"606": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/breakpoints.ts",
 			"qualifiedName": "__type"
 		},
 		"607": {
 			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/styles/breakpoints.ts",
+			"qualifiedName": "__type"
+		},
+		"609": {
+			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/interaction-styles.ts",
 			"qualifiedName": ""
 		},
-		"608": {
+		"610": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/styles/interaction-styles.ts",
 			"qualifiedName": "InteractionStyles"
 		},
-		"650": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": ""
-		},
-		"651": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "FAB_POSITION_COMPONENTS_VERTICAL"
-		},
 		"652": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": ""
 		},
 		"653": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.TOP"
+			"qualifiedName": "FAB_POSITION_COMPONENTS_VERTICAL"
 		},
 		"654": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.BOTTOM"
+			"qualifiedName": "__object"
 		},
 		"655": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "FAB_POSITION_COMPONENTS_HORIZONTAL"
+			"qualifiedName": "__object.TOP"
 		},
 		"656": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "__object.BOTTOM"
 		},
 		"657": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.START"
+			"qualifiedName": "FAB_POSITION_COMPONENTS_HORIZONTAL"
 		},
 		"658": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
+			"qualifiedName": "__object"
+		},
+		"659": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/configs/fab-configs.ts",
+			"qualifiedName": "__object.START"
+		},
+		"660": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END"
-		},
-		"662": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "FabPositionComponentVertical"
-		},
-		"663": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "FabPositionComponentHorizontal"
 		},
 		"664": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "FAB_POSITION"
+			"qualifiedName": "FabPositionComponentVertical"
 		},
 		"665": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "FabPositionComponentHorizontal"
 		},
 		"666": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.START_TOP"
+			"qualifiedName": "FAB_POSITION"
 		},
 		"667": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.START_BOTTOM"
+			"qualifiedName": "__object"
 		},
 		"668": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
-			"qualifiedName": "__object.END_TOP"
+			"qualifiedName": "__object.START_TOP"
 		},
 		"669": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
+			"qualifiedName": "__object.START_BOTTOM"
+		},
+		"670": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/configs/fab-configs.ts",
+			"qualifiedName": "__object.END_TOP"
+		},
+		"671": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "__object.END_BOTTOM"
 		},
-		"672": {
+		"674": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/configs/fab-configs.ts",
 			"qualifiedName": "FabPositionIcons"
 		},
-		"741": {
+		"743": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": ""
 		},
-		"742": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "jsonIsThemeJsonSchemes"
-		},
-		"743": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "jsonIsThemeJsonSchemes"
-		},
 		"744": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "json"
+			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
 		"745": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "keyTransform"
+			"qualifiedName": "jsonIsThemeJsonSchemes"
 		},
 		"746": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "keyTransform"
+			"qualifiedName": "json"
 		},
 		"747": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "jsonKey"
+			"qualifiedName": "keyTransform"
 		},
 		"748": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
+			"qualifiedName": "keyTransform"
+		},
+		"749": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/theme/theme.ts",
+			"qualifiedName": "jsonKey"
+		},
+		"750": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "rgb"
 		},
-		"773": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "readScheme"
-		},
-		"774": {
-			"packageName": "@fnc314/fnc314.github.io",
-			"packagePath": "src/types/theme/theme.ts",
-			"qualifiedName": "readScheme"
-		},
 		"775": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/theme/theme.ts",
+			"qualifiedName": "readScheme"
+		},
+		"776": {
+			"packageName": "@fnc314/fnc314.github.io",
+			"packagePath": "src/types/theme/theme.ts",
+			"qualifiedName": "readScheme"
+		},
+		"777": {
 			"packageName": "@fnc314/fnc314.github.io",
 			"packagePath": "src/types/theme/theme.ts",
 			"qualifiedName": "jsonSchema"
@@ -64125,70 +64165,71 @@
 			"13": "docs/wca/markdown/work-experience.md",
 			"14": "docs/wca/markdown/work-partial.md",
 			"15": "src/components/app-shell/app-shell.ts",
-			"16": "src/components/bento-layout/bento-layout.test.ts",
-			"17": "src/components/bento-layout/bento-layout.ts",
-			"18": "src/components/bento-layout/bento-layout.types.ts",
-			"19": "src/components/blog/blog-post.ts",
-			"20": "src/components/blog/blog-post.types.ts",
-			"21": "src/components/fab-menu/fab-menu-item.ts",
-			"22": "src/components/fab-menu/fab-menu.ts",
-			"23": "src/components/info-section/info-section.ts",
-			"24": "src/components/partial-header/partial-header.ts",
-			"25": "src/components/ui-mode-toggle/ui-mode-toggle.test.ts",
-			"26": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
-			"27": "src/components/work-experience/work-experience.ts",
-			"28": "src/components/work-experience/work-experience.types.ts",
-			"29": "src/components/card/bento/bento-card.styles.ts",
-			"30": "src/components/card/bento/bento-card.test.ts",
-			"31": "src/components/card/bento/bento-card.ts",
-			"32": "src/components/card/blog/blog-card.styles.ts",
-			"33": "src/components/card/blog/blog-card.test.ts",
-			"34": "src/components/card/blog/blog-card.ts",
-			"35": "src/components/card/code/code-card.styles.ts",
-			"36": "src/components/card/code/code-card.test.ts",
-			"37": "src/components/card/code/code-card.ts",
-			"38": "src/components/card/connect/connect-card.styles.ts",
-			"39": "src/components/card/connect/connect-card.test.ts",
-			"40": "src/components/card/connect/connect-card.ts",
-			"41": "src/components/card/education/education-card.styles.ts",
-			"42": "src/components/card/education/education-card.test.ts",
-			"43": "src/components/card/education/education-card.ts",
-			"44": "src/components/card/profile-bio/profile-bio-card.test.ts",
-			"45": "src/components/card/profile-bio/profile-bio-card.ts",
-			"46": "src/components/card/settings/settings-card.ts",
-			"47": "src/components/card/skills/skills-card.styles.ts",
-			"48": "src/components/card/skills/skills-card.test.ts",
-			"49": "src/components/card/skills/skills-card.ts",
-			"50": "src/components/card/work/work-card.styles.ts",
-			"51": "src/components/card/work/work-card.test.ts",
-			"52": "src/components/card/work/work-card.ts",
-			"53": "src/components/code/code-project/code-project.ts",
-			"54": "src/components/code/code-project/code-project.types.ts",
-			"55": "src/components/dialog/configs/configs-dialog.types.ts",
-			"56": "src/components/dialog/connect/connect-dialog.types.ts",
-			"57": "src/components/dialog/step-up/step-up-dialog.ts",
-			"58": "src/components/dialog/step-up/step-up-dialog.types.ts",
-			"59": "src/components/word/word-cloud/word-cloud.ts",
-			"60": "src/components/word/word-cloud/word-cloud.types.ts",
-			"61": "src/components/word/word-tag/word-tag.ts",
-			"62": "src/components/word/word-tag/word-tag.types.ts",
-			"63": "src/styles/breakpoints.ts",
-			"64": "src/styles/index.ts",
-			"65": "src/styles/interaction-styles.ts",
-			"66": "src/styles/material-styles.ts",
-			"67": "src/styles/styles.ts",
-			"68": "src/theme/theme.ts",
-			"69": "src/theme/chicago/chicago-theme.ts",
-			"70": "src/theme/inter/inter-theme.ts",
-			"71": "src/theme/red/red-theme.ts",
-			"72": "src/theme/sunset/sunset-theme.ts",
-			"73": "src/types/material-symbols.ts",
-			"74": "src/types/configs/app-configs.ts",
-			"75": "src/types/configs/fab-configs.ts",
-			"76": "src/types/theme/color-scheme-configs.ts",
-			"77": "src/types/theme/theme.ts",
-			"78": "src/types/components/nav/routes.ts",
-			"79": "docs/wca/markdown"
+			"16": "src/components/bento-layout/bento-layout.styles.ts",
+			"17": "src/components/bento-layout/bento-layout.test.ts",
+			"18": "src/components/bento-layout/bento-layout.ts",
+			"19": "src/components/bento-layout/bento-layout.types.ts",
+			"20": "src/components/blog/blog-post.ts",
+			"21": "src/components/blog/blog-post.types.ts",
+			"22": "src/components/fab-menu/fab-menu-item.ts",
+			"23": "src/components/fab-menu/fab-menu.ts",
+			"24": "src/components/info-section/info-section.ts",
+			"25": "src/components/partial-header/partial-header.ts",
+			"26": "src/components/ui-mode-toggle/ui-mode-toggle.test.ts",
+			"27": "src/components/ui-mode-toggle/ui-mode-toggle.ts",
+			"28": "src/components/work-experience/work-experience.ts",
+			"29": "src/components/work-experience/work-experience.types.ts",
+			"30": "src/components/card/bento/bento-card.styles.ts",
+			"31": "src/components/card/bento/bento-card.test.ts",
+			"32": "src/components/card/bento/bento-card.ts",
+			"33": "src/components/card/blog/blog-card.styles.ts",
+			"34": "src/components/card/blog/blog-card.test.ts",
+			"35": "src/components/card/blog/blog-card.ts",
+			"36": "src/components/card/code/code-card.styles.ts",
+			"37": "src/components/card/code/code-card.test.ts",
+			"38": "src/components/card/code/code-card.ts",
+			"39": "src/components/card/connect/connect-card.styles.ts",
+			"40": "src/components/card/connect/connect-card.test.ts",
+			"41": "src/components/card/connect/connect-card.ts",
+			"42": "src/components/card/education/education-card.styles.ts",
+			"43": "src/components/card/education/education-card.test.ts",
+			"44": "src/components/card/education/education-card.ts",
+			"45": "src/components/card/profile-bio/profile-bio-card.test.ts",
+			"46": "src/components/card/profile-bio/profile-bio-card.ts",
+			"47": "src/components/card/settings/settings-card.ts",
+			"48": "src/components/card/skills/skills-card.styles.ts",
+			"49": "src/components/card/skills/skills-card.test.ts",
+			"50": "src/components/card/skills/skills-card.ts",
+			"51": "src/components/card/work/work-card.styles.ts",
+			"52": "src/components/card/work/work-card.test.ts",
+			"53": "src/components/card/work/work-card.ts",
+			"54": "src/components/code/code-project/code-project.ts",
+			"55": "src/components/code/code-project/code-project.types.ts",
+			"56": "src/components/dialog/configs/configs-dialog.types.ts",
+			"57": "src/components/dialog/connect/connect-dialog.types.ts",
+			"58": "src/components/dialog/step-up/step-up-dialog.ts",
+			"59": "src/components/dialog/step-up/step-up-dialog.types.ts",
+			"60": "src/components/word/word-cloud/word-cloud.ts",
+			"61": "src/components/word/word-cloud/word-cloud.types.ts",
+			"62": "src/components/word/word-tag/word-tag.ts",
+			"63": "src/components/word/word-tag/word-tag.types.ts",
+			"64": "src/styles/breakpoints.ts",
+			"65": "src/styles/index.ts",
+			"66": "src/styles/interaction-styles.ts",
+			"67": "src/styles/material-styles.ts",
+			"68": "src/styles/styles.ts",
+			"69": "src/theme/theme.ts",
+			"70": "src/theme/chicago/chicago-theme.ts",
+			"71": "src/theme/inter/inter-theme.ts",
+			"72": "src/theme/red/red-theme.ts",
+			"73": "src/theme/sunset/sunset-theme.ts",
+			"74": "src/types/material-symbols.ts",
+			"75": "src/types/configs/app-configs.ts",
+			"76": "src/types/configs/fab-configs.ts",
+			"77": "src/types/theme/color-scheme-configs.ts",
+			"78": "src/types/theme/theme.ts",
+			"79": "src/types/components/nav/routes.ts",
+			"80": "docs/wca/markdown"
 		},
 		"reflections": {
 			"1": 0,
@@ -64206,34 +64247,35 @@
 			"13": 13,
 			"14": 14,
 			"15": 15,
-			"17": 49,
-			"18": 74,
-			"19": 90,
-			"21": 131,
-			"22": 146,
-			"23": 194,
-			"24": 202,
-			"26": 212,
-			"27": 241,
-			"31": 291,
-			"34": 308,
-			"37": 323,
-			"40": 338,
-			"43": 351,
-			"45": 362,
-			"46": 396,
-			"49": 427,
-			"52": 442,
-			"53": 454,
-			"57": 487,
-			"59": 512,
-			"60": 550,
-			"61": 588,
-			"63": 600,
-			"65": 607,
-			"75": 650,
-			"77": 741,
-			"79": 0
+			"16": 48,
+			"18": 51,
+			"19": 76,
+			"20": 92,
+			"22": 133,
+			"23": 148,
+			"24": 196,
+			"25": 204,
+			"27": 214,
+			"28": 243,
+			"32": 293,
+			"35": 310,
+			"38": 325,
+			"41": 340,
+			"44": 353,
+			"46": 364,
+			"47": 398,
+			"50": 429,
+			"53": 444,
+			"54": 456,
+			"58": 489,
+			"60": 514,
+			"61": 552,
+			"62": 590,
+			"64": 602,
+			"66": 609,
+			"76": 652,
+			"78": 743,
+			"80": 0
 		}
 	}
 }
