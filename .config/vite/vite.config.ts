@@ -10,8 +10,8 @@ import VitePluginCustomElementsManifest from "vite-plugin-cem";
 import cp from "vite-plugin-cp";
 import { type ManifestOptions, VitePWA } from "vite-plugin-pwa";
 import { vitePluginVersionMark } from "vite-plugin-version-mark";
-import manifest from "./manifest.json" with { type: "json" };
-import packageJson from "./package.json" with { type: "json" };
+import manifest from "./../../manifest.json" with { type: "json" };
+import packageJson from "./../../package.json" with { type: "json" };
 
 interface DynamicConfigs {
   isProduction: boolean;
@@ -57,8 +57,8 @@ function createDynamicConfig(
     isProduction,
     isLocalBuild,
     outDirSuffix,
-    outDir: path.resolve(__dirname, `dist/${outDirSuffix}`),
-    publicDir: path.resolve(__dirname, "static"),
+    outDir: path.resolve(process.cwd(), `dist/${outDirSuffix}`),
+    publicDir: path.resolve(process.cwd(), "static"),
     base,
     pwa
   };
@@ -138,7 +138,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     },
     html: {},
     json: {},
-    root: path.resolve(__dirname),
+    root: path.resolve(process.cwd()),
     define: {
       "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(getGitInfo()),
     },
@@ -152,7 +152,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     optimizeDeps: {},
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "src"),
+        "@": path.resolve(process.cwd(), "src"),
       },
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
@@ -167,7 +167,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       emptyOutDir: true,
       copyPublicDir: true,
       rolldownOptions: {
-        tsconfig: path.resolve(__dirname, "tsconfig.json"),
+        tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
         devtools: {},
         experimental: {
           viteMode: true,
@@ -179,9 +179,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     },
     css: {
       devSourcemap: !dynamicConfig.isProduction,
-      postcss: path.resolve(__dirname, "postcss.config.mjs"),
+      postcss: path.resolve(process.cwd(), "postcss.config.mjs"),
     },
-    envDir: path.resolve(__dirname, ".env"),
+    envDir: path.resolve(process.cwd(), ".env"),
     appType: "spa",
     logLevel: "info",
     server: {
@@ -242,9 +242,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           disabled: false,
           injectThemeColor: false,
           overrideManifestIcons: false,
-          config: path.resolve(__dirname, ".config/pwa-assets/pwa-assets.config.ts"),
+          config: path.resolve(process.cwd(), ".config/pwa-assets/pwa-assets.config.ts"),
         },
-        srcDir: path.resolve(__dirname, "static"),
+        srcDir: path.resolve(process.cwd(), "static"),
       }),
       vitePluginVersionMark({
         name: "@fnc314/fnc314.github.io",
@@ -276,12 +276,12 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       }),
       visualizer({
         title: "Vite Bundle Visualizer",
-        filename: path.resolve(__dirname, `stats/vite/visualizer/${mode}-${process.env.NODE_ENV}/${new Date().toISOString()}.html`),
+        filename: path.resolve(process.cwd(), `stats/vite/visualizer/${mode}-${process.env.NODE_ENV}/${new Date().toISOString()}.html`),
         sourcemap: !dynamicConfig.isProduction,
         template: "network",
         gzipSize: true,
         brotliSize: true,
-        projectRoot: path.resolve(__dirname),
+        projectRoot: path.resolve(process.cwd()),
       }),
       ...(!dynamicConfig.isProduction ? debugPlugins : [])
     ],
