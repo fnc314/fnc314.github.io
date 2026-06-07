@@ -28,7 +28,7 @@ const tsRules = {
 export default defineConfig([
   {
     name: "app/global-ignores",
-    ignores: ["jsconfig.json", "manifest.json", "website/", "old/"],
+    ignores: ["jsconfig.json", "manifest.json", "dist/", "docs/"],
   },
   {
     name: "app/js-recommended",
