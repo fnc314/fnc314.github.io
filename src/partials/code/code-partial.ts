@@ -4,7 +4,7 @@ import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 /**
- * @summary The {@link LitElement} for `/#code` route
+ * @summary The LitElement for /#code route
  */
 @customElement("code-partial")
 export class CodePartial extends LitElement {

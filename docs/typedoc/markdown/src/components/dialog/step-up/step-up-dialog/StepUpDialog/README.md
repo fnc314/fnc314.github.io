@@ -54,11 +54,11 @@ Defined in: [src/components/dialog/step-up/step-up-dialog.ts:29](https://github.
 
 ### dialogStyle
 
-&gt; **dialogStyle**: `StepUpDialogStyle` = `"confirm"`
+&gt; **dialogStyle**: [`StepUpDialogStyle`](#) = `"confirm"`
 
 Defined in: [src/components/dialog/step-up/step-up-dialog.ts:89](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/dialog/step-up/step-up-dialog.ts#L89)
 
-Determines which StepUpDialogStyle
+Determines which [StepUpDialogStyle](#)
 
 ---
 

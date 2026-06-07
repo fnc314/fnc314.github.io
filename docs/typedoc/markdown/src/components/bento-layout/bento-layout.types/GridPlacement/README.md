@@ -11,6 +11,4 @@ Defined in: [src/components/bento-layout/bento-layout.types.ts:9](https://github
 Defines the 2 numbers needed to place something
 on a `grid`
 
-GridPlacement
-
 </body></html>

@@ -5,52 +5,44 @@
   ],
   "tagDefinitions": [
     {
-      "tagName": "@attr",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@class",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@cssprop",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@element",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@export",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@extends",
-      "syntaxKind": "block"
-    },
-    {
-      "tagName": "@fires",
-      "syntaxKind": "block"
+      "tagName": "@slot",
+      "syntaxKind": "block",
+      "allowMultiple": true
     },
     {
       "tagName": "@property",
-      "syntaxKind": "block"
+      "syntaxKind": "block",
+      "allowMultiple": true
     },
     {
-      "tagName": "@slot",
-      "syntaxKind": "block"
+      "tagName": "@element",
+      "syntaxKind": "block",
+      "allowMultiple": true
     },
     {
-      "tagName": "@summary",
-      "syntaxKind": "block"
+      "tagName": "@cssprop",
+      "syntaxKind": "block",
+      "allowMultiple": true
     },
     {
-      "tagName": "@type",
-      "syntaxKind": "block"
+      "tagName": "@attr",
+      "syntaxKind": "block",
+      "allowMultiple": true
     },
     {
-      "tagName": "@typedef",
-      "syntaxKind": "block"
+      "tagName": "@export",
+      "syntaxKind": "block",
+      "allowMultiple": true
+    },
+    {
+      "tagName": "@fires",
+      "syntaxKind": "block",
+      "allowMultiple": true
+    },
+    {
+      "tagName": "@memberof",
+      "syntaxKind": "block",
+      "allowMultiple": true
     }
   ]
 }

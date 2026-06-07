@@ -6,11 +6,11 @@
 
 # Function: makeWordCloudWord()
 
-&gt; **makeWordCloudWord**(`word`: `string`, `weight`: `Weights`, `category`: `WordCloudWordCategory`, `extras?`: `string`[]): `WordCloudWord`
+&gt; **makeWordCloudWord**(`word`: `string`, `weight`: `Weights`, `category`: `WordCloudWordCategory`, `extras?`: `string`[]): [`WordCloudWord`](#)
 
 Defined in: [src/components/word/word-cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-cloud/word-cloud.types.ts#L41)
 
-A factory function to create a WordCloudWord
+A factory function to create a [WordCloudWord](#)
 
 ## Parameters
 
@@ -96,6 +96,6 @@ A factory function to create a WordCloudWord
 
 ## Returns
 
-`WordCloudWord`
+[`WordCloudWord`](#)
 
 </body></html>

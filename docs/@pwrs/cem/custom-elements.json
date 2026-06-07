@@ -7,6 +7,7 @@
       "declarations": [
         {
           "name": "AppShell",
+          "summary": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -78,14 +79,6 @@
               "privacy": "private"
             },
             {
-              "parameters": [
-                {
-                  "name": "_event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ],
               "name": "onAppConfigsChange",
               "description": "Syncs the component state with the global application configuration.",
               "kind": "method",
@@ -98,6 +91,10 @@
           "kind": "class",
           "tagName": "app-shell",
           "slots": [
+            {
+              "name": "",
+              "description": "[app-content] - The place for the dynamic application content"
+            },
             {
               "name": "app-content"
             }
@@ -4154,12 +4151,10 @@
         },
         {
           "return": {
-            "type": {
-              "text": "Breakpoint"
-            }
+            "description": "\\{Breakpoint\\}"
           },
           "name": "readBreakpoint",
-          "description": "Reads from {@link window} the current value of {@link --breakpoint-label}\nCSS `@property`",
+          "description": "Reads from \\`window\\` the current value of \\`--breakpoint-label\\`\nCSS `@property`",
           "kind": "function",
           "source": {
             "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L18"

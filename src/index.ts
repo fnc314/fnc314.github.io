@@ -1,3 +1,8 @@
+export { type Job, type WorkDate, type Experience } from "@/components/work-experience/work-experience.types";
+export { type StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
+export { type WordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
+export { type ThemeJsonSchemes } from "@/types/theme/theme";
+export { BentoLayout } from "@/components/bento-layout/bento-layout";
 import "@/components/app-shell/app-shell";
 import "@/components/bento-layout/bento-layout";
 import "@/components/blog/blog-post";

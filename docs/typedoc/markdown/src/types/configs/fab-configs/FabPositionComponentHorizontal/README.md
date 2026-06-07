@@ -8,7 +8,7 @@
 
 &gt; **FabPositionComponentHorizontal** = _typeof_ [`FAB_POSITION_COMPONENTS_HORIZONTAL`](../FAB_POSITION_COMPONENTS_HORIZONTAL/README.md)\[keyof _typeof_ [`FAB_POSITION_COMPONENTS_HORIZONTAL`](../FAB_POSITION_COMPONENTS_HORIZONTAL/README.md)\]
 
-Defined in: [src/types/configs/fab-configs.ts:38](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L38)
+Defined in: [src/types/configs/fab-configs.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L42)
 
 [FAB_POSITION_COMPONENTS_HORIZONTAL](../FAB_POSITION_COMPONENTS_HORIZONTAL/README.md)
 

@@ -20,13 +20,27 @@ skills-card
 
 - [`LitElement`](https://lit.dev/docs/api/LitElement/)
 
+## Other
+
+### styles
+
+&gt; `static` **styles**: `CSSResult`[]
+
+Defined in: [src/components/card/skills/skills-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/skills/skills-card.ts#L17)
+
+[lit!css](https://lit.dev/docs/api/styles/#css)
+
+#### Overrides
+
+`LitElement.styles`
+
 ## rendering
 
 ### render()
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/skills/skills-card.ts:35](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/skills/skills-card.ts#L35)
+Defined in: [src/components/card/skills/skills-card.ts:36](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/skills/skills-card.ts#L36)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -41,40 +55,4 @@ the element to update.
 
 `LitElement.render`
 
-## styles
-
-### styles
-
-&gt; `static` **styles**: `CSSResult`[]
-
-Defined in: [src/components/card/skills/skills-card.ts:16](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/skills/skills-card.ts#L16)
-
-Array of styles to apply to the element. The styles should be defined
-using the css tag function, via constructible stylesheets, or
-imported from native CSS module scripts.
-
-Note on Content Security Policy:
-
-Element styles are implemented with `<style>` tags when the browser doesn't
-support adopted StyleSheets. To use such `<style>` tags with the style-src
-CSP directive, the style-src value must either include 'unsafe-inline' or
-`nonce-<base64-value>` with `<base64-value>` replaced be a server-generated
-nonce.
-
-To provide a nonce to use on generated `<style>` elements, set
-`window.litNonce` to a server-generated nonce in your page's HTML, before
-loading application code:
-
-```html
-<script>
-  // Generated and unique per request:
-  window.litNonce = "a1b2c3d4";
-</script>
-```
-
-#### Nocollapse
-
-#### Overrides
-
-`LitElement.styles`
-</style></body></html>
+</body></html>

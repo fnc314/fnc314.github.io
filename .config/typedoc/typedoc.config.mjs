@@ -51,9 +51,20 @@ export default {
     "lit-html": {
       TemplateResult: "https://lit.dev/docs/api/templates/#TemplateResult",
     },
-    "@fnc314/com.fnc314.website": {
-      NavComponent: `${process.cwd()}/src/components/nav/nav-component.ts`,
-      WordTag: `${process.cwd()}/src/components/word/word-tag.ts`,
+    "@fnc314/fnc314.github.io": {
+      NavComponent: "#",
+      WordTag: "#",
+      WorkDate: "#",
+      Job: "#",
+      StepUpDialogStyle: "#",
+      WordCloudWord: "#",
+      ThemeJsonSchemes: "#",
+      BentoLayout: `${process.cwd()}/src/components/bento-layout/bento-layout.ts`,
+      "bento-layout": "#",
+    },
+    "unplugin-info": {
+      MaterialSymbol: "https://github.com/marella/material-symbols/tree/main/material-symbols",
+      time: "#",
     },
     "@material/web": {
       "--md-elevated-card-container-color": "https://github.com/material-components/material-web/blob/main/tokens/_md-comp-elevated-card.scss#L20",
@@ -88,7 +99,7 @@ export default {
     exampleTag: true,
     defaultTag: true,
     inheritDocTag: true,
-    ignoreUnescapedBraces: false,
+    ignoreUnescapedBraces: true,
   },
   lang: "en",
   lightHighlightTheme: "material-theme-lighter",

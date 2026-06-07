@@ -13,6 +13,7 @@ import { skillsCardStyles } from "./skills-card.styles";
  */
 @customElement("skills-card")
 export class SkillsCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [skillsCardStyles];
 
   @property({ type: Boolean })

@@ -8,7 +8,7 @@
 
 &gt; `const` **FAB_POSITION**: \{ `START_TOP`: `"START_TOP"`; `START_BOTTOM`: `"START_BOTTOM"`; `END_TOP`: `"END_TOP"`; `END_BOTTOM`: `"END_BOTTOM"`; \}
 
-Defined in: [src/types/configs/fab-configs.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L48)
+Defined in: [src/types/configs/fab-configs.ts:52](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L52)
 
 The complete collection of possible [@material/web!MdFab](https://github.com/material-components/material-web/tree/main/docs/components/fab.md) positions. Cross-product of [FAB_POSITION_COMPONENTS_HORIZONTAL](../FAB_POSITION_COMPONENTS_HORIZONTAL/README.md)
 and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/README.md)
@@ -20,6 +20,7 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/READM
 <tr>
 <th>Name</th>
 <th>Type</th>
+<th>Description</th>
 <th>Defined in</th>
 </tr>
 </thead>
@@ -37,7 +38,12 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/READM
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L49)
+AUTO-DOC'd WITH GEMINI: Start-Top position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L54)
 
 </td>
 </tr>
@@ -54,7 +60,12 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/READM
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:50](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L50)
+AUTO-DOC'd WITH GEMINI: Start-Bottom position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:56](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L56)
 
 </td>
 </tr>
@@ -71,7 +82,12 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/READM
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:51](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L51)
+AUTO-DOC'd WITH GEMINI: End-Top position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:58](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L58)
 
 </td>
 </tr>
@@ -88,7 +104,12 @@ and [FAB_POSITION_COMPONENTS_VERTICAL](../FAB_POSITION_COMPONENTS_VERTICAL/READM
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:52](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L52)
+AUTO-DOC'd WITH GEMINI: End-Bottom position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:60](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L60)
 
 </td>
 </tr>

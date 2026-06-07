@@ -21,6 +21,7 @@ import "@/components/ui-mode-toggle/ui-mode-toggle";
  */
 @customElement("settings-card")
 export class SettingsCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

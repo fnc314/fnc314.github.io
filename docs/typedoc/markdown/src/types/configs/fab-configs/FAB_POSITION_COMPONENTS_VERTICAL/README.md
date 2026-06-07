@@ -19,6 +19,7 @@ The vertical position of a given [@material/web!MdFab](https://github.com/materi
 <tr>
 <th>Name</th>
 <th>Type</th>
+<th>Description</th>
 <th>Defined in</th>
 </tr>
 </thead>
@@ -36,7 +37,12 @@ The vertical position of a given [@material/web!MdFab](https://github.com/materi
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:9](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L9)
+AUTO-DOC'd WITH GEMINI: Top vertical position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:10](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L10)
 
 </td>
 </tr>
@@ -53,7 +59,12 @@ The vertical position of a given [@material/web!MdFab](https://github.com/materi
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:10](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L10)
+AUTO-DOC'd WITH GEMINI: Bottom vertical position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:12](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L12)
 
 </td>
 </tr>

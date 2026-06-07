@@ -8,7 +8,7 @@
 
 &gt; `const` **FabPositionIcons**: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;`FabPosition`, [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&gt;
 
-Defined in: [src/types/configs/fab-configs.ts:64](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L64)
+Defined in: [src/types/configs/fab-configs.ts:72](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L72)
 
 Maps [FAB_POSITION](../FAB_POSITION/README.md) to a particular [@material/web!MdFab](https://github.com/material-components/material-web/tree/main/docs/components/fab.md)
 

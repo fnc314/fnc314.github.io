@@ -17,12 +17,12 @@ import { customElement, state } from "lit/decorators.js";
  *   Handles theme switching and navigation slotting.
  *   Uses Material Design 3 tokens and components.
  *
- * @slot [app-nav] - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed
+ * @slot [app-nav] - Where the navigation component is placed
  * @slot [app-content] - The place for the dynamic application content
  */
 @customElement("app-shell")
 export class AppShell extends LitElement {
-  /** {@link lit!css} */
+  /** {@link https://lit.dev/docs/components/styles/#styles | lit css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`
@@ -111,9 +111,8 @@ export class AppShell extends LitElement {
 
   /**
    * Syncs the component state with the global application configuration.
-   * @param _event - AppConfigsChange event.
    */
-  private onAppConfigsChange = (_event: Event) => {};
+  private onAppConfigsChange = () => {};
 
   override connectedCallback() {
     super.connectedCallback();

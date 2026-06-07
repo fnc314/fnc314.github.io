@@ -73,7 +73,7 @@ export type ThemeJsonSchemes=Record<MaterialSchemeNames, Record<ColorSchemeRoles
 
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
- * @param json - Input of an {@link unknown} type, ideally conforming to a Material 3 JSON scheme
+ * @param json - Input of an unknown type, ideally conforming to a Material 3 JSON scheme
  * @returns A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}
  */
 export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
@@ -154,7 +154,7 @@ export const readScheme=(jsonSchema: object) => css`
 
 /**
  * Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property
- *   via {@link css} and {@link unsafeCSS} functions
+ *   via {@link lit!css} and {@link lit!unsafeCSS} functions
  * @param jsonKey - The key from the JSON scheme, e.g., "primaryContainer"
  * @param rgb - The RGB color value from the JSON scheme, e.g., "#FF0000"
  * @returns {@link CSSResult} - A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"

@@ -20,32 +20,36 @@ const tsRules = {
 };
 
 const ignores = [
-  path.join(rootDir, ".config/**/*.*"),
-  path.join(rootDir, ".env/**/*.*"),
-  path.join(rootDir, ".firebase/**/*.*"),
-  path.join(rootDir, ".gemini/**/*.*"),
-  path.join(rootDir, ".git/**/*.*"),
-  path.join(rootDir, ".github/**/*.*"),
-  path.join(rootDir, ".idea/**/*.*"),
-  path.join(rootDir, ".mise/**/*.*"),
-  path.join(rootDir, ".pnpm-store/**/*.*"),
-  path.join(rootDir, ".vscode/**/*.*"),
-  path.join(rootDir, ".well-known/**/*.*"),
-  path.join(rootDir, "bin/**/*.*"),
-  path.join(rootDir, "changes/**/*.*"),
-  path.join(rootDir, "design-tokens/**/*.*"),
-  path.join(rootDir, "docs/**/*.*"),
-  path.join(rootDir, "dist/**/*.*"),
-  path.join(rootDir, "firebase/**/*.*"),
-  path.join(rootDir, "functions/**/*.*"),
-  path.join(rootDir, "logs/**/*.*"),
-  path.join(rootDir, "node_modules/**/*.*"),
-  path.join(rootDir, "static/**/*.*"),
-  path.join(rootDir, "stats/**/*.*"),
-  path.join(rootDir, "**/*.html"),
+  ".config/**/*",
+  ".env/**/*",
+  ".firebase/**/*",
+  ".gemini/**/*",
+  ".git/**/*",
+  ".github/**/*",
+  ".idea/**/*",
+  ".mise/**/*",
+  ".pnpm-store/**/*",
+  ".vscode/**/*",
+  ".well-known/**/*",
+  "bin/**/*",
+  "changes/**/*",
+  "design-tokens/**/*",
+  "docs/**/*",
+  "dist/**/*",
+  "firebase/**/*",
+  "functions/**/*",
+  "logs/**/*",
+  "node_modules/**/*",
+  "static/**/*",
+  "stats/**/*",
+  "**/*.html",
 ];
 
 export default defineConfig([
+  {
+    name: "app/global-ignores-strict",
+    ignores: [".config/**/*"],
+  },
   {
     name: "app/typescript",
     plugins: {
@@ -56,7 +60,8 @@ export default defineConfig([
     },
     basePath: rootDir,
     files: [
-      path.join(rootDir, "src/**/*.ts"),
+      "src/**/*.ts",
+      "!src/**/*.test.ts",
     ],
     ignores,
     languageOptions: {
@@ -77,21 +82,87 @@ export default defineConfig([
     },
     rules: {
       ...tsRules,
-      "tsdoc/syntax": "warn",
+      "tsdoc/syntax": "warn", // Re-enable tsdoc/syntax
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^(HTMLElementTagNameMap)$",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
     },
     settings: {
       lit: {
         elementBaseClasses: ["ClassExtendingLitElement"], // Recognize `ClassExtendingLitElement` as a sub-class of LitElement
       },
+      tsdoc: {
+        tagDefinitions: [
+          {
+            tagName: "@slot",
+            syntaxKind: "block",
+            allowMultiple: true,
+          },
+        ],
+      },
     },
-  },
-  {
+    },
+    {
+    name: "app/typescript/tests",
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+      wc,
+      lit,
+      tsdoc,
+    },
+    files: [
+      "src/**/*.test.ts",
+    ],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: ["./tsconfig.json"],
+        tsconfigRootDir: rootDir,
+        projectServices: true,
+      },
+      globals: {
+        ...globals.mocha,
+      },
+    },
+    rules: {
+      ...tsRules,
+      "tsdoc/syntax": "warn", // Re-enable tsdoc/syntax
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
+    settings: {
+      lit: {
+        elementBaseClasses: ["ClassExtendingLitElement"],
+      },
+    },
+    },
+    {
     name: "app/global-ignores",
     ignores: [
-      path.join(rootDir, "jsconfig.json"),
-      path.join(rootDir, "manifest.json"),
-      path.join(rootDir, "dist/"),
-      path.join(rootDir, "docs/"),
+      "jsconfig.json",
+      "manifest.json",
+      "dist/",
+      "docs/",
+      "eleventy.config.js",
+      "postcss.config.mjs",
+      "prettier.config.mts",
+      "rollup.config.ts",
+      "stylelint.config.ts",
+      "vite.config.ts",
+      "typedoc.config.mjs",
       ...ignores,
     ],
   },

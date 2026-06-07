@@ -8,13 +8,15 @@
 
 &gt; `const` **readBreakpoint**: () =&gt; [`Breakpoint`](../Breakpoint/README.md)
 
-Defined in: [src/styles/breakpoints.ts:18](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L18)
+Defined in: [src/styles/breakpoints.ts:14](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/styles/breakpoints.ts#L14)
 
-Reads from window the current value of --breakpoint-label
+Reads from `window` the current value of `--breakpoint-label`
 CSS `@property`
 
 ## Returns
 
 [`Breakpoint`](../Breakpoint/README.md)
+
+The current [Breakpoint](../Breakpoint/README.md)
 
 </body></html>

@@ -39,6 +39,7 @@ import { classMap } from "lit/directives/class-map.js";
  */
 @customElement("ui-mode-toggle")
 export class UiModeToggle extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

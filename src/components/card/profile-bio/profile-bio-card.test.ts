@@ -22,7 +22,7 @@ describe("ProfileBioCard Component", () => {
 
   beforeEach(async () => {
     // Mock themeService to return a consistent themePhoto
-    themeService.currentThemeConfig = (this: void) => ({
+    themeService.currentThemeConfig = () => ({
       themePhoto: mockThemePhoto,
       materialSchemes: {}, // Not relevant for this test
     });

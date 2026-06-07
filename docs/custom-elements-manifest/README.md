@@ -10,10 +10,10 @@
 
 ### Slots
 
-| Name          | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| `app-content` | The place for the dynamic application content                       |
-| `app-nav`     | Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed |
+| Name          | Description                                                                  |
+| ------------- | ---------------------------------------------------------------------------- |
+| `app-content` | The place for the dynamic application content                                |
+| `app-nav`     | Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed |
 
 <details><summary>Private API</summary>
 

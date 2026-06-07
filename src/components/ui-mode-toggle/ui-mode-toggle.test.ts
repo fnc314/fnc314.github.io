@@ -10,7 +10,7 @@ import type { ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mod
 describe("UiModeToggle Component", () => {
   let element: UiModeToggle;
   let originalLoadConfigs: () => AppConfigs;
-  let originalSaveConfigs: (configs: AppConfigs) => void;
+  let originalSaveConfigs: (_configs: AppConfigs) => void;
   let originalCurrentThemeConfig: () => any;
 
   const mockAppConfigs: AppConfigs = {

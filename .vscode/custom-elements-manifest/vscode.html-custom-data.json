@@ -4,7 +4,7 @@
   "tags": [
     {
       "name": "app-shell",
-      "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
+      "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed",
       "attributes": [],
       "references": []
     },

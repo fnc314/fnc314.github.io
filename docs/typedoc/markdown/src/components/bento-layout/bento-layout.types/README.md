@@ -9,11 +9,11 @@
 ## Interfaces
 
 - [GridPlacement](GridPlacement/README.md)
-- [GridPosition](GridPosition/README.md)
 - [BentoBoxConfig](BentoBoxConfig/README.md)
 
 ## Type Aliases
 
+- [GridPosition](GridPosition/README.md)
 - [BentoBoxType](BentoBoxType/README.md)
 
 ## Variables

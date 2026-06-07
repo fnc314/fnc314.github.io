@@ -3,7 +3,7 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-export type { Job, WorkDate } from "@/components/work-experience/work-experience.types";
+export { type Job, type WorkDate } from "@/components/work-experience/work-experience.types";
 
 /**
  * @summary A component for displaying professional work experience entries.  Supports nesting
@@ -216,9 +216,19 @@ export class WorkExperience extends LitElement {
   @property({ type: Object, attribute: "date-end" })
   dateEnd: WorkDate = { stamp: "", text: "" };
 
-  /** A list of summary points describing achievements or responsibilities. */
+  /** 
+   * A list of summary points describing achievements or responsibilities. 
+   * @typedef {Object} WorkExperienceSummaryItem
+   * @property {string} item - The summary text
+   */
   @property({ type: Array, attribute: "summaries" })
-  summaries: { item: string }[] = [];
+  summaries: { 
+    /** 
+     * AUTO-DOC'd WITH GEMINI
+     * The description of the responsibility or achievement.
+     */
+    item: string 
+  }[] = [];
 
   /** A list of sub-jobs or project assignments to be rendered as nested experiences. */
   @property({ type: Array, attribute: "jobs" })

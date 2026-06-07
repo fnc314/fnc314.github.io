@@ -13,6 +13,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  */
 @customElement("profile-bio-card")
 export class ProfileBioCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     css`

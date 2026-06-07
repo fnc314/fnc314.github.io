@@ -192,7 +192,7 @@ The employer formal name
 </td>
 <td>
 
-`WorkDate`
+[`WorkDate`](#)
 
 </td>
 <td>
@@ -202,7 +202,7 @@ The employer formal name
 </td>
 <td>
 
-A WorkDate instance describing employment start date
+A [WorkDate](#) instance describing employment start date
 
 </td>
 <td>
@@ -229,7 +229,7 @@ A WorkDate instance describing employment start date
 </td>
 <td>
 
-`WorkDate`
+[`WorkDate`](#)
 
 </td>
 <td>
@@ -239,7 +239,7 @@ A WorkDate instance describing employment start date
 </td>
 <td>
 
-A WorkDate instance describing employment end date
+A [WorkDate](#) instance describing employment end date
 
 </td>
 <td>
@@ -286,7 +286,7 @@ An array of `{ item: string }` objects describing the responsibilities
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:221](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L221)
+[src/components/work-experience/work-experience.ts:225](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L225)
 
 </td>
 </tr>
@@ -303,7 +303,7 @@ An array of `{ item: string }` objects describing the responsibilities
 </td>
 <td>
 
-`Job`[]
+[`Job`](#)[]
 
 </td>
 <td>
@@ -313,7 +313,7 @@ An array of `{ item: string }` objects describing the responsibilities
 </td>
 <td>
 
-An array of Jobs rendered as nested WorkExperience instances
+An array of [Job](#)s rendered as nested WorkExperience instances
 
 </td>
 <td>
@@ -323,7 +323,7 @@ An array of Jobs rendered as nested WorkExperience instances
 </td>
 <td>
 
-[src/components/work-experience/work-experience.ts:225](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L225)
+[src/components/work-experience/work-experience.ts:235](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L235)
 
 </td>
 </tr>
@@ -336,7 +336,7 @@ An array of Jobs rendered as nested WorkExperience instances
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/work-experience/work-experience.ts:228](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L228)
+Defined in: [src/components/work-experience/work-experience.ts:238](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/work-experience/work-experience.ts#L238)
 
 Renders the experience entry, conditionally applying styles based on nesting level.
 

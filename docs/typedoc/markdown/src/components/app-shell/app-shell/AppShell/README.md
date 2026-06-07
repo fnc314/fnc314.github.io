@@ -10,7 +10,7 @@ Defined in: [src/components/app-shell/app-shell.ts:24](https://github.com/fnc314
 
 ## Slot
 
-[app-nav] - Where the [@fnc314/com.fnc314.website!NavComponent](/Users/fnc314/Code/websites/fnc314.github.io/src/components/nav/nav-component.ts) is placed
+[app-nav] - Where the navigation component is placed
 
 ## Slot
 
@@ -32,7 +32,7 @@ Defined in: [src/components/app-shell/app-shell.ts:24](https://github.com/fnc314
 
 Defined in: [src/components/app-shell/app-shell.ts:26](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L26)
 
-[lit!css](https://lit.dev/docs/api/styles/#css)
+[lit css](https://lit.dev/docs/components/styles/#styles)
 
 #### Overrides
 
@@ -44,7 +44,7 @@ Defined in: [src/components/app-shell/app-shell.ts:26](https://github.com/fnc314
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/app-shell/app-shell.ts:146](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L146)
+Defined in: [src/components/app-shell/app-shell.ts:145](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L145)
 
 Renders the application shell.
 Includes navigation and content slots.
@@ -150,42 +150,11 @@ The color scheme configuration change event.
 
 ### onAppConfigsChange()
 
-&gt; `private` **onAppConfigsChange**(`_event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`
+&gt; `private` **onAppConfigsChange**(): `void`
 
-Defined in: [src/components/app-shell/app-shell.ts:116](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L116)
+Defined in: [src/components/app-shell/app-shell.ts:115](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L115)
 
 Syncs the component state with the global application configuration.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`_event`
-
-</td>
-<td>
-
-[`Event`](https://developer.mozilla.org/docs/Web/API/Event)
-
-</td>
-<td>
-
-AppConfigsChange event.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 #### Returns
 
@@ -197,7 +166,7 @@ AppConfigsChange event.
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/app-shell/app-shell.ts:118](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L118)
+Defined in: [src/components/app-shell/app-shell.ts:117](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L117)
 
 Invoked when the component is added to the document's DOM.
 
@@ -230,7 +199,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/app-shell/app-shell.ts:135](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L135)
+Defined in: [src/components/app-shell/app-shell.ts:134](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/app-shell/app-shell.ts#L134)
 
 Invoked when the component is removed from the document's DOM.
 

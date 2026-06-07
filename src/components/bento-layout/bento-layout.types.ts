@@ -1,10 +1,10 @@
 import { type Breakpoint } from "@/styles/breakpoints";
 
 /**
- * Defines the 2 {@link number}s needed to place something
+ * Defines the 2 numbers needed to place something
  *   on a `grid`
  *
- * @interface GridPlacement
+ * @typedef GridPlacement
  */
 export interface GridPlacement {
   start: number;
@@ -12,18 +12,24 @@ export interface GridPlacement {
 }
 
 /**
- * A pair of {@link GridPlacement}s for the {@link row} and {@link column}
+ * A pair of {@link GridPlacement}s for the row and column
  *   dimensions
  *
- * @interface GridPosition
- * @typedef {GridPosition}
+ * @typedef GridPosition
  */
 export type GridPosition = {
+  /** The breakpoint for this position */
   breakpoint: Omit<Breakpoint, "mobile">;
+  /** The row placement */
   row: GridPlacement;
+  /** The column placement */
   column: GridPlacement;
+  /** The grid area string */
   area?: string;
-} | { breakpoint: "mobile" }
+} | { 
+  /** The breakpoint for this position */
+  breakpoint: "mobile" 
+}
 
 /**
  * The finite `bento-box` instances
@@ -46,8 +52,8 @@ export interface BentoBoxConfig {
 }
 
 /**
- * Produces an {@link Array} of {@link BentoBoxConfig} instances used to populate
- *   {@link BentoLayout}.
+ * Produces an Array of {@link BentoBoxConfig} instances used to populate
+ *   {@link @fnc314/fnc314.github.io!BentoLayout}.
  *
  * @type {BentoBoxConfig[]}
  */

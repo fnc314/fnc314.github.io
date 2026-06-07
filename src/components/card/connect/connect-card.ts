@@ -12,6 +12,7 @@ import { connectCardStyles } from "./connect-card.styles";
  */
 @customElement("connect-card")
 export class ConnectCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [connectCardStyles];
 
   @property({ type: Boolean })

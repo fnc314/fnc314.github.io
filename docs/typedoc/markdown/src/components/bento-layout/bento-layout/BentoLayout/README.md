@@ -20,13 +20,27 @@ bento-layout
 
 - [`LitElement`](https://lit.dev/docs/api/LitElement/)
 
+## Other
+
+### styles
+
+&gt; `static` **styles**: `CSSResult`[]
+
+Defined in: [src/components/bento-layout/bento-layout.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L31)
+
+[lit!css](https://lit.dev/docs/api/styles/#css)
+
+#### Overrides
+
+`LitElement.styles`
+
 ## lifecycle
 
 ### connectedCallback()
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L41)
+Defined in: [src/components/bento-layout/bento-layout.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L42)
 
 Invoked when the component is added to the document's DOM.
 
@@ -59,7 +73,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:87](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L87)
+Defined in: [src/components/bento-layout/bento-layout.ts:88](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L88)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -91,7 +105,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/bento-layout/bento-layout.ts:142](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L142)
+Defined in: [src/components/bento-layout/bento-layout.ts:143](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L143)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -106,50 +120,13 @@ the element to update.
 
 `LitElement.render`
 
-## styles
-
-### styles
-
-&gt; `static` **styles**: `CSSResult`[]
-
-Defined in: [src/components/bento-layout/bento-layout.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L30)
-
-Array of styles to apply to the element. The styles should be defined
-using the css tag function, via constructible stylesheets, or
-imported from native CSS module scripts.
-
-Note on Content Security Policy:
-
-Element styles are implemented with `<style>` tags when the browser doesn't
-support adopted StyleSheets. To use such `<style>` tags with the style-src
-CSP directive, the style-src value must either include 'unsafe-inline' or
-`nonce-<base64-value>` with `<base64-value>` replaced be a server-generated
-nonce.
-
-To provide a nonce to use on generated `<style>` elements, set
-`window.litNonce` to a server-generated nonce in your page's HTML, before
-loading application code:
-
-```html
-<script>
-  // Generated and unique per request:
-  window.litNonce = "a1b2c3d4";
-</script>
-```
-
-#### Nocollapse
-
-#### Overrides
-
-`LitElement.styles`
-
 ## updates
 
 ### firstUpdated()
 
-> `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>): `void`
+&gt; `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:45](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L45)
+Defined in: [src/components/bento-layout/bento-layout.ts:46](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L46)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.
@@ -182,7 +159,7 @@ again after this update cycle completes.
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 <td>
@@ -201,4 +178,5 @@ Map of changed properties with old values
 #### Overrides
 
 `LitElement.firstUpdated`
-</style></body></html>
+
+</body></html>

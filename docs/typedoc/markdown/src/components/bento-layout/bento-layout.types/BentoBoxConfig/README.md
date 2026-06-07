@@ -6,7 +6,7 @@
 
 # Interface: BentoBoxConfig
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L42)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L48)
 
 Defines the [BentoBoxType](../BentoBoxType/README.md) coupled with a [GridPosition](../GridPosition/README.md) used
 to place a particular `bento-box`.

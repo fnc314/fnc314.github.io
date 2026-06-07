@@ -80,7 +80,7 @@ Defined in: [src/components/word/word-cloud/word-cloud.ts:43](https://github.com
 
 ### words
 
-&gt; **words**: `WordCloudWord`[] = `[]`
+&gt; **words**: [`WordCloudWord`](#)[] = `[]`
 
 Defined in: [src/components/word/word-cloud/word-cloud.ts:211](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/word-cloud/word-cloud.ts#L211)
 

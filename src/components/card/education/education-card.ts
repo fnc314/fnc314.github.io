@@ -11,6 +11,7 @@ import { educationCardStyles } from "./education-card.styles";
  */
 @customElement("education-card")
 export class EducationCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [educationCardStyles];
 
   @property({ type: Boolean })

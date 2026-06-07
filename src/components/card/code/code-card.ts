@@ -12,6 +12,7 @@ import { codeCardStyles } from "./code-card.styles";
  */
 @customElement("code-card")
 export class CodeCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [codeCardStyles];
 
   @property({ type: Boolean })

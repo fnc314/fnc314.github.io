@@ -8,10 +8,10 @@
 
 &gt; `const` **BentoBoxConfigs**: () =&gt; [`BentoBoxConfig`](../BentoBoxConfig/README.md)[]
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L54)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:60](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L60)
 
-Produces an [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) of [BentoBoxConfig](../BentoBoxConfig/README.md) instances used to populate
-BentoLayout.
+Produces an Array of [BentoBoxConfig](../BentoBoxConfig/README.md) instances used to populate
+[@fnc314/fnc314.github.io!BentoLayout](/Users/fnc314/Code/websites/fnc314.github.io/src/components/bento-layout/bento-layout.ts).
 
 ## Returns
 

@@ -12,6 +12,7 @@ import { workCardStyles } from "./work-card.styles";
  */
 @customElement("work-card")
 export class WorkCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [workCardStyles];
 
   @property({ type: Boolean })

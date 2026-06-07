@@ -13,6 +13,7 @@ import { blogCardStyles } from "./blog-card.styles";
  */
 @customElement("blog-card")
 export class BlogCard extends LitElement {
+  /** {@link lit!css} */
   static override styles = [blogCardStyles];
 
   @property({ type: Boolean })

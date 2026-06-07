@@ -175,12 +175,6 @@
                         "isDeprecated": false
                       },
                       {
-                        "title": "GridPosition",
-                        "kind": 256,
-                        "path": "src/components/bento-layout/bento-layout.types/GridPosition/README.md",
-                        "isDeprecated": false
-                      },
-                      {
                         "title": "BentoBoxConfig",
                         "kind": 256,
                         "path": "src/components/bento-layout/bento-layout.types/BentoBoxConfig/README.md",
@@ -191,6 +185,12 @@
                   {
                     "title": "Type Aliases",
                     "children": [
+                      {
+                        "title": "GridPosition",
+                        "kind": 2097152,
+                        "path": "src/components/bento-layout/bento-layout.types/GridPosition/README.md",
+                        "isDeprecated": false
+                      },
                       {
                         "title": "BentoBoxType",
                         "kind": 2097152,

@@ -8,7 +8,7 @@
 
 &gt; `const` **FAB_POSITION_COMPONENTS_HORIZONTAL**: \{ `START`: `"START"`; `END`: `"END"`; \}
 
-Defined in: [src/types/configs/fab-configs.ts:18](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L18)
+Defined in: [src/types/configs/fab-configs.ts:20](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L20)
 
 The hotizontal position of a given [@material/web!MdFab](https://github.com/material-components/material-web/tree/main/docs/components/fab.md)
 
@@ -19,6 +19,7 @@ The hotizontal position of a given [@material/web!MdFab](https://github.com/mate
 <tr>
 <th>Name</th>
 <th>Type</th>
+<th>Description</th>
 <th>Defined in</th>
 </tr>
 </thead>
@@ -36,7 +37,12 @@ The hotizontal position of a given [@material/web!MdFab](https://github.com/mate
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:19](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L19)
+AUTO-DOC'd WITH GEMINI: Start horizontal position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L22)
 
 </td>
 </tr>
@@ -53,7 +59,12 @@ The hotizontal position of a given [@material/web!MdFab](https://github.com/mate
 </td>
 <td>
 
-[src/types/configs/fab-configs.ts:20](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L20)
+AUTO-DOC'd WITH GEMINI: End horizontal position
+
+</td>
+<td>
+
+[src/types/configs/fab-configs.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/configs/fab-configs.ts#L24)
 
 </td>
 </tr>

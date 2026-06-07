@@ -27,6 +27,7 @@ import "@/components/card/work/work-card";
  */
 @customElement("bento-layout")
 export class BentoLayout extends LitElement {
+  /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
     bentoLayoutStyles,

@@ -47,6 +47,6 @@ Input of an unknown type, ideally conforming to a Material 3 JSON scheme
 
 `json is ThemeJsonSchemes`
 
-A boolean indicating whether the input JSON matches the expected structure of ThemeJsonSchemes
+A boolean indicating whether the input JSON matches the expected structure of [ThemeJsonSchemes](#)
 
 </body></html>
