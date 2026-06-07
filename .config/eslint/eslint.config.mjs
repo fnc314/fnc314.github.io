@@ -1,34 +1,68 @@
 import eslint from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import parser from "@typescript-eslint/parser";
 import lit from "eslint-plugin-lit";
 import tsdoc from "eslint-plugin-tsdoc";
 import wc from "eslint-plugin-wc";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import tseslint from "typescript-eslint";
-import { fileURLToPath } from "url";
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, "../../");
 
 /** @type {Record<string, any>} */
 const tsRules = {
-  ...(tsPlugin.configs.recommended?.rules ?? {}),
-  ...(tsPlugin.configs["recommended-requiring-type-checking"]?.rules ?? {}),
-  ...(tsPlugin.configs.stylistic?.rules ?? {}),
-  ...(tsPlugin.configs["stylistic-type-checked"]?.rules ?? {}),
-  ...(Array.isArray(wc.configs?.["flat/recommended"])
-    ? wc.configs["flat/recommended"][0]?.rules
-    : wc.configs?.["flat/recommended"]?.rules),
-  ...(Array.isArray(lit.configs?.["flat/recommended"])
-    ? lit.configs["flat/recommended"][0]?.rules
-    : lit.configs?.["flat/recommended"]?.rules),
+  ...tseslint.configs.recommendedTypeChecked.find(c => c.rules)?.rules,
+  ...tseslint.configs.stylisticTypeChecked.find(c => c.rules)?.rules,
+  ...wc.configs["flat/recommended"].rules,
+  ...lit.configs["flat/recommended"].rules,
 };
+
+const ignores = [
+  path.join(rootDir, ".config/"),
+  path.join(rootDir, ".env/"),
+  path.join(rootDir, ".firebase/"),
+  path.join(rootDir, ".gemini/"),
+  path.join(rootDir, ".git/"),
+  path.join(rootDir, ".github/"),
+  path.join(rootDir, ".idea/"),
+  path.join(rootDir, ".mise/"),
+  path.join(rootDir, ".pnpm-store/"),
+  path.join(rootDir, ".vscode/"),
+  path.join(rootDir, ".well-known/"),
+  path.join(rootDir, "bin/"),
+  path.join(rootDir, "changes/"),
+  path.join(rootDir, "design-tokens/"),
+  path.join(rootDir, "docs/"),
+  path.join(rootDir, "dist/"),
+  path.join(rootDir, "firebase/"),
+  path.join(rootDir, "functions/"),
+  path.join(rootDir, "logs/"),
+  path.join(rootDir, "node_modules/"),
+  path.join(rootDir, "static/"),
+  path.join(rootDir, "stats/"),
+  path.join(rootDir, "**/*.html"),
+];
+
+console.error(
+  `
+  __dirname ${__dirname}
+  rootDir ${rootDir}
+  ignores ${JSON.stringify({ ignores }, null, 2)}
+  `
+)
 
 export default defineConfig([
   {
     name: "app/global-ignores",
-    ignores: ["jsconfig.json", "manifest.json", "dist/", "docs/"],
+    ignores: [
+      path.join(rootDir, "jsconfig.json"),
+      path.join(rootDir, "manifest.json"),
+      path.join(rootDir, "dist/"),
+      path.join(rootDir, "docs/"),
+      ...ignores,
+    ],
   },
   {
     name: "app/js-recommended",
@@ -38,6 +72,7 @@ export default defineConfig([
         ...globals.browser,
       },
     },
+    ignores,
   },
   {
     name: "app/typescript",
@@ -48,20 +83,24 @@ export default defineConfig([
       tsdoc,
     },
     files: [
-      "./src/**/*.ts",
+      path.join(rootDir, "src/**/*.ts"),
     ],
+    ignores,
     languageOptions: {
-      parser: parser,
+      parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: "./tsconfig.json",
-        tsconfigRootDir: __dirname,
+        project: [path.resolve(rootDir, "tsconfig.json")],
+        tsconfigRootDir: rootDir,
         projectServices: true,
       },
       globals: {
         ...globals.browser,
       },
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
     },
     rules: {
       ...tsRules,
@@ -75,7 +114,11 @@ export default defineConfig([
   },
   {
     name: "app/javascript-overrides",
-    files: ["**/*.js", "**/*.mjs"],
+    files: [
+      path.join(rootDir, "**/*.js"),
+      path.join(rootDir, "**/*.mjs"),
+    ],
+    ignores,
     languageOptions: {
       parserOptions: {
         ecmaVersion: "latest",

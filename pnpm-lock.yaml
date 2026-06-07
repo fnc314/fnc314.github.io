@@ -266,6 +266,9 @@ catalogs:
     eslint-config-google:
       specifier: 0.14.0
       version: 0.14.0
+    eslint-formatter-html:
+      specifier: 2.7.3
+      version: 2.7.3
     eslint-plugin-import:
       specifier: 2.32.0
       version: 2.32.0
@@ -713,6 +716,9 @@ importers:
       eslint:
         specifier: catalog:devDependencies
         version: 10.4.1(@types/eslint@9.6.1)(jiti@2.7.0)
+      eslint-formatter-html:
+        specifier: catalog:devDependencies
+        version: 2.7.3
       eslint-plugin-json-schema-validator:
         specifier: catalog:devDependencies
         version: 6.2.0(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))
@@ -5059,6 +5065,10 @@ packages:
     resolution: {integrity: sha512-TIGnTpdo+E3+pCyAluZvtED5p5wCqLdezCyhPZzKPcxvFplEt4i+W7OONCKgeZFT3+y5NZZfOOS/Bdcanm1MYA==}
     engines: {node: '>=0.10.0'}
 
+  ansi-regex@4.1.1:
+    resolution: {integrity: sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==}
+    engines: {node: '>=6'}
+
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
@@ -6287,6 +6297,9 @@ packages:
     engines: {node: '>=0.10.0'}
     peerDependencies:
       eslint: '>=5.16.0'
+
+  eslint-formatter-html@2.7.3:
+    resolution: {integrity: sha512-MZMUIM6Ok0HlZKJW4ZIdH+36LWTstvhdquGdzsM7jKNJPC2COwDhtd5jjdpe5/XsLzO3v4CAuJO0bHIMznKf8w==}
 
   eslint-import-resolver-node@0.3.10:
     resolution: {integrity: sha512-tRrKqFyCaKict5hOd244sL6EQFNycnMQnBe+j8uqGNXYzsImGbGUU4ibtoaBmv5FLwJwcFJNeg1GeVjQfbMrDQ==}
@@ -8643,6 +8656,9 @@ packages:
   package-manager-detector@1.6.0:
     resolution: {integrity: sha512-61A5ThoTiDG/C8s8UMZwSorAGwMJ0ERVGj2OjoW5pAalsNOg15+iQiPzrLJ4jhZ1HJzmC2PIHT2oEiH3R5fzNA==}
 
+  pako@2.1.0:
+    resolution: {integrity: sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==}
+
   param-case@3.0.4:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
 
@@ -9704,6 +9720,10 @@ packages:
   strip-ansi@3.0.1:
     resolution: {integrity: sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==}
     engines: {node: '>=0.10.0'}
+
+  strip-ansi@5.2.0:
+    resolution: {integrity: sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==}
+    engines: {node: '>=6'}
 
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
@@ -15412,6 +15432,8 @@ snapshots:
 
   ansi-regex@2.1.1: {}
 
+  ansi-regex@4.1.1: {}
+
   ansi-regex@5.0.1: {}
 
   ansi-regex@6.2.2: {}
@@ -16824,6 +16846,11 @@ snapshots:
   eslint-config-google@0.14.0(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0)):
     dependencies:
       eslint: 10.4.1(@types/eslint@9.6.1)(jiti@2.7.0)
+
+  eslint-formatter-html@2.7.3:
+    dependencies:
+      pako: 2.1.0
+      strip-ansi: 5.2.0
 
   eslint-import-resolver-node@0.3.10:
     dependencies:
@@ -19782,6 +19809,8 @@ snapshots:
 
   package-manager-detector@1.6.0: {}
 
+  pako@2.1.0: {}
+
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
@@ -21094,6 +21123,10 @@ snapshots:
   strip-ansi@3.0.1:
     dependencies:
       ansi-regex: 2.1.1
+
+  strip-ansi@5.2.0:
+    dependencies:
+      ansi-regex: 4.1.1
 
   strip-ansi@6.0.1:
     dependencies:

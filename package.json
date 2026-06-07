@@ -16,7 +16,11 @@
   "customElements": "docs/custom-elements-manifest/custom-elements.json",
   "web-types": "./.idea/web-types.json",
   "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
-  "keywords": ["website", "homepage", "fnc314"],
+  "keywords": [
+    "website",
+    "homepage",
+    "fnc314"
+  ],
   "bugs": {
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
@@ -26,21 +30,14 @@
   },
   "scripts": {
     "@pwrs:cem:generate": "NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -v",
-    "build": "pnpm rollup --config ./.config/rollup/rollup.config.ts --configPlugin @rollup/plugin-typescript $ROLLUP_FLAGS",
-    "build:dev": "NODE_ENV=development pnpm run build",
-    "build:tsc": "pnpm tsc",
-    "build:tsc:watch": "pnpm tsc --watch",
-    "build:website": "NODE_ENV=development pnpm run build",
-    "build:website:prod": "NODE_ENV=production pnpm run build",
-    "build:website:watch": "NODE_ENV=development ROLLUP_FLAGS=\"--watch --logLevel debug\" pnpm run build",
-    "build:website:watch:prod": "NODE_ENV=production ROLLUP_FLAGS=\"--watch --logLevel debug\" pnpm run build",
-    "checksize": "pnpm run build | gzip -9 | wc -c ;",
+    "build:vite": "mise run vite:build:development",
+    "build:vite:dev": "mise run vite:build:development",
+    "build:vite:prod": "mise run vite:build:production",
     "cem-analyze": "NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs",
     "cem-analyze:watch": "NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs --watch",
-    "deploy": "rm -rfv website && pnpm run build:website:prod",
-    "deploy:test": "ROLLUP_FLAGS=\"--logLevel debug\" pnpm run deploy",
     "dx:@pwrs:cem:generate": "pnpm run @pwrs:cem:generate",
     "dx:cem-analyze": "pnpm run cem-analyze",
+    "dx:refresh": "mise run dev-ex:refresh",
     "dx:typedoc": "pnpm run typedoc:gen",
     "dx:wca": "pnpm run wca:json:file && pnpm run wca:json:files && pnpm run wca:markdown:file && pnpm run wca:markdown:files && pnpm run wca:vscode",
     "format": "pnpm prettier \"./src/**/*.{css,html,js,json,ts}\" --ignore-path ./.config/prettier/.prettierignore --write --config ./.config/prettier/prettier.config.mts",
@@ -48,10 +45,10 @@
     "lint:eslint": "pnpm eslint 'src/**/*.ts' -c ./.config/eslint/eslint.config.mjs",
     "lint:eslint:fix": "pnpm eslint 'src/**/*.ts' --fix -c ./.config/eslint/eslint.config.mjs",
     "lint:lit-analyzer": "pnpm lit-analyzer",
-    "prettier": "pnpm prettier . --config ./.config/prettier/prettier.config.mts",
-    "prettier:check": "pnpm prettier . --check --config ./.config/prettier/prettier.config.mts",
-    "prettier:check:debug": "pnpm prettier . --log-level debug --debug-check --config ./.config/prettier/prettier.config.mts",
-    "prettier:write": "pnpm prettier . --write --config ./.config/prettier/prettier.config.mts",
+    "prettier": "pnpm prettier . --config ./.config/prettier/prettier.config.mts --ignore-path ./.config/prettier/.prettierignore",
+    "prettier:check": "pnpm prettier . --check --config ./.config/prettier/prettier.config.mts --ignore-path ./.config/prettier/.prettierignore",
+    "prettier:check:debug": "pnpm prettier . --log-level debug --debug-check --config ./.config/prettier/prettier.config.mts --ignore-path ./.config/prettier/.prettierignore",
+    "prettier:write": "pnpm prettier . --write --config ./.config/prettier/prettier.config.mts --ignore-path ./.config/prettier/.prettierignore",
     "serve": "pnpm wds -c ./.config/web-dev-server/web-dev-server.config.mjs",
     "serve:prod": "MODE=prod pnpm run serve -- -c ./.config/web-dev-server/web-dev-server.config.prod.mjs",
     "stylelint:config:inspector": "pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.ts",
@@ -68,6 +65,7 @@
     "wca:vscode": "pnpm web-component-analyzer src/{components,partials,themes,types}/**/*.ts --outDir .vscode/wca --format vscode"
   },
   "dependencies": {
+    "@fnc314/design-tokens": "catalog:projects",
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",
@@ -79,8 +77,7 @@
     "lit": "catalog:dependencies",
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
-    "material-symbols": "catalog:dependencies",
-    "@fnc314/design-tokens": "catalog:projects"
+    "material-symbols": "catalog:dependencies"
   },
   "devDependencies": {
     "@addasoft/skeleton-component-generator": "catalog:devDependencies",
@@ -147,6 +144,7 @@
     "diff": "catalog:devDependencies",
     "esbuild": "catalog:devDependencies",
     "eslint": "catalog:devDependencies",
+    "eslint-formatter-html": "catalog:devDependencies",
     "eslint-plugin-json-schema-validator": "catalog:devDependencies",
     "eslint-plugin-lit": "catalog:devDependencies",
     "eslint-plugin-lit-a11y": "catalog:devDependencies",

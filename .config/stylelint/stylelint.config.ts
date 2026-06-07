@@ -2,32 +2,12 @@ import { type Config } from "stylelint";
 
 const config: Config = {
   defaultSeverity: "warning",
+  formatter: "verbose",
   extends: [
     "stylelint-config-standard",
     "stylelint-config-alphabetical-order",
     "stylelint-plugin-rhythmguard/configs/strict",
     "stylelint-prettier/recommended",
-  ],
-  ignoreFiles: [
-    ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
-    ".config/tailwind/*.ts",
-    ".gemini/*",
-    ".github/*",
-    ".idea/**/*",
-    ".vscode/*",
-    ".well-known/*",
-    "dist/**/*.{ts,js,css}",
-    "docs/**/*.{ts,js,css}",
-    "node_modules/**/*",
-    "eleventy.config.js",
-    "eslint.config.mjs",
-    "postcss.config.mjs",
-    "prettier.config.mts",
-    "rollup.config.ts",
-    "stylelint.config.ts",
-    "vite.config.ts",
-    "website/**/*.ts",
-    "src/**/*.d.ts",
   ],
   languageOptions: {
     directionality: {
@@ -37,7 +17,9 @@ const config: Config = {
   },
   overrides: [
     {
-      files: ["src/**/*.ts"],
+      // Use a glob that correctly matches your source files.
+      // If running from the root, this relative path is standard.
+      files: ["src/**/*.css"],
       customSyntax: "postcss-lit",
     }
   ],
@@ -51,7 +33,7 @@ const config: Config = {
       ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
       {
         "ignoreValues": ["0", "inherit", "transparent", "initial", "none", "unset"],
-        "message": "Use design tokens for ${property}. See https://fnc314.github.io/docs/design-tokens/ for guidance."
+        "message": "Use design tokens for ${property}. See `design-tokens/README.md` for guidance."
       }
     ],
     "declaration-block-no-redundant-longhand-properties": [
