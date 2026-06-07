@@ -83,7 +83,8 @@
     "lit": "catalog:dependencies",
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
-    "material-symbols": "catalog:dependencies"
+    "material-symbols": "catalog:dependencies",
+    "@fnc314/design-tokens": "catalog:projects"
   },
   "devDependencies": {
     "@addasoft/skeleton-component-generator": "catalog:devDependencies",

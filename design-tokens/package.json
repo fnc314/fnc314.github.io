@@ -11,9 +11,9 @@
     "src"
   ],
   "exports": {
-    ".": {
-
-    }
+    "./themes/*": "./src/themes/**/*.json",
+    "./src/*": "./src/*.json",
+    "./styles/*": "./dist/css/*.css"
   },
   "dependencies": {},
   "devDependencies": {

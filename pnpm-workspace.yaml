@@ -179,6 +179,8 @@ catalogs:
     nanoid: 5.1.11
     serialize-javascript: 7.0.5
     uuid: 14.0.0
+  projects:
+    "@fnc314/design-tokens": "./design-tokens"
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:

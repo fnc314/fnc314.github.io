@@ -473,6 +473,10 @@ catalogs:
     '@esbuild/linux-x64':
       specifier: 0.28.0
       version: 0.28.0
+  projects:
+    '@fnc314/design-tokens':
+      specifier: ./design-tokens
+      version: 0.1.0
 
 pnpmfileChecksum: sha256-nVOmFZ6JT8FxIhcN+S5sJXuP1DtIhTre5ZGvjJU+4tk=
 
@@ -480,6 +484,9 @@ importers:
 
   .:
     dependencies:
+      '@fnc314/design-tokens':
+        specifier: catalog:projects
+        version: link:design-tokens
       '@lit-labs/motion':
         specifier: catalog:dependencies
         version: 1.1.0
@@ -882,7 +889,7 @@ importers:
         version: 1.3.2(@nuxt/kit@4.4.6)(@nuxt/schema@4.4.6)(esbuild@0.28.0)(rollup@4.61.1)(vite@8.0.16)
       vite:
         specifier: catalog:devDependencies
-        version: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+        version: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       vite-plugin-cem:
         specifier: catalog:devDependencies
         version: 0.8.5(vite@8.0.16)
@@ -919,7 +926,7 @@ importers:
         version: 6.0.3
       vite:
         specifier: catalog:devDependencies
-        version: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+        version: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
 
   functions:
     dependencies:
@@ -14867,7 +14874,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.2
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - bufferutil
@@ -14941,7 +14948,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.2
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       vue: 3.5.35(typescript@6.0.3)
       ws: 8.21.0
     transitivePeerDependencies:
@@ -21864,7 +21871,7 @@ snapshots:
       '@nuxt/schema': 4.4.6
       esbuild: 0.28.0
       rollup: 4.61.1
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -22007,7 +22014,7 @@ snapshots:
       '@types/glob': 8.1.0
       glob: 8.1.0
       typescript: 5.7.3
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
 
   vite-plugin-cp@6.0.3:
     dependencies:
@@ -22025,7 +22032,7 @@ snapshots:
       debug: 4.4.3
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.17
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
       workbox-build: 7.4.1(@types/babel__core@7.20.5)
       workbox-window: 7.4.1
     optionalDependencies:
@@ -22037,9 +22044,9 @@ snapshots:
     dependencies:
       '@nuxt/kit': 4.4.6
       '@nuxt/schema': 4.4.6
-      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0)
 
-  vite@8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0):
+  vite@8.0.16(@types/node@25.9.2)(@vitejs/devtools@0.3.1)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
