@@ -226,7 +226,6 @@
     "rollup": "catalog:devDependencies",
     "serialize-javascript": "catalog:overrides",
     "stylelint": "catalog:devDependencies",
-    "typedoc": "catalog:devDependencies",
-    "typescript": "catalog:devDependencies"
+    "typedoc": "catalog:devDependencies"
   }
 }

@@ -20,60 +20,32 @@ const tsRules = {
 };
 
 const ignores = [
-  path.join(rootDir, ".config/"),
-  path.join(rootDir, ".env/"),
-  path.join(rootDir, ".firebase/"),
-  path.join(rootDir, ".gemini/"),
-  path.join(rootDir, ".git/"),
-  path.join(rootDir, ".github/"),
-  path.join(rootDir, ".idea/"),
-  path.join(rootDir, ".mise/"),
-  path.join(rootDir, ".pnpm-store/"),
-  path.join(rootDir, ".vscode/"),
-  path.join(rootDir, ".well-known/"),
-  path.join(rootDir, "bin/"),
-  path.join(rootDir, "changes/"),
-  path.join(rootDir, "design-tokens/"),
-  path.join(rootDir, "docs/"),
-  path.join(rootDir, "dist/"),
-  path.join(rootDir, "firebase/"),
-  path.join(rootDir, "functions/"),
-  path.join(rootDir, "logs/"),
-  path.join(rootDir, "node_modules/"),
-  path.join(rootDir, "static/"),
-  path.join(rootDir, "stats/"),
+  path.join(rootDir, ".config/**/*.*"),
+  path.join(rootDir, ".env/**/*.*"),
+  path.join(rootDir, ".firebase/**/*.*"),
+  path.join(rootDir, ".gemini/**/*.*"),
+  path.join(rootDir, ".git/**/*.*"),
+  path.join(rootDir, ".github/**/*.*"),
+  path.join(rootDir, ".idea/**/*.*"),
+  path.join(rootDir, ".mise/**/*.*"),
+  path.join(rootDir, ".pnpm-store/**/*.*"),
+  path.join(rootDir, ".vscode/**/*.*"),
+  path.join(rootDir, ".well-known/**/*.*"),
+  path.join(rootDir, "bin/**/*.*"),
+  path.join(rootDir, "changes/**/*.*"),
+  path.join(rootDir, "design-tokens/**/*.*"),
+  path.join(rootDir, "docs/**/*.*"),
+  path.join(rootDir, "dist/**/*.*"),
+  path.join(rootDir, "firebase/**/*.*"),
+  path.join(rootDir, "functions/**/*.*"),
+  path.join(rootDir, "logs/**/*.*"),
+  path.join(rootDir, "node_modules/**/*.*"),
+  path.join(rootDir, "static/**/*.*"),
+  path.join(rootDir, "stats/**/*.*"),
   path.join(rootDir, "**/*.html"),
 ];
 
-console.error(
-  `
-  __dirname ${__dirname}
-  rootDir ${rootDir}
-  ignores ${JSON.stringify({ ignores }, null, 2)}
-  `
-)
-
 export default defineConfig([
-  {
-    name: "app/global-ignores",
-    ignores: [
-      path.join(rootDir, "jsconfig.json"),
-      path.join(rootDir, "manifest.json"),
-      path.join(rootDir, "dist/"),
-      path.join(rootDir, "docs/"),
-      ...ignores,
-    ],
-  },
-  {
-    name: "app/js-recommended",
-    ...eslint.configs.recommended,
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
-    },
-    ignores,
-  },
   {
     name: "app/typescript",
     plugins: {
@@ -82,6 +54,7 @@ export default defineConfig([
       lit,
       tsdoc,
     },
+    basePath: rootDir,
     files: [
       path.join(rootDir, "src/**/*.ts"),
     ],
@@ -113,10 +86,30 @@ export default defineConfig([
     },
   },
   {
+    name: "app/global-ignores",
+    ignores: [
+      path.join(rootDir, "jsconfig.json"),
+      path.join(rootDir, "manifest.json"),
+      path.join(rootDir, "dist/"),
+      path.join(rootDir, "docs/"),
+      ...ignores,
+    ],
+  },
+  {
+    name: "app/js-recommended",
+    ...eslint.configs.recommended,
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    ignores,
+  },
+  {
     name: "app/javascript-overrides",
     files: [
-      path.join(rootDir, "**/*.js"),
-      path.join(rootDir, "**/*.mjs"),
+      path.join(rootDir, "src/**/*.js"),
+      path.join(rootDir, "src/**/*.mjs"),
     ],
     ignores,
     languageOptions: {
