@@ -1,5 +1,6 @@
 import { type CodeProjectData } from "@/components/code/code-project/code-project.types";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { MaterialTypescaleStyles } from "@/styles";
+import { InteractionStyles } from "@/styles/interaction-styles";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -29,6 +30,7 @@ export class CodeProject extends LitElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
+    InteractionStyles,
     css`
       :host {
         display: block;
@@ -51,14 +53,16 @@ export class CodeProject extends LitElement {
 
       md-outlined-card {
         --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
-        --md-outlined-card-container-elevation: 4;
+        --md-outlined-card-container-elevation: var(--motion-elevation-level-4);
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
 
         /* Ensure the card doesn't flatten the 3D space or clip the rotation */
+        margin: var(--spacing-margin-xxs);
         overflow: visible;
         width: 100%;
         height: 100%;
         perspective: 1000px; /* The guide's perspective container */
+        will-change: transform;
         transition:
           --md-outlined-card-container-shape var(--internal-code-project-rotation) var(--motion-easing-standard),
           --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motion-easing-standard)
@@ -67,6 +71,13 @@ export class CodeProject extends LitElement {
         /* Material Web components use a 'container' part for the inner surface */
         &::part(container) {
           overflow: visible;
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within,
+        &:focus-visible {
+          --md-outlined-card-container-elevation: var(--motion-elevation-level-6);
         }
 
         &.flipped {
@@ -240,7 +251,7 @@ export class CodeProject extends LitElement {
       flipped: this.flipped,
     };
     return html`
-      <md-outlined-card class=${classMap(classesMap)}>
+      <md-outlined-card class="${classMap(classesMap)} hover-lift">
         <div class="code-project-card-inner">
           ${this.#generateCardFront()}
           ${this.#generateCardBack()}

@@ -34,7 +34,7 @@ export const bentoCardStyles = css`
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--md-elevation-level-1);
+    box-shadow: var(--md-sys-elevation-level1);
     height: 100%;
     box-sizing: border-box;
   }
@@ -86,7 +86,7 @@ export const bentoCardStyles = css`
 
   /* Conditional Interaction States */
   .bento-card.enable-hover:hover {
-    transform: translateY(-4px);
+    transform: translateY(var(--motion-transform-hover-lift));
     box-shadow: var(--md-elevation-level-3);
     border-color: var(--md-sys-color-outline);
     background-color: var(--md-sys-color-surface-container-high);

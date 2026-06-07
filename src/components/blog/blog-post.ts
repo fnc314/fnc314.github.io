@@ -1,6 +1,7 @@
 import { type BlogPostJson } from "@/components/blog/blog-post.types";
 import { configsService } from "@/services/configs/configs-service";
 import { MaterialTypescaleStyles } from "@/styles";
+import { InteractionStyles } from "@/styles/interaction-styles";
 import { type AppConfigsChange } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
@@ -30,6 +31,7 @@ export class BlogPost extends LitElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
+    InteractionStyles,
     css`
       :host {
         display: block;
@@ -93,10 +95,11 @@ export class BlogPost extends LitElement {
       }
 
       md-elevated-card {
-        --md-elevated-card-container-elevation: 2;
+        --md-elevated-card-container-elevation: var(--motion-elevation-level-2);
         --md-elevated-card-container-shape: var(--md-sys-shape-corner-medium);
         --md-divider-color: var(--blog-post-header-divider-color);
 
+        margin: var(--spacing-margin-xxs);
         container-type: inline-size;
         color: var(--blog-post-primary-text-color);
         padding: var(--spacing-padding-m);
@@ -112,10 +115,8 @@ export class BlogPost extends LitElement {
         &:focus,
         &:focus-visible,
         &:focus-within {
-          --md-elevated-card-container-elevation: 4;
+          --md-elevated-card-container-elevation: var(--motion-elevation-level-4);
           --md-elevated-card-container-shape: var(--md-sys-shape-corner-large);
-
-          transform: translateY(var(--hover-focus-animation-translate-y));
         }
       }
 
@@ -223,7 +224,7 @@ export class BlogPost extends LitElement {
 
   override render() {
     return html`
-      <md-elevated-card>
+      <md-elevated-card class="hover-lift">
         <section>
           <img
             loading="lazy"
