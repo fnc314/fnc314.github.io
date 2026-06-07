@@ -7,7 +7,7 @@ import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-export type { BlogPostJson } from "@/components/blog/blog-post.types";
+export { type BlogPostJson } from "@/components/blog/blog-post.types";
 
 /**
  * @summary Represents a published blog record, linking to the artifact
@@ -19,7 +19,6 @@ export type { BlogPostJson } from "@/components/blog/blog-post.types";
  * @cssprop --blog-post-primary-text-color - The color of the primary text
  * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!MdElevatedCard}
  *   and {@link @material/web!--md-elevated-card-container-color}
- * @cssprop --blog-post-word-tag-container-color - The color of the container, {@link @fnc314/com.fnc314.website!WordTag}
  *
  * @see BlogPostJson
  * @export
@@ -169,16 +168,6 @@ export class BlogPost extends LitElement {
           margin-block-start: var(--spacing-margin-xs);
         }
 
-        ul.tags {
-          grid-area: tags;
-          display: flex;
-          flex-flow: row wrap;
-          list-style: none;
-          margin: var(--spacing-reset);
-          padding: var(--spacing-reset);
-          gap: var(--spacing-margin-l);
-        }
-
         @container (width > 1000px) {
           grid-template-areas:
             "icon header  header"
@@ -186,12 +175,6 @@ export class BlogPost extends LitElement {
             "icon header  header"
             ".    summary summary";
           grid-template-columns: 0.25fr 1fr 1fr;
-
-          ul.tags {
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-          }
         }
       }
     `,
