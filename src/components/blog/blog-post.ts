@@ -39,7 +39,7 @@ export class BlogPost extends LitElement {
          * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
          *   \`:focus-within\`, and \`:focus-visible\` states
          */
-        --blog-post-animation: 150ms;
+        --blog-post-animation: var(--motion-duration-short);
 
         /**
          * @cssprop --blog-post-primary-text-color - The color of the primary text
@@ -65,10 +65,10 @@ export class BlogPost extends LitElement {
         --blog-post-header-divider-color: var(--blog-post-primary-text-color);
 
         transition:
-          --blog-post-primary-text-color var(--blog-post-animation) ease-in-out,
-          --blog-post-secondary-text-color var(--blog-post-animation) ease-in-out,
-          --blog-post-container-color var(--blog-post-animation) ease-in-out,
-          --blog-post-header-divider-color var(--blog-post-animation) ease-in-out;
+          --blog-post-primary-text-color var(--blog-post-animation) var(--motion-easing-base),
+          --blog-post-secondary-text-color var(--blog-post-animation) var(--motion-easing-base),
+          --blog-post-container-color var(--blog-post-animation) var(--motion-easing-base),
+          --blog-post-header-divider-color var(--blog-post-animation) var(--motion-easing-base);
 
         :hover,
         :focus,
@@ -84,7 +84,7 @@ export class BlogPost extends LitElement {
         @media (prefers-reduced-motion: reduce) {
           --blog-post-animation: 0ms;
 
-          transition: all 0ms ease-in-out;
+          transition: all 0ms var(--motion-easing-base);
         }
       }
 
@@ -100,12 +100,13 @@ export class BlogPost extends LitElement {
         container-type: inline-size;
         color: var(--blog-post-primary-text-color);
         padding: var(--spacing-padding-m);
+        will-change: transform;
         transition:
-          transform var(--blog-post-animation) ease-in-out,
-          color var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-elevation var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-shape var(--blog-post-animation) ease-in-out,
-          --md-elevated-card-container-color var(--blog-post-animation) ease-in-out;
+          transform var(--blog-post-animation) var(--motion-easing-emphasized),
+          color var(--blog-post-animation) var(--motion-easing-base),
+          --md-elevated-card-container-elevation var(--blog-post-animation) var(--motion-easing-base),
+          --md-elevated-card-container-shape var(--blog-post-animation) var(--motion-easing-base),
+          --md-elevated-card-container-color var(--blog-post-animation) var(--motion-easing-base);
 
         &:hover,
         &:focus,

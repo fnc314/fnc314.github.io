@@ -35,7 +35,7 @@ export class CodeProject extends LitElement {
         height: 30rem;
 
         /* @ignore */
-        --internal-code-project-animation: var(--code-project-animation, 200ms);
+        --internal-code-project-animation: var(--code-project-animation, var(--motion-duration-short));
 
         /* @ignore */
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
@@ -60,8 +60,8 @@ export class CodeProject extends LitElement {
         height: 100%;
         perspective: 1000px; /* The guide's perspective container */
         transition:
-          --md-outlined-card-container-shape var(--internal-code-project-rotation) ease-in-out,
-          --md-outlined-card-container-elevation var(--internal-code-project-rotation) ease-in-out
+          --md-outlined-card-container-shape var(--internal-code-project-rotation) var(--motion-easing-standard),
+          --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motion-easing-standard)
           ;
 
         /* Material Web components use a 'container' part for the inner surface */
@@ -96,7 +96,8 @@ export class CodeProject extends LitElement {
         width: 100%;
         height: 100%;
         text-align: center;
-        transition: transform var(--internal-code-project-rotation) cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+        transition: transform var(--internal-code-project-rotation) var(--motion-easing-standard);
         transform-style: preserve-3d; /* Required for the 3D effect */
         border-radius: var(--md-outlined-card-container-shape);
       }

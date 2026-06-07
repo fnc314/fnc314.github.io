@@ -27,10 +27,10 @@ export const bentoCardStyles = css`
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
     padding: var(--spacing-padding-m);
     transition:
-      transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.25s ease,
-      border-color 0.25s ease,
-      background-color 0.3s ease;
+      transform var(--motion-duration-short) var(--motion-easing-emphasized),
+      box-shadow var(--motion-duration-short) var(--motion-easing-base),
+      border-color var(--motion-duration-short) var(--motion-easing-base),
+      background-color var(--motion-duration-medium) var(--motion-easing-base);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@ export const bentoCardStyles = css`
 
   .indicator {
     color: var(--md-sys-color-on-surface-variant);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--motion-duration-medium) var(--motion-easing-standard);
   }
 
   details[open] .indicator {
@@ -67,7 +67,7 @@ export const bentoCardStyles = css`
   .expansion-wrapper {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
     overflow: hidden;
   }
 
@@ -81,6 +81,7 @@ export const bentoCardStyles = css`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-margin-s);
+    padding: var(--spacing-padding-s) var(--spacing-padding-xxs);
   }
 
   /* Conditional Interaction States */
