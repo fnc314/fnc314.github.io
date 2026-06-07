@@ -1,3 +1,5 @@
+import type { BreakpointTokens } from "@fnc314/design-tokens/src/types";
+
 /**
  * Values for the {@link --breakpoint-label} custom CSS `@property`
  *

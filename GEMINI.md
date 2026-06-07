@@ -17,6 +17,11 @@ Design tokens are managed in a dedicated `@fnc314/design-tokens` package:
 - **Workflow:** Standardized through `mise` tasks residing in `./.mise/tasks/` or `design-tokens/.mise/tasks/`. No `mise` task should modify any `src` folder located "above" its definition directory.
 - **Enforcement:** Exclusive use of design tokens (as CSS variables) is strictly enforced via `stylelint` (leveraging `stylelint-value-no-udl`). Build breaks on violations.
 
+### Standards for Design Tokens
+- Never hardcode color, spacing, or typography values in CSS or component styling.
+- Always map hardcoded values to the appropriate design token from `@fnc314/design-tokens`.
+- Run `mise run lint-tokens` to ensure compliance.
+
 ## Key Commands
 
 ### Documentation & Metadata

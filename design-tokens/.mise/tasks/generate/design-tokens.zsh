@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 #MISE description="Generate design tokens using Style Dictionary"
-#MISE alias="dt-generate"
+#MISE alias="gen-dt"
 
 echo "Generating design tokens for @fnc314/design-tokens..."
-pnpx style-dictionary build --config ./../.config/style-dictionary/config.mjs
+pnpx style-dictionary build --config ./.config/style-dictionary/config.ts
 echo "Design tokens generated successfully."
 
 echo "Copying theme images..."

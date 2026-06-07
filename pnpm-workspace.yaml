@@ -142,9 +142,9 @@ catalogs:
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
     tailwindcss: 4.3.0
-    tsx: 4.22.4
     ts-lit-plugin: 2.0.2
     tslib: 2.8.1
+    tsx: 4.22.4
     typedoc: 0.28.19
     typedoc-color-chip: 0.0.2
     typedoc-github-wiki-theme: 2.1.0

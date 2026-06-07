@@ -10,9 +10,17 @@
     "dist",
     "src"
   ],
+  "exports": {
+    ".": {
+
+    }
+  },
   "dependencies": {},
   "devDependencies": {
-    "style-dictionary": "catalog:devDependencies"
+    "fs-extra": "catalog:devDependencies",
+    "style-dictionary": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies",
+    "vite": "catalog:devDependencies"
   },
   "keywords": [
     "design-tokens",

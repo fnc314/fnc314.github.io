@@ -1,14 +1,14 @@
-import StyleDictionary from 'style-dictionary';
-import pkg from 'fs-extra';
+import pkg from "fs-extra";
+import StyleDictionary from "style-dictionary";
 const { copySync, emptyDirSync } = pkg;
 
 StyleDictionary.registerAction({
-  name: 'copy_theme_images',
+  name: "copy_theme_images",
   do: function(dictionary, config) {
-    console.log('Copying theme images...');
+    console.log("Copying theme images...");
     emptyDirSync(`${config.buildPath}images/themes`);
-    copySync('design-tokens/src/themes/images', `${config.buildPath}images/themes`);
-    console.log('Theme images copied.');
+    copySync("design-tokens/src/themes/images", `${config.buildPath}images/themes`);
+    console.log("Theme images copied.");
   },
   undo: function(dictionary, config) {
     emptyDirSync(`${config.buildPath}images`);
@@ -16,7 +16,7 @@ StyleDictionary.registerAction({
 });
 
 StyleDictionary.registerParser({
-  name: 'material-theme-builder-parser',
+  name: "material-theme-builder-parser",
   pattern: /\.mtb\.json$/,
   parser: ({ contents }) => {
     const raw = JSON.parse(contents);
@@ -74,5 +74,5 @@ export default {
       }]
     },
   },
-  actions: ['copy_theme_images']
+  actions: ["copy_theme_images"]
 };
