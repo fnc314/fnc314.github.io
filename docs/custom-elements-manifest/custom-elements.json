@@ -16,7 +16,7 @@
               "name": "app-content"
             },
             {
-              "description": "Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed",
+              "description": "Where the navigation component is placed",
               "name": "app-nav"
             }
           ],
@@ -83,13 +83,7 @@
               "kind": "field",
               "name": "onAppConfigsChange",
               "privacy": "private",
-              "description": "Syncs the component state with the global application configuration.",
-              "parameters": [
-                {
-                  "description": "AppConfigsChange event.",
-                  "name": "_event"
-                }
-              ]
+              "description": "Syncs the component state with the global application configuration."
             },
             {
               "kind": "field",
@@ -268,7 +262,7 @@
         {
           "kind": "function",
           "name": "BentoBoxConfigs",
-          "description": "Produces an Array of BentoBoxConfig instances used to populate\n  BentoLayout.",
+          "description": "Produces an Array of BentoBoxConfig instances used to populate\n  @fnc314/fnc314.github.io!BentoLayout.",
           "type": {
             "text": "BentoBoxConfig[]"
           }
@@ -3492,12 +3486,13 @@
               "name": "summaries",
               "type": "array",
               "default": [],
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
               "attribute": "summaries",
               "items": {
                 "type": "object",
                 "properties": {
                   "item": {
+                    "description": "AUTO-DOC'd WITH GEMINI\nThe description of the responsibility or achievement.",
                     "type": "string"
                   }
                 },
@@ -3616,12 +3611,13 @@
               "name": "summaries",
               "type": "array",
               "default": [],
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
               "fieldName": "summaries",
               "items": {
                 "type": "object",
                 "properties": {
                   "item": {
+                    "description": "AUTO-DOC'd WITH GEMINI\nThe description of the responsibility or achievement.",
                     "type": "string"
                   }
                 },

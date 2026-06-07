@@ -14,7 +14,8 @@
       ],
       "slots": [
         {
-          "name": "object Object],[object Object],[object Object"
+          "name": "app-nav",
+          "description": "Where the navigation component is placed"
         },
         {
           "name": "app-content",
@@ -28,6 +29,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "array",
           "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
         }
@@ -356,6 +358,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "array",
           "default": "[\"MaterialTypescaleStyles\",null]"
         },

@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "app-shell",
-      "description": "Slots:\n\n  * `object Object],[object Object],[object Object` {} - \n\n  * `app-content` {} - The place for the dynamic application content\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_activeRoute` - \n\n  * `_inlineIconTimeout` {`number`} - \n\n  * `_boundListener` - \n\n  * `_scrollSpyObserver` - \n\n  * `onColorSchemeChange` - Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.\n\n  * `onAppConfigsChange` - Syncs the component state with the global application configuration.",
+      "description": "Slots:\n\n  * `app-nav` {} - Where the navigation component is placed\n\n  * `app-content` {} - The place for the dynamic application content\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_activeRoute` - \n\n  * `_inlineIconTimeout` {`number`} - \n\n  * `_boundListener` - \n\n  * `_scrollSpyObserver` - \n\n  * `onColorSchemeChange` - Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.\n\n  * `onAppConfigsChange` - Syncs the component state with the global application configuration.",
       "attributes": []
     }
   ],

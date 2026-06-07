@@ -10,10 +10,10 @@
 
 ### Slots
 
-| Name          | Description                                                                  |
-| ------------- | ---------------------------------------------------------------------------- |
-| `app-content` | The place for the dynamic application content                                |
-| `app-nav`     | Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed |
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `app-content` | The place for the dynamic application content |
+| `app-nav`     | Where the navigation component is placed      |
 
 <details><summary>Private API</summary>
 
@@ -106,9 +106,9 @@
 
 ## Functions
 
-| Name              | Description                                                                       | Parameters | Return |
-| ----------------- | --------------------------------------------------------------------------------- | ---------- | ------ |
-| `BentoBoxConfigs` | Produces an Array of BentoBoxConfig instances used to populate&#xA;  BentoLayout. |            |        |
+| Name              | Description                                                                                                | Parameters | Return |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ------ |
+| `BentoBoxConfigs` | Produces an Array of BentoBoxConfig instances used to populate&#xA;  @fnc314/fnc314.github.io!BentoLayout. |            |        |
 
 <hr/>
 
@@ -1257,7 +1257,7 @@
 | `experienceSummary` |         |      |                           | An optional summary of the overall role                                         |                |
 | `isNested`          |         |      |                           | If true, adjusts font sizes and layout for a nested appearance.                 |                |
 | `jobs`              |         |      | ``                        | A list of sub-jobs or project assignments to be rendered as nested experiences. |                |
-| `summaries`         |         |      | ``                        | A list of summary points describing achievements or responsibilities.           |                |
+| `summaries`         |         |      | ``                        | An array of \`{ item: string }\` objects describing the responsibilities        |                |
 
 ### Attributes
 

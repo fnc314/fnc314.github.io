@@ -59315,7 +59315,7 @@
 			"content": [
 				{
 					"kind": "text",
-					"text": "# app-shell\n\n## Slots\n\n| Name                                            | Description                                   |\n|-------------------------------------------------|-----------------------------------------------|\n| "
+					"text": "# app-shell\n\n## Slots\n\n| Name          | Description                                   |\n|---------------|-----------------------------------------------|\n| "
 				},
 				{
 					"kind": "code",
@@ -59323,15 +59323,15 @@
 				},
 				{
 					"kind": "text",
-					"text": "                                   | The place for the dynamic application content |\n| "
+					"text": " | The place for the dynamic application content |\n| "
 				},
 				{
 					"kind": "code",
-					"text": "`object Object],[object Object],[object Object`"
+					"text": "`app-nav`"
 				},
 				{
 					"kind": "text",
-					"text": " |                                               |"
+					"text": "     | Where the navigation component is placed      |"
 				}
 			],
 			"frontmatter": {}
@@ -59947,7 +59947,7 @@
 			"content": [
 				{
 					"kind": "text",
-					"text": "# app-shell\n\n## Slots\n\n| Name                                            | Description                                   |\n|-------------------------------------------------|-----------------------------------------------|\n| "
+					"text": "# app-shell\n\n## Slots\n\n| Name          | Description                                   |\n|---------------|-----------------------------------------------|\n| "
 				},
 				{
 					"kind": "code",
@@ -59955,15 +59955,15 @@
 				},
 				{
 					"kind": "text",
-					"text": "                                   | The place for the dynamic application content |\n| "
+					"text": " | The place for the dynamic application content |\n| "
 				},
 				{
 					"kind": "code",
-					"text": "`object Object],[object Object],[object Object`"
+					"text": "`app-nav`"
 				},
 				{
 					"kind": "text",
-					"text": " |                                               |\n\n\n# bento-layout\n\n\n# blog-post\n\n## Properties\n\n| Property                                        | Attribute  | Type           | Default |\n|-------------------------------------------------|------------|----------------|---------|\n| "
+					"text": "     | Where the navigation component is placed      |\n\n\n# bento-layout\n\n\n# blog-post\n\n## Properties\n\n| Property                                        | Attribute  | Type           | Default |\n|-------------------------------------------------|------------|----------------|---------|\n| "
 				},
 				{
 					"kind": "code",
@@ -61296,7 +61296,7 @@
 	"readme": [
 		{
 			"kind": "text",
-			"text": "# app-shell\n\n## Slots\n\n| Name                                            | Description                                   |\n|-------------------------------------------------|-----------------------------------------------|\n| "
+			"text": "# app-shell\n\n## Slots\n\n| Name          | Description                                   |\n|---------------|-----------------------------------------------|\n| "
 		},
 		{
 			"kind": "code",
@@ -61304,15 +61304,15 @@
 		},
 		{
 			"kind": "text",
-			"text": "                                   | The place for the dynamic application content |\n| "
+			"text": " | The place for the dynamic application content |\n| "
 		},
 		{
 			"kind": "code",
-			"text": "`object Object],[object Object],[object Object`"
+			"text": "`app-nav`"
 		},
 		{
 			"kind": "text",
-			"text": " |                                               |\n\n\n# bento-layout\n\n\n# blog-post\n\n## Properties\n\n| Property                                        | Attribute  | Type           | Default |\n|-------------------------------------------------|------------|----------------|---------|\n| "
+			"text": "     | Where the navigation component is placed      |\n\n\n# bento-layout\n\n\n# blog-post\n\n## Properties\n\n| Property                                        | Attribute  | Type           | Default |\n|-------------------------------------------------|------------|----------------|---------|\n| "
 		},
 		{
 			"kind": "code",

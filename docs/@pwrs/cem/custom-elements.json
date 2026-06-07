@@ -253,10 +253,10 @@
       "declarations": [
         {
           "name": "BentoBoxConfigs",
-          "description": "Produces an {@link Array} of {@link BentoBoxConfig} instances used to populate\n{@link BentoLayout}.",
+          "description": "Produces an Array of {@link BentoBoxConfig} instances used to populate",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L54"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L60"
           }
         }
       ],
@@ -3474,9 +3474,9 @@
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "A list of summary points describing achievements or responsibilities. ",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "{ \n    /** \n     * AUTO-DOC'd WITH GEMINI\n     * The description of the responsibility or achievement.\n     */\n    item: string \n  }[]"
               },
               "default": "[]",
               "kind": "field",
@@ -3554,9 +3554,9 @@
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "A list of summary points describing achievements or responsibilities. ",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "{ \n    /** \n     * AUTO-DOC'd WITH GEMINI\n     * The description of the responsibility or achievement.\n     */\n    item: string \n  }[]"
               },
               "default": "[]",
               "fieldName": "summaries"
@@ -3700,7 +3700,7 @@
       "declarations": [
         {
           "name": "CodePartial",
-          "summary": "The {@link LitElement} for `/#code` route",
+          "summary": "The LitElement for /#code route",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -4146,18 +4146,18 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L7"
           }
         },
         {
           "return": {
-            "description": "\\{Breakpoint\\}"
+            "description": "The current {@link Breakpoint}"
           },
           "name": "readBreakpoint",
           "description": "Reads from \\`window\\` the current value of \\`--breakpoint-label\\`\nCSS `@property`",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L18"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L14"
           }
         }
       ],
@@ -4560,7 +4560,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L18"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L20"
           }
         },
         {
@@ -4568,7 +4568,7 @@
           "description": "The complete collection of possible {@link @material/web!MdFab} positions.  Cross-product of {@link FAB_POSITION_COMPONENTS_HORIZONTAL}\nand {@link FAB_POSITION_COMPONENTS_VERTICAL}\n\n@type {{ readonly START_TOP: \"START_TOP\"; readonly START_BOTTOM: \"START_BOTTOM\"; readonly END_TOP: \"END_TOP\"; readonly END_BOTTOM: \"END_BOTTOM\"; }}",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L48"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L52"
           }
         },
         {
@@ -4578,7 +4578,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L56"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L64"
           }
         },
         {
@@ -4589,14 +4589,14 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L64"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L72"
           }
         },
         {
           "name": "FAB_STYLE",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L83"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L91"
           }
         },
         {
@@ -4606,7 +4606,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L104"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L112"
           }
         },
         {
@@ -4621,7 +4621,7 @@
           "name": "fabPositionToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L71"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L79"
           }
         },
         {
@@ -4636,7 +4636,7 @@
           "name": "fabPositionComponents",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L77"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L85"
           }
         },
         {
@@ -4651,7 +4651,7 @@
           "name": "fabStyleToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L91"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L99"
           }
         },
         {
@@ -4666,7 +4666,7 @@
           "name": "fabConfigToGrid",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L114"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L122"
           }
         },
         {
@@ -4681,7 +4681,7 @@
           "name": "fabPositionClass",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L126"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L134"
           }
         }
       ],
@@ -4897,7 +4897,7 @@
           "parameters": [
             {
               "name": "json",
-              "description": "- Input of an  type, ideally conforming to a Material 3 JSON scheme",
+              "description": "- Input of an unknown type, ideally conforming to a Material 3 JSON scheme",
               "type": {
                 "text": "unknown"
               }

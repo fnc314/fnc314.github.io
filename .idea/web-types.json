@@ -9,7 +9,7 @@
       "elements": [
         {
           "name": "app-shell",
-          "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed",
+          "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the navigation component is placed",
           "doc-url": "",
           "attributes": [],
           "slots": [
@@ -19,7 +19,7 @@
             },
             {
               "name": "app-nav",
-              "description": "Where the {@link src/components/nav/nav-component.ts#NavComponent} is placed"
+              "description": "Where the navigation component is placed"
             }
           ],
           "events": [],
@@ -825,7 +825,7 @@
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "An array of `{ item: string }` objects describing the responsibilities",
               "value": { "type": "string", "default": [] }
             }
           ],
@@ -862,7 +862,7 @@
               },
               {
                 "name": "summaries",
-                "description": "A list of summary points describing achievements or responsibilities."
+                "description": "An array of `{ item: string }` objects describing the responsibilities"
               }
             ],
             "events": []
