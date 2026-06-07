@@ -11,9 +11,13 @@
     "src"
   ],
   "exports": {
+    ".": {
+      "style": "./dist/css/_variables.css"
+    },
+    "./dist/*": "./dist/*",
     "./themes/*": "./src/themes/**/*.json",
     "./src/*": "./src/*.json",
-    "./styles/*": "./dist/css/*.css"
+    "./styles/*": "./dist/css/_variables.css"
   },
   "dependencies": {},
   "devDependencies": {
