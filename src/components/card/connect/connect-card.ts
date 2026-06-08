@@ -38,12 +38,15 @@ export class ConnectCard extends LitElement {
         <dl class="connections-list">
           ${Connections.connections.map(
             (category) => html`
-              <dt class="md-typescale-title-small connection-label">
-                ${category.label}
+              <dt class="connection-label">
+                <h3 class="md-typescale-title-small">
+                  ${category.label}
+                </h3>
               </dt>
               ${Object.values(category.connections).map(
                 (conn) => html`
                   <dd>
+                    ${unsafeHTML(conn.start)}
                     <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
                       ${unsafeHTML(conn.text)}
                     </a>

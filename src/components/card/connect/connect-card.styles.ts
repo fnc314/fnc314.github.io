@@ -20,7 +20,27 @@ export const connectCardStyles = css`
 
   .connection-label {
     margin-block-start: var(--spacing-margin-xs);
-    color: var(--md-sys-color-secondary)
+    color: var(--md-sys-color-secondary);
+    margin-block-start: var(--spacing-margin-m);
+
+    h3 {
+      margin-block: var(--spacing-reset);
+    }
+  }
+
+  dd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-margin-xs);
+    margin: var(--spacing-reset);
+    margin-inline-start: var(--spacing-margin-m);
+    margin-block: var(--spacing-margin-xs);
+
+    & > img, & > md-icon {
+      width: var(--md-icon-size);
+      height: var(--md-icon-size);
+    }
   }
 
   .connections-list {

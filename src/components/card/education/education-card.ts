@@ -38,9 +38,9 @@ export class EducationCard extends LitElement {
           ${EducationJson.education.map(
             (edu) => html`
               <li class="education-item">
-                <span class="md-typescale-title-medium">${edu.institute}</span>
+                <h3 class="md-typescale-title-medium">${edu.institute}</h3>
                 <span class="md-typescale-body-medium">${edu.location}</span>
-                <span class="md-typescale-title-small">${edu.degree}</span>
+                <h4 class="md-typescale-title-small">${edu.degree}</h4>
                 <span class="md-typescale-body-small">${edu.graduationDate.label}</span>
               </li>
             `,
