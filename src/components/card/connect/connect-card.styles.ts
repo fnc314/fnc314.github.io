@@ -46,6 +46,11 @@ export const connectCardStyles = css`
   .connections-list {
     display: flex;
     flex-direction: column;
+    margin-block: var(--spacing-reset);
+  }
+
+  .connection-links-wrapper {
+    margin-block: var(--spacing-margin-s);
   }
 
   .connection-link {

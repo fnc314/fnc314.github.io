@@ -38,11 +38,13 @@ export class ConnectCard extends LitElement {
         <dl class="connections-list">
           ${Connections.connections.map(
             (category) => html`
+            <div class="connection-links-wrapper">
               <dt class="connection-label">
                 <h3 class="md-typescale-title-small">
                   ${category.label}
                 </h3>
               </dt>
+
               ${Object.values(category.connections).map(
                 (conn) => html`
                   <dd>
@@ -53,6 +55,7 @@ export class ConnectCard extends LitElement {
                   </dd>
                 `,
               )}
+            </div>
             `,
           )}
         </dl>

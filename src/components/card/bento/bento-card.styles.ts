@@ -72,7 +72,6 @@ export const bentoCardStyles = css`
 
   details[open] .expansion-wrapper {
     grid-template-rows: 1fr;
-    padding-top: var(--spacing-padding-m);
   }
 
   .expansion-content {
@@ -80,7 +79,7 @@ export const bentoCardStyles = css`
     flex-direction: column;
     gap: var(--spacing-margin-s);
     min-height: 0;
-    padding: var(--spacing-padding-s) var(--spacing-padding-xxs);
+    padding: var(--spacing-padding-xs);
   }
 
   /* Conditional Interaction States */
@@ -104,7 +103,7 @@ export const bentoCardStyles = css`
     flex-grow: 1;
     font-family: var(--md-ref-typeface-brand);
     margin: var(--spacing-reset) !important;
-    padding-bottom: var(--spacing-padding-xs);
+    padding-block-end: var(--spacing-padding-xs);
   }
 
   .scrollable {
