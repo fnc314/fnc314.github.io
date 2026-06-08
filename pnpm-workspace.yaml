@@ -8,11 +8,6 @@ allowBuilds:
   secp256k1: false
   sharp: false
   unrs-resolver: false
-catalog:
-  stylelint-declaration-strict-value: 1.11.1
-  ts-node: 10.9.2
-  tsx: 4.22.4
-  typescript: 6.0.3
 catalogMode: "strict"
 catalogs:
   dependencies:
@@ -60,7 +55,7 @@ catalogs:
     "@rollup/plugin-url": 8.0.2
     "@tailwindcss/postcss": 4.3.0
     "@types/eslint": 9.6.1
-    '@types/fs-extra': 11.0.4
+    "@types/fs-extra": 11.0.4
     "@types/node": 25.9.2
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.60.1
@@ -139,12 +134,14 @@ catalogs:
     stylelint-config-alphabetical-order: 2.0.0
     stylelint-config-inspector: 2.3.4
     stylelint-config-standard: 40.0.0
+    stylelint-declaration-strict-value: 1.11.1
     stylelint-plugin-rhythmguard: 2.0.0
     stylelint-plugin-use-baseline: 1.4.2
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
     tailwindcss: 4.3.0
     ts-lit-plugin: 2.0.2
+    ts-node: 10.9.2
     tslib: 2.8.1
     tsx: 4.22.4
     typedoc: 0.28.19
