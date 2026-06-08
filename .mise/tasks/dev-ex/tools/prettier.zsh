@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-#MISE description="Invokes `pnpm prettier` with `./.config/prettier/prettier.config.mts"
+#MISE description="Invokes `prettier` with `./.config/prettier/prettier.config.mts`"
 #MISE alias="dx:t:prettier"
 #USAGE arg "<logLevel>" help="Determines `--log-level` passed to `prettier`" default="warn" {
 #USAGE   choices "warn" "info" "debug"

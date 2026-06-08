@@ -1,5 +1,5 @@
 #!/usr/bin/env/ zsh
-#MISE description="Invokes `pnpm style-dictionary` with `./.config/style-dictionary/config.ts"
+#MISE description="Invokes `style-dictionary` with `./.config/style-dictionary/config.ts`"
 #MISE alias="dx:t:style-dictionary"
 
 echo "Cleaning design tokens for @fnc314/design-tokens..."

@@ -7,8 +7,3 @@ pnpm style-dictionary clean -v -c ./.config/style-dictionary/config.ts
 echo "Generating design tokens for @fnc314/design-tokens..."
 pnpm style-dictionary build -v -c ./.config/style-dictionary/config.ts
 echo "Design tokens generated successfully."
-
-# echo "Copying theme images..."
-# mkdir -p dist/themes
-# cp -r src/themes/* dist/themes/
-# echo "Theme images copied successfully."

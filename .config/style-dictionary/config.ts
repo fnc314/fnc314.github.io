@@ -17,36 +17,14 @@ StyleDictionary.registerAction({
     copySync("design-tokens/assets", `${config.buildPath}`);
     console.log("Assets copied.");
   },
-  undo: function(dictionary, config) {}
-});
-
-StyleDictionary.registerParser({
-  name: "material-theme-builder-parser",
-  pattern: /\.mtb\.json$/,
-  parser: ({ contents }) => {
-    const raw = JSON.parse(contents);
-    const tokens = {
-      schemes: {}
-    };
-
-    if (raw.schemes) {
-      for (const schemeName in raw.schemes) {
-        if (Object.prototype.hasOwnProperty.call(raw.schemes, schemeName)) {
-          tokens.schemes[schemeName] = {};
-          for (const colorRole in raw.schemes[schemeName]) {
-            if (Object.prototype.hasOwnProperty.call(raw.schemes[schemeName], colorRole)) {
-              tokens.schemes[schemeName][colorRole] = { value: raw.schemes[schemeName][colorRole] };
-            }
-          }
-        }
-      }
-    }
-    return tokens;
+  undo: function(dictionary, config) {
+    console.log("Deleting assets");
+    emptyDirSync(`${config.buildPath}`);
+    console.log("Assets deleted.");
   }
 });
 
 export default {
-  // usesDtcg: true,
   source: [
     `${process.cwd()}/design-tokens/tokens/*.json`,
   ],
