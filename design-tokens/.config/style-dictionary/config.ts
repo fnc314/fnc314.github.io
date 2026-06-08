@@ -46,9 +46,9 @@ StyleDictionary.registerParser({
 });
 
 export default {
-  usesDtcg: true,
+  // usesDtcg: true,
   source: [
-    "tokens/*.json",
+    `${process.cwd()}/tokens/*.json`,
   ],
   platforms: {
     css: {
