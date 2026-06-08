@@ -1,3 +1,11 @@
+experimental_monorepo_root = true
+
+[monorepo]
+  config_roots = [
+    "design-tokens",
+    "functions"
+  ]
+
 [tools]
   firebase = "15.19.1"
   node = "26.3.0"
@@ -30,3 +38,4 @@
   env_shell_expand = true
   terminal_progress = true
   color_theme = "dracula"
+  experimental = true
