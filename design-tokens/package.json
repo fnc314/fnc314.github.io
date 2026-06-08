@@ -21,6 +21,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",

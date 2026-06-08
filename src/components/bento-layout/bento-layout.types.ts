@@ -26,9 +26,9 @@ export type GridPosition = {
   column: GridPlacement;
   /** The grid area string */
   area?: string;
-} | { 
+} | {
   /** The breakpoint for this position */
-  breakpoint: "mobile" 
+  breakpoint: "mobile"
 }
 
 /**
@@ -77,7 +77,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "work",
-    expanded: false,
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -94,7 +94,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "blog",
-    expanded: false,
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -111,7 +111,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "code",
-    expanded: false,
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -128,6 +128,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "skills",
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -144,6 +145,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "education",
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -160,6 +162,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "connect",
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -176,6 +179,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "settings",
+    expanded: true,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":

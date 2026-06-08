@@ -4,7 +4,7 @@ import { InteractionStyles } from "@/styles/interaction-styles";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-export type { CodeProjectData } from "@/components/code/code-project/code-project.types";
+export { type CodeProjectData } from "@/components/code/code-project/code-project.types";
 
 /**
  * @summary Represents a single (usually GitHub-hosted) demonstration project
@@ -38,7 +38,7 @@ export class CodeProject extends LitElement {
 
         /* @ignore */
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
-    
+
         display: block;
         height: 30rem;
 
@@ -55,7 +55,7 @@ export class CodeProject extends LitElement {
         --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
         --md-outlined-card-container-elevation: var(--motion-elevation-level-4);
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
-    
+
         height: 100%;
 
         /* Ensure the card doesn't flatten the 3D space or clip the rotation */
@@ -204,7 +204,7 @@ export class CodeProject extends LitElement {
         <md-outlined-button
           @click=${() => this.flipped = !this.flipped}
           >
-          View More
+          View Tech
         </md-outlined-button>
       </section>
     `;
@@ -240,7 +240,7 @@ export class CodeProject extends LitElement {
         <md-outlined-button
           @click=${() => this.flipped = !this.flipped}
           >
-          View Less
+          Hide Tech
         </md-outlined-button>
       </section>
     `;

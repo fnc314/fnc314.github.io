@@ -1,18 +1,23 @@
 import pkg from "fs-extra";
 import StyleDictionary from "style-dictionary";
+import {
+  formats,
+  logBrokenReferenceLevels,
+  logVerbosityLevels,
+  logWarningLevels,
+  transformGroups,
+  transforms
+} from "style-dictionary/enums";
 const { copySync, emptyDirSync } = pkg;
 
 StyleDictionary.registerAction({
-  name: "copy_theme_images",
+  name: "copy_assets",
   do: function(dictionary, config) {
-    console.log("Copying theme images...");
-    emptyDirSync(`${config.buildPath}images/themes`);
-    copySync("design-tokens/src/themes/images", `${config.buildPath}images/themes`);
-    console.log("Theme images copied.");
+    console.log("Copying assets");
+    copySync("assets", `${config.buildPath}`);
+    console.log("Assets copied.");
   },
-  undo: function(dictionary, config) {
-    emptyDirSync(`${config.buildPath}images`);
-  }
+  undo: function(dictionary, config) {}
 });
 
 StyleDictionary.registerParser({
@@ -41,38 +46,42 @@ StyleDictionary.registerParser({
 });
 
 export default {
+  usesDtcg: true,
   source: [
-    "design-tokens/src/themes/**/*.mtb.json", // Existing theme JSONs
-    "design-tokens/src/spacing.json",
-    "design-tokens/src/breakpoints/*.{json,css}",
-    "design-tokens/src/typography.json",
-    "design-tokens/src/shapes.json",
-    "design-tokens/src/icons.json",
-    "design-tokens/src/globals.json"
+    "tokens/*.json",
   ],
   platforms: {
     css: {
-      transformGroup: "css",
-      buildPath: "design-tokens/dist/css/",
+      actions: [
+        "copy_assets",
+      ],
+      transforms: [
+        transforms.assetBase64
+      ],
+      transformGroup: transformGroups.css,
+      buildPath: "dist/",
       files: [{
-        destination: "_variables.css",
-        format: "css/variables",
-        options: {
-          outputReferences: true
-        }
-      }]
+        destination: "css/_variables.css",
+        format: formats.cssVariables,
+      }],
     },
     dtcgJson: {
-      transformGroup: "web",
-      buildPath: "design-tokens/dist/json/",
+      transformGroup: transformGroups.web,
+      buildPath: "dist/json/",
       files: [{
         destination: "tokens.json",
-        format: "json/nested", // DTCG compliant format for now
+        format: formats.jsonNested, // DTCG compliant format for now
         options: {
           outputReferences: true
         }
       }]
     },
   },
-  actions: ["copy_theme_images"]
+  log: {
+    warnings: logWarningLevels.warn,
+    verbosity: logVerbosityLevels.verbose,
+    errors: {
+      brokenReferences: logBrokenReferenceLevels.throw,
+    }
+  }
 };

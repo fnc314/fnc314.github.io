@@ -35,22 +35,24 @@ export class ConnectCard extends LitElement {
         ?enableFocus=${this.enableFocus}
       >
         <h2 slot="header" id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
-        <div class="connections-list">
+        <dl class="connections-list">
           ${Connections.connections.map(
             (category) => html`
-              <span class="md-typescale-title-small" style="margin-top: var(--spacing-margin-xs); color: var(--md-sys-color-secondary)">
+              <dt class="md-typescale-title-small connection-label">
                 ${category.label}
-              </span>
+              </dt>
               ${Object.values(category.connections).map(
                 (conn) => html`
-                  <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
-                    ${unsafeHTML(conn.text)}
-                  </a>
+                  <dd>
+                    <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
+                      ${unsafeHTML(conn.text)}
+                    </a>
+                  </dd>
                 `,
               )}
             `,
           )}
-        </div>
+        </dl>
       </bento-card>
     `;
   }
