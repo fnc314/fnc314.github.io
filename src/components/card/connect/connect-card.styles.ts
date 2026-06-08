@@ -37,9 +37,16 @@ export const connectCardStyles = css`
     margin-inline-start: var(--spacing-margin-m);
     margin-block: var(--spacing-margin-xs);
 
-    & > img, & > md-icon {
+    img, md-icon {
       width: var(--md-icon-size);
       height: var(--md-icon-size);
+      background-color: var(--md-sys-color-primary-container);
+      border-radius: var(--md-sys-shape-corner-full);
+      padding: var(--spacing-padding-xs);
+    }
+
+    md-icon {
+      color: var(--md-sys-color-on-primary-container);
     }
   }
 
