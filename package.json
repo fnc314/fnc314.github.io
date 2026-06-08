@@ -28,6 +28,10 @@
     "type": "git",
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
+  "workspaces": [
+    "design-tokens",
+    "functions"
+  ],
   "scripts": {
     "@pwrs:cem:generate": "NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -v",
     "build:vite": "mise run vite:build:development",

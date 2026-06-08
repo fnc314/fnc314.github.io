@@ -1,4 +1,4 @@
-#!/usr/bin/env/ zsh
+#!/usr/bin/env zsh
 #MISE description="Invokes `style-dictionary` with `./.config/style-dictionary/config.ts`"
 #MISE alias="dx:t:style-dictionary"
 

@@ -209,8 +209,8 @@ minimumReleaseAgeExclude:
 nodeVersion: "26.3.0"
 packageManagerStrictVersion: true
 packages:
-  - "functions"
   - "design-tokens"
+  - "functions"
 peerDependencyRules:
   allowAny:
     - vite
