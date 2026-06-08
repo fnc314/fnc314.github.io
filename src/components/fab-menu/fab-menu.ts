@@ -42,18 +42,18 @@ export class FabMenu extends LitElement {
         --menu-direction: end;
 
         /**
-         * @cssprop [--fab-menu-transition-duration]
-         */
+ * @cssprop [--fab-menu-transition-duration]
+ */
         --internal-fab-menu-transition-duration: var(--fab-menu-transition-duration, 200ms);
 
         /**
-         * @cssprop [--fab-menu-animation-spec]
-         */
+ * @cssprop [--fab-menu-animation-spec]
+ */
         --internal-fab-menu-animation-spec: var(--fab-menu-animation-spec, cubic-bezier(0.4, 0, 0.2, 1));
-
+    
+        align-items: flex-end; /* Align to right side */
         display: inline-flex;
         flex-direction: column-reverse;
-        align-items: flex-end; /* Align to right side */
         position: relative;
         z-index: 10;
       }
@@ -73,64 +73,63 @@ export class FabMenu extends LitElement {
       }
 
       ul.menu-items {
+        align-items: flex-end;
         display: flex;
         flex-direction: column-reverse;
-        align-items: flex-end;
         gap: var(--spacing-margin-s);
-        margin-bottom: 0;
-        padding: var(--spacing-reset);
-        list-style: none;
         height: 0;
+        list-style: none;
         margin-inline-end: var(--md-fab-margin, 0);
+        margin-bottom: 0;
         opacity: 0;
-        visibility: hidden;
-        transform: scale(0.8) translateY(20px);
-        transform-origin: bottom center;
+        padding: var(--spacing-reset);
         pointer-events: none;
+        transform: scale(0.8) translateY(16px);
+        transform-origin: bottom center;
         transition:
           opacity var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
           transform var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec),
           visibility var(--internal-fab-menu-transition-duration) linear;
+        visibility: hidden;
       }
 
       :host([open]) ul.menu-items {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1) translateY(0);
-        pointer-events: auto;
         height: auto;
         margin-bottom: var(--spacing-margin-s);
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1) translateY(0);
+        visibility: visible;
       }
 
       .fab-container {
-        position: relative;
         display: grid;
         place-items: center;
+        position: relative;
       }
 
       md-fab {
         --md-fab-container-elevation: 4;
 
+        /* Reset display for wrapper concerns */
+        display: grid;
+        margin-inline-end: unset;
+
+        /* Reset default margin */
+        margin-inline-start: unset;
+        place-items: center;
         transition:
           transform calc(100ms + var(--internal-fab-menu-transition-duration)) var(--internal-fab-menu-animation-spec),
           background-color var(--internal-fab-menu-transition-duration) linear,
           color var(--internal-fab-menu-transition-duration) linear;
-
-        /* Reset default margin */
-        margin-inline-start: unset;
-        margin-inline-end: unset;
-
-        /* Reset display for wrapper concerns */
-        display: grid;
-        place-items: center;
       }
 
       .icon-wrapper {
         display: grid;
-        place-items: center;
-        width: var(--md-icon-size);
         height: var(--md-icon-size);
         margin-inline: unset;
+        place-items: center;
+        width: var(--md-icon-size);
       }
 
       .icon-wrapper md-icon {
@@ -150,11 +149,11 @@ export class FabMenu extends LitElement {
         background: var(--md-sys-color-scrim);
         inset: 0;
         opacity: 0.5;
-        pointer-events: auto;
         overscroll-behavior: contain;
+        pointer-events: auto;
         position: fixed;
-        z-index: 0;
         transition: opacity var(--internal-fab-menu-transition-duration) var(--internal-fab-menu-animation-spec);
+        z-index: 0;
       }
     `,
   ];

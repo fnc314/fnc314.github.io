@@ -16,17 +16,17 @@ export class WorkPartial extends LitElement {
       }
 
       article {
-        background-color: var(--md-sys-color-surface);
-        color: var(--md-sys-color-on-surface);
-        box-sizing: border-box;
         align-content: start;
+        background-color: var(--md-sys-color-surface);
+        box-sizing: border-box;
+        color: var(--md-sys-color-on-surface);
         display: grid;
+        gap: var(--spacing-margin-s);
+        grid-auto-rows: auto;
         grid-template-areas:
           "title"
           "content";
-        gap: var(--spacing-margin-s);
         grid-template-rows: min-content;
-        grid-auto-rows: auto;
         height: min-content;
         padding-inline: var(--spacing-padding-s);
       }
@@ -37,10 +37,10 @@ export class WorkPartial extends LitElement {
       }
 
       .article-body {
-        grid-area: content;
         display: flex;
         flex-direction: column;
         gap: var(--spacing-margin-s);
+        grid-area: content;
       }
     `,
   ];

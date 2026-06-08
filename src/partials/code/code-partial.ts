@@ -15,25 +15,25 @@ export class CodePartial extends LitElement {
       :host {
         --code-partial-animation: 100ms;
         --code-partial-animation-reduced: 0ms;
-
-        display: block;
+    
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
+        display: block;
       }
 
       article {
         container-type: inline-size;
         display: grid;
-        grid-template-rows: min-content auto;
         gap: 1rem;
+        grid-template-rows: min-content auto;
         padding-inline: 1rem;
       }
 
       .article-body {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
-        grid-auto-rows: 1fr;
         gap: 1rem;
+        grid-auto-rows: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
         padding-block-end: 1rem;
 
         ul& {

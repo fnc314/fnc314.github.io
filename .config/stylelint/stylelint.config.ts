@@ -15,10 +15,10 @@ const config: Config = {
       inline: "left-to-right",
     }
   },
+  // Reverting to CSS-only for simplicity. We will deal with Lit components later.
+  files: ["src/**/*.css"],
   overrides: [
     {
-      // Use a glob that correctly matches your source files.
-      // If running from the root, this relative path is standard.
       files: ["src/**/*.css"],
       customSyntax: "postcss-lit",
     }

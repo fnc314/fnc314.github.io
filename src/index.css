@@ -1,5 +1,6 @@
 @import url("@fnc314/design-tokens/dist/css/_variables.css");
 @import url("styles/material-overrides.css");
+@import url("styles/breakpoints.css");
 
 :root {
   --hover-focus-animation-translate-y: var(

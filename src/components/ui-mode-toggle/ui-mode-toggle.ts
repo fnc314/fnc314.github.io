@@ -48,9 +48,6 @@ export class UiModeToggle extends LitElement {
       }
 
       dark-mode-toggle {
-        place-items: center;
-        display: contents;
-
         --dark-mode-toggle-icon-size: 2rem;
         --dark-mode-toggle-dark-icon: url("./icons/components/configs-dialog/dark-mode.svg");
         --dark-mode-toggle-light-icon: url("./icons/components/configs-dialog/light-mode.svg");
@@ -66,55 +63,58 @@ export class UiModeToggle extends LitElement {
         --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand);
         --dark-mode-toggle-icon-filter: none;
         --dark-mode-toggle-remember-filter: contrast(100%);
+    
+        display: contents;
+        place-items: center;
 
         &::part(form) {
           display: contents;
         }
 
         &::part(fieldset) {
-          padding: unset;
+          align-items: center;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
           gap: var(--spacing-margin-xs);
-          padding-inline: unset;
+          justify-content: center;
+          padding: unset;
           padding-block: unset;
+          padding-inline: unset;
         }
 
         &::part(threeWayRadioWrapper) {
+          border-color: var(--md-sys-color-on-surface-variant);
+          border-radius: 1rem;
+          border-style: solid;
+          border-width: var(--hairline-width);
+          display: inline-flex;
+          margin-block-start: var(--spacing-margin-xs);
+          overflow: hidden;
+          padding: var(--spacing-reset);
           position: relative;
           z-index: 0;
-          border-radius: 1rem;
-          border-color: var(--md-sys-color-on-surface-variant);
-          border-width: var(--hairline-width);
-          border-style: solid;
-          margin-block-start: var(--spacing-margin-xs);
-          display: inline-flex;
-          padding: var(--spacing-reset);
-          overflow: hidden;
         }
 
         &::part(threeWayRadioWrapper)::before {
+          background-color: var(--md-sys-color-surface-container-lowest);
+          border-radius: inherit;
+          bottom: 0;
           content: "";
           position: absolute;
           top: 0;
-          bottom: 0;
-          width: calc(100% / 3);
-          background-color: var(--md-sys-color-surface-container-lowest);
-          border-radius: inherit;
           transition: transform 0.3s ease-in-out;
+          width: calc(100% / 3);
           z-index: -1;
         }
 
         &::part(darkThreeWayLabel),
         &::part(lightThreeWayLabel),
         &::part(systemThreeWayLabel) {
+          flex: 1;
           padding: var(--spacing-padding-s);
           position: relative;
-          z-index: 1;
-          flex: 1;
           text-align: center;
+          z-index: 1;
         }
 
         &:not([permanent]) {
@@ -151,7 +151,7 @@ export class UiModeToggle extends LitElement {
         &::part(darkThreeWayRadio),
         &::part(systemThreeWayRadio) {
           /* Take the radio buttons out of the layout flow.
-            The component's internal styles already set opacity to 0. */
+    The component's internal styles already set opacity to 0. */
           position: absolute;
         }
 

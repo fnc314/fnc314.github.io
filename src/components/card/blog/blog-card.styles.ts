@@ -1,4 +1,3 @@
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { css } from "lit";
 
 /**
@@ -6,7 +5,7 @@ import { css } from "lit";
  * @packageDocumentation
  */
 export const blogCardStyles = css`
-  ${MaterialTypescaleStyles}
+
   :host {
     display: block;
     height: 100%;
@@ -29,8 +28,8 @@ export const blogCardStyles = css`
     .blog-list {
       flex-direction: row;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
       padding-bottom: var(--spacing-padding-xs);
+      scroll-snap-type: x mandatory;
     }
 
     blog-post {

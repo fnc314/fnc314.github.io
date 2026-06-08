@@ -10,6 +10,7 @@ const config: Config = {
   ],
   ignoreFiles: [
     ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
+    ".config/style-dictionary/config.ts",
     ".config/tailwind/*.ts",
     ".gemini/*",
     ".github/*",

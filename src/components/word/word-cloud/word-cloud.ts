@@ -44,10 +44,6 @@ export class WordCloud extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        container-type: inline-size;
-
         --word-cloud-animation: 150ms;
         --word-cloud-animation-reduced: 1ms;
         --word-cloud-first-quartile-font-size: var(--md-sys-typescale-headline-medium-size);
@@ -58,33 +54,20 @@ export class WordCloud extends LitElement {
         --word-cloud-third-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
         --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-medium-size);
         --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
-      }
-
-      @container (max-width: 500px) {
-        :host {
-          --word-cloud-first-quartile-font-size: var(--md-sys-typescale-title-large-size);
-          --word-cloud-first-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
-          --word-cloud-second-quartile-font-size: var(--md-sys-typescale-title-medium-size);
-          --word-cloud-second-quartile-line-height: var(--md-sys-typescale-title-medium-line-height);
-          --word-cloud-third-quartile-font-size: var(--md-sys-typescale-body-medium-size);
-          --word-cloud-third-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
-          --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-small-size);
-          --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-small-line-height);
-        }
-
-        li {
-          padding: var(--spacing-padding-xxs) !important;
-        }
+    
+        container-type: inline-size;
+        display: flex;
+        flex-direction: column;
       }
 
       ul {
-        flex: 1;
-        list-style-type: none;
+        align-items: center;
         display: flex;
+        flex: 1;
         flex-flow: row wrap;
         gap: 0.5rem;
-        align-items: center;
         justify-content: space-evenly;
+        list-style-type: none;
         margin: unset;
         padding: unset;
       }
@@ -92,23 +75,17 @@ export class WordCloud extends LitElement {
       li {
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
         --word-tag-font-family: var(--md-ref-typeface-brand);
-
-        will-change: opacity, transform;
-        padding: var(--spacing-padding-xs);
+    
         min-width: 0;
 
         /* Animation Base State */
         opacity: 0;
-        transform: scale(0.8) translateY(10px);
+        padding: var(--spacing-padding-xs);
+        transform: scale(0.8) translateY(8px);
         transition:
           opacity var(--word-cloud-animation) ease-out,
           transform var(--word-cloud-animation) cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        li {
-          transition: all var(--word-cloud-animation-reduced) ease-in-out;
-        }
+        will-change: opacity, transform;
       }
 
       /* Animation Active State (base styles, transforms applied inline) */
@@ -198,6 +175,29 @@ export class WordCloud extends LitElement {
         &.product {
           --word-tag-background-color: var(--md-sys-color-on-primary-fixed);
           --word-tag-color: var(--md-sys-color-primary-fixed);
+        }
+      }
+
+      @container (max-width: 500px) {
+        :host {
+          --word-cloud-first-quartile-font-size: var(--md-sys-typescale-title-large-size);
+          --word-cloud-first-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
+          --word-cloud-second-quartile-font-size: var(--md-sys-typescale-title-medium-size);
+          --word-cloud-second-quartile-line-height: var(--md-sys-typescale-title-medium-line-height);
+          --word-cloud-third-quartile-font-size: var(--md-sys-typescale-body-medium-size);
+          --word-cloud-third-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
+          --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-small-size);
+          --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-small-line-height);
+        }
+
+        li {
+          padding: var(--spacing-padding-xxs) !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        li {
+          transition: all var(--word-cloud-animation-reduced) ease-in-out;
         }
       }
     `,

@@ -5,8 +5,8 @@ import { css } from 'lit';
  */
 export const InteractionStyles = css`
   .hover-lift {
-    will-change: transform;
     transition: transform var(--motion-duration-short) var(--motion-easing-emphasized);
+    will-change: transform;
   }
 
   .hover-lift:is(:hover, :focus, :focus-within, :focus-visible) {

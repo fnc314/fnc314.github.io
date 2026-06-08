@@ -44,7 +44,7 @@ export default {
   source: [
     "design-tokens/src/themes/**/*.mtb.json", // Existing theme JSONs
     "design-tokens/src/spacing.json",
-    "design-tokens/src/breakpoints.json",
+    "design-tokens/src/breakpoints/*.{json,css}",
     "design-tokens/src/typography.json",
     "design-tokens/src/shapes.json",
     "design-tokens/src/icons.json",

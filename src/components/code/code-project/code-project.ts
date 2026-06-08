@@ -33,14 +33,14 @@ export class CodeProject extends LitElement {
     InteractionStyles,
     css`
       :host {
-        display: block;
-        height: 30rem;
-
         /* @ignore */
         --internal-code-project-animation: var(--code-project-animation, var(--motion-duration-short));
 
         /* @ignore */
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
+    
+        display: block;
+        height: 30rem;
 
         @media (prefers-reduced-motion: reduce) {
           /* @ignore */
@@ -55,18 +55,18 @@ export class CodeProject extends LitElement {
         --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
         --md-outlined-card-container-elevation: var(--motion-elevation-level-4);
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
+    
+        height: 100%;
 
         /* Ensure the card doesn't flatten the 3D space or clip the rotation */
         margin: var(--spacing-margin-xxs);
         overflow: visible;
-        width: 100%;
-        height: 100%;
         perspective: 1000px; /* The guide's perspective container */
-        will-change: transform;
         transition:
           --md-outlined-card-container-shape var(--internal-code-project-rotation) var(--motion-easing-standard),
-          --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motion-easing-standard)
-          ;
+          --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motion-easing-standard);
+        width: 100%;
+        will-change: transform;
 
         /* Material Web components use a 'container' part for the inner surface */
         &::part(container) {
@@ -88,29 +88,29 @@ export class CodeProject extends LitElement {
       }
 
       .code-project-card {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        padding: var(--spacing-padding-m);
+        align-items: center;
         backface-visibility: hidden; /* Hides the reverse side of the element */
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
         gap: var(--spacing-margin-s);
+        height: 100%;
+        inset: 0;
+        justify-content: space-between;
+        padding: var(--spacing-padding-m);
+        position: absolute;
+        width: 100%;
       }
 
       div.code-project-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        will-change: transform;
-        transition: transform var(--internal-code-project-rotation) var(--motion-easing-standard);
-        transform-style: preserve-3d; /* Required for the 3D effect */
         border-radius: var(--md-outlined-card-container-shape);
+        height: 100%;
+        position: relative;
+        text-align: center;
+        transform-style: preserve-3d; /* Required for the 3D effect */
+        transition: transform var(--internal-code-project-rotation) var(--motion-easing-standard);
+        width: 100%;
+        will-change: transform;
       }
 
       section.code-project-card-front {
@@ -132,8 +132,8 @@ export class CodeProject extends LitElement {
 
           pre {
             display: inline;
-            white-space: pre-wrap;
             overflow-wrap: break-word;
+            white-space: pre-wrap;
           }
         }
       }

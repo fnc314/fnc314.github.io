@@ -23,34 +23,34 @@ export class FabMenuItem extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        z-index: 10;
-        list-style: none;
+        align-items: center;
         display: flex;
         flex-direction: var(--fab-menu-item-direction, row);
-        align-items: center;
-        justify-content: var(--fab-menu-item-justify, flex-end);
         gap: var(--spacing-margin-s);
+        justify-content: var(--fab-menu-item-justify, flex-end);
+        list-style: none;
 
         /* Align center of small FAB (40px) with center of medium FAB (56px) in parent. (56 - 40) / 2 = 8px = 0.5rem */
 
         padding-inline-end: var(--fab-menu-item-padding-end, 0);
         /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
         padding-inline-start: var(--fab-menu-item-padding-start, 0);
+        z-index: 10;
       }
 
       .label-container {
         --md-elevation-level: 4;
-
-        position: relative;
+    
         background-color: var(--md-sys-color-surface-container-high);
-        color: var(--md-sys-color-on-surface-variant);
-        padding: var(--spacing-padding-xs) var(--spacing-padding-s);
         border-radius: var(--md-sys-shape-corner-medium);
         box-shadow: var(--md-sys-elevation-2);
+        color: var(--md-sys-color-on-surface-variant);
         opacity: 1;
+        padding: var(--spacing-padding-xs) var(--spacing-padding-s);
+        position: relative;
         transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        white-space: nowrap;
         user-select: none;
+        white-space: nowrap;
       }
 
       md-fab {

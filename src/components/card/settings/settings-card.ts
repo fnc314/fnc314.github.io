@@ -39,9 +39,9 @@ export class SettingsCard extends LitElement {
 
       .configs-form {
         display: flex;
+        flex: 1;
         flex-direction: column;
         gap: var(--spacing-margin-s);
-        flex: 1;
         justify-content: space-between;
       }
 
@@ -52,26 +52,26 @@ export class SettingsCard extends LitElement {
       }
 
       .form-field label {
-        font-size: var(--md-sys-typescale-label-large-size);
         color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-label-large-size);
       }
 
       .form-field select {
-        padding: var(--spacing-padding-xs);
-        border-radius: var(--md-sys-shape-corner-small);
-        border: var(--hairline-width) solid var(--md-sys-color-outline);
         background-color: var(--md-sys-color-surface);
+        border: var(--hairline-width) solid var(--md-sys-color-outline);
+        border-radius: var(--md-sys-shape-corner-small);
         color: var(--md-sys-color-on-surface);
         font-family: inherit;
         font-size: var(--md-sys-typescale-body-medium-size);
+        padding: var(--spacing-padding-xs);
       }
 
       .version-tag {
-        font-size: var(--md-sys-typescale-body-small-size);
         color: var(--md-sys-color-on-surface-variant);
-        text-align: center;
+        font-size: var(--md-sys-typescale-body-small-size);
         margin-top: auto;
         padding-top: var(--spacing-padding-m);
+        text-align: center;
       }
     `,
   ];

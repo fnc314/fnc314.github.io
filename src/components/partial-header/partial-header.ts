@@ -19,21 +19,21 @@ export class PartialHeader extends LitElement {
 
       header {
         --md-elevation-level: 2;
-
-        display: flex;
+    
         align-items: center;
-        justify-content: center;
-        position: relative;
-        border-radius: var(--md-sys-shape-corner-medium);
-        margin-block-start: var(--spacing-margin-s);
         background-color: var(--md-sys-color-primary);
+        border-radius: var(--md-sys-shape-corner-medium);
+        display: flex;
+        justify-content: center;
+        margin-block-start: var(--spacing-margin-s);
+        position: relative;
 
         h1 {
-          text-align: center;
-          margin-inline: auto;
-          margin-block: var(--spacing-margin-s);
           color: var(--md-sys-color-on-primary);
           font-variant-caps: small-caps;
+          margin-block: var(--spacing-margin-s);
+          margin-inline: auto;
+          text-align: center;
           width: 100%;
         }
 

@@ -128,24 +128,22 @@ export const THEME_NAMES={
   sunset: "sunset" as const,
 } as const;
 
-export type ThemeName=(typeof THEME_NAMES)[keyof typeof THEME_NAMES];
+export type ThemeName = (typeof THEME_NAMES)[keyof typeof THEME_NAMES];
 
-export type PhotosJson=Record<ThemeName, PhotoJson>;
+export type PhotosJson = Record<ThemeName, PhotoJson>;
 
-export type ThemeConfigs=Record<ThemeName, ThemeConfig>;
+export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 
 export const PhotoJsonFile: PhotosJson=PhotoJsonFileImport;
 
 // postcss-lit-disable-next-line
-export const readScheme=(jsonSchema: object) => css`
+export const readScheme = (jsonSchema: object) => css`
   :root {
     ${unsafeCSS(
   Object.entries(jsonSchema)
     .map(([colorRole, colorRGB]: [string, string]) => keyTransform(colorRole, colorRGB))
     .reduce(
-      (acc, curr) => css`
-            ${acc}${curr}
-          `,
+      (acc, curr) => css`${acc}${curr}`,
       unsafeCSS(""),
     ),
 )}

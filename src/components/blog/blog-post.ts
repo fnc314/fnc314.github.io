@@ -33,38 +33,37 @@ export class BlogPost extends LitElement {
     InteractionStyles,
     css`
       :host {
-        display: block;
-        container-type: inline-size;
-
         /**
-         * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
-         *   \`:focus-within\`, and \`:focus-visible\` states
-         */
+ * @cssprop --blog-post-animation - The duration of the animation for \\\\\`:focus\\\\\`, \\\\\`:hover\\\\\`,
+ *   \\\\\`:focus-within\\\\\`, and \\\\\`:focus-visible\\\\\` states
+ */
         --blog-post-animation: var(--motion-duration-short);
 
         /**
-         * @cssprop --blog-post-primary-text-color - The color of the primary text
-         */
+ * @cssprop --blog-post-primary-text-color - The color of the primary text
+ */
         --blog-post-primary-text-color: var(--md-sys-color-on-secondary-container);
 
         /**
-         * @cssprop --blog-post-secondary-text-color - The color of the secondary text
-         */
+ * @cssprop --blog-post-secondary-text-color - The color of the secondary text
+ */
         --blog-post-secondary-text-color: var(--md-sys-color-on-secondary);
 
         /**
-         * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!md-elevated-card}
-         *   and {@link @material/web!--md-elevated-card-container-color}
-         */
+ * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!md-elevated-card}
+ *   and {@link @material/web!--md-elevated-card-container-color}
+ */
         --blog-post-container-color: var(--md-sys-color-secondary-container);
         --md-elevated-card-container-color: var(--blog-post-container-color);
 
         /**
-         * @cssprop --blog-post-header-divider-color - The color for the {@link @material/web!MdDivider} used in the \`<header>\`
-         *   element of the \`blog-post\`.  Defaults to \`--blog-post-primary-text-color\`
-         */
+ * @cssprop --blog-post-header-divider-color - The color for the {@link @material/web!MdDivider} used in the \\\\\`<header>\\\\\`
+ *   element of the \\\\\`blog-post\\\\\`.  Defaults to \\\\\`--blog-post-primary-text-color\\\\\`
+ */
         --blog-post-header-divider-color: var(--blog-post-primary-text-color);
-
+    
+        container-type: inline-size;
+        display: block;
         transition:
           --blog-post-primary-text-color var(--blog-post-animation) var(--motion-easing-base),
           --blog-post-secondary-text-color var(--blog-post-animation) var(--motion-easing-base),
@@ -97,18 +96,18 @@ export class BlogPost extends LitElement {
         --md-elevated-card-container-elevation: var(--motion-elevation-level-2);
         --md-elevated-card-container-shape: var(--md-sys-shape-corner-medium);
         --md-divider-color: var(--blog-post-header-divider-color);
-
-        margin: var(--spacing-margin-xxs);
-        container-type: inline-size;
+    
         color: var(--blog-post-primary-text-color);
+        container-type: inline-size;
+        margin: var(--spacing-margin-xxs);
         padding: var(--spacing-padding-m);
-        will-change: transform;
         transition:
           transform var(--blog-post-animation) var(--motion-easing-emphasized),
           color var(--blog-post-animation) var(--motion-easing-base),
           --md-elevated-card-container-elevation var(--blog-post-animation) var(--motion-easing-base),
           --md-elevated-card-container-shape var(--blog-post-animation) var(--motion-easing-base),
           --md-elevated-card-container-color var(--blog-post-animation) var(--motion-easing-base);
+        will-change: transform;
 
         &:hover,
         &:focus,
@@ -121,6 +120,7 @@ export class BlogPost extends LitElement {
 
       section {
         display: grid;
+        gap: var(--spacing-margin-xs);
         grid-template-areas:
           "icon    icon"
           "header  header"
@@ -128,26 +128,25 @@ export class BlogPost extends LitElement {
           "header  header"
           "summary summary";
         grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-margin-xs);
 
         img {
-          grid-area: icon;
-          width: calc(2 * var(--md-icon-size));
-          height: auto;
           aspect-ratio: 1;
+          grid-area: icon;
+          height: auto;
           place-self: center;
+          width: calc(2 * var(--md-icon-size));
         }
 
         header {
-          grid-area: header;
           display: grid;
+          grid-area: header;
           grid-template-columns: subgrid;
           grid-template-rows: subgrid;
         }
 
         h2 {
-          grid-row: 1 / 2;
           grid-column: 1 / -1;
+          grid-row: 1 / 2;
           margin: var(--spacing-reset);
         }
 
@@ -157,8 +156,8 @@ export class BlogPost extends LitElement {
         }
 
         h3 {
-          grid-row: 2 / 3;
           grid-column: 1 / -1;
+          grid-row: 2 / 3;
           margin: var(--spacing-reset);
         }
 

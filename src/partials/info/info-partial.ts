@@ -20,42 +20,42 @@ export class InfoPartial extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: block;
-        container-type: inline-size;
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
+        container-type: inline-size;
+        display: block;
       }
 
       article {
         display: grid;
+        gap: 1rem;
+        grid-auto-rows: min-content;
         grid-template-areas:
           "header"
           "figure"
           "bio"
           "education"
           "cloud";
-        height: min-content;
         grid-template-rows: min-content;
-        grid-auto-rows: min-content;
-        gap: 1rem;
+        height: min-content;
         padding-inline: 1rem;
       }
 
       .education-list-grid {
-        place-self: center;
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         justify-content: space-evenly;
         padding: unset;
-        gap: 1rem;
+        place-self: center;
 
         ul& {
           list-style-type: none;
         }
 
         .education-list-grid-item {
-          display: grid;
           align-items: baseline;
+          display: grid;
           grid-template-rows: repeat(4, 1fr);
         }
       }
@@ -70,34 +70,34 @@ export class InfoPartial extends LitElement {
       }
 
       .figure {
-        grid-area: figure;
-        margin: unset;
+        align-items: center;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
         gap: 0.5rem;
+        grid-area: figure;
+        justify-content: flex-start;
+        margin: unset;
 
         picture {
           display: grid;
         }
 
         img {
-          object-fit: scale-down;
-          max-width: 100%;
-          height: auto;
-          place-self: center;
           border-radius: 1rem;
+          height: auto;
+          max-width: 100%;
+          object-fit: scale-down;
+          place-self: center;
         }
 
         figcaption {
-          text-align: center;
-          color: var(--md-sys-color-inverse-on-surface);
           background-color: var(--md-sys-color-inverse-surface);
-          padding: var(--spacing-padding-xs);
           border-radius: 1rem;
+          color: var(--md-sys-color-inverse-on-surface);
           font-style: italic;
           margin-block: 0.5rem;
+          padding: var(--spacing-padding-xs);
+          text-align: center;
         }
       }
 
@@ -106,19 +106,19 @@ export class InfoPartial extends LitElement {
 
         [slot="section-grid-content"] {
           &::first-line {
-            white-space: pre-wrap;
+            font-family: var(--md-ref-typeface-brand);
+            font-size: var(--md-sys-typescale-headline-small-size);
             overflow-wrap: break-word;
             text-align: justify;
-            text-justify: inter-word;
-            font-size: var(--md-sys-typescale-headline-small-size);
             text-indent: 0.5rem;
-            font-family: var(--md-ref-typeface-brand);
+            text-justify: inter-word;
+            white-space: pre-wrap;
           }
 
           @container (min-width: 500px) {
-            columns: 40cqi 2;
             column-gap: 2rem;
             column-rule: var(--md-sys-color-inverse-on-surface) solid var(--hairline-width);
+            columns: 40cqi 2;
           }
         }
       }
@@ -137,13 +137,13 @@ export class InfoPartial extends LitElement {
 
       @container (min-width: 600px) {
         article {
+          gap: 1rem;
           grid-template-areas:
             "header header"
             "figure figure"
             "bio bio"
             "education education"
             "cloud cloud";
-          gap: 1rem;
           grid-template-columns: auto 1fr;
         }
       }
@@ -153,17 +153,17 @@ export class InfoPartial extends LitElement {
           place-self: stretch;
 
           .education-list-grid-item {
-            grid-template-rows: repeat(2, 1fr);
-            grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
 
             span:nth-child(2n - 1) {
-              justify-self: flex-end;
-              text-align: end;
-              border-inline-end: 0.1rem solid currentcolor;
               border-block-end: 0.1rem solid currentcolor;
-              padding-inline: 0.5rem 0.25rem;
+              border-inline-end: 0.1rem solid currentcolor;
+              justify-self: flex-end;
               padding-block-end: 0.25rem;
+              padding-inline: 0.5rem 0.25rem;
+              text-align: end;
             }
           }
         }
@@ -171,32 +171,33 @@ export class InfoPartial extends LitElement {
 
       @container (min-width: 900px) {
         article {
+          grid-auto-rows: auto;
           grid-template-areas:
             "header header"
             "figure bio"
             "figure education"
             "cloud cloud";
-          grid-template-rows: minmax(auto, min-content);
-          grid-auto-rows: auto;
           grid-template-columns: fit-content(40%) minmax(0, 1fr);
+          grid-template-rows: minmax(auto, min-content);
         }
       }
 
       @container (min-width: 1200px) {
         article {
+          grid-auto-rows: auto;
           grid-template-areas:
             "header header"
             "figure bio"
             "figure education"
             "cloud cloud";
-          grid-template-rows: minmax(auto, min-content);
-          grid-auto-rows: auto;
           grid-template-columns: fit-content(40%) minmax(0, 1fr);
+          grid-template-rows: minmax(auto, min-content);
         }
       }
 
       @container (min-width: 1500px) {
         article {
+          grid-auto-rows: min-content;
           grid-template-areas:
             "header   header         header         header"
             "figure   bio            bio            bio"
@@ -205,7 +206,6 @@ export class InfoPartial extends LitElement {
           grid-template-columns:
             fit-content(30%) minmax(0, 1fr) minmax(0, 1fr)
             minmax(0, 1fr);
-          grid-auto-rows: min-content;
           grid-template-rows: minmax(auto, min-content);
         }
       }

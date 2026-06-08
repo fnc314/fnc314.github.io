@@ -29,18 +29,18 @@ export class ProfileBioCard extends LitElement {
       }
 
       .profile-picture {
-        width: 100%;
+        border: 2px solid var(--md-sys-color-primary);
+        border-radius: var(--md-sys-shape-corner-medium);
         max-height: 300px;
         object-fit: contain;
-        border-radius: var(--md-sys-shape-corner-medium);
-        border: 2px solid var(--md-sys-color-primary);
+        width: 100%;
       }
 
       .profile-figcaption {
         color: var(--md-sys-color-on-surface-variant);
         font-size: var(--md-sys-typescale-body-small-size);
-        text-align: center;
         margin-top: var(--spacing-margin-xs);
+        text-align: center;
       }
     `,
   ];

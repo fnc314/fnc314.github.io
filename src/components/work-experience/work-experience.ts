@@ -25,11 +25,11 @@ export class WorkExperience extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: block;
+        box-sizing: border-box;
 
         /* For contextual layout */
         container: experience-container / inline-size;
-        box-sizing: border-box;
+        display: block;
         width: 100%;
 
         h2,
@@ -42,13 +42,13 @@ export class WorkExperience extends LitElement {
       /* --- SHARED BASE --- */
       h2,
       h3 {
-        font-weight: var(--md-ref-typeface-weight-bold);
         font-family: var(--md-ref-typeface-brand);
+        font-weight: var(--md-ref-typeface-weight-bold);
       }
 
       time {
-        opacity: 0.8;
         font-weight: var(--md-ref-typeface-weight-bold);
+        opacity: 0.8;
       }
 
       .nested-experiences {
@@ -57,31 +57,31 @@ export class WorkExperience extends LitElement {
       }
 
       .nested-experience {
+        border-inline-start: 2px solid var(--md-sys-color-primary);
         display: flex;
         flex-direction: column;
         gap: var(--spacing-margin-s);
         margin-block-start: var(--spacing-margin-xs);
         padding-inline-start: var(--spacing-padding-s);
-        border-inline-start: 2px solid var(--md-sys-color-primary);
       }
 
       .nested-summary {
-        padding-inline: var(--spacing-padding-m);
-        margin-block: unset;
-        grid-row: 4;
         grid-column: 2;
+        grid-row: 4;
+        margin-block: unset;
+        padding-inline: var(--spacing-padding-m);
 
         li {
-          list-style-type: circle;
           list-style-position: outside;
+          list-style-type: circle;
           margin-block: var(--spacing-margin-xs);
         }
 
         span.first-word {
-          font-family: var(--md-ref-typeface-brand);
-          font-weight: var(--md-ref-typeface-weight-bold);
-          font-size: var(--md-sys-typescale-title-small-size);
           color: var(--md-sys-color-on-surface-variant);
+          font-family: var(--md-ref-typeface-brand);
+          font-size: var(--md-sys-typescale-title-small-size);
+          font-weight: var(--md-ref-typeface-weight-bold);
         }
 
         pre {
@@ -110,8 +110,8 @@ export class WorkExperience extends LitElement {
 
         /* ORG */
         > p:nth-child(2) {
-          font-style: italic;
           color: var(--md-sys-color-tertiary);
+          font-style: italic;
         }
 
         /* Dates */
@@ -136,10 +136,10 @@ export class WorkExperience extends LitElement {
         }
 
         .experience-container {
-          display: grid;
-          grid-template-columns: minmax(20ch, max-content) 1fr;
-          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
           align-items: baseline;
+          display: grid;
+          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
+          grid-template-columns: minmax(20ch, max-content) 1fr;
 
           .experience-info {
             display: contents;
@@ -147,46 +147,46 @@ export class WorkExperience extends LitElement {
             /* Role */
             > h2,
             > h3 {
+              color: var(--md-sys-color-primary);
               grid-column: 2;
               grid-row: 1;
-              color: var(--md-sys-color-primary);
             }
 
             /* Org */
             > p:nth-child(2) {
+              color: var(--md-sys-color-tertiary);
+              font-style: italic;
               grid-column: 2;
               grid-row: 2;
-              font-style: italic;
-              color: var(--md-sys-color-tertiary);
             }
 
             /* Dates */
             > p:nth-child(3) {
+              color: var(--md-sys-color-on-surface);
               grid-column: 1;
               grid-row: 1;
-              text-align: end;
               inset-block-start: 0;
-              color: var(--md-sys-color-on-surface);
+              text-align: end;
             }
 
             /* Summary */
             > p:nth-child(4) {
-              grid-column: 2 / -1;
-              grid-row: 3 / 4;
               color: var(--md-sys-color-on-surface-variant);
               font-style: italic;
+              grid-column: 2 / -1;
+              grid-row: 3 / 4;
             }
           }
 
           /* Nested content */
           .nested-experience {
+            border-inline-start: none;
             container-type: inline-size;
+            display: grid;
             grid-column: auto / span 2;
             grid-row: 4;
-            border-inline-start: none;
-            padding-inline-start: 0;
-            display: grid;
             grid-template-columns: subgrid;
+            padding-inline-start: 0;
           }
         }
       }

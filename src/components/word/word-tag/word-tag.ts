@@ -58,29 +58,29 @@ export class WordTag extends LitElement {
         /** @ignore */
         --internal-word-tag-animation-duration: 200ms;
 
+        display: contents;
+
         @media (prefers-reduced-motion: reduce) {
           --internal-word-tag-animation-duration: 0ms;
         }
-
-        display: contents;
       }
 
       span {
-        display: inline-block;
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: var(--internal-word-tag-color);
         background-color: var(--internal-word-tag-background-color);
+        border-color: var(--internal-word-tag-color);
+        border-radius: var(--internal-word-tag-border-radius);
+        border-style: solid;
+        color: var(--internal-word-tag-color);
+        display: inline-block;
         font-family: var(--internal-word-tag-font-family);
-        padding: var(--spacing-padding-xs);
         font-size: var(--internal-word-tag-font-size);
         line-height: var(--internal-word-tag-line-height);
-        border-radius: var(--internal-word-tag-border-radius);
-        border-color: var(--internal-word-tag-color);
-        border-style: solid;
+        max-width: 100%;
+        overflow: hidden;
+        padding: var(--spacing-padding-xs);
+        text-overflow: ellipsis;
         transition: all var(--internal-word-tag-animation-duration) ease-in-out;
+        white-space: nowrap;
       }
     `,
   ];

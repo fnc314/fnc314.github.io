@@ -6,7 +6,7 @@
 #USAGE flag "--fix" help="Passes `--fix` to `eslint`" default="false"
 #USAGE flag "--inspector" help="Passes `--inspect-config` to `eslint`" default="false"
 #USAGE flag "--log [format]" {
-#USAGE   help "Creates a new file of type `format` in `./logs/eslint/{YYYYMMDD}/format`"
+#USAGE   help "Creates a new file of type `format` in `./logs/eslint/{YYYYMMDD}/{format}`"
 #USAGE   choices "none" "json" "html"
 #USAGE   default "none"
 #USAGE }

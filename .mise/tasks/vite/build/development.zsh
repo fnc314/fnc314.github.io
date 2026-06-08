@@ -10,7 +10,9 @@ VITE_FLAGS=(
 )
 
 if [[ "${usage_w:=false}" == "true" ]]; then
-  VITE_FLAGS+= -w
+  VITE_FLAGS+=(
+    -w
+  )
 fi
 
 NODE_ENV=development pnpm vite build "${VITE_FLAGS[@]}"

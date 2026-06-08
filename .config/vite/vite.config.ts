@@ -179,7 +179,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     },
     css: {
       devSourcemap: !dynamicConfig.isProduction,
-      postcss: path.resolve(process.cwd(), "postcss.config.mjs"),
+      postcss: path.resolve(process.cwd(), ".config/postcss/postcss.config.mjs"),
     },
     envDir: path.resolve(process.cwd(), ".env"),
     appType: "spa",

@@ -20,34 +20,33 @@ export const bentoCardStyles = css`
   }
 
   .bento-card {
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: var(--md-sys-shape-corner-large);
-    background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%);
     backdrop-filter: blur(12px);
+    background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%);
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-large);
+    box-shadow: var(--md-sys-elevation-level1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
     padding: var(--spacing-padding-m);
     transition:
       transform var(--motion-duration-short) var(--motion-easing-emphasized),
       box-shadow var(--motion-duration-short) var(--motion-easing-base),
       border-color var(--motion-duration-short) var(--motion-easing-base),
       background-color var(--motion-duration-medium) var(--motion-easing-base);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--md-sys-elevation-level1);
-    height: 100%;
-    box-sizing: border-box;
   }
 
   summary {
-    display: flex;
     align-items: center;
+    cursor: pointer;
+    display: flex;
     justify-content: space-between;
     list-style: none;
-    cursor: pointer;
-    user-select: none;
     outline: none;
     padding: 0;
+    user-select: none;
   }
 
   summary::-webkit-details-marker {
@@ -67,8 +66,8 @@ export const bentoCardStyles = css`
   .expansion-wrapper {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
     overflow: hidden;
+    transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
   }
 
   details[open] .expansion-wrapper {
@@ -77,19 +76,19 @@ export const bentoCardStyles = css`
   }
 
   .expansion-content {
-    min-height: 0;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-margin-s);
+    min-height: 0;
     padding: var(--spacing-padding-s) var(--spacing-padding-xxs);
   }
 
   /* Conditional Interaction States */
   .bento-card.enable-hover:hover {
-    transform: translateY(var(--motion-transform-hover-lift));
-    box-shadow: var(--md-elevation-level-3);
-    border-color: var(--md-sys-color-outline);
     background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-outline);
+    box-shadow: var(--md-elevation-level-3);
+    transform: translateY(var(--motion-transform-hover-lift));
   }
 
   .bento-card.enable-focus:focus-within {
@@ -100,18 +99,18 @@ export const bentoCardStyles = css`
   /* Style slotted header elements (h2 by default) */
   ::slotted(h2),
   ::slotted([slot="header"]) {
-    margin: var(--spacing-reset) !important;
-    color: var(--md-sys-color-primary);
-    font-family: var(--md-ref-typeface-brand);
     border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
-    padding-bottom: var(--spacing-padding-xs);
+    color: var(--md-sys-color-primary);
     flex-grow: 1;
+    font-family: var(--md-ref-typeface-brand);
+    margin: var(--spacing-reset) !important;
+    padding-bottom: var(--spacing-padding-xs);
   }
 
   .scrollable {
     .expansion-content {
-      overflow-y: auto;
       flex-grow: 1;
+      overflow-y: auto;
     }
   }
 `;

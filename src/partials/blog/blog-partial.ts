@@ -16,13 +16,13 @@ export class BlogPartial extends LitElement {
 
       article {
         display: grid;
+        gap: 1rem;
+        grid-auto-rows: auto;
         grid-template-areas:
           "header"
           "posts";
         grid-template-columns: 1fr;
         grid-template-rows: min-content auto;
-        grid-auto-rows: auto;
-        gap: 1rem;
         padding-inline: 1rem;
         padding-bottom: 1rem;
 
@@ -31,10 +31,10 @@ export class BlogPartial extends LitElement {
         }
 
         .posts {
-          grid-area: posts;
           display: flex;
           flex-flow: column nowrap;
           gap: 1rem;
+          grid-area: posts;
         }
       }
     `,

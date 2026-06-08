@@ -1,5 +1,5 @@
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
-import { readBreakpoint } from "@/styles/breakpoints";
+import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { ROUTES, type Route } from "@/types/components/nav/routes";
 import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
@@ -36,11 +36,19 @@ export class BentoLayout extends LitElement {
   @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
+  @state()
+  private _currentBreakpoint: Breakpoint = readBreakpoint();
+
+  private _windowResizeObserver: () => void = () => {
+    this._currentBreakpoint = readBreakpoint();
+  }
+
   private _scrollSpyObserver?: IntersectionObserver;
   private _activeRoute: Route = ROUTES.INFO;
 
   override connectedCallback() {
     super.connectedCallback();
+    window.addEventListener("resize", this._windowResizeObserver);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
@@ -87,18 +95,26 @@ export class BentoLayout extends LitElement {
 
   override disconnectedCallback() {
     super.disconnectedCallback();
+    window.removeEventListener("resize", this._windowResizeObserver);
     this._scrollSpyObserver?.disconnect();
   }
 
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placementForBreakpoint(
-      readBreakpoint()
+      this._currentBreakpoint
     );
 
     let gridArea = "";
     if ("column" in position && "row" in position) {
       gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
     }
+
+    console.log(
+      `
+      Position | gridArea | GridPostion
+      ${JSON.stringify({ position, gridArea, breakpoint: this._currentBreakpoint }, null, 2)}
+      `
+    );
 
     let cardContent: TemplateResult;
     switch (config.type) {

@@ -33,35 +33,35 @@ export class InfoSection extends LitElement {
     MaterialTypescaleStyles,
     css`
       :host {
-        display: block;
         container: profile-section-root / inline-size;
+        display: block;
       }
 
       section {
+        background-color: var(--md-sys-color-inverse-surface);
+        border-radius: var(--md-sys-shape-corner-medium);
+        color: var(--md-sys-color-inverse-on-surface);
         display: grid;
-        grid-template-rows: min-content auto;
+        gap: var(--spacing-margin-s);
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
-        gap: var(--spacing-margin-s);
+        grid-template-rows: min-content auto;
         padding: var(--spacing-padding-s);
-        border-radius: var(--md-sys-shape-corner-medium);
-        background-color: var(--md-sys-color-inverse-surface);
-        color: var(--md-sys-color-inverse-on-surface);
       }
 
       h2 {
         grid-area: section-grid-title;
-        place-self: center;
-        padding-block: var(--spacing-padding-s);
         margin: unset;
+        padding-block: var(--spacing-padding-s);
+        place-self: center;
       }
 
       div {
-        display: block;
-        container-type: inline-size;
-        grid-area: section-grid-content;
         align-self: center;
+        container-type: inline-size;
+        display: block;
+        grid-area: section-grid-content;
       }
 
       slot[name="section-grid-content"] {

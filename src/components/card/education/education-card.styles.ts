@@ -1,12 +1,11 @@
 import { css } from "lit";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 
 /**
  * @summary Styles for the EducationCard component.
  * @packageDocumentation
  */
 export const educationCardStyles = css`
-  ${MaterialTypescaleStyles}
+
   :host {
     display: block;
     height: 100%;
@@ -20,12 +19,12 @@ export const educationCardStyles = css`
   }
 
   .education-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-margin-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .education-item {
