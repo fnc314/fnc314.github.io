@@ -15,7 +15,6 @@ export const bentoLayoutStyles = css`
      * Desktop -> >= 1201 -> 12
      */
     --bento-layout-column-count: 1;
-    --breakpoint-label: mobile;
 
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
@@ -47,7 +46,6 @@ export const bentoLayoutStyles = css`
   @media screen and ((width <= 1200px) and (width >= 769px)) {
     :host {
       --bento-layout-column-count: 6;
-      --breakpoint-label: tablet;
     }
 
     .bento-grid {
@@ -67,7 +65,6 @@ export const bentoLayoutStyles = css`
   @media screen and (width >= 1201px) {
     :host {
       --bento-layout-column-count: 12;
-      --breakpoint-label: desktop;
     }
 
     .bento-grid {
