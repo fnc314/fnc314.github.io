@@ -30,6 +30,3 @@
   env_shell_expand = true
   terminal_progress = true
   color_theme = "dracula"
-
-[task_config]
-  dir = "{{cwd}}"
