@@ -114,8 +114,8 @@ catalogs:
       specifier: 4.0.0
       version: 4.0.0
     '@pwrs/cem':
-      specifier: 0.10.5
-      version: 0.10.5
+      specifier: 0.10.6
+      version: 0.10.6
     '@rollup/plugin-alias':
       specifier: 6.0.0
       version: 6.0.0
@@ -571,7 +571,7 @@ importers:
         version: 4.0.0
       '@pwrs/cem':
         specifier: catalog:devDependencies
-        version: 0.10.5
+        version: 0.10.6
       '@rollup/plugin-alias':
         specifier: catalog:devDependencies
         version: 6.0.0(rollup@4.61.1)
@@ -3192,38 +3192,38 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@pwrs/cem-darwin-arm64@0.10.5':
-    resolution: {integrity: sha512-R6vqjqgGq31C1LL834LWibPwDZbHi5X0+hhtn8iJX5sv+MLib1G7Fmsu1TYOZ4Bhqd7qI0B8Qn3Vq5QAYi1RtA==}
+  '@pwrs/cem-darwin-arm64@0.10.6':
+    resolution: {integrity: sha512-IcThGC2jaVCjjPdPJB+norPlWmdcMqYVCaOpNXu+V+z+baq2niyik5C7chAjqfKtcniIqh0Xu9JoLytOy1Dmzw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@pwrs/cem-darwin-x64@0.10.5':
-    resolution: {integrity: sha512-6i/XkhRl/jGVeB/KiLB8geDfMa4K2UpliMOb4EESnw8RqnjpY7MpFIrsmfaxbFyGTEVdrh3VScXi7FKhnCi8Sw==}
+  '@pwrs/cem-darwin-x64@0.10.6':
+    resolution: {integrity: sha512-79VUg2ySxhjFjz/MAlk/rDXSlFDMILi+2lgb69kOhKytjopGqJ5RHvdF7RO/DRhJtXXRtnQZjWry3LamDXruMw==}
     cpu: [x64]
     os: [darwin]
 
-  '@pwrs/cem-linux-arm64@0.10.5':
-    resolution: {integrity: sha512-UTXBYzFrmLv8820hm84wWN2/thrAPVGwWCijvLfrSIawwzwnIw2GbGTAFLJscaX37Soy22dZ4wRsDOAUzvgc1Q==}
+  '@pwrs/cem-linux-arm64@0.10.6':
+    resolution: {integrity: sha512-PHwz7g7PTF4NY5koYz9MLP8VcpsrmC3KDNtMmKdmF1YXqbRdT62ia4UhUW1BwUQ4jSDoZGcCnPuorj9vuglcJw==}
     cpu: [arm64]
     os: [linux]
 
-  '@pwrs/cem-linux-x64@0.10.5':
-    resolution: {integrity: sha512-l9/nvKsqkeCVvQlzatpTGYJ7ToXHSP0k9gp7LoK+J9JMuAZ9q9CJLM+6qn5owTICZzqgHt4YQeC92GUHuH5bnw==}
+  '@pwrs/cem-linux-x64@0.10.6':
+    resolution: {integrity: sha512-gVEFOffODWL7NZ0SI+UzCDRDxYt6Hg4w2wHwF3zMkrFuM6tm4snOTOXPyS475TETdY+0KGDjARPQOO8TMxoQ9g==}
     cpu: [x64]
     os: [linux]
 
-  '@pwrs/cem-win32-arm64@0.10.5':
-    resolution: {integrity: sha512-4pRmhzxuvBJOiNzpOTBsajYnkbSietpjarawERph/qqZDetv+Jzl/G9WRsCakX8/LeSn/pvTooR6VTein7xokA==}
+  '@pwrs/cem-win32-arm64@0.10.6':
+    resolution: {integrity: sha512-IoUbFZdyctrJclMzQ6cx5DUabvAkOJnSJLHHHPbuGBO4aQsyAdOSyMoegRJW1R5CSBRpgoPcftriSjJgvPQZdg==}
     cpu: [arm64]
     os: [win32]
 
-  '@pwrs/cem-win32-x64@0.10.5':
-    resolution: {integrity: sha512-oKRhEVymhAe3I/dSvpNSy46L5QJr/tqGGcByJtAfIDaAw2ZQUe1trpafPfLNJMif1jhP42fbpHnbHJRUCNIWiw==}
+  '@pwrs/cem-win32-x64@0.10.6':
+    resolution: {integrity: sha512-DwWEtbmPFo04V5NDxcqSAf9Hi9ruQdd0JFxp2JqrPFbZzkAFC9qU8D//4jJxs9xo4SQT1aYNm453rrNBzEhruQ==}
     cpu: [x64]
     os: [win32]
 
-  '@pwrs/cem@0.10.5':
-    resolution: {integrity: sha512-RHyHN+CbzyoUJ6ruAKGY1AYTmRvoPvp2TOSLLdiOpDaPEEazNNhXOoR6i5vNxgQqd2eSdqgUGXY32thdL1CdTA==}
+  '@pwrs/cem@0.10.6':
+    resolution: {integrity: sha512-G48Z0Oz94bL+xVCBc5cGQ+NPMIM67LPrkOq6+cRclwCAUH5n5LGEd54ZxX6vxGtZVIopgWCtsqkq2bUQ26LlnQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -13440,32 +13440,32 @@ snapshots:
       - react-native-b4a
       - supports-color
 
-  '@pwrs/cem-darwin-arm64@0.10.5':
+  '@pwrs/cem-darwin-arm64@0.10.6':
     optional: true
 
-  '@pwrs/cem-darwin-x64@0.10.5':
+  '@pwrs/cem-darwin-x64@0.10.6':
     optional: true
 
-  '@pwrs/cem-linux-arm64@0.10.5':
+  '@pwrs/cem-linux-arm64@0.10.6':
     optional: true
 
-  '@pwrs/cem-linux-x64@0.10.5':
+  '@pwrs/cem-linux-x64@0.10.6':
     optional: true
 
-  '@pwrs/cem-win32-arm64@0.10.5':
+  '@pwrs/cem-win32-arm64@0.10.6':
     optional: true
 
-  '@pwrs/cem-win32-x64@0.10.5':
+  '@pwrs/cem-win32-x64@0.10.6':
     optional: true
 
-  '@pwrs/cem@0.10.5':
+  '@pwrs/cem@0.10.6':
     optionalDependencies:
-      '@pwrs/cem-darwin-arm64': 0.10.5
-      '@pwrs/cem-darwin-x64': 0.10.5
-      '@pwrs/cem-linux-arm64': 0.10.5
-      '@pwrs/cem-linux-x64': 0.10.5
-      '@pwrs/cem-win32-arm64': 0.10.5
-      '@pwrs/cem-win32-x64': 0.10.5
+      '@pwrs/cem-darwin-arm64': 0.10.6
+      '@pwrs/cem-darwin-x64': 0.10.6
+      '@pwrs/cem-linux-arm64': 0.10.6
+      '@pwrs/cem-linux-x64': 0.10.6
+      '@pwrs/cem-win32-arm64': 0.10.6
+      '@pwrs/cem-win32-x64': 0.10.6
 
   '@quansync/fs@1.0.0':
     dependencies:
