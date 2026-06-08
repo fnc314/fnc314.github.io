@@ -1,6 +1,6 @@
 ﻿import { type CodeProjectData } from "@/components/code/code-project/code-project.types";
 import { LitElement, type TemplateResult } from "lit";
-export type { CodeProjectData } from "@/components/code/code-project/code-project.types";
+export { type CodeProjectData } from "@/components/code/code-project/code-project.types";
 export declare class CodeProject extends LitElement {
     #private;
     codeProject: CodeProjectData;

@@ -138,7 +138,9 @@
     {
       "name": "code-project",
       "description": "Represents a single (usually GitHub-hosted) demonstration project\n---\n",
-      "attributes": [{ "name": "codeProject", "values": [] }],
+      "attributes": [
+        { "name": "codeProject", "values": [{ "name": "CodeProjectData" }] }
+      ],
       "references": []
     },
     {

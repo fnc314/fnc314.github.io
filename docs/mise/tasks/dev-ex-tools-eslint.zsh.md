@@ -35,7 +35,7 @@ Passes `--inspect-config` to `eslint`
 
 #### `--log [format]`
 
-Creates a new file of type `format` in `./logs/eslint/{YYYYMMDD}/format`
+Creates a new file of type `format` in `./logs/eslint/{YYYYMMDD}/{format}`
 
 **Choices:**
 

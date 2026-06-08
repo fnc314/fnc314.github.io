@@ -134,6 +134,11 @@
           },
           "members": [
             {
+              "name": "_windowResizeObserver",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
               "name": "_scrollSpyObserver",
               "type": {
                 "text": "IntersectionObserver"
@@ -632,7 +637,7 @@
           "summary": "Styles for the BlogCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.styles.ts#L7"
           }
         }
       ],
@@ -753,7 +758,7 @@
           "summary": "Styles for the CodeCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.styles.ts#L7"
           }
         }
       ],
@@ -874,7 +879,7 @@
           "summary": "Styles for the ConnectCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.styles.ts#L7"
           }
         }
       ],
@@ -995,7 +1000,7 @@
           "summary": "Styles for the EducationCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.styles.ts#L7"
           }
         }
       ],
@@ -1124,10 +1129,10 @@
               "name": "--spacing-margin-s"
             },
             {
-              "name": "--md-sys-shape-corner-medium"
+              "name": "--md-sys-color-primary"
             },
             {
-              "name": "--md-sys-color-primary"
+              "name": "--md-sys-shape-corner-medium"
             },
             {
               "name": "--md-sys-color-on-surface-variant"
@@ -1309,10 +1314,7 @@
               "name": "--md-sys-typescale-label-large-size"
             },
             {
-              "name": "--spacing-padding-xs"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
+              "name": "--md-sys-color-surface"
             },
             {
               "name": "--hairline-width"
@@ -1321,7 +1323,7 @@
               "name": "--md-sys-color-outline"
             },
             {
-              "name": "--md-sys-color-surface"
+              "name": "--md-sys-shape-corner-small"
             },
             {
               "name": "--md-sys-color-on-surface"
@@ -1330,10 +1332,13 @@
               "name": "--md-sys-typescale-body-medium-size"
             },
             {
-              "name": "--md-sys-typescale-body-small-size"
+              "name": "--spacing-padding-xs"
             },
             {
               "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
             },
             {
               "name": "--spacing-padding-m"
@@ -1468,7 +1473,7 @@
           "summary": "Styles for the SkillsCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.styles.ts#L7"
           }
         }
       ],
@@ -1589,7 +1594,7 @@
           "summary": "Styles for the WorkCard component.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.styles.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.styles.ts#L7"
           }
         }
       ],
@@ -1672,19 +1677,19 @@
               "name": "--motion-elevation-level-6"
             },
             {
+              "name": "--spacing-margin-s"
+            },
+            {
               "name": "--spacing-padding-m"
             },
             {
-              "name": "--spacing-margin-s"
+              "name": "--md-outlined-card-container-shape"
             },
             {
               "name": "--internal-code-project-rotation"
             },
             {
               "name": "--motion-easing-standard"
-            },
-            {
-              "name": "--md-outlined-card-container-shape"
             },
             {
               "name": "--md-sys-color-surface-container-high"
@@ -2032,6 +2037,12 @@
               "name": "--md-sys-color-surface-container-high"
             },
             {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-elevation-2"
+            },
+            {
               "name": "--md-sys-color-on-surface-variant"
             },
             {
@@ -2039,12 +2050,6 @@
             },
             {
               "name": "--spacing-padding-s"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-sys-elevation-2"
             }
           ],
           "customElement": true
@@ -2398,10 +2403,10 @@
           ],
           "cssProperties": [
             {
-              "name": "--md-sys-shape-corner-medium"
+              "name": "--md-sys-color-inverse-surface"
             },
             {
-              "name": "--md-sys-color-inverse-surface"
+              "name": "--md-sys-shape-corner-medium"
             },
             {
               "name": "--md-sys-color-inverse-on-surface"
@@ -3023,33 +3028,6 @@
               "name": "--md-sys-typescale-headline-small-line-height"
             },
             {
-              "name": "--md-sys-typescale-title-large-size"
-            },
-            {
-              "name": "--md-sys-typescale-title-large-line-height"
-            },
-            {
-              "name": "--md-sys-typescale-title-medium-size"
-            },
-            {
-              "name": "--md-sys-typescale-title-medium-line-height"
-            },
-            {
-              "name": "--md-sys-typescale-body-medium-size"
-            },
-            {
-              "name": "--md-sys-typescale-body-medium-line-height"
-            },
-            {
-              "name": "--md-sys-typescale-body-small-size"
-            },
-            {
-              "name": "--md-sys-typescale-body-small-line-height"
-            },
-            {
-              "name": "--spacing-padding-xxs"
-            },
-            {
               "name": "--md-sys-shape-corner-medium"
             },
             {
@@ -3111,6 +3089,33 @@
             },
             {
               "name": "--md-sys-color-primary-fixed"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-line-height"
+            },
+            {
+              "name": "--spacing-padding-xxs"
             }
           ],
           "customElement": true
@@ -3348,11 +3353,16 @@
               "default": "var(--word-tag-background-color, var(--md-sys-color-primary-container))"
             },
             {
-              "name": "--internal-word-tag-font-family",
-              "default": "var(--word-tag-font-family, var(--md-ref-typeface-brand))"
+              "name": "--internal-word-tag-border-radius",
+              "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
             },
             {
-              "name": "--spacing-padding-xs"
+              "name": "--internal-word-tag-color",
+              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
+            },
+            {
+              "name": "--internal-word-tag-font-family",
+              "default": "var(--word-tag-font-family, var(--md-ref-typeface-brand))"
             },
             {
               "name": "--internal-word-tag-font-size",
@@ -3363,12 +3373,7 @@
               "default": "var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height))"
             },
             {
-              "name": "--internal-word-tag-border-radius",
-              "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
-            },
-            {
-              "name": "--internal-word-tag-color",
-              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
+              "name": "--spacing-padding-xs"
             },
             {
               "name": "--internal-word-tag-animation-duration",
@@ -3582,10 +3587,10 @@
               "name": "--md-ref-typeface-brand"
             },
             {
-              "name": "--md-ref-typeface-weight-bold"
+              "name": "--md-sys-typescale-title-small-size"
             },
             {
-              "name": "--md-sys-typescale-title-small-size"
+              "name": "--md-ref-typeface-weight-bold"
             },
             {
               "name": "--spacing-padding-xs"
@@ -3773,10 +3778,10 @@
               "name": "--spacing-padding-xs"
             },
             {
-              "name": "--md-sys-typescale-headline-small-size"
+              "name": "--md-ref-typeface-brand"
             },
             {
-              "name": "--md-ref-typeface-brand"
+              "name": "--md-sys-typescale-headline-small-size"
             },
             {
               "name": "--md-sys-color-inverse-on-surface"

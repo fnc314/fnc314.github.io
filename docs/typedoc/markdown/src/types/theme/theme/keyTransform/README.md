@@ -8,7 +8,7 @@
 
 &gt; **keyTransform**(`jsonKey`: `string`, `rgb`: `string`): `CSSResult`
 
-Defined in: [src/types/theme/theme.ts:163](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L163)
+Defined in: [src/types/theme/theme.ts:161](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L161)
 
 postcss-lit-disable-next-line
 

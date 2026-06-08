@@ -77,11 +77,13 @@
 
 ### Fields
 
-| Name                 | Privacy | Type                                | Default | Description | Inherited From |
-| -------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
-| `_activeRoute`       | private | `Route`                             |         |             |                |
-| `_bentoBoxConfigs`   | private | `BentoBoxConfig[]`                  |         |             |                |
-| `_scrollSpyObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
+| Name                    | Privacy | Type                                | Default | Description | Inherited From |
+| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
+| `_activeRoute`          | private | `Route`                             |         |             |                |
+| `_bentoBoxConfigs`      | private | `BentoBoxConfig[]`                  |         |             |                |
+| `_currentBreakpoint`    | private | `Breakpoint`                        |         |             |                |
+| `_scrollSpyObserver`    | private | `IntersectionObserver \| undefined` |         |             |                |
+| `_windowResizeObserver` | private | `() => void`                        |         |             |                |
 
 ### Methods
 

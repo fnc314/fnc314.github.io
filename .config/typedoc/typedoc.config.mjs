@@ -146,7 +146,7 @@ export default {
   ],
   preserveLinkText: true,
   pretty: true,
-  prettierConfigFile: `${process.cwd()}/prettier.config.mts`,
+  prettierConfigFile: `${process.cwd()}/.config/prettier/prettier.config.mts`,
   projectDocuments: [`${process.cwd()}/docs/wca/markdown/*.md`],
   propertyMembersFormat: "htmlTable",
   readme: `${process.cwd()}/docs/wca/markdown/README.md`,

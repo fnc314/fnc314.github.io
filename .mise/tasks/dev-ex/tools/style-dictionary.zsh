@@ -1,6 +1,6 @@
 #!/usr/bin/env/ zsh
-#MISE description="Generate design tokens using Style Dictionary"
-#MISE alias="dt:g"
+#MISE description="Invokes `pnpm style-dictionary` with `./.config/style-dictionary/config.ts"
+#MISE alias="dx:t:style-dictionary"
 
 echo "Cleaning design tokens for @fnc314/design-tokens..."
 pnpm style-dictionary clean -v -c ./.config/style-dictionary/config.ts

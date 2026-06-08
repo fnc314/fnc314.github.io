@@ -12,12 +12,13 @@
   ],
   "exports": {
     ".": {
-      "style": "./dist/css/_variables.css"
+      "style": "./dist/css/_variables.css",
+      "import": "./dist/jsno/tokens.json",
+      "default": "./dist/json/tokens.json"
     },
-    "./dist/*": "./dist/*",
-    "./themes/*": "./dist/themes/*.json",
-    "./src/*": "./src/*.json",
-    "./styles/*": "./dist/css/_variables.css"
+    "./themes/*": "./dist/themes/*",
+    "./css/*": "./dist/css/*",
+    "./json/*": "./dist/json/*"
   },
   "dependencies": {},
   "devDependencies": {

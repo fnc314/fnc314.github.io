@@ -58,7 +58,7 @@ Defined in: [src/components/blog/blog-post.ts:31](https://github.com/fnc314/fnc3
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/blog/blog-post.ts:198](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L198)
+Defined in: [src/components/blog/blog-post.ts:197](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L197)
 
 Invoked when the component is added to the document's DOM.
 
@@ -91,7 +91,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/blog/blog-post.ts:203](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L203)
+Defined in: [src/components/blog/blog-post.ts:202](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L202)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -123,7 +123,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/blog/blog-post.ts:208](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L208)
+Defined in: [src/components/blog/blog-post.ts:207](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/blog-post.ts#L207)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

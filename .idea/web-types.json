@@ -345,7 +345,7 @@
           "attributes": [
             {
               "name": "codeProject",
-              "value": { "type": "string", "default": "{}" }
+              "value": { "type": "CodeProjectData", "default": "{}" }
             }
           ],
           "events": [],

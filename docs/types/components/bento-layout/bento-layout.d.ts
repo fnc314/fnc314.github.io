@@ -11,6 +11,8 @@ import "@/components/card/work/work-card";
 export declare class BentoLayout extends LitElement {
     static styles: import("lit").CSSResult[];
     private _bentoBoxConfigs;
+    private _currentBreakpoint;
+    private _windowResizeObserver;
     private _scrollSpyObserver?;
     private _activeRoute;
     connectedCallback(): void;
