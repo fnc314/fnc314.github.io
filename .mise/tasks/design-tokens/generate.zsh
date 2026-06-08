@@ -1,6 +1,5 @@
 #!/usr/bin/env/ zsh
 #MISE description="Generate design tokens using Style Dictionary"
-#MISE dir="{{cwd}}/design-tokens"
 #MISE alias="dt:g"
 
 echo "Cleaning design tokens for @fnc314/design-tokens..."
