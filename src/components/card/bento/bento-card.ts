@@ -2,6 +2,7 @@ import { BentoCardStyles } from "@/components/card/bento/bento-card.styles";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * @summary BentoCard - A reusable card component for the bento grid.
@@ -23,6 +24,7 @@ import { classMap } from "lit/directives/class-map.js";
  * @property {boolean} expanded - Reflects and controls the open state of the card.
  * @property {boolean} enableHover - Opt-in to the hover elevation/shift effect.
  * @property {boolean} enableFocus - Opt-in to the focus-within border/shadow shift effect.
+ * @property {string} bentoCardTitle - An optional `string` which, when set, suppresses the `slot[name="header"]`
  * @slot header - Content to be displayed in the card's header/summary area.
  * @slot - Default slot for card content. Slotted `h2` elements receive standardized header styling.
  */
@@ -31,29 +33,42 @@ export class BentoCard extends LitElement {
   /** {@link lit!css} */
   static override styles = [BentoCardStyles];
 
+  /**
+   * Whether to enable scrolling for content
+   */
   @property({ type: Boolean })
   scrollable = false;
 
   /**
    * Reflects and controls the open state of the underlying `<details>` element.
-   * When true, the card is expanded and content is visible.
+   * When `true`, the card is expanded and content is visible.
    */
   @property({ type: Boolean, reflect: true })
   expanded = false;
 
   /**
    * Whether to enable the lift-on-hover effect.
-   * Defaults to false to minimize visual motion in dense layout grids.
+   * Defaults to `false` to minimize visual motion in dense layout grids.
    */
   @property({ type: Boolean })
   enableHover = false;
 
   /**
    * Whether to enable enhanced border and shadow styling on focus-within.
-   * Defaults to false.
+   * Defaults to `false`.
    */
   @property({ type: Boolean })
   enableFocus = false;
+
+  /**
+   * The clickable text for the `<h2>` in the `<summary>` element.  When provided,
+   *   the exposed `slot[name="header"]` is suppressed.
+   *
+   * @type {string}
+   * @memberof BentoCard
+   */
+  @property({ type: String })
+  bentoCardTitle: string = "";
 
   /**
    * Synchronizes the `expanded` property with the state of the `<details>` element
@@ -74,17 +89,31 @@ export class BentoCard extends LitElement {
     };
 
     return html`
-      <section>
+      <section aria-labelledby="${ifDefined(this.bentoCardTitle ? "bento-card-title" : undefined)}">
         <details
           class="${classMap(classes)}"
           ?open=${this.expanded}
           @toggle=${this._handleToggle}
+          aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} details` : undefined)}"
           >
-          <summary>
-            <slot name="header"></slot>
+          <summary
+            aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} summary` : undefined)}"
+            >
+            ${
+              this.bentoCardTitle ?
+                html`
+                  <h2 id="bento-card-title" class="md-typescale-headline-small">${this.bentoCardTitle}</h2>
+                ` :
+                html`
+                  <slot name="header"></slot>
+                `
+            }
             <md-icon class="indicator">expand_more</md-icon>
           </summary>
-          <div class="expansion-wrapper">
+          <div
+            aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} content` : undefined)}"
+            class="expansion-wrapper"
+            >
             <div class="expansion-content">
               <slot></slot>
             </div>

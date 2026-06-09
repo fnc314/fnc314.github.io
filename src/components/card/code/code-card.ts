@@ -33,13 +33,12 @@ export class CodeCard extends LitElement {
     return html`
       <bento-card
         class="code-container"
-        aria-labelledby="code-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Code Projects"}
       >
-        <h2 slot="header" id="code-title" class="md-typescale-title-large">Code Projects</h2>
         <div class="code-list">
           ${CodeJson.projects.map(
             (p) => html`

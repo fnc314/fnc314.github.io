@@ -155,13 +155,12 @@ export class SettingsCard extends LitElement {
     return html`
       <bento-card
         class="settings-container"
-        aria-labelledby="settings-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Settings"}
       >
-        <h2 slot="header" id="settings-title" class="md-typescale-title-large">Settings</h2>
         <div class="settings-content">
           <form>
             <fieldset>

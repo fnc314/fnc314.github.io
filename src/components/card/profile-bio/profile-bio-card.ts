@@ -81,13 +81,12 @@ export class ProfileBioCard extends LitElement {
     return html`
       <bento-card
         class="profile-bio-wrapper"
-        aria-labelledby="profile-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Info"}
       >
-        <h2 slot="header" id="profile-title" class="md-typescale-title-large">Info</h2>
         <div class="profile-bio-container">
           <figure>
             <img

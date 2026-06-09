@@ -58,19 +58,19 @@ export const ConnectCardStyles = css`
     gap: var(--spacing-gap-xs);
     margin: var(--spacing-reset);
     padding: var(--spacing-reset);
-    padding-inline-start: var(--spacing-padding-m);
+    padding-inline-start: var(--spacing-padding-s);
     padding-block: var(--spacing-padding-xs);
 
     img, md-icon {
       width: calc(var(--md-icon-size) * 0.75);
       height: calc(var(--md-icon-size) * 0.75);
-      background-color: var(--md-sys-color-primary-fixed);
+      background-color: var(--md-sys-color-surface-container-highest);
       border-radius: var(--md-sys-shape-corner-full);
       padding: var(--spacing-padding-xs);
     }
 
     md-icon {
-      color: var(--md-sys-color-on-primary-fixed-variant);
+      color: var(--md-sys-color-on-surface-variant);
     }
   }
 

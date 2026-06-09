@@ -34,13 +34,12 @@ export class BlogCard extends LitElement {
     return html`
       <bento-card
         class="blog-container"
-        aria-labelledby="blog-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Blogs"}
       >
-        <h2 slot="header" id="blog-title" class="md-typescale-title-large">Blog Posts</h2>
         <div class="blog-list">
           ${BlogJson.posts.map(
             (post: BlogPostJson) => html`

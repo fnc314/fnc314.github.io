@@ -38,8 +38,8 @@ export class WorkCard extends LitElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Work Experience"}
       >
-        <h2 slot="header" id="work-title" class="md-typescale-title-large">Work History</h2>
         ${WorkJson.experiences.map(
           (exp) => html`
             <work-experience

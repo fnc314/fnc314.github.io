@@ -42,8 +42,8 @@ export class SkillsCard extends LitElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Skills & Technologies"}
       >
-        <h2 slot="header" id="skills-title" class="md-typescale-title-large">Skills &amp; Technologies</h2>
         <word-cloud
           .words=${this.getSkillsForWordCloud()}
           instant-clear

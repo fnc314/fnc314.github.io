@@ -28,13 +28,12 @@ export class ConnectCard extends LitElement {
     return html`
       <bento-card
         class="connect-container"
-        aria-labelledby="connect-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Let's Connect"}
       >
-        <h2 slot="header" id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
         ${
           Connections.connections.map(
             (category) => html`

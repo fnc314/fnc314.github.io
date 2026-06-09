@@ -32,16 +32,16 @@ export class WorkExperience extends LitElement {
         display: block;
         width: 100%;
 
-        h2,
         h3,
+        h4,
         p {
           margin: unset;
         }
       }
 
       /* --- SHARED BASE --- */
-      h2,
-      h3 {
+      h3,
+      h4 {
         font-family: var(--md-ref-typeface-brand);
         font-weight: var(--md-ref-typeface-weight-bold);
       }
@@ -103,8 +103,8 @@ export class WorkExperience extends LitElement {
         flex-direction: column;
         gap: var(--spacing-gap-xxs);
 
-        > h2,
-        > h3 {
+        > h3,
+        > h4 {
           color: var(--md-sys-color-primary);
         }
 
@@ -145,8 +145,8 @@ export class WorkExperience extends LitElement {
             display: contents;
 
             /* Role */
-            > h2,
-            > h3 {
+            > h3,
+            > h4 {
               color: var(--md-sys-color-primary);
               grid-column: 2;
               grid-row: 1;
@@ -237,8 +237,8 @@ export class WorkExperience extends LitElement {
   /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
     const headerRole = this.isNested
-      ? html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`
-      : html`<h2 class="md-typescale-headline-large">${this.experienceRole}</h2>`;
+      ? html`<h4 class="md-typescale-headline-small">${this.experienceRole}</h4>`
+      : html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`;
 
     const org = html`
       <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>${this.experienceOrg}</p>

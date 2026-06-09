@@ -94,6 +94,7 @@ export const BentoCardStyles = css`
   }
 
   /* Style slotted header elements (h2 by default) */
+  h2,
   ::slotted(h2),
   ::slotted([slot="header"]) {
     border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);

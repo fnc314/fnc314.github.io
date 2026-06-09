@@ -42,6 +42,7 @@ export const EducationCardStyles = css`
     h4 {
       grid-area: program;
       font-style: italic;
+      font-weight: unset;
     }
 
     time {
