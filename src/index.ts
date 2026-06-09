@@ -64,19 +64,6 @@ const domLoadedListener = () => {
 
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
-  // if (window.location.hash === "") {
-  //   window.history.replaceState(null, "", `${window.location.href}#bio`);
-  // } else {
-  //   setTimeout(() => {
-  //     const hash = window.location.hash.replace("#", "").toLowerCase();
-  //     const targetId = hash === "info" ? "bio" : hash;
-  //     const el = document.getElementById(targetId) ?? document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
-  //     if (el) {
-  //       el.scrollIntoView({ behavior: "smooth", block: "start" });
-  //     }
-  //   }, 500);
-  // }
-
   const matScheme =
     themeService.currentThemeConfig().materialSchemes[
       colorSchemeConfigsToMaterialSchemeName(configsService.loadConfigs().colorScheme)

@@ -90,6 +90,15 @@ export class BlogPost extends LitElement {
 
       a {
         color: var(--blog-post-primary-text-color);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-gap-s);
+
+        img {
+          aspect-ratio: 1;
+          height: auto;
+          width: calc(2 * var(--md-icon-size));
+        }
       }
 
       md-elevated-card {
@@ -122,20 +131,11 @@ export class BlogPost extends LitElement {
         display: grid;
         gap: var(--spacing-gap-xs);
         grid-template-areas:
-          "icon    icon"
           "header  header"
           "header  header"
           "header  header"
           "summary summary";
         grid-template-columns: 1fr 1fr;
-
-        img {
-          aspect-ratio: 1;
-          grid-area: icon;
-          height: auto;
-          place-self: center;
-          width: calc(2 * var(--md-icon-size));
-        }
 
         header {
           display: grid;
@@ -169,11 +169,11 @@ export class BlogPost extends LitElement {
 
         @container (width > 1000px) {
           grid-template-areas:
-            "icon header  header"
-            "icon header  header"
-            "icon header  header"
-            ".    summary summary";
-          grid-template-columns: 0.25fr 1fr 1fr;
+            "header  header"
+            "header  header"
+            "header  header"
+            "summary summary";
+          grid-template-columns: 1fr 1fr;
         }
       }
     `,
@@ -208,16 +208,10 @@ export class BlogPost extends LitElement {
     return html`
       <md-elevated-card class="hover-lift">
         <section>
-          <img
-            loading="lazy"
-            role="img"
-            alt="Medium logo"
-            .src=${`./icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
-          />
           <header>
-            <h3 class="md-typescale-headline-large">${this.blogPost.title}</h3>
+            <h3 class="md-typescale-headline-medium">${this.blogPost.title}</h3>
+            <h4 class="md-typescale-title-small">${this.blogPost.series}</h4>
             <md-divider inset></md-divider>
-            <h4 class="md-typescale-title-medium">${this.blogPost.series}</h4>
           </header>
           <p class="md-typescale-body-medium">
             ${this.blogPost.summary}
@@ -227,6 +221,12 @@ export class BlogPost extends LitElement {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <img
+                loading="lazy"
+                role="img"
+                alt="Medium logo"
+                .src=${`./icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
+              />
               Medium&reg;
             </a>
           </p>
