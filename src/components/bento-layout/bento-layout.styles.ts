@@ -6,7 +6,7 @@ import { css } from "lit";
  * Orchestrates the responsive grid layout for the bento box UI.
  * Supports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts.
  */
-export const bentoLayoutStyles = css`
+export const BentoLayoutStyles = css`
   :host {
     /**
      * Mobile styles use flex so this is only used when

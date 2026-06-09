@@ -1,9 +1,9 @@
 import "@/components/card/bento/bento-card";
+import { WorkCardStyles } from "@/components/card/work/work-card.styles";
 import "@/components/work-experience/work-experience";
 import { data as WorkJson } from "@/components/work-experience/work-experience.types";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { workCardStyles } from "./work-card.styles";
 
 /**
  * @summary WorkCard - A card component displaying work experience.
@@ -13,7 +13,7 @@ import { workCardStyles } from "./work-card.styles";
 @customElement("work-card")
 export class WorkCard extends LitElement {
   /** {@link lit!css} */
-  static override styles = [workCardStyles];
+  static override styles = [WorkCardStyles];
 
   @property({ type: Boolean })
   expanded = false;

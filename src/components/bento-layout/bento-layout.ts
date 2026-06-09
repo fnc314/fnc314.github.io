@@ -1,10 +1,10 @@
+import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
-import { bentoLayoutStyles } from "./bento-layout.styles";
 
 // New components
 import "@/components/card/bento/bento-card";
@@ -29,7 +29,7 @@ export class BentoLayout extends LitElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
-    bentoLayoutStyles,
+    BentoLayoutStyles,
   ];
 
   @state()

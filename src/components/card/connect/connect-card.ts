@@ -1,9 +1,9 @@
 import "@/components/card/bento/bento-card";
+import { ConnectCardStyles } from "@/components/card/connect/connect-card.styles";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import { connectCardStyles } from "./connect-card.styles";
 
 /**
  * @summary ConnectCard - A card component displaying contact/connection links.
@@ -13,7 +13,7 @@ import { connectCardStyles } from "./connect-card.styles";
 @customElement("connect-card")
 export class ConnectCard extends LitElement {
   /** {@link lit!css} */
-  static override styles = [connectCardStyles];
+  static override styles = [ConnectCardStyles];
 
   @property({ type: Boolean })
   expanded = false;

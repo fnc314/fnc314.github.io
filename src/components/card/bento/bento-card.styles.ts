@@ -12,7 +12,7 @@ import { css } from "lit";
  *
  * @packageDocumentation
  */
-export const bentoCardStyles = css`
+export const BentoCardStyles = css`
   :host {
     display: block;
     height: 100%;

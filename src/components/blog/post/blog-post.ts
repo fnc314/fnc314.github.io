@@ -1,4 +1,4 @@
-import { type BlogPostJson } from "@/components/blog/blog-post.types";
+import { type BlogPostJson } from "@/components/blog/post/blog-post.types";
 import { configsService } from "@/services/configs/configs-service";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
@@ -7,7 +7,7 @@ import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-export { type BlogPostJson } from "@/components/blog/blog-post.types";
+export { type BlogPostJson } from "@/components/blog/post/blog-post.types";
 
 /**
  * @summary Represents a published blog record, linking to the artifact
@@ -144,7 +144,7 @@ export class BlogPost extends LitElement {
           grid-template-rows: subgrid;
         }
 
-        h2 {
+        h3 {
           grid-column: 1 / -1;
           grid-row: 1 / 2;
           margin: var(--spacing-reset);
@@ -155,7 +155,7 @@ export class BlogPost extends LitElement {
           margin-block: var(--spacing-margin-s);
         }
 
-        h3 {
+        h4 {
           grid-column: 1 / -1;
           grid-row: 2 / 3;
           margin: var(--spacing-reset);
@@ -215,9 +215,9 @@ export class BlogPost extends LitElement {
             .src=${`./icons/brand/medium/medium-${this.darkMode ? "light" : "dark"}.svg`}
           />
           <header>
-            <h2 class="md-typescale-headline-large">${this.blogPost.title}</h2>
+            <h3 class="md-typescale-headline-large">${this.blogPost.title}</h3>
             <md-divider inset></md-divider>
-            <h3 class="md-typescale-title-medium">${this.blogPost.series}</h3>
+            <h4 class="md-typescale-title-medium">${this.blogPost.series}</h4>
           </header>
           <p class="md-typescale-body-medium">
             ${this.blogPost.summary}

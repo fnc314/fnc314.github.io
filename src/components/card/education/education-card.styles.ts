@@ -4,8 +4,7 @@ import { css } from "lit";
  * @summary Styles for the EducationCard component.
  * @packageDocumentation
  */
-export const educationCardStyles = css`
-
+export const EducationCardStyles = css`
   :host {
     display: block;
     height: 100%;

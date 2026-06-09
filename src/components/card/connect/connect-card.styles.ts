@@ -4,7 +4,7 @@ import { css } from "lit";
  * @summary Styles for the ConnectCard component.
  * @packageDocumentation
  */
-export const connectCardStyles = css`
+export const ConnectCardStyles = css`
   :host {
     display: block;
     height: 100%;

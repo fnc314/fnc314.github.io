@@ -1,10 +1,10 @@
-import "@/components/blog/blog-post";
-import { type BlogPostJson } from "@/components/blog/blog-post";
+import "@/components/blog/post/blog-post";
+import { type BlogPostJson } from "@/components/blog/post/blog-post";
 import "@/components/card/bento/bento-card";
+import { blogCardStyles } from "@/components/card/blog/blog-card.styles";
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { blogCardStyles } from "./blog-card.styles";
 
 /**
  * @summary BlogCard - A card component displaying blog posts.

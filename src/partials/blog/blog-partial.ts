@@ -1,4 +1,4 @@
-import { type BlogPostJson } from "@/components/blog/blog-post.types";
+import { type BlogPostJson } from "@/components/blog/post/blog-post.types";
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles";
 import { LitElement, css, html } from "lit";

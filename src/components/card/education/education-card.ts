@@ -1,8 +1,8 @@
 import "@/components/card/bento/bento-card";
+import { EducationCardStyles } from "@/components/card/education/education-card.styles";
 import EducationJson from "@/data/education.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { educationCardStyles } from "./education-card.styles";
 
 /**
  * @summary EducationCard - A card component displaying education history.
@@ -12,7 +12,7 @@ import { educationCardStyles } from "./education-card.styles";
 @customElement("education-card")
 export class EducationCard extends LitElement {
   /** {@link lit!css} */
-  static override styles = [educationCardStyles];
+  static override styles = [EducationCardStyles];
 
   @property({ type: Boolean })
   expanded = false;

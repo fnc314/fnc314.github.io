@@ -4,8 +4,7 @@ import { css } from "lit";
  * @summary Styles for the SkillsCard component.
  * @packageDocumentation
  */
-export const skillsCardStyles = css`
-
+export const SkillsCardStyles = css`
   :host {
     display: block;
     height: 100%;

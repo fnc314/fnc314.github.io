@@ -1,9 +1,9 @@
 import "@/components/card/bento/bento-card";
-import "@/components/code/code-project/code-project";
+import { CodeCardStyles } from "@/components/card/code/code-card.styles";
+import "@/components/code/project/code-project";
 import CodeJson from "@/data/code.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { codeCardStyles } from "./code-card.styles";
 
 /**
  * @summary CodeCard - A card component displaying code projects.
@@ -13,7 +13,7 @@ import { codeCardStyles } from "./code-card.styles";
 @customElement("code-card")
 export class CodeCard extends LitElement {
   /** {@link lit!css} */
-  static override styles = [codeCardStyles];
+  static override styles = [CodeCardStyles];
 
   @property({ type: Boolean })
   expanded = false;

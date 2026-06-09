@@ -4,8 +4,7 @@ import { css } from "lit";
  * @summary Styles for the WorkCard component.
  * @packageDocumentation
  */
-export const workCardStyles = css`
-
+export const WorkCardStyles = css`
   :host {
     display: block;
     height: 100%;

@@ -1,4 +1,4 @@
-import { type CodeProjectData } from "@/components/code/code-project/code-project.types";
+import { type CodeProjectData } from "@/components/code/project/code-project.types";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
 import { LitElement, type TemplateResult, css, html } from "lit";
@@ -119,7 +119,7 @@ export class CodeProject extends LitElement {
         border-radius: inherit;
 
         header {
-          h2 {
+          h3 {
             margin: var(--spacing-reset);
           }
         }
@@ -180,14 +180,14 @@ export class CodeProject extends LitElement {
     return html`
       <section class="code-project-card code-project-card-front">
         <header part="code-project-header">
-          <h2 class="md-typescale-headline-small">
+          <h3 class="md-typescale-title-large">
             ${this.codeProject.name}
-          </h2>
+          </h3>
         </header>
         <md-divider></md-divider>
         <slot name="code-project-summary" part="code-project-summary">
           <p
-            class="md-typescale-body-large"
+            class="md-typescale-body-medium"
             .innerHTML=${this.codeProject.description}
           ></p>
         </slot>
@@ -218,9 +218,9 @@ export class CodeProject extends LitElement {
   #generateCardBack(): TemplateResult {
     return html`
       <section class="code-project-card code-project-card-back">
-        <h2 class="md-typescale-title-large">
+        <h3 class="md-typescale-title-large">
           Tech Stack
-        </h2>
+        </h3>
         <ul part="code-project-tech-stack">
           ${
             this.codeProject.tech

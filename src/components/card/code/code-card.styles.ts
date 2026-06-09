@@ -4,7 +4,7 @@ import { css } from "lit";
  * @summary Styles for the CodeCard component.
  * @packageDocumentation
  */
-export const codeCardStyles = css`
+export const CodeCardStyles = css`
 
   :host {
     display: block;

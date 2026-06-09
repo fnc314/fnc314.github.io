@@ -5,9 +5,9 @@ export { type Experience, type Job, type WorkDate } from "@/components/work-expe
 export { type ThemeJsonSchemes } from "@/types/theme/theme";
 import "@/components/app-shell/app-shell";
 import "@/components/bento-layout/bento-layout";
-import "@/components/blog/blog-post";
-import "@/components/blog/blog-post.types";
-import "@/components/code/code-project/code-project";
+import "@/components/blog/post/blog-post";
+import "@/components/blog/post/blog-post.types";
+import "@/components/code/project/code-project";
 import "@/components/dialog/step-up/step-up-dialog";
 import "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
