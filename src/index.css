@@ -5,7 +5,6 @@
 :root {
   --hover-focus-animation-translate-y: var(--globals-hover-focus-animation-translate-y);
   --hairline-width: var(--globals-hairline-width);
-  --icon-fill-color: var(--globals-icon-fill-color);
   --color-transition-duration: var(--globals-transition-color-duration);
   --color-transition-timing: var(--globals-transition-color-timing);
   --fab-buffer-height: var(--globals-fab-buffer-height);

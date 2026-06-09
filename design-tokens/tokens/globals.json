@@ -3,9 +3,6 @@
     "hairline": {
       "width": { "value": "1px" }
     },
-    "icon": {
-      "fillColor": { "value": "#c12a1c" }
-    },
     "transition": {
       "color": {
         "duration": { "value": "500ms" },
