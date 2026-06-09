@@ -13,6 +13,7 @@ import "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";
 import "@/components/info-section/info-section";
 import "@/components/partial-header/partial-header";
+import "@/components/version-tag/version-tag";
 import "@/components/word/word-cloud/word-cloud";
 import "@/components/word/word-cloud/word-cloud.types";
 import "@/components/word/word-tag/word-tag";

@@ -4,14 +4,14 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import {
-    CONFIG_COLOR_SCHEME_NAMES,
-    type ColorScheme,
-    colorSchemeConfigsToMaterialSchemeName
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme,
+  colorSchemeConfigsToMaterialSchemeName
 } from "@/types/theme/color-scheme-configs";
 import {
-    type ColorSchemeChangeEvent,
-    DarkModeToggle,
-    type PermanentColorSchemeEvent,
+  type ColorSchemeChangeEvent,
+  DarkModeToggle,
+  type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -72,31 +72,47 @@ export class UiModeToggle extends LitElement {
         }
 
         &::part(fieldset) {
-          align-items: center;
           display: flex;
           flex-direction: column;
-          gap: var(--spacing-gap-xs);
-          justify-content: center;
+          gap: var(--spacing-gap-xxs);
           padding: unset;
           padding-block: unset;
           padding-inline: unset;
         }
 
+        &::part(legend) {
+          padding: var(--spacing-reset);
+          margin: var(--spacing-reset);
+          padding-block-end: var(--spacing-padding-xs);
+          margin-block-end: var(--spacing-margin-xs);
+          border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+          color: var(--md-sys-color-primary);
+          font-family: var(--md-ref-typeface-brand);
+          font-size: var(--md-sys-typescale-label-large-size);
+        }
+
+        &::part(permanentLabel) {
+          color: var(--md-sys-color-on-surface-variant);
+          font-size: var(--md-sys-typescale-label-large-size);
+          vertical-align: middle;
+          display: inline-block;
+        }
+
         &::part(threeWayRadioWrapper) {
           border-color: var(--md-sys-color-on-surface-variant);
-          border-radius: 1rem;
+          border-radius: var(--md-sys-shape-corner-medium);
           border-style: solid;
           border-width: var(--hairline-width);
           display: inline-flex;
-          margin-block-start: var(--spacing-margin-xs);
-          overflow: hidden;
           padding: var(--spacing-reset);
+          padding-block-start: var(--spacing-padding-xs);
+          overflow: hidden;
           position: relative;
           z-index: 0;
         }
 
         &::part(threeWayRadioWrapper)::before {
-          background-color: var(--md-sys-color-surface-container-lowest);
+          background-color: var(--md-sys-color-surface-container);
           border-radius: inherit;
           bottom: 0;
           content: "";
@@ -120,19 +136,23 @@ export class UiModeToggle extends LitElement {
         &:not([permanent]) {
           &::part(threeWayRadioWrapper)::before {
             transform: translateX(100%);
+            background-color: var(--md-sys-color-primary-container);
           }
 
           &::part(systemThreeWayLabel) {
             --dark-mode-toggle-system-icon: url("./icons/components/configs-dialog/system-filled.svg");
+            color: var(--md-sys-color-on-primary-container);
           }
         }
 
         &:is([mode="light"][permanent]) {
           &::part(threeWayRadioWrapper)::before {
             transform: translateX(0%);
+            background-color: var(--md-sys-color-primary-container);
           }
 
           &::part(lightThreeWayLabel) {
+            color: var(--md-sys-color-on-primary-container);
             --dark-mode-toggle-light-icon: url("./icons/components/configs-dialog/light-mode-filled.svg");
           }
         }
@@ -140,9 +160,11 @@ export class UiModeToggle extends LitElement {
         &:is([mode="dark"][permanent]) {
           &::part(threeWayRadioWrapper)::before {
             transform: translateX(200%);
+            background-color: var(--md-sys-color-primary-container);
           }
 
           &::part(darkThreeWayLabel) {
+            color: var(--md-sys-color-on-primary-container);
             --dark-mode-toggle-dark-icon: url("./icons/components/configs-dialog/dark-mode-filled.svg");
           }
         }
@@ -274,7 +296,7 @@ export class UiModeToggle extends LitElement {
         .mode=${this.mode}
         ?permanent=${this.permanent}
         appearance="three-way"
-        legend="Choose UI Variant"
+        legend="UI Variant"
         system="System"
         light="Light"
         dark="Dark"

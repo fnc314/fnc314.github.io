@@ -13,20 +13,13 @@ export const educationCardStyles = css`
     --md-divider-color: currentColor;
   }
 
-  .education-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-gap-s);
-    height: 100%;
-  }
-
   .education-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-xs);
+    gap: var(--spacing-gap-xl);
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: var(--spacing-reset);
+    padding: var(--spacing-reset);
     justify-content: space-around;
   }
 

@@ -7,9 +7,9 @@ import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfi
 import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
 import { LitElement, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { abbreviatedSha as gitSha } from "~build/git";
-import { version as buildVersion } from "~build/package";
-import time from "~build/time";
+
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
 
 import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
@@ -37,41 +37,47 @@ export class SettingsCard extends LitElement {
         height: 100%;
       }
 
-      .configs-form {
+      .settings-content {
         display: flex;
         flex: 1;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
+        gap: var(--spacing-gap-m); /* Gap between form and version-tag */
         justify-content: space-between;
-      }
 
-      .form-field {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-gap-xxs);
-      }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-gap-xl); /* Gap between fieldsets and ui-mode-toggle */
+          flex: 1;
+          padding: var(--spacing-reset); /* Remove default form padding */
+          border: none; /* Remove default form border */
 
-      .form-field label {
-        color: var(--md-sys-color-on-surface-variant);
-        font-size: var(--md-sys-typescale-label-large-size);
-      }
+          fieldset {
+            border: none;
+            margin: var(--spacing-reset);
+            padding: var(--spacing-reset);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-gap-s); /* Gap between label and select within a fieldset */
 
-      .form-field select {
-        background-color: var(--md-sys-color-surface);
-        border: var(--hairline-width) solid var(--md-sys-color-outline);
-        border-radius: var(--md-sys-shape-corner-small);
-        color: var(--md-sys-color-on-surface);
-        font-family: inherit;
-        font-size: var(--md-sys-typescale-body-medium-size);
-        padding: var(--spacing-padding-xs);
-      }
+            legend {
+              padding: var(--spacing-reset);
+              margin: var(--spacing-reset);
+              padding-block-end: var(--spacing-padding-xxs);
+              border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+              color: var(--md-sys-color-primary);
+              font-family: var(--md-ref-typeface-brand);
+            }
 
-      .version-tag {
-        color: var(--md-sys-color-on-surface-variant);
-        font-size: var(--md-sys-typescale-body-small-size);
-        margin-top: auto;
-        padding-top: var(--spacing-padding-m);
-        text-align: center;
+            md-outlined-select {
+              padding-block-start: var(--spacing-padding-s);
+            }
+          }
+        }
+
+        version-tag {
+          padding-block-start: var(--spacing-padding-m);
+        }
       }
     `,
   ];
@@ -87,26 +93,6 @@ export class SettingsCard extends LitElement {
 
   @property({ type: Boolean })
   enableFocus = false;
-
-  /**
-   * Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}
-   *   on {@link time} to render the user presented timestamp
-   *
-   * @private
-   * @type {string}
-   * @memberof SettingsCard
-   */
-  private formattedDate: string = new Intl.DateTimeFormat(
-    navigator.languages,
-    {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }
-  ).format(time);
 
   override connectedCallback() {
     super.connectedCallback();
@@ -176,39 +162,48 @@ export class SettingsCard extends LitElement {
         ?enableFocus=${this.enableFocus}
       >
         <h2 slot="header" id="settings-title" class="md-typescale-title-large">Settings</h2>
-        <div class="configs-form">
-          <div class="form-field">
-            <label for="theme-select">UI Theme</label>
-            <select id="theme-select" @change=${this._onThemeChange}>
-              ${Object.values(THEME_NAMES).map(
-                (theme) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.theme === theme} value=${theme}>
-                    ${theme.charAt(0).toUpperCase() + theme.slice(1)}
-                  </option>
-                `,
-              )}
-            </select>
-          </div>
+        <div class="settings-content">
+          <form>
+            <fieldset>
+              <legend class="md-typescale-label-large">UI Theme</legend>
+              <md-outlined-select
+                label="Theme"
+                id="theme-select"
+                @change=${this._onThemeChange}
+                .value=${this._appConfigs.colorScheme.theme}
+              >
+                ${Object.values(THEME_NAMES).map(
+                  (theme) => html`
+                    <md-select-option value=${theme}>
+                      <div slot="headline">${theme.charAt(0).toUpperCase() + theme.slice(1)}</div>
+                    </md-select-option>
+                  `,
+                )}
+              </md-outlined-select>
+            </fieldset>
 
-          <div class="form-field">
-            <label for="contrast-select">UI Contrast</label>
-            <select id="contrast-select" @change=${this._onContrastChange}>
-              ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-                (contrast) => html`
-                  <option ?selected=${this._appConfigs.colorScheme.contrast === contrast} value=${contrast}>
-                    ${contrast.charAt(0) + contrast.slice(1).toLowerCase()}
-                  </option>
-                `,
-              )}
-            </select>
-          </div>
+            <fieldset>
+              <legend class="md-typescale-label-large">UI Contrast</legend>
+              <md-outlined-select
+                label="Contrast"
+                id="contrast-select"
+                @change=${this._onContrastChange}
+                .value=${this._appConfigs.colorScheme.contrast}
+              >
+                ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+                  (contrast) => html`
+                    <md-select-option value=${contrast}>
+                      <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
+                    </md-select-option>
+                  `,
+                )}
+              </md-outlined-select>
+            </fieldset>
 
-          <ui-mode-toggle></ui-mode-toggle>
+            <ui-mode-toggle></ui-mode-toggle>
+          </form>
 
-          <div class="version-tag">
-            <div>Version: ${buildVersion} (Built: ${this.formattedDate})</div>
-            <div>SHA: ${gitSha}</div>
-          </div>
+          <version-tag></version-tag>
         </div>
       </bento-card>
     `;

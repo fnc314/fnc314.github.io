@@ -26,7 +26,6 @@ export class EducationCard extends LitElement {
   override render() {
     return html`
       <bento-card
-        class="education-container"
         aria-labelledby="education-title"
         scrollable
         ?expanded=${this.expanded}
