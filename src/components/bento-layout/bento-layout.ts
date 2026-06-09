@@ -1,7 +1,6 @@
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { ROUTES, type Route } from "@/types/components/nav/routes";
 import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -43,9 +42,6 @@ export class BentoLayout extends LitElement {
     this._currentBreakpoint = readBreakpoint();
   }
 
-  private _scrollSpyObserver?: IntersectionObserver;
-  private _activeRoute: Route = ROUTES.INFO;
-
   override connectedCallback() {
     super.connectedCallback();
     window.addEventListener("resize", this._windowResizeObserver);
@@ -53,50 +49,11 @@ export class BentoLayout extends LitElement {
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     super.firstUpdated(_changedProperties);
-    this._setupScrollSpy();
-  }
-
-  private _setupScrollSpy() {
-    this._scrollSpyObserver = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries.find((entry) => entry.isIntersecting);
-        if (visibleEntry) {
-          const id = visibleEntry.target.id;
-          const route = this._routeFromElementId(id);
-          if (route && this._activeRoute !== route) {
-            this._activeRoute = route;
-          }
-        }
-      },
-      {
-        rootMargin: "-25% 0px -55% 0px",
-        threshold: 0.15,
-      }
-    );
-
-    setTimeout(() => {
-      const targets = ["bio", "work", "code", "blog"];
-      targets.forEach((id) => {
-        const el = this.shadowRoot?.getElementById(id);
-        if (el) {
-          this._scrollSpyObserver?.observe(el);
-        }
-      });
-    }, 500);
-  }
-
-  private _routeFromElementId(id: string): Route | null {
-    if (id === "bio") return ROUTES.INFO;
-    if (id === "work") return ROUTES.WORK;
-    if (id === "code") return ROUTES.CODE;
-    if (id === "blog") return ROUTES.BLOG;
-    return null;
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener("resize", this._windowResizeObserver);
-    this._scrollSpyObserver?.disconnect();
   }
 
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {

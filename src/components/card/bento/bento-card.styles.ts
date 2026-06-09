@@ -77,7 +77,7 @@ export const bentoCardStyles = css`
   .expansion-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     min-height: 0;
     padding: var(--spacing-padding-xs);
   }

@@ -14,14 +14,14 @@ export const blogCardStyles = css`
   .blog-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     height: 100%;
   }
 
   .blog-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-xs);
+    gap: var(--spacing-gap-xs);
   }
 
   @media screen and (width <= 768px) {

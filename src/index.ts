@@ -1,8 +1,8 @@
-export { type Job, type WorkDate, type Experience } from "@/components/work-experience/work-experience.types";
+export { BentoLayout } from "@/components/bento-layout/bento-layout";
 export { type StepUpDialogStyle } from "@/components/dialog/step-up/step-up-dialog.types";
 export { type WordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
+export { type Experience, type Job, type WorkDate } from "@/components/work-experience/work-experience.types";
 export { type ThemeJsonSchemes } from "@/types/theme/theme";
-export { BentoLayout } from "@/components/bento-layout/bento-layout";
 import "@/components/app-shell/app-shell";
 import "@/components/bento-layout/bento-layout";
 import "@/components/blog/blog-post";
@@ -63,18 +63,18 @@ const domLoadedListener = () => {
 
   document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
-  if (window.location.hash === "") {
-    window.history.replaceState(null, "", `${window.location.href}#bio`);
-  } else {
-    setTimeout(() => {
-      const hash = window.location.hash.replace("#", "").toLowerCase();
-      const targetId = hash === "info" ? "bio" : hash;
-      const el = document.getElementById(targetId) ?? document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }, 500);
-  }
+  // if (window.location.hash === "") {
+  //   window.history.replaceState(null, "", `${window.location.href}#bio`);
+  // } else {
+  //   setTimeout(() => {
+  //     const hash = window.location.hash.replace("#", "").toLowerCase();
+  //     const targetId = hash === "info" ? "bio" : hash;
+  //     const el = document.getElementById(targetId) ?? document.querySelector("bento-layout")?.shadowRoot?.getElementById(targetId);
+  //     if (el) {
+  //       el.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }
+  //   }, 500);
+  // }
 
   const matScheme =
     themeService.currentThemeConfig().materialSchemes[

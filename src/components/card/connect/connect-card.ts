@@ -35,30 +35,37 @@ export class ConnectCard extends LitElement {
         ?enableFocus=${this.enableFocus}
       >
         <h2 slot="header" id="connect-title" class="md-typescale-title-large">Let's Connect</h2>
-        <dl class="connections-list">
-          ${Connections.connections.map(
+        ${
+          Connections.connections.map(
             (category) => html`
-            <div class="connection-links-wrapper">
-              <dt class="connection-label">
-                <h3 class="md-typescale-title-small">
-                  ${category.label}
-                </h3>
-              </dt>
-
-              ${Object.values(category.connections).map(
-                (conn) => html`
-                  <dd>
-                    ${unsafeHTML(conn.start)}
-                    <a href=${conn.href} target="_blank" rel="noopener noreferrer" class="connection-link md-typescale-body-medium">
-                      ${unsafeHTML(conn.text)}
-                    </a>
-                  </dd>
-                `,
-              )}
-            </div>
-            `,
-          )}
-        </dl>
+              <section>
+                <header>
+                  <h3 class="md-typescale-title-small">${category.label}</h3>
+                  <md-divider inset></md-divider>
+                </header>
+                <ul>
+                  ${
+                    Object.values(category.connections).map(
+                      (conn) => html`
+                        <li class="connection-list-item">
+                          ${unsafeHTML(conn.start)}
+                          <a
+                            href=${conn.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="connection-link md-typescale-body-large"
+                          >
+                            ${unsafeHTML(conn.text)}
+                          </a>
+                        </li>
+                      `
+                    )
+                  }
+                </ul>
+              </section>
+            `
+          )
+        }
       </bento-card>
     `;
   }

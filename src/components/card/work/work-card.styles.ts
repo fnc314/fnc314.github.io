@@ -14,7 +14,7 @@ export const workCardStyles = css`
   .work-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     height: 100%;
   }
 `;

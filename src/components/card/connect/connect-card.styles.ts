@@ -8,38 +8,62 @@ export const connectCardStyles = css`
   :host {
     display: block;
     height: 100%;
+
+    --md-divider-color: var(--md-sys-color-secondary);
   }
 
-  .connect-container {
+  bento-card {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     height: 100%;
-  }
 
-  .connection-label {
-    margin-block-start: var(--spacing-margin-xs);
-    color: var(--md-sys-color-secondary);
-    margin-block-start: var(--spacing-margin-m);
+    section {
+      padding-block: var(--spacing-padding-xs);
 
-    h3 {
-      margin-block: var(--spacing-reset);
-      text-align: center;
+      header {
+        h3 {
+          color: var(--md-sys-color-secondary);
+          padding-block: var(--spacing-padding-xs);
+          text-align: center;
+          margin: var(--spacing-reset);
+        }
+
+        md-divider {
+          margin-block-end: var(--spacing-margin-m);
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-block: var(--spacing-reset);
+        list-style: none;
+        padding: var(--spacing-reset);
+      }
     }
   }
 
-  dd {
+  .connection-links-label {
+    color: var(--md-sys-color-secondary);
+    padding-block: var(--spacing-padding-xs);
+    text-align: center;
+    margin-block: var(--spacing-reset);
+  }
+
+  .connection-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--spacing-margin-xs);
+    gap: var(--spacing-gap-xs);
     margin: var(--spacing-reset);
-    margin-inline-start: var(--spacing-margin-m);
-    margin-block: var(--spacing-margin-xs);
+    padding: var(--spacing-reset);
+    padding-inline-start: var(--spacing-padding-m);
+    padding-block: var(--spacing-padding-xs);
 
     img, md-icon {
-      width: var(--md-icon-size);
-      height: var(--md-icon-size);
+      width: calc(var(--md-icon-size) * 0.75);
+      height: calc(var(--md-icon-size) * 0.75);
       background-color: var(--md-sys-color-primary-fixed);
       border-radius: var(--md-sys-shape-corner-full);
       padding: var(--spacing-padding-xs);
@@ -54,10 +78,12 @@ export const connectCardStyles = css`
     display: flex;
     flex-direction: column;
     margin-block: var(--spacing-reset);
-  }
+    list-style: none;
+    padding: var(--spacing-reset);
 
-  .connection-links-wrapper {
-    margin-block: var(--spacing-margin-s);
+    md-divider {
+      margin-block-end: var(--spacing-margin-m);
+    }
   }
 
   .connection-link {

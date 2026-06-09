@@ -92,7 +92,7 @@ export class CodeProject extends LitElement {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         height: 100%;
         inset: 0;
         justify-content: space-between;
@@ -149,7 +149,7 @@ export class CodeProject extends LitElement {
         ul {
           display: flex;
           flex-flow: row wrap;
-          gap: var(--spacing-margin-l);
+          gap: var(--spacing-gap-l);
           justify-content: space-evenly;
           margin: unset;
           padding: unset;

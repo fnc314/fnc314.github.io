@@ -21,7 +21,7 @@ export class WorkPartial extends LitElement {
         box-sizing: border-box;
         color: var(--md-sys-color-on-surface);
         display: grid;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         grid-auto-rows: auto;
         grid-template-areas:
           "title"
@@ -39,7 +39,7 @@ export class WorkPartial extends LitElement {
       .article-body {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         grid-area: content;
       }
     `,

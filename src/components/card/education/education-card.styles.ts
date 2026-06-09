@@ -16,14 +16,14 @@ export const educationCardStyles = css`
   .education-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     height: 100%;
   }
 
   .education-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-xs);
+    gap: var(--spacing-gap-xs);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@ export const educationCardStyles = css`
     grid-template-areas:
       "institute location"
       "program year";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr max-content;
     grid-template-rows: 1fr 1fr;
     margin-block: var(--spacing-margin-xs);
 
@@ -43,20 +43,25 @@ export const educationCardStyles = css`
       grid-area: institute;
     }
 
-    span:nth-of-type(1) {
+    span {
       grid-area: location;
     }
 
     h4 {
       grid-area: program;
+      font-style: italic;
     }
 
-    span:nth-of-type(2) {
+    time {
       grid-area: year;
     }
 
     h3, h4 {
       margin-block: var(--spacing-reset);
+    }
+
+    span, time {
+      text-align: end;
     }
   }
 `;

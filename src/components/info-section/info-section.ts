@@ -42,7 +42,7 @@ export class InfoSection extends LitElement {
         border-radius: var(--md-sys-shape-corner-medium);
         color: var(--md-sys-color-inverse-on-surface);
         display: grid;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
@@ -86,7 +86,7 @@ export class InfoSection extends LitElement {
 
       @container (min-width: 900px) {
         section {
-          column-gap: var(--spacing-margin-s);
+          column-gap: var(--spacing-gap-s);
         }
       }
     `,

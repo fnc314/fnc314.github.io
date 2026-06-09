@@ -42,6 +42,26 @@
       "xl": {
         "$value": "2.4rem"
       }
+    },
+    "gap": {
+      "xxs": {
+        "$value": "0.2rem"
+      },
+      "xs": {
+        "$value": "0.4rem"
+      },
+      "s": {
+        "$value": "0.8rem"
+      },
+      "m": {
+        "$value": "1.2rem"
+      },
+      "l": {
+        "$value": "1.6rem"
+      },
+      "xl": {
+        "$value": "2.4rem"
+      }
     }
   }
 }

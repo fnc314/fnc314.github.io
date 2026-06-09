@@ -60,7 +60,7 @@ export class WorkExperience extends LitElement {
         border-inline-start: 2px solid var(--md-sys-color-primary);
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         margin-block-start: var(--spacing-margin-xs);
         padding-inline-start: var(--spacing-padding-s);
       }
@@ -93,7 +93,7 @@ export class WorkExperience extends LitElement {
       .experience-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-xs);
+        gap: var(--spacing-gap-xs);
         padding-block: var(--spacing-padding-xs);
       }
 
@@ -101,7 +101,7 @@ export class WorkExperience extends LitElement {
       .nested-experience-info {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-xxs);
+        gap: var(--spacing-gap-xxs);
 
         > h2,
         > h3 {
@@ -132,13 +132,13 @@ export class WorkExperience extends LitElement {
 
       @container experience-container (min-inline-size: 600px) {
         div.experience-container {
-          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
+          gap: var(--spacing-gap-xs) var(--spacing-margin-s);
         }
 
         .experience-container {
           align-items: baseline;
           display: grid;
-          gap: var(--spacing-margin-xs) var(--spacing-margin-s);
+          gap: var(--spacing-gap-xs) var(--spacing-margin-s);
           grid-template-columns: minmax(20ch, max-content) 1fr;
 
           .experience-info {
@@ -216,18 +216,18 @@ export class WorkExperience extends LitElement {
   @property({ type: Object, attribute: "date-end" })
   dateEnd: WorkDate = { stamp: "", text: "" };
 
-  /** 
-   * A list of summary points describing achievements or responsibilities. 
+  /**
+   * A list of summary points describing achievements or responsibilities.
    * @typedef {Object} WorkExperienceSummaryItem
    * @property {string} item - The summary text
    */
   @property({ type: Array, attribute: "summaries" })
-  summaries: { 
-    /** 
+  summaries: {
+    /**
      * AUTO-DOC'd WITH GEMINI
      * The description of the responsibility or achievement.
      */
-    item: string 
+    item: string
   }[] = [];
 
   /** A list of sub-jobs or project assignments to be rendered as nested experiences. */

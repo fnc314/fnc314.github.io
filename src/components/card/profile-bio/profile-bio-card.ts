@@ -25,7 +25,7 @@ export class ProfileBioCard extends LitElement {
       .profile-bio-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
       }
 
       .profile-picture {

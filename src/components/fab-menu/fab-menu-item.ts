@@ -26,7 +26,7 @@ export class FabMenuItem extends LitElement {
         align-items: center;
         display: flex;
         flex-direction: var(--fab-menu-item-direction, row);
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         justify-content: var(--fab-menu-item-justify, flex-end);
         list-style: none;
 

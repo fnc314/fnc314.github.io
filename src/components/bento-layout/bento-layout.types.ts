@@ -60,7 +60,7 @@ export interface BentoBoxConfig {
 export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   {
     type: "profile-photo-bio",
-    expanded: true,
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -77,7 +77,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "work",
-    expanded: true,
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -94,7 +94,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "blog",
-    expanded: true,
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -111,7 +111,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "code",
-    expanded: true,
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":
@@ -128,7 +128,7 @@ export const BentoBoxConfigs: () => BentoBoxConfig[] = () => ([
   },
   {
     type: "skills",
-    expanded: true,
+    expanded: false,
     placementForBreakpoint(breakpoint: Breakpoint) {
       switch (breakpoint) {
         case "mobile":

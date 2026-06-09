@@ -120,7 +120,7 @@ export class BlogPost extends LitElement {
 
       section {
         display: grid;
-        gap: var(--spacing-margin-xs);
+        gap: var(--spacing-gap-xs);
         grid-template-areas:
           "icon    icon"
           "header  header"

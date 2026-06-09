@@ -27,7 +27,7 @@ export const bentoLayoutStyles = css`
     align-items: stretch;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-margin-s);
+    gap: var(--spacing-gap-s);
     padding: var(--spacing-padding-xs);
   }
 
@@ -51,7 +51,7 @@ export const bentoLayoutStyles = css`
     .bento-grid {
       align-items: unset;
       display: grid;
-      gap: var(--spacing-margin-m);
+      gap: var(--spacing-gap-m);
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
       padding: var(--spacing-padding-s);
@@ -69,7 +69,7 @@ export const bentoLayoutStyles = css`
 
     .bento-grid {
       display: grid;
-      gap: var(--spacing-margin-l);
+      gap: var(--spacing-gap-l);
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
       margin: var(--spacing-reset) auto;

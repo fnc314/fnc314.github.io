@@ -50,7 +50,7 @@ export class FabMenu extends LitElement {
  * @cssprop [--fab-menu-animation-spec]
  */
         --internal-fab-menu-animation-spec: var(--fab-menu-animation-spec, cubic-bezier(0.4, 0, 0.2, 1));
-    
+
         align-items: flex-end; /* Align to right side */
         display: inline-flex;
         flex-direction: column-reverse;
@@ -76,7 +76,7 @@ export class FabMenu extends LitElement {
         align-items: flex-end;
         display: flex;
         flex-direction: column-reverse;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         height: 0;
         list-style: none;
         margin-inline-end: var(--md-fab-margin, 0);

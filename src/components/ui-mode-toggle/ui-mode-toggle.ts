@@ -4,14 +4,14 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import {
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  colorSchemeConfigsToMaterialSchemeName
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    colorSchemeConfigsToMaterialSchemeName
 } from "@/types/theme/color-scheme-configs";
 import {
-  type ColorSchemeChangeEvent,
-  DarkModeToggle,
-  type PermanentColorSchemeEvent,
+    type ColorSchemeChangeEvent,
+    DarkModeToggle,
+    type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -63,7 +63,7 @@ export class UiModeToggle extends LitElement {
         --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand);
         --dark-mode-toggle-icon-filter: none;
         --dark-mode-toggle-remember-filter: contrast(100%);
-    
+
         display: contents;
         place-items: center;
 
@@ -75,7 +75,7 @@ export class UiModeToggle extends LitElement {
           align-items: center;
           display: flex;
           flex-direction: column;
-          gap: var(--spacing-margin-xs);
+          gap: var(--spacing-gap-xs);
           justify-content: center;
           padding: unset;
           padding-block: unset;

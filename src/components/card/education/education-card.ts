@@ -39,7 +39,7 @@ export class EducationCard extends LitElement {
             (edu) => html`
               <li class="education-item">
                 <h3 class="md-typescale-title-medium">${edu.institute}</h3>
-                <span class="md-typescale-body-small">${edu.graduationDate.label}</span>
+                <time class="md-typescale-body-small" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
                 <h4 class="md-typescale-title-small">${edu.degree}</h4>
                 <span class="md-typescale-body-medium">${edu.location}</span>
               </li>

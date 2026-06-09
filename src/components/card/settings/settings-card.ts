@@ -33,7 +33,7 @@ export class SettingsCard extends LitElement {
       .settings-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         height: 100%;
       }
 
@@ -41,14 +41,14 @@ export class SettingsCard extends LitElement {
         display: flex;
         flex: 1;
         flex-direction: column;
-        gap: var(--spacing-margin-s);
+        gap: var(--spacing-gap-s);
         justify-content: space-between;
       }
 
       .form-field {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-margin-xxs);
+        gap: var(--spacing-gap-xxs);
       }
 
       .form-field label {
