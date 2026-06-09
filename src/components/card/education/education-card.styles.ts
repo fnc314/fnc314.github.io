@@ -31,10 +31,29 @@ export const educationCardStyles = css`
   }
 
   .education-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-areas:
+      "institute location"
+      "program year";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin-block: var(--spacing-margin-xs);
+
+    h3 {
+      grid-area: institute;
+    }
+
+    span:nth-of-type(1) {
+      grid-area: location;
+    }
+
+    h4 {
+      grid-area: program;
+    }
+
+    span:nth-of-type(2) {
+      grid-area: year;
+    }
 
     h3, h4 {
       margin-block: var(--spacing-reset);

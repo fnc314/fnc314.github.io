@@ -40,10 +40,9 @@ export class FabMenuItem extends LitElement {
 
       .label-container {
         --md-elevation-level: 4;
-    
+
         background-color: var(--md-sys-color-surface-container-high);
         border-radius: var(--md-sys-shape-corner-medium);
-        box-shadow: var(--md-sys-elevation-2);
         color: var(--md-sys-color-on-surface-variant);
         opacity: 1;
         padding: var(--spacing-padding-xs) var(--spacing-padding-s);

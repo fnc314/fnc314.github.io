@@ -74,17 +74,23 @@ export class BentoCard extends LitElement {
     };
 
     return html`
-      <details class="${classMap(classes)}" ?open=${this.expanded} @toggle=${this._handleToggle}>
-        <summary>
-          <slot name="header"></slot>
-          <md-icon class="indicator">expand_more</md-icon>
-        </summary>
-        <div class="expansion-wrapper">
-          <div class="expansion-content">
-            <slot></slot>
+      <section>
+        <details
+          class="${classMap(classes)}"
+          ?open=${this.expanded}
+          @toggle=${this._handleToggle}
+          >
+          <summary>
+            <slot name="header"></slot>
+            <md-icon class="indicator">expand_more</md-icon>
+          </summary>
+          <div class="expansion-wrapper">
+            <div class="expansion-content">
+              <slot></slot>
+            </div>
           </div>
-        </div>
-      </details>
+        </details>
+      </section>
     `;
   }
 }

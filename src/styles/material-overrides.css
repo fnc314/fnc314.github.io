@@ -78,4 +78,5 @@
   --md-icon-font-sharp: "Material Symbols Sharp";
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-filled-button-container-shape: var(--md-sys-shape-corner-small);
+  --md-elevated-card-container-shadow-color: oklch(from var(--md-sys-color-scrim) 30% c h);
 }

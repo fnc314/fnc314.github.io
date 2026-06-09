@@ -53,7 +53,7 @@ export class CodeProject extends LitElement {
 
       md-outlined-card {
         --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
-        --md-outlined-card-container-elevation: var(--motion-elevation-level-4);
+        --md-outlined-card-container-elevation: var(--motion-elevation-level-1);
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
 
         height: 100%;
@@ -77,7 +77,7 @@ export class CodeProject extends LitElement {
         &:focus,
         &:focus-within,
         &:focus-visible {
-          --md-outlined-card-container-elevation: var(--motion-elevation-level-6);
+          --md-outlined-card-container-elevation: var(--motion-elevation-level-3);
         }
 
         &.flipped {

@@ -19,7 +19,7 @@ export class PartialHeader extends LitElement {
 
       header {
         --md-elevation-level: 2;
-    
+
         align-items: center;
         background-color: var(--md-sys-color-primary);
         border-radius: var(--md-sys-shape-corner-medium);

@@ -5,7 +5,6 @@ import { css } from "lit";
  * @packageDocumentation
  */
 export const connectCardStyles = css`
-
   :host {
     display: block;
     height: 100%;
@@ -25,6 +24,7 @@ export const connectCardStyles = css`
 
     h3 {
       margin-block: var(--spacing-reset);
+      text-align: center;
     }
   }
 
@@ -40,13 +40,13 @@ export const connectCardStyles = css`
     img, md-icon {
       width: var(--md-icon-size);
       height: var(--md-icon-size);
-      background-color: var(--md-sys-color-primary-container);
+      background-color: var(--md-sys-color-primary-fixed);
       border-radius: var(--md-sys-shape-corner-full);
       padding: var(--spacing-padding-xs);
     }
 
     md-icon {
-      color: var(--md-sys-color-on-primary-container);
+      color: var(--md-sys-color-on-primary-fixed-variant);
     }
   }
 

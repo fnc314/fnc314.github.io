@@ -1,5 +1,5 @@
 {
-  "icon": {
+  "icons": {
     "size": { "value": "1.5rem" },
     "font": { "value": "\"Material Symbols Outlined\"" },
     "fontSharp": { "value": "\"Material Symbols Sharp\"" }

@@ -34,34 +34,34 @@ export class BlogPost extends LitElement {
     css`
       :host {
         /**
- * @cssprop --blog-post-animation - The duration of the animation for \\\\\`:focus\\\\\`, \\\\\`:hover\\\\\`,
- *   \\\\\`:focus-within\\\\\`, and \\\\\`:focus-visible\\\\\` states
- */
+         * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
+         *   \`:focus-within\`, and \`:focus-visible\` states
+         */
         --blog-post-animation: var(--motion-duration-short);
 
         /**
- * @cssprop --blog-post-primary-text-color - The color of the primary text
- */
+         * @cssprop --blog-post-primary-text-color - The color of the primary text
+         */
         --blog-post-primary-text-color: var(--md-sys-color-on-secondary-container);
 
         /**
- * @cssprop --blog-post-secondary-text-color - The color of the secondary text
- */
+         * @cssprop --blog-post-secondary-text-color - The color of the secondary text
+         */
         --blog-post-secondary-text-color: var(--md-sys-color-on-secondary);
 
         /**
- * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!md-elevated-card}
- *   and {@link @material/web!--md-elevated-card-container-color}
- */
+         * @cssprop --blog-post-container-color - The color of the container, {@link @material/web!md-elevated-card}
+         *   and {@link @material/web!--md-elevated-card-container-color}
+         */
         --blog-post-container-color: var(--md-sys-color-secondary-container);
         --md-elevated-card-container-color: var(--blog-post-container-color);
 
         /**
- * @cssprop --blog-post-header-divider-color - The color for the {@link @material/web!MdDivider} used in the \\\\\`<header>\\\\\`
- *   element of the \\\\\`blog-post\\\\\`.  Defaults to \\\\\`--blog-post-primary-text-color\\\\\`
- */
+         * @cssprop --blog-post-header-divider-color - The color for the {@link @material/web!MdDivider} used in the \`<header>\`
+         *   element of the \`blog-post\`.  Defaults to \`--blog-post-primary-text-color\`
+         */
         --blog-post-header-divider-color: var(--blog-post-primary-text-color);
-    
+
         container-type: inline-size;
         display: block;
         transition:
@@ -93,10 +93,10 @@ export class BlogPost extends LitElement {
       }
 
       md-elevated-card {
-        --md-elevated-card-container-elevation: var(--motion-elevation-level-2);
+        --md-elevated-card-container-elevation: var(--motion-elevation-level-1);
         --md-elevated-card-container-shape: var(--md-sys-shape-corner-medium);
         --md-divider-color: var(--blog-post-header-divider-color);
-    
+
         color: var(--blog-post-primary-text-color);
         container-type: inline-size;
         margin: var(--spacing-margin-xxs);
@@ -113,7 +113,7 @@ export class BlogPost extends LitElement {
         &:focus,
         &:focus-visible,
         &:focus-within {
-          --md-elevated-card-container-elevation: var(--motion-elevation-level-4);
+          --md-elevated-card-container-elevation: var(--motion-elevation-level-3);
           --md-elevated-card-container-shape: var(--md-sys-shape-corner-large);
         }
       }

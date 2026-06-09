@@ -1,5 +1,5 @@
 import pkg from "fs-extra";
-import StyleDictionary from "style-dictionary";
+import StyleDictionary, { type Config } from "style-dictionary";
 import {
   formats,
   logBrokenReferenceLevels,
@@ -37,9 +37,23 @@ export default {
         transforms.assetBase64
       ],
       transformGroup: transformGroups.css,
+
       buildPath: "design-tokens/dist/",
       files: [{
         destination: "css/_variables.css",
+        format: formats.cssVariables,
+      }],
+    },
+    materialCss: {
+      transforms: [
+        transforms.assetBase64
+      ],
+      transformGroup: transformGroups.css,
+
+      buildPath: "design-tokens/dist/",
+      prefix: "md",
+      files: [{
+        destination: "css/_material-overrides.css",
         format: formats.cssVariables,
       }],
     },
@@ -62,4 +76,4 @@ export default {
       brokenReferences: logBrokenReferenceLevels.throw,
     }
   }
-};
+} satisfies Config;

@@ -4,13 +4,13 @@
 
 :root {
   --hover-focus-animation-translate-y: var(
-    --global-hover-focus-animation-translate-y
+    --globals-hover-focus-animation-translate-y
   );
-  --hairline-width: var(--global-hairline-width);
-  --icon-fill-color: var(--global-icon-fill-color);
-  --color-transition-duration: var(--global-transition-color-duration);
-  --color-transition-timing: var(--global-transition-color-timing);
-  --fab-buffer-height: var(--global-fab-buffer-height);
+  --hairline-width: var(--globals-hairline-width);
+  --icon-fill-color: var(--globals-icon-fill-color);
+  --color-transition-duration: var(--globals-transition-color-duration);
+  --color-transition-timing: var(--globals-transition-color-timing);
+  --fab-buffer-height: var(--globals-fab-buffer-height);
 
   color-scheme: light dark;
 }

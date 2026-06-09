@@ -1,5 +1,5 @@
 {
-  "global": {
+  "globals": {
     "hairline": {
       "width": { "value": "1px" }
     },

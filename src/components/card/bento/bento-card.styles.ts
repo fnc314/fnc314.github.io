@@ -21,7 +21,7 @@ export const bentoCardStyles = css`
 
   .bento-card {
     backdrop-filter: blur(12px);
-    background-color: color(from var(--md-sys-color-surface-container-low) srgb r g b / 90%);
+    background-color: var(--md-sys-color-surface-container-low);
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-level1);
@@ -86,13 +86,11 @@ export const bentoCardStyles = css`
   .bento-card.enable-hover:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-outline);
-    box-shadow: var(--md-elevation-level-3);
     transform: translateY(var(--motion-transform-hover-lift));
   }
 
   .bento-card.enable-focus:focus-within {
     border-color: var(--md-sys-color-primary);
-    box-shadow: var(--md-elevation-level-2);
   }
 
   /* Style slotted header elements (h2 by default) */
