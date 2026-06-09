@@ -4,7 +4,6 @@ import { InteractionStyles } from "@/styles/interaction-styles";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-export { type CodeProjectData } from "@/components/code/code-project/code-project.types";
 
 /**
  * @summary Represents a single (usually GitHub-hosted) demonstration project

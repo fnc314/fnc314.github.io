@@ -54,6 +54,7 @@
     "**/Flutter/ephemeral": true,
     "**/Thumbs.db": true
   },
+  "git.ignoreLimitWarning": true,
   "html.customData": [
     "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "./.vscode/wca/*.json"
@@ -76,6 +77,9 @@
   "pnpm.packageJson": "./package.json",
   "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
   "stylelint.packageManager": "pnpm",
+  "stylelint.reportDescriptionlessDisables": false,
+  "stylelint.reportInvalidScopeDisables": false,
+  "stylelint.reportNeedlessDisables": false,
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",
@@ -89,6 +93,5 @@
   ],
   "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "workbench.tree.indent": 4,
-  "git.ignoreLimitWarning": true
+  "workbench.tree.indent": 4
 }

@@ -15,8 +15,6 @@ const config: Config = {
       inline: "left-to-right",
     }
   },
-  // Reverting to CSS-only for simplicity. We will deal with Lit components later.
-  files: ["src/**/*.css"],
   overrides: [
     {
       files: ["src/**/*.css"],
