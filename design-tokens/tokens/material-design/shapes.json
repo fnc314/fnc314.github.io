@@ -3,8 +3,8 @@
     "sys": {
       "shape": {
         "corner": {
-          "extraLarge": { "value": "2rem" },
-          "extraSmall": { "value": "0.25rem" },
+          "extra-large": { "value": "2rem" },
+          "extra-small": { "value": "0.25rem" },
           "full": { "value": "100%" },
           "large": { "value": "1.5rem" },
           "medium": { "value": "1rem" },

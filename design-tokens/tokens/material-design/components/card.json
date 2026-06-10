@@ -1,0 +1,16 @@
+{
+  "md": {
+    "elevated": {
+      "card": {
+        "container": {
+          "shadow": {
+            "color": {
+              "type": "value",
+              "value": "oklch(from var(--md-sys-color-scrim) 30% c h)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

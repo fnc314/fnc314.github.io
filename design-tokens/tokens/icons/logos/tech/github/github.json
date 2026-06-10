@@ -5,11 +5,11 @@
         "github": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/github/github-light.svg"
+            "value": "design-tokens/assets/icons/logos/tech/github/github-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/github/github-dark.svg"
+            "value": "design-tokens/assets/icons/logos/tech/github/github-light.svg"
           },
           "light": {
             "type": "asset",
