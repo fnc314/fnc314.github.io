@@ -5,11 +5,13 @@
       "tech": [
         {
           "name": "Gradle",
-          "url": "https://docs.gradle.org/"
+          "url": "https://docs.gradle.org/",
+          "designToken": "--icons-logos-tech-gradle-default"
         },
         {
           "name": "Kotlin",
-          "url": "https://kotlinlang.org/"
+          "url": "https://kotlinlang.org/",
+          "designToken": "--icons-logos-tech-kotlin-default"
         }
       ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
@@ -20,11 +22,13 @@
       "tech": [
         {
           "name": "Bash",
-          "url": "https://www.gnu.org/software/bash/"
+          "url": "https://www.gnu.org/software/bash/",
+          "designToken": "--icons-logos-tech-bash-default"
         },
         {
           "name": "Oh-My-Zsh",
-          "url": "https://ohmyz.sh/"
+          "url": "https://ohmyz.sh/",
+          "designToken": "--icons-logos-tech-zsh-default"
         }
       ],
       "url": "https://github.com/fnc314/mac-os-env-scripts",
@@ -35,15 +39,18 @@
       "tech": [
         {
           "name": "Android",
-          "url": "https://developer.android.com/"
+          "url": "https://developer.android.com/",
+          "designToken": "--icons-logos-tech-android-default"
         },
         {
           "name": "Gradle",
-          "url": "https://docs.gradle.org/"
+          "url": "https://docs.gradle.org/",
+          "designToken": "--icons-logos-tech-gradle-default"
         },
         {
           "name": "Kotlin",
-          "url": "https://kotlinlang.org/"
+          "url": "https://kotlinlang.org/",
+          "designToken": "--icons-logos-tech-kotlin-default"
         }
       ],
       "url": "https://github.com/fnc314/fnc314-kmp",
@@ -54,35 +61,43 @@
       "tech": [
         {
           "name": "HTML/CSS/JS",
-          "url": "https://developer.mozilla.org/"
+          "url": "https://developer.mozilla.org/",
+          "designToken": "--icons-logos-tech-web-html-default"
         },
         {
           "name": "Lit",
-          "url": "https://lit.dev/"
+          "url": "https://lit.dev/",
+          "designToken": "--icons-logos-tech-lit-default"
         },
         {
           "name": "TypeScript",
-          "url": "https://typescriptlang.org/"
+          "url": "https://typescriptlang.org/",
+          "designToken": "--icons-logos-tech-typescript-default"
         },
         {
           "name": "Node",
-          "url": "https://nodejs.org/"
+          "url": "https://nodejs.org/",
+          "designToken": "--icons-logos-tech-node-default"
         },
         {
           "name": "Web Components",
-          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+          "designToken": "--icons-logos-tech-web-web-components-default"
         },
         {
           "name": "Material Components Web",
-          "url": "https://github.com/material-components/material-web"
+          "url": "https://github.com/material-components/material-web",
+          "designToken": "--icons-logos-tech-material-design-default"
         },
         {
           "name": "Mise",
-          "url": "https://mise.jdx.dev/"
+          "url": "https://mise.jdx.dev/",
+          "designToken": "--icons-logos-tech-mise-default"
         },
         {
           "name": "PNPM",
-          "url": "https://pnpm.io/"
+          "url": "https://pnpm.io/",
+          "designToken": "--icons-logos-tech-pnpm-default"
         },
         {
           "name": "Vite",
@@ -90,23 +105,28 @@
         },
         {
           "name": "Material Theme Builder",
-          "url": "https://material-foundation.github.io/material-theme-builder/"
+          "url": "https://material-foundation.github.io/material-theme-builder/",
+          "designToken": "--icons-logos-tech-material-design-default"
         },
         {
           "name": "Prettier",
-          "url": "https://prettier.io/"
+          "url": "https://prettier.io/",
+          "designToken": "--icons-logos-tech-prettier-default"
         },
         {
           "name": "ESLint",
-          "url": "https://eslint.org/"
+          "url": "https://eslint.org/",
+          "designToken": "--icons-logos-tech-eslint-default"
         },
         {
           "name": "StyleLint",
-          "url": "https://stylelint.io/"
+          "url": "https://stylelint.io/",
+          "designToken": "--icons-logos-tech-stylelint-default"
         },
         {
-          "name": "PostCSS",
-          "url": "https://postcss.org/"
+          "name": "Style Dictionary",
+          "url": "https://styledictionary.com/",
+          "designToken": "--icons-logos-tech-style-dictionary-default"
         }
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",
@@ -117,11 +137,13 @@
       "tech": [
         {
           "name": "HTML/CSS/JS",
-          "url": "https://developer.mozilla.org/"
+          "url": "https://developer.mozilla.org/",
+          "designToken": "--icons-logos-tech-web-html-default"
         },
         {
           "name": "Material Theme Builder",
-          "url": "https://material-foundation.github.io/material-theme-builder/"
+          "url": "https://material-foundation.github.io/material-theme-builder/",
+          "designToken": "--icons-logos-tech-material-design-default"
         }
       ],
       "url": "https://github.com/fnc314/material-theme-viewer",
@@ -132,11 +154,13 @@
       "tech": [
         {
           "name": "Python",
-          "url": "https://python.org/"
+          "url": "https://python.org/",
+          "designToken": "--icons-logos-tech-python-default"
         },
         {
           "name": "Ruby",
-          "url": "https://www.ruby-lang.org/en/"
+          "url": "https://www.ruby-lang.org/en/",
+          "designToken": "--icons-logos-tech-ruby-default"
         }
       ],
       "url": "https://github.com/fnc314/project_euler",

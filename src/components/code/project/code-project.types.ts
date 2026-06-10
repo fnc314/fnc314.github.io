@@ -23,8 +23,12 @@ export interface CodeProjectData {
  * @export
  */
 export interface CodeProjectTech {
+  /** A generated `CSS Variable` from `@fnc314/design-tokens` */
+  designToken?: string | undefined;
+
   /** Display name for the technology (e.g., "TypeScript"). */
   name: string;
+
   /** URL with more information about the technology. */
   url: string;
 }

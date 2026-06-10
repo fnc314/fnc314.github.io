@@ -1,7 +1,7 @@
 import { type CodeProjectData } from "@/components/code/project/code-project.types";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
-import { LitElement, type TemplateResult, css, html } from "lit";
+import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
@@ -135,6 +135,20 @@ export class CodeProject extends LitElement {
             white-space: pre-wrap;
           }
         }
+
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: var(--spacing-gap-xs);
+
+          img {
+            width: var(--md-icon-size);
+            height: var(--md-icon-size);
+            aspect-ratio: 1;
+          }
+        }
       }
 
       section.code-project-card-back {
@@ -149,13 +163,23 @@ export class CodeProject extends LitElement {
         ul {
           display: flex;
           flex-flow: row wrap;
-          gap: var(--spacing-gap-l);
+          gap: var(--spacing-gap-m);
           justify-content: space-evenly;
           margin: unset;
           padding: unset;
 
           li {
             list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--spacing-gap-xs);
+
+            img {
+              width: var(--md-icon-size);
+              height: var(--md-icon-size);
+              aspect-ratio: 1;
+            }
           }
         }
       }
@@ -164,7 +188,7 @@ export class CodeProject extends LitElement {
         color: var(--md-sys-color-on-surface-variant);
 
         &.repo-link::before {
-          content: url("./icons/brand/github.svg") / "GitHub logo";
+          content: url("data:image/svg+xml;base64,") / "GitHub logo";
           display: block;
         }
       }
@@ -198,6 +222,10 @@ export class CodeProject extends LitElement {
           rel="noopener noreferrer"
           class="repo-link md-typescale-title-large"
         >
+          <img
+            src="data:image/svg+xml;base64,${window.getComputedStyle(document.documentElement).getPropertyValue("--icons-logos-tech-github-light")}"
+            alt="GitHub Logo"
+            />
           Repo
         </a>
         <md-outlined-button
@@ -208,7 +236,6 @@ export class CodeProject extends LitElement {
       </section>
     `;
   }
-
 
   /**
    * Builds the back of the {@link @material/web!MdOutlinedCard} content
@@ -224,16 +251,34 @@ export class CodeProject extends LitElement {
         <ul part="code-project-tech-stack">
           ${
             this.codeProject.tech
-              .map((tech) =>
-                html`
+              .map((tech) => {
+                const imgSrc =
+                  tech.designToken ?
+                    `data:image/svg+xml;base64,${window.getComputedStyle(document.documentElement).getPropertyValue(tech.designToken)}` :
+                    undefined;
+
+                return html`
                   <li>
+                    ${
+                      imgSrc ?
+                        html`
+                          <img
+                            role="img"
+                            aria-labelledby="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
+                            src="${imgSrc}"
+                            alt="${tech.name}"
+                            />
+                        ` :
+                        nothing
+                    }
                     <word-tag
+                      id="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
                       .hrefUrl=${tech.url}
                       .word=${tech.name}>
                     </word-tag>
                   </li>
-                `
-              )
+                `;
+              })
           }
         </ul>
         <md-outlined-button
