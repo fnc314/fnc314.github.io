@@ -13,15 +13,19 @@
   "exports": {
     ".": {
       "style": "./dist/css/_variables.css",
-      "import": "./dist/jsno/tokens.json",
+      "import": "./dist/json/tokens.json",
       "default": "./dist/json/tokens.json"
     },
     "./themes/*": "./dist/themes/*",
     "./css/*": "./dist/css/*",
     "./json/*": "./dist/json/*",
-    "./icons/*": "./dist/icons/*"
+    "./icons/*": "./dist/icons/*",
+    "./js/*": "./dist/js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "material-symbols": "catalog:dependencies",
+    "@material/web": "catalog:dependencies"
+  },
   "devDependencies": {
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
