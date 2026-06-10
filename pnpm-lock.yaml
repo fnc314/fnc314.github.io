@@ -305,8 +305,8 @@ catalogs:
       specifier: 6.0.1
       version: 6.0.1
     prettier:
-      specifier: 3.8.3
-      version: 3.8.3
+      specifier: 3.8.4
+      version: 3.8.4
     pwa-asset-generator:
       specifier: 8.1.5
       version: 8.1.5
@@ -459,8 +459,8 @@ catalogs:
       version: 2.0.0
   functionsDependencies:
     firebase-admin:
-      specifier: 13.10.0
-      version: 13.10.0
+      specifier: 14.0.0
+      version: 14.0.0
     firebase-functions:
       specifier: 7.2.5
       version: 7.2.5
@@ -702,10 +702,10 @@ importers:
         version: 0.0.4(@custom-elements-manifest/analyzer@0.11.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))
       custom-element-jet-brains-integration:
         specifier: catalog:devDependencies
-        version: 1.7.0(prettier@3.8.3)
+        version: 1.7.0(prettier@3.8.4)
       custom-element-vs-code-integration:
         specifier: catalog:devDependencies
-        version: 1.5.0(prettier@3.8.3)
+        version: 1.5.0(prettier@3.8.4)
       custom-elements-manifest:
         specifier: catalog:devDependencies
         version: 2.1.0
@@ -732,7 +732,7 @@ importers:
         version: 5.1.1(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))
       eslint-plugin-prettier:
         specifier: catalog:devDependencies
-        version: 5.5.6(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(prettier@3.8.3)
+        version: 5.5.6(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(prettier@3.8.4)
       eslint-plugin-tsdoc:
         specifier: catalog:devDependencies
         version: 0.5.2(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3)
@@ -762,7 +762,7 @@ importers:
         version: 6.0.1(jiti@2.7.0)(postcss@8.5.15)(tsx@4.22.4)(yaml@2.9.0)
       prettier:
         specifier: catalog:devDependencies
-        version: 3.8.3
+        version: 3.8.4
       pwa-asset-generator:
         specifier: catalog:devDependencies
         version: 8.1.5
@@ -837,7 +837,7 @@ importers:
         version: 1.4.2(stylelint@17.13.0(typescript@6.0.3))
       stylelint-prettier:
         specifier: catalog:devDependencies
-        version: 5.0.3(prettier@3.8.3)(stylelint@17.13.0(typescript@6.0.3))
+        version: 5.0.3(prettier@3.8.4)(stylelint@17.13.0(typescript@6.0.3))
       stylelint-use-nesting:
         specifier: catalog:devDependencies
         version: 6.0.2(stylelint@17.13.0(typescript@6.0.3))
@@ -922,6 +922,13 @@ importers:
         version: 0.28.0
 
   design-tokens:
+    dependencies:
+      '@material/web':
+        specifier: catalog:dependencies
+        version: 2.4.1
+      material-symbols:
+        specifier: catalog:dependencies
+        version: 0.44.12
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -943,10 +950,10 @@ importers:
     dependencies:
       firebase-admin:
         specifier: catalog:functionsDependencies
-        version: 13.10.0
+        version: 14.0.0
       firebase-functions:
         specifier: catalog:functionsDependencies
-        version: 7.2.5(firebase-admin@13.10.0)
+        version: 7.2.5(firebase-admin@14.0.0)
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: catalog:devDependencies
@@ -965,7 +972,7 @@ importers:
         version: 2.32.0(@types/eslint@9.6.1)(@typescript-eslint/parser@8.61.0(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3))(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))
       firebase-functions-test:
         specifier: catalog:functionsDevDependencies
-        version: 3.5.0(firebase-admin@13.10.0)(firebase-functions@7.2.5(firebase-admin@13.10.0))(jest@30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@25.9.2)(ts-node@10.9.2(@types/node@25.9.2)(typescript@6.0.3)))
+        version: 3.5.0(firebase-admin@14.0.0)(firebase-functions@7.2.5(firebase-admin@14.0.0))(jest@30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@25.9.2)(ts-node@10.9.2(@types/node@25.9.2)(typescript@6.0.3)))
       typescript:
         specifier: catalog:devDependencies
         version: 6.0.3
@@ -2316,9 +2323,9 @@ packages:
   '@github/catalyst@1.8.1':
     resolution: {integrity: sha512-dnN4WWpbeuQvA17LvsGdlXEueJdBk9y+I+WO5pdNpoHNOXPsFcz3hJrq1iRmdsNgQOf4S8e83axtwIxvG62eWA==}
 
-  '@google-cloud/firestore@7.11.6':
-    resolution: {integrity: sha512-EW/O8ktzwLfyWBOsNuhRoMi8lrC3clHM5LVFhGvO1HCsLozCOOXRAlHrYBoE6HL42Sc8yYMuCb2XqcnJ4OOEpw==}
-    engines: {node: '>=14.0.0'}
+  '@google-cloud/firestore@8.6.0':
+    resolution: {integrity: sha512-TdvZHfwQj5B5CSDEgDqyrhdVqtOSupmBXDQPasMAJiC64tjsGvyMooNiC43fdk1TsUHeklyoZ6/vQ1TjWKVMbg==}
+    engines: {node: '>=18'}
 
   '@google-cloud/paginator@5.0.2':
     resolution: {integrity: sha512-DJS3s0OVH4zFDB1PzjxAsHqJT6sKVbRwwML0ZBP9PbU7Yebtu/7SWMRzvO2J3nUi9pRNITCfu4LJeooM2w4pjg==}
@@ -4148,9 +4155,6 @@ packages:
 
   '@types/lodash@4.17.24':
     resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
-
-  '@types/long@4.0.2':
-    resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
 
   '@types/lru-cache@5.1.1':
     resolution: {integrity: sha512-ssE3Vlrys7sdIzs5LOxCzTVMsU7i9oa/IaW92wF32JFb3CVczqOkru2xspuKczHEbG3nvmPY7IFqVmGGHdNbYw==}
@@ -6494,9 +6498,9 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-admin@13.10.0:
-    resolution: {integrity: sha512-rbuCrJvYRwqBqvbccMS8fj/x2zsaMisdf5RQbRzQzr14Rbq9r2UlpuBHqWAwrO6c9dIRF56xF/xoepXsD5yDuQ==}
-    engines: {node: '>=18'}
+  firebase-admin@14.0.0:
+    resolution: {integrity: sha512-U88/r6VWiBQ05+UlLaF1A1AN4Y3SAGQKcQWawzafEAnXVaCZ21+2KclMPdlIQAAF5pUtN+FkXCSQnJEpc6QDZA==}
+    engines: {node: '>=22'}
 
   firebase-functions-test@3.5.0:
     resolution: {integrity: sha512-Jg+f9GeWkWpgYRY9s+Oxst/b9kEnOJ6pU/XNFthOFYs2Ax2fU2Zxc7ckfTozYKEH/mzptSDxV5JYiPTvR+RhKA==}
@@ -6774,6 +6778,10 @@ packages:
   globjoin@0.1.4:
     resolution: {integrity: sha512-xYfnw62CKG8nLkZBfWbhWwDw02CHty86jfPcc2cr3ZfeuK9ysoVPPEUxf21bAD/rWAgk52SuBrLJlefNy8mvFg==}
 
+  google-auth-library@10.5.0:
+    resolution: {integrity: sha512-7ABviyMOlX5hIVD60YOfHw4/CxOfBhyduaYB+wbFWCWoni4N7SLcV46hrVRktuBbZjFC9ONyqamZITN7q3n32w==}
+    engines: {node: '>=18'}
+
   google-auth-library@10.6.2:
     resolution: {integrity: sha512-e27Z6EThmVNNvtYASwQxose/G57rkRuaRbQyxM2bvYLLX/GqWZ5chWq2EBoUchJbCc57eC9ArzO5wMsEmWftCw==}
     engines: {node: '>=18'}
@@ -6782,9 +6790,9 @@ packages:
     resolution: {integrity: sha512-Jb6Z0+nvECVz+2lzSMt9u98UsoakXxA2HGHMCxh+so3n90XgYWkq5dur19JAJV7ONiJY22yBTyJB1TSkvPq9Ng==}
     engines: {node: '>=14'}
 
-  google-gax@4.6.1:
-    resolution: {integrity: sha512-V6eky/xz2mcKfAd1Ioxyd6nmA61gao3n01C+YeuIwu3vzM9EDR6wcVzMSIbLMDXWeoi9SHYctXuKYC5uJUT3eQ==}
-    engines: {node: '>=14'}
+  google-gax@5.0.7:
+    resolution: {integrity: sha512-EhiqaWWJ+9h7sCcKJTsoo6tMcjokVHhWsbSuWCnZJT4vIBP3y4mAoFLnt9SzgkVZeq24ZsFaArr06nnYYku2yA==}
+    engines: {node: '>=18'}
 
   google-logging-utils@0.0.2:
     resolution: {integrity: sha512-NEgUnEcBiP5HrPzufUkBzJOD/Sxsco3rLNo1F1TNf7ieU8ryUzBhqba8r756CjLX7rn3fHl6iLEwPYuqpoKgQQ==}
@@ -6804,6 +6812,10 @@ packages:
   gtoken@7.1.0:
     resolution: {integrity: sha512-pCcEwRi+TKpMlxAQObHDQ56KawURgyAf6jtIY046fJ5tIv3zDe/LEIubckAO8fj6JnAxLdmWkUfNyulQ2iKdEw==}
     engines: {node: '>=14.0.0'}
+
+  gtoken@8.0.0:
+    resolution: {integrity: sha512-+CqsMbHPiSTdtSO14O51eMNlrp9N79gmeqmXeouJOhfucAedHw9noVe/n5uJk3tbKE6a+6ZCQg3RPhVhHByAIw==}
+    engines: {node: '>=18'}
 
   gzip-size@7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
@@ -7452,8 +7464,8 @@ packages:
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
-  jose@4.15.9:
-    resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
+  jose@6.2.3:
+    resolution: {integrity: sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==}
 
   js-beautify@1.15.4:
     resolution: {integrity: sha512-9/KXeZUKKJwqCXUdBxFJ3vPh467OCckSBmYDwSK/EtV090K+iMJ7zx2S3HLVDIWFQdqMIsZWbnaGiba18aWhaA==}
@@ -7544,9 +7556,9 @@ packages:
   jwa@2.0.1:
     resolution: {integrity: sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==}
 
-  jwks-rsa@3.2.2:
-    resolution: {integrity: sha512-BqTyEDV+lS8F2trk3A+qJnxV5Q9EqKCBJOPti3W97r7qTympCZjb7h2X6f2kc+0K3rsSTY1/6YG2eaXKoj497w==}
-    engines: {node: '>=14'}
+  jwks-rsa@4.0.1:
+    resolution: {integrity: sha512-poXwUA8S4cP9P5N8tZS3xnUDJH8WmwSGfKK9gIaRPdjLHyJtd9iX/cngX9CUIe0Caof5JhK2EbN7N5lnnaf9NA==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >= 23.0.0}
 
   jws@4.0.1:
     resolution: {integrity: sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==}
@@ -7836,10 +7848,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lru-cache@6.0.0:
-    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
-    engines: {node: '>=10'}
-
   lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
@@ -7848,8 +7856,8 @@ packages:
     resolution: {integrity: sha512-MhWWlVnuab1RG5/zMRRcVGXZLCXrZTgfwMikgzCegsPnG62yDQo5JnqKkrK4jO5iKqDAZGItAqN5CtKBCBWRUA==}
     engines: {node: '>=16.14'}
 
-  lru-memoizer@2.3.0:
-    resolution: {integrity: sha512-GXn7gyHAMhO13WSKrIiNfztwxodVsP8IoZ3XfrJV4yH2x0/OeTO/FIaAHTY5YekdGgW94njfuKmyyt1E0mR6Ug==}
+  lru-memoizer@3.0.0:
+    resolution: {integrity: sha512-m83w/cYXLdUIboKSPxzPAGfYnk+vqeDYXuoSrQRw1q+yVEd8IXhvMufN8Q5TIPe7e2jyX4SRNrDJI2Skw1yznQ==}
 
   lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
@@ -8958,6 +8966,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-bytes@5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
@@ -8993,9 +9006,9 @@ packages:
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
-  proto3-json-serializer@2.0.2:
-    resolution: {integrity: sha512-SAzp/O4Yh02jGdRc+uIrGoe87dkN/XtwxfZ4ZyafJHymd79ozp5VG5nyZ7ygqPM5+cpLDjjGnYFUkngonyDPOQ==}
-    engines: {node: '>=14.0.0'}
+  proto3-json-serializer@3.0.4:
+    resolution: {integrity: sha512-E1sbAYg3aEbXrq0n1ojJkRHQJGE1kaE/O6GLA94y8rnJBfgvOPTOd1b9hOceQK1FFZI9qMh1vBERCyO2ifubcw==}
+    engines: {node: '>=18'}
 
   protobufjs@7.6.1:
     resolution: {integrity: sha512-4K0myLaWL5EteuSAro91EGFgcfVgxb64Jx+7oDAY6GOkXD4M69yuSEljNcInGVCA5sOPxmZ/EqDLj2x0Q0+Ygg==}
@@ -9192,6 +9205,10 @@ packages:
     resolution: {integrity: sha512-dUOvLMJ0/JJYEn8NrpOaGNE7X3vpI5XlZS/u0ANjqtcZVKnIxP7IgCFwrKTxENw29emmwug53awKtaMm4i9g5w==}
     engines: {node: '>=14'}
 
+  retry-request@8.0.3:
+    resolution: {integrity: sha512-qqoc4kkGgP9cmQDWELlOpAmfgJOg0Yi7MT82ZjiPWu451ayju4itwomjM4/dBEliify8C1b3tSaeCOldugtwPQ==}
+    engines: {node: '>=18'}
+
   retry@0.13.1:
     resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
     engines: {node: '>= 4'}
@@ -9203,6 +9220,10 @@ packages:
   rimraf@2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     deprecated: Rimraf versions prior to v4 are no longer supported
+    hasBin: true
+
+  rimraf@5.0.10:
+    resolution: {integrity: sha512-l0OE8wL34P4nJH/H2ffoaniAokM2qSmrtXHmlpvYr5AVVX8msAyW0l8NVJFDxlSK4u3Uh/f41cQheDVdnYijwQ==}
     hasBin: true
 
   rimraf@6.1.3:
@@ -9794,6 +9815,10 @@ packages:
 
   tar-stream@3.2.0:
     resolution: {integrity: sha512-ojzvCvVaNp6aOTFmG7jaRD0meowIAuPc3cMMhSgKiVWws1GyHbGd/xvnyuRKcKlMpt3qvxx6r0hreCNITP9hIg==}
+
+  teeny-request@10.1.3:
+    resolution: {integrity: sha512-5yDliI1uWkYPo7W+Zvrxg6YmoWuj5iC5EydewqrRTvc68nyMTZhlPPlLg6cptUGfbQAb+N9XDPDPzF6N081lug==}
+    engines: {node: '>=18'}
 
   teeny-request@9.0.0:
     resolution: {integrity: sha512-resvxdc6Mgb7YEThw6G6bExlXKkv6+YbuzGg9xuXxSgxJF7Ozs+o8Y9+2R3sArdWdW8nOokoQb1yrpFB0pQK2g==}
@@ -10709,9 +10734,6 @@ packages:
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
-
-  yallist@4.0.0:
-    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
   yaml-eslint-parser@2.0.0:
     resolution: {integrity: sha512-h0uDm97wvT2bokfwwTmY6kJ1hp6YDFL0nRHwNKz8s/VD1FH/vvZjAKoMUE+un0eaYBSG7/c6h+lJTP+31tjgTw==}
@@ -12318,15 +12340,14 @@ snapshots:
 
   '@github/catalyst@1.8.1': {}
 
-  '@google-cloud/firestore@7.11.6':
+  '@google-cloud/firestore@8.6.0':
     dependencies:
       '@opentelemetry/api': 1.9.1
       fast-deep-equal: 3.1.3
       functional-red-black-tree: 1.0.1
-      google-gax: 4.6.1
+      google-gax: 5.0.7
       protobufjs: 7.6.1
     transitivePeerDependencies:
-      - encoding
       - supports-color
     optional: true
 
@@ -13255,10 +13276,10 @@ snapshots:
       style-value-types: 3.2.0
       tslib: 1.14.1
 
-  '@prettier/sync@0.5.5(prettier@3.8.3)':
+  '@prettier/sync@0.5.5(prettier@3.8.4)':
     dependencies:
       make-synchronized: 0.4.2
-      prettier: 3.8.3
+      prettier: 3.8.4
 
   '@protobufjs/aspromise@1.1.2': {}
 
@@ -14159,9 +14180,6 @@ snapshots:
       '@types/lodash': 4.17.24
 
   '@types/lodash@4.17.24': {}
-
-  '@types/long@4.0.2':
-    optional: true
 
   '@types/lru-cache@5.1.1': {}
 
@@ -16121,15 +16139,15 @@ snapshots:
 
   csstype@3.2.3: {}
 
-  custom-element-jet-brains-integration@1.7.0(prettier@3.8.3):
+  custom-element-jet-brains-integration@1.7.0(prettier@3.8.4):
     dependencies:
-      '@prettier/sync': 0.5.5(prettier@3.8.3)
+      '@prettier/sync': 0.5.5(prettier@3.8.4)
     transitivePeerDependencies:
       - prettier
 
-  custom-element-vs-code-integration@1.5.0(prettier@3.8.3):
+  custom-element-vs-code-integration@1.5.0(prettier@3.8.4):
     dependencies:
-      '@prettier/sync': 0.5.5(prettier@3.8.3)
+      '@prettier/sync': 0.5.5(prettier@3.8.4)
     transitivePeerDependencies:
       - prettier
 
@@ -16738,10 +16756,10 @@ snapshots:
       parse5: 8.0.1
       parse5-htmlparser2-tree-adapter: 8.0.1
 
-  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(prettier@3.8.3):
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint@10.4.1(@types/eslint@9.6.1)(jiti@2.7.0))(prettier@3.8.4):
     dependencies:
       eslint: 10.4.1(@types/eslint@9.6.1)(jiti@2.7.0)
-      prettier: 3.8.3
+      prettier: 3.8.4
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
@@ -17072,7 +17090,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-admin@13.10.0:
+  firebase-admin@14.0.0:
     dependencies:
       '@fastify/busboy': 3.2.0
       '@firebase/database-compat': 2.1.4
@@ -17082,30 +17100,30 @@ snapshots:
       fast-deep-equal: 3.1.3
       google-auth-library: 10.6.2
       jsonwebtoken: 9.0.3
-      jwks-rsa: 3.2.2
+      jwks-rsa: 4.0.1
     optionalDependencies:
-      '@google-cloud/firestore': 7.11.6
+      '@google-cloud/firestore': 8.6.0
       '@google-cloud/storage': 7.19.0
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  firebase-functions-test@3.5.0(firebase-admin@13.10.0)(firebase-functions@7.2.5(firebase-admin@13.10.0))(jest@30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@25.9.2)(ts-node@10.9.2(@types/node@25.9.2)(typescript@6.0.3))):
+  firebase-functions-test@3.5.0(firebase-admin@14.0.0)(firebase-functions@7.2.5(firebase-admin@14.0.0))(jest@30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@25.9.2)(ts-node@10.9.2(@types/node@25.9.2)(typescript@6.0.3))):
     dependencies:
       '@types/lodash': 4.17.24
-      firebase-admin: 13.10.0
-      firebase-functions: 7.2.5(firebase-admin@13.10.0)
+      firebase-admin: 14.0.0
+      firebase-functions: 7.2.5(firebase-admin@14.0.0)
       jest: 30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@25.9.2)(ts-node@10.9.2(@types/node@25.9.2)(typescript@6.0.3))
       lodash: 4.18.1
       ts-deepmerge: 2.0.7
 
-  firebase-functions@7.2.5(firebase-admin@13.10.0):
+  firebase-functions@7.2.5(firebase-admin@14.0.0):
     dependencies:
       '@types/cors': 2.8.19
       '@types/express': 4.17.25
       cors: 2.8.6
       express: 4.22.2
-      firebase-admin: 13.10.0
+      firebase-admin: 14.0.0
       protobufjs: 7.6.1
     transitivePeerDependencies:
       - supports-color
@@ -17474,6 +17492,21 @@ snapshots:
 
   globjoin@0.1.4: {}
 
+  google-auth-library@10.5.0:
+    dependencies:
+      '@types/base64-js': 1.5.0
+      '@types/jws': 3.2.11
+      base64-js: 1.5.1
+      ecdsa-sig-formatter: 1.0.11
+      gaxios: 7.1.4
+      gcp-metadata: 8.1.2
+      google-logging-utils: 1.1.3
+      gtoken: 8.0.0
+      jws: 4.0.1
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
+
   google-auth-library@10.6.2:
     dependencies:
       '@types/base64-js': 1.5.0
@@ -17502,25 +17535,21 @@ snapshots:
       - supports-color
     optional: true
 
-  google-gax@4.6.1:
+  google-gax@5.0.7:
     dependencies:
       '@grpc/grpc-js': 1.14.4
-      '@grpc/proto-loader': 0.7.15
-      '@types/long': 4.0.2
-      '@types/node-fetch': 2.6.13
+      '@grpc/proto-loader': 0.8.1
       '@types/object-hash': 3.0.6
-      '@types/uuid': 9.0.8
-      abort-controller: 3.0.0
       duplexify: 4.1.3
-      google-auth-library: 9.15.1
-      node-fetch: 2.7.0
+      google-auth-library: 10.5.0
+      google-logging-utils: 1.1.3
+      node-fetch: 3.3.2
       object-hash: 3.0.0
-      proto3-json-serializer: 2.0.2
+      proto3-json-serializer: 3.0.4
       protobufjs: 7.6.1
-      retry-request: 7.0.2
-      uuid: 9.0.1
+      retry-request: 8.0.3
+      rimraf: 5.0.10
     transitivePeerDependencies:
-      - encoding
       - supports-color
     optional: true
 
@@ -17540,6 +17569,15 @@ snapshots:
       jws: 4.0.1
     transitivePeerDependencies:
       - encoding
+      - supports-color
+    optional: true
+
+  gtoken@8.0.0:
+    dependencies:
+      '@types/jws': 3.2.11
+      gaxios: 7.1.4
+      jws: 4.0.1
+    transitivePeerDependencies:
       - supports-color
     optional: true
 
@@ -18388,7 +18426,7 @@ snapshots:
 
   jju@1.4.0: {}
 
-  jose@4.15.9: {}
+  jose@6.2.3: {}
 
   js-beautify@1.15.4:
     dependencies:
@@ -18503,13 +18541,13 @@ snapshots:
       ecdsa-sig-formatter: 1.0.11
       safe-buffer: 5.2.1
 
-  jwks-rsa@3.2.2:
+  jwks-rsa@4.0.1:
     dependencies:
       '@types/jsonwebtoken': 9.0.10
       debug: 4.4.3
-      jose: 4.15.9
+      jose: 6.2.3
       limiter: 1.1.5
-      lru-memoizer: 2.3.0
+      lru-memoizer: 3.0.0
     transitivePeerDependencies:
       - supports-color
 
@@ -18806,20 +18844,15 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lru-cache@6.0.0:
-    dependencies:
-      yallist: 4.0.0
-
   lru-cache@7.18.3: {}
 
   lru-cache@8.0.5: {}
 
-  lru-memoizer@2.3.0:
+  lru-memoizer@3.0.0:
     dependencies:
       '@types/lodash.clonedeep': 4.5.9
-      '@types/lru-cache': 5.1.1
       lodash.clonedeep: 4.5.0
-      lru-cache: 6.0.0
+      lru-cache: 11.5.0
 
   lunr@2.3.9: {}
 
@@ -20017,6 +20050,8 @@ snapshots:
 
   prettier@3.8.3: {}
 
+  prettier@3.8.4: {}
+
   pretty-bytes@5.6.0: {}
 
   pretty-bytes@6.1.1: {}
@@ -20044,7 +20079,7 @@ snapshots:
 
   proto-list@1.2.4: {}
 
-  proto3-json-serializer@2.0.2:
+  proto3-json-serializer@3.0.4:
     dependencies:
       protobufjs: 7.6.1
     optional: true
@@ -20310,6 +20345,14 @@ snapshots:
       - supports-color
     optional: true
 
+  retry-request@8.0.3:
+    dependencies:
+      extend: 3.0.2
+      teeny-request: 10.1.3
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
+
   retry@0.13.1:
     optional: true
 
@@ -20318,6 +20361,11 @@ snapshots:
   rimraf@2.7.1:
     dependencies:
       glob: 7.2.3
+
+  rimraf@5.0.10:
+    dependencies:
+      glob: 10.5.0
+    optional: true
 
   rimraf@6.1.3:
     dependencies:
@@ -21018,9 +21066,9 @@ snapshots:
       postcss-value-parser: 4.2.0
       stylelint: 17.13.0(typescript@6.0.3)
 
-  stylelint-prettier@5.0.3(prettier@3.8.3)(stylelint@17.13.0(typescript@6.0.3)):
+  stylelint-prettier@5.0.3(prettier@3.8.4)(stylelint@17.13.0(typescript@6.0.3)):
     dependencies:
-      prettier: 3.8.3
+      prettier: 3.8.4
       prettier-linter-helpers: 1.0.1
       stylelint: 17.13.0(typescript@6.0.3)
 
@@ -21173,6 +21221,17 @@ snapshots:
       - bare-abort-controller
       - bare-buffer
       - react-native-b4a
+
+  teeny-request@10.1.3:
+    dependencies:
+      '@types/node-fetch': 2.6.13
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.6
+      node-fetch: 3.3.2
+      stream-events: 1.0.5
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
 
   teeny-request@9.0.0:
     dependencies:
@@ -22199,8 +22258,6 @@ snapshots:
   y18n@5.0.8: {}
 
   yallist@3.1.1: {}
-
-  yallist@4.0.0: {}
 
   yaml-eslint-parser@2.0.0:
     dependencies:
