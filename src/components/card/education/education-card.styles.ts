@@ -15,7 +15,7 @@ export const EducationCardStyles = css`
   .education-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-xl);
+    gap: var(--spacing-gap-l);
     list-style: none;
     margin: var(--spacing-reset);
     padding: var(--spacing-reset);
@@ -25,11 +25,19 @@ export const EducationCardStyles = css`
   .education-item {
     display: grid;
     grid-template-areas:
-      "institute location"
-      "program year";
-    grid-template-columns: 1fr max-content;
-    grid-template-rows: 1fr 1fr;
+      "logo institute location"
+      "logo program year";
+    grid-template-columns: max-content 1fr max-content;
     margin-block: var(--spacing-margin-xs);
+    gap: var(--spacing-reset) var(--spacing-gap-s);
+
+    img {
+      place-self: center;
+      grid-area: logo;
+      aspect-ratio: 1;
+      width: var(--md-icon-size);
+      height: var(--md-icon-size);
+    }
 
     h3 {
       grid-area: institute;

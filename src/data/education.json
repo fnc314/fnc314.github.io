@@ -7,7 +7,8 @@
       "graduationDate": {
         "label": "April 2014",
         "value": "2014-04"
-      }
+      },
+      "designToken": "--icons-logos-education-general-assembly-default"
     },
     {
       "institute": "University of Pittsburgh",
@@ -16,7 +17,8 @@
       "graduationDate": {
         "label": "April 2011",
         "value": "2011-04"
-      }
+      },
+      "designToken": "--icons-logos-education-university-of-pittsburgh-default"
     }
   ]
 }

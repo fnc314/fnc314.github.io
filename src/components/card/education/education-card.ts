@@ -36,6 +36,10 @@ export class EducationCard extends LitElement {
           ${EducationJson.education.map(
             (edu) => html`
               <li class="education-item">
+                <img
+                  src=${`data:image/svg+xml;base64,${window.getComputedStyle(document.documentElement).getPropertyValue(edu.designToken)}`}
+                  alt=${`Logo for ${edu.institute}`}
+                />
                 <h3 class="md-typescale-title-medium">${edu.institute}</h3>
                 <span class="md-typescale-body-medium">${edu.location}</span>
                 <h4 class="md-typescale-title-small">${edu.degree}</h4>
