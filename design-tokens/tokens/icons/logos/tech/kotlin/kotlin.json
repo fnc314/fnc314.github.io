@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "kotlin": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
+          }
+        }
+      }
+    }
+  }
+}

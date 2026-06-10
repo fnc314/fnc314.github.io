@@ -1,0 +1,20 @@
+{
+  "$type": "asset",
+  "icons": {
+    "logos": {
+      "tech": {
+        "prettier": {
+          "dark": {
+            "$value": "design-tokens/assets/icons/logos/tech/prettier/prettier-light.svg"
+          },
+          "default": {
+            "$value": "design-tokens/assets/icons/logos/tech/prettier/prettier-dark.svg"
+          },
+          "light": {
+            "$value": "design-tokens/assets/icons/logos/tech/prettier/prettier-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

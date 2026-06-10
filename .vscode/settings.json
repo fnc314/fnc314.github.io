@@ -76,6 +76,7 @@
   "pnpm-vscode-helper.enableCodelen": true,
   "pnpm.packageJson": "./package.json",
   "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
+  "stylelint.ignorePath": "./.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
   "stylelint.reportDescriptionlessDisables": false,
   "stylelint.reportInvalidScopeDisables": false,

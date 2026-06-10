@@ -18,7 +18,8 @@
     },
     "./themes/*": "./dist/themes/*",
     "./css/*": "./dist/css/*",
-    "./json/*": "./dist/json/*"
+    "./json/*": "./dist/json/*",
+    "./icons/*": "./dist/icons/*"
   },
   "dependencies": {},
   "devDependencies": {

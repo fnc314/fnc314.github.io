@@ -3,7 +3,7 @@
 #MISE alias="dx:t:style-dictionary"
 
 print -f "Cleaning design tokens for @fnc314/design-tokens..."
-pnpm style-dictionary clean -v -c ./.config/style-dictionary/config.ts
+pnpm style-dictionary clean --verbose --config ./.config/style-dictionary/config.ts
 print -f "Generating design tokens for @fnc314/design-tokens..."
-pnpm style-dictionary build -v -c ./.config/style-dictionary/config.ts
+pnpm style-dictionary build --verbose --config ./.config/style-dictionary/config.ts
 print -f "Design tokens generated successfully."
