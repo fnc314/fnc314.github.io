@@ -3,12 +3,21 @@ import { type Config } from "stylelint";
 const config: Config = {
   defaultSeverity: "warning",
   formatter: "verbose",
+  ignoreFiles: [
+    "./config/**/*.{js,mjs,ts,mts}",
+    "dist/**/**",
+    "docs/**/**",
+  ].map((path) => `${process.cwd()}/${path}`),
   extends: [
     "stylelint-config-standard",
     "stylelint-config-alphabetical-order",
     "stylelint-plugin-rhythmguard/configs/strict",
     "stylelint-prettier/recommended",
   ],
+  reportDescriptionlessDisables: true,
+  reportInvalidScopeDisables: true,
+  reportNeedlessDisables: true,
+  reportUnscopedDisables: true,
   languageOptions: {
     directionality: {
       block: "top-to-bottom",

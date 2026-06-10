@@ -1,7 +1,7 @@
 @property --breakpoint-label {
-  syntax: "unknown | mobile | tablet | desktop";
   inherits: true;
   initial-value: unknown;
+  syntax: "unknown | mobile | tablet | desktop";
 }
 
 :root {

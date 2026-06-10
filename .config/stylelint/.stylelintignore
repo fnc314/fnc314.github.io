@@ -1,9 +1,10 @@
-.config/
+.config/**/*.{js,mjs,ts,mts}
 .config/custom-elements-manifest/custom-elements-manifest.config.mjs
 .config/eslint/eslint.config.mjs
 .config/prettier/prettier.config.mts
 .config/rollup/rollup.config.ts
 .config/stylelint/stylelint.config.ts
+.config/style-dictionary/config.ts
 .config/tailwind/*.ts
 .config/vite/vite.config.ts
 .gemini/
@@ -12,13 +13,12 @@
 .github/*
 .idea/
 .idea/**/*
-.mise/**/*
 .vscode/
 .vscode/*
 .well-known/
 .well-known/*
 bun-build/
-design-tokens/**/*
+design-tokens/dist/**/*
 dist/
 dist/**/*
 docs/

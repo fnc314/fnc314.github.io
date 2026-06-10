@@ -78,9 +78,10 @@
   "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
   "stylelint.ignorePath": "./.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
-  "stylelint.reportDescriptionlessDisables": false,
-  "stylelint.reportInvalidScopeDisables": false,
-  "stylelint.reportNeedlessDisables": false,
+  "stylelint.reportDescriptionlessDisables": true,
+  "stylelint.reportInvalidScopeDisables": true,
+  "stylelint.reportNeedlessDisables": true,
+  "stylelint.configBasedir": "./.config/stylelint",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",
