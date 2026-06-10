@@ -8,7 +8,8 @@ import Info from "unplugin-info/vite";
 import { defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
 import cp from "vite-plugin-cp";
-import { type ManifestOptions, VitePWA } from "vite-plugin-pwa";
+import type { ManifestOptions } from "vite-plugin-pwa";
+import { VitePWA } from "vite-plugin-pwa";
 import { vitePluginVersionMark } from "vite-plugin-version-mark";
 import manifest from "./../../manifest.json" with { type: "json" };
 import packageJson from "./../../package.json" with { type: "json" };
@@ -91,7 +92,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     }),
     VitePluginCustomElementsManifest({
       config: path.resolve(
-        __dirname,
+        `${process.cwd()}`,
         ".config/custom-elements-manifest/custom-elements-manifest.config.mjs",
       ),
       lit: true,
@@ -234,6 +235,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
               src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
             })),
           })),
+        },
+        workbox: {
+          maximumFileSizeToCacheInBytes: 6_000_000,
         },
         manifestFilename: "manifest.json",
         minify: dynamicConfig.isProduction,
