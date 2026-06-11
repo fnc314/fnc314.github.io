@@ -19,6 +19,8 @@
     "./types/*": "./dist/types/*"
   },
   "types": "./dist/types/index.d.ts",
+  "main": "./dist/@fnc314.design-tokens.js",
+  "module": "./dist/@fnc314.design-tokens.js",
   "dependencies": {
     "material-symbols": "catalog:dependencies",
     "@material/web": "catalog:dependencies"

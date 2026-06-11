@@ -1,6 +1,6 @@
 import { BlogPostStyles } from "@/components/blog/post/blog-post.styles";
 import { type BlogPostJson } from "@/components/blog/post/blog-post.types";
-import { UIModeAwareElement } from "@/mixins/ui-mode-aware-element/ui-mode-aware-element";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
 import { html } from "lit";
@@ -22,10 +22,10 @@ export { type BlogPostJson } from "@/components/blog/post/blog-post.types";
  * @see BlogPostJson
  * @export
  * @class BlogPost
- * @extends {UIModeAwareElement}
+ * @extends {UIAwareElement}
  */
 @customElement("blog-post")
-export class BlogPost extends UIModeAwareElement {
+export class BlogPost extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,

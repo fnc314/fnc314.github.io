@@ -1,6 +1,6 @@
 import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { type CodeRepoData } from "@/components/code/repo/code-repo.types";
-import { UIModeAwareElement } from "@/mixins/ui-mode-aware-element/ui-mode-aware-element";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
@@ -16,10 +16,10 @@ import { customElement, property } from "lit/decorators.js";
  *
  * @export
  * @class CodeRepo
- * @extends {UIModeAwareElement}
+ * @extends {UIAwareElement}
  */
 @customElement("code-repo")
-export class CodeRepo extends UIModeAwareElement {
+export class CodeRepo extends UIAwareElement {
   /** {@link CodeRepoData} */
   @property({ type: Object })
   codeRepo: CodeRepoData = {} as CodeRepoData;

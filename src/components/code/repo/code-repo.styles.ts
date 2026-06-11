@@ -7,6 +7,8 @@ export const CodeRepoStyles: CSSResult = css`
     width: 100%;
     box-sizing: border-box;
     background-color: var(--md-sys-color-background);
+    container-type: inline-size;
+    container-name: code-repo-card;
 
     --md-divider-color: var(--md-sys-color-outline-variant);
     --md-divider-thickness: calc(var(--sizes-thickness-hairline) * 2);

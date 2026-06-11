@@ -45,8 +45,10 @@ export class ProfileBioCard extends LitElement {
     `,
   ];
 
-  @property({ type: Object })
-  private _photoData = PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson];
+  @property({ type: Object, attribute: false, noAccessor: true, state: true })
+  private _photoData = PhotoJson[
+    configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson
+  ];
 
   @property({ type: String })
   bioText: string = BioJson.bio;
