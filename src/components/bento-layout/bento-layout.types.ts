@@ -1,4 +1,4 @@
-import { type Breakpoint } from "@/styles/breakpoints";
+import { type Breakpoint } from "@/types/breakpoints";
 
 /**
  * Defines the 2 numbers needed to place something

@@ -105,7 +105,8 @@
       "vite-plugin-pwa/pwa-assets",
       "custom-elements-manifest/schema",
       "unplugin-info/client",
-      "material-symbols"
+      "material-symbols",
+      "@fnc314/design-tokens"
     ],
     // "typeRoots": [
     //   "./node_modules",
@@ -119,8 +120,7 @@
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/theme/*": ["./src/theme/*"],
-      "@/types/*": ["./src/types/*"],
-      "@fnc314/design-tokens/*": ["./design-tokens/scripts/*"]
+      "@/types/*": ["./src/types/*"]
     }
   }
 }

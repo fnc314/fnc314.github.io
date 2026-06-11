@@ -32,11 +32,14 @@ export const EducationCardStyles = css`
     gap: var(--spacing-reset) var(--spacing-gap-s);
 
     img {
+      background-color: var(--md-sys-color-surface-container-highest);
+      border-radius: var(--md-sys-shape-corner-full);
+      padding: var(--spacing-padding-xs);
       place-self: center;
       grid-area: logo;
       aspect-ratio: 1;
-      width: var(--md-icon-size);
-      height: var(--md-icon-size);
+      width: calc(var(--md-icon-size) * 0.75);
+      height: calc(var(--md-icon-size) * 0.75);
     }
 
     h3 {

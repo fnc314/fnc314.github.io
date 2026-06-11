@@ -46,8 +46,7 @@
     "paths": {
       "@/scripts/*": ["./scripts/*"],
       "@/assets/*": ["./assets/*"],
-      "@/css/*": ["./css/*"],
-      "@/dist/*": ["./dist/*"]
+      "@/css/*": ["./css/*"]
     },
     "preserveConstEnums": true,
     "pretty": true,

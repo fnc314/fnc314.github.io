@@ -5,9 +5,6 @@
 #USAGE   choices "development" "production"
 #USAGE }
 
-print -f "Copying \`design-tokens/assets/themes\` to \`design-tokens/dist/themes\`"
-cp -vr design-tokens/assets/themes design-tokens/dist/themes
-
 declare -a STYLE_DICTIONARY_CLI
 STYLE_DICTIONARY_CLI=(
   --verbose

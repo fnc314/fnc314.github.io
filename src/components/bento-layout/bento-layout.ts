@@ -1,7 +1,7 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
-import { type Breakpoint, readBreakpoint } from "@/styles/breakpoints";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { type Breakpoint } from "@/types/breakpoints";
 import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -16,6 +16,7 @@ import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
 import "@/components/card/skills/skills-card";
 import "@/components/card/work/work-card";
+import readCSSProperty from "@fnc314/design-tokens";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
@@ -36,10 +37,10 @@ export class BentoLayout extends LitElement {
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
   @state()
-  private _currentBreakpoint: Breakpoint = readBreakpoint();
+  private _currentBreakpoint: Breakpoint = readCSSProperty("--breakpoint-label") as Breakpoint;
 
   private _windowResizeObserver: () => void = () => {
-    this._currentBreakpoint = readBreakpoint();
+    this._currentBreakpoint = readCSSProperty("--breakpoint-label") as Breakpoint;
   }
 
   override connectedCallback() {

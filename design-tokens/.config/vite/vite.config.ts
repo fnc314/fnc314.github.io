@@ -19,6 +19,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       outDir: `${process.cwd()}/design-tokens/dist`,
       emptyOutDir: false,
       copyPublicDir: true,
+      minify: false,
     },
     plugins: [
       dts({
