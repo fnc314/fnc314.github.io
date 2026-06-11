@@ -6,9 +6,10 @@ import { readCSSProperty } from "./read-css-property";
  *
  * @param {string} propertyOrData A `string` which, when starting
  *   with `--`, is assumed a `CSS Property` and passed to related
- *   {@link readCSSProperty}.  If `--` is missing, then the provided
- *   {@link propertyOrData} is used directly
+ *   {@link @fnc314/design-tokens!readCSSProperty}.  If `--` is missing, then the provided
+ *   `propertyOrData` is used directly
  * @returns {string} A `string` usable for exposing an encoded `SVG`
+ * @see {readCSSProperty}
  */
 export const cssPropertyDataImage: (propertyOrData: string) => string =
   (propertyOrData: string) => propertyOrData.startsWith("--") ?

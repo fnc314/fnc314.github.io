@@ -1,9 +1,10 @@
 import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { type CodeRepoData } from "@/components/code/repo/code-repo.types";
+import { UIModeAwareElement } from "@/mixins/ui-mode-aware-element/ui-mode-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -15,10 +16,10 @@ import { customElement, property } from "lit/decorators.js";
  *
  * @export
  * @class CodeRepo
- * @extends {LitElement}
+ * @extends {UIModeAwareElement}
  */
 @customElement("code-repo")
-export class CodeRepo extends LitElement {
+export class CodeRepo extends UIModeAwareElement {
   /** {@link CodeRepoData} */
   @property({ type: Object })
   codeRepo: CodeRepoData = {} as CodeRepoData;
@@ -42,7 +43,7 @@ export class CodeRepo extends LitElement {
             target="_blank" rel="noopener noreferrer"
             >
             <img
-              src="${cssPropertyDataImage("--icons-logos-tech-github-light")}"
+              src="${cssPropertyDataImage(this.darkMode ? "--icons-logos-tech-github-dark" : "--icons-logos-tech-github-light")}"
               alt="GitHub Logo"
               />
             ${this.codeRepo.url}

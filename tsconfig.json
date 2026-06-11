@@ -117,6 +117,7 @@
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/data/*": ["./src/data/*"],
+      "@/mixins/*": ["./src/mixins/*"],
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/theme/*": ["./src/theme/*"],

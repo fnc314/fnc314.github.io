@@ -1,12 +1,10 @@
 import { BlogPostStyles } from "@/components/blog/post/blog-post.styles";
 import { type BlogPostJson } from "@/components/blog/post/blog-post.types";
-import { configsService } from "@/services/configs/configs-service";
+import { UIModeAwareElement } from "@/mixins/ui-mode-aware-element/ui-mode-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
-import { type AppConfigsChange } from "@/types/configs/app-configs";
-import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import { LitElement, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 export { type BlogPostJson } from "@/components/blog/post/blog-post.types";
 
@@ -24,10 +22,10 @@ export { type BlogPostJson } from "@/components/blog/post/blog-post.types";
  * @see BlogPostJson
  * @export
  * @class BlogPost
- * @extends {LitElement}
+ * @extends {UIModeAwareElement}
  */
 @customElement("blog-post")
-export class BlogPost extends LitElement {
+export class BlogPost extends UIModeAwareElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
@@ -38,26 +36,8 @@ export class BlogPost extends LitElement {
   @property({ type: Object })
   blogPost: BlogPostJson = {} as BlogPostJson;
 
-  @state()
-  private darkMode = configsService.loadConfigs().colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
-
-  private onAppConfigChange: (event: Event) => void = (event: Event) => {
-    const appConfigsChange = event as AppConfigsChange;
-    this.darkMode = appConfigsChange.detail?.appConfigs?.colorScheme?.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
-  };
-
   constructor() {
     super();
-  }
-
-  override connectedCallback(): void {
-    super.connectedCallback();
-    configsService.addEventListener("app-configs.change", this.onAppConfigChange);
-  }
-
-  override disconnectedCallback(): void {
-    super.disconnectedCallback();
-    configsService.removeEventListener("app-configs.change", this.onAppConfigChange);
   }
 
   override render() {
@@ -65,7 +45,7 @@ export class BlogPost extends LitElement {
       <md-elevated-card class="hover-lift">
         <section>
           <header>
-            <h3 class="md-typescale-headline-medium">${this.blogPost.title}</h3>
+            <h3 class="md-typescale-title-large">${this.blogPost.title}</h3>
             <h4 class="md-typescale-title-small">${this.blogPost.series}</h4>
             <md-divider inset></md-divider>
           </header>
