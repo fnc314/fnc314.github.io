@@ -5,7 +5,7 @@
         "gradle": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg"
+            "value": "design-tokens/assets/icons/logos/tech/gradle/gradle-dark.svg"
           },
           "default": {
             "type": "asset",

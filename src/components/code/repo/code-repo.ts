@@ -43,7 +43,7 @@ export class CodeRepo extends UIModeAwareElement {
             target="_blank" rel="noopener noreferrer"
             >
             <img
-              src="${cssPropertyDataImage(this.darkMode ? "--icons-logos-tech-github-dark" : "--icons-logos-tech-github-light")}"
+              src="${cssPropertyDataImage(this.darkMode ? "--icons-logos-organization-github-dark" : "--icons-logos-organization-github-light")}"
               alt="GitHub Logo"
               />
             ${this.codeRepo.url}
@@ -61,7 +61,7 @@ export class CodeRepo extends UIModeAwareElement {
             ${
               this.codeRepo.tech.map(tech => {
                 const imgSrc =
-                  tech.designToken ?
+                  typeof tech.designToken === "string" ?
                     cssPropertyDataImage(tech.designToken) :
                     undefined;
 

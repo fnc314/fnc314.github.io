@@ -221,7 +221,7 @@ export class CodeProject extends LitElement {
           class="repo-link md-typescale-title-large"
         >
           <img
-            src="${cssPropertyDataImage("--icons-logos-tech-github-light")}"
+            src="${cssPropertyDataImage("--icons-logos-organization-github-light")}"
             alt="GitHub Logo"
             />
           Repo

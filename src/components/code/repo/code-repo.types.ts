@@ -1,3 +1,4 @@
+import { type DesignTokenIcon } from "@fnc314/design-tokens/types/design-token-icon.js";
 /**
  * Represents a single project entry loaded from `code.json`.
  *
@@ -27,7 +28,7 @@ export interface CodeRepoData {
  */
 export interface CodeRepoTech {
   /** A generated `CSS Variable` from `@fnc314/design-tokens` */
-  designToken?: string | undefined;
+  designToken: string | DesignTokenIcon;
 
   /** Display name for the technology (e.g., "TypeScript"). */
   name: string;
