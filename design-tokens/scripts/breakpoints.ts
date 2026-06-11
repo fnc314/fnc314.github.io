@@ -1,14 +1,8 @@
-/**
- * Defines the {@link min} and {@link max} values
- *   for a breakpoint
- */
-export interface BreakpointRange {
-  min: number;
-  max: number;
-}
+/** The CSS Variable changed across device breakpoints */
+export const CSS_VARIABLE_BREAKPOINT_LABEL: string = "--breakpoint-label" as const;
 
 /**
- * Values for the \`--breakpoint-label\` custom CSS property
+ * Values for the {@link CSS_VARIABLE_BREAKPOINT_LABEL} custom CSS property
  *
  * @typedef Breakpoint
  */
@@ -19,6 +13,15 @@ export const BREAKPOINT_LABELS: BreakpointLabel[] = [
   "tablet",
   "desktop"
 ];
+
+/**
+ * Defines the {@link min} and {@link max} values
+ *   for a breakpoint
+ */
+export interface BreakpointRange {
+  min: number;
+  max: number;
+}
 
 /**
  * Binds the {@link BreakpointLabel}s to their {@link BreakpointRange}

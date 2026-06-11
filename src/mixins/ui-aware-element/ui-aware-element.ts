@@ -1,7 +1,7 @@
 import { configsService } from "@/services/configs/configs-service";
 import { type AppConfigsChange } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import { BREAKPOINT_LABELS, readCSSProperty } from "@fnc314/design-tokens";
+import { BREAKPOINT_LABELS, CSS_VARIABLE_BREAKPOINT_LABEL, readCSSProperty } from "@fnc314/design-tokens";
 import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
 import { LitElement } from "lit";
 import { state } from "lit/decorators.js";
@@ -12,6 +12,7 @@ import { state } from "lit/decorators.js";
  *   by leveraging `connectedCallback` and `disconnectedCallbacak` for implementers.
  *   Also exposes `breakpoint` to expose (from `window` resize events) which
  *   {@link BreakpointLabel} is currently applicable *from the screen level*.
+ *   The current {@link BreakpointLabel} is determined by {@link CSS_VARIABLE_BREAKPOINT_LABEL}
  *
  * @export
  * @abstract
@@ -35,12 +36,12 @@ export abstract class UIAwareElement extends LitElement {
    */
   @state()
   protected breakpoint: BreakpointLabel = readCSSProperty(
-    "--breakpoint-label"
+    CSS_VARIABLE_BREAKPOINT_LABEL
   ) as BreakpointLabel;
 
   private onBreakpointChange: () => void = () => {
     this.breakpoint = readCSSProperty(
-      "--breakpoint-label"
+      CSS_VARIABLE_BREAKPOINT_LABEL
     ) as BreakpointLabel
   }
 

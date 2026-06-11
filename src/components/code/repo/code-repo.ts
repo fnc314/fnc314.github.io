@@ -9,10 +9,10 @@ import { customElement, property } from "lit/decorators.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
- *   {@link CodeRepoData} objects from `data/code.json`
+ * {@link CodeRepoData} objects from `data/code.json`
  *
  * @property {CodeRepoData} codeRepo - An instance of {@link CodeRepoData}
- *   to render
+ * to render
  *
  * @export
  * @class CodeRepo
@@ -33,66 +33,85 @@ export class CodeRepo extends UIAwareElement {
   override render() {
     return html`
       <article class="card">
-        <header class="header">
-          <h3 class="project-title md-typescale-title-large">
-            ${this.codeRepo.name}
-          </h3>
-          <a
-            class="repo-link md-typescale-body-medium"
-            href="${this.codeRepo.url}"
-            target="_blank" rel="noopener noreferrer"
+        <div class="card-body-wrapper">
+          <header class="header">
+            <h3 class="project-title md-typescale-title-large">
+              ${this.codeRepo.name}
+            </h3>
+            <a
+              class="repo-link md-typescale-body-small"
+              href="${this.codeRepo.url}"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            <img
-              src="${cssPropertyDataImage(this.darkMode ? "--icons-logos-organization-github-dark" : "--icons-logos-organization-github-light")}"
-              alt="GitHub Logo"
+              <img
+                src="${cssPropertyDataImage(
+                  this.darkMode
+                    ? "--icons-logos-organization-github-dark"
+                    : "--icons-logos-organization-github-light"
+                )}"
+                alt="GitHub Link"
+                aria-hidden="true"
               />
-            ${this.codeRepo.url}
-          </a>
-        </header>
+              <span>${this.codeRepo.url}</span>
+            </a>
+          </header>
 
-        <md-divider></md-divider>
+          <md-divider></md-divider>
 
-        <p class="blurb md-typescale-body-large" .innerHTML=${this.codeRepo.description}></p>
+          <div class="info-pane">
+            <p
+              class="blurb md-typescale-body-medium"
+              .innerHTML=${this.codeRepo.description}
+            ></p>
 
-        <md-divider></md-divider>
+            <footer class="footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                ${this.codeRepo.tech.map((tech) => {
+                  const imgSrc =
+                    typeof tech.designToken === "string"
+                      ? cssPropertyDataImage(tech.designToken)
+                      : cssPropertyDataImage(
+                          this.darkMode
+                            ? tech.designToken.dark
+                            : tech.designToken.light
+                        );
 
-        <footer class="footer">
-          <ul class="tech-list" aria-label="Technologies used">
-            ${
-              this.codeRepo.tech.map(tech => {
-                const imgSrc =
-                  typeof tech.designToken === "string" ?
-                    cssPropertyDataImage(tech.designToken) :
-                    cssPropertyDataImage(this.darkMode ? tech.designToken.dark : tech.designToken.light);
+                  const tagId: string = `${
+                    typeof tech.designToken === "string"
+                      ? tech.designToken
+                      : tech.designToken.default
+                  }-word-tag`;
 
-                const imgTag = imgSrc ?
-                  html`
-                    <img
-                      role="img"
-                      aria-labelledby="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
-                      src="${imgSrc}"
-                      alt="${tech.name}"
-                      slot="icon"
-                      />
-                  ` :
-                  nothing;
+                  const imgTag = imgSrc
+                    ? html`
+                        <img
+                          role="img"
+                          aria-labelledby="${tagId}"
+                          src="${imgSrc}"
+                          alt="${tech.name}"
+                          slot="icon"
+                        />
+                      `
+                    : nothing;
 
                   return html`
                     <li>
                       <word-tag
-                        id="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
+                        id="${tagId}"
                         .hrefUrl=${tech.url}
                         .word=${tech.name}
                         .variant=${"text-icon"}
-                        >
+                      >
                         ${imgTag}
                       </word-tag>
                     </li>
                   `;
-              })
-            }
-          </ul>
-        </footer>
+                })}
+              </ul>
+            </footer>
+          </div>
+        </div>
       </article>
     `;
   }
@@ -100,6 +119,6 @@ export class CodeRepo extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "project-repo": CodeRepo;
+    "code-repo": CodeRepo;
   }
 }
