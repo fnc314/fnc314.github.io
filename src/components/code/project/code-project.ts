@@ -1,7 +1,7 @@
 import { type CodeProjectData } from "@/components/code/project/code-project.types";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
-import readCSSProperty from "@fnc314/design-tokens";
+import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -219,7 +219,7 @@ export class CodeProject extends LitElement {
           class="repo-link md-typescale-title-large"
         >
           <img
-            src="data:image/svg+xml;base64,${readCSSProperty("--icons-logos-tech-github-light")}"
+            src="${cssPropertyDataImage("--icons-logos-tech-github-light")}"
             alt="GitHub Logo"
             />
           Repo
@@ -250,7 +250,7 @@ export class CodeProject extends LitElement {
               .map((tech) => {
                 const imgSrc =
                   tech.designToken ?
-                    `data:image/svg+xml;base64,${readCSSProperty(tech.designToken)}` :
+                    cssPropertyDataImage(tech.designToken) :
                     undefined;
 
                 const imgTag = imgSrc ?

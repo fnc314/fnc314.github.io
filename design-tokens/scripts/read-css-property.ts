@@ -6,7 +6,7 @@
  * @return A `string` from `CSS` or an empty `string`
  * @typedef (property: string) => string
  */
-export const readCSSProperty = (property: string) =>
-  window.getComputedStyle(
-    window.document.documentElement
-  ).getPropertyValue(property);
+export const readCSSProperty: (property: string) => string =
+  (property: string) => window
+    .getComputedStyle(window.document.documentElement)
+    .getPropertyValue(property);

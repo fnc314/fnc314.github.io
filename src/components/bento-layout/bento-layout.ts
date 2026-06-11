@@ -16,7 +16,7 @@ import "@/components/card/profile-bio/profile-bio-card";
 import "@/components/card/settings/settings-card";
 import "@/components/card/skills/skills-card";
 import "@/components/card/work/work-card";
-import readCSSProperty from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/design-tokens";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
