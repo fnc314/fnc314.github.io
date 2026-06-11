@@ -1,9 +1,8 @@
-import { type WordTagHeaviness } from "@/components/word/word-tag/word-tag.types";
+import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/word-tag/word-tag.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { LitElement, css, html } from "lit";
+import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
-export type { WordTagHeaviness } from "@/components/word/word-tag/word-tag.types";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
@@ -12,6 +11,7 @@ export type { WordTagHeaviness } from "@/components/word/word-tag/word-tag.types
  * @property {WordTagHeaviness} [heaviness="normal"] - The weight of the tag (text & border), can be
  *  `"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or
  *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)
+ * @property {WordTagVariant} [variant="text"] - The version of the layout to render
  * @property {string} [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
  *  {@link HTMLAnchorElement}
  *
@@ -22,6 +22,8 @@ export type { WordTagHeaviness } from "@/components/word/word-tag/word-tag.types
  * @cssprop [--word-tag-font-weight=--md-ref-typeface-weight-regular] - The font weight
  * @cssprop [--word-tag-line-height=--md-typescale-body-large-lingt-height] - The line height
  * @cssprop [--word-tag-border-radius=--md-sys-shape-corner-small] - The corner radius (for all corners)
+ *
+ * @slot icon - The optional space available for, and positioned by, the {@link variant} property
  *
  * @export
  * @class WordTag
@@ -65,22 +67,28 @@ export class WordTag extends LitElement {
         }
       }
 
-      span {
+      .word-tag-variant-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-gap-xs);
         background-color: var(--internal-word-tag-background-color);
         border-color: var(--internal-word-tag-color);
         border-radius: var(--internal-word-tag-border-radius);
         border-style: solid;
-        color: var(--internal-word-tag-color);
-        display: inline-block;
-        font-family: var(--internal-word-tag-font-family);
-        font-size: var(--internal-word-tag-font-size);
-        line-height: var(--internal-word-tag-line-height);
         max-width: 100%;
         overflow: hidden;
         padding: var(--spacing-padding-xs);
-        text-overflow: ellipsis;
         transition: all var(--internal-word-tag-animation-duration) ease-in-out;
-        white-space: nowrap;
+
+        span {
+          color: var(--internal-word-tag-color);
+          font-family: var(--internal-word-tag-font-family);
+          font-size: var(--internal-word-tag-font-size);
+          line-height: var(--internal-word-tag-line-height);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     `,
   ];
@@ -94,19 +102,58 @@ export class WordTag extends LitElement {
   @property({ type: String })
   hrefUrl = "";
 
-  override render() {
-    const styles = {
-      borderWidth: this.heaviness === "normal" ? "var(--hairline-width)" : "calc(2.5 * var(--hairline-width))",
+  /** {@link WordTagVariantAttributeConverter} */
+  @property({
+    attribute: "variant",
+    type: String,
+    converter: WordTagVariantAttributeConverter,
+    reflect: true,
+    useDefault: true,
+  })
+  variant: WordTagVariant = "text"
+
+  private layoutForVariant(variant: WordTagVariant): TemplateResult {
+    const fontStyles = {
       fontWeight: this.heaviness === "normal" ? "var(--md-ref-typeface-weight-regular)" : "var(--md-ref-typeface-weight-bold)",
+    }
+
+    const borderStyles = {
+      borderWidth: this.heaviness === "normal" ? "var(--hairline-width)" : "calc(2.5 * var(--hairline-width))",
     };
 
     const defaultWordTag = html`
-      <span style=${styleMap(styles)}>${this.word}</span>
+      <span style=${styleMap(fontStyles)}>${this.word}</span>
     `;
 
+    switch (variant) {
+      case "text-icon":
+        return html`
+          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
+            ${defaultWordTag}
+            <slot name="icon"></slot>
+          </div>
+        `;
+      case "icon-text":
+        return html`
+          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
+            <slot name="icon"></slot>
+            ${defaultWordTag}
+          </div>
+        `;
+      case "text":
+      default:
+        return html`
+          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
+            ${defaultWordTag}
+          </div>
+        `;
+    }
+  }
+
+  override render() {
     return this.hrefUrl === "" ?
-      defaultWordTag :
-      html`<a href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${defaultWordTag}</a>`;
+      this.layoutForVariant(this.variant) :
+      html`<a href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${this.layoutForVariant(this.variant)}</a>`;
   }
 }
 

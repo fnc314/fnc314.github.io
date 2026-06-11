@@ -187,11 +187,6 @@ export class CodeProject extends LitElement {
 
       a {
         color: var(--md-sys-color-on-surface-variant);
-
-        &.repo-link::before {
-          content: url("data:image/svg+xml;base64,") / "GitHub logo";
-          display: block;
-        }
       }
     `
   ];
@@ -258,24 +253,26 @@ export class CodeProject extends LitElement {
                     `data:image/svg+xml;base64,${readCSSProperty(tech.designToken)}` :
                     undefined;
 
+                const imgTag = imgSrc ?
+                  html`
+                    <img
+                      role="img"
+                      aria-labelledby="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
+                      src="${imgSrc}"
+                      alt="${tech.name}"
+                      slot="icon"
+                      />
+                  ` :
+                  nothing
                 return html`
                   <li>
-                    ${
-                      imgSrc ?
-                        html`
-                          <img
-                            role="img"
-                            aria-labelledby="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
-                            src="${imgSrc}"
-                            alt="${tech.name}"
-                            />
-                        ` :
-                        nothing
-                    }
                     <word-tag
                       id="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
                       .hrefUrl=${tech.url}
-                      .word=${tech.name}>
+                      .word=${tech.name}
+                      .variant=${"text-icon"}
+                      >
+                      ${imgTag}
                     </word-tag>
                   </li>
                 `;
