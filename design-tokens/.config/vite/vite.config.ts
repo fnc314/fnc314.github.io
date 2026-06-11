@@ -17,9 +17,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         tsconfig: `${process.cwd()}/design-tokens/tsconfig.json`,
       },
       outDir: `${process.cwd()}/design-tokens/dist`,
-      emptyOutDir: false,
+      emptyOutDir: true,
       copyPublicDir: true,
-      minify: false,
+      minify: mode == "production",
     },
     plugins: [
       dts({
