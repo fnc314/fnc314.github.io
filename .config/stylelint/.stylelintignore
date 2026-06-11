@@ -18,7 +18,9 @@
 .well-known/
 .well-known/*
 bun-build/
+design-tokens/.config/**/*.{js,mjs,ts,mts}
 design-tokens/dist/**/*
+design-tokens/script/**/*.ts
 dist/
 dist/**/*
 docs/
@@ -28,7 +30,7 @@ logs/
 node_modules/
 node_modules/**/*
 postcss.config.mjs
-src/**/*.d.ts
+src/**/*.ts
 src/env.d.ts
 stats/
 website/

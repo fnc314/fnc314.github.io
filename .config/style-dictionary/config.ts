@@ -1,4 +1,3 @@
-import pkg from "fs-extra";
 import StyleDictionary, { type Config, type TransformedToken } from "style-dictionary";
 import {
   formats,
@@ -8,49 +7,6 @@ import {
   transformGroups,
   transforms
 } from "style-dictionary/enums";
-const { copySync, emptyDirSync } = pkg;
-
-StyleDictionary.registerAction({
-  name: "copy_themes",
-  do: function(dictionary, config) {
-    console.log("Copying /assets/themes");
-    copySync("design-tokens/assets/themes", `${config.buildPath}themes`);
-    console.log("assets/themes copied.");
-  },
-  undo: function(dictionary, config) {
-    console.log("Deleting /dist/themes");
-    emptyDirSync(`${config.buildPath}themes`);
-    console.log("/dist/themes deleted.");
-  }
-});
-
-StyleDictionary.registerAction({
-  name: "copy_css_overrides",
-  do: function(dictionary, config) {
-    console.log("Copying /assets/css");
-    copySync("design-tokens/assets/css", `${config.buildPath}css`);
-    console.log("/assets/css copied.");
-  },
-  undo: function(dictionary, config) {
-    console.log("Deleting /dist/css");
-    emptyDirSync(`${config.buildPath}css`);
-    console.log("/dist/css deleted.");
-  }
-});
-
-StyleDictionary.registerAction({
-  name: "copy_icon_images",
-  do: function(dictionary, config) {
-    console.log("Copying /assets/icons");
-    copySync("design-tokens/assets/icons", `${config.buildPath}icons`);
-    console.log("/assets/icons copied.");
-  },
-  undo: function(dictionary, config) {
-    console.log("Deleting /dist/icons");
-    emptyDirSync(`${config.buildPath}icons`);
-    console.log("/dist/icons deleted.");
-  }
-});
 
 StyleDictionary.registerFilter({
   name: "isIconToken",
@@ -73,15 +29,17 @@ StyleDictionary.registerFilter({
     ["icons", "sys", "ref", "md"].every(path => !token.path.includes(path))
 });
 
+const buildPaths = {
+  css: `${process.cwd()}/design-tokens/css/`,
+  json: `${process.cwd()}/design-tokens/dist/json/`,
+}
+
 export default {
   source: [
     `${process.cwd()}/design-tokens/tokens/**/*.json`,
   ],
   platforms: {
     cssIcons: {
-      actions: [
-        "copy_icon_images"
-      ],
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
@@ -89,27 +47,29 @@ export default {
         transforms.colorCss,
         transforms.assetBase64,
       ],
-      buildPath: "design-tokens/dist/",
+      buildPath: buildPaths.css,
       files: [
         {
-          destination: "css/_icons.css",
+          destination: "_icons.css",
           format: formats.cssVariables,
           filter: "isIconToken",
+          options: {
+            outputReferences: true
+          }
         }
       ]
     },
     css: {
-      actions: [
-        "copy_themes",
-        "copy_css_overrides",
-      ],
       transformGroup: transformGroups.css,
-      buildPath: "design-tokens/dist/",
+      buildPath: buildPaths.css,
       files: [
         {
-          destination: "css/_variables.css",
+          destination: "_variables.css",
           format: formats.cssVariables,
           filter: "isCustomToken",
+          options: {
+            outputReferences: true
+          }
         }
       ],
     },
@@ -120,18 +80,21 @@ export default {
         transforms.nameKebab,
         transforms.colorCss,
       ],
-      buildPath: "design-tokens/dist/",
+      buildPath: buildPaths.css,
       files: [
         {
-          destination: "css/_material-overrides.css",
+          destination: "_material-overrides.css",
           format: formats.cssVariables,
           filter: "isMaterialOverride",
+          options: {
+            outputReferences: true
+          }
         }
       ],
     },
     dtcgJson: {
       transformGroup: transformGroups.web,
-      buildPath: "design-tokens/dist/json/",
+      buildPath: buildPaths.json,
       files: [
         {
           destination: "tokens.json",

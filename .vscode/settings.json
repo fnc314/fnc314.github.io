@@ -21,7 +21,7 @@
   "cem.lsp.executable": "",
   "cem.lsp.trace.server": "verbose",
   "css.customData": [
-    "./.vscode/custom-elements-manifest/vscode.css-custom-data.json"
+    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
@@ -56,8 +56,8 @@
   },
   "git.ignoreLimitWarning": true,
   "html.customData": [
-    "./.vscode/custom-elements-manifest/vscode.html-custom-data.json",
-    "./.vscode/wca/*.json"
+    "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.html-custom-data.json",
+    "${workspaceFolder}/.vscode/wca/*.json"
   ],
   "html.suggest.html5": true,
   "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
@@ -72,16 +72,15 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
-  "oxc.fmt.configPath": "./.config/vite/vite.config.ts",
+  "oxc.fmt.configPath": "${workspaceFolder}/.config/vite/vite.config.ts",
   "pnpm-vscode-helper.enableCodelen": true,
-  "pnpm.packageJson": "./package.json",
-  "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
-  "stylelint.ignorePath": "./.config/stylelint/.stylelintignore",
+  "pnpm.packageJson": "${workspaceFolder}/package.json",
+  "stylelint.configFile": "${workspaceFolder}/.config/stylelint/stylelint.config.ts",
+  "stylelint.ignorePath": "${workspaceFolder}/.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
   "stylelint.reportDescriptionlessDisables": true,
   "stylelint.reportInvalidScopeDisables": true,
   "stylelint.reportNeedlessDisables": true,
-  "stylelint.configBasedir": "./.config/stylelint",
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",
@@ -93,7 +92,7 @@
     "postcss",
     "typescript"
   ],
-  "tailwindCSS.experimental.configFile": "./.config/tailwind/tailwind.config.ts",
+  "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "workbench.tree.indent": 4
 }

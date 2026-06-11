@@ -6,22 +6,19 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "files": [
-    "dist",
-    "src"
-  ],
   "exports": {
     ".": {
-      "style": "./dist/css/_variables.css",
-      "import": "./dist/json/tokens.json",
-      "default": "./dist/json/tokens.json"
+      "style": "./dist/@fnc314.design-tokens.css",
+      "import": "./dist/@fnc314.design-tokens.js",
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/@fnc314.design-tokens.js"
     },
-    "./themes/*": "./dist/themes/*",
-    "./css/*": "./dist/css/*",
-    "./json/*": "./dist/json/*",
     "./icons/*": "./dist/icons/*",
-    "./js/*": "./dist/js"
+    "./json/*": "./dist/json/*",
+    "./themes/*": "./dist/themes/*",
+    "./types/*": "./dist/types/*"
   },
+  "types": "./dist/types/index.d.ts",
   "dependencies": {
     "material-symbols": "catalog:dependencies",
     "@material/web": "catalog:dependencies"
@@ -31,6 +28,7 @@
     "fs-extra": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
+    "unplugin-dts": "catalog:devDependencies",
     "vite": "catalog:devDependencies"
   },
   "keywords": [

@@ -1,12 +1,22 @@
 {
   "extends": [
-    "./../tsconfig.json",
+    // "./../tsconfig.json",
+  ],
+  "include": [
+    "./scripts",
+    "./types"
   ],
   "compilerOptions": {
     "types": [
+      "node",
+      "vite/client",
+      "material-symbols",
       "@types/fs-extra"
     ],
-    "outDir": "dist/js",
+    "composite": true,
+    "declaration": true,
+    "outDir": "./dist/js",
+    "declarationDir": "./dist/types",
     "emitDeclarationOnly": false,
     "noEmit": false,
     "allowJs": true,
@@ -16,6 +26,10 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "declarationMap": false,
+    "strictBindCallApply": false,
     "module": "esnext",
     "moduleResolution": "bundler",
     "lib": [
@@ -29,9 +43,11 @@
       "ES2025",
       "ESNext"
     ],
-    "rootDir": ".",
     "paths": {
-      "@/*": ["./scripts/*"]
+      "@/scripts/*": ["./scripts/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/css/*": ["./css/*"],
+      "@/dist/*": ["./dist/*"]
     },
     "preserveConstEnums": true,
     "pretty": true,
@@ -41,5 +57,5 @@
     "rewriteRelativeImportExtensions": true,
     "target": "esnext",
     "tsBuildInfoFile": "./../stats/design-tokens.tsbuildinfo",
-  }
+  },
 }

@@ -16,6 +16,14 @@ export interface SpacingTokens {
     l: string;
     xl: string;
   };
+  gap: {
+    xxs: string;
+    xs: string;
+    s: string;
+    m: string;
+    l: string;
+    xl: string;
+  };
 }
 
 export interface BreakpointTokens {

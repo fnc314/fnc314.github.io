@@ -7,6 +7,8 @@ const config: Config = {
     "./config/**/*.{js,mjs,ts,mts}",
     "dist/**/**",
     "docs/**/**",
+    "design-tokens/.config/**/*.{js,mjs,ts,mts}",
+    "design-tokens/scripts/**/*.ts",
   ].map((path) => `${process.cwd()}/${path}`),
   extends: [
     "stylelint-config-standard",

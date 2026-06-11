@@ -1,5 +1,8 @@
 {
-  "include": ["src/**/*.ts", "stylelint.config.ts"],
+  "references": [
+    { "path": "./design-tokens/tsconfig.json" }
+  ],
+  "include": ["src/**/*.ts", "./.config/**/*.ts"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
     "enable": true
@@ -64,7 +67,7 @@
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": false,
-    "rootDir": "./src",
+    "rootDir": ".",
     "sourceMap": true,
     "strict": true,
     "skipLibCheck": true,
@@ -116,7 +119,8 @@
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/theme/*": ["./src/theme/*"],
-      "@/types/*": ["./src/types/*"]
+      "@/types/*": ["./src/types/*"],
+      "@fnc314/design-tokens/*": ["./design-tokens/scripts/*"]
     }
   }
 }

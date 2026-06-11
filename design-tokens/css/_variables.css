@@ -1,0 +1,54 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --breakpoint-mobile-max: 768px;
+  --breakpoint-tablet-min: 769px;
+  --breakpoint-tablet-max: 1200px;
+  --breakpoint-desktop-min: 1201px;
+  --button-container-shape: var(--md-sys-shape-corner-small);
+  --elevations-beneath: 0;
+  --elevations-lowest: 1;
+  --elevations-low: 2;
+  --elevations-medium: 3;
+  --elevations-high: 4;
+  --elevations-highest: 5;
+  --globals-hairline-width: 1px;
+  --globals-transition-color-duration: 500ms;
+  --globals-transition-color-timing: ease-in-out;
+  --globals-fab-buffer-height: 10rem;
+  --globals-hover-focus-animation-translate-y: -0.25rem;
+  --motion-duration-none: 0ms;
+  --motion-duration-short: 250ms;
+  --motion-duration-medium: 300ms;
+  --motion-easing-emphasized: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-base: ease-in-out;
+  --motion-elevation-level-0: 0;
+  --motion-elevation-level-1: 1;
+  --motion-elevation-level-2: 2;
+  --motion-elevation-level-3: 3;
+  --motion-elevation-level-4: 4;
+  --motion-elevation-level-5: 5;
+  --motion-transform-hover-lift: -4px;
+  --spacing-reset: 0;
+  --spacing-padding-xxs: 0.25rem;
+  --spacing-padding-xs: 0.5rem;
+  --spacing-padding-s: 1rem;
+  --spacing-padding-m: 1.5rem;
+  --spacing-padding-l: 2rem;
+  --spacing-padding-xl: 3rem;
+  --spacing-margin-xxs: 0.2rem;
+  --spacing-margin-xs: 0.4rem;
+  --spacing-margin-s: 0.8rem;
+  --spacing-margin-m: 1.2rem;
+  --spacing-margin-l: 1.6rem;
+  --spacing-margin-xl: 2.4rem;
+  --spacing-gap-xxs: 0.2rem;
+  --spacing-gap-xs: 0.4rem;
+  --spacing-gap-s: 0.8rem;
+  --spacing-gap-m: 1.2rem;
+  --spacing-gap-l: 1.6rem;
+  --spacing-gap-xl: 2.4rem;
+}
