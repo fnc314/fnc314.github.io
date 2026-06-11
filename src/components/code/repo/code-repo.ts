@@ -63,7 +63,7 @@ export class CodeRepo extends UIModeAwareElement {
                 const imgSrc =
                   typeof tech.designToken === "string" ?
                     cssPropertyDataImage(tech.designToken) :
-                    undefined;
+                    cssPropertyDataImage(this.darkMode ? tech.designToken.dark : tech.designToken.light);
 
                 const imgTag = imgSrc ?
                   html`

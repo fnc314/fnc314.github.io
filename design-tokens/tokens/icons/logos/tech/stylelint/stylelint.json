@@ -5,11 +5,11 @@
         "stylelint": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/stylelint/stylelint-light.svg"
+            "value": "design-tokens/assets/icons/logos/tech/stylelint/stylelint-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/stylelint/stylelint-dark.svg"
+            "value": "design-tokens/assets/icons/logos/tech/stylelint/stylelint-light.svg"
           },
           "light": {
             "type": "asset",

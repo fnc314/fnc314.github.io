@@ -5,11 +5,11 @@
         "pnpm": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/pnpm/pnpm-light.svg"
+            "value": "design-tokens/assets/icons/logos/tech/pnpm/pnpm-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/pnpm/pnpm-dark.svg"
+            "value": "design-tokens/assets/icons/logos/tech/pnpm/pnpm-light.svg"
           },
           "light": {
             "type": "asset",
