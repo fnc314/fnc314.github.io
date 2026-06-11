@@ -105,21 +105,21 @@ export class BentoLayout extends LitElement {
     }
 
     return html`
-      <div
+      <section
         class="card-${config.type}"
         style=${styleMap({ gridArea: gridArea || undefined })}
       >
         ${cardContent}
-      </div>
+      </section>
     `;
   }
 
   override render() {
     return html`
-      <div class="bento-grid" role="main" id="bento-root">
+      <main class="bento-grid" id="bento-root">
         <h1>Franco N. Colaizzi</h1>
         ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
-      </div>
+      </main>
     `;
   }
 }

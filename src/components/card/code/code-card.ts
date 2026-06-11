@@ -42,7 +42,7 @@ export class CodeCard extends LitElement {
         <div class="code-list">
           ${CodeJson.projects.map(
             (p) => html`
-              <code-project .codeProject="${p}"></code-project>
+              <code-repo .codeRepo="${p}"></code-repo>
             `,
           )}
         </div>

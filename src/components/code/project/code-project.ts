@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 /**
  * @summary Represents a single (usually GitHub-hosted) demonstration project
  *
+ * @deprecated - Replaced by {@link CodeRepo}
+ *
  * @property {CodeProjectData} [codeProject={}] - The Rendered {@link CodeProjectData}
  *
  * @cssprop [--code-project-animation=200ms] - The duration of the subtle hover/focus effect
@@ -96,7 +98,7 @@ export class CodeProject extends LitElement {
         gap: var(--spacing-gap-s);
         height: 100%;
         inset: 0;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: var(--spacing-padding-m);
         position: absolute;
         width: 100%;

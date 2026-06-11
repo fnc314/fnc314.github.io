@@ -8,6 +8,7 @@ import "@/components/bento-layout/bento-layout";
 import "@/components/blog/post/blog-post";
 import "@/components/blog/post/blog-post.types";
 import "@/components/code/project/code-project";
+import "@/components/code/repo/code-repo";
 import "@/components/dialog/step-up/step-up-dialog";
 import "@/components/fab-menu/fab-menu";
 import "@/components/fab-menu/fab-menu-item";

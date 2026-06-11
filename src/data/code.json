@@ -101,7 +101,8 @@
         },
         {
           "name": "Vite",
-          "url": "https://vite.dev/"
+          "url": "https://vite.dev/",
+          "designToken": "--icons-logos-tech-vite-default"
         },
         {
           "name": "Material Theme Builder",

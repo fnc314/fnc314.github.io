@@ -1,0 +1,116 @@
+{
+  "sizes": {
+    "height": {
+      "l": {
+        "type": "value",
+        "value": "1.5rem"
+      },
+      "m": {
+        "type": "value",
+        "value": "1rem"
+      },
+      "sm": {
+        "type": "value",
+        "value": "0.75rem"
+      },
+      "xl": {
+        "type": "value",
+        "value": "2rem"
+      },
+      "xs": {
+        "type": "value",
+        "value": "0.5rem"
+      },
+      "xxl": {
+        "type": "value",
+        "value": "3rem"
+      },
+      "xxs": {
+        "type": "value",
+        "value": "0.25rem"
+      }
+    },
+    "none": {
+      "type": "value",
+      "value": "0"
+    },
+    "ratio": {
+      "square": {
+        "type": "value",
+        "value": "1"
+      },
+      "tall": {
+        "type": "value",
+        "value": "9 / 16"
+      },
+      "wide": {
+        "type": "value",
+        "value": "16 / 9"
+      }
+    },
+    "thickness": {
+      "hairline": {
+        "type": "value",
+        "value": "1px"
+      },
+      "l": {
+        "type": "value",
+        "value": "7px"
+      },
+      "m": {
+        "type": "value",
+        "value": "6px"
+      },
+      "sm": {
+        "type": "value",
+        "value": "5px"
+      },
+      "xl": {
+        "type": "value",
+        "value": "8px"
+      },
+      "xs": {
+        "type": "value",
+        "value": "4px"
+      },
+      "xxl": {
+        "type": "value",
+        "value": "9px"
+      },
+      "xxs": {
+        "type": "value",
+        "value": "3px"
+      }
+    },
+    "width": {
+      "l": {
+        "type": "value",
+        "value": "1.5rem"
+      },
+      "m": {
+        "type": "value",
+        "value": "1rem"
+      },
+      "sm": {
+        "type": "value",
+        "value": "0.75rem"
+      },
+      "xl": {
+        "type": "value",
+        "value": "2rem"
+      },
+      "xs": {
+        "type": "value",
+        "value": "0.5rem"
+      },
+      "xxl": {
+        "type": "value",
+        "value": "3rem"
+      },
+      "xxs": {
+        "type": "value",
+        "value": "0.25rem"
+      }
+    }
+  }
+}

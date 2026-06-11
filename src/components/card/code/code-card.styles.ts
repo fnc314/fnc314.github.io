@@ -5,7 +5,6 @@ import { css } from "lit";
  * @packageDocumentation
  */
 export const CodeCardStyles = css`
-
   :host {
     display: block;
     height: 100%;
@@ -21,7 +20,7 @@ export const CodeCardStyles = css`
   .code-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-xs);
+    gap: var(--spacing-gap-s);
   }
 
   @media screen and (width <= 768px) {
