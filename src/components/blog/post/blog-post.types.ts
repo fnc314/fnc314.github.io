@@ -1,3 +1,10 @@
+/**
+ * Describes a `json` record of a blog post
+ *
+ * @export
+ * @interface BlogPostJson
+ * @typedef {BlogPostJson}
+ */
 export interface BlogPostJson {
   id: string;
   title: string;
@@ -7,6 +14,12 @@ export interface BlogPostJson {
   tags: string[];
 }
 
+/**
+ * Alternative of {@link BlogPostJson}
+ *
+ * @export
+ * @typedef {BlogsJson}
+ */
 export type BlogsJson = {
   id: string;
   title: string;
@@ -21,6 +34,13 @@ export type BlogsJson = {
   }
 );
 
+/**
+ * Alternative of {@link BlogPostJson}
+ *
+ * @export
+ * @interface BlogsJsonEntry
+ * @typedef {BlogsJsonEntry}
+ */
 export interface BlogsJsonEntry {
   id: string;
   title: string;

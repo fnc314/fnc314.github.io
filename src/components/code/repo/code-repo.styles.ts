@@ -9,6 +9,9 @@ export const CodeRepoStyles: CSSResult = css`
     background-color: var(--md-sys-color-background);
 
     --md-divider-color: var(--md-sys-color-outline-variant);
+    --md-divider-thickness: calc(var(--sizes-thickness-hairline) * 2);
+    --word-tag-border-radius: var(--md-sys-shape-corner-medium);
+    --word-tag-font-size: var(--md-sys-typescale-body-medium-size);
   }
 
   /* Option 2 Container Design Frame */
@@ -49,15 +52,21 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   .repo-link {
-    font-family: var(--md-typescale-body-small-font);
-    font-weight: var(--md-typescale-body-small-weight);
-    font-size: var(--md-typescale-body-small-size);
-    line-height: var(--md-typescale-body-small-line-height);
     color: var(--md-sys-color-on-surface-variant);
     text-decoration: none;
     word-break: break-all;
     margin-block-start: var(--spacing-margin-xs);
     font-style: italic;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: var(--spacing-gap-xs);
+
+    img {
+      width: var(--sizes-width-l);
+      height: var(--sizes-height-l);
+      aspect-ratio: var(--sizes-ratio-square);
+    }
   }
 
   .repo-link:hover, .repo-link:focus {
@@ -80,10 +89,6 @@ export const CodeRepoStyles: CSSResult = css`
 
   /* Body Text Summary Box */
   .blurb {
-    font-family: var(--md-typescale-body-medium-font);
-    font-weight: var(--md-typescale-body-medium-weight);
-    font-size: var(--md-typescale-body-medium-size);
-    line-height: var(--md-typescale-body-medium-line-height);
     color: var(--md-sys-color-on-surface);
     margin-block: var(--spacing-reset);
 

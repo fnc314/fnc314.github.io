@@ -6,7 +6,6 @@ import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { LitElement, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-
 /**
  * An instance of a given `GitHub` repository project documented through
  *   {@link CodeRepoData} objects from `data/code.json`
@@ -34,15 +33,25 @@ export class CodeRepo extends LitElement {
     return html`
       <article class="card">
         <header class="header">
-          <h3 class="project-title md-typescale-title-large">${this.codeRepo.name}</h3>
-          <a class="repo-link" href="${this.codeRepo.url}" target="_blank" rel="noopener noreferrer">
+          <h3 class="project-title md-typescale-title-large">
+            ${this.codeRepo.name}
+          </h3>
+          <a
+            class="repo-link md-typescale-body-medium"
+            href="${this.codeRepo.url}"
+            target="_blank" rel="noopener noreferrer"
+            >
+            <img
+              src="${cssPropertyDataImage("--icons-logos-tech-github-light")}"
+              alt="GitHub Logo"
+              />
             ${this.codeRepo.url}
           </a>
         </header>
 
         <md-divider></md-divider>
 
-        <p class="blurb" .innerHTML=${this.codeRepo.description}></p>
+        <p class="blurb md-typescale-body-large" .innerHTML=${this.codeRepo.description}></p>
 
         <md-divider></md-divider>
 
@@ -68,17 +77,17 @@ export class CodeRepo extends LitElement {
                   nothing;
 
                   return html`
-                  <li>
-                    <word-tag
-                      id="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
-                      .hrefUrl=${tech.url}
-                      .word=${tech.name}
-                      .variant=${"text-icon"}
-                      >
-                      ${imgTag}
-                    </word-tag>
-                  </li>
-                `;
+                    <li>
+                      <word-tag
+                        id="${tech.designToken || tech.name.toLowerCase().split(" ").join("-")}-word-tag"
+                        .hrefUrl=${tech.url}
+                        .word=${tech.name}
+                        .variant=${"text-icon"}
+                        >
+                        ${imgTag}
+                      </word-tag>
+                    </li>
+                  `;
               })
             }
           </ul>
