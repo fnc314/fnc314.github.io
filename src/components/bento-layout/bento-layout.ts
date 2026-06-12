@@ -1,22 +1,11 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { type Breakpoint } from "@/types/breakpoints";
-import { LitElement, type PropertyValues, type TemplateResult, html, nothing } from "lit";
+import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-// New components
-import "@/components/card/bento/bento-card";
-import "@/components/card/blog/blog-card";
-import "@/components/card/code/code-card";
-import "@/components/card/connect/connect-card";
-import "@/components/card/education/education-card";
-import "@/components/card/profile-bio/profile-bio-card";
-import "@/components/card/settings/settings-card";
-import "@/components/card/skills/skills-card";
-import "@/components/card/work/work-card";
-import { readCSSProperty } from "@fnc314/design-tokens";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
@@ -26,7 +15,7 @@ import { readCSSProperty } from "@fnc314/design-tokens";
  * @element bento-layout
  */
 @customElement("bento-layout")
-export class BentoLayout extends LitElement {
+export class BentoLayout extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
@@ -36,30 +25,10 @@ export class BentoLayout extends LitElement {
   @state()
   private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
 
-  @state()
-  private _currentBreakpoint: Breakpoint = readCSSProperty("--breakpoint-label") as Breakpoint;
-
-  private _windowResizeObserver: () => void = () => {
-    this._currentBreakpoint = readCSSProperty("--breakpoint-label") as Breakpoint;
-  }
-
-  override connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener("resize", this._windowResizeObserver);
-  }
-
-  protected override firstUpdated(_changedProperties: PropertyValues): void {
-    super.firstUpdated(_changedProperties);
-  }
-
-  override disconnectedCallback() {
-    super.disconnectedCallback();
-    window.removeEventListener("resize", this._windowResizeObserver);
-  }
 
   private renderBentoBox(config: BentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placementForBreakpoint(
-      this._currentBreakpoint
+      this.breakpoint
     );
 
     let gridArea = "";
@@ -70,7 +39,7 @@ export class BentoLayout extends LitElement {
     console.log(
       `
       Position | gridArea | GridPostion
-      ${JSON.stringify({ position, gridArea, breakpoint: this._currentBreakpoint }, null, 2)}
+      ${JSON.stringify({ position, gridArea, breakpoint: this.breakpoint }, null, 2)}
       `
     );
 
