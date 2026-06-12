@@ -4,8 +4,7 @@ import { css } from "lit";
  * @summary Styles for the BlogCard component.
  * @packageDocumentation
  */
-export const blogCardStyles = css`
-
+export const BlogCardStyles = css`
   :host {
     display: block;
     height: 100%;

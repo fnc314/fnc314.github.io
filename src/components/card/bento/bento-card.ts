@@ -97,21 +97,18 @@ export class BentoCard extends LitElement {
           aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} details` : undefined)}"
           >
           <summary
-            aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} summary` : undefined)}"
+            aria-label="${this.bentoCardTitle} summary"
             >
-            ${
-              this.bentoCardTitle ?
-                html`
-                  <h2 id="bento-card-title" class="md-typescale-headline-small">${this.bentoCardTitle}</h2>
-                ` :
-                html`
-                  <slot name="header"></slot>
-                `
-            }
+            <h2
+              id="bento-card-title"
+              class="md-typescale-headline-small"
+              >
+              ${this.bentoCardTitle}
+            </h2>
             <md-icon class="indicator">expand_more</md-icon>
           </summary>
           <div
-            aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} content` : undefined)}"
+            aria-label="${this.bentoCardTitle} content"
             class="expansion-wrapper"
             >
             <div class="expansion-content">

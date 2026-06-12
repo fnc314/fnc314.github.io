@@ -9,8 +9,10 @@ export const CodeRepoStyles: CSSResult = css`
   :host {
     display: block;
     width: 100%;
+    min-width: 0;
+    align-self: stretch;
+    flex-grow: 1;
     box-sizing: border-box;
-    background-color: var(--md-sys-color-background);
     container-type: inline-size;
     container-name: code-repo-card;
 
@@ -33,6 +35,7 @@ export const CodeRepoStyles: CSSResult = css`
     overflow: hidden;
     justify-content: flex-start;
     min-height: min-content;
+    min-width: 0;
 
     &::before {
       content: "";
@@ -45,13 +48,18 @@ export const CodeRepoStyles: CSSResult = css`
     }
   }
 
-  /* Default Structural Tracking (Mobile Columns <= 500px Container Bounds) */
+  .card-body-wrapper {
+    min-width: 0;
+  }
+
+  /* Default Structural Layout Roles (Mobile Stack Flow <= 500px) */
   .header {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-gap-xxs);
     margin-top: var(--spacing-margin-reset);
     margin-bottom: var(--spacing-margin-s);
+    min-width: 0;
   }
 
   .project-title {
@@ -63,15 +71,22 @@ export const CodeRepoStyles: CSSResult = css`
   .repo-link {
     color: var(--md-sys-color-primary);
     text-decoration: none;
-    word-break: break-all;
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-gap-xs);
+    min-width: 0;
+    max-width: 100%;
 
     & img {
       width: var(--md-icon-size);
       height: var(--md-icon-size);
       flex-shrink: 0;
+    }
+
+    & span {
+      min-width: 0;
+      word-break: break-all;
+      overflow-wrap: break-word;
     }
 
     &:hover,
@@ -85,12 +100,17 @@ export const CodeRepoStyles: CSSResult = css`
     margin-top: var(--spacing-margin-reset);
     margin-bottom: var(--spacing-margin-m);
     word-break: break-word;
+    min-width: 0;
 
     pre {
       display: inline;
       overflow-wrap: break-word;
       white-space: pre-wrap;
     }
+  }
+
+  .info-pane {
+    min-width: 0;
   }
 
   .footer {
@@ -110,8 +130,8 @@ export const CodeRepoStyles: CSSResult = css`
 
     & word-tag img,
     & word-tag [slot="icon"] {
-      width: var(--md-icon-size, 16px) !important;
-      height: var(--md-icon-size, 16px) !important;
+      width: var(--md-icon-size);
+      height: var(--md-icon-size);
       object-fit: contain;
       flex-shrink: 0;
     }

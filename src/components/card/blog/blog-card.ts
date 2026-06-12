@@ -1,7 +1,7 @@
 import "@/components/blog/post/blog-post";
 import { type BlogPostJson } from "@/components/blog/post/blog-post";
 import "@/components/card/bento/bento-card";
-import { blogCardStyles } from "@/components/card/blog/blog-card.styles";
+import { BlogCardStyles } from "@/components/card/blog/blog-card.styles";
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -14,7 +14,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("blog-card")
 export class BlogCard extends LitElement {
   /** {@link lit!css} */
-  static override styles = [blogCardStyles];
+  static override styles = [BlogCardStyles];
 
   @property({ type: Boolean })
   expanded = false;

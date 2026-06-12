@@ -36,30 +36,55 @@ export const BentoCardStyles = css`
       box-shadow var(--motion-duration-short) var(--motion-easing-base),
       border-color var(--motion-duration-short) var(--motion-easing-base),
       background-color var(--motion-duration-medium) var(--motion-easing-base);
+
+    &.enable-hover:hover {
+      background-color: var(--md-sys-color-surface-container-high);
+      border-color: var(--md-sys-color-outline);
+      transform: translateY(var(--motion-transform-hover-lift));
+    }
+
+    &.enable-focus:focus {
+      border-color: var(--md-sys-color-primary);
+    }
   }
 
-  summary {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    outline: none;
-    padding: 0;
-    user-select: none;
+  details {
+    summary {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      outline: none;
+      padding: var(--spacing-reset);
+      user-select: none;
+    }
+
+    /* Expansion Animation Logic */
+    .expansion-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition:
+        grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
+    }
+
+    &[open] {
+      color: var(--md-sys-color-on-surface-variant);
+      transition: transform var(--motion-duration-medium) var(--motion-easing-standard);
+
+      .indicator {
+        transform: rotate(var(--motion-rotation-90));
+      }
+
+      .expansion-wrapper {
+        grid-template-rows: 1fr;
+      }
+    }
   }
 
   summary::-webkit-details-marker {
     display: none;
-  }
-
-  .indicator {
-    color: var(--md-sys-color-on-surface-variant);
-    transition: transform var(--motion-duration-medium) var(--motion-easing-standard);
-  }
-
-  details[open] .indicator {
-    transform: rotate(var(--motion-rotation-180));
   }
 
   /* Expansion Animation Logic */
@@ -67,11 +92,8 @@ export const BentoCardStyles = css`
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
-    transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
-  }
-
-  details[open] .expansion-wrapper {
-    grid-template-rows: 1fr;
+    transition:
+      grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
   }
 
   .expansion-content {
@@ -82,21 +104,8 @@ export const BentoCardStyles = css`
     padding-block: var(--spacing-padding-xs);
   }
 
-  /* Conditional Interaction States */
-  .bento-card.enable-hover:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-outline);
-    transform: translateY(var(--motion-transform-hover-lift));
-  }
-
-  .bento-card.enable-focus:focus-within {
-    border-color: var(--md-sys-color-primary);
-  }
-
   /* Style slotted header elements (h2 by default) */
-  h2,
-  ::slotted(h2),
-  ::slotted([slot="header"]) {
+  h2 {
     border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
     color: var(--md-sys-color-primary);
     flex-grow: 1;

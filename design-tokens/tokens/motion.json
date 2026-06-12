@@ -20,6 +20,24 @@
     },
     "transform": {
       "hover-lift": { "value": "-4px" }
+    },
+    "rotation": {
+      "none": {
+        "type": "value",
+        "value": "0deg"
+      },
+      "90": {
+        "type": "value",
+        "value": "90deg"
+      },
+      "180": {
+        "type": "value",
+        "value": "180deg"
+      },
+      "270": {
+        "type": "value",
+        "value": "270deg"
+      }
     }
   }
 }

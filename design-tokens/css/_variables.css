@@ -32,6 +32,10 @@
   --motion-elevation-level-4: 4;
   --motion-elevation-level-5: 5;
   --motion-transform-hover-lift: -4px;
+  --motion-rotation-90: 90deg;
+  --motion-rotation-180: 180deg;
+  --motion-rotation-270: 270deg;
+  --motion-rotation-none: 0deg;
   --sizes-height-l: 1.5rem;
   --sizes-height-m: 1rem;
   --sizes-height-sm: 0.75rem;

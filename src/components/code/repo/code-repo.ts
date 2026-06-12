@@ -9,10 +9,10 @@ import { customElement, property } from "lit/decorators.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
- * {@link CodeRepoData} objects from `data/code.json`
+ *   {@link CodeRepoData} objects from `data/code.json`
  *
  * @property {CodeRepoData} codeRepo - An instance of {@link CodeRepoData}
- * to render
+ *   to render
  *
  * @export
  * @class CodeRepo

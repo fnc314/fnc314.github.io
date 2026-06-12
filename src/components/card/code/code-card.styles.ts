@@ -31,7 +31,7 @@ export const CodeCardStyles = css`
       scroll-snap-type: x mandatory;
     }
 
-    code-project {
+    code-repo {
       min-width: 80%;
       scroll-snap-align: start;
     }
