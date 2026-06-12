@@ -1,7 +1,9 @@
 import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
 import EducationJson from "@/data/education.json" with { type: "json" };
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -10,7 +12,7 @@ import { customElement, property } from "lit/decorators.js";
  * @element education-card
  */
 @customElement("education-card")
-export class EducationCard extends LitElement {
+export class EducationCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [EducationCardStyles];
 
@@ -37,7 +39,9 @@ export class EducationCard extends LitElement {
             (edu) => html`
               <li class="education-item">
                 <img
-                  src=${`data:image/svg+xml;base64,${window.getComputedStyle(document.documentElement).getPropertyValue(edu.designToken)}`}
+                  src=${cssPropertyDataImage(
+                    this.darkMode ? edu.designToken.dark : edu.designToken.light
+                  )}
                   alt=${`Logo for ${edu.institute}`}
                 />
                 <h3 class="md-typescale-title-medium">${edu.institute}</h3>
