@@ -15,7 +15,7 @@ export class CodePartial extends LitElement {
       :host {
         --code-partial-animation: 100ms;
         --code-partial-animation-reduced: 0ms;
-    
+
         background-color: var(--md-sys-color-surface);
         color: var(--md-sys-color-on-surface);
         display: block;
@@ -59,7 +59,7 @@ export class CodePartial extends LitElement {
         <ul class="article-body">
           ${(CodeJson.projects).map((p) => html`
             <li>
-              <code-project .codeProject="${p}"></code-project>
+              <code-repo .codeRepo="${p}"></code-repo>
             </li>
             `
           )}

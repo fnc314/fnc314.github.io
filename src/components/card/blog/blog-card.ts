@@ -1,5 +1,5 @@
-import "@/components/blog/post/blog-post";
-import { type BlogPostJson } from "@/components/blog/post/blog-post";
+import "@/components/blog/entry/blog-entry";
+import type { BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import "@/components/card/bento/bento-card";
 import { BlogCardStyles } from "@/components/card/blog/blog-card.styles";
 import BlogJson from "@/data/blog.json" with { type: "json" };
@@ -42,8 +42,8 @@ export class BlogCard extends LitElement {
       >
         <div class="blog-list">
           ${BlogJson.posts.map(
-            (post: BlogPostJson) => html`
-              <blog-post .blogPost=${post}></blog-post>
+            (entry: BlogEntryJson) => html`
+              <blog-entry .blogEntry=${entry}></blog-entry>
             `,
           )}
         </div>

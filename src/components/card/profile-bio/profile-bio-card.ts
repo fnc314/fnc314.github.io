@@ -25,7 +25,7 @@ export class ProfileBioCard extends LitElement {
       .profile-bio-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
       }
 
       .profile-picture {
@@ -39,7 +39,7 @@ export class ProfileBioCard extends LitElement {
       .profile-figcaption {
         color: var(--md-sys-color-on-surface-variant);
         font-size: var(--md-sys-typescale-body-small-size);
-        margin-top: var(--spacing-margin-xs);
+        margin-top: var(--spaces-margin-xs);
         text-align: center;
       }
     `,

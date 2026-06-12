@@ -13,21 +13,21 @@ export const CodeCardStyles = css`
   .code-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
     height: 100%;
   }
 
   .code-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
   }
 
   @media screen and (width <= 768px) {
     .code-list {
       flex-direction: row;
       overflow-x: auto;
-      padding-bottom: var(--spacing-padding-xs);
+      padding-bottom: var(--spaces-padding-xs);
       scroll-snap-type: x mandatory;
     }
 

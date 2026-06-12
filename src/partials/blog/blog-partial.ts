@@ -1,4 +1,4 @@
-import { type BlogPostJson } from "@/components/blog/post/blog-post.types";
+import type { BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import BlogJson from "@/data/blog.json" with { type: "json" };
 import { MaterialTypescaleStyles } from "@/styles";
 import { LitElement, css, html } from "lit";
@@ -49,8 +49,8 @@ export class BlogPartial extends LitElement {
         ></partial-header>
         <div class="posts">
           ${BlogJson.posts.map(
-            (post: BlogPostJson) =>
-              html` <blog-post .blogPost=${post}></blog-post> `,
+            (entry: BlogEntryJson) =>
+              html` <blog-entry .blogEntry=${entry}></blog-entry> `,
           )}
         </div>
       </article>

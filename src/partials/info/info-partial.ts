@@ -96,7 +96,7 @@ export class InfoPartial extends LitElement {
           color: var(--md-sys-color-inverse-on-surface);
           font-style: italic;
           margin-block: 0.5rem;
-          padding: var(--spacing-padding-xs);
+          padding: var(--spaces-padding-xs);
           text-align: center;
         }
       }

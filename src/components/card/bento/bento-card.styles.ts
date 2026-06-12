@@ -30,12 +30,12 @@ export const BentoCardStyles = css`
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    padding: var(--spacing-padding-m);
+    padding: var(--spaces-padding-m);
     transition:
-      transform var(--motion-duration-short) var(--motion-easing-emphasized),
-      box-shadow var(--motion-duration-short) var(--motion-easing-base),
-      border-color var(--motion-duration-short) var(--motion-easing-base),
-      background-color var(--motion-duration-medium) var(--motion-easing-base);
+      transform var(--motions-duration-short) var(--motions-easing-emphasized),
+      box-shadow var(--motions-duration-short) var(--motions-easing-base),
+      border-color var(--motions-duration-short) var(--motions-easing-base),
+      background-color var(--motions-duration-medium) var(--motions-easing-base);
   }
 
   summary {
@@ -55,11 +55,11 @@ export const BentoCardStyles = css`
 
   .indicator {
     color: var(--md-sys-color-on-surface-variant);
-    transition: transform var(--motion-duration-medium) var(--motion-easing-standard);
+    transition: transform var(--motions-duration-medium) var(--motions-easing-standard);
   }
 
   details[open] .indicator {
-    transform: rotate(var(--motion-rotation-180));
+    transform: rotate(var(--motions-rotation-180));
   }
 
   /* Expansion Animation Logic */
@@ -67,7 +67,7 @@ export const BentoCardStyles = css`
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
-    transition: grid-template-rows var(--motion-duration-medium) var(--motion-easing-standard);
+    transition: grid-template-rows var(--motions-duration-medium) var(--motions-easing-standard);
   }
 
   details[open] .expansion-wrapper {
@@ -77,16 +77,16 @@ export const BentoCardStyles = css`
   .expansion-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
     min-height: 0;
-    padding-block: var(--spacing-padding-xs);
+    padding-block: var(--spaces-padding-xs);
   }
 
   /* Conditional Interaction States */
   .bento-card.enable-hover:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-outline);
-    transform: translateY(var(--motion-transform-hover-lift));
+    transform: translateY(var(--motions-transform-hover-lift));
   }
 
   .bento-card.enable-focus:focus-within {
@@ -94,15 +94,13 @@ export const BentoCardStyles = css`
   }
 
   /* Style slotted header elements (h2 by default) */
-  h2,
-  ::slotted(h2),
-  ::slotted([slot="header"]) {
+  h2 {
     border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
     color: var(--md-sys-color-primary);
     flex-grow: 1;
     font-family: var(--md-ref-typeface-brand);
-    margin: var(--spacing-reset) !important;
-    padding-block-end: var(--spacing-padding-xs);
+    margin: var(--spaces-none) !important;
+    padding-block-end: var(--spaces-padding-xs);
   }
 
   .scrollable {

@@ -1,19 +1,19 @@
 export type {
-  RenderableWordCloudWord,
-  WordCloudAppearance,
-  WordCloudGrouping,
-  WordCloudSorting,
-  WordCloudWord
+    RenderableWordCloudWord,
+    WordCloudAppearance,
+    WordCloudGrouping,
+    WordCloudSorting,
+    WordCloudWord
 } from "@/components/word/word-cloud/word-cloud.types";
 import {
-  type RenderableWordCloudWord,
-  type WordCloudAppearance,
-  WordCloudAppearances,
-  type WordCloudGrouping,
-  WordCloudGroupings,
-  type WordCloudSorting,
-  WordCloudSortings,
-  type WordCloudWord,
+    type RenderableWordCloudWord,
+    type WordCloudAppearance,
+    WordCloudAppearances,
+    type WordCloudGrouping,
+    WordCloudGroupings,
+    type WordCloudSorting,
+    WordCloudSortings,
+    type WordCloudWord,
 } from "@/components/word/word-cloud/word-cloud.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type PropertyValues, css, html } from "lit";
@@ -54,7 +54,7 @@ export class WordCloud extends LitElement {
         --word-cloud-third-quartile-line-height: var(--md-sys-typescale-title-large-line-height);
         --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-medium-size);
         --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-medium-line-height);
-    
+
         container-type: inline-size;
         display: flex;
         flex-direction: column;
@@ -75,12 +75,12 @@ export class WordCloud extends LitElement {
       li {
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
         --word-tag-font-family: var(--md-ref-typeface-brand);
-    
+
         min-width: 0;
 
         /* Animation Base State */
         opacity: 0;
-        padding: var(--spacing-padding-xs);
+        padding: var(--spaces-padding-xs);
         transform: scale(0.8) translateY(8px);
         transition:
           opacity var(--word-cloud-animation) ease-out,
@@ -191,7 +191,7 @@ export class WordCloud extends LitElement {
         }
 
         li {
-          padding: var(--spacing-padding-xxs) !important;
+          padding: var(--spaces-padding-xxs) !important;
         }
       }
 

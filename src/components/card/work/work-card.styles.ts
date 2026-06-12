@@ -13,7 +13,7 @@ export const WorkCardStyles = css`
   .work-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
     height: 100%;
   }
 `;

@@ -6,7 +6,7 @@ export const BlogPostStyles: CSSResult = css`
      * @cssprop --blog-post-animation - The duration of the animation for \`:focus\`, \`:hover\`,
      *   \`:focus-within\`, and \`:focus-visible\` states
      */
-    --blog-post-animation: var(--motion-duration-short);
+    --blog-post-animation: var(--motions-duration-short);
 
     /**
      * @cssprop --blog-post-primary-text-color - The color of the primary text
@@ -34,10 +34,10 @@ export const BlogPostStyles: CSSResult = css`
     container-type: inline-size;
     display: block;
     transition:
-      --blog-post-primary-text-color var(--blog-post-animation) var(--motion-easing-base),
-      --blog-post-secondary-text-color var(--blog-post-animation) var(--motion-easing-base),
-      --blog-post-container-color var(--blog-post-animation) var(--motion-easing-base),
-      --blog-post-header-divider-color var(--blog-post-animation) var(--motion-easing-base);
+      --blog-post-primary-text-color var(--blog-post-animation) var(--motions-easing-base),
+      --blog-post-secondary-text-color var(--blog-post-animation) var(--motions-easing-base),
+      --blog-post-container-color var(--blog-post-animation) var(--motions-easing-base),
+      --blog-post-header-divider-color var(--blog-post-animation) var(--motions-easing-base);
 
     :hover,
     :focus,
@@ -53,7 +53,7 @@ export const BlogPostStyles: CSSResult = css`
     @media (prefers-reduced-motion: reduce) {
       --blog-post-animation: 0ms;
 
-      transition: all 0ms var(--motion-easing-base);
+      transition: all 0ms var(--motions-easing-base);
     }
   }
 
@@ -61,7 +61,7 @@ export const BlogPostStyles: CSSResult = css`
     color: var(--blog-post-primary-text-color);
     display: flex;
     align-items: center;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
 
     img {
       aspect-ratio: 1;
@@ -71,34 +71,34 @@ export const BlogPostStyles: CSSResult = css`
   }
 
   md-elevated-card {
-    --md-elevated-card-container-elevation: var(--motion-elevation-level-1);
+    --md-elevated-card-container-elevation: var(--motions-elevation-level-1);
     --md-elevated-card-container-shape: var(--md-sys-shape-corner-medium);
     --md-divider-color: var(--blog-post-header-divider-color);
 
     color: var(--blog-post-primary-text-color);
     container-type: inline-size;
-    margin: var(--spacing-margin-xxs);
-    padding: var(--spacing-padding-m);
+    margin: var(--spaces-margin-xxs);
+    padding: var(--spaces-padding-m);
     transition:
-      transform var(--blog-post-animation) var(--motion-easing-emphasized),
-      color var(--blog-post-animation) var(--motion-easing-base),
-      --md-elevated-card-container-elevation var(--blog-post-animation) var(--motion-easing-base),
-      --md-elevated-card-container-shape var(--blog-post-animation) var(--motion-easing-base),
-      --md-elevated-card-container-color var(--blog-post-animation) var(--motion-easing-base);
+      transform var(--blog-post-animation) var(--motions-easing-emphasized),
+      color var(--blog-post-animation) var(--motions-easing-base),
+      --md-elevated-card-container-elevation var(--blog-post-animation) var(--motions-easing-base),
+      --md-elevated-card-container-shape var(--blog-post-animation) var(--motions-easing-base),
+      --md-elevated-card-container-color var(--blog-post-animation) var(--motions-easing-base);
     will-change: transform;
 
     &:hover,
     &:focus,
     &:focus-visible,
     &:focus-within {
-      --md-elevated-card-container-elevation: var(--motion-elevation-level-3);
+      --md-elevated-card-container-elevation: var(--motions-elevation-level-3);
       --md-elevated-card-container-shape: var(--md-sys-shape-corner-large);
     }
   }
 
   section {
     display: grid;
-    gap: var(--spacing-gap-xs);
+    gap: var(--spaces-gap-xs);
     grid-template-areas:
       "header  header"
       "header  header"
@@ -116,24 +116,24 @@ export const BlogPostStyles: CSSResult = css`
     h3 {
       grid-column: 1 / -1;
       grid-row: 1 / 2;
-      margin: var(--spacing-reset);
+      margin: var(--spaces-none);
     }
 
     md-divider {
       grid-column: 1 / -1;
-      margin-block: var(--spacing-margin-s);
+      margin-block: var(--spaces-margin-s);
     }
 
     h4 {
       grid-column: 1 / -1;
       grid-row: 2 / 3;
-      margin: var(--spacing-reset);
+      margin: var(--spaces-none);
     }
 
     p {
       grid-area: summary;
-      margin: var(--spacing-reset);
-      margin-block-start: var(--spacing-margin-xs);
+      margin: var(--spaces-none);
+      margin-block-start: var(--spaces-margin-xs);
     }
 
     @container (width > 1000px) {

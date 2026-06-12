@@ -5,11 +5,11 @@ import { css } from 'lit';
  */
 export const InteractionStyles = css`
   .hover-lift {
-    transition: transform var(--motion-duration-short) var(--motion-easing-emphasized);
+    transition: transform var(--motions-duration-short) var(--motions-easing-emphasized);
     will-change: transform;
   }
 
   .hover-lift:is(:hover, :focus, :focus-within, :focus-visible) {
-    transform: translateY(var(--motion-transform-hover-lift));
+    transform: translateY(var(--motions-transform-hover-lift));
   }
 `;

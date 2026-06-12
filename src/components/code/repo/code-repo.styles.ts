@@ -28,7 +28,7 @@ export const CodeRepoStyles: CSSResult = css`
     background-color: var(--md-sys-color-surface-container);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
-    padding: var(--spacing-padding-m);
+    padding: var(--spaces-padding-m);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -56,15 +56,15 @@ export const CodeRepoStyles: CSSResult = css`
   .header {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-xxs);
-    margin-top: var(--spacing-margin-reset);
-    margin-bottom: var(--spacing-margin-s);
+    gap: var(--spaces-gap-xxs);
+    margin-top: var(--spaces-none);
+    margin-bottom: var(--spaces-margin-s);
     min-width: 0;
   }
 
   .project-title {
     color: var(--md-sys-color-on-surface);
-    margin: var(--spacing-margin-reset);
+    margin: var(--spaces-none);
     word-break: break-word;
   }
 
@@ -73,7 +73,7 @@ export const CodeRepoStyles: CSSResult = css`
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-gap-xs);
+    gap: var(--spaces-gap-xs);
     min-width: 0;
     max-width: 100%;
 
@@ -97,8 +97,8 @@ export const CodeRepoStyles: CSSResult = css`
 
   .blurb {
     color: var(--md-sys-color-on-surface-variant);
-    margin-top: var(--spacing-margin-reset);
-    margin-bottom: var(--spacing-margin-m);
+    margin-top: var(--spaces-none);
+    margin-bottom: var(--spaces-margin-m);
     word-break: break-word;
     min-width: 0;
 
@@ -116,16 +116,16 @@ export const CodeRepoStyles: CSSResult = css`
   .footer {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
     margin-top: auto;
   }
 
   .tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-gap-xs);
-    margin: var(--spacing-margin-reset);
-    padding: var(--spacing-margin-reset);
+    gap: var(--spaces-gap-xs);
+    margin: var(--spaces-none);
+    padding: var(--spaces-none);
     list-style: none;
 
     & word-tag img,
@@ -139,8 +139,8 @@ export const CodeRepoStyles: CSSResult = css`
 
   md-divider {
     display: block;
-    margin-top: var(--spacing-margin-reset);
-    margin-bottom: var(--spacing-margin-m);
+    margin-top: var(--spaces-none);
+    margin-bottom: var(--spaces-margin-m);
   }
 
   /* ========================================================================== */
@@ -148,15 +148,15 @@ export const CodeRepoStyles: CSSResult = css`
   /* ========================================================================== */
   @container code-repo-card (max-width: 300px) {
     .card {
-      padding: var(--spacing-padding-s);
+      padding: var(--spaces-padding-s);
     }
 
     .header {
-      margin-bottom: var(--spacing-margin-xs);
+      margin-bottom: var(--spaces-margin-xs);
     }
 
     md-divider {
-      margin-bottom: var(--spacing-margin-s);
+      margin-bottom: var(--spaces-margin-s);
     }
 
     .project-title {
@@ -165,11 +165,11 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .blurb {
-      margin-bottom: var(--spacing-margin-s);
+      margin-bottom: var(--spaces-margin-s);
     }
 
     .tech-list {
-      gap: var(--spacing-gap-xxs);
+      gap: var(--spaces-gap-xxs);
     }
   }
 
@@ -178,13 +178,13 @@ export const CodeRepoStyles: CSSResult = css`
   /* ========================================================================== */
   @container code-repo-card (min-width: 500px) {
     .card {
-      padding: var(--spacing-padding-l);
+      padding: var(--spaces-padding-l);
     }
 
     .card-body-wrapper {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
-      gap: var(--spacing-gap-l);
+      gap: var(--spaces-gap-l);
       align-items: start;
     }
 
@@ -193,8 +193,8 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .header {
-      margin-top: var(--spacing-margin-reset);
-      margin-bottom: var(--spacing-margin-reset);
+      margin-top: var(--spaces-none);
+      margin-bottom: var(--spaces-none);
     }
 
     .project-title {
@@ -209,7 +209,7 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .blurb {
-      margin-bottom: var(--spacing-margin-m);
+      margin-bottom: var(--spaces-margin-m);
     }
 
     .footer {

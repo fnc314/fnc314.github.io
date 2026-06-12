@@ -21,14 +21,14 @@ export class WorkPartial extends LitElement {
         box-sizing: border-box;
         color: var(--md-sys-color-on-surface);
         display: grid;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         grid-auto-rows: auto;
         grid-template-areas:
           "title"
           "content";
         grid-template-rows: min-content;
         height: min-content;
-        padding-inline: var(--spacing-padding-s);
+        padding-inline: var(--spaces-padding-s);
       }
 
       partial-header {
@@ -39,7 +39,7 @@ export class WorkPartial extends LitElement {
       .article-body {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         grid-area: content;
       }
     `,

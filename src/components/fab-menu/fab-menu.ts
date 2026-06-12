@@ -76,13 +76,13 @@ export class FabMenu extends LitElement {
         align-items: flex-end;
         display: flex;
         flex-direction: column-reverse;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         height: 0;
         list-style: none;
         margin-inline-end: var(--md-fab-margin, 0);
         margin-bottom: 0;
         opacity: 0;
-        padding: var(--spacing-reset);
+        padding: var(--spaces-none);
         pointer-events: none;
         transform: scale(0.8) translateY(16px);
         transform-origin: bottom center;
@@ -95,7 +95,7 @@ export class FabMenu extends LitElement {
 
       :host([open]) ul.menu-items {
         height: auto;
-        margin-bottom: var(--spacing-margin-s);
+        margin-bottom: var(--spaces-margin-s);
         opacity: 1;
         pointer-events: auto;
         transform: scale(1) translateY(0);
@@ -273,7 +273,7 @@ export class FabMenu extends LitElement {
     await this._fab.updateComplete;
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spaces-padding-xs)":"0";
     }
     return result;
   }
@@ -289,7 +289,7 @@ export class FabMenu extends LitElement {
     );
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spaces-padding-xs)":"0";
     }
   }
 
@@ -324,14 +324,14 @@ export class FabMenu extends LitElement {
         break;
       case "medium":
         this._items.forEach((item: FabMenuItem) => {
-          item.style.setProperty("--fab-menu-item-padding-start", "var(--spacing-padding-xxs)");
-          item.style.setProperty("--fab-menu-item-padding-end", "var(--spacing-padding-xxs)");
+          item.style.setProperty("--fab-menu-item-padding-start", "var(--spaces-padding-xxs)");
+          item.style.setProperty("--fab-menu-item-padding-end", "var(--spaces-padding-xxs)");
         });
         break;
       case "large":
         this._items.forEach((item: FabMenuItem) => {
-          item.style.setProperty("--fab-menu-item-padding-start", "var(--spacing-padding-s)");
-          item.style.setProperty("--fab-menu-item-padding-end", "var(--spacing-padding-s)");
+          item.style.setProperty("--fab-menu-item-padding-start", "var(--spaces-padding-s)");
+          item.style.setProperty("--fab-menu-item-padding-end", "var(--spaces-padding-s)");
         });
         break;
     }
@@ -348,7 +348,7 @@ export class FabMenu extends LitElement {
     );
     const labelSpan: HTMLSpanElement|null|undefined=this._fab.shadowRoot?.querySelector("span.label");
     if (labelSpan) {
-      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spacing-padding-xs)":"0";
+      labelSpan.style.paddingInlineStart=this.icon&&this.label? "var(--spaces-padding-xs)":"0";
     }
     const fabButtonIcon: MdIcon|null|undefined=this._fab.shadowRoot?.querySelector("button slot[name='icon']");
     if (fabButtonIcon) {
@@ -356,7 +356,7 @@ export class FabMenu extends LitElement {
     }
     const button: HTMLButtonElement|null|undefined=this._fab.shadowRoot?.querySelector("button");
     if (button) {
-      button.style.paddingInline="var(--spacing-padding-s)";
+      button.style.paddingInline="var(--spaces-padding-s)";
     }
   }
 

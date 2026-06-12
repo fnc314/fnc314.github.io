@@ -60,21 +60,21 @@ export class WorkExperience extends LitElement {
         border-inline-start: 2px solid var(--md-sys-color-primary);
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
-        margin-block-start: var(--spacing-margin-xs);
-        padding-inline-start: var(--spacing-padding-s);
+        gap: var(--spaces-gap-s);
+        margin-block-start: var(--spaces-margin-xs);
+        padding-inline-start: var(--spaces-padding-s);
       }
 
       .nested-summary {
         grid-column: 2;
         grid-row: 4;
         margin-block: unset;
-        padding-inline: var(--spacing-padding-m);
+        padding-inline: var(--spaces-padding-m);
 
         li {
           list-style-position: outside;
           list-style-type: circle;
-          margin-block: var(--spacing-margin-xs);
+          margin-block: var(--spaces-margin-xs);
         }
 
         span.first-word {
@@ -93,15 +93,15 @@ export class WorkExperience extends LitElement {
       .experience-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-xs);
-        padding-block: var(--spacing-padding-xs);
+        gap: var(--spaces-gap-xs);
+        padding-block: var(--spaces-padding-xs);
       }
 
       .experience-info,
       .nested-experience-info {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-xxs);
+        gap: var(--spaces-gap-xxs);
 
         > h3,
         > h4 {
@@ -132,13 +132,13 @@ export class WorkExperience extends LitElement {
 
       @container experience-container (min-inline-size: 600px) {
         div.experience-container {
-          gap: var(--spacing-gap-xs) var(--spacing-margin-s);
+          gap: var(--spaces-gap-xs) var(--spaces-margin-s);
         }
 
         .experience-container {
           align-items: baseline;
           display: grid;
-          gap: var(--spacing-gap-xs) var(--spacing-margin-s);
+          gap: var(--spaces-gap-xs) var(--spaces-margin-s);
           grid-template-columns: minmax(20ch, max-content) 1fr;
 
           .experience-info {

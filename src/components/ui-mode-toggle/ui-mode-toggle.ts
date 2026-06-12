@@ -4,14 +4,14 @@ import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import {
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  colorSchemeConfigsToMaterialSchemeName
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    colorSchemeConfigsToMaterialSchemeName
 } from "@/types/theme/color-scheme-configs";
 import {
-  type ColorSchemeChangeEvent,
-  DarkModeToggle,
-  type PermanentColorSchemeEvent,
+    type ColorSchemeChangeEvent,
+    DarkModeToggle,
+    type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
 import { LitElement, type TemplateResult, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -74,17 +74,17 @@ export class UiModeToggle extends LitElement {
         &::part(fieldset) {
           display: flex;
           flex-direction: column;
-          gap: var(--spacing-gap-xxs);
+          gap: var(--spaces-gap-xxs);
           padding: unset;
           padding-block: unset;
           padding-inline: unset;
         }
 
         &::part(legend) {
-          padding: var(--spacing-reset);
-          margin: var(--spacing-reset);
-          padding-block-end: var(--spacing-padding-xs);
-          margin-block-end: var(--spacing-margin-xs);
+          padding: var(--spaces-none);
+          margin: var(--spaces-none);
+          padding-block-end: var(--spaces-padding-xs);
+          margin-block-end: var(--spaces-margin-xs);
           border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
           color: var(--md-sys-color-primary);
           font-family: var(--md-ref-typeface-brand);
@@ -104,8 +104,8 @@ export class UiModeToggle extends LitElement {
           border-style: solid;
           border-width: var(--hairline-width);
           display: inline-flex;
-          padding: var(--spacing-reset);
-          padding-block-start: var(--spacing-padding-xs);
+          padding: var(--spaces-none);
+          padding-block-start: var(--spaces-padding-xs);
           overflow: hidden;
           position: relative;
           z-index: 0;
@@ -127,7 +127,7 @@ export class UiModeToggle extends LitElement {
         &::part(lightThreeWayLabel),
         &::part(systemThreeWayLabel) {
           flex: 1;
-          padding: var(--spacing-padding-s);
+          padding: var(--spaces-padding-s);
           position: relative;
           text-align: center;
           z-index: 1;

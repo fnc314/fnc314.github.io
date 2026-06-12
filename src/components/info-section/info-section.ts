@@ -42,18 +42,18 @@ export class InfoSection extends LitElement {
         border-radius: var(--md-sys-shape-corner-medium);
         color: var(--md-sys-color-inverse-on-surface);
         display: grid;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         grid-template-areas:
           "section-grid-title"
           "section-grid-content";
         grid-template-rows: min-content auto;
-        padding: var(--spacing-padding-s);
+        padding: var(--spaces-padding-s);
       }
 
       h2 {
         grid-area: section-grid-title;
         margin: unset;
-        padding-block: var(--spacing-padding-s);
+        padding-block: var(--spaces-padding-s);
         place-self: center;
       }
 
@@ -86,7 +86,7 @@ export class InfoSection extends LitElement {
 
       @container (min-width: 900px) {
         section {
-          column-gap: var(--spacing-gap-s);
+          column-gap: var(--spaces-gap-s);
         }
       }
     `,

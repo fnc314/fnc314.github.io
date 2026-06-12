@@ -20,10 +20,10 @@ export class VersionTag extends LitElement {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: var(--spacing-gap-m);
+        gap: var(--spaces-gap-m);
 
         p {
-          margin: var(--spacing-reset);
+          margin: var(--spaces-none);
         }
       }
     `,

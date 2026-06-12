@@ -71,14 +71,14 @@ export class WordTag extends LitElement {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: var(--spacing-gap-xs);
+        gap: var(--spaces-gap-xs);
         background-color: var(--internal-word-tag-background-color);
         border-color: var(--internal-word-tag-color);
         border-radius: var(--internal-word-tag-border-radius);
         border-style: solid;
         max-width: 100%;
         overflow: hidden;
-        padding: var(--spacing-padding-xs);
+        padding: var(--spaces-padding-xs);
         transition: all var(--internal-word-tag-animation-duration) ease-in-out;
 
         span {

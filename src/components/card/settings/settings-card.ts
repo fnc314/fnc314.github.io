@@ -33,7 +33,7 @@ export class SettingsCard extends LitElement {
       .settings-container {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         height: 100%;
       }
 
@@ -41,42 +41,42 @@ export class SettingsCard extends LitElement {
         display: flex;
         flex: 1;
         flex-direction: column;
-        gap: var(--spacing-gap-m); /* Gap between form and version-tag */
+        gap: var(--spaces-gap-m); /* Gap between form and version-tag */
         justify-content: space-between;
 
         form {
           display: flex;
           flex-direction: column;
-          gap: var(--spacing-gap-xl); /* Gap between fieldsets and ui-mode-toggle */
+          gap: var(--spaces-gap-xl); /* Gap between fieldsets and ui-mode-toggle */
           flex: 1;
-          padding: var(--spacing-reset); /* Remove default form padding */
+          padding: var(--spaces-none); /* Remove default form padding */
           border: none; /* Remove default form border */
 
           fieldset {
             border: none;
-            margin: var(--spacing-reset);
-            padding: var(--spacing-reset);
+            margin: var(--spaces-none);
+            padding: var(--spaces-none);
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-gap-s); /* Gap between label and select within a fieldset */
+            gap: var(--spaces-gap-s); /* Gap between label and select within a fieldset */
 
             legend {
-              padding: var(--spacing-reset);
-              margin: var(--spacing-reset);
-              padding-block-end: var(--spacing-padding-xxs);
+              padding: var(--spaces-none);
+              margin: var(--spaces-none);
+              padding-block-end: var(--spaces-padding-xxs);
               border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
               color: var(--md-sys-color-primary);
               font-family: var(--md-ref-typeface-brand);
             }
 
             md-outlined-select {
-              padding-block-start: var(--spacing-padding-s);
+              padding-block-start: var(--spaces-padding-s);
             }
           }
         }
 
         version-tag {
-          padding-block-start: var(--spacing-padding-m);
+          padding-block-start: var(--spaces-padding-m);
         }
       }
     `,

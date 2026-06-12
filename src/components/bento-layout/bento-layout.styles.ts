@@ -19,7 +19,7 @@ export const BentoLayoutStyles = css`
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     display: block;
-    padding-bottom: var(--spacing-padding-xl);
+    padding-bottom: var(--spaces-padding-xl);
     width: 100%;
   }
 
@@ -27,8 +27,8 @@ export const BentoLayoutStyles = css`
     align-items: stretch;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
-    padding: var(--spacing-padding-xs);
+    gap: var(--spaces-gap-s);
+    padding: var(--spaces-padding-xs);
   }
 
   h1 {
@@ -38,7 +38,7 @@ export const BentoLayoutStyles = css`
     border-width: var(--hairline-width);
     color: var(--md-sys-color-on-primary-fixed);
     margin-inline: auto;
-    padding-block: var(--spacing-padding-l);
+    padding-block: var(--spaces-padding-l);
     text-align: center;
     width: 65%;
   }
@@ -51,10 +51,10 @@ export const BentoLayoutStyles = css`
     .bento-grid {
       align-items: unset;
       display: grid;
-      gap: var(--spacing-gap-m);
+      gap: var(--spaces-gap-m);
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
-      padding: var(--spacing-padding-s);
+      padding: var(--spaces-padding-s);
     }
 
     h1 {
@@ -69,11 +69,11 @@ export const BentoLayoutStyles = css`
 
     .bento-grid {
       display: grid;
-      gap: var(--spacing-gap-l);
+      gap: var(--spaces-gap-l);
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
-      margin: var(--spacing-reset) auto;
-      padding: var(--spacing-padding-m);
+      margin: var(--spaces-none) auto;
+      padding: var(--spaces-padding-m);
     }
 
     h1 {

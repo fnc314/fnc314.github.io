@@ -15,10 +15,10 @@ export const EducationCardStyles = css`
   .education-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-l);
+    gap: var(--spaces-gap-l);
     list-style: none;
-    margin: var(--spacing-reset);
-    padding: var(--spacing-reset);
+    margin: var(--spaces-none);
+    padding: var(--spaces-none);
     justify-content: space-around;
   }
 
@@ -28,13 +28,13 @@ export const EducationCardStyles = css`
       "logo institute location"
       "logo program year";
     grid-template-columns: max-content 1fr max-content;
-    margin-block: var(--spacing-margin-xs);
-    gap: var(--spacing-reset) var(--spacing-gap-s);
+    margin-block: var(--spaces-margin-xs);
+    gap: var(--spaces-none) var(--spaces-gap-s);
 
     img {
       background-color: var(--md-sys-color-surface-container-highest);
       border-radius: var(--md-sys-shape-corner-full);
-      padding: var(--spacing-padding-xs);
+      padding: var(--spaces-padding-xs);
       place-self: center;
       grid-area: logo;
       aspect-ratio: 1;
@@ -61,7 +61,7 @@ export const EducationCardStyles = css`
     }
 
     h3, h4 {
-      margin-block: var(--spacing-reset);
+      margin-block: var(--spaces-none);
     }
 
     span, time {

@@ -26,7 +26,7 @@ export class FabMenuItem extends LitElement {
         align-items: center;
         display: flex;
         flex-direction: var(--fab-menu-item-direction, row);
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         justify-content: var(--fab-menu-item-justify, flex-end);
         list-style: none;
 
@@ -45,7 +45,7 @@ export class FabMenuItem extends LitElement {
         border-radius: var(--md-sys-shape-corner-medium);
         color: var(--md-sys-color-on-surface-variant);
         opacity: 1;
-        padding: var(--spacing-padding-xs) var(--spacing-padding-s);
+        padding: var(--spaces-padding-xs) var(--spaces-padding-s);
         position: relative;
         transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         user-select: none;

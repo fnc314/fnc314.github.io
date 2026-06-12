@@ -15,58 +15,58 @@ export const ConnectCardStyles = css`
   bento-card {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-gap-s);
+    gap: var(--spaces-gap-s);
     height: 100%;
 
     section {
-      padding-block: var(--spacing-padding-xs);
+      padding-block: var(--spaces-padding-xs);
 
       header {
         h3 {
           color: var(--md-sys-color-secondary);
-          padding-block: var(--spacing-padding-xs);
+          padding-block: var(--spaces-padding-xs);
           text-align: center;
-          margin: var(--spacing-reset);
+          margin: var(--spaces-none);
         }
 
         md-divider {
-          margin-block-end: var(--spacing-margin-m);
+          margin-block-end: var(--spaces-margin-m);
         }
       }
 
       ul {
         display: flex;
         flex-direction: column;
-        margin-block: var(--spacing-reset);
+        margin-block: var(--spaces-none);
         list-style: none;
-        padding: var(--spacing-reset);
+        padding: var(--spaces-none);
       }
     }
   }
 
   .connection-links-label {
     color: var(--md-sys-color-secondary);
-    padding-block: var(--spacing-padding-xs);
+    padding-block: var(--spaces-padding-xs);
     text-align: center;
-    margin-block: var(--spacing-reset);
+    margin-block: var(--spaces-none);
   }
 
   .connection-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--spacing-gap-xs);
-    margin: var(--spacing-reset);
-    padding: var(--spacing-reset);
-    padding-inline-start: var(--spacing-padding-s);
-    padding-block: var(--spacing-padding-xs);
+    gap: var(--spaces-gap-xs);
+    margin: var(--spaces-none);
+    padding: var(--spaces-none);
+    padding-inline-start: var(--spaces-padding-s);
+    padding-block: var(--spaces-padding-xs);
 
     img, md-icon {
       width: calc(var(--md-icon-size) * 0.75);
       height: calc(var(--md-icon-size) * 0.75);
       background-color: var(--md-sys-color-surface-container-highest);
       border-radius: var(--md-sys-shape-corner-full);
-      padding: var(--spacing-padding-xs);
+      padding: var(--spaces-padding-xs);
     }
 
     md-icon {
@@ -77,12 +77,12 @@ export const ConnectCardStyles = css`
   .connections-list {
     display: flex;
     flex-direction: column;
-    margin-block: var(--spacing-reset);
+    margin-block: var(--spaces-none);
     list-style: none;
-    padding: var(--spacing-reset);
+    padding: var(--spaces-none);
 
     md-divider {
-      margin-block-end: var(--spacing-margin-m);
+      margin-block-end: var(--spaces-margin-m);
     }
   }
 

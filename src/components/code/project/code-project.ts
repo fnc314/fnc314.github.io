@@ -36,7 +36,7 @@ export class CodeProject extends LitElement {
     css`
       :host {
         /* @ignore */
-        --internal-code-project-animation: var(--code-project-animation, var(--motion-duration-short));
+        --internal-code-project-animation: var(--code-project-animation, var(--motions-duration-short));
 
         /* @ignore */
         --internal-code-project-rotation: var(--code-project-rotation, 800ms);
@@ -55,18 +55,18 @@ export class CodeProject extends LitElement {
 
       md-outlined-card {
         --md-outlined-card-container-shape: var(--md-sys-shape-corner-medium);
-        --md-outlined-card-container-elevation: var(--motion-elevation-level-1);
+        --md-outlined-card-container-elevation: var(--motions-elevation-level-1);
         --word-tag-border-radius: var(--md-sys-shape-corner-medium);
 
         height: 100%;
 
         /* Ensure the card doesn't flatten the 3D space or clip the rotation */
-        margin: var(--spacing-margin-xxs);
+        margin: var(--spaces-margin-xxs);
         overflow: visible;
         perspective: 1000px; /* The guide's perspective container */
         transition:
-          --md-outlined-card-container-shape var(--internal-code-project-rotation) var(--motion-easing-standard),
-          --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motion-easing-standard);
+          --md-outlined-card-container-shape var(--internal-code-project-rotation) var(--motions-easing-standard),
+          --md-outlined-card-container-elevation var(--internal-code-project-rotation) var(--motions-easing-standard);
         width: 100%;
         will-change: transform;
 
@@ -79,12 +79,12 @@ export class CodeProject extends LitElement {
         &:focus,
         &:focus-within,
         &:focus-visible {
-          --md-outlined-card-container-elevation: var(--motion-elevation-level-3);
+          --md-outlined-card-container-elevation: var(--motions-elevation-level-3);
         }
 
         &.flipped {
           .code-project-card-inner {
-            transform: rotateY(180deg);
+            transform: rotateY(var(--motions-rotation-180));
           }
         }
       }
@@ -95,11 +95,11 @@ export class CodeProject extends LitElement {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-gap-s);
+        gap: var(--spaces-gap-s);
         height: 100%;
         inset: 0;
         justify-content: space-around;
-        padding: var(--spacing-padding-m);
+        padding: var(--spaces-padding-m);
         position: absolute;
         width: 100%;
       }
@@ -110,7 +110,7 @@ export class CodeProject extends LitElement {
         position: relative;
         text-align: center;
         transform-style: preserve-3d; /* Required for the 3D effect */
-        transition: transform var(--internal-code-project-rotation) var(--motion-easing-standard);
+        transition: transform var(--internal-code-project-rotation) var(--motions-easing-standard);
         width: 100%;
         will-change: transform;
       }
@@ -123,13 +123,13 @@ export class CodeProject extends LitElement {
 
         header {
           h3 {
-            margin: var(--spacing-reset);
+            margin: var(--spaces-none);
           }
         }
 
         slot[name="code-project-summary"] {
           p {
-            margin: var(--spacing-reset);
+            margin: var(--spaces-none);
           }
 
           pre {
@@ -144,7 +144,7 @@ export class CodeProject extends LitElement {
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          gap: var(--spacing-gap-xs);
+          gap: var(--spaces-gap-xs);
 
           img {
             width: var(--md-icon-size);
@@ -166,7 +166,7 @@ export class CodeProject extends LitElement {
         ul {
           display: flex;
           flex-flow: row wrap;
-          gap: var(--spacing-gap-m);
+          gap: var(--spaces-gap-m);
           justify-content: space-evenly;
           margin: unset;
           padding: unset;
@@ -176,7 +176,7 @@ export class CodeProject extends LitElement {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: var(--spacing-gap-xs);
+            gap: var(--spaces-gap-xs);
 
             img {
               width: var(--md-icon-size);
