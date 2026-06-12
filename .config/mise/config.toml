@@ -7,7 +7,7 @@ experimental_monorepo_root = true
   ]
 
 [tools]
-  "github:firebase/firebase-tools" = "15.20.0"
+  firebase = "15.20.0"
   node = "26.3.0"
   "npm:vite" = "8.0.16"
   pnpm = "11.5.3"
