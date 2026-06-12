@@ -1,5 +1,5 @@
 {
-  "motion": {
+  "motions": {
     "duration": {
       "none": { "value": "0ms" },
       "short": { "value": "250ms" },
