@@ -12,12 +12,12 @@ export type WordTagHeaviness = "normal" | "heavy";
 
 /**
  * The variations of {@link WordTag} representing the possible combinations
- *   of `text only`, `icon then text`, and `text then icon`
+ *   of `text only`, `icon-only`, `icon then text`, and `text then icon`
  *
  * @export
  * @typedef {WordTagVariant}
  */
-export type WordTagVariant = "text" | "icon-text" | "text-icon";
+export type WordTagVariant = "text-only" | "icon-text" | "text-icon" | "icon-only";
 
 /**
  * Implements {@link ComplexAttributeConverter} for {@link WordTagVariant} properties
@@ -33,8 +33,12 @@ export const WordTagVariantAttributeConverter: ComplexAttributeConverter<
         return "icon-text";
       case "text-icon":
         return "text-icon";
+      case "text-only":
+        return "text-only";
+      case "icon-only":
+        return "icon-only";
       default:
-        return "text";
+        return "text-only";
     }
   }
 }

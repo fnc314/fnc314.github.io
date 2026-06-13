@@ -1,8 +1,8 @@
 import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/word-tag/word-tag.types";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
-import { LitElement, type TemplateResult, css, html } from "lit";
+import { type CSSResult, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styleMap } from "lit/directives/style-map.js";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
@@ -11,7 +11,7 @@ import { styleMap } from "lit/directives/style-map.js";
  * @property {WordTagHeaviness} [heaviness="normal"] - The weight of the tag (text & border), can be
  *  `"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or
  *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)
- * @property {WordTagVariant} [variant="text"] - The version of the layout to render
+ * @property {WordTagVariant} [variant="text-only"] - The version of the layout to render
  * @property {string} [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
  *  {@link HTMLAnchorElement}
  *
@@ -22,6 +22,7 @@ import { styleMap } from "lit/directives/style-map.js";
  * @cssprop [--word-tag-font-weight=--md-ref-typeface-weight-regular] - The font weight
  * @cssprop [--word-tag-line-height=--md-typescale-body-large-lingt-height] - The line height
  * @cssprop [--word-tag-border-radius=--md-sys-shape-corner-small] - The corner radius (for all corners)
+ * @cssprop [--word-tag-gap=--spaces-gap-xs] - The `gap` between `word` and any `slot`-ed icon
  *
  * @slot icon - The optional space available for, and positioned by, the {@link variant} property
  *
@@ -30,7 +31,7 @@ import { styleMap } from "lit/directives/style-map.js";
  * @extends {LitElement}
  */
 @customElement("word-tag")
-export class WordTag extends LitElement {
+export class WordTag extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
@@ -60,6 +61,9 @@ export class WordTag extends LitElement {
         /** @ignore */
         --internal-word-tag-animation-duration: 200ms;
 
+        /** @ignore */
+        --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs));
+
         display: contents;
 
         @media (prefers-reduced-motion: reduce) {
@@ -71,7 +75,7 @@ export class WordTag extends LitElement {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: var(--spaces-gap-xs);
+        gap: var(--internal-word-tag-gap);
         background-color: var(--internal-word-tag-background-color);
         border-color: var(--internal-word-tag-color);
         border-radius: var(--internal-word-tag-border-radius);
@@ -110,44 +114,57 @@ export class WordTag extends LitElement {
     reflect: true,
     useDefault: true,
   })
-  variant: WordTagVariant = "text"
+  variant: WordTagVariant = "text-only"
 
   private layoutForVariant(variant: WordTagVariant): TemplateResult {
-    const fontStyles = {
-      fontWeight: this.heaviness === "normal" ? "var(--md-ref-typeface-weight-regular)" : "var(--md-ref-typeface-weight-bold)",
-    }
-
-    const borderStyles = {
-      borderWidth: this.heaviness === "normal" ? "var(--hairline-width)" : "calc(2.5 * var(--hairline-width))",
-    };
-
-    const defaultWordTag = html`
-      <span style=${styleMap(fontStyles)}>${this.word}</span>
+    const fontStyles: CSSResult = css`
+      font-weight: ${this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)` };
     `;
 
+    const borderStyles: CSSResult = css`
+      border-width: ${this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`};
+    `;
+
+    const defaultWordTag = html`
+      <span style=${fontStyles.cssText}>${this.word}</span>
+    `;
+
+    let contents: TemplateResult | undefined = undefined;
     switch (variant) {
       case "text-icon":
-        return html`
-          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
-            ${defaultWordTag}
-            <slot name="icon"></slot>
-          </div>
+        contents = html`
+          ${defaultWordTag}
+          <slot name="icon"></slot>
         `;
+        break;
       case "icon-text":
-        return html`
-          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
-            <slot name="icon"></slot>
-            ${defaultWordTag}
-          </div>
+        contents = html`
+          <slot name="icon"></slot>
+          ${defaultWordTag}
         `;
-      case "text":
+        break;
+      case "icon-only":
+        contents = html`
+          <slot name="icon"></slot>
+        `;
+        break;
+      case "text-only":
+        contents = html`
+          ${defaultWordTag}
+        `;
+        break;
       default:
-        return html`
-          <div style=${styleMap(borderStyles)} class="word-tag-variant-wrapper">
-            ${defaultWordTag}
-          </div>
-        `;
+        break;
     }
+
+    return contents ?
+      html`
+        <div style=${borderStyles.cssText} class="word-tag-variant-wrapper">
+          ${contents}
+        </div>
+      ` :
+      html`${nothing}`
+      ;
   }
 
   override render() {
