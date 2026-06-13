@@ -1,11 +1,10 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
-
-import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
@@ -35,13 +34,6 @@ export class BentoLayout extends UIAwareElement {
     if ("column" in position && "row" in position) {
       gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
     }
-
-    console.log(
-      `
-      Position | gridArea | GridPostion
-      ${JSON.stringify({ position, gridArea, breakpoint: this.breakpoint }, null, 2)}
-      `
-    );
 
     let cardContent: TemplateResult;
     switch (config.type) {

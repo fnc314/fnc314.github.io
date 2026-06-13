@@ -488,7 +488,7 @@
   "stylelint.reportNeedlessDisables": true,
   "stylelint.run": "onSave",
   "stylelint.snippet": ["css", "postcss"],
-  "stylelint.validate": ["css", "javascript", "postcss", "typescript"],
+  "stylelint.validate": ["css", "postcss"],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "workbench.tree.indent": 4

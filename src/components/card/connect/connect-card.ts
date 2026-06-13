@@ -1,5 +1,6 @@
 import "@/components/card/bento/bento-card";
 import { ConnectCardStyles } from "@/components/card/connect/connect-card.styles";
+import "@/components/connection/direct/direct-connection";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { html } from "lit";
@@ -26,6 +27,16 @@ export class ConnectCard extends UIAwareElement {
   enableFocus = false;
 
   override render() {
+    // const directConnections = html`
+    //   ${
+    //     Object.values(DirectConnections.direct).map((instance: ConnectionInstance) => {
+    //       return html`
+    //         <direct-connection .connectionInstance=${instance}></direct-connection>
+    //       `;
+    //     })
+    //   }
+    // `;
+
     return html`
       <bento-card
         class="connect-container"
@@ -41,7 +52,6 @@ export class ConnectCard extends UIAwareElement {
               <section>
                 <header>
                   <h3 class="md-typescale-title-small">${category.label}</h3>
-                  <md-divider inset></md-divider>
                 </header>
                 <ul>
                   ${

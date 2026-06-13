@@ -33,10 +33,11 @@ export class BlogEntry extends UIAwareElement {
       `--icons-logos-organization-medium-${this.darkMode ? "light" : "dark"}`
     );
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
+
     return html`
       <article class="card">
         <div class="timeline-node" aria-hidden="true">
-          <span>${blogEntryPadded}</span>
+          <span class="md-typescale-title-large">${blogEntryPadded}</span>
         </div>
 
         <div class="card-content">
@@ -62,23 +63,12 @@ export class BlogEntry extends UIAwareElement {
             >
               <img
                 role="img"
-                alt="Medium"
+                aria-labelledby="medium-link-label"
                 .src=${logoSource}
               />
-              <span>Read on Medium<sup>&reg;</sup></span>
+              <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
             </a>
 
-            <ul class="badge-list">
-              ${this.blogEntry.tags?.map(tag => html`
-                <li>
-                  <word-tag
-                    .word=${tag}
-                    .variant=${"text"}
-                    >
-                  </word-tag>
-                </li>
-              `)}
-            </ul>
           </footer>
         </div>
       </article>

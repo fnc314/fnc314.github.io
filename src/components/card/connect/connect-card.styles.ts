@@ -58,7 +58,6 @@ export const ConnectCardStyles = css`
     gap: var(--spaces-gap-xs);
     margin: var(--spaces-none);
     padding: var(--spaces-none);
-    padding-inline-start: var(--spaces-padding-s);
     padding-block: var(--spaces-padding-xs);
 
     img, md-icon {

@@ -7,11 +7,14 @@ export const BlogEntryStyles: CSSResult = css`
     min-width: 0;
     container-type: inline-size;
     container-name: blog-entry-card;
+
+    --blog-entry-timeline: 5;
+    --blog-entry-card-content: 95;
   }
 
   .card {
     position: relative;
-    background-color: var(--md-sys-color-surface-container-low);
+    background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
     display: flex;
@@ -22,16 +25,18 @@ export const BlogEntryStyles: CSSResult = css`
 
   /* Mobile: Number on Top */
   .timeline-node {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
     padding: var(--spaces-padding-xs);
     text-align: center;
     font-weight: var(--md-sys-typescale-title-medium-weight);
     font-family: var(--md-ref-typeface-brand);
+    flex: var(--blog-entry-timeline);
   }
 
   .card-content {
     padding: var(--spaces-padding-m);
+    flex: var(--blog-entry-card-content);
 
     header {
 
@@ -46,14 +51,9 @@ export const BlogEntryStyles: CSSResult = css`
         margin: var(--spaces-none);
         margin-block-end: var(--spaces-margin-xs);
         font-style: italic;
+        color: var(--md-sys-color-primary);
       }
     }
-  }
-
-  .title {
-    margin: var(--spaces-none);
-    margin-block-end: var(--spaces-margin-s);
-    color: var(--md-sys-color-on-surface);
   }
 
   .blog-summary-container {
@@ -78,7 +78,7 @@ export const BlogEntryStyles: CSSResult = css`
     display: inline-flex;
     align-items: center;
     gap: var(--spaces-gap-xs);
-    color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-inverse-surface);
     text-decoration: none;
 
     img {
@@ -111,15 +111,14 @@ export const BlogEntryStyles: CSSResult = css`
 
   /* Breakpoints: 300px and 500px */
   @container blog-entry-card (min-width: 500px) {
-    .card { flex-direction: row; }
+    .card {
+      flex-direction: row;
+    }
 
     .timeline-node {
-      width: var(--sizes-width-xxxl); /* Mapped to 60px equivalent */
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--md-sys-color-primary);
-      color: var(--md-sys-color-on-primary);
     }
   }
 `;

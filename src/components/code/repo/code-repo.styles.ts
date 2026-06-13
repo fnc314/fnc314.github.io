@@ -1,4 +1,5 @@
-import { type CSSResult, css } from "lit";
+import { WORD_TAG_SIZES } from "@/components/code/repo/code-repo.types";
+import { type CSSResult, css, unsafeCSS } from "lit";
 
 /**
  * The {@link CSSResult} for {@link @fnc314/fnc314.github.io!CodeRepo}
@@ -6,6 +7,14 @@ import { type CSSResult, css } from "lit";
  * @type {CSSResult}
  */
 export const CodeRepoStyles: CSSResult = css`
+  @property --code-repo-word-tag-size {
+    /* 1. Use unsafeCSS for strings.
+       2. Ensure the resulting CSS has quotes around the syntax value. */
+    syntax: "${unsafeCSS(`${WORD_TAG_SIZES.full} | ${WORD_TAG_SIZES.compact} | ${WORD_TAG_SIZES.condensed}`)}";
+    initial-value: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
+    inherits: false;
+  }
+
   :host {
     display: block;
     width: 100%;
@@ -16,10 +25,12 @@ export const CodeRepoStyles: CSSResult = css`
     container-type: inline-size;
     container-name: code-repo-card;
 
-    --md-divider-color: var(--md-sys-color-outline-variant);
-    --md-divider-thickness: calc(var(--sizes-thickness-hairline) * 2);
+    --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.full)};
+    transition: --code-repo-word-tag-size 0ms;
+
+    --md-divider-color: var(--md-sys-color-on-surface-variant);
+    --md-divider-thickness: var(--sizes-thickness-hairline);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
-    --word-tag-font-size: var(--md-sys-typescale-body-medium-size);
   }
 
   /* Option 2 Container Design Frame */
@@ -122,11 +133,15 @@ export const CodeRepoStyles: CSSResult = css`
 
   .tech-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--spaces-gap-xs);
+    flex-flow: row wrap;
+    gap: var(--spaces-gap-s);
     margin: var(--spaces-none);
     padding: var(--spaces-none);
     list-style: none;
+
+    li {
+      // --word-tag-font-size: var(--md-sys-typescale-body-small-size);
+    }
 
     & word-tag img,
     & word-tag [slot="icon"] {
@@ -138,25 +153,26 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   md-divider {
-    display: block;
     margin-top: var(--spaces-none);
-    margin-bottom: var(--spaces-margin-m);
+    margin-block-end: var(--spaces-margin-m);
   }
 
   /* ========================================================================== */
   /* ULTRA-DENSE MOBILE COMPRESSION (Container Width <= 300px)                 */
   /* ========================================================================== */
   @container code-repo-card (max-width: 300px) {
+    :host {
+      --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
+    }
+
     .card {
       padding: var(--spaces-padding-s);
+      height: 100%;
+      justify-content: space-between;
     }
 
     .header {
-      margin-bottom: var(--spaces-margin-xs);
-    }
-
-    md-divider {
-      margin-bottom: var(--spaces-margin-s);
+      margin-block-end: var(--spaces-margin-xs);
     }
 
     .project-title {
@@ -165,11 +181,11 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .blurb {
-      margin-bottom: var(--spaces-margin-s);
+      margin-block-end: var(--spaces-margin-s);
     }
 
     .tech-list {
-      gap: var(--spaces-gap-xxs);
+      gap: var(--spaces-gap-xs);
     }
   }
 
@@ -177,6 +193,10 @@ export const CodeRepoStyles: CSSResult = css`
   /* ASYMMETRIC GRID BREAKPOINT (iPad Pro Portrait & Desktop Grid >= 500px)    */
   /* ========================================================================== */
   @container code-repo-card (min-width: 500px) {
+    :host {
+      --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.compact)};
+    }
+
     .card {
       padding: var(--spaces-padding-l);
     }
@@ -193,8 +213,7 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .header {
-      margin-top: var(--spaces-none);
-      margin-bottom: var(--spaces-none);
+      margin-block: var(--spaces-none);
     }
 
     .project-title {
@@ -209,7 +228,7 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .blurb {
-      margin-bottom: var(--spaces-margin-m);
+      margin-block-end: var(--spaces-margin-m);
     }
 
     .footer {

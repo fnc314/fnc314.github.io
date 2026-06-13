@@ -51,7 +51,7 @@ function createDynamicConfig(
   const pwa = {
     manifest: {
       scope: pwa_manifest_scope,
-      start_url: `${pwa_manifest_scope}#info`
+      start_url: `${pwa_manifest_scope}`
     }
   };
   return {

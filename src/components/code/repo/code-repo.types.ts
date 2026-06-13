@@ -1,4 +1,22 @@
 import { type DesignTokenIcon } from "@fnc314/design-tokens/types/design-token-icon.js";
+
+/**
+ * The `const` for the `CSS @property`
+ */
+export const CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE = "--code-repo-word-tag-size";
+
+/**
+ * A {@link Record} of pre-defined values exposed as a custom `CSS @property`
+ */
+export const WORD_TAG_SIZES = {
+  full: "full" as const,
+  compact: "compact" as const,
+  condensed: "condensed" as const,
+} as const;
+
+/** We give {@link WordTag} various treatments within this component */
+export type WordTagSize = typeof WORD_TAG_SIZES[keyof typeof WORD_TAG_SIZES];
+
 /**
  * Represents a single project entry loaded from `code.json`.
  *
@@ -19,6 +37,9 @@ export interface CodeRepoData {
 
   /** Public URL for the project (website or repository). */
   url: string;
+
+  /** The bit of {@link url} which begins with `fnc314/` */
+  repo: `fnc314/${string}`;
 }
 
 /**

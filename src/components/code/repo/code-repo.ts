@@ -1,11 +1,11 @@
 import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
-import { type CodeRepoData } from "@/components/code/repo/code-repo.types";
+import { CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE, type CodeRepoData, WORD_TAG_SIZES, type WordTagSize } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
-import { html, nothing } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { cssPropertyDataImage, readCSSProperty } from "@fnc314/design-tokens";
+import { type PropertyValues, html, nothing } from "lit";
+import { customElement, property, query, state } from "lit/decorators.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
@@ -30,9 +30,63 @@ export class CodeRepo extends UIAwareElement {
     CodeRepoStyles,
   ];
 
+  /**
+   * Extraced by {@link onWordTagSizeChange} listener bound to the `resize` `Event`
+   *
+   * {@link TransitionEvent}
+   */
+  @state()
+  protected wordTagSize: WordTagSize = WORD_TAG_SIZES.full;
+
+  @query("article.card")
+  private articleCard!: HTMLElement;
+
+  private onWordTagSizeChange: (event: TransitionEvent) => void = (event: TransitionEvent) => {
+    debugger;
+    console.info(
+      `Event ${JSON.stringify({ articleCard: this.articleCard?.tagName, elapsedTime: event.elapsedTime, propertyName: event.propertyName }, null, 2)}`
+    );
+    if (event.propertyName === CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE) {
+      const readProp: WordTagSize = readCSSProperty(
+        CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
+        this
+      ) as WordTagSize;
+      console.info(
+        `Replacing WordTagSize ${this.wordTagSize} with ${readProp}, Event ${JSON.stringify({ element: event.pseudoElement, propertyName: event.propertyName }, null, 2)}`
+      );
+      this.wordTagSize = readProp;
+    }
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
+    console.info(
+      `
+        Connected Callback
+        articleCard: ${this.articleCard?.tagName}
+        Locals ${JSON.stringify({ wordTagSize: this.wordTagSize, darkMode: this.darkMode, breakpoint: this.breakpoint }, null, 2)}
+      `
+    )
+    this.addEventListener("transitionend", this.onWordTagSizeChange);
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener("transitionend", this.onWordTagSizeChange);
+  }
+
+  protected override firstUpdated(_changedProperties: PropertyValues): void {
+    this.wordTagSize = readCSSProperty(
+        CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
+        this
+      ) as WordTagSize;
+  }
+
   override render() {
     return html`
-      <article class="card">
+      <article
+        class="card"
+        >
         <div class="card-body-wrapper">
           <header class="header">
             <h3 class="project-title md-typescale-title-large">
@@ -53,7 +107,7 @@ export class CodeRepo extends UIAwareElement {
                 alt="GitHub Link"
                 aria-hidden="true"
               />
-              <span>${this.codeRepo.url}</span>
+              <span>${this.codeRepo.repo}</span>
             </a>
           </header>
 
@@ -80,7 +134,9 @@ export class CodeRepo extends UIAwareElement {
                   const tagId: string = `${
                     typeof tech.designToken === "string"
                       ? tech.designToken
-                      : tech.designToken.default
+                      : this.darkMode
+                        ? tech.designToken.dark
+                        : tech.designToken.light
                   }-word-tag`;
 
                   const imgTag = imgSrc
@@ -95,13 +151,17 @@ export class CodeRepo extends UIAwareElement {
                       `
                     : nothing;
 
+                  const variant = imgTag === nothing
+                    ? "text-only"
+                    : "icon-only";
+
                   return html`
                     <li>
                       <word-tag
                         id="${tagId}"
                         .hrefUrl=${tech.url}
                         .word=${tech.name}
-                        .variant=${"text-icon"}
+                        .variant=${variant}
                       >
                         ${imgTag}
                       </word-tag>
