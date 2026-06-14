@@ -1,5 +1,5 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
-import { type BentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
+import { type ABentoBoxConfig, BentoBoxConfigs2, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type TemplateResult, html, nothing } from "lit";
@@ -22,44 +22,40 @@ export class BentoLayout extends UIAwareElement {
   ];
 
   @state()
-  private _bentoBoxConfigs: BentoBoxConfig[] = BentoBoxConfigs();
+  private _bentoBoxConfigs: ABentoBoxConfig[] = BentoBoxConfigs2(this.breakpoint);
 
+  private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
+    const position: GridPosition = config.placement[this.breakpoint];
 
-  private renderBentoBox(config: BentoBoxConfig): TemplateResult {
-    const position: GridPosition = config.placementForBreakpoint(
-      this.breakpoint
-    );
-
-    let gridArea = "";
-    if ("column" in position && "row" in position) {
-      gridArea = position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`;
-    }
+    const gridArea = position.breakpoint !== "mobile"
+      ? (position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`)
+      : undefined;
 
     let cardContent: TemplateResult;
     switch (config.type) {
       case "profile-photo-bio":
         cardContent = html`<profile-bio-card .expanded=${config.expanded}></profile-bio-card>`;
         break;
-      case "skills":
-        cardContent = html`<skills-card .expanded=${config.expanded}></skills-card>`;
+      case "connect":
+        cardContent = html`<connect-card .expanded=${config.expanded}></connect-card>`;
         break;
       case "education":
         cardContent = html`<education-card .expanded=${config.expanded}></education-card>`;
         break;
-      case "settings":
-        cardContent = html`<settings-card .expanded=${config.expanded}></settings-card>`;
-        break;
-      case "connect":
-        cardContent = html`<connect-card .expanded=${config.expanded}></connect-card>`;
-        break;
       case "work":
         cardContent = html`<work-card .expanded=${config.expanded}></work-card>`;
+        break;
+      case "blog":
+        cardContent = html`<blog-card .expanded=${config.expanded}></blog-card>`;
         break;
       case "code":
         cardContent = html`<code-card .expanded=${config.expanded}></code-card>`;
         break;
-      case "blog":
-        cardContent = html`<blog-card .expanded=${config.expanded}></blog-card>`;
+      case "skills":
+        cardContent = html`<skills-card .expanded=${config.expanded}></skills-card>`;
+        break;
+      case "settings":
+        cardContent = html`<settings-card .expanded=${config.expanded}></settings-card>`;
         break;
       default:
         return html`${nothing}`;
@@ -68,7 +64,7 @@ export class BentoLayout extends UIAwareElement {
     return html`
       <section
         class="card-${config.type}"
-        style=${styleMap({ gridArea: gridArea || undefined })}
+        style=${styleMap({ gridArea })}
       >
         ${cardContent}
       </section>
@@ -78,7 +74,7 @@ export class BentoLayout extends UIAwareElement {
   override render() {
     return html`
       <main class="bento-grid" id="bento-root">
-        <h1>Franco N. Colaizzi</h1>
+        <h1 class="md-typescale-headline-large">Franco N. Colaizzi</h1>
         ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
       </main>
     `;

@@ -117,6 +117,52 @@
             "default": "--icons-logos-tech-material-design-default",
             "light": "--icons-logos-tech-material-design-light"
           }
+        },
+        {
+          "name": "Node",
+          "url": "https://nodejs.org/",
+          "designToken": {
+            "dark": "--icons-logos-tech-node-dark",
+            "default": "--icons-logos-tech-node-default",
+            "light": "--icons-logos-tech-node-light"
+          }
+        },
+        {
+          "name": "Material Theme Builder",
+          "url": "https://material-foundation.github.io/material-theme-builder/",
+          "designToken": {
+            "dark": "--icons-logos-tech-material-design-dark",
+            "default": "--icons-logos-tech-material-design-default",
+            "light": "--icons-logos-tech-material-design-light"
+          }
+        },
+        {
+          "name": "HTML/CSS/JS",
+          "url": "https://developer.mozilla.org/",
+          "designToken": "--icons-logos-tech-web-html-default"
+        },
+        {
+          "name": "Prettier",
+          "url": "https://prettier.io/",
+          "designToken": {
+            "dark": "--icons-logos-tech-prettier-dark",
+            "default": "--icons-logos-tech-prettier-default",
+            "light": "--icons-logos-tech-prettier-light"
+          }
+        },
+        {
+          "name": "ESLint",
+          "url": "https://eslint.org/",
+          "designToken": "--icons-logos-tech-eslint-default"
+        },
+        {
+          "name": "StyleLint",
+          "url": "https://stylelint.io/",
+          "designToken": {
+            "dark": "--icons-logos-tech-stylelint-dark",
+            "default": "--icons-logos-tech-stylelint-default",
+            "light": "--icons-logos-tech-stylelint-light"
+          }
         }
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",

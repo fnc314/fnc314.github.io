@@ -40,25 +40,31 @@ export const BentoLayoutStyles = css`
     margin-inline: auto;
     padding-block: var(--spaces-padding-l);
     text-align: center;
-    width: 65%;
+    grid-area: span 1 / span var(--bento-layout-column-count);
+    width: 100%;
   }
 
-  @media screen and ((width <= 1200px) and (width >= 769px)) {
+  @media screen and (width >= 769px) {
     :host {
       --bento-layout-column-count: 6;
     }
 
-    .bento-grid {
-      align-items: unset;
-      display: grid;
-      gap: var(--spaces-gap-m);
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
-      padding: var(--spaces-padding-s);
+    h1 {
+      width: 65%;
     }
 
-    h1 {
-      grid-area: span 1 / span var(--bento-layout-column-count);
+    .bento-grid {
+      display: grid;
+      grid-auto-flow: dense;
+      grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
+    }
+  }
+
+  @media screen and ((width <= 1200px) and (width >= 769px)) {
+    .bento-grid {
+      align-items: unset;
+      gap: var(--spaces-gap-m);
+      padding: var(--spaces-padding-s);
     }
   }
 
@@ -68,16 +74,9 @@ export const BentoLayoutStyles = css`
     }
 
     .bento-grid {
-      display: grid;
       gap: var(--spaces-gap-l);
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
       margin: var(--spaces-none) auto;
       padding: var(--spaces-padding-m);
-    }
-
-    h1 {
-      grid-area: span 1 / span var(--bento-layout-column-count);
     }
   }
 `;

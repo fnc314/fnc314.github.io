@@ -1,3 +1,4 @@
+import { SettingsCardStyles } from "@/components/card/settings/settings-card.styles";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
@@ -5,14 +6,13 @@ import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
-import { LitElement, css, html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-
-import "@material/web/select/outlined-select";
-import "@material/web/select/select-option";
 
 import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
 
 /**
  * @summary A card component for managing application settings, including theme, contrast, and UI mode.
@@ -24,62 +24,7 @@ export class SettingsCard extends LitElement {
   /** {@link lit!css} */
   static override styles = [
     MaterialTypescaleStyles,
-    css`
-      :host {
-        display: block;
-        height: 100%;
-      }
-
-      .settings-container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spaces-gap-s);
-        height: 100%;
-      }
-
-      .settings-content {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        gap: var(--spaces-gap-m); /* Gap between form and version-tag */
-        justify-content: space-between;
-
-        form {
-          display: flex;
-          flex-direction: column;
-          gap: var(--spaces-gap-xl); /* Gap between fieldsets and ui-mode-toggle */
-          flex: 1;
-          padding: var(--spaces-none); /* Remove default form padding */
-          border: none; /* Remove default form border */
-
-          fieldset {
-            border: none;
-            margin: var(--spaces-none);
-            padding: var(--spaces-none);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spaces-gap-s); /* Gap between label and select within a fieldset */
-
-            legend {
-              padding: var(--spaces-none);
-              margin: var(--spaces-none);
-              padding-block-end: var(--spaces-padding-xxs);
-              border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
-              color: var(--md-sys-color-primary);
-              font-family: var(--md-ref-typeface-brand);
-            }
-
-            md-outlined-select {
-              padding-block-start: var(--spaces-padding-s);
-            }
-          }
-        }
-
-        version-tag {
-          padding-block-start: var(--spaces-padding-m);
-        }
-      }
-    `,
+    SettingsCardStyles,
   ];
 
   @state()
@@ -154,7 +99,6 @@ export class SettingsCard extends LitElement {
   override render() {
     return html`
       <bento-card
-        class="settings-container"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}

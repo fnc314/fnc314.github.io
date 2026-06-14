@@ -2,7 +2,6 @@ import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE, type CodeRepoData, WORD_TAG_SIZES, type WordTagSize } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles";
-import { InteractionStyles } from "@/styles/interaction-styles";
 import { cssPropertyDataImage, readCSSProperty } from "@fnc314/design-tokens";
 import { type PropertyValues, html, nothing } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -26,7 +25,6 @@ export class CodeRepo extends UIAwareElement {
 
   static override styles = [
     MaterialTypescaleStyles,
-    InteractionStyles,
     CodeRepoStyles,
   ];
 
@@ -42,44 +40,55 @@ export class CodeRepo extends UIAwareElement {
   private articleCard!: HTMLElement;
 
   private onWordTagSizeChange: (event: TransitionEvent) => void = (event: TransitionEvent) => {
-    debugger;
     console.info(
-      `Event ${JSON.stringify({ articleCard: this.articleCard?.tagName, elapsedTime: event.elapsedTime, propertyName: event.propertyName }, null, 2)}`
+      `
+      Event
+      ${JSON.stringify({ target: event.target, articleCard: this.articleCard?.tagName, elapsedTime: event.elapsedTime, propertyName: event.propertyName }, null, 2)}
+      `
     );
     if (event.propertyName === CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE) {
+      void (event.target as HTMLElement).offsetHeight;
+
       const readProp: WordTagSize = readCSSProperty(
         CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
-        this
+        this.articleCard
       ) as WordTagSize;
-      console.info(
-        `Replacing WordTagSize ${this.wordTagSize} with ${readProp}, Event ${JSON.stringify({ element: event.pseudoElement, propertyName: event.propertyName }, null, 2)}`
-      );
-      this.wordTagSize = readProp;
+
+      if (readProp && readProp !== this.wordTagSize) {
+        console.info(
+          `Replacing WordTagSize ${this.wordTagSize} with ${readProp}, Event ${JSON.stringify({ element: event.pseudoElement, propertyName: event.propertyName }, null, 2)}`
+        );
+        this.wordTagSize = readProp;
+      }
     }
   }
 
-  override connectedCallback() {
-    super.connectedCallback();
-    console.info(
-      `
-        Connected Callback
-        articleCard: ${this.articleCard?.tagName}
-        Locals ${JSON.stringify({ wordTagSize: this.wordTagSize, darkMode: this.darkMode, breakpoint: this.breakpoint }, null, 2)}
-      `
-    )
-    this.addEventListener("transitionend", this.onWordTagSizeChange);
-  }
-
   override disconnectedCallback() {
+    this.articleCard?.removeEventListener("transitionend", this.onWordTagSizeChange);
     super.disconnectedCallback();
-    this.removeEventListener("transitionend", this.onWordTagSizeChange);
   }
 
   protected override firstUpdated(_changedProperties: PropertyValues): void {
-    this.wordTagSize = readCSSProperty(
-        CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
-        this
-      ) as WordTagSize;
+    const firstRead = readCSSProperty(
+      CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
+      this.articleCard,
+      true
+    ) as WordTagSize;
+
+    if (firstRead && this.wordTagSize !== firstRead) {
+      this.wordTagSize = firstRead;
+    }
+
+    console.info(
+      `
+        FirstUpdated Callback, after \`this.updateComplete\`
+        articleCard: ${this.articleCard?.tagName}
+        _changedProperties: ${JSON.stringify(_changedProperties, null, 2)}
+        Locals ${JSON.stringify({ wordTagSize: this.wordTagSize, darkMode: this.darkMode, breakpoint: this.breakpoint }, null, 2)}
+      `
+    )
+
+    this.articleCard.addEventListener("transitionend", this.onWordTagSizeChange);
   }
 
   override render() {

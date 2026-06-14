@@ -29,7 +29,6 @@ export class DirectConnection extends UIAwareElement {
   connectionInstance: ConnectionInstance = {} as ConnectionInstance;
 
   override render(): TemplateResult {
-    console.info(JSON.stringify({ darkMode: this.darkMode, instance: this.connectionInstance }, null, 2))
 
     const buttonId = `button-direct-connection-${this.connectionInstance.method}-${this.connectionInstance.text}`;
     const labelId = buttonId.replace("button", "label");
@@ -49,8 +48,8 @@ export class DirectConnection extends UIAwareElement {
         id="${labelId}"
         class="direct-connection-label"
         >
-          ${this.connectionInstance.text}
-        </span>
+        ${this.connectionInstance.text}
+      </span>
     `;
   }
 }

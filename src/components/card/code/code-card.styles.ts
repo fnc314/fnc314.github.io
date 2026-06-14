@@ -27,7 +27,7 @@ export const CodeCardStyles = css`
     .code-list {
       flex-direction: row;
       overflow-x: auto;
-      padding-bottom: var(--spaces-padding-xs);
+      padding-block-end: var(--spaces-padding-xs);
       scroll-snap-type: x mandatory;
     }
 

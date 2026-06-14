@@ -21,6 +21,7 @@ export const BlogEntryStyles: CSSResult = css`
     flex-direction: column;
     overflow: hidden;
     min-width: 0;
+    height: 100%;
   }
 
   /* Mobile: Number on Top */

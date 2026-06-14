@@ -10,7 +10,8 @@ export const CodeRepoStyles: CSSResult = css`
   @property --code-repo-word-tag-size {
     /* 1. Use unsafeCSS for strings.
        2. Ensure the resulting CSS has quotes around the syntax value. */
-    syntax: "${unsafeCSS(`${WORD_TAG_SIZES.full} | ${WORD_TAG_SIZES.compact} | ${WORD_TAG_SIZES.condensed}`)}";
+    // syntax: "${unsafeCSS(`${WORD_TAG_SIZES.full} | ${WORD_TAG_SIZES.compact} | ${WORD_TAG_SIZES.condensed}`)}";
+    syntax: "<custom-ident>";
     initial-value: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
     inherits: false;
   }
@@ -25,18 +26,22 @@ export const CodeRepoStyles: CSSResult = css`
     container-type: inline-size;
     container-name: code-repo-card;
 
-    --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.full)};
-    transition: --code-repo-word-tag-size 0ms;
-
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
+    --word-tag-background-color: var(--md-sys-color-tertiary-fixed);
+    --word-tag-color: var(--md-sys-color-on-tertiary-fixed);
+  }
+
+  article {
+    --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.full)};
+    transition: --code-repo-word-tag-size 5ms ease-in-out;
   }
 
   /* Option 2 Container Design Frame */
   .card {
     position: relative;
-    background-color: var(--md-sys-color-surface-container);
+    background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
     padding: var(--spaces-padding-m);
@@ -45,8 +50,8 @@ export const CodeRepoStyles: CSSResult = css`
     box-sizing: border-box;
     overflow: hidden;
     justify-content: flex-start;
-    min-height: min-content;
     min-width: 0;
+    height: 100%;
 
     &::before {
       content: "";
@@ -139,10 +144,6 @@ export const CodeRepoStyles: CSSResult = css`
     padding: var(--spaces-none);
     list-style: none;
 
-    li {
-      // --word-tag-font-size: var(--md-sys-typescale-body-small-size);
-    }
-
     & word-tag img,
     & word-tag [slot="icon"] {
       width: var(--md-icon-size);
@@ -158,10 +159,10 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   /* ========================================================================== */
-  /* ULTRA-DENSE MOBILE COMPRESSION (Container Width <= 300px)                 */
+  /* ULTRA-DENSE MOBILE COMPRESSION (Container Width <= 300px)                  */
   /* ========================================================================== */
   @container code-repo-card (max-width: 300px) {
-    :host {
+    article {
       --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
     }
 
@@ -190,10 +191,10 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   /* ========================================================================== */
-  /* ASYMMETRIC GRID BREAKPOINT (iPad Pro Portrait & Desktop Grid >= 500px)    */
+  /* ASYMMETRIC GRID BREAKPOINT (iPad Pro Portrait & Desktop Grid >= 500px)     */
   /* ========================================================================== */
   @container code-repo-card (min-width: 500px) {
-    :host {
+    article {
       --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.compact)};
     }
 
