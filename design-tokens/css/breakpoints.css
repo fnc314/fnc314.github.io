@@ -1,11 +1,11 @@
 @property --breakpoint-label {
   inherits: true;
-  initial-value: unknown;
-  syntax: "unknown | mobile | tablet | desktop";
+  initial-value: mobile;
+  syntax: "mobile | tablet | desktop";
 }
 
 :root {
-  --breakpoint-label: unknown;
+  --breakpoint-label: mobile;
 }
 
 @media screen and (width <= 768px) {

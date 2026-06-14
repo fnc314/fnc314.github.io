@@ -67,73 +67,65 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
     expanded: false,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } },
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 5 } },
-      unknown: { breakpoint: "unknown", row: { start: 2, end: 3 }, column: { start: 1, end: 7 } }
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   connect: {
     expanded: true,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } },
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 5, end: 9 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 5, end: 9 } }
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   education: {
     expanded: true,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 4, end: 7 } },
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 9, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 1, end: 5 } }
+      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 4, end: 7 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   work: {
     expanded: false,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
       desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 2, end: 3 }, column: { start: 7, end: -1 } }
+      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   blog: {
     expanded: true,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } },
       desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 3, end: 4 }, column: { start: 1, end: 7 } }
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   code: {
     expanded: true,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } },
       desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 3, end: 4 }, column: { start: 7, end: -1 } }
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   skills: {
     expanded: false,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
       desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } }
+      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
+      mobile: { breakpoint: "mobile" },
     }
   },
   settings: {
     expanded: true,
     placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
       desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 9, end: 13 } }
+      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
+      mobile: { breakpoint: "mobile" },
     }
   }
 };

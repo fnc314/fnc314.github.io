@@ -6,9 +6,8 @@ export const CSS_VARIABLE_BREAKPOINT_LABEL: string = "--breakpoint-label" as con
  *
  * @typedef Breakpoint
  */
-export type BreakpointLabel = "unknown" | "mobile" | "tablet" | "desktop";
+export type BreakpointLabel = "mobile" | "tablet" | "desktop";
 export const BREAKPOINT_LABELS: BreakpointLabel[] = [
-  "unknown",
   "mobile",
   "tablet",
   "desktop"
@@ -34,10 +33,6 @@ export interface Breakpoints extends Record<BreakpointLabel, BreakpointRange> {}
  * @type {Breakpoints}
  */
 export const BREAKPOINTS: Breakpoints = {
-  unknown: {
-    min: Number.NEGATIVE_INFINITY,
-    max: Number.POSITIVE_INFINITY,
-  } as const,
   mobile: {
     min: 0 as const,
     max: 768 as const,

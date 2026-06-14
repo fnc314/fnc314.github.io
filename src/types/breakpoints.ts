@@ -3,5 +3,5 @@
  *
  * @typedef Breakpoint
  */
-export type Breakpoint = "unknown" | "mobile" | "tablet" | "desktop";
-export const BREAKPOINT_NAMES: Breakpoint[] = ["unknown", "mobile", "tablet", "desktop"];
+export type Breakpoint = "mobile" | "tablet" | "desktop";
+export const BREAKPOINT_NAMES: Breakpoint[] = ["mobile", "tablet", "desktop"];
