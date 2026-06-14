@@ -6,29 +6,23 @@ This project is the personal website of Franco N. Colaizzi. It is a sophisticate
 
 - **Framework:** Lit (Web Components)
 - **Design System:** Material Design 3
-- **Build System:** Rollup, with Vite-related tooling for development and PWA support.
+- **Build System:** Mise-driven, Vite-orchestrated builds where CLIs are wrapped in tasks from relative `.mise/tasks/` directories and sub-directories. Dependencies are managed by PNPM and exclusively use `--save-catalog-name=dependencies|devDependencies|...` in call dependency installs
 - **Language:** TypeScript
 
+## Design System
+
+Design tokens are managed in a dedicated `@fnc314/design-tokens` package:
+
+- **Orchestration:** All design token builds are performed via `vite` from within the `@fnc314/design-tokens/` directory.
+- **Workflow:** Standardized through `mise` tasks residing in `./.mise/tasks/` or `design-tokens/.mise/tasks/`. No `mise` task should modify any `src` folder located "above" its definition directory.
+- **Enforcement:** Exclusive use of design tokens (as CSS variables) is strictly enforced via `stylelint` (leveraging `stylelint-value-no-udl`). Build breaks on violations.
+
+### Standards for Design Tokens
+- Never hardcode color, spacing, or typography values in CSS or component styling.
+- Always map hardcoded values to the appropriate design token from `@fnc314/design-tokens`.
+- Run `mise run lint-tokens` to ensure compliance.
+
 ## Key Commands
-
-### Development
-
-- `pnpm serve`: Starts the development server (`web-dev-server`).
-- `pnpm build:website:watch`: Builds the project in watch mode for local development.
-
-### Build & Deploy
-
-- `pnpm build`: Executes the production build via Rollup.
-- `pnpm deploy`: Cleans the `website/` directory and performs a production build.
-
-### Linting & Formatting
-
-- `pnpm lint`: Runs `lit-analyzer` and `eslint`.
-- `pnpm format`: Runs `prettier` to format source files.
-
-### Testing
-
-- `pnpm test`: Runs the test suite using `web-test-runner` in both development and production modes.
 
 ### Documentation & Metadata
 
@@ -38,7 +32,8 @@ This project is the personal website of Franco N. Colaizzi. It is a sophisticate
 
 ## Development Conventions
 
-- **File Structure:** Components are organized within `src/components/`, with data residing in `src/data/` and themes in `src/theme/`.
+- **File Structure:** Components are organized within `src/components/`, with data residing in `src/data/`
 - **Styling:** Primarily uses Material Design variables and custom CSS properties. Tailwind CSS is used for some utility styling.
 - **Standards:** Strictly TypeScript, using Lit conventions for web components.
 - **CEM:** Custom Elements Manifest is utilized extensively to document component APIs, which powers IDE support and documentation generation.
+- **TypeDoc:** Document everything extensively with `JSDoc`/`TSDoc` tags and annotations

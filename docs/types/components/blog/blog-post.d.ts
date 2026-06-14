@@ -1,6 +1,6 @@
 ﻿import { type BlogPostJson } from "@/components/blog/blog-post.types";
 import { LitElement } from "lit";
-export type { BlogPostJson } from "@/components/blog/blog-post.types";
+export { type BlogPostJson } from "@/components/blog/blog-post.types";
 export declare class BlogPost extends LitElement {
     static styles: import("lit").CSSResult[];
     blogPost: BlogPostJson;

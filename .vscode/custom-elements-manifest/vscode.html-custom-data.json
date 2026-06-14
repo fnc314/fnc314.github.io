@@ -4,19 +4,134 @@
   "tags": [
     {
       "name": "app-shell",
-      "description": "The core layout component for the application.\nHandles theme switching, FAB configurations, and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed",
+      "description": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.\n---\n\n\n### **Slots:**\n - **app-content** - The place for the dynamic application content\n- **app-nav** - Where the navigation component is placed",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "bento-layout",
+      "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\n---\n",
       "attributes": [],
       "references": []
     },
     {
       "name": "blog-post",
-      "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_\n- **--blog-post-word-tag-container-color** - The color of the container, {@link @fnc314/com.fnc314.website!WordTag} _(default: undefined)_",
+      "description": "Represents a published blog record, linking to the artifact\n---\n\n\n### **Methods:**\n - **blogPost()** - The {@link BlogPostJson} record to render\n\n### **CSS Properties:**\n - **--blog-post-animation** - The duration of the animation for \\`:focus\\`, \\`:hover\\`, \\`:focus-within\\`, and \\`:focus-visible\\` states _(default: undefined)_\n- **--blog-post-primary-text-color** - The color of the primary text _(default: undefined)_\n- **--blog-post-container-color** - The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} _(default: undefined)_",
       "attributes": [
         {
           "name": "blogPost",
           "description": "The {@link BlogPostJson} record to render",
-          "values": [{ "name": "BlogPostJson" }]
+          "values": []
         }
+      ],
+      "references": []
+    },
+    {
+      "name": "bento-card",
+      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
+      "attributes": [
+        {
+          "name": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
+          "values": []
+        },
+        {
+          "name": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+          "values": []
+        },
+        {
+          "name": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen true, the card is expanded and content is visible.",
+          "values": []
+        },
+        {
+          "name": "scrollable",
+          "description": "Enables internal vertical scrolling for content.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "blog-card",
+      "description": "BlogCard - A card component displaying blog posts.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "code-card",
+      "description": "CodeCard - A card component displaying code projects.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "connect-card",
+      "description": "ConnectCard - A card component displaying contact/connection links.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "education-card",
+      "description": "EducationCard - A card component displaying education history.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "profile-bio-card",
+      "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+      "attributes": [
+        { "name": "_photoData", "values": [] },
+        { "name": "bioText", "values": [] },
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "settings-card",
+      "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "skills-card",
+      "description": "SkillsCard - A card component displaying a skill word cloud.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "work-card",
+      "description": "WorkCard - A card component displaying work experience.\n---\n",
+      "attributes": [
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
       ],
       "references": []
     },
@@ -29,37 +144,25 @@
       "references": []
     },
     {
-      "name": "configs-dialog",
-      "description": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.\n---\n\n\n### **Events:**\n - ****\n- **color_scheme.change** - Dispatched when the UI theme, mode, or contrast is changed.\n- **fab.change** - Dispatched when a FAB's position or style is modified.\n- **stepUpOpen**\n\n### **Methods:**\n - **hideDialog(): __** - Hides the configuration dialog.\n- **showDialog(formContent: _FormContent_): __** - Shows the configuration dialog.",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "connect-dialog",
-      "description": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.\n---\n\n\n### **Events:**\n - ****\n\n### **Methods:**\n - **hideDialog(): __** - Maps to MdDialog's close method\n- **showDialog(): __** - Shows the connect dialog and applies a custom border to the internal container.\n\n### **CSS Properties:**\n - **--connect-dialog-content-transition** - The animation duration for expanding/collapsing connection details. _(default: 0.3s)_",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "step-up-dialog",
       "description": "A versatile confirmation dialog used to verify user intent before performing\nsignificant actions like resetting settings.\n---\n\n\n### **Events:**\n - **stepUpComplete** - Dispatched when the user confirms or cancels the action.\n\n### **Methods:**\n - **showDialog(): __** - Shows the step-up confirmation dialog.\n\n### **Slots:**\n - **actions** - The area of dialog action buttons\n- **content** - The body of the {@link MdDialog}\n- **headline** - The {@link MdDialog} headline {@link slot}",
       "attributes": [
         {
           "name": "dialogContentString",
-          "description": "The text content to display in the dialog body.",
+          "description": "The central content of the {@link MdDialog}",
           "values": []
         },
         {
           "name": "dialogStyle",
-          "description": "The visual style variant of the dialog, affecting colors and icons.",
-          "values": []
+          "description": "Determines which {@link StepUpDialogStyle}",
+          "values": [{ "name": "StepUpDialogStyle" }]
         }
       ],
       "references": []
     },
     {
       "name": "fab-menu-item",
-      "description": "\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
+      "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Focuses the underlying FAB element.\n\n### **CSS Properties:**\n - **--fab-menu-item-direction** - The `flex-direction` of the {@link FabMenuItem} _(default: row)_\n- **--fab-menu-item-justify** - The Flex `justify-content` of the {@link FabMenuItem} _(default: flex-end)_\n- **--fab-menu-item-padding-end** - The logical `padding-inline-end` value _(default: 0)_\n- **--fab-menu-item-padding-start** - The logical `padding-inline-start` value _(default: 0)_",
       "attributes": [
         {
           "name": "icon",
@@ -76,31 +179,31 @@
     },
     {
       "name": "fab-menu",
-      "description": "\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
+      "description": "@deprecated Use inline Bento Box cards instead. Deprecated as of version 2.0.0.\n\n\n---\n\n\n### **Slots:**\n - **menu-items** - The content of the menu, typically {@link FabMenuItem} elements\n\n### **CSS Properties:**\n - **--fab-menu-transition-duration** - The duration of the menu's opening and closing animations _(default: 200ms)_\n- **--fab-menu-animation-spec** - The animation spec for {@link FabMenu} `transition`s _(default: cubic-bezier(0.4,0,0.2,1))_",
       "attributes": [
         {
           "name": "aria-label",
-          "description": "The `aria-label` of the FAB.",
+          "description": "An override for the `aria-label` attribute",
           "values": []
         },
         {
           "name": "direction",
-          "description": "The direction in which the menu items should expand.",
-          "values": []
+          "description": "The direction of the menu, one of `\"start\"`, `\"end\"`",
+          "values": [{ "name": "start" }, { "name": "end" }]
         },
         {
           "name": "icon",
-          "description": "The {@link MaterialSymbol} to display when the menu\nis closed. Defaults to 'add'. An empty {@link string}\n  suppresses the icon",
+          "description": "The {@link MaterialSymbol} to display when menu is opened",
           "values": [{ "name": "MaterialSymbol" }, { "name": "\"\"" }]
         },
         {
           "name": "label",
-          "description": "The label of the underlying {@link MdFab}.\nDefaults to an empty string.",
+          "description": "The label to display when both opened and closed",
           "values": []
         },
         {
           "name": "open",
-          "description": "Whether the menu is currently open.",
+          "description": "Indicator of open/closed state",
           "values": []
         },
         {
@@ -110,13 +213,22 @@
         },
         {
           "name": "size",
-          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-          "values": []
+          "description": "The size of the underlying {@link MdFab}, one of `\"small\"`, `\"medium\"`, `\"large\"`",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
         },
         {
           "name": "variant",
-          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-          "values": []
+          "description": "The variant, one of `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"surface\"`",
+          "values": [
+            { "name": "surface" },
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" }
+          ]
         }
       ],
       "references": []
@@ -131,12 +243,6 @@
           "values": []
         }
       ],
-      "references": []
-    },
-    {
-      "name": "nav-component",
-      "description": "\n---\n\n\n### **CSS Properties:**\n - **--nav-component-icon-animation** - The duration of the icon's fill and color transition. _(default: 225ms)_\n- **--nav-component-icon-animation-reduced** - The duration of the icon's transition when motion is reduced. _(default: 1ms)_",
-      "attributes": [],
       "references": []
     },
     {
@@ -162,13 +268,30 @@
       "references": []
     },
     {
+      "name": "ui-mode-toggle",
+      "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application's global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n - **reset(): _void_** - Resets the UI mode toggle to its default settings.",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "values": []
+        },
+        {
+          "name": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "word-cloud",
-      "description": "\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+      "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
       "attributes": [
         {
           "name": "appearance",
           "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
-          "values": [{ "name": "WordCloudAppearance" }]
+          "values": []
         },
         {
           "name": "delay",
@@ -178,7 +301,7 @@
         {
           "name": "grouping",
           "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
-          "values": [{ "name": "WordCloudGrouping" }]
+          "values": []
         },
         {
           "name": "instant-clear",
@@ -188,7 +311,7 @@
         {
           "name": "sorting",
           "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
-          "values": [{ "name": "WordCloudSorting" }]
+          "values": []
         },
         {
           "name": "threshold",
@@ -198,7 +321,7 @@
         {
           "name": "words",
           "description": "The list of words to display in the cloud.",
-          "values": [{ "name": "WordCloudWord[]" }]
+          "values": []
         }
       ],
       "references": []
@@ -227,22 +350,22 @@
       "attributes": [
         {
           "name": "date-end",
-          "description": "A {@link WorkDate} instance describing employment end date",
-          "values": [{ "name": "WorkDate" }]
+          "description": "End date information including machine-readable stamp and display text.",
+          "values": []
         },
         {
           "name": "date-start",
-          "description": "A {@link WorkDate} instance describing employment start date",
-          "values": [{ "name": "WorkDate" }]
+          "description": "Start date information including machine-readable stamp and display text.",
+          "values": []
         },
         {
           "name": "experience-org",
-          "description": "The employer formal name",
+          "description": "The name of the organization or client.",
           "values": []
         },
         {
           "name": "experience-role",
-          "description": "The formal role from the {@link WorkExperience} instance",
+          "description": "The title of the professional role or project.",
           "values": []
         },
         {
@@ -252,18 +375,18 @@
         },
         {
           "name": "is-nested",
-          "description": "Whether this is a nested instance",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
           "values": []
         },
         {
           "name": "jobs",
-          "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-          "values": [{ "name": "Array<Job>" }]
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "values": []
         },
         {
           "name": "summaries",
           "description": "An array of `{ item: string }` objects describing the responsibilities",
-          "values": [{ "name": "Array<{ item: string }>" }]
+          "values": []
         }
       ],
       "references": []

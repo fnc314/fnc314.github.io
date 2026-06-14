@@ -6,7 +6,9 @@ import { type TemplateResult, html } from "lit";
  * @type {{ readonly TOP: "TOP"; readonly BOTTOM: "BOTTOM"; }}
  */
 export const FAB_POSITION_COMPONENTS_VERTICAL = {
+  /** AUTO-DOC'd WITH GEMINI: Top vertical position */
   TOP: "TOP" as const,
+  /** AUTO-DOC'd WITH GEMINI: Bottom vertical position */
   BOTTOM: "BOTTOM" as const,
 } as const;
 
@@ -16,7 +18,9 @@ export const FAB_POSITION_COMPONENTS_VERTICAL = {
  * @type {{ readonly START: "START"; readonly END: "END"; }}
  */
 export const FAB_POSITION_COMPONENTS_HORIZONTAL = {
+  /** AUTO-DOC'd WITH GEMINI: Start horizontal position */
   START: "START" as const,
+  /** AUTO-DOC'd WITH GEMINI: End horizontal position */
   END: "END" as const,
 } as const;
 
@@ -46,9 +50,13 @@ export type FabPositionComponentHorizontal =
  * @type {{ readonly START_TOP: "START_TOP"; readonly START_BOTTOM: "START_BOTTOM"; readonly END_TOP: "END_TOP"; readonly END_BOTTOM: "END_BOTTOM"; }}
  */
 export const FAB_POSITION = {
+  /** AUTO-DOC'd WITH GEMINI: Start-Top position */
   START_TOP: "START_TOP" as const,
+  /** AUTO-DOC'd WITH GEMINI: Start-Bottom position */
   START_BOTTOM: "START_BOTTOM" as const,
+  /** AUTO-DOC'd WITH GEMINI: End-Top position */
   END_TOP: "END_TOP" as const,
+  /** AUTO-DOC'd WITH GEMINI: End-Bottom position */
   END_BOTTOM: "END_BOTTOM" as const,
 } as const;
 

@@ -10,41 +10,31 @@
 
 ### Slots
 
-| Name          | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| `app-content` | The place for the dynamic application content                       |
-| `app-nav`     | Where the {@link @fnc314/com.fnc314.website!NavComponent} is placed |
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `app-content` | The place for the dynamic application content |
+| `app-nav`     | Where the navigation component is placed      |
 
 <details><summary>Private API</summary>
 
 ### Fields
 
-| Name                  | Privacy | Type                                       | Default | Description                                                                                                      | Inherited From |
-| --------------------- | ------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
-| `_openDialogCount`    | private | `number`                                   | `0`     |                                                                                                                  |                |
-| `_uiModeIcon`         | private | `"dark_mode" \| "light_mode" \| "routine"` |         | The icon associated with the current color scheme mode.                                                          |                |
-| `appConfigs`          | private | `AppConfigs`                               |         | The current global application configuration state.                                                              |                |
-| `configsDialog`       | private | `ConfigsDialog`                            |         | Reference to the configuration dialog.                                                                           |                |
-| `connectDialog`       | private | `ConnectDialog`                            |         | Reference to the connect dialog.                                                                                 |                |
-| `connectFab`          | private | `MdFab`                                    |         | Reference to the connect FAB.&#xA;This is an MdFab component.                                                    |                |
-| `connectFabConfig`    | private | `FabConfig`                                |         |                                                                                                                  |                |
-| `fabMenu`             | private | `FabMenu`                                  |         | Reference to the FAB menu component.                                                                             |                |
-| `onAppConfigsChange`  | private |                                            |         | Syncs the component state with the global application configuration.                                             |                |
-| `onColorSchemeChange` | private |                                            |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
-| `onFabChangeBind`     | private |                                            |         |                                                                                                                  |                |
-| `onFabConfigBind`     | private |                                            |         |                                                                                                                  |                |
-| `settingsFabConfig`   | private | `FabConfig`                                |         | The configuration for the settings FAB.                                                                          |                |
+| Name                  | Privacy | Type                                | Default | Description                                                                                                      | Inherited From |
+| --------------------- | ------- | ----------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- | -------------- |
+| `_activeRoute`        | private | `Route`                             |         |                                                                                                                  |                |
+| `_boundListener`      | private |                                     |         |                                                                                                                  |                |
+| `_inlineIconTimeout`  | private | `number`                            | `0`     |                                                                                                                  |                |
+| `_scrollSpyObserver`  | private | `IntersectionObserver \| undefined` |         |                                                                                                                  |                |
+| `onAppConfigsChange`  | private |                                     |         | Syncs the component state with the global application configuration.                                             |                |
+| `onColorSchemeChange` | private |                                     |         | Event handler for color scheme changes.&#xA;Updates the UI icon, Material theme variables, and meta theme color. |                |
 
 ### Methods
 
-| Name                  | Privacy | Description                                                                                                          | Parameters                                           | Return | Inherited From |
-| --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------ | -------------- |
-| `_getFabLabel`        | private | Generates the label string for a FAB based on its configuration style.                                               | `fab: string, config: FabConfig`                     |        |                |
-| `_handleDialogClosed` | private | Tracks closed dialogs to manage body scroll restoration.                                                             |                                                      |        |                |
-| `_handleDialogOpened` | private | Tracks open dialogs to manage body scroll locking.                                                                   |                                                      |        |                |
-| `_onFabMenuItemClick` | private | Handles clicks on FAB menu items.&#xA;Closes the menu and opens the configuration dialog with the requested content. | `formContent: FormContent`                           |        |                |
-| `onFabChange`         | private | Updates the state and DOM representation of a FAB when its configuration changes.                                    | `fab: "settings" \| "connect", fabConfig: FabConfig` |        |                |
-| `uiModeIcon`          | private | Maps a color scheme name to a Material icon name.                                                                    | `colorScheme: AppConfigs["colorScheme"]`             |        |                |
+| Name                  | Privacy | Description | Parameters   | Return          | Inherited From |
+| --------------------- | ------- | ----------- | ------------ | --------------- | -------------- |
+| `_handleHashChange`   | private |             |              |                 |                |
+| `_routeFromElementId` | private |             | `id: string` | `Route \| null` |                |
+| `_setupScrollSpy`     | private |             |              |                 |                |
 
 </details>
 
@@ -57,6 +47,79 @@
 | `custom-element-definition` | `app-shell` | AppShell    | src/components/app-shell/app-shell.ts |         |
 | `js`                        | `AppShell`  | AppShell    | src/components/app-shell/app-shell.ts |         |
 
+# `src/components/bento-layout/bento-layout.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `bentoLayoutStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `bentoLayoutStyles` | bentoLayoutStyles | src/components/bento-layout/bento-layout.styles.ts |         |
+
+# `dist/out/components/bento-layout/bento-layout.js`:
+
+## class: `BentoLayout`, `bento-layout`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                    | Privacy | Type                                | Default | Description | Inherited From |
+| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
+| `_activeRoute`          | private | `Route`                             |         |             |                |
+| `_bentoBoxConfigs`      | private | `BentoBoxConfig[]`                  |         |             |                |
+| `_currentBreakpoint`    | private | `Breakpoint`                        |         |             |                |
+| `_scrollSpyObserver`    | private | `IntersectionObserver \| undefined` |         |             |                |
+| `_windowResizeObserver` | private | `() => void`                        |         |             |                |
+
+### Methods
+
+| Name                  | Privacy | Description | Parameters               | Return           | Inherited From |
+| --------------------- | ------- | ----------- | ------------------------ | ---------------- | -------------- |
+| `_routeFromElementId` | private |             | `id: string`             | `Route \| null`  |                |
+| `_setupScrollSpy`     | private |             |                          |                  |                |
+| `renderBentoBox`      | private |             | `config: BentoBoxConfig` | `TemplateResult` |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                                      | Package |
+| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
+| `custom-element-definition` | `bento-layout` | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
+| `js`                        | `BentoLayout`  | BentoLayout | src/components/bento-layout/bento-layout.ts |         |
+
+# `src/components/bento-layout/bento-layout.types.ts`:
+
+## Functions
+
+| Name              | Description                                                                                                | Parameters | Return |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ------ |
+| `BentoBoxConfigs` | Produces an Array of BentoBoxConfig instances used to populate&#xA;  @fnc314/fnc314.github.io!BentoLayout. |            |        |
+
+<hr/>
+
+## Exports
+
+| Kind | Name              | Declaration     | Module                                            | Package |
+| ---- | ----------------- | --------------- | ------------------------------------------------- | ------- |
+| `js` | `BentoBoxConfigs` | BentoBoxConfigs | src/components/bento-layout/bento-layout.types.ts |         |
+
 # `dist/out/components/blog/blog-post.js`:
 
 ## class: `BlogPost`, `blog-post`
@@ -67,11 +130,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name       | Privacy | Type           | Default | Description                               | Inherited From |
-| ---------- | ------- | -------------- | ------- | ----------------------------------------- | -------------- |
-| `blogPost` |         | `BlogPostJson` | `{}`    | The {@link BlogPostJson} record to render |                |
+| Name       | Privacy | Description                               | Parameters | Return | Inherited From |
+| ---------- | ------- | ----------------------------------------- | ---------- | ------ | -------------- |
+| `blogPost` |         | The {@link BlogPostJson} record to render |            |        |                |
 
 ### Attributes
 
@@ -81,21 +144,20 @@
 
 ### CSS Properties
 
-| Name                                   | Default | Description                                                                                                                   |
-| -------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `--blog-post-animation`                |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states    |
-| `--blog-post-primary-text-color`       |         | The color of the primary text                                                                                                 |
-| `--blog-post-container-color`          |         | The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} |
-| `--blog-post-word-tag-container-color` |         | The color of the container, {@link @fnc314/com.fnc314.website!WordTag}                                                        |
+| Name                             | Default | Description                                                                                                                   |
+| -------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `--blog-post-animation`          |         | The duration of the animation for \\\`:focus\\\`, \\\`:hover\\\`, \\\`:focus-within\\\`, and \\\`:focus-visible\\\` states    |
+| `--blog-post-primary-text-color` |         | The color of the primary text                                                                                                 |
+| `--blog-post-container-color`    |         | The color of the container, {@link @material/web!MdElevatedCard} and {@link @material/web!--md-elevated-card-container-color} |
 
 <details><summary>Private API</summary>
 
-### Fields
+### Methods
 
-| Name                | Privacy | Type                     | Default | Description | Inherited From |
-| ------------------- | ------- | ------------------------ | ------- | ----------- | -------------- |
-| `darkMode`          | private |                          |         |             |                |
-| `onAppConfigChange` | private | `(event: Event) => void` |         |             |                |
+| Name                | Privacy | Description | Parameters | Return | Inherited From |
+| ------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `darkMode`          | private |             |            |        |                |
+| `onAppConfigChange` | private |             |            |        |                |
 
 </details>
 
@@ -109,6 +171,502 @@
 | `js`                        | `BlogPost`     | BlogPost     | src/components/blog/blog-post.ts  |         |
 | `js`                        | `BlogPostJson` | BlogPostJson | @/components/blog/blog-post.types |         |
 
+# `src/components/card/bento/bento-card.styles.ts`:
+
+## Variables
+
+| Name              | Description | Type |
+| ----------------- | ----------- | ---- |
+| `bentoCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name              | Declaration     | Module                                         | Package |
+| ---- | ----------------- | --------------- | ---------------------------------------------- | ------- |
+| `js` | `bentoCardStyles` | bentoCardStyles | src/components/card/bento/bento-card.styles.ts |         |
+
+# `dist/out/components/card/bento/bento-card.js`:
+
+## class: `BentoCard`, `bento-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description                                                                                                                                | Inherited From |
+| ------------- | ------- | ---- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `enableFocus` |         |      |         | Whether to enable enhanced border and shadow styling on focus-within.&#xA;Defaults to false.                                               |                |
+| `enableHover` |         |      |         | Whether to enable the lift-on-hover effect.&#xA;Defaults to false to minimize visual motion in dense layout grids.                         |                |
+| `expanded`    |         |      |         | Reflects and controls the open state of the underlying \`\<details>\` element.&#xA;When true, the card is expanded and content is visible. |                |
+| `scrollable`  |         |      |         | Enables internal vertical scrolling for content.                                                                                           |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+| `scrollable`  | scrollable  |                |
+
+### Slots
+
+| Name     | Description                                                                                 |
+| -------- | ------------------------------------------------------------------------------------------- |
+|          | Default slot for card content. Slotted \`h2\` elements receive standardized header styling. |
+| `header` | Content to be displayed in the card's header/summary area.                                  |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name            | Privacy | Description                                                                                                                                          | Parameters | Return | Inherited From |
+| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `_handleToggle` | private | Synchronizes the \`expanded\` property with the state of the \`\<details>\` element&#xA;whenever the user interacts with the toggle icon or summary. | `e: Event` |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name         | Declaration | Module                                  | Package |
+| --------------------------- | ------------ | ----------- | --------------------------------------- | ------- |
+| `custom-element-definition` | `bento-card` | BentoCard   | src/components/card/bento/bento-card.ts |         |
+| `js`                        | `BentoCard`  | BentoCard   | src/components/card/bento/bento-card.ts |         |
+
+# `src/components/card/blog/blog-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `blogCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `blogCardStyles` | blogCardStyles | src/components/card/blog/blog-card.styles.ts |         |
+
+# `dist/out/components/card/blog/blog-card.js`:
+
+## class: `BlogCard`, `blog-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `blog-card` | BlogCard    | src/components/card/blog/blog-card.ts |         |
+| `js`                        | `BlogCard`  | BlogCard    | src/components/card/blog/blog-card.ts |         |
+
+# `src/components/card/code/code-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `codeCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `codeCardStyles` | codeCardStyles | src/components/card/code/code-card.styles.ts |         |
+
+# `dist/out/components/card/code/code-card.js`:
+
+## class: `CodeCard`, `code-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `code-card` | CodeCard    | src/components/card/code/code-card.ts |         |
+| `js`                        | `CodeCard`  | CodeCard    | src/components/card/code/code-card.ts |         |
+
+# `src/components/card/connect/connect-card.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `connectCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `connectCardStyles` | connectCardStyles | src/components/card/connect/connect-card.styles.ts |         |
+
+# `dist/out/components/card/connect/connect-card.js`:
+
+## class: `ConnectCard`, `connect-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                                      | Package |
+| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
+| `custom-element-definition` | `connect-card` | ConnectCard | src/components/card/connect/connect-card.ts |         |
+| `js`                        | `ConnectCard`  | ConnectCard | src/components/card/connect/connect-card.ts |         |
+
+# `src/components/card/education/education-card.styles.ts`:
+
+## Variables
+
+| Name                  | Description | Type |
+| --------------------- | ----------- | ---- |
+| `educationCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                  | Declaration         | Module                                                 | Package |
+| ---- | --------------------- | ------------------- | ------------------------------------------------------ | ------- |
+| `js` | `educationCardStyles` | educationCardStyles | src/components/card/education/education-card.styles.ts |         |
+
+# `dist/out/components/card/education/education-card.js`:
+
+## class: `EducationCard`, `education-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name             | Declaration   | Module                                          | Package |
+| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
+| `custom-element-definition` | `education-card` | EducationCard | src/components/card/education/education-card.ts |         |
+| `js`                        | `EducationCard`  | EducationCard | src/components/card/education/education-card.ts |         |
+
+# `dist/out/components/card/profile-bio/profile-bio-card.js`:
+
+## class: `ProfileBioCard`, `profile-bio-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Methods
+
+| Name      | Privacy | Description | Parameters | Return | Inherited From |
+| --------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `bioText` |         |             |            |        |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `_photoData`  | \_photoData |                |
+| `bioText`     | bioText     |                |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name              | Privacy | Description | Parameters | Return | Inherited From |
+| ----------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `_onConfigChange` | private |             |            |        |                |
+| `_photoData`      | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name               | Declaration    | Module                                              | Package |
+| --------------------------- | ------------------ | -------------- | --------------------------------------------------- | ------- |
+| `custom-element-definition` | `profile-bio-card` | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
+| `js`                        | `ProfileBioCard`   | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
+
+# `dist/out/components/card/settings/settings-card.js`:
+
+## class: `SettingsCard`, `settings-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Events
+
+| Name                  | Type          | Description | Inherited From |
+| --------------------- | ------------- | ----------- | -------------- |
+| `color_scheme.change` | `CustomEvent` |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name                         | Privacy | Description                                                                                                                                      | Parameters                               | Return | Inherited From |
+| ---------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | ------ | -------------- |
+| `_appConfigs`                | private |                                                                                                                                                  |                                          |        |                |
+| `_dispatchColorSchemeChange` | private |                                                                                                                                                  | `colorScheme: AppConfigs["colorScheme"]` |        |                |
+| `_onContrastChange`          | private |                                                                                                                                                  | `event: Event`                           |        |                |
+| `_onThemeChange`             | private |                                                                                                                                                  | `event: Event`                           |        |                |
+| `formattedDate`              | private | Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}&#xA;  on {@link time} to render the user presented timestamp |                                          |        |                |
+| `onAppConfigsChange`         | private |                                                                                                                                                  |                                          |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name            | Declaration  | Module                                        | Package |
+| --------------------------- | --------------- | ------------ | --------------------------------------------- | ------- |
+| `custom-element-definition` | `settings-card` | SettingsCard | src/components/card/settings/settings-card.ts |         |
+| `js`                        | `SettingsCard`  | SettingsCard | src/components/card/settings/settings-card.ts |         |
+
+# `src/components/card/skills/skills-card.styles.ts`:
+
+## Variables
+
+| Name               | Description | Type |
+| ------------------ | ----------- | ---- |
+| `skillsCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name               | Declaration      | Module                                           | Package |
+| ---- | ------------------ | ---------------- | ------------------------------------------------ | ------- |
+| `js` | `skillsCardStyles` | skillsCardStyles | src/components/card/skills/skills-card.styles.ts |         |
+
+# `dist/out/components/card/skills/skills-card.js`:
+
+## class: `SkillsCard`, `skills-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name                    | Privacy | Description | Parameters | Return | Inherited From |
+| ----------------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `getSkillsForWordCloud` | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name          | Declaration | Module                                    | Package |
+| --------------------------- | ------------- | ----------- | ----------------------------------------- | ------- |
+| `custom-element-definition` | `skills-card` | SkillsCard  | src/components/card/skills/skills-card.ts |         |
+| `js`                        | `SkillsCard`  | SkillsCard  | src/components/card/skills/skills-card.ts |         |
+
+# `src/components/card/work/work-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `workCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                       | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
+| `js` | `workCardStyles` | workCardStyles | src/components/card/work/work-card.styles.ts |         |
+
+# `dist/out/components/card/work/work-card.js`:
+
+## class: `WorkCard`, `work-card`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name          | Privacy | Type | Default | Description | Inherited From |
+| ------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `enableFocus` |         |      |         |             |                |
+| `enableHover` |         |      |         |             |                |
+| `expanded`    |         |      |         |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name        | Declaration | Module                                | Package |
+| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| `custom-element-definition` | `work-card` | WorkCard    | src/components/card/work/work-card.ts |         |
+| `js`                        | `WorkCard`  | WorkCard    | src/components/card/work/work-card.ts |         |
+
 # `dist/out/components/code/code-project/code-project.js`:
 
 ## class: `CodeProject`, `code-project`
@@ -119,11 +677,11 @@
 | ------------ | ------ | ------- |
 | `LitElement` |        | lit     |
 
-### Fields
+### Methods
 
-| Name          | Privacy | Type              | Default | Description | Inherited From |
-| ------------- | ------- | ----------------- | ------- | ----------- | -------------- |
-| `codeProject` |         | `CodeProjectData` | `{}`    |             |                |
+| Name          | Privacy | Description | Parameters | Return | Inherited From |
+| ------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `codeProject` |         |             |            |        |                |
 
 ### Attributes
 
@@ -135,9 +693,9 @@
 
 ### Fields
 
-| Name      | Privacy | Type      | Default | Description | Inherited From |
-| --------- | ------- | --------- | ------- | ----------- | -------------- |
-| `flipped` | private | `boolean` | `false` |             |                |
+| Name      | Privacy | Type | Default | Description | Inherited From |
+| --------- | ------- | ---- | ------- | ----------- | -------------- |
+| `flipped` | private |      |         |             |                |
 
 ### Methods
 
@@ -158,134 +716,6 @@
 | `js`                        | `CodeProject`     | CodeProject     | src/components/code/code-project/code-project.ts  |         |
 | `js`                        | `CodeProjectData` | CodeProjectData | @/components/code/code-project/code-project.types |         |
 
-# `dist/out/components/dialog/configs/configs-dialog.js`:
-
-## class: `ConfigsDialog`, `configs-dialog`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### Methods
-
-| Name         | Privacy | Description                     | Parameters                 | Return | Inherited From |
-| ------------ | ------- | ------------------------------- | -------------------------- | ------ | -------------- |
-| `hideDialog` | public  | Hides the configuration dialog. |                            |        |                |
-| `showDialog` | public  | Shows the configuration dialog. | `formContent: FormContent` |        |                |
-
-### Events
-
-| Name                  | Type          | Description                                                 | Inherited From |
-| --------------------- | ------------- | ----------------------------------------------------------- | -------------- |
-|                       | `Event`       |                                                             |                |
-| `color_scheme.change` | `CustomEvent` | Dispatched when the UI theme, mode, or contrast is changed. |                |
-| `fab.change`          | `CustomEvent` | Dispatched when a FAB's position or style is modified.      |                |
-| `stepUpOpen`          | `CustomEvent` |                                                             |                |
-
-<details><summary>Private API</summary>
-
-### Fields
-
-| Name                   | Privacy | Type             | Default      | Description | Inherited From |
-| ---------------------- | ------- | ---------------- | ------------ | ----------- | -------------- |
-| `_configsMDDialog`     | private | `MdDialog`       |              |             |                |
-| `_darkModeEnabled`     | private |                  |              |             |                |
-| `_darkModeToggle`      | private | `DarkModeToggle` |              |             |                |
-| `_formContent`         | private |                  | `ui-mode`    |             |                |
-| `_stepUpDialog`        | private |                  |              |             |                |
-| `_stepUpDialogContent` | private |                  | `all custom` |             |                |
-| `_wasOpened`           | private |                  |              |             |                |
-| `openStepUp`           | private |                  |              |             |                |
-
-### Methods
-
-| Name                                | Privacy | Description | Parameters                                               | Return                             | Inherited From |
-| ----------------------------------- | ------- | ----------- | -------------------------------------------------------- | ---------------------------------- | -------------- |
-| `_appConfigs`                       | private |             |                                                          |                                    |                |
-| `_handleDialogEvent`                | private |             | `event: Event`                                           |                                    |                |
-| `#renderFabSettingsFieldset`        | private |             | `fab: "settings" \| "connect", currentConfig: FabConfig` | `TemplateResult`                   |                |
-| `#renderUIFieldset`                 | private |             |                                                          | `TemplateResult`                   |                |
-| `colorSchemeChangeEventListener`    | private |             |                                                          |                                    |                |
-| `completeStepUp`                    | private |             |                                                          |                                    |                |
-| `dialogContent`                     | private |             |                                                          | `TemplateResult \| typeof nothing` |                |
-| `dialogTitle`                       | private |             |                                                          | `string`                           |                |
-| `onAppConfigsChange`                | private |             |                                                          |                                    |                |
-| `onColorThemeModeContrastChange`    | private |             | `colorScheme: AppConfigs["colorScheme"]`                 |                                    |                |
-| `onFabChange`                       | private |             | `fab: "settings" \| "connect", newFabConfig: FabConfig`  |                                    |                |
-| `permanentColorSchemeEventListener` | private |             |                                                          |                                    |                |
-
-</details>
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name             | Declaration   | Module                                          | Package |
-| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
-| `custom-element-definition` | `configs-dialog` | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
-| `js`                        | `ConfigsDialog`  | ConfigsDialog | src/components/dialog/configs/configs-dialog.ts |         |
-| `js`                        | `FormContent`    | FormContent   | ./configs-dialog.types                          |         |
-
-# `dist/out/components/dialog/connect/connect-dialog.js`:
-
-## class: `ConnectDialog`, `connect-dialog`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### Methods
-
-| Name         | Privacy | Description                                                                     | Parameters | Return | Inherited From |
-| ------------ | ------- | ------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
-| `hideDialog` |         | Maps to MdDialog's close method                                                 |            |        |                |
-| `showDialog` |         | Shows the connect dialog and applies a custom border to the internal container. |            |        |                |
-
-### Events
-
-| Name | Type    | Description | Inherited From |
-| ---- | ------- | ----------- | -------------- |
-|      | `Event` |             |                |
-
-### CSS Properties
-
-| Name                                  | Default | Description                                                         |
-| ------------------------------------- | ------- | ------------------------------------------------------------------- |
-| `--connect-dialog-content-transition` | `0.3s`  | The animation duration for expanding/collapsing connection details. |
-
-<details><summary>Private API</summary>
-
-### Fields
-
-| Name        | Privacy | Type       | Default | Description | Inherited From |
-| ----------- | ------- | ---------- | ------- | ----------- | -------------- |
-| `_mdDialog` | private | `MdDialog` |         |             |                |
-
-### Methods
-
-| Name                 | Privacy | Description | Parameters               | Return           | Inherited From |
-| -------------------- | ------- | ----------- | ------------------------ | ---------------- | -------------- |
-| `_handleDialogEvent` | private |             | `event: Event`           |                  |                |
-| `#rederConnections`  | private |             | `connection: Connection` | `TemplateResult` |                |
-| `formattedDate`      | private |             |                          |                  |                |
-| `formattedTime`      | private |             |                          |                  |                |
-| `version`            | private |             |                          |                  |                |
-
-</details>
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name             | Declaration   | Module                                          | Package |
-| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
-| `custom-element-definition` | `connect-dialog` | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
-| `js`                        | `ConnectDialog`  | ConnectDialog | src/components/dialog/connect/connect-dialog.ts |         |
-
 # `dist/out/components/dialog/step-up/step-up-dialog.js`:
 
 ## class: `StepUpDialog`, `step-up-dialog`
@@ -298,10 +728,10 @@
 
 ### Fields
 
-| Name                  | Privacy | Type | Default   | Description                                                         | Inherited From |
-| --------------------- | ------- | ---- | --------- | ------------------------------------------------------------------- | -------------- |
-| `dialogContentString` |         |      |           | The text content to display in the dialog body.                     |                |
-| `dialogStyle`         |         |      | `confirm` | The visual style variant of the dialog, affecting colors and icons. |                |
+| Name                  | Privacy | Type                | Default     | Description                                 | Inherited From |
+| --------------------- | ------- | ------------------- | ----------- | ------------------------------------------- | -------------- |
+| `dialogContentString` |         | `string`            | `""`        | The central content of the {@link MdDialog} |                |
+| `dialogStyle`         |         | `StepUpDialogStyle` | `"confirm"` | Determines which {@link StepUpDialogStyle}  |                |
 
 ### Methods
 
@@ -334,17 +764,17 @@
 
 ### Fields
 
-| Name        | Privacy | Type       | Default | Description | Inherited From |
-| ----------- | ------- | ---------- | ------- | ----------- | -------------- |
-| `_mdDialog` | private | `MdDialog` |         |             |                |
+| Name             | Privacy | Type                                        | Default                                                                                                                                                                                                                                                                                                                                                                                                            | Description | Inherited From |
+| ---------------- | ------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | -------------- |
+| `_mdDialog`      | private | `MdDialog`                                  |                                                                                                                                                                                                                                                                                                                                                                                                                    |             |                |
+| `icons`          | private | `Record<StepUpDialogStyle, TemplateResult>` | ``{ confirm: html`<md-icon slot="icon">check_circle</md-icon>`, warning: html`<md-icon slot="icon">warning</md-icon>`, attention: html`<md-icon slot="icon">report</md-icon>`, }``                                                                                                                                                                                                                                 |             |                |
+| `primaryActions` | private | `Record<StepUpDialogStyle, TemplateResult>` | ``{ confirm: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Confirm</md-filled-button> `, warning: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Continue</md-filled-button> `, attention: html` <md-filled-button @click=${(event: PointerEvent) => this.onButtonClick(false, event)}>Accept</md-filled-button> `, }`` |             |                |
 
 ### Methods
 
-| Name             | Privacy | Description | Parameters                               | Return | Inherited From |
-| ---------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
-| `icons`          | private |             |                                          |        |                |
-| `onButtonClick`  | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
-| `primaryActions` | private |             |                                          |        |                |
+| Name            | Privacy | Description | Parameters                               | Return | Inherited From |
+| --------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
+| `onButtonClick` | private |             | `isCancel: boolean, event: PointerEvent` |        |                |
 
 </details>
 
@@ -429,16 +859,16 @@
 
 ### Fields
 
-| Name         | Privacy | Type                   | Default   | Description                                                                                                                             | Inherited From |
-| ------------ | ------- | ---------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `ariaLabel`  |         |                        |           | The \`aria-label\` of the FAB.                                                                                                          |                |
-| `direction`  |         |                        | `end`     | The direction in which the menu items should expand.                                                                                    |                |
-| `icon`       |         | `MaterialSymbol \| ""` | `add`     | The {@link MaterialSymbol} to display when the menu&#xA;is closed. Defaults to 'add'. An empty {@link string}&#xA;  suppresses the icon |                |
-| `label`      |         |                        |           | The label of the underlying {@link MdFab}.&#xA;Defaults to an empty string.                                                             |                |
-| `open`       |         |                        |           | Whether the menu is currently open.                                                                                                     |                |
-| `openedIcon` |         | `MaterialSymbol`       | `close`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                                                                     |                |
-| `size`       |         |                        | `medium`  | The size of the FAB.&#xA;Can be 'small', 'medium', or 'large'.&#xA;Defaults to 'medium'.                                                |                |
-| `variant`    |         |                        | `primary` | The variant of the FAB.&#xA;Can be 'surface', 'primary', 'secondary', or 'tertiary'.&#xA;Defaults to 'primary'.                         |                |
+| Name         | Privacy | Type                                                  | Default     | Description                                                                             | Inherited From |
+| ------------ | ------- | ----------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------- | -------------- |
+| `ariaLabel`  |         | `string`                                              | `""`        | An override for the \`aria-label\` attribute                                            |                |
+| `direction`  |         | `"start" \| "end"`                                    | `"end"`     | The direction of the menu, one of \`"start"\`, \`"end"\`                                |                |
+| `icon`       |         | `MaterialSymbol \| ""`                                | `"close"`   | The {@link MaterialSymbol} to display when menu is opened                               |                |
+| `label`      |         | `string`                                              | `""`        | The label to display when both opened and closed                                        |                |
+| `open`       |         | `boolean`                                             | `false`     | Indicator of open/closed state                                                          |                |
+| `openedIcon` |         | `MaterialSymbol`                                      | `"close"`   | The icon to display when the menu is open.&#xA;Defaults to 'close'.                     |                |
+| `size`       |         | `"small" \| "medium" \| "large"`                      | `"medium"`  | The size of the underlying {@link MdFab}, one of \`"small"\`, \`"medium"\`, \`"large"\` |                |
+| `variant`    |         | `"surface" \| "primary" \| "secondary" \| "tertiary"` | `"primary"` | The variant, one of \`"primary"\`, \`"secondary"\`, \`"tertiary"\`, \`"surface"\`       |                |
 
 ### Attributes
 
@@ -470,21 +900,21 @@
 
 ### Fields
 
-| Name                 | Privacy | Type             | Default | Description | Inherited From |
-| -------------------- | ------- | ---------------- | ------- | ----------- | -------------- |
-| `_fab`               | private | `MdFab`          |         |             |                |
-| `_focusableElements` | private |                  |         |             |                |
-| `_items`             | private |                  |         |             |                |
-| `_scrim`             | private | `HTMLDivElement` |         |             |                |
+| Name                   | Privacy | Type                                                           | Default | Description | Inherited From |
+| ---------------------- | ------- | -------------------------------------------------------------- | ------- | ----------- | -------------- |
+| `_fab`                 | private | `MdFab`                                                        |         |             |                |
+| `_focusableElements`   | private | `(HTMLElement&{ focus: (options?: FocusOptions) => void; })[]` |         |             |                |
+| `_handleDocumentClick` | private |                                                                |         |             |                |
+| `_items`               | private | `FabMenuItem[]`                                                |         |             |                |
+| `_scrim`               | private | `HTMLDivElement`                                               |         |             |                |
 
 ### Methods
 
-| Name                   | Privacy   | Description | Parameters      | Return             | Inherited From |
-| ---------------------- | --------- | ----------- | --------------- | ------------------ | -------------- |
-| `_handleDocumentClick` | private   |             |                 |                    |                |
-| `_handleFocusTrap`     | private   |             | `e: FocusEvent` |                    |                |
-| `_toggle`              | private   |             |                 |                    |                |
-| `getUpdateComplete`    | protected |             |                 | `Promise<boolean>` |                |
+| Name                | Privacy   | Description | Parameters      | Return             | Inherited From |
+| ------------------- | --------- | ----------- | --------------- | ------------------ | -------------- |
+| `_handleFocusTrap`  | private   |             | `e: FocusEvent` |                    |                |
+| `_toggle`           | private   |             |                 |                    |                |
+| `getUpdateComplete` | protected |             |                 | `Promise<boolean>` |                |
 
 </details>
 
@@ -529,60 +959,6 @@
 | `custom-element-definition` | `info-section` | InfoSection | src/components/info-section/info-section.ts |         |
 | `js`                        | `InfoSection`  | InfoSection | src/components/info-section/info-section.ts |         |
 
-# `dist/out/components/nav/nav-component.js`:
-
-## class: `NavComponent`, `nav-component`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### CSS Properties
-
-| Name                                     | Default | Description                                                   |
-| ---------------------------------------- | ------- | ------------------------------------------------------------- |
-| `--nav-component-icon-animation`         | `225ms` | The duration of the icon's fill and color transition.         |
-| `--nav-component-icon-animation-reduced` | `1ms`   | The duration of the icon's transition when motion is reduced. |
-
-<details><summary>Private API</summary>
-
-### Fields
-
-| Name                 | Privacy | Type                               | Default                                                                           | Description | Inherited From |
-| -------------------- | ------- | ---------------------------------- | --------------------------------------------------------------------------------- | ----------- | -------------- |
-| `_activeRoute`       | private | `Route`                            |                                                                                   |             |                |
-| `_activeTabIndex`    | private | `number`                           | `0`                                                                               |             |                |
-| `_exitingRoute`      | private | `Route \| null`                    | `null`                                                                            |             |                |
-| `_tabRefMap`         | private | `Record<Route, Ref<MdPrimaryTab>>` | `{ work: createRef(), code: createRef(), info: createRef(), blog: createRef(), }` |             |                |
-| `#boundListener`     | private |                                    |                                                                                   |             |                |
-| `#inlineIconTimeout` | private | `number`                           | `0`                                                                               |             |                |
-| `#routes`            | private | `Route[]`                          |                                                                                   |             |                |
-| `#tabsRef`           | private | `Ref<MdTabs>`                      |                                                                                   |             |                |
-
-### Methods
-
-| Name                        | Privacy | Description                                                                                                        | Parameters      | Return           | Inherited From |
-| --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ | --------------- | ---------------- | -------------- |
-| `#handleHashChange`         | private | Syncs internal state with the URL hash.                                                                            |                 |                  |                |
-| `#onTabChange`              | private | Handles user clicks on tabs. Updates URL and UI.                                                                   | `event: Event`  |                  |                |
-| `#renderTabs`               | private | Creates a TemplateResult consisting of @material/web!MdTabs, @material/web!MdPrimaryTab, and @material/web!MdIcons |                 | `TemplateResult` |                |
-| `#tabIndexAndRouteFromHash` | private | Reads window\.location.hash and returns an object containing the Route and indexing Number                         |                 |                  |                |
-| `#updateCarousel`           | private | Updates external DOM via style manipulations and blind queries                                                     | `index: number` |                  |                |
-| `#updateTabState`           | private | Updates the visual state of tabs and panels based on the index.                                                    | `index: number` |                  |                |
-
-</details>
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name            | Declaration  | Module                              | Package |
-| --------------------------- | --------------- | ------------ | ----------------------------------- | ------- |
-| `custom-element-definition` | `nav-component` | NavComponent | src/components/nav/nav-component.ts |         |
-| `js`                        | `NavComponent`  | NavComponent | src/components/nav/nav-component.ts |         |
-
 # `dist/out/components/partial-header/partial-header.js`:
 
 ## class: `PartialHeader`, `partial-header`
@@ -616,6 +992,73 @@
 | `custom-element-definition` | `partial-header` | PartialHeader | src/components/partial-header/partial-header.ts |         |
 | `js`                        | `PartialHeader`  | PartialHeader | src/components/partial-header/partial-header.ts |         |
 
+# `dist/out/components/ui-mode-toggle/ui-mode-toggle.js`:
+
+## class: `UiModeToggle`, `ui-mode-toggle`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+### Fields
+
+| Name        | Privacy | Type | Default  | Description                                                                         | Inherited From |
+| ----------- | ------- | ---- | -------- | ----------------------------------------------------------------------------------- | -------------- |
+| `mode`      |         |      | `system` | Reflects the currently active color scheme mode.                                    |                |
+| `permanent` |         |      |          | Controls whether the selected color scheme preference is persisted across sessions. |                |
+
+### Methods
+
+| Name    | Privacy | Description                                        | Parameters | Return | Inherited From |
+| ------- | ------- | -------------------------------------------------- | ---------- | ------ | -------------- |
+| `reset` | public  | Resets the UI mode toggle to its default settings. |            | `void` |                |
+
+### Events
+
+| Name                   | Type          | Description                                                                                                                                      | Inherited From |
+| ---------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `color_scheme.change`  | `CustomEvent` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new \`AppConfigs\["colorScheme"]\` details. |                |
+| `colorschemechange`    |               | Event from \`dark-mode-toggle\` when the scheme changes.                                                                                         |                |
+| `permanentcolorscheme` |               | Event from \`dark-mode-toggle\` when the persistence changes.                                                                                    |                |
+
+### Attributes
+
+| Name        | Field     | Inherited From |
+| ----------- | --------- | -------------- |
+| `mode`      | mode      |                |
+| `permanent` | permanent |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name              | Privacy | Type             | Default | Description | Inherited From |
+| ----------------- | ------- | ---------------- | ------- | ----------- | -------------- |
+| `_darkModeToggle` | private | `DarkModeToggle` |         |             |                |
+
+### Methods
+
+| Name                                | Privacy | Description | Parameters                               | Return | Inherited From |
+| ----------------------------------- | ------- | ----------- | ---------------------------------------- | ------ | -------------- |
+| `_appConfigs`                       | private |             |                                          |        |                |
+| `colorSchemeChangeEventListener`    | private |             |                                          |        |                |
+| `onAppConfigsChange`                | private |             |                                          |        |                |
+| `onColorThemeModeContrastChange`    | private |             | `colorScheme: AppConfigs["colorScheme"]` |        |                |
+| `permanentColorSchemeEventListener` | private |             |                                          |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name             | Declaration  | Module                                          | Package |
+| --------------------------- | ---------------- | ------------ | ----------------------------------------------- | ------- |
+| `custom-element-definition` | `ui-mode-toggle` | UiModeToggle | src/components/ui-mode-toggle/ui-mode-toggle.ts |         |
+| `js`                        | `UiModeToggle`   | UiModeToggle | src/components/ui-mode-toggle/ui-mode-toggle.ts |         |
+
 # `dist/out/components/word/word-cloud/word-cloud.js`:
 
 ## class: `WordCloud`, `word-cloud`
@@ -628,16 +1071,21 @@
 
 ### Fields
 
-| Name           | Privacy | Type                        | Default  | Description                                                                                                                                                                    | Inherited From |
-| -------------- | ------- | --------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `_sortedWords` |         | `RenderableWordCloudWord[]` | `[]`     |                                                                                                                                                                                |                |
-| `appearance`   |         | `WordCloudAppearance`       |          | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).                 |                |
-| `delay`        |         | `number \| "none"`          | `"none"` | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
-| `grouping`     |         | `WordCloudGrouping`         |          | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                                    |                |
-| `instantClear` |         | `boolean`                   | `false`  | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
-| `sorting`      |         | `WordCloudSorting`          |          | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.           |                |
-| `threshold`    |         | `number`                    | `0.1`    | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
-| `words`        |         | `WordCloudWord[]`           | `[]`     | The list of words to display in the cloud.                                                                                                                                     |                |
+| Name           | Privacy | Type               | Default | Description                                                                                                                                                                    | Inherited From |
+| -------------- | ------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `_sortedWords` |         |                    | ``      |                                                                                                                                                                                |                |
+| `delay`        |         | `number \| "none"` | `none`  | The delay in milliseconds between word appearances when using sequential mode.&#xA;&#xA;Set to "none" to use the component's internal default delays.                          |                |
+| `instantClear` |         |                    |         | Whether to clear the word cloud instantly when it is no longer visible.&#xA;When true, the cloud resets instantly to opacity 0 instead of fading out.                          |                |
+| `threshold`    |         |                    | `0.1`   | The intersection observer threshold for visibility detection.&#xA;&#xA;A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |                |
+| `words`        |         |                    | ``      | The list of words to display in the cloud.                                                                                                                                     |                |
+
+### Methods
+
+| Name         | Privacy | Description                                                                                                                                                          | Parameters | Return | Inherited From |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `appearance` |         | Controls the order in which words are animated/displayed.&#xA;&#xA;Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).       |            |        |                |
+| `grouping`   |         | Controls how words are grouped together within the cloud.&#xA;&#xA;Supported modes: 'category', 'quartile', or 'ungrouped'.                                          |            |        |                |
+| `sorting`    |         | Controls how words are sorted within their groupings.&#xA;&#xA;Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'. |            |        |                |
 
 ### Attributes
 
@@ -670,11 +1118,11 @@
 
 ### Fields
 
-| Name                    | Privacy | Type                                | Default | Description | Inherited From |
-| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
-| `_intersectionObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
-| `_isVisible`            | private | `boolean`                           | `false` |             |                |
-| `_listElement`          | private | `HTMLUListElement`                  |         |             |                |
+| Name                    | Privacy | Type               | Default | Description | Inherited From |
+| ----------------------- | ------- | ------------------ | ------- | ----------- | -------------- |
+| `_intersectionObserver` | private |                    |         |             |                |
+| `_isVisible`            | private |                    |         |             |                |
+| `_listElement`          | private | `HTMLUListElement` |         |             |                |
 
 ### Methods
 
@@ -802,16 +1250,16 @@
 
 ### Fields
 
-| Name                | Privacy | Type                      | Default                   | Description                                                                  | Inherited From |
-| ------------------- | ------- | ------------------------- | ------------------------- | ---------------------------------------------------------------------------- | -------------- |
-| `dateEnd`           |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment end date                   |                |
-| `dateStart`         |         | `WorkDate`                | `{ stamp: "", text: "" }` | A {@link WorkDate} instance describing employment start date                 |                |
-| `experienceOrg`     |         | `string`                  | `""`                      | The employer formal name                                                     |                |
-| `experienceRole`    |         | `string`                  | `""`                      | The formal role from the {@link WorkExperience} instance                     |                |
-| `experienceSummary` |         | `string`                  | `""`                      | An optional summary of the overall role                                      |                |
-| `isNested`          |         | `boolean`                 | `false`                   | Whether this is a nested instance                                            |                |
-| `jobs`              |         | `Array<Job>`              | `[]`                      | An array of {@link Job}s rendered as nested {@link WorkExperience} instances |                |
-| `summaries`         |         | `Array<{ item: string }>` | `[]`                      | An array of \`{ item: string }\` objects describing the responsibilities     |                |
+| Name                | Privacy | Type | Default                   | Description                                                                     | Inherited From |
+| ------------------- | ------- | ---- | ------------------------- | ------------------------------------------------------------------------------- | -------------- |
+| `dateEnd`           |         |      | `{ stamp: "", text: "" }` | End date information including machine-readable stamp and display text.         |                |
+| `dateStart`         |         |      | `{ stamp: "", text: "" }` | Start date information including machine-readable stamp and display text.       |                |
+| `experienceOrg`     |         |      |                           | The name of the organization or client.                                         |                |
+| `experienceRole`    |         |      |                           | The title of the professional role or project.                                  |                |
+| `experienceSummary` |         |      |                           | An optional summary of the overall role                                         |                |
+| `isNested`          |         |      |                           | If true, adjusts font sizes and layout for a nested appearance.                 |                |
+| `jobs`              |         |      | ``                        | A list of sub-jobs or project assignments to be rendered as nested experiences. |                |
+| `summaries`         |         |      | ``                        | An array of \`{ item: string }\` objects describing the responsibilities        |                |
 
 ### Attributes
 

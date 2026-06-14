@@ -1,0 +1,17 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "bento-layout",
+      "path": "./../../../src/components/bento-layout/bento-layout.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
+        }
+      ]
+    }
+  ]
+}

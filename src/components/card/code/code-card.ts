@@ -1,0 +1,58 @@
+import "@/components/card/bento/bento-card";
+import { CodeCardStyles } from "@/components/card/code/code-card.styles";
+import "@/components/code/repo/code-repo";
+import CodeJson from "@/data/code.json" with { type: "json" };
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+
+/**
+ * @summary CodeCard - A card component displaying code projects.
+ *
+ * @element code-card
+ */
+@customElement("code-card")
+export class CodeCard extends LitElement {
+  /** {@link lit!css} */
+  static override styles = [CodeCardStyles];
+
+  @property({ type: Boolean })
+  expanded = false;
+
+  @property({ type: Boolean })
+  enableHover = false;
+
+  @property({ type: Boolean })
+  enableFocus = false;
+
+  override connectedCallback() {
+    super.connectedCallback();
+    this.id = "code";
+  }
+
+  override render() {
+    return html`
+      <bento-card
+        class="code-container"
+        scrollable
+        ?expanded=${this.expanded}
+        ?enableHover=${this.enableHover}
+        ?enableFocus=${this.enableFocus}
+        .bentoCardTitle=${"Code Projects"}
+      >
+        <div class="code-list">
+          ${CodeJson.projects.map(
+            (p) => html`
+              <code-repo .codeRepo="${p}"></code-repo>
+            `,
+          )}
+        </div>
+      </bento-card>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "code-card": CodeCard;
+  }
+}

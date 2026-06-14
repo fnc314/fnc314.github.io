@@ -7,15 +7,25 @@
       "graduationDate": {
         "label": "April 2014",
         "value": "2014-04"
+      },
+      "designToken": {
+        "dark": "--icons-logos-education-general-assembly-dark",
+        "default": "--icons-logos-education-general-assembly-default",
+        "light": "--icons-logos-education-general-assembly-light"
       }
     },
     {
       "institute": "University of Pittsburgh",
-      "degree": "Bachelor of Science in Mathematics",
+      "degree": "Bachelor of Science, Mathematics",
       "location": "Pittsburgh, PA",
       "graduationDate": {
         "label": "April 2011",
         "value": "2011-04"
+      },
+      "designToken": {
+        "dark": "--icons-logos-education-university-of-pittsburgh-dark",
+        "default": "--icons-logos-education-university-of-pittsburgh-default",
+        "light": "--icons-logos-education-university-of-pittsburgh-light"
       }
     }
   ]

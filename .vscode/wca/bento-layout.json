@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "bento-layout",
+      "description": "Properties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_bentoBoxConfigs` - \n\n  * `_currentBreakpoint` - \n\n  * `_windowResizeObserver` - \n\n  * `_scrollSpyObserver` - \n\n  * `_activeRoute` - ",
+      "attributes": []
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

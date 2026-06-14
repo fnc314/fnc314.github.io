@@ -7,61 +7,60 @@
       "declarations": [
         {
           "name": "AppShell",
+          "summary": "The core layout component for the application.\nHandles theme switching and navigation slotting.\nUses Material Design 3 tokens and components.",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
           "members": [
             {
-              "name": "onFabChangeBind",
-              "default": "this.onFabChange.bind(this)",
+              "name": "_inlineIconTimeout",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
               "kind": "field",
               "privacy": "private"
             },
             {
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "\"settings\" | \"connect\""
-                  }
-                },
-                {
-                  "name": "fabConfig",
-                  "type": {
-                    "text": "FabConfig"
-                  }
-                }
-              ],
-              "name": "onFabChange",
-              "description": "Updates the state and DOM representation of a FAB when its configuration changes.",
+              "name": "_boundListener",
+              "default": "this._handleHashChange.bind(this)",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_scrollSpyObserver",
+              "type": {
+                "text": "IntersectionObserver"
+              },
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_setupScrollSpy",
               "kind": "method",
               "privacy": "private"
             },
             {
               "parameters": [
                 {
-                  "name": "event",
+                  "name": "id",
                   "type": {
-                    "text": "FabConfigChange"
+                    "text": "string"
                   }
                 }
               ],
-              "name": "onFabConfigBind",
+              "return": {
+                "type": {
+                  "text": "Route | null"
+                }
+              },
+              "name": "_routeFromElementId",
               "kind": "method",
               "privacy": "private"
             },
             {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "ColorSchemeConfigChange"
-                  }
-                }
-              ],
-              "name": "onColorSchemeChange",
-              "description": "Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.",
+              "name": "_handleHashChange",
               "kind": "method",
               "privacy": "private"
             },
@@ -74,100 +73,30 @@
                   }
                 }
               ],
+              "name": "onColorSchemeChange",
+              "description": "Event handler for color scheme changes.\nUpdates the UI icon, Material theme variables, and meta theme color.",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
               "name": "onAppConfigsChange",
               "description": "Syncs the component state with the global application configuration.",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "colorScheme",
-                  "type": {
-                    "text": "AppConfigs[\"colorScheme\"]"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "\"dark_mode\" | \"light_mode\" | \"routine\""
-                }
-              },
-              "name": "uiModeIcon",
-              "description": "Maps a color scheme name to a Material icon name.",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "name": "_handleDialogOpened",
-              "description": "Tracks open dialogs to manage body scroll locking.",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "name": "_handleDialogClosed",
-              "description": "Tracks closed dialogs to manage body scroll restoration.",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "formContent",
-                  "type": {
-                    "text": "FormContent"
-                  }
-                }
-              ],
-              "name": "_onFabMenuItemClick",
-              "description": "Handles clicks on FAB menu items.\nCloses the menu and opens the configuration dialog with the requested content.",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "config",
-                  "type": {
-                    "text": "FabConfig"
-                  }
-                }
-              ],
-              "return": {
-                "description": "The label string or an empty string if the style is icon-only."
-              },
-              "name": "_getFabLabel",
-              "description": "Generates the label string for a FAB based on its configuration style.",
               "kind": "method",
               "privacy": "private"
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L39"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/app-shell/app-shell.ts#L24"
           },
           "kind": "class",
           "tagName": "app-shell",
           "slots": [
             {
-              "name": "app-nav"
+              "name": "",
+              "description": "[app-content] - The place for the dynamic application content"
             },
             {
               "name": "app-content"
-            }
-          ],
-          "cssProperties": [
-            {
-              "name": "--md-fab-icon-size",
-              "default": "var(--md-icon-size)"
-            },
-            {
-              "name": "--md-icon-size"
             }
           ],
           "customElement": true
@@ -188,6 +117,161 @@
           "declaration": {
             "name": "AppShell",
             "module": "src/components/app-shell/app-shell.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.js",
+      "declarations": [
+        {
+          "name": "BentoLayout",
+          "summary": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "_windowResizeObserver",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "name": "_scrollSpyObserver",
+              "type": {
+                "text": "IntersectionObserver"
+              },
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_activeRoute",
+              "type": {
+                "text": "Route"
+              },
+              "default": "ROUTES.INFO",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "name": "_setupScrollSpy",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "Route | null"
+                }
+              },
+              "name": "_routeFromElementId",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "config",
+                  "type": {
+                    "text": "BentoBoxConfig"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "name": "renderBentoBox",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.ts#L29"
+          },
+          "kind": "class",
+          "tagName": "bento-layout",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bento-layout",
+          "declaration": {
+            "name": "BentoLayout",
+            "module": "src/components/bento-layout/bento-layout.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BentoLayout",
+          "declaration": {
+            "name": "BentoLayout",
+            "module": "src/components/bento-layout/bento-layout.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.styles.js",
+      "declarations": [
+        {
+          "name": "bentoLayoutStyles",
+          "summary": "Styles for the BentoLayout component.\n\nOrchestrates the responsive grid layout for the bento box UI.\nSupports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.styles.ts#L9"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoLayoutStyles",
+          "declaration": {
+            "name": "bentoLayoutStyles",
+            "module": "src/components/bento-layout/bento-layout.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bento-layout/bento-layout.types.js",
+      "declarations": [
+        {
+          "name": "BentoBoxConfigs",
+          "description": "Produces an Array of {@link BentoBoxConfig} instances used to populate",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/bento-layout/bento-layout.types.ts#L60"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BentoBoxConfigs",
+          "declaration": {
+            "name": "BentoBoxConfigs",
+            "module": "src/components/bento-layout/bento-layout.types.js"
           }
         }
       ]
@@ -253,7 +337,7 @@
             },
             {
               "name": "--blog-post-container-color",
-              "description": "The color of the container, {@link @material/web!MdElevatedCard}\nand {@link @material/web!--md-elevated-card-container-color}\n@cssprop --blog-post-word-tag-container-color - The color of the container, {@link @fnc314/com.fnc314.website!WordTag}"
+              "description": "The color of the container, {@link @material/web!MdElevatedCard}\nand {@link @material/web!--md-elevated-card-container-color}\n\n@see BlogPostJson"
             }
           ],
           "customElement": true
@@ -284,6 +368,1253 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.js",
+      "declarations": [
+        {
+          "name": "BentoCard",
+          "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `\u003cdetails\u003e` and `\u003csummary\u003e` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "scrollable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "scrollable"
+            },
+            {
+              "name": "expanded",
+              "description": "Reflects and controls the open state of the underlying `\u003cdetails\u003e` element.\nWhen true, the card is expanded and content is visible.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded",
+              "reflects": true
+            },
+            {
+              "name": "enableHover",
+              "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_handleToggle",
+              "description": "Synchronizes the `expanded` property with the state of the `\u003cdetails\u003e` element\nwhenever the user interacts with the toggle icon or summary.",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.ts#L30"
+          },
+          "kind": "class",
+          "tagName": "bento-card",
+          "attributes": [
+            {
+              "name": "scrollable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "scrollable"
+            },
+            {
+              "name": "expanded",
+              "description": "Reflects and controls the open state of the underlying `\u003cdetails\u003e` element.\nWhen true, the card is expanded and content is visible.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "description": "Whether to enable the lift-on-hover effect.\nDefaults to false to minimize visual motion in dense layout grids.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to false.",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "slots": [
+            {
+              "name": "header",
+              "description": "Content to be displayed in the card's header/summary area."
+            },
+            {
+              "name": "",
+              "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bento-card",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BentoCard",
+          "declaration": {
+            "name": "BentoCard",
+            "module": "src/components/card/bento/bento-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.styles.js",
+      "declarations": [
+        {
+          "name": "bentoCardStyles",
+          "summary": "Styles for the BentoCard component.\n\nImplements glassmorphism using `backdrop-filter` and semi-transparent background colors\nderived from Material Design 3 surface tokens. Provides interaction feedback via\nCSS transitions on hover, including elevation (shadow), border color shifts, and translation.\n\nIncludes specific styling for slotted `h2` elements to ensure visual consistency\nfor section headers within the bento grid layout.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/bento/bento-card.styles.ts#L15"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "bentoCardStyles",
+          "declaration": {
+            "name": "bentoCardStyles",
+            "module": "src/components/card/bento/bento-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/bento/bento-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/blog/blog-card.js",
+      "declarations": [
+        {
+          "name": "BlogCard",
+          "summary": "BlogCard - A card component displaying blog posts.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.ts#L15"
+          },
+          "kind": "class",
+          "tagName": "blog-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "blog-card",
+          "declaration": {
+            "name": "BlogCard",
+            "module": "src/components/card/blog/blog-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BlogCard",
+          "declaration": {
+            "name": "BlogCard",
+            "module": "src/components/card/blog/blog-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/blog/blog-card.styles.js",
+      "declarations": [
+        {
+          "name": "blogCardStyles",
+          "summary": "Styles for the BlogCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/blog/blog-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "blogCardStyles",
+          "declaration": {
+            "name": "blogCardStyles",
+            "module": "src/components/card/blog/blog-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/blog/blog-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.js",
+      "declarations": [
+        {
+          "name": "CodeCard",
+          "summary": "CodeCard - A card component displaying code projects.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "code-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "code-card",
+          "declaration": {
+            "name": "CodeCard",
+            "module": "src/components/card/code/code-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CodeCard",
+          "declaration": {
+            "name": "CodeCard",
+            "module": "src/components/card/code/code-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.styles.js",
+      "declarations": [
+        {
+          "name": "codeCardStyles",
+          "summary": "Styles for the CodeCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/code/code-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "codeCardStyles",
+          "declaration": {
+            "name": "codeCardStyles",
+            "module": "src/components/card/code/code-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/code/code-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.js",
+      "declarations": [
+        {
+          "name": "ConnectCard",
+          "summary": "ConnectCard - A card component displaying contact/connection links.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "connect-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "connect-card",
+          "declaration": {
+            "name": "ConnectCard",
+            "module": "src/components/card/connect/connect-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ConnectCard",
+          "declaration": {
+            "name": "ConnectCard",
+            "module": "src/components/card/connect/connect-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.styles.js",
+      "declarations": [
+        {
+          "name": "connectCardStyles",
+          "summary": "Styles for the ConnectCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/connect/connect-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "connectCardStyles",
+          "declaration": {
+            "name": "connectCardStyles",
+            "module": "src/components/card/connect/connect-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/connect/connect-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.js",
+      "declarations": [
+        {
+          "name": "EducationCard",
+          "summary": "EducationCard - A card component displaying education history.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.ts#L13"
+          },
+          "kind": "class",
+          "tagName": "education-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "education-card",
+          "declaration": {
+            "name": "EducationCard",
+            "module": "src/components/card/education/education-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "EducationCard",
+          "declaration": {
+            "name": "EducationCard",
+            "module": "src/components/card/education/education-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.styles.js",
+      "declarations": [
+        {
+          "name": "educationCardStyles",
+          "summary": "Styles for the EducationCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/education/education-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "educationCardStyles",
+          "declaration": {
+            "name": "educationCardStyles",
+            "module": "src/components/card/education/education-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/education/education-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/profile-bio/profile-bio-card.js",
+      "declarations": [
+        {
+          "name": "ProfileBioCard",
+          "summary": "A responsive card component that displays a profile photo and biography.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "_photoData",
+              "default": "PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson]",
+              "kind": "field",
+              "privacy": "private",
+              "attribute": "_photodata"
+            },
+            {
+              "name": "bioText",
+              "type": {
+                "text": "string"
+              },
+              "default": "BioJson.bio",
+              "kind": "field",
+              "attribute": "biotext"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "name": "_onConfigChange",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/profile-bio/profile-bio-card.ts#L15"
+          },
+          "kind": "class",
+          "tagName": "profile-bio-card",
+          "attributes": [
+            {
+              "name": "_photodata",
+              "default": "PhotoJson[configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson]",
+              "fieldName": "_photoData"
+            },
+            {
+              "name": "biotext",
+              "type": {
+                "text": "string"
+              },
+              "default": "BioJson.bio",
+              "fieldName": "bioText"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--spacing-margin-s"
+            },
+            {
+              "name": "--md-sys-color-primary"
+            },
+            {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--spacing-margin-xs"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-bio-card",
+          "declaration": {
+            "name": "ProfileBioCard",
+            "module": "src/components/card/profile-bio/profile-bio-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfileBioCard",
+          "declaration": {
+            "name": "ProfileBioCard",
+            "module": "src/components/card/profile-bio/profile-bio-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/profile-bio/profile-bio-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/settings/settings-card.js",
+      "declarations": [
+        {
+          "name": "SettingsCard",
+          "summary": "A card component for managing application settings, including theme, contrast, and UI mode.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "name": "formattedDate",
+              "description": "Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}\non {@link time} to render the user presented timestamp",
+              "type": {
+                "text": "string"
+              },
+              "default": "new Intl.DateTimeFormat(\\n    navigator.languages,\\n    {\\n      hour: \"2-digit\",\\n      minute: \"2-digit\",\\n      second: \"2-digit\",\\n      month: \"2-digit\",\\n      day: \"2-digit\",\\n      year: \"numeric\",\\n    }\\n  ).format(time)",
+              "kind": "field",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_onThemeChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "_onContrastChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "name": "_dispatchColorSchemeChange",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/settings/settings-card.ts#L23"
+          },
+          "kind": "class",
+          "tagName": "settings-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--spacing-margin-s"
+            },
+            {
+              "name": "--spacing-margin-xxs"
+            },
+            {
+              "name": "--md-sys-typescale-label-large-size"
+            },
+            {
+              "name": "--md-sys-color-surface"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--md-sys-color-outline"
+            },
+            {
+              "name": "--md-sys-shape-corner-small"
+            },
+            {
+              "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-size"
+            },
+            {
+              "name": "--spacing-padding-xs"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--spacing-padding-m"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "settings-card",
+          "declaration": {
+            "name": "SettingsCard",
+            "module": "src/components/card/settings/settings-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SettingsCard",
+          "declaration": {
+            "name": "SettingsCard",
+            "module": "src/components/card/settings/settings-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.js",
+      "declarations": [
+        {
+          "name": "SkillsCard",
+          "summary": "SkillsCard - A card component displaying a skill word cloud.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            },
+            {
+              "name": "getSkillsForWordCloud",
+              "kind": "method",
+              "privacy": "private"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.ts#L15"
+          },
+          "kind": "class",
+          "tagName": "skills-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "skills-card",
+          "declaration": {
+            "name": "SkillsCard",
+            "module": "src/components/card/skills/skills-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SkillsCard",
+          "declaration": {
+            "name": "SkillsCard",
+            "module": "src/components/card/skills/skills-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.styles.js",
+      "declarations": [
+        {
+          "name": "skillsCardStyles",
+          "summary": "Styles for the SkillsCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/skills/skills-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "skillsCardStyles",
+          "declaration": {
+            "name": "skillsCardStyles",
+            "module": "src/components/card/skills/skills-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/skills/skills-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.js",
+      "declarations": [
+        {
+          "name": "WorkCard",
+          "summary": "WorkCard - A card component displaying work experience.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "expanded"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablehover"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "enablefocus"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.ts#L14"
+          },
+          "kind": "class",
+          "tagName": "work-card",
+          "attributes": [
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "name": "enablehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "enablefocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "work-card",
+          "declaration": {
+            "name": "WorkCard",
+            "module": "src/components/card/work/work-card.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WorkCard",
+          "declaration": {
+            "name": "WorkCard",
+            "module": "src/components/card/work/work-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.styles.js",
+      "declarations": [
+        {
+          "name": "workCardStyles",
+          "summary": "Styles for the WorkCard component.",
+          "kind": "variable",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/card/work/work-card.styles.ts#L7"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "workCardStyles",
+          "declaration": {
+            "name": "workCardStyles",
+            "module": "src/components/card/work/work-card.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/card/work/work-card.test.js"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/code/code-project/code-project.js",
       "declarations": [
         {
@@ -305,7 +1636,7 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L22"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/code/code-project/code-project.ts#L23"
           },
           "kind": "class",
           "tagName": "code-project",
@@ -331,16 +1662,40 @@
               "default": "800ms"
             },
             {
+              "name": "--motion-duration-short"
+            },
+            {
+              "name": "--motion-elevation-level-4"
+            },
+            {
               "name": "--md-sys-shape-corner-medium"
             },
             {
-              "name": "--internal-code-project-rotation"
+              "name": "--spacing-margin-xxs"
+            },
+            {
+              "name": "--motion-elevation-level-6"
+            },
+            {
+              "name": "--spacing-margin-s"
+            },
+            {
+              "name": "--spacing-padding-m"
             },
             {
               "name": "--md-outlined-card-container-shape"
             },
             {
+              "name": "--internal-code-project-rotation"
+            },
+            {
+              "name": "--motion-easing-standard"
+            },
+            {
               "name": "--md-sys-color-surface-container-high"
+            },
+            {
+              "name": "--spacing-reset"
             },
             {
               "name": "--md-sys-color-surface-container-low"
@@ -353,6 +1708,9 @@
             },
             {
               "name": "--md-outlined-card-container-color"
+            },
+            {
+              "name": "--spacing-margin-l"
             },
             {
               "name": "--md-sys-color-on-surface-variant"
@@ -386,427 +1744,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/dialog/configs/configs-dialog.js",
-      "declarations": [
-        {
-          "name": "ConfigsDialog",
-          "summary": "A comprehensive configuration dialog for managing application settings. Allows users to toggle dark mode, change color themes, adjust contrast,\nand customize Floating Action Button (FAB) behaviors.",
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "members": [
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ],
-              "name": "_handleDialogEvent",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ],
-              "name": "onAppConfigsChange",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "formContent",
-                  "type": {
-                    "text": "\"ui-mode\" | \"button-settings\" | \"button-connect\"",
-                    "references": [
-                      {
-                        "name": "FormContent",
-                        "module": "src/components/dialog/configs/configs-dialog.types.js"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "Promise\u003cvoid\u003e"
-                }
-              },
-              "name": "showDialog",
-              "description": "Shows the configuration dialog.",
-              "kind": "method",
-              "privacy": "public"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "Promise\u003cvoid\u003e"
-                }
-              },
-              "name": "hideDialog",
-              "description": "Hides the configuration dialog.",
-              "kind": "method",
-              "privacy": "public"
-            },
-            {
-              "name": "openStepUp",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "CompleteStepUpDialog"
-                  }
-                }
-              ],
-              "name": "completeStepUp",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "CustomEvent\u003c{ colorScheme: ColorScheme }\u003e",
-                    "references": [
-                      {
-                        "name": "ColorSchemeChangeEvent",
-                        "package": "dark-mode-toggle"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "name": "colorSchemeChangeEventListener",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "CustomEvent\u003c{ permanent: boolean }\u003e",
-                    "references": [
-                      {
-                        "name": "PermanentColorSchemeEvent",
-                        "package": "dark-mode-toggle"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "name": "permanentColorSchemeEventListener",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "fab",
-                  "type": {
-                    "text": "\"settings\" | \"connect\""
-                  }
-                },
-                {
-                  "name": "newFabConfig",
-                  "type": {
-                    "text": "FabConfig"
-                  }
-                }
-              ],
-              "name": "onFabChange",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "colorScheme",
-                  "type": {
-                    "text": "AppConfigs[\"colorScheme\"]"
-                  }
-                }
-              ],
-              "name": "onColorThemeModeContrastChange",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "TemplateResult | typeof nothing"
-                }
-              },
-              "name": "dialogContent",
-              "kind": "method",
-              "privacy": "private"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "name": "dialogTitle",
-              "kind": "method",
-              "privacy": "private"
-            }
-          ],
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/configs/configs-dialog.ts#L61"
-          },
-          "kind": "class",
-          "tagName": "configs-dialog",
-          "events": [
-            {
-              "name": "fab",
-              "type": {
-                "text": "Event",
-                "references": [
-                  {
-                    "name": "Event",
-                    "package": "global:"
-                  }
-                ]
-              }
-            },
-            {
-              "name": "color_scheme",
-              "type": {
-                "text": "Event",
-                "references": [
-                  {
-                    "name": "Event",
-                    "package": "global:"
-                  }
-                ]
-              }
-            }
-          ],
-          "cssProperties": [
-            {
-              "name": "--md-sys-color-surface-container-highest"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-sys-color-primary"
-            },
-            {
-              "name": "--md-sys-color-error"
-            },
-            {
-              "name": "--md-ref-typeface-brand"
-            },
-            {
-              "name": "--md-sys-color-on-surface-variant"
-            },
-            {
-              "name": "--hairline-width"
-            },
-            {
-              "name": "--md-sys-color-surface-container-lowest"
-            },
-            {
-              "name": "--icon-fill-color"
-            },
-            {
-              "name": "--md-sys-color-outline"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
-            }
-          ],
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "configs-dialog",
-          "declaration": {
-            "name": "ConfigsDialog",
-            "module": "src/components/dialog/configs/configs-dialog.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ConfigsDialog",
-          "declaration": {
-            "name": "ConfigsDialog",
-            "module": "src/components/dialog/configs/configs-dialog.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/dialog/configs/configs-dialog.types.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/dialog/connect/connect-dialog.js",
-      "declarations": [
-        {
-          "name": "ConnectDialog",
-          "summary": "A dialog component that provides various contact methods and social links. It\nfeatures collapsible sections for different connection categories.",
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "members": [
-            {
-              "name": "formattedDate",
-              "type": {
-                "text": "string"
-              },
-              "default": "new Intl.DateTimeFormat(navigator.languages, {\\n    month: \"2-digit\",\\n    day: \"2-digit\",\\n    year: \"numeric\",\\n  }).format(time)",
-              "kind": "field",
-              "privacy": "private"
-            },
-            {
-              "name": "formattedTime",
-              "type": {
-                "text": "string"
-              },
-              "default": "new Intl.DateTimeFormat(navigator.languages, {\\n    hour: \"2-digit\",\\n    minute: \"2-digit\",\\n    second: \"2-digit\",\\n  }).format(time)",
-              "kind": "field",
-              "privacy": "private"
-            },
-            {
-              "name": "version",
-              "default": "buildVersion",
-              "kind": "field",
-              "privacy": "private"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "Promise\u003cvoid\u003e"
-                }
-              },
-              "name": "showDialog",
-              "description": "Shows the connect dialog and applies a custom border to the internal container.",
-              "kind": "method"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "Promise\u003cvoid\u003e"
-                }
-              },
-              "name": "hideDialog",
-              "description": "Maps to {@link MdDialog}'s close method",
-              "kind": "method"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ],
-              "name": "_handleDialogEvent",
-              "kind": "method",
-              "privacy": "private"
-            }
-          ],
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/dialog/connect/connect-dialog.ts#L22"
-          },
-          "kind": "class",
-          "tagName": "connect-dialog",
-          "cssProperties": [
-            {
-              "name": "--connect-dialog-content-transition",
-              "description": "The animation duration for expanding/collapsing connection details.",
-              "default": "0.3s"
-            },
-            {
-              "name": "--md-sys-color-surface-container-high"
-            },
-            {
-              "name": "--hairline-width"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-sys-color-on-surface-variant"
-            },
-            {
-              "name": "--md-dialog-container-color"
-            },
-            {
-              "name": "--md-sys-typescale-body-large-size"
-            },
-            {
-              "name": "--md-ref-typeface-weight-bold"
-            },
-            {
-              "name": "--md-sys-color-primary-fixed-dim"
-            },
-            {
-              "name": "--md-sys-color-on-primary-fixed-variant"
-            },
-            {
-              "name": "--md-sys-shape-corner-full"
-            },
-            {
-              "name": "--md-sys-color-primary"
-            },
-            {
-              "name": "--md-ref-typeface-brand"
-            },
-            {
-              "name": "--md-sys-shape-corner-small"
-            },
-            {
-              "name": "--md-list-item-leading-image-width"
-            },
-            {
-              "name": "--md-list-item-leading-image-height"
-            }
-          ],
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "connect-dialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialog/connect/connect-dialog.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ConnectDialog",
-          "declaration": {
-            "name": "ConnectDialog",
-            "module": "src/components/dialog/connect/connect-dialog.js"
-          }
-        }
-      ]
     },
     {
       "kind": "javascript-module",
@@ -1046,9 +1984,10 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L18"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu-item.ts#L20"
           },
           "kind": "class",
+          "deprecated": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0.",
           "tagName": "fab-menu-item",
           "attributes": [
             {
@@ -1092,16 +2031,25 @@
               "default": "0"
             },
             {
-              "name": "--md-sys-color-surface-container-high"
+              "name": "--spacing-margin-s"
             },
             {
-              "name": "--md-sys-color-on-surface-variant"
+              "name": "--md-sys-color-surface-container-high"
             },
             {
               "name": "--md-sys-shape-corner-medium"
             },
             {
               "name": "--md-sys-elevation-2"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--spacing-padding-xs"
+            },
+            {
+              "name": "--spacing-padding-s"
             }
           ],
           "customElement": true
@@ -1262,9 +2210,10 @@
             }
           ],
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L33"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/fab-menu/fab-menu.ts#L35"
           },
           "kind": "class",
+          "deprecated": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0.",
           "tagName": "fab-menu",
           "attributes": [
             {
@@ -1362,6 +2311,12 @@
               "default": "row-reverse"
             },
             {
+              "name": "--spacing-reset"
+            },
+            {
+              "name": "--spacing-margin-s"
+            },
+            {
               "name": "--md-icon-size"
             },
             {
@@ -1448,13 +2403,19 @@
           ],
           "cssProperties": [
             {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
               "name": "--md-sys-color-inverse-surface"
             },
             {
+              "name": "--md-sys-shape-corner-medium"
+            },
+            {
               "name": "--md-sys-color-inverse-on-surface"
+            },
+            {
+              "name": "--spacing-padding-s"
+            },
+            {
+              "name": "--spacing-margin-s"
             }
           ],
           "customElement": true
@@ -1475,92 +2436,6 @@
           "declaration": {
             "name": "InfoSection",
             "module": "src/components/info-section/info-section.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/nav/nav-component.js",
-      "declarations": [
-        {
-          "name": "NavComponent",
-          "description": "A navigation component that renders primary tabs synchronized with the application's URL hash routes.",
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/nav/nav-component.ts#L18"
-          },
-          "kind": "class",
-          "tagName": "nav-component",
-          "cssProperties": [
-            {
-              "name": "--nav-component-icon-animation",
-              "description": "The duration of the icon's fill and color transition.",
-              "default": "225ms"
-            },
-            {
-              "name": "--nav-component-icon-animation-reduced",
-              "description": "The duration of the icon's transition when motion is reduced.",
-              "default": "1ms"
-            },
-            {
-              "name": "--md-sys-color-primary-fixed"
-            },
-            {
-              "name": "--md-sys-color-surface-container-high"
-            },
-            {
-              "name": "--md-sys-shape-corner-medium"
-            },
-            {
-              "name": "--md-sys-color-surface-container-low"
-            },
-            {
-              "name": "--md-elevation-level"
-            },
-            {
-              "name": "--md-sys-shape-corner-extra-small"
-            },
-            {
-              "name": "--md-sys-color-on-primary-fixed"
-            },
-            {
-              "name": "--md-ref-typeface-brand"
-            },
-            {
-              "name": "--md-sys-color-primary"
-            },
-            {
-              "name": "--md-sys-color-tertiary"
-            },
-            {
-              "name": "--md-icon-font-sharp"
-            },
-            {
-              "name": "--icon-fill-color"
-            }
-          ],
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "nav-component",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "NavComponent",
-          "declaration": {
-            "name": "NavComponent",
-            "module": "src/components/nav/nav-component.js"
           }
         }
       ]
@@ -1628,6 +2503,9 @@
               "name": "--md-sys-shape-corner-medium"
             },
             {
+              "name": "--spacing-margin-s"
+            },
+            {
               "name": "--md-sys-color-primary"
             },
             {
@@ -1673,6 +2551,224 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/ui-mode-toggle/ui-mode-toggle.js",
+      "declarations": [
+        {
+          "name": "UiModeToggle",
+          "summary": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application's global `configsService` for state management\nand `themeService` for dynamic theme application.",
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "members": [
+            {
+              "name": "mode",
+              "type": {
+                "text": "\"light\" | \"dark\" | \"system\""
+              },
+              "default": "\"system\"",
+              "kind": "field",
+              "attribute": "mode"
+            },
+            {
+              "name": "permanent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "kind": "field",
+              "attribute": "permanent"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "name": "onAppConfigsChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ colorScheme: ColorScheme }\u003e",
+                    "references": [
+                      {
+                        "name": "ColorSchemeChangeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "colorSchemeChangeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CustomEvent\u003c{ permanent: boolean }\u003e",
+                    "references": [
+                      {
+                        "name": "PermanentColorSchemeEvent",
+                        "package": "dark-mode-toggle"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "permanentColorSchemeEventListener",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "colorScheme",
+                  "type": {
+                    "text": "AppConfigs[\"colorScheme\"]"
+                  }
+                }
+              ],
+              "name": "onColorThemeModeContrastChange",
+              "kind": "method",
+              "privacy": "private"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "reset",
+              "description": "Resets the UI mode toggle to its default settings.",
+              "kind": "method",
+              "privacy": "public"
+            }
+          ],
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L41"
+          },
+          "kind": "class",
+          "tagName": "ui-mode-toggle",
+          "attributes": [
+            {
+              "name": "mode",
+              "type": {
+                "text": "\"light\" | \"dark\" | \"system\""
+              },
+              "default": "\"system\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "permanent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "permanent"
+            }
+          ],
+          "events": [
+            {
+              "name": "color_scheme",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "colorschemechange",
+              "description": "Event from `dark-mode-toggle` when the scheme changes.",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "permanentcolorscheme",
+              "description": "Event from `dark-mode-toggle` when the persistence changes.",
+              "type": {
+                "text": "Event",
+                "references": [
+                  {
+                    "name": "Event",
+                    "package": "global:"
+                  }
+                ]
+              }
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-color-on-surface-variant"
+            },
+            {
+              "name": "--hairline-width"
+            },
+            {
+              "name": "--spacing-margin-xs"
+            },
+            {
+              "name": "--spacing-reset"
+            },
+            {
+              "name": "--md-sys-color-surface-container-lowest"
+            },
+            {
+              "name": "--spacing-padding-s"
+            }
+          ],
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "ui-mode-toggle",
+          "declaration": {
+            "name": "UiModeToggle",
+            "module": "src/components/ui-mode-toggle/ui-mode-toggle.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "UiModeToggle",
+          "declaration": {
+            "name": "UiModeToggle",
+            "module": "src/components/ui-mode-toggle/ui-mode-toggle.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/ui-mode-toggle/ui-mode-toggle.test.js"
     },
     {
       "kind": "javascript-module",
@@ -1920,10 +3016,25 @@
               "default": "1rem"
             },
             {
+              "name": "--md-sys-typescale-headline-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-headline-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-size"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-line-height"
+            },
+            {
               "name": "--md-sys-shape-corner-medium"
             },
             {
               "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--spacing-padding-xs"
             },
             {
               "name": "--md-sys-color-secondary-container"
@@ -1978,6 +3089,33 @@
             },
             {
               "name": "--md-sys-color-primary-fixed"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-large-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-title-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-medium-line-height"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-size"
+            },
+            {
+              "name": "--md-sys-typescale-body-small-line-height"
+            },
+            {
+              "name": "--spacing-padding-xxs"
             }
           ],
           "customElement": true
@@ -2215,6 +3353,14 @@
               "default": "var(--word-tag-background-color, var(--md-sys-color-primary-container))"
             },
             {
+              "name": "--internal-word-tag-border-radius",
+              "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
+            },
+            {
+              "name": "--internal-word-tag-color",
+              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
+            },
+            {
               "name": "--internal-word-tag-font-family",
               "default": "var(--word-tag-font-family, var(--md-ref-typeface-brand))"
             },
@@ -2227,12 +3373,7 @@
               "default": "var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height))"
             },
             {
-              "name": "--internal-word-tag-border-radius",
-              "default": "var(--word-tag-border-radius, var(--md-sys-shape-corner-small))"
-            },
-            {
-              "name": "--internal-word-tag-color",
-              "default": "var(--word-tag-color, var(--md-sys-color-on-primary-container))"
+              "name": "--spacing-padding-xs"
             },
             {
               "name": "--internal-word-tag-animation-duration",
@@ -2338,9 +3479,9 @@
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "A list of summary points describing achievements or responsibilities. ",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "{ \n    /** \n     * AUTO-DOC'd WITH GEMINI\n     * The description of the responsibility or achievement.\n     */\n    item: string \n  }[]"
               },
               "default": "[]",
               "kind": "field",
@@ -2418,9 +3559,9 @@
             },
             {
               "name": "summaries",
-              "description": "A list of summary points describing achievements or responsibilities.",
+              "description": "A list of summary points describing achievements or responsibilities. ",
               "type": {
-                "text": "{ item: string }[]"
+                "text": "{ \n    /** \n     * AUTO-DOC'd WITH GEMINI\n     * The description of the responsibility or achievement.\n     */\n    item: string \n  }[]"
               },
               "default": "[]",
               "fieldName": "summaries"
@@ -2437,10 +3578,31 @@
           ],
           "cssProperties": [
             {
+              "name": "--spacing-padding-s"
+            },
+            {
+              "name": "--spacing-padding-m"
+            },
+            {
               "name": "--md-ref-typeface-brand"
             },
             {
+              "name": "--md-sys-typescale-title-small-size"
+            },
+            {
               "name": "--md-ref-typeface-weight-bold"
+            },
+            {
+              "name": "--spacing-padding-xs"
+            },
+            {
+              "name": "--spacing-margin-xxs"
+            },
+            {
+              "name": "--spacing-margin-xs"
+            },
+            {
+              "name": "--spacing-margin-s"
             },
             {
               "name": "--md-sys-color-primary"
@@ -2543,7 +3705,7 @@
       "declarations": [
         {
           "name": "CodePartial",
-          "summary": "The {@link LitElement} for `/#code` route",
+          "summary": "The LitElement for /#code route",
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -2613,7 +3775,13 @@
               "name": "--md-sys-color-inverse-surface"
             },
             {
+              "name": "--spacing-padding-xs"
+            },
+            {
               "name": "--md-ref-typeface-brand"
+            },
+            {
+              "name": "--md-sys-typescale-headline-small-size"
             },
             {
               "name": "--md-sys-color-inverse-on-surface"
@@ -2665,6 +3833,12 @@
             },
             {
               "name": "--md-sys-color-on-surface"
+            },
+            {
+              "name": "--spacing-padding-s"
+            },
+            {
+              "name": "--spacing-margin-s"
             }
           ],
           "customElement": true
@@ -2968,27 +4142,45 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/styles/components/dialog/dialog.js",
+      "path": "src/styles/breakpoints.js",
       "declarations": [
         {
-          "name": "DialogSizing",
-          "description": "Sizing for \\`\u003cmd-dialog\u003e\\`s",
+          "name": "BREAKPOINT_NAMES",
           "type": {
-            "text": "CSSResult"
+            "text": ": Breakpoint[]"
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/components/dialog/dialog.ts#L8"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L7"
+          }
+        },
+        {
+          "return": {
+            "description": "The current {@link Breakpoint}"
+          },
+          "name": "readBreakpoint",
+          "description": "Reads from \\`window\\` the current value of \\`--breakpoint-label\\`\nCSS `@property`",
+          "kind": "function",
+          "source": {
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/breakpoints.ts#L14"
           }
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "DialogSizing",
+          "name": "BREAKPOINT_NAMES",
           "declaration": {
-            "name": "DialogSizing",
-            "module": "src/styles/components/dialog/dialog.js"
+            "name": "BREAKPOINT_NAMES",
+            "module": "src/styles/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "readBreakpoint",
+          "declaration": {
+            "name": "readBreakpoint",
+            "module": "src/styles/breakpoints.js"
           }
         }
       ]
@@ -2999,19 +4191,31 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/styles/material-styles.js",
+      "path": "src/styles/interaction-styles.js",
       "declarations": [
         {
-          "name": "MaterialOverrides",
-          "type": {
-            "text": ": CSSResult"
-          },
+          "name": "InteractionStyles",
+          "description": "Standardized interaction utility styles for hover and focus states.",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/material-styles.ts#L16"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/interaction-styles.ts#L6"
           }
         }
       ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "InteractionStyles",
+          "declaration": {
+            "name": "InteractionStyles",
+            "module": "src/styles/interaction-styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/material-styles.js",
       "exports": [
         {
           "kind": "js",
@@ -3019,14 +4223,6 @@
           "declaration": {
             "name": "styles",
             "module": "typography/md-typescale-styles.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "MaterialOverrides",
-          "declaration": {
-            "name": "MaterialOverrides",
-            "module": "src/styles/material-styles.js"
           }
         }
       ]
@@ -3043,16 +4239,6 @@
           "kind": "variable",
           "source": {
             "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L30"
-          }
-        },
-        {
-          "name": "Breakpoints",
-          "type": {
-            "text": ": CSSResult"
-          },
-          "kind": "variable",
-          "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/styles/styles.ts#L32"
           }
         },
         {
@@ -3108,14 +4294,6 @@
           "name": "MaterialCSSStyleSheet",
           "declaration": {
             "name": "MaterialCSSStyleSheet",
-            "module": "src/styles/styles.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Breakpoints",
-          "declaration": {
-            "name": "Breakpoints",
             "module": "src/styles/styles.js"
           }
         }
@@ -3387,7 +4565,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L18"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L20"
           }
         },
         {
@@ -3395,7 +4573,7 @@
           "description": "The complete collection of possible {@link @material/web!MdFab} positions.  Cross-product of {@link FAB_POSITION_COMPONENTS_HORIZONTAL}\nand {@link FAB_POSITION_COMPONENTS_VERTICAL}\n\n@type {{ readonly START_TOP: \"START_TOP\"; readonly START_BOTTOM: \"START_BOTTOM\"; readonly END_TOP: \"END_TOP\"; readonly END_BOTTOM: \"END_BOTTOM\"; }}",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L48"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L52"
           }
         },
         {
@@ -3405,7 +4583,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L56"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L64"
           }
         },
         {
@@ -3416,14 +4594,14 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L64"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L72"
           }
         },
         {
           "name": "FAB_STYLE",
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L83"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L91"
           }
         },
         {
@@ -3433,7 +4611,7 @@
           },
           "kind": "variable",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L104"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L112"
           }
         },
         {
@@ -3448,7 +4626,7 @@
           "name": "fabPositionToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L71"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L79"
           }
         },
         {
@@ -3463,7 +4641,7 @@
           "name": "fabPositionComponents",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L77"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L85"
           }
         },
         {
@@ -3478,7 +4656,7 @@
           "name": "fabStyleToUi",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L91"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L99"
           }
         },
         {
@@ -3493,7 +4671,7 @@
           "name": "fabConfigToGrid",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L114"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L122"
           }
         },
         {
@@ -3508,7 +4686,7 @@
           "name": "fabPositionClass",
           "kind": "function",
           "source": {
-            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L126"
+            "href": "https://github.com/fnc314/fnc314.github.io/tree/main/src/types/configs/fab-configs.ts#L134"
           }
         }
       ],
@@ -3724,7 +4902,7 @@
           "parameters": [
             {
               "name": "json",
-              "description": "- Input of an  type, ideally conforming to a Material 3 JSON scheme",
+              "description": "- Input of an unknown type, ideally conforming to a Material 3 JSON scheme",
               "type": {
                 "text": "unknown"
               }

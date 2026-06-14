@@ -3,4 +3,3 @@ export { styles as MaterialTypescaleStyles } from "@material/web/typography/md-t
 export type MaterialSchemeName = "light" | "lightMediumContrast" | "lightHighContrast" | "dark" | "darkMediumContrast" | "darkHighContrast";
 export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
-export declare const MaterialOverrides: CSSResult;

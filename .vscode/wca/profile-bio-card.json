@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "profile-bio-card",
+      "description": "Attributes:\n\n  * `themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\n  * `bioText` {string} - The biography text to display.\n\nProperties:\n\n  * `styles` - \n\n  * `themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\n  * `bioText` {string} - The biography text to display.",
+      "attributes": [
+        {
+          "name": "themePhoto",
+          "description": "`themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\nProperty: themePhoto\n\nDefault: themePhoto"
+        },
+        {
+          "name": "bioText",
+          "description": "`bioText` {string} - The biography text to display.\n\nProperty: bioText\n\nDefault: bio"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

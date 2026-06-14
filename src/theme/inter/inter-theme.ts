@@ -1,4 +1,3 @@
-import JsonTheme from "@/theme/inter/inter.material3-expressive-theme.json" with { type: "json" };
 import {
   PhotoJsonFile,
   type ThemeConfig,
@@ -6,6 +5,7 @@ import {
   jsonIsThemeJsonSchemes,
   readScheme,
 } from "@/types/theme/theme";
+import JsonTheme from "@fnc314/design-tokens/themes/inter/inter.mtb.json" with { type: "json" };
 
 export const InterThemeConfig: ThemeConfig = {
   themePhoto: PhotoJsonFile.inter,

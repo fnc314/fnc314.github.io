@@ -1,4 +1,4 @@
-<html><head></head><body>**@fnc314/com.fnc314.website v1.0.8**
+<html><head></head><body>**@fnc314/com.fnc314.website v2.0.0**
 
 ---
 
@@ -6,10 +6,12 @@
 
 ## Slots
 
-| Name                                            | Description                                   |
-| ----------------------------------------------- | --------------------------------------------- |
-| `app-content`                                   | The place for the dynamic application content |
-| `object Object],[object Object],[object Object` |                                               |
+| Name          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `app-content` | The place for the dynamic application content |
+| `app-nav`     | Where the navigation component is placed      |
+
+# bento-layout
 
 # blog-post
 
@@ -26,7 +28,6 @@
 | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `--blog-post-animation`                                         | The duration of the animation for `:focus`, `:hover`,<br>`:focus-within`, and `:focus-visible` states |
 | `--blog-post-primary-text-color`                                | The color of the primary text                                                                         |
-| `object Object],[object Object`                                 |                                                                                                       |
 | `object Object],[object Object],[object Object],[object Object` |                                                                                                       |
 
 # fab-menu-item
@@ -98,28 +99,6 @@ Uses container queries to provide a responsive grid layout that adapts to availa
 | -------------- | --------------- | -------- | ------- | -------------------------------------------------------------------------------------- |
 | `sectionTitle` | `section-title` | `string` | ""      | The title displayed in the section's header.<br>Maps to the `section-title` attribute. |
 
-# nav-component
-
-A navigation component that renders primary tabs synchronized with the application's URL hash routes.
-
-## Methods
-
-| Method                      | Type                                   | Description                                                                                                                                     |
-| --------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `#handleHashChange`         | `(): void`                             | Syncs internal state with the URL hash.                                                                                                         |
-| `#onTabChange`              | `(event: Event): void`                 | Handles user clicks on tabs. Updates URL and UI.<br><br>**event**: [object Object],[object Object],[object Object]                              |
-| `#renderTabs`               | `(): TemplateResult`                   | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] |
-| `#tabIndexAndRouteFromHash` | `(): { index: number; route: Route; }` | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]                                                 |
-| `#updateCarousel`           | `(index: number): void`                | Updates external DOM via style manipulations and blind queries<br><br>**index**: [object Object],[object Object]                                |
-| `#updateTabState`           | `(index: number): void`                | Updates the visual state of tabs and panels based on the index.                                                                                 |
-
-## CSS Custom Properties
-
-| Property                                 | Default | Description                                                   |
-| ---------------------------------------- | ------- | ------------------------------------------------------------- |
-| `--nav-component-icon-animation`         | "225ms" | The duration of the icon's fill and color transition.         |
-| `--nav-component-icon-animation-reduced` | "1ms"   | The duration of the icon's transition when motion is reduced. |
-
 # partial-header
 
 A header component used for section titles with support for primary, secondary, and tertiary Material color variants.
@@ -130,6 +109,29 @@ A header component used for section titles with support for primary, secondary, 
 | ------------- | -------------- | ----------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
 | `headerType`  | `header-type`  | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | "primary" | The color variant theme for the header background and text.<br>Can be 'primary', 'secondary', or 'tertiary'. |
 | `headingText` | `heading-text` | `string`                                              | ""        | The text to display within the header.                                                                       |
+
+# ui-mode-toggle
+
+## Properties
+
+| Property    | Attribute   | Type                            | Default  | Description                                                                         |
+| ----------- | ----------- | ------------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| `mode`      | `mode`      | `"light" \| "dark" \| "system"` | "system" | Reflects the currently active color scheme mode.                                    |
+| `permanent` | `permanent` | `boolean`                       | false    | Controls whether the selected color scheme preference is persisted across sessions. |
+
+## Methods
+
+| Method  | Type       | Description                                        |
+| ------- | ---------- | -------------------------------------------------- |
+| `reset` | `(): void` | Resets the UI mode toggle to its default settings. |
+
+## Events
+
+| Event                  | Type               | Description                                                                                                                                      |
+| ---------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
+| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
 
 # work-experience
 
@@ -158,38 +160,50 @@ A header component used for section titles with support for primary, secondary, 
 
 ## Documents
 
-- [docs/wca/markdown/app-shell](docs/wca/markdown/app-shell.md)
-- [docs/wca/markdown/blog-partial](docs/wca/markdown/blog-partial.md)
-- [docs/wca/markdown/blog-post](docs/wca/markdown/blog-post.md)
-- [docs/wca/markdown/code-partial](docs/wca/markdown/code-partial.md)
-- [docs/wca/markdown/fab-menu](docs/wca/markdown/fab-menu.md)
-- [docs/wca/markdown/fab-menu-item](docs/wca/markdown/fab-menu-item.md)
-- [docs/wca/markdown/info-partial](docs/wca/markdown/info-partial.md)
-- [docs/wca/markdown/info-section](docs/wca/markdown/info-section.md)
-- [docs/wca/markdown/nav-component](docs/wca/markdown/nav-component.md)
-- [docs/wca/markdown/partial-header](docs/wca/markdown/partial-header.md)
-- [docs/wca/markdown/README](docs/wca/markdown/README.md)
-- [docs/wca/markdown/work-experience](docs/wca/markdown/work-experience.md)
-- [docs/wca/markdown/work-partial](docs/wca/markdown/work-partial.md)
+- [docs/wca/markdown/app-shell](docs/wca/markdown/app-shell/README.md)
+- [docs/wca/markdown/bento-layout](docs/wca/markdown/bento-layout/README.md)
+- [docs/wca/markdown/blog-partial](docs/wca/markdown/blog-partial/README.md)
+- [docs/wca/markdown/blog-post](docs/wca/markdown/blog-post/README.md)
+- [docs/wca/markdown/code-partial](docs/wca/markdown/code-partial/README.md)
+- [docs/wca/markdown/fab-menu](docs/wca/markdown/fab-menu/README.md)
+- [docs/wca/markdown/fab-menu-item](docs/wca/markdown/fab-menu-item/README.md)
+- [docs/wca/markdown/info-partial](docs/wca/markdown/info-partial/README.md)
+- [docs/wca/markdown/info-section](docs/wca/markdown/info-section/README.md)
+- [docs/wca/markdown/partial-header](docs/wca/markdown/partial-header/README.md)
+- [docs/wca/markdown/README](docs/wca/markdown/README/README.md)
+- [docs/wca/markdown/ui-mode-toggle](docs/wca/markdown/ui-mode-toggle/README.md)
+- [docs/wca/markdown/work-experience](docs/wca/markdown/work-experience/README.md)
+- [docs/wca/markdown/work-partial](docs/wca/markdown/work-partial/README.md)
 
 ## Modules
 
-- [src/components/app-shell/app-shell](src/components/app-shell/app-shell.md)
-- [src/components/blog/blog-post](src/components/blog/blog-post.md)
-- [src/components/code/code-project/code-project](src/components/code/code-project/code-project.md)
-- [src/components/dialog/configs/configs-dialog](src/components/dialog/configs/configs-dialog.md)
-- [src/components/dialog/connect/connect-dialog](src/components/dialog/connect/connect-dialog.md)
-- [src/components/dialog/step-up/step-up-dialog](src/components/dialog/step-up/step-up-dialog.md)
-- [src/components/fab-menu/fab-menu-item](src/components/fab-menu/fab-menu-item.md)
-- [src/components/fab-menu/fab-menu](src/components/fab-menu/fab-menu.md)
-- [src/components/info-section/info-section](src/components/info-section/info-section.md)
-- [src/components/nav/nav-component](src/components/nav/nav-component.md)
-- [src/components/partial-header/partial-header](src/components/partial-header/partial-header.md)
-- [src/components/word/word-cloud/word-cloud](src/components/word/word-cloud/word-cloud.md)
-- [src/components/word/word-cloud/word-cloud.types](src/components/word/word-cloud/word-cloud.types.md)
-- [src/components/word/word-tag/word-tag](src/components/word/word-tag/word-tag.md)
-- [src/components/work-experience/work-experience](src/components/work-experience/work-experience.md)
-- [src/partials/code/code-partial](src/partials/code/code-partial.md)
-- [src/types/configs/fab-configs](src/types/configs/fab-configs.md)
-- [src/types/theme/theme](src/types/theme/theme.md)
-</body></html>
+- [src/components/app-shell/app-shell](src/components/app-shell/app-shell/README.md)
+- [src/components/bento-layout/bento-layout.styles](src/components/bento-layout/bento-layout.styles/README.md)
+- [src/components/bento-layout/bento-layout](src/components/bento-layout/bento-layout/README.md)
+- [src/components/bento-layout/bento-layout.types](src/components/bento-layout/bento-layout.types/README.md)
+- [src/components/blog/blog-post](src/components/blog/blog-post/README.md)
+- [src/components/card/bento/bento-card](src/components/card/bento/bento-card/README.md)
+- [src/components/card/blog/blog-card](src/components/card/blog/blog-card/README.md)
+- [src/components/card/code/code-card](src/components/card/code/code-card/README.md)
+- [src/components/card/connect/connect-card](src/components/card/connect/connect-card/README.md)
+- [src/components/card/education/education-card](src/components/card/education/education-card/README.md)
+- [src/components/card/profile-bio/profile-bio-card](src/components/card/profile-bio/profile-bio-card/README.md)
+- [src/components/card/settings/settings-card](src/components/card/settings/settings-card/README.md)
+- [src/components/card/skills/skills-card](src/components/card/skills/skills-card/README.md)
+- [src/components/card/work/work-card](src/components/card/work/work-card/README.md)
+- [src/components/code/code-project/code-project](src/components/code/code-project/code-project/README.md)
+- [src/components/dialog/step-up/step-up-dialog](src/components/dialog/step-up/step-up-dialog/README.md)
+- [src/components/fab-menu/fab-menu-item](src/components/fab-menu/fab-menu-item/README.md)
+- [src/components/fab-menu/fab-menu](src/components/fab-menu/fab-menu/README.md)
+- [src/components/info-section/info-section](src/components/info-section/info-section/README.md)
+- [src/components/partial-header/partial-header](src/components/partial-header/partial-header/README.md)
+- [src/components/ui-mode-toggle/ui-mode-toggle](src/components/ui-mode-toggle/ui-mode-toggle/README.md)
+- [src/components/word/word-cloud/word-cloud](src/components/word/word-cloud/word-cloud/README.md)
+- [src/components/word/word-cloud/word-cloud.types](src/components/word/word-cloud/word-cloud.types/README.md)
+- [src/components/word/word-tag/word-tag](src/components/word/word-tag/word-tag/README.md)
+- [src/components/work-experience/work-experience](src/components/work-experience/work-experience/README.md)
+- [src/styles/breakpoints](src/styles/breakpoints/README.md)
+- [src/styles/interaction-styles](src/styles/interaction-styles/README.md)
+- [src/types/configs/fab-configs](src/types/configs/fab-configs/README.md)
+- [src/types/theme/theme](src/types/theme/theme/README.md)
+  </any></body></html>

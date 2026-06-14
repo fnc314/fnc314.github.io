@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "organization": {
+        "github": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/github/github-dark.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/github/github-light.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/github/github-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

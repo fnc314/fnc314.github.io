@@ -16,7 +16,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",null]"
         },
         {
           "name": "blogPost",
@@ -39,9 +39,6 @@
         },
         {
           "name": "object Object],[object Object],[object Object],[object Object"
-        },
-        {
-          "name": "object Object],[object Object"
         }
       ]
     }

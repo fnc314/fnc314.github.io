@@ -1,10 +1,10 @@
-﻿export interface Connection {
+﻿export interface connection {
+    connections: partial<record<"phone" | "email" | "linkedin" | "github" | "medium" | "googleDocs" | "pdf", connectioninstance>>;
     label: string;
-    connections: Partial<Record<"phone" | "email" | "linkedin" | "github" | "medium" | "googleDocs" | "pdf", ConnectionInstance>>;
 }
-export interface ConnectionInstance {
+export interface connectioninstance {
     href: string;
-    start: string;
     overline: string;
+    start: string;
     text: string;
 }

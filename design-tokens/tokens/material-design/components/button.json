@@ -1,0 +1,24 @@
+{
+  "md": {
+    "filled": {
+      "button": {
+        "container": {
+          "shape": {
+            "type": "value",
+            "value": "var(--md-sys-shape-corner-small)"
+          }
+        }
+      }
+    },
+    "outlined": {
+      "button": {
+        "container": {
+          "shape": {
+            "type": "value",
+            "value": "var(--md-sys-shape-corner-small)"
+          }
+        }
+      }
+    }
+  }
+}

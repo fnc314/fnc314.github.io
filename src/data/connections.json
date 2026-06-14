@@ -1,4 +1,18 @@
 {
+  "direct": {
+    "phone": {
+      "method": "phone",
+      "href": "tel:+14127219550",
+      "text": "412-721-9550",
+      "mdIcon": "call"
+    },
+    "email": {
+      "method": "email",
+      "href": "mailto:fnc314@gmail.com",
+      "text": "fnc314@gmail.com",
+      "mdIcon": "mail"
+    }
+  },
   "connections": [
     {
       "label": "Directly",

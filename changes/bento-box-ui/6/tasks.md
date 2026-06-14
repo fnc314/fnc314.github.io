@@ -1,0 +1,25 @@
+# Tasks: Bento Card Expansion and Layout Refinement
+
+- [x] **Enhance `bento-card` Component**
+  - [x] Integrate `<details>` and `<summary>` tags into the base template.
+  - [x] Implement the 0fr -> 1fr grid-row animation for smooth expansion.
+  - [x] Add `expanded` (boolean) property to drive initial state.
+  - [x] Add `enableHover` (boolean) property and conditional styles. Default to `false`
+  - [x] Add `enableFocus` (boolean) property and conditional styles. Default to `false`
+  - [x] Add `md-icon` state indicator with rotation animation.
+- [/] **Refactor `bento-layout` Logic**
+  - [x] Update `bento-layout.types.ts` to support `expanded` state and `grid-template-areas`.
+  - [x] Enhance `BentoBoxConfigs` to return layout configurations respecting `--breakpoint-label`.
+  - [ ] Refactor `bento-layout.styles.ts` to leverage CSS Grid areas for positioning. (Pending file access)
+- [/] **Update Card Implementations**
+  - [x] Update `code-card.ts`
+  - [x] Update `blog-card.ts`
+  - [x] Update `work-card.ts`
+  - [x] Update `profile-bio-card.ts`
+  - [x] Update `settings-card.ts`
+  - [x] Update `connect-card.ts`
+  - [x] Update `education-card.ts`
+  - [x] Update `skills-card.ts`
+- [x] **Validation and Quality**
+  - [x] Verify Stylelint compliance with design tokens.
+  - [x] Update unit tests for `bento-card`.

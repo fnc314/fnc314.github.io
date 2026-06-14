@@ -1,56 +1,41 @@
-import "@/components/app-shell/app-shell";
-import "@/components/blog/blog-post";
-import "@/components/blog/blog-post.types";
-import "@/components/code/code-project/code-project";
-import "@/components/dialog/configs/configs-dialog";
-import "@/components/dialog/connect/connect-dialog";
-import "@/components/dialog/step-up/step-up-dialog";
-import "@/components/fab-menu/fab-menu";
-import "@/components/fab-menu/fab-menu-item";
-import "@/components/info-section/info-section";
-import "@/components/nav/nav-component";
-import "@/components/partial-header/partial-header";
-import "@/components/word/word-cloud/word-cloud";
-import "@/components/word/word-cloud/word-cloud.types";
-import "@/components/word/word-tag/word-tag";
-import "@/components/work-experience/work-experience";
-import "@/components/work-experience/work-experience.types";
-import "@/partials/blog/blog-partial";
-import "@/partials/code/code-partial";
-import "@/partials/info/info-partial";
-import "@/partials/work/work-partial";
+import "@/components/bento-layout/bento-layout";
+import "@/components/blog/entry/blog-entry";
+import "@/components/card/bento/bento-card";
+import "@/components/card/blog/blog-card";
+import "@/components/card/code/code-card";
+import "@/components/card/connect/connect-card";
+import "@/components/card/education/education-card";
+import "@/components/card/profile-bio/profile-bio-card";
+import "@/components/card/settings/settings-card";
+import "@/components/card/skills/skills-card";
+import "@/components/card/work/work-card";
+import "@/components/code/repo/code-repo";
+import "@/components/connection/direct/direct-connection";
+import "@/components/version-tag/version-tag";
+import "@/components/word/cloud/word-cloud";
+import "@/components/word/tag/word-tag";
+import "@/components/work/experience/work-experience";
 import "@/services/configs/configs-service";
 import { configsService } from "@/services/configs/configs-service";
-import "@/services/router/router-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
-import { themeService } from "@/services/theme/theme-service.js";
-import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles.js";
-import "@/types/components/nav/routes";
-import { ROUTES } from "@/types/components/nav/routes.js";
+import { themeService } from "@/services/theme/theme-service";
+import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
-import "@/types/configs/fab-configs";
 import "@/types/theme/color-scheme-configs";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import "@/types/theme/theme";
-import "@material/web/button/filled-button.js";
-import "@material/web/button/outlined-button.js";
-import "@material/web/button/text-button.js";
-import "@material/web/dialog/dialog.js";
-import "@material/web/divider/divider.js";
-import "@material/web/elevation/elevation.js";
-import "@material/web/fab/fab.js";
-import "@material/web/icon/icon.js";
-import "@material/web/labs/card/elevated-card.js";
-import "@material/web/labs/card/filled-card.js";
-import "@material/web/labs/card/outlined-card.js";
-import "@material/web/list/list-item.js";
-import "@material/web/list/list.js";
-import "@material/web/radio/radio.js";
-import "@material/web/select/outlined-select.js";
-import "@material/web/select/select-option.js";
-import "@material/web/tabs/primary-tab.js";
-import "@material/web/tabs/tabs.js";
+import "@material/web/divider/divider";
+import "@material/web/elevation/elevation";
+import "@material/web/icon/icon";
+import "@material/web/iconbutton/filled-tonal-icon-button";
+import "@material/web/labs/card/elevated-card";
+import "@material/web/labs/card/filled-card";
+import "@material/web/labs/card/outlined-card";
+import "@material/web/list/list";
+import "@material/web/list/list-item";
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -63,11 +48,8 @@ const domLoadedListener = () => {
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
-  document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
-  if (window.location.hash === "") {
-    window.history.replaceState(null, "", `${window.location.href}#${ROUTES.INFO}`);
-  }
+  document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   const matScheme =
     themeService.currentThemeConfig().materialSchemes[
@@ -76,6 +58,21 @@ const domLoadedListener = () => {
   updateMaterialCSSStyleSheet(matScheme);
 
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+
+  // Migrated from AppShell
+  document.addEventListener("color_scheme.change", (event: Event) => {
+    const customEvent = event as any; // ColorSchemeConfigChange
+    const themeConfig = themeService.currentThemeConfig();
+    updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
+    document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+  });
+
+  window.addEventListener("router.change", (ev: Event) => {
+    console.info(JSON.stringify({ event: "router.change", change: (ev as any).detail }, null, 2));
+  });
+  window.addEventListener("router.back", (ev: Event) => {
+    console.info(JSON.stringify({ event: "router.back", back: (ev as any).detail }, null, 2));
+  });
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);

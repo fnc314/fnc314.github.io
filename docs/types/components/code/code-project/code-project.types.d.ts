@@ -1,10 +1,10 @@
-﻿export interface CodeProjectData {
-    name: string;
-    url: string;
+﻿export interface codeprojectdata {
     description: string;
-    tech: CodeProjectTech[];
+    name: string;
+    tech: codeprojecttech[];
+    url: string;
 }
-export interface CodeProjectTech {
+export interface codeprojecttech {
     name: string;
     url: string;
 }
