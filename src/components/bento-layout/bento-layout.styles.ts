@@ -23,45 +23,46 @@ export const BentoLayoutStyles = css`
     width: 100%;
   }
 
-  .bento-grid {
+  main {
     align-items: stretch;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
     padding: var(--spaces-padding-xs);
+
+    h1 {
+      background-color: var(--md-sys-color-primary-fixed);
+      border-color: var(--md-sys-color-on-primary-fixed);
+      border-radius: var(--md-sys-shape-corner-large);
+      border-width: var(--hairline-width);
+      color: var(--md-sys-color-on-primary-fixed);
+      margin-inline: auto;
+      padding-block: var(--spaces-padding-l);
+      text-align: center;
+      grid-area: span 1 / span var(--bento-layout-column-count);
+      width: 100%;
+    }
   }
 
-  h1 {
-    background-color: var(--md-sys-color-primary-fixed);
-    border-color: var(--md-sys-color-on-primary-fixed);
-    border-radius: var(--md-sys-shape-corner-large);
-    border-width: var(--hairline-width);
-    color: var(--md-sys-color-on-primary-fixed);
-    margin-inline: auto;
-    padding-block: var(--spaces-padding-l);
-    text-align: center;
-    grid-area: span 1 / span var(--bento-layout-column-count);
-    width: 100%;
-  }
 
   @media screen and (width >= 769px) {
     :host {
       --bento-layout-column-count: 6;
     }
 
-    h1 {
-      width: 65%;
-    }
-
-    .bento-grid {
+    main {
       display: grid;
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
+
+      h1 {
+        width: 65%;
+      }
     }
   }
 
   @media screen and ((width <= 1200px) and (width >= 769px)) {
-    .bento-grid {
+    main {
       align-items: unset;
       gap: var(--spaces-gap-m);
       padding: var(--spaces-padding-s);
@@ -73,7 +74,7 @@ export const BentoLayoutStyles = css`
       --bento-layout-column-count: 12;
     }
 
-    .bento-grid {
+    main {
       gap: var(--spaces-gap-l);
       margin: var(--spaces-none) auto;
       padding: var(--spaces-padding-m);

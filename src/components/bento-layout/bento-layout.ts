@@ -73,7 +73,7 @@ export class BentoLayout extends UIAwareElement {
 
   override render() {
     return html`
-      <main class="bento-grid" id="bento-root">
+      <main id="bento-root">
         <h1 class="md-typescale-headline-large">Franco N. Colaizzi</h1>
         ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
       </main>
