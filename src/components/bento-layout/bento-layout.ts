@@ -1,5 +1,5 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
-import { type ABentoBoxConfig, BentoBoxConfigs2, type GridPosition } from "@/components/bento-layout/bento-layout.types";
+import { type ABentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type TemplateResult, html, nothing } from "lit";
@@ -22,7 +22,7 @@ export class BentoLayout extends UIAwareElement {
   ];
 
   @state()
-  private _bentoBoxConfigs: ABentoBoxConfig[] = BentoBoxConfigs2(this.breakpoint);
+  private _bentoBoxConfigs: ABentoBoxConfig[] = BentoBoxConfigs(this.breakpoint);
 
   private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placement[this.breakpoint];

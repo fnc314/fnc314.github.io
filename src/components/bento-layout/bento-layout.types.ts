@@ -139,95 +139,6 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
 };
 
 /**
- * Produces an Array of {@link ABentoBoxConfig} instances used to populate
- *   {@link @fnc314/fnc314.github.io!BentoLayout}.
- *
- * @type {ABentoBoxConfig[]}
- */
-export const BentoBoxConfigs: () => ABentoBoxConfig[] = () => ([
-  {
-    type: "profile-photo-bio",
-    expanded: false,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } },
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 5 } },
-      unknown: { breakpoint: "unknown", row: { start: 2, end: 3 }, column: { start: 1, end: 7 } }
-    }
-  },
-  {
-    type: "connect",
-    expanded: true,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } },
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 5, end: 9 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 5, end: 9 } }
-    }
-  },
-  {
-    type: "education",
-    expanded: true,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 4, end: 7 } },
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 9, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 1, end: 5 } }
-    }
-  },
-  {
-    type: "work",
-    expanded: false,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
-      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 2, end: 3 }, column: { start: 7, end: -1 } }
-    }
-  },
-  {
-    type: "blog",
-    expanded: true,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } },
-      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 3, end: 4 }, column: { start: 1, end: 7 } }
-    }
-  },
-  {
-    type: "code",
-    expanded: true,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } },
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 3, end: 4 }, column: { start: 7, end: -1 } }
-    }
-  },
-  {
-    type: "skills",
-    expanded: false,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
-      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } }
-    }
-  },
-  {
-    type: "settings",
-    expanded: true,
-    placement: {
-      mobile: { breakpoint: "mobile" },
-      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
-      unknown: { breakpoint: "unknown", row: { start: 5, end: 6 }, column: { start: 9, end: 13 } }
-    }
-  },
-]);
-
-/**
  * Determines the logical DOM order for bento box types based on grid placement.
  * Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing).
  *
@@ -258,7 +169,7 @@ export function getBentoDOMOrder(breakpoint: Breakpoint): BentoBoxType[] {
 /**
  * Produces an array of {@link ABentoBoxConfig} instances sorted for proper DOM order.
  */
-export const BentoBoxConfigs2 = (breakpoint: Breakpoint = "desktop"): ABentoBoxConfig[] =>
+export const BentoBoxConfigs = (breakpoint: Breakpoint = "desktop"): ABentoBoxConfig[] =>
   getBentoDOMOrder(breakpoint).map((type) => ({
     type,
     ...BENTO_BOX_CONFIG[type],
