@@ -2,28 +2,6 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "app-shell",
-      "path": "./../../../src/components/app-shell/app-shell.ts",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        }
-      ],
-      "slots": [
-        {
-          "name": "app-nav",
-          "description": "Where the navigation component is placed"
-        },
-        {
-          "name": "app-content",
-          "description": "The place for the dynamic application content"
-        }
-      ]
-    },
-    {
       "name": "bento-layout",
       "path": "./../../../src/components/bento-layout/bento-layout.ts",
       "properties": [
@@ -31,65 +9,68 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"bentoLayoutStyles\"]"
+          "default": "[\"MaterialTypescaleStyles\",\"BentoLayoutStyles\"]"
         }
       ]
     },
     {
-      "name": "blog-post",
-      "path": "./../../../src/components/blog/blog-post.ts",
+      "name": "blog-entry",
+      "path": "./../../../src/components/blog/entry/blog-entry.ts",
       "attributes": [
         {
-          "name": "blogPost",
-          "type": "BlogPostJson",
+          "name": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
           "default": "{}"
         }
       ],
       "properties": [
         {
           "name": "styles",
-          "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",\"BlogEntryStyles\"]"
         },
         {
-          "name": "blogPost",
-          "attribute": "blogPost",
-          "type": "BlogPostJson",
+          "name": "blogEntry",
+          "attribute": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
           "default": "{}"
-        },
-        {
-          "name": "object Object],[object Object],[object Object"
-        }
-      ],
-      "cssProperties": [
-        {
-          "name": "--blog-post-animation",
-          "description": "The duration of the animation for \\`:focus\\`, \\`:hover\\`,\n\\`:focus-within\\`, and \\`:focus-visible\\` states"
-        },
-        {
-          "name": "--blog-post-primary-text-color",
-          "description": "The color of the primary text"
-        },
-        {
-          "name": "object Object],[object Object],[object Object],[object Object"
         }
       ]
     },
     {
-      "name": "fab-menu-item",
-      "path": "./../../../src/components/fab-menu/fab-menu-item.ts",
-      "description": "An action item within a `fab-menu`.",
+      "name": "bento-card",
+      "path": "./../../../src/components/card/bento/bento-card.ts",
       "attributes": [
         {
-          "name": "label",
-          "description": "The text label displayed next to the FAB item.",
-          "type": "string",
-          "default": "\"\""
+          "name": "scrollable",
+          "description": "Whether to enable scrolling for content",
+          "type": "boolean",
+          "default": "false"
         },
         {
-          "name": "icon",
-          "description": "The icon to display inside the FAB item.",
+          "name": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+          "type": "string",
           "default": "\"\""
         }
       ],
@@ -98,221 +79,266 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"BentoCardStyles\"]"
         },
         {
-          "name": "label",
-          "attribute": "label",
-          "description": "The text label displayed next to the FAB item.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "icon",
-          "attribute": "icon",
-          "description": "The icon to display inside the FAB item.",
-          "default": "\"\""
-        }
-      ],
-      "cssProperties": [
-        {
-          "name": "object Object],[object Object"
-        },
-        {
-          "name": "--fab-menu-item-padding-end",
-          "description": "The logical `padding-inline-end` value",
-          "default": "0"
-        },
-        {
-          "name": "--fab-menu-item-padding-start",
-          "description": "The logical `padding-inline-start` value",
-          "default": "0"
-        }
-      ],
-      "deprecated": true,
-      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
-    },
-    {
-      "name": "fab-menu",
-      "path": "./../../../src/components/fab-menu/fab-menu.ts",
-      "description": "A floating action button that toggles a menu of actions.",
-      "attributes": [
-        {
-          "name": "icon",
-          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
-          "default": "\"add\""
-        },
-        {
-          "name": "opened-icon",
-          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
-          "type": "MaterialSymbol",
-          "default": "\"close\""
-        },
-        {
-          "name": "size",
-          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-          "type": "\"small\" | \"medium\" | \"large\"",
-          "default": "\"medium\""
-        },
-        {
-          "name": "open",
-          "description": "Whether the menu is currently open.",
+          "name": "scrollable",
+          "attribute": "scrollable",
+          "description": "Whether to enable scrolling for content",
           "type": "boolean",
           "default": "false"
         },
         {
-          "name": "variant",
-          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-          "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
-          "default": "\"primary\""
-        },
-        {
-          "name": "label",
-          "description": "[object Object],[object Object],[object Object]",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "aria-label",
-          "description": "The `aria-label` of the FAB.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "direction",
-          "description": "The direction in which the menu items should expand.",
-          "type": "\"start\" | \"end\"",
-          "default": "\"end\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        },
-        {
-          "name": "icon",
-          "attribute": "icon",
-          "description": "[object Object],[object Object],[object Object],[object Object],[object Object]",
-          "default": "\"add\""
-        },
-        {
-          "name": "openedIcon",
-          "attribute": "opened-icon",
-          "description": "The icon to display when the menu is open.\nDefaults to 'close'.",
-          "type": "MaterialSymbol",
-          "default": "\"close\""
-        },
-        {
-          "name": "size",
-          "attribute": "size",
-          "description": "The size of the FAB.\nCan be 'small', 'medium', or 'large'.\nDefaults to 'medium'.",
-          "type": "\"small\" | \"medium\" | \"large\"",
-          "default": "\"medium\""
-        },
-        {
-          "name": "open",
-          "attribute": "open",
-          "description": "Whether the menu is currently open.",
+          "name": "expanded",
+          "attribute": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
           "type": "boolean",
           "default": "false"
         },
         {
-          "name": "variant",
-          "attribute": "variant",
-          "description": "The variant of the FAB.\nCan be 'surface', 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
-          "type": "\"surface\" | \"primary\" | \"secondary\" | \"tertiary\"",
-          "default": "\"primary\""
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
         },
         {
-          "name": "label",
-          "attribute": "label",
-          "description": "[object Object],[object Object],[object Object]",
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "attribute": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
           "type": "string",
           "default": "\"\""
-        },
-        {
-          "name": "ariaLabel",
-          "attribute": "aria-label",
-          "description": "The `aria-label` of the FAB.",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "object Object],[object Object],[object Object"
-        },
-        {
-          "name": "direction",
-          "attribute": "direction",
-          "description": "The direction in which the menu items should expand.",
-          "type": "\"start\" | \"end\"",
-          "default": "\"end\""
         }
       ],
       "slots": [
         {
-          "name": "object Object],[object Object],[object Object"
-        }
-      ],
-      "cssProperties": [
-        {
-          "name": "--fab-menu-transition-duration",
-          "description": "The duration of the menu's opening and closing animations",
-          "default": "\"200ms\""
+          "name": "header",
+          "description": "Content to be displayed in the card's header/summary area."
         },
         {
-          "name": "object Object],[object Object],[object Object"
-        }
-      ],
-      "deprecated": true,
-      "deprecatedMessage": "Use inline Bento Box cards instead. Deprecated as of version 2.0.0."
-    },
-    {
-      "name": "info-section",
-      "path": "./../../../src/components/info-section/info-section.ts",
-      "description": "A reusable section component for profile-related content.\nUses container queries to provide a responsive grid layout that adapts to available space.\n\nAPI\n--",
-      "attributes": [
-        {
-          "name": "section-title",
-          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
-          "type": "string",
-          "default": "\"\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        },
-        {
-          "name": "sectionTitle",
-          "attribute": "section-title",
-          "description": "The title displayed in the section's header.\nMaps to the `section-title` attribute.",
-          "type": "string",
-          "default": "\"\""
+          "name": "",
+          "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
         }
       ]
     },
     {
-      "name": "partial-header",
-      "path": "./../../../src/components/partial-header/partial-header.ts",
-      "description": "A header component used for section titles with support for primary, secondary, and tertiary Material color variants.",
+      "name": "blog-card",
+      "path": "./../../../src/components/card/blog/blog-card.ts",
       "attributes": [
         {
-          "name": "heading-text",
-          "description": "The text to display within the header.",
-          "type": "string",
-          "default": "\"\""
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
         },
         {
-          "name": "header-type",
-          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
-          "default": "\"primary\""
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"BlogCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "code-card",
+      "path": "./../../../src/components/card/code/code-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"CodeCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "connect-card",
+      "path": "./../../../src/components/card/connect/connect-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"ConnectCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "education-card",
+      "path": "./../../../src/components/card/education/education-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"EducationCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "profile-bio-card",
+      "path": "./../../../src/components/card/profile-bio/profile-bio-card.ts",
+      "attributes": [
+        {
+          "name": "bioText",
+          "type": "string",
+          "default": "\"bio\""
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
         }
       ],
       "properties": [
@@ -323,18 +349,229 @@
           "default": "[\"MaterialTypescaleStyles\",null]"
         },
         {
-          "name": "headingText",
-          "attribute": "heading-text",
-          "description": "The text to display within the header.",
+          "name": "bioText",
+          "attribute": "bioText",
           "type": "string",
-          "default": "\"\""
+          "default": "\"bio\""
         },
         {
-          "name": "headerType",
-          "attribute": "header-type",
-          "description": "The color variant theme for the header background and text.\nCan be 'primary', 'secondary', or 'tertiary'.",
-          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"inverse\"",
-          "default": "\"primary\""
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "settings-card",
+      "path": "./../../../src/components/card/settings/settings-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",\"SettingsCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "color_scheme.change"
+        }
+      ]
+    },
+    {
+      "name": "skills-card",
+      "path": "./../../../src/components/card/skills/skills-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"SkillsCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "work-card",
+      "path": "./../../../src/components/card/work/work-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"WorkCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "code-repo",
+      "path": "./../../../src/components/code/repo/code-repo.ts",
+      "description": "[object Object],[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "codeRepo",
+          "attribute": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        },
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",\"CodeRepoStyles\"]"
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "direct-connection",
+      "path": "./../../../src/components/connection/direct/direct-connection.ts",
+      "description": "[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"MaterialTypescaleStyles\",\"DirectConnectionStyles\"]"
+        },
+        {
+          "name": "connectionInstance",
+          "attribute": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
         }
       ]
     },
@@ -360,7 +597,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"MaterialTypescaleStyles\",\"UIModeToggleStyles\"]"
         },
         {
           "name": "mode",
@@ -393,8 +630,291 @@
       ]
     },
     {
+      "name": "version-tag",
+      "path": "./../../../src/components/version-tag/version-tag.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[null]"
+        }
+      ]
+    },
+    {
+      "name": "word-cloud",
+      "path": "./../../../src/components/word/cloud/word-cloud.ts",
+      "description": "A component that renders a cloud of words with various sorting and grouping options.",
+      "attributes": [
+        {
+          "name": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "words",
+          "attribute": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instantClear",
+          "attribute": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "attribute": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "attribute": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "attribute": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "attribute": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "attribute": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-cloud-animation",
+          "description": "Duration of the entrance animation for each word.",
+          "default": "\"150ms\""
+        },
+        {
+          "name": "--word-cloud-animation-reduced",
+          "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+          "default": "\"1ms\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-font-size",
+          "description": "Font size for words in the first weight quartile (highest weight).",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-line-height",
+          "description": "Line height for words in the first weight quartile.",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-font-size",
+          "description": "Font size for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-line-height",
+          "description": "Line height for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-font-size",
+          "description": "Font size for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-line-height",
+          "description": "Line height for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-font-size",
+          "description": "Font size for words in the fourth weight quartile (lowest weight).",
+          "default": "\"1rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-line-height",
+          "description": "Line height for words in the fourth weight quartile.",
+          "default": "\"1rem\""
+        }
+      ]
+    },
+    {
+      "name": "word-tag",
+      "path": "./../../../src/components/word/tag/word-tag.ts",
+      "attributes": [
+        {
+          "name": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "hrefUrl",
+          "attribute": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "attribute": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "attribute": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-tag-color",
+          "description": "The text and border color",
+          "default": "\"--md-sys-color-on-primary-container\""
+        },
+        {
+          "name": "--word-tag-background-color",
+          "description": "The background color",
+          "default": "\"--md-sys-color-primary-container\""
+        },
+        {
+          "name": "--word-tag-font-family",
+          "description": "The font family",
+          "default": "\"--md-ref-typeface-brand\""
+        },
+        {
+          "name": "--word-tag-font-size",
+          "description": "The font size",
+          "default": "\"--md-typescale-body-large-font-size\""
+        },
+        {
+          "name": "--word-tag-font-weight",
+          "description": "The font weight",
+          "default": "\"--md-ref-typeface-weight-regular\""
+        },
+        {
+          "name": "--word-tag-line-height",
+          "description": "The line height",
+          "default": "\"--md-typescale-body-large-lingt-height\""
+        },
+        {
+          "name": "--word-tag-border-radius",
+          "description": "The corner radius (for all corners)",
+          "default": "\"--md-sys-shape-corner-small\""
+        },
+        {
+          "name": "--word-tag-gap",
+          "description": "The `gap` between `word` and any `slot`-ed icon",
+          "default": "\"--spaces-gap-xs\""
+        }
+      ]
+    },
+    {
       "name": "work-experience",
-      "path": "./../../../src/components/work-experience/work-experience.ts",
+      "path": "./../../../src/components/work/experience/work-experience.ts",
       "attributes": [
         {
           "name": "experience-role",
@@ -513,54 +1033,6 @@
         },
         {
           "name": "object Object],[object Object],[object Object],[object Object],[object Object"
-        }
-      ]
-    },
-    {
-      "name": "blog-partial",
-      "path": "./../../../src/partials/blog/blog-partial.ts",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        }
-      ]
-    },
-    {
-      "name": "code-partial",
-      "path": "./../../../src/partials/code/code-partial.ts",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        }
-      ]
-    },
-    {
-      "name": "info-partial",
-      "path": "./../../../src/partials/info/info-partial.ts",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
-        }
-      ]
-    },
-    {
-      "name": "work-partial",
-      "path": "./../../../src/partials/work/work-partial.ts",
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
         }
       ]
     }

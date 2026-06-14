@@ -3,15 +3,23 @@
   "tags": [
     {
       "name": "profile-bio-card",
-      "description": "Attributes:\n\n  * `themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\n  * `bioText` {string} - The biography text to display.\n\nProperties:\n\n  * `styles` - \n\n  * `themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\n  * `bioText` {string} - The biography text to display.",
+      "description": "Attributes:\n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_photoData` - \n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\n  * `_onConfigChange` - ",
       "attributes": [
         {
-          "name": "themePhoto",
-          "description": "`themePhoto` {Object} - An object containing `src`, `alt`, and `figcaption` for the profile picture.\n\nProperty: themePhoto\n\nDefault: themePhoto"
+          "name": "bioText",
+          "description": "`bioText` {`string`} - \n\nProperty: bioText\n\nDefault: bio"
         },
         {
-          "name": "bioText",
-          "description": "`bioText` {string} - The biography text to display.\n\nProperty: bioText\n\nDefault: bio"
+          "name": "expanded",
+          "description": "`expanded` {`boolean`} - \n\nProperty: expanded\n\nDefault: false"
+        },
+        {
+          "name": "enableHover",
+          "description": "`enableHover` {`boolean`} - \n\nProperty: enableHover\n\nDefault: false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "`enableFocus` {`boolean`} - \n\nProperty: enableFocus\n\nDefault: false"
         }
       ]
     }

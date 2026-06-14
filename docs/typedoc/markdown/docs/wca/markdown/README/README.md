@@ -4,113 +4,142 @@
 
 [@fnc314/com.fnc314.website](../../../../README.md) / docs/wca/markdown/README
 
-# app-shell
-
-## Slots
-
-| Name          | Description                                   |
-| ------------- | --------------------------------------------- |
-| `app-content` | The place for the dynamic application content |
-| `app-nav`     | Where the navigation component is placed      |
-
 # bento-layout
 
-# blog-post
+# blog-entry
 
 ## Properties
 
-| Property                                        | Attribute  | Type           | Default |
-| ----------------------------------------------- | ---------- | -------------- | ------- |
-| `blogPost`                                      | `blogPost` | `BlogPostJson` | {}      |
-| `object Object],[object Object],[object Object` |            |                |         |
+| Property    | Attribute   | Type            | Default | Description               |
+| ----------- | ----------- | --------------- | ------- | ------------------------- |
+| `blogEntry` | `blogEntry` | `BlogEntryJson` | {}      | The JSON record to render |
 
-## CSS Custom Properties
-
-| Property                                                        | Description                                                                                           |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `--blog-post-animation`                                         | The duration of the animation for `:focus`, `:hover`,<br>`:focus-within`, and `:focus-visible` states |
-| `--blog-post-primary-text-color`                                | The color of the primary text                                                                         |
-| `object Object],[object Object],[object Object],[object Object` |                                                                                                       |
-
-# fab-menu-item
-
-An action item within a `fab-menu`.
+# bento-card
 
 ## Properties
 
-| Property | Attribute | Type     | Default | Description                                    |
-| -------- | --------- | -------- | ------- | ---------------------------------------------- |
-| `icon`   | `icon`    |          | ""      | The icon to display inside the FAB item.       |
-| `label`  | `label`   | `string` | ""      | The text label displayed next to the FAB item. |
-
-## Methods
-
-| Method  | Type                                          | Description                                                                             |
-| ------- | --------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `focus` | `(options?: FocusOptions \| undefined): void` | Focuses the underlying FAB element.<br><br>**options**: Standard browser focus options. |
-
-## CSS Custom Properties
-
-| Property                        | Default | Description                              |
-| ------------------------------- | ------- | ---------------------------------------- |
-| `--fab-menu-item-padding-end`   | 0       | The logical `padding-inline-end` value   |
-| `--fab-menu-item-padding-start` | 0       | The logical `padding-inline-start` value |
-| `object Object],[object Object` |         |                                          |
-
-# fab-menu
-
-A floating action button that toggles a menu of actions.
-
-## Properties
-
-| Property                                        | Attribute     | Type                                                  | Default   | Description                                                                                                   |
-| ----------------------------------------------- | ------------- | ----------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------- |
-| `ariaLabel`                                     | `aria-label`  | `string`                                              | ""        | The `aria-label` of the FAB.                                                                                  |
-| `direction`                                     | `direction`   | `"start" \| "end"`                                    | "end"     | The direction in which the menu items should expand.                                                          |
-| `icon`                                          | `icon`        |                                                       | "add"     | [object Object],[object Object],[object Object],[object Object],[object Object]                               |
-| `label`                                         | `label`       | `string`                                              | ""        | [object Object],[object Object],[object Object]                                                               |
-| `object Object],[object Object],[object Object` |               |                                                       |           |                                                                                                               |
-| `open`                                          | `open`        | `boolean`                                             | false     | Whether the menu is currently open.                                                                           |
-| `openedIcon`                                    | `opened-icon` | `MaterialSymbol`                                      | "close"   | The icon to display when the menu is open.<br>Defaults to 'close'.                                            |
-| `size`                                          | `size`        | `"small" \| "medium" \| "large"`                      | "medium"  | The size of the FAB.<br>Can be 'small', 'medium', or 'large'.<br>Defaults to 'medium'.                        |
-| `variant`                                       | `variant`     | `"surface" \| "primary" \| "secondary" \| "tertiary"` | "primary" | The variant of the FAB.<br>Can be 'surface', 'primary', 'secondary', or 'tertiary'.<br>Defaults to 'primary'. |
+| Property         | Attribute        | Type      | Default | Description                                                                                                                              |
+| ---------------- | ---------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `bentoCardTitle` | `bentoCardTitle` | `string`  | ""      | The clickable text for the `<h2>` in the `<summary>` element. When provided,<br> the exposed `slot[name="header"]` is suppressed.        |
+| `enableFocus`    | `enableFocus`    | `boolean` | false   | Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to `false`.                                            |
+| `enableHover`    | `enableHover`    | `boolean` | false   | Whether to enable the lift-on-hover effect.<br>Defaults to `false` to minimize visual motion in dense layout grids.                      |
+| `expanded`       | `expanded`       | `boolean` | false   | Reflects and controls the open state of the underlying `<details>` element.<br>When `true`, the card is expanded and content is visible. |
+| `scrollable`     | `scrollable`     | `boolean` | false   | Whether to enable scrolling for content                                                                                                  |
 
 ## Slots
 
-| Name                                            |
-| ----------------------------------------------- |
-| `object Object],[object Object],[object Object` |
+| Name     | Description                                                                               |
+| -------- | ----------------------------------------------------------------------------------------- |
+|          | Default slot for card content. Slotted `h2` elements receive standardized header styling. |
+| `header` | Content to be displayed in the card's header/summary area.                                |
 
-## CSS Custom Properties
-
-| Property                                        | Default | Description                                               |
-| ----------------------------------------------- | ------- | --------------------------------------------------------- |
-| `--fab-menu-transition-duration`                | "200ms" | The duration of the menu's opening and closing animations |
-| `object Object],[object Object],[object Object` |         |                                                           |
-
-# info-section
-
-A reusable section component for profile-related content.
-Uses container queries to provide a responsive grid layout that adapts to available space.
-
-## API
+# blog-card
 
 ## Properties
 
-| Property       | Attribute       | Type     | Default | Description                                                                            |
-| -------------- | --------------- | -------- | ------- | -------------------------------------------------------------------------------------- |
-| `sectionTitle` | `section-title` | `string` | ""      | The title displayed in the section's header.<br>Maps to the `section-title` attribute. |
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
 
-# partial-header
-
-A header component used for section titles with support for primary, secondary, and tertiary Material color variants.
+# code-card
 
 ## Properties
 
-| Property      | Attribute      | Type                                                  | Default   | Description                                                                                                  |
-| ------------- | -------------- | ----------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
-| `headerType`  | `header-type`  | `"primary" \| "secondary" \| "tertiary" \| "inverse"` | "primary" | The color variant theme for the header background and text.<br>Can be 'primary', 'secondary', or 'tertiary'. |
-| `headingText` | `heading-text` | `string`                                              | ""        | The text to display within the header.                                                                       |
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# connect-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# education-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# profile-bio-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `bioText`     | `bioText`     | `string`  | "bio"   |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# settings-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+## Events
+
+| Event                 | Type               |
+| --------------------- | ------------------ |
+| `color_scheme.change` | `CustomEvent<any>` |
+
+# skills-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# work-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# code-repo
+
+[object Object],[object Object],[object Object]
+
+## Properties
+
+| Property                                        | Attribute  | Type           | Default | Description                     |
+| ----------------------------------------------- | ---------- | -------------- | ------- | ------------------------------- |
+| `codeRepo`                                      | `codeRepo` | `CodeRepoData` | {}      | [object Object],[object Object] |
+| `object Object],[object Object],[object Object` |            |                |         |                                 |
+
+# direct-connection
+
+[object Object],[object Object]
+
+## Properties
+
+| Property             | Attribute             | Type                 | Default |
+| -------------------- | --------------------- | -------------------- | ------- |
+| `connectionInstance` | `connection-instance` | `ConnectionInstance` | {}      |
 
 # ui-mode-toggle
 
@@ -135,6 +164,70 @@ A header component used for section titles with support for primary, secondary, 
 | `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
 | `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
 
+# version-tag
+
+# word-cloud
+
+A component that renders a cloud of words with various sorting and grouping options.
+
+## Properties
+
+| Property       | Attribute       | Type                  | Default      | Description                                                                                                                                                                  |
+| -------------- | --------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appearance`   | `appearance`    | `WordCloudAppearance` | "SEQUENTIAL" | Controls the order in which words are animated/displayed.<br><br>Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).                 |
+| `delay`        | `delay`         | `number \| "none"`    | "none"       | The delay in milliseconds between word appearances when using sequential mode.<br><br>Set to "none" to use the component's internal default delays.                          |
+| `grouping`     | `grouping`      | `WordCloudGrouping`   | "UNGROUPED"  | Controls how words are grouped together within the cloud.<br><br>Supported modes: 'category', 'quartile', or 'ungrouped'.                                                    |
+| `instantClear` | `instant-clear` | `boolean`             | false        | Whether to clear the word cloud instantly when it is no longer visible.<br>When true, the cloud resets instantly to opacity 0 instead of fading out.                         |
+| `sorting`      | `sorting`       | `WordCloudSorting`    | "NONE"       | Controls how words are sorted within their groupings.<br><br>Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.           |
+| `threshold`    | `threshold`     | `number`              | 0.1          | The intersection observer threshold for visibility detection.<br><br>A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation. |
+| `words`        | `words`         | `WordCloudWord[]`     | []           | The list of words to display in the cloud.                                                                                                                                   |
+
+## CSS Custom Properties
+
+| Property                                   | Default   | Description                                                               |
+| ------------------------------------------ | --------- | ------------------------------------------------------------------------- |
+| `--word-cloud-animation`                   | "150ms"   | Duration of the entrance animation for each word.                         |
+| `--word-cloud-animation-reduced`           | "1ms"     | Duration of the entrance animation when prefers-reduced-motion is active. |
+| `--word-cloud-first-quartile-font-size`    | "1.75rem" | Font size for words in the first weight quartile (highest weight).        |
+| `--word-cloud-first-quartile-line-height`  | "1.75rem" | Line height for words in the first weight quartile.                       |
+| `--word-cloud-fourth-quartile-font-size`   | "1rem"    | Font size for words in the fourth weight quartile (lowest weight).        |
+| `--word-cloud-fourth-quartile-line-height` | "1rem"    | Line height for words in the fourth weight quartile.                      |
+| `--word-cloud-second-quartile-font-size`   | "1.5rem"  | Font size for words in the second weight quartile.                        |
+| `--word-cloud-second-quartile-line-height` | "1.5rem"  | Line height for words in the second weight quartile.                      |
+| `--word-cloud-third-quartile-font-size`    | "1.25rem" | Font size for words in the third weight quartile.                         |
+| `--word-cloud-third-quartile-line-height`  | "1.25rem" | Line height for words in the third weight quartile.                       |
+
+# word-tag
+
+## Properties
+
+| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                    |
+| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--hairline-width`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --hairline-width`) |
+| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                |
+| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                |
+| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                |
+| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                |
+
+## Slots
+
+| Name                                            |
+| ----------------------------------------------- |
+| `object Object],[object Object],[object Object` |
+
+## CSS Custom Properties
+
+| Property                      | Default                                  | Description                                     |
+| ----------------------------- | ---------------------------------------- | ----------------------------------------------- |
+| `--word-tag-background-color` | "--md-sys-color-primary-container"       | The background color                            |
+| `--word-tag-border-radius`    | "--md-sys-shape-corner-small"            | The corner radius (for all corners)             |
+| `--word-tag-color`            | "--md-sys-color-on-primary-container"    | The text and border color                       |
+| `--word-tag-font-family`      | "--md-ref-typeface-brand"                | The font family                                 |
+| `--word-tag-font-size`        | "--md-typescale-body-large-font-size"    | The font size                                   |
+| `--word-tag-font-weight`      | "--md-ref-typeface-weight-regular"       | The font weight                                 |
+| `--word-tag-gap`              | "--spaces-gap-xs"                        | The `gap` between `word` and any `slot`-ed icon |
+| `--word-tag-line-height`      | "--md-typescale-body-large-lingt-height" | The line height                                 |
+
 # work-experience
 
 ## Properties
@@ -152,12 +245,4 @@ A header component used for section titles with support for primary, secondary, 
 | `object Object],[object Object],[object Object],[object Object],[object Object` |                      |                       |                        |                                                                                 |
 | `summaries`                                                                     | `summaries`          | `{ item: string; }[]` | []                     | A list of summary points describing achievements or responsibilities.           |
 
-# blog-partial
-
-# code-partial
-
-# info-partial
-
-# work-partial
-
-</any></body></html>
+</any></any></details></summary></h2></body></html>

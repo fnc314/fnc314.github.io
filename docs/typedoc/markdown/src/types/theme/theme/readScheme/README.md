@@ -8,9 +8,9 @@
 
 &gt; **readScheme**(`jsonSchema`: `object`): `CSSResult`
 
-Defined in: [src/types/theme/theme.ts:140](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L140)
+Defined in: [src/types/theme/theme.ts:165](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L165)
 
-postcss-lit-disable-next-line
+Reads a `.json` defined object and produces a lit!CSSResult
 
 ## Parameters
 
@@ -19,6 +19,7 @@ postcss-lit-disable-next-line
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -33,6 +34,11 @@ postcss-lit-disable-next-line
 `object`
 
 </td>
+<td>
+
+‐
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -40,5 +46,7 @@ postcss-lit-disable-next-line
 ## Returns
 
 `CSSResult`
+
+A lit!CSSResult of the provided [jsonSchema](#readscheme)
 
 </body></html>

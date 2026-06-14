@@ -40,7 +40,7 @@ Defined in: [src/components/card/profile-bio/profile-bio-card.ts:17](https://git
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:63](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L63)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:65](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L65)
 
 Invoked when the component is added to the document's DOM.
 
@@ -73,7 +73,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:69](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L69)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:71](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L71)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -105,7 +105,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/profile-bio/profile-bio-card.ts:80](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L80)
+Defined in: [src/components/card/profile-bio/profile-bio-card.ts:82](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/profile-bio/profile-bio-card.ts#L82)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

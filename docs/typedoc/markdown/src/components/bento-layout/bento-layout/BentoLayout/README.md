@@ -6,7 +6,7 @@
 
 # Class: BentoLayout
 
-Defined in: [src/components/bento-layout/bento-layout.ts:29](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L29)
+Defined in: [src/components/bento-layout/bento-layout.ts:17](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L17)
 
 ## Element
 
@@ -18,7 +18,7 @@ bento-layout
 
 ### Extends
 
-- [`LitElement`](https://lit.dev/docs/api/LitElement/)
+- `UIAwareElement`
 
 ## Other
 
@@ -26,13 +26,28 @@ bento-layout
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/bento-layout/bento-layout.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L31)
+Defined in: [src/components/bento-layout/bento-layout.ts:19](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L19)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
-`LitElement.styles`
+`UIAwareElement.styles`
+
+---
+
+### breakpoint
+
+&gt; `protected` **breakpoint**: `BreakpointLabel`
+
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+
+The BreakpointLabel as determined by _SCREEN_ width against
+Breakpoints.BREAKPOINT_LABELS
+
+#### Inherited from
+
+`UIAwareElement.breakpoint`
 
 ## lifecycle
 
@@ -40,7 +55,7 @@ Defined in: [src/components/bento-layout/bento-layout.ts:31](https://github.com/
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L49)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L48)
 
 Invoked when the component is added to the document's DOM.
 
@@ -63,9 +78,9 @@ element is disconnected, in `disconnectedCallback()`.
 
 `void`
 
-#### Overrides
+#### Inherited from
 
-`LitElement.connectedCallback`
+`UIAwareElement.connectedCallback`
 
 ---
 
@@ -73,7 +88,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/bento-layout/bento-layout.ts:96](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L96)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L54)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -95,9 +110,9 @@ An element may be re-connected after being disconnected.
 
 `void`
 
-#### Overrides
+#### Inherited from
 
-`LitElement.disconnectedCallback`
+`UIAwareElement.disconnectedCallback`
 
 ## rendering
 
@@ -105,7 +120,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/bento-layout/bento-layout.ts:159](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L159)
+Defined in: [src/components/bento-layout/bento-layout.ts:74](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L74)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -118,65 +133,6 @@ the element to update.
 
 #### Overrides
 
-`LitElement.render`
-
-## updates
-
-### firstUpdated()
-
-&gt; `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
-
-Defined in: [src/components/bento-layout/bento-layout.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.ts#L54)
-
-Invoked when the element is first updated. Implement to perform one time
-work on the element after update.
-
-```ts
-firstUpdated() {
-  this.renderRoot.getElementById('my-text-area').focus();
-}
-```
-
-Setting properties inside this method will trigger the element to update
-again after this update cycle completes.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`_changedProperties`
-
-</td>
-<td>
-
-`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
-
-</td>
-<td>
-
-Map of changed properties with old values
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`LitElement.firstUpdated`
+`UIAwareElement.render`
 
 </body></html>

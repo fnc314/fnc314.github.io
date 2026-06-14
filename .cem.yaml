@@ -7,7 +7,11 @@ generate:
     - ./src/data/**/*.json
 
   files:
-    - ./src/**/**/*.ts
+    - ./src/components/**/*.ts
+    - ./src/mixins/**/*.ts
+    - ./src/styles/**/*.css
+    - ./src/themes/**/*.ts
+    - ./src/types/**/*.ts
 
   output: ./docs/@pwrs/cem/custom-elements.json
 

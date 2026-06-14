@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "bento-card",
+      "description": "Slots:\n\n  * `header` {} - Content to be displayed in the card's header/summary area.\n\n  * ` ` {} - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n\nAttributes:\n\n  * `scrollable` {boolean} - Whether to enable scrolling for content\n\n  * `expanded` {boolean} - Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.\n\n  * `enableHover` {boolean} - Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.\n\n  * `enableFocus` {boolean} - Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.\n\n  * `bentoCardTitle` {string} - The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `scrollable` {boolean} - Whether to enable scrolling for content\n\n  * `expanded` {boolean} - Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.\n\n  * `enableHover` {boolean} - Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.\n\n  * `enableFocus` {boolean} - Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.\n\n  * `bentoCardTitle` {string} - The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+      "attributes": [
+        {
+          "name": "scrollable",
+          "description": "`scrollable` {boolean} - Whether to enable scrolling for content\n\nProperty: scrollable\n\nDefault: false"
+        },
+        {
+          "name": "expanded",
+          "description": "`expanded` {boolean} - Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.\n\nProperty: expanded\n\nDefault: false"
+        },
+        {
+          "name": "enableHover",
+          "description": "`enableHover` {boolean} - Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.\n\nProperty: enableHover\n\nDefault: false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "`enableFocus` {boolean} - Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.\n\nProperty: enableFocus\n\nDefault: false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "description": "`bentoCardTitle` {string} - The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.\n\nProperty: bentoCardTitle\n\nDefault: "
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

@@ -1,9 +1,10 @@
 ## `dev-ex:refresh`
 
+Run dx-refresh
+
+
 - **Usage**: `dev-ex:refresh [logstep]`
 - **Aliases**: `dxr`
-
-Run dx-refresh
 
 ### Arguments
 
@@ -16,7 +17,6 @@ Creates a .log file timestamped by execution point in ./logs/&lt;choice>/&lt;tim
 - `none`
 - `log-all`
 - `mise-tasks`
-- `mise-tasks-design-tokens`
 - `typescript-types`
 - `pwrs/cem`
 - `cem-analyze`

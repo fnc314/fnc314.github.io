@@ -6,8 +6,13 @@
 
 # src/types/theme/theme
 
+## Type Aliases
+
+- [ValidateRGBA](ValidateRGBA/README.md)
+
 ## Functions
 
+- [setRGBA](setRGBA/README.md)
 - [jsonIsThemeJsonSchemes](jsonIsThemeJsonSchemes/README.md)
 - [readScheme](readScheme/README.md)
 - [keyTransform](keyTransform/README.md)

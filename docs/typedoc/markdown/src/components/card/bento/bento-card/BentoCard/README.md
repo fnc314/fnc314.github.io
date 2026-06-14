@@ -6,7 +6,7 @@
 
 # Class: BentoCard
 
-Defined in: [src/components/card/bento/bento-card.ts:30](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L30)
+Defined in: [src/components/card/bento/bento-card.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L32)
 
 ## Element
 
@@ -34,7 +34,7 @@ header - Content to be displayed in the card's header/summary area.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/card/bento/bento-card.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L32)
+Defined in: [src/components/card/bento/bento-card.ts:34](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L34)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -44,11 +44,21 @@ Defined in: [src/components/card/bento/bento-card.ts:32](https://github.com/fnc3
 
 ---
 
+### scrollable
+
+&gt; **scrollable**: `boolean` = `false`
+
+Defined in: [src/components/card/bento/bento-card.ts:40](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L40)
+
+Enables internal vertical scrolling for content.
+
+---
+
 ### expanded
 
 &gt; **expanded**: `boolean` = `false`
 
-Defined in: [src/components/card/bento/bento-card.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L42)
+Defined in: [src/components/card/bento/bento-card.ts:47](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L47)
 
 Reflects and controls the open state of the card.
 
@@ -58,7 +68,7 @@ Reflects and controls the open state of the card.
 
 &gt; **enableHover**: `boolean` = `false`
 
-Defined in: [src/components/card/bento/bento-card.ts:49](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L49)
+Defined in: [src/components/card/bento/bento-card.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L54)
 
 Opt-in to the hover elevation/shift effect.
 
@@ -68,9 +78,19 @@ Opt-in to the hover elevation/shift effect.
 
 &gt; **enableFocus**: `boolean` = `false`
 
-Defined in: [src/components/card/bento/bento-card.ts:56](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L56)
+Defined in: [src/components/card/bento/bento-card.ts:61](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L61)
 
 Opt-in to the focus-within border/shadow shift effect.
+
+---
+
+### bentoCardTitle
+
+&gt; **bentoCardTitle**: `string` = `""`
+
+Defined in: [src/components/card/bento/bento-card.ts:71](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L71)
+
+An optional `string` which, when set, suppresses the `slot[name="header"]`
 
 ---
 
@@ -78,7 +98,7 @@ Opt-in to the focus-within border/shadow shift effect.
 
 &gt; `private` **\_handleToggle**(`e`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)): `void`
 
-Defined in: [src/components/card/bento/bento-card.ts:64](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L64)
+Defined in: [src/components/card/bento/bento-card.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L79)
 
 Synchronizes the `expanded` property with the state of the `<details>` element
 whenever the user interacts with the toggle icon or summary.
@@ -124,7 +144,7 @@ The toggle event from the `<details>` element.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/bento/bento-card.ts:68](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L68)
+Defined in: [src/components/card/bento/bento-card.ts:83](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/card/bento/bento-card.ts#L83)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

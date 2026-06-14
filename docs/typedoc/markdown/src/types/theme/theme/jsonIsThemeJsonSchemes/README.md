@@ -8,7 +8,7 @@
 
 &gt; **jsonIsThemeJsonSchemes**(`json`: `unknown`): `json is ThemeJsonSchemes`
 
-Defined in: [src/types/theme/theme.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L79)
+Defined in: [src/types/theme/theme.ts:99](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L99)
 
 Checks if the provided JSON conforms to the expected theme schemes structure
 

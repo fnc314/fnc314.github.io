@@ -6,7 +6,7 @@
 
 # Type Alias: GridPosition
 
-&gt; **GridPosition** = \{ `breakpoint`: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\&lt;[`Breakpoint`](../../../../styles/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \} \| \{ `breakpoint`: `"mobile"`; \}
+&gt; **GridPosition** = \{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \} \| \{ `breakpoint`: `"mobile"`; \}
 
 Defined in: [src/components/bento-layout/bento-layout.types.ts:20](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L20)
 
@@ -17,7 +17,7 @@ dimensions
 
 ### Type Literal
 
-\{ `breakpoint`: [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\&lt;[`Breakpoint`](../../../../styles/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \}
+\{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \}
 
 <table>
 <thead>
@@ -37,7 +37,7 @@ dimensions
 </td>
 <td>
 
-[`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\&lt;[`Breakpoint`](../../../../styles/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;
+[`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;
 
 </td>
 <td>

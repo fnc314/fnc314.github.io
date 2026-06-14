@@ -1,9 +1,10 @@
 ## `python:server:start`
 
+Start Python server at provided directory on given port
+
+
 - **Usage**: `python:server:start [-p --port [port]] [directory]`
 - **Aliases**: `python-server`
-
-Start Python server at provided directory on given port
 
 ### Arguments
 

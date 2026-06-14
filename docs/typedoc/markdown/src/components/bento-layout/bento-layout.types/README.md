@@ -9,14 +9,19 @@
 ## Interfaces
 
 - [GridPlacement](GridPlacement/README.md)
-- [BentoBoxConfig](BentoBoxConfig/README.md)
+- [ABentoBoxConfig](ABentoBoxConfig/README.md)
 
 ## Type Aliases
 
 - [GridPosition](GridPosition/README.md)
 - [BentoBoxType](BentoBoxType/README.md)
+- [BentoBoxConfigs](BentoBoxConfigs-1/README.md)
 
 ## Variables
 
 - [BentoBoxConfigs](BentoBoxConfigs/README.md)
+
+## Functions
+
+- [getBentoDOMOrder](getBentoDOMOrder/README.md)
 </body></html>

@@ -8,5 +8,5 @@
 
 ## Variables
 
-- [bentoLayoutStyles](bentoLayoutStyles/README.md)
+- [BentoLayoutStyles](BentoLayoutStyles/README.md)
 </body></html>

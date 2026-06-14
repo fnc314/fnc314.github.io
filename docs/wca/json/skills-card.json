@@ -1,0 +1,52 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "skills-card",
+      "path": "./../../../src/components/card/skills/skills-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"SkillsCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    }
+  ]
+}

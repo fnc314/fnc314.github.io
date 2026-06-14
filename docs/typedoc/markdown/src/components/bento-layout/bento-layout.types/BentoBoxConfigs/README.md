@@ -6,15 +6,45 @@
 
 # Variable: BentoBoxConfigs
 
-&gt; `const` **BentoBoxConfigs**: () =&gt; [`BentoBoxConfig`](../BentoBoxConfig/README.md)[]
+&gt; **BentoBoxConfigs**: (`breakpoint`: [`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)) =&gt; [`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:60](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L60)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:64](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L64)
 
-Produces an Array of [BentoBoxConfig](../BentoBoxConfig/README.md) instances used to populate
-[@fnc314/fnc314.github.io!BentoLayout](/Users/fnc314/Code/websites/fnc314.github.io/src/components/bento-layout/bento-layout.ts).
+Produces an array of [ABentoBoxConfig](../ABentoBoxConfig/README.md) instances sorted for proper DOM order.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`breakpoint`
+
+</td>
+<td>
+
+[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)
+
+</td>
+<td>
+
+`"desktop"`
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Returns
 
-[`BentoBoxConfig`](../BentoBoxConfig/README.md)[]
+[`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
 
 </body></html>

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "settings-card",
+      "description": "Events:\n\n  * `color_scheme.change` - \n\nAttributes:\n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `_appConfigs` - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\n  * `onAppConfigsChange` - ",
+      "attributes": [
+        {
+          "name": "expanded",
+          "description": "`expanded` {`boolean`} - \n\nProperty: expanded\n\nDefault: false"
+        },
+        {
+          "name": "enableHover",
+          "description": "`enableHover` {`boolean`} - \n\nProperty: enableHover\n\nDefault: false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "`enableFocus` {`boolean`} - \n\nProperty: enableFocus\n\nDefault: false"
+        },
+        {
+          "name": "oncolor_scheme.change",
+          "description": "`color_scheme.change` - "
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

@@ -6,7 +6,7 @@
 
 # Class: UiModeToggle
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L41)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L42)
 
 ## Element
 
@@ -28,7 +28,7 @@ permanentcolorscheme - Event from `dark-mode-toggle` when the persistence change
 ## Remarks
 
 The component applies custom styling to the encapsulated `dark-mode-toggle` using CSS parts
-to align with the application's Material Design 3 aesthetic.
+to align with the application"s Material Design 3 aesthetic.
 
 ## Hierarchy
 
@@ -44,7 +44,7 @@ to align with the application's Material Design 3 aesthetic.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:43](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L43)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:44](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L44)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -58,7 +58,7 @@ Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:43](https://github.
 
 &gt; **reset**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:260](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L260)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:141](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L141)
 
 Resets the UI mode toggle to its default settings.
 
@@ -72,7 +72,7 @@ Resets the UI mode toggle to its default settings.
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:189](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L189)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:65](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L65)
 
 Invoked when the component is added to the document's DOM.
 
@@ -105,7 +105,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:196](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L196)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:72](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L72)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -137,7 +137,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:265](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L265)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:146](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L146)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -151,5 +151,64 @@ the element to update.
 #### Overrides
 
 `LitElement.render`
+
+## updates
+
+### firstUpdated()
+
+&gt; `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
+
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L79)
+
+Invoked when the element is first updated. Implement to perform one time
+work on the element after update.
+
+```ts
+firstUpdated() {
+  this.renderRoot.getElementById('my-text-area').focus();
+}
+```
+
+Setting properties inside this method will trigger the element to update
+again after this update cycle completes.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`_changedProperties`
+
+</td>
+<td>
+
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
+
+</td>
+<td>
+
+Map of changed properties with old values
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Overrides
+
+`LitElement.firstUpdated`
 
 </body></html>

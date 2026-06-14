@@ -1,9 +1,12 @@
 ## `vite:build:development`
 
-- **Usage**: `vite:build:development [-w]`
-- **Aliases**: `vite-build-dev`
-
 Runs `vite build` using `development` for mode AND `NODE_ENV`
+
+
+- Depends: vite:build:design-tokens
+
+- **Usage**: `vite:build:development [-w]`
+- **Aliases**: `v:b:d`
 
 ### Flags
 

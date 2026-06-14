@@ -1,9 +1,10 @@
 ## `dev-ex:tools:eslint`
 
+Runs `eslint`
+
+
 - **Usage**: `dev-ex:tools:eslint [FLAGS] [print]`
 - **Aliases**: `dx:t:eslint`
-
-Runs `eslint`
 
 ### Arguments
 

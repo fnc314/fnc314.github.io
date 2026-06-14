@@ -1,9 +1,10 @@
 ## `dev-ex:tools:stylelint`
 
+Runs `stylelint`
+
+
 - **Usage**: `dev-ex:tools:stylelint [FLAGS]`
 - **Aliases**: `dx:t:stylelint`
-
-Runs `stylelint`
 
 ### Flags
 
