@@ -1,6 +1,6 @@
 additionalPackages:
   - "npm:@material/web@2.4.1"
-  - "npm:material-symbols@0.45.0"
+  - "npm:material-symbols@0.45.1"
 
 generate:
   exclude:
