@@ -1,11 +1,4 @@
-import { Breakpoints } from "@fnc314/design-tokens";
-
-/**
- * Values for the \`--breakpoint-label\` custom CSS property
- *
- * @typedef Breakpoint
- */
-export type Breakpoint = typeof Breakpoints.BREAKPOINT_LABELS[number];
+import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
 
 /**
  * Defines the 2 numbers needed to place something
@@ -26,7 +19,7 @@ export interface GridPlacement {
  */
 export type GridPosition = {
   /** The breakpoint for this position */
-  breakpoint: Exclude<Breakpoint, "mobile">;
+  breakpoint: Exclude<BreakpointLabel, "mobile">;
   /** The row placement */
   row: GridPlacement;
   /** The column placement */
@@ -65,7 +58,7 @@ export const BENTO_BOX_TYPES: BentoBoxType[] = [
 export interface ABentoBoxConfig {
   type: BentoBoxType;
   expanded?: boolean;
-  placement: Record<Breakpoint, GridPosition>;
+  placement: Record<BreakpointLabel, GridPosition>;
 }
 
 export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">>;
@@ -74,15 +67,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 5 } },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 8 } },
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 } },
       mobile: { breakpoint: "mobile" },
     }
   },
   connect: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 5, end: 9 } },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 8, end: -1 } },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } },
       mobile: { breakpoint: "mobile" },
     }
@@ -90,15 +83,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   education: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 9, end: -1 } },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 4, end: 7 } },
+      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
+      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
       mobile: { breakpoint: "mobile" },
     }
   },
   work: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
+      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
       mobile: { breakpoint: "mobile" },
     }
@@ -106,7 +99,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   blog: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
+      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } },
       mobile: { breakpoint: "mobile" },
     }
@@ -114,15 +107,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   code: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } },
+      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } },
       mobile: { breakpoint: "mobile" },
     }
   },
   skills: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
+      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
       mobile: { breakpoint: "mobile" },
     }
@@ -130,7 +123,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   settings: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
+      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
       mobile: { breakpoint: "mobile" },
     }
@@ -144,7 +137,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
  * @param breakpoint - The current active breakpoint.
  * @returns An array of {@link BentoBoxType} in the appropriate order for the DOM.
  */
-export function getBentoDOMOrder(breakpoint: Breakpoint): BentoBoxType[] {
+export function getBentoDOMOrder(breakpoint: BreakpointLabel): BentoBoxType[] {
   // Use desktop as the sequence authority if we are on a non-grid breakpoint (mobile)
   const sortBreakpoint = breakpoint === "mobile" ? "desktop" : breakpoint;
   const types = Object.keys(BENTO_BOX_CONFIG) as BentoBoxType[];
@@ -168,7 +161,7 @@ export function getBentoDOMOrder(breakpoint: Breakpoint): BentoBoxType[] {
 /**
  * Produces an array of {@link ABentoBoxConfig} instances sorted for proper DOM order.
  */
-export const BentoBoxConfigs = (breakpoint: Breakpoint = "desktop"): ABentoBoxConfig[] =>
+export const BentoBoxConfigs = (breakpoint: BreakpointLabel = "desktop"): ABentoBoxConfig[] =>
   getBentoDOMOrder(breakpoint).map((type) => ({
     type,
     ...BENTO_BOX_CONFIG[type],
