@@ -12,8 +12,8 @@ describe("EducationCard Component", () => {
     const el = await fixture<EducationCard>(html`<education-card></education-card>`);
     const bentoCard = el.shadowRoot?.querySelector("bento-card");
     expect(bentoCard).to.exist;
-    
-    const list = bentoCard?.querySelector(".education-list");
+
+    const list = bentoCard?.querySelector("ul");
     expect(list).to.exist;
     expect(list?.children.length).to.be.greaterThan(0);
   });

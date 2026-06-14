@@ -55,7 +55,7 @@
       }
     },
     {
-      "label": "Alternatively",
+      "label": "Professionally",
       "connections": {
         "googleDocs": {
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"Google Docs logo\" slot=\"start\" src=\"./icons/brand/google-docs.svg\" />",

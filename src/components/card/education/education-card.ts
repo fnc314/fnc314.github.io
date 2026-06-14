@@ -34,10 +34,10 @@ export class EducationCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Education"}
       >
-        <ul class="education-list">
+        <ul>
           ${EducationJson.education.map(
             (edu) => html`
-              <li class="education-item">
+              <li>
                 <img
                   src=${cssPropertyDataImage(
                     this.darkMode ? edu.designToken.dark : edu.designToken.light

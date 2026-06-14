@@ -61,8 +61,8 @@ export const ConnectCardStyles = css`
     padding-block: var(--spaces-padding-xs);
 
     img, md-icon {
-      width: calc(var(--md-icon-size) * 0.75);
-      height: calc(var(--md-icon-size) * 0.75);
+      width: calc(var(--md-icon-size));
+      height: calc(var(--md-icon-size));
       background-color: var(--md-sys-color-surface-container-highest);
       border-radius: var(--md-sys-shape-corner-full);
       padding: var(--spaces-padding-xs);

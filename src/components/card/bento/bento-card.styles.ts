@@ -17,11 +17,13 @@ export const BentoCardStyles = css`
     display: block;
     height: 100%;
     width: 100%;
+    container-type: inline-size;
+    container-name: bento-card-container;
   }
 
   .bento-card {
     backdrop-filter: blur(12px);
-    background-color: var(--md-sys-color-surface-container-low);
+    background-color: var(--md-sys-color-surface-container-lowest);
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-level1);
@@ -30,7 +32,7 @@ export const BentoCardStyles = css`
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    padding: var(--spaces-padding-m);
+    padding: var(--spaces-padding-s);
     transition:
       transform var(--motions-duration-short) var(--motions-easing-emphasized),
       box-shadow var(--motions-duration-short) var(--motions-easing-base),
@@ -107,6 +109,12 @@ export const BentoCardStyles = css`
     .expansion-content {
       flex-grow: 1;
       overflow-y: auto;
+    }
+  }
+
+  @container bento-card-container (min-width: 500px) {
+    .bendo-card {
+      padding: var(--spaces-padding-m);
     }
   }
 `;

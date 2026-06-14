@@ -39,35 +39,6 @@ export class CodeRepo extends UIAwareElement {
   @query("article")
   private articleCard!: HTMLElement;
 
-  private onWordTagSizeChange: (event: TransitionEvent) => void = (event: TransitionEvent) => {
-    console.info(
-      `
-      Event
-      ${JSON.stringify({ target: event.target, articleCard: this.articleCard?.tagName, elapsedTime: event.elapsedTime, propertyName: event.propertyName }, null, 2)}
-      `
-    );
-    if (event.propertyName === CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE) {
-      void (event.target as HTMLElement).offsetHeight;
-
-      const readProp: WordTagSize = readCSSProperty(
-        CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
-        this.articleCard
-      ) as WordTagSize;
-
-      if (readProp && readProp !== this.wordTagSize) {
-        console.info(
-          `Replacing WordTagSize ${this.wordTagSize} with ${readProp}, Event ${JSON.stringify({ element: event.pseudoElement, propertyName: event.propertyName }, null, 2)}`
-        );
-        this.wordTagSize = readProp;
-      }
-    }
-  }
-
-  override disconnectedCallback() {
-    this.articleCard?.removeEventListener("transitionend", this.onWordTagSizeChange);
-    super.disconnectedCallback();
-  }
-
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     const firstRead = readCSSProperty(
       CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE,
@@ -79,16 +50,6 @@ export class CodeRepo extends UIAwareElement {
       this.wordTagSize = firstRead;
     }
 
-    console.info(
-      `
-        FirstUpdated Callback, after \`this.updateComplete\`
-        articleCard: ${this.articleCard?.tagName}
-        _changedProperties: ${JSON.stringify(_changedProperties, null, 2)}
-        Locals ${JSON.stringify({ wordTagSize: this.wordTagSize, darkMode: this.darkMode, breakpoint: this.breakpoint }, null, 2)}
-      `
-    )
-
-    this.articleCard.addEventListener("transitionend", this.onWordTagSizeChange);
   }
 
   override render() {

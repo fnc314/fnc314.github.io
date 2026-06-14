@@ -26,19 +26,20 @@ export const CodeRepoStyles: CSSResult = css`
     container-type: inline-size;
     container-name: code-repo-card;
 
+    --code-repo-banner-thickness: calc(var(--sizes-thickness-hairline) * 8);
+    --code-repo-banner-color: var(--md-sys-color-primary);
+
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
-    --word-tag-background-color: var(--md-sys-color-tertiary-fixed);
+    --word-tag-background-color: var(--md-sys-color-tertiary-fixed-dim);
     --word-tag-color: var(--md-sys-color-on-tertiary-fixed);
   }
 
   article {
     --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.full)};
     transition: --code-repo-word-tag-size 5ms ease-in-out;
-  }
 
-  article {
     position: relative;
     background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
@@ -57,9 +58,9 @@ export const CodeRepoStyles: CSSResult = css`
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      height: calc(var(--sizes-thickness-hairline) * 8);
-      background-color: var(--md-sys-color-primary);
+      bottom: 0;
+      width: var(--code-repo-banner-thickness);
+      background-color: var(--code-repo-banner-color);
     }
 
     /* Formerly .card-body-wrapper */
@@ -159,35 +160,23 @@ export const CodeRepoStyles: CSSResult = css`
     }
   }
 
-  @container code-repo-card (max-width: 300px) {
-    article {
-      --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
-
-      padding: var(--spaces-padding-s);
-      justify-content: space-between;
-
-      > div {
-        header {
-          margin-block-end: var(--spaces-margin-xs);
-
-          h3 {
-            font-size: var(--md-sys-typescale-title-medium-size);
-            line-height: var(--md-sys-typescale-title-medium-line-height);
-          }
-        }
-
-        > div {
-          p { margin-block-end: var(--spaces-margin-s); }
-          footer ul { gap: var(--spaces-gap-xs); }
-        }
-      }
-    }
-  }
-
-  @container code-repo-card (min-width: 500px) {
+  @container code-repo-card (max-width: 500px) {
     article {
       --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.compact)};
+
       padding: var(--spaces-padding-l);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: unset;
+        width: unset;
+        height: var(--code-repo-banner-thickness);
+        background-color: var(--code-repo-banner-color);
+      }
 
       > div {
         display: grid;
@@ -210,6 +199,41 @@ export const CodeRepoStyles: CSSResult = css`
           flex-direction: column;
           p { margin-block-end: var(--spaces-margin-m); }
           footer { margin-top: auto; }
+        }
+      }
+    }
+  }
+
+  @container code-repo-card (max-width: 300px) {
+    article {
+      --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.condensed)};
+
+      padding: var(--spaces-padding-s);
+      justify-content: space-between;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--code-repo-banner-thickness);
+        background-color: var(--code-repo-banner-color);
+      }
+
+      > div {
+        header {
+          margin-block-end: var(--spaces-margin-xs);
+
+          h3 {
+            font-size: var(--md-sys-typescale-title-medium-size);
+            line-height: var(--md-sys-typescale-title-medium-line-height);
+          }
+        }
+
+        > div {
+          p { margin-block-end: var(--spaces-margin-s); }
+          footer ul { gap: var(--spaces-gap-xs); }
         }
       }
     }
