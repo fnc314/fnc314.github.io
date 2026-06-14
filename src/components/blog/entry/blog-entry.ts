@@ -35,14 +35,14 @@ export class BlogEntry extends UIAwareElement {
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
 
     return html`
-      <article class="card">
-        <div class="timeline-node" aria-hidden="true">
+      <article>
+        <div aria-hidden="true">
           <span class="md-typescale-title-large">${blogEntryPadded}</span>
         </div>
 
-        <div class="card-content">
-          <header class="header">
-            <h3 class="title md-typescale-title-large">
+        <div>
+          <header>
+            <h3 class="md-typescale-title-large">
               ${this.blogEntry.title}
             </h3>
             <h4 class="md-typescale-title-small">
@@ -50,13 +50,12 @@ export class BlogEntry extends UIAwareElement {
             </h4>
           </header>
 
-          <div class="blog-summary-container">
-            <p class="md-typescale-body-medium blog-summary">${this.blogEntry.summary}</p>
+          <div>
+            <p class="md-typescale-body-medium">${this.blogEntry.summary}</p>
           </div>
 
-          <footer class="footer">
+          <footer>
             <a
-              class="medium-link md-typescale-body-small"
               href=${ifDefined(this.blogEntry.mediumUrl)}
               target="_blank"
               rel="noopener noreferrer"

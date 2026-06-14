@@ -36,7 +36,7 @@ export class CodeRepo extends UIAwareElement {
   @state()
   protected wordTagSize: WordTagSize = WORD_TAG_SIZES.full;
 
-  @query("article.card")
+  @query("article")
   private articleCard!: HTMLElement;
 
   private onWordTagSizeChange: (event: TransitionEvent) => void = (event: TransitionEvent) => {
@@ -93,16 +93,13 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     return html`
-      <article
-        class="card"
-        >
-        <div class="card-body-wrapper">
-          <header class="header">
-            <h3 class="project-title md-typescale-title-large">
+      <article>
+        <div>
+          <header>
+            <h3 class=\"md-typescale-title-large\">
               ${this.codeRepo.name}
             </h3>
             <a
-              class="repo-link md-typescale-body-small"
               href="${this.codeRepo.url}"
               target="_blank"
               rel="noopener noreferrer"
@@ -122,14 +119,13 @@ export class CodeRepo extends UIAwareElement {
 
           <md-divider></md-divider>
 
-          <div class="info-pane">
+          <div>
             <p
-              class="blurb md-typescale-body-medium"
               .innerHTML=${this.codeRepo.description}
             ></p>
 
-            <footer class="footer">
-              <ul class="tech-list" aria-label="Technologies used">
+            <footer>
+              <ul aria-label=\"Technologies used\">
                 ${this.codeRepo.tech.map((tech) => {
                   const imgSrc =
                     typeof tech.designToken === "string"

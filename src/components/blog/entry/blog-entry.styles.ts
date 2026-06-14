@@ -12,7 +12,7 @@ export const BlogEntryStyles: CSSResult = css`
     --blog-entry-card-content: 95;
   }
 
-  .card {
+  article {
     position: relative;
     background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
@@ -22,83 +22,70 @@ export const BlogEntryStyles: CSSResult = css`
     overflow: hidden;
     min-width: 0;
     height: 100%;
-  }
 
-  /* Mobile: Number on Top */
-  .timeline-node {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    padding: var(--spaces-padding-xs);
-    text-align: center;
-    font-weight: var(--md-sys-typescale-title-medium-weight);
-    font-family: var(--md-ref-typeface-brand);
-    flex: var(--blog-entry-timeline);
-  }
-
-  .card-content {
-    padding: var(--spaces-padding-m);
-    flex: var(--blog-entry-card-content);
-
-    header {
-
-      h3 {
-        margin: var(--spaces-none);
-        margin-block-end: var(--spaces-margin-xs);
-        color: var(--md-sys-color-on-surface);
-        font-family: var(--md-ref-typeface-brand);
-      }
-
-      h4 {
-        margin: var(--spaces-none);
-        margin-block-end: var(--spaces-margin-xs);
-        font-style: italic;
-        color: var(--md-sys-color-primary);
-      }
+    /* Formerly .timeline-node */
+    > div:first-of-type {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      padding: var(--spaces-padding-xs);
+      text-align: center;
+      font-weight: var(--md-sys-typescale-title-medium-weight);
+      font-family: var(--md-ref-typeface-brand);
+      flex: var(--blog-entry-timeline);
     }
-  }
 
-  .blog-summary-container {
-
-    .blog-summary {
-      color: var(--md-sys-color-on-surface-variant);
-      margin-top: var(--spaces-none);
-      margin-bottom: var(--spaces-margin-m);
-      word-break: break-word;
+    /* Formerly .card-content */
+    > div:last-of-type {
+      padding: var(--spaces-padding-m);
+      flex: var(--blog-entry-card-content);
       min-width: 0;
-    }
-  }
 
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spaces-gap-s);
-  }
+      header {
+        h3 {
+          margin: var(--spaces-none);
+          margin-block-end: var(--spaces-margin-xs);
+          color: var(--md-sys-color-on-surface);
+          font-family: var(--md-ref-typeface-brand);
+        }
 
-  .medium-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spaces-gap-xs);
-    color: var(--md-sys-color-inverse-surface);
-    text-decoration: none;
+        h4 {
+          margin: var(--spaces-none);
+          margin-block-end: var(--spaces-margin-xs);
+          font-style: italic;
+          color: var(--md-sys-color-primary);
+        }
+      }
 
-    img {
-      width: var(--md-icon-size);
-      height: var(--md-icon-size);
-    }
-  }
+      /* Summary container */
+      div {
+        p {
+          color: var(--md-sys-color-on-surface-variant);
+          margin-top: var(--spaces-none);
+          margin-bottom: var(--spaces-margin-m);
+          word-break: break-word;
+          min-width: 0;
+        }
+      }
 
-  .badge-list {
-    display: flex;
-    gap: var(--spaces-gap-xs);
-    list-style: none;
-    margin: var(--spaces-none);
-    padding: var(--spaces-none);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spaces-gap-s);
 
-    word-tag {
-      scroll-snap-align: start;
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--spaces-gap-xs);
+          color: var(--md-sys-color-inverse-surface);
+          text-decoration: none;
+
+          img {
+            width: var(--md-icon-size);
+            height: var(--md-icon-size);
+          }
+        }
+      }
     }
   }
 
@@ -112,14 +99,14 @@ export const BlogEntryStyles: CSSResult = css`
 
   /* Breakpoints: 300px and 500px */
   @container blog-entry-card (min-width: 500px) {
-    .card {
+    article {
       flex-direction: row;
-    }
 
-    .timeline-node {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      > div:first-of-type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 `;
