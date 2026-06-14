@@ -1,4 +1,11 @@
-import { type Breakpoint } from "@/types/breakpoints";
+import { Breakpoints } from "@fnc314/design-tokens";
+
+/**
+ * Values for the \`--breakpoint-label\` custom CSS property
+ *
+ * @typedef Breakpoint
+ */
+export type Breakpoint = typeof Breakpoints.BREAKPOINT_LABELS[number];
 
 /**
  * Defines the 2 numbers needed to place something
