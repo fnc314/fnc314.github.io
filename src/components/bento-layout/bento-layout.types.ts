@@ -72,7 +72,7 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
-    expanded: false,
+    expanded: true,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 5 } },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } },
@@ -96,7 +96,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     }
   },
   work: {
-    expanded: false,
+    expanded: true,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
@@ -120,7 +120,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     }
   },
   skills: {
-    expanded: false,
+    expanded: true,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
       tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
