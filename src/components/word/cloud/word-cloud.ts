@@ -1,20 +1,20 @@
 export type {
-    RenderableWordCloudWord,
-    WordCloudAppearance,
-    WordCloudGrouping,
-    WordCloudSorting,
-    WordCloudWord
-} from "@/components/word/word-cloud/word-cloud.types";
+  RenderableWordCloudWord,
+  WordCloudAppearance,
+  WordCloudGrouping,
+  WordCloudSorting,
+  WordCloudWord
+} from "@/components/word/cloud/word-cloud.types";
 import {
-    type RenderableWordCloudWord,
-    type WordCloudAppearance,
-    WordCloudAppearances,
-    type WordCloudGrouping,
-    WordCloudGroupings,
-    type WordCloudSorting,
-    WordCloudSortings,
-    type WordCloudWord,
-} from "@/components/word/word-cloud/word-cloud.types";
+  type RenderableWordCloudWord,
+  type WordCloudAppearance,
+  WordCloudAppearances,
+  type WordCloudGrouping,
+  WordCloudGroupings,
+  type WordCloudSorting,
+  WordCloudSortings,
+  type WordCloudWord,
+} from "@/components/word/cloud/word-cloud.types";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";

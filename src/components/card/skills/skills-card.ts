@@ -1,7 +1,7 @@
 import "@/components/card/bento/bento-card";
 import { SkillsCardStyles } from "@/components/card/skills/skills-card.styles";
-import "@/components/word/word-cloud/word-cloud";
-import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/word-cloud/word-cloud.types";
+import "@/components/word/cloud/word-cloud";
+import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/cloud/word-cloud.types";
 import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";

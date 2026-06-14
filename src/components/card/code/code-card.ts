@@ -1,6 +1,6 @@
 import "@/components/card/bento/bento-card";
 import { CodeCardStyles } from "@/components/card/code/code-card.styles";
-import "@/components/code/project/code-project";
+import "@/components/code/repo/code-repo";
 import CodeJson from "@/data/code.json" with { type: "json" };
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";

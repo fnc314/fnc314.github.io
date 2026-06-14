@@ -1,4 +1,4 @@
-import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/word-tag/word-tag.types";
+import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/tag/word-tag.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { type CSSResult, type TemplateResult, css, html, nothing } from "lit";
@@ -159,7 +159,7 @@ export class WordTag extends UIAwareElement {
 
     return contents ?
       html`
-        <div style=${borderStyles.cssText} class="word-tag-variant-wrapper">
+        <div title=${this.word} style=${borderStyles.cssText} class="word-tag-variant-wrapper">
           ${contents}
         </div>
       ` :
@@ -170,7 +170,7 @@ export class WordTag extends UIAwareElement {
   override render() {
     return this.hrefUrl === "" ?
       this.layoutForVariant(this.variant) :
-      html`<a href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${this.layoutForVariant(this.variant)}</a>`;
+      html`<a title=${this.word} href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${this.layoutForVariant(this.variant)}</a>`;
   }
 }
 

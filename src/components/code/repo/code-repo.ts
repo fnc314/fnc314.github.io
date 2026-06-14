@@ -148,10 +148,11 @@ export class CodeRepo extends UIAwareElement {
                     ? html`
                         <img
                           role="img"
-                          aria-labelledby="${tagId}"
+                          aria-describedby="${tagId}"
                           src="${imgSrc}"
                           alt="${tech.name}"
                           slot="icon"
+                          title=${tech.name}
                         />
                       `
                     : nothing;
