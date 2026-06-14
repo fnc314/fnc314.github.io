@@ -2,7 +2,7 @@
 #MISE description="Run dx-refresh"
 #MISE alias="dxr"
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {
-#USAGE   choices "none" "log-all" "mise-tasks" "mise-tasks-design-tokens" "typescript-types" "pwrs/cem" "cem-analyze" "wca" "typedoc"
+#USAGE   choices "none" "log-all" "mise-tasks" "typescript-types" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
 
 declare LOG_STEP="${usage_logstep:=none}"
@@ -39,11 +39,11 @@ mkdir -p docs/mise/tasks
 mise generate task-docs -m -o docs/mise/tasks
 echo
 
-[[ "$LOG_STEP" == "mise-tasks-design-tokens" || "$LOG_STEP" == "log-all" ]] && create_log "mise-tasks/design-tokens"
-echo "Recreate Mise Task Docs - Design Tokens"
-mkdir -p docs/mise/tasks/design-tokens
-mise generate task-docs -m -o ../docs/mise/tasks/design-tokens -C design-tokens
-echo
+# [[ "$LOG_STEP" == "mise-tasks-design-tokens" || "$LOG_STEP" == "log-all" ]] && create_log "mise-tasks/design-tokens"
+# echo "Recreate Mise Task Docs - Design Tokens"
+# mkdir -p docs/mise/tasks/design-tokens
+# mise generate task-docs -m -o docs/mise/tasks/design-tokens -C design-tokens
+# echo
 
 [[ "$LOG_STEP" == "typescript-types" || "$LOG_STEP" == "log-all" ]] && create_log "typescript-types"
 echo "Recreate TypeScript \`.d.ts\` files"
@@ -52,22 +52,26 @@ echo
 
 [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
 echo "dx:@pwrs:cem:generate"
-pnpm run dx:@pwrs:cem:generate
+NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -v
 echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
 echo "dx:cem-analyze"
-pnpm run dx:cem-analyze
+NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs
 echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
 echo "dx:wca"
-pnpm run dx:wca
+pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
+pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir ./docs/wca/json --format json
+pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
+pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir ./docs/wca/markdown --format markdown
+pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir .vscode/wca --format vscode
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"
 echo "dx:typedoc"
-pnpm run dx:typedoc
+pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs
 echo
 echo "DONE"
 
