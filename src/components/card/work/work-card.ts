@@ -1,7 +1,7 @@
 import "@/components/card/bento/bento-card";
 import { WorkCardStyles } from "@/components/card/work/work-card.styles";
-import "@/components/work-experience/work-experience";
-import { data as WorkJson } from "@/components/work-experience/work-experience.types";
+import "@/components/work/experience/work-experience";
+import { data as WorkJson } from "@/components/work/experience/work-experience.types";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

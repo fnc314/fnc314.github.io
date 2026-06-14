@@ -14,7 +14,7 @@ import "@/components/connection/direct/direct-connection";
 import "@/components/version-tag/version-tag";
 import "@/components/word/word-cloud/word-cloud";
 import "@/components/word/word-tag/word-tag";
-import "@/components/work-experience/work-experience";
+import "@/components/work/experience/work-experience";
 import "@/services/configs/configs-service";
 import { configsService } from "@/services/configs/configs-service";
 import "@/services/storage/storage-service";
