@@ -12,10 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Mise Install
+      - env:
+          MISE_VERBOSE: "1"
+        name: Mise Install
         uses: jdx/mise-action@v4
         with:
-          cache: true
+          cache: false
           experimental: true
           install: true
 
