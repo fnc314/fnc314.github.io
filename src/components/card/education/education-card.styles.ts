@@ -27,13 +27,14 @@ export const EducationCardStyles = css`
       display: grid;
       gap: var(--spaces-none) var(--spaces-gap-s);
       grid-template-areas:
-        "logo institute"
+        ". institute"
         "logo location"
-        ". program"
+        "logo program"
         ". year";
-      grid-template-columns: 1fr max-content;
+      grid-template-columns: max-content 1fr;
       margin-block: var(--spaces-margin-xs);
       text-align: end;
+      align-items: baseline;
 
       img {
         aspect-ratio: 1;
@@ -77,12 +78,28 @@ export const EducationCardStyles = css`
 
       li {
         grid-template-areas:
-          "logo . institute"
-          "logo . location"
-          ". . program"
-          ". . year";
-        grid-template-columns: 1fr auto max-content;
-        text-align: unset;
+          ". institute"
+          "logo location"
+          "logo program"
+          ". year";
+        grid-template-columns: max-content auto 1fr;
+      }
+    }
+  }
+
+  @container education-card-container (min-width: 900px) {
+    ul {
+      flex-direction: row;
+
+      li {
+        grid-template-areas:
+          "logo institute location"
+          "logo program year";
+        grid-template-columns: repeat(3, max-content);
+      }
+
+      span, time {
+        text-align: start;
       }
     }
   }
