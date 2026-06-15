@@ -7,14 +7,14 @@ import { css } from "lit";
 export const CodeCardStyles = css`
   :host {
     display: block;
-    height: 100%;
+    block-size: 100%;
   }
 
   .code-container {
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    height: 100%;
+    block-size: 100%;
   }
 
   .code-list {
@@ -32,7 +32,7 @@ export const CodeCardStyles = css`
     }
 
     code-repo {
-      min-width: 80%;
+      min-inline-size: 80%;
       scroll-snap-align: start;
     }
   }

@@ -1,5 +1,3 @@
-experimental_monorepo_root = true
-
 [monorepo]
   config_roots = [
     "design-tokens",
@@ -20,7 +18,7 @@ experimental_monorepo_root = true
   }
   configureExtensionsUseSymLinks = true
   LOCAL_CONFIG_DIR = "{{config_root}}/.config"
-  LOCAL_BUILD_PYTHON_SERVER_PORT = "8888"
+  LOCAL_BUILD_PYTHON_SERVER_PORT = "9999"
   BUILD_ENVIRONMENT = ""
   LOCAL_BUILD_PYTHON_SERVER_DIR = "dist/vite/development"
 

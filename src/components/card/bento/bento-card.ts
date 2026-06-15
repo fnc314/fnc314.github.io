@@ -1,5 +1,6 @@
 import { BentoCardStyles } from "@/components/card/bento/bento-card.styles";
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -29,7 +30,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @slot - Default slot for card content. Slotted `h2` elements receive standardized header styling.
  */
 @customElement("bento-card")
-export class BentoCard extends LitElement {
+export class BentoCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [BentoCardStyles];
 

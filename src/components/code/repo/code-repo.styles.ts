@@ -16,13 +16,12 @@ export const CodeRepoStyles: CSSResult = css`
     flex-grow: 1;
     box-sizing: border-box;
     container-type: inline-size;
-    container-name: code-repo-card;
 
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-inverse-primary);
-    --word-tag-color: var(--md-sys-color-inverse-on-primary);
+    --word-tag-color: var(--md-sys-color-inverse-on-surface);
   }
 
   article {
@@ -32,9 +31,9 @@ export const CodeRepoStyles: CSSResult = css`
     background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
-    padding-block-start: var(--spaces-padding-s);
-    padding-block-end: var(--spaces-padding-s);
-    padding-inline-start: var(--spaces-padding-l);
+    padding-block-start: var(--spaces-padding-xs);
+    padding-block-end: var(--spaces-padding-xs);
+    padding-inline-start: var(--spaces-padding-xl);
     padding-inline-end: var(--spaces-padding-xs);
     display: grid;
     grid-template-columns: 1fr;
@@ -150,11 +149,12 @@ export const CodeRepoStyles: CSSResult = css`
    * Widget is 1/2 width (3 out of 6 columns).
    * Container width range: ~385px to 600px.
    */
-  @container code-repo-card (min-width: 385px) {
+  @container (min-width: 385px) {
     article {
-      padding-block: var(--spaces-padding-xl);
-      padding-inline-start: var(--spaces-padding-xl);
-      padding-inline-end: var(--spaces-padding-m);
+      padding-block-start: var(--spaces-padding-xl);
+      padding-block-end: var(--spaces-padding-s);
+      padding-inline-start: var(--spaces-padding-s);
+      padding-inline-end: var(--spaces-padding-s);
       gap: var(--spaces-gap-m);
 
       header {
@@ -178,10 +178,11 @@ export const CodeRepoStyles: CSSResult = css`
    * Widget is full width (12 out of 12 columns).
    * Container width range: 1201px+.
    */
-  @container code-repo-card (min-width: 1201px) {
+  @container (min-width: 1201px) {
     article {
-      padding-block: var(--spaces-padding-s);
-      padding-inline: var(--spaces-padding-xl);
+      padding-block: var(--spaces-padding-xs);
+      padding-inline-start: var(--spaces-padding-xl);
+      padding-inline-end: unset;
 
       grid-template-columns: 1fr 1.5fr;
       grid-template-rows: auto 1fr;

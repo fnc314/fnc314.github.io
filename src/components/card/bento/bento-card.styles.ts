@@ -113,7 +113,7 @@ export const BentoCardStyles = css`
   }
 
   @container bento-card-container (min-width: 500px) {
-    .bendo-card {
+    .bento-card {
       padding: var(--spaces-padding-m);
     }
   }
