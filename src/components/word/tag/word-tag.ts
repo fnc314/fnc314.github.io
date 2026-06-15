@@ -1,3 +1,4 @@
+import { WordTagStyles } from "@/components/word/tag/word-tag.styles";
 import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/tag/word-tag.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
@@ -35,66 +36,7 @@ export class WordTag extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,
-    css`
-      :host {
-        /** @ignore */
-        --internal-word-tag-color: var(--word-tag-color, var(--md-sys-color-on-primary-container));
-
-        /** @ignore */
-        --internal-word-tag-background-color: var(--word-tag-background-color, var(--md-sys-color-primary-container));
-
-        /** @ignore */
-        --internal-word-tag-font-family: var(--word-tag-font-family, var(--md-ref-typeface-brand));
-
-        /** @ignore */
-        --internal-word-tag-font-size: var(--word-tag-font-size, var(--md-sys-typescale-body-large-size));
-
-        /** @ignore */
-        --internal-word-tag-font-weight: var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight));
-
-        /** @ignore */
-        --internal-word-tag-line-height: var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height));
-
-        /** @ignore */
-        --internal-word-tag-border-radius: var(--word-tag-border-radius, var(--md-sys-shape-corner-small));
-
-        /** @ignore */
-        --internal-word-tag-animation-duration: 200ms;
-
-        /** @ignore */
-        --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs));
-
-        display: contents;
-
-        @media (prefers-reduced-motion: reduce) {
-          --internal-word-tag-animation-duration: 0ms;
-        }
-      }
-
-      .word-tag-variant-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: var(--internal-word-tag-gap);
-        background-color: var(--internal-word-tag-background-color);
-        border-color: var(--internal-word-tag-color);
-        border-radius: var(--internal-word-tag-border-radius);
-        border-style: solid;
-        max-width: 100%;
-        overflow: hidden;
-        padding: var(--spaces-padding-xs);
-        transition: all var(--internal-word-tag-animation-duration) ease-in-out;
-
-        span {
-          color: var(--internal-word-tag-color);
-          font-family: var(--internal-word-tag-font-family);
-          font-size: var(--internal-word-tag-font-size);
-          line-height: var(--internal-word-tag-line-height);
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-    `,
+    WordTagStyles,
   ];
 
   @property({ type: String })

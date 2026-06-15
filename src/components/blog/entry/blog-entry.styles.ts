@@ -24,7 +24,7 @@ export const BlogEntryStyles: CSSResult = css`
     height: 100%;
 
     /* Formerly .timeline-node */
-    > div:first-of-type {
+    > div.banner {
       background-color: var(--md-sys-color-primary);
       color: var(--md-sys-color-on-primary);
       padding: var(--spaces-padding-xs);
@@ -89,20 +89,12 @@ export const BlogEntryStyles: CSSResult = css`
     }
   }
 
-  .badge {
-    padding: var(--spaces-padding-xxs) var(--spaces-padding-xs);
-    background: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-    border-radius: var(--md-sys-shape-corner-small);
-    font-size: var(--md-sys-typescale-label-small-size);
-  }
-
   /* Breakpoints: 300px and 500px */
-  @container blog-entry-card (min-width: 500px) {
+  @container blog-entry-card (max-width: 500px) {
     article {
       flex-direction: row;
 
-      > div:first-of-type {
+      div.banner {
         display: flex;
         align-items: center;
         justify-content: center;
