@@ -1,6 +1,5 @@
-@import url("material-symbols/outlined.css");
-@import url("material-symbols/sharp.css");
 @import url("@fnc314/design-tokens");
+@import url("styles/material-symbols.css");
 
 :root {
   --hover-focus-animation-translate-y: var(
@@ -11,16 +10,6 @@
   --color-transition-timing: var(--globals-transition-color-timing);
 
   color-scheme: light dark;
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Material Symbols Outlined";
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Material Symbols Sharp";
 }
 
 * {

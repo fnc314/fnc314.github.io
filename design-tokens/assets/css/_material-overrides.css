@@ -78,6 +78,18 @@
   --md-sys-typescale-title-small-line-height: 1.25rem;
   --md-sys-typescale-title-small-size: 0.875rem;
   --md-sys-typescale-title-small-weight: 500;
+  --md-fonts-material-symbols-sharp-family: "Material Symbols Sharp";
+  --md-fonts-material-symbols-sharp-face-weight-min: 100;
+  --md-fonts-material-symbols-sharp-face-weight-max: 700;
+  --md-fonts-material-symbols-sharp-weight: normal;
+  --md-fonts-material-symbols-sharp-size: 24px;
+  --md-fonts-material-symbols-sharp-line-height: 1;
+  --md-fonts-material-symbols-outlined-family: "Material Symbols Outlined";
+  --md-fonts-material-symbols-outlined-face-weight-min: 100;
+  --md-fonts-material-symbols-outlined-face-weight-max: 700;
+  --md-fonts-material-symbols-outlined-weight: normal;
+  --md-fonts-material-symbols-outlined-size: 24px;
+  --md-fonts-material-symbols-outlined-line-height: 1;
   --md-ref-typeface-brand: monospace;
   --md-ref-typeface-plain: inter, sans-serif;
   --md-ref-typeface-weight-regular: 400;
