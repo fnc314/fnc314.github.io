@@ -1,3 +1,4 @@
+import { Breakpoints } from "@fnc314/design-tokens";
 import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
 
 /**
@@ -57,76 +58,78 @@ export type BentoBoxType =
  * @interface BentoBoxConfig
  */
 export interface ABentoBoxConfig {
-  expanded?: boolean;
+  type: BentoBoxType;
   placement: Record<BreakpointLabel, GridPosition>;
+  isExpanded: (breakpoint: BreakpointLabel) => boolean;
 }
 
-export type BentoBoxConfigs = Record<BentoBoxType, ABentoBoxConfig>;
+export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">>;
 
+/** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 8 }, area: "profile-photo-bio" },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile-photo-bio" },
       mobile: { breakpoint: "mobile", area: "profile-photo-bio" },
-    }
+    },
+    isExpanded: () => true
   },
   connect: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 8, end: -1 }, area: "connect" },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 }, area: "connect" },
       mobile: { breakpoint: "mobile", area: "connect" },
-    }
+    },
+    isExpanded: () => true
   },
   education: {
-    expanded: true,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
       tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
       mobile: { breakpoint: "mobile", area: "education" },
-    }
+    },
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint === Breakpoints.BreakpointLabels.desktop
   },
   work: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
       tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
       mobile: { breakpoint: "mobile", area: "work" },
-    }
+    },
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   blog: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "blog" },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: "blog" },
       mobile: { breakpoint: "mobile", area: "blog" },
-    }
+    },
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   code: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "code" },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: "code" },
       mobile: { breakpoint: "mobile", area: "code" },
-    }
+    },
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   skills: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "skills" },
       tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "skills" },
       mobile: { breakpoint: "mobile", area: "skills" },
-    }
+    },
+    isExpanded: () => false
   },
   settings: {
-    expanded: false,
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: "settings" },
       tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "settings" },
       mobile: { breakpoint: "mobile", area: "settings" },
-    }
+    },
+    isExpanded: () => false
   }
 };
 

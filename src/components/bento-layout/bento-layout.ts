@@ -34,28 +34,28 @@ export class BentoLayout extends UIAwareElement {
     let cardContent: TemplateResult;
     switch (config.type) {
       case "profile-photo-bio":
-        cardContent = html`<profile-bio-card .expanded=${config.expanded}></profile-bio-card>`;
+        cardContent = html`<profile-bio-card .expanded=${config.isExpanded(this.breakpoint)}></profile-bio-card>`;
         break;
       case "connect":
-        cardContent = html`<connect-card .expanded=${config.expanded}></connect-card>`;
+        cardContent = html`<connect-card .expanded=${config.isExpanded(this.breakpoint)}></connect-card>`;
         break;
       case "education":
-        cardContent = html`<education-card .expanded=${config.expanded}></education-card>`;
+        cardContent = html`<education-card .expanded=${config.isExpanded(this.breakpoint)}></education-card>`;
         break;
       case "work":
-        cardContent = html`<work-card .expanded=${config.expanded}></work-card>`;
+        cardContent = html`<work-card .expanded=${config.isExpanded(this.breakpoint)}></work-card>`;
         break;
       case "blog":
-        cardContent = html`<blog-card .expanded=${config.expanded}></blog-card>`;
+        cardContent = html`<blog-card .expanded=${config.isExpanded(this.breakpoint)}></blog-card>`;
         break;
       case "code":
-        cardContent = html`<code-card .expanded=${config.expanded}></code-card>`;
+        cardContent = html`<code-card .expanded=${config.isExpanded(this.breakpoint)}></code-card>`;
         break;
       case "skills":
-        cardContent = html`<skills-card .expanded=${config.expanded}></skills-card>`;
+        cardContent = html`<skills-card .expanded=${config.isExpanded(this.breakpoint)}></skills-card>`;
         break;
       case "settings":
-        cardContent = html`<settings-card .expanded=${config.expanded}></settings-card>`;
+        cardContent = html`<settings-card .expanded=${config.isExpanded(this.breakpoint)}></settings-card>`;
         break;
       default:
         return html`${nothing}`;

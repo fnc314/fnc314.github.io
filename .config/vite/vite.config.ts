@@ -114,7 +114,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
 
     VITE
     Dynamic Configs
-    ${JSON.stringify(dynamicConfig, null, 2)}
+      ${JSON.stringify(dynamicConfig, null, 2)}
 
     params
     MODE - ${mode}
@@ -127,7 +127,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       \`process.cwd()\` - ${process.cwd()}
       \`path.resolve(__dirname)\` - ${path.resolve(__dirname)}
 
-    `
+    `.trim()
   );
 
   return {
@@ -145,11 +145,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     },
     base: dynamicConfig.base,
     publicDir: dynamicConfig.publicDir,
-    assetsInclude: [
-      "files/pdfs/*.pdf",
-      "images/**/*.jpg",
-      "icons/**/*.{ico,svg,png",
-    ].map((p) => path.resolve(dynamicConfig.publicDir, p)),
     optimizeDeps: {},
     resolve: {
       alias: {
@@ -171,14 +166,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
         devtools: {},
         experimental: {
-          viteMode: true,
+          // viteMode: true,
         },
         logLevel: "debug",
         platform: "browser",
+        treeshake: dynamicConfig.isProduction,
       },
       reportCompressedSize: true,
     },
     css: {
+      transformer: "postcss",
       devSourcemap: !dynamicConfig.isProduction,
       postcss: path.resolve(process.cwd(), ".config/postcss/postcss.config.mjs"),
     },

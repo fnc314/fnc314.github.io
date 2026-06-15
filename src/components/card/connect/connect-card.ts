@@ -3,6 +3,7 @@ import { ConnectCardStyles } from "@/components/card/connect/connect-card.styles
 import "@/components/connection/direct/direct-connection";
 import Connections from "@/data/connections.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
@@ -56,19 +57,33 @@ export class ConnectCard extends UIAwareElement {
                 <ul>
                   ${
                     Object.values(category.connections).map(
-                      (conn) => html`
-                        <li class="connection-list-item">
-                          ${unsafeHTML(conn.start)}
-                          <a
-                            href=${conn.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="connection-link md-typescale-body-large"
-                          >
-                            ${unsafeHTML(conn.text)}
-                          </a>
-                        </li>
-                      `
+                      (conn) => {
+                        const liStart = "designToken" in conn ?
+                          html`
+                            <img
+                              alt=""
+                              role="img"
+                              aria-describedby="connection-link-tag"
+                              src="${cssPropertyDataImage(conn.designToken.default)}"
+                              />
+                          ` :
+                          unsafeHTML(conn.start);
+
+                        return html`
+                          <li class="connection-list-item">
+                            ${liStart}
+                            <a
+                              id="connection-link-tag"
+                              href=${conn.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="connection-link md-typescale-body-large"
+                            >
+                              ${unsafeHTML(conn.text)}
+                            </a>
+                          </li>
+                        `;
+                      }
                     )
                   }
                 </ul>

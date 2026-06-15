@@ -38,19 +38,34 @@
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"LinkedIn logo\" slot=\"start\" src=\"./icons/brand/linkedin.svg\" />",
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">linkedin.com/in/fnc314</span>",
           "overline": "<span slot=\"overline\">LinkedIn</span>",
-          "href": "https://www.linkedin.com/in/fnc314"
+          "href": "https://www.linkedin.com/in/fnc314",
+          "designToken": {
+            "dark": "--icons-logos-organization-linkedin-dark",
+            "default": "--icons-logos-organization-linkedin-default",
+            "light": "--icons-logos-organization-linkedin-light"
+          }
         },
         "github": {
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"GitHub logo\" slot=\"start\" src=\"./icons/brand/github.svg\" />",
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">github.com/fnc314</span>",
           "overline": "<span slot=\"overline\">GitHub</span>",
-          "href": "https://www.github.com/fnc314"
+          "href": "https://www.github.com/fnc314",
+          "designToken": {
+            "dark": "--icons-logos-organization-github-dark",
+            "default": "--icons-logos-organization-github-default",
+            "light": "--icons-logos-organization-github-light"
+          }
         },
         "medium": {
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"Medium logo\" slot=\"start\" src=\"./icons/brand/medium/medium-dark.svg\" />",
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">fnc314.medium.com</span>",
           "overline": "<span slot=\"overline\">Medium</span>",
-          "href": "https://fnc314.medium.com"
+          "href": "https://fnc314.medium.com",
+          "designToken": {
+            "dark": "--icons-logos-organization-medium-dark",
+            "default": "--icons-logos-organization-medium-default",
+            "light": "--icons-logos-organization-medium-light"
+          }
         }
       }
     },
@@ -61,13 +76,23 @@
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"Google Docs logo\" slot=\"start\" src=\"./icons/brand/google-docs.svg\" />",
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">Live Resume</span>",
           "overline": "<span slot=\"overline\">Google Docs</span>",
-          "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub"
+          "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
+          "designToken": {
+            "dark": "--icons-logos-tech-google-docs-dark",
+            "default": "--icons-logos-tech-google-docs-default",
+            "light": "--icons-logos-tech-google-docs-light"
+          }
         },
         "pdf": {
           "start": "<img loading=\"lazy\" role=\"img\" alt=\"PDF file logo\" slot=\"start\" src=\"./icons/brand/pdf.svg\" />",
           "text": "<span class=\"md-typescale-body-medium\" slot=\"headline\">PDF Resume</span>",
           "overline": "<span slot=\"overline\">PDF</span>",
-          "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf"
+          "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
+          "designToken": {
+            "dark": "--icons-logos-tech-pdf-dark",
+            "default": "--icons-logos-tech-pdf-default",
+            "light": "--icons-logos-tech-pdf-light"
+          }
         }
       }
     }

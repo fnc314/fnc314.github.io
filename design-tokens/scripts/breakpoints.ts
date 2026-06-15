@@ -7,11 +7,24 @@ export const CSS_VARIABLE_BREAKPOINT_LABEL: string = "--breakpoint-label" as con
  * @typedef Breakpoint
  */
 export type BreakpointLabel = "mobile" | "tablet" | "desktop";
+
+/**
+ * Iterable set of {@link BreakpointLabel}
+ */
 export const BREAKPOINT_LABELS: BreakpointLabel[] = [
   "mobile",
   "tablet",
   "desktop"
 ];
+
+/**
+ * Type-safe constants exposed to perform checks
+ */
+export const BreakpointLabels = {
+  mobile: "mobile" as const,
+  tablet: "tablet" as const,
+  desktop: "desktop" as const,
+} as const;
 
 /**
  * Defines the {@link min} and {@link max} values
