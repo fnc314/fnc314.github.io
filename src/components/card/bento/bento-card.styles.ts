@@ -21,17 +21,25 @@ export const BentoCardStyles = css`
     inline-size: 100%;
   }
 
+  section {
+    block-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .bento-card {
     backdrop-filter: blur(12px);
     background-color: var(--md-sys-color-surface-container-lowest);
     block-size: 100%;
+    inline-size: 100%;
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-level1);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+
     padding: var(--spaces-padding-s);
     transition:
       transform var(--motions-duration-short) var(--motions-easing-emphasized),

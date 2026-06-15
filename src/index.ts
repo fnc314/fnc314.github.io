@@ -6,6 +6,7 @@ import "@/components/card/code/code-card";
 import "@/components/card/connect/connect-card";
 import "@/components/card/education/education-card";
 import "@/components/card/profile-bio/profile-bio-card";
+import "@/components/card/profile/profile-card";
 import "@/components/card/settings/settings-card";
 import "@/components/card/skills/skills-card";
 import "@/components/card/work/work-card";

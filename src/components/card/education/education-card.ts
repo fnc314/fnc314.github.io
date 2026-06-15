@@ -30,6 +30,26 @@ export class EducationCard extends UIAwareElement {
   enableFocus = false;
 
   override render() {
+    const listItems = html`
+      ${
+        EducationJson.education.map(
+          (edu) => html`
+            <li>
+              <img
+                src=${cssPropertyDataImage(
+                  this.darkMode ? edu.designToken.dark : edu.designToken.light
+                )}
+                alt=${`Logo for ${edu.institute}`}
+              />
+              <h3 class="md-typescale-title-medium">${edu.institute}</h3>
+              <span class="md-typescale-body-medium">${edu.location}</span>
+              <h4 class="md-typescale-title-small">${edu.degree}</h4>
+              <time class="md-typescale-body-small" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
+            </li>
+          `,
+        )
+      }
+    `;
     return html`
       <bento-card
         scrollable
@@ -38,24 +58,11 @@ export class EducationCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Education"}
       >
-        <ul>
-          ${EducationJson.education.map(
-            (edu) => html`
-              <li>
-                <img
-                  src=${cssPropertyDataImage(
-                    this.darkMode ? edu.designToken.dark : edu.designToken.light
-                  )}
-                  alt=${`Logo for ${edu.institute}`}
-                />
-                <h3 class="md-typescale-title-medium">${edu.institute}</h3>
-                <span class="md-typescale-body-medium">${edu.location}</span>
-                <h4 class="md-typescale-title-small">${edu.degree}</h4>
-                <time class="md-typescale-body-small" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
-              </li>
-            `,
-          )}
-        </ul>
+        <section>
+          <ul>
+            ${listItems}
+          </ul>
+        </section>
       </bento-card>
     `;
   }

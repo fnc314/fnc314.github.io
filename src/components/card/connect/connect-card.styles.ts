@@ -8,6 +8,13 @@ export const ConnectCardStyles = css`
   :host {
     --md-divider-color: var(--md-sys-color-secondary);
 
+    --md-filled-tonal-icon-button-container-color: var(--md-sys-color-surface-container-high);
+    --md-filled-tonal-icon-button-container-height: calc(2 * var(--md-icon-size));
+    --md-filled-tonal-icon-button-container-width: calc(2 * var(--md-icon-size));
+    --md-filled-tonal-icon-button-container-shape: var(--md-sys-shape-corner-small);
+    --md-filled-tonal-icon-button-icon-color: var(--md-sys-color-on-surface-variant);
+    --md-filled-tonal-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+
     block-size: 100%;
     display: block;
   }
@@ -18,28 +25,16 @@ export const ConnectCardStyles = css`
     flex-direction: column;
     gap: var(--spaces-gap-s);
 
-    section {
-      padding-block: var(--spaces-padding-xs);
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      gap: var(--spaces-gap-l);
+      list-style: none;
+      margin: var(--spaces-none);
+      padding: var(--spaces-none);
 
-      header {
-        h3 {
-          color: var(--md-sys-color-secondary);
-          margin: var(--spaces-none);
-          padding-block: var(--spaces-padding-xs);
-          text-align: center;
-        }
-
-        md-divider {
-          margin-block-end: var(--spaces-margin-m);
-        }
-      }
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin-block: var(--spaces-none);
-        padding: var(--spaces-none);
+      li {
+        display: block;
       }
     }
   }

@@ -32,40 +32,33 @@ export class ConnectCard extends UIAwareElement {
   enableFocus = false;
 
   override render() {
-    const directConnections = html`
-      ${
-        Object.entries(DirectConnections).map(([method, instance]: [string, ConnectionInstance]) => {
-          return html`
-            <direct-connection .connectionInstance=${instance}></direct-connection>
-          `;
-        })
-      }
-    `;
+    const directConnections = Object.entries(DirectConnections)
+      .map(([method, instance]: [string, ConnectionInstance]) => html`
+        <li>
+          <direct-connection .connectionInstance=${instance}></direct-connection>
+        </li>
+      `);
 
-    const professionalConnections = html`
-      ${
-        Object.entries(ProfessionalConnections).map(([type, data]: [string, ProfessionalConnectionJsonData]) => {
-          return html`
-            <professional-connection
-              .professionalConnectionType=${type as ProfessionalConnectionType}
-              .professionalConnectionData=${data}>
-            </professional-connection>`
-        })
-      }
-    `;
+    const professionalConnections = Object.entries(ProfessionalConnections)
+      .map(([type, data]: [string, ProfessionalConnectionJsonData]) => html`
+        <li>
+          <professional-connection
+            .professionalConnectionType=${type as ProfessionalConnectionType}
+            .professionalConnectionData=${data}>
+          </professional-connection>
+        </li>
+      `);
 
-    const artifactConnections = html`
-      ${
-        Object.entries(ArtifactConnectionJson).map(([name, data]: [string, ArtifactConnectionData]) => {
-          return html`
-            <artifact-connection
-              .artifactConnectionType=${name as ArtifactConnectionType}
-              .artifactConnectionData=${data}>
-            </artifact-connection>
-          `;
-        })
-      }
-    `;
+    const artifactConnections = Object.entries(ArtifactConnectionJson)
+      .map(([name, data]: [string, ArtifactConnectionData]) => html`
+        <li>
+          <artifact-connection
+            .artifactConnectionType=${name as ArtifactConnectionType}
+            .artifactConnectionData=${data}>
+          </artifact-connection>
+        </li>
+      `
+      );
 
     return html`
       <bento-card
@@ -76,9 +69,11 @@ export class ConnectCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Let's Connect"}
       >
-        ${directConnections}
-        ${professionalConnections}
-        ${artifactConnections}
+        <ul>
+          ${directConnections}
+          ${professionalConnections}
+          ${artifactConnections}
+        </ul>
       </bento-card>
     `;
   }

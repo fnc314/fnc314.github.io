@@ -41,7 +41,7 @@ export type GridPosition = {
  * @typedef {BentoBoxType}
  */
 export type BentoBoxType =
-  "profile-photo-bio" |
+  "profile" |
   "work" |
   "code" |
   "blog" |
@@ -67,11 +67,11 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 
 /** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
-  "profile-photo-bio": {
+  profile: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 7 }, area: "profile-photo-bio" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile-photo-bio" },
-      mobile: { breakpoint: "mobile", area: "profile-photo-bio" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 7 }, area: "profile" },
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile" },
+      mobile: { breakpoint: "mobile", area: "profile" },
     },
     isExpanded: () => true
   },

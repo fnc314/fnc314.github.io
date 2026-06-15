@@ -27,14 +27,14 @@ export class BentoLayout extends UIAwareElement {
   private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placement[this.breakpoint];
 
-    const gridArea = position.breakpoint !== "mobile"
-      ? (`${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`)
-      : undefined;
+    const gridArea = position.breakpoint === "mobile"
+      ? undefined
+      : position.area;
 
     let cardContent: TemplateResult;
     switch (config.type) {
-      case "profile-photo-bio":
-        cardContent = html`<profile-bio-card .expanded=${config.isExpanded(this.breakpoint)}></profile-bio-card>`;
+      case "profile":
+        cardContent = html`<profile-card .expanded=${config.isExpanded(this.breakpoint)}></profile-card>`;
         break;
       case "connect":
         cardContent = html`<connect-card .expanded=${config.isExpanded(this.breakpoint)}></connect-card>`;
@@ -64,7 +64,7 @@ export class BentoLayout extends UIAwareElement {
     return html`
       <section
         class="card-${config.type}"
-        style=${styleMap({ gridArea })}
+        style=${styleMap({ gridArea, blockSize: "100%" })}
       >
         ${cardContent}
       </section>

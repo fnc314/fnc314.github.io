@@ -44,7 +44,6 @@ export const BentoLayoutStyles = css`
     }
   }
 
-
   @media screen and (width >= 769px) {
     :host {
       --bento-layout-column-count: 6;
@@ -53,10 +52,17 @@ export const BentoLayoutStyles = css`
     main {
       display: grid;
       grid-auto-flow: dense;
+      grid-template-areas:
+        ". header header header header ."
+        "profile profile profile work work work"
+        "connect connect connect connect education education"
+        "blog blog blog code code code"
+        "skills skills skills skills skills skills"
+        "settings settings settings settings settings settings";
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
 
       h1 {
-        inline-size: 65%;
+        grid-area: header;
       }
     }
   }
@@ -78,6 +84,16 @@ export const BentoLayoutStyles = css`
       gap: var(--spaces-gap-l);
       margin: var(--spaces-none) auto;
       padding: var(--spaces-padding-m);
+      grid-template-areas:
+        ".         header    header    header    header    header   header   header   header   header   header      ."
+        "profile    profile    profile    profile    profile    work     work     work     work     work     work     work"
+        "education education education education education work     work     work     work     work     work     work"
+        "connect   connect   connect   connect   connect   work     work     work     work     work     work     work"
+        "blog      blog      blog      blog      blog      blog     blog     blog     blog     blog     blog     blog"
+        "code      code      code      code      code      code     code     code     code     code     code     code"
+        "skills    skills    skills    skills    skills    skills   skills   skills   skills   skills   skills   skills"
+        "settings  settings  settings  settings  settings  settings settings settings settings settings settings settings";
+      place-items: stretch stretch;
     }
   }
 `;
