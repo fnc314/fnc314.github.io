@@ -193,7 +193,7 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
 
   return css`
     /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
-    --md-sys-color-${unsafeCSS(roleNameBase)}: ${unsafeCSS(rgb)};
+    --md-sys-color-${unsafeCSS(roleNameBase)}: POSTCSS_LIT_1;
     /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
     --oklch-md-sys-color-${unsafeCSS(roleNameBase)}: oklch(from ${unsafeCSS(rgb)} l c h);
   `;

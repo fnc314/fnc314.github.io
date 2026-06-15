@@ -6,17 +6,17 @@ import { css } from "lit";
  */
 export const ConnectCardStyles = css`
   :host {
-    display: block;
-    height: 100%;
-
     --md-divider-color: var(--md-sys-color-secondary);
+
+    block-size: 100%;
+    display: block;
   }
 
   bento-card {
+    block-size: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    height: 100%;
 
     section {
       padding-block: var(--spaces-padding-xs);
@@ -24,9 +24,9 @@ export const ConnectCardStyles = css`
       header {
         h3 {
           color: var(--md-sys-color-secondary);
+          margin: var(--spaces-none);
           padding-block: var(--spaces-padding-xs);
           text-align: center;
-          margin: var(--spaces-none);
         }
 
         md-divider {
@@ -37,8 +37,8 @@ export const ConnectCardStyles = css`
       ul {
         display: flex;
         flex-direction: column;
-        margin-block: var(--spaces-none);
         list-style: none;
+        margin-block: var(--spaces-none);
         padding: var(--spaces-none);
       }
     }
@@ -46,25 +46,25 @@ export const ConnectCardStyles = css`
 
   .connection-links-label {
     color: var(--md-sys-color-secondary);
+    margin-block: var(--spaces-none);
     padding-block: var(--spaces-padding-xs);
     text-align: center;
-    margin-block: var(--spaces-none);
   }
 
   .connection-list-item {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: var(--spaces-gap-xs);
     margin: var(--spaces-none);
     padding: var(--spaces-none);
     padding-block: var(--spaces-padding-xs);
 
     img, md-icon {
-      width: calc(var(--md-icon-size));
-      height: calc(var(--md-icon-size));
       background-color: var(--md-sys-color-surface-container-highest);
+      block-size: calc(var(--md-icon-size));
       border-radius: var(--md-sys-shape-corner-full);
+      inline-size: calc(var(--md-icon-size));
       padding: var(--spaces-padding-xs);
     }
 
@@ -76,8 +76,8 @@ export const ConnectCardStyles = css`
   .connections-list {
     display: flex;
     flex-direction: column;
-    margin-block: var(--spaces-none);
     list-style: none;
+    margin-block: var(--spaces-none);
     padding: var(--spaces-none);
 
     md-divider {

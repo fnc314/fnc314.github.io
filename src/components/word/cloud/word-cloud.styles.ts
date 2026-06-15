@@ -34,7 +34,7 @@ export const WordCloudStyles: CSSResult = css`
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-font-family: var(--md-ref-typeface-brand);
 
-    min-width: 0;
+    min-inline-size: 0;
 
     /* Animation Base State */
     opacity: 0;

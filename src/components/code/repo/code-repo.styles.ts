@@ -9,50 +9,48 @@ import { type CSSResult, css } from "lit";
 export const CodeRepoStyles: CSSResult = css`
   ${DynamicBorderStyles}
   :host {
-    display: block;
-    inline-size: 100%;
-    min-inline-size: 0;
-    align-self: stretch;
-    flex-grow: 1;
-    box-sizing: border-box;
-    container-type: inline-size;
-
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-inverse-primary);
     --word-tag-color: var(--md-sys-color-inverse-on-surface);
+
+    align-self: stretch;
+    box-sizing: border-box;
+    container-type: inline-size;
+    display: block;
+    flex-grow: 1;
+    inline-size: 100%;
+    min-inline-size: 0;
   }
 
   article {
     --dynamic-border-size: var(--sizes-width-l);
 
     background-color: var(--md-sys-color-surface-bright);
+    block-size: 100%;
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
-    padding-block-start: var(--spaces-padding-xs);
-    padding-block-end: var(--spaces-padding-xs);
-    padding-inline-start: var(--spaces-padding-xl);
-    padding-inline-end: var(--spaces-padding-xs);
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-areas:
       "header"
       "divider"
       "description"
       "tech";
-    box-sizing: border-box;
-    overflow: hidden;
+    grid-template-columns: 1fr;
     justify-content: flex-start;
     min-inline-size: 0;
-    block-size: 100%;
+    overflow: hidden;
+    padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs);
+    padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs);
   }
 
   header {
-    grid-area: header;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-xs);
+    grid-area: header;
     justify-content: space-between;
     margin-block: var(--spaces-margin-xs);
     min-inline-size: 0;
@@ -65,15 +63,15 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     a {
-      color: var(--md-sys-color-primary);
-      text-decoration: none;
-      display: inline-flex;
       align-items: center;
+      color: var(--md-sys-color-primary);
+      display: inline-flex;
       gap: var(--spaces-gap-xs);
-      min-inline-size: 0;
       max-inline-size: 100%;
-      word-break: break-all;
+      min-inline-size: 0;
       overflow-wrap: break-word;
+      text-decoration: none;
+      word-break: break-all;
 
       &:hover,
       &:focus {
@@ -84,8 +82,7 @@ export const CodeRepoStyles: CSSResult = css`
 
   md-divider {
     grid-area: divider;
-    margin-block-start: var(--spaces-none);
-    margin-block-end: var(--spaces-margin-m);
+    margin-block: var(--spaces-none) var(--spaces-margin-m);
   }
 
   section {
@@ -94,10 +91,9 @@ export const CodeRepoStyles: CSSResult = css`
 
     p {
       color: var(--md-sys-color-on-surface-variant);
-      margin-block-start: var(--spaces-none);
-      margin-block-end: var(--spaces-margin-m);
-      word-break: break-word;
+      margin-block: var(--spaces-none) var(--spaces-margin-m);
       min-inline-size: 0;
+      word-break: break-word;
 
       pre {
         display: inline;
@@ -108,28 +104,28 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   footer {
-    grid-area: tech;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
+    grid-area: tech;
     margin-block-start: auto;
 
     ul {
       display: flex;
       flex-flow: row wrap;
       gap: var(--spaces-gap-s);
+      list-style: none;
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
       padding-block: var(--spaces-none);
       padding-inline: var(--spaces-none);
-      list-style: none;
 
       & word-tag img,
-      & word-tag [slot=\"icon\"] {
-        inline-size: var(--md-icon-size);
+      & word-tag [slot="\\"icon\\""] {
         block-size: var(--md-icon-size);
-        object-fit: contain;
         flex-shrink: 0;
+        inline-size: var(--md-icon-size);
+        object-fit: contain;
       }
     }
   }
@@ -141,11 +137,9 @@ export const CodeRepoStyles: CSSResult = css`
    */
   @container (min-width: 385px) {
     article {
-      padding-block-start: var(--spaces-padding-xl);
-      padding-block-end: var(--spaces-padding-s);
-      padding-inline-start: var(--spaces-padding-s);
-      padding-inline-end: var(--spaces-padding-s);
       gap: var(--spaces-gap-m);
+      padding-block: var(--spaces-padding-xl) var(--spaces-padding-s);
+      padding-inline: var(--spaces-padding-s) var(--spaces-padding-s);
 
       header {
         margin-block: var(--spaces-none);
@@ -171,17 +165,16 @@ export const CodeRepoStyles: CSSResult = css`
    */
   @container (min-width: 1201px) {
     article {
-      padding-block: var(--spaces-padding-xs);
-      padding-inline-start: var(--spaces-padding-xl);
-      padding-inline-end: unset;
-
-      grid-template-columns: 1fr 1.5fr;
-      grid-template-rows: auto 1fr;
+      align-items: start;
+      gap: var(--spaces-gap-l);
       grid-template-areas:
         "header description"
         "header tech";
-      gap: var(--spaces-gap-l);
-      align-items: start;
+      grid-template-columns: 1fr 1.5fr;
+      grid-template-rows: auto 1fr;
+      padding-block: var(--spaces-padding-xs);
+      padding-inline-end: unset;
+      padding-inline-start: var(--spaces-padding-xl);
 
       md-divider {
         display: none;
@@ -192,8 +185,8 @@ export const CodeRepoStyles: CSSResult = css`
 
         h3 {
           font-size: var(--md-sys-typescale-headline-small-size);
-          line-height: var(--md-sys-typescale-headline-small-line-height);
           font-weight: var(--md-sys-typescale-headline-small-weight);
+          line-height: var(--md-sys-typescale-headline-small-line-height);
         }
       }
     }

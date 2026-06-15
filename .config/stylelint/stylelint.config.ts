@@ -28,10 +28,15 @@ const config: Config = {
       inline: "left-to-right",
     }
   },
+  customSyntax: "postcss-lit",
   overrides: [
     {
-      files: ["src/**/*.css"],
+      files: ["src/**/*.styles.ts"],
       customSyntax: "postcss-lit",
+    },
+    {
+      files: ["src/**/*.css"],
+      customSyntax: "postcss-lit"
     }
   ],
   plugins: [

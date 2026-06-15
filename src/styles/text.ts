@@ -8,7 +8,7 @@ import { type CSSResult, css } from "lit";
  * @type {CSSResult}
  */
 export const TextStyles: CSSResult = css`
-  ${MaterialTypescaleStyles}
+  postcss_lit_0
 
   a,
   dd, dt,

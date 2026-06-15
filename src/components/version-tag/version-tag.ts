@@ -17,11 +17,11 @@ export class VersionTag extends UIAwareElement {
       }
 
       div {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: var(--spaces-gap-m);
+        justify-content: center;
 
         p {
           margin: var(--spaces-none);

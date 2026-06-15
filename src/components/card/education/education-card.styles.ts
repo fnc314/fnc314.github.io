@@ -6,25 +6,26 @@ import { css } from "lit";
  */
 export const EducationCardStyles = css`
   :host {
-    display: block;
-    height: 100%;
-    container-type: inline-size;
-    container-name: education-card-container;
+    --md-divider-color: currentcolor;
 
-    --md-divider-color: currentColor;
+    block-size: 100%;
+    container-name: education-card-container;
+    container-type: inline-size;
+    display: block;
   }
 
   ul {
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-l);
+    justify-content: space-around;
     list-style: none;
     margin: var(--spaces-none);
     padding: var(--spaces-none);
-    justify-content: space-around;
 
     li {
       display: grid;
+      gap: var(--spaces-none) var(--spaces-gap-s);
       grid-template-areas:
         "logo institute"
         "logo location"
@@ -32,18 +33,17 @@ export const EducationCardStyles = css`
         ". year";
       grid-template-columns: 1fr max-content;
       margin-block: var(--spaces-margin-xs);
-      gap: var(--spaces-none) var(--spaces-gap-s);
       text-align: end;
 
       img {
+        aspect-ratio: 1;
         background-color: var(--md-sys-color-surface-container-highest);
+        block-size: calc(var(--md-icon-size));
         border-radius: var(--md-sys-shape-corner-full);
+        grid-area: logo;
+        inline-size: calc(var(--md-icon-size));
         padding: var(--spaces-padding-xs);
         place-self: center;
-        grid-area: logo;
-        aspect-ratio: 1;
-        width: calc(var(--md-icon-size));
-        height: calc(var(--md-icon-size));
         place-self: center start;
       }
 
@@ -56,9 +56,9 @@ export const EducationCardStyles = css`
       }
 
       h4 {
-        grid-area: program;
         font-style: italic;
         font-weight: unset;
+        grid-area: program;
       }
 
       time {
@@ -83,10 +83,6 @@ export const EducationCardStyles = css`
           ". . year";
         grid-template-columns: 1fr auto max-content;
         text-align: unset;
-
-        span, time {
-          // text-align: end;
-        }
       }
     }
   }

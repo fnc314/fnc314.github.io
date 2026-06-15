@@ -6,14 +6,14 @@ import { css } from "lit";
  */
 export const SkillsCardStyles = css`
   :host {
+    block-size: 100%;
     display: block;
-    height: 100%;
   }
 
   .skills-container {
+    block-size: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    height: 100%;
   }
 `;

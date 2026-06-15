@@ -37,15 +37,15 @@ export const WordTagStyles: CSSResult = css`
   }
 
   .word-tag-variant-wrapper {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: var(--internal-word-tag-gap);
     background-color: var(--internal-word-tag-background-color);
     border-color: var(--internal-word-tag-color);
     border-radius: var(--internal-word-tag-border-radius);
     border-style: solid;
-    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--internal-word-tag-gap);
+    max-inline-size: 100%;
     overflow: hidden;
     padding: var(--spaces-padding-xs);
     transition: all var(--internal-word-tag-animation-duration) ease-in-out;

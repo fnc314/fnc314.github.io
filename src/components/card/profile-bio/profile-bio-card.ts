@@ -20,7 +20,7 @@ export class ProfileBioCard extends UIAwareElement {
     css`
       :host {
         display: block;
-        height: 100%;
+        block-size: 100%;
       }
 
       .profile-bio-container {
@@ -32,15 +32,15 @@ export class ProfileBioCard extends UIAwareElement {
       .profile-picture {
         border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary);
         border-radius: var(--md-sys-shape-corner-medium);
-        max-height: 300px;
+        max-block-size: 300px;
         object-fit: contain;
-        width: 100%;
+        inline-size: 100%;
       }
 
       .profile-figcaption {
         color: var(--md-sys-color-on-surface-variant);
         font-size: var(--md-sys-typescale-body-small-size);
-        margin-top: var(--spaces-margin-xs);
+        margin-block-start: var(--spaces-margin-xs);
         text-align: center;
       }
     `,
