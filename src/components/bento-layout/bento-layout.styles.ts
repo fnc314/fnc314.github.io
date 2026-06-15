@@ -19,8 +19,8 @@ export const BentoLayoutStyles = css`
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     display: block;
-    padding-bottom: var(--spaces-padding-xl);
-    width: 100%;
+    inline-size: 100%;
+    padding-block-end: var(--spaces-padding-xl);
   }
 
   main {
@@ -36,11 +36,11 @@ export const BentoLayoutStyles = css`
       border-radius: var(--md-sys-shape-corner-large);
       border-width: var(--hairline-width);
       color: var(--md-sys-color-on-primary-fixed);
+      grid-area: span 1 / span var(--bento-layout-column-count);
+      inline-size: 100%;
       margin-inline: auto;
       padding-block: var(--spaces-padding-l);
       text-align: center;
-      grid-area: span 1 / span var(--bento-layout-column-count);
-      width: 100%;
     }
   }
 
@@ -56,7 +56,7 @@ export const BentoLayoutStyles = css`
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
 
       h1 {
-        width: 65%;
+        inline-size: 65%;
       }
     }
   }

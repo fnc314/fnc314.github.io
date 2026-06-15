@@ -7,7 +7,7 @@ export const WorkExperienceStyles: CSSResult = css`
     /* For contextual layout */
     container: experience-container / inline-size;
     display: block;
-    width: 100%;
+    inline-size: 100%;
 
     h3,
     h4,

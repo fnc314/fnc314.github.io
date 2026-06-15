@@ -6,15 +6,15 @@ import { css } from "lit";
  */
 export const CodeCardStyles = css`
   :host {
-    display: block;
     block-size: 100%;
+    display: block;
   }
 
   .code-container {
+    block-size: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    block-size: 100%;
   }
 
   .code-list {
@@ -26,7 +26,7 @@ export const CodeCardStyles = css`
   @media screen and (width <= 768px) {
     .code-list {
       flex-direction: row;
-      overflow-x: auto;
+      overflow-inline: auto;
       padding-block-end: var(--spaces-padding-xs);
       scroll-snap-type: x mandatory;
     }

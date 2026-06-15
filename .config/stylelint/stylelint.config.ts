@@ -9,10 +9,12 @@ const config: Config = {
     "docs/**/**",
     "design-tokens/.config/**/*.{js,mjs,ts,mts}",
     "design-tokens/scripts/**/*.ts",
+    "design-tokens/index.ts",
   ].map((path) => `${process.cwd()}/${path}`),
   extends: [
     "stylelint-config-standard",
     "stylelint-config-alphabetical-order",
+    "stylelint-plugin-logical-css/configs/recommended",
     "stylelint-plugin-rhythmguard/configs/strict",
     "stylelint-prettier/recommended",
   ],
@@ -26,13 +28,19 @@ const config: Config = {
       inline: "left-to-right",
     }
   },
+  customSyntax: "postcss-lit",
   overrides: [
     {
-      files: ["src/**/*.css"],
+      files: ["src/**/*.styles.ts"],
       customSyntax: "postcss-lit",
+    },
+    {
+      files: ["src/**/*.css"],
+      customSyntax: "postcss-lit"
     }
   ],
   plugins: [
+    "stylelint-plugin-logical-css",
     "stylelint-plugin-use-baseline",
     "stylelint-use-nesting",
     "stylelint-declaration-strict-value",

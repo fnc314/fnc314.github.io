@@ -8,12 +8,12 @@ export const UIModeToggleStyles: CSSResult = css`
 
   dark-mode-toggle {
     --dark-mode-toggle-icon-size: 2rem;
-    --dark-mode-toggle-dark-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-empty"))});
-    --dark-mode-toggle-light-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-empty"))});
-    --dark-mode-toggle-system-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-empty"))});
-    --dark-mode-toggle-checkbox-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-light"))});
-    --dark-mode-toggle-remember-icon-checked: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-light"))});
-    --dark-mode-toggle-remember-icon-unchecked: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-light"))});
+    --dark-mode-toggle-dark-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-empty"))}");
+    --dark-mode-toggle-light-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-empty"))}");
+    --dark-mode-toggle-system-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-empty"))}");
+    --dark-mode-toggle-checkbox-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-light"))}");
+    --dark-mode-toggle-remember-icon-checked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-light"))}");
+    --dark-mode-toggle-remember-icon-unchecked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-light"))}");
     --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant);
     --dark-mode-toggle-background-color: transparent;
     --dark-mode-toggle-active-mode-background-color: transparent;
@@ -40,21 +40,21 @@ export const UIModeToggleStyles: CSSResult = css`
     }
 
     &::part(legend) {
-      padding: var(--spaces-none);
-      margin: var(--spaces-none);
-      padding-block-end: var(--spaces-padding-xs);
-      margin-block-end: var(--spaces-margin-xs);
-      border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+      border-block-end: var(--hairline-width) solid var(--md-sys-color-outline-variant);
       color: var(--md-sys-color-primary);
       font-family: var(--md-ref-typeface-brand);
       font-size: var(--md-sys-typescale-label-large-size);
+      margin: var(--spaces-none);
+      margin-block-end: var(--spaces-margin-xs);
+      padding: var(--spaces-none);
+      padding-block-end: var(--spaces-padding-xs);
     }
 
     &::part(permanentLabel) {
       color: var(--md-sys-color-on-surface-variant);
+      display: inline-block;
       font-size: var(--md-sys-typescale-label-large-size);
       vertical-align: middle;
-      display: inline-block;
     }
 
     &::part(threeWayRadioWrapper) {
@@ -63,9 +63,9 @@ export const UIModeToggleStyles: CSSResult = css`
       border-style: solid;
       border-width: var(--hairline-width);
       display: inline-flex;
+      overflow: hidden;
       padding: var(--spaces-none);
       padding-block-start: var(--spaces-padding-xs);
-      overflow: hidden;
       position: relative;
       z-index: 0;
     }
@@ -73,12 +73,11 @@ export const UIModeToggleStyles: CSSResult = css`
     &::part(threeWayRadioWrapper)::before {
       background-color: var(--md-sys-color-surface-container);
       border-radius: inherit;
-      bottom: 0;
       content: "";
+      inline-size: calc(100% / 3);
+      inset-block: 0;
       position: absolute;
-      top: 0;
       transition: transform 0.3s ease-in-out;
-      width: calc(100% / 3);
       z-index: -1;
     }
 
@@ -94,37 +93,40 @@ export const UIModeToggleStyles: CSSResult = css`
 
     &:not([permanent]) {
       &::part(threeWayRadioWrapper)::before {
-        transform: translateX(100%);
         background-color: var(--md-sys-color-primary-container);
+        transform: translateX(100%);
       }
 
       &::part(systemThreeWayLabel) {
-        --dark-mode-toggle-system-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-filled"))});
+        --dark-mode-toggle-system-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-filled"))}");
+
         color: var(--md-sys-color-on-primary-container);
       }
     }
 
     &:is([mode="light"][permanent]) {
       &::part(threeWayRadioWrapper)::before {
-        transform: translateX(0%);
         background-color: var(--md-sys-color-primary-container);
+        transform: translateX(0%);
       }
 
       &::part(lightThreeWayLabel) {
+        --dark-mode-toggle-light-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-filled"))}");
+
         color: var(--md-sys-color-on-primary-container);
-        --dark-mode-toggle-light-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-filled"))});
       }
     }
 
     &:is([mode="dark"][permanent]) {
       &::part(threeWayRadioWrapper)::before {
-        transform: translateX(200%);
         background-color: var(--md-sys-color-primary-container);
+        transform: translateX(200%);
       }
 
       &::part(darkThreeWayLabel) {
+        --dark-mode-toggle-dark-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-filled"))}");
+
         color: var(--md-sys-color-on-primary-container);
-        --dark-mode-toggle-dark-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-filled"))});
       }
     }
 
@@ -143,8 +145,8 @@ The component"s internal styles already set opacity to 0. */
   }
 
   dark-mode-toggle.dark {
-    --dark-mode-toggle-checkbox-icon: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-dark"))});
-    --dark-mode-toggle-remember-icon-checked: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-dark"))});
-    --dark-mode-toggle-remember-icon-unchecked: url(${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-dark"))});
+    --dark-mode-toggle-checkbox-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-dark"))}");
+    --dark-mode-toggle-remember-icon-checked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-dark"))}");
+    --dark-mode-toggle-remember-icon-unchecked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-dark"))}");
   }
 `;

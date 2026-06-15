@@ -4,6 +4,7 @@
 #USAGE flag "--fix" help="Passes `--fix` to `stylelint`" default="false"
 #USAGE flag "--analyze" help="Passes `--cei` to `stylelint`" default="false"
 #USAGE flag "--log" help="Creates a `HHMMSS.log` file at `./logs/stylelint/{YYYYMMDD}" default="false"
+#USAGE flag "--verbose" help="Passes `-f verbose` to `stylelint`" default="false"
 
 declare STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"
@@ -23,6 +24,12 @@ if [[ "${usage_log:=false}" == "true" ]]; then
   )
 fi
 
+if [[ "${usage_verbose:=false}" == "true" ]]; then
+  STYLELINT_FLAGS+=(
+    -f verbose
+  )
+fi
+
 if [[ "${usage_analyze:=false}" == "true" ]]; then
   STYLELINT_FLAGS+=(
     --cei
@@ -37,4 +44,4 @@ fi
 
 print -f "${STYLELINT_FLAGS}\n\n"
 
-pnpm stylelint "src/**/*.{css,ts}" "${STYLELINT_FLAGS[@]}"
+pnpm stylelint "src" "${STYLELINT_FLAGS[@]}"

@@ -1,5 +1,71 @@
 {
   "md": {
+    "fonts": {
+      "material": {
+        "symbols": {
+          "sharp": {
+            "family": {
+              "type": "value",
+              "value": "\"Material Symbols Sharp\""
+            },
+            "face": {
+              "weight": {
+                "min": {
+                  "type": "value",
+                  "value": 100
+                },
+                "max": {
+                  "type": "value",
+                  "value": 700
+                }
+              }
+            },
+            "weight": {
+              "type": "value",
+              "value": "normal"
+            },
+            "size": {
+              "type": "value",
+              "value": "24px"
+            },
+            "line-height": {
+              "value": "1",
+              "type": "value"
+            }
+          },
+          "outlined": {
+            "family": {
+              "type": "value",
+              "value": "\"Material Symbols Outlined\""
+            },
+            "face": {
+              "weight": {
+                "min": {
+                  "type": "value",
+                  "value": 100
+                },
+                "max": {
+                  "type": "value",
+                  "value": 700
+                }
+              }
+            },
+            "weight": {
+              "type": "value",
+              "value": "normal"
+            },
+            "size": {
+              "type": "value",
+              "value": "24px"
+            },
+            "line-height": {
+              "value": "1",
+              "type": "value"
+            }
+          }
+        }
+      }
+    },
     "ref": {
       "typeface": {
         "brand": {

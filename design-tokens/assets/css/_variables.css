@@ -14,6 +14,7 @@
   --elevations-medium: 3;
   --elevations-high: 4;
   --elevations-highest: 5;
+  --globals-color-scheme: light dark;
   --globals-hairline-width: 1px;
   --globals-transition-color-duration: 500ms;
   --globals-transition-color-timing: ease-in-out;

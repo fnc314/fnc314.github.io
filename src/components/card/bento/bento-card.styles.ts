@@ -14,23 +14,23 @@ import { css } from "lit";
  */
 export const BentoCardStyles = css`
   :host {
-    display: block;
-    height: 100%;
-    width: 100%;
-    container-type: inline-size;
+    block-size: 100%;
     container-name: bento-card-container;
+    container-type: inline-size;
+    display: block;
+    inline-size: 100%;
   }
 
   .bento-card {
     backdrop-filter: blur(12px);
     background-color: var(--md-sys-color-surface-container-lowest);
+    block-size: 100%;
     border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-level1);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 100%;
     overflow: hidden;
     padding: var(--spaces-padding-s);
     transition:
@@ -80,7 +80,7 @@ export const BentoCardStyles = css`
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    min-height: 0;
+    min-block-size: 0;
     padding-block: var(--spaces-padding-xs);
   }
 
@@ -97,7 +97,7 @@ export const BentoCardStyles = css`
 
   /* Style slotted header elements (h2 by default) */
   h2 {
-    border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
+    border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
     color: var(--md-sys-color-primary);
     flex-grow: 1;
     font-family: var(--md-ref-typeface-brand);
@@ -108,7 +108,7 @@ export const BentoCardStyles = css`
   .scrollable {
     .expansion-content {
       flex-grow: 1;
-      overflow-y: auto;
+      overflow-block: auto;
     }
   }
 
