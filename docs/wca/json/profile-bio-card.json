@@ -1,0 +1,63 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "profile-bio-card",
+      "path": "./../../../src/components/card/profile-bio/profile-bio-card.ts",
+      "attributes": [
+        {
+          "name": "bioText",
+          "type": "string",
+          "default": "\"bio\""
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",null]"
+        },
+        {
+          "name": "bioText",
+          "attribute": "bioText",
+          "type": "string",
+          "default": "\"bio\""
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+Installing config dependencies...
+Installed config dependencies: @pnpm/plugin-types-fixer@0.1.0
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 447ms using pnpm v11.5.2
+
+
+    VITE
+    Dynamic Configs
+    {
+  "isProduction": false,
+  "isLocalBuild": false,
+  "outDirSuffix": "vite/development",
+  "outDir": "/Users/fnc314/Code/websites/fnc314.github.io/dist/vite/development",
+  "publicDir": "/Users/fnc314/Code/websites/fnc314.github.io/static",
+  "base": "/",
+  "pwa": {
+    "manifest": {
+      "scope": "http://localhost:9999/",
+      "start_url": "http://localhost:9999/#info"
+    }
+  }
+}
+
+    params
+    MODE - development
+    COMMAND - build
+    IS_SSR_BUILD - false
+    IS_PREVIEW - false
+    NODE_ENV - development
+
+    CWD
+      `process.cwd()` - /Users/fnc314/Code/websites/fnc314.github.io
+      `path.resolve(__dirname)` - /Users/fnc314/Code/websites/fnc314.github.io
+
+    
+[36mvite v8.0.16 [32mbuilding client environment for development...[36m[39m
+Current is /Users/fnc314/Code/websites/fnc314.github.io
+[2Ktransforming...(node:25972) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m✓[39m 209 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/vite/development/[0m[32mregisterSW.js                                    [39m[2m[1m    0.13 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mfavicon-16x16-CweLVsHY.png                [39m[2m[1m    0.68 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mfavicon-32x32-By-MlLZc.png                [39m[2m[1m    1.46 kB[0m[0m
+[2mdist/vite/development/[0m[32m.vite/manifest.json                              [39m[2m[1m    1.81 kB[0m[0m[2m │ gzip:   0.46 kB[0m
+[2mdist/vite/development/[0m[2massets/[0m[32micon-oB1Lxi3E.svg                         [39m[2m[1m    3.65 kB[0m[0m[2m │ gzip:   1.01 kB[0m
+[2mdist/vite/development/[0m[32mindex.html                                       [39m[2m[1m    4.76 kB[0m[0m[2m │ gzip:   1.30 kB[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mapple-touch-icon-BF2rMT-3.png             [39m[2m[1m    6.63 kB[0m[0m
+[2mdist/vite/development/[0m[32mmanifest.json                                    [39m[2m[1m    6.97 kB[0m[0m[2m │ gzip:   0.88 kB[0m
+[2mdist/vite/development/[0m[32m.vite/license.md                                 [39m[2m[1m   41.08 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mmaterial-symbols-sharp-CiSA2l3r.woff2     [39m[2m[1m3,510.64 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mmaterial-symbols-outlined-DachT0Wf.woff2  [39m[2m[1m3,962.53 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[32mprofile-photo-BwQUkRlE.jpg                [39m[2m[1m4,806.96 kB[0m[0m
+[2mdist/vite/development/[0m[2massets/[0m[35mindex-zQDj_m8w.css                        [39m[2m[1m    7.74 kB[0m[0m[2m │ gzip:   1.56 kB[0m
+[2mdist/vite/development/[0m[2massets/[0m[36mindex-COKvinj9.js                         [39m[33m[1m  602.72 kB[0m[39m[2m │ gzip: 132.48 kB[0m[2m │ map: 1,046.21 kB[0m
+
+[31m✗[39m Build failed in 1.23s
+[plugin vite-plugin-version-mark] Generate version file in /Users/fnc314/Code/websites/fnc314.github.io/dist/vite/development/vite-plugin-version-mark.json
+2026-06-07T02:25:19.023Z vite-plugin-cp [32m22:25:19 [INFO] - Done in 1ms[39m
+
+[36mPWA v1.3.0[39m
+mode      [35mgenerateSW[39m
+precache  [32m5 entries[39m [2m(600.95 KiB)[22m
+files generated
+  [2mdist/vite/development/sw.js.map[22m
+  [2mdist/vite/development/sw.js[22m
+  [2mdist/vite/development/workbox-f0c192c2.js.map[22m
+  [2mdist/vite/development/workbox-f0c192c2.js[22m
+[31merror during build:
+[31mBuild failed with 1 error:
+
+Error: [vite]: Rolldown failed to resolve import "@fnc314/design-tokens/themes/sunset/sunset.mtb.json" from "/Users/fnc314/Code/websites/fnc314.github.io/src/theme/sunset/sunset-theme.ts".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rolldownOptions.external`
+    at viteLog (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33346:57)
+    at onRollupLog (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33378:7)
+    at onLog (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33146:4)
+    at file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/rolldown@1.0.3/node_modules/rolldown/dist/shared/rolldown-build-CrPk_lZe.mjs:50:26
+    at logger (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/rolldown@1.0.3/node_modules/rolldown/dist/shared/rolldown-build-CrPk_lZe.mjs:41:3)[31m
+    at aggregateBindingErrorsIntoJsError (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/rolldown@1.0.3/node_modules/rolldown/dist/shared/error-BuvQYXuZ.mjs:48:18)
+    at unwrapBindingResult (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/rolldown@1.0.3/node_modules/rolldown/dist/shared/error-BuvQYXuZ.mjs:18:128)
+    at #build (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/rolldown@1.0.3/node_modules/rolldown/dist/shared/rolldown-build-CrPk_lZe.mjs:3246:34)
+    at async buildEnvironment (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33253:64)
+    at async Object.build (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33675:19)
+    at async Object.buildApp (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:33672:153)
+    at async CAC.<anonymous> (file:///Users/fnc314/Code/websites/fnc314.github.io/node_modules/.pnpm/vite@8.0.16_@types+node@25.9.2_@vitejs+devtools@0.3.1_esbuild@0.28.0_jiti@2.7.0_terser@5.48.0_tsx@4.22.4_yaml@2.9.0/node_modules/vite/dist/node/cli.js:777:3) {
+  errors: [Getter/Setter]
+}[39m

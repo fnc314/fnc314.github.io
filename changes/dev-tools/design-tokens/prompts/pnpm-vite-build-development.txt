@@ -1,0 +1,16 @@
+Scope: all 3 workspace projects
+[41m[31m[[39m[49m[41m[30mERR_PNPM_CATALOG_ENTRY_INVALID_WORKSPACE_SPEC[39m[49m[41m[31m][39m[49m [31mThe workspace protocol cannot be used as a catalog value. The entry for 'design-tokens' in catalog 'projects' is invalid.[39m
+Progress: resolved [96m1[39m, reused [96m0[39m, downloaded [96m0[39m, added [96m0[39m
+[ERROR] Command failed with exit code 1: /Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/pnpm install
+
+pnpm: Command failed with exit code 1: /Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/pnpm install
+    at getFinalError (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:34089:14)
+    at makeError (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:36396:21)
+    at getSyncResult (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:38240:10)
+    at spawnSubprocessSync (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:38200:14)
+    at execaCoreSync (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:38130:23)
+    at callBoundExeca (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:40658:23)
+    at boundExeca (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:40635:49)
+    at sync (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:40794:10)
+    at runPnpmCli (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:218399:5)
+    at runDepsStatusCheck (file:///Users/fnc314/.local/share/mise/installs/pnpm/11.5.2/dist/pnpm.mjs:220133:7)

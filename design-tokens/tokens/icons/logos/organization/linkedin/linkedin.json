@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "organization": {
+        "linkedin": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+          }
+        }
+      }
+    }
+  }
+}

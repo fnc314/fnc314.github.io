@@ -1,0 +1,30 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "direct-connection",
+      "path": "./../../../src/components/connection/direct/direct-connection.ts",
+      "description": "[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"MaterialTypescaleStyles\",\"DirectConnectionStyles\"]"
+        },
+        {
+          "name": "connectionInstance",
+          "attribute": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

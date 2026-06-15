@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "organization": {
+        "medium": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/medium/medium-dark.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

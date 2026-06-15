@@ -1,0 +1,62 @@
+{
+  "name": "@fnc314/design-tokens",
+  "version": "2.0.0",
+  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
+  "author": "Franco N. Colaizzi",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "style": "./dist/@fnc314.design-tokens.css",
+      "import": "./dist/@fnc314.design-tokens.js",
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/@fnc314.design-tokens.js"
+    },
+    "./css/*": {
+      "style": "./dist/css/*",
+      "default": "./dist/css/*"
+    },
+    "./styles/*": {
+      "style": "./dist/css/*",
+      "default": "./dist/css/*"
+    },
+    "./icons/*": "./dist/icons/*",
+    "./json/*": "./dist/json/*",
+    "./themes/*": "./dist/themes/*",
+    "./types/*": "./dist/types/*",
+    "./dist/*": "./dist/*"
+  },
+  "files": [
+    "./dist/@fnc314.design-tokens.css",
+    "./dist/@fnc314.design-tokens.js",
+    "./dist/icons/**/*",
+    "./dist/types/**/*.d.ts",
+    "./dist/themes/**/*.{jpg,json}",
+    "./dist/css/*.css",
+    "./dist/json/*.json"
+  ],
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/@fnc314.design-tokens.js",
+  "module": "./dist/@fnc314.design-tokens.js",
+  "dependencies": {
+    "material-symbols": "catalog:dependencies",
+    "@material/web": "catalog:dependencies"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "catalog:devDependencies",
+    "fs-extra": "catalog:devDependencies",
+    "style-dictionary": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies",
+    "unplugin-dts": "catalog:devDependencies",
+    "vite": "catalog:devDependencies"
+  },
+  "keywords": [
+    "design-tokens",
+    "style-dictionary"
+  ],
+  "engines": {
+    "node": "26.3.0"
+  },
+  "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916"
+}

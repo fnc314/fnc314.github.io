@@ -43,6 +43,7 @@ export default {
   ],
   exclude: [
     "**/*.json",
+    "src/components/**/*.test.ts",
     "src/data/**/*.json",
     "src/index.ts",
     "~build/*",

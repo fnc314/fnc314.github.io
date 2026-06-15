@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "gradle": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/gradle/gradle-dark.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/gradle/gradle-default.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

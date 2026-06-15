@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "zsh": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/zsh/zsh.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/zsh/zsh.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/zsh/zsh.svg"
+          }
+        }
+      }
+    }
+  }
+}

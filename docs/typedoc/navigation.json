@@ -3,81 +3,117 @@
     "title": "Documents",
     "children": [
       {
-        "title": "docs/wca/markdown/app-shell",
+        "title": "docs/wca/markdown/bento-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/app-shell.md",
+        "path": "docs/wca/markdown/bento-card/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/blog-partial",
+        "title": "docs/wca/markdown/bento-layout",
         "kind": 8388608,
-        "path": "docs/wca/markdown/blog-partial.md",
+        "path": "docs/wca/markdown/bento-layout/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/blog-post",
+        "title": "docs/wca/markdown/blog-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/blog-post.md",
+        "path": "docs/wca/markdown/blog-card/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/code-partial",
+        "title": "docs/wca/markdown/blog-entry",
         "kind": 8388608,
-        "path": "docs/wca/markdown/code-partial.md",
+        "path": "docs/wca/markdown/blog-entry/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/fab-menu",
+        "title": "docs/wca/markdown/code-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/fab-menu.md",
+        "path": "docs/wca/markdown/code-card/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/fab-menu-item",
+        "title": "docs/wca/markdown/code-repo",
         "kind": 8388608,
-        "path": "docs/wca/markdown/fab-menu-item.md",
+        "path": "docs/wca/markdown/code-repo/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/info-partial",
+        "title": "docs/wca/markdown/connect-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/info-partial.md",
+        "path": "docs/wca/markdown/connect-card/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/info-section",
+        "title": "docs/wca/markdown/direct-connection",
         "kind": 8388608,
-        "path": "docs/wca/markdown/info-section.md",
+        "path": "docs/wca/markdown/direct-connection/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/nav-component",
+        "title": "docs/wca/markdown/education-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/nav-component.md",
+        "path": "docs/wca/markdown/education-card/README.md",
         "isDeprecated": false
       },
       {
-        "title": "docs/wca/markdown/partial-header",
+        "title": "docs/wca/markdown/profile-bio-card",
         "kind": 8388608,
-        "path": "docs/wca/markdown/partial-header.md",
+        "path": "docs/wca/markdown/profile-bio-card/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/README",
         "kind": 8388608,
-        "path": "docs/wca/markdown/README.md",
+        "path": "docs/wca/markdown/README/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/settings-card",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/settings-card/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/skills-card",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/skills-card/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/ui-mode-toggle",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/ui-mode-toggle/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/version-tag",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/version-tag/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/word-cloud",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/word-cloud/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/word-tag",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/word-tag/README.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/wca/markdown/work-card",
+        "kind": 8388608,
+        "path": "docs/wca/markdown/work-card/README.md",
         "isDeprecated": false
       },
       {
         "title": "docs/wca/markdown/work-experience",
         "kind": 8388608,
-        "path": "docs/wca/markdown/work-experience.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/work-partial",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/work-partial.md",
+        "path": "docs/wca/markdown/work-experience/README.md",
         "isDeprecated": false
       }
     ]
@@ -89,21 +125,110 @@
         "title": "components",
         "children": [
           {
-            "title": "app-shell",
+            "title": "bento-layout",
             "children": [
               {
-                "title": "app-shell",
+                "title": "bento-layout.styles",
                 "kind": 2,
-                "path": "src/components/app-shell/app-shell.md",
+                "path": "src/components/bento-layout/bento-layout.styles/README.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Variables",
+                    "children": [
+                      {
+                        "title": "BentoLayoutStyles",
+                        "kind": 32,
+                        "path": "src/components/bento-layout/bento-layout.styles/BentoLayoutStyles/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "bento-layout",
+                "kind": 2,
+                "path": "src/components/bento-layout/bento-layout/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
                     "title": "Classes",
                     "children": [
                       {
-                        "title": "AppShell",
+                        "title": "BentoLayout",
                         "kind": 128,
-                        "path": "src/components/app-shell/app-shell/AppShell.md",
+                        "path": "src/components/bento-layout/bento-layout/BentoLayout/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "bento-layout.types",
+                "kind": 2,
+                "path": "src/components/bento-layout/bento-layout.types/README.md",
+                "isDeprecated": false,
+                "children": [
+                  {
+                    "title": "Interfaces",
+                    "children": [
+                      {
+                        "title": "GridPlacement",
+                        "kind": 256,
+                        "path": "src/components/bento-layout/bento-layout.types/GridPlacement/README.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "ABentoBoxConfig",
+                        "kind": 256,
+                        "path": "src/components/bento-layout/bento-layout.types/ABentoBoxConfig/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "GridPosition",
+                        "kind": 2097152,
+                        "path": "src/components/bento-layout/bento-layout.types/GridPosition/README.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "BentoBoxType",
+                        "kind": 2097152,
+                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxType/README.md",
+                        "isDeprecated": false
+                      },
+                      {
+                        "title": "BentoBoxConfigs",
+                        "kind": 2097152,
+                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxConfigs-1/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Variables",
+                    "children": [
+                      {
+                        "title": "BentoBoxConfigs",
+                        "kind": 32,
+                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxConfigs/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Functions",
+                    "children": [
+                      {
+                        "title": "getBentoDOMOrder",
+                        "kind": 64,
+                        "path": "src/components/bento-layout/bento-layout.types/getBentoDOMOrder/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -116,45 +241,63 @@
             "title": "blog",
             "children": [
               {
-                "title": "blog-post",
-                "kind": 2,
-                "path": "src/components/blog/blog-post.md",
-                "isDeprecated": false,
+                "title": "entry",
                 "children": [
                   {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "BlogPost",
-                        "kind": 128,
-                        "path": "src/components/blog/blog-post/BlogPost.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "code",
-            "children": [
-              {
-                "title": "code-project",
-                "children": [
-                  {
-                    "title": "code-project",
+                    "title": "blog-entry",
                     "kind": 2,
-                    "path": "src/components/code/code-project/code-project.md",
+                    "path": "src/components/blog/entry/blog-entry/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
                         "title": "Classes",
                         "children": [
                           {
-                            "title": "CodeProject",
+                            "title": "BlogEntry",
                             "kind": 128,
-                            "path": "src/components/code/code-project/code-project/CodeProject.md",
+                            "path": "src/components/blog/entry/blog-entry/BlogEntry/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "blog-entry.types",
+                    "kind": 2,
+                    "path": "src/components/blog/entry/blog-entry.types/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Interfaces",
+                        "children": [
+                          {
+                            "title": "BlogEntryJson",
+                            "kind": 256,
+                            "path": "src/components/blog/entry/blog-entry.types/BlogEntryJson/README.md",
+                            "isDeprecated": false
+                          },
+                          {
+                            "title": "BlogSeriesEntry",
+                            "kind": 256,
+                            "path": "src/components/blog/entry/blog-entry.types/BlogSeriesEntry/README.md",
+                            "isDeprecated": false
+                          },
+                          {
+                            "title": "BlogsJsonEntry",
+                            "kind": 256,
+                            "path": "src/components/blog/entry/blog-entry.types/BlogsJsonEntry/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Type Aliases",
+                        "children": [
+                          {
+                            "title": "BlogsJson",
+                            "kind": 2097152,
+                            "path": "src/components/blog/entry/blog-entry.types/BlogsJson/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -166,24 +309,72 @@
             ]
           },
           {
-            "title": "dialog",
+            "title": "card",
             "children": [
               {
-                "title": "configs",
+                "title": "bento",
                 "children": [
                   {
-                    "title": "configs-dialog",
+                    "title": "bento-card",
                     "kind": 2,
-                    "path": "src/components/dialog/configs/configs-dialog.md",
+                    "path": "src/components/card/bento/bento-card/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
                         "title": "Classes",
                         "children": [
                           {
-                            "title": "ConfigsDialog",
+                            "title": "BentoCard",
                             "kind": 128,
-                            "path": "src/components/dialog/configs/configs-dialog/ConfigsDialog.md",
+                            "path": "src/components/card/bento/bento-card/BentoCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "blog",
+                "children": [
+                  {
+                    "title": "blog-card",
+                    "kind": 2,
+                    "path": "src/components/card/blog/blog-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "BlogCard",
+                            "kind": 128,
+                            "path": "src/components/card/blog/blog-card/BlogCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "code",
+                "children": [
+                  {
+                    "title": "code-card",
+                    "kind": 2,
+                    "path": "src/components/card/code/code-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "CodeCard",
+                            "kind": 128,
+                            "path": "src/components/card/code/code-card/CodeCard/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -196,18 +387,18 @@
                 "title": "connect",
                 "children": [
                   {
-                    "title": "connect-dialog",
+                    "title": "connect-card",
                     "kind": 2,
-                    "path": "src/components/dialog/connect/connect-dialog.md",
+                    "path": "src/components/card/connect/connect-card/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
                         "title": "Classes",
                         "children": [
                           {
-                            "title": "ConnectDialog",
+                            "title": "ConnectCard",
                             "kind": 128,
-                            "path": "src/components/dialog/connect/connect-dialog/ConnectDialog.md",
+                            "path": "src/components/card/connect/connect-card/ConnectCard/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -217,21 +408,117 @@
                 ]
               },
               {
-                "title": "step-up",
+                "title": "education",
                 "children": [
                   {
-                    "title": "step-up-dialog",
+                    "title": "education-card",
                     "kind": 2,
-                    "path": "src/components/dialog/step-up/step-up-dialog.md",
+                    "path": "src/components/card/education/education-card/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
                         "title": "Classes",
                         "children": [
                           {
-                            "title": "StepUpDialog",
+                            "title": "EducationCard",
                             "kind": 128,
-                            "path": "src/components/dialog/step-up/step-up-dialog/StepUpDialog.md",
+                            "path": "src/components/card/education/education-card/EducationCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "profile-bio",
+                "children": [
+                  {
+                    "title": "profile-bio-card",
+                    "kind": 2,
+                    "path": "src/components/card/profile-bio/profile-bio-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "ProfileBioCard",
+                            "kind": 128,
+                            "path": "src/components/card/profile-bio/profile-bio-card/ProfileBioCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "settings",
+                "children": [
+                  {
+                    "title": "settings-card",
+                    "kind": 2,
+                    "path": "src/components/card/settings/settings-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "SettingsCard",
+                            "kind": 128,
+                            "path": "src/components/card/settings/settings-card/SettingsCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "skills",
+                "children": [
+                  {
+                    "title": "skills-card",
+                    "kind": 2,
+                    "path": "src/components/card/skills/skills-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "SkillsCard",
+                            "kind": 128,
+                            "path": "src/components/card/skills/skills-card/SkillsCard/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "work",
+                "children": [
+                  {
+                    "title": "work-card",
+                    "kind": 2,
+                    "path": "src/components/card/work/work-card/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "WorkCard",
+                            "kind": 128,
+                            "path": "src/components/card/work/work-card/WorkCard/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -243,41 +530,99 @@
             ]
           },
           {
-            "title": "fab-menu",
+            "title": "code",
             "children": [
               {
-                "title": "fab-menu-item",
-                "kind": 2,
-                "path": "src/components/fab-menu/fab-menu-item.md",
-                "isDeprecated": false,
+                "title": "repo",
                 "children": [
                   {
-                    "title": "Classes",
+                    "title": "code-repo.styles",
+                    "kind": 2,
+                    "path": "src/components/code/repo/code-repo.styles/README.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "FabMenuItem",
-                        "kind": 128,
-                        "path": "src/components/fab-menu/fab-menu-item/FabMenuItem.md",
-                        "isDeprecated": false
+                        "title": "Variables",
+                        "children": [
+                          {
+                            "title": "CodeRepoStyles",
+                            "kind": 32,
+                            "path": "src/components/code/repo/code-repo.styles/CodeRepoStyles/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "title": "fab-menu",
-                "kind": 2,
-                "path": "src/components/fab-menu/fab-menu.md",
-                "isDeprecated": false,
-                "children": [
+                  },
                   {
-                    "title": "Classes",
+                    "title": "code-repo",
+                    "kind": 2,
+                    "path": "src/components/code/repo/code-repo/README.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "FabMenu",
-                        "kind": 128,
-                        "path": "src/components/fab-menu/fab-menu/FabMenu.md",
-                        "isDeprecated": false
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "CodeRepo",
+                            "kind": 128,
+                            "path": "src/components/code/repo/code-repo/CodeRepo/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "code-repo.types",
+                    "kind": 2,
+                    "path": "src/components/code/repo/code-repo.types/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Interfaces",
+                        "children": [
+                          {
+                            "title": "CodeRepoData",
+                            "kind": 256,
+                            "path": "src/components/code/repo/code-repo.types/CodeRepoData/README.md",
+                            "isDeprecated": false
+                          },
+                          {
+                            "title": "CodeRepoTech",
+                            "kind": 256,
+                            "path": "src/components/code/repo/code-repo.types/CodeRepoTech/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Type Aliases",
+                        "children": [
+                          {
+                            "title": "WordTagSize",
+                            "kind": 2097152,
+                            "path": "src/components/code/repo/code-repo.types/WordTagSize/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Variables",
+                        "children": [
+                          {
+                            "title": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+                            "kind": 32,
+                            "path": "src/components/code/repo/code-repo.types/CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE/README.md",
+                            "isDeprecated": false
+                          },
+                          {
+                            "title": "WORD_TAG_SIZES",
+                            "kind": 32,
+                            "path": "src/components/code/repo/code-repo.types/WORD_TAG_SIZES/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
                   }
@@ -286,22 +631,46 @@
             ]
           },
           {
-            "title": "info-section",
+            "title": "connection",
             "children": [
               {
-                "title": "info-section",
-                "kind": 2,
-                "path": "src/components/info-section/info-section.md",
-                "isDeprecated": false,
+                "title": "direct",
                 "children": [
                   {
-                    "title": "Classes",
+                    "title": "direct-connection",
+                    "kind": 2,
+                    "path": "src/components/connection/direct/direct-connection/README.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "InfoSection",
-                        "kind": 128,
-                        "path": "src/components/info-section/info-section/InfoSection.md",
-                        "isDeprecated": false
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "DirectConnection",
+                            "kind": 128,
+                            "path": "src/components/connection/direct/direct-connection/DirectConnection/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "direct-connection.types",
+                    "kind": 2,
+                    "path": "src/components/connection/direct/direct-connection.types/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Type Aliases",
+                        "children": [
+                          {
+                            "title": "DirectConnectionMethod",
+                            "kind": 2097152,
+                            "path": "src/components/connection/direct/direct-connection.types/DirectConnectionMethod/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
                   }
@@ -310,45 +679,21 @@
             ]
           },
           {
-            "title": "nav",
+            "title": "ui-mode-toggle",
             "children": [
               {
-                "title": "nav-component",
+                "title": "ui-mode-toggle",
                 "kind": 2,
-                "path": "src/components/nav/nav-component.md",
+                "path": "src/components/ui-mode-toggle/ui-mode-toggle/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
                     "title": "Classes",
                     "children": [
                       {
-                        "title": "NavComponent",
+                        "title": "UiModeToggle",
                         "kind": 128,
-                        "path": "src/components/nav/nav-component/NavComponent.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "partial-header",
-            "children": [
-              {
-                "title": "partial-header",
-                "kind": 2,
-                "path": "src/components/partial-header/partial-header.md",
-                "isDeprecated": false,
-                "children": [
-                  {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "PartialHeader",
-                        "kind": 128,
-                        "path": "src/components/partial-header/partial-header/PartialHeader.md",
+                        "path": "src/components/ui-mode-toggle/ui-mode-toggle/UiModeToggle/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -361,12 +706,12 @@
             "title": "word",
             "children": [
               {
-                "title": "word-cloud",
+                "title": "cloud",
                 "children": [
                   {
                     "title": "word-cloud",
                     "kind": 2,
-                    "path": "src/components/word/word-cloud/word-cloud.md",
+                    "path": "src/components/word/cloud/word-cloud/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -375,7 +720,7 @@
                           {
                             "title": "WordCloud",
                             "kind": 128,
-                            "path": "src/components/word/word-cloud/word-cloud/WordCloud.md",
+                            "path": "src/components/word/cloud/word-cloud/WordCloud/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -385,7 +730,7 @@
                   {
                     "title": "word-cloud.types",
                     "kind": 2,
-                    "path": "src/components/word/word-cloud/word-cloud.types.md",
+                    "path": "src/components/word/cloud/word-cloud.types/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -394,7 +739,7 @@
                           {
                             "title": "makeWordCloudWord",
                             "kind": 64,
-                            "path": "src/components/word/word-cloud/word-cloud.types/makeWordCloudWord.md",
+                            "path": "src/components/word/cloud/word-cloud.types/makeWordCloudWord/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -404,12 +749,12 @@
                 ]
               },
               {
-                "title": "word-tag",
+                "title": "tag",
                 "children": [
                   {
                     "title": "word-tag",
                     "kind": 2,
-                    "path": "src/components/word/word-tag/word-tag.md",
+                    "path": "src/components/word/tag/word-tag/README.md",
                     "isDeprecated": false,
                     "children": [
                       {
@@ -418,7 +763,43 @@
                           {
                             "title": "WordTag",
                             "kind": 128,
-                            "path": "src/components/word/word-tag/word-tag/WordTag.md",
+                            "path": "src/components/word/tag/word-tag/WordTag/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "word-tag.types",
+                    "kind": 2,
+                    "path": "src/components/word/tag/word-tag.types/README.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Type Aliases",
+                        "children": [
+                          {
+                            "title": "WordTagHeaviness",
+                            "kind": 2097152,
+                            "path": "src/components/word/tag/word-tag.types/WordTagHeaviness/README.md",
+                            "isDeprecated": false
+                          },
+                          {
+                            "title": "WordTagVariant",
+                            "kind": 2097152,
+                            "path": "src/components/word/tag/word-tag.types/WordTagVariant/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Variables",
+                        "children": [
+                          {
+                            "title": "WordTagVariantAttributeConverter",
+                            "kind": 32,
+                            "path": "src/components/word/tag/word-tag.types/WordTagVariantAttributeConverter/README.md",
                             "isDeprecated": false
                           }
                         ]
@@ -430,22 +811,27 @@
             ]
           },
           {
-            "title": "work-experience",
+            "title": "work",
             "children": [
               {
-                "title": "work-experience",
-                "kind": 2,
-                "path": "src/components/work-experience/work-experience.md",
-                "isDeprecated": false,
+                "title": "experience",
                 "children": [
                   {
-                    "title": "Classes",
+                    "title": "work-experience",
+                    "kind": 2,
+                    "path": "src/components/work/experience/work-experience/README.md",
+                    "isDeprecated": false,
                     "children": [
                       {
-                        "title": "WorkExperience",
-                        "kind": 128,
-                        "path": "src/components/work-experience/work-experience/WorkExperience.md",
-                        "isDeprecated": false
+                        "title": "Classes",
+                        "children": [
+                          {
+                            "title": "WorkExperience",
+                            "kind": 128,
+                            "path": "src/components/work/experience/work-experience/WorkExperience/README.md",
+                            "isDeprecated": false
+                          }
+                        ]
                       }
                     ]
                   }
@@ -456,27 +842,22 @@
         ]
       },
       {
-        "title": "partials",
+        "title": "styles",
         "children": [
           {
-            "title": "code",
+            "title": "interaction-styles",
+            "kind": 2,
+            "path": "src/styles/interaction-styles/README.md",
+            "isDeprecated": false,
             "children": [
               {
-                "title": "code-partial",
-                "kind": 2,
-                "path": "src/partials/code/code-partial.md",
-                "isDeprecated": false,
+                "title": "Variables",
                 "children": [
                   {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "CodePartial",
-                        "kind": 128,
-                        "path": "src/partials/code/code-partial/CodePartial.md",
-                        "isDeprecated": false
-                      }
-                    ]
+                    "title": "InteractionStyles",
+                    "kind": 32,
+                    "path": "src/styles/interaction-styles/InteractionStyles/README.md",
+                    "isDeprecated": false
                   }
                 ]
               }
@@ -488,12 +869,31 @@
         "title": "types",
         "children": [
           {
+            "title": "breakpoints",
+            "kind": 2,
+            "path": "src/types/breakpoints/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "Breakpoint",
+                    "kind": 2097152,
+                    "path": "src/types/breakpoints/Breakpoint/README.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "title": "configs",
             "children": [
               {
                 "title": "fab-configs",
                 "kind": 2,
-                "path": "src/types/configs/fab-configs.md",
+                "path": "src/types/configs/fab-configs/README.md",
                 "isDeprecated": false,
                 "children": [
                   {
@@ -502,13 +902,13 @@
                       {
                         "title": "FabPositionComponentVertical",
                         "kind": 2097152,
-                        "path": "src/types/configs/fab-configs/FabPositionComponentVertical.md",
+                        "path": "src/types/configs/fab-configs/FabPositionComponentVertical/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FabPositionComponentHorizontal",
                         "kind": 2097152,
-                        "path": "src/types/configs/fab-configs/FabPositionComponentHorizontal.md",
+                        "path": "src/types/configs/fab-configs/FabPositionComponentHorizontal/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -519,25 +919,25 @@
                       {
                         "title": "FAB_POSITION_COMPONENTS_VERTICAL",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_VERTICAL.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_VERTICAL/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FAB_POSITION_COMPONENTS_HORIZONTAL",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_HORIZONTAL.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION_COMPONENTS_HORIZONTAL/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FAB_POSITION",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FAB_POSITION.md",
+                        "path": "src/types/configs/fab-configs/FAB_POSITION/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "FabPositionIcons",
                         "kind": 32,
-                        "path": "src/types/configs/fab-configs/FabPositionIcons.md",
+                        "path": "src/types/configs/fab-configs/FabPositionIcons/README.md",
                         "isDeprecated": false
                       }
                     ]
@@ -552,28 +952,45 @@
               {
                 "title": "theme",
                 "kind": 2,
-                "path": "src/types/theme/theme.md",
+                "path": "src/types/theme/theme/README.md",
                 "isDeprecated": false,
                 "children": [
+                  {
+                    "title": "Type Aliases",
+                    "children": [
+                      {
+                        "title": "ValidateRGBA",
+                        "kind": 2097152,
+                        "path": "src/types/theme/theme/ValidateRGBA/README.md",
+                        "isDeprecated": false
+                      }
+                    ]
+                  },
                   {
                     "title": "Functions",
                     "children": [
                       {
+                        "title": "setRGBA",
+                        "kind": 64,
+                        "path": "src/types/theme/theme/setRGBA/README.md",
+                        "isDeprecated": false
+                      },
+                      {
                         "title": "jsonIsThemeJsonSchemes",
                         "kind": 64,
-                        "path": "src/types/theme/theme/jsonIsThemeJsonSchemes.md",
+                        "path": "src/types/theme/theme/jsonIsThemeJsonSchemes/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "readScheme",
                         "kind": 64,
-                        "path": "src/types/theme/theme/readScheme.md",
+                        "path": "src/types/theme/theme/readScheme/README.md",
                         "isDeprecated": false
                       },
                       {
                         "title": "keyTransform",
                         "kind": 64,
-                        "path": "src/types/theme/theme/keyTransform.md",
+                        "path": "src/types/theme/theme/keyTransform/README.md",
                         "isDeprecated": false
                       }
                     ]

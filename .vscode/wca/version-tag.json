@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "version-tag",
+      "description": "Properties:\n\n  * `styles` - \n\n  * `formattedDate` {string} - [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]",
+      "attributes": []
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

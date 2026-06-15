@@ -1,0 +1,26 @@
+{
+  "globals": {
+    "hairline": {
+      "width": { "value": "1px" }
+    },
+    "transition": {
+      "color": {
+        "duration": { "value": "500ms" },
+        "timing": { "value": "ease-in-out" }
+      }
+    },
+    "buffer": {
+      "height": {
+        "type": "value",
+        "value": "10rem"
+      }
+    },
+    "hover": {
+      "focus": {
+        "animation": {
+          "translateY": { "value": "-0.25rem" }
+        }
+      }
+    }
+  }
+}

@@ -69,6 +69,11 @@ Components listen for these events rather than holding references to the service
 
 Multiple named themes (`chicago`, `inter`, `red`, `sunset`) live in `src/theme/<name>/`, each exporting a `ThemeConfig` built from JSON color-scheme data, aggregated into `THEME_CONFIGS`. Colors map to **M3 design tokens** (`--md-sys-color-*`) applied through a shared `MaterialCSSStyleSheet`. The scheme is the cross-product of mode (dark/light/system) × contrast (normal/medium/high). Component-local styling uses scoped CSS custom properties (e.g. `--word-tag-*`) that default to Material tokens.
 
+**Design Token Enforcement:**
+- Use `@fnc314/design-tokens` for all design-related values (colors, spacing, typography).
+- `stylelint` strictly enforces the use of tokens. If you encounter lint errors, replace hardcoded values with appropriate tokens.
+- Run `mise run lint-tokens` to check compliance.
+
 ### Data
 
 Site content is data-driven from `src/data/*.json` (`bio`, `work`, `code`, `blog`, `skills`, `education`, `connections`, `photo`). Edit JSON to change content; components render from it.

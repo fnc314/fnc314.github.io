@@ -1,0 +1,43 @@
+{
+  "motions": {
+    "duration": {
+      "none": { "value": "0ms" },
+      "short": { "value": "250ms" },
+      "medium": { "value": "300ms" }
+    },
+    "easing": {
+      "emphasized": { "value": "cubic-bezier(0.34, 1.56, 0.64, 1)" },
+      "standard": { "value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+      "base": { "value": "ease-in-out" }
+    },
+    "elevation": {
+      "level-0": { "value": "0" },
+      "level-1": { "value": "1" },
+      "level-2": { "value": "2" },
+      "level-3": { "value": "3" },
+      "level-4": { "value": "4" },
+      "level-5": { "value": "5" }
+    },
+    "transform": {
+      "hover-lift": { "value": "-4px" }
+    },
+    "rotation": {
+      "none": {
+        "type": "value",
+        "value": "0deg"
+      },
+      "90": {
+        "type": "value",
+        "value": "90deg"
+      },
+      "180": {
+        "type": "value",
+        "value": "180deg"
+      },
+      "270": {
+        "type": "value",
+        "value": "270deg"
+      }
+    }
+  }
+}

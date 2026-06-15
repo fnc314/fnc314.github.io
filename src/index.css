@@ -1,96 +1,46 @@
-@import url("./stylesheets/material-overrides.css");
+@import url("@fnc314/design-tokens");
 
 :root {
-  color-scheme: light dark;
+  --hover-focus-animation-translate-y: var(
+    --globals-hover-focus-animation-translate-y
+  );
+  --hairline-width: var(--globals-hairline-width);
+  --color-transition-duration: var(--globals-transition-color-duration);
+  --color-transition-timing: var(--globals-transition-color-timing);
 
-  --hover-focus-animation-translate-y: -0.25rem;
-  --hairline-width: 1px;
-  --icon-fill-color: #c12a1c;
-  --breakpoint-compact-width-max: 600px;
-  --breakpoint-medium-width-max: 900px;
-  --breakpoint-large-width-max: 1200px;
-  --breakpoint-expanded-width-max: 1500px;
-  --color-transition-duration: 500ms;
-  --color-transition-timing: ease-in-out;
-  --fab-buffer-height: 10rem;
+  color-scheme: light dark;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  margin: var(--spaces-none);
+  padding: var(--spaces-none);
   transition:
     stroke var(--color-transition-duration) var(--color-transition-timing),
     fill var(--color-transition-duration) var(--color-transition-timing),
     border-color var(--color-transition-duration) var(--color-transition-timing),
-    background-color var(--color-transition-duration) var(--color-transition-timing),
+    background-color var(--color-transition-duration)
+      var(--color-transition-timing),
     color var(--color-transition-duration) var(--color-transition-timing);
 }
 
 html,
 body {
-  font-family: var(--md-ref-typeface-plain);
-  writing-mode: horizontal-tb;
-  margin: unset;
-  scroll-padding-bottom: var(--fab-buffer-height);
-  padding: unset;
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-plain);
+  margin: unset;
+  padding: unset;
+  scroll-padding-bottom: var(--globals-buffer-height);
+  writing-mode: horizontal-tb;
 }
 
 body {
-  min-height: 100dvh;
-  display: grid;
-  grid-template-areas:
-    "header-nav"
-    "main";
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr;
   container-type: size;
-  color: var(--md-sys-color-on-surface);
-  background-color: var(--md-sys-color-surface);
+  min-height: 100dvh;
 
-  header {
-    grid-area: header-nav;
-  }
-
-  main {
-    grid-area: main;
-    overflow-x: hidden;
-    color: var(--md-sys-color-on-surface);
-    background-color: var(--md-sys-color-surface);
-
-    .carousel-track {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      box-sizing: border-box;
-      transition: transform 0.3s ease-in-out;
-
-      [role="tabpanel"] {
-        width: 100%;
-        min-width: 0;
-        overflow-x: hidden;
-        flex-shrink: 0;
-        box-sizing: border-box;
-        padding-bottom: var(--fab-buffer-height);
-
-        &:nth-child(1) {
-          order: 0;
-        }
-
-        &:nth-child(2) {
-          order: 1;
-        }
-
-        &:nth-child(3) {
-          order: 2;
-        }
-
-        &:nth-child(4) {
-          order: 3;
-        }
-      }
-    }
+  bento-layout {
+    height: 100%;
+    width: 100%;
   }
 }

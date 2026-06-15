@@ -1,0 +1,35 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "code-repo",
+      "path": "./../../../src/components/code/repo/code-repo.ts",
+      "description": "[object Object],[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "codeRepo",
+          "attribute": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        },
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"MaterialTypescaleStyles\",\"CodeRepoStyles\"]"
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    }
+  ]
+}

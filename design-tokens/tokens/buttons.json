@@ -1,0 +1,7 @@
+{
+  "button": {
+    "container": {
+      "shape": { "value": "var(--md-sys-shape-corner-small)" }
+    }
+  }
+}

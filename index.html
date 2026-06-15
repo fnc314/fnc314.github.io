@@ -158,7 +158,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
     />
     <link
       rel="stylesheet"
@@ -173,37 +173,6 @@
     ></script>
   </head>
   <body>
-    <app-shell>
-      <header slot="app-nav">
-        <nav-component id="main-nav"></nav-component>
-      </header>
-      <main slot="app-content">
-        <div
-          class="carousel-track"
-          id="tabs-container"
-        >
-          <info-partial
-            role="tabpanel"
-            id="panel-info"
-            aria-labelledby="tab-info"
-          ></info-partial>
-          <work-partial
-            role="tabpanel"
-            id="panel-work"
-            aria-labelledby="tab-work"
-          ></work-partial>
-          <code-partial
-            role="tabpanel"
-            id="panel-code"
-            aria-labelledby="tab-code"
-          ></code-partial>
-          <blog-partial
-            role="tabpanel"
-            id="panel-blog"
-            aria-labelledby="tab-blog"
-          ></blog-partial>
-        </div>
-      </main>
-    </app-shell>
+    <bento-layout></bento-layout>
   </body>
 </html>

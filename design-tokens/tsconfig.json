@@ -1,0 +1,57 @@
+{
+  "include": [
+    "./scripts/**/*.ts",
+    "index.ts"
+  ],
+  "compilerOptions": {
+    "types": [
+      "node",
+      "vite/client",
+      "material-symbols",
+      "@types/fs-extra"
+    ],
+    "composite": true,
+    "declaration": true,
+    "outDir": "./dist/js",
+    "declarationDir": "./dist/types",
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "allowJs": true,
+    "emitDecoratorMetadata": false,
+    "alwaysStrict": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "declarationMap": false,
+    "strictBindCallApply": false,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": [
+      "Decorators",
+      "DOM",
+      "ES2020",
+      "ES2021",
+      "ES2022",
+      "ES2023",
+      "ES2024",
+      "ES2025",
+      "ESNext"
+    ],
+    "paths": {
+      "@/scripts/*": ["./scripts/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/css/*": ["./assets/css/*"]
+    },
+    "preserveConstEnums": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+    "rewriteRelativeImportExtensions": true,
+    "target": "esnext",
+    "tsBuildInfoFile": "./../stats/design-tokens.tsbuildinfo",
+  },
+}

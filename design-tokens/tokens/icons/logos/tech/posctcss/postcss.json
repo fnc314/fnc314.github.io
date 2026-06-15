@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "postcss": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/postcss/postcss-dark.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/postcss/postcss-default.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/postcss/postcss-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

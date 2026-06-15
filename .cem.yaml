@@ -1,13 +1,17 @@
 additionalPackages:
   - "npm:@material/web@2.4.1"
-  - "npm:material-symbols@0.44.11"
+  - "npm:material-symbols@0.45.1"
 
 generate:
   exclude:
     - ./src/data/**/*.json
 
   files:
-    - ./src/**/**/*.ts
+    - ./src/components/**/*.ts
+    - ./src/mixins/**/*.ts
+    - ./src/styles/**/*.css
+    - ./src/themes/**/*.ts
+    - ./src/types/**/*.ts
 
   output: ./docs/@pwrs/cem/custom-elements.json
 

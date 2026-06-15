@@ -1,0 +1,22 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "bash": {
+          "dark": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/bash/bash.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/bash/bash.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "design-tokens/assets/icons/logos/tech/bash/bash.svg"
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
   "short_name": "fnc314.com",
   "author": "Franco N. Colaizzi",
   "description": "Personal Website of Franco N. Colaizzi - fnc314",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "name": "fnc314.com",
   "manifest_version": "3",
   "display": "standalone",
@@ -21,140 +21,11 @@
     "development",
     "networking"
   ],
-  "start_url": "https://fnc314.com/#info",
+  "start_url": "https://fnc314.com/",
   "id": "https://fnc314.com/",
   "screenshots": [],
   "protocol_handlers": [],
-  "shortcuts": [
-    {
-      "name": "Info",
-      "short_name": "Info",
-      "description": "View information on Franco N. Colaizzi",
-      "url": "https://fnc314.com/#info",
-      "icons": [
-        {
-          "src": "icons/shortcuts/info/icon-filled-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/info/icon-filled-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/info/icon-outline-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/info/icon-outline-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        }
-      ]
-    },
-    {
-      "name": "Work",
-      "short_name": "Work",
-      "description": "View work experience of Franco N. Colaizzi",
-      "url": "https://fnc314.com/#work",
-      "icons": [
-        {
-          "src": "icons/shortcuts/work/icon-filled-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/work/icon-filled-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/work/icon-outline-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/work/icon-outline-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        }
-      ]
-    },
-    {
-      "name": "Code",
-      "short_name": "Code",
-      "description": "View code samples from Franco N. Colaizzi",
-      "url": "https://fnc314.com/#code",
-      "icons": [
-        {
-          "src": "icons/shortcuts/code/icon-filled-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/code/icon-filled-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/code/icon-outline-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/code/icon-outline-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        }
-      ]
-    },
-    {
-      "name": "Blog",
-      "short_name": "Blog",
-      "description": "View blog posts from Franco N. Colaizzi",
-      "url": "https://fnc314.com/#blog",
-      "icons": [
-        {
-          "src": "icons/shortcuts/blog/icon-filled-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/blog/icon-filled-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/blog/icon-outline-512.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "icons/shortcuts/blog/icon-outline-512.svg",
-          "sizes": "512x512",
-          "type": "image/svg+xml",
-          "purpose": "any"
-        }
-      ]
-    }
-  ],
+  "shortcuts": [],
   "icons": [
     {
       "src": "icons/pwa-192x192.png",
