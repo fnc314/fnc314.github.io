@@ -7,7 +7,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     publicDir: `${process.cwd()}/design-tokens/assets`,
     build: {
       lib: {
-        entry: `${process.cwd()}/design-tokens/scripts/index.ts`,
+        entry: `${process.cwd()}/design-tokens/index.ts`,
         name: "@fnc314/design-tokens",
         fileName: "@fnc314.design-tokens",
         formats: ["es"],

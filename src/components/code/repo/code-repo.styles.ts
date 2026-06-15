@@ -27,7 +27,6 @@ export const CodeRepoStyles: CSSResult = css`
   article {
     --dynamic-border-size: var(--sizes-width-l);
 
-    position: relative;
     background-color: var(--md-sys-color-surface-bright);
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
@@ -53,7 +52,8 @@ export const CodeRepoStyles: CSSResult = css`
     grid-area: header;
     display: flex;
     flex-direction: column;
-    gap: var(--spaces-gap-xxs);
+    gap: var(--spaces-gap-xs);
+    justify-content: space-between;
     margin-block: var(--spaces-margin-xs);
     min-inline-size: 0;
 
@@ -72,18 +72,8 @@ export const CodeRepoStyles: CSSResult = css`
       gap: var(--spaces-gap-xs);
       min-inline-size: 0;
       max-inline-size: 100%;
-
-      & img {
-        inline-size: var(--md-icon-size);
-        block-size: var(--md-icon-size);
-        flex-shrink: 0;
-      }
-
-      & span {
-        min-inline-size: 0;
-        word-break: break-all;
-        overflow-wrap: break-word;
-      }
+      word-break: break-all;
+      overflow-wrap: break-word;
 
       &:hover,
       &:focus {
@@ -159,6 +149,7 @@ export const CodeRepoStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
+
         h3 {
           font-size: var(--md-sys-typescale-title-large-size);
           line-height: var(--md-sys-typescale-title-large-line-height);
@@ -198,6 +189,7 @@ export const CodeRepoStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
+
         h3 {
           font-size: var(--md-sys-typescale-headline-small-size);
           line-height: var(--md-sys-typescale-headline-small-line-height);

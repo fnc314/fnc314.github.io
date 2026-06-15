@@ -3,7 +3,9 @@ import type { BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import "@/components/card/bento/bento-card";
 import { BlogCardStyles } from "@/components/card/blog/blog-card.styles";
 import BlogJson from "@/data/blog.json" with { type: "json" };
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/styles/text";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -12,9 +14,12 @@ import { customElement, property } from "lit/decorators.js";
  * @element blog-card
  */
 @customElement("blog-card")
-export class BlogCard extends LitElement {
+export class BlogCard extends UIAwareElement {
   /** {@link lit!css} */
-  static override styles = [BlogCardStyles];
+  static override styles = [
+    TextStyles,
+    BlogCardStyles
+  ];
 
   @property({ type: Boolean })
   expanded = false;

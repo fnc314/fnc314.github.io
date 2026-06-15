@@ -30,8 +30,8 @@ StyleDictionary.registerFilter({
 });
 
 const buildPaths = {
-  css: `${process.cwd()}/design-tokens/css/`,
-  json: `${process.cwd()}/design-tokens/dist/json/`,
+  css: `${process.cwd()}/design-tokens/assets/css/`,
+  json: `${process.cwd()}/design-tokens/assets/json/`,
 }
 
 export default {

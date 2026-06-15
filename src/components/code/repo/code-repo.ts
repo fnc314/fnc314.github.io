@@ -49,12 +49,7 @@ export class CodeRepo extends UIAwareElement {
             rel="noopener noreferrer"
             title="${this.codeRepo.repo}"
           >
-            <img
-              src="${data}"
-              alt="GitHub Link"
-              aria-hidden="true"
-            />
-            <span>${this.codeRepo.repo}</span>
+            ${this.codeRepo.repo}
           </a>
         </header>
 

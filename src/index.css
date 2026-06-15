@@ -1,4 +1,4 @@
-@import url("@fnc314/design-tokens/@fnc314.design-tokens.css");
+@import url("@fnc314/design-tokens");
 
 :root {
   --hover-focus-animation-translate-y: var(

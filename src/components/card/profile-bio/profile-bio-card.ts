@@ -52,7 +52,7 @@ export class ProfileBioCard extends UIAwareElement {
   ];
 
   @property({ type: String })
-  bioText: string = BioJson.bio;
+  bioText: string = BioJson.bio.long;
 
   @property({ type: Boolean })
   expanded = false;
@@ -102,7 +102,7 @@ export class ProfileBioCard extends UIAwareElement {
           </figure>
           <div class="bio-text-area">
             <div class="bio-content md-typescale-body-large">
-              <p>${unsafeHTML(this.bioText)}</p>
+              ${unsafeHTML(this.bioText)}
             </div>
           </div>
         </div>

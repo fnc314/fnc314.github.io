@@ -25,6 +25,7 @@ import "@/types/configs/app-configs";
 import "@/types/theme/color-scheme-configs";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import "@/types/theme/theme";
+import "@fnc314/design-tokens";
 import "@material/web/divider/divider";
 import "@material/web/elevation/elevation";
 import "@material/web/icon/icon";

@@ -102,7 +102,7 @@ export class BentoCard extends UIAwareElement {
           aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} details` : undefined)}"
           >
           <summary
-            aria-label="${this.bentoCardTitle} summary"
+            aria-describedby="bento-card-title"
             >
             <h2
               id="bento-card-title"

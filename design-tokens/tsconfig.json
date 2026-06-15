@@ -1,10 +1,7 @@
 {
-  "extends": [
-    // "./../tsconfig.json",
-  ],
   "include": [
-    "./scripts",
-    "./types"
+    "./scripts/**/*.ts",
+    "index.ts"
   ],
   "compilerOptions": {
     "types": [
@@ -46,7 +43,7 @@
     "paths": {
       "@/scripts/*": ["./scripts/*"],
       "@/assets/*": ["./assets/*"],
-      "@/css/*": ["./css/*"]
+      "@/css/*": ["./assets/css/*"]
     },
     "preserveConstEnums": true,
     "pretty": true,

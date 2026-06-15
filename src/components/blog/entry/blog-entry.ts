@@ -1,12 +1,11 @@
+import { BlogEntryStyles } from "@/components/blog/entry/blog-entry.styles";
 import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { InteractionStyles } from "@/styles/interaction-styles";
 import { TextStyles } from "@/styles/text";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
-import { html } from "lit";
+import { html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { BlogEntryStyles } from "./blog-entry.styles";
 
 /**
  * @summary Represents a published series entry.
@@ -20,7 +19,6 @@ import { BlogEntryStyles } from "./blog-entry.styles";
 export class BlogEntry extends UIAwareElement {
   static override styles = [
     TextStyles,
-    InteractionStyles,
     BlogEntryStyles,
   ];
 
@@ -33,43 +31,39 @@ export class BlogEntry extends UIAwareElement {
       `--icons-logos-organization-medium-${this.darkMode ? "light" : "dark"}`
     );
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
+    const borderStyle = unsafeCSS(`
+      --dynamic-border-background-image: url('${logoSource}');
+    `);
 
     return html`
-      <article>
-        <div class="banner" aria-hidden="true">
-          <span class="md-typescale-title-large">${blogEntryPadded}</span>
-        </div>
+      <article class="dynamic-border-host" style="${borderStyle.cssText}">
+        <header>
+          <h3 class="md-typescale-title-large">
+            ${this.blogEntry.title}
+          </h3>
+          <h4 class="md-typescale-title-small">
+            ${this.blogEntry.series.title} #${blogEntryPadded}
+          </h4>
+        </header>
 
-        <div>
-          <header>
-            <h3 class="md-typescale-title-large">
-              ${this.blogEntry.title}
-            </h3>
-            <h4 class="md-typescale-title-small">
-              ${this.blogEntry.series.title} #${blogEntryPadded}
-            </h4>
-          </header>
+        <section>
+          <p class="md-typescale-body-medium">${this.blogEntry.summary}</p>
+        </section>
 
-          <div>
-            <p class="md-typescale-body-medium">${this.blogEntry.summary}</p>
-          </div>
-
-          <footer>
-            <a
-              href=${ifDefined(this.blogEntry.mediumUrl)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                role="img"
-                aria-describedby="medium-link-label"
-                .src=${logoSource}
-              />
-              <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
-            </a>
-
-          </footer>
-        </div>
+        <footer>
+          <a
+            href=${ifDefined(this.blogEntry.mediumUrl)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              role="img"
+              aria-describedby="medium-link-label"
+              .src=${logoSource}
+            />
+            <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
+          </a>
+        </footer>
       </article>
     `;
   }
