@@ -1,6 +1,6 @@
 import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/components/word/tag/word-tag.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { TextStyles } from "@/styles/text";
 import { type CSSResult, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -34,7 +34,7 @@ import { customElement, property } from "lit/decorators.js";
 export class WordTag extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     css`
       :host {
         /** @ignore */

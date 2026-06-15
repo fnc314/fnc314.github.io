@@ -1,7 +1,7 @@
 import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
+import { TextStyles } from "@/styles/text";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -19,7 +19,7 @@ import { BlogEntryStyles } from "./blog-entry.styles";
 @customElement("blog-entry")
 export class BlogEntry extends UIAwareElement {
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     InteractionStyles,
     BlogEntryStyles,
   ];
@@ -36,7 +36,7 @@ export class BlogEntry extends UIAwareElement {
 
     return html`
       <article>
-        <div aria-hidden="true">
+        <div class="banner" aria-hidden="true">
           <span class="md-typescale-title-large">${blogEntryPadded}</span>
         </div>
 
@@ -62,7 +62,7 @@ export class BlogEntry extends UIAwareElement {
             >
               <img
                 role="img"
-                aria-labelledby="medium-link-label"
+                aria-describedby="medium-link-label"
                 .src=${logoSource}
               />
               <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>

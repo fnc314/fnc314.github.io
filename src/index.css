@@ -1,11 +1,12 @@
 @import url("@fnc314/design-tokens");
 
 :root {
-  --hover-focus-animation-translate-y: var(--globals-hover-focus-animation-translate-y);
+  --hover-focus-animation-translate-y: var(
+    --globals-hover-focus-animation-translate-y
+  );
   --hairline-width: var(--globals-hairline-width);
   --color-transition-duration: var(--globals-transition-color-duration);
   --color-transition-timing: var(--globals-transition-color-timing);
-  --fab-buffer-height: var(--globals-fab-buffer-height);
 
   color-scheme: light dark;
 }
@@ -30,35 +31,16 @@ body {
   font-family: var(--md-ref-typeface-plain);
   margin: unset;
   padding: unset;
-  scroll-padding-bottom: var(--fab-buffer-height);
+  scroll-padding-bottom: var(--globals-buffer-height);
   writing-mode: horizontal-tb;
 }
 
 body {
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
   container-type: size;
-  display: grid;
-  grid-template-areas:
-    "header-nav"
-    "main";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
   min-height: 100dvh;
 
-  header {
-    grid-area: header-nav;
-  }
-
-  main {
-    background-color: var(--md-sys-color-surface);
-    color: var(--md-sys-color-on-surface);
-    grid-area: main;
-    overflow-x: hidden;
-
-    bento-layout {
-      height: 100%;
-      width: 100%;
-    }
+  bento-layout {
+    height: 100%;
+    width: 100%;
   }
 }

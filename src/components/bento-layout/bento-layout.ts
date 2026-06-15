@@ -1,7 +1,7 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type ABentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { TextStyles } from "@/styles/text";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -17,7 +17,7 @@ import { styleMap } from "lit/directives/style-map.js";
 export class BentoLayout extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     BentoLayoutStyles,
   ];
 

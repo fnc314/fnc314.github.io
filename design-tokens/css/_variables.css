@@ -17,7 +17,7 @@
   --globals-hairline-width: 1px;
   --globals-transition-color-duration: 500ms;
   --globals-transition-color-timing: ease-in-out;
-  --globals-fab-buffer-height: 10rem;
+  --globals-buffer-height: 10rem;
   --globals-hover-focus-animation-translate-y: -0.25rem;
   --motions-duration-none: 0ms;
   --motions-duration-short: 250ms;

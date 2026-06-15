@@ -1,7 +1,6 @@
 import { SettingsCardStyles } from "@/components/card/settings/settings-card.styles";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
@@ -11,6 +10,7 @@ import { customElement, property, state } from "lit/decorators.js";
 
 import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
+import { TextStyles } from "@/styles/text";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 
@@ -23,7 +23,7 @@ import "@material/web/select/select-option";
 export class SettingsCard extends LitElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     SettingsCardStyles,
   ];
 

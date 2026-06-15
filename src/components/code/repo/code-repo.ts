@@ -1,7 +1,7 @@
 import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE, type CodeRepoData, WORD_TAG_SIZES, type WordTagSize } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { MaterialTypescaleStyles } from "@/styles";
+import { TextStyles } from "@/styles/text";
 import { cssPropertyDataImage, readCSSProperty } from "@fnc314/design-tokens";
 import { type PropertyValues, html, nothing } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -24,7 +24,7 @@ export class CodeRepo extends UIAwareElement {
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     CodeRepoStyles,
   ];
 
@@ -54,7 +54,7 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     return html`
-      <article>
+      <article class="dynamic-border-host">
         <div>
           <header>
             <h3 class=\"md-typescale-title-large\">
@@ -86,7 +86,7 @@ export class CodeRepo extends UIAwareElement {
             ></p>
 
             <footer>
-              <ul aria-label=\"Technologies used\">
+              <ul aria-label=${"Technologies used"}>
                 ${this.codeRepo.tech.map((tech) => {
                   const imgSrc =
                     typeof tech.designToken === "string"

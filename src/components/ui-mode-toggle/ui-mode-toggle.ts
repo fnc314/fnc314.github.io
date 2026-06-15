@@ -1,8 +1,8 @@
 import { UIModeToggleStyles } from "@/components/ui-mode-toggle/ui-mode-toggle.styles";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
+import { TextStyles } from "@/styles/text";
 import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import {
   CONFIG_COLOR_SCHEME_NAMES,
@@ -42,7 +42,7 @@ import { classMap } from "lit/directives/class-map.js";
 export class UiModeToggle extends LitElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     UIModeToggleStyles
   ];
 

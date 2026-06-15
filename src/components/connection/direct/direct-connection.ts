@@ -1,7 +1,7 @@
 import { DirectConnectionStyles } from "@/components/connection/direct/direct-connection.styles";
 import { type ConnectionInstance } from "@/components/connection/direct/direct-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { MaterialTypescaleStyles } from "@/styles";
+import { TextStyles } from "@/styles/text";
 import "@material/web/iconbutton/filled-tonal-icon-button";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -18,7 +18,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("direct-connection")
 export class DirectConnection extends UIAwareElement {
   static override styles: CSSResult[] = [
-    MaterialTypescaleStyles,
+    TextStyles,
     DirectConnectionStyles
   ]
 

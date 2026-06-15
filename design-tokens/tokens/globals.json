@@ -9,9 +9,10 @@
         "timing": { "value": "ease-in-out" }
       }
     },
-    "fab": {
-      "buffer": {
-        "height": { "value": "10rem" }
+    "buffer": {
+      "height": {
+        "type": "value",
+        "value": "10rem"
       }
     },
     "hover": {

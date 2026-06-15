@@ -15,7 +15,7 @@ import {
   WordCloudSortings,
   type WordCloudWord,
 } from "@/components/word/cloud/word-cloud.types";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { TextStyles } from "@/styles/text";
 import { LitElement, type PropertyValues, css, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -41,7 +41,7 @@ import { styleMap } from "lit/directives/style-map.js";
 export class WordCloud extends LitElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     css`
       :host {
         --word-cloud-animation: 150ms;

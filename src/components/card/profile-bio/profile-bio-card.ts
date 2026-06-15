@@ -1,7 +1,7 @@
 import BioJson from "@/data/bio.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
 import { configsService } from "@/services/configs/configs-service";
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { TextStyles } from "@/styles/text";
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
@@ -15,7 +15,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 export class ProfileBioCard extends LitElement {
   /** {@link lit!css} */
   static override styles = [
-    MaterialTypescaleStyles,
+    TextStyles,
     css`
       :host {
         display: block;
@@ -29,7 +29,7 @@ export class ProfileBioCard extends LitElement {
       }
 
       .profile-picture {
-        border: 2px solid var(--md-sys-color-primary);
+        border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary);
         border-radius: var(--md-sys-shape-corner-medium);
         max-height: 300px;
         object-fit: contain;
@@ -46,7 +46,7 @@ export class ProfileBioCard extends LitElement {
   ];
 
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
-  private _photoData = PhotoJson[
+  photoData = PhotoJson[
     configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson
   ];
 
@@ -75,7 +75,7 @@ export class ProfileBioCard extends LitElement {
 
   private _onConfigChange = () => {
     const themeName = configsService.loadConfigs().colorScheme.theme;
-    this._photoData = PhotoJson[themeName as keyof typeof PhotoJson];
+    this.photoData = PhotoJson[themeName as keyof typeof PhotoJson];
     this.requestUpdate();
   };
 
@@ -94,10 +94,10 @@ export class ProfileBioCard extends LitElement {
             <img
               class="profile-picture"
               loading="lazy"
-              src=${this._photoData.src}
-              alt=${this._photoData.alt}
+              src=${this.photoData.src}
+              alt=${this.photoData.alt}
             />
-            <figcaption class="profile-figcaption">${this._photoData.figcaption}</figcaption>
+            <figcaption class="profile-figcaption">${this.photoData.figcaption}</figcaption>
           </figure>
           <div class="bio-text-area">
             <div class="bio-content md-typescale-body-large">
