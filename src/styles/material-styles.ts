@@ -1,7 +1,5 @@
 import { type CSSResult } from "lit";
 
-export { styles as MaterialTypescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-
 export type MaterialSchemeName =
   | "light"
   | "lightMediumContrast"
@@ -10,5 +8,4 @@ export type MaterialSchemeName =
   | "darkMediumContrast"
   | "darkHighContrast";
 
-export type MaterialTheme = Record<MaterialSchemeName, CSSStyleSheet>;
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;

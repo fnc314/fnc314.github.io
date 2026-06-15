@@ -1,4 +1,4 @@
-import { MaterialTypescaleStyles } from "@/styles/material-styles";
+import { styles as MaterialTypescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import { type CSSResult, css } from "lit";
 
 /**
