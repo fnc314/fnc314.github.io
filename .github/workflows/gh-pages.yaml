@@ -12,6 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Install Zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
+
       - env:
           MISE_VERBOSE: "1"
         name: Mise Install
@@ -23,9 +28,11 @@ jobs:
 
       - name: PNPM Install
         run: pnpm install
+        shell: zsh {0}
 
       - name: Mise Build
         run: mise run vite:build:production
+        shell: zsh {0}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
