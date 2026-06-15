@@ -5,11 +5,12 @@ import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { type AppConfigs } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
 import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
 import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
@@ -20,7 +21,7 @@ import "@material/web/select/select-option";
  * @element settings-card
  */
 @customElement("settings-card")
-export class SettingsCard extends LitElement {
+export class SettingsCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,

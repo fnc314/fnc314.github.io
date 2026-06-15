@@ -2,7 +2,7 @@ import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
 import EducationJson from "@/data/education.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { TextStyles } from "@/styles";
+import { TextStyles } from "@/styles/text";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";

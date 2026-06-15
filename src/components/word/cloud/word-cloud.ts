@@ -16,8 +16,9 @@ import {
   WordCloudSortings,
   type WordCloudWord,
 } from "@/components/word/cloud/word-cloud.types";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { LitElement, type PropertyValues, html } from "lit";
+import { type PropertyValues, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -39,7 +40,7 @@ import { styleMap } from "lit/directives/style-map.js";
  * @cssprop [--word-cloud-fourth-quartile-line-height=1rem] - Line height for words in the fourth weight quartile.
  */
 @customElement("word-cloud")
-export class WordCloud extends LitElement {
+export class WordCloud extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,

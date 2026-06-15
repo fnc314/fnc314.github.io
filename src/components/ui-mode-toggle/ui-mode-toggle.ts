@@ -1,4 +1,5 @@
 import { UIModeToggleStyles } from "@/components/ui-mode-toggle/ui-mode-toggle.styles";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
@@ -14,7 +15,7 @@ import {
   DarkModeToggle,
   type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
-import { LitElement, type PropertyValues, type TemplateResult, html } from "lit";
+import { type PropertyValues, type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
@@ -39,7 +40,7 @@ import { classMap } from "lit/directives/class-map.js";
  * to align with the application"s Material Design 3 aesthetic.
  */
 @customElement("ui-mode-toggle")
-export class UiModeToggle extends LitElement {
+export class UiModeToggle extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,

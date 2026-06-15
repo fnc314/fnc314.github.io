@@ -1,8 +1,9 @@
 import BioJson from "@/data/bio.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
-import { LitElement, css, html } from "lit";
+import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -12,7 +13,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  * @element profile-bio-card
  */
 @customElement("profile-bio-card")
-export class ProfileBioCard extends LitElement {
+export class ProfileBioCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,

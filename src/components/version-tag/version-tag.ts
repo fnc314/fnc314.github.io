@@ -1,4 +1,5 @@
-import { type CSSResult, LitElement, css, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { type CSSResult, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
@@ -6,7 +7,7 @@ import time from "~build/time";
 
 
 @customElement("version-tag")
-export class VersionTag extends LitElement {
+export class VersionTag extends UIAwareElement {
   static override styles: CSSResult[] = [
     css`
       :host {

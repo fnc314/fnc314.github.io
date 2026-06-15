@@ -1,7 +1,8 @@
 import { WorkExperienceStyles } from "@/components/work/experience/work-experience.styles";
 import { type Job, type WorkDate } from "@/components/work/experience/work-experience.types";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { LitElement, html, nothing } from "lit";
+import { html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 export { type Job, type WorkDate } from "@/components/work/experience/work-experience.types";
@@ -20,7 +21,7 @@ export { type Job, type WorkDate } from "@/components/work/experience/work-exper
  * @property {Array<Job>} [jobs=[]] - An array of {@link Job}s rendered as nested {@link WorkExperience} instances
  */
 @customElement("work-experience")
-export class WorkExperience extends LitElement {
+export class WorkExperience extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,

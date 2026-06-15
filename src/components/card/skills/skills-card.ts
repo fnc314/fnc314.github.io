@@ -3,7 +3,8 @@ import { SkillsCardStyles } from "@/components/card/skills/skills-card.styles";
 import "@/components/word/cloud/word-cloud";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/cloud/word-cloud.types";
 import SkillsJson from "@/data/skills.json" with { type: "json" };
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -12,7 +13,7 @@ import { customElement, property } from "lit/decorators.js";
  * @element skills-card
  */
 @customElement("skills-card")
-export class SkillsCard extends LitElement {
+export class SkillsCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [SkillsCardStyles];
 

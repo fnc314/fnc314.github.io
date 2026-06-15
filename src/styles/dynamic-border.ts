@@ -3,7 +3,7 @@ import { type CSSResult, css } from "lit";
 export const DynamicBorderStyles: CSSResult = css`
   :host {
     display: block;
-    container-type: inline-size !important;
+    container-type: inline-size;
 
     --dynamic-border-content: "";
     --dynamic-border-background-image: none;

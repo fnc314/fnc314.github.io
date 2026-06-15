@@ -1,5 +1,6 @@
 import { BentoCardStyles } from "@/components/card/bento/bento-card.styles";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/styles/text";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -32,7 +33,10 @@ import { ifDefined } from "lit/directives/if-defined.js";
 @customElement("bento-card")
 export class BentoCard extends UIAwareElement {
   /** {@link lit!css} */
-  static override styles = [BentoCardStyles];
+  static override styles = [
+    TextStyles,
+    BentoCardStyles
+  ];
 
   /**
    * Whether to enable scrolling for content

@@ -2,7 +2,9 @@ import "@/components/card/bento/bento-card";
 import { CodeCardStyles } from "@/components/card/code/code-card.styles";
 import "@/components/code/repo/code-repo";
 import CodeJson from "@/data/code.json" with { type: "json" };
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/styles/text";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -11,9 +13,12 @@ import { customElement, property } from "lit/decorators.js";
  * @element code-card
  */
 @customElement("code-card")
-export class CodeCard extends LitElement {
+export class CodeCard extends UIAwareElement {
   /** {@link lit!css} */
-  static override styles = [CodeCardStyles];
+  static override styles = [
+    TextStyles,
+    CodeCardStyles
+  ];
 
   @property({ type: Boolean })
   expanded = false;

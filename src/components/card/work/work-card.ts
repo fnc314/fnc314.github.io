@@ -2,8 +2,9 @@ import "@/components/card/bento/bento-card";
 import { WorkCardStyles } from "@/components/card/work/work-card.styles";
 import "@/components/work/experience/work-experience";
 import { data as WorkJson } from "@/components/work/experience/work-experience.types";
-import { TextStyles } from "@/styles";
-import { LitElement, html } from "lit";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/styles/text";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -12,7 +13,7 @@ import { customElement, property } from "lit/decorators.js";
  * @element work-card
  */
 @customElement("work-card")
-export class WorkCard extends LitElement {
+export class WorkCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,
