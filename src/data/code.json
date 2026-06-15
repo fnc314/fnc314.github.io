@@ -163,6 +163,15 @@
             "default": "--icons-logos-tech-stylelint-default",
             "light": "--icons-logos-tech-stylelint-light"
           }
+        },
+        {
+          "name": "PostCSS",
+          "url": "https://postcss.org/",
+          "designToken": {
+            "dark": "--icons-logos-tech-postcss-dark",
+            "default": "--icons-logos-tech-postcss-default",
+            "light": "--icons-logos-tech-postcss-light"
+          }
         }
       ],
       "url": "https://github.com/fnc314/fnc314.github.io",

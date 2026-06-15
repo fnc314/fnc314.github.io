@@ -1,3 +1,5 @@
+monorepo_root = true
+
 [monorepo]
   config_roots = [
     "design-tokens",

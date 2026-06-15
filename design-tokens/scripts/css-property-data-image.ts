@@ -1,5 +1,8 @@
 import { readCSSProperty } from "./read-css-property";
 
+/** String for `url` and `img#src` */
+const DATA_IMAGE_SVG_BASE64_PREFIX = "data:image/svg+xml;base64,";
+
 /**
  * Creates the necessary `data:` string to display encoded `SVG`
  *   assets exposed as `CSS Properties`
@@ -13,5 +16,5 @@ import { readCSSProperty } from "./read-css-property";
  */
 export const cssPropertyDataImage: (propertyOrData: string) => string =
   (propertyOrData: string) => propertyOrData.startsWith("--") ?
-    `data:image/svg+xml;base64,${readCSSProperty(propertyOrData)}` :
-    `data:image/svg+xml;base64,${propertyOrData}`
+    `${DATA_IMAGE_SVG_BASE64_PREFIX}${readCSSProperty(propertyOrData)}` :
+    `${DATA_IMAGE_SVG_BASE64_PREFIX}${propertyOrData}`

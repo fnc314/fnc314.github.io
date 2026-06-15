@@ -13,11 +13,19 @@
       "types": "./dist/types/index.d.ts",
       "default": "./dist/@fnc314.design-tokens.js"
     },
+    "./@fnc314.design-tokens.css": "./dist/@fnc314.design-tokens.css",
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",
     "./themes/*": "./dist/themes/*",
     "./types/*": "./dist/types/*"
   },
+  "files": [
+    "./dist/@fnc314.design-tokens.css",
+    "./dist/@fnc314.design-tokens.js",
+    "./dist/icons/**/*",
+    "./dist/types/*.d.ts",
+    "./dist/themes/**/*.{jpg,json}"
+  ],
   "types": "./dist/types/index.d.ts",
   "main": "./dist/@fnc314.design-tokens.js",
   "module": "./dist/@fnc314.design-tokens.js",
