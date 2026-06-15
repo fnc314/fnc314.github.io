@@ -60,11 +60,11 @@ export class WordTag extends UIAwareElement {
 
   private layoutForVariant(variant: WordTagVariant): TemplateResult {
     const fontStyles: CSSResult = css`
-      font-weight: postcss_lit_0;
+      font-weight: ${this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)` };
     `;
 
     const borderStyles: CSSResult = css`
-      border-width: postcss_lit_0;
+      border-width: ${this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`};
     `;
 
     const defaultWordTag = html`
