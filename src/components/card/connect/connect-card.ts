@@ -1,12 +1,13 @@
 import "@/components/card/bento/bento-card";
 import { ConnectCardStyles } from "@/components/card/connect/connect-card.styles";
+import { type ArtifactConnectionData, ArtifactConnectionJson, type ArtifactConnectionType } from "@/components/connection/artifact/artifact-connection.types";
 import "@/components/connection/direct/direct-connection";
-import Connections from "@/data/connections.json" with { type: "json" };
+import { type ConnectionInstance, DirectConnections } from "@/components/connection/direct/direct-connection.types";
+import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType, ProfessionalConnections } from "@/components/connection/professional/professional-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { TextStyles } from "@/styles/text";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary ConnectCard - A card component displaying contact/connection links.
@@ -16,7 +17,10 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 @customElement("connect-card")
 export class ConnectCard extends UIAwareElement {
   /** {@link lit!css} */
-  static override styles = [ConnectCardStyles];
+  static override styles = [
+    TextStyles,
+    ConnectCardStyles
+  ];
 
   @property({ type: Boolean })
   expanded = false;
@@ -28,15 +32,40 @@ export class ConnectCard extends UIAwareElement {
   enableFocus = false;
 
   override render() {
-    // const directConnections = html`
-    //   ${
-    //     Object.values(DirectConnections.direct).map((instance: ConnectionInstance) => {
-    //       return html`
-    //         <direct-connection .connectionInstance=${instance}></direct-connection>
-    //       `;
-    //     })
-    //   }
-    // `;
+    const directConnections = html`
+      ${
+        Object.entries(DirectConnections).map(([method, instance]: [string, ConnectionInstance]) => {
+          return html`
+            <direct-connection .connectionInstance=${instance}></direct-connection>
+          `;
+        })
+      }
+    `;
+
+    const professionalConnections = html`
+      ${
+        Object.entries(ProfessionalConnections).map(([type, data]: [string, ProfessionalConnectionJsonData]) => {
+          return html`
+            <professional-connection
+              .professionalConnectionType=${type as ProfessionalConnectionType}
+              .professionalConnectionData=${data}>
+            </professional-connection>`
+        })
+      }
+    `;
+
+    const artifactConnections = html`
+      ${
+        Object.entries(ArtifactConnectionJson).map(([name, data]: [string, ArtifactConnectionData]) => {
+          return html`
+            <artifact-connection
+              .artifactConnectionType=${name as ArtifactConnectionType}
+              .artifactConnectionData=${data}>
+            </artifact-connection>
+          `;
+        })
+      }
+    `;
 
     return html`
       <bento-card
@@ -47,50 +76,9 @@ export class ConnectCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Let's Connect"}
       >
-        ${
-          Connections.connections.map(
-            (category) => html`
-              <section>
-                <header>
-                  <h3 class="md-typescale-title-small">${category.label}</h3>
-                </header>
-                <ul>
-                  ${
-                    Object.values(category.connections).map(
-                      (conn) => {
-                        const liStart = "designToken" in conn ?
-                          html`
-                            <img
-                              alt=""
-                              role="img"
-                              aria-describedby="connection-link-tag"
-                              src="${cssPropertyDataImage(conn.designToken.default)}"
-                              />
-                          ` :
-                          unsafeHTML(conn.start);
-
-                        return html`
-                          <li class="connection-list-item">
-                            ${liStart}
-                            <a
-                              id="connection-link-tag"
-                              href=${conn.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              class="connection-link md-typescale-body-large"
-                            >
-                              ${unsafeHTML(conn.text)}
-                            </a>
-                          </li>
-                        `;
-                      }
-                    )
-                  }
-                </ul>
-              </section>
-            `
-          )
-        }
+        ${directConnections}
+        ${professionalConnections}
+        ${artifactConnections}
       </bento-card>
     `;
   }

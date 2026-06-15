@@ -1,16 +1,65 @@
 {
   "direct": {
     "phone": {
-      "method": "phone",
       "href": "tel:+14127219550",
       "text": "412-721-9550",
-      "mdIcon": "call"
+      "mdIcon": "call",
+      "title": "Call me directly"
     },
     "email": {
-      "method": "email",
       "href": "mailto:fnc314@gmail.com",
       "text": "fnc314@gmail.com",
-      "mdIcon": "mail"
+      "mdIcon": "mail",
+      "title": "Send me an email"
+    }
+  },
+  "professional": {
+    "linkedin": {
+      "href": "https://www.linkedin.com/in/fnc314",
+      "designToken": {
+        "dark": "--icons-logos-organization-linkedin-dark",
+        "default": "--icons-logos-organization-linkedin-default",
+        "light": "--icons-logos-organization-linkedin-light"
+      },
+      "title": "Review professional profile on LinkedIn"
+    },
+    "github": {
+      "href": "https://www.github.com/fnc314",
+      "designToken": {
+        "dark": "--icons-logos-organization-github-dark",
+        "default": "--icons-logos-organization-github-default",
+        "light": "--icons-logos-organization-github-light"
+      },
+      "title": "See open source code on GitHub"
+    },
+    "medium": {
+      "href": "https://fnc314.medium.com",
+      "designToken": {
+        "dark": "--icons-logos-organization-medium-dark",
+        "default": "--icons-logos-organization-medium-default",
+        "light": "--icons-logos-organization-medium-light"
+      },
+      "title": "View publications on Medium"
+    }
+  },
+  "artifacts": {
+    "googleDocs": {
+      "href": "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
+      "designToken": {
+        "dark": "--icons-logos-tech-google-docs-dark",
+        "default": "--icons-logos-tech-google-docs-default",
+        "light": "--icons-logos-tech-google-docs-light"
+      },
+      "title": "View resume on Google Docs"
+    },
+    "pdf": {
+      "href": "https://www.fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
+      "designToken": {
+        "dark": "--icons-logos-tech-pdf-dark",
+        "default": "--icons-logos-tech-pdf-default",
+        "light": "--icons-logos-tech-pdf-light"
+      },
+      "title": "View PDF resume"
     }
   },
   "connections": [

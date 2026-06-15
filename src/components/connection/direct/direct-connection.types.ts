@@ -6,13 +6,12 @@ import Connections from "@/data/connections.json" with { type: "json" };
 export type DirectConnectionMethod = "phone" | "email";
 export type DirectConnectionIcon = "call" | "mail";
 export interface ConnectionInstance {
-  method: DirectConnectionMethod;
   href: string;
   mdIcon: DirectConnectionIcon;
   text: string;
-}
-export type ConnectionJsonDirect = {
-  direct: Record<DirectConnectionMethod, ConnectionInstance>;
+  title: string;
 }
 
-export const DirectConnections: ConnectionJsonDirect = Connections as ConnectionJsonDirect;
+export type ConnectionJsonDirect = Record<DirectConnectionMethod, ConnectionInstance>;
+
+export const DirectConnections: ConnectionJsonDirect = Connections.direct as ConnectionJsonDirect;

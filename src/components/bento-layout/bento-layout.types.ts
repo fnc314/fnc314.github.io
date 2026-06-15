@@ -69,7 +69,7 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 8 }, area: "profile-photo-bio" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 7 }, area: "profile-photo-bio" },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile-photo-bio" },
       mobile: { breakpoint: "mobile", area: "profile-photo-bio" },
     },
@@ -77,7 +77,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   connect: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 8, end: -1 }, area: "connect" },
+      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: 7 }, area: "connect" },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 }, area: "connect" },
       mobile: { breakpoint: "mobile", area: "connect" },
     },
@@ -85,7 +85,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   education: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
+      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "education" },
       tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
       mobile: { breakpoint: "mobile", area: "education" },
     },
@@ -93,7 +93,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   work: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 4 }, column: { start: 7, end: -1 }, area: "work" },
       tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
       mobile: { breakpoint: "mobile", area: "work" },
     },

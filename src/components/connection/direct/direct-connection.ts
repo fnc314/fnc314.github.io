@@ -30,26 +30,19 @@ export class DirectConnection extends UIAwareElement {
 
   override render(): TemplateResult {
 
-    const buttonId = `button-direct-connection-${this.connectionInstance.method}-${this.connectionInstance.text}`;
-    const labelId = buttonId.replace("button", "label");
+    const buttonId = `button-direct-connection-${this.connectionInstance.mdIcon}-${this.connectionInstance.text}`;
 
     return html`
       <md-filled-tonal-icon-button
         id="${buttonId}"
-        aria-labelledby="${labelId}"
         href="${this.connectionInstance.href}"
         target="_blank"
         @click=${() => window.open(this.connectionInstance.href, "_blank")}
         type="button"
+        title=${this.connectionInstance.title}
         >
         <md-icon>${this.connectionInstance.mdIcon}</md-icon>
       </md-filled-tonal-icon-button>
-      <span
-        id="${labelId}"
-        class="direct-connection-label"
-        >
-        ${this.connectionInstance.text}
-      </span>
     `;
   }
 }

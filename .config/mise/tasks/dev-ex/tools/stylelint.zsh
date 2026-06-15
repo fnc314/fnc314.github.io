@@ -5,6 +5,7 @@
 #USAGE flag "--analyze" help="Passes `--cei` to `stylelint`" default="false"
 #USAGE flag "--log" help="Creates a `HHMMSS.log` file at `./logs/stylelint/{YYYYMMDD}" default="false"
 #USAGE flag "--verbose" help="Passes `-f verbose` to `stylelint`" default="false"
+#USAGE flag "--config-inspector" help="Runs `stylelint-config-inspector` instead" default="false"
 
 declare STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"
@@ -44,4 +45,10 @@ fi
 
 print -f "${STYLELINT_FLAGS}\n\n"
 
-pnpm stylelint "src" "${STYLELINT_FLAGS[@]}"
+if [[ "${usage_config_inspector:=false}" == "true" ]]; then
+  print -f "Running stylelint-config-inspector\n\n"
+  pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.ts
+  exit 0
+else
+  pnpm stylelint "src" "${STYLELINT_FLAGS[@]}"
+fi
