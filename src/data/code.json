@@ -20,7 +20,7 @@
       ],
       "url": "https://github.com/fnc314/project-collections-gradle-settings-plugin",
       "repo": "fnc314/project-collections-gradle-settings-plugin",
-      "description": "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate <pre>KTS</pre> configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module Android architectures."
+      "description": "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures."
     },
     {
       "name": "mac-os-env-scripts",

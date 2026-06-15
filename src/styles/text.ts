@@ -10,9 +10,14 @@ import { type CSSResult, css } from "lit";
 export const TextStyles: CSSResult = css`
   ${MaterialTypescaleStyles}
 
-  a, dd, dt, figcaption,
+  a,
+  dd, dt,
+  figcaption,
   h1, h2, h3, h4, h5, h6,
-  label, li, p, span, sup {
+  label, li,
+  p,
+  span, sub, sup,
+  time {
     text-wrap: balance;
   }
 `;
