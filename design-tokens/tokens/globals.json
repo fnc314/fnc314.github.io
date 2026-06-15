@@ -1,5 +1,9 @@
 {
   "globals": {
+    "color-scheme": {
+      "type": "value",
+      "value": "light dark"
+    },
     "hairline": {
       "width": { "value": "1px" }
     },
