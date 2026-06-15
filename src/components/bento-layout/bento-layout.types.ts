@@ -25,10 +25,12 @@ export type GridPosition = {
   /** The column placement */
   column: GridPlacement;
   /** The grid area string */
-  area?: string;
+  area: BentoBoxType;
 } | {
   /** The breakpoint for this position */
-  breakpoint: "mobile"
+  breakpoint: Extract<BreakpointLabel, "mobile">;
+  /** The grid area string */
+  area: BentoBoxType;
 }
 
 /**
@@ -37,17 +39,16 @@ export type GridPosition = {
  * @export
  * @typedef {BentoBoxType}
  */
-export type BentoBoxType = "profile-photo-bio" | "work" | "code" | "blog" | "settings" | "connect" | "education" | "skills";
-export const BENTO_BOX_TYPES: BentoBoxType[] = [
-  "profile-photo-bio",
-  "work",
-  "code",
-  "blog",
-  "settings",
-  "connect",
-  "education",
+export type BentoBoxType =
+  "profile-photo-bio" |
+  "work" |
+  "code" |
+  "blog" |
+  "settings" |
+  "connect" |
+  "education" |
   "skills"
-];
+  ;
 
 /**
  * Defines the {@link BentoBoxType} coupled with a {@link GridPosition} used
@@ -56,76 +57,75 @@ export const BENTO_BOX_TYPES: BentoBoxType[] = [
  * @interface BentoBoxConfig
  */
 export interface ABentoBoxConfig {
-  type: BentoBoxType;
   expanded?: boolean;
   placement: Record<BreakpointLabel, GridPosition>;
 }
 
-export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">>;
+export type BentoBoxConfigs = Record<BentoBoxType, ABentoBoxConfig>;
 
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   "profile-photo-bio": {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 8 } },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 8 }, area: "profile-photo-bio" },
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile-photo-bio" },
+      mobile: { breakpoint: "mobile", area: "profile-photo-bio" },
     }
   },
   connect: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 8, end: -1 } },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 8, end: -1 }, area: "connect" },
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 }, area: "connect" },
+      mobile: { breakpoint: "mobile", area: "connect" },
     }
   },
   education: {
     expanded: true,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
+      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
+      mobile: { breakpoint: "mobile", area: "education" },
     }
   },
   work: {
     expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
-      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
+      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
+      mobile: { breakpoint: "mobile", area: "work" },
     }
   },
   blog: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "blog" },
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: "blog" },
+      mobile: { breakpoint: "mobile", area: "blog" },
     }
   },
   code: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "code" },
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: "code" },
+      mobile: { breakpoint: "mobile", area: "code" },
     }
   },
   skills: {
     expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
-      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "skills" },
+      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "skills" },
+      mobile: { breakpoint: "mobile", area: "skills" },
     }
   },
   settings: {
-    expanded: true,
+    expanded: false,
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 } },
-      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } },
-      mobile: { breakpoint: "mobile" },
+      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: "settings" },
+      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "settings" },
+      mobile: { breakpoint: "mobile", area: "settings" },
     }
   }
 };

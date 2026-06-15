@@ -28,7 +28,7 @@ export class BentoLayout extends UIAwareElement {
     const position: GridPosition = config.placement[this.breakpoint];
 
     const gridArea = position.breakpoint !== "mobile"
-      ? (position.area || `${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`)
+      ? (`${position.row.start} / ${position.column.start} / ${position.row.end} / ${position.column.end}`)
       : undefined;
 
     let cardContent: TemplateResult;
