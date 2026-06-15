@@ -98,6 +98,7 @@ catalogs:
     stylelint-config-inspector: 2.3.4
     stylelint-config-standard: 40.0.0
     stylelint-declaration-strict-value: 1.11.1
+    stylelint-plugin-logical-css: 2.1.0
     stylelint-plugin-rhythmguard: 2.0.0
     stylelint-plugin-use-baseline: 1.4.3
     stylelint-prettier: 5.0.3

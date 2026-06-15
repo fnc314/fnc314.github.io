@@ -2,19 +2,19 @@
   font-display: swap;
   font-family: var(--md-fonts-material-symbols-sharp-name);
   font-style: normal;
-  font-weight: var(--md-fonts-material-symbols-sharp-face-weight-min) var(--md-fonts-material-symbols-sharp-face-weight-max);
+  font-weight: var(--md-fonts-material-symbols-sharp-face-weight-min)
+    var(--md-fonts-material-symbols-sharp-face-weight-max);
   src: url("material-symbols/material-symbols-sharp.woff2") format("woff2");
 }
 
 .material-symbols-sharp {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
   direction: ltr;
   display: inline-block;
   font-family: var(--md-fonts-material-symbols-sharp-family);
   font-feature-settings: "liga";
   font-size: var(--md-fonts-material-symbols-sharp-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: var(--md-fonts-martieral-symbols-sharp-weight);
   letter-spacing: normal;
@@ -29,19 +29,19 @@
   font-display: swap;
   font-family: var(--md-fonts-material-symbols-outlined-name);
   font-style: normal;
-  font-weight: var(--md-fonts-material-symbols-outlined-face-weight-min) var(--md-fonts-material-symbols-outlined-face-weight-max);
+  font-weight: var(--md-fonts-material-symbols-outlined-face-weight-min)
+    var(--md-fonts-material-symbols-outlined-face-weight-max);
   src: url("material-symbols/material-symbols-outlined.woff2") format("woff2");
 }
 
 .material-symbols-outlined {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
   direction: ltr;
   display: inline-block;
   font-family: var(--md-fonts-material-symbols-outlined-family);
   font-feature-settings: "liga";
   font-size: var(--md-fonts-material-symbols-outlined-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: var(--md-fonts-martieral-symbols-outlined-weight);
   letter-spacing: normal;

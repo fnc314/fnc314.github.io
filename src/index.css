@@ -32,16 +32,16 @@ body {
   font-family: var(--md-ref-typeface-plain);
   margin: unset;
   padding: unset;
-  scroll-padding-bottom: var(--globals-buffer-height);
+  scroll-padding-block-end: var(--globals-buffer-height);
   writing-mode: horizontal-tb;
 }
 
 body {
   container-type: size;
-  min-height: 100dvh;
+  min-block-size: 100dvb;
 
   bento-layout {
-    height: 100%;
-    width: 100%;
+    block-size: 100%;
+    inline-size: 100%;
   }
 }

@@ -136,6 +136,7 @@
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
     "stylelint-declaration-strict-value": "catalog:devDependencies",
+    "stylelint-plugin-logical-css": "catalog:devDependencies",
     "stylelint-plugin-rhythmguard": "catalog:devDependencies",
     "stylelint-plugin-use-baseline": "catalog:devDependencies",
     "stylelint-prettier": "catalog:devDependencies",
