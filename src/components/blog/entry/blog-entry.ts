@@ -60,6 +60,7 @@ export class BlogEntry extends UIAwareElement {
               role="img"
               aria-describedby="medium-link-label"
               .src=${logoSource}
+              alt="Medium logo"
             />
             <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
           </a>
