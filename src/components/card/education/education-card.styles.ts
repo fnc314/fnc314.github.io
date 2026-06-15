@@ -77,13 +77,15 @@ export const EducationCardStyles = css`
 
       li {
         grid-template-areas:
-          "logo institute location"
-          "logo program year";
-        grid-template-columns: max-content 1fr max-content;
+          "logo . institute"
+          "logo . location"
+          ". . program"
+          ". . year";
+        grid-template-columns: 1fr auto max-content;
         text-align: unset;
 
         span, time {
-          text-align: end;
+          // text-align: end;
         }
       }
     }

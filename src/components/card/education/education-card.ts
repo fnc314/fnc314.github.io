@@ -2,6 +2,7 @@ import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
 import EducationJson from "@/data/education.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/styles";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -14,7 +15,10 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("education-card")
 export class EducationCard extends UIAwareElement {
   /** {@link lit!css} */
-  static override styles = [EducationCardStyles];
+  static override styles = [
+    TextStyles,
+    EducationCardStyles
+  ];
 
   @property({ type: Boolean })
   expanded = false;
