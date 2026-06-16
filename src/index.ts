@@ -32,7 +32,7 @@ import "@fnc314/design-tokens";
 import "@material/web/divider/divider";
 import "@material/web/elevation/elevation";
 import "@material/web/icon/icon";
-import "@material/web/iconbutton/filled-tonal-icon-button";
+import "@material/web/iconbutton/filled-icon-button";
 import "@material/web/labs/card/elevated-card";
 import "@material/web/labs/card/filled-card";
 import "@material/web/labs/card/outlined-card";

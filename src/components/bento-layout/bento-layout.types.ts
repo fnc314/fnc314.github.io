@@ -69,7 +69,7 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 3 }, column: { start: 1, end: 7 }, area: "profile" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 1, end: 7 }, area: "profile" },
       tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile" },
       mobile: { breakpoint: "mobile", area: "profile" },
     },
@@ -77,15 +77,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   connect: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 3, end: 4 }, column: { start: 1, end: 7 }, area: "connect" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 4, end: 7 }, area: "connect" },
+      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "connect" },
+      tablet:  { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: 4 }, area: "connect" },
       mobile: { breakpoint: "mobile", area: "connect" },
     },
     isExpanded: () => true
   },
   education: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "education" },
+      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "education" },
       tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
       mobile: { breakpoint: "mobile", area: "education" },
     },
@@ -93,15 +93,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   work: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 4 }, column: { start: 7, end: -1 }, area: "work" },
-      tablet: { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: "work" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 7, end: -1 }, area: "work" },
+      tablet: { breakpoint: "tablet", row: { start: 2, end: 5 }, column: { start: 4, end: -1 }, area: "work" },
       mobile: { breakpoint: "mobile", area: "work" },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   blog: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "blog" },
+      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "blog" },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: "blog" },
       mobile: { breakpoint: "mobile", area: "blog" },
     },
@@ -109,7 +109,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   code: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "code" },
+      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: "code" },
       tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: "code" },
       mobile: { breakpoint: "mobile", area: "code" },
     },
@@ -117,7 +117,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   skills: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "skills" },
+      desktop: { breakpoint: "desktop", row: { start: 9, end: 10 }, column: { start: 1, end: -1 }, area: "skills" },
       tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "skills" },
       mobile: { breakpoint: "mobile", area: "skills" },
     },
@@ -125,7 +125,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: "settings" },
+      desktop: { breakpoint: "desktop", row: { start: 10, end: 11 }, column: { start: 1, end: -1 }, area: "settings" },
       tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "settings" },
       mobile: { breakpoint: "mobile", area: "settings" },
     },
