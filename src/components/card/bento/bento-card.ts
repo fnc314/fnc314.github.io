@@ -1,3 +1,4 @@
+import { BENTO_BOX_TYPES, type BentoBoxType } from "@/components/bento-layout/bento-layout.types";
 import { BentoCardStyles } from "@/components/card/bento/bento-card.styles";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
@@ -37,6 +38,13 @@ export class BentoCard extends UIAwareElement {
     TextStyles,
     BentoCardStyles
   ];
+
+  /**
+   * Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}
+   */
+  @property({ type: String })
+  bentoTag: BentoBoxType = BENTO_BOX_TYPES.profile;
+
 
   /**
    * Whether to enable scrolling for content
@@ -100,8 +108,10 @@ export class BentoCard extends UIAwareElement {
       "spread-content": this.spreadContent,
     };
 
+    const htmlId = `${this.bentoTag}-bento-card-title`;
+
     return html`
-      <article aria-labelledby="bento-card-title">
+      <article aria-describedby="${htmlId}">
         <details
           class="${classMap(classes)}"
           ?open=${this.expanded}
@@ -109,10 +119,10 @@ export class BentoCard extends UIAwareElement {
           aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} details` : undefined)}"
           >
           <summary
-            aria-describedby="bento-card-title"
+            aria-describedby="${htmlId}"
             >
             <h2
-              id="bento-card-title"
+              id="${htmlId}"
               class="md-typescale-headline-small"
               >
               ${this.bentoCardTitle}

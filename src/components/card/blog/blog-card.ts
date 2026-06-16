@@ -1,5 +1,6 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/blog/entry/blog-entry";
-import type { BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
+import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import "@/components/card/bento/bento-card";
 import { BlogCardStyles } from "@/components/card/blog/blog-card.styles";
 import BlogJson from "@/data/blog.json" with { type: "json" };
@@ -44,6 +45,7 @@ export class BlogCard extends UIAwareElement {
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Publications"}
+        .bentoTag=${BENTO_BOX_TYPES.blog}
       >
         <div class="blog-list">
           ${BlogJson.posts.map(

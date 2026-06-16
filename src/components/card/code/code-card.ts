@@ -1,3 +1,4 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { CodeCardStyles } from "@/components/card/code/code-card.styles";
 import "@/components/code/repo/code-repo";
@@ -43,6 +44,7 @@ export class CodeCard extends UIAwareElement {
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Code"}
+        .bentoTag=${BENTO_BOX_TYPES.code}
       >
         <div class="code-list">
           ${CodeJson.projects.map(

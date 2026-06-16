@@ -52,10 +52,10 @@ export class BentoLayout extends UIAwareElement {
         break;
       case BENTO_BOX_TYPES.work:
         cardContent = html`
-          <work-card
+          <experience-card
             style=${styleMap({ gridArea, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
-          </work-card>
+          </experience-card>
         `;
         break;
       case BENTO_BOX_TYPES.blog:

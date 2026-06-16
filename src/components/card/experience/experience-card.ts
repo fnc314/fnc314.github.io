@@ -1,5 +1,6 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
-import { WorkCardStyles } from "@/components/card/work/work-card.styles";
+import { WorkCardStyles } from "@/components/card/experience/experience-card.styles";
 import "@/components/work/experience/work-experience";
 import { data as WorkJson } from "@/components/work/experience/work-experience.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
@@ -10,10 +11,10 @@ import { customElement, property } from "lit/decorators.js";
 /**
  * @summary WorkCard - A card component displaying work experience.
  *
- * @element work-card
+ * @element experience-card
  */
-@customElement("work-card")
-export class WorkCard extends UIAwareElement {
+@customElement("experience-card")
+export class ExperienceCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,
@@ -38,12 +39,12 @@ export class WorkCard extends UIAwareElement {
     return html`
       <bento-card
         class="work-container"
-        aria-labelledby="work-title"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
-        .bentoCardTitle=${"Work Experience"}
+        .bentoCardTitle=${"Experience"}
+        .bentoTag=${BENTO_BOX_TYPES.work}
       >
         ${WorkJson.experiences.map(
           (exp) => html`
@@ -66,6 +67,6 @@ export class WorkCard extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "work-card": WorkCard;
+    "experience-card": ExperienceCard;
   }
 }

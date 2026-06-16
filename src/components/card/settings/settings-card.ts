@@ -8,6 +8,7 @@ import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import "@/components/ui-mode-toggle/ui-mode-toggle";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
@@ -105,6 +106,7 @@ export class SettingsCard extends UIAwareElement {
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Settings"}
+        .bentoTag=${BENTO_BOX_TYPES.settings}
       >
         <div class="settings-content">
           <form>

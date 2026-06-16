@@ -1,3 +1,4 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
 import EducationJson from "@/data/education.json" with { type: "json" };
@@ -59,6 +60,7 @@ export class EducationCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .spreadContent=${true}
         .bentoCardTitle=${"Education"}
+        .bentoTag=${BENTO_BOX_TYPES.education}
       >
         <section>
           <ul>

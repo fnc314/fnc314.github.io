@@ -1,3 +1,4 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import { ProfileCardStyles } from "@/components/card/profile/profile-card.styles";
 import { type ArtifactConnectionData, ArtifactConnectionJson, type ArtifactConnectionType } from "@/components/connection/artifact/artifact-connection.types";
 import { type ConnectionInstance, DirectConnections } from "@/components/connection/direct/direct-connection.types";
@@ -145,7 +146,8 @@ export class ProfileCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
-        .bentoCardTitle=${"Info"}
+        .bentoCardTitle=${"Profile"}
+        .bentoTag=${BENTO_BOX_TYPES.profile}
       >
         <article>
           ${this.imageSection()}
