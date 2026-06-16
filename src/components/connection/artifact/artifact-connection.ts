@@ -24,7 +24,7 @@ export class ArtifactConnection extends UIAwareElement {
       this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
     );
     return html`
-      <md-filled-tonal-icon-button
+      <md-filled-icon-button
         href="${this.artifactConnectionData.href}"
         target="_blank"
         @click=${() => window.open(this.artifactConnectionData.href, "_blank")}
@@ -35,7 +35,7 @@ export class ArtifactConnection extends UIAwareElement {
             src=${imgSrc}
             alt="${this.artifactConnectionType} Logo"
           />
-        </md-filled-tonal-icon-button>
+        </md-filled-icon-button>
     `;
   }
 }

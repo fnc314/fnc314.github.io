@@ -33,7 +33,7 @@ export class DirectConnection extends UIAwareElement {
     const buttonId = `button-direct-connection-${this.connectionInstance.mdIcon}-${this.connectionInstance.text}`;
 
     return html`
-      <md-filled-tonal-icon-button
+      <md-filled-icon-button
         id="${buttonId}"
         href="${this.connectionInstance.href}"
         target="_blank"
@@ -42,7 +42,7 @@ export class DirectConnection extends UIAwareElement {
         title=${this.connectionInstance.title}
         >
         <md-icon>${this.connectionInstance.mdIcon}</md-icon>
-      </md-filled-tonal-icon-button>
+      </md-filled-icon-button>
     `;
   }
 }

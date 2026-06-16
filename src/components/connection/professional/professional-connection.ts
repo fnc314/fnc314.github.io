@@ -24,7 +24,7 @@ export class ProfessionalConnection extends UIAwareElement {
       this.darkMode ? this.professionalConnectionData.designToken.dark : this.professionalConnectionData.designToken.light
     );
     return html`
-      <md-filled-tonal-icon-button
+      <md-filled-icon-button
         href="${this.professionalConnectionData.href}"
         target="_blank"
         @click=${() => window.open(this.professionalConnectionData.href, "_blank")}
@@ -35,7 +35,7 @@ export class ProfessionalConnection extends UIAwareElement {
           src=${imgSrc}
           alt="${this.professionalConnectionType} Logo"
         />
-      </md-filled-tonal-icon-button>
+      </md-filled-icon-button>
     `;
   }
 }
