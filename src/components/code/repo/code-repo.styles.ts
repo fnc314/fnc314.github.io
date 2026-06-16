@@ -144,11 +144,6 @@ export const CodeRepoStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
-
-        h3 {
-          font-size: var(--md-sys-typescale-title-large-size);
-          line-height: var(--md-sys-typescale-title-large-line-height);
-        }
       }
 
       section {
@@ -183,12 +178,6 @@ export const CodeRepoStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
-
-        h3 {
-          font-size: var(--md-sys-typescale-headline-small-size);
-          font-weight: var(--md-sys-typescale-headline-small-weight);
-          line-height: var(--md-sys-typescale-headline-small-line-height);
-        }
       }
     }
   }

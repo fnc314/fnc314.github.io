@@ -41,6 +41,19 @@ export const ProfileCardStyles: CSSResult = css`
           text-align: center;
         }
       }
+
+      p {
+        &::first-line {
+          font-size: calc(
+            var(--md-sys-typescale-body-large-size) * 1.5
+          );
+          font-family: var(--md-ref-typeface-brand);
+        }
+
+        &::first-letter {
+          color: var(--md-sys-color-primary);
+        }
+      }
     }
 
     section.sub-section {

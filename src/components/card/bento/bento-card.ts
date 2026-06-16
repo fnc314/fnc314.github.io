@@ -123,7 +123,7 @@ export class BentoCard extends UIAwareElement {
             >
             <h2
               id="${htmlId}"
-              class="md-typescale-headline-small"
+              class="md-typescale-display-small"
               >
               ${this.bentoCardTitle}
             </h2>

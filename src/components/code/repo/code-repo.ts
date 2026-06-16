@@ -40,7 +40,7 @@ export class CodeRepo extends UIAwareElement {
     return html`
       <article class="dynamic-border-host" style="${borderStyle.cssText}">
         <header>
-          <h3 class="md-typescale-title-large">
+          <h3 class="md-typescale-headline-small">
             ${this.codeRepo.name}
           </h3>
           <a
