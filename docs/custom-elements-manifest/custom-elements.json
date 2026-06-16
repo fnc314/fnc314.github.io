@@ -9,7 +9,7 @@
         {
           "kind": "variable",
           "name": "BentoLayoutStyles",
-          "default": "css` :host { /** * Mobile styles use flex so this is only used when * screen and (width >= 769px) * Tablet -> 769 <= 1200 -> 6 * Desktop -> >= 1201 -> 12 */ --bento-layout-column-count: 1; background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); display: block; padding-bottom: var(--spaces-padding-xl); width: 100%; } main { align-items: stretch; display: flex; flex-direction: column; gap: var(--spaces-gap-s); padding: var(--spaces-padding-xs); h1 { background-color: var(--md-sys-color-primary-fixed); border-color: var(--md-sys-color-on-primary-fixed); border-radius: var(--md-sys-shape-corner-large); border-width: var(--hairline-width); color: var(--md-sys-color-on-primary-fixed); margin-inline: auto; padding-block: var(--spaces-padding-l); text-align: center; grid-area: span 1 / span var(--bento-layout-column-count); width: 100%; } } @media screen and (width >= 769px) { :host { --bento-layout-column-count: 6; } main { display: grid; grid-auto-flow: dense; grid-template-columns: repeat(var(--bento-layout-column-count), 1fr); h1 { width: 65%; } } } @media screen and ((width <= 1200px) and (width >= 769px)) { main { align-items: unset; gap: var(--spaces-gap-m); padding: var(--spaces-padding-s); } } @media screen and (width >= 1201px) { :host { --bento-layout-column-count: 12; } main { gap: var(--spaces-gap-l); margin: var(--spaces-none) auto; padding: var(--spaces-padding-m); } } `",
+          "default": "css` :host { /** * Mobile styles use flex so this is only used when * screen and (width >= 769px) * Tablet -> 769 <= 1200 -> 6 * Desktop -> >= 1201 -> 12 */ --bento-layout-column-count: 1; background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); display: block; inline-size: 100%; padding-block-end: var(--spaces-padding-xl); } main { align-items: stretch; display: flex; flex-direction: column; gap: var(--spaces-gap-s); padding: var(--spaces-padding-xs); h1 { background-color: var(--md-sys-color-primary-fixed); border-color: var(--md-sys-color-on-primary-fixed); border-radius: var(--md-sys-shape-corner-large); border-width: var(--hairline-width); color: var(--md-sys-color-on-primary-fixed); grid-area: span 1 / span var(--bento-layout-column-count); inline-size: 100%; margin-inline: auto; padding-block: var(--spaces-padding-l); text-align: center; } } @media screen and (width >= 769px) { :host { --bento-layout-column-count: 6; } main { display: grid; grid-auto-flow: dense; grid-template-areas: \". header header header header .\" \"profile profile profile work work work\" \"connect connect connect connect education education\" \"blog blog blog code code code\" \"skills skills skills skills skills skills\" \"settings settings settings settings settings settings\"; grid-template-columns: repeat(var(--bento-layout-column-count), 1fr); h1 { grid-area: header; } } } @media screen and ((width <= 1200px) and (width >= 769px)) { main { align-items: unset; gap: var(--spaces-gap-m); padding: var(--spaces-padding-s); } } @media screen and (width >= 1201px) { :host { --bento-layout-column-count: 12; } main { gap: var(--spaces-gap-l); margin: var(--spaces-none) auto; padding: var(--spaces-padding-m); /* Adjusted grid template areas based on user feedback */ grid-template-areas: \"header header header header header header header header header header header header\" \"profile profile profile profile work work work work work work work work\" \"education education education education work work work work work work work work\" \"connect connect connect connect work work work work work work work work\" \"blog blog blog blog blog blog blog blog blog blog blog blog\" \"code code code code code code code code code code code code\" \"skills skills skills skills skills skills skills skills skills skills skills skills\" \"settings settings settings settings settings settings settings settings settings settings settings settings\"; place-items: stretch stretch; } } `",
           "summary": "Styles for the BentoLayout component.\n\nOrchestrates the responsive grid layout for the bento box UI.\nSupports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts."
         }
       ],
@@ -100,15 +100,8 @@
           "type": {
             "text": "BentoBoxConfigs"
           },
-          "default": "{ \"profile-photo-bio\": { expanded: false, placement: { desktop: { breakpoint: \"desktop\", row: { start: 2, end: 3 }, column: { start: 1, end: 5 } }, tablet: { breakpoint: \"tablet\", row: { start: 2, end: 4 }, column: { start: 1, end: 4 } }, mobile: { breakpoint: \"mobile\" }, } }, connect: { expanded: true, placement: { desktop: { breakpoint: \"desktop\", row: { start: 2, end: 3 }, column: { start: 5, end: 9 } }, tablet: { breakpoint: \"tablet\", row: { start: 2, end: 3 }, column: { start: 4, end: 7 } }, mobile: { breakpoint: \"mobile\" }, } }, education: { expanded: true, placement: { desktop: { breakpoint: \"desktop\", row: { start: 2, end: 3 }, column: { start: 9, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 3, end: 4 }, column: { start: 4, end: 7 } }, mobile: { breakpoint: \"mobile\" }, } }, work: { expanded: false, placement: { desktop: { breakpoint: \"desktop\", row: { start: 3, end: 4 }, column: { start: 1, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } }, mobile: { breakpoint: \"mobile\" }, } }, blog: { expanded: true, placement: { desktop: { breakpoint: \"desktop\", row: { start: 4, end: 5 }, column: { start: 1, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 5, end: 6 }, column: { start: 1, end: 4 } }, mobile: { breakpoint: \"mobile\" }, } }, code: { expanded: true, placement: { desktop: { breakpoint: \"desktop\", row: { start: 5, end: 6 }, column: { start: 1, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 5, end: 6 }, column: { start: 4, end: -1 } }, mobile: { breakpoint: \"mobile\" }, } }, skills: { expanded: false, placement: { desktop: { breakpoint: \"desktop\", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 6, end: 7 }, column: { start: 1, end: -1 } }, mobile: { breakpoint: \"mobile\" }, } }, settings: { expanded: true, placement: { desktop: { breakpoint: \"desktop\", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } }, tablet: { breakpoint: \"tablet\", row: { start: 7, end: 8 }, column: { start: 1, end: -1 } }, mobile: { breakpoint: \"mobile\" }, } } }"
-        },
-        {
-          "kind": "variable",
-          "name": "BENTO_BOX_TYPES",
-          "type": {
-            "text": "BentoBoxType[]"
-          },
-          "default": "[ \"profile-photo-bio\", \"work\", \"code\", \"blog\", \"settings\", \"connect\", \"education\", \"skills\" ]"
+          "default": "{ profile: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 2, end: 3 }, column: { start: 1, end: 7 }, area: \"profile\" }, tablet: { breakpoint: \"tablet\", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: \"profile\" }, mobile: { breakpoint: \"mobile\", area: \"profile\" }, }, isExpanded: () => true }, connect: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 3, end: 4 }, column: { start: 1, end: 7 }, area: \"connect\" }, tablet: { breakpoint: \"tablet\", row: { start: 2, end: 3 }, column: { start: 4, end: 7 }, area: \"connect\" }, mobile: { breakpoint: \"mobile\", area: \"connect\" }, }, isExpanded: () => true }, education: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: \"education\" }, tablet: { breakpoint: \"tablet\", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: \"education\" }, mobile: { breakpoint: \"mobile\", area: \"education\" }, }, isExpanded: (breakpoint: BreakpointLabel) => breakpoint === Breakpoints.BreakpointLabels.desktop }, work: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 2, end: 4 }, column: { start: 7, end: -1 }, area: \"work\" }, tablet: { breakpoint: \"tablet\", row: { start: 4, end: 5 }, column: { start: 1, end: -1 }, area: \"work\" }, mobile: { breakpoint: \"mobile\", area: \"work\" }, }, isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile }, blog: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: \"blog\" }, tablet: { breakpoint: \"tablet\", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: \"blog\" }, mobile: { breakpoint: \"mobile\", area: \"blog\" }, }, isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile }, code: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: \"code\" }, tablet: { breakpoint: \"tablet\", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: \"code\" }, mobile: { breakpoint: \"mobile\", area: \"code\" }, }, isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile }, skills: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: \"skills\" }, tablet: { breakpoint: \"tablet\", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: \"skills\" }, mobile: { breakpoint: \"mobile\", area: \"skills\" }, }, isExpanded: () => false }, settings: { placement: { desktop: { breakpoint: \"desktop\", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: \"settings\" }, tablet: { breakpoint: \"tablet\", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: \"settings\" }, mobile: { breakpoint: \"mobile\", area: \"settings\" }, }, isExpanded: () => false } }",
+          "description": "The final rendered BentoBoxConfigs"
         },
         {
           "kind": "function",
@@ -123,7 +116,7 @@
               "name": "breakpoint",
               "default": "\"desktop\"",
               "type": {
-                "text": "Breakpoint"
+                "text": "BreakpointLabel"
               }
             }
           ],
@@ -141,7 +134,7 @@
             {
               "name": "breakpoint",
               "type": {
-                "text": "Breakpoint"
+                "text": "BreakpointLabel"
               },
               "description": "The current active breakpoint."
             }
@@ -155,14 +148,6 @@
           "name": "BENTO_BOX_CONFIG",
           "declaration": {
             "name": "BENTO_BOX_CONFIG",
-            "module": "src/components/bento-layout/bento-layout.types.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "BENTO_BOX_TYPES",
-          "declaration": {
-            "name": "BENTO_BOX_TYPES",
             "module": "src/components/bento-layout/bento-layout.types.ts"
           }
         },
@@ -194,7 +179,7 @@
           "type": {
             "text": "CSSResult"
           },
-          "default": "css` :host { display: block; width: 100%; min-width: 0; container-type: inline-size; container-name: blog-entry-card; --blog-entry-timeline: 5; --blog-entry-card-content: 95; } article { position: relative; background-color: var(--md-sys-color-surface-bright); border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); display: flex; flex-direction: column; overflow: hidden; min-width: 0; height: 100%; /* Formerly .timeline-node */ > div:first-of-type { background-color: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); padding: var(--spaces-padding-xs); text-align: center; font-weight: var(--md-sys-typescale-title-medium-weight); font-family: var(--md-ref-typeface-brand); flex: var(--blog-entry-timeline); } /* Formerly .card-content */ > div:last-of-type { padding: var(--spaces-padding-m); flex: var(--blog-entry-card-content); min-width: 0; header { h3 { margin: var(--spaces-none); margin-block-end: var(--spaces-margin-xs); color: var(--md-sys-color-on-surface); font-family: var(--md-ref-typeface-brand); } h4 { margin: var(--spaces-none); margin-block-end: var(--spaces-margin-xs); font-style: italic; color: var(--md-sys-color-primary); } } /* Summary container */ div { p { color: var(--md-sys-color-on-surface-variant); margin-top: var(--spaces-none); margin-bottom: var(--spaces-margin-m); word-break: break-word; min-width: 0; } } footer { display: flex; justify-content: space-between; align-items: center; gap: var(--spaces-gap-s); a { display: inline-flex; align-items: center; gap: var(--spaces-gap-xs); color: var(--md-sys-color-inverse-surface); text-decoration: none; img { width: var(--md-icon-size); height: var(--md-icon-size); } } } } } .badge { padding: var(--spaces-padding-xxs) var(--spaces-padding-xs); background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); border-radius: var(--md-sys-shape-corner-small); font-size: var(--md-sys-typescale-label-small-size); } /* Breakpoints: 300px and 500px */ @container blog-entry-card (min-width: 500px) { article { flex-direction: row; > div:first-of-type { display: flex; align-items: center; justify-content: center; } } } `"
+          "default": "css` ${DynamicBorderStyles} :host { align-self: stretch; box-sizing: border-box; container-type: inline-size; display: block; flex-grow: 1; inline-size: 100%; min-inline-size: 0; } article { --dynamic-border-size: var(--sizes-width-l); background-color: var(--md-sys-color-surface-bright); block-size: 100%; border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); box-sizing: border-box; display: grid; grid-template-areas: \"header\" \"description\" \"footer\"; grid-template-columns: 1fr; justify-content: flex-start; min-inline-size: 0; overflow: hidden; padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs); padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs); } header { display: flex; flex-direction: column; gap: var(--spaces-gap-xxs); grid-area: header; justify-content: space-between; margin-block: var(--spaces-margin-xs); min-inline-size: 0; h3 { color: var(--md-sys-color-on-surface); font-family: var(--md-ref-typeface-brand); margin-block: var(--spaces-none); margin-inline: var(--spaces-none); word-break: break-word; } h4 { color: var(--md-sys-color-primary); font-style: italic; margin-block: var(--spaces-none); margin-inline: var(--spaces-none); } } section { grid-area: description; min-inline-size: 0; p { color: var(--md-sys-color-on-surface-variant); margin-block: var(--spaces-margin-xs); min-inline-size: 0; word-break: break-word; } } footer { align-items: center; display: flex; gap: var(--spaces-gap-s); grid-area: footer; justify-content: space-between; margin-block-start: auto; a { align-items: center; color: var(--md-sys-color-inverse-surface); display: inline-flex; gap: var(--spaces-gap-xs); text-decoration: none; &:hover, &:focus { text-decoration: underline; } img { block-size: var(--md-icon-size); inline-size: var(--md-icon-size); } } } @container (min-width: 385px) { article { gap: var(--spaces-gap-m); padding-block: var(--spaces-padding-xl) var(--spaces-padding-s); padding-inline: var(--spaces-padding-m); header { margin-block: var(--spaces-none); h3 { font-size: var(--md-sys-typescale-title-large-size); line-height: var(--md-sys-typescale-title-large-line-height); } } } } @container (min-width: 1201px) { article { align-items: start; gap: var(--spaces-gap-l); grid-template-areas: \"header description\" \"header footer\"; grid-template-columns: 1fr 1.5fr; grid-template-rows: auto 1fr; padding-block: var(--spaces-padding-xs); padding-inline-end: unset; padding-inline-start: var(--spaces-padding-xl); header { margin-block: var(--spaces-none); h3 { font-size: var(--md-sys-typescale-headline-small-size); font-weight: var(--md-sys-typescale-headline-small-weight); line-height: var(--md-sys-typescale-headline-small-line-height); } } } } `"
         }
       ],
       "exports": [
@@ -282,7 +267,7 @@
         {
           "kind": "variable",
           "name": "BentoCardStyles",
-          "default": "css` :host { display: block; height: 100%; width: 100%; } .bento-card { backdrop-filter: blur(12px); background-color: var(--md-sys-color-surface-container-low); border: var(--hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-large); box-shadow: var(--md-sys-elevation-level1); box-sizing: border-box; display: flex; flex-direction: column; height: 100%; overflow: hidden; padding: var(--spaces-padding-m); transition: transform var(--motions-duration-short) var(--motions-easing-emphasized), box-shadow var(--motions-duration-short) var(--motions-easing-base), border-color var(--motions-duration-short) var(--motions-easing-base), background-color var(--motions-duration-medium) var(--motions-easing-base); } summary { align-items: center; cursor: pointer; display: flex; justify-content: space-between; list-style: none; outline: none; padding: 0; user-select: none; } summary::-webkit-details-marker { display: none; } .indicator { color: var(--md-sys-color-on-surface-variant); transition: transform var(--motions-duration-medium) var(--motions-easing-standard); } details[open] .indicator { transform: rotate(var(--motions-rotation-180)); } /* Expansion Animation Logic */ .expansion-wrapper { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows var(--motions-duration-medium) var(--motions-easing-standard); } details[open] .expansion-wrapper { grid-template-rows: 1fr; } .expansion-content { display: flex; flex-direction: column; gap: var(--spaces-gap-s); min-height: 0; padding-block: var(--spaces-padding-xs); } /* Conditional Interaction States */ .bento-card.enable-hover:hover { background-color: var(--md-sys-color-surface-container-high); border-color: var(--md-sys-color-outline); transform: translateY(var(--motions-transform-hover-lift)); } .bento-card.enable-focus:focus-within { border-color: var(--md-sys-color-primary); } /* Style slotted header elements (h2 by default) */ h2 { border-bottom: var(--hairline-width) dashed var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); flex-grow: 1; font-family: var(--md-ref-typeface-brand); margin: var(--spaces-none) !important; padding-block-end: var(--spaces-padding-xs); } .scrollable { .expansion-content { flex-grow: 1; overflow-y: auto; } } `",
+          "default": "css` :host { block-size: 100%; container-name: bento-card-container; container-type: inline-size; display: block; inline-size: 100%; } section { block-size: 100%; display: flex; flex-direction: column; justify-content: center; } .bento-card { backdrop-filter: blur(12px); background-color: var(--md-sys-color-surface-container-lowest); block-size: 100%; inline-size: 100%; border: var(--hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-large); box-shadow: var(--md-sys-elevation-level1); box-sizing: border-box; display: flex; flex-direction: column; padding: var(--spaces-padding-s); transition: transform var(--motions-duration-short) var(--motions-easing-emphasized), box-shadow var(--motions-duration-short) var(--motions-easing-base), border-color var(--motions-duration-short) var(--motions-easing-base), background-color var(--motions-duration-medium) var(--motions-easing-base); } summary { align-items: center; cursor: pointer; display: flex; justify-content: space-between; list-style: none; outline: none; padding: 0; user-select: none; } summary::-webkit-details-marker { display: none; } .indicator { color: var(--md-sys-color-on-surface-variant); transition: transform var(--motions-duration-medium) var(--motions-easing-standard); } details[open] .indicator { transform: rotate(var(--motions-rotation-180)); } /* Expansion Animation Logic */ .expansion-wrapper { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows var(--motions-duration-medium) var(--motions-easing-standard); } details[open] .expansion-wrapper { grid-template-rows: 1fr; } .expansion-content { display: flex; flex-direction: column; gap: var(--spaces-gap-s); min-block-size: 0; padding-block: var(--spaces-padding-xs); } .bento-card.spread-content .expansion-content { block-size: 100%; flex-grow: 1; justify-content: space-between; } /* Conditional Interaction States */ .bento-card.enable-hover:hover { background-color: var(--md-sys-color-surface-container-high); border-color: var(--md-sys-color-outline); transform: translateY(var(--motions-transform-hover-lift)); } .bento-card.enable-focus:focus-within { border-color: var(--md-sys-color-primary); } /* Style slotted header elements (h2 by default) */ h2 { border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); flex-grow: 1; font-family: var(--md-ref-typeface-brand); margin: var(--spaces-none) !important; padding-block-end: var(--spaces-padding-xs); } .scrollable { .expansion-content { flex-grow: 1; overflow-block: auto; } } @container bento-card-container (min-width: 500px) { .bento-card { padding: var(--spaces-padding-m); } } `",
           "summary": "Styles for the BentoCard component.\n\nImplements glassmorphism using `backdrop-filter` and semi-transparent background colors\nderived from Material Design 3 surface tokens. Provides interaction feedback via\nCSS transitions on hover, including elevation (shadow), border color shifts, and translation.\n\nIncludes specific styling for slotted `h2` elements to ensure visual consistency\nfor section headers within the bento grid layout."
         }
       ],
@@ -381,6 +366,16 @@
               "default": "false",
               "description": "Enables internal vertical scrolling for content.",
               "attribute": "scrollable"
+            },
+            {
+              "kind": "field",
+              "name": "spreadContent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Whether to spread content over the entire body",
+              "attribute": "spreadContent"
             }
           ],
           "attributes": [
@@ -428,11 +423,20 @@
               "default": "false",
               "description": "Enables internal vertical scrolling for content.",
               "fieldName": "scrollable"
+            },
+            {
+              "name": "spreadContent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Whether to spread content over the entire body",
+              "fieldName": "spreadContent"
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "bento-card",
           "customElement": true,
@@ -467,7 +471,7 @@
         {
           "kind": "variable",
           "name": "BlogCardStyles",
-          "default": "css` :host { display: block; height: 100%; } .blog-container { display: flex; flex-direction: column; gap: var(--spaces-gap-s); height: 100%; } .blog-list { display: flex; flex-direction: column; gap: var(--spaces-gap-xs); } @media screen and (width <= 768px) { .blog-list { flex-direction: row; overflow-x: auto; padding-bottom: var(--spaces-padding-xs); scroll-snap-type: x mandatory; } blog-entry { min-width: 80%; scroll-snap-align: start; } } `",
+          "default": "css` :host { block-size: 100%; display: block; } .blog-container { block-size: 100%; display: flex; flex-direction: column; gap: var(--spaces-gap-s); } .blog-list { display: flex; flex-direction: column; gap: var(--spaces-gap-s); } @media screen and (width <= 768px) { .blog-list { flex-direction: row; overflow-inline: auto; padding-block-end: var(--spaces-padding-xs); scroll-snap-type: x mandatory; } blog-entry { min-inline-size: 80%; scroll-snap-align: start; } } `",
           "summary": "Styles for the BlogCard component."
         }
       ],
@@ -546,8 +550,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "blog-card",
           "customElement": true,
@@ -582,7 +586,7 @@
         {
           "kind": "variable",
           "name": "CodeCardStyles",
-          "default": "css` :host { display: block; height: 100%; } .code-container { display: flex; flex-direction: column; gap: var(--spaces-gap-s); height: 100%; } .code-list { display: flex; flex-direction: column; gap: var(--spaces-gap-s); } @media screen and (width <= 768px) { .code-list { flex-direction: row; overflow-x: auto; padding-block-end: var(--spaces-padding-xs); scroll-snap-type: x mandatory; } code-repo { min-width: 80%; scroll-snap-align: start; } } `",
+          "default": "css` :host { block-size: 100%; display: block; } .code-container { block-size: 100%; display: flex; flex-direction: column; gap: var(--spaces-gap-s); } .code-list { display: flex; flex-direction: column; gap: var(--spaces-gap-s); } @media screen and (width <= 768px) { .code-list { flex-direction: row; overflow-inline: auto; padding-block-end: var(--spaces-padding-xs); scroll-snap-type: x mandatory; } code-repo { min-inline-size: 80%; scroll-snap-align: start; } } `",
           "summary": "Styles for the CodeCard component."
         }
       ],
@@ -661,8 +665,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "code-card",
           "customElement": true,
@@ -697,7 +701,7 @@
         {
           "kind": "variable",
           "name": "ConnectCardStyles",
-          "default": "css` :host { display: block; height: 100%; --md-divider-color: var(--md-sys-color-secondary); } bento-card { display: flex; flex-direction: column; gap: var(--spaces-gap-s); height: 100%; section { padding-block: var(--spaces-padding-xs); header { h3 { color: var(--md-sys-color-secondary); padding-block: var(--spaces-padding-xs); text-align: center; margin: var(--spaces-none); } md-divider { margin-block-end: var(--spaces-margin-m); } } ul { display: flex; flex-direction: column; margin-block: var(--spaces-none); list-style: none; padding: var(--spaces-none); } } } .connection-links-label { color: var(--md-sys-color-secondary); padding-block: var(--spaces-padding-xs); text-align: center; margin-block: var(--spaces-none); } .connection-list-item { display: flex; flex-direction: row; align-items: center; gap: var(--spaces-gap-xs); margin: var(--spaces-none); padding: var(--spaces-none); padding-block: var(--spaces-padding-xs); img, md-icon { width: calc(var(--md-icon-size) * 0.75); height: calc(var(--md-icon-size) * 0.75); background-color: var(--md-sys-color-surface-container-highest); border-radius: var(--md-sys-shape-corner-full); padding: var(--spaces-padding-xs); } md-icon { color: var(--md-sys-color-on-surface-variant); } } .connections-list { display: flex; flex-direction: column; margin-block: var(--spaces-none); list-style: none; padding: var(--spaces-none); md-divider { margin-block-end: var(--spaces-margin-m); } } .connection-link { color: var(--md-sys-color-primary); text-decoration: none; } `",
+          "default": "css` :host { --md-divider-color: var(--md-sys-color-secondary); --md-filled-tonal-icon-button-container-color: var(--md-sys-color-surface-container-high); --md-filled-tonal-icon-button-container-height: calc(2 * var(--md-icon-size)); --md-filled-tonal-icon-button-container-width: calc(2 * var(--md-icon-size)); --md-filled-tonal-icon-button-container-shape: var(--md-sys-shape-corner-small); --md-filled-tonal-icon-button-icon-color: var(--md-sys-color-on-surface-variant); --md-filled-tonal-icon-button-icon-size: calc(1.5 * var(--md-icon-size)); block-size: 100%; display: block; } bento-card { block-size: 100%; display: flex; flex-direction: column; gap: var(--spaces-gap-s); ul { display: flex; flex-flow: row wrap; gap: var(--spaces-gap-l); list-style: none; margin: var(--spaces-none); padding: var(--spaces-none); li { display: block; } } } .connection-links-label { color: var(--md-sys-color-secondary); margin-block: var(--spaces-none); padding-block: var(--spaces-padding-xs); text-align: center; } .connection-list-item { align-items: center; display: flex; flex-direction: row; gap: var(--spaces-gap-xs); margin: var(--spaces-none); padding: var(--spaces-none); padding-block: var(--spaces-padding-xs); img, md-icon { background-color: var(--md-sys-color-surface-container-highest); block-size: calc(var(--md-icon-size)); border-radius: var(--md-sys-shape-corner-full); inline-size: calc(var(--md-icon-size)); padding: var(--spaces-padding-xs); } md-icon { color: var(--md-sys-color-on-surface-variant); } } .connections-list { display: flex; flex-direction: column; list-style: none; margin-block: var(--spaces-none); padding: var(--spaces-none); md-divider { margin-block-end: var(--spaces-margin-m); } } .connection-link { color: var(--md-sys-color-primary); text-decoration: none; } `",
           "summary": "Styles for the ConnectCard component."
         }
       ],
@@ -812,7 +816,7 @@
         {
           "kind": "variable",
           "name": "EducationCardStyles",
-          "default": "css` :host { display: block; height: 100%; --md-divider-color: currentColor; } .education-list { display: flex; flex-direction: column; gap: var(--spaces-gap-l); list-style: none; margin: var(--spaces-none); padding: var(--spaces-none); justify-content: space-around; } .education-item { display: grid; grid-template-areas: \"logo institute location\" \"logo program year\"; grid-template-columns: max-content 1fr max-content; margin-block: var(--spaces-margin-xs); gap: var(--spaces-none) var(--spaces-gap-s); img { background-color: var(--md-sys-color-surface-container-highest); border-radius: var(--md-sys-shape-corner-full); padding: var(--spaces-padding-xs); place-self: center; grid-area: logo; aspect-ratio: 1; width: calc(var(--md-icon-size) * 0.75); height: calc(var(--md-icon-size) * 0.75); } h3 { grid-area: institute; } span { grid-area: location; } h4 { grid-area: program; font-style: italic; font-weight: unset; } time { grid-area: year; } h3, h4 { margin-block: var(--spaces-none); } span, time { text-align: end; } } `",
+          "default": "css` :host { --md-divider-color: currentcolor; --education-icon-size: 3rem; /* Increased icon size */ block-size: 100%; container-name: education-card-container; container-type: inline-size; display: block; inline-size: 100%; } section { block-size: 100%; display: flex; flex-direction: column; inline-size: 100%; ul { block-size: 100%; display: flex; flex-direction: column; flex-grow: 1; gap: var(--spaces-gap-xl); /* Increased gap */ justify-content: space-between; list-style: none; margin: var(--spaces-none); padding: var(--spaces-padding-s); li { display: grid; gap: var(--spaces-gap-s) var(--spaces-gap-m); /* Increased column gap */ grid-template-areas: \"logo institute\" \"logo location\" \"logo program\" \"logo year\"; grid-template-columns: var(--education-icon-size) 1fr; margin-block: var(--spaces-margin-s); text-align: start; align-items: center; img { aspect-ratio: 1; background-color: var(--md-sys-color-surface-container-highest); block-size: var(--education-icon-size); border-radius: var(--md-sys-shape-corner-medium); grid-area: logo; inline-size: var(--education-icon-size); padding: var(--spaces-padding-xs); place-self: center; } h3 { grid-area: institute; font-size: 1.1rem; /* Increased font size */ } span { grid-area: location; font-size: 0.95rem; } h4 { font-style: italic; font-weight: 500; grid-area: program; font-size: 1rem; } time { grid-area: year; font-size: 0.9rem; } h3, h4 { margin-block: var(--spaces-none); } } } } @container education-card-container (min-width: 500px) { section { ul { /* Removed flex-direction: row; to maintain vertical stack */ li { grid-template-areas: \"logo institute\" \"logo location\" \"logo program\" \"logo year\"; grid-template-columns: var(--education-icon-size) 1fr; img { place-self: center; } } } } } @container education-card-container (min-width: 900px) { section { ul { /* Removed flex-direction: row; to maintain vertical stack */ li { grid-template-areas: \"logo institute location\" \"logo program year\"; grid-template-columns: var(--education-icon-size) repeat(2, 1fr); } } } } `",
           "summary": "Styles for the EducationCard component."
         }
       ],
@@ -936,12 +940,6 @@
             },
             {
               "kind": "field",
-              "name": "_photoData",
-              "privacy": "private",
-              "default": "PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]"
-            },
-            {
-              "kind": "field",
               "name": "bioText",
               "type": {
                 "text": "string"
@@ -974,6 +972,11 @@
               },
               "default": "false",
               "attribute": "expanded"
+            },
+            {
+              "kind": "field",
+              "name": "photoData",
+              "default": "PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]"
             }
           ],
           "attributes": [
@@ -1010,8 +1013,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "profile-bio-card",
           "customElement": true,
@@ -1041,6 +1044,148 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/card/profile/profile-card.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ProfileCardStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { display: block; block-size: 100%; } .profile-bio-container { display: flex; flex-direction: column; gap: var(--spaces-gap-s); } .profile-picture { border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary); border-radius: var(--md-sys-shape-corner-medium); max-block-size: 300px; object-fit: contain; inline-size: 100%; } .profile-figcaption { color: var(--md-sys-color-on-surface-variant); font-size: var(--md-sys-typescale-body-small-size); margin-block-start: var(--spaces-margin-xs); text-align: center; } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProfileCardStyles",
+          "declaration": {
+            "name": "ProfileCardStyles",
+            "module": "src/components/card/profile/profile-card.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/card/profile/profile-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ProfileCard",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_onConfigChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "bioText",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "bioText"
+            },
+            {
+              "kind": "field",
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "enableFocus"
+            },
+            {
+              "kind": "field",
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "enableHover"
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "expanded"
+            },
+            {
+              "kind": "field",
+              "name": "photoData",
+              "default": "PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "bioText",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "bioText"
+            },
+            {
+              "name": "enableFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableFocus"
+            },
+            {
+              "name": "enableHover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "enableHover"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "expanded"
+            }
+          ],
+          "superclass": {
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
+          },
+          "tagName": "profile-card",
+          "customElement": true,
+          "summary": "A responsive card component that displays a profile photo and biography.",
+          "modulePath": "src/components/card/profile/profile-card.ts",
+          "definitionPath": "src/components/card/profile/profile-card.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "profile-card",
+          "declaration": {
+            "name": "ProfileCard",
+            "module": "src/components/card/profile/profile-card.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfileCard",
+          "declaration": {
+            "name": "ProfileCard",
+            "module": "src/components/card/profile/profile-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/card/settings/settings-card.styles.ts",
       "declarations": [
         {
@@ -1049,7 +1194,7 @@
           "type": {
             "text": "CSSResult"
           },
-          "default": "css` :host { display: block; height: 100%; } .settings-content { display: flex; flex: 1; flex-direction: column; gap: var(--spaces-gap-m); /* Gap between form and version-tag */ justify-content: space-between; form { display: flex; flex-direction: column; gap: var(--spaces-gap-xl); /* Gap between fieldsets and ui-mode-toggle */ flex: 1; padding: var(--spaces-none); /* Remove default form padding */ border: none; /* Remove default form border */ fieldset { border: none; margin: var(--spaces-none); padding: var(--spaces-none); display: flex; flex-direction: column; gap: var(--spaces-gap-s); /* Gap between label and select within a fieldset */ legend { padding: var(--spaces-none); margin: var(--spaces-none); padding-block-end: var(--spaces-padding-xxs); border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); } md-outlined-select { padding-block-start: var(--spaces-padding-s); } } } version-tag { padding-block-start: var(--spaces-padding-m); } } `"
+          "default": "css` :host { block-size: 100%; display: block; } .settings-content { display: flex; flex: 1; flex-direction: column; gap: var(--spaces-gap-m); /* Gap between form and version-tag */ justify-content: space-between; form { border: none; /* Remove default form border */ display: flex; flex: 1; flex-direction: column; gap: var(--spaces-gap-xl); /* Gap between fieldsets and ui-mode-toggle */ padding: var(--spaces-none); /* Remove default form padding */ fieldset { border: none; display: flex; flex-direction: column; gap: var(--spaces-gap-s); /* Gap between label and select within a fieldset */ margin: var(--spaces-none); padding: var(--spaces-none); legend { border-block-end: var(--hairline-width) solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); margin: var(--spaces-none); padding: var(--spaces-none); padding-block-end: var(--spaces-padding-xxs); } md-outlined-select { padding-block-start: var(--spaces-padding-s); } } } version-tag { padding-block-start: var(--spaces-padding-m); } } `"
         }
       ],
       "exports": [
@@ -1187,8 +1332,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "settings-card",
           "customElement": true,
@@ -1223,7 +1368,7 @@
         {
           "kind": "variable",
           "name": "SkillsCardStyles",
-          "default": "css` :host { display: block; height: 100%; } .skills-container { display: flex; flex-direction: column; gap: var(--spaces-gap-s); height: 100%; } `",
+          "default": "css` :host { block-size: 100%; display: block; } .skills-container { block-size: 100%; display: flex; flex-direction: column; gap: var(--spaces-gap-s); } `",
           "summary": "Styles for the SkillsCard component."
         }
       ],
@@ -1307,8 +1452,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "skills-card",
           "customElement": true,
@@ -1343,7 +1488,7 @@
         {
           "kind": "variable",
           "name": "WorkCardStyles",
-          "default": "css` :host { display: block; height: 100%; } .work-container { display: flex; flex-direction: column; gap: var(--spaces-gap-s); height: 100%; } `",
+          "default": "css` :host { block-size: 100%; display: block; } .work-container { block-size: 100%; display: flex; flex-direction: column; gap: var(--spaces-gap-s); } `",
           "summary": "Styles for the WorkCard component."
         }
       ],
@@ -1422,8 +1567,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "work-card",
           "customElement": true,
@@ -1461,7 +1606,7 @@
           "type": {
             "text": "CSSResult"
           },
-          "default": "css` @property --code-repo-word-tag-size { /* 1. Use unsafeCSS for strings. 2. Ensure the resulting CSS has quotes around the syntax value. */ // syntax: \"${unsafeCSS(`${WORD_TAG_SIZES.full} | ${WORD_TAG_SIZES.compact} | ${WORD_TAG_SIZES.condensed}`)}\"; syntax: \"<custom-ident>\"; initial-value: ${unsafeCSS(WORD_TAG_SIZES.condensed)}; inherits: false; } :host { display: block; width: 100%; min-width: 0; align-self: stretch; flex-grow: 1; box-sizing: border-box; container-type: inline-size; container-name: code-repo-card; --md-divider-color: var(--md-sys-color-on-surface-variant); --md-divider-thickness: var(--sizes-thickness-hairline); --word-tag-border-radius: var(--md-sys-shape-corner-medium); --word-tag-background-color: var(--md-sys-color-tertiary-fixed); --word-tag-color: var(--md-sys-color-on-tertiary-fixed); } article { --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.full)}; transition: --code-repo-word-tag-size 5ms ease-in-out; } article { position: relative; background-color: var(--md-sys-color-surface-bright); border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); padding: var(--spaces-padding-m); display: flex; flex-direction: column; box-sizing: border-box; overflow: hidden; justify-content: flex-start; min-width: 0; height: 100%; &::before { content: \"\"; position: absolute; top: 0; left: 0; right: 0; height: calc(var(--sizes-thickness-hairline) * 8); background-color: var(--md-sys-color-primary); } /* Formerly .card-body-wrapper */ > div { min-width: 0; /* Default Structural Layout Roles (Mobile Stack Flow <= 500px) */ header { display: flex; flex-direction: column; gap: var(--spaces-gap-xxs); margin-top: var(--spaces-none); margin-bottom: var(--spaces-margin-s); min-width: 0; h3 { color: var(--md-sys-color-on-surface); margin: var(--spaces-none); word-break: break-word; } a { color: var(--md-sys-color-primary); text-decoration: none; display: inline-flex; align-items: center; gap: var(--spaces-gap-xs); min-width: 0; max-width: 100%; & img { width: var(--md-icon-size); height: var(--md-icon-size); flex-shrink: 0; } & span { min-width: 0; word-break: break-all; overflow-wrap: break-word; } &:hover, &:focus { text-decoration: underline; } } } md-divider { margin-top: var(--spaces-none); margin-block-end: var(--spaces-margin-m); } /* Formerly .info-pane */ > div { min-width: 0; p { color: var(--md-sys-color-on-surface-variant); margin-top: var(--spaces-none); margin-bottom: var(--spaces-margin-m); word-break: break-word; min-width: 0; pre { display: inline; overflow-wrap: break-word; white-space: pre-wrap; } } footer { display: flex; flex-direction: column; gap: var(--spaces-gap-s); margin-top: auto; ul { display: flex; flex-flow: row wrap; gap: var(--spaces-gap-s); margin: var(--spaces-none); padding: var(--spaces-none); list-style: none; & word-tag img, & word-tag [slot=\\\"icon\\\"] { width: var(--md-icon-size); height: var(--md-icon-size); object-fit: contain; flex-shrink: 0; } } } } } } @container code-repo-card (max-width: 300px) { article { --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.condensed)}; padding: var(--spaces-padding-s); justify-content: space-between; > div { header { margin-block-end: var(--spaces-margin-xs); h3 { font-size: var(--md-sys-typescale-title-medium-size); line-height: var(--md-sys-typescale-title-medium-line-height); } } > div { p { margin-block-end: var(--spaces-margin-s); } footer ul { gap: var(--spaces-gap-xs); } } } } } @container code-repo-card (min-width: 500px) { article { --code-repo-word-tag-size: ${unsafeCSS(WORD_TAG_SIZES.compact)}; padding: var(--spaces-padding-l); > div { display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--spaces-gap-l); align-items: start; md-divider { display: none; } header { margin-block: var(--spaces-none); h3 { font-size: var(--md-sys-typescale-headline-small-size); line-height: var(--md-sys-typescale-headline-small-line-height); font-weight: var(--md-sys-typescale-headline-small-weight); } } > div { display: flex; flex-direction: column; p { margin-block-end: var(--spaces-margin-m); } footer { margin-top: auto; } } } } } `",
+          "default": "css` ${DynamicBorderStyles} :host { --md-divider-color: var(--md-sys-color-on-surface-variant); --md-divider-thickness: var(--sizes-thickness-hairline); --word-tag-border-radius: var(--md-sys-shape-corner-medium); --word-tag-background-color: var(--md-sys-color-inverse-primary); --word-tag-color: var(--md-sys-color-inverse-on-surface); align-self: stretch; box-sizing: border-box; container-type: inline-size; display: block; flex-grow: 1; inline-size: 100%; min-inline-size: 0; } article { --dynamic-border-size: var(--sizes-width-l); background-color: var(--md-sys-color-surface-bright); block-size: 100%; border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); box-sizing: border-box; display: grid; grid-template-areas: \"header\" \"divider\" \"description\" \"tech\"; grid-template-columns: 1fr; justify-content: flex-start; min-inline-size: 0; overflow: hidden; padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs); padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs); } header { display: flex; flex-direction: column; gap: var(--spaces-gap-xs); grid-area: header; justify-content: space-between; margin-block: var(--spaces-margin-xs); min-inline-size: 0; h3 { color: var(--md-sys-color-on-surface); margin-block: var(--spaces-none); margin-inline: var(--spaces-none); word-break: break-word; } a { align-items: center; color: var(--md-sys-color-primary); display: inline-flex; gap: var(--spaces-gap-xs); max-inline-size: 100%; min-inline-size: 0; overflow-wrap: break-word; text-decoration: none; word-break: break-all; &:hover, &:focus { text-decoration: underline; } } } md-divider { grid-area: divider; margin-block: var(--spaces-none) var(--spaces-margin-m); } section { grid-area: description; min-inline-size: 0; p { color: var(--md-sys-color-on-surface-variant); margin-block: var(--spaces-none) var(--spaces-margin-m); min-inline-size: 0; word-break: break-word; pre { display: inline; overflow-wrap: break-word; white-space: pre-wrap; } } } footer { display: flex; flex-direction: column; gap: var(--spaces-gap-s); grid-area: tech; margin-block-start: auto; ul { display: flex; flex-flow: row wrap; gap: var(--spaces-gap-s); list-style: none; margin-block: var(--spaces-none); margin-inline: var(--spaces-none); padding-block: var(--spaces-none); padding-inline: var(--spaces-none); & word-tag img, & word-tag [slot=\"\\\\\"icon\\\\\"\"] { block-size: var(--md-icon-size); flex-shrink: 0; inline-size: var(--md-icon-size); object-fit: contain; } } } /** * Tablet Scenario: Screen 769px - 1200px. * Widget is 1/2 width (3 out of 6 columns). * Container width range: ~385px to 600px. */ @container (min-width: 385px) { article { gap: var(--spaces-gap-m); padding-block: var(--spaces-padding-xl) var(--spaces-padding-s); padding-inline: var(--spaces-padding-s) var(--spaces-padding-s); header { margin-block: var(--spaces-none); h3 { font-size: var(--md-sys-typescale-title-large-size); line-height: var(--md-sys-typescale-title-large-line-height); } } section { p { margin-block-end: var(--spaces-margin-m); } } } } /** * Desktop Scenario: Screen 1201px+. * Widget is full width (12 out of 12 columns). * Container width range: 1201px+. */ @container (min-width: 1201px) { article { align-items: start; gap: var(--spaces-gap-l); grid-template-areas: \"header description\" \"header tech\"; grid-template-columns: 1fr 1.5fr; grid-template-rows: auto 1fr; padding-block: var(--spaces-padding-xs); padding-inline-end: unset; padding-inline-start: var(--spaces-padding-xl); md-divider { display: none; } header { margin-block: var(--spaces-none); h3 { font-size: var(--md-sys-typescale-headline-small-size); font-weight: var(--md-sys-typescale-headline-small-weight); line-height: var(--md-sys-typescale-headline-small-line-height); } } } } `",
           "description": "The CSSResult for @fnc314/fnc314.github.io!CodeRepo"
         }
       ],
@@ -1487,14 +1632,6 @@
           "members": [
             {
               "kind": "field",
-              "name": "articleCard",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
               "name": "codeRepo",
               "type": {
                 "text": "CodeRepoData"
@@ -1502,23 +1639,6 @@
               "default": "{}",
               "description": "An instance of {@link CodeRepoData} to render",
               "attribute": "codeRepo"
-            },
-            {
-              "kind": "field",
-              "name": "onWordTagSizeChange",
-              "type": {
-                "text": "(event: TransitionEvent) => void"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "wordTagSize",
-              "type": {
-                "text": "WordTagSize"
-              },
-              "privacy": "protected",
-              "description": "Extraced by onWordTagSizeChange listener bound to the `resize` `Event`\n\nTransitionEvent"
             }
           ],
           "attributes": [
@@ -1605,6 +1725,142 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/connection/artifact/artifact-connection.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ConnectionArtifactStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { block-size: 100%; inline-size: 100%; align-items: center; display: flex; flex-direction: row; gap: var(--spaces-gap-s); } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ConnectionArtifactStyles",
+          "declaration": {
+            "name": "ConnectionArtifactStyles",
+            "module": "src/components/connection/artifact/artifact-connection.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/connection/artifact/artifact-connection.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ArtifactConnection",
+          "members": [
+            {
+              "kind": "field",
+              "name": "artifactConnectionData",
+              "type": {
+                "text": "ArtifactConnectionData"
+              },
+              "default": "{}",
+              "attribute": "artifactConnectionData"
+            },
+            {
+              "kind": "field",
+              "name": "artifactConnectionType",
+              "type": {
+                "text": "ArtifactConnectionType"
+              },
+              "default": "\"\"",
+              "attribute": "artifactConnectionType"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "artifactConnectionData",
+              "type": {
+                "text": "ArtifactConnectionData"
+              },
+              "default": "{}",
+              "fieldName": "artifactConnectionData"
+            },
+            {
+              "name": "artifactConnectionType",
+              "type": {
+                "text": "ArtifactConnectionType"
+              },
+              "default": "\"\"",
+              "fieldName": "artifactConnectionType"
+            }
+          ],
+          "superclass": {
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
+          },
+          "tagName": "artifact-connection",
+          "customElement": true,
+          "modulePath": "src/components/connection/artifact/artifact-connection.ts",
+          "definitionPath": "src/components/connection/artifact/artifact-connection.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "artifact-connection",
+          "declaration": {
+            "name": "ArtifactConnection",
+            "module": "src/components/connection/artifact/artifact-connection.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ArtifactConnection",
+          "declaration": {
+            "name": "ArtifactConnection",
+            "module": "src/components/connection/artifact/artifact-connection.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/connection/artifact/artifact-connection.types.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ArtifactConnectionJson",
+          "default": "Connections.artifacts"
+        },
+        {
+          "kind": "variable",
+          "name": "ArtifactConnections",
+          "type": {
+            "text": "{\n  googleDocs: \"googleDocs\" as const,\n  pdf: \"pdf\" as const,\n}"
+          },
+          "default": "{ googleDocs: \"googleDocs\" as const, pdf: \"pdf\" as const, }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ArtifactConnectionJson",
+          "declaration": {
+            "name": "ArtifactConnectionJson",
+            "module": "src/components/connection/artifact/artifact-connection.types.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ArtifactConnections",
+          "declaration": {
+            "name": "ArtifactConnections",
+            "module": "src/components/connection/artifact/artifact-connection.types.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/connection/direct/direct-connection.styles.ts",
       "declarations": [
         {
@@ -1613,7 +1869,7 @@
           "type": {
             "text": "CSSResult"
           },
-          "default": "css` :host { display: flex; flex-direction: row; align-items: center; gap: var(--spaces-gap-s); } md-filled-tonal-icon-button { width: calc(2 * var(--md-icon-size)); height: calc(2 * var(--md-icon-size)); } `"
+          "default": "css` :host { block-size: 100%; inline-size: 100%; align-items: center; display: flex; flex-direction: row; gap: var(--spaces-gap-s); } `"
         }
       ],
       "exports": [
@@ -1695,7 +1951,7 @@
           "type": {
             "text": "ConnectionJsonDirect"
           },
-          "default": "Connections"
+          "default": "Connections.direct"
         }
       ],
       "exports": [
@@ -1711,6 +1967,145 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/connection/professional/professional-connection.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ProfessionalConnectionStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { block-size: 100%; inline-size: 100%; align-items: center; display: flex; flex-direction: row; gap: var(--spaces-gap-s); } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProfessionalConnectionStyles",
+          "declaration": {
+            "name": "ProfessionalConnectionStyles",
+            "module": "src/components/connection/professional/professional-connection.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/out/components/connection/professional/professional-connection.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ProfessionalConnection",
+          "members": [
+            {
+              "kind": "field",
+              "name": "professionalConnectionData",
+              "type": {
+                "text": "ProfessionalConnectionJsonData"
+              },
+              "default": "{}",
+              "attribute": "professionalConnectionData"
+            },
+            {
+              "kind": "field",
+              "name": "professionalConnectionType",
+              "type": {
+                "text": "ProfessionalConnectionType"
+              },
+              "default": "\"\"",
+              "attribute": "professionalConnectionType"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "professionalConnectionData",
+              "type": {
+                "text": "ProfessionalConnectionJsonData"
+              },
+              "default": "{}",
+              "fieldName": "professionalConnectionData"
+            },
+            {
+              "name": "professionalConnectionType",
+              "type": {
+                "text": "ProfessionalConnectionType"
+              },
+              "default": "\"\"",
+              "fieldName": "professionalConnectionType"
+            }
+          ],
+          "superclass": {
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
+          },
+          "tagName": "professional-connection",
+          "customElement": true,
+          "modulePath": "src/components/connection/professional/professional-connection.ts",
+          "definitionPath": "src/components/connection/professional/professional-connection.ts"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "professional-connection",
+          "declaration": {
+            "name": "ProfessionalConnection",
+            "module": "src/components/connection/professional/professional-connection.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfessionalConnection",
+          "declaration": {
+            "name": "ProfessionalConnection",
+            "module": "src/components/connection/professional/professional-connection.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/connection/professional/professional-connection.types.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ProfessionalConnections",
+          "type": {
+            "text": "ProfessionalConnectionJson"
+          },
+          "default": "ConnectionsJson.professional"
+        },
+        {
+          "kind": "variable",
+          "name": "ProfessionalConnectionTypes",
+          "type": {
+            "text": "{\n  linkedin: \"linkedin\" as const,\n  github: \"github\" as const,\n  medium: \"medium\" as const,\n}"
+          },
+          "default": "{ linkedin: \"linkedin\" as const, github: \"github\" as const, medium: \"medium\" as const, }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProfessionalConnections",
+          "declaration": {
+            "name": "ProfessionalConnections",
+            "module": "src/components/connection/professional/professional-connection.types.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfessionalConnectionTypes",
+          "declaration": {
+            "name": "ProfessionalConnectionTypes",
+            "module": "src/components/connection/professional/professional-connection.types.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/ui-mode-toggle/ui-mode-toggle.styles.ts",
       "declarations": [
         {
@@ -1719,7 +2114,7 @@
           "type": {
             "text": "CSSResult"
           },
-          "default": "css` :host { display: block; } dark-mode-toggle { --dark-mode-toggle-icon-size: 2rem; --dark-mode-toggle-dark-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-dark-empty\"))}); --dark-mode-toggle-light-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-light-empty\"))}); --dark-mode-toggle-system-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-default-empty\"))}); --dark-mode-toggle-checkbox-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-check-box-light\"))}); --dark-mode-toggle-remember-icon-checked: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-checked-light\"))}); --dark-mode-toggle-remember-icon-unchecked: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-unchecked-light\"))}); --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant); --dark-mode-toggle-background-color: transparent; --dark-mode-toggle-active-mode-background-color: transparent; --dark-mode-toggle-legend-font: var(--md-ref-typeface-brand); --dark-mode-toggle-label-font: var(--md-ref-typeface-brand); --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand); --dark-mode-toggle-icon-filter: none; --dark-mode-toggle-remember-filter: contrast(100%); display: contents; place-items: center; &::part(form) { display: contents; } &::part(fieldset) { display: flex; flex-direction: column; gap: var(--spaces-gap-xxs); padding: unset; padding-block: unset; padding-inline: unset; } &::part(legend) { padding: var(--spaces-none); margin: var(--spaces-none); padding-block-end: var(--spaces-padding-xs); margin-block-end: var(--spaces-margin-xs); border-bottom: var(--hairline-width) solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); font-size: var(--md-sys-typescale-label-large-size); } &::part(permanentLabel) { color: var(--md-sys-color-on-surface-variant); font-size: var(--md-sys-typescale-label-large-size); vertical-align: middle; display: inline-block; } &::part(threeWayRadioWrapper) { border-color: var(--md-sys-color-on-surface-variant); border-radius: var(--md-sys-shape-corner-medium); border-style: solid; border-width: var(--hairline-width); display: inline-flex; padding: var(--spaces-none); padding-block-start: var(--spaces-padding-xs); overflow: hidden; position: relative; z-index: 0; } &::part(threeWayRadioWrapper)::before { background-color: var(--md-sys-color-surface-container); border-radius: inherit; bottom: 0; content: \"\"; position: absolute; top: 0; transition: transform 0.3s ease-in-out; width: calc(100% / 3); z-index: -1; } &::part(darkThreeWayLabel), &::part(lightThreeWayLabel), &::part(systemThreeWayLabel) { flex: 1; padding: var(--spaces-padding-s); position: relative; text-align: center; z-index: 1; } &:not([permanent]) { &::part(threeWayRadioWrapper)::before { transform: translateX(100%); background-color: var(--md-sys-color-primary-container); } &::part(systemThreeWayLabel) { --dark-mode-toggle-system-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-default-filled\"))}); color: var(--md-sys-color-on-primary-container); } } &:is([mode=\"light\"][permanent]) { &::part(threeWayRadioWrapper)::before { transform: translateX(0%); background-color: var(--md-sys-color-primary-container); } &::part(lightThreeWayLabel) { color: var(--md-sys-color-on-primary-container); --dark-mode-toggle-light-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-light-filled\"))}); } } &:is([mode=\"dark\"][permanent]) { &::part(threeWayRadioWrapper)::before { transform: translateX(200%); background-color: var(--md-sys-color-primary-container); } &::part(darkThreeWayLabel) { color: var(--md-sys-color-on-primary-container); --dark-mode-toggle-dark-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-dark-filled\"))}); } } &::part(lightThreeWayRadio), &::part(darkThreeWayRadio), &::part(systemThreeWayRadio) { /* Take the radio buttons out of the layout flow. The component\"s internal styles already set opacity to 0. */ position: absolute; } &::part(aside) { text-align: center; visibility: visible; } } dark-mode-toggle.dark { --dark-mode-toggle-checkbox-icon: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-check-box-dark\"))}); --dark-mode-toggle-remember-icon-checked: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-checked-dark\"))}); --dark-mode-toggle-remember-icon-unchecked: url(${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-unchecked-dark\"))}); } `"
+          "default": "css` :host { display: block; } dark-mode-toggle { --dark-mode-toggle-icon-size: 2rem; --dark-mode-toggle-dark-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-dark-empty\"))}\"); --dark-mode-toggle-light-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-light-empty\"))}\"); --dark-mode-toggle-system-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-default-empty\"))}\"); --dark-mode-toggle-checkbox-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-check-box-light\"))}\"); --dark-mode-toggle-remember-icon-checked: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-checked-light\"))}\"); --dark-mode-toggle-remember-icon-unchecked: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-unchecked-light\"))}\"); --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant); --dark-mode-toggle-background-color: transparent; --dark-mode-toggle-active-mode-background-color: transparent; --dark-mode-toggle-legend-font: var(--md-ref-typeface-brand); --dark-mode-toggle-label-font: var(--md-ref-typeface-brand); --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand); --dark-mode-toggle-icon-filter: none; --dark-mode-toggle-remember-filter: contrast(100%); display: contents; place-items: center; &::part(form) { display: contents; } &::part(fieldset) { display: flex; flex-direction: column; gap: var(--spaces-gap-xxs); padding: unset; padding-block: unset; padding-inline: unset; } &::part(legend) { border-block-end: var(--hairline-width) solid var(--md-sys-color-outline-variant); color: var(--md-sys-color-primary); font-family: var(--md-ref-typeface-brand); font-size: var(--md-sys-typescale-label-large-size); margin: var(--spaces-none); margin-block-end: var(--spaces-margin-xs); padding: var(--spaces-none); padding-block-end: var(--spaces-padding-xs); } &::part(permanentLabel) { color: var(--md-sys-color-on-surface-variant); display: inline-block; font-size: var(--md-sys-typescale-label-large-size); vertical-align: middle; } &::part(threeWayRadioWrapper) { border-color: var(--md-sys-color-on-surface-variant); border-radius: var(--md-sys-shape-corner-medium); border-style: solid; border-width: var(--hairline-width); display: inline-flex; overflow: hidden; padding: var(--spaces-none); padding-block-start: var(--spaces-padding-xs); position: relative; z-index: 0; } &::part(threeWayRadioWrapper)::before { background-color: var(--md-sys-color-surface-container); border-radius: inherit; content: \"\"; inline-size: calc(100% / 3); inset-block: 0; position: absolute; transition: transform 0.3s ease-in-out; z-index: -1; } &::part(darkThreeWayLabel), &::part(lightThreeWayLabel), &::part(systemThreeWayLabel) { flex: 1; padding: var(--spaces-padding-s); position: relative; text-align: center; z-index: 1; } &:not([permanent]) { &::part(threeWayRadioWrapper)::before { background-color: var(--md-sys-color-primary-container); transform: translateX(100%); } &::part(systemThreeWayLabel) { --dark-mode-toggle-system-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-default-filled\"))}\"); color: var(--md-sys-color-on-primary-container); } } &:is([mode=\"light\"][permanent]) { &::part(threeWayRadioWrapper)::before { background-color: var(--md-sys-color-primary-container); transform: translateX(0%); } &::part(lightThreeWayLabel) { --dark-mode-toggle-light-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-light-filled\"))}\"); color: var(--md-sys-color-on-primary-container); } } &:is([mode=\"dark\"][permanent]) { &::part(threeWayRadioWrapper)::before { background-color: var(--md-sys-color-primary-container); transform: translateX(200%); } &::part(darkThreeWayLabel) { --dark-mode-toggle-dark-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-dark-filled\"))}\"); color: var(--md-sys-color-on-primary-container); } } &::part(lightThreeWayRadio), &::part(darkThreeWayRadio), &::part(systemThreeWayRadio) { /* Take the radio buttons out of the layout flow. The component\"s internal styles already set opacity to 0. */ position: absolute; } &::part(aside) { text-align: center; visibility: visible; } } dark-mode-toggle.dark { --dark-mode-toggle-checkbox-icon: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-check-box-dark\"))}\"); --dark-mode-toggle-remember-icon-checked: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-checked-dark\"))}\"); --dark-mode-toggle-remember-icon-unchecked: url(\"${unsafeCSS(cssPropertyDataImage(\"--icons-components-ui-mode-toggle-remember-unchecked-dark\"))}\"); } `"
         }
       ],
       "exports": [
@@ -1856,8 +2251,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "ui-mode-toggle",
           "customElement": true,
@@ -1905,8 +2300,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "version-tag",
           "customElement": true,
@@ -1929,6 +2324,30 @@
           "declaration": {
             "name": "VersionTag",
             "module": "src/components/version-tag/version-tag.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/cloud/word-cloud.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "WordCloudStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { --word-cloud-animation: 150ms; --word-cloud-animation-reduced: 1ms; --word-cloud-first-quartile-font-size: var(--md-sys-typescale-headline-medium-size); --word-cloud-first-quartile-line-height: var(--md-sys-typescale-headline-medium-line-height); --word-cloud-second-quartile-font-size: var(--md-sys-typescale-headline-small-size); --word-cloud-second-quartile-line-height: var(--md-sys-typescale-headline-small-line-height); --word-cloud-third-quartile-font-size: var(--md-sys-typescale-title-large-size); --word-cloud-third-quartile-line-height: var(--md-sys-typescale-title-large-line-height); --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-medium-size); --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-medium-line-height); container-type: inline-size; display: flex; flex-direction: column; } ul { align-items: center; display: flex; flex: 1; flex-flow: row wrap; gap: 0.5rem; justify-content: space-evenly; list-style-type: none; margin: unset; padding: unset; } li { --word-tag-border-radius: var(--md-sys-shape-corner-medium); --word-tag-font-family: var(--md-ref-typeface-brand); min-inline-size: 0; /* Animation Base State */ opacity: 0; padding: var(--spaces-padding-xs); transform: scale(0.8) translateY(8px); transition: opacity var(--word-cloud-animation) ease-out, transform var(--word-cloud-animation) cubic-bezier(0.34, 1.56, 0.64, 1); will-change: opacity, transform; } /* Animation Active State (base styles, transforms applied inline) */ ul.visible li { opacity: 1; transform: scale(1) translateY(0); } ul.instant-clear:not(.visible) li { transition: none; } .first-quartile { --word-tag-font-size: var(--word-cloud-first-quartile-font-size); --word-tag-line-height: var(--word-cloud-first-quartile-line-height); &.tech { --word-tag-background-color: var(--md-sys-color-primary-container); --word-tag-color: var(--md-sys-color-on-primary-container); } &.practice { --word-tag-background-color: var(--md-sys-color-primary); --word-tag-color: var(--md-sys-color-on-primary); } &.product { --word-tag-background-color: var(--md-sys-color-primary-fixed); --word-tag-color: var(--md-sys-color-on-primary-fixed); } } .second-quartile { --word-tag-font-size: var(--word-cloud-second-quartile-font-size); --word-tag-line-height: var(--word-cloud-second-quartile-line-height); &.tech { --word-tag-background-color: var(--md-sys-color-secondary-container); --word-tag-color: var(--md-sys-color-on-secondary-container); } &.practice { --word-tag-background-color: var(--md-sys-color-secondary); --word-tag-color: var(--md-sys-color-on-secondary); } &.product { --word-tag-background-color: var(--md-sys-color-secondary-fixed); --word-tag-color: var(--md-sys-color-on-secondary-fixed); } } .third-quartile { --word-tag-font-size: var(--word-cloud-third-quartile-font-size); --word-tag-line-height: var(--word-cloud-third-quartile-line-height); &.tech { --word-tag-background-color: var(--md-sys-color-tertiary-container); --word-tag-color: var(--md-sys-color-on-tertiary-container); } &.practice { --word-tag-background-color: var(--md-sys-color-tertiary); --word-tag-color: var(--md-sys-color-on-tertiary); } &.product { --word-tag-background-color: var(--md-sys-color-tertiary-fixed); --word-tag-color: var(--md-sys-color-on-tertiary-fixed); } } .fourth-quartile { --word-tag-font-size: var(--word-cloud-fourth-quartile-font-size); --word-tag-line-height: var(--word-cloud-fourth-quartile-line-height); &.tech { --word-tag-background-color: var(--md-sys-color-on-primary-container); --word-tag-color: var(--md-sys-color-primary-container); } &.practice { --word-tag-background-color: var(--md-sys-color-on-primary); --word-tag-color: var(--md-sys-color-primary); } &.product { --word-tag-background-color: var(--md-sys-color-on-primary-fixed); --word-tag-color: var(--md-sys-color-primary-fixed); } } @container (max-width: 500px) { :host { --word-cloud-first-quartile-font-size: var(--md-sys-typescale-title-large-size); --word-cloud-first-quartile-line-height: var(--md-sys-typescale-title-large-line-height); --word-cloud-second-quartile-font-size: var(--md-sys-typescale-title-medium-size); --word-cloud-second-quartile-line-height: var(--md-sys-typescale-title-medium-line-height); --word-cloud-third-quartile-font-size: var(--md-sys-typescale-body-medium-size); --word-cloud-third-quartile-line-height: var(--md-sys-typescale-body-medium-line-height); --word-cloud-fourth-quartile-font-size: var(--md-sys-typescale-body-small-size); --word-cloud-fourth-quartile-line-height: var(--md-sys-typescale-body-small-line-height); } li { padding: var(--spaces-padding-xxs) !important; } } @media (prefers-reduced-motion: reduce) { li { transition: all var(--word-cloud-animation-reduced) ease-in-out; } } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordCloudStyles",
+          "declaration": {
+            "name": "WordCloudStyles",
+            "module": "src/components/word/cloud/word-cloud.styles.ts"
           }
         }
       ]
@@ -2198,8 +2617,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "tagName": "word-cloud",
           "customElement": true,
@@ -2363,6 +2782,30 @@
           "declaration": {
             "name": "WordCloudSortings",
             "module": "src/components/word/cloud/word-cloud.types.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/word/tag/word-tag.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "WordTagStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { /** @ignore */ --internal-word-tag-color: var(--word-tag-color, var(--md-sys-color-on-primary-container)); /** @ignore */ --internal-word-tag-background-color: var(--word-tag-background-color, var(--md-sys-color-primary-container)); /** @ignore */ --internal-word-tag-font-family: var(--word-tag-font-family, var(--md-ref-typeface-brand)); /** @ignore */ --internal-word-tag-font-size: var(--word-tag-font-size, var(--md-sys-typescale-body-large-size)); /** @ignore */ --internal-word-tag-font-weight: var(--word-tag-font-weight, var(--md-sys-typescale-body-large-weight)); /** @ignore */ --internal-word-tag-line-height: var(--word-tag-line-height, var(--md-sys-typescale-body-large-line-height)); /** @ignore */ --internal-word-tag-border-radius: var(--word-tag-border-radius, var(--md-sys-shape-corner-small)); /** @ignore */ --internal-word-tag-animation-duration: 200ms; /** @ignore */ --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs)); display: contents; @media (prefers-reduced-motion: reduce) { --internal-word-tag-animation-duration: 0ms; } } .word-tag-variant-wrapper { align-items: center; background-color: var(--internal-word-tag-background-color); border-color: var(--internal-word-tag-color); border-radius: var(--internal-word-tag-border-radius); border-style: solid; display: flex; flex-direction: row; gap: var(--internal-word-tag-gap); max-inline-size: 100%; overflow: hidden; padding: var(--spaces-padding-xs); transition: all var(--internal-word-tag-animation-duration) ease-in-out; span { color: var(--internal-word-tag-color); font-family: var(--internal-word-tag-font-family); font-size: var(--internal-word-tag-font-size); line-height: var(--internal-word-tag-line-height); text-overflow: ellipsis; white-space: nowrap; } } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordTagStyles",
+          "declaration": {
+            "name": "WordTagStyles",
+            "module": "src/components/word/tag/word-tag.styles.ts"
           }
         }
       ]
@@ -2579,6 +3022,30 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/work/experience/work-experience.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "WorkExperienceStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css` :host { box-sizing: border-box; /* For contextual layout */ container: experience-container / inline-size; display: block; inline-size: 100%; h3, h4, p { margin: unset; } } /* --- SHARED BASE --- */ h3, h4 { font-family: var(--md-ref-typeface-brand); font-weight: var(--md-ref-typeface-weight-bold); } time { font-weight: var(--md-ref-typeface-weight-bold); opacity: 0.8; } .nested-experiences { display: flex; flex-direction: column; } .nested-experience { border-inline-start: 2px solid var(--md-sys-color-primary); display: flex; flex-direction: column; gap: var(--spaces-gap-s); margin-block-start: var(--spaces-margin-xs); padding-inline-start: var(--spaces-padding-s); } .nested-summary { grid-column: 2; grid-row: 4; margin-block: unset; padding-inline: var(--spaces-padding-m); li { list-style-position: outside; list-style-type: circle; margin-block: var(--spaces-margin-xs); } span.first-word { color: var(--md-sys-color-on-surface-variant); font-family: var(--md-ref-typeface-brand); font-size: var(--md-sys-typescale-title-small-size); font-weight: var(--md-ref-typeface-weight-bold); } pre { display: inline; } } /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */ .experience-container { display: flex; flex-direction: column; gap: var(--spaces-gap-xs); padding-block: var(--spaces-padding-xs); } .experience-info, .nested-experience-info { display: flex; flex-direction: column; gap: var(--spaces-gap-xxs); > h3, > h4 { color: var(--md-sys-color-primary); } /* ORG */ > p:nth-child(2) { color: var(--md-sys-color-tertiary); font-style: italic; } /* Dates */ > p:nth-child(3) { color: var(--md-sys-color-on-surface); } /* Summary */ > p:nth-child(4) { color: var(--md-sys-color-on-surface-variant); } } .nested-experience-container { display: grid; grid-template-columns: subgrid; } @container experience-container (min-inline-size: 600px) { div.experience-container { gap: var(--spaces-gap-xs) var(--spaces-margin-s); } .experience-container { align-items: baseline; display: grid; gap: var(--spaces-gap-xs) var(--spaces-margin-s); grid-template-columns: minmax(20ch, max-content) 1fr; .experience-info { display: contents; /* Role */ > h3, > h4 { color: var(--md-sys-color-primary); grid-column: 2; grid-row: 1; } /* Org */ > p:nth-child(2) { color: var(--md-sys-color-tertiary); font-style: italic; grid-column: 2; grid-row: 2; } /* Dates */ > p:nth-child(3) { color: var(--md-sys-color-on-surface); grid-column: 1; grid-row: 1; inset-block-start: 0; text-align: end; } /* Summary */ > p:nth-child(4) { color: var(--md-sys-color-on-surface-variant); font-style: italic; grid-column: 2 / -1; grid-row: 3 / 4; } } /* Nested content */ .nested-experience { border-inline-start: none; container-type: inline-size; display: grid; grid-column: auto / span 2; grid-row: 4; grid-template-columns: subgrid; padding-inline-start: 0; } } } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WorkExperienceStyles",
+          "declaration": {
+            "name": "WorkExperienceStyles",
+            "module": "src/components/work/experience/work-experience.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "dist/out/components/work/experience/work-experience.js",
       "declarations": [
         {
@@ -2742,8 +3209,8 @@
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "UIAwareElement",
+            "package": "@/mixins/ui-aware-element/ui-aware-element"
           },
           "summary": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.",
           "tagName": "work-experience",

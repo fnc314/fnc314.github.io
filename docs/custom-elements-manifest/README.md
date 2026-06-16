@@ -53,19 +53,18 @@
 
 ## Variables
 
-| Name               | Description | Type              |
-| ------------------ | ----------- | ----------------- |
-| `BENTO_BOX_CONFIG` |             | `BentoBoxConfigs` |
-| `BENTO_BOX_TYPES`  |             | `BentoBoxType[]`  |
+| Name               | Description                        | Type              |
+| ------------------ | ---------------------------------- | ----------------- |
+| `BENTO_BOX_CONFIG` | The final rendered BentoBoxConfigs | `BentoBoxConfigs` |
 
 <hr/>
 
 ## Functions
 
-| Name               | Description                                                                                                                                                     | Parameters               | Return              |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------- |
-| `BentoBoxConfigs`  | Produces an array of ABentoBoxConfig instances sorted for proper DOM order.                                                                                     | `breakpoint: Breakpoint` | `ABentoBoxConfig[]` |
-| `getBentoDOMOrder` | Determines the logical DOM order for bento box types based on grid placement.&#xA;Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing). | `breakpoint: Breakpoint` |                     |
+| Name               | Description                                                                                                                                                     | Parameters                    | Return              |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------- |
+| `BentoBoxConfigs`  | Produces an array of ABentoBoxConfig instances sorted for proper DOM order.                                                                                     | `breakpoint: BreakpointLabel` | `ABentoBoxConfig[]` |
+| `getBentoDOMOrder` | Determines the logical DOM order for bento box types based on grid placement.&#xA;Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing). | `breakpoint: BreakpointLabel` |                     |
 
 <hr/>
 
@@ -74,7 +73,6 @@
 | Kind | Name               | Declaration        | Module                                            | Package |
 | ---- | ------------------ | ------------------ | ------------------------------------------------- | ------- |
 | `js` | `BENTO_BOX_CONFIG` | BENTO\_BOX\_CONFIG | src/components/bento-layout/bento-layout.types.ts |         |
-| `js` | `BENTO_BOX_TYPES`  | BENTO\_BOX\_TYPES  | src/components/bento-layout/bento-layout.types.ts |         |
 | `js` | `BentoBoxConfigs`  | BentoBoxConfigs    | src/components/bento-layout/bento-layout.types.ts |         |
 | `js` | `getBentoDOMOrder` | getBentoDOMOrder   | src/components/bento-layout/bento-layout.types.ts |         |
 
@@ -147,9 +145,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -160,6 +158,7 @@
 | `enableHover`    |         | `boolean` | `false` | Opt-in to the hover elevation/shift effect.                                     |                |
 | `expanded`       |         | `boolean` | `false` | Reflects and controls the open state of the card.                               |                |
 | `scrollable`     |         | `boolean` | `false` | Enables internal vertical scrolling for content.                                |                |
+| `spreadContent`  |         | `boolean` | `false` | Whether to spread content over the entire body                                  |                |
 
 ### Attributes
 
@@ -170,6 +169,7 @@
 | `enableHover`    | enableHover    |                |
 | `expanded`       | expanded       |                |
 | `scrollable`     | scrollable     |                |
+| `spreadContent`  | spreadContent  |                |
 
 ### Slots
 
@@ -219,9 +219,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -270,9 +270,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -407,18 +407,19 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
-| Name          | Privacy | Type      | Default | Description | Inherited From |
-| ------------- | ------- | --------- | ------- | ----------- | -------------- |
-| `bioText`     |         | `string`  |         |             |                |
-| `enableFocus` |         | `boolean` | `false` |             |                |
-| `enableHover` |         | `boolean` | `false` |             |                |
-| `expanded`    |         | `boolean` | `false` |             |                |
+| Name          | Privacy | Type      | Default                                                                                 | Description | Inherited From |
+| ------------- | ------- | --------- | --------------------------------------------------------------------------------------- | ----------- | -------------- |
+| `bioText`     |         | `string`  |                                                                                         |             |                |
+| `enableFocus` |         | `boolean` | `false`                                                                                 |             |                |
+| `enableHover` |         | `boolean` | `false`                                                                                 |             |                |
+| `expanded`    |         | `boolean` | `false`                                                                                 |             |                |
+| `photoData`   |         |           | `PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]` |             |                |
 
 ### Attributes
 
@@ -433,10 +434,9 @@
 
 ### Fields
 
-| Name              | Privacy | Type | Default                                                                                 | Description | Inherited From |
-| ----------------- | ------- | ---- | --------------------------------------------------------------------------------------- | ----------- | -------------- |
-| `_onConfigChange` | private |      |                                                                                         |             |                |
-| `_photoData`      | private |      | `PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]` |             |                |
+| Name              | Privacy | Type | Default | Description | Inherited From |
+| ----------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `_onConfigChange` | private |      |         |             |                |
 
 </details>
 
@@ -448,6 +448,70 @@
 | --------------------------- | ------------------ | -------------- | --------------------------------------------------- | ------- |
 | `custom-element-definition` | `profile-bio-card` | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
 | `js`                        | `ProfileBioCard`   | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
+
+# `src/components/card/profile/profile-card.styles.ts`:
+
+## Variables
+
+| Name                | Description | Type        |
+| ------------------- | ----------- | ----------- |
+| `ProfileCardStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                             | Package |
+| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
+| `js` | `ProfileCardStyles` | ProfileCardStyles | src/components/card/profile/profile-card.styles.ts |         |
+
+# `dist/out/components/card/profile/profile-card.js`:
+
+## class: `ProfileCard`, `profile-card`
+
+### Superclass
+
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
+
+### Fields
+
+| Name          | Privacy | Type      | Default                                                                                 | Description | Inherited From |
+| ------------- | ------- | --------- | --------------------------------------------------------------------------------------- | ----------- | -------------- |
+| `bioText`     |         | `string`  |                                                                                         |             |                |
+| `enableFocus` |         | `boolean` | `false`                                                                                 |             |                |
+| `enableHover` |         | `boolean` | `false`                                                                                 |             |                |
+| `expanded`    |         | `boolean` | `false`                                                                                 |             |                |
+| `photoData`   |         |           | `PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]` |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `bioText`     | bioText     |                |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name              | Privacy | Type | Default | Description | Inherited From |
+| ----------------- | ------- | ---- | ------- | ----------- | -------------- |
+| `_onConfigChange` | private |      |         |             |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name           | Declaration | Module                                      | Package |
+| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
+| `custom-element-definition` | `profile-card` | ProfileCard | src/components/card/profile/profile-card.ts |         |
+| `js`                        | `ProfileCard`  | ProfileCard | src/components/card/profile/profile-card.ts |         |
 
 # `src/components/card/settings/settings-card.styles.ts`:
 
@@ -471,9 +535,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -547,9 +611,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -608,9 +672,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -675,18 +739,6 @@
 | ---------- | -------- | -------------- |
 | `codeRepo` | codeRepo |                |
 
-<details><summary>Private API</summary>
-
-### Fields
-
-| Name                  | Privacy   | Type                               | Default | Description                                                                                         | Inherited From |
-| --------------------- | --------- | ---------------------------------- | ------- | --------------------------------------------------------------------------------------------------- | -------------- |
-| `articleCard`         | private   | `HTMLElement`                      |         |                                                                                                     |                |
-| `onWordTagSizeChange` | private   | `(event: TransitionEvent) => void` |         |                                                                                                     |                |
-| `wordTagSize`         | protected | `WordTagSize`                      |         | Extraced by onWordTagSizeChange listener bound to the \`resize\` \`Event\`&#xA;&#xA;TransitionEvent |                |
-
-</details>
-
 <hr/>
 
 ## Exports
@@ -717,6 +769,76 @@
 | ---- | -------------------------------------- | ------------------------------------------ | ------------------------------------------- | ------- |
 | `js` | `CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE` | CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE | src/components/code/repo/code-repo.types.ts |         |
 | `js` | `WORD_TAG_SIZES`                       | WORD\_TAG\_SIZES                           | src/components/code/repo/code-repo.types.ts |         |
+
+# `src/components/connection/artifact/artifact-connection.styles.ts`:
+
+## Variables
+
+| Name                       | Description | Type        |
+| -------------------------- | ----------- | ----------- |
+| `ConnectionArtifactStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                       | Declaration              | Module                                                           | Package |
+| ---- | -------------------------- | ------------------------ | ---------------------------------------------------------------- | ------- |
+| `js` | `ConnectionArtifactStyles` | ConnectionArtifactStyles | src/components/connection/artifact/artifact-connection.styles.ts |         |
+
+# `dist/out/components/connection/artifact/artifact-connection.js`:
+
+## class: `ArtifactConnection`, `artifact-connection`
+
+### Superclass
+
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
+
+### Fields
+
+| Name                     | Privacy | Type                     | Default | Description | Inherited From |
+| ------------------------ | ------- | ------------------------ | ------- | ----------- | -------------- |
+| `artifactConnectionData` |         | `ArtifactConnectionData` | `{}`    |             |                |
+| `artifactConnectionType` |         | `ArtifactConnectionType` | `""`    |             |                |
+
+### Attributes
+
+| Name                     | Field                  | Inherited From |
+| ------------------------ | ---------------------- | -------------- |
+| `artifactConnectionData` | artifactConnectionData |                |
+| `artifactConnectionType` | artifactConnectionType |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name                  | Declaration        | Module                                                    | Package |
+| --------------------------- | --------------------- | ------------------ | --------------------------------------------------------- | ------- |
+| `custom-element-definition` | `artifact-connection` | ArtifactConnection | src/components/connection/artifact/artifact-connection.ts |         |
+| `js`                        | `ArtifactConnection`  | ArtifactConnection | src/components/connection/artifact/artifact-connection.ts |         |
+
+# `src/components/connection/artifact/artifact-connection.types.ts`:
+
+## Variables
+
+| Name                     | Description | Type                                                              |
+| ------------------------ | ----------- | ----------------------------------------------------------------- |
+| `ArtifactConnectionJson` |             |                                                                   |
+| `ArtifactConnections`    |             | `{
+  googleDocs: "googleDocs" as const,
+  pdf: "pdf" as const,
+}` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                     | Declaration            | Module                                                          | Package |
+| ---- | ------------------------ | ---------------------- | --------------------------------------------------------------- | ------- |
+| `js` | `ArtifactConnectionJson` | ArtifactConnectionJson | src/components/connection/artifact/artifact-connection.types.ts |         |
+| `js` | `ArtifactConnections`    | ArtifactConnections    | src/components/connection/artifact/artifact-connection.types.ts |         |
 
 # `src/components/connection/direct/direct-connection.styles.ts`:
 
@@ -781,6 +903,77 @@
 | ---- | ------------------- | ----------------- | ----------------------------------------------------------- | ------- |
 | `js` | `DirectConnections` | DirectConnections | src/components/connection/direct/direct-connection.types.ts |         |
 
+# `src/components/connection/professional/professional-connection.styles.ts`:
+
+## Variables
+
+| Name                           | Description | Type        |
+| ------------------------------ | ----------- | ----------- |
+| `ProfessionalConnectionStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                           | Declaration                  | Module                                                                   | Package |
+| ---- | ------------------------------ | ---------------------------- | ------------------------------------------------------------------------ | ------- |
+| `js` | `ProfessionalConnectionStyles` | ProfessionalConnectionStyles | src/components/connection/professional/professional-connection.styles.ts |         |
+
+# `dist/out/components/connection/professional/professional-connection.js`:
+
+## class: `ProfessionalConnection`, `professional-connection`
+
+### Superclass
+
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
+
+### Fields
+
+| Name                         | Privacy | Type                             | Default | Description | Inherited From |
+| ---------------------------- | ------- | -------------------------------- | ------- | ----------- | -------------- |
+| `professionalConnectionData` |         | `ProfessionalConnectionJsonData` | `{}`    |             |                |
+| `professionalConnectionType` |         | `ProfessionalConnectionType`     | `""`    |             |                |
+
+### Attributes
+
+| Name                         | Field                      | Inherited From |
+| ---------------------------- | -------------------------- | -------------- |
+| `professionalConnectionData` | professionalConnectionData |                |
+| `professionalConnectionType` | professionalConnectionType |                |
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name                      | Declaration            | Module                                                            | Package |
+| --------------------------- | ------------------------- | ---------------------- | ----------------------------------------------------------------- | ------- |
+| `custom-element-definition` | `professional-connection` | ProfessionalConnection | src/components/connection/professional/professional-connection.ts |         |
+| `js`                        | `ProfessionalConnection`  | ProfessionalConnection | src/components/connection/professional/professional-connection.ts |         |
+
+# `src/components/connection/professional/professional-connection.types.ts`:
+
+## Variables
+
+| Name                          | Description | Type                                                                                             |
+| ----------------------------- | ----------- | ------------------------------------------------------------------------------------------------ |
+| `ProfessionalConnections`     |             | `ProfessionalConnectionJson`                                                                     |
+| `ProfessionalConnectionTypes` |             | `{
+  linkedin: "linkedin" as const,
+  github: "github" as const,
+  medium: "medium" as const,
+}` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                          | Declaration                 | Module                                                                  | Package |
+| ---- | ----------------------------- | --------------------------- | ----------------------------------------------------------------------- | ------- |
+| `js` | `ProfessionalConnections`     | ProfessionalConnections     | src/components/connection/professional/professional-connection.types.ts |         |
+| `js` | `ProfessionalConnectionTypes` | ProfessionalConnectionTypes | src/components/connection/professional/professional-connection.types.ts |         |
+
 # `src/components/ui-mode-toggle/ui-mode-toggle.styles.ts`:
 
 ## Variables
@@ -803,9 +996,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -870,9 +1063,9 @@
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 <details><summary>Private API</summary>
 
@@ -893,15 +1086,31 @@
 | `custom-element-definition` | `version-tag` | VersionTag  | src/components/version-tag/version-tag.ts |         |
 | `js`                        | `VersionTag`  | VersionTag  | src/components/version-tag/version-tag.ts |         |
 
+# `src/components/word/cloud/word-cloud.styles.ts`:
+
+## Variables
+
+| Name              | Description | Type        |
+| ----------------- | ----------- | ----------- |
+| `WordCloudStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name              | Declaration     | Module                                         | Package |
+| ---- | ----------------- | --------------- | ---------------------------------------------- | ------- |
+| `js` | `WordCloudStyles` | WordCloudStyles | src/components/word/cloud/word-cloud.styles.ts |         |
+
 # `dist/out/components/word/cloud/word-cloud.js`:
 
 ## class: `WordCloud`, `word-cloud`
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 
@@ -1019,6 +1228,22 @@
 | `js` | `WordCloudGroupings`   | WordCloudGroupings   | src/components/word/cloud/word-cloud.types.ts |         |
 | `js` | `WordCloudSortings`    | WordCloudSortings    | src/components/word/cloud/word-cloud.types.ts |         |
 
+# `src/components/word/tag/word-tag.styles.ts`:
+
+## Variables
+
+| Name            | Description | Type        |
+| --------------- | ----------- | ----------- |
+| `WordTagStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name            | Declaration   | Module                                     | Package |
+| ---- | --------------- | ------------- | ------------------------------------------ | ------- |
+| `js` | `WordTagStyles` | WordTagStyles | src/components/word/tag/word-tag.styles.ts |         |
+
 # `dist/out/components/word/tag/word-tag.js`:
 
 ## class: `WordTag`, `word-tag`
@@ -1103,15 +1328,31 @@
 | ---- | ---------------------------------- | -------------------------------- | ----------------------------------------- | ------- |
 | `js` | `WordTagVariantAttributeConverter` | WordTagVariantAttributeConverter | src/components/word/tag/word-tag.types.ts |         |
 
+# `src/components/work/experience/work-experience.styles.ts`:
+
+## Variables
+
+| Name                   | Description | Type        |
+| ---------------------- | ----------- | ----------- |
+| `WorkExperienceStyles` |             | `CSSResult` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                   | Declaration          | Module                                                   | Package |
+| ---- | ---------------------- | -------------------- | -------------------------------------------------------- | ------- |
+| `js` | `WorkExperienceStyles` | WorkExperienceStyles | src/components/work/experience/work-experience.styles.ts |         |
+
 # `dist/out/components/work/experience/work-experience.js`:
 
 ## class: `WorkExperience`, `work-experience`
 
 ### Superclass
 
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
 
 ### Fields
 

@@ -48,6 +48,11 @@
           "name": "scrollable",
           "description": "Enables internal vertical scrolling for content.",
           "values": []
+        },
+        {
+          "name": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "values": []
         }
       ],
       "references": []
@@ -104,6 +109,17 @@
       "references": []
     },
     {
+      "name": "profile-card",
+      "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+      "attributes": [
+        { "name": "bioText", "values": [] },
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
       "name": "settings-card",
       "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
       "attributes": [
@@ -146,12 +162,42 @@
       "references": []
     },
     {
+      "name": "artifact-connection",
+      "description": "\n---\n",
+      "attributes": [
+        {
+          "name": "artifactConnectionData",
+          "values": [{ "name": "ArtifactConnectionData" }]
+        },
+        {
+          "name": "artifactConnectionType",
+          "values": [{ "name": "ArtifactConnectionType" }]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "direct-connection",
       "description": "\n---\n",
       "attributes": [
         {
           "name": "connection-instance",
           "values": [{ "name": "ConnectionInstance" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "professional-connection",
+      "description": "\n---\n",
+      "attributes": [
+        {
+          "name": "professionalConnectionData",
+          "values": [{ "name": "ProfessionalConnectionJsonData" }]
+        },
+        {
+          "name": "professionalConnectionType",
+          "values": [{ "name": "ProfessionalConnectionType" }]
         }
       ],
       "references": []
