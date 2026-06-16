@@ -3,7 +3,6 @@ import "@/components/blog/entry/blog-entry";
 import "@/components/card/bento/bento-card";
 import "@/components/card/blog/blog-card";
 import "@/components/card/code/code-card";
-import "@/components/card/connect/connect-card";
 import "@/components/card/education/education-card";
 import "@/components/card/experience/experience-card";
 import "@/components/card/profile/profile-card";
