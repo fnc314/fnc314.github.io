@@ -32,6 +32,7 @@ export class ArtifactConnection extends UIAwareElement {
         title=${this.artifactConnectionData.title}
         >
           <img
+            loading="lazy"
             src=${imgSrc}
             alt="${this.artifactConnectionType} Logo"
           />

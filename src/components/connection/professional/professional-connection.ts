@@ -3,10 +3,10 @@ import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } 
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import { cssPropertyDataImage } from "@fnc314/design-tokens";
-import { type CSSResult, type TemplateResult, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { type CSSResult, type TemplateResult, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
-@customElement('professional-connection')
+@customElement("professional-connection")
 export class ProfessionalConnection extends UIAwareElement {
   static override styles: CSSResult[] = [
     TextStyles,
@@ -32,6 +32,7 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
       >
         <img
+          loading="lazy"
           src=${imgSrc}
           alt="${this.professionalConnectionType} Logo"
         />
@@ -42,6 +43,6 @@ export class ProfessionalConnection extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'professional-connection': ProfessionalConnection;
+    "professional-connection": ProfessionalConnection;
   }
 }

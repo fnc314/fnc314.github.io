@@ -36,6 +36,7 @@ export class EducationCard extends UIAwareElement {
           (edu) => html`
             <li>
               <img
+                loading="lazy"
                 src=${cssPropertyDataImage(
                   this.darkMode ? edu.designToken.dark : edu.designToken.light
                 )}
@@ -56,6 +57,7 @@ export class EducationCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .spreadContent=${true}
         .bentoCardTitle=${"Education"}
       >
         <section>

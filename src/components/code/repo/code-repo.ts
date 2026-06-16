@@ -84,6 +84,7 @@ export class CodeRepo extends UIAwareElement {
               const imgTag = imgSrc
                 ? html`
                     <img
+                      loading="lazy"
                       role="img"
                       aria-describedby="${tagId}"
                       src="${imgSrc}"

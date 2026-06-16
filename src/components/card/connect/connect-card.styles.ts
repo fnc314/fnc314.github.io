@@ -8,12 +8,12 @@ export const ConnectCardStyles = css`
   :host {
     --md-divider-color: var(--md-sys-color-secondary);
 
-    --md-filled-tonal-icon-button-container-color: var(--md-sys-color-surface-container-high);
-    --md-filled-tonal-icon-button-container-height: calc(2 * var(--md-icon-size));
-    --md-filled-tonal-icon-button-container-width: calc(2 * var(--md-icon-size));
-    --md-filled-tonal-icon-button-container-shape: var(--md-sys-shape-corner-small);
-    --md-filled-tonal-icon-button-icon-color: var(--md-sys-color-on-surface-variant);
-    --md-filled-tonal-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+    --md-filled-icon-button-container-color: var(--md-sys-color-primary-container);
+    --md-filled-icon-button-container-height: calc(2 * var(--md-icon-size));
+    --md-filled-icon-button-container-width: calc(2 * var(--md-icon-size));
+    --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-medium);
+    --md-filled-icon-button-icon-color: var(--md-sys-color-on-primary-container);
+    --md-filled-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
 
     block-size: 100%;
     display: block;

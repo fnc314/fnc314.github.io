@@ -76,6 +76,12 @@ export class BentoCard extends UIAwareElement {
   bentoCardTitle: string = "";
 
   /**
+   * Whether to spread content over the entire body
+   */
+  @property({ type: Boolean })
+  spreadContent = false;
+
+  /**
    * Synchronizes the `expanded` property with the state of the `<details>` element
    * whenever the user interacts with the toggle icon or summary.
    *
@@ -91,6 +97,7 @@ export class BentoCard extends UIAwareElement {
       "scrollable": this.scrollable,
       "enable-hover": this.enableHover,
       "enable-focus": this.enableFocus,
+      "spread-content": this.spreadContent,
     };
 
     return html`

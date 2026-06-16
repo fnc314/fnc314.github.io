@@ -46,7 +46,7 @@ export type BentoBoxType =
   "code" |
   "blog" |
   "settings" |
-  "connect" |
+  // "connect" |
   "education" |
   "skills"
   ;
@@ -75,14 +75,14 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     },
     isExpanded: () => true
   },
-  connect: {
-    placement: {
-      desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "connect" },
-      tablet:  { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: 4 }, area: "connect" },
-      mobile: { breakpoint: "mobile", area: "connect" },
-    },
-    isExpanded: () => true
-  },
+  // connect: {
+  //   placement: {
+  //     desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "connect" },
+  //     tablet:  { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: 4 }, area: "connect" },
+  //     mobile: { breakpoint: "mobile", area: "connect" },
+  //   },
+  //   isExpanded: () => true
+  // },
   education: {
     placement: {
       desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "education" },

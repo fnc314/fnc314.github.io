@@ -7,74 +7,76 @@ import { css } from "lit";
 export const EducationCardStyles = css`
   :host {
     --md-divider-color: currentcolor;
+    --education-icon-size: 3rem;
 
     block-size: 100%;
     container-name: education-card-container;
     container-type: inline-size;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    inline-size: 100%;
   }
 
   section {
     block-size: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    inline-size: 100%;
 
     ul {
       block-size: 100%;
       display: flex;
       flex-direction: column;
-      gap: var(--spaces-gap-l);
-      justify-content: space-around;
+      flex-grow: 1;
+      gap: var(--spaces-gap-xl);
+      justify-content: space-between;
       list-style: none;
       margin: var(--spaces-none);
-      padding: var(--spaces-none);
+      padding: var(--spaces-padding-s);
 
       li {
         display: grid;
-        gap: var(--spaces-none) var(--spaces-gap-s);
+        gap: var(--spaces-gap-s) var(--spaces-gap-m);
         grid-template-areas:
-          ". institute"
+          "logo institute"
           "logo location"
-          "logo program"
+          ". program"
           ". year";
-        grid-template-columns: max-content 1fr;
-        margin-block: var(--spaces-margin-xs);
+        grid-template-columns: var(--education-icon-size) 1fr;
+        margin-block: var(--spaces-margin-s);
         text-align: end;
-        align-items: baseline;
+        align-items: center;
 
         img {
           aspect-ratio: 1;
           background-color: var(--md-sys-color-surface-container-highest);
-          block-size: calc(var(--md-icon-size));
-          border-radius: var(--md-sys-shape-corner-full);
+          block-size: var(--education-icon-size);
+          border-radius: var(--md-sys-shape-corner-medium);
           grid-area: logo;
-          inline-size: calc(var(--md-icon-size));
+          inline-size: var(--education-icon-size);
           padding: var(--spaces-padding-xs);
           place-self: center;
-          place-self: center start;
         }
 
         h3 {
           grid-area: institute;
+          font-size: 1.1rem;
         }
 
         span {
           grid-area: location;
+          font-size: 0.95rem;
         }
 
         h4 {
           font-style: italic;
-          font-weight: unset;
+          font-weight: 500;
           grid-area: program;
+          font-size: 1rem;
         }
 
         time {
           grid-area: year;
+          font-size: 0.9rem;
         }
 
         h3, h4 {
@@ -88,15 +90,13 @@ export const EducationCardStyles = css`
   @container education-card-container (min-width: 500px) {
     section {
       ul {
-        flex-direction: row;
-
         li {
           grid-template-areas:
             "logo institute"
             "logo location"
             "logo program"
             "logo year";
-          grid-template-columns: max-content 1fr;
+          grid-template-columns: var(--education-icon-size) 1fr;
 
           img {
             place-self: center;
@@ -109,17 +109,11 @@ export const EducationCardStyles = css`
   @container education-card-container (min-width: 900px) {
     section {
       ul {
-        flex-direction: row;
-
         li {
           grid-template-areas:
             "logo institute location"
             "logo program year";
-          grid-template-columns: repeat(3, max-content);
-        }
-
-        span, time {
-          text-align: start;
+          grid-template-columns: var(--education-icon-size) repeat(2, 1fr);
         }
       }
     }

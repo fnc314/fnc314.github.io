@@ -1,9 +1,10 @@
+import { ProfileBioCardStyles } from "@/components/card/profile-bio/profile-bio-card.styles";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
-import { css, html } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -17,33 +18,7 @@ export class ProfileBioCard extends UIAwareElement {
   /** {@link lit!css} */
   static override styles = [
     TextStyles,
-    css`
-      :host {
-        display: block;
-        block-size: 100%;
-      }
-
-      .profile-bio-container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spaces-gap-s);
-      }
-
-      .profile-picture {
-        border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary);
-        border-radius: var(--md-sys-shape-corner-medium);
-        max-block-size: 300px;
-        object-fit: contain;
-        inline-size: 100%;
-      }
-
-      .profile-figcaption {
-        color: var(--md-sys-color-on-surface-variant);
-        font-size: var(--md-sys-typescale-body-small-size);
-        margin-block-start: var(--spaces-margin-xs);
-        text-align: center;
-      }
-    `,
+    ProfileBioCardStyles,
   ];
 
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
@@ -100,10 +75,10 @@ export class ProfileBioCard extends UIAwareElement {
             />
             <figcaption class="profile-figcaption">${this.photoData.figcaption}</figcaption>
           </figure>
-          <div class="bio-text-area">
-            <div class="bio-content md-typescale-body-large">
+          <div>
+            <p class="md-typescale-body-large">
               ${unsafeHTML(this.bioText)}
-            </div>
+            </p>
           </div>
         </div>
       </bento-card>

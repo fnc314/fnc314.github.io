@@ -57,6 +57,7 @@ export class BlogEntry extends UIAwareElement {
             rel="noopener noreferrer"
           >
             <img
+              loading="lazy"
               role="img"
               aria-describedby="medium-link-label"
               .src=${logoSource}

@@ -92,6 +92,12 @@ export const BentoCardStyles = css`
     padding-block: var(--spaces-padding-xs);
   }
 
+  .bento-card.spread-content .expansion-content {
+    block-size: 100%;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
   /* Conditional Interaction States */
   .bento-card.enable-hover:hover {
     background-color: var(--md-sys-color-surface-container-high);

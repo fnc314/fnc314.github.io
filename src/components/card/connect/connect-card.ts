@@ -67,6 +67,7 @@ export class ConnectCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
+        .spreadContent=${true}
         .bentoCardTitle=${"Let's Connect"}
       >
         <ul>
