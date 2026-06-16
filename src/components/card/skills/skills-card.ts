@@ -43,7 +43,7 @@ export class SkillsCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
-        .bentoCardTitle=${"Skills & Technologies"}
+        .bentoCardTitle=${"Skills"}
       >
         <word-cloud
           .words=${this.getSkillsForWordCloud()}

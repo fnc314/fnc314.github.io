@@ -11,6 +11,7 @@ export const CodeRepoStyles: CSSResult = css`
   :host {
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
+    --dynamic-border-background: var(--md-sys-color-inverse-primary);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-inverse-primary);
     --word-tag-color: var(--md-sys-color-inverse-on-surface);

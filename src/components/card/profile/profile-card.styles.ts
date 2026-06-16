@@ -5,12 +5,18 @@ export const ProfileCardStyles: CSSResult = css`
     display: block;
     block-size: 100%;
 
+    --profile-card-filled-icon-button-scale: 1.5;
+
     --md-filled-icon-button-container-color: var(--md-sys-color-primary-container);
-    --md-filled-icon-button-container-height: calc(2 * var(--md-icon-size));
-    --md-filled-icon-button-container-width: calc(2 * var(--md-icon-size));
+    --md-filled-icon-button-container-height: calc(
+      var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
+    );
+    --md-filled-icon-button-container-width: calc(
+      var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
+    );
     --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-medium);
     --md-filled-icon-button-icon-color: var(--md-sys-color-on-primary-container);
-    --md-filled-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+    --md-filled-icon-button-icon-size: var(--md-icon-size);
   }
 
   article {

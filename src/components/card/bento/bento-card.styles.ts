@@ -21,11 +21,15 @@ export const BentoCardStyles = css`
     inline-size: 100%;
   }
 
-  section {
-    block-size: 100%;
+  article {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+
+    &:has(details[open]) {
+      block-size: 100%;
+    }
   }
 
   .bento-card {
@@ -46,6 +50,25 @@ export const BentoCardStyles = css`
       box-shadow var(--motions-duration-short) var(--motions-easing-base),
       border-color var(--motions-duration-short) var(--motions-easing-base),
       background-color var(--motions-duration-medium) var(--motions-easing-base);
+
+    &.enable-hover:hover {
+      background-color: var(--md-sys-color-surface-container-high);
+      border-color: var(--md-sys-color-outline);
+      transform: translateY(var(--motions-transform-hover-lift));
+    }
+
+    /* Conditional Interaction States */
+    &.enable-focus:focus-within {
+      border-color: var(--md-sys-color-primary);
+    }
+
+    &.spread-content {
+      .expansion-content {
+        block-size: 100%;
+        flex-grow: 1;
+        justify-content: space-between;
+      }
+    }
   }
 
   summary {
@@ -57,66 +80,55 @@ export const BentoCardStyles = css`
     outline: none;
     padding: 0;
     user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
   }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
+  details {
+    summary {
+      /* Style slotted header elements (h2 by default) */
+      h2 {
+        border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
+        color: var(--md-sys-color-primary);
+        flex-grow: 1;
+        font-family: var(--md-ref-typeface-brand);
+        margin: var(--spaces-none) !important;
+        padding-block-end: var(--spaces-padding-xs);
+      }
 
-  .indicator {
-    color: var(--md-sys-color-on-surface-variant);
-    transition: transform var(--motions-duration-medium) var(--motions-easing-standard);
-  }
+      md-icon {
+        color: var(--md-sys-color-on-surface-variant);
+        transition: transform var(--motions-duration-medium) var(--motions-easing-standard);
+      }
+    }
 
-  details[open] .indicator {
-    transform: rotate(var(--motions-rotation-180));
-  }
+    /* Expansion Animation Logic */
+    .expansion-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+      transition: grid-template-rows var(--motions-duration-medium) var(--motions-easing-standard);
+    }
 
-  /* Expansion Animation Logic */
-  .expansion-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    overflow: hidden;
-    transition: grid-template-rows var(--motions-duration-medium) var(--motions-easing-standard);
-  }
+    &[open] {
+      md-icon {
+        transform: rotate(var(--motions-rotation-180));
+      }
 
-  details[open] .expansion-wrapper {
-    grid-template-rows: 1fr;
-  }
+      .expansion-wrapper {
+        grid-template-rows: 1fr;
 
-  .expansion-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spaces-gap-s);
-    min-block-size: 0;
-    padding-block: var(--spaces-padding-xs);
-  }
-
-  .bento-card.spread-content .expansion-content {
-    block-size: 100%;
-    flex-grow: 1;
-    justify-content: space-between;
-  }
-
-  /* Conditional Interaction States */
-  .bento-card.enable-hover:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-outline);
-    transform: translateY(var(--motions-transform-hover-lift));
-  }
-
-  .bento-card.enable-focus:focus-within {
-    border-color: var(--md-sys-color-primary);
-  }
-
-  /* Style slotted header elements (h2 by default) */
-  h2 {
-    border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
-    color: var(--md-sys-color-primary);
-    flex-grow: 1;
-    font-family: var(--md-ref-typeface-brand);
-    margin: var(--spaces-none) !important;
-    padding-block-end: var(--spaces-padding-xs);
+        .expansion-content {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spaces-gap-s);
+          min-block-size: 0;
+          padding-block: var(--spaces-padding-xs);
+        }
+      }
+    }
   }
 
   .scrollable {

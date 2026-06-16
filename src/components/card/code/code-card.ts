@@ -42,7 +42,7 @@ export class CodeCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
-        .bentoCardTitle=${"Code Projects"}
+        .bentoCardTitle=${"Code"}
       >
         <div class="code-list">
           ${CodeJson.projects.map(

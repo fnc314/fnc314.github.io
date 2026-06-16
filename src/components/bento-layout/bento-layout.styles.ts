@@ -51,13 +51,13 @@ export const BentoLayoutStyles = css`
       display: grid;
       grid-auto-flow: dense;
       grid-template-areas:
-        ". header header header header ."
-        "profile    profile    work work work work"
-        "education education work work work work"
-        "connect connect connect connect connect connect"
-        "blog blog blog code code code"
-        "skills skills skills skills skills skills"
-        "settings settings settings settings settings settings";
+        ".         header    header   header   header   ."
+        "profile    profile    work     work     work     work"
+        "education education work     work     work     work"
+        ".         .         work     work     work     work"
+        "blog      blog      blog     code     code     code"
+        "skills    skills    skills   skills   skills   skills"
+        "settings  settings  settings settings settings settings";
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
 
       h1 {
@@ -87,7 +87,6 @@ export const BentoLayoutStyles = css`
         "header   header   header   header   header   header   header   header   header   header   header   header"
         "profile  profile  profile  profile  work     work     work     work     work     work     work     work"
         "education education education education work    work     work     work     work     work     work     work"
-        "connect  connect  connect  connect  work     work     work     work     work     work     work     work"
         "blog     blog     blog     blog     blog     blog     blog     blog     blog     blog     blog     blog"
         "code     code     code     code     code     code     code     code     code     code     code     code"
         "skills   skills   skills   skills   skills   skills   skills   skills   skills   skills   skills   skills"

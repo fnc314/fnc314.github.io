@@ -51,6 +51,17 @@ export type BentoBoxType =
   "skills"
   ;
 
+/** A {@link Record} of {@link BentoBoxType} definitions */
+export const BENTO_BOX_TYPES = {
+  profile: "profile" as const,
+  work: "work" as const,
+  code: "code" as const,
+  blog: "blog" as const,
+  settings: "settings" as const,
+  education: "education" as const,
+  skills: "skills" as const,
+} as const;
+
 /**
  * Defines the {@link BentoBoxType} coupled with a {@link GridPosition} used
  *   to place a particular `bento-box`.
@@ -69,65 +80,57 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 1, end: 7 }, area: "profile" },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: "profile" },
-      mobile: { breakpoint: "mobile", area: "profile" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 1, end: 7 }, area: BENTO_BOX_TYPES.profile },
+      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: BENTO_BOX_TYPES.profile },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.profile },
     },
     isExpanded: () => true
   },
-  // connect: {
-  //   placement: {
-  //     desktop: { breakpoint: "desktop", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "connect" },
-  //     tablet:  { breakpoint: "tablet", row: { start: 4, end: 5 }, column: { start: 1, end: 4 }, area: "connect" },
-  //     mobile: { breakpoint: "mobile", area: "connect" },
-  //   },
-  //   isExpanded: () => true
-  // },
   education: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: "education" },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: "education" },
-      mobile: { breakpoint: "mobile", area: "education" },
+      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.education },
+      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.education },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.education },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint === Breakpoints.BreakpointLabels.desktop
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   work: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 7, end: -1 }, area: "work" },
-      tablet: { breakpoint: "tablet", row: { start: 2, end: 5 }, column: { start: 4, end: -1 }, area: "work" },
-      mobile: { breakpoint: "mobile", area: "work" },
+      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 7, end: -1 }, area: BENTO_BOX_TYPES.work },
+      tablet: { breakpoint: "tablet", row: { start: 2, end: 5 }, column: { start: 4, end: -1 }, area: BENTO_BOX_TYPES.work },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.work },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   blog: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "blog" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: "blog" },
-      mobile: { breakpoint: "mobile", area: "blog" },
+      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.blog },
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: BENTO_BOX_TYPES.blog },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.blog },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   code: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: "code" },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: "code" },
-      mobile: { breakpoint: "mobile", area: "code" },
+      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.code },
+      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: BENTO_BOX_TYPES.code },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.code },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   skills: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 9, end: 10 }, column: { start: 1, end: -1 }, area: "skills" },
-      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: "skills" },
-      mobile: { breakpoint: "mobile", area: "skills" },
+      desktop: { breakpoint: "desktop", row: { start: 9, end: 10 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.skills },
+      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.skills },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.skills },
     },
     isExpanded: () => false
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 10, end: 11 }, column: { start: 1, end: -1 }, area: "settings" },
-      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: "settings" },
-      mobile: { breakpoint: "mobile", area: "settings" },
+      desktop: { breakpoint: "desktop", row: { start: 10, end: 11 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.settings },
+      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.settings },
+      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.settings },
     },
     isExpanded: () => false
   }

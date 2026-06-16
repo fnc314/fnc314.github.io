@@ -21,6 +21,8 @@ export const EducationCardStyles = css`
     display: flex;
     flex-direction: column;
     inline-size: 100%;
+    justify-content: center;
+    align-items: stretch;
 
     ul {
       block-size: 100%;
@@ -31,19 +33,20 @@ export const EducationCardStyles = css`
       justify-content: space-between;
       list-style: none;
       margin: var(--spaces-none);
-      padding: var(--spaces-padding-s);
+      padding: var(--spaces-none);
 
       li {
         display: grid;
         gap: var(--spaces-gap-s) var(--spaces-gap-m);
         grid-template-areas:
-          "logo institute"
-          "logo location"
-          ". program"
-          ". year";
+          "logo logo"
+          "institute institute"
+          "location location"
+          "program program"
+          "year year";
         grid-template-columns: var(--education-icon-size) 1fr;
-        margin-block: var(--spaces-margin-s);
-        text-align: end;
+        margin: var(--spaces-margin-s);
+        text-align: center;
         align-items: center;
 
         img {
@@ -86,6 +89,21 @@ export const EducationCardStyles = css`
     }
   }
 
+  @container education-card-container (min-width: 300px) {
+    section {
+      ul {
+        li {
+          grid-template-areas:
+            "logo institute"
+            "logo location"
+            ". program"
+            ". year";
+          grid-template-columns: var(--education-icon-size) 1fr;
+          text-align: end;
+        }
+      }
+    }
+  }
 
   @container education-card-container (min-width: 500px) {
     section {
@@ -97,9 +115,11 @@ export const EducationCardStyles = css`
             "logo program"
             "logo year";
           grid-template-columns: var(--education-icon-size) 1fr;
+          gap: var(--spaces-gap-xs) var(--spaces-gap-m);
+          text-align: end;
 
           img {
-            place-self: center;
+            place-self: flex-start center;
           }
         }
       }
@@ -114,6 +134,11 @@ export const EducationCardStyles = css`
             "logo institute location"
             "logo program year";
           grid-template-columns: var(--education-icon-size) repeat(2, 1fr);
+          text-align: end;
+
+          img {
+            place-self: center;
+          }
         }
       }
     }

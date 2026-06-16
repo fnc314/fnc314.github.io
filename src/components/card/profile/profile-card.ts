@@ -9,7 +9,6 @@ import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary A responsive card component that displays a profile photo and biography.
@@ -65,6 +64,7 @@ export class ProfileCard extends UIAwareElement {
           <direct-connection .connectionInstance=${instance}></direct-connection>
         </li>
       `);
+
     return html`
       <section class="sub-section">
         <h3 class="md-typescale-title-small">Contact</h3>
@@ -85,6 +85,7 @@ export class ProfileCard extends UIAwareElement {
           </professional-connection>
         </li>
       `);
+
     return html`
       <section class="sub-section">
         <h3 class="md-typescale-title-small">Network</h3>
@@ -95,10 +96,8 @@ export class ProfileCard extends UIAwareElement {
     `;
   }
 
-  private cardContent(): TemplateResult {
-
-
-     const artifactConnections = Object.entries(ArtifactConnectionJson)
+  private artifactSection(): TemplateResult {
+    const artifactConnections = Object.entries(ArtifactConnectionJson)
       .map(([name, data]: [string, ArtifactConnectionData]) => html`
         <li>
           <artifact-connection
@@ -108,32 +107,33 @@ export class ProfileCard extends UIAwareElement {
         </li>
       `
       );
-    return html`
-      <article>
-        <section>
-          <figure>
-            <img
-              class="profile-picture"
-              loading="lazy"
-              src=${this.photoData.src}
-              alt=${this.photoData.alt}
-            />
-            <figcaption class="profile-figcaption">${this.photoData.figcaption}</figcaption>
-          </figure>
 
-          <div class="md-typescale-body-large">
-            ${unsafeHTML(this.bioText)}
-          </div>
-        </section>
-        ${this.contactSection()}
-        ${this.networkSection()}
-        <section class="sub-section">
-          <h3 class="md-typescale-title-small">Resume</h3>
-          <ul>
-            ${artifactConnections}
-          </ul>
-        </section>
-      </article>
+    return html`
+      <section class="sub-section">
+        <h3 class="md-typescale-title-small">Resume</h3>
+        <ul>
+          ${artifactConnections}
+        </ul>
+      </section>
+    `;
+  }
+
+  private imageSection(): TemplateResult {
+    return html`
+      <section>
+        <figure>
+          <img
+            class="profile-picture"
+            loading="lazy"
+            src=${this.photoData.src}
+            alt=${this.photoData.alt}
+          />
+          <figcaption class="profile-figcaption">${this.photoData.figcaption}</figcaption>
+        </figure>
+
+        <p class="md-typescale-body-large" .innerHTML="${this.bioText}">
+        </p>
+      </section>
     `;
   }
 
@@ -147,7 +147,14 @@ export class ProfileCard extends UIAwareElement {
         ?enableFocus=${this.enableFocus}
         .bentoCardTitle=${"Info"}
       >
-        ${this.cardContent()}
+        <article>
+          ${this.imageSection()}
+          ${this.contactSection()}
+          <md-divider></md-divider>
+          ${this.networkSection()}
+          <md-divider></md-divider>
+          ${this.artifactSection()}
+        </article>
       </bento-card>
     `;
   }

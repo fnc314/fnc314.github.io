@@ -1,7 +1,8 @@
 import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
-import { type ABentoBoxConfig, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
+import { type ABentoBoxConfig, BENTO_BOX_TYPES, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { Breakpoints } from "@fnc314/design-tokens";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -27,48 +28,73 @@ export class BentoLayout extends UIAwareElement {
   private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placement[this.breakpoint];
 
-    const gridArea = position.breakpoint === "mobile"
+    const gridArea = position.breakpoint === Breakpoints.BreakpointLabels.mobile
       ? undefined
       : position.area;
 
     let cardContent: TemplateResult;
     switch (config.type) {
-      case "profile":
-        cardContent = html`<profile-card .expanded=${config.isExpanded(this.breakpoint)}></profile-card>`;
+      case BENTO_BOX_TYPES.profile:
+        cardContent = html`
+          <profile-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </profile-card>
+        `;
         break;
-      case "connect":
-        cardContent = html`<connect-card .expanded=${config.isExpanded(this.breakpoint)}></connect-card>`;
+      case BENTO_BOX_TYPES.education:
+        cardContent = html`
+          <education-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </education-card>
+        `;
         break;
-      case "education":
-        cardContent = html`<education-card .expanded=${config.isExpanded(this.breakpoint)}></education-card>`;
+      case BENTO_BOX_TYPES.work:
+        cardContent = html`
+          <work-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </work-card>
+        `;
         break;
-      case "work":
-        cardContent = html`<work-card .expanded=${config.isExpanded(this.breakpoint)}></work-card>`;
+      case BENTO_BOX_TYPES.blog:
+        cardContent = html`
+          <blog-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </blog-card>
+        `;
         break;
-      case "blog":
-        cardContent = html`<blog-card .expanded=${config.isExpanded(this.breakpoint)}></blog-card>`;
+      case BENTO_BOX_TYPES.code:
+        cardContent = html`
+          <code-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </code-card>
+        `;
         break;
-      case "code":
-        cardContent = html`<code-card .expanded=${config.isExpanded(this.breakpoint)}></code-card>`;
+      case BENTO_BOX_TYPES.skills:
+        cardContent = html`
+          <skills-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </skills-card>
+        `;
         break;
-      case "skills":
-        cardContent = html`<skills-card .expanded=${config.isExpanded(this.breakpoint)}></skills-card>`;
-        break;
-      case "settings":
-        cardContent = html`<settings-card .expanded=${config.isExpanded(this.breakpoint)}></settings-card>`;
+      case BENTO_BOX_TYPES.settings:
+        cardContent = html`
+          <settings-card
+            style=${styleMap({ gridArea, blockSize: "100%" })}
+            .expanded=${config.isExpanded(this.breakpoint)}>
+          </settings-card>
+        `;
         break;
       default:
         return html`${nothing}`;
     }
 
-    return html`
-      <section
-        class="card-${config.type}"
-        style=${styleMap({ gridArea, blockSize: "100%" })}
-      >
-        ${cardContent}
-      </section>
-    `;
+    return cardContent;
   }
 
   override render() {

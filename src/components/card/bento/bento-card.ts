@@ -101,7 +101,7 @@ export class BentoCard extends UIAwareElement {
     };
 
     return html`
-      <section aria-labelledby="${ifDefined(this.bentoCardTitle ? "bento-card-title" : undefined)}">
+      <article aria-labelledby="bento-card-title">
         <details
           class="${classMap(classes)}"
           ?open=${this.expanded}
@@ -128,7 +128,7 @@ export class BentoCard extends UIAwareElement {
             </div>
           </div>
         </details>
-      </section>
+      </article>
     `;
   }
 }

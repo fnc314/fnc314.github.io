@@ -43,7 +43,7 @@ export class BlogCard extends UIAwareElement {
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
         ?enableFocus=${this.enableFocus}
-        .bentoCardTitle=${"Blogs"}
+        .bentoCardTitle=${"Publications"}
       >
         <div class="blog-list">
           ${BlogJson.posts.map(
