@@ -23,7 +23,7 @@ export const BlogCardStyles = css`
     gap: var(--spaces-gap-s);
   }
 
-  @media screen and (width <= 768px) {
+  @container style(--breakpoint-label: mobile) {
     .blog-list {
       flex-direction: row;
       overflow-inline: auto;

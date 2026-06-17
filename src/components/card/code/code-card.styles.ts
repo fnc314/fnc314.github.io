@@ -23,7 +23,7 @@ export const CodeCardStyles = css`
     gap: var(--spaces-gap-s);
   }
 
-  @media screen and (width <= 768px) {
+  @container style(--breakpoint-label: mobile) {
     .code-list {
       flex-direction: row;
       overflow-inline: auto;

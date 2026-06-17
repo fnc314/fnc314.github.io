@@ -19,6 +19,7 @@ export const BentoLayoutStyles = css`
     display: block;
     inline-size: 100%;
     padding-block-end: var(--spaces-padding-xl);
+    container-name: bento-layout;
   }
 
   main {
@@ -42,11 +43,7 @@ export const BentoLayoutStyles = css`
     }
   }
 
-  @media screen and (width >= 769px) {
-    :host {
-      --bento-layout-column-count: 6;
-    }
-
+  @container style(--breakpoint-label: tablet) or style(--breakpoint-label: desktop) {
     main {
       display: grid;
       grid-auto-flow: dense;
@@ -54,7 +51,11 @@ export const BentoLayoutStyles = css`
     }
   }
 
-  @media screen and ((width <= 1200px) and (width >= 769px)) {
+  @container style(--breakpoint-label: tablet) {
+    :host {
+      --bento-layout-column-count: 6;
+    }
+
     main {
       align-items: unset;
       gap: var(--spaces-gap-m);
@@ -62,7 +63,7 @@ export const BentoLayoutStyles = css`
     }
   }
 
-  @media screen and (width >= 1201px) {
+  @container style(--breakpoint-label: desktop) {
     :host {
       --bento-layout-column-count: 12;
     }
@@ -74,4 +75,5 @@ export const BentoLayoutStyles = css`
       place-items: stretch stretch;
     }
   }
+
 `;
