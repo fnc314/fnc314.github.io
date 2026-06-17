@@ -57,7 +57,7 @@ export class BentoLayout extends UIAwareElement {
           </education-card>
         `;
         break;
-      case BENTO_BOX_TYPES.work:
+      case BENTO_BOX_TYPES.experience:
         cardContent = html`
           <experience-card
             class="animate-entry"

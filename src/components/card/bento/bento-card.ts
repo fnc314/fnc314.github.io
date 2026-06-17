@@ -134,20 +134,29 @@ export class BentoCard extends UIAwareElement {
             id="${htmlId}-summary"
             aria-describedby="${htmlId}"
             >
+            <md-focus-ring for="${htmlId}-summary"></md-focus-ring>
+
             <h2
               id="${htmlId}"
               class="md-typescale-display-small"
               >
               ${this.bentoCardTitle}
-              <md-focus-ring for="${htmlId}-summary"></md-focus-ring>
             </h2>
-            <md-icon-button id="${htmlId}-icon-button" @click=${this._handleIconButtonClick}>
+            <md-icon-button
+              toggle
+              ?selected=${this.expanded}
+              id="${htmlId}-icon-button"
+              @click=${this._handleIconButtonClick}
+              aria-expanded=${this.expanded}
+              aria-controls="${htmlId}-content"
+              tabindex="-1"
+              >
               <md-icon>arrow_drop_down</md-icon>
-              <md-focus-ring for="${htmlId}-icon-button"></md-focus-ring>
             </md-icon-button>
           </summary>
           <div
             aria-label="${this.bentoCardTitle} content"
+            id="${htmlId}-content"
             class="expansion-wrapper"
             >
             <div class="expansion-content">

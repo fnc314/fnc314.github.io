@@ -129,7 +129,7 @@ export class ProfileCard extends UIAwareElement {
             src=${this.photoData.src}
             alt=${this.photoData.alt}
           />
-          <figcaption class="profile-figcaption">${this.photoData.figcaption}</figcaption>
+          <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
 
         <p class="md-typescale-body-large" .innerHTML="${this.bioText}">

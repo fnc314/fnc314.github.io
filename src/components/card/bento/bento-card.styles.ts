@@ -30,7 +30,7 @@ export const BentoCardStyles = css`
     align-items: stretch;
 
     &:has(details[open]) {
-      block-size: 100%;
+      // block-size: 100%;
     }
   }
 
@@ -76,7 +76,7 @@ export const BentoCardStyles = css`
   details {
 
     summary {
-      positin: relative;
+      position: relative;
       align-items: center;
       border-block-end: var(--sizes-thickness-hairline) dashed var(--md-sys-color-outline-variant);
       cursor: pointer;
@@ -96,7 +96,7 @@ export const BentoCardStyles = css`
         color: var(--md-sys-color-primary);
         flex-grow: 1;
         font-family: var(--md-ref-typeface-brand);
-        margin: var(--spaces-none) !important;
+        margin: var(--spaces-none);
         padding-block-end: var(--spaces-padding-xs);
       }
 
@@ -143,7 +143,7 @@ export const BentoCardStyles = css`
 
   @container bento-card-container (min-width: 500px) {
     .bento-card {
-      padding: var(--spaces-padding-m);
+      // padding: var(--spaces-padding-m);
     }
   }
 `;

@@ -5,6 +5,9 @@ export const ProfileCardStyles: CSSResult = css`
     display: block;
     block-size: 100%;
 
+    --profile-card-image-block-size-max: 500px;
+    --profile-card-image-inline-size-max: 100%;
+
     --profile-card-filled-icon-button-scale: 2;
     --profile-card-filled-icon-button-container-size: calc(
       var(--profile-card-filled-icon-button-scale) *
@@ -36,30 +39,51 @@ export const ProfileCardStyles: CSSResult = css`
 
     section {
       figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+
         img {
-          border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary);
+          border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary-fixed);
           border-radius: var(--md-sys-shape-corner-medium);
-          max-block-size: 300px;
+          max-block-size: var(--profile-card-image-block-size-max);
           object-fit: contain;
-          inline-size: 100%;
+          max-inline-size: var(--profile-card-image-inline-size-max);
         }
 
         figcaption {
-          color: var(--md-sys-color-on-surface-variant);
+          background-color: var(--md-sys-color-primary-fixed);
+          border-radius: var(--md-sys-shape-corner-medium);
+          border: var(--md-sys-color-on-primary-fixed) solid var(--sizes-thickness-hairline);
+          color: var(--md-sys-color-on-primary-fixed);
           font-size: var(--md-sys-typescale-body-small-size);
-          margin-block-start: var(--spaces-margin-xs);
+          margin-block: var(--spaces-margin-s);
           text-align: center;
+          min-inline-size: min-content;
+          padding-inline: var(--spaces-padding-xs);
         }
       }
 
       p {
+        padding-block: var(--spaces-padding-l);
+        padding-inline: var(--spaces-padding-xs);
+        margin: var(--spaces-none);
+
         &::first-line {
-          font-size: var(--md-sys-typescale-headline-large-size);
+          font-size: var(--md-sys-typescale-headline-medium-size);
+          line-height: var(--md-sys-typescale-headline-medium-line-height);
           font-family: var(--md-ref-typeface-brand);
         }
 
         &::first-letter {
-          color: var(--md-sys-color-primary);
+          background-color: var(--md-sys-color-on-secondary-fixed);
+          border: var(--md-sys-color-secondary-fixed) solid var(--sizes-thickness-hairline);
+          border-radius: var(--md-sys-shape-corner-small);
+          color: var(--md-sys-color-secondary-fixed);
+          font-size: var(--md-sys-typescale-headline-large-size);
+          font-weight: var(--md-ref-typeface-weight-bold);
+          margin-inline-start: var(--spaces-padding-s);
         }
       }
     }
