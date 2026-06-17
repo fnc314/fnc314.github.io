@@ -166,13 +166,15 @@
       type="text/css"
       title="Site CSS"
     />
-    <script
-      defer
-      type="module"
-      src="src/index.ts"
-    ></script>
   </head>
   <body>
     <bento-layout></bento-layout>
+    <script
+      async
+      blocking="render"
+      fetchpriority="high"
+      type="module"
+      src="src/index.ts"
+    ></script>
   </body>
 </html>

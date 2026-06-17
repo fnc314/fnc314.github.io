@@ -2,8 +2,8 @@
   "md": {
     "icon": {
       "size": { "value": "1.5rem" },
-      "font": { "value": "\"Material Symbols Outlined\"" },
-      "fontSharp": { "value": "\"Material Symbols Sharp\"" }
+      "font": { "value": "var(--md-fonts-material-symbols-outlined-family)" },
+      "fontSharp": { "value": "var(--md-fonts-material-symbols-sharp-family)" }
     }
   }
 }

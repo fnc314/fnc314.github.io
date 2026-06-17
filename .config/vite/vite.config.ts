@@ -109,28 +109,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     })
   ];
 
-  console.error(
-    `
-
-    VITE
-    Dynamic Configs
-      ${JSON.stringify(dynamicConfig, null, 2)}
-
-    params
-    MODE - ${mode}
-    COMMAND - ${command}
-    IS_SSR_BUILD - ${isSsrBuild}
-    IS_PREVIEW - ${isPreview}
-    NODE_ENV - ${process.env.NODE_ENV}
-
-    CWD
-      \`process.cwd()\` - ${process.cwd()}
-      \`path.resolve(__dirname)\` - ${path.resolve(__dirname)}
-
-    `.trim()
-  );
-
-  return {
+  const userConfig = {
     devtools: {
       enabled: !dynamicConfig.isProduction,
       environments: [
@@ -224,14 +203,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             ...icon,
             src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
           })),
-          shortcuts: (manifest.shortcuts || []).map((shortcut) => ({
-            ...shortcut,
-            url: shortcut.url.replace("https://fnc314.com/", dynamicConfig.pwa.manifest.scope),
-            icons: (shortcut.icons || []).map((icon) => ({
-              ...icon,
-              src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
-            })),
-          })),
         },
         workbox: {
           maximumFileSizeToCacheInBytes: 6_000_000,
@@ -287,4 +258,28 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       ...(!dynamicConfig.isProduction ? debugPlugins : [])
     ],
   };
+
+  console.error(
+    `
+    VITE
+    Dynamic Configs
+      ${JSON.stringify(dynamicConfig, null, 2)}
+    Returned Config
+      ${JSON.stringify(userConfig, null, 2)}
+
+    params
+    MODE - ${mode}
+    COMMAND - ${command}
+    IS_SSR_BUILD - ${isSsrBuild}
+    IS_PREVIEW - ${isPreview}
+    process.ENV - ${JSON.stringify(process.env, null, 2)}
+
+    CWD
+      \`process.cwd()\` - ${process.cwd()}
+      \`path.resolve(__dirname)\` - ${path.resolve(__dirname)}
+
+    `.trim()
+  );
+
+  return userConfig;
 });

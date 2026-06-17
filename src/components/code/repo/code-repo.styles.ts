@@ -11,10 +11,10 @@ export const CodeRepoStyles: CSSResult = css`
   :host {
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
-    --dynamic-border-background: var(--md-sys-color-inverse-primary);
+    --dynamic-border-background: var(--md-sys-color-tertiary-container);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
-    --word-tag-background-color: var(--md-sys-color-inverse-primary);
-    --word-tag-color: var(--md-sys-color-inverse-on-surface);
+    --word-tag-background-color: var(--md-sys-color-tertiary-container);
+    --word-tag-color: var(--md-sys-color-on-tertiary-container);
 
     align-self: stretch;
     box-sizing: border-box;
@@ -28,9 +28,9 @@ export const CodeRepoStyles: CSSResult = css`
   article {
     --dynamic-border-size: var(--sizes-width-l);
 
-    background-color: var(--md-sys-color-surface-bright);
+    background-color: var(--md-sys-color-surface);
     block-size: 100%;
-    border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
+    border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
     box-sizing: border-box;
     display: grid;
@@ -116,13 +116,11 @@ export const CodeRepoStyles: CSSResult = css`
       flex-flow: row wrap;
       gap: var(--spaces-gap-s);
       list-style: none;
-      margin-block: var(--spaces-none);
-      margin-inline: var(--spaces-none);
-      padding-block: var(--spaces-none);
-      padding-inline: var(--spaces-none);
+      margin: var(--spaces-none);
+      padding: var(--spaces-none);
 
       & word-tag img,
-      & word-tag [slot="\\"icon\\""] {
+      & word-tag [slot=icon] {
         block-size: var(--md-icon-size);
         flex-shrink: 0;
         inline-size: var(--md-icon-size);

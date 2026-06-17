@@ -29,6 +29,7 @@ logs/
 node_modules/
 node_modules/**/*
 postcss.config.mjs
+src/**/*.css
 src/**/*.json
 src/**/*.test.ts
 src/**/*.types.ts

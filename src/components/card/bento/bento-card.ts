@@ -98,6 +98,18 @@ export class BentoCard extends UIAwareElement {
     this.expanded = (e.target as HTMLDetailsElement).open;
   }
 
+  /**
+   * Attached to a {@link MdIconButton} to forward events to the containing
+   *   {@link HTMLDetailsElement}
+   */
+  private _handleIconButtonClick(e: Event) {
+    e.preventDefault();
+    const details = this.shadowRoot?.getElementById(`${this.bentoTag}-bento-card-details`);
+    if (details) {
+      details.toggleAttribute("open");
+    }
+  }
+
   override render() {
     const classes = {
       "bento-card": true,
@@ -107,17 +119,19 @@ export class BentoCard extends UIAwareElement {
       "spread-content": this.spreadContent,
     };
 
-    const htmlId = `${this.bentoTag}-bento-card-title`;
+    const htmlId = `${this.bentoTag}-bento-card`;
 
     return html`
       <article aria-describedby="${htmlId}">
         <details
+          id="${htmlId}-details"
           class="${classMap(classes)}"
           ?open=${this.expanded}
           @toggle=${this._handleToggle}
           aria-label=${`${this.bentoCardTitle} details`}
           >
           <summary
+            id="${htmlId}-summary"
             aria-describedby="${htmlId}"
             >
             <h2
@@ -125,8 +139,12 @@ export class BentoCard extends UIAwareElement {
               class="md-typescale-display-small"
               >
               ${this.bentoCardTitle}
+              <md-focus-ring for="${htmlId}-summary"></md-focus-ring>
             </h2>
-            <md-icon>arrow_drop_down</md-icon>
+            <md-icon-button id="${htmlId}-icon-button" @click=${this._handleIconButtonClick}>
+              <md-icon>arrow_drop_down</md-icon>
+              <md-focus-ring for="${htmlId}-icon-button"></md-focus-ring>
+            </md-icon-button>
           </summary>
           <div
             aria-label="${this.bentoCardTitle} content"

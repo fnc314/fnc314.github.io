@@ -43,6 +43,7 @@ const ignores = [
   "static/**/*",
   "stats/**/*",
   "**/*.html",
+  "**/*.css",
 ];
 
 export default defineConfig([

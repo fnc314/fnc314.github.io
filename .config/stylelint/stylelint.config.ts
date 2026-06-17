@@ -34,10 +34,6 @@ const config: Config = {
       files: ["src/**/*.styles.ts"],
       customSyntax: "postcss-lit",
     },
-    {
-      files: ["src/**/*.css"],
-      customSyntax: "postcss-lit"
-    }
   ],
   plugins: [
     "stylelint-plugin-logical-css",

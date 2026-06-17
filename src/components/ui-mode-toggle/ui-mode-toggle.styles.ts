@@ -40,7 +40,7 @@ export const UIModeToggleStyles: CSSResult = css`
     }
 
     &::part(legend) {
-      border-block-end: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+      border-block-end: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
       color: var(--md-sys-color-primary);
       font-family: var(--md-ref-typeface-brand);
       font-size: var(--md-sys-typescale-label-large-size);
@@ -61,11 +61,10 @@ export const UIModeToggleStyles: CSSResult = css`
       border-color: var(--md-sys-color-on-surface-variant);
       border-radius: var(--md-sys-shape-corner-medium);
       border-style: solid;
-      border-width: var(--hairline-width);
+      border-width: var(--sizes-thickness-hairline);
       display: inline-flex;
       overflow: hidden;
       padding: var(--spaces-none);
-      padding-block-start: var(--spaces-padding-xs);
       position: relative;
       z-index: 0;
     }

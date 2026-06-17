@@ -25,6 +25,12 @@
           "translateY": { "value": "-0.25rem" }
         }
       }
+    },
+    "color": {
+      "background": {
+        "type": "value",
+        "value": "var(--md-sys-color-surface-container-highest)"
+      }
     }
   }
 }

@@ -1,11 +1,11 @@
-@import url("@fnc314/design-tokens");
-@import url("styles/material-symbols.css");
+@charset "UTF-8";
+@import "@fnc314/design-tokens";
+@import "./styles/material-symbols.css";
 
 :root {
   --hover-focus-animation-translate-y: var(
     --globals-hover-focus-animation-translate-y
   );
-  --hairline-width: var(--globals-hairline-width);
   --color-transition-duration: var(--globals-transition-color-duration);
   --color-transition-timing: var(--globals-transition-color-timing);
 
@@ -27,8 +27,6 @@
 
 html,
 body {
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
   font-family: var(--md-ref-typeface-plain);
   margin: unset;
   padding: unset;

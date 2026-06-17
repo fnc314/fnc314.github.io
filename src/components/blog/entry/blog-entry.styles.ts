@@ -12,14 +12,14 @@ export const BlogEntryStyles: CSSResult = css`
     inline-size: 100%;
     min-inline-size: 0;
 
-    --dynamic-border-background: var(--md-sys-color-inverse-primary);
+    --dynamic-border-background: var(--md-sys-color-tertiary-container);
     --dynamic-border-size: var(--sizes-width-l);
   }
 
   article {
-    background-color: var(--md-sys-color-surface-bright);
+    background-color: var(--md-sys-color-surface);
     block-size: 100%;
-    border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
+    border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-medium);
     box-sizing: border-box;
     display: grid;

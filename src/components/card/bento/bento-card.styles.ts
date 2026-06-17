@@ -19,6 +19,8 @@ export const BentoCardStyles = css`
     container-type: inline-size;
     display: block;
     inline-size: 100%;
+
+    --md-focus-ring-shape: var(--md-sys-shape-corner-small);
   }
 
   article {
@@ -37,7 +39,7 @@ export const BentoCardStyles = css`
     background-color: var(--md-sys-color-surface-container-lowest);
     block-size: 100%;
     inline-size: 100%;
-    border: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+    border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-sys-shape-corner-large);
     box-shadow: var(--md-sys-elevation-level1);
     box-sizing: border-box;
@@ -74,14 +76,15 @@ export const BentoCardStyles = css`
   details {
 
     summary {
+      positin: relative;
       align-items: center;
-      border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
+      border-block-end: var(--sizes-thickness-hairline) dashed var(--md-sys-color-outline-variant);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       list-style: none;
       outline: none;
-      padding: 0;
+      padding: var(--spaces-none);
       user-select: none;
 
       &::-webkit-details-marker {

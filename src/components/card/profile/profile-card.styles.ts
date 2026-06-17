@@ -6,17 +6,27 @@ export const ProfileCardStyles: CSSResult = css`
     block-size: 100%;
 
     --profile-card-filled-icon-button-scale: 2;
+    --profile-card-filled-icon-button-container-size: calc(
+      var(--profile-card-filled-icon-button-scale) *
+      var(--md-icon-size)
+    );
+    --profile-card-filled-icon-button-icon-color: var(
+      --md-sys-color-on-surface-variant
+    );
+    --profile-card-filled-icon-button-icon-scale: 0.75;
+    --profile-card-filled-icon-button-icon-size: calc(
+      var(--profile-card-filled-icon-button-icon-scale) *
+      var(--profile-card-filled-icon-button-container-size)
+    );
 
     --md-filled-icon-button-container-color: var(--md-sys-color-surface-container-highest);
-    --md-filled-icon-button-container-height: calc(
-      var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
-    );
-    --md-filled-icon-button-container-width: calc(
-      var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
-    );
-    --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-medium);
-    --md-filled-icon-button-icon-color: var(--md-sys-color-on-surface-variant);
-    --md-filled-icon-button-icon-size: var(--md-icon-size);
+    --md-filled-icon-button-container-height: var(--profile-card-filled-icon-button-container-size);
+    --md-filled-icon-button-container-width: var(--profile-card-filled-icon-button-container-size);
+    --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-small);
+    --md-filled-icon-button-icon-color: var(--profile-card-filled-icon-button-icon-color);
+    --md-filled-icon-button-focus-icon-color: var(--profile-card-filled-icon-button-icon-color);
+    --md-filled-icon-button-hover-icon-color: var(--profile-card-filled-icon-button-icon-color);
+    --md-filled-icon-button-icon-size: var(--profile-card-filled-icon-button-icon-size);
   }
 
   article {
@@ -63,7 +73,7 @@ export const ProfileCardStyles: CSSResult = css`
 
       h3 {
         flex: 1;
-        text-align: center;
+        text-align: start;
         margin: var(--spaces-none);
       }
 

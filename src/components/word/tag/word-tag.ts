@@ -10,8 +10,8 @@ import { customElement, property } from "lit/decorators.js";
  *
  * @property {string} [word=""] - The tagged word
  * @property {WordTagHeaviness} [heaviness="normal"] - The weight of the tag (text & border), can be
- *  `"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or
- *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)
+ *  `"normal"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or
+ *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)
  * @property {WordTagVariant} [variant="text-only"] - The version of the layout to render
  * @property {string} [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
  *  {@link HTMLAnchorElement}

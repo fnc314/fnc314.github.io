@@ -13,13 +13,13 @@
       "types": "./dist/types/index.d.ts",
       "default": "./dist/@fnc314.design-tokens.js"
     },
+    "./styles.css": {
+      "style": "./dist/@fnc314.design-tokens.css",
+      "default": "./dist/@fnc314.design-tokens.css"
+    },
     "./css/*": {
       "style": "./dist/css/*",
-      "default": "./dist/css/*"
-    },
-    "./styles/*": {
-      "style": "./dist/css/*",
-      "default": "./dist/css/*"
+      "default": "./dist/@fnc314.design-tokens.css"
     },
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",

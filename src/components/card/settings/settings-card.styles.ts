@@ -30,7 +30,7 @@ export const SettingsCardStyles: CSSResult = css`
         padding: var(--spaces-none);
 
         legend {
-          border-block-end: var(--hairline-width) solid var(--md-sys-color-outline-variant);
+          border-block-end: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
           color: var(--md-sys-color-primary);
           font-family: var(--md-ref-typeface-brand);
           margin: var(--spaces-none);

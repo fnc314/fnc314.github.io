@@ -14,7 +14,7 @@ export const BentoLayoutStyles = css`
   :host {
     --bento-layout-column-count: 1;
 
-    background-color: var(--md-sys-color-surface);
+    background-color: var(--globals-color-background);
     color: var(--md-sys-color-on-surface);
     display: block;
     inline-size: 100%;
@@ -29,11 +29,11 @@ export const BentoLayoutStyles = css`
     padding: var(--spaces-padding-xs);
 
     h1 {
-      background-color: var(--md-sys-color-primary-fixed);
-      border-color: var(--md-sys-color-on-primary-fixed);
+      background-color: var(--md-sys-color-primary);
+      border-color: var(--md-sys-color-on-primary);
       border-radius: var(--md-sys-shape-corner-large);
-      border-width: var(--hairline-width);
-      color: var(--md-sys-color-on-primary-fixed);
+      border-width: var(--sizes-thickness-hairline);
+      color: var(--md-sys-color-on-primary);
       grid-area: span 1 / span var(--bento-layout-column-count);
       inline-size: 100%;
       margin-inline: auto;

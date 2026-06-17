@@ -29,8 +29,10 @@ import "@/types/theme/theme";
 import "@fnc314/design-tokens";
 import "@material/web/divider/divider";
 import "@material/web/elevation/elevation";
+import "@material/web/focus/md-focus-ring";
 import "@material/web/icon/icon";
 import "@material/web/iconbutton/filled-icon-button";
+import "@material/web/iconbutton/icon-button";
 import "@material/web/labs/card/elevated-card";
 import "@material/web/labs/card/filled-card";
 import "@material/web/labs/card/outlined-card";
@@ -65,13 +67,6 @@ const domLoadedListener = () => {
     const themeConfig = themeService.currentThemeConfig();
     updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
     document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
-  });
-
-  window.addEventListener("router.change", (ev: Event) => {
-    console.info(JSON.stringify({ event: "router.change", change: (ev as any).detail }, null, 2));
-  });
-  window.addEventListener("router.back", (ev: Event) => {
-    console.info(JSON.stringify({ event: "router.back", back: (ev as any).detail }, null, 2));
   });
 };
 

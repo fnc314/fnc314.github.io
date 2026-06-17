@@ -2,7 +2,7 @@ import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { type CodeRepoData } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { Breakpoints, cssPropertyDataImage } from "@fnc314/design-tokens";
 import { html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -97,7 +97,11 @@ export class CodeRepo extends UIAwareElement {
 
               const variant = imgTag === nothing
                 ? "text-only"
-                : "icon-only";
+                : (
+                  this.breakpoint === Breakpoints.BreakpointLabels.mobile
+                  ? "icon-text"
+                  : "icon-only"
+                );
 
               return html`
                 <li>

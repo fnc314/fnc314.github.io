@@ -7,8 +7,8 @@
   --md-outlined-button-container-shape: var(--md-sys-shape-corner-small);
   --md-elevated-card-container-shadow-color: oklch(from var(--md-sys-color-scrim) 30% c h);
   --md-icon-size: 1.5rem;
-  --md-icon-font: "Material Symbols Outlined";
-  --md-icon-font-sharp: "Material Symbols Sharp";
+  --md-icon-font: var(--md-fonts-material-symbols-outlined-family);
+  --md-icon-font-sharp: var(--md-fonts-material-symbols-sharp-family);
   --md-sys-shape-corner-extra-large: 2rem;
   --md-sys-shape-corner-extra-small: 0.25rem;
   --md-sys-shape-corner-full: 100%;

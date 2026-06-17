@@ -1,6 +1,6 @@
 @font-face {
   font-display: swap;
-  font-family: var(--md-fonts-material-symbols-sharp-name);
+  font-family: var(--md-fonts-material-symbols-sharp-family);
   font-style: normal;
   font-weight: var(--md-fonts-material-symbols-sharp-face-weight-min)
     var(--md-fonts-material-symbols-sharp-face-weight-max);
@@ -27,7 +27,7 @@
 
 @font-face {
   font-display: swap;
-  font-family: var(--md-fonts-material-symbols-outlined-name);
+  font-family: var(--md-fonts-material-symbols-outlined-family);
   font-style: normal;
   font-weight: var(--md-fonts-material-symbols-outlined-face-weight-min)
     var(--md-fonts-material-symbols-outlined-face-weight-max);

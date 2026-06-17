@@ -2,8 +2,8 @@ import type { ComplexAttributeConverter } from "lit";
 
 /**
  * The weight of the tag (text & border), can be
- *  `"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or
- *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)
+ *  `"normal"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or
+ *  `"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)
  *
  * @export
  * @typedef {WordTagHeaviness}
