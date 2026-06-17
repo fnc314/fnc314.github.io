@@ -8,6 +8,12 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultFormatter": "ms-python.python",
+    // "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -491,5 +497,10 @@
   "stylelint.validate": ["css", "postcss"],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "workbench.tree.indent": 4
+  "workbench.tree.indent": 4,
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python.analysis.autoImportCompletions": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }

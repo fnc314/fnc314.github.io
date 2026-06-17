@@ -5,6 +5,7 @@ import "@/components/card/blog/blog-card";
 import "@/components/card/code/code-card";
 import "@/components/card/education/education-card";
 import "@/components/card/experience/experience-card";
+import "@/components/card/now-playing/now-playing-card";
 import "@/components/card/profile/profile-card";
 import "@/components/card/settings/settings-card";
 import "@/components/card/skills/skills-card";
@@ -65,8 +66,19 @@ const domLoadedListener = () => {
   document.addEventListener("color_scheme.change", (event: Event) => {
     const customEvent = event as any; // ColorSchemeConfigChange
     const themeConfig = themeService.currentThemeConfig();
-    updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
-    document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+    
+    const applyTheme = () => {
+      updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
+      document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+    };
+
+    if (!document.startViewTransition) {
+      applyTheme();
+    } else {
+      document.startViewTransition(() => {
+        applyTheme();
+      });
+    }
   });
 };
 

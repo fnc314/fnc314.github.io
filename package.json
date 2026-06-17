@@ -51,6 +51,7 @@
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",
+    "@lit/task": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "@open-wc/lit-helpers": "catalog:dependencies",
     "animate-css-grid": "catalog:dependencies",

@@ -21,6 +21,16 @@
   --globals-buffer-height: 10rem;
   --globals-hover-focus-animation-translate-y: -0.25rem;
   --globals-color-background: var(--md-sys-color-surface-container-highest);
+  --motions-delay-none: 0ms;
+  --motions-delay-xxxs: 50ms;
+  --motions-delay-xxs: 100ms;
+  --motions-delay-xs: 150ms;
+  --motions-delay-s: 200ms;
+  --motions-delay-m: 250ms;
+  --motions-delay-l: 300ms;
+  --motions-delay-xl: 350ms;
+  --motions-delay-xxl: 400ms;
+  --motions-delay-xxxl: 450ms;
   --motions-duration-none: 0ms;
   --motions-duration-short: 250ms;
   --motions-duration-medium: 300ms;
@@ -33,6 +43,11 @@
   --motions-elevation-level-3: 3;
   --motions-elevation-level-4: 4;
   --motions-elevation-level-5: 5;
+  --motions-fade-in-up-from-opacity: 0;
+  --motions-fade-in-up-from-translate: translateY(var(--motions-translate-y-fade-in-up));
+  --motions-fade-in-up-to-opacity: 1;
+  --motions-fade-in-up-to-translate: translateY(0);
+  --motions-translate-y-fade-in-up: 20px;
   --motions-transform-hover-lift: -4px;
   --motions-rotation-90: 90deg;
   --motions-rotation-180: 180deg;

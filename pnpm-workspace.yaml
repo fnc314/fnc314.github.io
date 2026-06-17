@@ -14,6 +14,7 @@ catalogs:
     "@lit-labs/motion": 1.1.0
     "@lit-labs/router": 0.1.4
     "@lit/reactive-element": 2.1.2
+    "@lit/task": 1.0.3
     "@material/web": 2.4.1
     "@open-wc/lit-helpers": 0.7.0
     animate-css-grid: 1.5.1

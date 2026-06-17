@@ -1,5 +1,47 @@
 {
   "motions": {
+    "delay": {
+      "none": {
+        "type": "value",
+        "value": "0ms"
+      },
+      "xxxs": {
+        "type": "value",
+        "value": "50ms"
+      },
+      "xxs": {
+        "type": "value",
+        "value": "100ms"
+      },
+      "xs": {
+        "type": "value",
+        "value": "150ms"
+      },
+      "s": {
+        "type": "value",
+        "value": "200ms"
+      },
+      "m": {
+        "type": "value",
+        "value": "250ms"
+      },
+      "l": {
+        "type": "value",
+        "value": "300ms"
+      },
+      "xl": {
+        "type": "value",
+        "value": "350ms"
+      },
+      "xxl": {
+        "type": "value",
+        "value": "400ms"
+      },
+      "xxxl": {
+        "type": "value",
+        "value": "450ms"
+      }
+    },
     "duration": {
       "none": { "value": "0ms" },
       "short": { "value": "250ms" },
@@ -17,6 +59,36 @@
       "level-3": { "value": "3" },
       "level-4": { "value": "4" },
       "level-5": { "value": "5" }
+    },
+    "fade-in-up": {
+      "from": {
+        "opacity": {
+          "type": "value",
+          "value": "0"
+        },
+        "translate": {
+          "type": "value",
+          "value": "translateY(var(--motions-translate-y-fade-in-up))"
+        }
+      },
+      "to": {
+        "opacity": {
+          "type": "value",
+          "value": "1"
+        },
+        "translate": {
+          "type": "value",
+          "value": "translateY(0)"
+        }
+      }
+    },
+    "translate": {
+      "y": {
+        "fade-in-up": {
+          "type": "value",
+          "value": "20px"
+        }
+      }
     },
     "transform": {
       "hover-lift": { "value": "-4px" }

@@ -2,6 +2,7 @@ import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles
 import { type ABentoBoxConfig, BENTO_BOX_TYPES, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { TransitionStyles } from "@/styles/transitions.styles";
 import { Breakpoints } from "@fnc314/design-tokens";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
@@ -20,6 +21,7 @@ export class BentoLayout extends UIAwareElement {
   static override styles = [
     TextStyles,
     BentoLayoutStyles,
+    TransitionStyles,
   ];
 
   @state()
@@ -28,16 +30,20 @@ export class BentoLayout extends UIAwareElement {
   private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placement[this.breakpoint];
 
-    const gridArea = position.breakpoint === Breakpoints.BreakpointLabels.mobile
-      ? undefined
-      : position.area;
+    const gridStyles = position.breakpoint === Breakpoints.BreakpointLabels.mobile
+      ? {}
+      : {
+          gridColumn: `span ${position.span.colSpan}`,
+          gridRow: `span ${position.span.rowSpan}`
+        };
 
     let cardContent: TemplateResult;
     switch (config.type) {
       case BENTO_BOX_TYPES.profile:
         cardContent = html`
           <profile-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </profile-card>
         `;
@@ -45,7 +51,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.education:
         cardContent = html`
           <education-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </education-card>
         `;
@@ -53,7 +60,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.work:
         cardContent = html`
           <experience-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </experience-card>
         `;
@@ -61,7 +69,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.blog:
         cardContent = html`
           <blog-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </blog-card>
         `;
@@ -69,7 +78,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.code:
         cardContent = html`
           <code-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </code-card>
         `;
@@ -77,7 +87,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.skills:
         cardContent = html`
           <skills-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </skills-card>
         `;
@@ -85,7 +96,8 @@ export class BentoLayout extends UIAwareElement {
       case BENTO_BOX_TYPES.settings:
         cardContent = html`
           <settings-card
-            style=${styleMap({ gridArea, blockSize: "100%" })}
+            class="animate-entry"
+            style=${styleMap({ ...gridStyles, blockSize: "100%" })}
             .expanded=${config.isExpanded(this.breakpoint)}>
           </settings-card>
         `;
@@ -100,7 +112,7 @@ export class BentoLayout extends UIAwareElement {
   override render() {
     return html`
       <main id="bento-root">
-        <h1 class="md-typescale-display-large">Franco N. Colaizzi</h1>
+        <h1 class="md-typescale-display-large animate-entry">Franco N. Colaizzi</h1>
         ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
       </main>
     `;

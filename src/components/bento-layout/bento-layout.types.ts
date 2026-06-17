@@ -2,36 +2,32 @@ import { Breakpoints } from "@fnc314/design-tokens";
 import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
 
 /**
- * Defines the 2 numbers needed to place something
- *   on a `grid`
+ * Defines the column and row span for dense auto-flow grid
  *
- * @typedef GridPlacement
+ * @typedef GridSpan
  */
-export interface GridPlacement {
-  start: number;
-  end: number;
+export interface GridSpan {
+  colSpan: number;
+  rowSpan: number;
 }
 
 /**
- * A pair of {@link GridPlacement}s for the row and column
- *   dimensions
+ * The span and order for a given breakpoint
  *
  * @typedef GridPosition
  */
 export type GridPosition = {
   /** The breakpoint for this position */
   breakpoint: Exclude<BreakpointLabel, "mobile">;
-  /** The row placement */
-  row: GridPlacement;
-  /** The column placement */
-  column: GridPlacement;
-  /** The grid area string */
-  area: BentoBoxType;
+  /** The grid span */
+  span: GridSpan;
+  /** The logical order in the DOM */
+  order: number;
 } | {
   /** The breakpoint for this position */
   breakpoint: Extract<BreakpointLabel, "mobile">;
-  /** The grid area string */
-  area: BentoBoxType;
+  /** The logical order in the DOM */
+  order: number;
 }
 
 /**
@@ -46,9 +42,9 @@ export type BentoBoxType =
   "code" |
   "blog" |
   "settings" |
-  // "connect" |
   "education" |
-  "skills"
+  "skills" |
+  // "now-playing"
   ;
 
 /** A {@link Record} of {@link BentoBoxType} definitions */
@@ -60,6 +56,7 @@ export const BENTO_BOX_TYPES = {
   settings: "settings" as const,
   education: "education" as const,
   skills: "skills" as const,
+  // "now-playing": "now-playing" as const,
 } as const;
 
 /**
@@ -80,57 +77,57 @@ export type BentoBoxConfigs = Record<BentoBoxType, Omit<ABentoBoxConfig, "type">
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 1, end: 7 }, area: BENTO_BOX_TYPES.profile },
-      tablet:  { breakpoint: "tablet", row: { start: 2, end: 3 }, column: { start: 1, end: 4 }, area: BENTO_BOX_TYPES.profile },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.profile },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 2 }, order: 1 },
+      tablet:  { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 2 }, order: 1 },
+      mobile: { breakpoint: "mobile", order: 1 },
     },
     isExpanded: () => true
   },
-  education: {
+  work: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 5, end: 6 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.education },
-      tablet:  { breakpoint: "tablet", row: { start: 3, end: 4 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.education },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.education },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 3 }, order: 2 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 2 }, order: 2 },
+      mobile: { breakpoint: "mobile", order: 2 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
-  work: {
+  education: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 2, end: 5 }, column: { start: 7, end: -1 }, area: BENTO_BOX_TYPES.work },
-      tablet: { breakpoint: "tablet", row: { start: 2, end: 5 }, column: { start: 4, end: -1 }, area: BENTO_BOX_TYPES.work },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.work },
+      desktop: { breakpoint: "desktop", span: { colSpan: 12, rowSpan: 1 }, order: 4 },
+      tablet:  { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 4 },
+      mobile: { breakpoint: "mobile", order: 4 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   blog: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.blog },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 1, end: 4 }, area: BENTO_BOX_TYPES.blog },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.blog },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 2 }, order: 5 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 2 }, order: 5 },
+      mobile: { breakpoint: "mobile", order: 5 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   code: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 8, end: 9 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.code },
-      tablet: { breakpoint: "tablet", row: { start: 5, end: 6 }, column: { start: 4, end: -1 }, area: BENTO_BOX_TYPES.code },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.code },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 2 }, order: 6 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 2 }, order: 6 },
+      mobile: { breakpoint: "mobile", order: 6 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
   skills: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 9, end: 10 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.skills },
-      tablet: { breakpoint: "tablet", row: { start: 6, end: 7 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.skills },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.skills },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
+      mobile: { breakpoint: "mobile", order: 7 },
     },
     isExpanded: () => false
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", row: { start: 10, end: 11 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.settings },
-      tablet: { breakpoint: "tablet", row: { start: 7, end: 8 }, column: { start: 1, end: -1 }, area: BENTO_BOX_TYPES.settings },
-      mobile: { breakpoint: "mobile", area: BENTO_BOX_TYPES.settings },
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 8 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 8 },
+      mobile: { breakpoint: "mobile", order: 8 },
     },
     isExpanded: () => false
   }
@@ -152,13 +149,8 @@ export function getBentoDOMOrder(breakpoint: BreakpointLabel): BentoBoxType[] {
     const posA = BENTO_BOX_CONFIG[a].placement[sortBreakpoint];
     const posB = BENTO_BOX_CONFIG[b].placement[sortBreakpoint];
 
-    // Narrow union type to access coordinates (unavailable on mobile)
-    if ("row" in posA && "row" in posB) {
-      // Primary sort: Row Start (Top to Bottom)
-      if (posA.row.start !== posB.row.start) return posA.row.start - posB.row.start;
-      // Secondary sort: Column Start (Leading to Trailing)
-      // Ascending numerical order maps correctly to RTL/LTR logical flow in CSS Grid.
-      return posA.column.start - posB.column.start;
+    if ("order" in posA && "order" in posB) {
+      return posA.order - posB.order;
     }
     return 0;
   });

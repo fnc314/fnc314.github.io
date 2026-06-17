@@ -36,6 +36,9 @@ catalogs:
     '@lit/reactive-element':
       specifier: 2.1.2
       version: 2.1.2
+    '@lit/task':
+      specifier: 1.0.3
+      version: 1.0.3
     '@material/web':
       specifier: 2.4.1
       version: 2.4.1
@@ -405,6 +408,9 @@ importers:
       '@lit/reactive-element':
         specifier: catalog:dependencies
         version: 2.1.2
+      '@lit/task':
+        specifier: catalog:dependencies
+        version: 1.0.3
       '@material/web':
         specifier: catalog:dependencies
         version: 2.4.1
@@ -2453,6 +2459,9 @@ packages:
 
   '@lit/reactive-element@2.1.2':
     resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
+
+  '@lit/task@1.0.3':
+    resolution: {integrity: sha512-1gJGJl8WON+2j0y9xfcD+XsS1rvcy3XDgsIhcdUW++yTR8ESjZW6o7dn8M8a4SZM8NnJe6ynS2cKWwsbfLOurg==}
 
   '@material/material-color-utilities@0.3.0':
     resolution: {integrity: sha512-ztmtTd6xwnuh2/xu+Vb01btgV8SQWYCaK56CkRK8gEkWe5TuDyBcYJ0wgkMRn+2VcE9KUmhvkz+N9GHrqw/C0g==}
@@ -11784,6 +11793,10 @@ snapshots:
   '@lit/reactive-element@2.1.2':
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.6.0
+
+  '@lit/task@1.0.3':
+    dependencies:
+      '@lit/reactive-element': 2.1.2
 
   '@material/material-color-utilities@0.3.0': {}
 
