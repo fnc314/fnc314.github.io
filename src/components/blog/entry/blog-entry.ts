@@ -47,7 +47,7 @@ export class BlogEntry extends UIAwareElement {
         </header>
 
         <section>
-          <p class="md-typescale-body-medium">${this.blogEntry.summary}</p>
+          <p class="md-typescale-body-large">${this.blogEntry.summary}</p>
         </section>
 
         <footer>
@@ -63,7 +63,7 @@ export class BlogEntry extends UIAwareElement {
               .src=${logoSource}
               alt="Medium logo"
             />
-            <span id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
+            <span class="md-typescale-label-medium" id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
           </a>
         </footer>
       </article>

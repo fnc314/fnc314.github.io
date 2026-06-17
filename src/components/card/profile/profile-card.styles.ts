@@ -5,9 +5,9 @@ export const ProfileCardStyles: CSSResult = css`
     display: block;
     block-size: 100%;
 
-    --profile-card-filled-icon-button-scale: 1.5;
+    --profile-card-filled-icon-button-scale: 2;
 
-    --md-filled-icon-button-container-color: var(--md-sys-color-primary-container);
+    --md-filled-icon-button-container-color: var(--md-sys-color-surface-container-highest);
     --md-filled-icon-button-container-height: calc(
       var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
     );
@@ -15,7 +15,7 @@ export const ProfileCardStyles: CSSResult = css`
       var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
     );
     --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-medium);
-    --md-filled-icon-button-icon-color: var(--md-sys-color-on-primary-container);
+    --md-filled-icon-button-icon-color: var(--md-sys-color-on-surface-variant);
     --md-filled-icon-button-icon-size: var(--md-icon-size);
   }
 
@@ -44,9 +44,7 @@ export const ProfileCardStyles: CSSResult = css`
 
       p {
         &::first-line {
-          font-size: calc(
-            var(--md-sys-typescale-body-large-size) * 1.5
-          );
+          font-size: var(--md-sys-typescale-headline-large-size);
           font-family: var(--md-ref-typeface-brand);
         }
 
@@ -65,17 +63,16 @@ export const ProfileCardStyles: CSSResult = css`
 
       h3 {
         flex: 1;
-        flex-grow: 0;
         text-align: center;
         margin: var(--spaces-none);
       }
 
       ul {
         flex: 2;
-        flex-grow: auto;
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        align-items: center;
         list-style: none;
         margin: var(--spaces-none);
         padding: var(--spaces-none);

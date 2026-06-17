@@ -5,7 +5,6 @@ import { TextStyles } from "@/styles/text";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * @summary BentoCard - A reusable card component for the bento grid.
@@ -116,7 +115,7 @@ export class BentoCard extends UIAwareElement {
           class="${classMap(classes)}"
           ?open=${this.expanded}
           @toggle=${this._handleToggle}
-          aria-label="${ifDefined(this.bentoCardTitle ? `${this.bentoCardTitle} details` : undefined)}"
+          aria-label=${`${this.bentoCardTitle} details`}
           >
           <summary
             aria-describedby="${htmlId}"
@@ -127,7 +126,7 @@ export class BentoCard extends UIAwareElement {
               >
               ${this.bentoCardTitle}
             </h2>
-            <md-icon class="indicator">expand_more</md-icon>
+            <md-icon>arrow_drop_down</md-icon>
           </summary>
           <div
             aria-label="${this.bentoCardTitle} content"

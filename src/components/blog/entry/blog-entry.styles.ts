@@ -11,11 +11,12 @@ export const BlogEntryStyles: CSSResult = css`
     flex-grow: 1;
     inline-size: 100%;
     min-inline-size: 0;
+
+    --dynamic-border-background: var(--md-sys-color-inverse-primary);
+    --dynamic-border-size: var(--sizes-width-l);
   }
 
   article {
-    --dynamic-border-size: var(--sizes-width-l);
-
     background-color: var(--md-sys-color-surface-bright);
     block-size: 100%;
     border: var(--globals-hairline-width) solid var(--md-sys-color-outline-variant);
@@ -108,8 +109,8 @@ export const BlogEntryStyles: CSSResult = css`
         margin-block: var(--spaces-none);
 
         h3 {
-          font-size: var(--md-sys-typescale-title-large-size);
-          line-height: var(--md-sys-typescale-title-large-line-height);
+          // font-size: var(--md-sys-typescale-title-large-size);
+          // line-height: var(--md-sys-typescale-title-large-line-height);
         }
       }
     }
@@ -132,9 +133,9 @@ export const BlogEntryStyles: CSSResult = css`
         margin-block: var(--spaces-none);
 
         h3 {
-          font-size: var(--md-sys-typescale-headline-small-size);
-          font-weight: var(--md-sys-typescale-headline-small-weight);
-          line-height: var(--md-sys-typescale-headline-small-line-height);
+          // font-size: var(--md-sys-typescale-headline-small-size);
+          // font-weight: var(--md-sys-typescale-headline-small-weight);
+          // line-height: var(--md-sys-typescale-headline-small-line-height);
         }
       }
     }

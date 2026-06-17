@@ -43,10 +43,10 @@ export class EducationCard extends UIAwareElement {
                 )}
                 alt=${`Logo for ${edu.institute}`}
               />
-              <h3 class="md-typescale-title-medium">${edu.institute}</h3>
-              <span class="md-typescale-body-medium">${edu.location}</span>
-              <h4 class="md-typescale-title-small">${edu.degree}</h4>
-              <time class="md-typescale-body-small" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
+              <h3 class="md-typescale-title-large">${edu.institute}</h3>
+              <span class="md-typescale-body-large">${edu.location}</span>
+              <h4 class="md-typescale-title-medium">${edu.degree}</h4>
+              <time class="md-typescale-body-medium" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
             </li>
           `,
         )

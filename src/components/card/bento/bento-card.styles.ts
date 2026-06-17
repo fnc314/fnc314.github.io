@@ -71,26 +71,25 @@ export const BentoCardStyles = css`
     }
   }
 
-  summary {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    outline: none;
-    padding: 0;
-    user-select: none;
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-
   details {
+
     summary {
+      align-items: center;
+      border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      outline: none;
+      padding: 0;
+      user-select: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
       /* Style slotted header elements (h2 by default) */
       h2 {
-        border-block-end: var(--hairline-width) dashed var(--md-sys-color-outline-variant);
         color: var(--md-sys-color-primary);
         flex-grow: 1;
         font-family: var(--md-ref-typeface-brand);
@@ -99,7 +98,8 @@ export const BentoCardStyles = css`
       }
 
       md-icon {
-        color: var(--md-sys-color-on-surface-variant);
+        --md-icon-size: 2rem;
+        color: var(--md-sys-color-primary);
         transition: transform var(--motions-duration-medium) var(--motions-easing-standard);
       }
     }

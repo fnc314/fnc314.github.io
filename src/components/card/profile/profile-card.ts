@@ -68,7 +68,7 @@ export class ProfileCard extends UIAwareElement {
 
     return html`
       <section class="sub-section">
-        <h3 class="md-typescale-title-small">Contact</h3>
+        <h3 class="md-typescale-title-large">Contact</h3>
         <ul>
           ${directConnections}
         </ul>
@@ -89,7 +89,7 @@ export class ProfileCard extends UIAwareElement {
 
     return html`
       <section class="sub-section">
-        <h3 class="md-typescale-title-small">Network</h3>
+        <h3 class="md-typescale-title-large">Network</h3>
         <ul>
           ${professionalConnections}
         </ul>
@@ -111,7 +111,7 @@ export class ProfileCard extends UIAwareElement {
 
     return html`
       <section class="sub-section">
-        <h3 class="md-typescale-title-small">Resume</h3>
+        <h3 class="md-typescale-title-large">Resume</h3>
         <ul>
           ${artifactConnections}
         </ul>
