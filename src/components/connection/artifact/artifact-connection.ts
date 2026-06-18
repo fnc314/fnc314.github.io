@@ -2,7 +2,7 @@ import { ConnectionArtifactStyles } from "@/components/connection/artifact/artif
 import { type ArtifactConnectionData, type ArtifactConnectionType } from "@/components/connection/artifact/artifact-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/design-tokens";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -20,7 +20,7 @@ export class ArtifactConnection extends UIAwareElement {
   artifactConnectionData: ArtifactConnectionData = {} as ArtifactConnectionData;
 
   override render(): TemplateResult {
-    const imgSrc = cssPropertyDataImage(
+    const imgSrc = readCSSProperty(
       this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
     );
     return html`

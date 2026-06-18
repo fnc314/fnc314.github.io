@@ -15,7 +15,7 @@ import {
   DarkModeToggle,
   type PermanentColorSchemeEvent,
 } from "dark-mode-toggle";
-import { type PropertyValues, type TemplateResult, html } from "lit";
+import { type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
@@ -59,10 +59,6 @@ export class UiModeToggle extends UIAwareElement {
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
 
-  constructor() {
-    super();
-  }
-
   override connectedCallback(): void {
     super.connectedCallback();
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
@@ -75,11 +71,6 @@ export class UiModeToggle extends UIAwareElement {
     configsService.removeEventListener("app-configs.change", this.onAppConfigsChange);
     document.removeEventListener("colorschemechange", this.colorSchemeChangeEventListener);
     document.removeEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
-  }
-
-  protected override firstUpdated(_changedProperties: PropertyValues): void {
-    super.firstUpdated(_changedProperties);
-    this._appConfigs = configsService.loadConfigs();
   }
 
   private onAppConfigsChange = (event: Event) => {

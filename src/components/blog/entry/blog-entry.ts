@@ -2,7 +2,7 @@ import { BlogEntryStyles } from "@/components/blog/entry/blog-entry.styles";
 import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/design-tokens";
 import { html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -26,14 +26,21 @@ export class BlogEntry extends UIAwareElement {
   blogEntry: BlogEntryJson = {} as BlogEntryJson;
 
   override render() {
-    // Correctly using your token-based image property pattern
-    const logoSource = cssPropertyDataImage(
-      `--icons-logos-organization-medium-${this.darkMode ? "light" : "dark"}`
-    );
+    const variant = this.darkMode ? "light" : "dark";
+
+    // `*-css-url` resolves to `url("data:…")` for the decorative CSS border.
+    const logoToken = `--icons-logos-organization-medium-${variant}-css-url`;
+
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
     const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: url('${logoSource}');
+      --dynamic-border-background-image: var(${logoToken});
     `);
+
+    // `*-data-image-svg` resolves to a `data:image/svg+xml;base64,…` URI
+    // (`readCSSProperty` strips the surrounding quotes) for the <img src>.
+    const logoProperty = readCSSProperty(
+      `--icons-logos-organization-medium-${variant}-data-image-svg`
+    );
 
     return html`
       <article class="dynamic-border-host" style="${borderStyle.cssText}">
@@ -60,10 +67,12 @@ export class BlogEntry extends UIAwareElement {
               loading="lazy"
               role="img"
               aria-describedby="medium-link-label"
-              .src=${logoSource}
+              .src=${logoProperty}
               alt="Medium logo"
             />
-            <span class="md-typescale-label-medium" id="medium-link-label">Read on Medium<sup>&reg;</sup></span>
+            <span class="md-typescale-label-large" id="medium-link-label">
+              Read on Medium<sup>&reg;</sup>
+            </span>
           </a>
         </footer>
       </article>

@@ -5,6 +5,7 @@ import {
   logVerbosityLevels,
   logWarningLevels,
   transformGroups,
+  transformTypes,
   transforms
 } from "style-dictionary/enums";
 
@@ -29,28 +30,88 @@ StyleDictionary.registerFilter({
     ["icons", "sys", "ref", "md"].every(path => !token.path.includes(path))
 });
 
+StyleDictionary.registerTransform({
+  name: "iconEncodingToDataImageSvg",
+  type: transformTypes.value,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `"data:image/svg+xml;base64,${token.value}"`,
+});
+
+StyleDictionary.registerTransform({
+  name: "iconEncodingToDataImageSvgName",
+  type: transformTypes.name,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-data-image-svg`,
+});
+
+StyleDictionary.registerTransform({
+  name: "urlForIcons",
+  type: transformTypes.value,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `url("data:image/svg+xml;base64,${token.value}")`,
+});
+
+StyleDictionary.registerTransform({
+  name: "urlForIconsName",
+  type: transformTypes.name,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-css-url`,
+});
+
 const buildPaths = {
   css: `${process.cwd()}/design-tokens/assets/css/`,
   json: `${process.cwd()}/design-tokens/assets/json/`,
-}
+};
 
 export default {
   source: [
     `${process.cwd()}/design-tokens/tokens/**/*.json`,
   ],
   platforms: {
-    cssIcons: {
+    iconsAsDataSvg: {
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetBase64,
+        "iconEncodingToDataImageSvg",
+        "iconEncodingToDataImageSvgName"
       ],
       buildPath: buildPaths.css,
       files: [
         {
-          destination: "_icons.css",
+          destination: "data_image_svg_icons.css",
+          format: formats.cssVariables,
+          filter: "isIconToken",
+          options: {
+            outputReferences: true
+          }
+        }
+      ]
+    },
+    iconsAsCssUrl: {
+      transforms: [
+        transforms.attributeCti,
+        transforms.attributeColor,
+        transforms.nameKebab,
+        transforms.colorCss,
+        transforms.assetBase64,
+        "urlForIcons",
+        "urlForIconsName"
+      ],
+      buildPath: buildPaths.css,
+      files: [
+        {
+          destination: "css_url_icons.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {

@@ -2,7 +2,7 @@ import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
 import { type CodeRepoData } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { Breakpoints, cssPropertyDataImage } from "@fnc314/design-tokens";
+import { Breakpoints, readCSSProperty } from "@fnc314/design-tokens";
 import { html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -29,13 +29,12 @@ export class CodeRepo extends UIAwareElement {
   ];
 
   override render() {
-    const data = cssPropertyDataImage(
-      this.darkMode
-        ? "--icons-logos-organization-github-dark"
-        : "--icons-logos-organization-github-light"
-    );
+    const token = this.darkMode
+      ? "--icons-logos-organization-github-dark-css-url"
+      : "--icons-logos-organization-github-light-css-url";
+
     const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: url('${data}');
+      --dynamic-border-background-image: var(${token});
     `);
     return html`
       <article class="dynamic-border-host" style="${borderStyle.cssText}">
@@ -66,8 +65,8 @@ export class CodeRepo extends UIAwareElement {
             ${this.codeRepo.tech.map((tech) => {
               const imgSrc =
                 typeof tech.designToken === "string"
-                  ? cssPropertyDataImage(tech.designToken)
-                  : cssPropertyDataImage(
+                  ? readCSSProperty(tech.designToken)
+                  : readCSSProperty(
                       this.darkMode
                         ? tech.designToken.dark
                         : tech.designToken.light

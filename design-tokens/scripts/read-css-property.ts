@@ -21,19 +21,25 @@ export function readCSSProperty(
 
   const computedStyle = window.getComputedStyle(computedTarget);
 
-  const propertyValue = computedStyle.getPropertyValue(property);
+  // `getComputedStyle` returns string-typed custom properties with their
+  // surrounding quotes intact (e.g. the `*-data-image-svg` tokens resolve to
+  // `"data:image/svg+xml;base64,…"`). Strip a single layer of matching outer
+  // quotes so callers get a directly-usable value (valid `<img src>`, etc.).
+  const rawPropertyValue = computedStyle.getPropertyValue(property);
+  const trimmedPropertyValue = rawPropertyValue.trim();
+  const sanitizedPropertyValue = trimmedPropertyValue.replace(/^(["'])(.*)\1$/s, "$2");
 
   if (logComputedPropertyTransaction) {
     console.info(
       `
       Reading property: ${property}
-      From element: ${element?.tagName ?? "window.document.documentElement"}
+      Computed: ${computedTarget.tagName}
+      From element: ${element?.tagName ?? `Provided 'element' is ${element} so using 'computedTarget' = ${computedTarget.tagName}`}
       Targeting: ${computedTarget.tagName}
-      Value: ${propertyValue}
-      Styles: ${JSON.stringify(computedStyle, null, 2)}
+      ${JSON.stringify({ rawPropertyValue, trimmedPropertyValue, sanitizedPropertyValue }, null, 2)}
       `
     );
   }
 
-  return propertyValue;
+  return sanitizedPropertyValue;
 }

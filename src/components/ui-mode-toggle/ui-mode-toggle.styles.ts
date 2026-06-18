@@ -1,22 +1,37 @@
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
-import { type CSSResult, css, unsafeCSS } from "lit";
+import { type CSSResult, css } from "lit";
 
+/**
+ *
+ * @cssprop [--icons-components-ui-mode-toggle-dark-empty]
+ * @cssprop [--icons-components-ui-mode-toggle-dark-filled]
+ * @cssprop [--icons-components-ui-mode-toggle-default-empty]
+ * @cssprop [--icons-components-ui-mode-toggle-default-filled]
+ * @cssprop [--icons-components-ui-mode-toggle-light-empty]
+ * @cssprop [--icons-components-ui-mode-toggle-light-filled]
+ * @cssprop [--icons-components-ui-mode-toggle-check-box-dark]
+ * @cssprop [--icons-components-ui-mode-toggle-check-box-light]
+ * @cssprop [--icons-components-ui-mode-toggle-remember-checked-dark]
+ * @cssprop [--icons-components-ui-mode-toggle-remember-checked-light]
+ * @cssprop [--icons-components-ui-mode-toggle-remember-unchecked-dark]
+ * @cssprop [--icons-components-ui-mode-toggle-remember-unchecked-light]
+ */
 export const UIModeToggleStyles: CSSResult = css`
   :host {
     display: block;
   }
 
   dark-mode-toggle {
+    --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-empty-css-url);
+    --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-empty-css-url);
+    --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-empty-css-url);
+    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-light-css-url);
+    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-light-css-url);
+    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-light-css-url);
+
     --dark-mode-toggle-icon-size: 2rem;
-    --dark-mode-toggle-dark-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-empty"))}");
-    --dark-mode-toggle-light-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-empty"))}");
-    --dark-mode-toggle-system-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-empty"))}");
-    --dark-mode-toggle-checkbox-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-light"))}");
-    --dark-mode-toggle-remember-icon-checked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-light"))}");
-    --dark-mode-toggle-remember-icon-unchecked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-light"))}");
     --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant);
-    --dark-mode-toggle-background-color: transparent;
-    --dark-mode-toggle-active-mode-background-color: transparent;
+    --dark-mode-toggle-background-color: var(--colors-transparent);
+    --dark-mode-toggle-active-mode-background-color: var(--colors-transparent);
     --dark-mode-toggle-legend-font: var(--md-ref-typeface-brand);
     --dark-mode-toggle-label-font: var(--md-ref-typeface-brand);
     --dark-mode-toggle-remember-font: var(--md-ref-typeface-brand);
@@ -24,7 +39,6 @@ export const UIModeToggleStyles: CSSResult = css`
     --dark-mode-toggle-remember-filter: contrast(100%);
 
     display: contents;
-    place-items: center;
 
     &::part(form) {
       display: contents;
@@ -34,7 +48,6 @@ export const UIModeToggleStyles: CSSResult = css`
       display: flex;
       flex-direction: column;
       gap: var(--spaces-gap-xxs);
-      padding: unset;
       padding-block: unset;
       padding-inline: unset;
     }
@@ -97,7 +110,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(systemThreeWayLabel) {
-        --dark-mode-toggle-system-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-default-filled"))}");
+        --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-filled-css-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -110,7 +123,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(lightThreeWayLabel) {
-        --dark-mode-toggle-light-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-light-filled"))}");
+        --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-filled-css-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -123,7 +136,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(darkThreeWayLabel) {
-        --dark-mode-toggle-dark-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-dark-filled"))}");
+        --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-filled-css-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -132,8 +145,7 @@ export const UIModeToggleStyles: CSSResult = css`
     &::part(lightThreeWayRadio),
     &::part(darkThreeWayRadio),
     &::part(systemThreeWayRadio) {
-      /* Take the radio buttons out of the layout flow.
-The component"s internal styles already set opacity to 0. */
+      /* Take the radio buttons out of the layout flow. The component"s internal styles already set opacity to 0. */
       position: absolute;
     }
 
@@ -144,8 +156,8 @@ The component"s internal styles already set opacity to 0. */
   }
 
   dark-mode-toggle.dark {
-    --dark-mode-toggle-checkbox-icon: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-check-box-dark"))}");
-    --dark-mode-toggle-remember-icon-checked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-checked-dark"))}");
-    --dark-mode-toggle-remember-icon-unchecked: url("${unsafeCSS(cssPropertyDataImage("--icons-components-ui-mode-toggle-remember-unchecked-dark"))}");
+    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-dark-css-url);
+    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-dark-css-url);
+    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-dark-css-url);
   }
 `;

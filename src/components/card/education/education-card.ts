@@ -4,7 +4,7 @@ import { EducationCardStyles } from "@/components/card/education/education-card.
 import EducationJson from "@/data/education.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/design-tokens";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -38,7 +38,7 @@ export class EducationCard extends UIAwareElement {
             <li>
               <img
                 loading="lazy"
-                src=${cssPropertyDataImage(
+                src=${readCSSProperty(
                   this.darkMode ? edu.designToken.dark : edu.designToken.light
                 )}
                 alt=${`Logo for ${edu.institute}`}

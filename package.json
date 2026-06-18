@@ -60,7 +60,8 @@
     "lit": "catalog:dependencies",
     "lit-element": "catalog:dependencies",
     "lit-html": "catalog:dependencies",
-    "material-symbols": "catalog:dependencies"
+    "material-symbols": "catalog:dependencies",
+    "prop-for-that": "catalog:dependencies"
   },
   "devDependencies": {
     "@addasoft/skeleton-component-generator": "catalog:devDependencies",

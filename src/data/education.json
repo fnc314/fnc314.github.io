@@ -9,9 +9,9 @@
         "value": "2014-04"
       },
       "designToken": {
-        "dark": "--icons-logos-education-general-assembly-dark",
-        "default": "--icons-logos-education-general-assembly-default",
-        "light": "--icons-logos-education-general-assembly-light"
+        "dark": "--icons-logos-education-general-assembly-dark-data-image-svg",
+        "default": "--icons-logos-education-general-assembly-default-data-image-svg",
+        "light": "--icons-logos-education-general-assembly-light-data-image-svg"
       }
     },
     {
@@ -23,9 +23,9 @@
         "value": "2011-04"
       },
       "designToken": {
-        "dark": "--icons-logos-education-university-of-pittsburgh-dark",
-        "default": "--icons-logos-education-university-of-pittsburgh-default",
-        "light": "--icons-logos-education-university-of-pittsburgh-light"
+        "dark": "--icons-logos-education-university-of-pittsburgh-dark-data-image-svg",
+        "default": "--icons-logos-education-university-of-pittsburgh-default-data-image-svg",
+        "light": "--icons-logos-education-university-of-pittsburgh-light-data-image-svg"
       }
     }
   ]

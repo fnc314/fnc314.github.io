@@ -2,7 +2,7 @@ import { ProfessionalConnectionStyles } from "@/components/connection/profession
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@/components/connection/professional/professional-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/design-tokens";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -20,7 +20,7 @@ export class ProfessionalConnection extends UIAwareElement {
   professionalConnectionData: ProfessionalConnectionJsonData = {} as ProfessionalConnectionJsonData;
 
   override render(): TemplateResult {
-    const imgSrc = cssPropertyDataImage(
+    const imgSrc = readCSSProperty(
       this.darkMode ? this.professionalConnectionData.designToken.dark : this.professionalConnectionData.designToken.light
     );
     return html`

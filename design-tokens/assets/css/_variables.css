@@ -8,6 +8,7 @@
   --breakpoint-tablet-max: 1200px;
   --breakpoint-desktop-min: 1201px;
   --button-container-shape: var(--md-sys-shape-corner-small);
+  --colors-transparent: rgba(0, 0, 0, 0);
   --elevations-beneath: 0;
   --elevations-lowest: 1;
   --elevations-low: 2;
@@ -21,6 +22,12 @@
   --globals-buffer-height: 10rem;
   --globals-hover-focus-animation-translate-y: -0.25rem;
   --globals-color-background: var(--md-sys-color-surface-container-highest);
+  --keyframes-fade-in-up-from-opacity: 0;
+  --keyframes-fade-in-up-from-translate: translateY(var(--keyframes-fade-in-up-motions-translate-y-from));
+  --keyframes-fade-in-up-to-opacity: 1;
+  --keyframes-fade-in-up-to-translate: translateY(var(--keyframes-fade-in-up-motions-translate-y-to));
+  --keyframes-fade-in-up-motions-translate-y-from: 20px;
+  --keyframes-fade-in-up-motions-translate-y-to: 0px;
   --motions-delay-none: 0ms;
   --motions-delay-xxxs: 50ms;
   --motions-delay-xxs: 100ms;

@@ -1,0 +1,40 @@
+{
+  "keyframes": {
+    "fade-in-up": {
+      "from": {
+        "opacity": {
+          "type": "value",
+          "value": "0"
+        },
+        "translate": {
+          "type": "value",
+          "value": "translateY(var(--keyframes-fade-in-up-motions-translate-y-from))"
+        }
+      },
+      "to": {
+        "opacity": {
+          "type": "value",
+          "value": "1"
+        },
+        "translate": {
+          "type": "value",
+          "value": "translateY(var(--keyframes-fade-in-up-motions-translate-y-to))"
+        }
+      },
+      "motions": {
+        "translate": {
+          "y": {
+            "from": {
+              "type": "value",
+              "value": "20px"
+            },
+            "to": {
+              "type": "value",
+              "value": "0px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

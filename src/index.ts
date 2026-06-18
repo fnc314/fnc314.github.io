@@ -42,6 +42,7 @@ import "@material/web/list/list-item";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+import "prop-for-that/auto";
 
 const domLoadedListener = () => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
@@ -66,7 +67,7 @@ const domLoadedListener = () => {
   document.addEventListener("color_scheme.change", (event: Event) => {
     const customEvent = event as any; // ColorSchemeConfigChange
     const themeConfig = themeService.currentThemeConfig();
-    
+
     const applyTheme = () => {
       updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
       document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);

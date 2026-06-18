@@ -98,18 +98,6 @@ export class BentoCard extends UIAwareElement {
     this.expanded = (e.target as HTMLDetailsElement).open;
   }
 
-  /**
-   * Attached to a {@link MdIconButton} to forward events to the containing
-   *   {@link HTMLDetailsElement}
-   */
-  private _handleIconButtonClick(e: Event) {
-    e.preventDefault();
-    const details = this.shadowRoot?.getElementById(`${this.bentoTag}-bento-card-details`);
-    if (details) {
-      details.toggleAttribute("open");
-    }
-  }
-
   override render() {
     const classes = {
       "bento-card": true,
@@ -142,17 +130,7 @@ export class BentoCard extends UIAwareElement {
               >
               ${this.bentoCardTitle}
             </h2>
-            <md-icon-button
-              toggle
-              ?selected=${this.expanded}
-              id="${htmlId}-icon-button"
-              @click=${this._handleIconButtonClick}
-              aria-expanded=${this.expanded}
-              aria-controls="${htmlId}-content"
-              tabindex="-1"
-              >
-              <md-icon>arrow_drop_down</md-icon>
-            </md-icon-button>
+            <md-icon>arrow_drop_down</md-icon>
           </summary>
           <div
             aria-label="${this.bentoCardTitle} content"
