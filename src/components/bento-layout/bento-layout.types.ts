@@ -23,6 +23,11 @@ export type GridPosition = {
   span: GridSpan;
   /** The logical order in the DOM */
   order: number;
+  /** Offsets */
+  offsets?: {
+    row?: number | 0;
+    col?: number | 0;
+  }
 } | {
   /** The breakpoint for this position */
   breakpoint: Extract<BreakpointLabel, "mobile">;
@@ -109,7 +114,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   skills: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 8, rowSpan: 1 }, order: 5 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 7, rowSpan: 2 }, order: 5 },
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 5 },
       mobile: { breakpoint: "mobile", order: 6 },
     },
@@ -117,7 +122,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   education: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 4, rowSpan: 1 }, order: 6 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 5, rowSpan: 1 }, order: 6 },
       tablet:  { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 6 },
       mobile: { breakpoint: "mobile", order: 6 },
     },
@@ -125,7 +130,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
+      desktop: { breakpoint: "desktop", offsets: { col: 8 }, span: { colSpan: 5, rowSpan: 1 }, order: 7 },
       tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
       mobile: { breakpoint: "mobile", order: 7 },
     },

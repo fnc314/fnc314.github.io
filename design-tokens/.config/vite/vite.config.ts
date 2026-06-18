@@ -11,7 +11,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "@fnc314/design-tokens",
         fileName: "@fnc314.design-tokens",
         formats: ["es"],
-        cssFileName: "@fnc314.design-tokens.css",
+        cssFileName: "@fnc314.design-tokens",
       },
       rollupOptions: {
         external: [],

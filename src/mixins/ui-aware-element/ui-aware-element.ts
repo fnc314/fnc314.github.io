@@ -1,7 +1,7 @@
 import { configsService } from "@/services/configs/configs-service";
 import { type AppConfigsChange } from "@/types/configs/app-configs";
 import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import { Breakpoints, readCSSProperty } from "@fnc314/design-tokens";
+import { Breakpoints, TouchScreen, readCSSProperty } from "@fnc314/design-tokens";
 import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
 import { LitElement } from "lit";
 import { state } from "lit/decorators.js";
@@ -44,6 +44,17 @@ export abstract class UIAwareElement extends LitElement {
       Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL
     ) as BreakpointLabel
   }
+
+  /**
+   * Reads {@link TouchScreen.CSS_VARIABLE_TOUCH_SCREEN} from `:root`
+   *   and tests against `"true"`,
+   */
+  @state()
+  protected touchScreen: boolean = readCSSProperty(
+    TouchScreen.CSS_VARIABLE_TOUCH_SCREEN,
+    this,
+    false
+  ) === "true";
 
   override connectedCallback(): void {
     super.connectedCallback();

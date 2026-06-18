@@ -1,12 +1,11 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
-import EducationJson from "@/data/education.json" with { type: "json" };
+import { type EducationInstitutionRecord, EducationJsonData } from "@/components/education/institution/education-institution.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { readCSSProperty } from "@fnc314/design-tokens";
 import { html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 
 /**
  * @summary EducationCard - A card component displaying education history.
@@ -30,23 +29,16 @@ export class EducationCard extends UIAwareElement {
   @property({ type: Boolean })
   enableFocus = false;
 
+  @state({})
+  _educationJsonData: EducationInstitutionRecord[] = EducationJsonData
+
   override render() {
     const listItems = html`
       ${
-        EducationJson.education.map(
-          (edu) => html`
+        this._educationJsonData.map(
+          (edu: EducationInstitutionRecord) => html`
             <li>
-              <img
-                loading="lazy"
-                src=${readCSSProperty(
-                  this.darkMode ? edu.designToken.dark : edu.designToken.light
-                )}
-                alt=${`Logo for ${edu.institute}`}
-              />
-              <h3 class="md-typescale-title-large">${edu.institute}</h3>
-              <span class="md-typescale-body-large">${edu.location}</span>
-              <h4 class="md-typescale-title-medium">${edu.degree}</h4>
-              <time class="md-typescale-body-medium" datetime="${edu.graduationDate.value}">${edu.graduationDate.label}</time>
+              <education-institution .institute=${edu}></education-institution>
             </li>
           `,
         )

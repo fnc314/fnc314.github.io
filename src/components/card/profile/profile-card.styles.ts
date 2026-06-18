@@ -9,12 +9,15 @@ export const ProfileCardStyles: CSSResult = css`
     --profile-card-image-inline-size-max: 100%;
 
     --profile-card-filled-icon-button-scale: 2;
+    --profile-card-filled-icon-button-container-color: var(
+      --md-sys-color-tertiary-container
+    );
     --profile-card-filled-icon-button-container-size: calc(
       var(--profile-card-filled-icon-button-scale) *
       var(--md-icon-size)
     );
     --profile-card-filled-icon-button-icon-color: var(
-      --md-sys-color-on-surface-variant
+      --md-sys-color-on-tertiary-container
     );
     --profile-card-filled-icon-button-icon-scale: 0.75;
     --profile-card-filled-icon-button-icon-size: calc(
@@ -22,14 +25,30 @@ export const ProfileCardStyles: CSSResult = css`
       var(--profile-card-filled-icon-button-container-size)
     );
 
-    --md-filled-icon-button-container-color: var(--md-sys-color-surface-container-highest);
-    --md-filled-icon-button-container-height: var(--profile-card-filled-icon-button-container-size);
-    --md-filled-icon-button-container-width: var(--profile-card-filled-icon-button-container-size);
-    --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-small);
-    --md-filled-icon-button-icon-color: var(--profile-card-filled-icon-button-icon-color);
-    --md-filled-icon-button-focus-icon-color: var(--profile-card-filled-icon-button-icon-color);
-    --md-filled-icon-button-hover-icon-color: var(--profile-card-filled-icon-button-icon-color);
-    --md-filled-icon-button-icon-size: var(--profile-card-filled-icon-button-icon-size);
+    --md-filled-icon-button-container-color: var(
+      --profile-card-filled-icon-button-container-color
+    );
+    --md-filled-icon-button-container-height: var(
+      --profile-card-filled-icon-button-container-size
+    );
+    --md-filled-icon-button-container-width: var(
+      --profile-card-filled-icon-button-container-size
+    );
+    --md-filled-icon-button-container-shape: var(
+      --md-sys-shape-corner-small
+    );
+    --md-filled-icon-button-icon-color: var(
+      --profile-card-filled-icon-button-icon-color
+    );
+    --md-filled-icon-button-focus-icon-color: var(
+      --profile-card-filled-icon-button-icon-color
+    );
+    --md-filled-icon-button-hover-icon-color: var(
+      --profile-card-filled-icon-button-icon-color
+    );
+    --md-filled-icon-button-icon-size: var(
+      --profile-card-filled-icon-button-icon-size
+    );
   }
 
   article {
@@ -110,6 +129,7 @@ export const ProfileCardStyles: CSSResult = css`
         list-style: none;
         margin: var(--spaces-none);
         padding: var(--spaces-none);
+        gap: var(--spaces-gap-s);
 
         li {
           display: flex;

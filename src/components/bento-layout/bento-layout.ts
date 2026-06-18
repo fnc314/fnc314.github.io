@@ -30,12 +30,15 @@ export class BentoLayout extends UIAwareElement {
   private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
     const position: GridPosition = config.placement[this.breakpoint];
 
-    const gridStyles = position.breakpoint === Breakpoints.BreakpointLabels.mobile
-      ? {}
-      : {
-          gridColumn: `span ${position.span.colSpan}`,
-          gridRow: `span ${position.span.rowSpan}`
-        };
+    let gridStyles = {};
+    if (position.breakpoint !== Breakpoints.BreakpointLabels.mobile) {
+      const rowOffset = `${position?.offsets?.row ? `${position?.offsets?.row} / ` : ""}`;
+      const colOffset = `${position?.offsets?.col ? `${position?.offsets?.col} / ` : ""}`;
+      gridStyles = {
+        gridColumn: `${colOffset} span ${position.span.colSpan}`,
+        gridRow: `${rowOffset} span ${position.span.rowSpan}`,
+      };
+    }
 
     let cardContent: TemplateResult;
     switch (config.type) {

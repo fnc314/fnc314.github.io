@@ -1,0 +1,15 @@
+@property --touch-screen {
+  inherits: true;
+  initial-value: false;
+  syntax: "true | false";
+}
+
+:root {
+  --touch-screen: false;
+}
+
+@media screen and (pointer: coarse) {
+  :root {
+    --touch-screen: true;
+  }
+}

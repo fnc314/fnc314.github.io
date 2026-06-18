@@ -13,6 +13,7 @@ import "@/components/code/repo/code-repo";
 import "@/components/connection/artifact/artifact-connection";
 import "@/components/connection/direct/direct-connection";
 import "@/components/connection/professional/professional-connection";
+import "@/components/education/institution/education-institution";
 import "@/components/version-tag/version-tag";
 import "@/components/word/cloud/word-cloud";
 import "@/components/word/tag/word-tag";

@@ -1,12 +1,22 @@
 {
-  "education": [
+  "institutions": [
     {
       "institute": "General Assembly",
       "degree": "Web Development Immersive",
-      "location": "San Francisco, CA",
+      "location": {
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States"
+      },
       "graduationDate": {
-        "label": "April 2014",
-        "value": "2014-04"
+        "text": {
+          "month": "April",
+          "year": "2014"
+        },
+        "date": {
+          "month": "04",
+          "year": "2014"
+        }
       },
       "designToken": {
         "dark": "--icons-logos-education-general-assembly-dark-data-image-svg",
@@ -17,10 +27,20 @@
     {
       "institute": "University of Pittsburgh",
       "degree": "Bachelor of Science, Mathematics",
-      "location": "Pittsburgh, PA",
+      "location": {
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "country": "United States"
+      },
       "graduationDate": {
-        "label": "April 2011",
-        "value": "2011-04"
+        "text": {
+          "month": "April",
+          "year": "2011"
+        },
+        "date": {
+          "month": "04",
+          "year": "2011"
+        }
       },
       "designToken": {
         "dark": "--icons-logos-education-university-of-pittsburgh-dark-data-image-svg",
