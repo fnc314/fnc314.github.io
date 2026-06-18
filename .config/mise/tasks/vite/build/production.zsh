@@ -5,6 +5,7 @@
 
 typeset -a VITE_FLAGS
 VITE_FLAGS=(
+  -d
   -m production
   -c ./.config/vite/vite.config.ts
 )

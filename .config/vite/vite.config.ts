@@ -5,7 +5,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
-import { defineConfig } from "vite";
+import { type UserConfig, defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
 import cp from "vite-plugin-cp";
 import type { ManifestOptions } from "vite-plugin-pwa";
@@ -109,7 +109,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     })
   ];
 
-  const userConfig = {
+  const userConfig: UserConfig = {
     devtools: {
       enabled: !dynamicConfig.isProduction,
       environments: [
@@ -205,7 +205,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           })),
         },
         workbox: {
-          maximumFileSizeToCacheInBytes: 6_000_000,
+          maximumFileSizeToCacheInBytes: 60_000_000,
         },
         manifestFilename: "manifest.json",
         minify: dynamicConfig.isProduction,
@@ -217,6 +217,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           config: path.resolve(process.cwd(), ".config/pwa-assets/pwa-assets.config.ts"),
         },
         srcDir: path.resolve(process.cwd(), "static"),
+        disable: false,
       }),
       vitePluginVersionMark({
         name: "@fnc314/fnc314.github.io",
