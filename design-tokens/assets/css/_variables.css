@@ -16,12 +16,17 @@
   --elevations-high: 4;
   --elevations-highest: 5;
   --globals-color-scheme: light dark;
-  --globals-hairline-width: 1px;
   --globals-transition-color-duration: 500ms;
   --globals-transition-color-timing: ease-in-out;
   --globals-buffer-height: 10rem;
   --globals-hover-focus-animation-translate-y: -0.25rem;
   --globals-color-background: var(--md-sys-color-surface-container-highest);
+  --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-empty-css-url);
+  --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-empty-css-url);
+  --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-empty-css-url);
+  --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-light-css-url);
+  --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-light-css-url);
+  --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-light-css-url);
   --keyframes-fade-in-up-from-opacity: 0;
   --keyframes-fade-in-up-from-translate: translateY(var(--keyframes-fade-in-up-motions-translate-y-from));
   --keyframes-fade-in-up-to-opacity: 1;

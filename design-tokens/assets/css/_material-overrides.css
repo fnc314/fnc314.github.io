@@ -16,6 +16,7 @@
   --md-sys-shape-corner-medium: 1rem;
   --md-sys-shape-corner-none: 0;
   --md-sys-shape-corner-small: 0.5rem;
+  --md-sys-shape-corner-circle: 50%;
   --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-body-large-line-height: 1.5rem;
   --md-sys-typescale-body-large-size: 1rem;

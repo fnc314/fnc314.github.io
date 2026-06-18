@@ -23,11 +23,12 @@ export class ArtifactConnection extends UIAwareElement {
     const imgSrc = readCSSProperty(
       this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
     );
+    const cacheBustingUrl = `${this.artifactConnectionData.href}?t=${Date.now()}`;
     return html`
       <md-filled-icon-button
-        href="${this.artifactConnectionData.href}"
+        href="${cacheBustingUrl}"
         target="_blank"
-        @click=${() => window.open(this.artifactConnectionData.href, "_blank")}
+        @click=${() => window.open(cacheBustingUrl, "_blank")}
         type="button"
         title=${this.artifactConnectionData.title}
         >

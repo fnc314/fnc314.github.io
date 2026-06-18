@@ -21,13 +21,6 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle {
-    --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-empty-css-url);
-    --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-empty-css-url);
-    --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-empty-css-url);
-    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-light-css-url);
-    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-light-css-url);
-    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-light-css-url);
-
     --dark-mode-toggle-icon-size: 2rem;
     --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant);
     --dark-mode-toggle-background-color: var(--colors-transparent);
