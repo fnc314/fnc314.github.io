@@ -42,7 +42,7 @@ import "@material/web/list/list-item";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-import "prop-for-that/auto";
+// import "prop-for-that/auto";
 
 const domLoadedListener = () => {
   document.removeEventListener("DOMContentLoaded", domLoadedListener);
