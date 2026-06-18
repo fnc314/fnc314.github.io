@@ -4,6 +4,50 @@
       "size": { "value": "1.5rem" },
       "font": { "value": "var(--md-fonts-material-symbols-outlined-family)" },
       "fontSharp": { "value": "var(--md-fonts-material-symbols-sharp-family)" }
+    },
+    "icons": {
+      "call": {
+        "dark": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/call/call-dark.svg"
+        },
+        "default": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/call/call-default.svg"
+        },
+        "light": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/call/call-light.svg"
+        }
+      },
+      "mail": {
+        "dark": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-dark.svg"
+        },
+        "default": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-default.svg"
+        },
+        "light": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-light.svg"
+        }
+      },
+      "arrow_drop_down": {
+        "dark": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg"
+        },
+        "default": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg"
+        },
+        "light": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg"
+        }
+      }
     }
   }
 }

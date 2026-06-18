@@ -140,6 +140,9 @@ export default {
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
+        transforms.assetBase64,
+        "iconEncodingToDataImageSvg",
+        "iconEncodingToDataImageSvgName"
       ],
       buildPath: buildPaths.css,
       files: [

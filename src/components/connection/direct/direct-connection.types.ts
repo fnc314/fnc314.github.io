@@ -1,4 +1,5 @@
 import Connections from "@/data/connections.json" with { type: "json" };
+import type { DesignTokenIcon } from "@fnc314/design-tokens/types/design-token-icon.js";
 
 /**
  * The two variants of the {@link DirectConnection} widget
@@ -10,6 +11,7 @@ export interface ConnectionInstance {
   mdIcon: DirectConnectionIcon;
   text: string;
   title: string;
+  designToken: DesignTokenIcon;
 }
 
 export type ConnectionJsonDirect = Record<DirectConnectionMethod, ConnectionInstance>;
