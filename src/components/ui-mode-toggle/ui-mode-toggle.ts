@@ -59,6 +59,21 @@ export class UiModeToggle extends UIAwareElement {
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
 
+  /**
+   * Guards against the synthetic `colorschemechange` / `permanentcolorscheme`
+   *   events that `dark-mode-toggle` dispatches at the end of its
+   *   `connectedCallback` (which runs *during* this element's first render).
+   *   Reacting to that echo would mutate reactive state mid-update — triggering
+   *   Lit's `change-in-update` warning — and would clobber a `SYSTEM` preference
+   *   with the resolved light/dark value. We only honor these events once the
+   *   first render has completed (i.e. after a genuine user toggle).
+   */
+  private _ready = false;
+
+  protected override firstUpdated(): void {
+    this._ready = true;
+  }
+
   override connectedCallback(): void {
     super.connectedCallback();
     configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
@@ -80,20 +95,18 @@ export class UiModeToggle extends UIAwareElement {
   };
 
   private colorSchemeChangeEventListener = (event: ColorSchemeChangeEvent) => {
-    this._appConfigs = {
-      ...this._appConfigs,
-      colorScheme: {
-        ...this._appConfigs.colorScheme,
-        name:
-          event.detail.colorScheme.length > 0
-            ? (event.detail.colorScheme.toUpperCase() as ColorScheme)
-            : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
-      },
-    };
-    this.onColorThemeModeContrastChange(this._appConfigs.colorScheme);
+    if (!this._ready) return;
+    this.onColorThemeModeContrastChange({
+      ...this._appConfigs.colorScheme,
+      name:
+        event.detail.colorScheme.length > 0
+          ? (event.detail.colorScheme.toUpperCase() as ColorScheme)
+          : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
+    });
   };
 
   private permanentColorSchemeEventListener = (event: PermanentColorSchemeEvent) => {
+    if (!this._ready) return;
     this._appConfigs = {
       ...this._appConfigs,
       colorScheme: {
@@ -105,6 +118,16 @@ export class UiModeToggle extends UIAwareElement {
   };
 
   private onColorThemeModeContrastChange(colorScheme: AppConfigs["colorScheme"]) {
+    const current = this._appConfigs.colorScheme;
+    if (
+      current.name === colorScheme.name &&
+      current.contrast === colorScheme.contrast &&
+      current.theme === colorScheme.theme &&
+      current.persist === colorScheme.persist
+    ) {
+      return;
+    }
+
     this._appConfigs = {
       ...this._appConfigs,
       colorScheme,
