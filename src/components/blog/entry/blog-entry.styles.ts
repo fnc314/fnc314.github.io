@@ -33,6 +33,10 @@ export const BlogEntryStyles: CSSResult = css`
     overflow: hidden;
     padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs);
     padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs);
+
+    * {
+      text-wrap: unset;
+    }
   }
 
   header {
@@ -79,12 +83,14 @@ export const BlogEntryStyles: CSSResult = css`
     grid-area: footer;
     justify-content: space-between;
     margin-block-start: auto;
+    border-block-start: var(--sizes-thickness-hairline) solid var(--md-sys-color-secondary);
+    padding-block-start: var(--spaces-padding-xs);
 
     a {
       align-items: center;
       color: var(--md-sys-color-inverse-surface);
       display: inline-flex;
-      gap: var(--spaces-gap-xs);
+      gap: var(--spaces-gap-s);
       text-decoration: none;
 
       &:hover,
@@ -107,11 +113,6 @@ export const BlogEntryStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
-
-        h3 {
-          // font-size: var(--md-sys-typescale-title-large-size);
-          // line-height: var(--md-sys-typescale-title-large-line-height);
-        }
       }
     }
   }
@@ -131,12 +132,6 @@ export const BlogEntryStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
-
-        h3 {
-          // font-size: var(--md-sys-typescale-headline-small-size);
-          // font-weight: var(--md-sys-typescale-headline-small-weight);
-          // line-height: var(--md-sys-typescale-headline-small-line-height);
-        }
       }
     }
   }

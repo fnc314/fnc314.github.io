@@ -8,7 +8,7 @@ export const ProfileCardStyles: CSSResult = css`
     --profile-card-image-block-size-max: 500px;
     --profile-card-image-inline-size-max: 100%;
 
-    --profile-card-filled-icon-button-scale: 2;
+    --profile-card-filled-icon-button-scale: 2.125;
     --profile-card-filled-icon-button-container-color: var(
       --md-sys-color-tertiary-container
     );
@@ -25,6 +25,9 @@ export const ProfileCardStyles: CSSResult = css`
       var(--profile-card-filled-icon-button-container-size)
     );
 
+    --md-divider-color: var(
+      --profile-card-filled-icon-button-container-color
+    );
     --md-filled-icon-button-container-color: var(
       --profile-card-filled-icon-button-container-color
     );
@@ -35,7 +38,7 @@ export const ProfileCardStyles: CSSResult = css`
       --profile-card-filled-icon-button-container-size
     );
     --md-filled-icon-button-container-shape: var(
-      --md-sys-shape-corner-small
+      --md-sys-shape-corner-medium
     );
     --md-filled-icon-button-icon-color: var(
       --profile-card-filled-icon-button-icon-color

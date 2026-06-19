@@ -29,6 +29,7 @@ export class CodeRepo extends UIAwareElement {
   ];
 
   private createWordTagLI(tech: CodeRepoTech): TemplateResult {
+    const techWord = tech.name.replace(" ", "-").toLowerCase();
     const imgSrc =
       typeof tech.designToken === "string"
         ? readCSSProperty(tech.designToken)
@@ -44,7 +45,7 @@ export class CodeRepo extends UIAwareElement {
         : this.darkMode
           ? tech.designToken.dark
           : tech.designToken.light
-    }-word-tag`;
+    }-${techWord}-word-tag`;
 
     const imgTag = imgSrc
       ? html`
@@ -68,16 +69,6 @@ export class CodeRepo extends UIAwareElement {
         : "icon-only"
       );
 
-    console.warn(
-      `
-      CODE REPO
-      TouchScreen ${this.touchScreen}
-      Breakpoint ${this.breakpoint}
-      Variant ${variant}
-      Tag ID ${tagId}
-      Tech ${JSON.stringify(tech, null, 2)}
-      `
-    );
     return html`
       <li>
         <word-tag

@@ -93,7 +93,8 @@ export default {
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
-            outputReferences: true
+            outputReferences: true,
+            sort: "name",
           }
         }
       ]
@@ -115,7 +116,8 @@ export default {
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
-            outputReferences: true
+            outputReferences: true,
+            sort: "name",
           }
         }
       ]
@@ -129,7 +131,8 @@ export default {
           format: formats.cssVariables,
           filter: "isCustomToken",
           options: {
-            outputReferences: true
+            outputReferences: true,
+            sort: "name",
           }
         }
       ],
@@ -151,7 +154,8 @@ export default {
           format: formats.cssVariables,
           filter: "isMaterialOverride",
           options: {
-            outputReferences: true
+            outputReferences: true,
+            sort: "name",
           }
         }
       ],
@@ -164,7 +168,8 @@ export default {
           destination: "tokens.json",
           format: formats.jsonNested, // DTCG compliant format for now
           options: {
-            outputReferences: true
+            outputReferences: true,
+            sort: "name",
           }
         }
       ]

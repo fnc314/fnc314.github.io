@@ -1,0 +1,20 @@
+{
+  "icons": {
+    "material": {
+      "mail": {
+        "dark": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-dark.svg"
+        },
+        "default": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-default.svg"
+        },
+        "light": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/mail/mail-light.svg"
+        }
+      }
+    }
+  }
+}

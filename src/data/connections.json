@@ -60,7 +60,8 @@
         "default": "--icons-logos-tech-google-docs-default-data-image-svg",
         "light": "--icons-logos-tech-google-docs-light-data-image-svg"
       },
-      "title": "View resume on Google Docs"
+      "title": "View resume on Google Docs",
+      "mdIcon": "docs"
     },
     "pdf": {
       "href": "https://fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
@@ -69,7 +70,8 @@
         "default": "--icons-logos-tech-pdf-default-data-image-svg",
         "light": "--icons-logos-tech-pdf-light-data-image-svg"
       },
-      "title": "Download resume in PDF format"
+      "title": "Download resume in PDF format",
+      "mdIcon": "picture_as_pdf"
     }
   }
 }

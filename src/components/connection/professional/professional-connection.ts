@@ -30,6 +30,7 @@ export class ProfessionalConnection extends UIAwareElement {
         @click=${() => window.open(this.professionalConnectionData.href, "_blank")}
         type="button"
         title=${this.professionalConnectionData.title}
+        aria-label=${this.professionalConnectionData.title}
       >
         <img
           loading="lazy"

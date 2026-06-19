@@ -5,15 +5,15 @@
         "linkedin": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin-default.svg"
           },
           "light": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin.svg"
+            "value": "design-tokens/assets/icons/logos/organization/linkedin/linkedin-light.svg"
           }
         }
       }

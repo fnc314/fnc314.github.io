@@ -62,6 +62,9 @@ export class BlogEntry extends UIAwareElement {
             href=${ifDefined(this.blogEntry.mediumUrl)}
             target="_blank"
             rel="noopener noreferrer"
+            aria-labelledby="medium-link-label"
+            aria-describedby="medium-link-label"
+            title="${`Read ${this.blogEntry.title} on Medium`}"
           >
             <img
               loading="lazy"
@@ -71,7 +74,7 @@ export class BlogEntry extends UIAwareElement {
               alt="Medium logo"
             />
             <span class="md-typescale-label-large" id="medium-link-label">
-              Read on Medium<sup>&reg;</sup>
+              ${html`Read <em>${this.blogEntry.title}</em> on Medium<sup>&reg;</sup>`}
             </span>
           </a>
         </footer>

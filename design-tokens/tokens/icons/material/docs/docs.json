@@ -1,0 +1,20 @@
+{
+  "icons": {
+    "material": {
+      "docs": {
+        "dark": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/docs/docs-dark.svg"
+        },
+        "default": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/docs/docs-default.svg"
+        },
+        "light": {
+          "type": "asset",
+          "value": "design-tokens/assets/icons/material/docs/docs-light.svg"
+        }
+      }
+    }
+  }
+}

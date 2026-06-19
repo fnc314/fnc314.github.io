@@ -31,12 +31,11 @@ export class ArtifactConnection extends UIAwareElement {
         @click=${() => window.open(cacheBustingUrl, "_blank")}
         type="button"
         title=${this.artifactConnectionData.title}
+        aria-label=${this.artifactConnectionData.title}
         >
-          <img
-            loading="lazy"
-            src=${imgSrc}
-            alt="${this.artifactConnectionType} Logo"
-          />
+        <md-icon>
+          ${this.artifactConnectionData.mdIcon}
+        </md-icon>
         </md-filled-icon-button>
     `;
   }

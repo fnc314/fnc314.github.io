@@ -381,13 +381,6 @@ catalogs:
     firebase-functions-test:
       specifier: 3.5.0
       version: 3.5.0
-  optionalDependencies:
-    '@esbuild/darwin-arm64':
-      specifier: 0.28.1
-      version: 0.28.1
-    '@esbuild/linux-x64':
-      specifier: 0.28.1
-      version: 0.28.1
   projects:
     '@fnc314/design-tokens':
       specifier: ./design-tokens
@@ -739,13 +732,6 @@ importers:
       web-component-analyzer:
         specifier: catalog:devDependencies
         version: 2.0.0
-    optionalDependencies:
-      '@esbuild/darwin-arm64':
-        specifier: catalog:optionalDependencies
-        version: 0.28.1
-      '@esbuild/linux-x64':
-        specifier: catalog:optionalDependencies
-        version: 0.28.1
 
   design-tokens:
     dependencies:

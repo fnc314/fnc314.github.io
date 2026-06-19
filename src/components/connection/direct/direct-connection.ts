@@ -40,6 +40,7 @@ export class DirectConnection extends UIAwareElement {
         @click=${() => window.open(this.connectionInstance.href, "_blank")}
         type="button"
         title=${this.connectionInstance.title}
+        aria-label=${this.connectionInstance.title}
         >
         <md-icon>${this.connectionInstance.mdIcon}</md-icon>
       </md-filled-icon-button>
