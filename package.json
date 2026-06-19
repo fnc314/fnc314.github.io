@@ -36,6 +36,7 @@
     "build:vite": "mise run vite:build:development",
     "build:vite:dev": "mise run vite:build:development",
     "build:vite:prod": "mise run vite:build:production",
+    "dev": "mise run //:vite:build:development -w -d & mise run //:python:server:start dist/vite/development -p 9999",
     "lint": "pnpm run lint:lit-analyzer",
     "lint:lit-analyzer": "pnpm lit-analyzer",
     "serve": "pnpm wds -c ./.config/web-dev-server/web-dev-server.config.mjs",
@@ -174,5 +175,8 @@
     "serialize-javascript": "catalog:overrides",
     "stylelint": "catalog:devDependencies",
     "typedoc": "catalog:devDependencies"
+  },
+  "engines": {
+    "node": "26.3.1"
   }
 }
