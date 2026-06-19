@@ -18,11 +18,13 @@ import "@/components/version-tag/version-tag";
 import "@/components/word/cloud/word-cloud";
 import "@/components/word/tag/word-tag";
 import "@/components/work/experience/work-experience";
+import "@/index.css";
 import "@/services/configs/configs-service";
 import { configsService } from "@/services/configs/configs-service";
 import "@/services/storage/storage-service";
 import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service";
+import "@/styles";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
 import "@/types/theme/color-scheme-configs";
@@ -43,6 +45,8 @@ import "@material/web/list/list-item";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+import "material-symbols/outlined.css";
+import "material-symbols/sharp.css";
 // import "prop-for-that/auto";
 
 const domLoadedListener = () => {
