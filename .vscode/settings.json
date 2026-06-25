@@ -34,7 +34,7 @@
   ],
   "css.lint.importStatement": "ignore",
   "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "~/.local/share/mise/shims/node"
+    "pwa-node": "${workspaceFolder}/.vscode/mise-tools/node"
   },
   "debug.javascript.terminalOptions": {
     "resolveSourceMapLocations": [
@@ -69,9 +69,9 @@
     "${workspaceFolder}/.vscode/wca/*.json"
   ],
   "html.suggest.html5": true,
-  "java.import.gradle.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "java.jdt.ls.java.home": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
-  "jdk.jdkhome": "~/.local/share/mise/installs/java/temurin-26.0.1+8",
+  "java.import.gradle.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
+  "java.jdt.ls.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
+  "jdk.jdkhome": "${workspaceFolder}/.vscode/mise-tools/java",
   "js/ts.tsdk.path": "./node_modules/typescript/lib",
   "lit-html.format.enabled": true,
   "lit-plugin.customHtmlData": {
@@ -637,10 +637,13 @@
   "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
   "oxc.fmt.configPath": "${workspaceFolder}/.config/vite/vite.config.ts",
+  "oxc.path.node": "${workspaceFolder}/.vscode/mise-tools/node",
+  "pkl.lsp.java.path": "/Users/fnc314/.local/share/mise/shims/java",
   "pnpm-vscode-helper.enableCodelen": true,
   "pnpm.packageJson": "${workspaceFolder}/package.json",
   "python-envs.defaultEnvManager": "ms-python.python:system",
   "python.analysis.autoImportCompletions": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.vscode/mise-tools/python",
   "stylelint.configFile": "${workspaceFolder}/.config/stylelint/stylelint.config.ts",
   "stylelint.ignorePath": "${workspaceFolder}/.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
