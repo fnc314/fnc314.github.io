@@ -40,6 +40,7 @@
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": true,
+    "rootDir": "${configDir}",
     "sourceMap": false,
     "strictBindCallApply": false,
     "target": "esnext",
@@ -52,10 +53,11 @@
     ]
   },
   "exclude": [
-    "./node_modules"
+    "node_modules"
   ],
   "include": [
-    "lib/**/*.ts"
+    "${configDir}/lib/**/*.ts",
+    "${configDir}/index.ts"
   ],
   "ts-node": {
     "compiler": "typescript",

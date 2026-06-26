@@ -4,9 +4,9 @@ import "@/css/breakpoints.css";
 import "@/css/css_url_icons.css";
 import "@/css/data_image_svg_icons.css";
 import "@/css/touch-screen.css";
-import * as Breakpoints from "@/scripts/breakpoints";
-import { readCSSProperty } from "@/scripts/read-css-property";
-import * as TouchScreen from "@/scripts/touch-screen";
+import * as Breakpoints from "@/lib/breakpoints";
+import { readCSSProperty } from "@/lib/read-css-property";
+import * as TouchScreen from "@/lib/touch-screen";
 
 export * from "@/css/_material-overrides.css";
 export * from "@/css/_variables.css";

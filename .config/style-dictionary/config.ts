@@ -74,6 +74,7 @@ const buildPaths = {
 export default {
   source: [
     `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
+    `!${process.cwd()}/packages/design-tokens/tokens/dtcg/**/*.json`,
   ],
   platforms: {
     iconsAsDataSvg: {

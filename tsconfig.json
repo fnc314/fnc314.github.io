@@ -1,7 +1,8 @@
 {
   "references": [
-    // { "path": "./packages/data/tsconfig.json" },
+    { "path": "./packages/data/tsconfig.json" },
     { "path": "./packages/design-tokens/tsconfig.json" },
+    { "path": "./packages/types/tsconfig.json" },
   ],
   "include": ["src/**/*.ts", "./.config/**/*.ts"],
   "exclude": ["node_modules"],
@@ -107,7 +108,7 @@
       "custom-elements-manifest/schema",
       "unplugin-info/client",
       "material-symbols",
-      "@fnc314/design-tokens"
+      "@fnc314/packages.design-tokens"
     ],
     // "typeRoots": [
     //   "./node_modules",
