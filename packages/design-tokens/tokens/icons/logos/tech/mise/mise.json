@@ -5,15 +5,15 @@
         "mise": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/mise/mise-dark.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/mise/mise-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/mise/mise-light.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/mise/mise-light.svg"
           },
           "light": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/mise/mise-light.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/mise/mise-light.svg"
           }
         }
       }

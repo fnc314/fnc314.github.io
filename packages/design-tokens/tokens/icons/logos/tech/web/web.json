@@ -6,57 +6,57 @@
           "css": {
             "dark": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/css.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
             },
             "default": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/css.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
             },
             "light": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/css.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
             }
           },
           "html": {
             "dark": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
             },
             "default": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
             },
             "light": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
             }
           },
           "javascript": {
             "dark": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/javascript.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
             },
             "default": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/javascript.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
             },
             "light": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/javascript.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
             }
           },
           "web-components": {
             "dark": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/web-components.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
             },
             "default": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/web-components.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
             },
             "light": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/web/web-components.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
             }
           }
         }

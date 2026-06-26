@@ -5,13 +5,13 @@
       "education": {
         "general-assembly": {
           "dark": {
-            "$value": "design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           },
           "default": {
-            "$value": "design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           },
           "light": {
-            "$value": "design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           }
         }
       }

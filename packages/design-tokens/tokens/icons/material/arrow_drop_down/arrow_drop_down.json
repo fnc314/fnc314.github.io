@@ -4,15 +4,15 @@
       "arrow_drop_down": {
         "dark": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg"
+          "value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg"
         },
         "default": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg"
+          "value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg"
         },
         "light": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg"
+          "value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg"
         }
       }
     }

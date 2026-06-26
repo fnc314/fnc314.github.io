@@ -4,15 +4,15 @@
       "picture_as_pdf": {
         "dark": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-dark.svg"
+          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-dark.svg"
         },
         "default": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg"
+          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg"
         },
         "light": {
           "type": "asset",
-          "value": "design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-light.svg"
+          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-light.svg"
         }
       }
     }

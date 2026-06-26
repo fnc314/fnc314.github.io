@@ -5,13 +5,13 @@
       "tech": {
         "github": {
           "dark": {
-            "$value": "design-tokens/assets/icons/logos/tech/github/github-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/github/github-light.svg"
           },
           "default": {
-            "$value": "design-tokens/assets/icons/logos/tech/github/github-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/github/github-dark.svg"
           },
           "light": {
-            "$value": "design-tokens/assets/icons/logos/tech/github/github-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/github/github-light.svg"
           }
         }
       }

@@ -5,15 +5,15 @@
         "android": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/android/android.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/android/android.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg"
           },
           "light": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/android/android.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg"
           }
         }
       }

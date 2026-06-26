@@ -5,13 +5,13 @@
       "education": {
         "university-of-pittsburgh": {
           "dark": {
-            "$value": "design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh-dark.svg"
           },
           "default": {
-            "$value": "design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh.svg"
           },
           "light": {
-            "$value": "design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/education/university-of-pittsburgh/university-of-pittsburgh-light.svg"
           }
         }
       }

@@ -5,13 +5,13 @@
       "tech": {
         "style-dictionary": {
           "dark": {
-            "$value": "design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
           },
           "default": {
-            "$value": "design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
           },
           "light": {
-            "$value": "design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary.svg"
           }
         }
       }

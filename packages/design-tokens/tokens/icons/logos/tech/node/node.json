@@ -5,15 +5,15 @@
         "node": {
           "dark": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/node/node-dark.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/node/node-dark.svg"
           },
           "default": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/node/node-light.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/node/node-light.svg"
           },
           "light": {
             "type": "asset",
-            "value": "design-tokens/assets/icons/logos/tech/node/node-light.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/node/node-light.svg"
           }
         }
       }

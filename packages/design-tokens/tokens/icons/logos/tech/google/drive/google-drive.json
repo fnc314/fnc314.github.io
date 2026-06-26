@@ -6,15 +6,15 @@
           "docs": {
             "dark": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             },
             "default": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             },
             "light": {
               "type": "asset",
-              "value": "design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             }
           }
         }
