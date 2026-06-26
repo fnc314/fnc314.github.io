@@ -2,7 +2,7 @@
   "references": [
     { "path": "./design-tokens/tsconfig.json" },
     { "path": "./packages/data/tsconfig.json" },
-    { "path": "./packages/design-tokens/tsconfig.json" },
+    // { "path": "./packages/design-tokens/tsconfig.json" },
   ],
   "include": ["src/**/*.ts", "./.config/**/*.ts"],
   "exclude": ["node_modules"],
