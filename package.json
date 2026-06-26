@@ -1,6 +1,6 @@
 {
   "name": "@fnc314/fnc314.github.io",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Website for Franco N. Colaizzi - fnc314.com",
   "homepage": "https://fnc314.com",
   "license": "ISC",
@@ -29,7 +29,6 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "workspaces": [
-    "design-tokens",
     "functions",
     "packages/data",
     "packages/design-tokens"

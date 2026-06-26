@@ -1,6 +1,6 @@
 {
-  "name": "@fnc314/design-tokens",
-  "version": "2.0.0",
+  "name": "@fnc314/packages.design-tokens",
+  "version": "2.0.3",
   "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "author": "Franco N. Colaizzi",
   "license": "ISC",
@@ -8,18 +8,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "style": "./dist/@fnc314.design-tokens.css",
-      "import": "./dist/@fnc314.design-tokens.js",
+      "style": "./dist/@fnc314.packages.design-tokens.css",
+      "import": "./dist/@fnc314.packages.design-tokens.js",
       "types": "./dist/types/index.d.ts",
-      "default": "./dist/@fnc314.design-tokens.js"
+      "default": "./dist/@fnc314.packages.design-tokens.js"
     },
     "./styles.css": {
-      "style": "./dist/@fnc314.design-tokens.css",
-      "default": "./dist/@fnc314.design-tokens.css"
+      "style": "./dist/@fnc314.packages.design-tokens.css",
+      "default": "./dist/@fnc314.packages.design-tokens.css"
     },
     "./css/*": {
       "style": "./dist/css/*",
-      "default": "./dist/@fnc314.design-tokens.css"
+      "default": "./dist/@fnc314.packages.design-tokens.css"
     },
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",
@@ -28,8 +28,8 @@
     "./dist/*": "./dist/*"
   },
   "files": [
-    "./dist/@fnc314.design-tokens.css",
-    "./dist/@fnc314.design-tokens.js",
+    "./dist/@fnc314.packages.design-tokens.css",
+    "./dist/@fnc314.packages.design-tokens.js",
     "./dist/icons/**/*",
     "./dist/types/**/*.d.ts",
     "./dist/themes/**/*.{jpg,json}",
@@ -37,8 +37,8 @@
     "./dist/json/*.json"
   ],
   "types": "./dist/types/index.d.ts",
-  "main": "./dist/@fnc314.design-tokens.js",
-  "module": "./dist/@fnc314.design-tokens.js",
+  "main": "./dist/@fnc314.packages.design-tokens.js",
+  "module": "./dist/@fnc314.packages.design-tokens.js",
   "dependencies": {
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"

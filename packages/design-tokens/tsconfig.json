@@ -52,6 +52,6 @@
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": true,
     "target": "esnext",
-    "tsBuildInfoFile": "./../stats/design-tokens.tsbuildinfo",
+    "tsBuildInfoFile": "./../../stats/packages.design-tokens.tsbuildinfo",
   },
 }

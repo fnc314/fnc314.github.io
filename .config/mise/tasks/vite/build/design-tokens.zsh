@@ -10,8 +10,8 @@ declare -a VITE_CLI
 VITE_CLI=(
   build
   -m "${usage_mode:=development}"
-  --config ./design-tokens/.config/vite/vite.config.ts
-  design-tokens
+  --config ./packages/design-tokens/.config/vite/vite.config.ts
+  packages/design-tokens
 )
 
 print -f "Building final output with \`vite\`"

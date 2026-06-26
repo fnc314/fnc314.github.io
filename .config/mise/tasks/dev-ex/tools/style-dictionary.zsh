@@ -11,9 +11,9 @@ STYLE_DICTIONARY_CLI=(
   --config ./.config/style-dictionary/config.ts
 )
 
-print -f "Cleaning design tokens for @fnc314/design-tokens..."
+print -f "Cleaning design tokens for @fnc314/packages.design-tokens..."
 pnpm style-dictionary clean "${STYLE_DICTIONARY_CLI[@]}"
-print -f "Generating design tokens for @fnc314/design-tokens..."
+print -f "Generating design tokens for @fnc314/packages.design-tokens..."
 pnpm style-dictionary build "${STYLE_DICTIONARY_CLI[@]}"
 print -f "Design tokens generated successfully."
 
@@ -21,8 +21,8 @@ declare -a VITE_CLI
 VITE_CLI=(
   build
   -m ${usage_mode:=development}
-  --config ./design-tokens/.config/vite/vite.config.ts
-  design-tokens
+  --config ./packages/design-tokens/.config/vite/vite.config.ts
+  packages/design-tokens
 )
 
 print -f "Building final output with \`vite\`"

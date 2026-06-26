@@ -67,13 +67,13 @@ StyleDictionary.registerTransform({
 });
 
 const buildPaths = {
-  css: `${process.cwd()}/design-tokens/assets/css/`,
-  json: `${process.cwd()}/design-tokens/assets/json/`,
+  css: `${process.cwd()}/packages/design-tokens/assets/css/`,
+  json: `${process.cwd()}/packages/design-tokens/assets/json/`,
 };
 
 export default {
   source: [
-    `${process.cwd()}/design-tokens/tokens/**/*.json`,
+    `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
   ],
   platforms: {
     iconsAsDataSvg: {
