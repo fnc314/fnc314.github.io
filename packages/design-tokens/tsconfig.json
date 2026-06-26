@@ -3,6 +3,9 @@
     "./scripts/**/*.ts",
     "index.ts"
   ],
+  "extends": [
+    "./../tsconfig.json"
+  ],
   "compilerOptions": {
     "types": [
       "node",
@@ -52,6 +55,6 @@
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": true,
     "target": "esnext",
-    "tsBuildInfoFile": "./../../stats/packages.design-tokens.tsbuildinfo",
+    "tsBuildInfoFile": "./../../stats/packages/design-tokens.tsbuildinfo",
   },
 }
