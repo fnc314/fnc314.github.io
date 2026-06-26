@@ -3,7 +3,7 @@ import { type ABentoBoxConfig, BENTO_BOX_TYPES, BentoBoxConfigs, type GridPositi
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import { TransitionStyles } from "@/styles/transitions.styles";
-import { Breakpoints } from "@fnc314/design-tokens";
+import { Breakpoints } from "@fnc314/packages.design-tokens";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";

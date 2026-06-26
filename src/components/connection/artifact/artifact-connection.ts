@@ -2,7 +2,7 @@ import { ConnectionArtifactStyles } from "@/components/connection/artifact/artif
 import { type ArtifactConnectionData, type ArtifactConnectionType } from "@/components/connection/artifact/artifact-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles";
-import { readCSSProperty } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

@@ -1,7 +1,7 @@
 import { type CodeProjectData } from "@/components/code/project/code-project.types";
 import { MaterialTypescaleStyles } from "@/styles";
 import { InteractionStyles } from "@/styles/interaction-styles";
-import { cssPropertyDataImage } from "@fnc314/design-tokens";
+import { cssPropertyDataImage } from "@fnc314/packages.design-tokens";
 import { LitElement, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";

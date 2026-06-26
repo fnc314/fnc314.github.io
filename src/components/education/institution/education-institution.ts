@@ -2,7 +2,7 @@ import { EducationInstitutionStyles } from "@/components/education/institution/e
 import { type EducationInstitutionRecord } from "@/components/education/institution/education-institution.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { readCSSProperty } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

@@ -1,5 +1,5 @@
-import { Breakpoints } from "@fnc314/design-tokens";
-import { type BreakpointLabel } from "@fnc314/design-tokens/types/breakpoints.js";
+import { Breakpoints } from "@fnc314/packages.design-tokens";
+import { type BreakpointLabel } from "@fnc314/packages.design-tokens/types/breakpoints.js";
 
 /**
  * Defines the column and row span for dense auto-flow grid

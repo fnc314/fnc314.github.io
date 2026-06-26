@@ -49,7 +49,6 @@
     "test:watch": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch"
   },
   "dependencies": {
-    "@fnc314/design-tokens": "catalog:projects",
     "@fnc314/packages.data": "catalog:projects",
     "@fnc314/packages.design-tokens": "catalog:projects",
     "@lit-labs/motion": "catalog:dependencies",

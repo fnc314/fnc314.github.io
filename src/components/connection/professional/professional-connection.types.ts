@@ -1,5 +1,5 @@
 import ConnectionsJson from "@/data/connections.json" with { type: "json" };
-import { type DesignTokenIcon } from "@fnc314/design-tokens/types/design-token-icon.js";
+import { type DesignTokenIcon } from "@fnc314/packages.design-tokens/types/design-token-icon.js";
 
 export const ProfessionalConnectionTypes = {
   linkedin: "linkedin" as const,

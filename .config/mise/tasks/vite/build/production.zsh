@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #MISE description="Runs `vite build` using `production` for mode AND `NODE_ENV`"
 #MISE alias="v:d:p"
-#MISE depends=["vite:build:design-tokens"]
+#MISE depends=["vite:build:design-tokens production"]
 #USAGE flag "-w" help="Passes `-w` to `vite build`" default="false"
 #USAGE flag "-d" help="Passes `-d` to `vite build`" default="false"
 

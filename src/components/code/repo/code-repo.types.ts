@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@fnc314/design-tokens/types/design-token-icon.js";
+import { type DesignTokenIcon } from "@fnc314/packages.design-tokens/types/design-token-icon.js";
 
 /**
  * The `const` for the `CSS @property`

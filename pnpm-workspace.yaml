@@ -93,7 +93,7 @@ catalogs:
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-visualizer: 7.0.1
     style-dictionary: 5.5.0
-    stylelint: 17.13.0
+    stylelint: 17.14.0
     stylelint-config-alphabetical-order: 2.0.0
     stylelint-config-inspector: 2.3.4
     stylelint-config-standard: 40.0.0
@@ -141,7 +141,6 @@ catalogs:
     serialize-javascript: 7.0.5
     uuid: 14.0.0
   projects:
-    "@fnc314/design-tokens": "./design-tokens"
     "@fnc314/packages.data": "./packages/data"
     "@fnc314/packages.design-tokens": "./packages/design-tokens"
 cleanupUnusedCatalogs: false
@@ -173,7 +172,6 @@ minimumReleaseAgeExclude:
 nodeVersion: "26.4.0"
 packageManagerStrictVersion: true
 packages:
-  - "design-tokens"
   - "functions"
   - "packages/data"
   - "packages/design-tokens"

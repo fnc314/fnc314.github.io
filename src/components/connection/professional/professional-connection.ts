@@ -2,7 +2,7 @@ import { ProfessionalConnectionStyles } from "@/components/connection/profession
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@/components/connection/professional/professional-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { readCSSProperty } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

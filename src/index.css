@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "@fnc314/design-tokens";
+@import "@fnc314/packages.design-tokens";
 @import "./styles/material-symbols.css";
 
 :root {

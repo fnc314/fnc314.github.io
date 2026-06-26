@@ -2,7 +2,7 @@ import { BlogEntryStyles } from "@/components/blog/entry/blog-entry.styles";
 import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { readCSSProperty } from "@fnc314/design-tokens";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
