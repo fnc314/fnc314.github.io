@@ -23,8 +23,8 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.3
-    prop-for-that: 0.7.6
+    material-symbols: 0.45.4
+    prop-for-that: 0.7.7
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
     "@custom-elements-manifest/analyzer": 0.11.0
@@ -100,7 +100,7 @@ catalogs:
     stylelint-declaration-strict-value: 1.11.1
     stylelint-plugin-logical-css: 2.1.0
     stylelint-plugin-rhythmguard: 2.0.1
-    stylelint-plugin-use-baseline: 1.4.3
+    stylelint-plugin-use-baseline: 1.4.4
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
     ts-lit-plugin: 2.0.2
@@ -142,6 +142,8 @@ catalogs:
     uuid: 14.0.0
   projects:
     "@fnc314/design-tokens": "./design-tokens"
+    "@fnc314/packages.data": "./packages/data"
+    "@fnc314/packages.design-tokens": "./packages/design-tokens"
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:
@@ -173,6 +175,8 @@ packageManagerStrictVersion: true
 packages:
   - "design-tokens"
   - "functions"
+  - "packages/data"
+  - "packages/design-tokens"
 peerDependencyRules:
   allowAny:
     - vite

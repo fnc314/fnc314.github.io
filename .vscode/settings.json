@@ -661,5 +661,5 @@
   ],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "workbench.tree.indent": 4
+  "workbench.tree.indent": 8
 }

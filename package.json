@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "description": "Website for Franco N. Colaizzi - fnc314.com",
   "homepage": "https://fnc314.com",
-  "license": "MIT",
+  "license": "ISC",
   "author": "Franco N. Colaizzi",
   "org": "@fnc314",
   "readme": "README.md",
@@ -30,7 +30,9 @@
   },
   "workspaces": [
     "design-tokens",
-    "functions"
+    "functions",
+    "packages/data",
+    "packages/design-tokens"
   ],
   "scripts": {
     "build:vite": "mise run vite:build:development",
@@ -49,6 +51,8 @@
   },
   "dependencies": {
     "@fnc314/design-tokens": "catalog:projects",
+    "@fnc314/packages.data": "catalog:projects",
+    "@fnc314/packages.design-tokens": "catalog:projects",
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",

@@ -20,7 +20,7 @@ A `package.json` file will be created in `design-tokens/` with the following str
   "version": "0.1.0",
   "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "author": "Franco N. Colaizzi",
-  "license": "MIT",
+  "license": "ISC",
   "private": true,
   "type": "module",
   "main": "dist/index.js",
