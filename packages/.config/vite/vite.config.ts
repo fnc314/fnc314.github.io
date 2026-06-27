@@ -9,7 +9,7 @@ export function bulidConfig(dirName: string): UserConfigFnObject {
       build: {
         lib: {
           entry: `${process.cwd()}/packages/${dirName}/index.ts`,
-          name: `@fnc314/packages/${dirName}`,
+          name: `@fnc314.packages.${dirName}`,
           fileName: `@fnc314.packages.${dirName}`,
           cssFileName: `@fnc314.packages.${dirName}`,
           formats: ["es"],
@@ -27,7 +27,7 @@ export function bulidConfig(dirName: string): UserConfigFnObject {
         dts({
           // bundleTypes: true,
           tsconfigPath: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
-          entryRoot: `${process.cwd()}/packages/${dirName}/scripts`,
+          entryRoot: `${process.cwd()}/packages/${dirName}/lib`,
           root: `${process.cwd()}/packages/${dirName}`,
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
         })
