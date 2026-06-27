@@ -140,9 +140,6 @@ catalogs:
     nanoid: 5.1.11
     serialize-javascript: 7.0.5
     uuid: 14.0.0
-  projects:
-    "@fnc314/packages.data": "./packages/data"
-    "@fnc314/packages.design-tokens": "./packages/design-tokens"
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:
@@ -175,6 +172,7 @@ packages:
   - "functions"
   - "packages/data"
   - "packages/design-tokens"
+  - "packages/types"
 peerDependencyRules:
   allowAny:
     - vite

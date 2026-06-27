@@ -31,7 +31,8 @@
   "workspaces": [
     "functions",
     "packages/data",
-    "packages/design-tokens"
+    "packages/design-tokens",
+    "packages/types"
   ],
   "scripts": {
     "build:vite": "mise run vite:build:development",
@@ -49,8 +50,9 @@
     "test:watch": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch"
   },
   "dependencies": {
-    "@fnc314/packages.data": "catalog:projects",
-    "@fnc314/packages.design-tokens": "catalog:projects",
+    "@fnc314/packages.data": "workspace:*",
+    "@fnc314/packages.design-tokens": "workspace:*",
+    "@fnc314/packages.types": "workspace:*",
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",

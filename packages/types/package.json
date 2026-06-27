@@ -1,0 +1,41 @@
+{
+  "author": "Franco N. Colaizzi <fnc314@fnc314.com>",
+  "bugs": {
+    "url": "https://github.com/fnc314/fnc314.github.io/issues"
+  },
+  "dependencies": {
+    "@material/web": "catalog:dependencies",
+    "material-symbols": "catalog:dependencies"
+  },
+  "description": "Types package to support https://fnc314.com",
+  "devDependencies": {
+    "@types/fs-extra": "catalog:devDependencies",
+    "fs-extra": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies",
+    "unplugin-dts": "catalog:devDependencies",
+    "vite": "catalog:devDependencies"
+  },
+  "homepage": "https://github.com/fnc314/fnc314.github.io#readme",
+  "license": "ISC",
+  "name": "@fnc314/packages.types",
+  "private": true,
+  "main": "./dist/@fnc314.packages.types.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fnc314/fnc314.github.io.git"
+  },
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/@fnc314.packages.types.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./types/*": "./dist/types/*"
+  },
+  "files": [
+    "./dist/types/**/*.d.ts",
+    "./dist/@fnc314.packages.types.js"
+  ],
+  "type": "module",
+  "version": "2.0.3"
+}

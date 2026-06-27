@@ -1,7 +1,7 @@
 import { DirectConnectionStyles } from "@/components/connection/direct/direct-connection.styles";
-import { type ConnectionInstance } from "@/components/connection/direct/direct-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { type ConnectionInstance } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-tonal-icon-button";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";

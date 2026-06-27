@@ -13,7 +13,6 @@
         "./lib/*"
       ]
     },
-    "tsBuildInfoFile": "./../../stats/packages/design-tokens.tsbuildinfo"
   },
   "extends": [
     "./../packages.tsconfig.json"

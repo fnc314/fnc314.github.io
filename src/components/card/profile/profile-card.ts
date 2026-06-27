@@ -1,13 +1,13 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import { ProfileCardStyles } from "@/components/card/profile/profile-card.styles";
-import { type ArtifactConnectionData, ArtifactConnectionJson, type ArtifactConnectionType } from "@/components/connection/artifact/artifact-connection.types";
-import { type ConnectionInstance, DirectConnections } from "@/components/connection/direct/direct-connection.types";
-import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType, ProfessionalConnections } from "@/components/connection/professional/professional-connection.types";
+import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@/components/connection/professional/professional-connection.types";
 import BioJson from "@/data/bio.json" with { type: "json" };
 import PhotoJson from "@/data/photo.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
+import { Connections } from "@fnc314/packages.data";
+import { type ArtifactConnectionData, type ArtifactConnectionType, type ConnectionInstance } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -59,7 +59,7 @@ export class ProfileCard extends UIAwareElement {
   };
 
   private contactSection(): TemplateResult {
-    const directConnections = Object.entries(DirectConnections)
+    const directConnections = Object.entries(Connections.direct)
       .map(([method, instance]: [string, ConnectionInstance]) => html`
         <li>
           <direct-connection .connectionInstance=${instance}></direct-connection>
@@ -77,7 +77,7 @@ export class ProfileCard extends UIAwareElement {
   }
 
   private networkSection(): TemplateResult {
-    const professionalConnections = Object.entries(ProfessionalConnections)
+    const professionalConnections = Object.entries(Connections.social)
       .map(([type, data]: [string, ProfessionalConnectionJsonData]) => html`
         <li>
           <professional-connection
@@ -98,7 +98,7 @@ export class ProfileCard extends UIAwareElement {
   }
 
   private artifactSection(): TemplateResult {
-    const artifactConnections = Object.entries(ArtifactConnectionJson)
+    const artifactConnections = Object.entries(Connections.resume)
       .map(([name, data]: [string, ArtifactConnectionData]) => html`
         <li>
           <artifact-connection

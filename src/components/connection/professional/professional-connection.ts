@@ -1,8 +1,8 @@
 import { ProfessionalConnectionStyles } from "@/components/connection/professional/professional-connection.styles";
-import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@/components/connection/professional/professional-connection.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
+import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
