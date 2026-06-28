@@ -69,7 +69,7 @@ catalogs:
     custom-elements-manifest: 2.1.0
     diff: 9.0.0
     esbuild: 0.28.1
-    eslint: 10.5.0
+    eslint: 10.6.0
     eslint-config-google: 0.14.0
     eslint-formatter-html: 2.7.3
     eslint-plugin-import: 2.32.0
@@ -86,7 +86,7 @@ catalogs:
     node: runtime:26.4.0
     postcss: 8.5.15
     postcss-lit: 1.4.1
-    prettier: 3.8.4
+    prettier: 3.8.5
     prettier-plugin-toml: 2.0.6
     pwa-asset-generator: 8.1.5
     rimraf: 6.1.3
