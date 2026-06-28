@@ -78,13 +78,13 @@ export const BlogEntryStyles: CSSResult = css`
   }
 
   footer {
-    align-items: center;
+    align-items: stretch;
     display: flex;
+    flex-direction: column;
     gap: var(--spaces-gap-s);
     grid-area: footer;
     justify-content: space-between;
     margin-block-start: auto;
-    border-block-start: var(--sizes-thickness-hairline) solid var(--md-sys-color-secondary);
     padding-block-start: var(--spaces-padding-xs);
 
     a {

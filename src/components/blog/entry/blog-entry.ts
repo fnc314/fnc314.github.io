@@ -56,6 +56,7 @@ export class BlogEntry extends UIAwareElement {
         </section>
 
         <footer>
+          <md-divider inset></md-divider>
           <a
             href=${ifDefined(this.blogEntry.mediumUrl)}
             target="_blank"
