@@ -29,7 +29,7 @@ export class BlogEntry extends UIAwareElement {
     const variant = this.darkMode ? "dark" : "light";
 
     // `*-css-url` resolves to `url("data:…")` for the decorative CSS border.
-    const logoToken = `--icons-logos-organization-medium-${this.darkMode ? "dark" : "light"}-css-url-svg`;
+    const logoToken = `--icons-logos-organization-medium-${variant}-css-url-svg`;
 
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
     const borderStyle = unsafeCSS(`
@@ -37,7 +37,7 @@ export class BlogEntry extends UIAwareElement {
     `);
 
     const logoProperty = readCSSProperty(
-      `--icons-logos-organization-medium-${this.darkMode ? "dark" : "light"}-data-image-svg-raw`
+      `--icons-logos-organization-medium-${variant}-data-image-svg-raw`
     );
 
     return html`
