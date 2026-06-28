@@ -26,7 +26,7 @@ export class BlogEntry extends UIAwareElement {
   blogEntry: BlogEntryJson = {} as BlogEntryJson;
 
   override render() {
-    const variant = this.darkMode ? "light" : "dark";
+    const variant = this.darkMode ? "dark" : "light";
 
     // `*-css-url` resolves to `url("data:…")` for the decorative CSS border.
     const logoToken = `--icons-logos-organization-medium-${variant}-css-url`;
