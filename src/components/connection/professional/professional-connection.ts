@@ -21,7 +21,7 @@ export class ProfessionalConnection extends UIAwareElement {
 
   override render(): TemplateResult {
     const imgSrc = readCSSProperty(
-      this.darkMode ? this.professionalConnectionData.designToken.dark : this.professionalConnectionData.designToken.light
+      this.darkMode ? this.professionalConnectionData.designToken.light : this.professionalConnectionData.designToken.dark
     );
     return html`
       <md-filled-icon-button
