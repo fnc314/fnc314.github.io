@@ -11,6 +11,13 @@ import {
   transforms
 } from "style-dictionary/enums";
 
+
+/**
+ * Sanitizes SVG file contents for use within CSS
+ *
+ * @param {string} svg File contents of `.svg` file
+ * @returns {string}
+ */
 const encodeSvgToUtf8: (svg: string) => string = (svg: string) =>
   svg
     .replace(/"/g, "'")
@@ -23,12 +30,26 @@ const encodeSvgToUtf8: (svg: string) => string = (svg: string) =>
     .replace(/\s+/g, ' ')
     .trim();
 
+/**
+ * Reads the file from {@link TransformedToken.value} and returns
+ *   the string contents
+ *
+ * @param {TransformedToken} token A token referring to an `.svg` file
+ * @returns {string}
+ */
 const readTokenFileContents: (token: TransformedToken) => string = (token: TransformedToken) => {
   const filePath = path.resolve(token.value);
   if (!fs.existsSync(filePath)) return token.value;
   const fileContent = fs.readFileSync(filePath, "utf-8");
   return encodeSvgToUtf8(fileContent);
 }
+
+/**
+ * Required portion of `url()` values in `css`
+ *
+ * @type {string}
+ */
+const DATA_IMAGE_SVG: string = "data:image/svg+xml"
 
 StyleDictionary.registerFilter({
   name: "isIconToken",
@@ -57,7 +78,7 @@ StyleDictionary.registerTransform({
   filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
-    `"data:image/svg+xml;base64,${token.value}"`,
+    `"${DATA_IMAGE_SVG};base64,${token.value}"`,
 });
 
 StyleDictionary.registerTransform({
@@ -66,7 +87,7 @@ StyleDictionary.registerTransform({
   filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
-    `"data:image/svg+xml;utf8,${readTokenFileContents(token)}"`,
+    `"${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}"`,
 });
 
 StyleDictionary.registerTransform({
@@ -93,7 +114,7 @@ StyleDictionary.registerTransform({
   filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
-    `url("data:image/svg+xml;base64,${token.value}")`,
+    `url("${DATA_IMAGE_SVG};base64,${token.value}")`,
 });
 
 StyleDictionary.registerTransform({
@@ -102,7 +123,7 @@ StyleDictionary.registerTransform({
   filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
-    `url("data:image/svg+xml;utf8,${readTokenFileContents(token)}")`,
+    `url("${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}")`,
 });
 
 StyleDictionary.registerTransform({

@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@fnc314/packages.design-tokens/types/design-token-icon.js";
+import { type DesignTokenIcon } from "@fnc314/packages.types";
 
 /**
  * The `const` for the `CSS @property`
@@ -48,7 +48,7 @@ export interface CodeRepoData {
  * @export
  */
 export interface CodeRepoTech {
-  /** A generated `CSS Variable` from `@fnc314/design-tokens` */
+  /** A generated `CSS Variable` from `@fnc314/packages.types` */
   designToken: string | DesignTokenIcon;
 
   /** Display name for the technology (e.g., "TypeScript"). */

@@ -3,7 +3,7 @@ import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
-import { type CSSResult, type TemplateResult, html } from "lit";
+import { type CSSResult, type TemplateResult, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("professional-connection")
@@ -20,9 +20,9 @@ export class ProfessionalConnection extends UIAwareElement {
   professionalConnectionData: ProfessionalConnectionJsonData = {} as ProfessionalConnectionJsonData;
 
   override render(): TemplateResult {
-    const imgSrc = readCSSProperty(
-      this.professionalConnectionData.designToken.mask
-    );
+    const style = css`
+      --professional-connection-mask: ${unsafeCSS(readCSSProperty(this.professionalConnectionData.designToken.mask))}
+    `;
     return html`
       <md-filled-icon-button
         href="${this.professionalConnectionData.href}"
@@ -33,7 +33,7 @@ export class ProfessionalConnection extends UIAwareElement {
         aria-label=${this.professionalConnectionData.title}
       >
         <span
-          style="--professional-connection-mask: ${imgSrc};"
+          style="${style.cssText}"
           aria-label="${this.professionalConnectionType} Logo"
         ></span>
       </md-filled-icon-button>

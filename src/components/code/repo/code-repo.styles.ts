@@ -12,6 +12,7 @@ export const CodeRepoStyles: CSSResult = css`
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
     --dynamic-border-background: var(--md-sys-color-tertiary-container);
+    --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-tertiary-container);
     --word-tag-color: var(--md-sys-color-on-tertiary-container);

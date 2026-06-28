@@ -3,6 +3,7 @@ import { type CSSResult, css } from "lit";
 export const DynamicBorderStyles: CSSResult = css`
   :host {
     --dynamic-border-content: "";
+    --dynamic-border-mask: none;
     --dynamic-border-background-image: none;
     --dynamic-border-size: calc(var(--sizes-thickness-hairline) * 8);
     --dynamic-border-color: var(--md-sys-color-on-primary-container);
@@ -20,6 +21,7 @@ export const DynamicBorderStyles: CSSResult = css`
       align-items: center;
       background-color: var(--dynamic-border-background);
       background-image: var(--dynamic-border-background-image);
+      // mask: var(--dynamic-border-mask) center no-repeat / contain;
       background-origin: content-box;
       background-position: center;
       background-repeat: no-repeat;

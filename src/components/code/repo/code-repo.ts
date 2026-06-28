@@ -85,8 +85,8 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     const token = this.darkMode
-      ? "--icons-logos-organization-github-dark-css-url"
-      : "--icons-logos-organization-github-light-css-url";
+      ? "--icons-logos-organization-github-dark-css-url-svg"
+      : "--icons-logos-organization-github-light-css-url-svg";
 
     const borderStyle = unsafeCSS(`
       --dynamic-border-background-image: var(${token});
@@ -109,14 +109,14 @@ export class CodeRepo extends UIAwareElement {
 
         <md-divider></md-divider>
 
-        <section>
+        <section aria-label="Synopsis">
           <p
             .innerHTML="${this.codeRepo.description}"
           ></p>
         </section>
 
-        <footer>
-          <ul aria-label="${"Technologies used"}">
+        <footer aria-label="Technologies used">
+          <ul>
             ${this.codeRepo.tech.map((tech) => this.createWordTagLI(tech))}
           </ul>
         </footer>

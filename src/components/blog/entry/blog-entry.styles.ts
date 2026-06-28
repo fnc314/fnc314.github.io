@@ -14,6 +14,7 @@ export const BlogEntryStyles: CSSResult = css`
 
     --dynamic-border-background: var(--md-sys-color-tertiary-container);
     --dynamic-border-size: var(--sizes-width-l);
+    --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
   }
 
   article {

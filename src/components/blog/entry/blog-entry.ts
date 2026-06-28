@@ -29,17 +29,15 @@ export class BlogEntry extends UIAwareElement {
     const variant = this.darkMode ? "dark" : "light";
 
     // `*-css-url` resolves to `url("data:…")` for the decorative CSS border.
-    const logoToken = `--icons-logos-organization-medium-${variant}-css-url`;
+    const logoToken = `--icons-logos-organization-medium-${this.darkMode ? "dark" : "light"}-css-url-svg`;
 
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
     const borderStyle = unsafeCSS(`
       --dynamic-border-background-image: var(${logoToken});
     `);
 
-    // `*-data-image-svg` resolves to a `data:image/svg+xml;base64,…` URI
-    // (`readCSSProperty` strips the surrounding quotes) for the <img src>.
     const logoProperty = readCSSProperty(
-      `--icons-logos-organization-medium-${variant}-data-image-svg`
+      `--icons-logos-organization-medium-${this.darkMode ? "dark" : "light"}-data-image-svg-raw`
     );
 
     return html`
