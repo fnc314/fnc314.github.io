@@ -93,6 +93,7 @@ export const BentoCardStyles = css`
 
       /* Style slotted header elements (h2 by default) */
       h2 {
+        font-variant: small-caps;
         color: var(--md-sys-color-primary);
         flex-grow: 1;
         font-family: var(--md-ref-typeface-brand);

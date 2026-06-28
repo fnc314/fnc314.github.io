@@ -8,16 +8,16 @@ export const ProfileCardStyles: CSSResult = css`
     --profile-card-image-block-size-max: 500px;
     --profile-card-image-inline-size-max: 100%;
 
-    --profile-card-filled-icon-button-scale: 2.125;
+    --profile-card-filled-icon-button-scale: 2.25;
     --profile-card-filled-icon-button-container-color: var(
-      --md-sys-color-tertiary-container
+      --md-sys-color-on-tertiary-container
     );
     --profile-card-filled-icon-button-container-size: calc(
       var(--profile-card-filled-icon-button-scale) *
       var(--md-icon-size)
     );
     --profile-card-filled-icon-button-icon-color: var(
-      --md-sys-color-on-tertiary-container
+      --md-sys-color-tertiary-container
     );
     --profile-card-filled-icon-button-icon-scale: 0.75;
     --profile-card-filled-icon-button-icon-size: calc(
@@ -88,7 +88,7 @@ export const ProfileCardStyles: CSSResult = css`
       }
 
       p {
-        padding-block: var(--spaces-padding-l);
+        padding-block: var(--spaces-padding-m);
         padding-inline: var(--spaces-padding-xs);
         margin: var(--spaces-none);
 
@@ -96,6 +96,7 @@ export const ProfileCardStyles: CSSResult = css`
           font-size: var(--md-sys-typescale-headline-medium-size);
           line-height: var(--md-sys-typescale-headline-medium-line-height);
           font-family: var(--md-ref-typeface-brand);
+          font-variant: small-caps;
         }
 
         &::first-letter {
@@ -121,6 +122,7 @@ export const ProfileCardStyles: CSSResult = css`
         flex: 1;
         text-align: start;
         margin: var(--spaces-none);
+        font-variant: small-caps;
       }
 
       ul {

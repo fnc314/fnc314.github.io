@@ -10,5 +10,7 @@ export const ProfessionalConnectionStyles: CSSResult = css`
     gap: var(--spaces-gap-s);
   }
 
-
+  img {
+    object-fit: contain;
+  }
 `;

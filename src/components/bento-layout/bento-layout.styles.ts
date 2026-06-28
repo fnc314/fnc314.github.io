@@ -39,6 +39,7 @@ export const BentoLayoutStyles = css`
       margin-inline: auto;
       padding-block: var(--spaces-padding-l);
       text-align: center;
+      font-variant: small-caps;
     }
   }
 
