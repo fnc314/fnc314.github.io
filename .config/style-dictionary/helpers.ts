@@ -24,3 +24,13 @@ export const materialParser = StyleDictionary.registerParser({
     return tokens;
   }
 });
+
+
+/**
+ * Safely encodes raw SVG content for CSS utf8 Data URIs
+ *
+ * @param {string} svg
+ * @returns {*}
+ */
+export const encodeSvgToUtf8 = (svg: string) =>
+  svg.replace(/"/g, "'").replace(/%/g, '%25').replace(/#/g, '%23').replace(/{/g, '%7B').replace(/}/g, '%7D').replace(/</g, '%3C').replace(/>/g, '%3E').replace(/\s+/g, ' ').trim();

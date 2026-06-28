@@ -86,7 +86,7 @@ export class WorkExperience extends UIAwareElement {
           datetime="${this.dateStart.stamp}"
           >${this.dateStart.text}</time
         >
-        -
+        &mdash;
         <time
           class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}
           datetime="${this.dateEnd.stamp}"
@@ -147,7 +147,7 @@ export class WorkExperience extends UIAwareElement {
       : nothing;
 
     return this.isNested
-      ? html`<div class="experience-container">${info} ${summaries}</div>`
+      ? html`<section class="experience-container">${info} ${summaries}</section>`
       : html`<section class="experience-container">${info} ${content} ${summaries}</section>`;
   }
 }

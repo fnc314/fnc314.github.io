@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@/lib/design-token-icon";
+import { type DesignTokenIcon, type MaskableDesignTokenIcon } from "@/lib/design-token-icon";
 
 /**
  * The two variants of the {@link DirectConnection} widget
@@ -35,7 +35,7 @@ export type ProfessionalConnectionType = keyof typeof ProfessionalConnectionType
 
 export type ProfessionalConnectionJsonData = {
   href: string;
-  designToken: DesignTokenIcon;
+  designToken: MaskableDesignTokenIcon;
   title: string;
 }
 

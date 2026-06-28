@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import StyleDictionary, { type Config, type TransformedToken } from "style-dictionary";
 import {
   formats,
@@ -8,6 +10,25 @@ import {
   transformTypes,
   transforms
 } from "style-dictionary/enums";
+
+const encodeSvgToUtf8: (svg: string) => string = (svg: string) =>
+  svg
+    .replace(/"/g, "'")
+    .replace(/%/g, '%25')
+    .replace(/#/g, '%23')
+    .replace(/{/g, '%7B')
+    .replace(/}/g, '%7D')
+    .replace(/</g, '%3C')
+    .replace(/>/g, '%3E')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const readTokenFileContents: (token: TransformedToken) => string = (token: TransformedToken) => {
+  const filePath = path.resolve(token.value);
+  if (!fs.existsSync(filePath)) return token.value;
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  return encodeSvgToUtf8(fileContent);
+}
 
 StyleDictionary.registerFilter({
   name: "isIconToken",
@@ -40,6 +61,24 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
+  name: "iconToDataImageSvg",
+  type: transformTypes.value,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `"data:image/svg+xml;utf8,${readTokenFileContents(token)}"`,
+});
+
+StyleDictionary.registerTransform({
+  name: "iconToDataImageSvgName",
+  type: transformTypes.name,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-data-image-svg-raw`,
+});
+
+StyleDictionary.registerTransform({
   name: "iconEncodingToDataImageSvgName",
   type: transformTypes.name,
   filter: (token: TransformedToken) => token.path.includes("icons"),
@@ -58,12 +97,30 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
+  name: "urlForIconsSvg",
+  type: transformTypes.value,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `url("data:image/svg+xml;utf8,${readTokenFileContents(token)}")`,
+});
+
+StyleDictionary.registerTransform({
   name: "urlForIconsName",
   type: transformTypes.name,
   filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-css-url`,
+});
+
+StyleDictionary.registerTransform({
+  name: "urlForIconsNameSvg",
+  type: transformTypes.name,
+  filter: (token: TransformedToken) => token.path.includes("icons"),
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-css-url-svg`,
 });
 
 const buildPaths = {
@@ -95,7 +152,44 @@ export default {
           filter: "isIconToken",
           options: {
             outputReferences: true,
+            outputReferenceFallbacks: true,
             sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
+          }
+        }
+      ]
+    },
+    iconsAsDataSvgRaw: {
+      transforms: [
+        transforms.attributeCti,
+        transforms.attributeColor,
+        transforms.nameKebab,
+        transforms.colorCss,
+        transforms.assetPath,
+        "iconToDataImageSvg",
+        "iconToDataImageSvgName"
+      ],
+      buildPath: buildPaths.css,
+      files: [
+        {
+          destination: "data_image_svg_icons_raw.css",
+          format: formats.cssVariables,
+          filter: "isIconToken",
+          options: {
+            outputReferences: true,
+            outputReferenceFallbacks: true,
+            sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
           }
         }
       ]
@@ -118,7 +212,44 @@ export default {
           filter: "isIconToken",
           options: {
             outputReferences: true,
+            outputReferenceFallbacks: true,
             sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
+          }
+        }
+      ]
+    },
+    iconsAsCssUrlSvg: {
+      transforms: [
+        transforms.attributeCti,
+        transforms.attributeColor,
+        transforms.nameKebab,
+        transforms.colorCss,
+        transforms.assetPath,
+        "urlForIconsSvg",
+        "urlForIconsNameSvg"
+      ],
+      buildPath: buildPaths.css,
+      files: [
+        {
+          destination: "css_url_icons_svg.css",
+          format: formats.cssVariables,
+          filter: "isIconToken",
+          options: {
+            outputReferences: true,
+            outputReferenceFallbacks: true,
+            sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
           }
         }
       ]
@@ -133,7 +264,14 @@ export default {
           filter: "isCustomToken",
           options: {
             outputReferences: true,
+            outputReferenceFallbacks: true,
             sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
           }
         }
       ],
@@ -156,7 +294,14 @@ export default {
           filter: "isMaterialOverride",
           options: {
             outputReferences: true,
+            outputReferenceFallbacks: true,
             sort: "name",
+            formatting: {
+              indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
           }
         }
       ],
@@ -170,6 +315,7 @@ export default {
           format: formats.jsonNested, // DTCG compliant format for now
           options: {
             outputReferences: true,
+            outputReferenceFallbacks: true,
             sort: "name",
           }
         }

@@ -10,14 +10,14 @@ export const ProfileCardStyles: CSSResult = css`
 
     --profile-card-filled-icon-button-scale: 2.25;
     --profile-card-filled-icon-button-container-color: var(
-      --md-sys-color-on-tertiary-container
+      --md-sys-color-tertiary-container
     );
     --profile-card-filled-icon-button-container-size: calc(
       var(--profile-card-filled-icon-button-scale) *
       var(--md-icon-size)
     );
     --profile-card-filled-icon-button-icon-color: var(
-      --md-sys-color-tertiary-container
+      --md-sys-color-on-tertiary-container
     );
     --profile-card-filled-icon-button-icon-scale: 0.75;
     --profile-card-filled-icon-button-icon-size: calc(

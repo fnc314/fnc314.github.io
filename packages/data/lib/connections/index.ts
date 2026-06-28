@@ -43,27 +43,30 @@ export const Connections: {
     linkedIn: {
       href: "https://www.linkedin.com/in/fnc314",
       designToken: {
-        dark: "--icons-logos-organization-linkedin-dark-data-image-svg",
-        default: "--icons-logos-organization-linkedin-default-data-image-svg",
-        light: "--icons-logos-organization-linkedin-light-data-image-svg"
+        dark: "--icons-logos-organization-linkedin-dark-css-url-svg",
+        default: "--icons-logos-organization-linkedin-default-css-url-svg",
+        light: "--icons-logos-organization-linkedin-light-css-url-svg",
+        mask: "--icons-logos-organization-linkedin-mask-css-url-svg"
       },
       title: "Review professional profile on LinkedIn"
     },
     github: {
       href: "https://www.github.com/fnc314",
       designToken: {
-        dark: "--icons-logos-organization-github-dark-data-image-svg",
-        default: "--icons-logos-organization-github-default-data-image-svg",
-        light: "--icons-logos-organization-github-light-data-image-svg"
+        dark: "--icons-logos-organization-github-dark-css-url-svg",
+        default: "--icons-logos-organization-github-default-css-url-svg",
+        light: "--icons-logos-organization-github-light-css-url-svg",
+        mask: "--icons-logos-organization-github-mask-css-url-svg"
       },
       title: "See open source code on GitHub"
     },
     medium: {
       href: "https://fnc314.medium.com",
       designToken: {
-        dark: "--icons-logos-organization-medium-dark-data-image-svg",
-        default: "--icons-logos-organization-medium-default-data-image-svg",
-        light: "--icons-logos-organization-medium-light-data-image-svg"
+        dark: "--icons-logos-organization-medium-dark-css-url-svg",
+        default: "--icons-logos-organization-medium-default-css-url-svg",
+        light: "--icons-logos-organization-medium-light-css-url-svg",
+        mask: "--icons-logos-organization-medium-mask-css-url-svg"
       },
       title: "Read publications on Medium"
     },

@@ -9,7 +9,7 @@ monorepo_root = true
   ]
 
 [tools]
-  firebase = "15.22.1"
+  firebase = "15.22.3"
   node = "26.4.0"
   "npm:vite" = "8.1.0"
   pnpm = "11.9.0"

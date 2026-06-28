@@ -78,10 +78,10 @@ export class ProfileCard extends UIAwareElement {
 
   private networkSection(): TemplateResult {
     const professionalConnections = Object.entries(Connections.social)
-      .map(([type, data]: [string, ProfessionalConnectionJsonData]) => html`
+      .map(([type, data]: [ProfessionalConnectionType, ProfessionalConnectionJsonData]) => html`
         <li>
           <professional-connection
-            .professionalConnectionType=${type as ProfessionalConnectionType}
+            .professionalConnectionType=${type}
             .professionalConnectionData=${data}>
           </professional-connection>
         </li>

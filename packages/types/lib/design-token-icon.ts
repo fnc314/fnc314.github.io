@@ -15,3 +15,17 @@ export interface DesignTokenIcon {
   /** Display for light mode */
   light: string;
 }
+
+
+/**
+ * Extends {@link DesignTokenIcon} with a maskable asset
+ *
+ * @export
+ * @interface MaskableDesignTokenIcon
+ * @typedef {MaskableDesignTokenIcon}
+ * @extends {DesignTokenIcon}
+ */
+export interface MaskableDesignTokenIcon extends DesignTokenIcon {
+  /** Display a masked version */
+  mask: string;
+}

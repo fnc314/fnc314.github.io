@@ -21,7 +21,7 @@ export class ProfessionalConnection extends UIAwareElement {
 
   override render(): TemplateResult {
     const imgSrc = readCSSProperty(
-      this.darkMode ? this.professionalConnectionData.designToken.light : this.professionalConnectionData.designToken.dark
+      this.professionalConnectionData.designToken.mask
     );
     return html`
       <md-filled-icon-button
@@ -32,11 +32,10 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}
       >
-        <img
-          loading="lazy"
-          src=${imgSrc}
-          alt="${this.professionalConnectionType} Logo"
-        />
+        <span
+          style="--professional-connection-mask: ${imgSrc};"
+          aria-label="${this.professionalConnectionType} Logo"
+        ></span>
       </md-filled-icon-button>
     `;
   }

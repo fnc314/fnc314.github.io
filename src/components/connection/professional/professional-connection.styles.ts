@@ -10,7 +10,9 @@ export const ProfessionalConnectionStyles: CSSResult = css`
     gap: var(--spaces-gap-s);
   }
 
-  img {
+  span {
     object-fit: contain;
+    background-color: var(--md-filled-icon-button-icon-color);
+    mask: var(--professional-connection-mask) no-repeat center / contain;
   }
 `;
