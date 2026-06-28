@@ -164,7 +164,7 @@ export const CodeRepoStyles: CSSResult = css`
       gap: var(--spaces-gap-l);
       grid-template-areas:
         "header description"
-        "header tech";
+        "tech tech";
       grid-template-columns: 1fr 1.5fr;
       grid-template-rows: auto 1fr;
       padding-block: var(--spaces-padding-xs);
