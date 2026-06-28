@@ -111,34 +111,27 @@ export const ProfileCardStyles: CSSResult = css`
       }
     }
 
-    section.sub-section {
-      display: flex;
-      flex-direction: row;
-      gap: var(--spaces-gap-m);
-      margin-block-start: var(--spaces-margin-xs);
-      align-items: center;
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
 
-      h3 {
-        flex: 1;
-        text-align: start;
-        margin: var(--spaces-none);
-        font-variant: small-caps;
+      th[scope="row"] {
+        width: 20%;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        padding: var(--spaces-padding-s) var(--spaces-none);
+        color: var(--profile-card-filled-icon-button-icon-color);
       }
 
-      ul {
-        flex: 2;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: center;
-        list-style: none;
-        margin: var(--spaces-none);
-        padding: var(--spaces-none);
-        gap: var(--spaces-gap-s);
+      td {
+        padding: var(--spaces-padding-s);
+        text-align: center;
+        vertical-align: middle;
+      }
 
-        li {
-          display: flex;
-        }
+      tr:not(:last-child) {
+        border-bottom: var(--sizes-thickness-xs) solid var(--profile-card-filled-icon-button-container-color);
       }
     }
   }

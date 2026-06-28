@@ -9,6 +9,7 @@ import { TextStyles } from "@/styles/text";
 import { Connections } from "@fnc314/packages.data";
 import { type ArtifactConnectionData, type ArtifactConnectionType, type ConnectionInstance } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
+import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
 
 /**
@@ -58,64 +59,61 @@ export class ProfileCard extends UIAwareElement {
     this.requestUpdate();
   };
 
-  private contactSection(): TemplateResult {
-    const directConnections = Object.entries(Connections.direct)
-      .map(([method, instance]: [string, ConnectionInstance]) => html`
-        <li>
-          <direct-connection .connectionInstance=${instance}></direct-connection>
-        </li>
-      `);
-
+  private contactsSection(): TemplateResult {
+    const directConnections = html`
+      <tr>
+        <th scope="row" class="md-typescale-title-large">Contact</th>
+        ${
+          Object.entries(Connections.direct)
+            .map(([method, instance]: [string, ConnectionInstance]) => html`
+              <td colspan="3">
+                <direct-connection .connectionInstance=${instance}></direct-connection>
+              </td>
+            `)
+        }
+      </tr>
+    `;
+    const professionalConnections = html`
+      <tr>
+        <th scope="row" class="md-typescale-title-large">Network</th>
+        ${
+          Object.entries(Connections.social)
+            .map(([type, data]: [ProfessionalConnectionType, ProfessionalConnectionJsonData]) => html`
+              <td colspan="2">
+                <professional-connection
+                  .professionalConnectionType=${type}
+                  .professionalConnectionData=${data}>
+                </professional-connection>
+              </td>
+            `)
+        }
+      </tr>
+    `;
+    const artifactConnections = html`
+      <tr>
+        <th scope="row" class="md-typescale-title-large">Resume</th>
+        ${
+          Object.entries(Connections.resume)
+            .map(([name, data]: [string, ArtifactConnectionData]) => html`
+              <td colspan="3">
+                <artifact-connection
+                  .artifactConnectionType=${name as ArtifactConnectionType}
+                  .artifactConnectionData=${data}>
+                </artifact-connection>
+              </td>
+            `
+            )
+        }
+      </tr>
+    `;
     return html`
-      <section class="sub-section">
-        <h3 class="md-typescale-title-large">Contact</h3>
-        <ul>
+      <table>
+        <tbody>
           ${directConnections}
-        </ul>
-      </section>
-    `;
-  }
-
-  private networkSection(): TemplateResult {
-    const professionalConnections = Object.entries(Connections.social)
-      .map(([type, data]: [ProfessionalConnectionType, ProfessionalConnectionJsonData]) => html`
-        <li>
-          <professional-connection
-            .professionalConnectionType=${type}
-            .professionalConnectionData=${data}>
-          </professional-connection>
-        </li>
-      `);
-
-    return html`
-      <section class="sub-section">
-        <h3 class="md-typescale-title-large">Network</h3>
-        <ul>
           ${professionalConnections}
-        </ul>
-      </section>
-    `;
-  }
-
-  private artifactSection(): TemplateResult {
-    const artifactConnections = Object.entries(Connections.resume)
-      .map(([name, data]: [string, ArtifactConnectionData]) => html`
-        <li>
-          <artifact-connection
-            .artifactConnectionType=${name as ArtifactConnectionType}
-            .artifactConnectionData=${data}>
-          </artifact-connection>
-        </li>
-      `
-      );
-
-    return html`
-      <section class="sub-section">
-        <h3 class="md-typescale-title-large">Resume</h3>
-        <ul>
           ${artifactConnections}
-        </ul>
-      </section>
+        </tbody>
+      </table>
     `;
   }
 
@@ -132,8 +130,7 @@ export class ProfileCard extends UIAwareElement {
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
 
-        <p class="md-typescale-body-large" .innerHTML="${this.bioText}">
-        </p>
+        <p class="md-typescale-body-large">${unsafeHTML(this.bioText)}</p>
       </section>
     `;
   }
@@ -151,11 +148,7 @@ export class ProfileCard extends UIAwareElement {
       >
         <article>
           ${this.imageSection()}
-          ${this.contactSection()}
-          <md-divider></md-divider>
-          ${this.networkSection()}
-          <md-divider></md-divider>
-          ${this.artifactSection()}
+          ${this.contactsSection()}
         </article>
       </bento-card>
     `;
