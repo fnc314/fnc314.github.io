@@ -86,7 +86,7 @@ catalogs:
     node: runtime:26.4.0
     postcss: 8.5.15
     postcss-lit: 1.4.1
-    prettier: 3.8.5
+    prettier: 3.9.0
     prettier-plugin-toml: 2.0.6
     pwa-asset-generator: 8.1.5
     rimraf: 6.1.3
