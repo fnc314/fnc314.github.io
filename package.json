@@ -122,6 +122,7 @@
     "eslint-plugin-wc": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "globals": "catalog:devDependencies",
+    "isomorphic-dompurify": "catalog:devDependencies",
     "lit-analyzer": "catalog:devDependencies",
     "node": "catalog:devDependencies",
     "postcss": "catalog:devDependencies",

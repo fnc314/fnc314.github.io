@@ -1,3 +1,4 @@
+import DOMPurify from "isomorphic-dompurify";
 import fs from "node:fs";
 import path from "node:path";
 import StyleDictionary, { type Config, type TransformedToken } from "style-dictionary";
@@ -11,24 +12,20 @@ import {
   transforms
 } from "style-dictionary/enums";
 
-
 /**
- * Sanitizes SVG file contents for use within CSS
+ * Invokes {@link DOMPurify} methods on {@link svg} returning a sanitized {@link string}
  *
- * @param {string} svg File contents of `.svg` file
- * @returns {string}
+ * @param {string} svg The SVG file contents
+ * @returns {string} Sanitized file contents
  */
-const encodeSvgToUtf8: (svg: string) => string = (svg: string) =>
-  svg
-    .replace(/"/g, "'")
-    .replace(/%/g, '%25')
-    .replace(/#/g, '%23')
-    .replace(/{/g, '%7B')
-    .replace(/}/g, '%7D')
-    .replace(/</g, '%3C')
-    .replace(/>/g, '%3E')
-    .replace(/\s+/g, ' ')
-    .trim();
+const purifySvg: (svg: string) => string = (svg: string) =>
+  DOMPurify.sanitize(
+    svg,
+    {
+      USE_PROFILES: { svg: true, svgFilters: true },
+      ADD_ATTR: ['style'] // If you plan to use inline styles or CSS variables
+    }
+  );
 
 /**
  * Reads the file from {@link TransformedToken.value} and returns
@@ -41,7 +38,7 @@ const readTokenFileContents: (token: TransformedToken) => string = (token: Trans
   const filePath = path.resolve(token.value);
   if (!fs.existsSync(filePath)) return token.value;
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  return encodeSvgToUtf8(fileContent);
+  return purifySvg(fileContent);
 }
 
 /**
@@ -75,7 +72,6 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerTransform({
   name: "iconEncodingToDataImageSvg",
   type: transformTypes.value,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `"${DATA_IMAGE_SVG};base64,${token.value}"`,
@@ -84,7 +80,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "iconToDataImageSvg",
   type: transformTypes.value,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `"${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}"`,
@@ -93,7 +88,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "iconToDataImageSvgName",
   type: transformTypes.name,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-data-image-svg-raw`,
@@ -102,7 +96,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "iconEncodingToDataImageSvgName",
   type: transformTypes.name,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-data-image-svg`,
@@ -111,7 +104,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "urlForIcons",
   type: transformTypes.value,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `url("${DATA_IMAGE_SVG};base64,${token.value}")`,
@@ -120,7 +112,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "urlForIconsSvg",
   type: transformTypes.value,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `url("${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}")`,
@@ -129,7 +120,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "urlForIconsName",
   type: transformTypes.name,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-css-url`,
@@ -138,7 +128,6 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: "urlForIconsNameSvg",
   type: transformTypes.name,
-  filter: (token: TransformedToken) => token.path.includes("icons"),
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-css-url-svg`,
