@@ -1,0 +1,40 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "artifact-connection",
+      "path": "./../../../src/components/connection/artifact/artifact-connection.ts",
+      "attributes": [
+        {
+          "name": "artifactConnectionType",
+          "type": "ArtifactConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ConnectionArtifactStyles\"]"
+        },
+        {
+          "name": "artifactConnectionType",
+          "attribute": "artifactConnectionType",
+          "type": "ArtifactConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "attribute": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

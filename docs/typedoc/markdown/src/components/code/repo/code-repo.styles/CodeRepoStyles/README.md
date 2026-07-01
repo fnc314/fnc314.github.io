@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -8,8 +8,7 @@
 
 &gt; `const` **CodeRepoStyles**: `CSSResult`
 
-Defined in: [src/components/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.styles.ts#L9)
+Defined in: [src/components/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.styles.ts#L9)
 
 The CSSResult for @fnc314/fnc314.github.io!CodeRepo
-
 </body></html>

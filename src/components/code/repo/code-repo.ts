@@ -29,7 +29,7 @@ export class CodeRepo extends UIAwareElement {
   ];
 
   private createWordTagLI(tech: CodeRepoTech): TemplateResult {
-    const techWord = tech.name.replace(" ", "-").toLowerCase();
+    const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const imgSrc =
       typeof tech.designToken === "string"
         ? readCSSProperty(tech.designToken)

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **setRGBA**\&lt;`T`\&gt;(`color`: `T` &amp; [`ValidateRGBA`](../ValidateRGBA/README.md)\&lt;`T`\&gt;): `T` &amp; [`ValidateRGBA`](../ValidateRGBA/README.md)\&lt;`T`\&gt;
 
-Defined in: [src/types/theme/theme.ts:81](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L81)
+Defined in: [src/types/theme/theme.ts:81](https://github.com/fnc314/fnc314.github.io/blob/main/src/types/theme/theme.ts#L81)
 
 Helper function to enforce the type
 
@@ -59,5 +59,4 @@ Helper function to enforce the type
 ## Returns
 
 `T` &amp; [`ValidateRGBA`](../ValidateRGBA/README.md)\&lt;`T`\&gt;
-
 </body></html>

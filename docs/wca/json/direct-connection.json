@@ -16,7 +16,7 @@
         {
           "name": "styles",
           "type": "CSSResult[]",
-          "default": "[\"MaterialTypescaleStyles\",\"DirectConnectionStyles\"]"
+          "default": "[\"TextStyles\",\"DirectConnectionStyles\"]"
         },
         {
           "name": "connectionInstance",

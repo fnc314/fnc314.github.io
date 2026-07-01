@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "now-playing-card",
+      "description": "Attributes:\n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\nProperties:\n\n  * `styles` - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\n  * `_trackTask` - ",
+      "attributes": [
+        {
+          "name": "expanded",
+          "description": "`expanded` {`boolean`} - \n\nProperty: expanded\n\nDefault: false"
+        },
+        {
+          "name": "enableHover",
+          "description": "`enableHover` {`boolean`} - \n\nProperty: enableHover\n\nDefault: false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "`enableFocus` {`boolean`} - \n\nProperty: enableFocus\n\nDefault: false"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

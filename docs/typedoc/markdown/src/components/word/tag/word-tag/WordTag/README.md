@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: WordTag
 
-Defined in: [src/components/word/tag/word-tag.ts:34](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/tag/word-tag.ts#L34)
+Defined in: [src/components/word/tag/word-tag.ts:35](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/tag/word-tag.ts#L35)
 
 ## Cssprop
 
@@ -54,7 +54,7 @@ WordTag
 
 ### Extends
 
-- `UIAwareElement`
+- [`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md)
 
 ## Other
 
@@ -62,7 +62,7 @@ WordTag
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/word/tag/word-tag.ts:36](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/tag/word-tag.ts#L36)
+Defined in: [src/components/word/tag/word-tag.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/tag/word-tag.ts#L37)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -76,7 +76,7 @@ Defined in: [src/components/word/tag/word-tag.ts:36](https://github.com/fnc314/f
 
 &gt; **variant**: [`WordTagVariant`](../../word-tag.types/WordTagVariant/README.md) = `"text-only"`
 
-Defined in: [src/components/word/tag/word-tag.ts:117](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/tag/word-tag.ts#L117)
+Defined in: [src/components/word/tag/word-tag.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/tag/word-tag.ts#L59)
 
 The version of the layout to render
 
@@ -86,14 +86,29 @@ The version of the layout to render
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
 
 The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT_LABELS
+Breakpoints.BREAKPOINT\_LABELS
 
 #### Inherited from
 
-`UIAwareElement.breakpoint`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`breakpoint`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#breakpoint)
+
+---
+
+### touchScreen
+
+&gt; `protected` **touchScreen**: `boolean`
+
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+
+Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+and tests against `"true"`,
+
+#### Inherited from
+
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`touchScreen`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#touchscreen)
 
 ## lifecycle
 
@@ -101,7 +116,7 @@ Breakpoints.BREAKPOINT_LABELS
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L48)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
 
 Invoked when the component is added to the document's DOM.
 
@@ -126,7 +141,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 #### Inherited from
 
-`UIAwareElement.connectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`connectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#connectedcallback)
 
 ---
 
@@ -134,7 +149,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L54)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -158,7 +173,7 @@ An element may be re-connected after being disconnected.
 
 #### Inherited from
 
-`UIAwareElement.disconnectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`disconnectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#disconnectedcallback)
 
 ## rendering
 
@@ -166,7 +181,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/word/tag/word-tag.ts:170](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/tag/word-tag.ts#L170)
+Defined in: [src/components/word/tag/word-tag.ts:112](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/tag/word-tag.ts#L112)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -180,5 +195,4 @@ the element to update.
 #### Overrides
 
 `UIAwareElement.render`
-
 </body></html>

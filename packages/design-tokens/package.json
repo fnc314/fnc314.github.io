@@ -30,7 +30,7 @@
   "files": [
     "./dist/@fnc314.packages.design-tokens.css",
     "./dist/@fnc314.packages.design-tokens.js",
-    "./dist/icons/**/*",
+    "./dist/icons",
     "./dist/types/**/*.d.ts",
     "./dist/themes/**/*.{jpg,json}",
     "./dist/css/*.css",

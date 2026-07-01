@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: WordCloud
 
-Defined in: [src/components/word/cloud/word-cloud.ts:41](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L41)
+Defined in: [src/components/word/cloud/word-cloud.ts:43](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L43)
 
 A component that renders a cloud of words with various sorting and grouping options.
 
@@ -60,7 +60,7 @@ word-cloud
 
 ### Extends
 
-- [`LitElement`](https://lit.dev/docs/api/LitElement/)
+- [`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md)
 
 ## Other
 
@@ -68,13 +68,13 @@ word-cloud
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/word/cloud/word-cloud.ts:43](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L43)
+Defined in: [src/components/word/cloud/word-cloud.ts:45](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L45)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
-`LitElement.styles`
+`UIAwareElement.styles`
 
 ---
 
@@ -82,7 +82,7 @@ Defined in: [src/components/word/cloud/word-cloud.ts:43](https://github.com/fnc3
 
 &gt; **words**: [`WordCloudWord`](#)[] = `[]`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:211](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L211)
+Defined in: [src/components/word/cloud/word-cloud.ts:55](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L55)
 
 The list of words to display in the cloud.
 
@@ -96,7 +96,7 @@ words
 
 &gt; **instantClear**: `boolean` = `false`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:219](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L219)
+Defined in: [src/components/word/cloud/word-cloud.ts:63](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L63)
 
 Whether to clear the word cloud instantly when it is no longer visible.
 When true, the cloud resets instantly to opacity 0 instead of fading out.
@@ -111,7 +111,7 @@ instant-clear
 
 &gt; **appearance**: `WordCloudAppearance` = `WordCloudAppearances.SEQUENTIAL`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:228](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L228)
+Defined in: [src/components/word/cloud/word-cloud.ts:72](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L72)
 
 Controls the order in which words are animated/displayed.
 
@@ -127,7 +127,7 @@ appearance
 
 &gt; **grouping**: `WordCloudGrouping` = `WordCloudGroupings.UNGROUPED`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:237](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L237)
+Defined in: [src/components/word/cloud/word-cloud.ts:81](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L81)
 
 Controls how words are grouped together within the cloud.
 
@@ -143,7 +143,7 @@ grouping
 
 &gt; **sorting**: `WordCloudSorting` = `WordCloudSortings.NONE`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:246](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L246)
+Defined in: [src/components/word/cloud/word-cloud.ts:90](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L90)
 
 Controls how words are sorted within their groupings.
 
@@ -159,7 +159,7 @@ sorting
 
 &gt; **delay**: `number` \| `"none"` = `"none"`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:255](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L255)
+Defined in: [src/components/word/cloud/word-cloud.ts:99](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L99)
 
 The delay in milliseconds between word appearances when using sequential mode.
 
@@ -175,7 +175,7 @@ delay
 
 &gt; **threshold**: `number` = `0.1`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:264](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L264)
+Defined in: [src/components/word/cloud/word-cloud.ts:108](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L108)
 
 The intersection observer threshold for visibility detection.
 
@@ -185,70 +185,35 @@ A value between 0 and 1 indicating what percentage of the element must be visibl
 
 threshold
 
-## lifecycle
+---
 
-### connectedCallback()
+### breakpoint
 
-&gt; **connectedCallback**(): `void`
+&gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:279](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L279)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
 
-Invoked when the component is added to the document's DOM.
+The BreakpointLabel as determined by _SCREEN_ width against
+Breakpoints.BREAKPOINT\_LABELS
 
-In `connectedCallback()` you should setup tasks that should only occur when
-the element is connected to the document. The most common of these is
-adding event listeners to nodes external to the element, like a keydown
-event handler added to the window.
+#### Inherited from
 
-```ts
-connectedCallback() {
-  super.connectedCallback();
-  addEventListener('keydown', this._handleKeydown);
-}
-```
-
-Typically, anything done in `connectedCallback()` should be undone when the
-element is disconnected, in `disconnectedCallback()`.
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`LitElement.connectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`breakpoint`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#breakpoint)
 
 ---
 
-### disconnectedCallback()
+### touchScreen
 
-&gt; **disconnectedCallback**(): `void`
+&gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:319](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L319)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
 
-Invoked when the component is removed from the document's DOM.
+Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+and tests against `"true"`,
 
-This callback is the main signal to the element that it may no longer be
-used. `disconnectedCallback()` should ensure that nothing is holding a
-reference to the element (such as event listeners added to nodes external
-to the element), so that it is free to be garbage collected.
+#### Inherited from
 
-```ts
-disconnectedCallback() {
-  super.disconnectedCallback();
-  window.removeEventListener('keydown', this._handleKeydown);
-}
-```
-
-An element may be re-connected after being disconnected.
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`LitElement.disconnectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`touchScreen`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#touchscreen)
 
 ## rendering
 
@@ -256,7 +221,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/word/cloud/word-cloud.ts:416](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L416)
+Defined in: [src/components/word/cloud/word-cloud.ts:260](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L260)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -269,7 +234,7 @@ the element to update.
 
 #### Overrides
 
-`LitElement.render`
+`UIAwareElement.render`
 
 ## updates
 
@@ -277,7 +242,7 @@ the element to update.
 
 &gt; **updated**(`changedProperties`: `PropertyValueMap`\&lt;`WordCloud`\&gt;): `void`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:284](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L284)
+Defined in: [src/components/word/cloud/word-cloud.ts:128](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L128)
 
 Invoked whenever the element is updated. Implement to perform
 post-updating tasks via DOM APIs, for example, focusing an element.
@@ -316,7 +281,7 @@ again after this update cycle completes.
 
 #### Overrides
 
-`LitElement.updated`
+`UIAwareElement.updated`
 
 ---
 
@@ -324,7 +289,7 @@ again after this update cycle completes.
 
 &gt; **firstUpdated**(): `void`
 
-Defined in: [src/components/word/cloud/word-cloud.ts:315](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/word/cloud/word-cloud.ts#L315)
+Defined in: [src/components/word/cloud/word-cloud.ts:159](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/word/cloud/word-cloud.ts#L159)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.
@@ -344,6 +309,5 @@ again after this update cycle completes.
 
 #### Overrides
 
-`LitElement.firstUpdated`
-
+`UIAwareElement.firstUpdated`
 </body></html>

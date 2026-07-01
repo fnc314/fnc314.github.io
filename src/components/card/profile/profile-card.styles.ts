@@ -116,6 +116,7 @@ export const ProfileCardStyles: CSSResult = css`
       border-collapse: collapse;
 
       th[scope="row"] {
+        font-weight: var(--md-ref-typeface-weight-bold);
         width: 20%;
         text-align: center;
         vertical-align: middle;

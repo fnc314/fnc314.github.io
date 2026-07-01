@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -17,6 +17,7 @@
 
 ## Variables
 
-- [CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE](CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE/README.md)
-- [WORD_TAG_SIZES](WORD_TAG_SIZES/README.md)
+- [CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE](CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE/README.md)
+- [WORD\_TAG\_SIZES](WORD_TAG_SIZES/README.md)
+
 </body></html>

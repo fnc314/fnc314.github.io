@@ -16,7 +16,7 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",\"BlogEntryStyles\"]"
+          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
         },
         {
           "name": "blogEntry",

@@ -24,7 +24,7 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"CodeRepoStyles\"]"
+          "default": "[\"TextStyles\",\"CodeRepoStyles\"]"
         },
         {
           "name": "object Object],[object Object],[object Object"

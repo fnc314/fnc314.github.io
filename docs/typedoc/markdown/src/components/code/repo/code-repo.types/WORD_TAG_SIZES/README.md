@@ -1,14 +1,14 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../../../../README.md) / [src/components/code/repo/code-repo.types](../README.md) / WORD_TAG_SIZES
+[@fnc314/com.fnc314.website](../../../../../../README.md) / [src/components/code/repo/code-repo.types](../README.md) / WORD\_TAG\_SIZES
 
-# Variable: WORD_TAG_SIZES
+# Variable: WORD\_TAG\_SIZES
 
-&gt; `const` **WORD_TAG_SIZES**: \{ `full`: `"full"`; `compact`: `"compact"`; `condensed`: `"condensed"`; \}
+&gt; `const` **WORD\_TAG\_SIZES**: \{ `full`: `"full"`; `compact`: `"compact"`; `condensed`: `"condensed"`; \}
 
-Defined in: [src/components/code/repo/code-repo.types.ts:11](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.types.ts#L11)
+Defined in: [src/components/code/repo/code-repo.types.ts:11](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.types.ts#L11)
 
 A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type) of pre-defined values exposed as a custom `CSS @property`
 
@@ -36,7 +36,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[src/components/code/repo/code-repo.types.ts:12](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.types.ts#L12)
+[src/components/code/repo/code-repo.types.ts:12](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.types.ts#L12)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[src/components/code/repo/code-repo.types.ts:13](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.types.ts#L13)
+[src/components/code/repo/code-repo.types.ts:13](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.types.ts#L13)
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[src/components/code/repo/code-repo.types.ts:14](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.types.ts#L14)
+[src/components/code/repo/code-repo.types.ts:14](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.types.ts#L14)
 
 </td>
 </tr>

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -6,9 +6,9 @@
 
 # Variable: BentoBoxConfigs
 
-&gt; **BentoBoxConfigs**: (`breakpoint`: [`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)) =&gt; [`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
+&gt; **BentoBoxConfigs**: (`breakpoint`: `BreakpointLabel`) =&gt; [`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:64](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L64)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:79](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L79)
 
 Produces an array of [ABentoBoxConfig](../ABentoBoxConfig/README.md) instances sorted for proper DOM order.
 
@@ -31,7 +31,7 @@ Produces an array of [ABentoBoxConfig](../ABentoBoxConfig/README.md) instances s
 </td>
 <td>
 
-[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)
+`BreakpointLabel`
 
 </td>
 <td>
@@ -46,5 +46,4 @@ Produces an array of [ABentoBoxConfig](../ABentoBoxConfig/README.md) instances s
 ## Returns
 
 [`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
-
 </body></html>

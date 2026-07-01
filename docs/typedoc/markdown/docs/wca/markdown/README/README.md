@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
 
 ---
 
@@ -18,13 +18,15 @@
 
 ## Properties
 
-| Property         | Attribute        | Type      | Default | Description                                                                                                                              |
-| ---------------- | ---------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `bentoCardTitle` | `bentoCardTitle` | `string`  | ""      | The clickable text for the `<h2>` in the `<summary>` element. When provided,<br> the exposed `slot[name="header"]` is suppressed.        |
-| `enableFocus`    | `enableFocus`    | `boolean` | false   | Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to `false`.                                            |
-| `enableHover`    | `enableHover`    | `boolean` | false   | Whether to enable the lift-on-hover effect.<br>Defaults to `false` to minimize visual motion in dense layout grids.                      |
-| `expanded`       | `expanded`       | `boolean` | false   | Reflects and controls the open state of the underlying `<details>` element.<br>When `true`, the card is expanded and content is visible. |
-| `scrollable`     | `scrollable`     | `boolean` | false   | Whether to enable scrolling for content                                                                                                  |
+| Property         | Attribute        | Type           | Default   | Description                                                                                                                              |
+| ---------------- | ---------------- | -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `bentoCardTitle` | `bentoCardTitle` | `string`       | ""        | The clickable text for the `<h2>` in the `<summary>` element. When provided,<br> the exposed `slot[name="header"]` is suppressed.        |
+| `bentoTag`       | `bentoTag`       | `BentoBoxType` | "profile" | [object Object],[object Object]                                                                                                          |
+| `enableFocus`    | `enableFocus`    | `boolean`      | false     | Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to `false`.                                            |
+| `enableHover`    | `enableHover`    | `boolean`      | false     | Whether to enable the lift-on-hover effect.<br>Defaults to `false` to minimize visual motion in dense layout grids.                      |
+| `expanded`       | `expanded`       | `boolean`      | false     | Reflects and controls the open state of the underlying `<details>` element.<br>When `true`, the card is expanded and content is visible. |
+| `scrollable`     | `scrollable`     | `boolean`      | false     | Whether to enable scrolling for content                                                                                                  |
+| `spreadContent`  | `spreadContent`  | `boolean`      | false     | Whether to spread content over the entire body                                                                                           |
 
 ## Slots
 
@@ -53,16 +55,6 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# connect-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
 # education-card
 
 ## Properties
@@ -73,16 +65,37 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# profile-bio-card
+# experience-card
 
 ## Properties
 
 | Property      | Attribute     | Type      | Default |
 | ------------- | ------------- | --------- | ------- |
-| `bioText`     | `bioText`     | `string`  | "bio"   |
 | `enableFocus` | `enableFocus` | `boolean` | false   |
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
+
+# now-playing-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# profile-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default                                                                                     |
+| ------------- | ------------- | --------- | ------------------------------------------------------------------------------------------- |
+| `bioText`     | `bioText`     | `string`  | "long"                                                                                      |
+| `enableFocus` | `enableFocus` | `boolean` | false                                                                                       |
+| `enableHover` | `enableHover` | `boolean` | false                                                                                       |
+| `expanded`    | `expanded`    | `boolean` | false                                                                                       |
+| `photoData`   |               |           | "PhotoJson[\n configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\n ]" |
 
 # settings-card
 
@@ -110,16 +123,6 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# work-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
 # code-repo
 
 [object Object],[object Object],[object Object]
@@ -131,6 +134,15 @@
 | `codeRepo`                                      | `codeRepo` | `CodeRepoData` | {}      | [object Object],[object Object] |
 | `object Object],[object Object],[object Object` |            |                |         |                                 |
 
+# artifact-connection
+
+## Properties
+
+| Property                 | Attribute                | Type                     | Default |
+| ------------------------ | ------------------------ | ------------------------ | ------- |
+| `artifactConnectionData` | `artifactConnectionData` | `ArtifactConnectionData` | {}      |
+| `artifactConnectionType` | `artifactConnectionType` | `ArtifactConnectionType` | ""      |
+
 # direct-connection
 
 [object Object],[object Object]
@@ -140,6 +152,23 @@
 | Property             | Attribute             | Type                 | Default |
 | -------------------- | --------------------- | -------------------- | ------- |
 | `connectionInstance` | `connection-instance` | `ConnectionInstance` | {}      |
+
+# professional-connection
+
+## Properties
+
+| Property                     | Attribute                    | Type                             | Default |
+| ---------------------------- | ---------------------------- | -------------------------------- | ------- |
+| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData` | {}      |
+| `professionalConnectionType` | `professionalConnectionType` | `ProfessionalConnectionType`     | ""      |
+
+# education-institution
+
+## Properties
+
+| Property    | Attribute   | Type                         | Default |
+| ----------- | ----------- | ---------------------------- | ------- |
+| `institute` | `institute` | `EducationInstitutionRecord` | {}      |
 
 # ui-mode-toggle
 
@@ -201,13 +230,13 @@ A component that renders a cloud of words with various sorting and grouping opti
 
 ## Properties
 
-| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                    |
-| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--hairline-width`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --hairline-width`) |
-| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                |
-| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                |
-| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                |
-| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                |
+| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                                        |
+| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--sizes-thickness-hairline`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --sizes-thickness-hairline`) |
+| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                                    |
+| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                                    |
+| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                                    |
+| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                                    |
 
 ## Slots
 
@@ -244,5 +273,4 @@ A component that renders a cloud of words with various sorting and grouping opti
 | `object Object],[object Object],[object Object`                                 |                      |                       |                        |                                                                                 |
 | `object Object],[object Object],[object Object],[object Object],[object Object` |                      |                       |                        |                                                                                 |
 | `summaries`                                                                     | `summaries`          | `{ item: string; }[]` | []                     | A list of summary points describing achievements or responsibilities.           |
-
-</any></any></details></summary></h2></body></html>
+| </any></any></details></summary></h2></body></html>                             |

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -15,4 +15,5 @@
 ## Type Aliases
 
 - [BlogsJson](BlogsJson/README.md)
+
 </body></html>

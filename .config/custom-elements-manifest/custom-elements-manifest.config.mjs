@@ -40,6 +40,7 @@ console.warn(
 export default {
   globs: [
     "src/components/**/*.ts",
+    "src/mixins/**/*.ts",
   ],
   exclude: [
     "**/*.json",

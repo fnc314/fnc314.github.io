@@ -25,3 +25,15 @@ Passes `--cei` to `stylelint`
 Creates a `HHMMSS.log` file at `./logs/stylelint/{YYYYMMDD}
 
 **Default:** `false`
+
+#### `--verbose`
+
+Passes `-f verbose` to `stylelint`
+
+**Default:** `false`
+
+#### `--config-inspector`
+
+Runs `stylelint-config-inspector` instead
+
+**Default:** `false`

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
 
 ---
 
@@ -8,13 +8,13 @@
 
 ## Properties
 
-| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                    |
-| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--hairline-width`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --hairline-width`) |
-| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                |
-| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                |
-| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                |
-| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                |
+| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                                        |
+| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--sizes-thickness-hairline`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --sizes-thickness-hairline`) |
+| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                                    |
+| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                                    |
+| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                                    |
+| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                                    |
 
 ## Slots
 

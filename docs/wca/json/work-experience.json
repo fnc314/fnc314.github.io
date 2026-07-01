@@ -59,7 +59,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"WorkExperienceStyles\"]"
         },
         {
           "name": "experienceRole",

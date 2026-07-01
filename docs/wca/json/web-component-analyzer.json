@@ -9,7 +9,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"BentoLayoutStyles\"]"
+          "default": "[\"TextStyles\",\"BentoLayoutStyles\",\"TransitionStyles\"]"
         }
       ]
     },
@@ -28,7 +28,7 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"InteractionStyles\",\"BlogEntryStyles\"]"
+          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
         },
         {
           "name": "blogEntry",
@@ -43,6 +43,18 @@
       "name": "bento-card",
       "path": "./../../../src/components/card/bento/bento-card.ts",
       "attributes": [
+        {
+          "name": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
         {
           "name": "scrollable",
           "description": "Whether to enable scrolling for content",
@@ -79,7 +91,21 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"BentoCardStyles\"]"
+          "default": "[\"TextStyles\",\"BentoCardStyles\"]"
+        },
+        {
+          "name": "bentoTag",
+          "attribute": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "attribute": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
         },
         {
           "name": "scrollable",
@@ -153,7 +179,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"BlogCardStyles\"]"
+          "default": "[\"TextStyles\",\"BlogCardStyles\"]"
         },
         {
           "name": "expanded",
@@ -200,54 +226,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"CodeCardStyles\"]"
-        },
-        {
-          "name": "expanded",
-          "attribute": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "attribute": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "attribute": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ]
-    },
-    {
-      "name": "connect-card",
-      "path": "./../../../src/components/card/connect/connect-card.ts",
-      "attributes": [
-        {
-          "name": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"ConnectCardStyles\"]"
+          "default": "[\"TextStyles\",\"CodeCardStyles\"]"
         },
         {
           "name": "expanded",
@@ -294,7 +273,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"EducationCardStyles\"]"
+          "default": "[\"TextStyles\",\"EducationCardStyles\"]"
         },
         {
           "name": "expanded",
@@ -317,13 +296,106 @@
       ]
     },
     {
-      "name": "profile-bio-card",
-      "path": "./../../../src/components/card/profile-bio/profile-bio-card.ts",
+      "name": "experience-card",
+      "path": "./../../../src/components/card/experience/experience-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WorkCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "now-playing-card",
+      "path": "./../../../src/components/card/now-playing/now-playing-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"TextStyles\",\"NowPlayingCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "path": "./../../../src/components/card/profile/profile-card.ts",
       "attributes": [
         {
           "name": "bioText",
           "type": "string",
-          "default": "\"bio\""
+          "default": "\"long\""
         },
         {
           "name": "expanded",
@@ -346,13 +418,17 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"ProfileCardStyles\"]"
+        },
+        {
+          "name": "photoData",
+          "default": "\"PhotoJson[\\n    configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\\n  ]\""
         },
         {
           "name": "bioText",
           "attribute": "bioText",
           "type": "string",
-          "default": "\"bio\""
+          "default": "\"long\""
         },
         {
           "name": "expanded",
@@ -399,7 +475,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"SettingsCardStyles\"]"
+          "default": "[\"TextStyles\",\"SettingsCardStyles\"]"
         },
         {
           "name": "expanded",
@@ -474,53 +550,6 @@
       ]
     },
     {
-      "name": "work-card",
-      "path": "./../../../src/components/card/work/work-card.ts",
-      "attributes": [
-        {
-          "name": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "description": "[object Object],[object Object]",
-          "type": "array",
-          "default": "[\"WorkCardStyles\"]"
-        },
-        {
-          "name": "expanded",
-          "attribute": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "attribute": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "attribute": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ]
-    },
-    {
       "name": "code-repo",
       "path": "./../../../src/components/code/repo/code-repo.ts",
       "description": "[object Object],[object Object],[object Object]",
@@ -543,10 +572,45 @@
         {
           "name": "styles",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"CodeRepoStyles\"]"
+          "default": "[\"TextStyles\",\"CodeRepoStyles\"]"
         },
         {
           "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "artifact-connection",
+      "path": "./../../../src/components/connection/artifact/artifact-connection.ts",
+      "attributes": [
+        {
+          "name": "artifactConnectionType",
+          "type": "ArtifactConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ConnectionArtifactStyles\"]"
+        },
+        {
+          "name": "artifactConnectionType",
+          "attribute": "artifactConnectionType",
+          "type": "ArtifactConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "attribute": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
         }
       ]
     },
@@ -565,12 +629,71 @@
         {
           "name": "styles",
           "type": "CSSResult[]",
-          "default": "[\"MaterialTypescaleStyles\",\"DirectConnectionStyles\"]"
+          "default": "[\"TextStyles\",\"DirectConnectionStyles\"]"
         },
         {
           "name": "connectionInstance",
           "attribute": "connection-instance",
           "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "professional-connection",
+      "path": "./../../../src/components/connection/professional/professional-connection.ts",
+      "attributes": [
+        {
+          "name": "professionalConnectionType",
+          "type": "ProfessionalConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ProfessionalConnectionStyles\"]"
+        },
+        {
+          "name": "professionalConnectionType",
+          "attribute": "professionalConnectionType",
+          "type": "ProfessionalConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "attribute": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "education-institution",
+      "path": "./../../../src/components/education/institution/education-institution.ts",
+      "attributes": [
+        {
+          "name": "institute",
+          "type": "EducationInstitutionRecord",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"EducationInstitutionStyles\"]"
+        },
+        {
+          "name": "institute",
+          "attribute": "institute",
+          "type": "EducationInstitutionRecord",
           "default": "{}"
         }
       ]
@@ -597,7 +720,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"UIModeToggleStyles\"]"
+          "default": "[\"TextStyles\",\"UIModeToggleStyles\"]"
         },
         {
           "name": "mode",
@@ -693,7 +816,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"WordCloudStyles\"]"
         },
         {
           "name": "words",
@@ -815,7 +938,7 @@
         },
         {
           "name": "heaviness",
-          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
           "type": "WordTagHeaviness",
           "default": "\"normal\""
         },
@@ -831,7 +954,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"WordTagStyles\"]"
         },
         {
           "name": "hrefUrl",
@@ -849,7 +972,7 @@
         {
           "name": "heaviness",
           "attribute": "heaviness",
-          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
           "type": "WordTagHeaviness",
           "default": "\"normal\""
         },
@@ -970,7 +1093,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"WorkExperienceStyles\"]"
         },
         {
           "name": "experienceRole",

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -6,9 +6,9 @@
 
 # Function: getBentoDOMOrder()
 
-&gt; **getBentoDOMOrder**(`breakpoint`: [`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)): [`BentoBoxType`](../BentoBoxType/README.md)[]
+&gt; **getBentoDOMOrder**(`breakpoint`: `BreakpointLabel`): [`BentoBoxType`](../BentoBoxType/README.md)[]
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:140](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L140)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:148](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L148)
 
 Determines the logical DOM order for bento box types based on grid placement.
 Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing).
@@ -32,7 +32,7 @@ Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing).
 </td>
 <td>
 
-[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md)
+`BreakpointLabel`
 
 </td>
 <td>
@@ -49,5 +49,4 @@ The current active breakpoint.
 [`BentoBoxType`](../BentoBoxType/README.md)[]
 
 An array of [BentoBoxType](../BentoBoxType/README.md) in the appropriate order for the DOM.
-
 </body></html>

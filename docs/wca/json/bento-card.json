@@ -6,6 +6,18 @@
       "path": "./../../../src/components/card/bento/bento-card.ts",
       "attributes": [
         {
+          "name": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
           "name": "scrollable",
           "description": "Whether to enable scrolling for content",
           "type": "boolean",
@@ -41,7 +53,21 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"BentoCardStyles\"]"
+          "default": "[\"TextStyles\",\"BentoCardStyles\"]"
+        },
+        {
+          "name": "bentoTag",
+          "attribute": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "attribute": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
         },
         {
           "name": "scrollable",

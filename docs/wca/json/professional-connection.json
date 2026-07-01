@@ -1,0 +1,40 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "professional-connection",
+      "path": "./../../../src/components/connection/professional/professional-connection.ts",
+      "attributes": [
+        {
+          "name": "professionalConnectionType",
+          "type": "ProfessionalConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ProfessionalConnectionStyles\"]"
+        },
+        {
+          "name": "professionalConnectionType",
+          "attribute": "professionalConnectionType",
+          "type": "ProfessionalConnectionType",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "attribute": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

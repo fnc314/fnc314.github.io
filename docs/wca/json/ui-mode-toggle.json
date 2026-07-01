@@ -23,7 +23,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",\"UIModeToggleStyles\"]"
+          "default": "[\"TextStyles\",\"UIModeToggleStyles\"]"
         },
         {
           "name": "mode",

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **BlogsJson** = \{ `id`: `string`; `title`: `string`; \} &amp; \{ `type`: `"SERIES"`; `entries`: [`BlogsJsonEntry`](../BlogsJsonEntry/README.md)[]; \} \| \{ `type`: `"SINGLE"`; `mediumUrl`: `string`; `tags`: `string`[]; \}
 
-Defined in: [src/components/blog/entry/blog-entry.types.ts:32](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/entry/blog-entry.types.ts#L32)
+Defined in: [src/components/blog/entry/blog-entry.types.ts:32](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/blog/entry/blog-entry.types.ts#L32)
 
 Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 
@@ -36,7 +36,7 @@ Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 </td>
 <td>
 
-[src/components/blog/entry/blog-entry.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/entry/blog-entry.types.ts#L33)
+[src/components/blog/entry/blog-entry.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/blog/entry/blog-entry.types.ts#L33)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 </td>
 <td>
 
-[src/components/blog/entry/blog-entry.types.ts:34](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/entry/blog-entry.types.ts#L34)
+[src/components/blog/entry/blog-entry.types.ts:34](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/blog/entry/blog-entry.types.ts#L34)
 
 </td>
 </tr>

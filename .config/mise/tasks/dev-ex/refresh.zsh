@@ -52,7 +52,7 @@ echo
 
 [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
 echo "dx:@pwrs:cem:generate"
-NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -v
+NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -vvv
 echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
@@ -62,11 +62,11 @@ echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
 echo "dx:wca"
-pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
-pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir ./docs/wca/json --format json
-pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
-pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir ./docs/wca/markdown --format markdown
-pnpm web-component-analyzer "src/{components,partials,themes,types}/**/*.ts" --outDir .vscode/wca --format vscode
+pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
+pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir ./docs/wca/json --format json
+pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
+pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir ./docs/wca/markdown --format markdown
+pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir .vscode/wca --format vscode
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"

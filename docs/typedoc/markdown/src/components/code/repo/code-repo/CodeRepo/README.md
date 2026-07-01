@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: CodeRepo
 
-Defined in: [src/components/code/repo/code-repo.ts:21](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L21)
+Defined in: [src/components/code/repo/code-repo.ts:21](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L21)
 
 An instance of a given `GitHub` repository project documented through
 [CodeRepoData](../../code-repo.types/CodeRepoData/README.md) objects from `data/code.json`
@@ -21,7 +21,7 @@ CodeRepo
 
 ### Extends
 
-- `UIAwareElement`
+- [`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md)
 
 ## Other
 
@@ -29,22 +29,10 @@ CodeRepo
 
 &gt; **codeRepo**: [`CodeRepoData`](../../code-repo.types/CodeRepoData/README.md)
 
-Defined in: [src/components/code/repo/code-repo.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L24)
+Defined in: [src/components/code/repo/code-repo.ts:24](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L24)
 
 An instance of [CodeRepoData](../../code-repo.types/CodeRepoData/README.md)
 to render
-
----
-
-### wordTagSize
-
-&gt; `protected` **wordTagSize**: [`WordTagSize`](../../code-repo.types/WordTagSize/README.md) = `WORD_TAG_SIZES.full`
-
-Defined in: [src/components/code/repo/code-repo.ts:37](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L37)
-
-Extraced by onWordTagSizeChange listener bound to the `resize` `Event`
-
-[TransitionEvent](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
 
 ---
 
@@ -52,14 +40,29 @@ Extraced by onWordTagSizeChange listener bound to the `resize` `Event`
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
 
 The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT_LABELS
+Breakpoints.BREAKPOINT\_LABELS
 
 #### Inherited from
 
-`UIAwareElement.breakpoint`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`breakpoint`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#breakpoint)
+
+---
+
+### touchScreen
+
+&gt; `protected` **touchScreen**: `boolean`
+
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+
+Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+and tests against `"true"`,
+
+#### Inherited from
+
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`touchScreen`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#touchscreen)
 
 ## lifecycle
 
@@ -67,7 +70,7 @@ Breakpoints.BREAKPOINT_LABELS
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L48)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
 
 Invoked when the component is added to the document's DOM.
 
@@ -92,7 +95,39 @@ element is disconnected, in `disconnectedCallback()`.
 
 #### Inherited from
 
-`UIAwareElement.connectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`connectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#connectedcallback)
+
+---
+
+### disconnectedCallback()
+
+&gt; **disconnectedCallback**(): `void`
+
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+
+Invoked when the component is removed from the document's DOM.
+
+This callback is the main signal to the element that it may no longer be
+used. `disconnectedCallback()` should ensure that nothing is holding a
+reference to the element (such as event listeners added to nodes external
+to the element), so that it is free to be garbage collected.
+
+```ts
+disconnectedCallback() {
+  super.disconnectedCallback();
+  window.removeEventListener('keydown', this._handleKeydown);
+}
+```
+
+An element may be re-connected after being disconnected.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`disconnectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#disconnectedcallback)
 
 ## rendering
 
@@ -100,7 +135,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/code/repo/code-repo.ts:94](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L94)
+Defined in: [src/components/code/repo/code-repo.ts:86](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L86)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -121,7 +156,7 @@ the element to update.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/code/repo/code-repo.ts:26](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L26)
+Defined in: [src/components/code/repo/code-repo.ts:26](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L26)
 
 Array of styles to apply to the element. The styles should be defined
 using the css tag function, via constructible stylesheets, or
@@ -151,63 +186,4 @@ loading application code:
 #### Overrides
 
 `UIAwareElement.styles`
-
-## updates
-
-### firstUpdated()
-
-> `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>): `void`
-
-Defined in: [src/components/code/repo/code-repo.ts:71](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.ts#L71)
-
-Invoked when the element is first updated. Implement to perform one time
-work on the element after update.
-
-```ts
-firstUpdated() {
-  this.renderRoot.getElementById('my-text-area').focus();
-}
-```
-
-Setting properties inside this method will trigger the element to update
-again after this update cycle completes.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`_changedProperties`
-
-</td>
-<td>
-
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
-
-</td>
-<td>
-
-Map of changed properties with old values
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`UIAwareElement.firstUpdated`
 </style></body></html>

@@ -21,6 +21,7 @@ export default {
   emit: "docs",
   entryPoints: [
     `${process.cwd()}/src/components/**/*.ts`,
+    `${process.cwd()}/src/mixins/**/*.ts`,
     `${process.cwd()}/src/styles/**/*.ts`,
     `${process.cwd()}/src/theme/**/*.ts`,
     `${process.cwd()}/src/types/**/*.ts`,

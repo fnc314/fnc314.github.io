@@ -1,4 +1,4 @@
-<html><head></head><body>**@fnc314/com.fnc314.website v2.0.0**
+<html><head></head><body>**@fnc314/com.fnc314.website v2.0.4**
 
 ---
 
@@ -16,13 +16,15 @@
 
 ## Properties
 
-| Property         | Attribute        | Type      | Default | Description                                                                                                                              |
-| ---------------- | ---------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `bentoCardTitle` | `bentoCardTitle` | `string`  | ""      | The clickable text for the `<h2>` in the `<summary>` element. When provided,<br> the exposed `slot[name="header"]` is suppressed.        |
-| `enableFocus`    | `enableFocus`    | `boolean` | false   | Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to `false`.                                            |
-| `enableHover`    | `enableHover`    | `boolean` | false   | Whether to enable the lift-on-hover effect.<br>Defaults to `false` to minimize visual motion in dense layout grids.                      |
-| `expanded`       | `expanded`       | `boolean` | false   | Reflects and controls the open state of the underlying `<details>` element.<br>When `true`, the card is expanded and content is visible. |
-| `scrollable`     | `scrollable`     | `boolean` | false   | Whether to enable scrolling for content                                                                                                  |
+| Property         | Attribute        | Type           | Default   | Description                                                                                                                              |
+| ---------------- | ---------------- | -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `bentoCardTitle` | `bentoCardTitle` | `string`       | ""        | The clickable text for the `<h2>` in the `<summary>` element. When provided,<br> the exposed `slot[name="header"]` is suppressed.        |
+| `bentoTag`       | `bentoTag`       | `BentoBoxType` | "profile" | [object Object],[object Object]                                                                                                          |
+| `enableFocus`    | `enableFocus`    | `boolean`      | false     | Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to `false`.                                            |
+| `enableHover`    | `enableHover`    | `boolean`      | false     | Whether to enable the lift-on-hover effect.<br>Defaults to `false` to minimize visual motion in dense layout grids.                      |
+| `expanded`       | `expanded`       | `boolean`      | false     | Reflects and controls the open state of the underlying `<details>` element.<br>When `true`, the card is expanded and content is visible. |
+| `scrollable`     | `scrollable`     | `boolean`      | false     | Whether to enable scrolling for content                                                                                                  |
+| `spreadContent`  | `spreadContent`  | `boolean`      | false     | Whether to spread content over the entire body                                                                                           |
 
 ## Slots
 
@@ -51,16 +53,6 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# connect-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
 # education-card
 
 ## Properties
@@ -71,16 +63,37 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# profile-bio-card
+# experience-card
 
 ## Properties
 
 | Property      | Attribute     | Type      | Default |
 | ------------- | ------------- | --------- | ------- |
-| `bioText`     | `bioText`     | `string`  | "bio"   |
 | `enableFocus` | `enableFocus` | `boolean` | false   |
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
+
+# now-playing-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default |
+| ------------- | ------------- | --------- | ------- |
+| `enableFocus` | `enableFocus` | `boolean` | false   |
+| `enableHover` | `enableHover` | `boolean` | false   |
+| `expanded`    | `expanded`    | `boolean` | false   |
+
+# profile-card
+
+## Properties
+
+| Property      | Attribute     | Type      | Default                                                                                     |
+| ------------- | ------------- | --------- | ------------------------------------------------------------------------------------------- |
+| `bioText`     | `bioText`     | `string`  | "long"                                                                                      |
+| `enableFocus` | `enableFocus` | `boolean` | false                                                                                       |
+| `enableHover` | `enableHover` | `boolean` | false                                                                                       |
+| `expanded`    | `expanded`    | `boolean` | false                                                                                       |
+| `photoData`   |               |           | "PhotoJson[\n configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\n ]" |
 
 # settings-card
 
@@ -108,16 +121,6 @@
 | `enableHover` | `enableHover` | `boolean` | false   |
 | `expanded`    | `expanded`    | `boolean` | false   |
 
-# work-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
 # code-repo
 
 [object Object],[object Object],[object Object]
@@ -129,6 +132,15 @@
 | `codeRepo`                                      | `codeRepo` | `CodeRepoData` | {}      | [object Object],[object Object] |
 | `object Object],[object Object],[object Object` |            |                |         |                                 |
 
+# artifact-connection
+
+## Properties
+
+| Property                 | Attribute                | Type                     | Default |
+| ------------------------ | ------------------------ | ------------------------ | ------- |
+| `artifactConnectionData` | `artifactConnectionData` | `ArtifactConnectionData` | {}      |
+| `artifactConnectionType` | `artifactConnectionType` | `ArtifactConnectionType` | ""      |
+
 # direct-connection
 
 [object Object],[object Object]
@@ -138,6 +150,23 @@
 | Property             | Attribute             | Type                 | Default |
 | -------------------- | --------------------- | -------------------- | ------- |
 | `connectionInstance` | `connection-instance` | `ConnectionInstance` | {}      |
+
+# professional-connection
+
+## Properties
+
+| Property                     | Attribute                    | Type                             | Default |
+| ---------------------------- | ---------------------------- | -------------------------------- | ------- |
+| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData` | {}      |
+| `professionalConnectionType` | `professionalConnectionType` | `ProfessionalConnectionType`     | ""      |
+
+# education-institution
+
+## Properties
+
+| Property    | Attribute   | Type                         | Default |
+| ----------- | ----------- | ---------------------------- | ------- |
+| `institute` | `institute` | `EducationInstitutionRecord` | {}      |
 
 # ui-mode-toggle
 
@@ -199,13 +228,13 @@ A component that renders a cloud of words with various sorting and grouping opti
 
 ## Properties
 
-| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                    |
-| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--hairline-width`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --hairline-width`) |
-| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                |
-| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                |
-| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                |
-| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                |
+| Property                                                        | Attribute   | Type               | Default     | Description                                                                                                                                                                                                                        |
+| --------------------------------------------------------------- | ----------- | ------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heaviness`                                                     | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text &amp; border), can be<br>`"normal"` (`--md-ref-typeface-weight-regular` &amp; `--sizes-thickness-hairline`) or<br>`"heavy"` (`--md-ref-typeface-weight-bold` &amp; `2.5 * --sizes-thickness-hairline`) |
+| `hrefUrl`                                                       | `hrefUrl`   | `string`           | ""          |                                                                                                                                                                                                                                    |
+| `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                                                                                                                                                                                                    |
+| `variant`                                                       | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                                                                                                                                                                                                    |
+| `word`                                                          | `word`      | `string`           | ""          | The tagged word                                                                                                                                                                                                                    |
 
 ## Slots
 
@@ -245,16 +274,20 @@ A component that renders a cloud of words with various sorting and grouping opti
 
 ## Documents
 
+- [docs/wca/markdown/artifact-connection](docs/wca/markdown/artifact-connection/README.md)
 - [docs/wca/markdown/bento-card](docs/wca/markdown/bento-card/README.md)
 - [docs/wca/markdown/bento-layout](docs/wca/markdown/bento-layout/README.md)
 - [docs/wca/markdown/blog-card](docs/wca/markdown/blog-card/README.md)
 - [docs/wca/markdown/blog-entry](docs/wca/markdown/blog-entry/README.md)
 - [docs/wca/markdown/code-card](docs/wca/markdown/code-card/README.md)
 - [docs/wca/markdown/code-repo](docs/wca/markdown/code-repo/README.md)
-- [docs/wca/markdown/connect-card](docs/wca/markdown/connect-card/README.md)
 - [docs/wca/markdown/direct-connection](docs/wca/markdown/direct-connection/README.md)
 - [docs/wca/markdown/education-card](docs/wca/markdown/education-card/README.md)
-- [docs/wca/markdown/profile-bio-card](docs/wca/markdown/profile-bio-card/README.md)
+- [docs/wca/markdown/education-institution](docs/wca/markdown/education-institution/README.md)
+- [docs/wca/markdown/experience-card](docs/wca/markdown/experience-card/README.md)
+- [docs/wca/markdown/now-playing-card](docs/wca/markdown/now-playing-card/README.md)
+- [docs/wca/markdown/professional-connection](docs/wca/markdown/professional-connection/README.md)
+- [docs/wca/markdown/profile-card](docs/wca/markdown/profile-card/README.md)
 - [docs/wca/markdown/README](docs/wca/markdown/README/README.md)
 - [docs/wca/markdown/settings-card](docs/wca/markdown/settings-card/README.md)
 - [docs/wca/markdown/skills-card](docs/wca/markdown/skills-card/README.md)
@@ -262,7 +295,6 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [docs/wca/markdown/version-tag](docs/wca/markdown/version-tag/README.md)
 - [docs/wca/markdown/word-cloud](docs/wca/markdown/word-cloud/README.md)
 - [docs/wca/markdown/word-tag](docs/wca/markdown/word-tag/README.md)
-- [docs/wca/markdown/work-card](docs/wca/markdown/work-card/README.md)
 - [docs/wca/markdown/work-experience](docs/wca/markdown/work-experience/README.md)
 
 ## Modules
@@ -275,25 +307,25 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [src/components/card/bento/bento-card](src/components/card/bento/bento-card/README.md)
 - [src/components/card/blog/blog-card](src/components/card/blog/blog-card/README.md)
 - [src/components/card/code/code-card](src/components/card/code/code-card/README.md)
-- [src/components/card/connect/connect-card](src/components/card/connect/connect-card/README.md)
 - [src/components/card/education/education-card](src/components/card/education/education-card/README.md)
-- [src/components/card/profile-bio/profile-bio-card](src/components/card/profile-bio/profile-bio-card/README.md)
+- [src/components/card/experience/experience-card](src/components/card/experience/experience-card/README.md)
+- [src/components/card/profile/profile-card](src/components/card/profile/profile-card/README.md)
 - [src/components/card/settings/settings-card](src/components/card/settings/settings-card/README.md)
 - [src/components/card/skills/skills-card](src/components/card/skills/skills-card/README.md)
-- [src/components/card/work/work-card](src/components/card/work/work-card/README.md)
 - [src/components/code/repo/code-repo.styles](src/components/code/repo/code-repo.styles/README.md)
 - [src/components/code/repo/code-repo](src/components/code/repo/code-repo/README.md)
 - [src/components/code/repo/code-repo.types](src/components/code/repo/code-repo.types/README.md)
 - [src/components/connection/direct/direct-connection](src/components/connection/direct/direct-connection/README.md)
-- [src/components/connection/direct/direct-connection.types](src/components/connection/direct/direct-connection.types/README.md)
+- [src/components/ui-mode-toggle/ui-mode-toggle.styles](src/components/ui-mode-toggle/ui-mode-toggle.styles/README.md)
 - [src/components/ui-mode-toggle/ui-mode-toggle](src/components/ui-mode-toggle/ui-mode-toggle/README.md)
 - [src/components/word/cloud/word-cloud](src/components/word/cloud/word-cloud/README.md)
 - [src/components/word/cloud/word-cloud.types](src/components/word/cloud/word-cloud.types/README.md)
 - [src/components/word/tag/word-tag](src/components/word/tag/word-tag/README.md)
 - [src/components/word/tag/word-tag.types](src/components/word/tag/word-tag.types/README.md)
 - [src/components/work/experience/work-experience](src/components/work/experience/work-experience/README.md)
+- [src/mixins/ui-aware-element/ui-aware-element](src/mixins/ui-aware-element/ui-aware-element/README.md)
 - [src/styles/interaction-styles](src/styles/interaction-styles/README.md)
-- [src/types/breakpoints](src/types/breakpoints/README.md)
-- [src/types/configs/fab-configs](src/types/configs/fab-configs/README.md)
+- [src/styles/text](src/styles/text/README.md)
+- [src/styles/transitions.styles](src/styles/transitions.styles/README.md)
 - [src/types/theme/theme](src/types/theme/theme/README.md)
   </any></any></details></summary></h2></body></html>

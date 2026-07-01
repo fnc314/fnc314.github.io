@@ -1,8 +1,23 @@
 ## `vite:build:production`
 
-- Depends: vite:build:design-tokens
+Runs `vite build` using `production` for mode AND `NODE_ENV`
 
-- **Usage**: `vite:build:production`
+
+- Depends: vite:build:packages -p
+
+- **Usage**: `vite:build:production [-w] [-d]`
 - **Aliases**: `v:d:p`
 
-Runs `vite build` using `production` for mode AND `NODE_ENV`
+### Flags
+
+#### `-w`
+
+Passes `-w` to `vite build`
+
+**Default:** `false`
+
+#### `-d`
+
+Passes `-d` to `vite build`
+
+**Default:** `false`

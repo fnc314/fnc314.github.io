@@ -28,9 +28,14 @@
 
 ### Fields
 
-| Name               | Privacy | Type                | Default | Description | Inherited From |
-| ------------------ | ------- | ------------------- | ------- | ----------- | -------------- |
-| `_bentoBoxConfigs` | private | `ABentoBoxConfig[]` |         |             |                |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `_bentoBoxConfigs`   | private   | `ABentoBoxConfig[]`      |                                                                |                                                                                                    |                |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 ### Methods
 
@@ -53,9 +58,19 @@
 
 ## Variables
 
-| Name               | Description                        | Type              |
-| ------------------ | ---------------------------------- | ----------------- |
-| `BENTO_BOX_CONFIG` | The final rendered BentoBoxConfigs | `BentoBoxConfigs` |
+| Name               | Description                          | Type                                                                                                                                                                                                                                                                     |
+| ------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `BENTO_BOX_CONFIG` | The final rendered BentoBoxConfigs   | `BentoBoxConfigs`                                                                                                                                                                                                                                                        |
+| `BENTO_BOX_TYPES`  | A Record of BentoBoxType definitions | `{
+  profile: "profile" as const,
+  experience: "experience" as const,
+  code: "code" as const,
+  blog: "blog" as const,
+  settings: "settings" as const,
+  education: "education" as const,
+  skills: "skills" as const,
+  // "now-playing": "now-playing" as const,
+}` |
 
 <hr/>
 
@@ -73,6 +88,7 @@
 | Kind | Name               | Declaration        | Module                                            | Package |
 | ---- | ------------------ | ------------------ | ------------------------------------------------- | ------- |
 | `js` | `BENTO_BOX_CONFIG` | BENTO\_BOX\_CONFIG | src/components/bento-layout/bento-layout.types.ts |         |
+| `js` | `BENTO_BOX_TYPES`  | BENTO\_BOX\_TYPES  | src/components/bento-layout/bento-layout.types.ts |         |
 | `js` | `BentoBoxConfigs`  | BentoBoxConfigs    | src/components/bento-layout/bento-layout.types.ts |         |
 | `js` | `getBentoDOMOrder` | getBentoDOMOrder   | src/components/bento-layout/bento-layout.types.ts |         |
 
@@ -114,6 +130,20 @@
 | ----------- | --------- | -------------- |
 | `blogEntry` | blogEntry |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -151,20 +181,22 @@
 
 ### Fields
 
-| Name             | Privacy | Type      | Default | Description                                                                     | Inherited From |
-| ---------------- | ------- | --------- | ------- | ------------------------------------------------------------------------------- | -------------- |
-| `bentoCardTitle` |         | `string`  | `""`    | An optional \`string\` which, when set, suppresses the \`slot\[name="header"]\` |                |
-| `enableFocus`    |         | `boolean` | `false` | Opt-in to the focus-within border/shadow shift effect.                          |                |
-| `enableHover`    |         | `boolean` | `false` | Opt-in to the hover elevation/shift effect.                                     |                |
-| `expanded`       |         | `boolean` | `false` | Reflects and controls the open state of the card.                               |                |
-| `scrollable`     |         | `boolean` | `false` | Enables internal vertical scrolling for content.                                |                |
-| `spreadContent`  |         | `boolean` | `false` | Whether to spread content over the entire body                                  |                |
+| Name             | Privacy | Type           | Default | Description                                                                     | Inherited From |
+| ---------------- | ------- | -------------- | ------- | ------------------------------------------------------------------------------- | -------------- |
+| `bentoCardTitle` |         | `string`       | `""`    | An optional \`string\` which, when set, suppresses the \`slot\[name="header"]\` |                |
+| `bentoTag`       |         | `BentoBoxType` |         | Uniquely identifies this \`BentoCard\` via BENTO\_BOX\_TYPES                    |                |
+| `enableFocus`    |         | `boolean`      | `false` | Opt-in to the focus-within border/shadow shift effect.                          |                |
+| `enableHover`    |         | `boolean`      | `false` | Opt-in to the hover elevation/shift effect.                                     |                |
+| `expanded`       |         | `boolean`      | `false` | Reflects and controls the open state of the card.                               |                |
+| `scrollable`     |         | `boolean`      | `false` | Enables internal vertical scrolling for content.                                |                |
+| `spreadContent`  |         | `boolean`      | `false` | Whether to spread content over the entire body                                  |                |
 
 ### Attributes
 
 | Name             | Field          | Inherited From |
 | ---------------- | -------------- | -------------- |
 | `bentoCardTitle` | bentoCardTitle |                |
+| `bentoTag`       | bentoTag       |                |
 | `enableFocus`    | enableFocus    |                |
 | `enableHover`    | enableHover    |                |
 | `expanded`       | expanded       |                |
@@ -179,6 +211,16 @@
 | `header` | Content to be displayed in the card's header/summary area.                                  |
 
 <details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 ### Methods
 
@@ -239,6 +281,20 @@
 | `enableHover` | enableHover |                |
 | `expanded`    | expanded    |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -290,6 +346,20 @@
 | `enableHover` | enableHover |                |
 | `expanded`    | expanded    |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -298,57 +368,6 @@
 | --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
 | `custom-element-definition` | `code-card` | CodeCard    | src/components/card/code/code-card.ts |         |
 | `js`                        | `CodeCard`  | CodeCard    | src/components/card/code/code-card.ts |         |
-
-# `src/components/card/connect/connect-card.styles.ts`:
-
-## Variables
-
-| Name                | Description | Type |
-| ------------------- | ----------- | ---- |
-| `ConnectCardStyles` |             |      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                | Declaration       | Module                                             | Package |
-| ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
-| `js` | `ConnectCardStyles` | ConnectCardStyles | src/components/card/connect/connect-card.styles.ts |         |
-
-# `dist/out/components/card/connect/connect-card.js`:
-
-## class: `ConnectCard`, `connect-card`
-
-### Superclass
-
-| Name             | Module | Package                                    |
-| ---------------- | ------ | ------------------------------------------ |
-| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
-
-### Fields
-
-| Name          | Privacy | Type      | Default | Description | Inherited From |
-| ------------- | ------- | --------- | ------- | ----------- | -------------- |
-| `enableFocus` |         | `boolean` | `false` |             |                |
-| `enableHover` |         | `boolean` | `false` |             |                |
-| `expanded`    |         | `boolean` | `false` |             |                |
-
-### Attributes
-
-| Name          | Field       | Inherited From |
-| ------------- | ----------- | -------------- |
-| `enableFocus` | enableFocus |                |
-| `enableHover` | enableHover |                |
-| `expanded`    | expanded    |                |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name           | Declaration | Module                                      | Package |
-| --------------------------- | -------------- | ----------- | ------------------------------------------- | ------- |
-| `custom-element-definition` | `connect-card` | ConnectCard | src/components/card/connect/connect-card.ts |         |
-| `js`                        | `ConnectCard`  | ConnectCard | src/components/card/connect/connect-card.ts |         |
 
 # `src/components/card/education/education-card.styles.ts`:
 
@@ -378,6 +397,72 @@
 
 ### Fields
 
+| Name                 | Privacy | Type                           | Default             | Description | Inherited From |
+| -------------------- | ------- | ------------------------------ | ------------------- | ----------- | -------------- |
+| `_educationJsonData` |         | `EducationInstitutionRecord[]` | `EducationJsonData` |             |                |
+| `enableFocus`        |         | `boolean`                      | `false`             |             |                |
+| `enableHover`        |         | `boolean`                      | `false`             |             |                |
+| `expanded`           |         | `boolean`                      | `false`             |             |                |
+
+### Attributes
+
+| Name          | Field       | Inherited From |
+| ------------- | ----------- | -------------- |
+| `enableFocus` | enableFocus |                |
+| `enableHover` | enableHover |                |
+| `expanded`    | expanded    |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name             | Declaration   | Module                                          | Package |
+| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
+| `custom-element-definition` | `education-card` | EducationCard | src/components/card/education/education-card.ts |         |
+| `js`                        | `EducationCard`  | EducationCard | src/components/card/education/education-card.ts |         |
+
+# `src/components/card/experience/experience-card.styles.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `WorkCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                                   | Package |
+| ---- | ---------------- | -------------- | -------------------------------------------------------- | ------- |
+| `js` | `WorkCardStyles` | WorkCardStyles | src/components/card/experience/experience-card.styles.ts |         |
+
+# `dist/out/components/card/experience/experience-card.js`:
+
+## class: `ExperienceCard`, `experience-card`
+
+### Superclass
+
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
+
+### Fields
+
 | Name          | Privacy | Type      | Default | Description | Inherited From |
 | ------------- | ------- | --------- | ------- | ----------- | -------------- |
 | `enableFocus` |         | `boolean` | `false` |             |                |
@@ -392,18 +477,48 @@
 | `enableHover` | enableHover |                |
 | `expanded`    | expanded    |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
 
-| Kind                        | Name             | Declaration   | Module                                          | Package |
-| --------------------------- | ---------------- | ------------- | ----------------------------------------------- | ------- |
-| `custom-element-definition` | `education-card` | EducationCard | src/components/card/education/education-card.ts |         |
-| `js`                        | `EducationCard`  | EducationCard | src/components/card/education/education-card.ts |         |
+| Kind                        | Name              | Declaration    | Module                                            | Package |
+| --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
+| `custom-element-definition` | `experience-card` | ExperienceCard | src/components/card/experience/experience-card.ts |         |
+| `js`                        | `ExperienceCard`  | ExperienceCard | src/components/card/experience/experience-card.ts |         |
 
-# `dist/out/components/card/profile-bio/profile-bio-card.js`:
+# `src/components/card/now-playing/now-playing-card.styles.ts`:
 
-## class: `ProfileBioCard`, `profile-bio-card`
+## Variables
+
+| Name                   | Description | Type |
+| ---------------------- | ----------- | ---- |
+| `NowPlayingCardStyles` |             |      |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                   | Declaration          | Module                                                     | Package |
+| ---- | ---------------------- | -------------------- | ---------------------------------------------------------- | ------- |
+| `js` | `NowPlayingCardStyles` | NowPlayingCardStyles | src/components/card/now-playing/now-playing-card.styles.ts |         |
+
+# `dist/out/components/card/now-playing/now-playing-card.js`:
+
+## class: `NowPlayingCard`, `now-playing-card`
 
 ### Superclass
 
@@ -413,19 +528,16 @@
 
 ### Fields
 
-| Name          | Privacy | Type      | Default                                                                                 | Description | Inherited From |
-| ------------- | ------- | --------- | --------------------------------------------------------------------------------------- | ----------- | -------------- |
-| `bioText`     |         | `string`  |                                                                                         |             |                |
-| `enableFocus` |         | `boolean` | `false`                                                                                 |             |                |
-| `enableHover` |         | `boolean` | `false`                                                                                 |             |                |
-| `expanded`    |         | `boolean` | `false`                                                                                 |             |                |
-| `photoData`   |         |           | `PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]` |             |                |
+| Name          | Privacy | Type      | Default | Description | Inherited From |
+| ------------- | ------- | --------- | ------- | ----------- | -------------- |
+| `enableFocus` |         | `boolean` | `false` |             |                |
+| `enableHover` |         | `boolean` | `false` |             |                |
+| `expanded`    |         | `boolean` | `false` |             |                |
 
 ### Attributes
 
 | Name          | Field       | Inherited From |
 | ------------- | ----------- | -------------- |
-| `bioText`     | bioText     |                |
 | `enableFocus` | enableFocus |                |
 | `enableHover` | enableHover |                |
 | `expanded`    | expanded    |                |
@@ -434,9 +546,14 @@
 
 ### Fields
 
-| Name              | Privacy | Type | Default | Description | Inherited From |
-| ----------------- | ------- | ---- | ------- | ----------- | -------------- |
-| `_onConfigChange` | private |      |         |             |                |
+| Name                 | Privacy   | Type                     | Default                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | -------------- |
+| `_trackTask`         | private   |                          | `new Task<[], TrackData>(this, { task: async () => { // In development, you might point this to your local Firebase Emulator URL. // E.g. "http://127.0.0.1:5001/YOUR_PROJECT/us-east1/nowplaying" // In production, we'll configure a rewrite or use the direct CF URL. const functionUrl = import.meta.env.DEV ? "http://127.0.0.1:5001/nowplaying" : "/nowplaying"; const response = await fetch(functionUrl); if (!response.ok) { throw new Error("Failed to fetch track data"); } return response.json(); }, args: () => [] })` |                                                                                                    |                |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )`                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 </details>
 
@@ -446,8 +563,8 @@
 
 | Kind                        | Name               | Declaration    | Module                                              | Package |
 | --------------------------- | ------------------ | -------------- | --------------------------------------------------- | ------- |
-| `custom-element-definition` | `profile-bio-card` | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
-| `js`                        | `ProfileBioCard`   | ProfileBioCard | src/components/card/profile-bio/profile-bio-card.ts |         |
+| `custom-element-definition` | `now-playing-card` | NowPlayingCard | src/components/card/now-playing/now-playing-card.ts |         |
+| `js`                        | `NowPlayingCard`   | NowPlayingCard | src/components/card/now-playing/now-playing-card.ts |         |
 
 # `src/components/card/profile/profile-card.styles.ts`:
 
@@ -498,9 +615,21 @@
 
 ### Fields
 
-| Name              | Privacy | Type | Default | Description | Inherited From |
-| ----------------- | ------- | ---- | ------- | ----------- | -------------- |
-| `_onConfigChange` | private |      |         |             |                |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `_onConfigChange`    | private   |                          |                                                                |                                                                                                    |                |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+### Methods
+
+| Name              | Privacy | Description | Parameters | Return           | Inherited From |
+| ----------------- | ------- | ----------- | ---------- | ---------------- | -------------- |
+| `contactsSection` | private |             |            | `TemplateResult` |                |
+| `imageSection`    | private |             |            | `TemplateResult` |                |
 
 </details>
 
@@ -565,10 +694,15 @@
 
 ### Fields
 
-| Name                 | Privacy | Type         | Default | Description | Inherited From |
-| -------------------- | ------- | ------------ | ------- | ----------- | -------------- |
-| `_appConfigs`        | private | `AppConfigs` |         |             |                |
-| `onAppConfigsChange` | private |              |         |             |                |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `_appConfigs`        | private   | `AppConfigs`             |                                                                |                                                                                                    |                |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigsChange` | private   |                          |                                                                |                                                                                                    |                |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 ### Methods
 
@@ -633,6 +767,16 @@
 
 <details><summary>Private API</summary>
 
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
 ### Methods
 
 | Name                    | Privacy | Description | Parameters | Return | Inherited From |
@@ -649,57 +793,6 @@
 | --------------------------- | ------------- | ----------- | ----------------------------------------- | ------- |
 | `custom-element-definition` | `skills-card` | SkillsCard  | src/components/card/skills/skills-card.ts |         |
 | `js`                        | `SkillsCard`  | SkillsCard  | src/components/card/skills/skills-card.ts |         |
-
-# `src/components/card/work/work-card.styles.ts`:
-
-## Variables
-
-| Name             | Description | Type |
-| ---------------- | ----------- | ---- |
-| `WorkCardStyles` |             |      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name             | Declaration    | Module                                       | Package |
-| ---- | ---------------- | -------------- | -------------------------------------------- | ------- |
-| `js` | `WorkCardStyles` | WorkCardStyles | src/components/card/work/work-card.styles.ts |         |
-
-# `dist/out/components/card/work/work-card.js`:
-
-## class: `WorkCard`, `work-card`
-
-### Superclass
-
-| Name             | Module | Package                                    |
-| ---------------- | ------ | ------------------------------------------ |
-| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
-
-### Fields
-
-| Name          | Privacy | Type      | Default | Description | Inherited From |
-| ------------- | ------- | --------- | ------- | ----------- | -------------- |
-| `enableFocus` |         | `boolean` | `false` |             |                |
-| `enableHover` |         | `boolean` | `false` |             |                |
-| `expanded`    |         | `boolean` | `false` |             |                |
-
-### Attributes
-
-| Name          | Field       | Inherited From |
-| ------------- | ----------- | -------------- |
-| `enableFocus` | enableFocus |                |
-| `enableHover` | enableHover |                |
-| `expanded`    | expanded    |                |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name        | Declaration | Module                                | Package |
-| --------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
-| `custom-element-definition` | `work-card` | WorkCard    | src/components/card/work/work-card.ts |         |
-| `js`                        | `WorkCard`  | WorkCard    | src/components/card/work/work-card.ts |         |
 
 # `src/components/code/repo/code-repo.styles.ts`:
 
@@ -738,6 +831,26 @@
 | Name       | Field    | Inherited From |
 | ---------- | -------- | -------------- |
 | `codeRepo` | codeRepo |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+### Methods
+
+| Name              | Privacy | Description | Parameters           | Return           | Inherited From |
+| ----------------- | ------- | ----------- | -------------------- | ---------------- | -------------- |
+| `createWordTagLI` | private |             | `tech: CodeRepoTech` | `TemplateResult` |                |
+
+</details>
 
 <hr/>
 
@@ -810,6 +923,20 @@
 | `artifactConnectionData` | artifactConnectionData |                |
 | `artifactConnectionType` | artifactConnectionType |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -818,27 +945,6 @@
 | --------------------------- | --------------------- | ------------------ | --------------------------------------------------------- | ------- |
 | `custom-element-definition` | `artifact-connection` | ArtifactConnection | src/components/connection/artifact/artifact-connection.ts |         |
 | `js`                        | `ArtifactConnection`  | ArtifactConnection | src/components/connection/artifact/artifact-connection.ts |         |
-
-# `src/components/connection/artifact/artifact-connection.types.ts`:
-
-## Variables
-
-| Name                     | Description | Type                                                              |
-| ------------------------ | ----------- | ----------------------------------------------------------------- |
-| `ArtifactConnectionJson` |             |                                                                   |
-| `ArtifactConnections`    |             | `{
-  googleDocs: "googleDocs" as const,
-  pdf: "pdf" as const,
-}` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                     | Declaration            | Module                                                          | Package |
-| ---- | ------------------------ | ---------------------- | --------------------------------------------------------------- | ------- |
-| `js` | `ArtifactConnectionJson` | ArtifactConnectionJson | src/components/connection/artifact/artifact-connection.types.ts |         |
-| `js` | `ArtifactConnections`    | ArtifactConnections    | src/components/connection/artifact/artifact-connection.types.ts |         |
 
 # `src/components/connection/direct/direct-connection.styles.ts`:
 
@@ -878,6 +984,20 @@
 | --------------------- | ------------------ | -------------- |
 | `connection-instance` | connectionInstance |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -886,22 +1006,6 @@
 | --------------------------- | ------------------- | ---------------- | ----------------------------------------------------- | ------- |
 | `custom-element-definition` | `direct-connection` | DirectConnection | src/components/connection/direct/direct-connection.ts |         |
 | `js`                        | `DirectConnection`  | DirectConnection | src/components/connection/direct/direct-connection.ts |         |
-
-# `src/components/connection/direct/direct-connection.types.ts`:
-
-## Variables
-
-| Name                | Description | Type                   |
-| ------------------- | ----------- | ---------------------- |
-| `DirectConnections` |             | `ConnectionJsonDirect` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                | Declaration       | Module                                                      | Package |
-| ---- | ------------------- | ----------------- | ----------------------------------------------------------- | ------- |
-| `js` | `DirectConnections` | DirectConnections | src/components/connection/direct/direct-connection.types.ts |         |
 
 # `src/components/connection/professional/professional-connection.styles.ts`:
 
@@ -943,6 +1047,20 @@
 | `professionalConnectionData` | professionalConnectionData |                |
 | `professionalConnectionType` | professionalConnectionType |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -952,27 +1070,82 @@
 | `custom-element-definition` | `professional-connection` | ProfessionalConnection | src/components/connection/professional/professional-connection.ts |         |
 | `js`                        | `ProfessionalConnection`  | ProfessionalConnection | src/components/connection/professional/professional-connection.ts |         |
 
-# `src/components/connection/professional/professional-connection.types.ts`:
+# `src/components/education/institution/education-institution.styles.ts`:
 
 ## Variables
 
-| Name                          | Description | Type                                                                                             |
-| ----------------------------- | ----------- | ------------------------------------------------------------------------------------------------ |
-| `ProfessionalConnections`     |             | `ProfessionalConnectionJson`                                                                     |
-| `ProfessionalConnectionTypes` |             | `{
-  linkedin: "linkedin" as const,
-  github: "github" as const,
-  medium: "medium" as const,
-}` |
+| Name                         | Description | Type        |
+| ---------------------------- | ----------- | ----------- |
+| `EducationInstitutionStyles` |             | `CSSResult` |
 
 <hr/>
 
 ## Exports
 
-| Kind | Name                          | Declaration                 | Module                                                                  | Package |
-| ---- | ----------------------------- | --------------------------- | ----------------------------------------------------------------------- | ------- |
-| `js` | `ProfessionalConnections`     | ProfessionalConnections     | src/components/connection/professional/professional-connection.types.ts |         |
-| `js` | `ProfessionalConnectionTypes` | ProfessionalConnectionTypes | src/components/connection/professional/professional-connection.types.ts |         |
+| Kind | Name                         | Declaration                | Module                                                               | Package |
+| ---- | ---------------------------- | -------------------------- | -------------------------------------------------------------------- | ------- |
+| `js` | `EducationInstitutionStyles` | EducationInstitutionStyles | src/components/education/institution/education-institution.styles.ts |         |
+
+# `dist/out/components/education/institution/education-institution.js`:
+
+## class: `EducationInstitution`, `education-institution`
+
+### Superclass
+
+| Name             | Module | Package                                    |
+| ---------------- | ------ | ------------------------------------------ |
+| `UIAwareElement` |        | @/mixins/ui-aware-element/ui-aware-element |
+
+### Fields
+
+| Name        | Privacy | Type                         | Default | Description | Inherited From |
+| ----------- | ------- | ---------------------------- | ------- | ----------- | -------------- |
+| `institute` |         | `EducationInstitutionRecord` | `{}`    |             |                |
+
+### Attributes
+
+| Name        | Field     | Inherited From |
+| ----------- | --------- | -------------- |
+| `institute` | institute |                |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind                        | Name                    | Declaration          | Module                                                        | Package |
+| --------------------------- | ----------------------- | -------------------- | ------------------------------------------------------------- | ------- |
+| `custom-element-definition` | `education-institution` | EducationInstitution | src/components/education/institution/education-institution.ts |         |
+| `js`                        | `EducationInstitution`  | EducationInstitution | src/components/education/institution/education-institution.ts |         |
+
+# `src/components/education/institution/education-institution.types.ts`:
+
+## Variables
+
+| Name                | Description | Type                           |
+| ------------------- | ----------- | ------------------------------ |
+| `EducationJsonData` |             | `EducationInstitutionRecord[]` |
+
+<hr/>
+
+## Exports
+
+| Kind | Name                | Declaration       | Module                                                              | Package |
+| ---- | ------------------- | ----------------- | ------------------------------------------------------------------- | ------- |
+| `js` | `EducationJsonData` | EducationJsonData | src/components/education/institution/education-institution.types.ts |         |
 
 # `src/components/ui-mode-toggle/ui-mode-toggle.styles.ts`:
 
@@ -1032,13 +1205,19 @@
 
 ### Fields
 
-| Name                                | Privacy | Type             | Default | Description | Inherited From |
-| ----------------------------------- | ------- | ---------------- | ------- | ----------- | -------------- |
-| `_appConfigs`                       | private | `AppConfigs`     |         |             |                |
-| `_darkModeToggle`                   | private | `DarkModeToggle` |         |             |                |
-| `colorSchemeChangeEventListener`    | private |                  |         |             |                |
-| `onAppConfigsChange`                | private |                  |         |             |                |
-| `permanentColorSchemeEventListener` | private |                  |         |             |                |
+| Name                                | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Inherited From |
+| ----------------------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `_appConfigs`                       | private   | `AppConfigs`             |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                |
+| `_darkModeToggle`                   | private   | `DarkModeToggle`         |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                |
+| `_ready`                            | private   | `boolean`                | `false`                                                        | Guards against the synthetic \`colorschemechange\` / \`permanentcolorscheme\`&#xA;  events that \`dark-mode-toggle\` dispatches at the end of its&#xA;  \`connectedCallback\` (which runs \*during\* this element's first render).&#xA;  Reacting to that echo would mutate reactive state mid-update — triggering&#xA;  Lit's \`change-in-update\` warning — and would clobber a \`SYSTEM\` preference&#xA;  with the resolved light/dark value. We only honor these events once the&#xA;  first render has completed (i.e. after a genuine user toggle). |                |
+| `breakpoint`                        | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS                                                                                                                                                                                                                                                                                                                                                                                                                                                         | UIAwareElement |
+| `colorSchemeChangeEventListener`    | private   |                          |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                |
+| `darkMode`                          | protected |                          |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | UIAwareElement |
+| `onAppConfigChange`                 | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | UIAwareElement |
+| `onAppConfigsChange`                | private   |                          |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                |
+| `onBreakpointChange`                | private   | `() => void`             |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | UIAwareElement |
+| `permanentColorSchemeEventListener` | private   |                          |                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                |
+| `touchScreen`                       | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                                                                                                                                                                                                                                                                                                                                                                                                                                          | UIAwareElement |
 
 ### Methods
 
@@ -1071,9 +1250,14 @@
 
 ### Fields
 
-| Name            | Privacy | Type     | Default | Description                                                                                                              | Inherited From |
-| --------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `formattedDate` | private | `string` |         | Creates an Intl.DateTimeFormat and calls Intl.DateTimeFormat.format&#xA;  on time to render the user presented timestamp |                |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                              | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS                       | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                          | UIAwareElement |
+| `formattedDate`      | private   | `string`                 |                                                                | Creates an Intl.DateTimeFormat and calls Intl.DateTimeFormat.format&#xA;  on time to render the user presented timestamp |                |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                          | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                          | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                        | UIAwareElement |
 
 </details>
 
@@ -1156,11 +1340,16 @@
 
 ### Fields
 
-| Name                    | Privacy | Type                                | Default | Description | Inherited From |
-| ----------------------- | ------- | ----------------------------------- | ------- | ----------- | -------------- |
-| `_intersectionObserver` | private | `IntersectionObserver \| undefined` |         |             |                |
-| `_isVisible`            | private | `boolean`                           | `false` |             |                |
-| `_listElement`          | private | `HTMLUListElement`                  |         |             |                |
+| Name                    | Privacy   | Type                                | Default                                                        | Description                                                                                        | Inherited From |
+| ----------------------- | --------- | ----------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `_intersectionObserver` | private   | `IntersectionObserver \| undefined` |                                                                |                                                                                                    |                |
+| `_isVisible`            | private   | `boolean`                           | `false`                                                        |                                                                                                    |                |
+| `_listElement`          | private   | `HTMLUListElement`                  |                                                                |                                                                                                    |                |
+| `breakpoint`            | protected | `BreakpointLabel`                   | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`              | protected |                                     |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`     | private   | `(event: Event) => void`            |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange`    | private   | `() => void`                        |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`           | protected | `boolean`                           |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 ### Methods
 
@@ -1256,12 +1445,12 @@
 
 ### Fields
 
-| Name        | Privacy | Type               | Default       | Description                                                                                                                                                                                               | Inherited From |
-| ----------- | ------- | ------------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `heaviness` |         | `WordTagHeaviness` | `"normal"`    | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--hairline-width\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --hairline-width\`) |                |
-| `hrefUrl`   |         | `string`           | `""`          | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                     |                |
-| `variant`   |         | `WordTagVariant`   | `"text-only"` | The version of the layout to render                                                                                                                                                                       |                |
-| `word`      |         | `string`           | `""`          | The tagged word                                                                                                                                                                                           |                |
+| Name        | Privacy | Type               | Default       | Description                                                                                                                                                                                                                   | Inherited From |
+| ----------- | ------- | ------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `heaviness` |         | `WordTagHeaviness` | `"normal"`    | The weight of the tag (text & border), can be \`"normal"\` (\`--md-ref-typeface-weight-regular\` & \`--sizes-thickness-hairline\`) or \`"heavy"\` (\`--md-ref-typeface-weight-bold\` & \`2.5 \* --sizes-thickness-hairline\`) |                |
+| `hrefUrl`   |         | `string`           | `""`          | A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}                                                                                                                                         |                |
+| `variant`   |         | `WordTagVariant`   | `"text-only"` | The version of the layout to render                                                                                                                                                                                           |                |
+| `word`      |         | `string`           | `""`          | The tagged word                                                                                                                                                                                                               |                |
 
 ### Attributes
 
@@ -1292,6 +1481,16 @@
 | `icon` | The optional space available for, and positioned by, the {@link variant} property |
 
 <details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
 
 ### Methods
 
@@ -1380,6 +1579,20 @@
 | `jobs`               | jobs              |                |
 | `summaries`          | summaries         |                |
 
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+
+</details>
+
 <hr/>
 
 ## Exports
@@ -1406,3 +1619,70 @@
 | Kind | Name   | Declaration | Module                                                  | Package |
 | ---- | ------ | ----------- | ------------------------------------------------------- | ------- |
 | `js` | `data` | data        | src/components/work/experience/work-experience.types.ts |         |
+
+# `src/mixins/size-observer-element/size-observer-element.ts`:
+
+## mixin: `SizeObserverElement`
+
+### Parameters
+
+| Name   | Type | Default | Description |
+| ------ | ---- | ------- | ----------- |
+| `Base` | `T`  |         |             |
+
+<details><summary>Private API</summary>
+
+### Fields
+
+| Name                   | Privacy   | Type                                | Default | Description | Inherited From |
+| ---------------------- | --------- | ----------------------------------- | ------- | ----------- | -------------- |
+| `intersectionObserver` | protected | `IntersectionObserver \| undefined` |         |             |                |
+| `resizeObserver`       | protected | `ResizeObserver \| undefined`       |         |             |                |
+
+### Methods
+
+| Name            | Privacy | Description | Parameters | Return | Inherited From |
+| --------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `initObservers` | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind | Name                  | Declaration         | Module                                                    | Package |
+| ---- | --------------------- | ------------------- | --------------------------------------------------------- | ------- |
+| `js` | `SizeObserverElement` | SizeObserverElement | src/mixins/size-observer-element/size-observer-element.ts |         |
+
+# `dist/out/mixins/ui-aware-element/ui-aware-element.js`:
+
+## class: `UIAwareElement`
+
+### Superclass
+
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+<details><summary>Private API</summary>
+
+### Methods
+
+| Name                 | Privacy   | Description                                                                                                        | Parameters | Return | Inherited From |
+| -------------------- | --------- | ------------------------------------------------------------------------------------------------------------------ | ---------- | ------ | -------------- |
+| `breakpoint`         | protected | The {@link BreakpointLabel} as determined by \*SCREEN\* width against&#xA;  {@link Breakpoints.BREAKPOINT\_LABELS} |            |        |                |
+| `darkMode`           | protected |                                                                                                                    |            |        |                |
+| `onAppConfigChange`  | private   |                                                                                                                    |            |        |                |
+| `onBreakpointChange` | private   |                                                                                                                    |            |        |                |
+| `touchScreen`        | protected | Reads {@link TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN} from \`:root\`&#xA;  and tests against \`"true"\`,          |            |        |                |
+
+</details>
+
+<hr/>
+
+## Exports
+
+| Kind | Name             | Declaration    | Module                                          | Package |
+| ---- | ---------------- | -------------- | ----------------------------------------------- | ------- |
+| `js` | `UIAwareElement` | UIAwareElement | src/mixins/ui-aware-element/ui-aware-element.ts |         |

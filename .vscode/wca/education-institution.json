@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "education-institution",
+      "description": "Attributes:\n\n  * `institute` - \n\nProperties:\n\n  * `styles` - \n\n  * `institute` - ",
+      "attributes": [
+        {
+          "name": "institute",
+          "description": "`institute` - \n\nProperty: institute\n\nDefault: [object Object]"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

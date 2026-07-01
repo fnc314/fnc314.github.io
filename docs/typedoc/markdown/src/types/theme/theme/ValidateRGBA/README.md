@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **ValidateRGBA**\&lt;`T`\&gt; = `T` _extends_ `` `#${infer Rest}` `` ? `IsHex`\&lt;`Rest`\&gt; _extends_ `true` ? `T` : `"Error: Must be # followed by exactly 8 hex digits"` : `"Error: Must start with #"`
 
-Defined in: [src/types/theme/theme.ts:73](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L73)
+Defined in: [src/types/theme/theme.ts:73](https://github.com/fnc314/fnc314.github.io/blob/main/src/types/theme/theme.ts#L73)
 
 The final validator constraint
 

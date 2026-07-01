@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -6,12 +6,11 @@
 
 # Interface: BlogsJsonEntry
 
-Defined in: [src/components/blog/entry/blog-entry.types.ts:53](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/blog/entry/blog-entry.types.ts#L53)
+Defined in: [src/components/blog/entry/blog-entry.types.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/blog/entry/blog-entry.types.ts#L53)
 
 Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 
 ## Export
 
 BlogsJsonEntry
-
 </body></html>

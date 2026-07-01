@@ -73,7 +73,7 @@ export class BlogEntry extends UIAwareElement {
               alt="Medium logo"
             />
             <span class="md-typescale-label-large" id="medium-link-label">
-              ${html`Read <em>${this.blogEntry.title}</em> on Medium<sup>&reg;</sup>`}
+              Read <em>${this.blogEntry.title}</em> on Medium<sup>&reg;</sup>
             </span>
           </a>
         </footer>

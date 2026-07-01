@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: DirectConnection
 
-Defined in: [src/components/connection/direct/direct-connection.ts:19](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/connection/direct/direct-connection.ts#L19)
+Defined in: [src/components/connection/direct/direct-connection.ts:19](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/connection/direct/direct-connection.ts#L19)
 
 Represents a subset of content in `connections.json` as
 outlined in ConnectionInstance
@@ -21,7 +21,7 @@ DirectConnection
 
 ### Extends
 
-- `UIAwareElement`
+- [`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md)
 
 ## Other
 
@@ -29,14 +29,29 @@ DirectConnection
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
 
 The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT_LABELS
+Breakpoints.BREAKPOINT\_LABELS
 
 #### Inherited from
 
-`UIAwareElement.breakpoint`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`breakpoint`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#breakpoint)
+
+---
+
+### touchScreen
+
+&gt; `protected` **touchScreen**: `boolean`
+
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+
+Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+and tests against `"true"`,
+
+#### Inherited from
+
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`touchScreen`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#touchscreen)
 
 ## lifecycle
 
@@ -44,7 +59,7 @@ Breakpoints.BREAKPOINT_LABELS
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:48](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L48)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
 
 Invoked when the component is added to the document's DOM.
 
@@ -69,7 +84,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 #### Inherited from
 
-`UIAwareElement.connectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`connectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#connectedcallback)
 
 ---
 
@@ -77,7 +92,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:54](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/mixins/ui-aware-element/ui-aware-element.ts#L54)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -101,7 +116,7 @@ An element may be re-connected after being disconnected.
 
 #### Inherited from
 
-`UIAwareElement.disconnectedCallback`
+[`UIAwareElement`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`disconnectedCallback`](../../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#disconnectedcallback)
 
 ## rendering
 
@@ -109,7 +124,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/connection/direct/direct-connection.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/connection/direct/direct-connection.ts#L31)
+Defined in: [src/components/connection/direct/direct-connection.ts:31](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/connection/direct/direct-connection.ts#L31)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -130,7 +145,7 @@ the element to update.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/connection/direct/direct-connection.ts:20](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/connection/direct/direct-connection.ts#L20)
+Defined in: [src/components/connection/direct/direct-connection.ts:20](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/connection/direct/direct-connection.ts#L20)
 
 Array of styles to apply to the element. The styles should be defined
 using the css tag function, via constructible stylesheets, or

@@ -9,6 +9,7 @@ generate:
   files:
     - ./src/components/**/*.ts
     - ./src/mixins/**/*.ts
+    - ./src/services/**/*.css
     - ./src/styles/**/*.css
     - ./src/themes/**/*.ts
     - ./src/types/**/*.ts

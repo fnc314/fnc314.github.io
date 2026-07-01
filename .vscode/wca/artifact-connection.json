@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "artifact-connection",
+      "description": "Attributes:\n\n  * `artifactConnectionType` - \n\n  * `artifactConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `artifactConnectionType` - \n\n  * `artifactConnectionData` - ",
+      "attributes": [
+        {
+          "name": "artifactConnectionType",
+          "description": "`artifactConnectionType` - \n\nProperty: artifactConnectionType\n\nDefault: "
+        },
+        {
+          "name": "artifactConnectionData",
+          "description": "`artifactConnectionData` - \n\nProperty: artifactConnectionData\n\nDefault: [object Object]"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

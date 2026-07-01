@@ -4,7 +4,7 @@
 
 | Property                                         | Attribute   | Type               | Default     | Description                                      |
 |--------------------------------------------------|-------------|--------------------|-------------|--------------------------------------------------|
-| `heaviness`                                      | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text & border), can be<br />`"normal"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or<br />`"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`) |
+| `heaviness`                                      | `heaviness` | `WordTagHeaviness` | "normal"    | The weight of the tag (text & border), can be<br />`"normal"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or<br />`"heavy"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`) |
 | `hrefUrl`                                        | `hrefUrl`   | `string`           | ""          |                                                  |
 | `object Object],[object Object],[object Object],[object Object` |             |                    |             |                                                  |
 | `variant`                                        | `variant`   | `WordTagVariant`   | "text-only" | [object Object],[object Object]                  |

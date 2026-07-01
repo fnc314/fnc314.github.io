@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: UiModeToggle
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:42](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L42)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:43](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L43)
 
 ## Element
 
@@ -36,7 +36,7 @@ to align with the application"s Material Design 3 aesthetic.
 
 ### Extends
 
-- [`LitElement`](https://lit.dev/docs/api/LitElement/)
+- [`UIAwareElement`](../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md)
 
 ## Other
 
@@ -44,13 +44,13 @@ to align with the application"s Material Design 3 aesthetic.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:44](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L44)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:45](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L45)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
-`LitElement.styles`
+`UIAwareElement.styles`
 
 ---
 
@@ -58,7 +58,7 @@ Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:44](https://github.
 
 &gt; **reset**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:141](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L141)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:156](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L156)
 
 Resets the UI mode toggle to its default settings.
 
@@ -66,70 +66,51 @@ Resets the UI mode toggle to its default settings.
 
 `void`
 
-## lifecycle
+---
 
-### connectedCallback()
+### breakpoint
 
-&gt; **connectedCallback**(): `void`
+&gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:65](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
 
-Invoked when the component is added to the document's DOM.
+The BreakpointLabel as determined by _SCREEN_ width against
+Breakpoints.BREAKPOINT\_LABELS
 
-In `connectedCallback()` you should setup tasks that should only occur when
-the element is connected to the document. The most common of these is
-adding event listeners to nodes external to the element, like a keydown
-event handler added to the window.
+#### Inherited from
 
-```ts
-connectedCallback() {
-  super.connectedCallback();
-  addEventListener('keydown', this._handleKeydown);
-}
-```
-
-Typically, anything done in `connectedCallback()` should be undone when the
-element is disconnected, in `disconnectedCallback()`.
-
-#### Returns
-
-`void`
-
-#### Overrides
-
-`LitElement.connectedCallback`
+[`UIAwareElement`](../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`breakpoint`](../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#breakpoint)
 
 ---
 
-### disconnectedCallback()
+### touchScreen
 
-&gt; **disconnectedCallback**(): `void`
+&gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:72](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L72)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
 
-Invoked when the component is removed from the document's DOM.
+Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+and tests against `"true"`,
 
-This callback is the main signal to the element that it may no longer be
-used. `disconnectedCallback()` should ensure that nothing is holding a
-reference to the element (such as event listeners added to nodes external
-to the element), so that it is free to be garbage collected.
+#### Inherited from
 
-```ts
-disconnectedCallback() {
-  super.disconnectedCallback();
-  window.removeEventListener('keydown', this._handleKeydown);
-}
-```
+[`UIAwareElement`](../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md).[`touchScreen`](../../../../mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md#touchscreen)
 
-An element may be re-connected after being disconnected.
+---
 
-#### Returns
+### \_ready
 
-`void`
+&gt; `private` **\_ready**: `boolean` = `false`
 
-#### Overrides
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:71](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L71)
 
-`LitElement.disconnectedCallback`
+Guards against the synthetic `colorschemechange` / `permanentcolorscheme`
+events that `dark-mode-toggle` dispatches at the end of its
+`connectedCallback` (which runs _during_ this element's first render).
+Reacting to that echo would mutate reactive state mid-update — triggering
+Lit's `change-in-update` warning — and would clobber a `SYSTEM` preference
+with the resolved light/dark value. We only honor these events once the
+first render has completed (i.e. after a genuine user toggle).
 
 ## rendering
 
@@ -137,7 +118,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:146](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L146)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:161](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L161)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -150,15 +131,15 @@ the element to update.
 
 #### Overrides
 
-`LitElement.render`
+`UIAwareElement.render`
 
 ## updates
 
 ### firstUpdated()
 
-&gt; `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
+&gt; `protected` **firstUpdated**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:79](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/ui-mode-toggle/ui-mode-toggle.ts#L79)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:73](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L73)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.
@@ -172,43 +153,11 @@ firstUpdated() {
 Setting properties inside this method will trigger the element to update
 again after this update cycle completes.
 
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`_changedProperties`
-
-</td>
-<td>
-
-`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
-
-</td>
-<td>
-
-Map of changed properties with old values
-
-</td>
-</tr>
-</tbody>
-</table>
-
 #### Returns
 
 `void`
 
 #### Overrides
 
-`LitElement.firstUpdated`
-
+`UIAwareElement.firstUpdated`
 </body></html>

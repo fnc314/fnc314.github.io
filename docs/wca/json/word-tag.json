@@ -18,7 +18,7 @@
         },
         {
           "name": "heaviness",
-          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
           "type": "WordTagHeaviness",
           "default": "\"normal\""
         },
@@ -34,7 +34,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"MaterialTypescaleStyles\",null]"
+          "default": "[\"TextStyles\",\"WordTagStyles\"]"
         },
         {
           "name": "hrefUrl",
@@ -52,7 +52,7 @@
         {
           "name": "heaviness",
           "attribute": "heaviness",
-          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
           "type": "WordTagHeaviness",
           "default": "\"normal\""
         },

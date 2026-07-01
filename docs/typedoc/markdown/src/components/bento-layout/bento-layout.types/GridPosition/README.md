@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -6,18 +6,17 @@
 
 # Type Alias: GridPosition
 
-&gt; **GridPosition** = \{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \} \| \{ `breakpoint`: `"mobile"`; \}
+&gt; **GridPosition** = \{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `span`: [`GridSpan`](../GridSpan/README.md); `order`: `number`; `offsets?`: \{ `row?`: `number` \| `0`; `col?`: `number` \| `0`; \}; \} \| \{ `breakpoint`: [`Extract`](https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `order`: `number`; \}
 
-Defined in: [src/components/bento-layout/bento-layout.types.ts:20](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L20)
+Defined in: [src/components/bento-layout/bento-layout.types.ts:19](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L19)
 
-A pair of [GridPlacement](../GridPlacement/README.md)s for the row and column
-dimensions
+The span and order for a given breakpoint
 
 ## Union Members
 
 ### Type Literal
 
-\{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;; `row`: [`GridPlacement`](../GridPlacement/README.md); `column`: [`GridPlacement`](../GridPlacement/README.md); `area?`: `string`; \}
+\{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `span`: [`GridSpan`](../GridSpan/README.md); `order`: `number`; `offsets?`: \{ `row?`: `number` \| `0`; `col?`: `number` \| `0`; \}; \}
 
 <table>
 <thead>
@@ -37,7 +36,7 @@ dimensions
 </td>
 <td>
 
-[`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;[`Breakpoint`](../../../../types/breakpoints/Breakpoint/README.md), `"mobile"`\&gt;
+[`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;`BreakpointLabel`, `"mobile"`\&gt;
 
 </td>
 <td>
@@ -47,73 +46,117 @@ The breakpoint for this position
 </td>
 <td>
 
-[src/components/bento-layout/bento-layout.types.ts:22](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L22)
+[src/components/bento-layout/bento-layout.types.ts:21](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L21)
 
 </td>
 </tr>
 <tr>
 <td>
 
-`row`
+`span`
 
 </td>
 <td>
 
-[`GridPlacement`](../GridPlacement/README.md)
+[`GridSpan`](../GridSpan/README.md)
 
 </td>
 <td>
 
-The row placement
+The grid span
 
 </td>
 <td>
 
-[src/components/bento-layout/bento-layout.types.ts:24](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L24)
-
-</td>
-</tr>
-<tr>
-<td>
-
-`column`
-
-</td>
-<td>
-
-[`GridPlacement`](../GridPlacement/README.md)
-
-</td>
-<td>
-
-The column placement
-
-</td>
-<td>
-
-[src/components/bento-layout/bento-layout.types.ts:26](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L26)
+[src/components/bento-layout/bento-layout.types.ts:23](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L23)
 
 </td>
 </tr>
 <tr>
 <td>
 
-`area?`
+`order`
 
 </td>
 <td>
 
-`string`
+`number`
 
 </td>
 <td>
 
-The grid area string
+The logical order in the DOM
 
 </td>
 <td>
 
-[src/components/bento-layout/bento-layout.types.ts:28](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L28)
+[src/components/bento-layout/bento-layout.types.ts:25](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L25)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`offsets?`
+
+</td>
+<td>
+
+\{ `row?`: `number` \| `0`; `col?`: `number` \| `0`; \}
+
+</td>
+<td>
+
+Offsets
+
+</td>
+<td>
+
+[src/components/bento-layout/bento-layout.types.ts:27](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L27)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`offsets.row?`
+
+</td>
+<td>
+
+`number` \| `0`
+
+</td>
+<td>
+
+‐
+
+</td>
+<td>
+
+[src/components/bento-layout/bento-layout.types.ts:28](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L28)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`offsets.col?`
+
+</td>
+<td>
+
+`number` \| `0`
+
+</td>
+<td>
+
+‐
+
+</td>
+<td>
+
+[src/components/bento-layout/bento-layout.types.ts:29](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L29)
 
 </td>
 </tr>
@@ -124,7 +167,7 @@ The grid area string
 
 ### Type Literal
 
-\{ `breakpoint`: `"mobile"`; \}
+\{ `breakpoint`: [`Extract`](https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `order`: `number`; \}
 
 <table>
 <thead>
@@ -144,7 +187,7 @@ The grid area string
 </td>
 <td>
 
-`"mobile"`
+[`Extract`](https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union)\&lt;`BreakpointLabel`, `"mobile"`\&gt;
 
 </td>
 <td>
@@ -154,7 +197,29 @@ The breakpoint for this position
 </td>
 <td>
 
-[src/components/bento-layout/bento-layout.types.ts:31](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/bento-layout/bento-layout.types.ts#L31)
+[src/components/bento-layout/bento-layout.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L33)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`order`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The logical order in the DOM
+
+</td>
+<td>
+
+[src/components/bento-layout/bento-layout.types.ts:35](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/bento-layout/bento-layout.types.ts#L35)
 
 </td>
 </tr>

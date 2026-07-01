@@ -30,6 +30,11 @@
           "values": []
         },
         {
+          "name": "bentoTag",
+          "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
+          "values": [{ "name": "BentoBoxType" }]
+        },
+        {
           "name": "enableFocus",
           "description": "Opt-in to the focus-within border/shadow shift effect.",
           "values": []
@@ -78,16 +83,6 @@
       "references": []
     },
     {
-      "name": "connect-card",
-      "description": "ConnectCard - A card component displaying contact/connection links.\n---\n",
-      "attributes": [
-        { "name": "enableFocus", "values": [] },
-        { "name": "enableHover", "values": [] },
-        { "name": "expanded", "values": [] }
-      ],
-      "references": []
-    },
-    {
       "name": "education-card",
       "description": "EducationCard - A card component displaying education history.\n---\n",
       "attributes": [
@@ -98,10 +93,19 @@
       "references": []
     },
     {
-      "name": "profile-bio-card",
-      "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+      "name": "experience-card",
+      "description": "WorkCard - A card component displaying work experience.\n---\n",
       "attributes": [
-        { "name": "bioText", "values": [] },
+        { "name": "enableFocus", "values": [] },
+        { "name": "enableHover", "values": [] },
+        { "name": "expanded", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "now-playing-card",
+      "description": "\n---\n",
+      "attributes": [
         { "name": "enableFocus", "values": [] },
         { "name": "enableHover", "values": [] },
         { "name": "expanded", "values": [] }
@@ -132,16 +136,6 @@
     {
       "name": "skills-card",
       "description": "SkillsCard - A card component displaying a skill word cloud.\n---\n",
-      "attributes": [
-        { "name": "enableFocus", "values": [] },
-        { "name": "enableHover", "values": [] },
-        { "name": "expanded", "values": [] }
-      ],
-      "references": []
-    },
-    {
-      "name": "work-card",
-      "description": "WorkCard - A card component displaying work experience.\n---\n",
       "attributes": [
         { "name": "enableFocus", "values": [] },
         { "name": "enableHover", "values": [] },
@@ -198,6 +192,17 @@
         {
           "name": "professionalConnectionType",
           "values": [{ "name": "ProfessionalConnectionType" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "education-institution",
+      "description": "\n---\n",
+      "attributes": [
+        {
+          "name": "institute",
+          "values": [{ "name": "EducationInstitutionRecord" }]
         }
       ],
       "references": []
@@ -277,7 +282,7 @@
       "attributes": [
         {
           "name": "heaviness",
-          "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+          "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
           "values": [{ "name": "WordTagHeaviness" }]
         },
         {

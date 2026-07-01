@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
 
 ---
 
@@ -8,8 +8,7 @@
 
 &gt; **WordTagSize** = _typeof_ [`WORD_TAG_SIZES`](../WORD_TAG_SIZES/README.md)\[keyof _typeof_ [`WORD_TAG_SIZES`](../WORD_TAG_SIZES/README.md)\]
 
-Defined in: [src/components/code/repo/code-repo.types.ts:18](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/components/code/repo/code-repo.types.ts#L18)
+Defined in: [src/components/code/repo/code-repo.types.ts:18](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.types.ts#L18)
 
 We give WordTag various treatments within this component
-
 </body></html>

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 &gt; **jsonIsThemeJsonSchemes**(`json`: `unknown`): `json is ThemeJsonSchemes`
 
-Defined in: [src/types/theme/theme.ts:99](https://github.com/fnc314/fnc314.github.io/blob/feature/bento-ui/src/types/theme/theme.ts#L99)
+Defined in: [src/types/theme/theme.ts:99](https://github.com/fnc314/fnc314.github.io/blob/main/src/types/theme/theme.ts#L99)
 
 Checks if the provided JSON conforms to the expected theme schemes structure
 
@@ -48,5 +48,4 @@ Input of an unknown type, ideally conforming to a Material 3 JSON scheme
 `json is ThemeJsonSchemes`
 
 A boolean indicating whether the input JSON matches the expected structure of [ThemeJsonSchemes](#)
-
 </body></html>

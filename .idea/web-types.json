@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
   "name": "@fnc314/fnc314.github.io",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "description-markup": "markdown",
   "default-icon": "./static/icons/icon.svg",
   "contributions": {
@@ -12,6 +12,7 @@
           "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\n---\n",
           "doc-url": "",
           "attributes": [],
+          "slots": [],
           "events": [],
           "js": { "properties": [], "events": [] }
         },
@@ -26,6 +27,7 @@
               "value": { "type": "BlogEntryJson", "default": "{}" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -47,6 +49,11 @@
               "name": "bentoCardTitle",
               "description": "An optional `string` which, when set, suppresses the `slot[name=\"header\"]`",
               "value": { "type": "string", "default": "\"\"" }
+            },
+            {
+              "name": "bentoTag",
+              "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
+              "value": { "type": "BentoBoxType" }
             },
             {
               "name": "enableFocus",
@@ -91,6 +98,11 @@
                 "name": "bentoCardTitle",
                 "description": "An optional `string` which, when set, suppresses the `slot[name=\"header\"]`",
                 "type": "string"
+              },
+              {
+                "name": "bentoTag",
+                "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
+                "type": "BentoBoxType"
               },
               {
                 "name": "enableFocus",
@@ -139,6 +151,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -167,34 +180,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
-          "events": [],
-          "js": {
-            "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
-            ],
-            "events": []
-          }
-        },
-        {
-          "name": "connect-card",
-          "description": "ConnectCard - A card component displaying contact/connection links.\n---\n",
-          "doc-url": "",
-          "attributes": [
-            {
-              "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
-            }
-          ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -223,9 +209,14 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
+              {
+                "name": "_educationJsonData",
+                "type": "EducationInstitutionRecord[]"
+              },
               { "name": "enableFocus", "type": "boolean" },
               { "name": "enableHover", "type": "boolean" },
               { "name": "expanded", "type": "boolean" }
@@ -234,11 +225,10 @@
           }
         },
         {
-          "name": "profile-bio-card",
-          "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+          "name": "experience-card",
+          "description": "WorkCard - A card component displaying work experience.\n---\n",
           "doc-url": "",
           "attributes": [
-            { "name": "bioText", "value": { "type": "string" } },
             {
               "name": "enableFocus",
               "value": { "type": "boolean", "default": "false" }
@@ -252,14 +242,42 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "bioText", "type": "string" },
               { "name": "enableFocus", "type": "boolean" },
               { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" },
-              { "name": "photoData" }
+              { "name": "expanded", "type": "boolean" }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "now-playing-card",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "enableFocus",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "enableHover",
+              "value": { "type": "boolean", "default": "false" }
+            },
+            {
+              "name": "expanded",
+              "value": { "type": "boolean", "default": "false" }
+            }
+          ],
+          "slots": [],
+          "events": [],
+          "js": {
+            "properties": [
+              { "name": "enableFocus", "type": "boolean" },
+              { "name": "enableHover", "type": "boolean" },
+              { "name": "expanded", "type": "boolean" }
             ],
             "events": []
           }
@@ -283,6 +301,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -313,6 +332,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }],
           "js": {
             "properties": [
@@ -341,34 +361,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
-          "events": [],
-          "js": {
-            "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
-            ],
-            "events": []
-          }
-        },
-        {
-          "name": "work-card",
-          "description": "WorkCard - A card component displaying work experience.\n---\n",
-          "doc-url": "",
-          "attributes": [
-            {
-              "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
-            }
-          ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -390,6 +383,7 @@
               "value": { "type": "CodeRepoData", "default": "{}" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -416,6 +410,7 @@
               "value": { "type": "ArtifactConnectionType", "default": "\"\"" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -441,6 +436,7 @@
               "value": { "type": "ConnectionInstance", "default": "{}" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -469,6 +465,7 @@
               }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -480,6 +477,25 @@
                 "name": "professionalConnectionType",
                 "type": "ProfessionalConnectionType"
               }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "education-institution",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "institute",
+              "value": { "type": "EducationInstitutionRecord", "default": "{}" }
+            }
+          ],
+          "slots": [],
+          "events": [],
+          "js": {
+            "properties": [
+              { "name": "institute", "type": "EducationInstitutionRecord" }
             ],
             "events": []
           }
@@ -503,6 +519,7 @@
               "value": { "type": "boolean", "default": "false" }
             }
           ],
+          "slots": [],
           "events": [
             {
               "name": "color_scheme.change",
@@ -553,6 +570,7 @@
           "description": "\n---\n",
           "doc-url": "",
           "attributes": [],
+          "slots": [],
           "events": [],
           "js": { "properties": [], "events": [] }
         },
@@ -597,6 +615,7 @@
               "value": { "type": "WordCloudWord[]", "default": "[]" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [
@@ -647,7 +666,7 @@
           "attributes": [
             {
               "name": "heaviness",
-              "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+              "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
               "value": { "type": "WordTagHeaviness", "default": "\"normal\"" }
             },
             {
@@ -677,7 +696,7 @@
             "properties": [
               {
                 "name": "heaviness",
-                "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)",
+                "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
                 "type": "WordTagHeaviness"
               },
               {
@@ -751,6 +770,7 @@
               "value": { "type": "Array<{ item: string }>", "default": "[]" }
             }
           ],
+          "slots": [],
           "events": [],
           "js": {
             "properties": [

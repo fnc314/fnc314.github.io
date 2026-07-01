@@ -143,6 +143,7 @@
     "stylelint-plugin-use-baseline": "catalog:devDependencies",
     "stylelint-prettier": "catalog:devDependencies",
     "stylelint-use-nesting": "catalog:devDependencies",
+    "svgo": "catalog:devDependencies",
     "ts-lit-plugin": "catalog:devDependencies",
     "ts-node": "catalog:devDependencies",
     "tslib": "catalog:devDependencies",
@@ -166,6 +167,7 @@
     "vite-plugin-cp": "catalog:devDependencies",
     "vite-plugin-dts": "catalog:devDependencies",
     "vite-plugin-pwa": "catalog:devDependencies",
+    "vite-plugin-svgo": "catalog:devDependencies",
     "vite-plugin-version-mark": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },

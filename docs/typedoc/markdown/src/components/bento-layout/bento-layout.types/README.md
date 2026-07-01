@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.0**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
 
 ---
 
@@ -8,7 +8,7 @@
 
 ## Interfaces
 
-- [GridPlacement](GridPlacement/README.md)
+- [GridSpan](GridSpan/README.md)
 - [ABentoBoxConfig](ABentoBoxConfig/README.md)
 
 ## Type Aliases
@@ -19,9 +19,12 @@
 
 ## Variables
 
+- [BENTO\_BOX\_TYPES](BENTO_BOX_TYPES/README.md)
 - [BentoBoxConfigs](BentoBoxConfigs/README.md)
+- [BENTO\_BOX\_CONFIG](BENTO_BOX_CONFIG/README.md)
 
 ## Functions
 
 - [getBentoDOMOrder](getBentoDOMOrder/README.md)
+
 </body></html>

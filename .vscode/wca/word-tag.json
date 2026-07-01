@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "word-tag",
-      "description": "Slots:\n\n  * `object Object],[object Object],[object Object` {} - \n\nAttributes:\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\n  * `variant` {WordTagVariant} - [object Object],[object Object]\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\n  * `variant` {WordTagVariant} - [object Object],[object Object]\n\n  * `object Object],[object Object],[object Object],[object Object` - ",
+      "description": "Slots:\n\n  * `object Object],[object Object],[object Object` {} - \n\nAttributes:\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)\n\n  * `variant` {WordTagVariant} - [object Object],[object Object]\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `hrefUrl` {`string`} - \n\n  * `word` {string} - The tagged word\n\n  * `heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)\n\n  * `variant` {WordTagVariant} - [object Object],[object Object]\n\n  * `object Object],[object Object],[object Object],[object Object` - ",
       "attributes": [
         {
           "name": "hrefUrl",
@@ -15,7 +15,7 @@
         },
         {
           "name": "heaviness",
-          "description": "`heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--hairline-width`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --hairline-width`)\n\nProperty: heaviness\n\nDefault: normal"
+          "description": "`heaviness` {WordTagHeaviness} - The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)\n\nProperty: heaviness\n\nDefault: normal"
         },
         {
           "name": "variant",

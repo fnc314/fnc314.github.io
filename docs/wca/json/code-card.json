@@ -26,7 +26,7 @@
           "name": "styles",
           "description": "[object Object],[object Object]",
           "type": "array",
-          "default": "[\"CodeCardStyles\"]"
+          "default": "[\"TextStyles\",\"CodeCardStyles\"]"
         },
         {
           "name": "expanded",
