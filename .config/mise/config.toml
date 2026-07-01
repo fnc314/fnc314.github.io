@@ -11,7 +11,7 @@ monorepo_root = true
 [tools]
   firebase = "15.22.3"
   node = "26.4.0"
-  "npm:vite" = "8.1.1"
+  "npm:vite" = "8.1.2"
   pnpm = "11.9.0"
   tombi = "1.1.5"
   usage = "3.5.3"
