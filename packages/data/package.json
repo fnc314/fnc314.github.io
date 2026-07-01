@@ -23,8 +23,8 @@
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/@fnc314.packages.data.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/@fnc314.packages.data.js"
     },
     "./types/*": "./dist/types/*"
   },

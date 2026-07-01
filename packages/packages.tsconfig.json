@@ -59,8 +59,7 @@
     "${configDir}/node_modules"
   ],
   "include": [
-    "${configDir}/lib/**/*.ts",
-    "${configDir}/index.ts"
+    "${configDir}/lib/**/*.ts"
   ],
   "ts-node": {
     "compiler": "typescript",

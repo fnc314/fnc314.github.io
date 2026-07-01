@@ -8,11 +8,12 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "style": "./dist/@fnc314.packages.design-tokens.css",
       "import": "./dist/@fnc314.packages.design-tokens.js",
-      "types": "./dist/types/index.d.ts",
       "default": "./dist/@fnc314.packages.design-tokens.js"
     },
+    "./types/*": "./dist/types/*",
     "./styles.css": {
       "style": "./dist/@fnc314.packages.design-tokens.css",
       "default": "./dist/@fnc314.packages.design-tokens.css"
@@ -24,7 +25,6 @@
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",
     "./themes/*": "./dist/themes/*",
-    "./types/*": "./dist/types/*",
     "./dist/*": "./dist/*"
   },
   "files": [

@@ -8,7 +8,7 @@ export function bulidConfig(dirName: string): UserConfigFnObject {
       publicDir: `${process.cwd()}/packages/${dirName}/assets`,
       build: {
         lib: {
-          entry: `${process.cwd()}/packages/${dirName}/index.ts`,
+          entry: `${process.cwd()}/packages/${dirName}/lib/index.ts`,
           name: `@fnc314.packages.${dirName}`,
           fileName: `@fnc314.packages.${dirName}`,
           cssFileName: `@fnc314.packages.${dirName}`,
