@@ -1,9 +1,10 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { EducationCardStyles } from "@/components/card/education/education-card.styles";
-import { type EducationInstitutionRecord, EducationJsonData } from "@/components/education/institution/education-institution.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { EducationJsonData } from "@fnc314/packages.data";
+import { type EducationInstitutionRecord } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 

@@ -1,4 +1,3 @@
-import WorkJson from "@/data/work.json" with { type: "json" };
 export interface WorkDate {
   stamp: string;
   text: string;
@@ -30,5 +29,3 @@ export interface Experience {
 export interface WorkData {
   experiences: Experience[];
 }
-
-export const data = WorkJson as WorkData;

@@ -2,9 +2,9 @@ import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { CodeCardStyles } from "@/components/card/code/code-card.styles";
 import "@/components/code/repo/code-repo";
-import CodeJson from "@/data/code.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { Projects } from "@fnc314/packages.data";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -47,7 +47,7 @@ export class CodeCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.code}
       >
         <div class="code-list">
-          ${CodeJson.projects.map(
+          ${Projects.map(
             (p) => html`
               <code-repo .codeRepo="${p}"></code-repo>
             `,

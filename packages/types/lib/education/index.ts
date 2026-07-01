@@ -1,7 +1,6 @@
-import EducationJson from "@/data/education.json" with { type: "json" };
-import { type DesignTokenIcon } from "@fnc314/packages.design-tokens/types/design-token-icon.js";
+import { type DesignTokenIcon } from "@/lib/design-token-icon";
 
-type SingleDigit =
+export type SingleDigit =
   "0" |
   "1" |
   "2" |
@@ -35,5 +34,3 @@ export interface EducationInstitutionRecord {
   },
   designToken: DesignTokenIcon;
 }
-
-export const EducationJsonData: EducationInstitutionRecord[] = EducationJson.institutions as EducationInstitutionRecord[];

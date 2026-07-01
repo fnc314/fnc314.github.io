@@ -1,6 +1,7 @@
 [tools]
 node = "26.4.0"
-"npm:vite" = "8.1.0"
+"npm:vite" = "8.1.1"
 pnpm = "11.9.0"
 usage = "3.5.3"
 tombi = "1.1.5"
+firebase = "15.22.3"

@@ -2,12 +2,11 @@ import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/card/bento/bento-card";
 import { WorkCardStyles } from "@/components/card/experience/experience-card.styles";
 import "@/components/work/experience/work-experience";
-import { data as WorkJson } from "@/components/work/experience/work-experience.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { Experiences } from "@fnc314/packages.data";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
 /**
  * @summary WorkCard - A card component displaying work experience.
  *
@@ -46,7 +45,7 @@ export class ExperienceCard extends UIAwareElement {
         .bentoCardTitle=${"Experience"}
         .bentoTag=${BENTO_BOX_TYPES.work}
       >
-        ${WorkJson.experiences.map(
+        ${Experiences.map(
           (exp) => html`
             <work-experience
               .isNested="${false}"

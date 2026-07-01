@@ -40,6 +40,7 @@
   "main": "./dist/@fnc314.packages.design-tokens.js",
   "module": "./dist/@fnc314.packages.design-tokens.js",
   "dependencies": {
+    "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },

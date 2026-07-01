@@ -1,8 +1,8 @@
 import { CodeRepoStyles } from "@/components/code/repo/code-repo.styles";
-import { type CodeRepoData, type CodeRepoTech } from "@/components/code/repo/code-repo.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
 import { Breakpoints, readCSSProperty } from "@fnc314/packages.design-tokens";
+import { type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

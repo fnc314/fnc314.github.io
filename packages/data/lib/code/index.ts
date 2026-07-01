@@ -1,0 +1,222 @@
+import { type CodeRepoData } from "@fnc314/packages.types";
+
+export const Projects: CodeRepoData[] = [
+  {
+    name: "project-collections-gradle-settings-plugin",
+    tech: [
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: {
+          dark: "--icons-logos-tech-gradle-dark-data-image-svg",
+          default: "--icons-logos-tech-gradle-default-data-image-svg",
+          light: "--icons-logos-tech-gradle-light-data-image-svg"
+        }
+      },
+      {
+        name: "Kotlin",
+        url: "https://kotlinlang.org/",
+        designToken: "--icons-logos-tech-kotlin-default-data-image-svg"
+      }
+    ],
+    url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
+    repo: "fnc314/project-collections-gradle-settings-plugin",
+    description: "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures."
+  },
+  {
+    name: "mac-os-env-scripts",
+    tech: [
+      {
+        name: "Bash",
+        url: "https://www.gnu.org/software/bash/",
+        designToken: "--icons-logos-tech-bash-default-data-image-svg"
+      },
+      {
+        name: "Oh-My-Zsh",
+        url: "https://ohmyz.sh/",
+        designToken: "--icons-logos-tech-zsh-default-data-image-svg"
+      }
+    ],
+    url: "https://github.com/fnc314/mac-os-env-scripts",
+    repo: "fnc314/mac-os-env-scripts",
+    description: "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states."
+  },
+  {
+    name: "fnc314-kmp",
+    tech: [
+      {
+        name: "Android",
+        url: "https://developer.android.com/",
+        designToken: "--icons-logos-tech-android-default-data-image-svg"
+      },
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: {
+          dark: "--icons-logos-tech-gradle-dark-data-image-svg",
+          default: "--icons-logos-tech-gradle-default-data-image-svg",
+          light: "--icons-logos-tech-gradle-light-data-image-svg"
+        }
+      },
+      {
+        name: "Kotlin",
+        url: "https://kotlinlang.org/",
+        designToken: "--icons-logos-tech-kotlin-default-data-image-svg"
+      }
+    ],
+    url: "https://github.com/fnc314/fnc314-kmp",
+    repo: "fnc314/fnc314-kmp",
+    description: "An exploratory <abbr title=\"Kotlin Multiplatform\">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets."
+  },
+  {
+    name: "fnc314.github.io",
+    tech: [
+      {
+        name: "Mise",
+        url: "https://mise.jdx.dev/",
+        designToken: {
+          dark: "--icons-logos-tech-mise-dark-data-image-svg",
+          default: "--icons-logos-tech-mise-default-data-image-svg",
+          light: "--icons-logos-tech-mise-light-data-image-svg"
+        }
+      },
+      {
+        name: "PNPM",
+        url: "https://pnpm.io/",
+        designToken: {
+          dark: "--icons-logos-tech-pnpm-dark-data-image-svg",
+          default: "--icons-logos-tech-pnpm-default-data-image-svg",
+          light: "--icons-logos-tech-pnpm-light-data-image-svg"
+        }
+      },
+      {
+        name: "Vite",
+        url: "https://vite.dev/",
+        designToken: "--icons-logos-tech-vite-default-data-image-svg"
+      },
+      {
+        name: "Lit",
+        url: "https://lit.dev/",
+        designToken: "--icons-logos-tech-lit-default-data-image-svg"
+      },
+      {
+        name: "TypeScript",
+        url: "https://typescriptlang.org/",
+        designToken: "--icons-logos-tech-typescript-default-data-image-svg"
+      },
+      {
+        name: "Style Dictionary",
+        url: "https://styledictionary.com/",
+        designToken: "--icons-logos-tech-style-dictionary-default-data-image-svg"
+      },
+      {
+        name: "Material Components",
+        url: "https://github.com/material-components/material-web",
+        // repo: "material-components/material-web",
+        designToken: {
+          dark: "--icons-logos-tech-material-design-dark-data-image-svg",
+          default: "--icons-logos-tech-material-design-default-data-image-svg",
+          light: "--icons-logos-tech-material-design-light-data-image-svg"
+        }
+      },
+      {
+        name: "Node",
+        url: "https://nodejs.org/",
+        designToken: {
+          dark: "--icons-logos-tech-node-dark-data-image-svg",
+          default: "--icons-logos-tech-node-default-data-image-svg",
+          light: "--icons-logos-tech-node-light-data-image-svg"
+        }
+      },
+      {
+        name: "Material Theme Builder",
+        url: "https://material-foundation.github.io/material-theme-builder/",
+        designToken: {
+          dark: "--icons-logos-tech-material-design-dark-data-image-svg",
+          default: "--icons-logos-tech-material-design-default-data-image-svg",
+          light: "--icons-logos-tech-material-design-light-data-image-svg"
+        }
+      },
+      {
+        name: "HTML/CSS/JS",
+        url: "https://developer.mozilla.org/",
+        designToken: "--icons-logos-tech-web-html-default-data-image-svg"
+      },
+      {
+        name: "Prettier",
+        url: "https://prettier.io/",
+        designToken: {
+          dark: "--icons-logos-tech-prettier-dark-data-image-svg",
+          default: "--icons-logos-tech-prettier-default-data-image-svg",
+          light: "--icons-logos-tech-prettier-light-data-image-svg"
+        }
+      },
+      {
+        name: "ESLint",
+        url: "https://eslint.org/",
+        designToken: "--icons-logos-tech-eslint-default-data-image-svg"
+      },
+      {
+        name: "StyleLint",
+        url: "https://stylelint.io/",
+        designToken: {
+          dark: "--icons-logos-tech-stylelint-dark-data-image-svg",
+          default: "--icons-logos-tech-stylelint-default-data-image-svg",
+          light: "--icons-logos-tech-stylelint-light-data-image-svg"
+        }
+      },
+      {
+        name: "PostCSS",
+        url: "https://postcss.org/",
+        designToken: {
+          dark: "--icons-logos-tech-postcss-dark-data-image-svg",
+          default: "--icons-logos-tech-postcss-default-data-image-svg",
+          light: "--icons-logos-tech-postcss-light-data-image-svg"
+        }
+      }
+    ],
+    url: "https://github.com/fnc314/fnc314.github.io",
+    repo: "fnc314/fnc314.github.io",
+    description: "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
+  },
+  {
+    name: "material-theme-viewer",
+    tech: [
+      {
+        name: "HTML/CSS/JS",
+        url: "https://developer.mozilla.org/",
+        designToken: "--icons-logos-tech-web-html-default-data-image-svg"
+      },
+      {
+        name: "Material Theme Builder",
+        url: "https://material-foundation.github.io/material-theme-builder/",
+        designToken: {
+          dark: "--icons-logos-tech-material-design-dark-data-image-svg",
+          default: "--icons-logos-tech-material-design-default-data-image-svg",
+          light: "--icons-logos-tech-material-design-light-data-image-svg"
+        }
+      }
+    ],
+    url: "https://github.com/fnc314/material-theme-viewer",
+    repo: "fnc314/material-theme-viewer",
+    description: "Displays the output of <a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a> in a simple tabbed interface"
+  },
+  {
+    name: "project_euler",
+    tech: [
+      {
+        name: "Python",
+        url: "https://python.org/",
+        designToken: "--icons-logos-tech-python-default-data-image-svg"
+      },
+      {
+        name: "Ruby",
+        url: "https://www.ruby-lang.org/en/",
+        designToken: "--icons-logos-tech-ruby-default-data-image-svg"
+      }
+    ],
+    url: "https://github.com/fnc314/project_euler",
+    repo: "fnc314/project_euler",
+    description: "Solutions to various <a href=\"https://projecteuler.net/\" target=\"_blank\">Project Euler</a> problems"
+  }
+];

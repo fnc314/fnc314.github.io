@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@fnc314/packages.types";
+import { type DesignTokenIcon } from "@/lib/design-token-icon";
 
 /**
  * The `const` for the `CSS @property`

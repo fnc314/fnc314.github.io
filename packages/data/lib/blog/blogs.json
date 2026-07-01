@@ -1,0 +1,102 @@
+{
+  "blogs": [
+    {
+      "id": "019d3dc0-ec34-0702-824f-878d614baa9f",
+      "type": "SERIES",
+      "title": "Taming the Elephant Heard",
+      "entries": [
+        {
+          "id": "019d3dc2-78e9-177f-ba40-ba6dc9bbac08",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "01. Taming the Elephant Heard - From Mayhem to Micro-Managed",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-from-mayhem-to-micro-managed-be02d1f58aa8",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc4-1855-67fc-52d5-b41230239eee",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "02. Taming the Elephant Heard - Establishing Existing Order",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-establishing-existing-order-6dc2aa452571",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc4-bede-676a-16af-955978965469",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "03. Taming the Elephant Heard - Plugins Over Copy-Paste",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc5-8e19-e761-caf1-773042bfc568",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "04. Taming the Elephant Heard - Into the Wider Infrastructure",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-into-the-wider-infrastructure-4ffcd2865901",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a426-87e9-b235-77fccdd6ec71",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "05. Taming the Elephant Heard - Right Tool for the Job",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-right-tool-for-the-job-27f7f7ea3d57",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a62b-6727-e638-b64c0d784be8",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "06. Taming the Elephant Heard - Screaming and Scripted Architecture",
+          "mediumUrl": "https://medium.com/@fnc314/taming-the-elephant-heard-screaming-and-scripted-architecture-49c449e84e20",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        },
+        {
+          "id": "019d3dc6-a843-97e8-1e28-230f062b2435",
+          "type": "SERIES_POST",
+          "seriesId": "019d3dc0-ec34-0702-824f-878d614baa9f",
+          "title": "07. Taming the Elephant Heard - To Future States and Beyond",
+          "mediumUrl": "https://fnc314.medium.com/07-taming-the-elephant-heard-to-future-states-and-beyond-2f9fb794d6ee",
+          "tags": [
+            "Gradle",
+            "Android Developer",
+            "Android Gradle Plugin",
+            "Android"
+          ]
+        }
+      ]
+    }
+  ]
+}

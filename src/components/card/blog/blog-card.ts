@@ -1,11 +1,11 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import "@/components/blog/entry/blog-entry";
-import { type BlogEntryJson } from "@/components/blog/entry/blog-entry.types";
 import "@/components/card/bento/bento-card";
 import { BlogCardStyles } from "@/components/card/blog/blog-card.styles";
-import BlogJson from "@/data/blog.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { Blogs } from "@fnc314/packages.data";
+import { type BlogEntryJson } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -48,7 +48,7 @@ export class BlogCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.blog}
       >
         <div class="blog-list">
-          ${BlogJson.posts.map(
+          ${Blogs.map(
             (entry: BlogEntryJson) => html`
               <blog-entry .blogEntry=${entry}></blog-entry>
             `,
