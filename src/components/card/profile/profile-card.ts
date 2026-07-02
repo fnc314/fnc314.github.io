@@ -55,7 +55,7 @@ export class ProfileCard extends UIAwareElement {
 
   private _onConfigChange = () => {
     const themeName = configsService.loadConfigs().colorScheme.theme;
-    this.photoData = PhotoJson[themeName as keyof typeof PhotoJson];
+    this.photoData = Photos[themeName];
     this.requestUpdate();
   };
 
