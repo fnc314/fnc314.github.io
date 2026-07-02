@@ -27,9 +27,7 @@ import { themeService } from "@/services/theme/theme-service";
 import "@/styles";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/configs/app-configs";
-import "@/types/theme/color-scheme-configs";
-import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
-import "@/types/theme/theme";
+import "@/types/theme";
 import "@fnc314/packages.data";
 import "@fnc314/packages.design-tokens";
 import "@fnc314/packages.types";
@@ -49,6 +47,7 @@ import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
+import { colorSchemeConfigsToMaterialSchemeName } from "./types/theme";
 // import "prop-for-that/auto";
 
 const domLoadedListener = () => {

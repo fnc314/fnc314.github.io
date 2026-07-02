@@ -1,95 +1,22 @@
-import PhotoJsonFileImport from "@/data/photo.json" with { type: "json" };
-import { type MaterialScheme } from "@/styles/material-styles";
-import { type CSSResult, css, unsafeCSS } from "lit";
+import type { MaterialSchemeName } from "@/styles";
+import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorSchemeConfigs, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
+import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
-export type ColorSchemeRoles =
-  | "background"
-  | "error"
-  | "errorContainer"
-  | "inverseOnSurface"
-  | "inversePrimary"
-  | "inverseSurface"
-  | "onBackground"
-  | "onError"
-  | "onErrorContainer"
-  | "onPrimary"
-  | "onPrimaryContainer"
-  | "onPrimaryFixed"
-  | "onPrimaryFixedVariant"
-  | "onSecondary"
-  | "onSecondaryContainer"
-  | "onSecondaryFixed"
-  | "onSecondaryFixedVariant"
-  | "onSurface"
-  | "onSurfaceVariant"
-  | "onTertiary"
-  | "onTertiaryContainer"
-  | "onTertiaryFixed"
-  | "onTertiaryFixedVariant"
-  | "outline"
-  | "outlineVariant"
-  | "primary"
-  | "primaryContainer"
-  | "primaryFixed"
-  | "primaryFixedDim"
-  | "scrim"
-  | "secondary"
-  | "secondaryContainer"
-  | "secondaryFixed"
-  | "secondaryFixedDim"
-  | "shadow"
-  | "surface"
-  | "surfaceBright"
-  | "surfaceContainer"
-  | "surfaceContainerHigh"
-  | "surfaceContainerHighest"
-  | "surfaceContainerLow"
-  | "surfaceContainerLowest"
-  | "surfaceDim"
-  | "surfaceTint"
-  | "surfaceVariant"
-  | "tertiary"
-  | "tertiaryContainer"
-  | "tertiaryFixed"
-  | "tertiaryFixedDim"
-  ;
-
-export type ColorSubValue =
-  `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`;
-
-export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
-
-export type ColorString = `#${string}`;
-
-// Recursive helper to check if a string consists only of N hex digits
-type IsHex<T extends string, Count extends any[] = []> =
-  T extends `${ColorSubValue}${infer Rest}`
-  ? IsHex<Rest, [...Count, any]>
-  : T extends ""
-  ? Count["length"] extends 8 ? true : false
-  : false;
-
-// The final validator constraint
-export type ValidateRGBA<T extends string> =
-  T extends `#${infer Rest}`
-  ? IsHex<Rest> extends true
-  ? T
-  : "Error: Must be # followed by exactly 8 hex digits"
-  : "Error: Must start with #";
-
-// Helper function to enforce the type
-export const setRGBA = <T extends string>(color: T & ValidateRGBA<T>) => color;
-
-export type MaterialSchemeNames =
-  | "light"
-  | "light-medium-contrast"
-  | "light-high-contrast"
-  | "dark"
-  | "dark-medium-contrast"
-  | "dark-high-contrast"
-  ;
-
-export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
+export const colorSchemeContrastToIcon: (
+  slot: "start" | "leading-icon",
+  contrast: ColorSchemeContrast,
+) => TemplateResult = (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => {
+  switch (contrast) {
+    case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
+      return html`<md-icon slot=${slot}>exposure_zero</md-icon>`;
+    case CONFIG_COLOR_CONTRAST_NAMES.MEDIUM:
+      return html`<md-icon slot=${slot}>exposure_plus_1</md-icon>`;
+    case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
+      return html`<md-icon slot=${slot}>exposure_plus_2</md-icon>`;
+    default:
+      return html`${nothing}`;
+  }
+};
 
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
@@ -127,34 +54,6 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
 
   return correctValues;
 }
-
-export interface PhotoJson {
-  src: string;
-  figcaption: string;
-  alt: string;
-}
-
-export interface ThemeConfig {
-  themePhoto: PhotoJson;
-  json: ThemeJsonSchemes;
-  materialSchemes: MaterialScheme;
-}
-
-export const THEME_NAMES = {
-  chicago: "chicago" as const,
-  inter: "inter" as const,
-  red: "red" as const,
-  // skyline: "skyline" as const,
-  sunset: "sunset" as const,
-} as const;
-
-export type ThemeName = (typeof THEME_NAMES)[keyof typeof THEME_NAMES];
-
-export type PhotosJson = Record<ThemeName, PhotoJson>;
-
-export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
-
-export const PhotoJsonFile: PhotosJson = PhotoJsonFileImport;
 
 /**
  * Converts typtical `JSON` keys in `lowerPascalCase` into `CSS` appropriate
@@ -204,11 +103,11 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
 
   return css`
     :root {
-      ${unsafeCSS(mdRows)}
+      ${unsafeCSS(mdRows)};
     }
 
     :root {
-      ${unsafeCSS(okRows)}
+      ${unsafeCSS(okRows)};
     }
   `;
 }
@@ -249,3 +148,20 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
     --oklch-md-sys-color-${cssColorName}: oklch(from ${cssColor} l c h);
   `;
 }
+
+export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
+  colorSchemeSettings: ColorSchemeConfigs
+): MaterialSchemeName => {
+  const variant = colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+    ? colorSchemeSettings.name.toLowerCase()
+    : (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? CONFIG_COLOR_SCHEME_NAMES.DARK
+      : CONFIG_COLOR_SCHEME_NAMES.LIGHT
+    ).toLowerCase();
+
+  const contrast = colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL
+    ? ""
+    : colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
+
+  return `${variant}${contrast}` as MaterialSchemeName;
+};

@@ -1,10 +1,14 @@
+import "@/lib/bio";
 import "@/lib/blog";
 import "@/lib/code";
 import "@/lib/connections";
 import "@/lib/education";
 import "@/lib/experience";
+import "@/lib/photo";
+export * from "@/lib/bio";
 export * from "@/lib/blog";
 export * from "@/lib/code";
 export * from "@/lib/connections";
 export * from "@/lib/education";
 export * from "@/lib/experience";
+export * from "@/lib/photo";

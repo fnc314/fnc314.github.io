@@ -2,8 +2,9 @@ import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorSchemeConfigs,
-} from "@/types/theme/color-scheme-configs";
-import { THEME_NAMES, type ThemeConfig } from "@/types/theme/theme";
+  THEME_NAMES,
+  type ThemeConfig
+} from "@fnc314/packages.types";
 
 export interface AppConfigs {
   colorScheme: ColorSchemeConfigs;

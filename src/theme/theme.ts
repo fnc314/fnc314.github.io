@@ -2,7 +2,7 @@ import { ChicagoThemeConfig } from "@/theme/chicago/chicago-theme";
 import { InterThemeConfig } from "@/theme/inter/inter-theme";
 import { RedThemeConfig } from "@/theme/red/red-theme";
 import { SunsetThemeConfig } from "@/theme/sunset/sunset-theme";
-import { type ThemeConfigs } from "@/types/theme/theme";
+import { type ThemeConfigs } from "@fnc314/packages.types";
 
 export const THEME_CONFIGS: ThemeConfigs = {
   inter: InterThemeConfig,

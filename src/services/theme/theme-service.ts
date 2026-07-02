@@ -4,13 +4,11 @@ import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme,
-} from "@/types/theme/color-scheme-configs";
-import {
   type ColorSchemeRoles,
   type ColorString,
   type MaterialSchemeNames,
-  type ThemeConfig,
-} from "@/types/theme/theme";
+  type ThemeConfig
+} from "@fnc314/packages.types";
 
 export interface ThemeService {
   currentThemeConfig(): ThemeConfig;

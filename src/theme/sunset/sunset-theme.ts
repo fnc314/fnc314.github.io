@@ -1,14 +1,16 @@
 import {
-    PhotoJsonFile,
-    type ThemeConfig,
-    type ThemeJsonSchemes,
-    jsonIsThemeJsonSchemes,
-    readScheme,
-} from "@/types/theme/theme";
+  jsonIsThemeJsonSchemes,
+  readScheme
+} from "@/types/theme";
+import { Photos } from "@fnc314/packages.data";
 import JsonTheme from "@fnc314/packages.design-tokens/themes/sunset/sunset.mtb.json" with { type: "json" };
+import {
+  type ThemeConfig,
+  type ThemeJsonSchemes,
+} from "@fnc314/packages.types";
 
 export const SunsetThemeConfig: ThemeConfig = {
-  themePhoto: PhotoJsonFile.sunset,
+  themePhoto: Photos.sunset,
   json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes),
   materialSchemes: {
     light: readScheme(JsonTheme.schemes.light),

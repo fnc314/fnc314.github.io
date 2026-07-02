@@ -1,13 +1,15 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import { ProfileCardStyles } from "@/components/card/profile/profile-card.styles";
-import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@/components/connection/professional/professional-connection.types";
-import BioJson from "@/data/bio.json" with { type: "json" };
-import PhotoJson from "@/data/photo.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
-import { Connections } from "@fnc314/packages.data";
-import { type ArtifactConnectionData, type ArtifactConnectionType, type ConnectionInstance } from "@fnc314/packages.types";
+import { Biographies, Connections, Photos } from "@fnc314/packages.data";
+import {
+  type ArtifactConnectionData,
+  type ArtifactConnectionType,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData
+} from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
@@ -26,12 +28,10 @@ export class ProfileCard extends UIAwareElement {
   ];
 
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
-  photoData = PhotoJson[
-    configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson
-  ];
+  photoData = Photos[configsService.loadConfigs().colorScheme.theme];
 
   @property({ type: String })
-  bioText: string = BioJson.bio.long;
+  bioText: string = Biographies.bio.long;
 
   @property({ type: Boolean })
   expanded = false;
@@ -78,7 +78,7 @@ export class ProfileCard extends UIAwareElement {
         <th scope="row" class="md-typescale-title-large">Network</th>
         ${
           Object.entries(Connections.social)
-            .map(([type, data]: [ProfessionalConnectionType, ProfessionalConnectionJsonData]) => html`
+            .map(([type, data]: [string, ProfessionalConnectionJsonData]) => html`
               <td colspan="2">
                 <professional-connection
                   .professionalConnectionType=${type}

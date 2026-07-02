@@ -1,20 +1,19 @@
+import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
+import "@/components/card/bento/bento-card";
 import { SettingsCardStyles } from "@/components/card/settings/settings-card.styles";
+import "@/components/ui-mode-toggle/ui-mode-toggle";
+import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
-import { type AppConfigs } from "@/types/configs/app-configs";
-import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, colorSchemeConfigsToMaterialSchemeName } from "@/types/theme/color-scheme-configs";
-import { THEME_NAMES, type ThemeName } from "@/types/theme/theme";
-import { html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
-
-import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
-import "@/components/card/bento/bento-card";
-import "@/components/ui-mode-toggle/ui-mode-toggle";
-import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
+import { type AppConfigs } from "@/types/configs/app-configs";
+import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme";
+import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, THEME_NAMES, type ThemeName } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
+import { html } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
 
 /**
  * @summary A card component for managing application settings, including theme, contrast, and UI mode.
