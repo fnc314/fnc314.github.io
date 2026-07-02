@@ -23,7 +23,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.4
+    material-symbols: 0.45.5
     prop-for-that: 0.7.7
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
@@ -41,7 +41,7 @@ catalogs:
     "@pwrs/cem": 0.11.0
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
-    "@types/node": 26.0.1
+    "@types/node": 26.1.0
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.62.1
     "@typescript-eslint/parser": 8.62.1
