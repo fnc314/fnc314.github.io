@@ -53,6 +53,7 @@
     "test:watch": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch"
   },
   "dependencies": {
+    "@fnc314/packages.components": "workspace:*",
     "@fnc314/packages.data": "workspace:*",
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.services": "workspace:*",

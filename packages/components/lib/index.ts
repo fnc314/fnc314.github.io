@@ -1,3 +1,20 @@
+import "@material/web/divider/divider";
+import "@material/web/elevation/elevation";
+import "@material/web/focus/md-focus-ring";
+import "@material/web/icon/icon";
+import "@material/web/iconbutton/filled-icon-button";
+import "@material/web/iconbutton/icon-button";
+import "@material/web/labs/card/elevated-card";
+import "@material/web/labs/card/filled-card";
+import "@material/web/labs/card/outlined-card";
+import "@material/web/list/list";
+import "@material/web/list/list-item";
+import "@material/web/select/outlined-select";
+import "@material/web/select/select-option";
+import "@material/web/typography/md-typescale-styles.js";
+import "material-symbols/outlined.css";
+import "material-symbols/sharp.css";
+
 export { BentoLayout } from "./bento-layout/bento-layout";
 export { BentoLayoutStyles, TransitionStyles } from "./bento-layout/bento-layout.styles";
 export { BENTO_BOX_CONFIG, BENTO_BOX_TYPES, BentoBoxConfigsArray, getBentoDOMOrder } from "./bento-layout/bento-layout.types";

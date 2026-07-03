@@ -22,6 +22,7 @@ import "@/index.css";
 import "@/styles";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
 import "@/types/theme";
+import "@fnc314/packages.components";
 import "@fnc314/packages.data";
 import "@fnc314/packages.design-tokens";
 import "@fnc314/packages.services";

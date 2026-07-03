@@ -397,6 +397,9 @@ importers:
 
   .:
     dependencies:
+      '@fnc314/packages.components':
+        specifier: workspace:*
+        version: link:packages/components
       '@fnc314/packages.data':
         specifier: workspace:*
         version: link:packages/data
