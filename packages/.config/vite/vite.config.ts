@@ -1,7 +1,8 @@
 import dts from "unplugin-dts/vite";
+import Info from "unplugin-info/vite";
 import { type UserConfigFnObject, defineConfig } from "vite";
 
-export function bulidConfig(dirName: string): UserConfigFnObject {
+export function buildConfig(dirName: string): UserConfigFnObject {
   return defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     return {
       root: `${process.cwd()}/packages/${dirName}`,
@@ -30,7 +31,24 @@ export function bulidConfig(dirName: string): UserConfigFnObject {
           entryRoot: `${process.cwd()}/packages/${dirName}/lib`,
           root: `${process.cwd()}/packages/${dirName}`,
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
-        })
+        }),
+        Info({
+          github: "https://github.com/fnc314/fnc314.github.io",
+          root: ".",
+          cloudflare: false,
+          package: {
+            dependencies: true,
+            devDependencies: true,
+            optionalDependencies: true,
+            overrides: true,
+          },
+          console: {
+            environment: [
+              "development",
+              "production",
+            ],
+          }
+        }),
       ]
     };
   });

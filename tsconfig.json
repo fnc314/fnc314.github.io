@@ -1,7 +1,9 @@
 {
   "references": [
+    { "path": "./packages/components/tsconfig.json" },
     { "path": "./packages/data/tsconfig.json" },
     { "path": "./packages/design-tokens/tsconfig.json" },
+    { "path": "./packages/services/tsconfig.json" },
     { "path": "./packages/types/tsconfig.json" },
   ],
   "include": ["src/**/*.ts", "./.config/**/*.ts"],

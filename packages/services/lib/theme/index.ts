@@ -9,6 +9,10 @@ import {
   type MaterialSchemeNames, type ThemeConfig
 } from "@fnc314/packages.types";
 
+export * from "@/lib/theme/utils";
+
+export { THEME_CONFIGS } from "@/lib/theme/theme";
+
 export interface ThemeService {
   currentThemeConfig(): ThemeConfig;
 

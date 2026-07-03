@@ -1,3 +1,5 @@
+import { configsService } from "@/lib/configs";
+import { THEME_CONFIGS, themeService } from "@/lib/theme";
 import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorSchemeConfigs, type ColorSchemeContrast, type MaterialSchemeName, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
@@ -164,3 +166,28 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
 
   return `${variant}${contrast}` as MaterialSchemeName;
 };
+
+export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
+  const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
+
+  const appSettings = configsService.loadConfigs();
+  const colorScheme = {
+    ...appSettings.colorScheme,
+    name,
+  };
+  configsService.saveConfigs({
+    ...appSettings,
+    colorScheme,
+  });
+
+  updateMaterialCSSStyleSheet(
+    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)],
+  );
+
+  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+};
+
+export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result: CSSResult) =>
+  MaterialCSSStyleSheet.replaceSync(result.cssText);
+
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;

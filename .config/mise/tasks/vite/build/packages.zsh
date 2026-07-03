@@ -15,6 +15,7 @@ declare PACKAGES=(
   data
   design-tokens
   services
+  components
 )
 
 for pkg in "${PACKAGES[@]}"; do

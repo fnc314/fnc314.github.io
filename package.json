@@ -12,7 +12,7 @@
   "module": "src/index.ts",
   "private": true,
   "types": "./dist/out",
-  "main": "./website/index.js",
+  "main": "./dist/vite/production/assets/index.js",
   "customElements": "docs/@pwrs/cem/custom-elements.json",
   "web-types": "./.idea/web-types.json",
   "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
@@ -31,6 +31,7 @@
   "workspaces": [
     ".",
     "functions",
+    "packages/components",
     "packages/data",
     "packages/design-tokens",
     "packages/services",

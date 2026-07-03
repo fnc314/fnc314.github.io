@@ -1,3 +1,3 @@
-import { bulidConfig } from "../../../.config/vite/vite.config";
+import { buildConfig } from "../../../.config/vite/vite.config";
 
-export default bulidConfig("data");
+export default buildConfig("data");

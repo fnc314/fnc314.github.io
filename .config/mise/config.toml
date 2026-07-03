@@ -5,6 +5,7 @@ monorepo_root = true
     ".",
     "functions",
     "functions-python",
+    "packages/components",
     "packages/data",
     "packages/design-tokens",
     "packages/services",

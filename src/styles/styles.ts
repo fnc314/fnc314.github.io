@@ -1,6 +1,5 @@
-import { THEME_CONFIGS } from "@/theme/theme";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme";
-import { configsService, themeService } from "@fnc314/packages.services";
+import { THEME_CONFIGS, configsService, themeService } from "@fnc314/packages.services";
 import { CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
 import { type CSSResult } from "lit";
 

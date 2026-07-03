@@ -1,0 +1,294 @@
+import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
+import { TextStyles } from "@/lib/styles";
+import { WordCloudStyles } from "@/lib/word/cloud/word-cloud.styles";
+import {
+  type RenderableWordCloudWord,
+  type WordCloudAppearance,
+  WordCloudAppearances,
+  type WordCloudGrouping,
+  WordCloudGroupings,
+  type WordCloudSorting,
+  WordCloudSortings,
+  type WordCloudWord,
+} from "@/lib/word/cloud/word-cloud.types";
+import { type PropertyValues, html } from "lit";
+import { customElement, property, query, state } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
+import { styleMap } from "lit/directives/style-map.js";
+
+/**
+ * A component that renders a cloud of words with various sorting and grouping options.
+ *
+ * @element word-cloud
+ *
+ * @cssprop [--word-cloud-animation=150ms] - Duration of the entrance animation for each word.
+ * @cssprop [--word-cloud-animation-reduced=1ms] - Duration of the entrance animation when prefers-reduced-motion is active.
+ * @cssprop [--word-cloud-first-quartile-font-size=1.75rem] - Font size for words in the first weight quartile (highest weight).
+ * @cssprop [--word-cloud-first-quartile-line-height=1.75rem] - Line height for words in the first weight quartile.
+ * @cssprop [--word-cloud-second-quartile-font-size=1.5rem] - Font size for words in the second weight quartile.
+ * @cssprop [--word-cloud-second-quartile-line-height=1.5rem] - Line height for words in the second weight quartile.
+ * @cssprop [--word-cloud-third-quartile-font-size=1.25rem] - Font size for words in the third weight quartile.
+ * @cssprop [--word-cloud-third-quartile-line-height=1.25rem] - Line height for words in the third weight quartile.
+ * @cssprop [--word-cloud-fourth-quartile-font-size=1rem] - Font size for words in the fourth weight quartile (lowest weight).
+ * @cssprop [--word-cloud-fourth-quartile-line-height=1rem] - Line height for words in the fourth weight quartile.
+ */
+@customElement("word-cloud")
+export class WordCloud extends UIAwareElement {
+  /** {@link lit!css} */
+  static override styles = [
+    TextStyles,
+    WordCloudStyles
+  ];
+
+  /**
+   * The list of words to display in the cloud.
+   * @attr words
+   */
+  @property({ type: Array, attribute: "words", hasChanged: () => true })
+  words: WordCloudWord[] = [];
+
+  /**
+   * Whether to clear the word cloud instantly when it is no longer visible.
+   * When true, the cloud resets instantly to opacity 0 instead of fading out.
+   * @attr instant-clear
+   */
+  @property({ type: Boolean, attribute: "instant-clear" })
+  instantClear = false;
+
+  /**
+   * Controls the order in which words are animated/displayed.
+   *
+   * Can be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).
+   * @attr appearance
+   */
+  @property({ attribute: "appearance" })
+  appearance: WordCloudAppearance = WordCloudAppearances.SEQUENTIAL;
+
+  /**
+   * Controls how words are grouped together within the cloud.
+   *
+   * Supported modes: 'category', 'quartile', or 'ungrouped'.
+   * @attr grouping
+   */
+  @property({ attribute: "grouping" })
+  grouping: WordCloudGrouping = WordCloudGroupings.UNGROUPED;
+
+  /**
+   * Controls how words are sorted within their groupings.
+   *
+   * Supported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.
+   * @attr sorting
+   */
+  @property({ attribute: "sorting" })
+  sorting: WordCloudSorting = WordCloudSortings.NONE;
+
+  /**
+   * The delay in milliseconds between word appearances when using sequential mode.
+   *
+   * Set to "none" to use the component's internal default delays.
+   * @attr delay
+   */
+  @property()
+  delay: number | "none" = "none";
+
+  /**
+   * The intersection observer threshold for visibility detection.
+   *
+   * A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.
+   * @attr threshold
+   */
+  @property({ type: Number })
+  threshold = 0.1;
+
+  @state({
+    hasChanged: () => true,
+  })
+  _sortedWords: RenderableWordCloudWord[] = [];
+
+  @state()
+  private _isVisible = false;
+
+  @query("ul")
+  private _listElement!: HTMLUListElement;
+
+  private _intersectionObserver?: IntersectionObserver;
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+    this._sortedWords = this._processWords();
+  }
+
+  override updated(changedProperties: PropertyValues<this>) {
+    super.updated(changedProperties);
+    if (changedProperties.has("threshold")) {
+      this._initIntersectionObserver();
+    }
+  }
+
+  private _initIntersectionObserver() {
+    this._intersectionObserver?.disconnect();
+    this._intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!this._isVisible) {
+              // Shuffle arrangement on re-entry if unsorted
+              this._sortedWords = this._processWords();
+              this._isVisible = true;
+            }
+          } else {
+            this._isVisible = false;
+          }
+        });
+      },
+      { threshold: this.threshold },
+    );
+
+    if (this._listElement) {
+      this._intersectionObserver.observe(this._listElement);
+    }
+  }
+
+  override firstUpdated() {
+    this._initIntersectionObserver();
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback();
+    this._intersectionObserver?.disconnect();
+  }
+
+  private _processWords(): RenderableWordCloudWord[] {
+    // 1. Layout: Always Randomize
+    const randomized: RenderableWordCloudWord[] = this.words.map((w) => ({ ...w })).sort(() => Math.random() - 0.5);
+
+    // 2. Determine groups
+    let groups: RenderableWordCloudWord[][];
+
+    switch (this.grouping) {
+      case WordCloudGroupings.CATEGORY: {
+        const catMap = new Map<string, RenderableWordCloudWord[]>();
+        randomized.forEach((w) => {
+          if (!catMap.has(w.category)) catMap.set(w.category, []);
+          catMap.get(w.category)!.push(w);
+        });
+        // Sort keys to ensure stable group order
+        const catKeys = Array.from(catMap.keys()).sort();
+        groups = catKeys.map((k) => catMap.get(k)!);
+        break;
+      }
+
+      case WordCloudGroupings.QUARTILE: {
+        // Fixed order: 1st, 2nd, 3rd, 4th
+        const q1 = randomized.filter((w) => w.quartile === "first-quartile");
+        const q2 = randomized.filter((w) => w.quartile === "second-quartile");
+        const q3 = randomized.filter((w) => w.quartile === "third-quartile");
+        const q4 = randomized.filter((w) => w.quartile === "fourth-quartile");
+        groups = [q1, q2, q3, q4];
+        break;
+      }
+
+      case WordCloudGroupings.UNGROUPED:
+      default:
+        groups = [randomized];
+        break;
+    }
+
+    // 3. Sort within groups
+    const sortFn = this._getSortFunction(this.sorting);
+    if (sortFn) {
+      groups.forEach((group) => group.sort(sortFn));
+    }
+
+    // 4. Calculate delays
+    let currentDelay = 0;
+    const delayVal = this.delay === "none" ? undefined : Number(this.delay);
+    const GROUP_DELAY_OFFSET = delayVal ?? 200; // Delay between groups if simultaneous
+    const ITEM_DELAY_OFFSET = delayVal ?? 50; // Delay between items if sequential
+
+    groups.forEach((group) => {
+      // If group is empty, skip
+      if (group.length === 0) return;
+
+      group.forEach((word) => {
+        word.delay = currentDelay;
+        if (this.appearance === WordCloudAppearances.SEQUENTIAL) {
+          currentDelay += ITEM_DELAY_OFFSET;
+        }
+      });
+
+      // After a group is processed:
+      if (this.appearance === WordCloudAppearances.SIMULTANEOUS) {
+        // All items in this group appeared at currentDelay.
+        // Bump delay for the next group.
+        currentDelay += GROUP_DELAY_OFFSET;
+      } else {
+        // SEQUENTIAL: currentDelay is already at the end of this group's items.
+        // No extra bump needed usually, or maybe a small one?
+        // Let's just let it flow naturally.
+      }
+    });
+
+    return randomized;
+  }
+
+  private _getSortFunction(
+    sorting: WordCloudSorting,
+  ): ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number) | undefined {
+    switch (sorting) {
+      case WordCloudSortings.BY_WEIGHT:
+        return (a, b) => (a.weight as number) - (b.weight as number);
+      case WordCloudSortings.BY_WEIGHT_REVERSED:
+        return (a, b) => (b.weight as number) - (a.weight as number);
+      case WordCloudSortings.BY_ALPHABET:
+        return (a, b) => a.word.localeCompare(b.word);
+      case WordCloudSortings.BY_ALPHABET_REVERSED:
+        return (a, b) => b.word.localeCompare(a.word);
+      case WordCloudSortings.NONE:
+      default:
+        return undefined;
+    }
+  }
+
+  override render() {
+    const ulClasses = {
+      visible: this._isVisible,
+      "instant-clear": this.instantClear,
+    };
+
+    return html`
+      <ul class=${classMap(ulClasses)}>
+        ${this._sortedWords.map((word) => {
+          const classes = {
+            tech: word.category === "tech",
+            practice: word.category === "practice",
+            product: word.category === "product",
+            "first-quartile": word.quartile === "first-quartile",
+            "second-quartile": word.quartile === "second-quartile",
+            "third-quartile": word.quartile === "third-quartile",
+            "fourth-quartile": word.quartile === "fourth-quartile",
+          };
+
+          const styles = {
+            transitionDelay: `${word.delay}ms`,
+          };
+
+          return html`
+            <li
+              class=${classMap(classes)}
+              style=${styleMap(styles)}
+            >
+              <word-tag .word=${word.word}></word-tag>
+            </li>
+          `;
+        })}
+      </ul>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "word-cloud": WordCloud;
+  }
+}
