@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../../README.md)
 
 ---
 
@@ -9,7 +9,7 @@
 Defined in: [src/components/code/repo/code-repo.ts:21](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L21)
 
 An instance of a given `GitHub` repository project documented through
-[CodeRepoData](../../code-repo.types/CodeRepoData/README.md) objects from `data/code.json`
+CodeRepoData objects from `data/code.json`
 
 ## Export
 
@@ -27,11 +27,11 @@ CodeRepo
 
 ### codeRepo
 
-&gt; **codeRepo**: [`CodeRepoData`](../../code-repo.types/CodeRepoData/README.md)
+&gt; **codeRepo**: `CodeRepoData`
 
 Defined in: [src/components/code/repo/code-repo.ts:24](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/code/repo/code-repo.ts#L24)
 
-An instance of [CodeRepoData](../../code-repo.types/CodeRepoData/README.md)
+An instance of CodeRepoData
 to render
 
 ---
@@ -40,7 +40,7 @@ to render
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -55,7 +55,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -70,7 +70,7 @@ and tests against `"true"`,
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L58)
 
 Invoked when the component is added to the document's DOM.
 
@@ -103,7 +103,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L64)
 
 Invoked when the component is removed from the document's DOM.
 

@@ -11,6 +11,12 @@
           "name": "BentoLayoutStyles",
           "default": "css` :host { --bento-layout-column-count: 1; background-color: var(--globals-color-background); color: var(--md-sys-color-on-surface); display: block; inline-size: 100%; padding-block-end: var(--spaces-padding-xl); container-name: bento-layout; } main { align-items: stretch; display: flex; flex-direction: column; gap: var(--spaces-gap-s); padding: var(--spaces-padding-xs); h1 { background-color: var(--md-sys-color-primary-container); border: var(--sizes-thickness-hairline) solid var(--md-sys-color-on-primary-container); border-radius: var(--md-sys-shape-corner-large); color: var(--md-sys-color-on-primary-container); grid-area: span 1 / span var(--bento-layout-column-count); inline-size: 100%; margin-inline: auto; padding-block: var(--spaces-padding-l); text-align: center; font-variant: small-caps; } } @container style(--breakpoint-label: tablet) or style(--breakpoint-label: desktop) { main { display: grid; grid-auto-flow: dense; grid-template-columns: repeat(var(--bento-layout-column-count), 1fr); } } @container style(--breakpoint-label: tablet) { :host { --bento-layout-column-count: 6; } main { align-items: unset; gap: var(--spaces-gap-m); padding: var(--spaces-padding-s); } } @container style(--breakpoint-label: desktop) { :host { --bento-layout-column-count: 12; } main { gap: var(--spaces-gap-l); margin: var(--spaces-none) auto; padding: var(--spaces-padding-m); place-items: stretch stretch; } } `",
           "summary": "Styles for the BentoLayout component.\n\nOrchestrates the responsive grid layout for the bento box UI.\nSupports mobile (flex column), tablet (6-column grid), and desktop (12-column grid) layouts.\nMobile styles use flex so this is only used when\nscreen and (width >= 769px)\nTablet -> 769 <= 1200 -> 6\nDesktop -> >= 1201 -> 12"
+        },
+        {
+          "kind": "variable",
+          "name": "TransitionStyles",
+          "default": "css` @keyframes fade-in-up { from { opacity: var(--keyframes-fade-in-up-from-opacity); transform: var(--keyframes-fade-in-up-from-translate); } to { opacity: var(--keyframes-fade-in-up-to-opacity); transform: var(--keyframes-fade-in-up-to-translate); } } .animate-entry { animation: fade-in-up var(--motions-duration-short) var(--motions-easing-emphasized) both; } /* Staggered animation delays for grid items */ main { > *:nth-child(1) { animation-delay: var(--motions-delay-xxxs); } > *:nth-child(2) { animation-delay: var(--motions-delay-xxs); } > *:nth-child(3) { animation-delay: var(--motions-delay-xs); } > *:nth-child(4) { animation-delay: var(--motions-delay-s); } > *:nth-child(5) { animation-delay: var(--motions-delay-m); } > *:nth-child(6) { animation-delay: var(--motions-delay-l); } > *:nth-child(7) { animation-delay: var(--motions-delay-xl); } > *:nth-child(8) { animation-delay: var(--motions-delay-xxl); } > *:nth-child(9) { animation-delay: var(--motions-delay-xxxl); } } `",
+          "description": "Standardized transition animations for page loads and state changes."
         }
       ],
       "exports": [
@@ -19,6 +25,14 @@
           "name": "BentoLayoutStyles",
           "declaration": {
             "name": "BentoLayoutStyles",
+            "module": "src/components/bento-layout/bento-layout.styles.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TransitionStyles",
+          "declaration": {
+            "name": "TransitionStyles",
             "module": "src/components/bento-layout/bento-layout.styles.ts"
           }
         }
@@ -401,12 +415,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/blog/entry/blog-entry.types.ts",
-      "declarations": [],
-      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -1748,7 +1756,7 @@
             {
               "kind": "field",
               "name": "photoData",
-              "default": "PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]"
+              "default": "Photos[configsService.loadConfigs().colorScheme.theme]"
             },
             {
               "kind": "field",
@@ -2428,48 +2436,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/components/code/repo/code-repo.types.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-          "type": {
-            "text": "string"
-          },
-          "default": "\"--code-repo-word-tag-size\"",
-          "description": "The `const` for the `CSS"
-        },
-        {
-          "kind": "variable",
-          "name": "WORD_TAG_SIZES",
-          "type": {
-            "text": "{\n  full: \"full\" as const,\n  compact: \"compact\" as const,\n  condensed: \"condensed\" as const,\n}"
-          },
-          "default": "{ full: \"full\" as const, compact: \"compact\" as const, condensed: \"condensed\" as const, }",
-          "description": "A Record of pre-defined values exposed as a custom `CSS"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-          "declaration": {
-            "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-            "module": "src/components/code/repo/code-repo.types.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WORD_TAG_SIZES",
-          "declaration": {
-            "name": "WORD_TAG_SIZES",
-            "module": "src/components/code/repo/code-repo.types.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/components/connection/artifact/artifact-connection.styles.ts",
       "declarations": [
         {
@@ -3086,30 +3052,6 @@
           "declaration": {
             "name": "EducationInstitution",
             "module": "src/components/education/institution/education-institution.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/education/institution/education-institution.types.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "EducationJsonData",
-          "type": {
-            "text": "EducationInstitutionRecord[]"
-          },
-          "default": "EducationJson.institutions"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "EducationJsonData",
-          "declaration": {
-            "name": "EducationJsonData",
-            "module": "src/components/education/institution/education-institution.types.ts"
           }
         }
       ]
@@ -4563,14 +4505,6 @@
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "Job",
-          "declaration": {
-            "name": "Job",
-            "module": "@/components/work/experience/work-experience.types"
-          }
-        },
-        {
           "kind": "custom-element-definition",
           "name": "work-experience",
           "declaration": {
@@ -4580,39 +4514,10 @@
         },
         {
           "kind": "js",
-          "name": "WorkDate",
-          "declaration": {
-            "name": "WorkDate",
-            "module": "@/components/work/experience/work-experience.types"
-          }
-        },
-        {
-          "kind": "js",
           "name": "WorkExperience",
           "declaration": {
             "name": "WorkExperience",
             "module": "src/components/work/experience/work-experience.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/work/experience/work-experience.types.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "data",
-          "default": "WorkJson"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "data",
-          "declaration": {
-            "name": "data",
-            "module": "src/components/work/experience/work-experience.types.ts"
           }
         }
       ]

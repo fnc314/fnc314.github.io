@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../README.md)
 
 ---
 
@@ -9,5 +9,6 @@
 ## Variables
 
 - [BentoLayoutStyles](BentoLayoutStyles/README.md)
+- [TransitionStyles](TransitionStyles/README.md)
 
 </body></html>

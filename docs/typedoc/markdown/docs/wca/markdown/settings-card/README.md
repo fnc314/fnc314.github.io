@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../README.md)
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## Events
 
-| Event                 | Type               |
-| --------------------- | ------------------ |
-| `color_scheme.change` | `CustomEvent<any>` |
-| </any></body></html>  |
+| Event                               | Type                              |
+| ----------------------------------- | --------------------------------- |
+| `color_scheme.change`               | `CustomEvent<colorschemeconfigs>` |
+| </colorschemeconfigs></body></html> |

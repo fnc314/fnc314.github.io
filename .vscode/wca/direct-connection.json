@@ -3,11 +3,11 @@
   "tags": [
     {
       "name": "direct-connection",
-      "description": "[object Object],[object Object]\n\nAttributes:\n\n  * `connection-instance` - \n\nProperties:\n\n  * `styles` - \n\n  * `connectionInstance` - ",
+      "description": "[object Object],[object Object]\n\nAttributes:\n\n  * `connection-instance` {`ConnectionInstance`} - \n\nProperties:\n\n  * `styles` - \n\n  * `connectionInstance` {`ConnectionInstance`} - ",
       "attributes": [
         {
           "name": "connection-instance",
-          "description": "`connection-instance` - \n\nProperty: connectionInstance\n\nDefault: [object Object]"
+          "description": "`connection-instance` {`ConnectionInstance`} - \n\nProperty: connectionInstance\n\nDefault: [object Object]"
         }
       ]
     }

@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../../README.md)
 
 ---
 
@@ -86,7 +86,7 @@ The version of the layout to render
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -101,7 +101,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -116,7 +116,7 @@ and tests against `"true"`,
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L58)
 
 Invoked when the component is added to the document's DOM.
 
@@ -149,7 +149,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L64)
 
 Invoked when the component is removed from the document's DOM.
 

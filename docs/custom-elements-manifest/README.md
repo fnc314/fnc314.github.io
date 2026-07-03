@@ -2,9 +2,10 @@
 
 ## Variables
 
-| Name                | Description | Type |
-| ------------------- | ----------- | ---- |
-| `BentoLayoutStyles` |             |      |
+| Name                | Description                                                          | Type |
+| ------------------- | -------------------------------------------------------------------- | ---- |
+| `BentoLayoutStyles` |                                                                      |      |
+| `TransitionStyles`  | Standardized transition animations for page loads and state changes. |      |
 
 <hr/>
 
@@ -13,6 +14,7 @@
 | Kind | Name                | Declaration       | Module                                             | Package |
 | ---- | ------------------- | ----------------- | -------------------------------------------------- | ------- |
 | `js` | `BentoLayoutStyles` | BentoLayoutStyles | src/components/bento-layout/bento-layout.styles.ts |         |
+| `js` | `TransitionStyles`  | TransitionStyles  | src/components/bento-layout/bento-layout.styles.ts |         |
 
 # `dist/out/components/bento-layout/bento-layout.js`:
 
@@ -594,13 +596,13 @@
 
 ### Fields
 
-| Name          | Privacy | Type      | Default                                                                                 | Description | Inherited From |
-| ------------- | ------- | --------- | --------------------------------------------------------------------------------------- | ----------- | -------------- |
-| `bioText`     |         | `string`  |                                                                                         |             |                |
-| `enableFocus` |         | `boolean` | `false`                                                                                 |             |                |
-| `enableHover` |         | `boolean` | `false`                                                                                 |             |                |
-| `expanded`    |         | `boolean` | `false`                                                                                 |             |                |
-| `photoData`   |         |           | `PhotoJson[ configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson ]` |             |                |
+| Name          | Privacy | Type      | Default                                                  | Description | Inherited From |
+| ------------- | ------- | --------- | -------------------------------------------------------- | ----------- | -------------- |
+| `bioText`     |         | `string`  |                                                          |             |                |
+| `enableFocus` |         | `boolean` | `false`                                                  |             |                |
+| `enableHover` |         | `boolean` | `false`                                                  |             |                |
+| `expanded`    |         | `boolean` | `false`                                                  |             |                |
+| `photoData`   |         |           | `Photos[configsService.loadConfigs().colorScheme.theme]` |             |                |
 
 ### Attributes
 
@@ -861,28 +863,6 @@
 | `custom-element-definition` | `code-repo` | CodeRepo    | src/components/code/repo/code-repo.ts |         |
 | `js`                        | `CodeRepo`  | CodeRepo    | src/components/code/repo/code-repo.ts |         |
 
-# `src/components/code/repo/code-repo.types.ts`:
-
-## Variables
-
-| Name                                   | Description                                              | Type                                                                                             |
-| -------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE` | The \`const\` for the \`CSS                              | `string`                                                                                         |
-| `WORD_TAG_SIZES`                       | A Record of pre-defined values exposed as a custom \`CSS | `{
-  full: "full" as const,
-  compact: "compact" as const,
-  condensed: "condensed" as const,
-}` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                                   | Declaration                                | Module                                      | Package |
-| ---- | -------------------------------------- | ------------------------------------------ | ------------------------------------------- | ------- |
-| `js` | `CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE` | CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE | src/components/code/repo/code-repo.types.ts |         |
-| `js` | `WORD_TAG_SIZES`                       | WORD\_TAG\_SIZES                           | src/components/code/repo/code-repo.types.ts |         |
-
 # `src/components/connection/artifact/artifact-connection.styles.ts`:
 
 ## Variables
@@ -1130,22 +1110,6 @@
 | --------------------------- | ----------------------- | -------------------- | ------------------------------------------------------------- | ------- |
 | `custom-element-definition` | `education-institution` | EducationInstitution | src/components/education/institution/education-institution.ts |         |
 | `js`                        | `EducationInstitution`  | EducationInstitution | src/components/education/institution/education-institution.ts |         |
-
-# `src/components/education/institution/education-institution.types.ts`:
-
-## Variables
-
-| Name                | Description | Type                           |
-| ------------------- | ----------- | ------------------------------ |
-| `EducationJsonData` |             | `EducationInstitutionRecord[]` |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                | Declaration       | Module                                                              | Package |
-| ---- | ------------------- | ----------------- | ------------------------------------------------------------------- | ------- |
-| `js` | `EducationJsonData` | EducationJsonData | src/components/education/institution/education-institution.types.ts |         |
 
 # `src/components/ui-mode-toggle/ui-mode-toggle.styles.ts`:
 
@@ -1597,28 +1561,10 @@
 
 ## Exports
 
-| Kind                        | Name              | Declaration    | Module                                             | Package |
-| --------------------------- | ----------------- | -------------- | -------------------------------------------------- | ------- |
-| `js`                        | `Job`             | Job            | @/components/work/experience/work-experience.types |         |
-| `custom-element-definition` | `work-experience` | WorkExperience | src/components/work/experience/work-experience.ts  |         |
-| `js`                        | `WorkDate`        | WorkDate       | @/components/work/experience/work-experience.types |         |
-| `js`                        | `WorkExperience`  | WorkExperience | src/components/work/experience/work-experience.ts  |         |
-
-# `src/components/work/experience/work-experience.types.ts`:
-
-## Variables
-
-| Name   | Description | Type |
-| ------ | ----------- | ---- |
-| `data` |             |      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name   | Declaration | Module                                                  | Package |
-| ---- | ------ | ----------- | ------------------------------------------------------- | ------- |
-| `js` | `data` | data        | src/components/work/experience/work-experience.types.ts |         |
+| Kind                        | Name              | Declaration    | Module                                            | Package |
+| --------------------------- | ----------------- | -------------- | ------------------------------------------------- | ------- |
+| `custom-element-definition` | `work-experience` | WorkExperience | src/components/work/experience/work-experience.ts |         |
+| `js`                        | `WorkExperience`  | WorkExperience | src/components/work/experience/work-experience.ts |         |
 
 # `src/mixins/size-observer-element/size-observer-element.ts`:
 

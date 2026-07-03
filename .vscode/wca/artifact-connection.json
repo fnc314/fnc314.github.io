@@ -3,11 +3,19 @@
   "tags": [
     {
       "name": "artifact-connection",
-      "description": "Attributes:\n\n  * `artifactConnectionType` - \n\n  * `artifactConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `artifactConnectionType` - \n\n  * `artifactConnectionData` - ",
+      "description": "Attributes:\n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - ",
       "attributes": [
         {
           "name": "artifactConnectionType",
-          "description": "`artifactConnectionType` - \n\nProperty: artifactConnectionType\n\nDefault: "
+          "description": "`artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\nProperty: artifactConnectionType\n\nDefault: ",
+          "values": [
+            {
+              "name": "googleDocs"
+            },
+            {
+              "name": "pdf"
+            }
+          ]
         },
         {
           "name": "artifactConnectionData",

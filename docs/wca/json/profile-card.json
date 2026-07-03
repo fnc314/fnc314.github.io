@@ -35,7 +35,8 @@
         },
         {
           "name": "photoData",
-          "default": "\"PhotoJson[\\n    configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\\n  ]\""
+          "type": "PhotoJson",
+          "default": "\"Photos[configsService.loadConfigs().colorScheme.theme]\""
         },
         {
           "name": "bioText",

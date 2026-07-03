@@ -3,11 +3,22 @@
   "tags": [
     {
       "name": "professional-connection",
-      "description": "Attributes:\n\n  * `professionalConnectionType` - \n\n  * `professionalConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `professionalConnectionType` - \n\n  * `professionalConnectionData` - ",
+      "description": "Attributes:\n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - ",
       "attributes": [
         {
           "name": "professionalConnectionType",
-          "description": "`professionalConnectionType` - \n\nProperty: professionalConnectionType\n\nDefault: "
+          "description": "`professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\nProperty: professionalConnectionType\n\nDefault: ",
+          "values": [
+            {
+              "name": "linkedin"
+            },
+            {
+              "name": "github"
+            },
+            {
+              "name": "medium"
+            }
+          ]
         },
         {
           "name": "professionalConnectionData",

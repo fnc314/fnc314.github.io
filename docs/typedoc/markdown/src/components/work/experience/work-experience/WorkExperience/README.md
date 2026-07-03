@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: WorkExperience
 
-Defined in: [src/components/work/experience/work-experience.ts:24](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L24)
+Defined in: [src/components/work/experience/work-experience.ts:23](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L23)
 
 ## Hierarchy
 
@@ -22,7 +22,7 @@ Defined in: [src/components/work/experience/work-experience.ts:24](https://githu
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/work/experience/work-experience.ts:26](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L26)
+Defined in: [src/components/work/experience/work-experience.ts:25](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L25)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -36,7 +36,7 @@ Defined in: [src/components/work/experience/work-experience.ts:26](https://githu
 
 &gt; **isNested**: `boolean` = `false`
 
-Defined in: [src/components/work/experience/work-experience.ts:33](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L33)
+Defined in: [src/components/work/experience/work-experience.ts:32](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L32)
 
 Whether this is a nested instance
 
@@ -46,7 +46,7 @@ Whether this is a nested instance
 
 &gt; **experienceRole**: `string` = `""`
 
-Defined in: [src/components/work/experience/work-experience.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L37)
+Defined in: [src/components/work/experience/work-experience.ts:36](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L36)
 
 The formal role from the WorkExperience instance
 
@@ -56,7 +56,7 @@ The formal role from the WorkExperience instance
 
 &gt; **experienceOrg**: `string` = `""`
 
-Defined in: [src/components/work/experience/work-experience.ts:41](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L41)
+Defined in: [src/components/work/experience/work-experience.ts:40](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L40)
 
 The employer formal name
 
@@ -64,21 +64,21 @@ The employer formal name
 
 ### dateStart
 
-&gt; **dateStart**: [`WorkDate`](#)
+&gt; **dateStart**: `WorkDate`
 
-Defined in: [src/components/work/experience/work-experience.ts:48](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L48)
+Defined in: [src/components/work/experience/work-experience.ts:47](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L47)
 
-A [WorkDate](#) instance describing employment start date
+A WorkDate instance describing employment start date
 
 ---
 
 ### dateEnd
 
-&gt; **dateEnd**: [`WorkDate`](#)
+&gt; **dateEnd**: `WorkDate`
 
-Defined in: [src/components/work/experience/work-experience.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L52)
+Defined in: [src/components/work/experience/work-experience.ts:51](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L51)
 
-A [WorkDate](#) instance describing employment end date
+A WorkDate instance describing employment end date
 
 ---
 
@@ -86,7 +86,7 @@ A [WorkDate](#) instance describing employment end date
 
 &gt; **summaries**: \{ `item`: `string`; \}[] = `[]`
 
-Defined in: [src/components/work/experience/work-experience.ts:60](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L60)
+Defined in: [src/components/work/experience/work-experience.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L59)
 
 An array of `{ item: string }` objects describing the responsibilities
 
@@ -119,7 +119,7 @@ The description of the responsibility or achievement.
 </td>
 <td>
 
-[src/components/work/experience/work-experience.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L65)
+[src/components/work/experience/work-experience.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L64)
 
 </td>
 </tr>
@@ -130,11 +130,11 @@ The description of the responsibility or achievement.
 
 ### jobs
 
-&gt; **jobs**: [`Job`](#)[] = `[]`
+&gt; **jobs**: `Job`[] = `[]`
 
-Defined in: [src/components/work/experience/work-experience.ts:70](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L70)
+Defined in: [src/components/work/experience/work-experience.ts:69](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L69)
 
-An array of [Job](#)s rendered as nested WorkExperience instances
+An array of Jobs rendered as nested WorkExperience instances
 
 ---
 
@@ -142,7 +142,7 @@ An array of [Job](#)s rendered as nested WorkExperience instances
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/work/experience/work-experience.ts:73](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L73)
+Defined in: [src/components/work/experience/work-experience.ts:72](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/work/experience/work-experience.ts#L72)
 
 Renders the experience entry, conditionally applying styles based on nesting level.
 
@@ -160,7 +160,7 @@ Renders the experience entry, conditionally applying styles based on nesting lev
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -175,7 +175,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -190,7 +190,7 @@ and tests against `"true"`,
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L58)
 
 Invoked when the component is added to the document's DOM.
 
@@ -223,7 +223,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L64)
 
 Invoked when the component is removed from the document's DOM.
 

@@ -3,11 +3,11 @@
   "tags": [
     {
       "name": "code-repo",
-      "description": "[object Object],[object Object],[object Object]\n\nAttributes:\n\n  * `codeRepo` - [object Object],[object Object]\n\nProperties:\n\n  * `codeRepo` - [object Object],[object Object]\n\n  * `styles` - \n\n  * `object Object],[object Object],[object Object` - ",
+      "description": "[object Object],[object Object],[object Object]\n\nAttributes:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\nProperties:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\n  * `styles` - \n\n  * `object Object],[object Object],[object Object` - ",
       "attributes": [
         {
           "name": "codeRepo",
-          "description": "`codeRepo` - [object Object],[object Object]\n\nProperty: codeRepo\n\nDefault: [object Object]"
+          "description": "`codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\nProperty: codeRepo\n\nDefault: [object Object]"
         }
       ]
     }

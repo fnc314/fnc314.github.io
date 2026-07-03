@@ -10,6 +10,6 @@
 
 ## Events
 
-| Event                 | Type               |
-|-----------------------|--------------------|
-| `color_scheme.change` | `CustomEvent<any>` |
+| Event                 | Type                              |
+|-----------------------|-----------------------------------|
+| `color_scheme.change` | `CustomEvent<ColorSchemeConfigs>` |

@@ -1,8 +1,8 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](README.md)
 
 ---
 
-# @fnc314/com.fnc314.website v2.0.4
+# @fnc314/com.fnc314.website v2.0.5
 
 ## Hierarchy Summary
 

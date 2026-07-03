@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "profile-card",
-      "description": "Attributes:\n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `photoData` - \n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\n  * `_onConfigChange` - ",
+      "description": "Attributes:\n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `photoData` {`PhotoJson`} - \n\n  * `bioText` {`string`} - \n\n  * `expanded` {`boolean`} - \n\n  * `enableHover` {`boolean`} - \n\n  * `enableFocus` {`boolean`} - \n\n  * `_onConfigChange` - ",
       "attributes": [
         {
           "name": "bioText",

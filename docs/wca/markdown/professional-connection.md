@@ -2,7 +2,7 @@
 
 ## Properties
 
-| Property                     | Attribute                    | Type                             | Default |
-|------------------------------|------------------------------|----------------------------------|---------|
-| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData` | {}      |
-| `professionalConnectionType` | `professionalConnectionType` | `ProfessionalConnectionType`     | ""      |
+| Property                     | Attribute                    | Type                                 | Default |
+|------------------------------|------------------------------|--------------------------------------|---------|
+| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData`     | {}      |
+| `professionalConnectionType` | `professionalConnectionType` | `"linkedin" \| "github" \| "medium"` | ""      |

@@ -7,7 +7,7 @@
       "attributes": [
         {
           "name": "professionalConnectionType",
-          "type": "ProfessionalConnectionType",
+          "type": "\"linkedin\" | \"github\" | \"medium\"",
           "default": "\"\""
         },
         {
@@ -25,7 +25,7 @@
         {
           "name": "professionalConnectionType",
           "attribute": "professionalConnectionType",
-          "type": "ProfessionalConnectionType",
+          "type": "\"linkedin\" | \"github\" | \"medium\"",
           "default": "\"\""
         },
         {

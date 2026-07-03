@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../README.md)
 
 ---
 
@@ -21,9 +21,9 @@
 
 ## Events
 
-| Event                  | Type               | Description                                                                                                                                      |
-| ---------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
-| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
-| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
-| </any></body></html>   |
+| Event                               | Type                              | Description                                                                                                                                      |
+| ----------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `color_scheme.change`               | `CustomEvent<colorschemeconfigs>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`                 |                                   | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
+| `permanentcolorscheme`              |                                   | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
+| </colorschemeconfigs></body></html> |

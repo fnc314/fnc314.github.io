@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: UiModeToggle
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:43](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L43)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:41](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L41)
 
 ## Element
 
@@ -44,7 +44,7 @@ to align with the application"s Material Design 3 aesthetic.
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:45](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L45)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:43](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L43)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -58,7 +58,7 @@ Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:45](https://github.
 
 &gt; **reset**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:156](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L156)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:154](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L154)
 
 Resets the UI mode toggle to its default settings.
 
@@ -72,7 +72,7 @@ Resets the UI mode toggle to its default settings.
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -87,7 +87,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -102,7 +102,7 @@ and tests against `"true"`,
 
 &gt; `private` **\_ready**: `boolean` = `false`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:71](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L71)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:69](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L69)
 
 Guards against the synthetic `colorschemechange` / `permanentcolorscheme`
 events that `dark-mode-toggle` dispatches at the end of its
@@ -118,7 +118,7 @@ first render has completed (i.e. after a genuine user toggle).
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:161](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L161)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:159](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L159)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -139,7 +139,7 @@ the element to update.
 
 &gt; `protected` **firstUpdated**(): `void`
 
-Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:73](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L73)
+Defined in: [src/components/ui-mode-toggle/ui-mode-toggle.ts:71](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/ui-mode-toggle/ui-mode-toggle.ts#L71)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.

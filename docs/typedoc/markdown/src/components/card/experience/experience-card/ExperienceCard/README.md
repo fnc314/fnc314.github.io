@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: ExperienceCard
 
-Defined in: [src/components/card/experience/experience-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L17)
+Defined in: [src/components/card/experience/experience-card.ts:16](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L16)
 
 ## Element
 
@@ -26,7 +26,7 @@ experience-card
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/card/experience/experience-card.ts:19](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L19)
+Defined in: [src/components/card/experience/experience-card.ts:18](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L18)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -40,7 +40,7 @@ Defined in: [src/components/card/experience/experience-card.ts:19](https://githu
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -55,7 +55,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -70,7 +70,7 @@ and tests against `"true"`,
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L64)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -102,7 +102,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/experience/experience-card.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L38)
+Defined in: [src/components/card/experience/experience-card.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/experience/experience-card.ts#L37)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

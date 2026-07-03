@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../../../README.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 # Class: EducationCard
 
-Defined in: [src/components/card/education/education-card.ts:16](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L16)
+Defined in: [src/components/card/education/education-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L17)
 
 ## Element
 
@@ -26,7 +26,7 @@ education-card
 
 &gt; `static` **styles**: `CSSResult`[]
 
-Defined in: [src/components/card/education/education-card.ts:18](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L18)
+Defined in: [src/components/card/education/education-card.ts:19](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L19)
 
 [lit!css](https://lit.dev/docs/api/styles/#css)
 
@@ -40,7 +40,7 @@ Defined in: [src/components/card/education/education-card.ts:18](https://github.
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:38](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L38)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L37)
 
 The BreakpointLabel as determined by _SCREEN_ width against
 Breakpoints.BREAKPOINT\_LABELS
@@ -55,7 +55,7 @@ Breakpoints.BREAKPOINT\_LABELS
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:53](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L53)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L52)
 
 Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
@@ -70,7 +70,7 @@ and tests against `"true"`,
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L58)
 
 Invoked when the component is added to the document's DOM.
 
@@ -103,7 +103,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:65](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L65)
+Defined in: [src/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/main/src/mixins/ui-aware-element/ui-aware-element.ts#L64)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -135,7 +135,7 @@ An element may be re-connected after being disconnected.
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [src/components/card/education/education-card.ts:35](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L35)
+Defined in: [src/components/card/education/education-card.ts:36](https://github.com/fnc314/fnc314.github.io/blob/main/src/components/card/education/education-card.ts#L36)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

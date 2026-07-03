@@ -15,8 +15,8 @@
 
 ## Events
 
-| Event                  | Type               | Description                                      |
-|------------------------|--------------------|--------------------------------------------------|
-| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br />propagating the new `AppConfigs["colorScheme"]` details. |
-| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes. |
-| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes. |
+| Event                  | Type                              | Description                                      |
+|------------------------|-----------------------------------|--------------------------------------------------|
+| `color_scheme.change`  | `CustomEvent<ColorSchemeConfigs>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br />propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`    |                                   | Event from `dark-mode-toggle` when the scheme changes. |
+| `permanentcolorscheme` |                                   | Event from `dark-mode-toggle` when the persistence changes. |

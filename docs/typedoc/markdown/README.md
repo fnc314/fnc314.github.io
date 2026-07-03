@@ -1,4 +1,4 @@
-<html><head></head><body>**@fnc314/com.fnc314.website v2.0.4**
+<html><head></head><body>**@fnc314/com.fnc314.website v2.0.5**
 
 ---
 
@@ -87,13 +87,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Type      | Default                                                                                     |
-| ------------- | ------------- | --------- | ------------------------------------------------------------------------------------------- |
-| `bioText`     | `bioText`     | `string`  | "long"                                                                                      |
-| `enableFocus` | `enableFocus` | `boolean` | false                                                                                       |
-| `enableHover` | `enableHover` | `boolean` | false                                                                                       |
-| `expanded`    | `expanded`    | `boolean` | false                                                                                       |
-| `photoData`   |               |           | "PhotoJson[\n configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\n ]" |
+| Property      | Attribute     | Type        | Default                                                  |
+| ------------- | ------------- | ----------- | -------------------------------------------------------- |
+| `bioText`     | `bioText`     | `string`    | "long"                                                   |
+| `enableFocus` | `enableFocus` | `boolean`   | false                                                    |
+| `enableHover` | `enableHover` | `boolean`   | false                                                    |
+| `expanded`    | `expanded`    | `boolean`   | false                                                    |
+| `photoData`   |               | `PhotoJson` | "Photos[configsService.loadConfigs().colorScheme.theme]" |
 
 # settings-card
 
@@ -107,9 +107,9 @@
 
 ## Events
 
-| Event                 | Type               |
-| --------------------- | ------------------ |
-| `color_scheme.change` | `CustomEvent<any>` |
+| Event                 | Type                              |
+| --------------------- | --------------------------------- |
+| `color_scheme.change` | `CustomEvent<colorschemeconfigs>` |
 
 # skills-card
 
@@ -139,7 +139,7 @@
 | Property                 | Attribute                | Type                     | Default |
 | ------------------------ | ------------------------ | ------------------------ | ------- |
 | `artifactConnectionData` | `artifactConnectionData` | `ArtifactConnectionData` | {}      |
-| `artifactConnectionType` | `artifactConnectionType` | `ArtifactConnectionType` | ""      |
+| `artifactConnectionType` | `artifactConnectionType` | `"googleDocs" \| "pdf"`  | ""      |
 
 # direct-connection
 
@@ -155,10 +155,10 @@
 
 ## Properties
 
-| Property                     | Attribute                    | Type                             | Default |
-| ---------------------------- | ---------------------------- | -------------------------------- | ------- |
-| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData` | {}      |
-| `professionalConnectionType` | `professionalConnectionType` | `ProfessionalConnectionType`     | ""      |
+| Property                     | Attribute                    | Type                                 | Default |
+| ---------------------------- | ---------------------------- | ------------------------------------ | ------- |
+| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData`     | {}      |
+| `professionalConnectionType` | `professionalConnectionType` | `"linkedin" \| "github" \| "medium"` | ""      |
 
 # education-institution
 
@@ -185,11 +185,11 @@
 
 ## Events
 
-| Event                  | Type               | Description                                                                                                                                      |
-| ---------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
-| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
-| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
+| Event                  | Type                              | Description                                                                                                                                      |
+| ---------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `color_scheme.change`  | `CustomEvent<colorschemeconfigs>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`    |                                   | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
+| `permanentcolorscheme` |                                   | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
 
 # version-tag
 
@@ -303,7 +303,6 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [src/components/bento-layout/bento-layout](src/components/bento-layout/bento-layout/README.md)
 - [src/components/bento-layout/bento-layout.types](src/components/bento-layout/bento-layout.types/README.md)
 - [src/components/blog/entry/blog-entry](src/components/blog/entry/blog-entry/README.md)
-- [src/components/blog/entry/blog-entry.types](src/components/blog/entry/blog-entry.types/README.md)
 - [src/components/card/bento/bento-card](src/components/card/bento/bento-card/README.md)
 - [src/components/card/blog/blog-card](src/components/card/blog/blog-card/README.md)
 - [src/components/card/code/code-card](src/components/card/code/code-card/README.md)
@@ -314,7 +313,6 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [src/components/card/skills/skills-card](src/components/card/skills/skills-card/README.md)
 - [src/components/code/repo/code-repo.styles](src/components/code/repo/code-repo.styles/README.md)
 - [src/components/code/repo/code-repo](src/components/code/repo/code-repo/README.md)
-- [src/components/code/repo/code-repo.types](src/components/code/repo/code-repo.types/README.md)
 - [src/components/connection/direct/direct-connection](src/components/connection/direct/direct-connection/README.md)
 - [src/components/ui-mode-toggle/ui-mode-toggle.styles](src/components/ui-mode-toggle/ui-mode-toggle.styles/README.md)
 - [src/components/ui-mode-toggle/ui-mode-toggle](src/components/ui-mode-toggle/ui-mode-toggle/README.md)
@@ -326,6 +324,5 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [src/mixins/ui-aware-element/ui-aware-element](src/mixins/ui-aware-element/ui-aware-element/README.md)
 - [src/styles/interaction-styles](src/styles/interaction-styles/README.md)
 - [src/styles/text](src/styles/text/README.md)
-- [src/styles/transitions.styles](src/styles/transitions.styles/README.md)
-- [src/types/theme/theme](src/types/theme/theme/README.md)
-  </any></any></details></summary></h2></body></html>
+- [src/types/theme](src/types/theme/README.md)
+  </colorschemeconfigs></colorschemeconfigs></details></summary></h2></body></html>

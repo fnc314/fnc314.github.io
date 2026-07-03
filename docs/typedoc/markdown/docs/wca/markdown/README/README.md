@@ -1,4 +1,4 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.4**](../../../../README.md)
+<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../../README.md)
 
 ---
 
@@ -89,13 +89,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Type      | Default                                                                                     |
-| ------------- | ------------- | --------- | ------------------------------------------------------------------------------------------- |
-| `bioText`     | `bioText`     | `string`  | "long"                                                                                      |
-| `enableFocus` | `enableFocus` | `boolean` | false                                                                                       |
-| `enableHover` | `enableHover` | `boolean` | false                                                                                       |
-| `expanded`    | `expanded`    | `boolean` | false                                                                                       |
-| `photoData`   |               |           | "PhotoJson[\n configsService.loadConfigs().colorScheme.theme as keyof typeof PhotoJson\n ]" |
+| Property      | Attribute     | Type        | Default                                                  |
+| ------------- | ------------- | ----------- | -------------------------------------------------------- |
+| `bioText`     | `bioText`     | `string`    | "long"                                                   |
+| `enableFocus` | `enableFocus` | `boolean`   | false                                                    |
+| `enableHover` | `enableHover` | `boolean`   | false                                                    |
+| `expanded`    | `expanded`    | `boolean`   | false                                                    |
+| `photoData`   |               | `PhotoJson` | "Photos[configsService.loadConfigs().colorScheme.theme]" |
 
 # settings-card
 
@@ -109,9 +109,9 @@
 
 ## Events
 
-| Event                 | Type               |
-| --------------------- | ------------------ |
-| `color_scheme.change` | `CustomEvent<any>` |
+| Event                 | Type                              |
+| --------------------- | --------------------------------- |
+| `color_scheme.change` | `CustomEvent<colorschemeconfigs>` |
 
 # skills-card
 
@@ -141,7 +141,7 @@
 | Property                 | Attribute                | Type                     | Default |
 | ------------------------ | ------------------------ | ------------------------ | ------- |
 | `artifactConnectionData` | `artifactConnectionData` | `ArtifactConnectionData` | {}      |
-| `artifactConnectionType` | `artifactConnectionType` | `ArtifactConnectionType` | ""      |
+| `artifactConnectionType` | `artifactConnectionType` | `"googleDocs" \| "pdf"`  | ""      |
 
 # direct-connection
 
@@ -157,10 +157,10 @@
 
 ## Properties
 
-| Property                     | Attribute                    | Type                             | Default |
-| ---------------------------- | ---------------------------- | -------------------------------- | ------- |
-| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData` | {}      |
-| `professionalConnectionType` | `professionalConnectionType` | `ProfessionalConnectionType`     | ""      |
+| Property                     | Attribute                    | Type                                 | Default |
+| ---------------------------- | ---------------------------- | ------------------------------------ | ------- |
+| `professionalConnectionData` | `professionalConnectionData` | `ProfessionalConnectionJsonData`     | {}      |
+| `professionalConnectionType` | `professionalConnectionType` | `"linkedin" \| "github" \| "medium"` | ""      |
 
 # education-institution
 
@@ -187,11 +187,11 @@
 
 ## Events
 
-| Event                  | Type               | Description                                                                                                                                      |
-| ---------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `color_scheme.change`  | `CustomEvent<any>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
-| `colorschemechange`    |                    | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
-| `permanentcolorscheme` |                    | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
+| Event                  | Type                              | Description                                                                                                                                      |
+| ---------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `color_scheme.change`  | `CustomEvent<colorschemeconfigs>` | Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new `AppConfigs["colorScheme"]` details. |
+| `colorschemechange`    |                                   | Event from `dark-mode-toggle` when the scheme changes.                                                                                           |
+| `permanentcolorscheme` |                                   | Event from `dark-mode-toggle` when the persistence changes.                                                                                      |
 
 # version-tag
 
@@ -261,16 +261,16 @@ A component that renders a cloud of words with various sorting and grouping opti
 
 ## Properties
 
-| Property                                                                        | Attribute            | Type                  | Default                | Description                                                                     |
-| ------------------------------------------------------------------------------- | -------------------- | --------------------- | ---------------------- | ------------------------------------------------------------------------------- |
-| `dateEnd`                                                                       | `date-end`           | `WorkDate`            | {"stamp":"","text":""} | End date information including machine-readable stamp and display text.         |
-| `dateStart`                                                                     | `date-start`         | `WorkDate`            | {"stamp":"","text":""} | Start date information including machine-readable stamp and display text.       |
-| `experienceOrg`                                                                 | `experience-org`     | `string`              | ""                     | The name of the organization or client.                                         |
-| `experienceRole`                                                                | `experience-role`    | `string`              | ""                     | The title of the professional role or project.                                  |
-| `experienceSummary`                                                             | `experience-summary` | `string`              | ""                     | An optional summary of the overall role                                         |
-| `isNested`                                                                      | `is-nested`          | `boolean`             | false                  | If true, adjusts font sizes and layout for a nested appearance.                 |
-| `jobs`                                                                          | `jobs`               | `Job[]`               | []                     | A list of sub-jobs or project assignments to be rendered as nested experiences. |
-| `object Object],[object Object],[object Object`                                 |                      |                       |                        |                                                                                 |
-| `object Object],[object Object],[object Object],[object Object],[object Object` |                      |                       |                        |                                                                                 |
-| `summaries`                                                                     | `summaries`          | `{ item: string; }[]` | []                     | A list of summary points describing achievements or responsibilities.           |
-| </any></any></details></summary></h2></body></html>                             |
+| Property                                                                          | Attribute            | Type                  | Default                | Description                                                                     |
+| --------------------------------------------------------------------------------- | -------------------- | --------------------- | ---------------------- | ------------------------------------------------------------------------------- |
+| `dateEnd`                                                                         | `date-end`           | `WorkDate`            | {"stamp":"","text":""} | End date information including machine-readable stamp and display text.         |
+| `dateStart`                                                                       | `date-start`         | `WorkDate`            | {"stamp":"","text":""} | Start date information including machine-readable stamp and display text.       |
+| `experienceOrg`                                                                   | `experience-org`     | `string`              | ""                     | The name of the organization or client.                                         |
+| `experienceRole`                                                                  | `experience-role`    | `string`              | ""                     | The title of the professional role or project.                                  |
+| `experienceSummary`                                                               | `experience-summary` | `string`              | ""                     | An optional summary of the overall role                                         |
+| `isNested`                                                                        | `is-nested`          | `boolean`             | false                  | If true, adjusts font sizes and layout for a nested appearance.                 |
+| `jobs`                                                                            | `jobs`               | `Job[]`               | []                     | A list of sub-jobs or project assignments to be rendered as nested experiences. |
+| `object Object],[object Object],[object Object`                                   |                      |                       |                        |                                                                                 |
+| `object Object],[object Object],[object Object],[object Object],[object Object`   |                      |                       |                        |                                                                                 |
+| `summaries`                                                                       | `summaries`          | `{ item: string; }[]` | []                     | A list of summary points describing achievements or responsibilities.           |
+| </colorschemeconfigs></colorschemeconfigs></details></summary></h2></body></html> |
