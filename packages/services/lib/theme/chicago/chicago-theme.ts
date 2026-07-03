@@ -1,0 +1,20 @@
+import { jsonIsThemeJsonSchemes, readScheme } from "@/lib/theme/utils";
+import { Photos } from "@fnc314/packages.data";
+import JsonTheme from "@fnc314/packages.design-tokens/themes/chicago/chicago.mtb.json" with { type: "json" };
+import {
+  type ThemeConfig,
+  type ThemeJsonSchemes,
+} from "@fnc314/packages.types";
+
+export const ChicagoThemeConfig: ThemeConfig = {
+  themePhoto: Photos.chicago,
+  json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes),
+  materialSchemes: {
+    light: readScheme(JsonTheme.schemes.light),
+    lightMediumContrast: readScheme(JsonTheme.schemes["light-medium-contrast"]),
+    lightHighContrast: readScheme(JsonTheme.schemes["light-high-contrast"]),
+    dark: readScheme(JsonTheme.schemes.dark),
+    darkMediumContrast: readScheme(JsonTheme.schemes["dark-medium-contrast"]),
+    darkHighContrast: readScheme(JsonTheme.schemes["dark-high-contrast"]),
+  },
+};

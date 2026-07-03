@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "./../packages.tsconfig.json",
+  ],
+  "references": [
+    { "path": "./../types" },
+    { "path": "./../data" },
+    { "path": "./../design-tokens" },
+  ]
+}

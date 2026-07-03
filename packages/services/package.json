@@ -1,0 +1,46 @@
+{
+  "author": "Franco N. Colaizzi <fnc314@fnc314.com>",
+  "bugs": {
+    "url": "https://github.com/fnc314/fnc314.github.io/issues"
+  },
+  "customElements": "../../docs/@pwrs/cem/packages/services/custom-elements.json",
+  "dependencies": {
+    "@fnc314/packages.data": "workspace:*",
+    "@fnc314/packages.design-tokens": "workspace:*",
+    "@fnc314/packages.types": "workspace:*",
+    "@material/web": "catalog:dependencies",
+    "lit": "catalog:dependencies",
+    "material-symbols": "catalog:dependencies"
+  },
+  "description": "Types package to support https://fnc314.com",
+  "devDependencies": {
+    "@types/fs-extra": "catalog:devDependencies",
+    "fs-extra": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies",
+    "unplugin-dts": "catalog:devDependencies",
+    "vite": "catalog:devDependencies"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/@fnc314.packages.services.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./types/*": "./dist/types/*"
+  },
+  "files": [
+    "./dist/types/**/*.d.ts",
+    "./dist/@fnc314.packages.services.js"
+  ],
+  "homepage": "https://github.com/fnc314/fnc314.github.io#readme",
+  "license": "ISC",
+  "main": "./dist/@fnc314.packages.services.js",
+  "name": "@fnc314/packages.services",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fnc314/fnc314.github.io.git"
+  },
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "version": "2.0.4"
+}

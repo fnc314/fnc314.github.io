@@ -176,6 +176,7 @@ packages:
   - "functions"
   - "packages/data"
   - "packages/design-tokens"
+  - "packages/services"
   - "packages/types"
 peerDependencyRules:
   allowAny:
