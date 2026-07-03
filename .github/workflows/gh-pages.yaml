@@ -25,6 +25,7 @@ jobs:
           cache: false
           experimental: true
           install: true
+          install_args: "--monorepo -v"
 
       - name: PNPM Install
         run: pnpm install
