@@ -25,9 +25,6 @@ export const ProfileCardStyles: CSSResult = css`
       var(--profile-card-filled-icon-button-container-size)
     );
 
-    --md-divider-color: var(
-      --profile-card-filled-icon-button-container-color
-    );
     --md-filled-icon-button-container-color: var(
       --profile-card-filled-icon-button-container-color
     );
@@ -123,7 +120,7 @@ export const ProfileCardStyles: CSSResult = css`
         vertical-align: middle;
         white-space: nowrap;
         padding: var(--spaces-padding-s) var(--spaces-none);
-        color: var(--profile-card-filled-icon-button-icon-color);
+        color: var(--md-sys-color-on-surface-variant);
       }
 
       td {
