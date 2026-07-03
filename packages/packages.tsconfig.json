@@ -44,6 +44,7 @@
     "strictBindCallApply": false,
     "rootDir": "${configDir}",
     "target": "esnext",
+    "useDefineForClassFields": false,
     "types": [
       "node",
       "vite/client",

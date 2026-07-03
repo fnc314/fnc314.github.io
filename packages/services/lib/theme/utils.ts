@@ -1,6 +1,4 @@
-import { configsService } from "@/lib/configs";
-import { THEME_CONFIGS, themeService } from "@/lib/theme";
-import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorSchemeConfigs, type ColorSchemeContrast, type MaterialSchemeName, type ThemeJsonSchemes } from "@fnc314/packages.types";
+import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 export const colorSchemeContrastToIcon: (
@@ -63,11 +61,8 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
  * @param {string} jsonKey The key of a `JSON` object, expected in `lowerPascalCase`
  * @returns {string} The same {@link jsonKey} but in `lower-kebab-case`
  */
-const formatJsonKey: (jsonKey: string) => string = (jsonKey: string) =>
-  jsonKey
-    .split(/(?=[A-Z])/)
-    .map((part) => part.toLowerCase())
-    .join("-");
+const formatJsonKey: (jsonKey: string) => string =
+  (jsonKey: string) => jsonKey.split(/(?=[A-Z])/).map((part) => part.toLowerCase()).join("-");
 
 /**
  * Takes the provided {@link CSSResult} and massages the underlying text with
@@ -149,45 +144,3 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
     --oklch-md-sys-color-${cssColorName}: oklch(from ${cssColor} l c h);
   `;
 }
-
-export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
-  colorSchemeSettings: ColorSchemeConfigs
-): MaterialSchemeName => {
-  const variant = colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM
-    ? colorSchemeSettings.name.toLowerCase()
-    : (window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT
-    ).toLowerCase();
-
-  const contrast = colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL
-    ? ""
-    : colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
-
-  return `${variant}${contrast}` as MaterialSchemeName;
-};
-
-export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
-  const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
-
-  const appSettings = configsService.loadConfigs();
-  const colorScheme = {
-    ...appSettings.colorScheme,
-    name,
-  };
-  configsService.saveConfigs({
-    ...appSettings,
-    colorScheme,
-  });
-
-  updateMaterialCSSStyleSheet(
-    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)],
-  );
-
-  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
-};
-
-export const updateMaterialCSSStyleSheet: (result: CSSResult) => void = (result: CSSResult) =>
-  MaterialCSSStyleSheet.replaceSync(result.cssText);
-
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;

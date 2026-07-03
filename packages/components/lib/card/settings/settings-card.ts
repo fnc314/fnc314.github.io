@@ -4,7 +4,7 @@ import { SettingsCardStyles } from "@/lib/card/settings/settings-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
-import { colorSchemeConfigsToMaterialSchemeName, configsService, themeService, updateMaterialCSSStyleSheet } from "@fnc314/packages.services";
+import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, themeService } from "@fnc314/packages.services";
 import { type AppConfigs, CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, THEME_NAMES, type ThemeName } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
@@ -86,10 +86,10 @@ export class SettingsCard extends UIAwareElement {
       }),
     );
 
-    updateMaterialCSSStyleSheet(
+    MaterialCSSStyleSheet.replaceSync(
       themeService.currentThemeConfig().materialSchemes[
         colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
-      ],
+      ].cssText,
     );
   }
 

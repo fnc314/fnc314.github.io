@@ -1,7 +1,7 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
-import { colorSchemeConfigsToMaterialSchemeName, configsService, themeService, updateMaterialCSSStyleSheet } from "@fnc314/packages.services";
+import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, themeService } from "@fnc314/packages.services";
 import {
   type AppConfigs, type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme
@@ -139,10 +139,10 @@ export class UiModeToggle extends UIAwareElement {
       }),
     );
 
-    updateMaterialCSSStyleSheet(
+    MaterialCSSStyleSheet.replaceSync(
       themeService.currentThemeConfig().materialSchemes[
         colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
-      ],
+      ].cssText,
     );
   }
 

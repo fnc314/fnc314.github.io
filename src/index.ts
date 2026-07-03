@@ -1,30 +1,13 @@
 import "@/index.css";
-import "@/styles";
-import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
-import "@/types/theme";
 import "@fnc314/packages.components";
 import "@fnc314/packages.data";
 import "@fnc314/packages.design-tokens";
 import "@fnc314/packages.services";
-import { configsService, themeService } from "@fnc314/packages.services";
+import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
 import "@fnc314/packages.types";
-import "@material/web/divider/divider";
-import "@material/web/elevation/elevation";
-import "@material/web/focus/md-focus-ring";
-import "@material/web/icon/icon";
-import "@material/web/iconbutton/filled-icon-button";
-import "@material/web/iconbutton/icon-button";
-import "@material/web/labs/card/elevated-card";
-import "@material/web/labs/card/filled-card";
-import "@material/web/labs/card/outlined-card";
-import "@material/web/list/list";
-import "@material/web/list/list-item";
-import "@material/web/select/outlined-select";
-import "@material/web/select/select-option";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
-import { colorSchemeConfigsToMaterialSchemeName } from "./types/theme";
 // import "prop-for-that/auto";
 
 const domLoadedListener = () => {
@@ -40,9 +23,14 @@ const domLoadedListener = () => {
 
   const matScheme =
     themeService.currentThemeConfig().materialSchemes[
-      colorSchemeConfigsToMaterialSchemeName(configsService.loadConfigs().colorScheme)
+      colorSchemeConfigsToMaterialSchemeName(
+        configsService.loadConfigs().colorScheme
+      )
     ];
-  updateMaterialCSSStyleSheet(matScheme);
+
+  MaterialCSSStyleSheet.replaceSync(
+    matScheme.cssText
+  );
 
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 
@@ -52,7 +40,11 @@ const domLoadedListener = () => {
     const themeConfig = themeService.currentThemeConfig();
 
     const applyTheme = () => {
-      updateMaterialCSSStyleSheet(themeConfig.materialSchemes[colorSchemeConfigsToMaterialSchemeName(customEvent.detail)]);
+      MaterialCSSStyleSheet.replaceSync(
+        themeConfig.materialSchemes[
+          colorSchemeConfigsToMaterialSchemeName(customEvent.detail)
+        ].cssText
+      );
       document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
     };
 

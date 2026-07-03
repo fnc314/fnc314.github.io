@@ -3,8 +3,8 @@
     "./../packages.tsconfig.json",
   ],
   "references": [
-    { "path": "./../types" },
-    { "path": "./../data" },
-    { "path": "./../design-tokens" },
+    { "path": "./../types/tsconfig.json" },
+    { "path": "./../data/tsconfig.json" },
+    { "path": "./../design-tokens/tsconfig.json" },
   ]
 }
