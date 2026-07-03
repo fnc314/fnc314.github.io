@@ -1,8 +1,7 @@
-import { BentoLayoutStyles } from "@/components/bento-layout/bento-layout.styles";
+import { BentoLayoutStyles, TransitionStyles } from "@/components/bento-layout/bento-layout.styles";
 import { type ABentoBoxConfig, BENTO_BOX_TYPES, BentoBoxConfigs, type GridPosition } from "@/components/bento-layout/bento-layout.types";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/styles/text";
-import { TransitionStyles } from "@/styles/transitions.styles";
 import { Breakpoints } from "@fnc314/packages.design-tokens";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";

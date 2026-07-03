@@ -11,7 +11,7 @@
   "type": "module",
   "module": "src/index.ts",
   "private": true,
-  "types": "./out",
+  "types": "./dist/out",
   "main": "./website/index.js",
   "customElements": "dist/vite/development/custom-elements.json",
   "web-types": "./.idea/web-types.json",
@@ -29,6 +29,7 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "workspaces": [
+    ".",
     "functions",
     "packages/data",
     "packages/design-tokens",

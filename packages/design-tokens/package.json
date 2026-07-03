@@ -36,6 +36,7 @@
     "./dist/css/*.css",
     "./dist/json/*.json"
   ],
+  "customElements": "../../docs/@pwrs/cem/packages/design-tokens/custom-elements.json",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/@fnc314.packages.design-tokens.js",
   "module": "./dist/@fnc314.packages.design-tokens.js",

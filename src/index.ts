@@ -26,7 +26,6 @@ import "@/services/theme/theme-service";
 import { themeService } from "@/services/theme/theme-service";
 import "@/styles";
 import { MaterialCSSStyleSheet, onThemeChange, updateMaterialCSSStyleSheet } from "@/styles/styles";
-import "@/types/configs/app-configs";
 import "@/types/theme";
 import "@fnc314/packages.data";
 import "@fnc314/packages.design-tokens";

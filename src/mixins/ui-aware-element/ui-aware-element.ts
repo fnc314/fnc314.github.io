@@ -1,8 +1,7 @@
 import { configsService } from "@/services/configs/configs-service";
-import { type AppConfigsChange } from "@/types/configs/app-configs";
 import { Breakpoints, TouchScreen, readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type BreakpointLabel } from "@fnc314/packages.design-tokens/types/breakpoints.js";
-import { CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
 import { LitElement } from "lit";
 import { state } from "lit/decorators.js";
 

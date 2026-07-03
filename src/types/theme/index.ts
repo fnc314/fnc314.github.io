@@ -1,5 +1,4 @@
-import type { MaterialSchemeName } from "@/styles";
-import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorSchemeConfigs, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
+import { CONFIG_COLOR_CONTRAST_NAMES, CONFIG_COLOR_SCHEME_NAMES, type ColorSchemeConfigs, type ColorSchemeContrast, type MaterialSchemeName, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 export const colorSchemeContrastToIcon: (

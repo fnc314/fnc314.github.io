@@ -1,11 +1,12 @@
-import { html, fixture, expect, oneEvent } from "@open-wc/testing";
-import { UiModeToggle } from "./ui-mode-toggle";
-import "./ui-mode-toggle";
+import "@/components/ui-mode-toggle/ui-mode-toggle";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { type AppConfigs } from "@/types/configs/app-configs";
-import { CONFIG_COLOR_SCHEME_NAMES } from "@/types/theme/color-scheme-configs";
-import type { ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
+import { type AppConfigs, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { expect, fixture, html, oneEvent } from "@open-wc/testing";
+import { type ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
+import { afterEach, before, beforeEach, type it } from "node:test";
+import { describe } from "~build/git";
+import { UiModeToggle } from "./ui-mode-toggle";
 
 describe("UiModeToggle Component", () => {
   let element: UiModeToggle;

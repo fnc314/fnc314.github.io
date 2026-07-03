@@ -4,11 +4,10 @@ import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { TextStyles } from "@/styles/text";
-import { type AppConfigs, type AppConfigsChange } from "@/types/configs/app-configs";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme";
 import {
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
+  type AppConfigs, type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme
 } from "@fnc314/packages.types";
 import {
   type ColorSchemeChangeEvent,

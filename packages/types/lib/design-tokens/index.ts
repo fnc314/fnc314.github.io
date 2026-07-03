@@ -16,7 +16,6 @@ export interface DesignTokenIcon {
   light: string;
 }
 
-
 /**
  * Extends {@link DesignTokenIcon} with a maskable asset
  *

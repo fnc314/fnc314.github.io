@@ -171,8 +171,6 @@ minimumReleaseAgeExclude:
   - stylelint@17.13.0
   - vite-plugin-svgo@3.0.0
 nodeVersion: "26.4.0"
-overrides:
-  vite-plugin-svgo: link:../../libraries/forks/vite-plugin-svgo
 packageManagerStrictVersion: true
 packages:
   - "functions"

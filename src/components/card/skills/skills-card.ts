@@ -2,8 +2,8 @@ import "@/components/card/bento/bento-card";
 import { SkillsCardStyles } from "@/components/card/skills/skills-card.styles";
 import "@/components/word/cloud/word-cloud";
 import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/components/word/cloud/word-cloud.types";
-import SkillsJson from "@/data/skills.json" with { type: "json" };
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
+import { Skills } from "@fnc314/packages.data";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -27,8 +27,8 @@ export class SkillsCard extends UIAwareElement {
   enableFocus = false;
 
   private getSkillsForWordCloud() {
-    return Object.keys(SkillsJson.skills).flatMap((proficiency) =>
-      Object.entries(SkillsJson.skills[proficiency as keyof typeof SkillsJson.skills]).map(([word, weight]) =>
+    return Object.keys(Skills).flatMap((proficiency) =>
+      Object.entries(Skills[proficiency as keyof typeof Skills]).map(([word, weight]) =>
         makeWordCloudWord(word, weight as Weights, proficiency as WordCloudWordCategory),
       ),
     );
