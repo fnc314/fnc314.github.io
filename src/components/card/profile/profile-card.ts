@@ -1,9 +1,9 @@
 import { BENTO_BOX_TYPES } from "@/components/bento-layout/bento-layout.types";
 import { ProfileCardStyles } from "@/components/card/profile/profile-card.styles";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { configsService } from "@/services/configs/configs-service";
 import { TextStyles } from "@/styles/text";
 import { Biographies, Connections, Photos } from "@fnc314/packages.data";
+import { configsService } from "@fnc314/packages.services";
 import {
   type ArtifactConnectionData,
   type ArtifactConnectionType,

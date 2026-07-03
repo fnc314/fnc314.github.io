@@ -1,4 +1,4 @@
-import { type DesignTokenIcon, type MaskableDesignTokenIcon } from "@/lib/design-token-icon";
+import { type DesignTokenIcon, type MaskableDesignTokenIcon } from "@/lib/design-tokens";
 
 /**
  * The two variants of the {@link DirectConnection} widget

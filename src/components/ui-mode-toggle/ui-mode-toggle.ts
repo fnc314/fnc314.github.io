@@ -1,10 +1,9 @@
 import { UIModeToggleStyles } from "@/components/ui-mode-toggle/ui-mode-toggle.styles";
 import { UIAwareElement } from "@/mixins/ui-aware-element/ui-aware-element";
-import { configsService } from "@/services/configs/configs-service";
-import { themeService } from "@/services/theme/theme-service";
 import { updateMaterialCSSStyleSheet } from "@/styles/styles";
 import { TextStyles } from "@/styles/text";
 import { colorSchemeConfigsToMaterialSchemeName } from "@/types/theme";
+import { configsService, themeService } from "@fnc314/packages.services";
 import {
   type AppConfigs, type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme

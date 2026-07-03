@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@/lib/design-token-icon";
+import { type DesignTokenIcon } from "@/lib/design-tokens";
 
 export type SingleDigit =
   "0" |
