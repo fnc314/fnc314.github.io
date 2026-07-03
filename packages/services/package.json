@@ -19,7 +19,7 @@
     "typescript": "catalog:devDependencies",
     "unplugin-dts": "catalog:devDependencies",
     "unplugin-info": "catalog:devDependencies",
-   "vite": "catalog:devDependencies"
+    "vite": "catalog:devDependencies"
   },
   "exports": {
     ".": {

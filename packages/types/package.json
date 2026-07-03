@@ -15,7 +15,7 @@
     "typescript": "catalog:devDependencies",
     "unplugin-dts": "catalog:devDependencies",
     "unplugin-info": "catalog:devDependencies",
-   "vite": "catalog:devDependencies"
+    "vite": "catalog:devDependencies"
   },
   "homepage": "https://github.com/fnc314/fnc314.github.io#readme",
   "license": "ISC",
