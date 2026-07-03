@@ -1,8 +1,8 @@
 import { ConnectionArtifactStyles } from "@/lib/connection/artifact/artifact-connection.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
+import "@material/web/iconbutton/filled-icon-button";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -20,9 +20,9 @@ export class ArtifactConnection extends UIAwareElement {
   artifactConnectionData: ArtifactConnectionData = {} as ArtifactConnectionData;
 
   override render(): TemplateResult {
-    const imgSrc = readCSSProperty(
-      this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
-    );
+    // const imgSrc = readCSSProperty(
+    //   this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
+    // );
     const cacheBustingUrl = `${this.artifactConnectionData.href}?t=${Date.now()}`;
     return html`
       <md-filled-icon-button

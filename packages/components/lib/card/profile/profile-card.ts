@@ -5,10 +5,10 @@ import { TextStyles } from "@/lib/styles";
 import { Biographies, Connections, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
-    type ArtifactConnectionData,
-    type ArtifactConnectionType,
-    type ConnectionInstance,
-    type ProfessionalConnectionJsonData
+  type ArtifactConnectionData,
+  type ArtifactConnectionType,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
@@ -65,7 +65,7 @@ export class ProfileCard extends UIAwareElement {
         <th scope="row" class="md-typescale-title-large">Contact</th>
         ${
           Object.entries(Connections.direct)
-            .map(([method, instance]: [string, ConnectionInstance]) => html`
+            .map(([_, instance]: [string, ConnectionInstance]) => html`
               <td colspan="3">
                 <direct-connection .connectionInstance=${instance}></direct-connection>
               </td>

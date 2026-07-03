@@ -7,18 +7,24 @@
   "compileOnSave": true,
   "compilerOptions": {
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "checkJs": true,
     "composite": true,
     "declaration": true,
+    "declarationDir": "${configDir}/dist/types",
     "declarationMap": false,
+    "emitBOM": true,
     "emitDeclarationOnly": false,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "incremental": true,
     "inlineSourceMap": false,
+    "inlineSources": false,
+    "isolatedModules": true,
     "lib": [
       "Decorators",
       "DOM",
@@ -33,18 +39,33 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "${configDir}/dist",
+    "paths": {
+      "@/lib/*": [
+        "${configDir}/lib/*"
+      ]
+    },
     "preserveConstEnums": true,
+    "preserveSymlinks": false,
     "pretty": true,
+    "removeComments": true,
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true,
     "resolvePackageJsonImports": true,
     "rewriteRelativeImportExtensions": true,
-    "sourceMap": false,
-    "strictBindCallApply": false,
     "rootDir": "${configDir}",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": false,
     "target": "esnext",
-    "useDefineForClassFields": false,
     "types": [
       "node",
       "vite/client",
@@ -52,10 +73,8 @@
       "@types/fs-extra",
       "unplugin-info/client"
     ],
-    "paths": {
-      "@/lib/*": ["${configDir}/lib/*"]
-    },
-    "declarationDir": "${configDir}/dist/types"
+    "useDefineForClassFields": false,
+    "verbatimModuleSyntax": false
   },
   "exclude": [
     "${configDir}/node_modules",
