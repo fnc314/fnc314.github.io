@@ -47,7 +47,7 @@
     "noUnusedParameters": true,
     "outDir": "./dist/out",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
     },
     "plugins": [
       {
@@ -111,10 +111,10 @@
     "packages/**/lib/**/*.test.ts",
   ],
   "include": [
-    "src/env.d.ts",
-    "src/vite-env.d.ts",
-    "src/index.ts",
-    "src/index.css",
+    "env.d.ts",
+    "vite-env.d.ts",
+    "index.ts",
+    "index.css",
     "packages/components/lib/**/*.ts",
     "packages/data/lib/**/*.ts",
     "packages/design-tokens/lib/**/*.ts",
