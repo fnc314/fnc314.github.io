@@ -36,7 +36,10 @@ jobs:
         shell: zsh {0}
 
       - name: Verify build artifact
-        run: echo "Listing ./dist/vite/production" ls -la ./dist/vite/production || exit 1 du -sh ./dist/vite/production || true
+        run: |
+          echo "Listing ./dist/vite/production"
+          ls -la ./dist/vite/production || exit 1
+          du -sh ./dist/vite/production || true
         shell: zsh {0}
 
 
