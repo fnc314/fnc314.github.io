@@ -189,10 +189,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         }
       },
       reportCompressedSize: true,
-      watch: {
-        clearScreen: true,
-        buildDelay: 250,
-      }
+      // watch: {
+      //   clearScreen: true,
+      //   buildDelay: 250,
+      // }
     },
     envDir: path.resolve(process.cwd(), ".env"),
     appType: "spa",
