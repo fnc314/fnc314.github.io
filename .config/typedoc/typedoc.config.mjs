@@ -178,7 +178,7 @@ export default {
     hideValues: false,
     leftAlignHeaders: false,
   },
-  tsconfig: `${process.cwd()}/tsconfig.json`,
+  // tsconfig: `${process.cwd()}/tsconfig.json`,
   typeAliasPropertiesFormat: "htmlTable",
   typeDeclarationFormat: "htmlTable",
   typePrintWidth: 2,

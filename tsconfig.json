@@ -47,7 +47,7 @@
     "noUnusedParameters": true,
     "outDir": "./dist/out",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     },
     "plugins": [
       {

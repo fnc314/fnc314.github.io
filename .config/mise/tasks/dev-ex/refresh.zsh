@@ -2,7 +2,7 @@
 #MISE description="Run dx-refresh"
 #MISE alias="dxr"
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {
-#USAGE   choices "none" "log-all" "mise-tasks" "typescript-types" "pwrs/cem" "cem-analyze" "wca" "typedoc"
+#USAGE   choices "none" "log-all" "mise-tasks" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
 
 declare LOG_STEP="${usage_logstep:=none}"
@@ -45,10 +45,10 @@ echo
 # mise generate task-docs -m -o docs/mise/tasks/design-tokens -C design-tokens
 # echo
 
-[[ "$LOG_STEP" == "typescript-types" || "$LOG_STEP" == "log-all" ]] && create_log "typescript-types"
-echo "Recreate TypeScript \`.d.ts\` files"
-pnpm tsc --declaration --declarationMap false -p ./tsconfig.no-test.json
-echo
+# [[ "$LOG_STEP" == "typescript-types" || "$LOG_STEP" == "log-all" ]] && create_log "typescript-types"
+# echo "Recreate TypeScript \`.d.ts\` files"
+# pnpm tsc --declaration --declarationMap false -p ./tsconfig.no-test.json
+# echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
 echo "dx:cem-analyze"

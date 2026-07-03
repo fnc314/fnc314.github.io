@@ -17,7 +17,6 @@ Creates a .log file timestamped by execution point in ./logs/&lt;choice>/&lt;tim
 - `none`
 - `log-all`
 - `mise-tasks`
-- `typescript-types`
 - `pwrs/cem`
 - `cem-analyze`
 - `wca`

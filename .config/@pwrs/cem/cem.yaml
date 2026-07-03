@@ -8,7 +8,11 @@ generate:
 
   files:
     - src/**/*.ts
-    - packages/**/*.ts
+    - packages/components/lib/**/*.ts
+    - packages/data/lib/**/*.ts
+    - packages/design-tokens/lib/**/*.ts
+    - packages/services/lib/**/*.ts
+    - packages/types/lib/**/*.ts
 
   output: docs/@pwrs/cem/custom-elements.json
 
