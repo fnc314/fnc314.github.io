@@ -52,7 +52,7 @@ echo
 
 [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
 echo "dx:@pwrs:cem:generate"
-NODE_ENV=development pnpx @pwrs/cem generate --config .cem.yaml -vvv
+NODE_ENV=development pnpx @pwrs/cem generate --config .config/@pwrs/cem/cem.yaml -vvv -p .
 echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"

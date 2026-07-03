@@ -1,0 +1,289 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": ".config/vite/vite.config.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/breakpoints.js",
+      "declarations": [
+        {
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "description": "The CSS Variable changed across device breakpoints",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINT_LABELS",
+          "description": "Iterable set of {@link BreakpointLabel}",
+          "type": {
+            "text": ": BreakpointLabel[]"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BreakpointLabels",
+          "description": "Type-safe constants exposed to perform checks",
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINTS",
+          "description": "A static implementation of {@link Breakpoints}",
+          "type": {
+            "text": "Breakpoints"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "declaration": {
+            "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINT_LABELS",
+          "declaration": {
+            "name": "BREAKPOINT_LABELS",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BreakpointLabels",
+          "declaration": {
+            "name": "BreakpointLabels",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINTS",
+          "declaration": {
+            "name": "BREAKPOINTS",
+            "module": "lib/breakpoints.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/design-token-icon.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/read-css-property.js",
+      "declarations": [
+        {
+          "parameters": [
+            {
+              "name": "property",
+              "description": "- The particular `CSS` property\nof interest",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "return": {
+            "description": "A `string` from `CSS` or an empty `string`"
+          },
+          "name": "readCSSProperty",
+          "description": "Returns the value of the provided {@link property}",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "readCSSProperty",
+          "declaration": {
+            "name": "readCSSProperty",
+            "module": "lib/read-css-property.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/touch-screen.js",
+      "declarations": [
+        {
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "description": "The CSS Variable set by `@media` query of `screen` and `pointer: coarse`",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "declaration": {
+            "name": "CSS_VARIABLE_TOUCH_SCREEN",
+            "module": "lib/touch-screen.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/.config/vite/vite.config.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/bio/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/blog/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/code/index.js",
+      "declarations": [
+        {
+          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+          "description": "The `const` for the `CSS @property`",
+          "kind": "variable"
+        },
+        {
+          "name": "WORD_TAG_SIZES",
+          "description": "A {@link Record} of pre-defined values exposed as a custom `CSS @property`",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+          "declaration": {
+            "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+            "module": "node_modules/@fnc314/packages.types/lib/code/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WORD_TAG_SIZES",
+          "declaration": {
+            "name": "WORD_TAG_SIZES",
+            "module": "node_modules/@fnc314/packages.types/lib/code/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/connections/index.js",
+      "declarations": [
+        {
+          "name": "ArtifactConnections",
+          "kind": "variable"
+        },
+        {
+          "name": "ProfessionalConnectionTypes",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ArtifactConnections",
+          "declaration": {
+            "name": "ArtifactConnections",
+            "module": "node_modules/@fnc314/packages.types/lib/connections/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfessionalConnectionTypes",
+          "declaration": {
+            "name": "ProfessionalConnectionTypes",
+            "module": "node_modules/@fnc314/packages.types/lib/connections/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/design-token-icon.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/education/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/experience/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "node_modules/@fnc314/packages.types/lib/theme/index.js",
+      "declarations": [
+        {
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "kind": "variable"
+        },
+        {
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "kind": "variable"
+        },
+        {
+          "name": "THEME_NAMES",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_SCHEME_NAMES",
+            "module": "node_modules/@fnc314/packages.types/lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_CONTRAST_NAMES",
+            "module": "node_modules/@fnc314/packages.types/lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setRGBA",
+          "declaration": {
+            "name": "setRGBA",
+            "module": "node_modules/@fnc314/packages.types/lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "THEME_NAMES",
+          "declaration": {
+            "name": "THEME_NAMES",
+            "module": "node_modules/@fnc314/packages.types/lib/theme/index.js"
+          }
+        }
+      ]
+    }
+  ]
+}

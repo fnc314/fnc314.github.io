@@ -97,7 +97,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       ),
       lit: true,
       dev: !dynamicConfig.isProduction,
-      packageJson: true,
+      packageJson: false,
     }),
     cp({
       targets: [
