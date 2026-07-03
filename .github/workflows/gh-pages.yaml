@@ -35,6 +35,11 @@ jobs:
         run: mise run vite:build:production
         shell: zsh {0}
 
+      - name: Verify build artifact
+        run: echo "Listing ./dist/vite/production" ls -la ./dist/vite/production || exit 1 du -sh ./dist/vite/production || true
+        shell: zsh {0}
+
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
