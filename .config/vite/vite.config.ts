@@ -126,9 +126,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     publicDir: dynamicConfig.publicDir,
     optimizeDeps: {},
     resolve: {
-      alias: {
-        "@": path.resolve(process.cwd(), "src"),
-      },
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
     },

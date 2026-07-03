@@ -51,7 +51,8 @@
     "style-dictionary": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "unplugin-dts": "catalog:devDependencies",
-    "vite": "catalog:devDependencies"
+    "unplugin-info": "catalog:devDependencies",
+   "vite": "catalog:devDependencies"
   },
   "keywords": [
     "design-tokens",
