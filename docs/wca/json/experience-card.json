@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "experience-card",
-      "path": "./../../../src/components/card/experience/experience-card.ts",
+      "path": "./../../../packages/components/lib/card/experience/experience-card.ts",
       "attributes": [
         {
           "name": "expanded",

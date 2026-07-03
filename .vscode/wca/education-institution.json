@@ -3,11 +3,11 @@
   "tags": [
     {
       "name": "education-institution",
-      "description": "Attributes:\n\n  * `institute` - \n\nProperties:\n\n  * `styles` - \n\n  * `institute` - ",
+      "description": "Attributes:\n\n  * `institute` {`EducationInstitutionRecord`} - \n\nProperties:\n\n  * `styles` - \n\n  * `institute` {`EducationInstitutionRecord`} - ",
       "attributes": [
         {
           "name": "institute",
-          "description": "`institute` - \n\nProperty: institute\n\nDefault: [object Object]"
+          "description": "`institute` {`EducationInstitutionRecord`} - \n\nProperty: institute\n\nDefault: [object Object]"
         }
       ]
     }

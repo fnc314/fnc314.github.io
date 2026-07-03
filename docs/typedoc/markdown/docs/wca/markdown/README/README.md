@@ -6,14 +6,6 @@
 
 # bento-layout
 
-# blog-entry
-
-## Properties
-
-| Property    | Attribute   | Type            | Default | Description               |
-| ----------- | ----------- | --------------- | ------- | ------------------------- |
-| `blogEntry` | `blogEntry` | `BlogEntryJson` | {}      | The JSON record to render |
-
 # bento-card
 
 ## Properties
@@ -66,16 +58,6 @@
 | `expanded`    | `expanded`    | `boolean` | false   |
 
 # experience-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
-# now-playing-card
 
 ## Properties
 
@@ -169,6 +151,14 @@
 | Property    | Attribute   | Type                         | Default |
 | ----------- | ----------- | ---------------------------- | ------- |
 | `institute` | `institute` | `EducationInstitutionRecord` | {}      |
+
+# blog-entry
+
+## Properties
+
+| Property    | Attribute   | Type            | Default | Description               |
+| ----------- | ----------- | --------------- | ------- | ------------------------- |
+| `blogEntry` | `blogEntry` | `BlogEntryJson` | {}      | The JSON record to render |
 
 # ui-mode-toggle
 

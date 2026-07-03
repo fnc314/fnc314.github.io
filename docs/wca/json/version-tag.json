@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "version-tag",
-      "path": "./../../../src/components/version-tag/version-tag.ts",
+      "path": "./../../../packages/components/lib/version-tag/version-tag.ts",
       "properties": [
         {
           "name": "styles",

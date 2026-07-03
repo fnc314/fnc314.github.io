@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "word-cloud",
-      "path": "./../../../src/components/word/cloud/word-cloud.ts",
+      "path": "./../../../packages/components/lib/word/cloud/word-cloud.ts",
       "description": "A component that renders a cloud of words with various sorting and grouping options.",
       "attributes": [
         {

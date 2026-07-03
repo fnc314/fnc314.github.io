@@ -35,18 +35,22 @@ console.warn(
   `Final Config is ${JSON.stringify({ customElementsManifestFileName, docsDir }, null, 2)}`
 );
 
+const packages = [
+  "components",
+  "data",
+  "design-tokens",
+  "services",
+  "types",
+].map((pkg) => `${path.resolve(process.cwd(), "packages", pkg, "lib")}/**/*.ts`);
+
 /** @type {import('@custom-elements-manifest/analyzer').Config & import('@custom-elements-manifest/analyzer').Plugin} */
 // @ts-ignore
 export default {
   globs: [
-    "src/components/**/*.ts",
-    "src/mixins/**/*.ts",
+    ...packages
   ],
   exclude: [
-    "**/*.json",
-    "src/components/**/*.test.ts",
-    "src/data/**/*.json",
-    "src/index.ts",
+    ...packages.map(pkg => pkg.replace("**/*.ts", "**/*.test.ts")),
     "~build/*",
   ],
   fast: false,
@@ -62,15 +66,14 @@ export default {
     mainFields: ["module", "main"],
     conditionNames: ["import", "require"],
     alias: {
-      "@": [path.resolve(process.cwd(), "src")],
       "~build/git": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build/package": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build/time": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build": [path.resolve(process.cwd(), "node_modules")]
     },
-    tsconfig: {
-      configFile: path.resolve(process.cwd(), "tsconfig.json"),
-    },
+    // tsconfig: {
+    //   configFile: path.resolve(process.cwd(), "tsconfig.json"),
+    // },
   },
 
   plugins: [
@@ -107,7 +110,7 @@ export default {
     }),
     modulePathResolverPlugin({
       fileName: customElementsManifestJSON,
-      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/out").replace(".ts", ".js"),
+      modulePathTemplate: (modulePath) => modulePath.replace("src", "dist/types").replace(".ts", ".js"),
       outdir: docsDir,
       debug: true,
     }),

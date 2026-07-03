@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "education-card",
-      "path": "./../../../src/components/card/education/education-card.ts",
+      "path": "./../../../packages/components/lib/card/education/education-card.ts",
       "attributes": [
         {
           "name": "expanded",

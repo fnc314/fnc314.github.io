@@ -9,49 +9,37 @@
       "references": []
     },
     {
-      "name": "blog-entry",
-      "description": "Represents a published series entry.\n---\n",
-      "attributes": [
-        {
-          "name": "blogEntry",
-          "description": "The JSON record to render",
-          "values": [{ "name": "BlogEntryJson" }]
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "bento-card",
-      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
+      "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Methods:**\n - **bentoTag()** - Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
       "attributes": [
         {
           "name": "bentoCardTitle",
-          "description": "An optional `string` which, when set, suppresses the `slot[name=\"header\"]`",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
           "values": []
         },
         {
           "name": "bentoTag",
-          "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
+          "description": "Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}",
           "values": [{ "name": "BentoBoxType" }]
         },
         {
           "name": "enableFocus",
-          "description": "Opt-in to the focus-within border/shadow shift effect.",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
           "values": []
         },
         {
           "name": "enableHover",
-          "description": "Opt-in to the hover elevation/shift effect.",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
           "values": []
         },
         {
           "name": "expanded",
-          "description": "Reflects and controls the open state of the card.",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
           "values": []
         },
         {
           "name": "scrollable",
-          "description": "Enables internal vertical scrolling for content.",
+          "description": "Whether to enable scrolling for content",
           "values": []
         },
         {
@@ -103,16 +91,6 @@
       "references": []
     },
     {
-      "name": "now-playing-card",
-      "description": "\n---\n",
-      "attributes": [
-        { "name": "enableFocus", "values": [] },
-        { "name": "enableHover", "values": [] },
-        { "name": "expanded", "values": [] }
-      ],
-      "references": []
-    },
-    {
       "name": "profile-card",
       "description": "A responsive card component that displays a profile photo and biography.\n---\n",
       "attributes": [
@@ -145,11 +123,11 @@
     },
     {
       "name": "code-repo",
-      "description": "\n---\n",
+      "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link CodeRepoData}",
       "attributes": [
         {
           "name": "codeRepo",
-          "description": "An instance of {@link CodeRepoData} to render",
+          "description": "{@link CodeRepoData}",
           "values": [{ "name": "CodeRepoData" }]
         }
       ],
@@ -208,17 +186,25 @@
       "references": []
     },
     {
+      "name": "blog-entry",
+      "description": "Represents a published series entry.\n---\n\n\n### **Methods:**\n - **blogEntry()** - The JSON record to render\n\n",
+      "attributes": [
+        {
+          "name": "blogEntry",
+          "description": "The JSON record to render",
+          "values": [{ "name": "BlogEntryJson" }]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "ui-mode-toggle",
-      "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n - **reset(): _void_** - Resets the UI mode toggle to its default settings.",
+      "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n \n- **reset(): _void_** - Resets the UI mode toggle to its default settings.\n",
       "attributes": [
         {
           "name": "mode",
           "description": "Reflects the currently active color scheme mode.",
-          "values": [
-            { "name": "light" },
-            { "name": "dark" },
-            { "name": "system" }
-          ]
+          "values": []
         },
         {
           "name": "permanent",
@@ -230,13 +216,13 @@
     },
     {
       "name": "version-tag",
-      "description": "\n---\n",
+      "description": "\n---\n\n\n### **Methods:**\n \n",
       "attributes": [],
       "references": []
     },
     {
       "name": "word-cloud",
-      "description": "\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+      "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
       "attributes": [
         {
           "name": "appearance",
@@ -271,14 +257,14 @@
         {
           "name": "words",
           "description": "The list of words to display in the cloud.",
-          "values": [{ "name": "WordCloudWord[]" }]
+          "values": []
         }
       ],
       "references": []
     },
     {
       "name": "word-tag",
-      "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
+      "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Methods:**\n \n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
       "attributes": [
         {
           "name": "heaviness",
@@ -292,7 +278,7 @@
         },
         {
           "name": "variant",
-          "description": "The version of the layout to render",
+          "description": "{@link WordTagVariantAttributeConverter}",
           "values": [{ "name": "WordTagVariant" }]
         },
         { "name": "word", "description": "The tagged word", "values": [] }
@@ -301,26 +287,26 @@
     },
     {
       "name": "work-experience",
-      "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n",
+      "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n\n\n### **Methods:**\n \n",
       "attributes": [
         {
           "name": "date-end",
-          "description": "A {@link WorkDate} instance describing employment end date",
+          "description": "End date information including machine-readable stamp and display text.",
           "values": [{ "name": "WorkDate" }]
         },
         {
           "name": "date-start",
-          "description": "A {@link WorkDate} instance describing employment start date",
+          "description": "Start date information including machine-readable stamp and display text.",
           "values": [{ "name": "WorkDate" }]
         },
         {
           "name": "experience-org",
-          "description": "The employer formal name",
+          "description": "The name of the organization or client.",
           "values": []
         },
         {
           "name": "experience-role",
-          "description": "The formal role from the {@link WorkExperience} instance",
+          "description": "The title of the professional role or project.",
           "values": []
         },
         {
@@ -330,18 +316,18 @@
         },
         {
           "name": "is-nested",
-          "description": "Whether this is a nested instance",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
           "values": []
         },
         {
           "name": "jobs",
-          "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-          "values": [{ "name": "Array<Job>" }]
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "values": []
         },
         {
           "name": "summaries",
           "description": "An array of `{ item: string }` objects describing the responsibilities",
-          "values": [{ "name": "Array<{ item: string }>" }]
+          "values": []
         }
       ],
       "references": []

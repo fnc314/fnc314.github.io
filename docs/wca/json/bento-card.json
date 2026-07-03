@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "bento-card",
-      "path": "./../../../src/components/card/bento/bento-card.ts",
+      "path": "./../../../packages/components/lib/card/bento/bento-card.ts",
       "attributes": [
         {
           "name": "bentoTag",

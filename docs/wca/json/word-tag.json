@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "word-tag",
-      "path": "./../../../src/components/word/tag/word-tag.ts",
+      "path": "./../../../packages/components/lib/word/tag/word-tag.ts",
       "attributes": [
         {
           "name": "hrefUrl",

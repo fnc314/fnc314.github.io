@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "skills-card",
-      "path": "./../../../src/components/card/skills/skills-card.ts",
+      "path": "./../../../packages/components/lib/card/skills/skills-card.ts",
       "attributes": [
         {
           "name": "expanded",

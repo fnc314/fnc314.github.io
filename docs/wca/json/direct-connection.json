@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "direct-connection",
-      "path": "./../../../src/components/connection/direct/direct-connection.ts",
+      "path": "./../../../packages/components/lib/connection/direct/direct-connection.ts",
       "description": "[object Object],[object Object]",
       "attributes": [
         {

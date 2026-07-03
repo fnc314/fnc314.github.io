@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "profile-card",
-      "path": "./../../../src/components/card/profile/profile-card.ts",
+      "path": "./../../../packages/components/lib/card/profile/profile-card.ts",
       "attributes": [
         {
           "name": "bioText",

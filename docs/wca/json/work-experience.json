@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "work-experience",
-      "path": "./../../../src/components/work/experience/work-experience.ts",
+      "path": "./../../../packages/components/lib/work/experience/work-experience.ts",
       "attributes": [
         {
           "name": "experience-role",

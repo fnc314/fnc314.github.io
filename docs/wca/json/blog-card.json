@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "blog-card",
-      "path": "./../../../src/components/card/blog/blog-card.ts",
+      "path": "./../../../packages/components/lib/card/blog/blog-card.ts",
       "attributes": [
         {
           "name": "expanded",

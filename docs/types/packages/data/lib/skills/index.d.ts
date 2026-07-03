@@ -1,0 +1,55 @@
+﻿export declare const Skills: {
+    tech: {
+        Mobile: number;
+        Kotlin: number;
+        Java: number;
+        Bash: number;
+        "Jetpack Compose": number;
+        Coroutines: number;
+        RxJava: number;
+        TypeScript: number;
+        JavaScript: number;
+        CSS: number;
+        HTML: number;
+        Git: number;
+        Ruby: number;
+        Node: number;
+        Python: number;
+    };
+    product: {
+        Android: number;
+        "Android Studio": number;
+        "Gradle (KTS/Groovy)": number;
+        "IntelliJ IDEA": number;
+        "Visual Studio Code": number;
+        Fastlane: number;
+        BitBucket: number;
+        Firebase: number;
+        GitHub: number;
+        Jira: number;
+        "GitHub Actions": number;
+        Jenkins: number;
+        "Samsung Knox": number;
+        Confluence: number;
+        Trello: number;
+        "Google Cloud": number;
+    };
+    practice: {
+        "Design Systems": number;
+        "Design Tokens": number;
+        "Clean Architecture": number;
+        "Multi-Module Architecture": number;
+        "Technical Mentorship": number;
+        Accessibility: number;
+        "Engineering Management": number;
+        "MVI / MVVM": number;
+        "FIDO / MFA": number;
+        "CI / CD": number;
+        Scrum: number;
+        KanBan: number;
+        Agile: number;
+        "Stakeholder Alignment": number;
+        "Dependency Injection": number;
+        "Change Management": number;
+    };
+};

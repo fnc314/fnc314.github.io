@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "bento-layout",
-      "path": "./../../../src/components/bento-layout/bento-layout.ts",
+      "path": "./../../../packages/components/lib/bento-layout/bento-layout.ts",
       "properties": [
         {
           "name": "styles",
@@ -14,34 +14,8 @@
       ]
     },
     {
-      "name": "blog-entry",
-      "path": "./../../../src/components/blog/entry/blog-entry.ts",
-      "attributes": [
-        {
-          "name": "blogEntry",
-          "description": "The JSON record to render",
-          "type": "BlogEntryJson",
-          "default": "{}"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "type": "array",
-          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
-        },
-        {
-          "name": "blogEntry",
-          "attribute": "blogEntry",
-          "description": "The JSON record to render",
-          "type": "BlogEntryJson",
-          "default": "{}"
-        }
-      ]
-    },
-    {
       "name": "bento-card",
-      "path": "./../../../src/components/card/bento/bento-card.ts",
+      "path": "./../../../packages/components/lib/card/bento/bento-card.ts",
       "attributes": [
         {
           "name": "bentoTag",
@@ -156,7 +130,7 @@
     },
     {
       "name": "blog-card",
-      "path": "./../../../src/components/card/blog/blog-card.ts",
+      "path": "./../../../packages/components/lib/card/blog/blog-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -203,7 +177,7 @@
     },
     {
       "name": "code-card",
-      "path": "./../../../src/components/card/code/code-card.ts",
+      "path": "./../../../packages/components/lib/card/code/code-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -250,7 +224,7 @@
     },
     {
       "name": "education-card",
-      "path": "./../../../src/components/card/education/education-card.ts",
+      "path": "./../../../packages/components/lib/card/education/education-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -297,7 +271,7 @@
     },
     {
       "name": "experience-card",
-      "path": "./../../../src/components/card/experience/experience-card.ts",
+      "path": "./../../../packages/components/lib/card/experience/experience-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -343,54 +317,8 @@
       ]
     },
     {
-      "name": "now-playing-card",
-      "path": "./../../../src/components/card/now-playing/now-playing-card.ts",
-      "attributes": [
-        {
-          "name": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "type": "array",
-          "default": "[\"TextStyles\",\"NowPlayingCardStyles\"]"
-        },
-        {
-          "name": "expanded",
-          "attribute": "expanded",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableHover",
-          "attribute": "enableHover",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "enableFocus",
-          "attribute": "enableFocus",
-          "type": "boolean",
-          "default": "false"
-        }
-      ]
-    },
-    {
       "name": "profile-card",
-      "path": "./../../../src/components/card/profile/profile-card.ts",
+      "path": "./../../../packages/components/lib/card/profile/profile-card.ts",
       "attributes": [
         {
           "name": "bioText",
@@ -453,7 +381,7 @@
     },
     {
       "name": "settings-card",
-      "path": "./../../../src/components/card/settings/settings-card.ts",
+      "path": "./../../../packages/components/lib/card/settings/settings-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -505,7 +433,7 @@
     },
     {
       "name": "skills-card",
-      "path": "./../../../src/components/card/skills/skills-card.ts",
+      "path": "./../../../packages/components/lib/card/skills/skills-card.ts",
       "attributes": [
         {
           "name": "expanded",
@@ -552,7 +480,7 @@
     },
     {
       "name": "code-repo",
-      "path": "./../../../src/components/code/repo/code-repo.ts",
+      "path": "./../../../packages/components/lib/code/repo/code-repo.ts",
       "description": "[object Object],[object Object],[object Object]",
       "attributes": [
         {
@@ -582,7 +510,7 @@
     },
     {
       "name": "artifact-connection",
-      "path": "./../../../src/components/connection/artifact/artifact-connection.ts",
+      "path": "./../../../packages/components/lib/connection/artifact/artifact-connection.ts",
       "attributes": [
         {
           "name": "artifactConnectionType",
@@ -617,7 +545,7 @@
     },
     {
       "name": "direct-connection",
-      "path": "./../../../src/components/connection/direct/direct-connection.ts",
+      "path": "./../../../packages/components/lib/connection/direct/direct-connection.ts",
       "description": "[object Object],[object Object]",
       "attributes": [
         {
@@ -642,7 +570,7 @@
     },
     {
       "name": "professional-connection",
-      "path": "./../../../src/components/connection/professional/professional-connection.ts",
+      "path": "./../../../packages/components/lib/connection/professional/professional-connection.ts",
       "attributes": [
         {
           "name": "professionalConnectionType",
@@ -677,7 +605,7 @@
     },
     {
       "name": "education-institution",
-      "path": "./../../../src/components/education/institution/education-institution.ts",
+      "path": "./../../../packages/components/lib/education/institution/education-institution.ts",
       "attributes": [
         {
           "name": "institute",
@@ -700,8 +628,34 @@
       ]
     },
     {
+      "name": "blog-entry",
+      "path": "./../../../packages/components/lib/publication/blog/entry/blog-entry.ts",
+      "attributes": [
+        {
+          "name": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
+        },
+        {
+          "name": "blogEntry",
+          "attribute": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ]
+    },
+    {
       "name": "ui-mode-toggle",
-      "path": "./../../../src/components/ui-mode-toggle/ui-mode-toggle.ts",
+      "path": "./../../../packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts",
       "attributes": [
         {
           "name": "mode",
@@ -755,7 +709,7 @@
     },
     {
       "name": "version-tag",
-      "path": "./../../../src/components/version-tag/version-tag.ts",
+      "path": "./../../../packages/components/lib/version-tag/version-tag.ts",
       "properties": [
         {
           "name": "styles",
@@ -766,7 +720,7 @@
     },
     {
       "name": "word-cloud",
-      "path": "./../../../src/components/word/cloud/word-cloud.ts",
+      "path": "./../../../packages/components/lib/word/cloud/word-cloud.ts",
       "description": "A component that renders a cloud of words with various sorting and grouping options.",
       "attributes": [
         {
@@ -924,7 +878,7 @@
     },
     {
       "name": "word-tag",
-      "path": "./../../../src/components/word/tag/word-tag.ts",
+      "path": "./../../../packages/components/lib/word/tag/word-tag.ts",
       "attributes": [
         {
           "name": "hrefUrl",
@@ -1038,7 +992,7 @@
     },
     {
       "name": "work-experience",
-      "path": "./../../../src/components/work/experience/work-experience.ts",
+      "path": "./../../../packages/components/lib/work/experience/work-experience.ts",
       "attributes": [
         {
           "name": "experience-role",

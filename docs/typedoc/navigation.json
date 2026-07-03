@@ -1,872 +1,140 @@
 [
   {
-    "title": "Hierarchy",
-    "path": "hierarchy.md"
-  },
-  {
     "title": "Documents",
     "children": [
       {
-        "title": "docs/wca/markdown/artifact-connection",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/artifact-connection/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/bento-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/bento-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/bento-layout",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/bento-layout/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/blog-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/blog-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/blog-entry",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/blog-entry/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/code-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/code-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/code-repo",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/code-repo/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/direct-connection",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/direct-connection/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/education-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/education-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/education-institution",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/education-institution/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/experience-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/experience-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/now-playing-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/now-playing-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/professional-connection",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/professional-connection/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/profile-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/profile-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/README",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/README/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/settings-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/settings-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/skills-card",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/skills-card/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/ui-mode-toggle",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/ui-mode-toggle/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/version-tag",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/version-tag/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/word-cloud",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/word-cloud/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/word-tag",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/word-tag/README.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "docs/wca/markdown/work-experience",
-        "kind": 8388608,
-        "path": "docs/wca/markdown/work-experience/README.md",
-        "isDeprecated": false
-      }
-    ]
-  },
-  {
-    "title": "src",
-    "children": [
-      {
-        "title": "components",
+        "title": "docs",
         "children": [
           {
-            "title": "bento-layout",
+            "title": "wca",
             "children": [
               {
-                "title": "bento-layout.styles",
-                "kind": 2,
-                "path": "src/components/bento-layout/bento-layout.styles/README.md",
-                "isDeprecated": false,
+                "title": "markdown",
                 "children": [
                   {
-                    "title": "Variables",
-                    "children": [
-                      {
-                        "title": "BentoLayoutStyles",
-                        "kind": 32,
-                        "path": "src/components/bento-layout/bento-layout.styles/BentoLayoutStyles/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "TransitionStyles",
-                        "kind": 32,
-                        "path": "src/components/bento-layout/bento-layout.styles/TransitionStyles/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "bento-layout",
-                "kind": 2,
-                "path": "src/components/bento-layout/bento-layout/README.md",
-                "isDeprecated": false,
-                "children": [
-                  {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "BentoLayout",
-                        "kind": 128,
-                        "path": "src/components/bento-layout/bento-layout/BentoLayout/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "bento-layout.types",
-                "kind": 2,
-                "path": "src/components/bento-layout/bento-layout.types/README.md",
-                "isDeprecated": false,
-                "children": [
-                  {
-                    "title": "Interfaces",
-                    "children": [
-                      {
-                        "title": "GridSpan",
-                        "kind": 256,
-                        "path": "src/components/bento-layout/bento-layout.types/GridSpan/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "ABentoBoxConfig",
-                        "kind": 256,
-                        "path": "src/components/bento-layout/bento-layout.types/ABentoBoxConfig/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
+                    "title": "artifact-connection",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/artifact-connection/README.md",
+                    "isDeprecated": false
                   },
-                  {
-                    "title": "Type Aliases",
-                    "children": [
-                      {
-                        "title": "GridPosition",
-                        "kind": 2097152,
-                        "path": "src/components/bento-layout/bento-layout.types/GridPosition/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "BentoBoxType",
-                        "kind": 2097152,
-                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxType/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "BentoBoxConfigs",
-                        "kind": 2097152,
-                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxConfigs-1/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Variables",
-                    "children": [
-                      {
-                        "title": "BENTO_BOX_TYPES",
-                        "kind": 32,
-                        "path": "src/components/bento-layout/bento-layout.types/BENTO_BOX_TYPES/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "BentoBoxConfigs",
-                        "kind": 32,
-                        "path": "src/components/bento-layout/bento-layout.types/BentoBoxConfigs/README.md",
-                        "isDeprecated": false
-                      },
-                      {
-                        "title": "BENTO_BOX_CONFIG",
-                        "kind": 32,
-                        "path": "src/components/bento-layout/bento-layout.types/BENTO_BOX_CONFIG/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Functions",
-                    "children": [
-                      {
-                        "title": "getBentoDOMOrder",
-                        "kind": 64,
-                        "path": "src/components/bento-layout/bento-layout.types/getBentoDOMOrder/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "blog",
-            "children": [
-              {
-                "title": "entry",
-                "children": [
-                  {
-                    "title": "blog-entry",
-                    "kind": 2,
-                    "path": "src/components/blog/entry/blog-entry/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "BlogEntry",
-                            "kind": 128,
-                            "path": "src/components/blog/entry/blog-entry/BlogEntry/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "card",
-            "children": [
-              {
-                "title": "bento",
-                "children": [
                   {
                     "title": "bento-card",
-                    "kind": 2,
-                    "path": "src/components/card/bento/bento-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "BentoCard",
-                            "kind": 128,
-                            "path": "src/components/card/bento/bento-card/BentoCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "blog",
-                "children": [
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/bento-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "bento-layout",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/bento-layout/README.md",
+                    "isDeprecated": false
+                  },
                   {
                     "title": "blog-card",
-                    "kind": 2,
-                    "path": "src/components/card/blog/blog-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "BlogCard",
-                            "kind": 128,
-                            "path": "src/components/card/blog/blog-card/BlogCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "code",
-                "children": [
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/blog-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "blog-entry",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/blog-entry/README.md",
+                    "isDeprecated": false
+                  },
                   {
                     "title": "code-card",
-                    "kind": 2,
-                    "path": "src/components/card/code/code-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "CodeCard",
-                            "kind": 128,
-                            "path": "src/components/card/code/code-card/CodeCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "education",
-                "children": [
-                  {
-                    "title": "education-card",
-                    "kind": 2,
-                    "path": "src/components/card/education/education-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "EducationCard",
-                            "kind": 128,
-                            "path": "src/components/card/education/education-card/EducationCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "experience",
-                "children": [
-                  {
-                    "title": "experience-card",
-                    "kind": 2,
-                    "path": "src/components/card/experience/experience-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "ExperienceCard",
-                            "kind": 128,
-                            "path": "src/components/card/experience/experience-card/ExperienceCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "profile",
-                "children": [
-                  {
-                    "title": "profile-card",
-                    "kind": 2,
-                    "path": "src/components/card/profile/profile-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "ProfileCard",
-                            "kind": 128,
-                            "path": "src/components/card/profile/profile-card/ProfileCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "settings",
-                "children": [
-                  {
-                    "title": "settings-card",
-                    "kind": 2,
-                    "path": "src/components/card/settings/settings-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "SettingsCard",
-                            "kind": 128,
-                            "path": "src/components/card/settings/settings-card/SettingsCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "skills",
-                "children": [
-                  {
-                    "title": "skills-card",
-                    "kind": 2,
-                    "path": "src/components/card/skills/skills-card/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "SkillsCard",
-                            "kind": 128,
-                            "path": "src/components/card/skills/skills-card/SkillsCard/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "code",
-            "children": [
-              {
-                "title": "repo",
-                "children": [
-                  {
-                    "title": "code-repo.styles",
-                    "kind": 2,
-                    "path": "src/components/code/repo/code-repo.styles/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Variables",
-                        "children": [
-                          {
-                            "title": "CodeRepoStyles",
-                            "kind": 32,
-                            "path": "src/components/code/repo/code-repo.styles/CodeRepoStyles/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/code-card/README.md",
+                    "isDeprecated": false
                   },
                   {
                     "title": "code-repo",
-                    "kind": 2,
-                    "path": "src/components/code/repo/code-repo/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "CodeRepo",
-                            "kind": 128,
-                            "path": "src/components/code/repo/code-repo/CodeRepo/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "connection",
-            "children": [
-              {
-                "title": "direct",
-                "children": [
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/code-repo/README.md",
+                    "isDeprecated": false
+                  },
                   {
                     "title": "direct-connection",
-                    "kind": 2,
-                    "path": "src/components/connection/direct/direct-connection/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "DirectConnection",
-                            "kind": 128,
-                            "path": "src/components/connection/direct/direct-connection/DirectConnection/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "ui-mode-toggle",
-            "children": [
-              {
-                "title": "ui-mode-toggle.styles",
-                "kind": 2,
-                "path": "src/components/ui-mode-toggle/ui-mode-toggle.styles/README.md",
-                "isDeprecated": false,
-                "children": [
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/direct-connection/README.md",
+                    "isDeprecated": false
+                  },
                   {
-                    "title": "Variables",
-                    "children": [
-                      {
-                        "title": "UIModeToggleStyles",
-                        "kind": 32,
-                        "path": "src/components/ui-mode-toggle/ui-mode-toggle.styles/UIModeToggleStyles/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "ui-mode-toggle",
-                "kind": 2,
-                "path": "src/components/ui-mode-toggle/ui-mode-toggle/README.md",
-                "isDeprecated": false,
-                "children": [
+                    "title": "education-card",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/education-card/README.md",
+                    "isDeprecated": false
+                  },
                   {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "UiModeToggle",
-                        "kind": 128,
-                        "path": "src/components/ui-mode-toggle/ui-mode-toggle/UiModeToggle/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "word",
-            "children": [
-              {
-                "title": "cloud",
-                "children": [
+                    "title": "education-institution",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/education-institution/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "experience-card",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/experience-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "professional-connection",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/professional-connection/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "profile-card",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/profile-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "README",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/README/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "settings-card",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/settings-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "skills-card",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/skills-card/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "ui-mode-toggle",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/ui-mode-toggle/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "version-tag",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/version-tag/README.md",
+                    "isDeprecated": false
+                  },
                   {
                     "title": "word-cloud",
-                    "kind": 2,
-                    "path": "src/components/word/cloud/word-cloud/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "WordCloud",
-                            "kind": 128,
-                            "path": "src/components/word/cloud/word-cloud/WordCloud/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/word-cloud/README.md",
+                    "isDeprecated": false
                   },
-                  {
-                    "title": "word-cloud.types",
-                    "kind": 2,
-                    "path": "src/components/word/cloud/word-cloud.types/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Functions",
-                        "children": [
-                          {
-                            "title": "makeWordCloudWord",
-                            "kind": 64,
-                            "path": "src/components/word/cloud/word-cloud.types/makeWordCloudWord/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "title": "tag",
-                "children": [
                   {
                     "title": "word-tag",
-                    "kind": 2,
-                    "path": "src/components/word/tag/word-tag/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "WordTag",
-                            "kind": 128,
-                            "path": "src/components/word/tag/word-tag/WordTag/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/word-tag/README.md",
+                    "isDeprecated": false
                   },
-                  {
-                    "title": "word-tag.types",
-                    "kind": 2,
-                    "path": "src/components/word/tag/word-tag.types/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Type Aliases",
-                        "children": [
-                          {
-                            "title": "WordTagHeaviness",
-                            "kind": 2097152,
-                            "path": "src/components/word/tag/word-tag.types/WordTagHeaviness/README.md",
-                            "isDeprecated": false
-                          },
-                          {
-                            "title": "WordTagVariant",
-                            "kind": 2097152,
-                            "path": "src/components/word/tag/word-tag.types/WordTagVariant/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      },
-                      {
-                        "title": "Variables",
-                        "children": [
-                          {
-                            "title": "WordTagVariantAttributeConverter",
-                            "kind": 32,
-                            "path": "src/components/word/tag/word-tag.types/WordTagVariantAttributeConverter/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "work",
-            "children": [
-              {
-                "title": "experience",
-                "children": [
                   {
                     "title": "work-experience",
-                    "kind": 2,
-                    "path": "src/components/work/experience/work-experience/README.md",
-                    "isDeprecated": false,
-                    "children": [
-                      {
-                        "title": "Classes",
-                        "children": [
-                          {
-                            "title": "WorkExperience",
-                            "kind": 128,
-                            "path": "src/components/work/experience/work-experience/WorkExperience/README.md",
-                            "isDeprecated": false
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "mixins",
-        "children": [
-          {
-            "title": "ui-aware-element",
-            "children": [
-              {
-                "title": "ui-aware-element",
-                "kind": 2,
-                "path": "src/mixins/ui-aware-element/ui-aware-element/README.md",
-                "isDeprecated": false,
-                "children": [
-                  {
-                    "title": "Classes",
-                    "children": [
-                      {
-                        "title": "UIAwareElement",
-                        "kind": 128,
-                        "path": "src/mixins/ui-aware-element/ui-aware-element/UIAwareElement/README.md",
-                        "isDeprecated": false
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "styles",
-        "children": [
-          {
-            "title": "interaction-styles",
-            "kind": 2,
-            "path": "src/styles/interaction-styles/README.md",
-            "isDeprecated": false,
-            "children": [
-              {
-                "title": "Variables",
-                "children": [
-                  {
-                    "title": "InteractionStyles",
-                    "kind": 32,
-                    "path": "src/styles/interaction-styles/InteractionStyles/README.md",
-                    "isDeprecated": false
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "text",
-            "kind": 2,
-            "path": "src/styles/text/README.md",
-            "isDeprecated": false,
-            "children": [
-              {
-                "title": "Variables",
-                "children": [
-                  {
-                    "title": "TextStyles",
-                    "kind": 32,
-                    "path": "src/styles/text/TextStyles/README.md",
-                    "isDeprecated": false
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "types",
-        "children": [
-          {
-            "title": "theme",
-            "kind": 2,
-            "path": "src/types/theme/README.md",
-            "isDeprecated": false,
-            "children": [
-              {
-                "title": "Variables",
-                "children": [
-                  {
-                    "title": "readScheme",
-                    "kind": 32,
-                    "path": "src/types/theme/readScheme/README.md",
-                    "isDeprecated": false
-                  }
-                ]
-              },
-              {
-                "title": "Functions",
-                "children": [
-                  {
-                    "title": "jsonIsThemeJsonSchemes",
-                    "kind": 64,
-                    "path": "src/types/theme/jsonIsThemeJsonSchemes/README.md",
-                    "isDeprecated": false
-                  },
-                  {
-                    "title": "keyTransform",
-                    "kind": 64,
-                    "path": "src/types/theme/keyTransform/README.md",
+                    "kind": 8388608,
+                    "path": "docs/wca/markdown/work-experience/README.md",
                     "isDeprecated": false
                   }
                 ]

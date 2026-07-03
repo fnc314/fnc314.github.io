@@ -4,14 +4,6 @@
 
 # bento-layout
 
-# blog-entry
-
-## Properties
-
-| Property    | Attribute   | Type            | Default | Description               |
-| ----------- | ----------- | --------------- | ------- | ------------------------- |
-| `blogEntry` | `blogEntry` | `BlogEntryJson` | {}      | The JSON record to render |
-
 # bento-card
 
 ## Properties
@@ -64,16 +56,6 @@
 | `expanded`    | `expanded`    | `boolean` | false   |
 
 # experience-card
-
-## Properties
-
-| Property      | Attribute     | Type      | Default |
-| ------------- | ------------- | --------- | ------- |
-| `enableFocus` | `enableFocus` | `boolean` | false   |
-| `enableHover` | `enableHover` | `boolean` | false   |
-| `expanded`    | `expanded`    | `boolean` | false   |
-
-# now-playing-card
 
 ## Properties
 
@@ -167,6 +149,14 @@
 | Property    | Attribute   | Type                         | Default |
 | ----------- | ----------- | ---------------------------- | ------- |
 | `institute` | `institute` | `EducationInstitutionRecord` | {}      |
+
+# blog-entry
+
+## Properties
+
+| Property    | Attribute   | Type            | Default | Description               |
+| ----------- | ----------- | --------------- | ------- | ------------------------- |
+| `blogEntry` | `blogEntry` | `BlogEntryJson` | {}      | The JSON record to render |
 
 # ui-mode-toggle
 
@@ -285,7 +275,6 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [docs/wca/markdown/education-card](docs/wca/markdown/education-card/README.md)
 - [docs/wca/markdown/education-institution](docs/wca/markdown/education-institution/README.md)
 - [docs/wca/markdown/experience-card](docs/wca/markdown/experience-card/README.md)
-- [docs/wca/markdown/now-playing-card](docs/wca/markdown/now-playing-card/README.md)
 - [docs/wca/markdown/professional-connection](docs/wca/markdown/professional-connection/README.md)
 - [docs/wca/markdown/profile-card](docs/wca/markdown/profile-card/README.md)
 - [docs/wca/markdown/README](docs/wca/markdown/README/README.md)
@@ -296,33 +285,4 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [docs/wca/markdown/word-cloud](docs/wca/markdown/word-cloud/README.md)
 - [docs/wca/markdown/word-tag](docs/wca/markdown/word-tag/README.md)
 - [docs/wca/markdown/work-experience](docs/wca/markdown/work-experience/README.md)
-
-## Modules
-
-- [src/components/bento-layout/bento-layout.styles](src/components/bento-layout/bento-layout.styles/README.md)
-- [src/components/bento-layout/bento-layout](src/components/bento-layout/bento-layout/README.md)
-- [src/components/bento-layout/bento-layout.types](src/components/bento-layout/bento-layout.types/README.md)
-- [src/components/blog/entry/blog-entry](src/components/blog/entry/blog-entry/README.md)
-- [src/components/card/bento/bento-card](src/components/card/bento/bento-card/README.md)
-- [src/components/card/blog/blog-card](src/components/card/blog/blog-card/README.md)
-- [src/components/card/code/code-card](src/components/card/code/code-card/README.md)
-- [src/components/card/education/education-card](src/components/card/education/education-card/README.md)
-- [src/components/card/experience/experience-card](src/components/card/experience/experience-card/README.md)
-- [src/components/card/profile/profile-card](src/components/card/profile/profile-card/README.md)
-- [src/components/card/settings/settings-card](src/components/card/settings/settings-card/README.md)
-- [src/components/card/skills/skills-card](src/components/card/skills/skills-card/README.md)
-- [src/components/code/repo/code-repo.styles](src/components/code/repo/code-repo.styles/README.md)
-- [src/components/code/repo/code-repo](src/components/code/repo/code-repo/README.md)
-- [src/components/connection/direct/direct-connection](src/components/connection/direct/direct-connection/README.md)
-- [src/components/ui-mode-toggle/ui-mode-toggle.styles](src/components/ui-mode-toggle/ui-mode-toggle.styles/README.md)
-- [src/components/ui-mode-toggle/ui-mode-toggle](src/components/ui-mode-toggle/ui-mode-toggle/README.md)
-- [src/components/word/cloud/word-cloud](src/components/word/cloud/word-cloud/README.md)
-- [src/components/word/cloud/word-cloud.types](src/components/word/cloud/word-cloud.types/README.md)
-- [src/components/word/tag/word-tag](src/components/word/tag/word-tag/README.md)
-- [src/components/word/tag/word-tag.types](src/components/word/tag/word-tag.types/README.md)
-- [src/components/work/experience/work-experience](src/components/work/experience/work-experience/README.md)
-- [src/mixins/ui-aware-element/ui-aware-element](src/mixins/ui-aware-element/ui-aware-element/README.md)
-- [src/styles/interaction-styles](src/styles/interaction-styles/README.md)
-- [src/styles/text](src/styles/text/README.md)
-- [src/types/theme](src/types/theme/README.md)
   </colorschemeconfigs></colorschemeconfigs></details></summary></h2></body></html>

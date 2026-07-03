@@ -46,6 +46,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist/out",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "plugins": [
       {
         "name": "ts-lit-plugin",
@@ -103,10 +106,18 @@
     "verbatimModuleSyntax": false
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "packages/**/dist",
+    "packages/**/lib/**/*.test.ts",
   ],
   "include": [
-    "src/**/*.ts",
+    "src/index.ts",
+    "packages/components/lib/**/*.ts",
+    "packages/data/lib/**/*.ts",
+    "packages/design-tokens/lib/**/*.ts",
+    "packages/services/lib/**/*.ts",
+    "packages/types/lib/**/*.ts",
+    "packages/.config/**/*.ts",
     "./.config/**/*.ts"
   ],
   "references": [

@@ -1,12 +1,3 @@
-import "@/lib/bio";
-import "@/lib/blog";
-import "@/lib/code";
-import "@/lib/configs";
-import "@/lib/connections";
-import "@/lib/design-tokens";
-import "@/lib/education";
-import "@/lib/experience";
-import "@/lib/theme";
 export * from "@/lib/bio";
 export * from "@/lib/blog";
 export * from "@/lib/code";

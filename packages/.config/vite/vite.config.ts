@@ -1,4 +1,3 @@
-import path from "node:path";
 import process from "node:process";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
@@ -26,14 +25,14 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         copyPublicDir: true,
         minify: mode === "production",
       },
-      resolve: {
-        alias: {
-          "@": path.resolve(process.cwd(), "src"),
-        },
-        tsconfigPaths: true,
-        extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
-        tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
-      },
+      // resolve: {
+      //   alias: {
+      //     "@": path.resolve(process.cwd(), dirName, "lib"),
+      //   },
+      //   tsconfigPaths: true,
+      //   extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
+      //   tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
+      // },
       plugins: [
         dts({
           // bundleTypes: true,

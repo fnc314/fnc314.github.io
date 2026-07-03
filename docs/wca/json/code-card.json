@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "code-card",
-      "path": "./../../../src/components/card/code/code-card.ts",
+      "path": "./../../../packages/components/lib/card/code/code-card.ts",
       "attributes": [
         {
           "name": "expanded",

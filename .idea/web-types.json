@@ -17,68 +17,44 @@
           "js": { "properties": [], "events": [] }
         },
         {
-          "name": "blog-entry",
-          "description": "Represents a published series entry.\n---\n",
-          "doc-url": "",
-          "attributes": [
-            {
-              "name": "blogEntry",
-              "description": "The JSON record to render",
-              "value": { "type": "BlogEntryJson", "default": "{}" }
-            }
-          ],
-          "slots": [],
-          "events": [],
-          "js": {
-            "properties": [
-              {
-                "name": "blogEntry",
-                "description": "The JSON record to render",
-                "type": "BlogEntryJson"
-              }
-            ],
-            "events": []
-          }
-        },
-        {
           "name": "bento-card",
-          "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
+          "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Methods:**\n - **bentoTag()** - Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
           "doc-url": "",
           "attributes": [
             {
               "name": "bentoCardTitle",
-              "description": "An optional `string` which, when set, suppresses the `slot[name=\"header\"]`",
-              "value": { "type": "string", "default": "\"\"" }
+              "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+              "value": { "type": "string", "default": "" }
             },
             {
               "name": "bentoTag",
-              "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
+              "description": "Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}",
               "value": { "type": "BentoBoxType" }
             },
             {
               "name": "enableFocus",
-              "description": "Opt-in to the focus-within border/shadow shift effect.",
-              "value": { "type": "boolean", "default": "false" }
+              "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "description": "Opt-in to the hover elevation/shift effect.",
-              "value": { "type": "boolean", "default": "false" }
+              "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "description": "Reflects and controls the open state of the card.",
-              "value": { "type": "boolean", "default": "false" }
+              "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "scrollable",
-              "description": "Enables internal vertical scrolling for content.",
-              "value": { "type": "boolean", "default": "false" }
+              "description": "Whether to enable scrolling for content",
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "spreadContent",
               "description": "Whether to spread content over the entire body",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [
@@ -96,38 +72,27 @@
             "properties": [
               {
                 "name": "bentoCardTitle",
-                "description": "An optional `string` which, when set, suppresses the `slot[name=\"header\"]`",
-                "type": "string"
-              },
-              {
-                "name": "bentoTag",
-                "description": "Uniquely identifies this `BentoCard` via BENTO_BOX_TYPES",
-                "type": "BentoBoxType"
+                "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed."
               },
               {
                 "name": "enableFocus",
-                "description": "Opt-in to the focus-within border/shadow shift effect.",
-                "type": "boolean"
+                "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`."
               },
               {
                 "name": "enableHover",
-                "description": "Opt-in to the hover elevation/shift effect.",
-                "type": "boolean"
+                "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids."
               },
               {
                 "name": "expanded",
-                "description": "Reflects and controls the open state of the card.",
-                "type": "boolean"
+                "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible."
               },
               {
                 "name": "scrollable",
-                "description": "Enables internal vertical scrolling for content.",
-                "type": "boolean"
+                "description": "Whether to enable scrolling for content"
               },
               {
                 "name": "spreadContent",
-                "description": "Whether to spread content over the entire body",
-                "type": "boolean"
+                "description": "Whether to spread content over the entire body"
               }
             ],
             "events": []
@@ -140,24 +105,24 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
@@ -169,24 +134,24 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
@@ -198,28 +163,24 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              {
-                "name": "_educationJsonData",
-                "type": "EducationInstitutionRecord[]"
-              },
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
@@ -231,53 +192,24 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
-            ],
-            "events": []
-          }
-        },
-        {
-          "name": "now-playing-card",
-          "description": "\n---\n",
-          "doc-url": "",
-          "attributes": [
-            {
-              "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
-            },
-            {
-              "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
-            }
-          ],
-          "slots": [],
-          "events": [],
-          "js": {
-            "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
@@ -290,26 +222,24 @@
             { "name": "bioText", "value": { "type": "string" } },
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "bioText", "type": "string" },
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" },
-              { "name": "photoData" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
@@ -321,24 +251,24 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }],
           "js": {
             "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": [{ "name": "color_scheme.change", "type": "CustomEvent" }]
           }
@@ -350,51 +280,42 @@
           "attributes": [
             {
               "name": "enableFocus",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "enableHover",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "expanded",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "enableFocus", "type": "boolean" },
-              { "name": "enableHover", "type": "boolean" },
-              { "name": "expanded", "type": "boolean" }
+              { "name": "enableFocus" },
+              { "name": "enableHover" },
+              { "name": "expanded" }
             ],
             "events": []
           }
         },
         {
           "name": "code-repo",
-          "description": "\n---\n",
+          "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link CodeRepoData}",
           "doc-url": "",
           "attributes": [
             {
               "name": "codeRepo",
-              "description": "An instance of {@link CodeRepoData} to render",
+              "description": "{@link CodeRepoData}",
               "value": { "type": "CodeRepoData", "default": "{}" }
             }
           ],
           "slots": [],
           "events": [],
-          "js": {
-            "properties": [
-              {
-                "name": "codeRepo",
-                "description": "An instance of {@link CodeRepoData} to render",
-                "type": "CodeRepoData"
-              }
-            ],
-            "events": []
-          }
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "artifact-connection",
@@ -412,19 +333,7 @@
           ],
           "slots": [],
           "events": [],
-          "js": {
-            "properties": [
-              {
-                "name": "artifactConnectionData",
-                "type": "ArtifactConnectionData"
-              },
-              {
-                "name": "artifactConnectionType",
-                "type": "ArtifactConnectionType"
-              }
-            ],
-            "events": []
-          }
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "direct-connection",
@@ -438,12 +347,7 @@
           ],
           "slots": [],
           "events": [],
-          "js": {
-            "properties": [
-              { "name": "connectionInstance", "type": "ConnectionInstance" }
-            ],
-            "events": []
-          }
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "professional-connection",
@@ -467,19 +371,7 @@
           ],
           "slots": [],
           "events": [],
-          "js": {
-            "properties": [
-              {
-                "name": "professionalConnectionData",
-                "type": "ProfessionalConnectionJsonData"
-              },
-              {
-                "name": "professionalConnectionType",
-                "type": "ProfessionalConnectionType"
-              }
-            ],
-            "events": []
-          }
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "education-institution",
@@ -493,30 +385,37 @@
           ],
           "slots": [],
           "events": [],
-          "js": {
-            "properties": [
-              { "name": "institute", "type": "EducationInstitutionRecord" }
-            ],
-            "events": []
-          }
+          "js": { "properties": [], "events": [] }
+        },
+        {
+          "name": "blog-entry",
+          "description": "Represents a published series entry.\n---\n\n\n### **Methods:**\n - **blogEntry()** - The JSON record to render\n\n",
+          "doc-url": "",
+          "attributes": [
+            {
+              "name": "blogEntry",
+              "description": "The JSON record to render",
+              "value": { "type": "BlogEntryJson", "default": "{}" }
+            }
+          ],
+          "slots": [],
+          "events": [],
+          "js": { "properties": [], "events": [] }
         },
         {
           "name": "ui-mode-toggle",
-          "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n - **reset(): _void_** - Resets the UI mode toggle to its default settings.",
+          "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n \n- **reset(): _void_** - Resets the UI mode toggle to its default settings.\n",
           "doc-url": "",
           "attributes": [
             {
               "name": "mode",
               "description": "Reflects the currently active color scheme mode.",
-              "value": {
-                "type": "\"light\" | \"dark\" | \"system\"",
-                "default": "\"system\""
-              }
+              "value": { "type": "string", "default": "system" }
             },
             {
               "name": "permanent",
               "description": "Controls whether the selected color scheme preference is persisted across sessions.",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             }
           ],
           "slots": [],
@@ -539,13 +438,11 @@
             "properties": [
               {
                 "name": "mode",
-                "description": "Reflects the currently active color scheme mode.",
-                "type": "\"light\" | \"dark\" | \"system\""
+                "description": "Reflects the currently active color scheme mode."
               },
               {
                 "name": "permanent",
-                "description": "Controls whether the selected color scheme preference is persisted across sessions.",
-                "type": "boolean"
+                "description": "Controls whether the selected color scheme preference is persisted across sessions."
               }
             ],
             "events": [
@@ -567,7 +464,7 @@
         },
         {
           "name": "version-tag",
-          "description": "\n---\n",
+          "description": "\n---\n\n\n### **Methods:**\n \n",
           "doc-url": "",
           "attributes": [],
           "slots": [],
@@ -576,7 +473,7 @@
         },
         {
           "name": "word-cloud",
-          "description": "\n---\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+          "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
           "doc-url": "",
           "attributes": [
             {
@@ -587,7 +484,7 @@
             {
               "name": "delay",
               "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
-              "value": { "type": "number | \"none\"", "default": "\"none\"" }
+              "value": { "type": "number | \"none\"", "default": "none" }
             },
             {
               "name": "grouping",
@@ -597,7 +494,7 @@
             {
               "name": "instant-clear",
               "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
-              "value": { "type": "boolean", "default": "false" }
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "sorting",
@@ -607,53 +504,35 @@
             {
               "name": "threshold",
               "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
-              "value": { "type": "number", "default": "0.1" }
+              "value": { "type": "string", "default": 0.1 }
             },
             {
               "name": "words",
               "description": "The list of words to display in the cloud.",
-              "value": { "type": "WordCloudWord[]", "default": "[]" }
+              "value": { "type": "string", "default": [] }
             }
           ],
           "slots": [],
           "events": [],
           "js": {
             "properties": [
-              { "name": "_sortedWords", "type": "RenderableWordCloudWord[]" },
-              {
-                "name": "appearance",
-                "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
-                "type": "WordCloudAppearance"
-              },
+              { "name": "_sortedWords" },
               {
                 "name": "delay",
                 "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
                 "type": "number | \"none\""
               },
               {
-                "name": "grouping",
-                "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
-                "type": "WordCloudGrouping"
-              },
-              {
                 "name": "instantClear",
-                "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
-                "type": "boolean"
-              },
-              {
-                "name": "sorting",
-                "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
-                "type": "WordCloudSorting"
+                "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out."
               },
               {
                 "name": "threshold",
-                "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
-                "type": "number"
+                "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation."
               },
               {
                 "name": "words",
-                "description": "The list of words to display in the cloud.",
-                "type": "WordCloudWord[]"
+                "description": "The list of words to display in the cloud."
               }
             ],
             "events": []
@@ -661,28 +540,28 @@
         },
         {
           "name": "word-tag",
-          "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
+          "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Methods:**\n \n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
           "doc-url": "",
           "attributes": [
             {
               "name": "heaviness",
               "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
-              "value": { "type": "WordTagHeaviness", "default": "\"normal\"" }
+              "value": { "type": "WordTagHeaviness", "default": "normal" }
             },
             {
               "name": "hrefUrl",
               "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
-              "value": { "type": "string", "default": "\"\"" }
+              "value": { "type": "string", "default": "" }
             },
             {
               "name": "variant",
-              "description": "The version of the layout to render",
-              "value": { "type": "WordTagVariant", "default": "\"text-only\"" }
+              "description": "{@link WordTagVariantAttributeConverter}",
+              "value": { "type": "WordTagVariant", "default": "text-only" }
             },
             {
               "name": "word",
               "description": "The tagged word",
-              "value": { "type": "string", "default": "\"\"" }
+              "value": { "type": "string", "default": "" }
             }
           ],
           "slots": [
@@ -701,31 +580,26 @@
               },
               {
                 "name": "hrefUrl",
-                "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
-                "type": "string"
+                "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}"
               },
               {
                 "name": "variant",
-                "description": "The version of the layout to render",
+                "description": "{@link WordTagVariantAttributeConverter}",
                 "type": "WordTagVariant"
               },
-              {
-                "name": "word",
-                "description": "The tagged word",
-                "type": "string"
-              }
+              { "name": "word", "description": "The tagged word" }
             ],
             "events": []
           }
         },
         {
           "name": "work-experience",
-          "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n",
+          "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n\n\n### **Methods:**\n \n",
           "doc-url": "",
           "attributes": [
             {
               "name": "date-end",
-              "description": "A {@link WorkDate} instance describing employment end date",
+              "description": "End date information including machine-readable stamp and display text.",
               "value": {
                 "type": "WorkDate",
                 "default": "{ stamp: \"\", text: \"\" }"
@@ -733,7 +607,7 @@
             },
             {
               "name": "date-start",
-              "description": "A {@link WorkDate} instance describing employment start date",
+              "description": "Start date information including machine-readable stamp and display text.",
               "value": {
                 "type": "WorkDate",
                 "default": "{ stamp: \"\", text: \"\" }"
@@ -741,33 +615,33 @@
             },
             {
               "name": "experience-org",
-              "description": "The employer formal name",
-              "value": { "type": "string", "default": "\"\"" }
+              "description": "The name of the organization or client.",
+              "value": { "type": "string", "default": "" }
             },
             {
               "name": "experience-role",
-              "description": "The formal role from the {@link WorkExperience} instance",
-              "value": { "type": "string", "default": "\"\"" }
+              "description": "The title of the professional role or project.",
+              "value": { "type": "string", "default": "" }
             },
             {
               "name": "experience-summary",
               "description": "An optional summary of the overall role",
-              "value": { "type": "string", "default": "\"\"" }
+              "value": { "type": "string", "default": "" }
             },
             {
               "name": "is-nested",
-              "description": "Whether this is a nested instance",
-              "value": { "type": "boolean", "default": "false" }
+              "description": "If true, adjusts font sizes and layout for a nested appearance.",
+              "value": { "type": "string", "default": false }
             },
             {
               "name": "jobs",
-              "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-              "value": { "type": "Array<Job>", "default": "[]" }
+              "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+              "value": { "type": "string", "default": [] }
             },
             {
               "name": "summaries",
               "description": "An array of `{ item: string }` objects describing the responsibilities",
-              "value": { "type": "Array<{ item: string }>", "default": "[]" }
+              "value": { "type": "string", "default": [] }
             }
           ],
           "slots": [],
@@ -776,43 +650,37 @@
             "properties": [
               {
                 "name": "dateEnd",
-                "description": "A {@link WorkDate} instance describing employment end date",
+                "description": "End date information including machine-readable stamp and display text.",
                 "type": "WorkDate"
               },
               {
                 "name": "dateStart",
-                "description": "A {@link WorkDate} instance describing employment start date",
+                "description": "Start date information including machine-readable stamp and display text.",
                 "type": "WorkDate"
               },
               {
                 "name": "experienceOrg",
-                "description": "The employer formal name",
-                "type": "string"
+                "description": "The name of the organization or client."
               },
               {
                 "name": "experienceRole",
-                "description": "The formal role from the {@link WorkExperience} instance",
-                "type": "string"
+                "description": "The title of the professional role or project."
               },
               {
                 "name": "experienceSummary",
-                "description": "An optional summary of the overall role",
-                "type": "string"
+                "description": "An optional summary of the overall role"
               },
               {
                 "name": "isNested",
-                "description": "Whether this is a nested instance",
-                "type": "boolean"
+                "description": "If true, adjusts font sizes and layout for a nested appearance."
               },
               {
                 "name": "jobs",
-                "description": "An array of {@link Job}s rendered as nested {@link WorkExperience} instances",
-                "type": "Array<Job>"
+                "description": "A list of sub-jobs or project assignments to be rendered as nested experiences."
               },
               {
                 "name": "summaries",
-                "description": "An array of `{ item: string }` objects describing the responsibilities",
-                "type": "Array<{ item: string }>"
+                "description": "An array of `{ item: string }` objects describing the responsibilities"
               }
             ],
             "events": []

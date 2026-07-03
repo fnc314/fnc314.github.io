@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "artifact-connection",
-      "path": "./../../../src/components/connection/artifact/artifact-connection.ts",
+      "path": "./../../../packages/components/lib/connection/artifact/artifact-connection.ts",
       "attributes": [
         {
           "name": "artifactConnectionType",

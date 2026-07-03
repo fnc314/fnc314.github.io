@@ -50,23 +50,23 @@ echo "Recreate TypeScript \`.d.ts\` files"
 pnpm tsc --declaration --declarationMap false -p ./tsconfig.no-test.json
 echo
 
-[[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
-echo "dx:@pwrs:cem:generate"
-NODE_ENV=development pnpx @pwrs/cem generate --config .config/@pwrs/cem/cem.yaml -vvv -p .
-echo
-
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
 echo "dx:cem-analyze"
 NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs
 echo
 
+[[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
+echo "dx:@pwrs:cem:generate"
+NODE_ENV=development pnpx @pwrs/cem generate --config .config/@pwrs/cem/cem.yaml -vvv -p .
+echo
+
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
 echo "dx:wca"
-pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
-pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir ./docs/wca/json --format json
-pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
-pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir ./docs/wca/markdown --format markdown
-pnpm web-component-analyzer "src/{components,mixins,services,themes,types}/**/*.ts" --outDir .vscode/wca --format vscode
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./docs/wca/json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./docs/wca/markdown --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir .vscode/wca --format vscode
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"
