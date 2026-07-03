@@ -117,6 +117,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       ]
     },
     html: {},
+    css: {
+      transformer: "postcss",
+      devSourcemap: !dynamicConfig.isProduction,
+      postcss: path.resolve(process.cwd(), ".config/postcss/postcss.config.mjs"),
+    },
     json: {},
     root: path.resolve(process.cwd()),
     define: {
@@ -126,11 +131,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     publicDir: dynamicConfig.publicDir,
     optimizeDeps: {},
     resolve: {
+      mainFields: ["module"],
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
     },
     build: {
       minify: dynamicConfig.isProduction,
+      cssMinify: dynamicConfig.isProduction,
       sourcemap: !dynamicConfig.isProduction,
       outDir: dynamicConfig.outDir,
       assetsDir: "./assets",
@@ -138,6 +145,30 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       manifest: true,
       emptyOutDir: true,
       copyPublicDir: true,
+      terserOptions: {
+        compress: {
+          ecma: 2025,
+          builtins_ecma: 2025,
+          dead_code: true,
+          drop_console: dynamicConfig.isProduction,
+          drop_debugger: dynamicConfig.isProduction,
+          unused: true,
+        },
+        ecma: 2025,
+        format: {
+          ecma: 2025,
+          braces: true,
+          comments: "all",
+          indent_level: 2,
+          indent_start: 0,
+          max_line_len: 120,
+          quote_keys: true,
+          quote_style: 2,
+          semicolons: true,
+          wrap_func_args: true,
+          webkit: true,
+        }
+      },
       rolldownOptions: {
         tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
         devtools: {},
@@ -147,13 +178,17 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         logLevel: "debug",
         platform: "browser",
         treeshake: dynamicConfig.isProduction,
+        transform: {
+          typescript: {
+            allowNamespaces: true,
+            declaration: {
+              sourcemap: !dynamicConfig.isProduction,
+            },
+            rewriteImportExtensions: "remove",
+          }
+        }
       },
       reportCompressedSize: true,
-    },
-    css: {
-      transformer: "postcss",
-      devSourcemap: !dynamicConfig.isProduction,
-      postcss: path.resolve(process.cwd(), ".config/postcss/postcss.config.mjs"),
     },
     envDir: path.resolve(process.cwd(), ".env"),
     appType: "spa",

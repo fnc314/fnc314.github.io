@@ -5,6 +5,9 @@
 
 set -e
 
+declare PACKAGES_DIR="packages"
+declare VITE_CONFIG_FILEPATH=".config/vite/vite.config.ts"
+
 declare MODE="development"
 if [[ "${usage_p:=false}" == "true" ]]; then
   MODE="production"
@@ -18,12 +21,26 @@ declare PACKAGES=(
   components
 )
 
+declare BASE_VITE_PARAMS=(
+  -m "${MODE}"
+  -v
+)
+
+declare VITE_PARAMS=(
+  "${BASE_VITE_PARAMS[@]}"
+)
+
 for pkg in "${PACKAGES[@]}"; do
-  if [ -d "packages/$pkg" ]; then
-    rm -rfv "packages/${pkg}/dist"
-    NODE_ENV=${MODE} pnpm vite build -m ${MODE} -c "packages/${pkg}/.config/vite/vite.config.ts" -v || {
-      echo "Build failed for packages/${pkg}, aborting" >&2
+  if [ -d "${PACKAGES_DIR}/${pkg}" ]; then
+    rm -rfv "${PACKAGES_DIR}/${pkg}/dist"
+    VITE_PARAMS+=(
+      -c "${PACKAGES_DIR}/${pkg}/${VITE_CONFIG_FILEPATH}"
+    )
+    printf "Vite Params for ${PACKAGES_DIR}/${pkg}: %s\n" "${VITE_PARAMS[@]}"
+    NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" || {
+      echo "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
       exit 1
     }
   fi
+  VITE_PARAMS=("${BASE_VITE_PARAMS[@]}")
 done

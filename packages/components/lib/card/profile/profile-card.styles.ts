@@ -91,6 +91,8 @@ export const ProfileCardStyles: CSSResult = css`
         padding-block: var(--spaces-padding-m);
         padding-inline: var(--spaces-padding-xs);
         margin: var(--spaces-none);
+        white-space: pre-wrap;
+        text-indent: 1rem each-line;
 
         &::first-line {
           font-size: var(--md-sys-typescale-headline-medium-size);
@@ -106,7 +108,6 @@ export const ProfileCardStyles: CSSResult = css`
           color: var(--md-sys-color-secondary-fixed);
           font-size: var(--md-sys-typescale-headline-large-size);
           font-weight: var(--md-ref-typeface-weight-bold);
-          margin-inline-start: var(--spaces-padding-s);
         }
       }
     }

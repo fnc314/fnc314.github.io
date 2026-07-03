@@ -111,7 +111,10 @@
     "packages/**/lib/**/*.test.ts",
   ],
   "include": [
+    "src/env.d.ts",
+    "src/vite-env.d.ts",
     "src/index.ts",
+    "src/index.css",
     "packages/components/lib/**/*.ts",
     "packages/data/lib/**/*.ts",
     "packages/design-tokens/lib/**/*.ts",

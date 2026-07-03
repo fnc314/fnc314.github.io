@@ -25,14 +25,14 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         copyPublicDir: true,
         minify: mode === "production",
       },
-      // resolve: {
-      //   alias: {
-      //     "@": path.resolve(process.cwd(), dirName, "lib"),
-      //   },
-      //   tsconfigPaths: true,
-      //   extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
-      //   tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
-      // },
+      resolve: {
+        // alias: {
+        //   "@": path.resolve(process.cwd(), "packages", dirName, "lib"),
+        // },
+        tsconfigPaths: true,
+        extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
+        tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
+      },
       plugins: [
         dts({
           // bundleTypes: true,
@@ -42,7 +42,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
         }),
         Info({
-          github: "https://github.com/fnc314/fnc314.github.io",
+          github: `https://github.com/fnc314/fnc314.github.io/tree/main/packages/${dirName}`,
           root: ".",
           cloudflare: false,
           package: {
