@@ -21,10 +21,10 @@
   },
   "exports": {
     ".": {
-      "default": "./dist/@fnc314.packages.design-tokens.js",
-      "import": "./dist/@fnc314.packages.design-tokens.js",
+      "types": "./dist/types/index.d.ts",
       "style": "./dist/@fnc314.packages.design-tokens.css",
-      "types": "./dist/types/index.d.ts"
+      "import": "./dist/@fnc314.packages.design-tokens.js",
+      "default": "./dist/@fnc314.packages.design-tokens.js"
     },
     "./css/*": {
       "default": "./dist/@fnc314.packages.design-tokens.css",
@@ -33,6 +33,10 @@
     "./dist/*": "./dist/*",
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",
+    "./index.css": {
+      "default": "./dist/@fnc314.packages.design-tokens.css",
+      "style": "./dist/@fnc314.packages.design-tokens.css"
+    },
     "./styles.css": {
       "default": "./dist/@fnc314.packages.design-tokens.css",
       "style": "./dist/@fnc314.packages.design-tokens.css"
