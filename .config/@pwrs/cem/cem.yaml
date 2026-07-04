@@ -7,7 +7,7 @@ generate:
     - packages/.config/**/*.ts
 
   files:
-    - src/**/*.ts
+    - index.ts
     - packages/components/lib/**/*.ts
     - packages/data/lib/**/*.ts
     - packages/design-tokens/lib/**/*.ts

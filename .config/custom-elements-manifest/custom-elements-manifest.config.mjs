@@ -41,7 +41,7 @@ const packages = [
   "design-tokens",
   "services",
   "types",
-].map((pkg) => `${path.resolve(process.cwd(), "packages", pkg, "lib")}/**/*.ts`);
+].map((pkg) => `${resolvePath("packages", pkg, "lib")}/**/*.ts`);
 
 /** @type {import('@custom-elements-manifest/analyzer').Config & import('@custom-elements-manifest/analyzer').Plugin} */
 // @ts-ignore
@@ -57,7 +57,7 @@ export default {
   outdir: docsDir,
   dev: isDev,
   dependencies: false,
-  packagejson: true,
+  packagejson: false,
   litelement: true,
 
   // https://github.com/oxc-project/oxc-resolver?tab=readme-ov-file#options
