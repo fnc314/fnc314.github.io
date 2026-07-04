@@ -5,9 +5,11 @@
 #USAGE flag "-w" help="Passes `-w` to `vite build`" default="false"
 #USAGE flag "-d" help="Passes `-d` to `vite build`" default="false"
 
+export NODE_ENV="production"
+
 typeset -a VITE_FLAGS
 VITE_FLAGS=(
-  -m production
+  -m ${NODE_ENV}
   -c ./.config/vite/vite.config.ts
 )
 
@@ -23,4 +25,4 @@ if [[ "${usage_d:=false}" == "true" ]]; then
   )
 fi
 
-NODE_ENV=production pnpm vite build "${VITE_FLAGS[@]}"
+pnpm vite build "${VITE_FLAGS[@]}"

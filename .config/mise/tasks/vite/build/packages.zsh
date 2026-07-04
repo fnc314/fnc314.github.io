@@ -13,6 +13,8 @@ if [[ "${usage_p:=false}" == "true" ]]; then
   MODE="production"
 fi
 
+export NODE_ENV="${MODE}"
+
 declare PACKAGES=(
   types
   data
@@ -32,12 +34,18 @@ declare VITE_PARAMS=(
 
 for pkg in "${PACKAGES[@]}"; do
   if [ -d "${PACKAGES_DIR}/${pkg}" ]; then
-    rm -rfv "${PACKAGES_DIR}/${pkg}/dist"
+
+    if [ -d "${PACKAGES_DIR}/${pkg}/dist" ]; then
+      rm -rfv "${PACKAGES_DIR}/${pkg}/dist"
+    fi
+
     VITE_PARAMS+=(
       -c "${PACKAGES_DIR}/${pkg}/${VITE_CONFIG_FILEPATH}"
     )
+
     printf "Vite Params for ${PACKAGES_DIR}/${pkg}: %s\n" "${VITE_PARAMS[@]}"
-    NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" || {
+
+    pnpm vite build "${VITE_PARAMS[@]}" || {
       echo "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
       exit 1
     }

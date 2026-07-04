@@ -3,7 +3,7 @@
   "bugs": {
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
-  "customElements": "../../docs/@pwrs/cem/packages/data/custom-elements.json",
+  "customElements": "custom-elements.json",
   "dependencies": {
     "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",

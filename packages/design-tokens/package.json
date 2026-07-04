@@ -1,31 +1,44 @@
 {
-  "name": "@fnc314/packages.design-tokens",
-  "version": "2.0.5",
-  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "author": "Franco N. Colaizzi",
-  "license": "ISC",
-  "private": true,
-  "type": "module",
+  "customElements": "custom-elements.json",
+  "dependencies": {
+    "@fnc314/packages.types": "workspace:*",
+    "@material/web": "catalog:dependencies",
+    "material-symbols": "catalog:dependencies"
+  },
+  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
+  "devDependencies": {
+    "@types/fs-extra": "catalog:devDependencies",
+    "fs-extra": "catalog:devDependencies",
+    "style-dictionary": "catalog:devDependencies",
+    "typescript": "catalog:devDependencies",
+    "unplugin-dts": "catalog:devDependencies",
+    "unplugin-info": "catalog:devDependencies",
+    "vite": "catalog:devDependencies"
+  },
+  "engines": {
+    "node": "26.4.0"
+  },
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "style": "./dist/@fnc314.packages.design-tokens.css",
+      "default": "./dist/@fnc314.packages.design-tokens.js",
       "import": "./dist/@fnc314.packages.design-tokens.js",
-      "default": "./dist/@fnc314.packages.design-tokens.js"
-    },
-    "./types/*": "./dist/types/*",
-    "./styles.css": {
       "style": "./dist/@fnc314.packages.design-tokens.css",
-      "default": "./dist/@fnc314.packages.design-tokens.css"
+      "types": "./dist/types/index.d.ts"
     },
     "./css/*": {
-      "style": "./dist/css/*",
-      "default": "./dist/@fnc314.packages.design-tokens.css"
+      "default": "./dist/@fnc314.packages.design-tokens.css",
+      "style": "./dist/css/*"
     },
+    "./dist/*": "./dist/*",
     "./icons/*": "./dist/icons/*",
     "./json/*": "./dist/json/*",
+    "./styles.css": {
+      "default": "./dist/@fnc314.packages.design-tokens.css",
+      "style": "./dist/@fnc314.packages.design-tokens.css"
+    },
     "./themes/*": "./dist/themes/*",
-    "./dist/*": "./dist/*"
+    "./types/*": "./dist/types/*"
   },
   "files": [
     "./dist/@fnc314.packages.design-tokens.css",
@@ -36,30 +49,17 @@
     "./dist/css/*.css",
     "./dist/json/*.json"
   ],
-  "customElements": "../../docs/@pwrs/cem/packages/design-tokens/custom-elements.json",
-  "types": "./dist/types/index.d.ts",
-  "main": "./dist/@fnc314.packages.design-tokens.js",
-  "module": "./dist/@fnc314.packages.design-tokens.js",
-  "dependencies": {
-    "@fnc314/packages.types": "workspace:*",
-    "@material/web": "catalog:dependencies",
-    "material-symbols": "catalog:dependencies"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "catalog:devDependencies",
-    "fs-extra": "catalog:devDependencies",
-    "style-dictionary": "catalog:devDependencies",
-    "typescript": "catalog:devDependencies",
-    "unplugin-dts": "catalog:devDependencies",
-    "unplugin-info": "catalog:devDependencies",
-    "vite": "catalog:devDependencies"
-  },
   "keywords": [
     "design-tokens",
     "style-dictionary"
   ],
-  "engines": {
-    "node": "26.4.0"
-  },
-  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b"
+  "license": "ISC",
+  "main": "./dist/@fnc314.packages.design-tokens.js",
+  "module": "./dist/@fnc314.packages.design-tokens.js",
+  "name": "@fnc314/packages.design-tokens",
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
+  "private": true,
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "version": "2.0.5"
 }

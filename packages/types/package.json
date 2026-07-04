@@ -7,7 +7,7 @@
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
-  "customElements": "../../docs/@pwrs/cem/packages/types/custom-elements.json",
+  "customElements": "custom-elements.json",
   "description": "Types package to support https://fnc314.com",
   "devDependencies": {
     "@types/fs-extra": "catalog:devDependencies",

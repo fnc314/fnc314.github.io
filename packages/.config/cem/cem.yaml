@@ -1,0 +1,28 @@
+additionalPackages:
+  - "npm:@material/web@2.4.1"
+  - "npm:material-symbols@0.45.5"
+
+generate:
+  exclude:
+    - .config/**/*.ts
+    - lib/**/*.test.ts
+  files:
+    - lib/**/*.ts
+
+health:
+  failBelow: 75
+
+serve:
+  demos:
+    rendering: light
+  importMap:
+    generate: true
+  port: 9888
+  transforms:
+    css:
+      enabled: true
+      include:
+        - "node_modules/@fnc314/packages.design-tokens/dist/@fnc314.packages.design-tokens.css"
+        - "node_modules/material-symbols/**/*.css"
+
+sourceControlRootUrl: "https://github.com/fnc314/fnc314.github.io/tree/main/"
