@@ -1,15 +1,28 @@
 {
   "$schema": "https://raw.githubusercontent.com/firebase/firebase-tools/refs/heads/main/schema/firebase-config.json",
+  "apphosting": {
+    "alwaysDeployFromSource": false,
+    "backendId": "com-fnc314-website",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "firebase/functions/node"
+    ],
+    "localBuild": true,
+    "rootDir": "dist/vite/production"
+  },
   "firestore": {
     "database": "(default)",
+    "indexes": "./firebase/firestore/firestore-indexes.json",
     "location": "us-east1",
-    "rules": "./firebase/firestore/firestore.rules",
-    "indexes": "./firebase/firestore/firestore-indexes.json"
+    "rules": "./firebase/firestore/firestore.rules"
   },
   "functions": [
     {
-      "source": "firebase/functions/node",
       "codebase": "default",
+      "configDir": ".config/firebase/functions/node",
       "disallowLegacyRuntimeConfig": true,
       "ignore": [
         "firebase/functions/node/node_modules",
@@ -21,14 +34,9 @@
       "predeploy": [
         "pnpm --prefix \"$RESOURCE_DIR\" run lint",
         "pnpm --prefix \"$RESOURCE_DIR\" run build"
-      ]
+      ],
+      "runtime": "nodejs24",
+      "source": "firebase/functions/node"
     }
-  ],
-  "apphosting": {
-    "backendId": "com-fnc314-website",
-    "rootDir": "src",
-    "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log", "functions"],
-    "alwaysDeployFromSource": false,
-    "localBuild": true
-  }
+  ]
 }
