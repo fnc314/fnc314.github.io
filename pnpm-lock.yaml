@@ -759,6 +759,37 @@ importers:
         specifier: catalog:devDependencies
         version: 2.0.0
 
+  firebase/functions/node:
+    dependencies:
+      firebase-admin:
+        specifier: catalog:functionsDependencies
+        version: 14.0.0
+      firebase-functions:
+        specifier: catalog:functionsDependencies
+        version: 7.2.5(firebase-admin@14.0.0)
+    devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: catalog:devDependencies
+        version: 8.62.1(@types/eslint@9.6.1)(@typescript-eslint/parser@8.62.1(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3)
+      '@typescript-eslint/parser':
+        specifier: catalog:devDependencies
+        version: 8.62.1(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3)
+      eslint:
+        specifier: catalog:devDependencies
+        version: 10.6.0(@types/eslint@9.6.1)(jiti@2.7.0)
+      eslint-config-google:
+        specifier: catalog:devDependencies
+        version: 0.14.0(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))
+      eslint-plugin-import:
+        specifier: catalog:devDependencies
+        version: 2.32.0(@types/eslint@9.6.1)(@typescript-eslint/parser@8.62.1(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(@types/eslint@9.6.1)(jiti@2.7.0))
+      firebase-functions-test:
+        specifier: catalog:functionsDevDependencies
+        version: 3.5.0(firebase-admin@14.0.0)(firebase-functions@7.2.5(firebase-admin@14.0.0))(jest@30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@26.1.0)(ts-node@10.9.2(@types/node@26.1.0)(typescript@6.0.3)))
+      typescript:
+        specifier: catalog:devDependencies
+        version: 6.0.3
+
   functions:
     dependencies:
       firebase-admin:
