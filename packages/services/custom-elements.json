@@ -1,0 +1,494 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/configs/index.js",
+      "declarations": [
+        {
+          "name": "configsService",
+          "type": {
+            "text": ": ConfigsService"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "ConfigsServiceImpl",
+          "superclass": {
+            "name": "EventTarget"
+          },
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "configs",
+                  "type": {
+                    "text": "AppConfigs"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "saveConfigs",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "AppConfigs"
+                }
+              },
+              "name": "loadConfigs",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "resetConfigs",
+              "kind": "method"
+            }
+          ],
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "configsService",
+          "declaration": {
+            "name": "configsService",
+            "module": "lib/configs/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/storage/index.js",
+      "declarations": [
+        {
+          "name": "storageService",
+          "type": {
+            "text": ": StorageService"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "StorageServiceImpl",
+          "members": [
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "data",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "saveData",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "defaultValue",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "{ value: string; isDefault: boolean; }"
+                }
+              },
+              "name": "getData",
+              "kind": "method"
+            },
+            {
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "name": "clearData",
+              "kind": "method"
+            }
+          ],
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "storageService",
+          "declaration": {
+            "name": "storageService",
+            "module": "lib/storage/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/chicago/index.js",
+      "declarations": [
+        {
+          "name": "ChicagoThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ChicagoThemeConfig",
+          "declaration": {
+            "name": "ChicagoThemeConfig",
+            "module": "lib/theme/chicago/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/index.js",
+      "declarations": [
+        {
+          "name": "THEME_CONFIGS",
+          "type": {
+            "text": ": ThemeConfigs"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "themeService",
+          "type": {
+            "text": ": ThemeService"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "MaterialCSSStyleSheet",
+          "type": {
+            "text": ": CSSStyleSheet"
+          },
+          "kind": "variable"
+        },
+        {
+          "parameters": [
+            {
+              "name": "event",
+              "type": {
+                "text": "MediaQueryListEvent"
+              }
+            }
+          ],
+          "name": "onThemeChange",
+          "kind": "function"
+        },
+        {
+          "parameters": [
+            {
+              "name": "colorSchemeSettings",
+              "type": {
+                "text": "ColorSchemeConfigs"
+              }
+            }
+          ],
+          "name": "colorSchemeConfigsToMaterialSchemeName",
+          "kind": "function"
+        },
+        {
+          "name": "ThemeServiceImpl",
+          "members": [
+            {
+              "return": {
+                "type": {
+                  "text": "ThemeConfig"
+                }
+              },
+              "name": "currentThemeConfig",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "MaterialSchemeNames"
+                }
+              },
+              "name": "currentMaterialSchemeName",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
+                  "text": "Record\u003cColorSchemeRoles, ColorString\u003e"
+                }
+              },
+              "name": "themeJson",
+              "kind": "method"
+            }
+          ],
+          "kind": "class"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "THEME_CONFIGS",
+          "declaration": {
+            "name": "THEME_CONFIGS",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "themeService",
+          "declaration": {
+            "name": "themeService",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "MaterialCSSStyleSheet",
+          "declaration": {
+            "name": "MaterialCSSStyleSheet",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "onThemeChange",
+          "declaration": {
+            "name": "onThemeChange",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "colorSchemeConfigsToMaterialSchemeName",
+          "declaration": {
+            "name": "colorSchemeConfigsToMaterialSchemeName",
+            "module": "lib/theme/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/inter/index.js",
+      "declarations": [
+        {
+          "name": "InterThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "InterThemeConfig",
+          "declaration": {
+            "name": "InterThemeConfig",
+            "module": "lib/theme/inter/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/red/index.js",
+      "declarations": [
+        {
+          "name": "RedThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RedThemeConfig",
+          "declaration": {
+            "name": "RedThemeConfig",
+            "module": "lib/theme/red/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/sunset/index.js",
+      "declarations": [
+        {
+          "name": "SunsetThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SunsetThemeConfig",
+          "declaration": {
+            "name": "SunsetThemeConfig",
+            "module": "lib/theme/sunset/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/utils.js",
+      "declarations": [
+        {
+          "parameters": [
+            {
+              "name": "slot",
+              "type": {
+                "text": "\"start\" | \"leading-icon\""
+              }
+            }
+          ],
+          "name": "colorSchemeContrastToIcon",
+          "kind": "function"
+        },
+        {
+          "parameters": [
+            {
+              "name": "json",
+              "description": "- Input of an unknown type, ideally conforming to a Material 3 JSON scheme",
+              "type": {
+                "text": "unknown"
+              }
+            }
+          ],
+          "return": {
+            "description": "A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}"
+          },
+          "name": "jsonIsThemeJsonSchemes",
+          "description": "Checks if the provided JSON conforms to the expected theme schemes structure",
+          "kind": "function"
+        },
+        {
+          "parameters": [
+            {
+              "name": "jsonSchema",
+              "type": {
+                "text": "object"
+              }
+            }
+          ],
+          "return": {
+            "type": {
+              "text": "lit!CSSResult"
+            },
+            "description": " A {@link lit!CSSResult} of the provided {@link jsonSchema}"
+          },
+          "name": "readScheme",
+          "description": "Reads a `.json` defined object and produces a {@link lit!CSSResult}",
+          "kind": "function"
+        },
+        {
+          "parameters": [
+            {
+              "name": "jsonKey",
+              "description": "- The key from the JSON scheme, e.g., \"primaryContainer\"",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "return": {
+            "type": {
+              "text": "lit!CSSResult"
+            },
+            "description": " - A CSSResult containing the custom property definition, e.g., \"--md-sys-color-primary-container: #FF0000;\""
+          },
+          "name": "keyTransform",
+          "description": "Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property\nvia {@link lit!css} and {@link lit!unsafeCSS} functions",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "colorSchemeContrastToIcon",
+          "declaration": {
+            "name": "colorSchemeContrastToIcon",
+            "module": "lib/theme/utils.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "jsonIsThemeJsonSchemes",
+          "declaration": {
+            "name": "jsonIsThemeJsonSchemes",
+            "module": "lib/theme/utils.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "readScheme",
+          "declaration": {
+            "name": "readScheme",
+            "module": "lib/theme/utils.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "keyTransform",
+          "declaration": {
+            "name": "keyTransform",
+            "module": "lib/theme/utils.js"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/bio/index.js",
+      "declarations": [
+        {
+          "name": "Biographies",
+          "type": {
+            "text": ": Bio"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Biographies",
+          "declaration": {
+            "name": "Biographies",
+            "module": "lib/bio/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/blog/index.js",
+      "declarations": [
+        {
+          "name": "Blogs",
+          "type": {
+            "text": ": BlogEntryJson[]"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Blogs",
+          "declaration": {
+            "name": "Blogs",
+            "module": "lib/blog/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/code/index.js",
+      "declarations": [
+        {
+          "name": "Projects",
+          "type": {
+            "text": ": CodeRepoData[]"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Projects",
+          "declaration": {
+            "name": "Projects",
+            "module": "lib/code/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/connections/index.js",
+      "declarations": [
+        {
+          "name": "Connections",
+          "type": {
+            "text": ": {\n  direct: {\n    phone: ConnectionInstance,\n    email: ConnectionInstance\n  },\n  social: {\n    linkedIn: ProfessionalConnectionJsonData,\n    github: ProfessionalConnectionJsonData,\n    medium: ProfessionalConnectionJsonData,\n  },\n  resume: {\n    googleDoc: ArtifactConnectionData,\n    pdf: ArtifactConnectionData,\n  }\n}"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Connections",
+          "declaration": {
+            "name": "Connections",
+            "module": "lib/connections/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/education/index.js",
+      "declarations": [
+        {
+          "name": "EducationJsonData",
+          "type": {
+            "text": ": EducationInstitutionRecord[]"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "EducationJsonData",
+          "declaration": {
+            "name": "EducationJsonData",
+            "module": "lib/education/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/experience/index.js",
+      "declarations": [
+        {
+          "name": "Experiences",
+          "type": {
+            "text": ": Experience[]"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Experiences",
+          "declaration": {
+            "name": "Experiences",
+            "module": "lib/experience/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/photo/index.js",
+      "declarations": [
+        {
+          "name": "Photos",
+          "type": {
+            "text": ": PhotosJson"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Photos",
+          "declaration": {
+            "name": "Photos",
+            "module": "lib/photo/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/skills/index.js",
+      "declarations": [
+        {
+          "name": "Skills",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Skills",
+          "declaration": {
+            "name": "Skills",
+            "module": "lib/skills/index.js"
+          }
+        }
+      ]
+    }
+  ]
+}

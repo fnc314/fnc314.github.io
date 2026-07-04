@@ -3,11 +3,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.js",
+      "path": "lib/bento-layout/bento-layout.js",
       "declarations": [
         {
           "name": "BentoLayout",
@@ -57,7 +53,7 @@
           "name": "bento-layout",
           "declaration": {
             "name": "BentoLayout",
-            "module": "packages/components/lib/bento-layout/bento-layout.js"
+            "module": "lib/bento-layout/bento-layout.js"
           }
         },
         {
@@ -65,14 +61,14 @@
           "name": "BentoLayout",
           "declaration": {
             "name": "BentoLayout",
-            "module": "packages/components/lib/bento-layout/bento-layout.js"
+            "module": "lib/bento-layout/bento-layout.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.styles.js",
+      "path": "lib/bento-layout/bento-layout.styles.js",
       "declarations": [
         {
           "name": "BentoLayoutStyles",
@@ -91,7 +87,7 @@
           "name": "BentoLayoutStyles",
           "declaration": {
             "name": "BentoLayoutStyles",
-            "module": "packages/components/lib/bento-layout/bento-layout.styles.js"
+            "module": "lib/bento-layout/bento-layout.styles.js"
           }
         },
         {
@@ -99,18 +95,14 @@
           "name": "TransitionStyles",
           "declaration": {
             "name": "TransitionStyles",
-            "module": "packages/components/lib/bento-layout/bento-layout.styles.js"
+            "module": "lib/bento-layout/bento-layout.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.types.js",
+      "path": "lib/bento-layout/bento-layout.types.js",
       "declarations": [
         {
           "name": "BENTO_BOX_TYPES",
@@ -161,7 +153,7 @@
           "name": "BENTO_BOX_TYPES",
           "declaration": {
             "name": "BENTO_BOX_TYPES",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.js"
+            "module": "lib/bento-layout/bento-layout.types.js"
           }
         },
         {
@@ -169,7 +161,7 @@
           "name": "BENTO_BOX_CONFIG",
           "declaration": {
             "name": "BENTO_BOX_CONFIG",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.js"
+            "module": "lib/bento-layout/bento-layout.types.js"
           }
         },
         {
@@ -177,7 +169,7 @@
           "name": "getBentoDOMOrder",
           "declaration": {
             "name": "getBentoDOMOrder",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.js"
+            "module": "lib/bento-layout/bento-layout.types.js"
           }
         },
         {
@@ -185,14 +177,14 @@
           "name": "BentoBoxConfigsArray",
           "declaration": {
             "name": "BentoBoxConfigsArray",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.js"
+            "module": "lib/bento-layout/bento-layout.types.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/bento/bento-card.js",
+      "path": "lib/card/bento/bento-card.js",
       "declarations": [
         {
           "name": "BentoCard",
@@ -311,7 +303,7 @@
           "name": "bento-card",
           "declaration": {
             "name": "BentoCard",
-            "module": "packages/components/lib/card/bento/bento-card.js"
+            "module": "lib/card/bento/bento-card.js"
           }
         },
         {
@@ -319,14 +311,14 @@
           "name": "BentoCard",
           "declaration": {
             "name": "BentoCard",
-            "module": "packages/components/lib/card/bento/bento-card.js"
+            "module": "lib/card/bento/bento-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/bento/bento-card.styles.js",
+      "path": "lib/card/bento/bento-card.styles.js",
       "declarations": [
         {
           "name": "BentoCardStyles",
@@ -340,18 +332,14 @@
           "name": "BentoCardStyles",
           "declaration": {
             "name": "BentoCardStyles",
-            "module": "packages/components/lib/card/bento/bento-card.styles.js"
+            "module": "lib/card/bento/bento-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/bento/bento-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/blog/blog-card.js",
+      "path": "lib/card/blog/blog-card.js",
       "declarations": [
         {
           "name": "BlogCard",
@@ -411,7 +399,7 @@
           "name": "blog-card",
           "declaration": {
             "name": "BlogCard",
-            "module": "packages/components/lib/card/blog/blog-card.js"
+            "module": "lib/card/blog/blog-card.js"
           }
         },
         {
@@ -419,14 +407,14 @@
           "name": "BlogCard",
           "declaration": {
             "name": "BlogCard",
-            "module": "packages/components/lib/card/blog/blog-card.js"
+            "module": "lib/card/blog/blog-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/blog/blog-card.styles.js",
+      "path": "lib/card/blog/blog-card.styles.js",
       "declarations": [
         {
           "name": "BlogCardStyles",
@@ -440,18 +428,14 @@
           "name": "BlogCardStyles",
           "declaration": {
             "name": "BlogCardStyles",
-            "module": "packages/components/lib/card/blog/blog-card.styles.js"
+            "module": "lib/card/blog/blog-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/blog/blog-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/code/code-card.js",
+      "path": "lib/card/code/code-card.js",
       "declarations": [
         {
           "name": "CodeCard",
@@ -511,7 +495,7 @@
           "name": "code-card",
           "declaration": {
             "name": "CodeCard",
-            "module": "packages/components/lib/card/code/code-card.js"
+            "module": "lib/card/code/code-card.js"
           }
         },
         {
@@ -519,14 +503,14 @@
           "name": "CodeCard",
           "declaration": {
             "name": "CodeCard",
-            "module": "packages/components/lib/card/code/code-card.js"
+            "module": "lib/card/code/code-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/code/code-card.styles.js",
+      "path": "lib/card/code/code-card.styles.js",
       "declarations": [
         {
           "name": "CodeCardStyles",
@@ -540,18 +524,14 @@
           "name": "CodeCardStyles",
           "declaration": {
             "name": "CodeCardStyles",
-            "module": "packages/components/lib/card/code/code-card.styles.js"
+            "module": "lib/card/code/code-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/code/code-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/education/education-card.js",
+      "path": "lib/card/education/education-card.js",
       "declarations": [
         {
           "name": "EducationCard",
@@ -607,7 +587,7 @@
           "name": "education-card",
           "declaration": {
             "name": "EducationCard",
-            "module": "packages/components/lib/card/education/education-card.js"
+            "module": "lib/card/education/education-card.js"
           }
         },
         {
@@ -615,14 +595,14 @@
           "name": "EducationCard",
           "declaration": {
             "name": "EducationCard",
-            "module": "packages/components/lib/card/education/education-card.js"
+            "module": "lib/card/education/education-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/education/education-card.styles.js",
+      "path": "lib/card/education/education-card.styles.js",
       "declarations": [
         {
           "name": "EducationCardStyles",
@@ -636,18 +616,14 @@
           "name": "EducationCardStyles",
           "declaration": {
             "name": "EducationCardStyles",
-            "module": "packages/components/lib/card/education/education-card.styles.js"
+            "module": "lib/card/education/education-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/education/education-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/experience/experience-card.js",
+      "path": "lib/card/experience/experience-card.js",
       "declarations": [
         {
           "name": "ExperienceCard",
@@ -707,7 +683,7 @@
           "name": "experience-card",
           "declaration": {
             "name": "ExperienceCard",
-            "module": "packages/components/lib/card/experience/experience-card.js"
+            "module": "lib/card/experience/experience-card.js"
           }
         },
         {
@@ -715,14 +691,14 @@
           "name": "ExperienceCard",
           "declaration": {
             "name": "ExperienceCard",
-            "module": "packages/components/lib/card/experience/experience-card.js"
+            "module": "lib/card/experience/experience-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/experience/experience-card.styles.js",
+      "path": "lib/card/experience/experience-card.styles.js",
       "declarations": [
         {
           "name": "WorkCardStyles",
@@ -736,18 +712,14 @@
           "name": "WorkCardStyles",
           "declaration": {
             "name": "WorkCardStyles",
-            "module": "packages/components/lib/card/experience/experience-card.styles.js"
+            "module": "lib/card/experience/experience-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/experience/experience-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/profile/profile-card.js",
+      "path": "lib/card/profile/profile-card.js",
       "declarations": [
         {
           "name": "ProfileCard",
@@ -849,7 +821,7 @@
           "name": "profile-card",
           "declaration": {
             "name": "ProfileCard",
-            "module": "packages/components/lib/card/profile/profile-card.js"
+            "module": "lib/card/profile/profile-card.js"
           }
         },
         {
@@ -857,14 +829,14 @@
           "name": "ProfileCard",
           "declaration": {
             "name": "ProfileCard",
-            "module": "packages/components/lib/card/profile/profile-card.js"
+            "module": "lib/card/profile/profile-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/profile/profile-card.styles.js",
+      "path": "lib/card/profile/profile-card.styles.js",
       "declarations": [
         {
           "name": "ProfileCardStyles",
@@ -880,18 +852,14 @@
           "name": "ProfileCardStyles",
           "declaration": {
             "name": "ProfileCardStyles",
-            "module": "packages/components/lib/card/profile/profile-card.styles.js"
+            "module": "lib/card/profile/profile-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/profile/profile-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/card/settings/settings-card.js",
+      "path": "lib/card/settings/settings-card.js",
       "declarations": [
         {
           "name": "SettingsCard",
@@ -1007,7 +975,7 @@
           "name": "settings-card",
           "declaration": {
             "name": "SettingsCard",
-            "module": "packages/components/lib/card/settings/settings-card.js"
+            "module": "lib/card/settings/settings-card.js"
           }
         },
         {
@@ -1015,14 +983,14 @@
           "name": "SettingsCard",
           "declaration": {
             "name": "SettingsCard",
-            "module": "packages/components/lib/card/settings/settings-card.js"
+            "module": "lib/card/settings/settings-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/settings/settings-card.styles.js",
+      "path": "lib/card/settings/settings-card.styles.js",
       "declarations": [
         {
           "name": "SettingsCardStyles",
@@ -1038,14 +1006,14 @@
           "name": "SettingsCardStyles",
           "declaration": {
             "name": "SettingsCardStyles",
-            "module": "packages/components/lib/card/settings/settings-card.styles.js"
+            "module": "lib/card/settings/settings-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/skills/skills-card.js",
+      "path": "lib/card/skills/skills-card.js",
       "declarations": [
         {
           "name": "SkillsCard",
@@ -1106,7 +1074,7 @@
           "name": "skills-card",
           "declaration": {
             "name": "SkillsCard",
-            "module": "packages/components/lib/card/skills/skills-card.js"
+            "module": "lib/card/skills/skills-card.js"
           }
         },
         {
@@ -1114,14 +1082,14 @@
           "name": "SkillsCard",
           "declaration": {
             "name": "SkillsCard",
-            "module": "packages/components/lib/card/skills/skills-card.js"
+            "module": "lib/card/skills/skills-card.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/skills/skills-card.styles.js",
+      "path": "lib/card/skills/skills-card.styles.js",
       "declarations": [
         {
           "name": "SkillsCardStyles",
@@ -1135,18 +1103,14 @@
           "name": "SkillsCardStyles",
           "declaration": {
             "name": "SkillsCardStyles",
-            "module": "packages/components/lib/card/skills/skills-card.styles.js"
+            "module": "lib/card/skills/skills-card.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/skills/skills-card.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/code/repo/code-repo.js",
+      "path": "lib/code/repo/code-repo.js",
       "declarations": [
         {
           "name": "CodeRepo",
@@ -1204,7 +1168,7 @@
           "name": "code-repo",
           "declaration": {
             "name": "CodeRepo",
-            "module": "packages/components/lib/code/repo/code-repo.js"
+            "module": "lib/code/repo/code-repo.js"
           }
         },
         {
@@ -1212,14 +1176,14 @@
           "name": "CodeRepo",
           "declaration": {
             "name": "CodeRepo",
-            "module": "packages/components/lib/code/repo/code-repo.js"
+            "module": "lib/code/repo/code-repo.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/code/repo/code-repo.styles.js",
+      "path": "lib/code/repo/code-repo.styles.js",
       "declarations": [
         {
           "name": "CodeRepoStyles",
@@ -1236,14 +1200,14 @@
           "name": "CodeRepoStyles",
           "declaration": {
             "name": "CodeRepoStyles",
-            "module": "packages/components/lib/code/repo/code-repo.styles.js"
+            "module": "lib/code/repo/code-repo.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/artifact/artifact-connection.js",
+      "path": "lib/connection/artifact/artifact-connection.js",
       "declarations": [
         {
           "name": "ArtifactConnection",
@@ -1264,13 +1228,7 @@
             {
               "name": "artifactConnectionType",
               "type": {
-                "text": "keyof typeof ArtifactConnections",
-                "references": [
-                  {
-                    "name": "ArtifactConnectionType",
-                    "package": "@fnc314/packages.types"
-                  }
-                ]
+                "text": "ArtifactConnectionType"
               },
               "default": "\"\" as ArtifactConnectionType",
               "kind": "field"
@@ -1278,13 +1236,7 @@
             {
               "name": "artifactConnectionData",
               "type": {
-                "text": "{ title: string, href: string, designToken: DesignTokenIcon, mdIcon: string }",
-                "references": [
-                  {
-                    "name": "ArtifactConnectionData",
-                    "package": "@fnc314/packages.types"
-                  }
-                ]
+                "text": "ArtifactConnectionData"
               },
               "default": "{} as ArtifactConnectionData",
               "kind": "field"
@@ -1310,7 +1262,7 @@
           "name": "artifact-connection",
           "declaration": {
             "name": "ArtifactConnection",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.js"
+            "module": "lib/connection/artifact/artifact-connection.js"
           }
         },
         {
@@ -1318,14 +1270,14 @@
           "name": "ArtifactConnection",
           "declaration": {
             "name": "ArtifactConnection",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.js"
+            "module": "lib/connection/artifact/artifact-connection.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/artifact/artifact-connection.styles.js",
+      "path": "lib/connection/artifact/artifact-connection.styles.js",
       "declarations": [
         {
           "name": "ConnectionArtifactStyles",
@@ -1341,14 +1293,14 @@
           "name": "ConnectionArtifactStyles",
           "declaration": {
             "name": "ConnectionArtifactStyles",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.styles.js"
+            "module": "lib/connection/artifact/artifact-connection.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/direct/direct-connection.js",
+      "path": "lib/connection/direct/direct-connection.js",
       "declarations": [
         {
           "name": "DirectConnection",
@@ -1396,7 +1348,7 @@
           "name": "direct-connection",
           "declaration": {
             "name": "DirectConnection",
-            "module": "packages/components/lib/connection/direct/direct-connection.js"
+            "module": "lib/connection/direct/direct-connection.js"
           }
         },
         {
@@ -1404,14 +1356,14 @@
           "name": "DirectConnection",
           "declaration": {
             "name": "DirectConnection",
-            "module": "packages/components/lib/connection/direct/direct-connection.js"
+            "module": "lib/connection/direct/direct-connection.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/direct/direct-connection.styles.js",
+      "path": "lib/connection/direct/direct-connection.styles.js",
       "declarations": [
         {
           "name": "DirectConnectionStyles",
@@ -1427,14 +1379,14 @@
           "name": "DirectConnectionStyles",
           "declaration": {
             "name": "DirectConnectionStyles",
-            "module": "packages/components/lib/connection/direct/direct-connection.styles.js"
+            "module": "lib/connection/direct/direct-connection.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/professional/professional-connection.js",
+      "path": "lib/connection/professional/professional-connection.js",
       "declarations": [
         {
           "name": "ProfessionalConnection",
@@ -1455,13 +1407,7 @@
             {
               "name": "professionalConnectionType",
               "type": {
-                "text": "keyof typeof ProfessionalConnectionTypes",
-                "references": [
-                  {
-                    "name": "ProfessionalConnectionType",
-                    "package": "@fnc314/packages.types"
-                  }
-                ]
+                "text": "ProfessionalConnectionType"
               },
               "default": "\"\" as ProfessionalConnectionType",
               "kind": "field"
@@ -1469,13 +1415,7 @@
             {
               "name": "professionalConnectionData",
               "type": {
-                "text": "{\n  href: string;\n  designToken: MaskableDesignTokenIcon;\n  title: string;\n}",
-                "references": [
-                  {
-                    "name": "ProfessionalConnectionJsonData",
-                    "package": "@fnc314/packages.types"
-                  }
-                ]
+                "text": "ProfessionalConnectionJsonData"
               },
               "default": "{} as ProfessionalConnectionJsonData",
               "kind": "field"
@@ -1501,7 +1441,7 @@
           "name": "professional-connection",
           "declaration": {
             "name": "ProfessionalConnection",
-            "module": "packages/components/lib/connection/professional/professional-connection.js"
+            "module": "lib/connection/professional/professional-connection.js"
           }
         },
         {
@@ -1509,14 +1449,14 @@
           "name": "ProfessionalConnection",
           "declaration": {
             "name": "ProfessionalConnection",
-            "module": "packages/components/lib/connection/professional/professional-connection.js"
+            "module": "lib/connection/professional/professional-connection.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/professional/professional-connection.styles.js",
+      "path": "lib/connection/professional/professional-connection.styles.js",
       "declarations": [
         {
           "name": "ProfessionalConnectionStyles",
@@ -1532,14 +1472,14 @@
           "name": "ProfessionalConnectionStyles",
           "declaration": {
             "name": "ProfessionalConnectionStyles",
-            "module": "packages/components/lib/connection/professional/professional-connection.styles.js"
+            "module": "lib/connection/professional/professional-connection.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/education/institution/education-institution.js",
+      "path": "lib/education/institution/education-institution.js",
       "declarations": [
         {
           "name": "EducationInstitution",
@@ -1586,7 +1526,7 @@
           "name": "education-institution",
           "declaration": {
             "name": "EducationInstitution",
-            "module": "packages/components/lib/education/institution/education-institution.js"
+            "module": "lib/education/institution/education-institution.js"
           }
         },
         {
@@ -1594,14 +1534,14 @@
           "name": "EducationInstitution",
           "declaration": {
             "name": "EducationInstitution",
-            "module": "packages/components/lib/education/institution/education-institution.js"
+            "module": "lib/education/institution/education-institution.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/education/institution/education-institution.styles.js",
+      "path": "lib/education/institution/education-institution.styles.js",
       "declarations": [
         {
           "name": "EducationInstitutionStyles",
@@ -1617,21 +1557,21 @@
           "name": "EducationInstitutionStyles",
           "declaration": {
             "name": "EducationInstitutionStyles",
-            "module": "packages/components/lib/education/institution/education-institution.styles.js"
+            "module": "lib/education/institution/education-institution.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/index.js",
+      "path": "lib/index.js",
       "exports": [
         {
           "kind": "js",
           "name": "BentoLayout",
           "declaration": {
             "name": "BentoLayout",
-            "module": "packages/components/lib/bento-layout/bento-layout"
+            "module": "lib/bento-layout/bento-layout"
           }
         },
         {
@@ -1639,7 +1579,7 @@
           "name": "BentoLayoutStyles",
           "declaration": {
             "name": "BentoLayoutStyles",
-            "module": "packages/components/lib/bento-layout/bento-layout.styles"
+            "module": "lib/bento-layout/bento-layout.styles"
           }
         },
         {
@@ -1647,7 +1587,7 @@
           "name": "BENTO_BOX_CONFIG",
           "declaration": {
             "name": "BENTO_BOX_CONFIG",
-            "module": "packages/components/lib/bento-layout/bento-layout.types"
+            "module": "lib/bento-layout/bento-layout.types"
           }
         },
         {
@@ -1655,7 +1595,7 @@
           "name": "BentoCard",
           "declaration": {
             "name": "BentoCard",
-            "module": "packages/components/lib/card/bento/bento-card"
+            "module": "lib/card/bento/bento-card"
           }
         },
         {
@@ -1663,7 +1603,7 @@
           "name": "BentoCardStyles",
           "declaration": {
             "name": "BentoCardStyles",
-            "module": "packages/components/lib/card/bento/bento-card.styles"
+            "module": "lib/card/bento/bento-card.styles"
           }
         },
         {
@@ -1671,7 +1611,7 @@
           "name": "BlogCard",
           "declaration": {
             "name": "BlogCard",
-            "module": "packages/components/lib/card/blog/blog-card"
+            "module": "lib/card/blog/blog-card"
           }
         },
         {
@@ -1679,7 +1619,7 @@
           "name": "BlogCardStyles",
           "declaration": {
             "name": "BlogCardStyles",
-            "module": "packages/components/lib/card/blog/blog-card.styles"
+            "module": "lib/card/blog/blog-card.styles"
           }
         },
         {
@@ -1687,7 +1627,7 @@
           "name": "CodeCard",
           "declaration": {
             "name": "CodeCard",
-            "module": "packages/components/lib/card/code/code-card"
+            "module": "lib/card/code/code-card"
           }
         },
         {
@@ -1695,7 +1635,7 @@
           "name": "CodeCardStyles",
           "declaration": {
             "name": "CodeCardStyles",
-            "module": "packages/components/lib/card/code/code-card.styles"
+            "module": "lib/card/code/code-card.styles"
           }
         },
         {
@@ -1703,7 +1643,7 @@
           "name": "EducationCard",
           "declaration": {
             "name": "EducationCard",
-            "module": "packages/components/lib/card/education/education-card"
+            "module": "lib/card/education/education-card"
           }
         },
         {
@@ -1711,7 +1651,7 @@
           "name": "EducationCardStyles",
           "declaration": {
             "name": "EducationCardStyles",
-            "module": "packages/components/lib/card/education/education-card.styles"
+            "module": "lib/card/education/education-card.styles"
           }
         },
         {
@@ -1719,7 +1659,7 @@
           "name": "ExperienceCard",
           "declaration": {
             "name": "ExperienceCard",
-            "module": "packages/components/lib/card/experience/experience-card"
+            "module": "lib/card/experience/experience-card"
           }
         },
         {
@@ -1727,7 +1667,7 @@
           "name": "WorkCardStyles",
           "declaration": {
             "name": "WorkCardStyles",
-            "module": "packages/components/lib/card/experience/experience-card.styles"
+            "module": "lib/card/experience/experience-card.styles"
           }
         },
         {
@@ -1735,7 +1675,7 @@
           "name": "ProfileCard",
           "declaration": {
             "name": "ProfileCard",
-            "module": "packages/components/lib/card/profile/profile-card"
+            "module": "lib/card/profile/profile-card"
           }
         },
         {
@@ -1743,7 +1683,7 @@
           "name": "ProfileCardStyles",
           "declaration": {
             "name": "ProfileCardStyles",
-            "module": "packages/components/lib/card/profile/profile-card.styles"
+            "module": "lib/card/profile/profile-card.styles"
           }
         },
         {
@@ -1751,7 +1691,7 @@
           "name": "SettingsCard",
           "declaration": {
             "name": "SettingsCard",
-            "module": "packages/components/lib/card/settings/settings-card"
+            "module": "lib/card/settings/settings-card"
           }
         },
         {
@@ -1759,7 +1699,7 @@
           "name": "SettingsCardStyles",
           "declaration": {
             "name": "SettingsCardStyles",
-            "module": "packages/components/lib/card/settings/settings-card.styles"
+            "module": "lib/card/settings/settings-card.styles"
           }
         },
         {
@@ -1767,7 +1707,7 @@
           "name": "SkillsCard",
           "declaration": {
             "name": "SkillsCard",
-            "module": "packages/components/lib/card/skills/skills-card"
+            "module": "lib/card/skills/skills-card"
           }
         },
         {
@@ -1775,7 +1715,7 @@
           "name": "SkillsCardStyles",
           "declaration": {
             "name": "SkillsCardStyles",
-            "module": "packages/components/lib/card/skills/skills-card.styles"
+            "module": "lib/card/skills/skills-card.styles"
           }
         },
         {
@@ -1783,7 +1723,7 @@
           "name": "CodeRepo",
           "declaration": {
             "name": "CodeRepo",
-            "module": "packages/components/lib/code/repo/code-repo"
+            "module": "lib/code/repo/code-repo"
           }
         },
         {
@@ -1791,7 +1731,7 @@
           "name": "CodeRepoStyles",
           "declaration": {
             "name": "CodeRepoStyles",
-            "module": "packages/components/lib/code/repo/code-repo.styles"
+            "module": "lib/code/repo/code-repo.styles"
           }
         },
         {
@@ -1799,7 +1739,7 @@
           "name": "ArtifactConnection",
           "declaration": {
             "name": "ArtifactConnection",
-            "module": "packages/components/lib/connection/artifact/artifact-connection"
+            "module": "lib/connection/artifact/artifact-connection"
           }
         },
         {
@@ -1807,7 +1747,7 @@
           "name": "ConnectionArtifactStyles",
           "declaration": {
             "name": "ConnectionArtifactStyles",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.styles"
+            "module": "lib/connection/artifact/artifact-connection.styles"
           }
         },
         {
@@ -1815,7 +1755,7 @@
           "name": "DirectConnection",
           "declaration": {
             "name": "DirectConnection",
-            "module": "packages/components/lib/connection/direct/direct-connection"
+            "module": "lib/connection/direct/direct-connection"
           }
         },
         {
@@ -1823,7 +1763,7 @@
           "name": "DirectConnectionStyles",
           "declaration": {
             "name": "DirectConnectionStyles",
-            "module": "packages/components/lib/connection/direct/direct-connection.styles"
+            "module": "lib/connection/direct/direct-connection.styles"
           }
         },
         {
@@ -1831,7 +1771,7 @@
           "name": "ProfessionalConnection",
           "declaration": {
             "name": "ProfessionalConnection",
-            "module": "packages/components/lib/connection/professional/professional-connection"
+            "module": "lib/connection/professional/professional-connection"
           }
         },
         {
@@ -1839,7 +1779,7 @@
           "name": "ProfessionalConnectionStyles",
           "declaration": {
             "name": "ProfessionalConnectionStyles",
-            "module": "packages/components/lib/connection/professional/professional-connection.styles"
+            "module": "lib/connection/professional/professional-connection.styles"
           }
         },
         {
@@ -1847,7 +1787,7 @@
           "name": "EducationInstitution",
           "declaration": {
             "name": "EducationInstitution",
-            "module": "packages/components/lib/education/institution/education-institution"
+            "module": "lib/education/institution/education-institution"
           }
         },
         {
@@ -1855,7 +1795,7 @@
           "name": "EducationInstitutionStyles",
           "declaration": {
             "name": "EducationInstitutionStyles",
-            "module": "packages/components/lib/education/institution/education-institution.styles"
+            "module": "lib/education/institution/education-institution.styles"
           }
         },
         {
@@ -1863,7 +1803,7 @@
           "name": "SizeObserverElement",
           "declaration": {
             "name": "SizeObserverElement",
-            "module": "packages/components/lib/mixins/size-observer-element/size-observer-element"
+            "module": "lib/mixins/size-observer-element/size-observer-element"
           }
         },
         {
@@ -1871,7 +1811,7 @@
           "name": "UIAwareElement",
           "declaration": {
             "name": "UIAwareElement",
-            "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element"
+            "module": "lib/mixins/ui-aware-element/ui-aware-element"
           }
         },
         {
@@ -1879,7 +1819,7 @@
           "name": "BlogEntry",
           "declaration": {
             "name": "BlogEntry",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry"
+            "module": "lib/publication/blog/entry/blog-entry"
           }
         },
         {
@@ -1887,7 +1827,7 @@
           "name": "BlogEntryStyles",
           "declaration": {
             "name": "BlogEntryStyles",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.styles"
+            "module": "lib/publication/blog/entry/blog-entry.styles"
           }
         },
         {
@@ -1895,7 +1835,7 @@
           "name": "DynamicBorderStyles",
           "declaration": {
             "name": "DynamicBorderStyles",
-            "module": "packages/components/lib/styles/dynamic-border"
+            "module": "lib/styles/dynamic-border"
           }
         },
         {
@@ -1903,7 +1843,7 @@
           "name": "TextStyles",
           "declaration": {
             "name": "TextStyles",
-            "module": "packages/components/lib/styles/text"
+            "module": "lib/styles/text"
           }
         },
         {
@@ -1911,7 +1851,7 @@
           "name": "UiModeToggle",
           "declaration": {
             "name": "UiModeToggle",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle"
+            "module": "lib/ui-mode-toggle/ui-mode-toggle"
           }
         },
         {
@@ -1919,7 +1859,7 @@
           "name": "UIModeToggleStyles",
           "declaration": {
             "name": "UIModeToggleStyles",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles"
+            "module": "lib/ui-mode-toggle/ui-mode-toggle.styles"
           }
         },
         {
@@ -1927,7 +1867,7 @@
           "name": "VersionTag",
           "declaration": {
             "name": "VersionTag",
-            "module": "packages/components/lib/version-tag/version-tag"
+            "module": "lib/version-tag/version-tag"
           }
         },
         {
@@ -1935,7 +1875,7 @@
           "name": "WordCloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "packages/components/lib/word/cloud/word-cloud"
+            "module": "lib/word/cloud/word-cloud"
           }
         },
         {
@@ -1943,7 +1883,7 @@
           "name": "WordCloudStyles",
           "declaration": {
             "name": "WordCloudStyles",
-            "module": "packages/components/lib/word/cloud/word-cloud.styles"
+            "module": "lib/word/cloud/word-cloud.styles"
           }
         },
         {
@@ -1951,7 +1891,7 @@
           "name": "WordCloudAppearances",
           "declaration": {
             "name": "WordCloudAppearances",
-            "module": "packages/components/lib/word/cloud/word-cloud.types"
+            "module": "lib/word/cloud/word-cloud.types"
           }
         },
         {
@@ -1959,7 +1899,7 @@
           "name": "WordTag",
           "declaration": {
             "name": "WordTag",
-            "module": "packages/components/lib/word/tag/word-tag"
+            "module": "lib/word/tag/word-tag"
           }
         },
         {
@@ -1967,7 +1907,7 @@
           "name": "WordTagStyles",
           "declaration": {
             "name": "WordTagStyles",
-            "module": "packages/components/lib/word/tag/word-tag.styles"
+            "module": "lib/word/tag/word-tag.styles"
           }
         },
         {
@@ -1975,7 +1915,7 @@
           "name": "WordTagVariantAttributeConverter",
           "declaration": {
             "name": "WordTagVariantAttributeConverter",
-            "module": "packages/components/lib/word/tag/word-tag.types"
+            "module": "lib/word/tag/word-tag.types"
           }
         },
         {
@@ -1983,7 +1923,7 @@
           "name": "WorkExperience",
           "declaration": {
             "name": "WorkExperience",
-            "module": "packages/components/lib/work/experience/work-experience"
+            "module": "lib/work/experience/work-experience"
           }
         },
         {
@@ -1991,14 +1931,14 @@
           "name": "WorkExperienceStyles",
           "declaration": {
             "name": "WorkExperienceStyles",
-            "module": "packages/components/lib/work/experience/work-experience.styles"
+            "module": "lib/work/experience/work-experience.styles"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/mixins/size-observer-element/size-observer-element.js",
+      "path": "lib/mixins/size-observer-element/size-observer-element.js",
       "declarations": [
         {
           "parameters": [
@@ -2019,18 +1959,18 @@
           "name": "SizeObserverElement",
           "declaration": {
             "name": "SizeObserverElement",
-            "module": "packages/components/lib/mixins/size-observer-element/size-observer-element.js"
+            "module": "lib/mixins/size-observer-element/size-observer-element.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.js"
+      "path": "lib/mixins/ui-aware-element/ui-aware-element.js"
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/publication/blog/entry/blog-entry.js",
+      "path": "lib/publication/blog/entry/blog-entry.js",
       "declarations": [
         {
           "name": "BlogEntry",
@@ -2070,7 +2010,7 @@
           "name": "blog-entry",
           "declaration": {
             "name": "BlogEntry",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.js"
+            "module": "lib/publication/blog/entry/blog-entry.js"
           }
         },
         {
@@ -2078,14 +2018,14 @@
           "name": "BlogEntry",
           "declaration": {
             "name": "BlogEntry",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.js"
+            "module": "lib/publication/blog/entry/blog-entry.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/publication/blog/entry/blog-entry.styles.js",
+      "path": "lib/publication/blog/entry/blog-entry.styles.js",
       "declarations": [
         {
           "name": "BlogEntryStyles",
@@ -2101,14 +2041,14 @@
           "name": "BlogEntryStyles",
           "declaration": {
             "name": "BlogEntryStyles",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.styles.js"
+            "module": "lib/publication/blog/entry/blog-entry.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/dynamic-border.js",
+      "path": "lib/styles/dynamic-border.js",
       "declarations": [
         {
           "name": "DynamicBorderStyles",
@@ -2124,21 +2064,21 @@
           "name": "DynamicBorderStyles",
           "declaration": {
             "name": "DynamicBorderStyles",
-            "module": "packages/components/lib/styles/dynamic-border.js"
+            "module": "lib/styles/dynamic-border.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/index.js",
+      "path": "lib/styles/index.js",
       "exports": [
         {
           "kind": "js",
           "name": "DynamicBorderStyles",
           "declaration": {
             "name": "DynamicBorderStyles",
-            "module": "packages/components/lib/styles/dynamic-border"
+            "module": "lib/styles/dynamic-border"
           }
         },
         {
@@ -2146,14 +2086,14 @@
           "name": "TextStyles",
           "declaration": {
             "name": "TextStyles",
-            "module": "packages/components/lib/styles/text"
+            "module": "lib/styles/text"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/text.js",
+      "path": "lib/styles/text.js",
       "declarations": [
         {
           "name": "TextStyles",
@@ -2170,14 +2110,14 @@
           "name": "TextStyles",
           "declaration": {
             "name": "TextStyles",
-            "module": "packages/components/lib/styles/text.js"
+            "module": "lib/styles/text.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.js",
+      "path": "lib/ui-mode-toggle/ui-mode-toggle.js",
       "declarations": [
         {
           "name": "UiModeToggle",
@@ -2383,7 +2323,7 @@
           "name": "ui-mode-toggle",
           "declaration": {
             "name": "UiModeToggle",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.js"
+            "module": "lib/ui-mode-toggle/ui-mode-toggle.js"
           }
         },
         {
@@ -2391,14 +2331,14 @@
           "name": "UiModeToggle",
           "declaration": {
             "name": "UiModeToggle",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.js"
+            "module": "lib/ui-mode-toggle/ui-mode-toggle.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.js",
+      "path": "lib/ui-mode-toggle/ui-mode-toggle.styles.js",
       "declarations": [
         {
           "name": "UIModeToggleStyles",
@@ -2414,18 +2354,14 @@
           "name": "UIModeToggleStyles",
           "declaration": {
             "name": "UIModeToggleStyles",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.js"
+            "module": "lib/ui-mode-toggle/ui-mode-toggle.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/version-tag/version-tag.js",
+      "path": "lib/version-tag/version-tag.js",
       "declarations": [
         {
           "name": "VersionTag",
@@ -2483,7 +2419,7 @@
           "name": "version-tag",
           "declaration": {
             "name": "VersionTag",
-            "module": "packages/components/lib/version-tag/version-tag.js"
+            "module": "lib/version-tag/version-tag.js"
           }
         },
         {
@@ -2491,18 +2427,14 @@
           "name": "VersionTag",
           "declaration": {
             "name": "VersionTag",
-            "module": "packages/components/lib/version-tag/version-tag.js"
+            "module": "lib/version-tag/version-tag.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/version-tag/version-tag.test.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.js",
+      "path": "lib/word/cloud/word-cloud.js",
       "declarations": [
         {
           "name": "WordCloud",
@@ -2719,7 +2651,7 @@
           "name": "word-cloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "packages/components/lib/word/cloud/word-cloud.js"
+            "module": "lib/word/cloud/word-cloud.js"
           }
         },
         {
@@ -2727,14 +2659,14 @@
           "name": "WordCloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "packages/components/lib/word/cloud/word-cloud.js"
+            "module": "lib/word/cloud/word-cloud.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.styles.js",
+      "path": "lib/word/cloud/word-cloud.styles.js",
       "declarations": [
         {
           "name": "WordCloudStyles",
@@ -2750,14 +2682,14 @@
           "name": "WordCloudStyles",
           "declaration": {
             "name": "WordCloudStyles",
-            "module": "packages/components/lib/word/cloud/word-cloud.styles.js"
+            "module": "lib/word/cloud/word-cloud.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.types.js",
+      "path": "lib/word/cloud/word-cloud.types.js",
       "declarations": [
         {
           "name": "WordCloudGroupings",
@@ -2790,7 +2722,7 @@
           "name": "WordCloudGroupings",
           "declaration": {
             "name": "WordCloudGroupings",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.js"
+            "module": "lib/word/cloud/word-cloud.types.js"
           }
         },
         {
@@ -2798,7 +2730,7 @@
           "name": "WordCloudSortings",
           "declaration": {
             "name": "WordCloudSortings",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.js"
+            "module": "lib/word/cloud/word-cloud.types.js"
           }
         },
         {
@@ -2806,7 +2738,7 @@
           "name": "WordCloudAppearances",
           "declaration": {
             "name": "WordCloudAppearances",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.js"
+            "module": "lib/word/cloud/word-cloud.types.js"
           }
         },
         {
@@ -2814,14 +2746,14 @@
           "name": "makeWordCloudWord",
           "declaration": {
             "name": "makeWordCloudWord",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.js"
+            "module": "lib/word/cloud/word-cloud.types.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.js",
+      "path": "lib/word/tag/word-tag.js",
       "declarations": [
         {
           "name": "WordTag",
@@ -2951,7 +2883,7 @@
           "name": "word-tag",
           "declaration": {
             "name": "WordTag",
-            "module": "packages/components/lib/word/tag/word-tag.js"
+            "module": "lib/word/tag/word-tag.js"
           }
         },
         {
@@ -2959,14 +2891,14 @@
           "name": "WordTag",
           "declaration": {
             "name": "WordTag",
-            "module": "packages/components/lib/word/tag/word-tag.js"
+            "module": "lib/word/tag/word-tag.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.styles.js",
+      "path": "lib/word/tag/word-tag.styles.js",
       "declarations": [
         {
           "name": "WordTagStyles",
@@ -2982,14 +2914,14 @@
           "name": "WordTagStyles",
           "declaration": {
             "name": "WordTagStyles",
-            "module": "packages/components/lib/word/tag/word-tag.styles.js"
+            "module": "lib/word/tag/word-tag.styles.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.types.js",
+      "path": "lib/word/tag/word-tag.types.js",
       "declarations": [
         {
           "name": "WordTagVariantAttributeConverter",
@@ -3006,14 +2938,14 @@
           "name": "WordTagVariantAttributeConverter",
           "declaration": {
             "name": "WordTagVariantAttributeConverter",
-            "module": "packages/components/lib/word/tag/word-tag.types.js"
+            "module": "lib/word/tag/word-tag.types.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/work/experience/work-experience.js",
+      "path": "lib/work/experience/work-experience.js",
       "declarations": [
         {
           "name": "WorkExperience",
@@ -3117,7 +3049,7 @@
           "name": "work-experience",
           "declaration": {
             "name": "WorkExperience",
-            "module": "packages/components/lib/work/experience/work-experience.js"
+            "module": "lib/work/experience/work-experience.js"
           }
         },
         {
@@ -3125,14 +3057,14 @@
           "name": "WorkExperience",
           "declaration": {
             "name": "WorkExperience",
-            "module": "packages/components/lib/work/experience/work-experience.js"
+            "module": "lib/work/experience/work-experience.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/work/experience/work-experience.styles.js",
+      "path": "lib/work/experience/work-experience.styles.js",
       "declarations": [
         {
           "name": "WorkExperienceStyles",
@@ -3148,982 +3080,7 @@
           "name": "WorkExperienceStyles",
           "declaration": {
             "name": "WorkExperienceStyles",
-            "module": "packages/components/lib/work/experience/work-experience.styles.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/bio/index.js",
-      "declarations": [
-        {
-          "name": "Biographies",
-          "type": {
-            "text": ": Bio"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Biographies",
-          "declaration": {
-            "name": "Biographies",
-            "module": "packages/data/lib/bio/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/blog/index.js",
-      "declarations": [
-        {
-          "name": "Blogs",
-          "type": {
-            "text": ": BlogEntryJson[]"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Blogs",
-          "declaration": {
-            "name": "Blogs",
-            "module": "packages/data/lib/blog/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/code/index.js",
-      "declarations": [
-        {
-          "name": "Projects",
-          "type": {
-            "text": ": CodeRepoData[]"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Projects",
-          "declaration": {
-            "name": "Projects",
-            "module": "packages/data/lib/code/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/connections/index.js",
-      "declarations": [
-        {
-          "name": "Connections",
-          "type": {
-            "text": ": {\n  direct: {\n    phone: ConnectionInstance,\n    email: ConnectionInstance\n  },\n  social: {\n    linkedIn: ProfessionalConnectionJsonData,\n    github: ProfessionalConnectionJsonData,\n    medium: ProfessionalConnectionJsonData,\n  },\n  resume: {\n    googleDoc: ArtifactConnectionData,\n    pdf: ArtifactConnectionData,\n  }\n}"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Connections",
-          "declaration": {
-            "name": "Connections",
-            "module": "packages/data/lib/connections/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/education/index.js",
-      "declarations": [
-        {
-          "name": "EducationJsonData",
-          "type": {
-            "text": ": EducationInstitutionRecord[]"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "EducationJsonData",
-          "declaration": {
-            "name": "EducationJsonData",
-            "module": "packages/data/lib/education/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/experience/index.js",
-      "declarations": [
-        {
-          "name": "Experiences",
-          "type": {
-            "text": ": Experience[]"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Experiences",
-          "declaration": {
-            "name": "Experiences",
-            "module": "packages/data/lib/experience/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/photo/index.js",
-      "declarations": [
-        {
-          "name": "Photos",
-          "type": {
-            "text": ": PhotosJson"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Photos",
-          "declaration": {
-            "name": "Photos",
-            "module": "packages/data/lib/photo/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/data/lib/skills/index.js",
-      "declarations": [
-        {
-          "name": "Skills",
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Skills",
-          "declaration": {
-            "name": "Skills",
-            "module": "packages/data/lib/skills/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/design-tokens/lib/breakpoints.js",
-      "declarations": [
-        {
-          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
-          "description": "The CSS Variable changed across device breakpoints",
-          "type": {
-            "text": ": string"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "BREAKPOINT_LABELS",
-          "description": "Iterable set of {@link BreakpointLabel}",
-          "type": {
-            "text": ": BreakpointLabel[]"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "BreakpointLabels",
-          "description": "Type-safe constants exposed to perform checks",
-          "kind": "variable"
-        },
-        {
-          "name": "BREAKPOINTS",
-          "description": "A static implementation of {@link Breakpoints}",
-          "type": {
-            "text": "Breakpoints"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
-          "declaration": {
-            "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
-            "module": "packages/design-tokens/lib/breakpoints.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "BREAKPOINT_LABELS",
-          "declaration": {
-            "name": "BREAKPOINT_LABELS",
-            "module": "packages/design-tokens/lib/breakpoints.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "BreakpointLabels",
-          "declaration": {
-            "name": "BreakpointLabels",
-            "module": "packages/design-tokens/lib/breakpoints.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "BREAKPOINTS",
-          "declaration": {
-            "name": "BREAKPOINTS",
-            "module": "packages/design-tokens/lib/breakpoints.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/design-tokens/lib/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/design-tokens/lib/read-css-property.js",
-      "declarations": [
-        {
-          "parameters": [
-            {
-              "name": "property",
-              "description": "- The particular `CSS` property\nof interest",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "return": {
-            "description": "A `string` from `CSS` or an empty `string`"
-          },
-          "name": "readCSSProperty",
-          "description": "Returns the value of the provided {@link property}",
-          "kind": "function"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "readCSSProperty",
-          "declaration": {
-            "name": "readCSSProperty",
-            "module": "packages/design-tokens/lib/read-css-property.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/design-tokens/lib/touch-screen.js",
-      "declarations": [
-        {
-          "name": "CSS_VARIABLE_TOUCH_SCREEN",
-          "description": "The CSS Variable set by `@media` query of `screen` and `pointer: coarse`",
-          "type": {
-            "text": ": string"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CSS_VARIABLE_TOUCH_SCREEN",
-          "declaration": {
-            "name": "CSS_VARIABLE_TOUCH_SCREEN",
-            "module": "packages/design-tokens/lib/touch-screen.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/configs/index.js",
-      "declarations": [
-        {
-          "name": "configsService",
-          "type": {
-            "text": ": ConfigsService"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "ConfigsServiceImpl",
-          "superclass": {
-            "name": "EventTarget"
-          },
-          "members": [
-            {
-              "parameters": [
-                {
-                  "name": "configs",
-                  "type": {
-                    "text": "AppConfigs"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "saveConfigs",
-              "kind": "method"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "AppConfigs"
-                }
-              },
-              "name": "loadConfigs",
-              "kind": "method"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "resetConfigs",
-              "kind": "method"
-            }
-          ],
-          "kind": "class"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "configsService",
-          "declaration": {
-            "name": "configsService",
-            "module": "packages/services/lib/configs/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/storage/index.js",
-      "declarations": [
-        {
-          "name": "storageService",
-          "type": {
-            "text": ": StorageService"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "StorageServiceImpl",
-          "members": [
-            {
-              "parameters": [
-                {
-                  "name": "key",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "data",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "saveData",
-              "kind": "method"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "key",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "defaultValue",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "{ value: string; isDefault: boolean; }"
-                }
-              },
-              "name": "getData",
-              "kind": "method"
-            },
-            {
-              "parameters": [
-                {
-                  "name": "key",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "name": "clearData",
-              "kind": "method"
-            }
-          ],
-          "kind": "class"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "storageService",
-          "declaration": {
-            "name": "storageService",
-            "module": "packages/services/lib/storage/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/chicago/index.js",
-      "declarations": [
-        {
-          "name": "ChicagoThemeConfig",
-          "type": {
-            "text": ": ThemeConfig"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ChicagoThemeConfig",
-          "declaration": {
-            "name": "ChicagoThemeConfig",
-            "module": "packages/services/lib/theme/chicago/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/index.js",
-      "declarations": [
-        {
-          "name": "THEME_CONFIGS",
-          "type": {
-            "text": ": ThemeConfigs"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "themeService",
-          "type": {
-            "text": ": ThemeService"
-          },
-          "kind": "variable"
-        },
-        {
-          "name": "MaterialCSSStyleSheet",
-          "type": {
-            "text": ": CSSStyleSheet"
-          },
-          "kind": "variable"
-        },
-        {
-          "parameters": [
-            {
-              "name": "event",
-              "type": {
-                "text": "MediaQueryListEvent"
-              }
-            }
-          ],
-          "name": "onThemeChange",
-          "kind": "function"
-        },
-        {
-          "parameters": [
-            {
-              "name": "colorSchemeSettings",
-              "type": {
-                "text": "ColorSchemeConfigs"
-              }
-            }
-          ],
-          "name": "colorSchemeConfigsToMaterialSchemeName",
-          "kind": "function"
-        },
-        {
-          "name": "ThemeServiceImpl",
-          "members": [
-            {
-              "return": {
-                "type": {
-                  "text": "ThemeConfig"
-                }
-              },
-              "name": "currentThemeConfig",
-              "kind": "method"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "\"light\" | \"light-medium-contrast\" | \"light-high-contrast\" | \"dark\" | \"dark-medium-contrast\" | \"dark-high-contrast\"",
-                  "references": [
-                    {
-                      "name": "MaterialSchemeNames",
-                      "package": "@fnc314/packages.types"
-                    }
-                  ]
-                }
-              },
-              "name": "currentMaterialSchemeName",
-              "kind": "method"
-            },
-            {
-              "return": {
-                "type": {
-                  "text": "Record\u003cColorSchemeRoles, ColorString\u003e"
-                }
-              },
-              "name": "themeJson",
-              "kind": "method"
-            }
-          ],
-          "kind": "class"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "THEME_CONFIGS",
-          "declaration": {
-            "name": "THEME_CONFIGS",
-            "module": "packages/services/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "themeService",
-          "declaration": {
-            "name": "themeService",
-            "module": "packages/services/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "MaterialCSSStyleSheet",
-          "declaration": {
-            "name": "MaterialCSSStyleSheet",
-            "module": "packages/services/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "onThemeChange",
-          "declaration": {
-            "name": "onThemeChange",
-            "module": "packages/services/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "colorSchemeConfigsToMaterialSchemeName",
-          "declaration": {
-            "name": "colorSchemeConfigsToMaterialSchemeName",
-            "module": "packages/services/lib/theme/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/inter/index.js",
-      "declarations": [
-        {
-          "name": "InterThemeConfig",
-          "type": {
-            "text": ": ThemeConfig"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "InterThemeConfig",
-          "declaration": {
-            "name": "InterThemeConfig",
-            "module": "packages/services/lib/theme/inter/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/red/index.js",
-      "declarations": [
-        {
-          "name": "RedThemeConfig",
-          "type": {
-            "text": ": ThemeConfig"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RedThemeConfig",
-          "declaration": {
-            "name": "RedThemeConfig",
-            "module": "packages/services/lib/theme/red/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/sunset/index.js",
-      "declarations": [
-        {
-          "name": "SunsetThemeConfig",
-          "type": {
-            "text": ": ThemeConfig"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "SunsetThemeConfig",
-          "declaration": {
-            "name": "SunsetThemeConfig",
-            "module": "packages/services/lib/theme/sunset/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/services/lib/theme/utils.js",
-      "declarations": [
-        {
-          "parameters": [
-            {
-              "name": "slot",
-              "type": {
-                "text": "\"start\" | \"leading-icon\""
-              }
-            }
-          ],
-          "name": "colorSchemeContrastToIcon",
-          "kind": "function"
-        },
-        {
-          "parameters": [
-            {
-              "name": "json",
-              "description": "- Input of an unknown type, ideally conforming to a Material 3 JSON scheme",
-              "type": {
-                "text": "unknown"
-              }
-            }
-          ],
-          "return": {
-            "description": "A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}"
-          },
-          "name": "jsonIsThemeJsonSchemes",
-          "description": "Checks if the provided JSON conforms to the expected theme schemes structure",
-          "kind": "function"
-        },
-        {
-          "parameters": [
-            {
-              "name": "jsonSchema",
-              "type": {
-                "text": "object"
-              }
-            }
-          ],
-          "return": {
-            "type": {
-              "text": "lit!CSSResult"
-            },
-            "description": " A {@link lit!CSSResult} of the provided {@link jsonSchema}"
-          },
-          "name": "readScheme",
-          "description": "Reads a `.json` defined object and produces a {@link lit!CSSResult}",
-          "kind": "function"
-        },
-        {
-          "parameters": [
-            {
-              "name": "jsonKey",
-              "description": "- The key from the JSON scheme, e.g., \"primaryContainer\"",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "return": {
-            "type": {
-              "text": "lit!CSSResult"
-            },
-            "description": " - A CSSResult containing the custom property definition, e.g., \"--md-sys-color-primary-container: #FF0000;\""
-          },
-          "name": "keyTransform",
-          "description": "Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property\nvia {@link lit!css} and {@link lit!unsafeCSS} functions",
-          "kind": "function"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "colorSchemeContrastToIcon",
-          "declaration": {
-            "name": "colorSchemeContrastToIcon",
-            "module": "packages/services/lib/theme/utils.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "jsonIsThemeJsonSchemes",
-          "declaration": {
-            "name": "jsonIsThemeJsonSchemes",
-            "module": "packages/services/lib/theme/utils.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "readScheme",
-          "declaration": {
-            "name": "readScheme",
-            "module": "packages/services/lib/theme/utils.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "keyTransform",
-          "declaration": {
-            "name": "keyTransform",
-            "module": "packages/services/lib/theme/utils.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/bio/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/blog/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/code/index.js",
-      "declarations": [
-        {
-          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-          "description": "The `const` for the `CSS @property`",
-          "kind": "variable"
-        },
-        {
-          "name": "WORD_TAG_SIZES",
-          "description": "A {@link Record} of pre-defined values exposed as a custom `CSS @property`",
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-          "declaration": {
-            "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-            "module": "packages/types/lib/code/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WORD_TAG_SIZES",
-          "declaration": {
-            "name": "WORD_TAG_SIZES",
-            "module": "packages/types/lib/code/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/configs/index.js",
-      "declarations": [
-        {
-          "name": "DEFAULT_APP_CONFIGS",
-          "type": {
-            "text": ": AppConfigs"
-          },
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "DEFAULT_APP_CONFIGS",
-          "declaration": {
-            "name": "DEFAULT_APP_CONFIGS",
-            "module": "packages/types/lib/configs/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/connections/index.js",
-      "declarations": [
-        {
-          "name": "ArtifactConnections",
-          "kind": "variable"
-        },
-        {
-          "name": "ProfessionalConnectionTypes",
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ArtifactConnections",
-          "declaration": {
-            "name": "ArtifactConnections",
-            "module": "packages/types/lib/connections/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ProfessionalConnectionTypes",
-          "declaration": {
-            "name": "ProfessionalConnectionTypes",
-            "module": "packages/types/lib/connections/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/design-tokens/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/education/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/experience/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/index.js"
-    },
-    {
-      "kind": "javascript-module",
-      "path": "packages/types/lib/theme/index.js",
-      "declarations": [
-        {
-          "name": "CONFIG_COLOR_SCHEME_NAMES",
-          "kind": "variable"
-        },
-        {
-          "name": "CONFIG_COLOR_CONTRAST_NAMES",
-          "kind": "variable"
-        },
-        {
-          "name": "THEME_NAMES",
-          "kind": "variable"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CONFIG_COLOR_SCHEME_NAMES",
-          "declaration": {
-            "name": "CONFIG_COLOR_SCHEME_NAMES",
-            "module": "packages/types/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CONFIG_COLOR_CONTRAST_NAMES",
-          "declaration": {
-            "name": "CONFIG_COLOR_CONTRAST_NAMES",
-            "module": "packages/types/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "setRGBA",
-          "declaration": {
-            "name": "setRGBA",
-            "module": "packages/types/lib/theme/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "THEME_NAMES",
-          "declaration": {
-            "name": "THEME_NAMES",
-            "module": "packages/types/lib/theme/index.js"
+            "module": "lib/work/experience/work-experience.styles.js"
           }
         }
       ]

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/bio/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/blog/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/code/index.js",
+      "declarations": [
+        {
+          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+          "description": "The `const` for the `CSS @property`",
+          "kind": "variable"
+        },
+        {
+          "name": "WORD_TAG_SIZES",
+          "description": "A {@link Record} of pre-defined values exposed as a custom `CSS @property`",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+          "declaration": {
+            "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+            "module": "lib/code/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WORD_TAG_SIZES",
+          "declaration": {
+            "name": "WORD_TAG_SIZES",
+            "module": "lib/code/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/configs/index.js",
+      "declarations": [
+        {
+          "name": "DEFAULT_APP_CONFIGS",
+          "type": {
+            "text": ": AppConfigs"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DEFAULT_APP_CONFIGS",
+          "declaration": {
+            "name": "DEFAULT_APP_CONFIGS",
+            "module": "lib/configs/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/connections/index.js",
+      "declarations": [
+        {
+          "name": "ArtifactConnections",
+          "kind": "variable"
+        },
+        {
+          "name": "ProfessionalConnectionTypes",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ArtifactConnections",
+          "declaration": {
+            "name": "ArtifactConnections",
+            "module": "lib/connections/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ProfessionalConnectionTypes",
+          "declaration": {
+            "name": "ProfessionalConnectionTypes",
+            "module": "lib/connections/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/design-tokens/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/education/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/experience/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/theme/index.js",
+      "declarations": [
+        {
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "kind": "variable"
+        },
+        {
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "kind": "variable"
+        },
+        {
+          "name": "THEME_NAMES",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_SCHEME_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_SCHEME_NAMES",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CONFIG_COLOR_CONTRAST_NAMES",
+          "declaration": {
+            "name": "CONFIG_COLOR_CONTRAST_NAMES",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setRGBA",
+          "declaration": {
+            "name": "setRGBA",
+            "module": "lib/theme/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "THEME_NAMES",
+          "declaration": {
+            "name": "THEME_NAMES",
+            "module": "lib/theme/index.js"
+          }
+        }
+      ]
+    }
+  ]
+}
