@@ -1,7 +1,9 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "module": "NodeNext",
+    "alwaysStrict": true,
     "esModuleInterop": true,
+    "module": "NodeNext",
     "moduleResolution": "nodenext",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -9,8 +11,9 @@
     "rootDir": "src",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2025"
   },
-  "compileOnSave": true,
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

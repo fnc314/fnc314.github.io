@@ -173,7 +173,7 @@ minimumReleaseAgeExclude:
 nodeVersion: "26.4.0"
 packageManagerStrictVersion: true
 packages:
-  - "functions"
+  - "firebase/functions/node"
   - "packages/components"
   - "packages/data"
   - "packages/design-tokens"

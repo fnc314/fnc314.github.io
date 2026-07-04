@@ -1,5 +1,5 @@
 {
-  "name": "@fnc314/com-fnc314-website.functions",
+  "name": "@fnc314/functions.node",
   "version": "2.0.5",
   "private": true,
   "description": "Firebase Cloud Functions for www.fnc314.com",

@@ -3,8 +3,7 @@ monorepo_root = true
 [monorepo]
   config_roots = [
     ".",
-    "functions",
-    "functions-python",
+    "firebase/functions/node",
     "packages/components",
     "packages/data",
     "packages/design-tokens",
