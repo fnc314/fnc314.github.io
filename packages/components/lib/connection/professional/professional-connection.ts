@@ -32,10 +32,7 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}
       >
-        <span
-          style="${style.cssText}"
-          aria-label="${this.professionalConnectionType} Logo"
-        ></span>
+        <span style="${style.cssText}"></span>
       </md-filled-icon-button>
     `;
   }

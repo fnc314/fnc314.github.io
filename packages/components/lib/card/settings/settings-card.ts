@@ -104,7 +104,7 @@ export class SettingsCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.settings}
       >
         <div class="settings-content">
-          <form>
+          <form toolname="adjustSiteDisplayConfigurations" tooldescription="Adjusts the theme, light/dark/system mode (and persistence), and color-contrast levels for the site">
             <fieldset>
               <legend class="md-typescale-label-large">UI Theme</legend>
               <md-outlined-select

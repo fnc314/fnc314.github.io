@@ -171,6 +171,8 @@ export class UiModeToggle extends UIAwareElement {
         light="Light"
         dark="Dark"
         remember="Persist UI Variant"
+        toolname="adjustSiteMode"
+        tooldescription="Toggle the site between system/light/dark mode and choice persistence"
       ></dark-mode-toggle>
     `;
   }
