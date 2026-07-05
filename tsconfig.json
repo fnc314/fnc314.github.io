@@ -68,7 +68,6 @@
             //     "and use the ! pattern to ignore manifests"
           ],
           //   "timeout": 2000,
-          "src": "./src"
         }
       }
     ],

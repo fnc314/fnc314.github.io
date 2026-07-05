@@ -39,25 +39,24 @@ mkdir -p docs/mise/tasks
 mise generate task-docs -m -o docs/mise/tasks
 echo
 
-# [[ "$LOG_STEP" == "mise-tasks-design-tokens" || "$LOG_STEP" == "log-all" ]] && create_log "mise-tasks/design-tokens"
-# echo "Recreate Mise Task Docs - Design Tokens"
-# mkdir -p docs/mise/tasks/design-tokens
-# mise generate task-docs -m -o docs/mise/tasks/design-tokens -C design-tokens
-# echo
-
-# [[ "$LOG_STEP" == "typescript-types" || "$LOG_STEP" == "log-all" ]] && create_log "typescript-types"
-# echo "Recreate TypeScript \`.d.ts\` files"
-# pnpm tsc --declaration --declarationMap false -p ./tsconfig.no-test.json
-# echo
-
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
 echo "dx:cem-analyze"
 NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs
 echo
 
-[[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "pwrs/cem"
-echo "dx:@pwrs:cem:generate"
-NODE_ENV=development pnpx @pwrs/cem generate --config .config/@pwrs/cem/cem.yaml -vvv -p .
+[[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "@pwrs/cem"
+echo "//:dev-ex:tools:@pwrs:cem:generate"
+declare PWRS_CEM_GENERATE_ARGS=(
+  --trace
+)
+
+if [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]]; then
+  PWRS_CEM_GENERATE_ARGS+=(
+    -l
+  )
+fi
+printf "Running //:dev-ex:tools:@pwrs:cem:generate with %s\n" "${PWRS_CEM_GENERATE_ARGS[@]}"
+mise run //:dev-ex:tools:@pwrs:cem:generate "${PWRS_CEM_GENERATE_ARGS[@]}"
 echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"

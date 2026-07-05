@@ -1,7 +1,7 @@
 import eslint from "@eslint/js";
-import lit from "eslint-plugin-lit";
+import lit, { configs as LitConfigs } from "eslint-plugin-lit";
 import tsdoc from "eslint-plugin-tsdoc";
-import wc from "eslint-plugin-wc";
+import wc, { configs as WCConfigs } from "eslint-plugin-wc";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import path from "node:path";
@@ -15,8 +15,8 @@ const rootDir = path.resolve(__dirname, "../../");
 const tsRules = {
   ...tseslint.configs.recommendedTypeChecked.find(c => c.rules)?.rules,
   ...tseslint.configs.stylisticTypeChecked.find(c => c.rules)?.rules,
-  ...wc.configs["flat/recommended"].rules,
-  ...lit.configs["flat/recommended"].rules,
+  ...(WCConfigs["flat/recommended"].rules ?? []),
+  ...(LitConfigs["flat/recommended"].rules ?? []),
 };
 
 const ignores = [
@@ -33,13 +33,13 @@ const ignores = [
   ".well-known/**/*",
   "bin/**/*",
   "changes/**/*",
-  "design-tokens/**/*",
   "docs/**/*",
   "dist/**/*",
   "firebase/**/*",
-  "functions/**/*",
   "logs/**/*",
   "node_modules/**/*",
+  "packages/{components,data,design-tokens,services,types}/{.config,node_modules,dist}/**/*",
+  "packages/{components,data,design-tokens,services,types}/lib/**/*.test.ts",
   "static/**/*",
   "stats/**/*",
   "**/*.html",
@@ -61,8 +61,7 @@ export default defineConfig([
     },
     basePath: rootDir,
     files: [
-      "src/**/*.ts",
-      "!src/**/*.test.ts",
+      "packages/{components,data,design-tokens,services,types}/lib/**/*.ts",
     ],
     ignores,
     languageOptions: {
@@ -70,7 +69,6 @@ export default defineConfig([
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: [path.resolve(rootDir, "tsconfig.json")],
         tsconfigRootDir: rootDir,
         projectServices: true,
       },
@@ -107,8 +105,8 @@ export default defineConfig([
         ],
       },
     },
-    },
-    {
+  },
+  {
     name: "app/typescript/tests",
     plugins: {
       "@typescript-eslint": tseslint.plugin,
@@ -117,14 +115,13 @@ export default defineConfig([
       tsdoc,
     },
     files: [
-      "src/**/*.test.ts",
+      "packages/{components,data,design-tokens,services,types}/lib/**/*.test.ts",
     ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: ["./tsconfig.json"],
         tsconfigRootDir: rootDir,
         projectServices: true,
       },
@@ -149,8 +146,8 @@ export default defineConfig([
         elementBaseClasses: ["ClassExtendingLitElement"],
       },
     },
-    },
-    {
+  },
+  {
     name: "app/global-ignores",
     ignores: [
       "jsconfig.json",
@@ -180,8 +177,8 @@ export default defineConfig([
   {
     name: "app/javascript-overrides",
     files: [
-      path.join(rootDir, "src/**/*.js"),
-      path.join(rootDir, "src/**/*.mjs"),
+      "index.ts",
+      path.join(rootDir, "packages/{components,data,design-tokens,services,types}/lib/**/*.ts"),
     ],
     ignores,
     languageOptions: {

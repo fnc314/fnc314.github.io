@@ -25,7 +25,7 @@ declare PACKAGES=(
   components
 )
 
-declare SHARED_CONFIG="packages/.config/cem/cem.yaml"
+declare SHARED_CONFIG="packages/.config/@pwrs/cem/cem.yaml"
 declare DOCS_DIR="docs/@pwrs/cem/packages"
 
 declare BASE_CEM_ARGS=(
@@ -63,10 +63,10 @@ for pkg in "${PACKAGES[@]}"; do
       "${BASE_CEM_ARGS[@]}"
       -p "packages/${pkg}"
     )
-    
+
     printf "\nRunning cem generate for packages/%s...\n" "${pkg}"
     printf "CEM_GENERATE_ARGS %s\n" "${CEM_GENERATE_ARGS[@]}"
-    
+
     if [[ "${usage_l:=false}" == "true" ]]; then
       # Append to the same log file for all packages
       pnpm cem generate "${CEM_GENERATE_ARGS[@]}" 2>&1 | tee -a "$LOG_FILE"

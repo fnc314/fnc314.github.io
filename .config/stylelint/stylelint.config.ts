@@ -7,9 +7,8 @@ const config: Config = {
     "./config/**/*.{js,mjs,ts,mts}",
     "dist/**/**",
     "docs/**/**",
-    "design-tokens/.config/**/*.{js,mjs,ts,mts}",
-    "design-tokens/scripts/**/*.ts",
-    "design-tokens/index.ts",
+    "packages/.config/**/*.ts",
+    "packages/{components,data,design-tokens,services,types}/{.config,node_modules,dist}/**/*.ts",
   ].map((path) => `${process.cwd()}/${path}`),
   extends: [
     "stylelint-config-standard",
@@ -28,10 +27,9 @@ const config: Config = {
       inline: "left-to-right",
     }
   },
-  customSyntax: "postcss-lit",
   overrides: [
     {
-      files: ["src/**/*.styles.ts"],
+      files: ["packages/{components,data,design-tokens,services,types}/lib/**/*.ts"],
       customSyntax: "postcss-lit",
     },
   ],
@@ -46,7 +44,7 @@ const config: Config = {
       ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
       {
         "ignoreValues": ["0", "inherit", "transparent", "initial", "none", "unset"],
-        "message": "Use design tokens for ${property}. See `design-tokens/README.md` for guidance."
+        "message": "Use design tokens for ${property}. See `packages/design-tokens/README.md` for guidance."
       }
     ],
     "declaration-block-no-redundant-longhand-properties": [
