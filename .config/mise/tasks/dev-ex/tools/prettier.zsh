@@ -16,7 +16,7 @@ PRETTIER_FLAGS=(
   --log-level ${usage_log_level:=warn}
 )
 
-declare PRETTIER_MODE="${usage_mode:=check}"
+typeset PRETTIER_MODE="${usage_mode:=check}"
 if [[ "$PRETTIER_MODE" == "write" ]]; then
   PRETTIER_FLAGS+=(
     --write
@@ -31,6 +31,6 @@ else
   )
 fi
 
-print -f "${PRETTIER_FLAGS}\n\n"
+print -r -f "${PRETTIER_FLAGS}\n\n"
 
 NODE_OPTIONS="--experimental-strip-types" pnpm prettier "./src/**/*.{css,json,ts}" "${PRETTIER_FLAGS[@]}"

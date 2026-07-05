@@ -6,11 +6,11 @@
 
 set -e
 
-declare ROOT_DIR="${usage_dir:=design-tokens/assets/icons}"
-declare DRY_RUN="${usage_dry_run:=false}"
+typeset ROOT_DIR="${usage_dir:=design-tokens/assets/icons}"
+typeset DRY_RUN="${usage_dry_run:=false}"
 
 if [[ ! -d "$ROOT_DIR" ]]; then
-  print -u2 "fix-svg: not a directory: $ROOT_DIR"
+  print -r -u2 "fix-svg: not a directory: $ROOT_DIR"
   exit 1
 fi
 
@@ -18,21 +18,21 @@ fi
 typeset -i RENAMED=0 SKIPPED=0
 for file in "$ROOT_DIR"/**/*(.N); do
   # Only touch files that are actually SVG (XML with an <svg root); skip every other type.
-  if ! grep -qil '<svg' "$file"; then
+  if ! grep -qil '<svg' -- "$file"; then
     continue
   fi
 
-  declare dir="${file:h}" name="${file:t}"
+  typeset dir="${file:h}" name="${file:t}"
 
   # Collapse any run of trailing `.svg`/`.SVG` endings down to a single lowercase `.svg`,
   # counting how many we strip; for an SVG with some other (or no) ending, append `.svg`.
-  declare base="$name"
+  typeset base="$name"
   typeset -i SVG_COUNT=0
   while [[ "${(L)base}" == *.svg ]]; do
     base="${base:r}"
     (( ++SVG_COUNT ))
   done
-  declare target="$dir/$base.svg"
+  typeset target="$dir/$base.svg"
 
   # Already uniform — exactly one lowercase `.svg`, nothing to do.
   if [[ "$target" == "$file" ]]; then
@@ -50,17 +50,17 @@ for file in "$ROOT_DIR"/**/*(.N); do
 
   # Still colliding after disambiguation — leave it alone rather than clobber.
   if [[ -e "$target" && ! "$target" -ef "$file" ]]; then
-    print "fix-svg: SKIP (target already exists): $file -> $target"
+    print -r "fix-svg: SKIP (target already exists): $file -> $target"
     (( ++SKIPPED ))
     continue
   fi
 
   if [[ "$DRY_RUN" == "true" ]]; then
-    print "would rename: $file -> $target"
+    print -r "would rename: $file -> $target"
   else
     mv -v "$file" "$target"
   fi
   (( ++RENAMED ))
 done
 
-print "\nfix-svg: ${RENAMED} renamed, ${SKIPPED} skipped under '${ROOT_DIR}'"
+print -r "\nfix-svg: ${RENAMED} renamed, ${SKIPPED} skipped under '${ROOT_DIR}'"

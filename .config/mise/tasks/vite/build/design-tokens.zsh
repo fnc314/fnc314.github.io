@@ -5,7 +5,7 @@
 #USAGE   choices "development" "production"
 #USAGE }
 
-declare -a VITE_CLI
+typeset -a VITE_CLI
 VITE_CLI=(
   build
   -m "${usage_mode:=development}"
@@ -13,8 +13,8 @@ VITE_CLI=(
   packages/design-tokens
 )
 
-print -f "Building \`style-dictionary\`"
+print -r -f "Building \`style-dictionary\`"
 mise run dev-ex:tools:style-dictionary "${usage_mode:=development}"
 
-print -f "Building final output with \`vite\`"
+print -r -f "Building final output with \`vite\`"
 pnpm vite "${VITE_CLI[@]}"

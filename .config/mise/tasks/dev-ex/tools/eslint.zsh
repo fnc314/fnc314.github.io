@@ -12,10 +12,10 @@
 #USAGE }
 #USAGE flag "--stats" help="Passes `--stats` to `eslint`" default="false"
 
-declare ESLINT_LOG_FORMAT=${usage_log:=none}
-declare ESLINT_LOG_DIR
+typeset ESLINT_LOG_FORMAT=${usage_log:=none}
+typeset ESLINT_LOG_DIR
 ESLINT_LOG_DIR="./logs/eslint/$(date +%Y%m%d)/${ESLINT_LOG_FORMAT}"
-declare ESLINT_CONFIG_FILE=".config/eslint/eslint.config.mjs"
+typeset ESLINT_CONFIG_FILE=".config/eslint/eslint.config.mjs"
 
 typeset -a ESLINT_FLAGS
 ESLINT_FLAGS=(
@@ -54,12 +54,12 @@ if [[ "${usage_debug:=false}" == "true" ]]; then
   )
 fi
 
-if [[ "${usage_print:=""}" != "" ]]; then
+if [[ -n "${usage_print:=""}" ]]; then
   ESLINT_FLAGS+=(
     --print-config "$usage_print"
   )
 fi
 
-print -f "${ESLINT_FLAGS}\n\n"
+print -r -f "${ESLINT_FLAGS}\n\n"
 
 TIMING=all pnpm eslint "${ESLINT_FLAGS[@]}"

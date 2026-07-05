@@ -7,10 +7,10 @@
 #USAGE flag "--verbose" help="Passes `-f verbose` to `stylelint`" default="false"
 #USAGE flag "--config-inspector" help="Runs `stylelint-config-inspector` instead" default="false"
 
-declare STYLELINT_LOG_DIR
+typeset STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"
-declare STYLELINT_CONFIG_FILE=".config/stylelint/stylelint.config.ts"
-declare STYLELINT_IGNORE_FILE=".config/stylelint/.stylelintignore"
+typeset STYLELINT_CONFIG_FILE=".config/stylelint/stylelint.config.ts"
+typeset STYLELINT_IGNORE_FILE=".config/stylelint/.stylelintignore"
 
 typeset -a STYLELINT_FLAGS
 STYLELINT_FLAGS=(
@@ -43,12 +43,12 @@ if [[ "${usage_fix:=false}" == "true" ]]; then
   )
 fi
 
-print -f "${STYLELINT_FLAGS}\n\n"
+printf "%s\n\n" "${STYLELINT_FLAGS}"
 
 if [[ "${usage_config_inspector:=false}" == "true" ]]; then
-  print -f "Running stylelint-config-inspector\n\n"
+  printf "Running stylelint-config-inspector\n\n"
   pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.ts
   exit 0
 else
-  pnpm stylelint "src" "${STYLELINT_FLAGS[@]}"
+  pnpm stylelint "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" "${STYLELINT_FLAGS[@]}"
 fi

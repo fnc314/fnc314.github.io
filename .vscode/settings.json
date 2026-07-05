@@ -38,7 +38,9 @@
   "css.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
+  "css.format.spaceAroundSelectorSeparator": true,
   "css.lint.importStatement": "ignore",
+  "css.lint.vendorPrefix": "ignore",
   "cssCustomProperties.files": [
     "${workspaceFolder}/index.css",
     "${workspaceFolder}/packages/design-tokens/**/*.css",
@@ -54,6 +56,8 @@
       "**/node_modules/.vite-temp/**"
     ]
   },
+  "docthis.authorName": "Franco N. Colaizzi",
+  "docthis.inlineOneLiners": false,
   "docthis.returnsTag": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit"
@@ -61,6 +65,7 @@
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
+  "editor.glyphMargin": true,
   "eslint.codeAction.disableRuleComment": {
     "commentStyle": "block",
     "enable": true,
@@ -71,16 +76,14 @@
   },
   "eslint.debug": true,
   "eslint.enable": true,
-  "eslint.execArgv": [
-
-  ],
+  "eslint.execArgv": [],
   "eslint.format.enable": true,
   "eslint.lintTask.command": "mise run //:dev-ex:tools:eslint",
   "eslint.lintTask.enable": true,
   "eslint.nodeEnv": "development",
   "eslint.options": {
     "overrideConfigFile": "./.config/eslint/eslint.config.mjs",
-    "stats": true,
+    "stats": true
   },
   "eslint.probe": [
     "javascript",
@@ -101,8 +104,18 @@
     "${workspaceFolder}/index.css",
     "${workspaceFolder}/packages/**/*.ts",
   ],
-  "exportall.config.folderListener": [],
+  "evenBetterToml.formatter.allowedBlankLines": 1,
+  "evenBetterToml.formatter.arrayTrailingComma": true,
+  "evenBetterToml.formatter.compactEntries": false,
+  "evenBetterToml.formatter.compactInlineTables": false,
+  "evenBetterToml.formatter.indentEntries": true,
+  "evenBetterToml.formatter.indentString": "  ",
+  "evenBetterToml.formatter.indentTables": true,
+  "evenBetterToml.schema.links": true,
+  "exportall.config.namedExports": true,
+  "exportall.config.quote": "\"",
   "exportall.config.recursive": true,
+  "extensions.ignoreRecommendations": true,
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": false,
@@ -116,16 +129,32 @@
     "**/Flutter/ephemeral": true,
     "**/Thumbs.db": true
   },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "fixJson.indentationSpaces": 2,
   "git.ignoreLimitWarning": true,
   "html.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "${workspaceFolder}/.vscode/wca/*.json"
   ],
+  "html.format.indentInnerHtml": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.format.wrapAttributesIndentSize": 4,
   "html.suggest.html5": true,
   "java.import.gradle.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "java.jdt.ls.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "jdk.jdkhome": "${workspaceFolder}/.vscode/mise-tools/java",
+  "js/ts.format.semicolons": "insert",
+  "js/ts.preferences.quoteStyle": "double",
+  "js/ts.preferGoToSourceDefinition": true,
   "js/ts.tsdk.path": "./node_modules/typescript/lib",
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+  "js/ts.tsserver.node.path": "${workspaceFolder}/.vscode/mise-tools/node",
+  "js/ts.validate.enabled": true,
+  "jsdoc-generator.generateDescriptionForParameters": true,
+  "jsdoc-generator.generateDescriptionForReturns": true,
+  "jsdoc-generator.generateDescriptionForTypeParameters": true,
+  "JSON-zain.json.autorefresh": true,
   "lit-html.format.enabled": true,
   "lit-plugin.customHtmlData": {
     "tags": [
@@ -616,6 +645,7 @@
   "lit-plugin.rules.no-unclosed-tag": "error",
   "lit-plugin.rules.no-unknown-slot": "error",
   "lit-plugin.strict": true,
+  "npm.enableRunFromFolder": true,
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "outline.collapseItems": "alwaysCollapse",
@@ -624,11 +654,31 @@
   "pkl.lsp.java.path": "/Users/fnc314/.local/share/mise/shims/java",
   "pnpm-vscode-helper.enableCodelen": true,
   "pnpm.packageJson": "${workspaceFolder}/package.json",
+  "prettier.configPath": "./.config/prettier/prettier.config.mts",
+  "prettier.enable": true,
+  "prettier.enableDebugLogs": true,
+  "prettier.ignorePath": "./.config/prettier/.prettierignore",
+  "prettier.printWidth": 120,
+  "prettier.useEditorConfig": true,
   "python-envs.defaultEnvManager": "ms-python.python:system",
   "python.analysis.autoImportCompletions": true,
   "python.defaultInterpreterPath": "${workspaceFolder}/.vscode/mise-tools/python",
-  "stylelint.configFile": "${workspaceFolder}/.config/stylelint/stylelint.config.ts",
-  "stylelint.ignorePath": "${workspaceFolder}/.config/stylelint/.stylelintignore",
+  "search.defaultViewMode": "tree",
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "shell-syntax.defaultShell": "zsh",
+  "shellcheck.enable": true,
+  "shellcheck.ignorePatterns": {
+    "**/*.zlogin": false,
+    "**/*.zprofile": false,
+    "**/*.zsh": true,
+    "**/*.zshenv": false,
+    "**/*.zshrc": false
+  },
+  "shellcheck.logLevel": "trace",
+  "shellcheck.run": "onSave",
+  "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
+  "stylelint.ignorePath": "./.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
   "stylelint.reportDescriptionlessDisables": true,
   "stylelint.reportInvalidScopeDisables": true,
@@ -647,6 +697,20 @@
   "workbench.tree.indent": 8,
   "zshellcheck.enable": true,
   "zshellcheck.executablePath": "zshellcheck",
+  "zshellcheck.filePatterns": [
+    "**/*.zsh",
+    "**/*.zsh-theme",
+    "**/*.zshrc",
+    "**/*.zshenv",
+    "**/*.zprofile",
+    "**/*.zlogin",
+    "**/*.zlogout",
+    "**/zshrc",
+    "**/zshenv",
+    "**/zprofile",
+    "**/zlogin",
+    "**/zlogout"
+  ],
   "zshellcheck.run": "onSave",
   "zshellcheck.useWorkspaceRootAsCwd": true
 }

@@ -8,10 +8,11 @@
 
 export NODE_ENV="production"
 
-declare LOG_DIR="logs/mise/tasks/vite/build/production"
+typeset LOG_DIR="logs/mise/tasks/vite/build/production"
 # Use new directory structure for date logging
-declare LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
-declare LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
+typeset LOG_FILE_PATH
+LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
+typeset LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
 
 typeset -a VITE_FLAGS
 VITE_FLAGS=(

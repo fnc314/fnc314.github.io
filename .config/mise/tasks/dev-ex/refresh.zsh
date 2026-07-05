@@ -5,12 +5,12 @@
 #USAGE   choices "none" "log-all" "mise-tasks" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
 
-declare LOG_STEP="${usage_logstep:=none}"
-declare MASTER_LOG
+typeset LOG_STEP="${usage_logstep:=none}"
+typeset MASTER_LOG
 
 if [[ "$LOG_STEP" == "log-all" ]]; then
   MASTER_LOG="./logs/dx-refresh/$(date +%Y%m%d-%H%M%S).log"
-  mkdir -pv "./logs/dx-refresh"
+  mkdir -p -pv "./logs/dx-refresh"
   exec &> >(tee -a "$MASTER_LOG")
 fi
 
@@ -28,25 +28,25 @@ create_log() {
   fi
 }
 
-echo "Running dx-refresh"
-echo
+print -r -- "Running dx-refresh"
+print -r --
 rm -rfv docs
 echo
 
 [[ "$LOG_STEP" == "mise-tasks" || "$LOG_STEP" == "log-all" ]] && create_log "mise-tasks"
-echo "Recreate Mise Task Docs"
+print -r -- "Recreate Mise Task Docs"
 mkdir -p docs/mise/tasks
 mise generate task-docs -m -o docs/mise/tasks
 echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
-echo "dx:cem-analyze"
+print -r -- "dx:cem-analyze"
 NODE_ENV=development pnpm custom-elements-manifest analyze --config ./.config/custom-elements-manifest/custom-elements-manifest.config.mjs
 echo
 
 [[ "$LOG_STEP" == "pwrs/cem" || "$LOG_STEP" == "log-all" ]] && create_log "@pwrs/cem"
-echo "//:dev-ex:tools:@pwrs:cem:generate"
-declare PWRS_CEM_GENERATE_ARGS=(
+print -r -- "//:dev-ex:tools:@pwrs:cem:generate"
+typeset PWRS_CEM_GENERATE_ARGS=(
   --trace
 )
 
@@ -60,7 +60,7 @@ mise run //:dev-ex:tools:@pwrs:cem:generate "${PWRS_CEM_GENERATE_ARGS[@]}"
 echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
-echo "dx:wca"
+print -r -- "dx:wca"
 pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
 pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./docs/wca/json --format json
 pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
@@ -69,9 +69,9 @@ pnpm web-component-analyzer "packages/{components,data,design-tokens,services,ty
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"
-echo "dx:typedoc"
+print -r -- "dx:typedoc"
 pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs
-echo
-echo "DONE"
+print -r --
+print -r -- "DONE"
 
 # See https://mise.jdx.dev/tasks/file-tasks.html for more information

@@ -5,19 +5,19 @@
 #USAGE   choices "development" "production"
 #USAGE }
 
-declare -a STYLE_DICTIONARY_CLI
+typeset -a STYLE_DICTIONARY_CLI
 STYLE_DICTIONARY_CLI=(
   --verbose
   --config ./.config/style-dictionary/config.ts
 )
 
-print -f "Cleaning design tokens for @fnc314/packages.design-tokens..."
+print -r -f "Cleaning design tokens for @fnc314/packages.design-tokens..."
 pnpm style-dictionary clean "${STYLE_DICTIONARY_CLI[@]}"
-print -f "Generating design tokens for @fnc314/packages.design-tokens..."
+print -r -f "Generating design tokens for @fnc314/packages.design-tokens..."
 pnpm style-dictionary build "${STYLE_DICTIONARY_CLI[@]}"
-print -f "Design tokens generated successfully."
+print -r -f "Design tokens generated successfully."
 
-declare -a VITE_CLI
+typeset -a VITE_CLI
 VITE_CLI=(
   build
   -m ${usage_mode:=development}
@@ -25,5 +25,5 @@ VITE_CLI=(
   packages/design-tokens
 )
 
-print -f "Building final output with \`vite\`"
+print -r -f "Building final output with \`vite\`"
 pnpm vite "${VITE_CLI[@]}"

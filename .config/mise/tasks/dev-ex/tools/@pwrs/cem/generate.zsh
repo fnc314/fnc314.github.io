@@ -7,17 +7,16 @@
 #USAGE flag "-d" help="Enables debug logging via `-vv` flag to `pnpm cem`" default="false"
 #USAGE flag "--trace" help="Enables trace logging via `-vvv` flag to `pnpm cem`" default="false"
 
-set -e
-
 printf "Usage_trace %s\nUsage_d %s\nUsage_w\nLog %s\n" "${usage_trace}" "${usage_d}" "${usage_w}" "${usage_l}"
 
-declare LOG_DIR="logs/mise/tasks/dev-ex/tools/@pwrs/cem/generate"
+typeset LOG_DIR="logs/mise/tasks/dev-ex/tools/@pwrs/cem/generate"
 # Use new directory structure for date logging
-declare LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
-declare LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
+typeset LOG_FILE_PATH
+LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
+typeset LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
 export NODE_ENV=development
 
-declare PACKAGES=(
+typeset PACKAGES=(
   types
   data
   design-tokens
@@ -25,10 +24,10 @@ declare PACKAGES=(
   components
 )
 
-declare SHARED_CONFIG="packages/.config/@pwrs/cem/cem.yaml"
-declare DOCS_DIR="docs/@pwrs/cem/packages"
+typeset SHARED_CONFIG="packages/.config/@pwrs/cem/cem.yaml"
+typeset DOCS_DIR="docs/@pwrs/cem/packages"
 
-declare BASE_CEM_ARGS=(
+typeset BASE_CEM_ARGS=(
   --config "${SHARED_CONFIG}"
 )
 
@@ -58,8 +57,8 @@ if [[ "${usage_l:=false}" == "true" ]]; then
 fi
 
 for pkg in "${PACKAGES[@]}"; do
-  if [ -d "packages/${pkg}" ]; then
-    declare CEM_GENERATE_ARGS=(
+  if [[ -d "packages/${pkg}" ]]; then
+    typeset CEM_GENERATE_ARGS=(
       "${BASE_CEM_ARGS[@]}"
       -p "packages/${pkg}"
     )
@@ -69,9 +68,15 @@ for pkg in "${PACKAGES[@]}"; do
 
     if [[ "${usage_l:=false}" == "true" ]]; then
       # Append to the same log file for all packages
-      pnpm cem generate "${CEM_GENERATE_ARGS[@]}" 2>&1 | tee -a "$LOG_FILE"
+      pnpm cem generate "${CEM_GENERATE_ARGS[@]}" 2>&1 | tee -a "$LOG_FILE" || {
+        printf "Failed to generate"
+        exit 1
+      }
     else
-      pnpm cem generate "${CEM_GENERATE_ARGS[@]}"
+      pnpm cem generate "${CEM_GENERATE_ARGS[@]}" || {
+        printf "Failed to generate"
+        exit 1
+      }
     fi
 
     # Copy the generated manifest to the central docs directory for the LSP

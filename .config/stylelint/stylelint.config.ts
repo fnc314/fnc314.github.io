@@ -40,6 +40,7 @@ const config: Config = {
     "stylelint-declaration-strict-value",
   ],
   rules: {
+    "import-notation": "string",
     "scale-unlimited/declaration-strict-value": [
       ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
       {
