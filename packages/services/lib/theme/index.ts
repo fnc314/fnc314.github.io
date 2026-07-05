@@ -7,7 +7,6 @@ import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme,
-  type ColorSchemeChange,
   type ColorSchemeConfigs,
   type ColorSchemeRoles,
   type ColorString,
@@ -72,7 +71,7 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    "color_scheme.change": ColorSchemeChange;
+    "color_scheme.change": ColorSchemeConfigs;
   }
 }
 
