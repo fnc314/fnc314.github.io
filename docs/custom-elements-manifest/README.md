@@ -1463,16 +1463,16 @@
 
 ### Methods
 
-| Name                        | Privacy   | Description                                                                                        | Parameters                  | Return                                                                              | Inherited From |
-| --------------------------- | --------- | -------------------------------------------------------------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------------- | -------------- |
-| `_getSortFunction`          | private   |                                                                                                    | `sorting: WordCloudSorting` | `((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number) \| undefined` |                |
-| `_initIntersectionObserver` | private   |                                                                                                    |                             |                                                                                     |                |
-| `_processWords`             | private   |                                                                                                    |                             | `RenderableWordCloudWord[]`                                                         |                |
-| `breakpoint`                | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |                             |                                                                                     | UIAwareElement |
-| `darkMode`                  | protected |                                                                                                    |                             |                                                                                     | UIAwareElement |
-| `onAppConfigChange`         | private   |                                                                                                    |                             |                                                                                     | UIAwareElement |
-| `onBreakpointChange`        | private   |                                                                                                    |                             |                                                                                     | UIAwareElement |
-| `touchScreen`               | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |                             |                                                                                     | UIAwareElement |
+| Name                        | Privacy   | Description                                                                                        | Parameters                  | Return                                                                                     | Inherited From |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------ | -------------- |
+| `_getSortFunction`          | private   |                                                                                                    | `sorting: WordCloudSorting` | `\| ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)     \| undefined` |                |
+| `_initIntersectionObserver` | private   |                                                                                                    |                             |                                                                                            |                |
+| `_processWords`             | private   |                                                                                                    |                             | `RenderableWordCloudWord[]`                                                                |                |
+| `breakpoint`                | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |                             |                                                                                            | UIAwareElement |
+| `darkMode`                  | protected |                                                                                                    |                             |                                                                                            | UIAwareElement |
+| `onAppConfigChange`         | private   |                                                                                                    |                             |                                                                                            | UIAwareElement |
+| `onBreakpointChange`        | private   |                                                                                                    |                             |                                                                                            | UIAwareElement |
+| `touchScreen`               | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |                             |                                                                                            | UIAwareElement |
 
 </details>
 
@@ -1989,6 +1989,7 @@
 | Name                 | Description | Type          |
 | -------------------- | ----------- | ------------- |
 | `ChicagoThemeConfig` |             | `ThemeConfig` |
+| `json`               |             |               |
 
 <hr/>
 
@@ -2042,6 +2043,7 @@
 | Name               | Description | Type          |
 | ------------------ | ----------- | ------------- |
 | `InterThemeConfig` |             | `ThemeConfig` |
+| `json`             |             |               |
 
 <hr/>
 
@@ -2057,6 +2059,7 @@
 
 | Name             | Description | Type          |
 | ---------------- | ----------- | ------------- |
+| `json`           |             |               |
 | `RedThemeConfig` |             | `ThemeConfig` |
 
 <hr/>
@@ -2073,6 +2076,7 @@
 
 | Name                | Description | Type          |
 | ------------------- | ----------- | ------------- |
+| `json`              |             |               |
 | `SunsetThemeConfig` |             | `ThemeConfig` |
 
 <hr/>
@@ -2092,7 +2096,7 @@
 | `colorSchemeContrastToIcon` |                                                                                                                       | `slot: "start" \| "leading-icon", contrast: ColorSchemeContrast` |        |
 | `jsonIsThemeJsonSchemes`    | Checks if the provided JSON conforms to the expected theme schemes structure                                          | `json: unknown`                                                  |        |
 | `keyTransform`              | Converts jsonKey and corresponding rgb value into a CSS custom property&#xA;  via lit!css and lit!unsafeCSS functions | `jsonKey: string, rgb: string`                                   | `lit!` |
-| `readScheme`                | Reads a \`.json\` defined object and produces a lit!CSSResult                                                         | `jsonSchema: object`                                             | `lit!` |
+| `readScheme`                | Reads a \`.json\` defined object and produces a lit!CSSResult                                                         | `jsonSchema: object`                                             |        |
 
 <hr/>
 

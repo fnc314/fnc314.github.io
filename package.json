@@ -161,6 +161,7 @@
     "typedoc-plugin-frontmatter": "catalog:devDependencies",
     "typedoc-plugin-markdown": "catalog:devDependencies",
     "typedoc-plugin-mdn-links": "catalog:devDependencies",
+    "typedoc-plugin-monorepo": "catalog:devDependencies",
     "typedoc-plugin-version-header": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",

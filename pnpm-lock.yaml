@@ -202,15 +202,9 @@ catalogs:
     eslint:
       specifier: 10.6.0
       version: 10.6.0
-    eslint-config-google:
-      specifier: 0.14.0
-      version: 0.14.0
     eslint-formatter-html:
       specifier: 2.7.3
       version: 2.7.3
-    eslint-plugin-import:
-      specifier: 2.32.0
-      version: 2.32.0
     eslint-plugin-json-schema-validator:
       specifier: 6.2.0
       version: 6.2.0
@@ -340,6 +334,9 @@ catalogs:
     typedoc-plugin-mdn-links:
       specifier: 5.1.1
       version: 5.1.1
+    typedoc-plugin-monorepo:
+      specifier: 0.1.0
+      version: 0.1.0
     typedoc-plugin-version-header:
       specifier: 1.0.0
       version: 1.0.0
@@ -379,17 +376,6 @@ catalogs:
     web-component-analyzer:
       specifier: 2.0.0
       version: 2.0.0
-  functionsDependencies:
-    firebase-admin:
-      specifier: 14.0.0
-      version: 14.0.0
-    firebase-functions:
-      specifier: 7.2.5
-      version: 7.2.5
-  functionsDevDependencies:
-    firebase-functions-test:
-      specifier: 3.5.0
-      version: 3.5.0
 
 pnpmfileChecksum: sha256-nVOmFZ6JT8FxIhcN+S5sJXuP1DtIhTre5ZGvjJU+4tk=
 
@@ -719,6 +705,9 @@ importers:
       typedoc-plugin-mdn-links:
         specifier: catalog:devDependencies
         version: 5.1.1(typedoc@0.28.19(typescript@6.0.3))
+      typedoc-plugin-monorepo:
+        specifier: catalog:devDependencies
+        version: 0.1.0(typedoc@0.28.19(typescript@6.0.3))
       typedoc-plugin-version-header:
         specifier: catalog:devDependencies
         version: 1.0.0(typedoc@0.28.19(typescript@6.0.3))
@@ -6388,6 +6377,10 @@ packages:
   hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
 
+  highlight.js@9.18.5:
+    resolution: {integrity: sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==}
+    deprecated: Support has ended for 9.x series. Upgrade to @latest
+
   hirestime@6.1.0:
     resolution: {integrity: sha512-sCVxYT/2iSUanrRuiUspZaF78crKojzmVz2mI+gjq1/N+7RPCyZu8S0KyBlE4O+Aq/YmtTzJWGxLxByZvCiKPA==}
     engines: {node: '>=6.0'}
@@ -7376,6 +7369,11 @@ packages:
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
+
+  marked@0.3.19:
+    resolution: {integrity: sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
 
   marky@1.3.0:
     resolution: {integrity: sha512-ocnPZQLNpvbedwTy9kNrQEsknEfgvcLMvOtz3sFeWApDq1MXH1TqkCIx58xlpESsfwQOnuBO9beyQuNGzVvuhQ==}
@@ -9218,6 +9216,11 @@ packages:
     resolution: {integrity: sha512-fLlYudnlGkE9uspOEm/SBXwr+G0RbxoDZiHAVsCg+5NwKe2aUxjZK1YyQfleNZydImanzkX2oUJF29xbEeOSWw==}
     peerDependencies:
       typedoc: 0.27.x || 0.28.x
+
+  typedoc-plugin-monorepo@0.1.0:
+    resolution: {integrity: sha512-hx42ck+9dJCoZO0jLCmEE3R6lydYaaYIKL+g6LT5Ev+B8CdAESsML2jiGR+TFu1rUuEujjArtCHjNLj2YqnKnQ==}
+    peerDependencies:
+      typedoc: '>=0.8 <1.0'
 
   typedoc-plugin-version-header@1.0.0:
     resolution: {integrity: sha512-HVGf5LfujEDHEe2DLtZRfstQ7UPQYx/Pe74fYjeylp9wwDBh2bJgcuVUu2x+cf4mOKHW2FuMluw7l0K9sH6Erg==}
@@ -16434,6 +16437,8 @@ snapshots:
 
   hey-listen@1.0.8: {}
 
+  highlight.js@9.18.5: {}
+
   hirestime@6.1.0: {}
 
   hookified@1.15.1: {}
@@ -17691,6 +17696,8 @@ snapshots:
       repeat-string: 1.6.1
 
   markdown-table@3.0.4: {}
+
+  marked@0.3.19: {}
 
   marky@1.3.0: {}
 
@@ -19979,6 +19986,12 @@ snapshots:
 
   typedoc-plugin-mdn-links@5.1.1(typedoc@0.28.19(typescript@6.0.3)):
     dependencies:
+      typedoc: 0.28.19(typescript@6.0.3)
+
+  typedoc-plugin-monorepo@0.1.0(typedoc@0.28.19(typescript@6.0.3)):
+    dependencies:
+      highlight.js: 9.18.5
+      marked: 0.3.19
       typedoc: 0.28.19(typescript@6.0.3)
 
   typedoc-plugin-version-header@1.0.0(typedoc@0.28.19(typescript@6.0.3)):

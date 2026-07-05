@@ -192,16 +192,16 @@
       "path": "lib/theme/index.js",
       "declarations": [
         {
-          "name": "THEME_CONFIGS",
+          "name": "themeService",
           "type": {
-            "text": ": ThemeConfigs"
+            "text": ": ThemeService"
           },
           "kind": "variable"
         },
         {
-          "name": "themeService",
+          "name": "THEME_CONFIGS",
           "type": {
-            "text": ": ThemeService"
+            "text": ": ThemeConfigs"
           },
           "kind": "variable"
         },
@@ -273,17 +273,17 @@
       "exports": [
         {
           "kind": "js",
-          "name": "THEME_CONFIGS",
+          "name": "themeService",
           "declaration": {
-            "name": "THEME_CONFIGS",
+            "name": "themeService",
             "module": "lib/theme/index.js"
           }
         },
         {
           "kind": "js",
-          "name": "themeService",
+          "name": "THEME_CONFIGS",
           "declaration": {
-            "name": "themeService",
+            "name": "THEME_CONFIGS",
             "module": "lib/theme/index.js"
           }
         },
@@ -419,16 +419,14 @@
           "parameters": [
             {
               "name": "jsonSchema",
+              "description": "- Any `object`",
               "type": {
                 "text": "object"
               }
             }
           ],
           "return": {
-            "type": {
-              "text": "lit!CSSResult"
-            },
-            "description": " A {@link lit!CSSResult} of the provided {@link jsonSchema}"
+            "description": "- A {@link lit!CSSResult} of the provided {@link jsonSchema}"
           },
           "name": "readScheme",
           "description": "Reads a `.json` defined object and produces a {@link lit!CSSResult}",

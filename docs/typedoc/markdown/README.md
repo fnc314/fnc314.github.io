@@ -285,4 +285,12 @@ A component that renders a cloud of words with various sorting and grouping opti
 - [docs/wca/markdown/word-cloud](docs/wca/markdown/word-cloud/README.md)
 - [docs/wca/markdown/word-tag](docs/wca/markdown/word-tag/README.md)
 - [docs/wca/markdown/work-experience](docs/wca/markdown/work-experience/README.md)
+
+## Packages
+
+- [@fnc314/packages.components - v2.0.5](_fnc314/packages.components/README.md)
+- [@fnc314/packages.data - v2.0.5](_fnc314/packages.data/README.md)
+- [@fnc314/packages.design-tokens - v2.0.5](_fnc314/packages.design-tokens/README.md)
+- [@fnc314/packages.services - v2.0.5](_fnc314/packages.services/README.md)
+- [@fnc314/packages.types - v2.0.5](_fnc314/packages.types/README.md)
   </colorschemeconfigs></colorschemeconfigs></details></summary></h2></body></html>
