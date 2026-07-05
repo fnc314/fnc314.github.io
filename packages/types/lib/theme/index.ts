@@ -149,3 +149,5 @@ export type PhotosJson = Record<ThemeName, PhotoJson>;
 export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 
 export { type MaterialSymbol } from "material-symbols";
+
+export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs>;

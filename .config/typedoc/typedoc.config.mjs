@@ -20,7 +20,7 @@ export default {
   displayBasePath: process.cwd(),
   emit: "docs",
   entryPoints: [
-    `${process.cwd()}/src/index.ts`,
+    `${process.cwd()}/index.ts`,
     `${process.cwd()}/packages/components/lib/**/*.ts`,
     `${process.cwd()}/packages/data/lib/**/*.ts`,
     `${process.cwd()}/packages/design-tokens/lib/**/*.ts`,

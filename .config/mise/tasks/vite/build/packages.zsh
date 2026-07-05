@@ -57,13 +57,13 @@ for pkg in "${PACKAGES[@]}"; do
 
     if [[ "${usage_l:=false}" == "true" ]]; then
       # Append to the same log file for all packages
-      pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
+      NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
       if (( "${pipestatus[1]}" != 0 )); then
         print -r -- "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       fi
     else
-      pnpm vite build "${VITE_PARAMS[@]}" || {
+      NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" || {
         echo "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       }

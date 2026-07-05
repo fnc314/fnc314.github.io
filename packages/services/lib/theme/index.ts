@@ -7,13 +7,14 @@ import {
   CONFIG_COLOR_CONTRAST_NAMES,
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorScheme,
+  type ColorSchemeChange,
   type ColorSchemeConfigs,
   type ColorSchemeRoles,
   type ColorString,
   type MaterialSchemeName,
   type MaterialSchemeNames,
   type ThemeConfig,
-  type ThemeConfigs
+  type ThemeConfigs,
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/chicago";
@@ -67,6 +68,14 @@ class ThemeServiceImpl implements ThemeService {
   }
 }
 
+export const themeService: ThemeService = new ThemeServiceImpl(configsService);
+
+declare global {
+  interface GlobalEventHandlersEventMap {
+    "color_scheme.change": ColorSchemeChange;
+  }
+}
+
 export const THEME_CONFIGS: ThemeConfigs = {
   inter: InterThemeConfig,
   chicago: ChicagoThemeConfig,
@@ -74,7 +83,6 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 export const MaterialCSSStyleSheet: CSSStyleSheet = SunsetThemeConfig.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {

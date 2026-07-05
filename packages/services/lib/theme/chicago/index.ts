@@ -6,15 +6,17 @@ import {
   type ThemeJsonSchemes,
 } from "@fnc314/packages.types";
 
+const json = jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes);
+
 export const ChicagoThemeConfig: ThemeConfig = {
   themePhoto: Photos.chicago,
-  json: jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes),
+  json,
   materialSchemes: {
-    light: readScheme(JsonTheme.schemes.light),
-    lightMediumContrast: readScheme(JsonTheme.schemes["light-medium-contrast"]),
-    lightHighContrast: readScheme(JsonTheme.schemes["light-high-contrast"]),
-    dark: readScheme(JsonTheme.schemes.dark),
-    darkMediumContrast: readScheme(JsonTheme.schemes["dark-medium-contrast"]),
-    darkHighContrast: readScheme(JsonTheme.schemes["dark-high-contrast"]),
+    light: readScheme(json.light),
+    lightMediumContrast: readScheme(json["light-medium-contrast"]),
+    lightHighContrast: readScheme(json["light-high-contrast"]),
+    dark: readScheme(json.dark),
+    darkMediumContrast: readScheme(json["dark-medium-contrast"]),
+    darkHighContrast: readScheme(json["dark-high-contrast"]),
   },
 };

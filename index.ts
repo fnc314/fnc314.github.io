@@ -5,6 +5,7 @@ import "@fnc314/packages.design-tokens";
 import "@fnc314/packages.services";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
 import "@fnc314/packages.types";
+import { type ColorSchemeConfigChange } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -35,14 +36,13 @@ const domLoadedListener = () => {
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 
   // Migrated from AppShell
-  document.addEventListener("color_scheme.change", (event: Event) => {
-    const customEvent = event as any; // ColorSchemeConfigChange
+  document.addEventListener("color_scheme.change", (event: ColorSchemeConfigChange) => {
     const themeConfig = themeService.currentThemeConfig();
 
     const applyTheme = () => {
       MaterialCSSStyleSheet.replaceSync(
         themeConfig.materialSchemes[
-          colorSchemeConfigsToMaterialSchemeName(customEvent.detail)
+          colorSchemeConfigsToMaterialSchemeName(event.detail)
         ].cssText
       );
       document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);

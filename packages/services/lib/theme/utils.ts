@@ -58,8 +58,8 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
  * Converts typtical `JSON` keys in `lowerPascalCase` into `CSS` appropriate
  *   `lower-kebab-case`
  *
- * @param {string} jsonKey The key of a `JSON` object, expected in `lowerPascalCase`
- * @returns {string} The same {@link jsonKey} but in `lower-kebab-case`
+ * @param jsonKey - The key of a `JSON` object, expected in `lowerPascalCase`
+ * @returns - The same {@link jsonKey} but in `lower-kebab-case`
  */
 const formatJsonKey: (jsonKey: string) => string =
   (jsonKey: string) => jsonKey.split(/(?=[A-Z])/).map((part) => part.toLowerCase()).join("-");
@@ -69,8 +69,8 @@ const formatJsonKey: (jsonKey: string) => string =
  *   a snippet provided by Gemini.  The intent is to remove redundant spaces and,
  *   soon, the comments left for the linter.
  *
- * @param {CSSResult} inputCSS The newly crafted {@link CSSResult} from a `JSON` file
- * @returns {CSSResult} The same {@link CSSResult} with empty lines removed
+ * @param inputCSS - The newly crafted {@link CSSResult} from a `JSON` file
+ * @returns - The same {@link CSSResult} with empty lines removed
  */
 const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) => {
   const sortedVariableRows = inputCSS.cssText.split(/\r?\n/)
@@ -111,8 +111,8 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
 /**
  * Reads a `.json` defined object and produces a {@link lit!CSSResult}
  *
- * @param {object} jsonSchema
- * @returns {lit!CSSResult} A {@link lit!CSSResult} of the provided {@link jsonSchema}
+ * @param jsonSchema - Any `object`
+ * @returns - A {@link lit!CSSResult} of the provided {@link jsonSchema}
  */
 export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object) => {
   const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult =
