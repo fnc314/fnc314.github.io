@@ -3,7 +3,6 @@
 #MISE alias="dx:t:@pwrs:cem:serve"
 #USAGE flag="-p [port]" help="Chooses the serving port" default="1234"
 
-set -e
 export NODE_ENV="developmet"
 
 typeset CEM_GENERATE_ARGS=(

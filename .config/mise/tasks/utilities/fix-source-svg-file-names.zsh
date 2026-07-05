@@ -4,10 +4,10 @@
 #USAGE arg "<dir>" help="Directory to walk recursively" default="design-tokens/assets/icons"
 #USAGE flag "--dry-run" help="Print what would be renamed without touching the filesystem"
 
-set -e
-
-typeset ROOT_DIR="${usage_dir:=design-tokens/assets/icons}"
-typeset DRY_RUN="${usage_dry_run:=false}"
+typeset ROOT_DIR
+ROOT_DIR="${usage_dir:=design-tokens/assets/icons}"
+typeset DRY_RUN
+DRY_RUN="${usage_dry_run:=false}"
 
 if [[ ! -d "$ROOT_DIR" ]]; then
   print -r -u2 "fix-svg: not a directory: $ROOT_DIR"
@@ -44,7 +44,8 @@ for file in "$ROOT_DIR"/**/*(.N); do
   # endings (e.g. `foo.svg.svg` -> `foo-1.svg`). `-ef` lets a case-only rename pass through
   # untouched on case-insensitive filesystems (the target "exists" but is the same inode).
   if [[ -e "$target" && ! "$target" -ef "$file" ]]; then
-    typeset -i EXTRA=$(( SVG_COUNT > 1 ? SVG_COUNT - 1 : 1 ))
+    typeset -i EXTRA
+    EXTRA=$(( SVG_COUNT > 1 ? SVG_COUNT - 1 : 1 ))
     target="$dir/$base-${EXTRA}.svg"
   fi
 
@@ -58,7 +59,7 @@ for file in "$ROOT_DIR"/**/*(.N); do
   if [[ "$DRY_RUN" == "true" ]]; then
     print -r "would rename: $file -> $target"
   else
-    mv -v "$file" "$target"
+    mv -n -v "$file" "$target"
   fi
   (( ++RENAMED ))
 done
