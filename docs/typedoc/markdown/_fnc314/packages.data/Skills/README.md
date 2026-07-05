@@ -8,7 +8,7 @@
 
 &gt; `const` **Skills**: \{ `practice`: \{ `Accessibility`: `number`; `Agile`: `number`; `Change Management`: `number`; `CI / CD`: `number`; `Clean Architecture`: `number`; `Dependency Injection`: `number`; `Design Systems`: `number`; `Design Tokens`: `number`; `Engineering Management`: `number`; `FIDO / MFA`: `number`; `KanBan`: `number`; `Multi-Module Architecture`: `number`; `MVI / MVVM`: `number`; `Scrum`: `number`; `Stakeholder Alignment`: `number`; `Technical Mentorship`: `number`; \}; `product`: \{ `Android`: `number`; `Android Studio`: `number`; `BitBucket`: `number`; `Confluence`: `number`; `Fastlane`: `number`; `Firebase`: `number`; `GitHub`: `number`; `GitHub Actions`: `number`; `Google Cloud`: `number`; `Gradle (KTS/Groovy)`: `number`; `IntelliJ IDEA`: `number`; `Jenkins`: `number`; `Jira`: `number`; `Samsung Knox`: `number`; `Trello`: `number`; `Visual Studio Code`: `number`; \}; `tech`: \{ `Bash`: `number`; `Coroutines`: `number`; `CSS`: `number`; `Git`: `number`; `HTML`: `number`; `Java`: `number`; `JavaScript`: `number`; `Jetpack Compose`: `number`; `Kotlin`: `number`; `Mobile`: `number`; `Node`: `number`; `Python`: `number`; `Ruby`: `number`; `RxJava`: `number`; `TypeScript`: `number`; \}; \}
 
-Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L1)
+Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L1)
 
 ## Type Declaration
 
@@ -40,7 +40,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L37)
+[skills/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L37)
 
 </td>
 </tr>
@@ -62,7 +62,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:43](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L43)
+[skills/index.ts:43](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L43)
 
 </td>
 </tr>
@@ -84,7 +84,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L50)
+[skills/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L50)
 
 </td>
 </tr>
@@ -106,7 +106,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:53](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L53)
+[skills/index.ts:53](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L53)
 
 </td>
 </tr>
@@ -128,7 +128,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:47](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L47)
+[skills/index.ts:47](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L47)
 
 </td>
 </tr>
@@ -150,7 +150,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:40](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L40)
+[skills/index.ts:40](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L40)
 
 </td>
 </tr>
@@ -172,7 +172,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L52)
+[skills/index.ts:52](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L52)
 
 </td>
 </tr>
@@ -194,7 +194,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:38](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L38)
+[skills/index.ts:38](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L38)
 
 </td>
 </tr>
@@ -216,7 +216,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L39)
+[skills/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L39)
 
 </td>
 </tr>
@@ -238,7 +238,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:44](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L44)
+[skills/index.ts:44](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L44)
 
 </td>
 </tr>
@@ -260,7 +260,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:46](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L46)
+[skills/index.ts:46](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L46)
 
 </td>
 </tr>
@@ -282,7 +282,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:49](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L49)
+[skills/index.ts:49](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L49)
 
 </td>
 </tr>
@@ -304,7 +304,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:41](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L41)
+[skills/index.ts:41](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L41)
 
 </td>
 </tr>
@@ -326,7 +326,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:45](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L45)
+[skills/index.ts:45](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L45)
 
 </td>
 </tr>
@@ -348,7 +348,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:48](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L48)
+[skills/index.ts:48](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L48)
 
 </td>
 </tr>
@@ -370,7 +370,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:51](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L51)
+[skills/index.ts:51](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L51)
 
 </td>
 </tr>
@@ -392,7 +392,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:42](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L42)
+[skills/index.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L42)
 
 </td>
 </tr>
@@ -414,7 +414,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L19)
+[skills/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L19)
 
 </td>
 </tr>
@@ -436,7 +436,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L20)
+[skills/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L20)
 
 </td>
 </tr>
@@ -458,7 +458,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L21)
+[skills/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L21)
 
 </td>
 </tr>
@@ -480,7 +480,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L26)
+[skills/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L26)
 
 </td>
 </tr>
@@ -502,7 +502,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L33)
+[skills/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L33)
 
 </td>
 </tr>
@@ -524,7 +524,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L25)
+[skills/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L25)
 
 </td>
 </tr>
@@ -546,7 +546,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L27)
+[skills/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L27)
 
 </td>
 </tr>
@@ -568,7 +568,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L28)
+[skills/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L28)
 
 </td>
 </tr>
@@ -590,7 +590,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L30)
+[skills/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L30)
 
 </td>
 </tr>
@@ -612,7 +612,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L35)
+[skills/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L35)
 
 </td>
 </tr>
@@ -634,7 +634,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L22)
+[skills/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L22)
 
 </td>
 </tr>
@@ -656,7 +656,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L23)
+[skills/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L23)
 
 </td>
 </tr>
@@ -678,7 +678,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L31)
+[skills/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L31)
 
 </td>
 </tr>
@@ -700,7 +700,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L29)
+[skills/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L29)
 
 </td>
 </tr>
@@ -722,7 +722,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L32)
+[skills/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L32)
 
 </td>
 </tr>
@@ -744,7 +744,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L34)
+[skills/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L34)
 
 </td>
 </tr>
@@ -766,7 +766,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L24)
+[skills/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L24)
 
 </td>
 </tr>
@@ -788,7 +788,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L2)
+[skills/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L2)
 
 </td>
 </tr>
@@ -810,7 +810,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L6)
+[skills/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L6)
 
 </td>
 </tr>
@@ -832,7 +832,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L8)
+[skills/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L8)
 
 </td>
 </tr>
@@ -854,7 +854,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L12)
+[skills/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L12)
 
 </td>
 </tr>
@@ -876,7 +876,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L14)
+[skills/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L14)
 
 </td>
 </tr>
@@ -898,7 +898,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L13)
+[skills/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L13)
 
 </td>
 </tr>
@@ -920,7 +920,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L5)
+[skills/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L5)
 
 </td>
 </tr>
@@ -942,7 +942,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L11)
+[skills/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L11)
 
 </td>
 </tr>
@@ -964,7 +964,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L7)
+[skills/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L7)
 
 </td>
 </tr>
@@ -986,7 +986,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L4)
+[skills/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L4)
 
 </td>
 </tr>
@@ -1008,7 +1008,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L3)
+[skills/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L3)
 
 </td>
 </tr>
@@ -1030,7 +1030,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L16)
+[skills/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L16)
 
 </td>
 </tr>
@@ -1052,7 +1052,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L17)
+[skills/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L17)
 
 </td>
 </tr>
@@ -1074,7 +1074,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L15)
+[skills/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L15)
 
 </td>
 </tr>
@@ -1096,7 +1096,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L9)
+[skills/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L9)
 
 </td>
 </tr>
@@ -1118,7 +1118,7 @@ Defined in: [skills/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/
 </td>
 <td>
 
-[skills/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/data/lib/skills/index.ts#L10)
+[skills/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/skills/index.ts#L10)
 
 </td>
 </tr>

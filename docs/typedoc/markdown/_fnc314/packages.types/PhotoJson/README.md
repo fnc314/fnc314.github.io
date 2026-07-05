@@ -6,7 +6,7 @@
 
 # Interface: PhotoJson
 
-Defined in: [packages/types/lib/theme/index.ts:125](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L125)
+Defined in: [packages/types/lib/theme/index.ts:125](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L125)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/theme/index.ts:125](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:128](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L128)
+[packages/types/lib/theme/index.ts:128](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L128)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/lib/theme/index.ts:125](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:127](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L127)
+[packages/types/lib/theme/index.ts:127](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L127)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/lib/theme/index.ts:125](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:126](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L126)
+[packages/types/lib/theme/index.ts:126](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L126)
 
 </td>
 </tr>

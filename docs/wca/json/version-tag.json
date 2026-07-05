@@ -7,6 +7,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[null]"
         }

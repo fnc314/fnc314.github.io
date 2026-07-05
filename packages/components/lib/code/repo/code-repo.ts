@@ -8,21 +8,21 @@ import { customElement, property } from "lit/decorators.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
- *   {@link CodeRepoData} objects from `data/code.json`
+ *   {@link @fnc314/packages.types!CodeRepoData} objects from `data/code.json`
  *
- * @property {CodeRepoData} codeRepo - An instance of {@link CodeRepoData}
+ * @property {CodeRepoData} codeRepo - An instance of {@link @fnc314/packages.types!CodeRepoData}
  *   to render
  *
- * @export
  * @class CodeRepo
  * @extends {UIAwareElement}
  */
 @customElement("code-repo")
 export class CodeRepo extends UIAwareElement {
-  /** {@link CodeRepoData} */
+  /** {@link @fnc314/packages.types!CodeRepoData} */
   @property({ type: Object })
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     CodeRepoStyles,

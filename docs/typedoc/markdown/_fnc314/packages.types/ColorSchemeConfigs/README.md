@@ -6,7 +6,7 @@
 
 # Interface: ColorSchemeConfigs
 
-Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L28)
+Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L28)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L30)
+[packages/types/lib/theme/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L30)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L29)
+[packages/types/lib/theme/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L29)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L31)
+[packages/types/lib/theme/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L31)
 
 </td>
 </tr>
@@ -83,7 +83,7 @@ Defined in: [packages/types/lib/theme/index.ts:28](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L33)
+[packages/types/lib/theme/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L33)
 
 </td>
 </tr>

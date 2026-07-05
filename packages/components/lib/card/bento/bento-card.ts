@@ -32,7 +32,7 @@ import { classMap } from "lit/directives/class-map.js";
  */
 @customElement("bento-card")
 export class BentoCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     BentoCardStyles
@@ -77,7 +77,6 @@ export class BentoCard extends UIAwareElement {
    *   the exposed `slot[name="header"]` is suppressed.
    *
    * @type {string}
-   * @memberof BentoCard
    */
   @property({ type: String })
   bentoCardTitle: string = "";

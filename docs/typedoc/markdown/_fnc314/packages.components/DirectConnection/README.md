@@ -6,12 +6,10 @@
 
 # Class: DirectConnection
 
-Defined in: [packages/components/lib/connection/direct/direct-connection.ts:19](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/connection/direct/direct-connection.ts#L19)
+Defined in: [packages/components/lib/connection/direct/direct-connection.ts:18](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/connection/direct/direct-connection.ts#L18)
 
 Represents a subset of content in `connections.json` as
-outlined in ConnectionInstance
-
-## Export
+outlined in [@fnc314/packages.types!ConnectionInstance](../../packages.types/ConnectionInstance/README.md)
 
 DirectConnection
 
@@ -909,10 +907,10 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L37)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
-The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT\_LABELS
+The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
+[@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
 
 #### Inherited from
 
@@ -1078,7 +1076,7 @@ node is a Comment node.
 
 &gt; **connectionInstance**: `ConnectionInstance`
 
-Defined in: [packages/components/lib/connection/direct/direct-connection.ts:29](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/connection/direct/direct-connection.ts#L29)
+Defined in: [packages/components/lib/connection/direct/direct-connection.ts:29](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/connection/direct/direct-connection.ts#L29)
 
 ---
 
@@ -1128,7 +1126,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L23)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -3590,9 +3588,9 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L52)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
-Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
 
 #### Inherited from
@@ -3684,6 +3682,20 @@ from decorators.
 #### Inherited from
 
 [`UIAwareElement`](../UIAwareElement/README.md).[`finalized`](../UIAwareElement/README.md#finalized)
+
+---
+
+### styles
+
+&gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
+
+Defined in: [packages/components/lib/connection/direct/direct-connection.ts:20](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/connection/direct/direct-connection.ts#L20)
+
+[@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
+
+#### Overrides
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`styles`](../UIAwareElement/README.md#styles)
 
 ---
 
@@ -9548,7 +9560,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L58)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
 
 Invoked when the component is added to the document's DOM.
 
@@ -9581,7 +9593,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L64)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -9664,12 +9676,12 @@ facilitate complex interactions.
 
 ### createProperty()
 
-&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;): `void`
+&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:391
 
 Creates a property accessor on the element prototype if one does not exist
-and stores a `PropertyDeclaration` for the property with the
+and stores a [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration) for the property with the
 given options. The property setter calls the property's `hasChanged`
 property option or uses a strict identity check to determine whether or not
 to request an update.
@@ -9719,7 +9731,7 @@ static createProperty(name, options) {
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 </tr>
@@ -9740,7 +9752,7 @@ static createProperty(name, options) {
 
 ### getPropertyDescriptor()
 
-&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: `PropertyDeclaration`): `PropertyDescriptor` \| `undefined`
+&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)): `PropertyDescriptor` \| `undefined`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:419
 
@@ -9808,7 +9820,7 @@ class MyElement extends LitElement {
 </td>
 <td>
 
-`PropertyDeclaration`
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)
 
 </td>
 </tr>
@@ -9829,7 +9841,7 @@ class MyElement extends LitElement {
 
 ### getPropertyOptions()
 
-&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:434
 
@@ -9869,7 +9881,7 @@ customize the options for a given property, override
 
 #### Returns
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 #### Nocollapse
 
@@ -9949,7 +9961,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/components/lib/connection/direct/direct-connection.ts:31](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/connection/direct/direct-connection.ts#L31)
+Defined in: [packages/components/lib/connection/direct/direct-connection.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/connection/direct/direct-connection.ts#L31)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -9983,46 +9995,9 @@ Created lazily on user subclasses when finalizing the class.
 
 ---
 
-### styles
-
-&gt; `static` **styles**: `CSSResult`[]
-
-Defined in: [packages/components/lib/connection/direct/direct-connection.ts:20](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/connection/direct/direct-connection.ts#L20)
-
-Array of styles to apply to the element. The styles should be defined
-using the css tag function, via constructible stylesheets, or
-imported from native CSS module scripts.
-
-Note on Content Security Policy:
-
-Element styles are implemented with `<style>` tags when the browser doesn't
-support adopted StyleSheets. To use such `<style>` tags with the style-src
-CSP directive, the style-src value must either include 'unsafe-inline' or
-`nonce-<base64-value>` with `<base64-value>` replaced be a server-generated
-nonce.
-
-To provide a nonce to use on generated `<style>` elements, set
-`window.litNonce` to a server-generated nonce in your page's HTML, before
-loading application code:
-
-```html
-<script>
-  // Generated and unique per request:
-  window.litNonce = "a1b2c3d4";
-</script>
-```
-
-#### Nocollapse
-
-#### Overrides
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`styles`](../UIAwareElement/README.md#styles)
-
----
-
 ### finalizeStyles()
 
-> `protected` `static` **finalizeStyles**(`styles?`: `CSSResultGroup`): `CSSResultOrNative`[]
+&gt; `protected` `static` **finalizeStyles**(`styles?`: `CSSResultGroup`): `CSSResultOrNative`[]
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:485
 
@@ -10075,7 +10050,7 @@ that last added styles override previous styles.
 
 ### hasUpdated
 
-> **hasUpdated**: `boolean`
+&gt; **hasUpdated**: `boolean`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:509
 
@@ -10090,7 +10065,7 @@ that `renderRoot` exists before the element `hasUpdated`.
 
 ### isUpdatePending
 
-> **isUpdatePending**: `boolean`
+&gt; **isUpdatePending**: `boolean`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:503
 
@@ -10107,7 +10082,7 @@ Should only be read.
 
 #### Get Signature
 
-> **get** **updateComplete**(): [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`boolean`>\>
+&gt; **get** **updateComplete**(): [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`boolean`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:692
 
@@ -10124,7 +10099,7 @@ before fulfilling this Promise. To do this, first await
 
 ##### Returns
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`boolean`\>
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`boolean`\&gt;
 
 A promise of a boolean that resolves to true if the update completed
 without triggering another update.
@@ -10137,7 +10112,7 @@ without triggering another update.
 
 ### enableUpdating()
 
-> `protected` **enableUpdating**(`_requestedUpdate`: `boolean`): `void`
+&gt; `protected` **enableUpdating**(`_requestedUpdate`: `boolean`): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:577
 
@@ -10182,7 +10157,7 @@ update.
 
 ### firstUpdated()
 
-> `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\<`any`> \> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`>\>): `void`
+&gt; `protected` **firstUpdated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:763
 
@@ -10217,7 +10192,7 @@ again after this update cycle completes.
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10241,7 +10216,7 @@ Map of changed properties with old values
 
 ### getUpdateComplete()
 
-> `protected` **getUpdateComplete**(): [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`boolean`>\>
+&gt; `protected` **getUpdateComplete**(): [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`boolean`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:716
 
@@ -10265,7 +10240,7 @@ class MyElement extends LitElement {
 
 #### Returns
 
-[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`boolean`\>
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`boolean`\&gt;
 
 A promise of a boolean that resolves to true if the update completed
 without triggering another update.
@@ -10278,7 +10253,7 @@ without triggering another update.
 
 ### performUpdate()
 
-> `protected` **performUpdate**(): `void`
+&gt; `protected` **performUpdate**(): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:652
 
@@ -10301,7 +10276,7 @@ update synchronously.
 
 ### requestUpdate()
 
-> **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: `PropertyDeclaration`\<`unknown`, `unknown`>\>, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
+&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:619
 
@@ -10365,7 +10340,7 @@ old value of requesting property
 </td>
 <td>
 
-`PropertyDeclaration`\<`unknown`, `unknown`\>
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10428,7 +10403,7 @@ the new value of the property. This is only used if
 
 ### scheduleUpdate()
 
-> `protected` **scheduleUpdate**(): `void` \| [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`unknown`>\>
+&gt; `protected` **scheduleUpdate**(): `void` \| [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`unknown`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:641
 
@@ -10442,14 +10417,14 @@ For instance, to schedule updates to occur just before the next frame:
 
 ```ts
 override protected async scheduleUpdate(): Promise<unknown> {
-  await new Promise((resolve) => requestAnimationFrame(() => resolve()));
+  await new Promise((resolve) =&gt; requestAnimationFrame(() =&gt; resolve()));
   super.scheduleUpdate();
 }
 ```
 
 #### Returns
 
-`void` \| [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`unknown`\>
+`void` \| [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\&lt;`unknown`\&gt;
 
 #### Inherited from
 
@@ -10459,7 +10434,7 @@ override protected async scheduleUpdate(): Promise<unknown> {
 
 ### shouldUpdate()
 
-> `protected` **shouldUpdate**(`_changedProperties`: `PropertyValueMap`\<`any`> \> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`>\>): `boolean`
+&gt; `protected` **shouldUpdate**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `boolean`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:725
 
@@ -10486,7 +10461,7 @@ customized to control when to update.
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10510,7 +10485,7 @@ Map of changed properties with old values
 
 ### update()
 
-> `protected` **update**(`changedProperties`: `PropertyValueMap`\<`any`> \> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`>\>): `void`
+&gt; `protected` **update**(`changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/development/lit-element.d.ts:101
 
@@ -10537,7 +10512,7 @@ this method will _not_ trigger another update.
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10561,7 +10536,7 @@ Map of changed properties with old values
 
 ### updated()
 
-> `protected` **updated**(`_changedProperties`: `PropertyValueMap`\<`any`> \> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`>\>): `void`
+&gt; `protected` **updated**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:746
 
@@ -10590,7 +10565,7 @@ again after this update cycle completes.
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10614,7 +10589,7 @@ Map of changed properties with old values
 
 ### willUpdate()
 
-> `protected` **willUpdate**(`_changedProperties`: `PropertyValueMap`\<`any`> \> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`>\>): `void`
+&gt; `protected` **willUpdate**(`_changedProperties`: `PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:674
 
@@ -10654,7 +10629,7 @@ render() {
 </td>
 <td>
 
-`PropertyValueMap`\<`any`\> \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\<`PropertyKey`, `unknown`\>
+`PropertyValueMap`\&lt;`any`\&gt; \| [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)\&lt;`PropertyKey`, `unknown`\&gt;
 
 </td>
 </tr>
@@ -10668,4 +10643,4 @@ render() {
 #### Inherited from
 
 [`UIAwareElement`](../UIAwareElement/README.md).[`willUpdate`](../UIAwareElement/README.md#willupdate)
-</style></body></html>
+</unknown></body></html>

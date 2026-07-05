@@ -38,7 +38,14 @@ export interface BreakpointRange {
 /**
  * Binds the {@link BreakpointLabel}s to their {@link BreakpointRange}
  */
-export interface Breakpoints extends Record<BreakpointLabel, BreakpointRange> {}
+export interface Breakpoints {
+  /** The {@link BreakpointRange} applied at the `mobile` breakpoint */
+  mobile: BreakpointRange;
+  /** The {@link BreakpointRange} applied at the `tablet` breakpoint */
+  tablet: BreakpointRange;
+  /** The {@link BreakpointRange} applied at the `desktop` breakpoint */
+  desktop: BreakpointRange;
+}
 
 /**
  * A static implementation of {@link Breakpoints}

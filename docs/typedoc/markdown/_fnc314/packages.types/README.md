@@ -46,6 +46,7 @@
 - [DirectConnectionIcon](DirectConnectionIcon/README.md)
 - [DirectConnectionMethod](DirectConnectionMethod/README.md)
 - [FourDigitYear](FourDigitYear/README.md)
+- [IsHex](IsHex/README.md)
 - [MaterialScheme](MaterialScheme/README.md)
 - [MaterialSchemeName](MaterialSchemeName/README.md)
 - [MaterialSchemeNames](MaterialSchemeNames/README.md)

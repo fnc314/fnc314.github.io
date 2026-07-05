@@ -92,7 +92,7 @@
             "description": "A `string` from `CSS` or an empty `string`"
           },
           "name": "readCSSProperty",
-          "description": "Returns the value of the provided {@link property}",
+          "description": "Returns the value of the provided `property`",
           "kind": "function"
         }
       ],

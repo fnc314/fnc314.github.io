@@ -8,7 +8,7 @@
 
 &gt; **ProfessionalConnectionJsonData** = \{ `designToken`: [`MaskableDesignTokenIcon`](../MaskableDesignTokenIcon/README.md); `href`: `string`; `title`: `string`; \}
 
-Defined in: [packages/types/lib/connections/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/connections/index.ts#L36)
+Defined in: [packages/types/lib/connections/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L36)
 
 ## Properties
 
@@ -34,7 +34,7 @@ Defined in: [packages/types/lib/connections/index.ts:36](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:38](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/connections/index.ts#L38)
+[packages/types/lib/connections/index.ts:38](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L38)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/types/lib/connections/index.ts:36](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/connections/index.ts#L37)
+[packages/types/lib/connections/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L37)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [packages/types/lib/connections/index.ts:36](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/connections/index.ts#L39)
+[packages/types/lib/connections/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L39)
 
 </td>
 </tr>

@@ -304,12 +304,12 @@
         },
         {
           "name": "code-repo",
-          "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link CodeRepoData}",
+          "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link @fnc314/packages.types!CodeRepoData}",
           "doc-url": "",
           "attributes": [
             {
               "name": "codeRepo",
-              "description": "{@link CodeRepoData}",
+              "description": "{@link @fnc314/packages.types!CodeRepoData}",
               "value": { "type": "CodeRepoData", "default": "{}" }
             }
           ],

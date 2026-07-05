@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "artifact-connection",
-      "description": "Attributes:\n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - ",
+      "description": "Attributes:\n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `artifactConnectionType` {`\"googleDocs\" | \"pdf\"`} - \n\n  * `artifactConnectionData` - ",
       "attributes": [
         {
           "name": "artifactConnectionType",

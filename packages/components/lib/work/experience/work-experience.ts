@@ -14,14 +14,14 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
  * @property {string} [experienceRole=""] - The formal role from the {@link WorkExperience} instance
  * @property {string} [experienceOrg=""] - The employer formal name
  * @property {string} [experienceSummary=""] - An optional summary of the overall role
- * @property {WorkDate} [dateStart={ stamp: "", text: "" }] - A {@link WorkDate} instance describing employment start date
- * @property {WorkDate} [dateEnd={ stamp: "", text: "" }] - A {@link WorkDate} instance describing employment end date
+ * @property {WorkDate} [dateStart={ stamp: "", text: "" }] - A {@link @fnc314/packages.types!WorkDate} instance describing employment start date
+ * @property {WorkDate} [dateEnd={ stamp: "", text: "" }] - A {@link @fnc314/packages.types!WorkDate} instance describing employment end date
  * @property {Array<{ item: string }>} [summaries=[]] - An array of `{ item: string }` objects describing the responsibilities
- * @property {Array<Job>} [jobs=[]] - An array of {@link Job}s rendered as nested {@link WorkExperience} instances
+ * @property {Array<Job>} [jobs=[]] - An array of {@link @fnc314/packages.types!Job}s rendered as nested {@link WorkExperience} instances
  */
 @customElement("work-experience")
 export class WorkExperience extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     WorkExperienceStyles

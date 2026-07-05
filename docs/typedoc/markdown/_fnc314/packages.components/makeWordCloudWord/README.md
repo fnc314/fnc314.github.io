@@ -8,7 +8,7 @@
 
 &gt; **makeWordCloudWord**(`word`: `string`, `weight`: [`Weights`](../Weights/README.md), `category`: [`WordCloudWordCategory`](../WordCloudWordCategory/README.md), `extras?`: `string`[]): [`WordCloudWord`](../WordCloudWord/README.md)
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.types.ts#L41)
+Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:41](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L41)
 
 A factory function to create a [WordCloudWord](../WordCloudWord/README.md)
 

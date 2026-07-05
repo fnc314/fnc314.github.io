@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "direct-connection",
-      "description": "[object Object],[object Object]\n\nAttributes:\n\n  * `connection-instance` {`ConnectionInstance`} - \n\nProperties:\n\n  * `styles` - \n\n  * `connectionInstance` {`ConnectionInstance`} - ",
+      "description": "[object Object],[object Object]\n\nAttributes:\n\n  * `connection-instance` {`ConnectionInstance`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `connectionInstance` {`ConnectionInstance`} - ",
       "attributes": [
         {
           "name": "connection-instance",

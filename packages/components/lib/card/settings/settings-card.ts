@@ -18,7 +18,7 @@ import { customElement, property, state } from "lit/decorators.js";
  */
 @customElement("settings-card")
 export class SettingsCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     SettingsCardStyles,

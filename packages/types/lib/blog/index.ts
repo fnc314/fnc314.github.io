@@ -1,7 +1,6 @@
 /**
  * Describes a `json` record of a blog post
  *
- * @export
  * @interface BlogPostJson
  * @typedef {BlogEntryJson}
  */
@@ -26,7 +25,6 @@ export interface BlogSeriesEntry {
 /**
  * Alternative of {@link BlogEntryJson}
  *
- * @export
  * @typedef {BlogsJson}
  */
 export type BlogsJson = {
@@ -46,7 +44,6 @@ export type BlogsJson = {
 /**
  * Alternative of {@link BlogEntryJson}
  *
- * @export
  * @interface BlogsJsonEntry
  * @typedef {BlogsJsonEntry}
  */

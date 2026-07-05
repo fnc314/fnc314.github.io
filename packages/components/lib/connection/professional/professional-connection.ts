@@ -8,6 +8,7 @@ import { customElement, property } from "lit/decorators.js";
 
 @customElement("professional-connection")
 export class ProfessionalConnection extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [
     TextStyles,
     ProfessionalConnectionStyles,

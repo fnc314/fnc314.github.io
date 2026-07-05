@@ -93,7 +93,7 @@ export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 export type ColorString = `#${string}`;
 
 // Recursive helper to check if a string consists only of N hex digits
-type IsHex<T extends string, Count extends any[] = []> =
+export type IsHex<T extends string, Count extends any[] = []> =
   T extends `${ColorSubValue}${infer Rest}`
   ? IsHex<Rest, [...Count, any]>
   : T extends ""

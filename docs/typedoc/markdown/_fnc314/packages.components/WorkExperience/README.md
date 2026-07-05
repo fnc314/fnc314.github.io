@@ -6,7 +6,7 @@
 
 # Class: WorkExperience
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L23)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:23](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L23)
 
 ## Hierarchy
 
@@ -902,10 +902,10 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L37)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
-The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT\_LABELS
+The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
+[@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
 
 #### Inherited from
 
@@ -1113,7 +1113,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L23)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1139,9 +1139,9 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **dateEnd**: `WorkDate`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:51](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L51)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:51](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L51)
 
-A WorkDate instance describing employment end date
+A [@fnc314/packages.types!WorkDate](../../packages.types/WorkDate/README.md) instance describing employment end date
 
 ---
 
@@ -1149,9 +1149,9 @@ A WorkDate instance describing employment end date
 
 &gt; **dateStart**: `WorkDate`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:47](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L47)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:47](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L47)
 
-A WorkDate instance describing employment start date
+A [@fnc314/packages.types!WorkDate](../../packages.types/WorkDate/README.md) instance describing employment start date
 
 ---
 
@@ -1367,7 +1367,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **experienceOrg**: `string` = `""`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:40](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L40)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:40](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L40)
 
 The employer formal name
 
@@ -1377,7 +1377,7 @@ The employer formal name
 
 &gt; **experienceRole**: `string` = `""`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:36](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L36)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:36](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L36)
 
 The formal role from the WorkExperience instance
 
@@ -1387,7 +1387,7 @@ The formal role from the WorkExperience instance
 
 &gt; **experienceSummary**: `string` = `""`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:43](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L43)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:43](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L43)
 
 An optional summary of the overall role
 
@@ -1553,7 +1553,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **isNested**: `boolean` = `false`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:32](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L32)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:32](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L32)
 
 Whether this is a nested instance
 
@@ -1563,9 +1563,9 @@ Whether this is a nested instance
 
 &gt; **jobs**: `Job`[] = `[]`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:69](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L69)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:69](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L69)
 
-An array of Jobs rendered as nested WorkExperience instances
+An array of [@fnc314/packages.types!Job](../../packages.types/Job/README.md)s rendered as nested WorkExperience instances
 
 ---
 
@@ -3585,7 +3585,7 @@ The **`spellcheck`** property of the HTMLElement interface represents a boolean 
 
 &gt; **summaries**: \{ `item`: `string`; \}[] = `[]`
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:59](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L59)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:59](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L59)
 
 An array of `{ item: string }` objects describing the responsibilities
 
@@ -3618,7 +3618,7 @@ The description of the responsibility or achievement.
 </td>
 <td>
 
-[packages/components/lib/work/experience/work-experience.ts:64](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L64)
+[packages/components/lib/work/experience/work-experience.ts:64](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L64)
 
 </td>
 </tr>
@@ -3691,9 +3691,9 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L52)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
-Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
 
 #### Inherited from
@@ -3790,11 +3790,11 @@ from decorators.
 
 ### styles
 
-&gt; `static` **styles**: `CSSResult`[]
+&gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:25](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L25)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L25)
 
-[lit!css](https://lit.dev/docs/api/styles/#css)
+[@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
@@ -8090,7 +8090,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/lib/work/experience/work-experience.ts:72](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/work/experience/work-experience.ts#L72)
+Defined in: [packages/components/lib/work/experience/work-experience.ts:72](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/work/experience/work-experience.ts#L72)
 
 Renders the experience entry, conditionally applying styles based on nesting level.
 
@@ -9681,7 +9681,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L58)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
 
 Invoked when the component is added to the document's DOM.
 
@@ -9714,7 +9714,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L64)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -9797,12 +9797,12 @@ facilitate complex interactions.
 
 ### createProperty()
 
-&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;): `void`
+&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:391
 
 Creates a property accessor on the element prototype if one does not exist
-and stores a `PropertyDeclaration` for the property with the
+and stores a [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration) for the property with the
 given options. The property setter calls the property's `hasChanged`
 property option or uses a strict identity check to determine whether or not
 to request an update.
@@ -9852,7 +9852,7 @@ static createProperty(name, options) {
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 </tr>
@@ -9873,7 +9873,7 @@ static createProperty(name, options) {
 
 ### getPropertyDescriptor()
 
-&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: `PropertyDeclaration`): `PropertyDescriptor` \| `undefined`
+&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)): `PropertyDescriptor` \| `undefined`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:419
 
@@ -9941,7 +9941,7 @@ class MyElement extends LitElement {
 </td>
 <td>
 
-`PropertyDeclaration`
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)
 
 </td>
 </tr>
@@ -9962,7 +9962,7 @@ class MyElement extends LitElement {
 
 ### getPropertyOptions()
 
-&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:434
 
@@ -10002,7 +10002,7 @@ customize the options for a given property, override
 
 #### Returns
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 #### Nocollapse
 
@@ -10376,7 +10376,7 @@ update synchronously.
 
 ### requestUpdate()
 
-&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
+&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:619
 
@@ -10440,7 +10440,7 @@ old value of requesting property
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 <td>

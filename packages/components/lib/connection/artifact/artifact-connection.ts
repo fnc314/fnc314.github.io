@@ -8,6 +8,7 @@ import { customElement, property } from "lit/decorators.js";
 
 @customElement("artifact-connection")
 export class ArtifactConnection extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [
     TextStyles,
     ConnectionArtifactStyles,

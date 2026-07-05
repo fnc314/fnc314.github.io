@@ -37,7 +37,7 @@ import { classMap } from "lit/directives/class-map.js";
  */
 @customElement("ui-mode-toggle")
 export class UiModeToggle extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     UIModeToggleStyles

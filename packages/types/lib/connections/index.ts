@@ -1,7 +1,7 @@
 import { type DesignTokenIcon, type MaskableDesignTokenIcon } from "@/lib/design-tokens";
 
 /**
- * The two variants of the {@link DirectConnection} widget
+ * The two variants of the {@link @fnc314/packages.components!DirectConnection} widget
  */
 export type DirectConnectionMethod = "phone" | "email";
 export type DirectConnectionIcon = "call" | "mail";

@@ -6,7 +6,7 @@
 
 # Class: WordTag
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:35](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L35)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:34](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L34)
 
 ## Cssprop
 
@@ -43,8 +43,6 @@ Defined in: [packages/components/lib/word/tag/word-tag.ts:35](https://github.com
 ## Slot
 
 icon - The optional space available for, and positioned by, the [variant](#variant) property
-
-## Export
 
 WordTag
 
@@ -942,10 +940,10 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L37)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
-The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT\_LABELS
+The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
+[@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
 
 #### Inherited from
 
@@ -1153,7 +1151,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L23)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1419,7 +1417,7 @@ Returns the first child that is an element, and null otherwise.
 
 &gt; **heaviness**: [`WordTagHeaviness`](../WordTagHeaviness/README.md) = `"normal"`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:46](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L46)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:45](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L45)
 
 The weight of the tag (text &amp; border), can be
 `"normal"` (`--md-ref-typeface-weight-regular` &amp; `--sizes-thickness-hairline`) or
@@ -1447,7 +1445,7 @@ The HTMLElement property **`hidden`** reflects the value of the element's hidden
 
 &gt; **hrefUrl**: `string` = `""`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:49](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L49)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:48](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L48)
 
 A URL which, when provided, wraps this WordTag in a
 [HTMLAnchorElement](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
@@ -3638,9 +3636,9 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L52)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
-Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
 
 #### Inherited from
@@ -3669,7 +3667,7 @@ The **`translate`** property of the HTMLElement interface indicates whether an e
 
 &gt; **variant**: [`WordTagVariant`](../WordTagVariant/README.md) = `"text-only"`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:59](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L59)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:58](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L58)
 
 The version of the layout to render
 
@@ -3679,7 +3677,7 @@ The version of the layout to render
 
 &gt; **word**: `string` = `""`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:43](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L43)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L42)
 
 The tagged word
 
@@ -3757,11 +3755,11 @@ from decorators.
 
 ### styles
 
-&gt; `static` **styles**: `CSSResult`[]
+&gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L37)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:36](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L36)
 
-[lit!css](https://lit.dev/docs/api/styles/#css)
+[@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
@@ -9630,7 +9628,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:58](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L58)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
 
 Invoked when the component is added to the document's DOM.
 
@@ -9663,7 +9661,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:64](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L64)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -9746,12 +9744,12 @@ facilitate complex interactions.
 
 ### createProperty()
 
-&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;): `void`
+&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:391
 
 Creates a property accessor on the element prototype if one does not exist
-and stores a `PropertyDeclaration` for the property with the
+and stores a [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration) for the property with the
 given options. The property setter calls the property's `hasChanged`
 property option or uses a strict identity check to determine whether or not
 to request an update.
@@ -9801,7 +9799,7 @@ static createProperty(name, options) {
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 </tr>
@@ -9822,7 +9820,7 @@ static createProperty(name, options) {
 
 ### getPropertyDescriptor()
 
-&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: `PropertyDeclaration`): `PropertyDescriptor` \| `undefined`
+&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)): `PropertyDescriptor` \| `undefined`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:419
 
@@ -9890,7 +9888,7 @@ class MyElement extends LitElement {
 </td>
 <td>
 
-`PropertyDeclaration`
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)
 
 </td>
 </tr>
@@ -9911,7 +9909,7 @@ class MyElement extends LitElement {
 
 ### getPropertyOptions()
 
-&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:434
 
@@ -9951,7 +9949,7 @@ customize the options for a given property, override
 
 #### Returns
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 #### Nocollapse
 
@@ -10031,7 +10029,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:112](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/tag/word-tag.ts#L112)
+Defined in: [packages/components/lib/word/tag/word-tag.ts:111](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/tag/word-tag.ts#L111)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -10346,7 +10344,7 @@ update synchronously.
 
 ### requestUpdate()
 
-&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
+&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:619
 
@@ -10410,7 +10408,7 @@ old value of requesting property
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 <td>

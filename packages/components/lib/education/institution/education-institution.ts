@@ -8,6 +8,7 @@ import { customElement, property } from "lit/decorators.js";
 
 @customElement("education-institution")
 export class EducationInstitution extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [
     TextStyles,
     EducationInstitutionStyles

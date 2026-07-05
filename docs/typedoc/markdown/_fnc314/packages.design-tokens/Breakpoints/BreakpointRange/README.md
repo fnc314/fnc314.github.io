@@ -6,7 +6,7 @@
 
 # Interface: BreakpointRange
 
-Defined in: [breakpoints.ts:33](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/breakpoints.ts#L33)
+Defined in: [breakpoints.ts:33](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L33)
 
 Defines the [min](#min) and [max](#max) values
 for a breakpoint
@@ -35,7 +35,7 @@ for a breakpoint
 </td>
 <td>
 
-[breakpoints.ts:35](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/breakpoints.ts#L35)
+[breakpoints.ts:35](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L35)
 
 </td>
 </tr>
@@ -52,7 +52,7 @@ for a breakpoint
 </td>
 <td>
 
-[breakpoints.ts:34](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/breakpoints.ts#L34)
+[breakpoints.ts:34](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L34)
 
 </td>
 </tr>

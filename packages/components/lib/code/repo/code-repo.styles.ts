@@ -2,7 +2,7 @@ import { DynamicBorderStyles } from "@/lib/styles";
 import { type CSSResult, css } from "lit";
 
 /**
- * The {@link CSSResult} for {@link @fnc314/fnc314.github.io!CodeRepo}
+ * The {@link CSSResult} for {@link @fnc314/packages.components!CodeRepo}
  *
  * @type {CSSResult}
  */

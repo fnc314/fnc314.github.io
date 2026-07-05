@@ -8,9 +8,9 @@
 
 &gt; **readCSSProperty**(`property`: `string`, `element?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `null` \| `undefined`, `logComputedPropertyTransaction?`: `boolean`): `string`
 
-Defined in: [read-css-property.ts:15](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/read-css-property.ts#L15)
+Defined in: [read-css-property.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/read-css-property.ts#L15)
 
-Returns the value of the provided [property](#readcssproperty)
+Returns the value of the provided `property`
 
 ## Parameters
 
@@ -90,7 +90,7 @@ Defaults to "global" `window.document.documentElement`
 <td>
 
 Removes log suppression allowing
-invocations can expose the [property](#readcssproperty) read from the [element](#readcssproperty) and the
+invocations can expose the `property` read from the `element` and the
 returned value
 
 </td>

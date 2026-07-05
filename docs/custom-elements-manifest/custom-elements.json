@@ -62,7 +62,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -126,7 +126,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -346,7 +346,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -433,7 +433,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -566,7 +566,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -633,7 +633,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -734,7 +734,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -801,7 +801,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -909,7 +909,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -976,7 +976,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1077,7 +1077,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1144,7 +1144,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1260,7 +1260,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1352,7 +1352,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1508,7 +1508,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1582,7 +1582,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1690,7 +1690,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1762,7 +1762,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1835,7 +1835,7 @@
             "text": "CSSResult"
           },
           "default": "css` ${DynamicBorderStyles} :host { --md-divider-color: var(--md-sys-color-on-surface-variant); --md-divider-thickness: var(--sizes-thickness-hairline); --dynamic-border-background: var(--md-sys-color-tertiary-container); --dynamic-border-color: var(--md-sys-color-on-tertiary-container); --word-tag-border-radius: var(--md-sys-shape-corner-medium); --word-tag-background-color: var(--md-sys-color-tertiary-container); --word-tag-color: var(--md-sys-color-on-tertiary-container); align-self: stretch; box-sizing: border-box; container-type: inline-size; display: block; flex-grow: 1; inline-size: 100%; min-inline-size: 0; } article { --dynamic-border-size: var(--sizes-width-l); background-color: var(--md-sys-color-surface); block-size: 100%; border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-medium); box-sizing: border-box; display: grid; grid-template-areas: \"header\" \"divider\" \"description\" \"tech\"; grid-template-columns: 1fr; justify-content: flex-start; min-inline-size: 0; overflow: hidden; padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs); padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs); } header { display: flex; flex-direction: column; gap: var(--spaces-gap-xs); grid-area: header; justify-content: space-between; margin-block: var(--spaces-margin-xs); min-inline-size: 0; h3 { color: var(--md-sys-color-on-surface); margin-block: var(--spaces-none); margin-inline: var(--spaces-none); word-break: break-word; } a { align-items: center; color: var(--md-sys-color-primary); display: inline-flex; gap: var(--spaces-gap-xs); max-inline-size: 100%; min-inline-size: 0; overflow-wrap: break-word; text-decoration: none; word-break: break-all; &:hover, &:focus { text-decoration: underline; } } } md-divider { grid-area: divider; margin-block: var(--spaces-none) var(--spaces-margin-m); } section { grid-area: description; min-inline-size: 0; p { color: var(--md-sys-color-on-surface-variant); margin-block: var(--spaces-none) var(--spaces-margin-m); min-inline-size: 0; word-break: break-word; pre { display: inline; overflow-wrap: break-word; white-space: pre-wrap; } } } footer { display: flex; flex-direction: column; gap: var(--spaces-gap-s); grid-area: tech; margin-block-start: auto; ul { display: flex; flex-flow: row wrap; gap: var(--spaces-gap-s); list-style: none; margin: var(--spaces-none); padding: var(--spaces-none); & word-tag img, & word-tag [slot=icon] { block-size: var(--md-icon-size); flex-shrink: 0; inline-size: var(--md-icon-size); object-fit: contain; } } } /** * Tablet Scenario: Screen 769px - 1200px. * Widget is 1/2 width (3 out of 6 columns). * Container width range: ~385px to 600px. */ @container (min-width: 385px) { article { gap: var(--spaces-gap-m); padding-block: var(--spaces-padding-xl) var(--spaces-padding-s); padding-inline: var(--spaces-padding-s) var(--spaces-padding-s); header { margin-block: var(--spaces-none); } section { p { margin-block-end: var(--spaces-margin-m); } } } } /** * Desktop Scenario: Screen 1201px+. * Widget is full width (12 out of 12 columns). * Container width range: 1201px+. */ @container (min-width: 1201px) { article { align-items: start; gap: var(--spaces-gap-l); grid-template-areas: \"header description\" \"tech tech\"; grid-template-columns: 1fr 1.5fr; grid-template-rows: auto 1fr; padding-block: var(--spaces-padding-xs); padding-inline-end: unset; padding-inline-start: var(--spaces-padding-xl); md-divider { display: none; } header { margin-block: var(--spaces-none); } } } `",
-          "description": "The CSSResult for @fnc314/fnc314.github.io!CodeRepo"
+          "description": "The CSSResult for @fnc314/packages.components!CodeRepo"
         }
       ],
       "exports": [
@@ -1855,7 +1855,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An instance of a given `GitHub` repository project documented through\n  CodeRepoData objects from `data/code.json`",
+          "description": "An instance of a given `GitHub` repository project documented through\n  @fnc314/packages.types!CodeRepoData objects from `data/code.json`",
           "name": "CodeRepo",
           "members": [
             {
@@ -1866,7 +1866,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1879,7 +1879,7 @@
                 "text": "CodeRepoData"
               },
               "default": "{}",
-              "description": "{@link CodeRepoData}",
+              "description": "{@link @fnc314/packages.types!CodeRepoData}",
               "attribute": "codeRepo"
             },
             {
@@ -1940,7 +1940,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -1954,7 +1954,7 @@
                 "text": "CodeRepoData"
               },
               "default": "{}",
-              "description": "{@link CodeRepoData}",
+              "description": "{@link @fnc314/packages.types!CodeRepoData}",
               "fieldName": "codeRepo",
               "kind": "method"
             }
@@ -2052,7 +2052,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2098,7 +2098,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2189,7 +2189,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Represents a subset of content in `connections.json` as\n  outlined in ConnectionInstance",
+          "description": "Represents a subset of content in `connections.json` as\n  outlined in @fnc314/packages.types!ConnectionInstance",
           "name": "DirectConnection",
           "members": [
             {
@@ -2200,7 +2200,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2255,7 +2255,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2347,7 +2347,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2411,7 +2411,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2513,7 +2513,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -2568,7 +2568,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3237,7 +3237,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An extension of LitElement which encapsulates interactivity\n  with configService to expose `darkMode` as an internal @state\n  by leveraging `connectedCallback` and `disconnectedCallbacak` for implementers.\n  Also exposes `breakpoint` to expose (from `window` resize events) which\n  BreakpointLabel is currently applicable *from the screen level*.\n  The current BreakpointLabel is determined by Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL",
+          "description": "An extension of LitElement which encapsulates interactivity\n  with @fnc314/packages.services!configsService to expose `darkMode` as an internal `@state`\n  by leveraging `connectedCallback` and `disconnectedCallbacak` for implementers.\n  Also exposes `breakpoint` to expose (from `window` resize events) which\n  @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel is currently applicable *from the screen level*.\n  The current @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel is determined by @fnc314/packages.design-tokens!Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL",
           "name": "UIAwareElement",
           "members": [
             {
@@ -3248,7 +3248,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The {@link BreakpointLabel} as determined by *SCREEN* width against\n  {@link Breakpoints.BREAKPOINT_LABELS}"
+              "description": "The {@link @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel} as determined by *SCREEN* width against\n  {@link @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS}"
             },
             {
               "kind": "method",
@@ -3275,7 +3275,7 @@
               "name": "touchScreen",
               "type": "boolean",
               "privacy": "protected",
-              "description": "Reads {@link TouchScreen.CSS_VARIABLE_TOUCH_SCREEN} from `:root`\n  and tests against `\"true\"`,"
+              "description": "Reads {@link @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN} from `:root`\n  and tests against `\"true\"`,"
             }
           ],
           "superclass": {
@@ -3348,7 +3348,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3394,7 +3394,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3689,7 +3689,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3801,7 +3801,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3897,7 +3897,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -3950,7 +3950,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4180,7 +4180,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4281,7 +4281,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4598,7 +4598,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4680,7 +4680,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4839,7 +4839,7 @@
               },
               "privacy": "protected",
               "default": "readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )",
-              "description": "The BreakpointLabel as determined by *SCREEN* width against\n  Breakpoints.BREAKPOINT_LABELS",
+              "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -4964,7 +4964,7 @@
                 "text": "boolean"
               },
               "privacy": "protected",
-              "description": "Reads TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
+              "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
                 "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
@@ -5542,10 +5542,10 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "Removes log suppression allowing\n *   invocations can expose the {@link property}read from the {@link element}and the\n *   returned value\n * "
+              "description": "Removes log suppression allowing\ninvocations can expose the `property` read from the `element` and the\nreturned value"
             }
           ],
-          "description": "Returns the value of the provided property",
+          "description": "Returns the value of the provided `property`",
           "return": {
             "type": {
               "text": ""
@@ -5990,7 +5990,7 @@
               "description": "The RGB color value from the JSON scheme, e.g., \"#FF0000\""
             }
           ],
-          "description": "Converts jsonKey and corresponding rgb value into a CSS custom property\n  via lit!css and lit!unsafeCSS functions"
+          "description": "Converts `jsonKey` and corresponding `rgb` value into a CSS custom property\n  via css and unsafeCSS functions"
         },
         {
           "kind": "function",
@@ -6004,7 +6004,7 @@
               "description": "Any `object`"
             }
           ],
-          "description": "Reads a `.json` defined object and produces a lit!CSSResult",
+          "description": "Reads a `.json` defined object and produces a CSSResult",
           "return": {
             "type": {
               "text": ""

@@ -6,11 +6,9 @@
 
 # Interface: MaskableDesignTokenIcon
 
-Defined in: [packages/types/lib/design-tokens/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L27)
+Defined in: [packages/types/lib/design-tokens/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L25)
 
 Extends [DesignTokenIcon](../DesignTokenIcon/README.md) with a maskable asset
-
-## Export
 
 MaskableDesignTokenIcon
 
@@ -58,7 +56,7 @@ Display for dark mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L10)
+[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L9)
 
 </td>
 </tr>
@@ -85,7 +83,7 @@ Default option
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L13)
+[packages/types/lib/design-tokens/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L12)
 
 </td>
 </tr>
@@ -112,7 +110,7 @@ Display for light mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L16)
+[packages/types/lib/design-tokens/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L15)
 
 </td>
 </tr>
@@ -139,7 +137,7 @@ Display a masked version
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L29)
+[packages/types/lib/design-tokens/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L27)
 
 </td>
 </tr>

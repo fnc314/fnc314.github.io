@@ -6,12 +6,12 @@
 
 # Function: keyTransform()
 
-&gt; **keyTransform**(`jsonKey`: `string`, `rgb`: `string`): `CSSResult`
+&gt; **keyTransform**(`jsonKey`: `string`, `rgb`: `string`): [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/services/lib/theme/utils.ts:136](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/services/lib/theme/utils.ts#L136)
+Defined in: [packages/services/lib/theme/utils.ts:136](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/utils.ts#L136)
 
-Converts [jsonKey](#keytransform) and corresponding [rgb](#keytransform) value into a CSS custom property
-via [lit!css](https://lit.dev/docs/api/styles/#css) and lit!unsafeCSS functions
+Converts `jsonKey` and corresponding `rgb` value into a CSS custom property
+via [css](https://lit.dev/docs/api/styles/#css) and [unsafeCSS](https://lit.dev/docs/api/styles/#unsafeCSS) functions
 
 ## Parameters
 
@@ -63,7 +63,7 @@ The RGB color value from the JSON scheme, e.g., "#FF0000"
 
 ## Returns
 
-`CSSResult`
+[`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
 - A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"
 

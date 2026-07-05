@@ -8,7 +8,7 @@
 
 &gt; **jsonIsThemeJsonSchemes**(`json`: `unknown`): `json is ThemeJsonSchemes`
 
-Defined in: [packages/services/lib/theme/utils.ts:25](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/services/lib/theme/utils.ts#L25)
+Defined in: [packages/services/lib/theme/utils.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/utils.ts#L25)
 
 Checks if the provided JSON conforms to the expected theme schemes structure
 
@@ -47,5 +47,5 @@ Input of an unknown type, ideally conforming to a Material 3 JSON scheme
 
 `json is ThemeJsonSchemes`
 
-A boolean indicating whether the input JSON matches the expected structure of ThemeJsonSchemes
+A boolean indicating whether the input JSON matches the expected structure of [@fnc314/packages.types!ThemeJsonSchemes](../../packages.types/ThemeJsonSchemes/README.md)
 </body></html>

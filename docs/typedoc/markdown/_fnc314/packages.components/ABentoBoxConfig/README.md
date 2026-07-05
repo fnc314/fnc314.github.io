@@ -6,7 +6,7 @@
 
 # Interface: ABentoBoxConfig
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:73](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L73)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:72](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L72)
 
 Defines the [BentoBoxType](../BentoBoxType/README.md) coupled with a [GridPosition](../GridPosition/README.md) used
 to place a particular `bento-box`.
@@ -37,7 +37,7 @@ BentoBoxConfig
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:76](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L76)
+[packages/components/lib/bento-layout/bento-layout.types.ts:75](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L75)
 
 </td>
 </tr>
@@ -54,7 +54,7 @@ BentoBoxConfig
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:75](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L75)
+[packages/components/lib/bento-layout/bento-layout.types.ts:74](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L74)
 
 </td>
 </tr>
@@ -71,7 +71,7 @@ BentoBoxConfig
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:74](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L74)
+[packages/components/lib/bento-layout/bento-layout.types.ts:73](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L73)
 
 </td>
 </tr>

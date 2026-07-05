@@ -14,7 +14,7 @@ export const WORD_TAG_SIZES = {
   condensed: "condensed" as const,
 } as const;
 
-/** We give {@link WordTag} various treatments within this component */
+/** We give {@link @fnc314/packages.components!WordTag} various treatments within this component */
 export type WordTagSize = typeof WORD_TAG_SIZES[keyof typeof WORD_TAG_SIZES];
 
 /**
@@ -22,8 +22,6 @@ export type WordTagSize = typeof WORD_TAG_SIZES[keyof typeof WORD_TAG_SIZES];
  *
  * This interface mirrors the shape used by the `code` data loader and the
  * components that render project cards in the `code` partial.
- *
- * @export
  */
 export interface CodeRepoData {
   /** Short description or summary of the project. */
@@ -44,8 +42,6 @@ export interface CodeRepoData {
 
 /**
  * Represents a single technology entry used by a project.
- *
- * @export
  */
 export interface CodeRepoTech {
   /** A generated `CSS Variable` from `@fnc314/packages.types` */

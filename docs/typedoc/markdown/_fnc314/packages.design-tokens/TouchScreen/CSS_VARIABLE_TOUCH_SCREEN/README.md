@@ -8,7 +8,7 @@
 
 &gt; `const` **CSS\_VARIABLE\_TOUCH\_SCREEN**: `string` = `"--touch-screen"`
 
-Defined in: [touch-screen.ts:2](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/touch-screen.ts#L2)
+Defined in: [touch-screen.ts:2](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/touch-screen.ts#L2)
 
 The CSS Variable set by `@media` query of `screen` and `pointer: coarse`
 </body></html>

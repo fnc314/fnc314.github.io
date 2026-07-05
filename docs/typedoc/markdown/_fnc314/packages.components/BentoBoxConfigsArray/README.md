@@ -8,7 +8,7 @@
 
 &gt; **BentoBoxConfigsArray**(`breakpoint?`: `BreakpointLabel`): [`ABentoBoxConfig`](../ABentoBoxConfig/README.md)[]
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:167](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L167)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:166](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L166)
 
 Produces an array of [ABentoBoxConfig](../ABentoBoxConfig/README.md) instances sorted for proper DOM order.
 

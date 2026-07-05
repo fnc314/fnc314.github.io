@@ -8,7 +8,7 @@
 
 &gt; `const` **CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE**: `"--code-repo-word-tag-size"` = `"--code-repo-word-tag-size"`
 
-Defined in: [packages/types/lib/code/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L6)
+Defined in: [packages/types/lib/code/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L6)
 
 The `const` for the `CSS @property`
 </body></html>

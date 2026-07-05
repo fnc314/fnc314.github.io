@@ -1,7 +1,6 @@
 /**
  * Describes the Design Token shape for icons
  *
- * @export
  * @interface DesignTokenIcon
  * @typedef {DesignTokenIcon}
  */
@@ -19,7 +18,6 @@ export interface DesignTokenIcon {
 /**
  * Extends {@link DesignTokenIcon} with a maskable asset
  *
- * @export
  * @interface MaskableDesignTokenIcon
  * @typedef {MaskableDesignTokenIcon}
  * @extends {DesignTokenIcon}

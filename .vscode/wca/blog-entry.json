@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "blog-entry",
-      "description": "Attributes:\n\n  * `blogEntry` {BlogEntryJson} - The JSON record to render\n\nProperties:\n\n  * `styles` - \n\n  * `blogEntry` {BlogEntryJson} - The JSON record to render",
+      "description": "Attributes:\n\n  * `blogEntry` {BlogEntryJson} - The JSON record to render\n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `blogEntry` {BlogEntryJson} - The JSON record to render",
       "attributes": [
         {
           "name": "blogEntry",

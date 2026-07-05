@@ -34,7 +34,7 @@ import { styleMap } from "lit/directives/style-map.js";
  */
 @customElement("word-cloud")
 export class WordCloud extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     WordCloudStyles

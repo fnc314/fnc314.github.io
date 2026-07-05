@@ -8,7 +8,7 @@
 
 &gt; **BreakpointLabel** = `"mobile"` \| `"tablet"` \| `"desktop"`
 
-Defined in: [breakpoints.ts:9](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/breakpoints.ts#L9)
+Defined in: [breakpoints.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L9)
 
 Values for the [CSS\_VARIABLE\_BREAKPOINT\_LABEL](../CSS_VARIABLE_BREAKPOINT_LABEL/README.md) custom CSS property
 </body></html>

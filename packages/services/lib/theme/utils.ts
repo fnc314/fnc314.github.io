@@ -20,7 +20,7 @@ export const colorSchemeContrastToIcon: (
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
  * @param json - Input of an unknown type, ideally conforming to a Material 3 JSON scheme
- * @returns A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}
+ * @returns A boolean indicating whether the input JSON matches the expected structure of {@link @fnc314/packages.types!ThemeJsonSchemes}
  */
 export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes {
   if (typeof json !== "object" || json === null) {
@@ -59,7 +59,7 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
  *   `lower-kebab-case`
  *
  * @param jsonKey - The key of a `JSON` object, expected in `lowerPascalCase`
- * @returns - The same {@link jsonKey} but in `lower-kebab-case`
+ * @returns - The same `jsonKey` but in `lower-kebab-case`
  */
 const formatJsonKey: (jsonKey: string) => string =
   (jsonKey: string) => jsonKey.split(/(?=[A-Z])/).map((part) => part.toLowerCase()).join("-");
@@ -109,10 +109,10 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
 }
 
 /**
- * Reads a `.json` defined object and produces a {@link lit!CSSResult}
+ * Reads a `.json` defined object and produces a {@link CSSResult}
  *
  * @param jsonSchema - Any `object`
- * @returns - A {@link lit!CSSResult} of the provided {@link jsonSchema}
+ * @returns - A {@link CSSResult} of the provided `jsonSchema`
  */
 export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object) => {
   const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult =
@@ -127,8 +127,8 @@ export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object
 };
 
 /**
- * Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property
- *   via {@link lit!css} and {@link lit!unsafeCSS} functions
+ * Converts `jsonKey` and corresponding `rgb` value into a CSS custom property
+ *   via {@link css} and {@link unsafeCSS} functions
  * @param jsonKey - The key from the JSON scheme, e.g., "primaryContainer"
  * @param rgb - The RGB color value from the JSON scheme, e.g., "#FF0000"
  * @returns {lit!CSSResult} - A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"

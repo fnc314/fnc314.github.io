@@ -6,9 +6,9 @@
 
 # Variable: UIModeToggleStyles
 
-&gt; `const` **UIModeToggleStyles**: `CSSResult`
+&gt; `const` **UIModeToggleStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts:18](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts#L18)
+Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts:18](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts#L18)
 
 ## Cssprop
 

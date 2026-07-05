@@ -8,15 +8,15 @@ import { customElement, property } from "lit/decorators.js";
 
 /**
  * Represents a subset of content in `connections.json` as
- *   outlined in {@link ConnectionInstance}
+ *   outlined in {@link @fnc314/packages.types!ConnectionInstance}
  *
- * @export
  * @class DirectConnection
  * @typedef {DirectConnection}
  * @extends {UIAwareElement}
  */
 @customElement("direct-connection")
 export class DirectConnection extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [
     TextStyles,
     DirectConnectionStyles

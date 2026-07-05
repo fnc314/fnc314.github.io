@@ -8,5 +8,5 @@
 
 &gt; **ColorString** = `` `#${string}` ``
 
-Defined in: [packages/types/lib/theme/index.ts:93](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L93)
+Defined in: [packages/types/lib/theme/index.ts:93](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L93)
 </body></html>

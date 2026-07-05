@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "code-repo",
-      "description": "[object Object],[object Object],[object Object]\n\nAttributes:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\nProperties:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\n  * `styles` - \n\n  * `object Object],[object Object],[object Object` - ",
+      "description": "[object Object],[object Object],[object Object]\n\nAttributes:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\nProperties:\n\n  * `codeRepo` {`CodeRepoData`} - [object Object],[object Object]\n\n  * `styles` - [object Object],[object Object]\n\n  * `object Object],[object Object],[object Object` - ",
       "attributes": [
         {
           "name": "codeRepo",

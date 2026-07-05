@@ -6,14 +6,12 @@
 
 # Interface: CodeRepoData
 
-Defined in: [packages/types/lib/code/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L28)
+Defined in: [packages/types/lib/code/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L26)
 
 Represents a single project entry loaded from `code.json`.
 
 This interface mirrors the shape used by the `code` data loader and the
 components that render project cards in the `code` partial.
-
-## Export
 
 ## Properties
 
@@ -45,7 +43,7 @@ Short description or summary of the project.
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L30)
+[packages/types/lib/code/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L28)
 
 </td>
 </tr>
@@ -67,7 +65,7 @@ Human-readable project title.
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L33)
+[packages/types/lib/code/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L31)
 
 </td>
 </tr>
@@ -89,7 +87,7 @@ The bit of [url](#url) which begins with `fnc314/`
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:42](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L42)
+[packages/types/lib/code/index.ts:40](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L40)
 
 </td>
 </tr>
@@ -111,7 +109,7 @@ Array of technologies used by the project.
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L36)
+[packages/types/lib/code/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L34)
 
 </td>
 </tr>
@@ -133,7 +131,7 @@ Public URL for the project (website or repository).
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L39)
+[packages/types/lib/code/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L37)
 
 </td>
 </tr>

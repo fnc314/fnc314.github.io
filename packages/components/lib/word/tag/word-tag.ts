@@ -27,13 +27,12 @@ import { customElement, property } from "lit/decorators.js";
  *
  * @slot icon - The optional space available for, and positioned by, the {@link variant} property
  *
- * @export
  * @class WordTag
  * @extends {LitElement}
  */
 @customElement("word-tag")
 export class WordTag extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     WordTagStyles,

@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "education-institution",
-      "description": "Attributes:\n\n  * `institute` {`EducationInstitutionRecord`} - \n\nProperties:\n\n  * `styles` - \n\n  * `institute` {`EducationInstitutionRecord`} - ",
+      "description": "Attributes:\n\n  * `institute` {`EducationInstitutionRecord`} - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `institute` {`EducationInstitutionRecord`} - ",
       "attributes": [
         {
           "name": "institute",

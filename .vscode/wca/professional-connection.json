@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "professional-connection",
-      "description": "Attributes:\n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - \n\nProperties:\n\n  * `styles` - \n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - ",
+      "description": "Attributes:\n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - \n\nProperties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `professionalConnectionType` {`\"linkedin\" | \"github\" | \"medium\"`} - \n\n  * `professionalConnectionData` - ",
       "attributes": [
         {
           "name": "professionalConnectionType",

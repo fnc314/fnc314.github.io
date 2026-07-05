@@ -69,8 +69,15 @@ pnpm web-component-analyzer "packages/{components,data,design-tokens,services,ty
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"
-print -r -- "dx:typedoc"
-pnpm typedoc --options ./.config/typedoc/typedoc.config.mjs
+print -r -- "//:dev-ex:tools:typedoc"
+typeset TYPEDOC_TASK_ARGS=()
+if [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]]; then
+  TYPEDOC_TASK_ARGS+=(
+    -l
+  )
+fi
+printf "Running //:dev-ex:tools:typedoc with %s\n" "${TYPEDOC_TASK_ARGS[@]}"
+mise run //:dev-ex:tools:typedoc "${TYPEDOC_TASK_ARGS[@]}"
 print -r --
 print -r -- "DONE"
 

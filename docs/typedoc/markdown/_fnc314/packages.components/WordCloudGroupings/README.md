@@ -8,7 +8,7 @@
 
 &gt; `const` **WordCloudGroupings**: \{ `CATEGORY`: `"category"`; `QUARTILE`: `"quartile"`; `UNGROUPED`: `"ungrouped"`; \}
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:15](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.types.ts#L15)
+Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L15)
 
 ## Type Declaration
 
@@ -34,7 +34,7 @@ Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:15](https://
 </td>
 <td>
 
-[packages/components/lib/word/cloud/word-cloud.types.ts:16](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.types.ts#L16)
+[packages/components/lib/word/cloud/word-cloud.types.ts:16](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L16)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:15](https://
 </td>
 <td>
 
-[packages/components/lib/word/cloud/word-cloud.types.ts:17](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.types.ts#L17)
+[packages/components/lib/word/cloud/word-cloud.types.ts:17](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L17)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:15](https://
 </td>
 <td>
 
-[packages/components/lib/word/cloud/word-cloud.types.ts:18](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.types.ts#L18)
+[packages/components/lib/word/cloud/word-cloud.types.ts:18](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L18)
 
 </td>
 </tr>

@@ -38,7 +38,6 @@ export type GridPosition = {
 /**
  * The finite `bento-box` instances
  *
- * @export
  * @typedef {BentoBoxType}
  */
 export type BentoBoxType =

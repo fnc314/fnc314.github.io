@@ -6,7 +6,7 @@
 
 # Variable: DirectConnectionStyles
 
-&gt; `const` **DirectConnectionStyles**: `CSSResult`
+&gt; `const` **DirectConnectionStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/connection/direct/direct-connection.styles.ts:3](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/connection/direct/direct-connection.styles.ts#L3)
+Defined in: [packages/components/lib/connection/direct/direct-connection.styles.ts:3](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/connection/direct/direct-connection.styles.ts#L3)
 </body></html>

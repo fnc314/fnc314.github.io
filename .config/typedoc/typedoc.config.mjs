@@ -1,6 +1,27 @@
 import process from "node:process";
 import { LogLevel } from "typedoc";
 
+/**
+ * TypeDoc's default block tags PLUS the custom Web Component tags
+ * (`@element`/`@slot`/`@cssprop`/`@fires`/`@attr`) that feed the CEM/WCA.
+ *
+ * NOTE: `blockTags` REPLACES TypeDoc's default set (the Array option converter
+ * ignores the previous value), so the full defaults are enumerated here. It is
+ * applied via `packageOptions` below — in `entryPointStrategy: "packages"` mode
+ * comments are parsed during each PER-PACKAGE conversion, and a top-level
+ * `blockTags` does not propagate to those; `packageOptions.blockTags` does.
+ */
+const blockTags = [
+  "@attr", "@augments", "@author", "@callback", "@category", "@categoryDescription",
+  "@cssprop", "@default", "@defaultValue", "@deprecated", "@document", "@element",
+  "@example", "@expandType", "@extends", "@fires", "@group", "@groupDescription",
+  "@import", "@inheritDoc", "@inlineType", "@jsx", "@license", "@mergeModuleWith",
+  "@module", "@param", "@preventExpand", "@preventInline", "@privateRemarks", "@prop",
+  "@property", "@remarks", "@return", "@returns", "@satisfies", "@see", "@since",
+  "@slot", "@sortStrategy", "@summary", "@template", "@this", "@throws", "@type",
+  "@typedef", "@typeParam", "@yields",
+];
+
 /** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
 export default {
   // $schema: "https://typedoc.org/schema.json",
@@ -8,12 +29,6 @@ export default {
   // showConfig: true,
   // version: true,
   additionalModuleSources: ["lit", "lit-element", "lit-html", "@material/web", "material-symbols", "typescript"],
-  blockTags: [
-    "@attr",
-    "@cssprop",
-    "@fires",
-    "@slot",
-  ],
   cacheBust: true,
   classPropertiesFormat: "htmlTable",
   cleanOutputDir: true,
@@ -66,6 +81,13 @@ export default {
     "lit-html": {
       TemplateResult: "https://lit.dev/docs/api/templates/#TemplateResult",
     },
+    "@lit/reactive-element": {
+      css: "https://lit.dev/docs/api/styles/#css",
+      CSSResult: "https://lit.dev/docs/api/styles/#CSSResult",
+      ComplexAttributeConverter: "https://lit.dev/docs/api/ReactiveElement/#ComplexAttributeConverter",
+      PropertyDeclaration: "https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration",
+      unsafeCSS: "https://lit.dev/docs/api/styles/#unsafeCSS",
+    },
     "@fnc314/fnc314.github.io": {
       NavComponent: "#",
       WordTag: "#",
@@ -82,6 +104,7 @@ export default {
       time: "#",
     },
     "@material/web": {
+      styles: "https://github.com/material-components/material-web/blob/main/typography/md-typescale-styles.ts",
       "--md-elevated-card-container-color": "https://github.com/material-components/material-web/blob/main/tokens/_md-comp-elevated-card.scss#L20",
       MdTabs: "https://github.com/material-components/material-web/blob/main/docs/components/tabs.md",
       MdPrimaryTab: "https://github.com/material-components/material-web/blob/main/docs/components/tabs.md",
@@ -153,6 +176,7 @@ export default {
   // paths resolve against each package's own directory, so this one block
   // documents all packages that share the `lib/index.ts` + `tsconfig.json` layout.
   packageOptions: {
+    blockTags,
     entryPoints: ["lib/index.ts"],
     entryPointStrategy: "resolve",
     tsconfig: "tsconfig.json",

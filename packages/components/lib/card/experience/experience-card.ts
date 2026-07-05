@@ -15,7 +15,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("experience-card")
 export class ExperienceCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     WorkCardStyles

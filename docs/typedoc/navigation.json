@@ -965,6 +965,12 @@
             "isDeprecated": false
           },
           {
+            "title": "IsHex",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/IsHex/README.md",
+            "isDeprecated": false
+          },
+          {
             "title": "MaterialScheme",
             "kind": 2097152,
             "path": "_fnc314/packages.types/MaterialScheme/README.md",

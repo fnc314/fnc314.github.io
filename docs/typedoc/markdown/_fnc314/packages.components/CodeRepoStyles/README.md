@@ -6,9 +6,9 @@
 
 # Variable: CodeRepoStyles
 
-&gt; `const` **CodeRepoStyles**: `CSSResult`
+&gt; `const` **CodeRepoStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/code/repo/code-repo.styles.ts#L9)
+Defined in: [packages/components/lib/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/code/repo/code-repo.styles.ts#L9)
 
-The CSSResult for @fnc314/fnc314.github.io!CodeRepo
+The [CSSResult](https://lit.dev/docs/api/styles/#CSSResult) for [@fnc314/packages.components!CodeRepo](../CodeRepo/README.md)
 </body></html>

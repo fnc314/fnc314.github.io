@@ -8,7 +8,7 @@
 
 &gt; `const` **colorSchemeContrastToIcon**: (`slot`: `"start"` \| `"leading-icon"`, `contrast`: `ColorSchemeContrast`) =&gt; [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/services/lib/theme/utils.ts:4](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/services/lib/theme/utils.ts#L4)
+Defined in: [packages/services/lib/theme/utils.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/utils.ts#L4)
 
 ## Parameters
 

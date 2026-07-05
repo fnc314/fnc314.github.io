@@ -8,7 +8,7 @@
 
 &gt; **getBentoDOMOrder**(`breakpoint`: `BreakpointLabel`): [`BentoBoxType`](../BentoBoxType/README.md)[]
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:148](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/bento-layout/bento-layout.types.ts#L148)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:147](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L147)
 
 Determines the logical DOM order for bento box types based on grid placement.
 Reading order follows Top-to-Bottom, then Start-to-End (Leading-to-Trailing).

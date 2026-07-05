@@ -6,11 +6,9 @@
 
 # Interface: DesignTokenIcon
 
-Defined in: [packages/types/lib/design-tokens/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L8)
+Defined in: [packages/types/lib/design-tokens/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L7)
 
 Describes the Design Token shape for icons
-
-## Export
 
 DesignTokenIcon
 
@@ -52,7 +50,7 @@ Display for dark mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L10)
+[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L9)
 
 </td>
 </tr>
@@ -74,7 +72,7 @@ Default option
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L13)
+[packages/types/lib/design-tokens/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L12)
 
 </td>
 </tr>
@@ -96,7 +94,7 @@ Display for light mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/design-tokens/index.ts#L16)
+[packages/types/lib/design-tokens/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L15)
 
 </td>
 </tr>

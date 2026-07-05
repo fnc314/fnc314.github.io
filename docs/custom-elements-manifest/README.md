@@ -30,13 +30,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -160,13 +160,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -231,13 +231,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -296,13 +296,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -367,13 +367,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -432,13 +432,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -505,14 +505,14 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `_onConfigChange`    | private   |                          |                                                                |                                                                                                    |                |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `_onConfigChange`    | private   |                          |                                                                |                                                                                                                                                                              |                |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -584,13 +584,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -659,13 +659,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -688,9 +688,9 @@
 
 ## Variables
 
-| Name             | Description                                         | Type        |
-| ---------------- | --------------------------------------------------- | ----------- |
-| `CodeRepoStyles` | The CSSResult for @fnc314/fnc314.github.io!CodeRepo | `CSSResult` |
+| Name             | Description                                            | Type        |
+| ---------------- | ------------------------------------------------------ | ----------- |
+| `CodeRepoStyles` | The CSSResult for @fnc314/packages.components!CodeRepo | `CSSResult` |
 
 <hr/>
 
@@ -712,9 +712,9 @@
 
 ### Methods
 
-| Name       | Privacy | Description          | Parameters | Return | Inherited From |
-| ---------- | ------- | -------------------- | ---------- | ------ | -------------- |
-| `codeRepo` |         | {@link CodeRepoData} |            |        |                |
+| Name       | Privacy | Description                                 | Parameters | Return | Inherited From |
+| ---------- | ------- | ------------------------------------------- | ---------- | ------ | -------------- |
+| `codeRepo` |         | {@link @fnc314/packages.types!CodeRepoData} |            |        |                |
 
 ### Attributes
 
@@ -726,13 +726,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 ### Methods
 
@@ -795,13 +795,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -856,13 +856,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -919,13 +919,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -980,13 +980,13 @@
 
 ### Fields
 
-| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                        | Inherited From |
-| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
-| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
-| `darkMode`           | protected |                          |                                                                |                                                                                                    | UIAwareElement |
-| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                    | UIAwareElement |
-| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                    | UIAwareElement |
-| `touchScreen`        | protected | `boolean`                |                                                                | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  | UIAwareElement |
+| Name                 | Privacy   | Type                     | Default                                                        | Description                                                                                                                                                                  | Inherited From |
+| -------------------- | --------- | ------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `breakpoint`         | protected | `BreakpointLabel`        | `readCSSProperty( Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL )` | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS | UIAwareElement |
+| `darkMode`           | protected |                          |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onAppConfigChange`  | private   | `(event: Event) => void` |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `onBreakpointChange` | private   | `() => void`             |                                                                |                                                                                                                                                                              | UIAwareElement |
+| `touchScreen`        | protected | `boolean`                |                                                                | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             | UIAwareElement |
 
 </details>
 
@@ -1124,13 +1124,13 @@
 
 ### Methods
 
-| Name                 | Privacy   | Description                                                                                                        | Parameters | Return | Inherited From |
-| -------------------- | --------- | ------------------------------------------------------------------------------------------------------------------ | ---------- | ------ | -------------- |
-| `breakpoint`         | protected | The {@link BreakpointLabel} as determined by \*SCREEN\* width against&#xA;  {@link Breakpoints.BREAKPOINT\_LABELS} |            |        |                |
-| `darkMode`           | protected |                                                                                                                    |            |        |                |
-| `onAppConfigChange`  | private   |                                                                                                                    |            |        |                |
-| `onBreakpointChange` | private   |                                                                                                                    |            |        |                |
-| `touchScreen`        | protected | Reads {@link TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN} from \`:root\`&#xA;  and tests against \`"true"\`,          |            |        |                |
+| Name                 | Privacy   | Description                                                                                                                                                                                  | Parameters | Return | Inherited From |
+| -------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `breakpoint`         | protected | The {@link @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel} as determined by \*SCREEN\* width against&#xA;  {@link @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS} |            |        |                |
+| `darkMode`           | protected |                                                                                                                                                                                              |            |        |                |
+| `onAppConfigChange`  | private   |                                                                                                                                                                                              |            |        |                |
+| `onBreakpointChange` | private   |                                                                                                                                                                                              |            |        |                |
+| `touchScreen`        | protected | Reads {@link @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN} from \`:root\`&#xA;  and tests against \`"true"\`,                                                     |            |        |                |
 
 </details>
 
@@ -1184,13 +1184,13 @@
 
 ### Methods
 
-| Name                 | Privacy   | Description                                                                                        | Parameters | Return | Inherited From |
-| -------------------- | --------- | -------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
-| `breakpoint`         | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |            |        | UIAwareElement |
-| `darkMode`           | protected |                                                                                                    |            |        | UIAwareElement |
-| `onAppConfigChange`  | private   |                                                                                                    |            |        | UIAwareElement |
-| `onBreakpointChange` | private   |                                                                                                    |            |        | UIAwareElement |
-| `touchScreen`        | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |            |        | UIAwareElement |
+| Name                 | Privacy   | Description                                                                                                                                                                  | Parameters | Return | Inherited From |
+| -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `breakpoint`         | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |            |        | UIAwareElement |
+| `darkMode`           | protected |                                                                                                                                                                              |            |        | UIAwareElement |
+| `onAppConfigChange`  | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `onBreakpointChange` | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `touchScreen`        | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |            |        | UIAwareElement |
 
 </details>
 
@@ -1322,18 +1322,18 @@
 
 ### Methods
 
-| Name                                | Privacy   | Description                                                                                        | Parameters                               | Return | Inherited From |
-| ----------------------------------- | --------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------- | ------ | -------------- |
-| `_appConfigs`                       | private   |                                                                                                    |                                          |        |                |
-| `breakpoint`                        | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |                                          |        | UIAwareElement |
-| `colorSchemeChangeEventListener`    | private   |                                                                                                    |                                          |        |                |
-| `darkMode`                          | protected |                                                                                                    |                                          |        | UIAwareElement |
-| `onAppConfigChange`                 | private   |                                                                                                    |                                          |        | UIAwareElement |
-| `onAppConfigsChange`                | private   |                                                                                                    |                                          |        |                |
-| `onBreakpointChange`                | private   |                                                                                                    |                                          |        | UIAwareElement |
-| `onColorThemeModeContrastChange`    | private   |                                                                                                    | `colorScheme: AppConfigs["colorScheme"]` |        |                |
-| `permanentColorSchemeEventListener` | private   |                                                                                                    |                                          |        |                |
-| `touchScreen`                       | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |                                          |        | UIAwareElement |
+| Name                                | Privacy   | Description                                                                                                                                                                  | Parameters                               | Return | Inherited From |
+| ----------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ------ | -------------- |
+| `_appConfigs`                       | private   |                                                                                                                                                                              |                                          |        |                |
+| `breakpoint`                        | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |                                          |        | UIAwareElement |
+| `colorSchemeChangeEventListener`    | private   |                                                                                                                                                                              |                                          |        |                |
+| `darkMode`                          | protected |                                                                                                                                                                              |                                          |        | UIAwareElement |
+| `onAppConfigChange`                 | private   |                                                                                                                                                                              |                                          |        | UIAwareElement |
+| `onAppConfigsChange`                | private   |                                                                                                                                                                              |                                          |        |                |
+| `onBreakpointChange`                | private   |                                                                                                                                                                              |                                          |        | UIAwareElement |
+| `onColorThemeModeContrastChange`    | private   |                                                                                                                                                                              | `colorScheme: AppConfigs["colorScheme"]` |        |                |
+| `permanentColorSchemeEventListener` | private   |                                                                                                                                                                              |                                          |        |                |
+| `touchScreen`                       | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |                                          |        | UIAwareElement |
 
 </details>
 
@@ -1360,14 +1360,14 @@
 
 ### Methods
 
-| Name                 | Privacy   | Description                                                                                                                                      | Parameters | Return | Inherited From |
-| -------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | ------ | -------------- |
-| `breakpoint`         | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS                                               |            |        | UIAwareElement |
-| `darkMode`           | protected |                                                                                                                                                  |            |        | UIAwareElement |
-| `formattedDate`      | private   | Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}&#xA;  on {@link time} to render the user presented timestamp |            |        |                |
-| `onAppConfigChange`  | private   |                                                                                                                                                  |            |        | UIAwareElement |
-| `onBreakpointChange` | private   |                                                                                                                                                  |            |        | UIAwareElement |
-| `touchScreen`        | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                                |            |        | UIAwareElement |
+| Name                 | Privacy   | Description                                                                                                                                                                  | Parameters | Return | Inherited From |
+| -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `breakpoint`         | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |            |        | UIAwareElement |
+| `darkMode`           | protected |                                                                                                                                                                              |            |        | UIAwareElement |
+| `formattedDate`      | private   | Creates an {@link Intl.DateTimeFormat} and calls {@link Intl.DateTimeFormat.format}&#xA;  on {@link time} to render the user presented timestamp                             |            |        |                |
+| `onAppConfigChange`  | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `onBreakpointChange` | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `touchScreen`        | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |            |        | UIAwareElement |
 
 </details>
 
@@ -1463,16 +1463,16 @@
 
 ### Methods
 
-| Name                        | Privacy   | Description                                                                                        | Parameters                  | Return                                                                                     | Inherited From |
-| --------------------------- | --------- | -------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------ | -------------- |
-| `_getSortFunction`          | private   |                                                                                                    | `sorting: WordCloudSorting` | `\| ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)     \| undefined` |                |
-| `_initIntersectionObserver` | private   |                                                                                                    |                             |                                                                                            |                |
-| `_processWords`             | private   |                                                                                                    |                             | `RenderableWordCloudWord[]`                                                                |                |
-| `breakpoint`                | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |                             |                                                                                            | UIAwareElement |
-| `darkMode`                  | protected |                                                                                                    |                             |                                                                                            | UIAwareElement |
-| `onAppConfigChange`         | private   |                                                                                                    |                             |                                                                                            | UIAwareElement |
-| `onBreakpointChange`        | private   |                                                                                                    |                             |                                                                                            | UIAwareElement |
-| `touchScreen`               | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |                             |                                                                                            | UIAwareElement |
+| Name                        | Privacy   | Description                                                                                                                                                                  | Parameters                  | Return                                                                                     | Inherited From |
+| --------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------ | -------------- |
+| `_getSortFunction`          | private   |                                                                                                                                                                              | `sorting: WordCloudSorting` | `\| ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)     \| undefined` |                |
+| `_initIntersectionObserver` | private   |                                                                                                                                                                              |                             |                                                                                            |                |
+| `_processWords`             | private   |                                                                                                                                                                              |                             | `RenderableWordCloudWord[]`                                                                |                |
+| `breakpoint`                | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |                             |                                                                                            | UIAwareElement |
+| `darkMode`                  | protected |                                                                                                                                                                              |                             |                                                                                            | UIAwareElement |
+| `onAppConfigChange`         | private   |                                                                                                                                                                              |                             |                                                                                            | UIAwareElement |
+| `onBreakpointChange`        | private   |                                                                                                                                                                              |                             |                                                                                            | UIAwareElement |
+| `touchScreen`               | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |                             |                                                                                            | UIAwareElement |
 
 </details>
 
@@ -1594,14 +1594,14 @@
 
 ### Methods
 
-| Name                 | Privacy   | Description                                                                                        | Parameters                | Return           | Inherited From |
-| -------------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------------------- | ---------------- | -------------- |
-| `breakpoint`         | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |                           |                  | UIAwareElement |
-| `darkMode`           | protected |                                                                                                    |                           |                  | UIAwareElement |
-| `layoutForVariant`   | private   |                                                                                                    | `variant: WordTagVariant` | `TemplateResult` |                |
-| `onAppConfigChange`  | private   |                                                                                                    |                           |                  | UIAwareElement |
-| `onBreakpointChange` | private   |                                                                                                    |                           |                  | UIAwareElement |
-| `touchScreen`        | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |                           |                  | UIAwareElement |
+| Name                 | Privacy   | Description                                                                                                                                                                  | Parameters                | Return           | Inherited From |
+| -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ---------------- | -------------- |
+| `breakpoint`         | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |                           |                  | UIAwareElement |
+| `darkMode`           | protected |                                                                                                                                                                              |                           |                  | UIAwareElement |
+| `layoutForVariant`   | private   |                                                                                                                                                                              | `variant: WordTagVariant` | `TemplateResult` |                |
+| `onAppConfigChange`  | private   |                                                                                                                                                                              |                           |                  | UIAwareElement |
+| `onBreakpointChange` | private   |                                                                                                                                                                              |                           |                  | UIAwareElement |
+| `touchScreen`        | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |                           |                  | UIAwareElement |
 
 </details>
 
@@ -1688,13 +1688,13 @@
 
 ### Methods
 
-| Name                 | Privacy   | Description                                                                                        | Parameters | Return | Inherited From |
-| -------------------- | --------- | -------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
-| `breakpoint`         | protected | The BreakpointLabel as determined by \*SCREEN\* width against&#xA;  Breakpoints.BREAKPOINT\_LABELS |            |        | UIAwareElement |
-| `darkMode`           | protected |                                                                                                    |            |        | UIAwareElement |
-| `onAppConfigChange`  | private   |                                                                                                    |            |        | UIAwareElement |
-| `onBreakpointChange` | private   |                                                                                                    |            |        | UIAwareElement |
-| `touchScreen`        | protected | Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,  |            |        | UIAwareElement |
+| Name                 | Privacy   | Description                                                                                                                                                                  | Parameters | Return | Inherited From |
+| -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | -------------- |
+| `breakpoint`         | protected | The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by \*SCREEN\* width against&#xA;  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS |            |        | UIAwareElement |
+| `darkMode`           | protected |                                                                                                                                                                              |            |        | UIAwareElement |
+| `onAppConfigChange`  | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `onBreakpointChange` | private   |                                                                                                                                                                              |            |        | UIAwareElement |
+| `touchScreen`        | protected | Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from \`:root\`&#xA;  and tests against \`"true"\`,                                             |            |        | UIAwareElement |
 
 </details>
 
@@ -1912,9 +1912,9 @@
 
 ## Functions
 
-| Name              | Description                                | Parameters                                                                                         | Return |
-| ----------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
-| `readCSSProperty` | Returns the value of the provided property | `property: string, element: HTMLElement\|null\|undefined, logComputedPropertyTransaction: boolean` |        |
+| Name              | Description                                    | Parameters                                                                                         | Return |
+| ----------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------ |
+| `readCSSProperty` | Returns the value of the provided \`property\` | `property: string, element: HTMLElement\|null\|undefined, logComputedPropertyTransaction: boolean` |        |
 
 <hr/>
 
@@ -2095,8 +2095,8 @@
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------ |
 | `colorSchemeContrastToIcon` |                                                                                                                       | `slot: "start" \| "leading-icon", contrast: ColorSchemeContrast` |        |
 | `jsonIsThemeJsonSchemes`    | Checks if the provided JSON conforms to the expected theme schemes structure                                          | `json: unknown`                                                  |        |
-| `keyTransform`              | Converts jsonKey and corresponding rgb value into a CSS custom property&#xA;  via lit!css and lit!unsafeCSS functions | `jsonKey: string, rgb: string`                                   | `lit!` |
-| `readScheme`                | Reads a \`.json\` defined object and produces a lit!CSSResult                                                         | `jsonSchema: object`                                             |        |
+| `keyTransform`              | Converts \`jsonKey\` and corresponding \`rgb\` value into a CSS custom property&#xA;  via css and unsafeCSS functions | `jsonKey: string, rgb: string`                                   | `lit!` |
+| `readScheme`                | Reads a \`.json\` defined object and produces a CSSResult                                                             | `jsonSchema: object`                                             |        |
 
 <hr/>
 

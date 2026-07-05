@@ -6,7 +6,7 @@
 
 # Interface: Bio
 
-Defined in: [packages/types/lib/bio/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/bio/index.ts#L1)
+Defined in: [packages/types/lib/bio/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/bio/index.ts#L1)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/bio/index.ts:1](https://github.com/fnc314/fnc314
 </td>
 <td>
 
-[packages/types/lib/bio/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/bio/index.ts#L2)
+[packages/types/lib/bio/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/bio/index.ts#L2)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/lib/bio/index.ts:1](https://github.com/fnc314/fnc314
 </td>
 <td>
 
-[packages/types/lib/bio/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/bio/index.ts#L4)
+[packages/types/lib/bio/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/bio/index.ts#L4)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/lib/bio/index.ts:1](https://github.com/fnc314/fnc314
 </td>
 <td>
 
-[packages/types/lib/bio/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/bio/index.ts#L3)
+[packages/types/lib/bio/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/bio/index.ts#L3)
 
 </td>
 </tr>

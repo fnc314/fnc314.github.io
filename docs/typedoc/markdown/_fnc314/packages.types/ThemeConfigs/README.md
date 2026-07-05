@@ -8,5 +8,5 @@
 
 &gt; **ThemeConfigs** = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;[`ThemeName`](../ThemeName/README.md), [`ThemeConfig`](../ThemeConfig/README.md)\&gt;
 
-Defined in: [packages/types/lib/theme/index.ts:149](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/theme/index.ts#L149)
+Defined in: [packages/types/lib/theme/index.ts:149](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L149)
 </body></html>

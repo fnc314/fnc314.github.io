@@ -6,11 +6,11 @@
 
 # Variable: readScheme
 
-&gt; `const` **readScheme**: (`jsonSchema`: `object`) =&gt; `CSSResult`
+&gt; `const` **readScheme**: (`jsonSchema`: `object`) =&gt; [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/services/lib/theme/utils.ts:117](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/services/lib/theme/utils.ts#L117)
+Defined in: [packages/services/lib/theme/utils.ts:117](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/utils.ts#L117)
 
-Reads a `.json` defined object and produces a lit!CSSResult
+Reads a `.json` defined object and produces a [CSSResult](https://lit.dev/docs/api/styles/#CSSResult)
 
 ## Parameters
 
@@ -45,8 +45,8 @@ Any `object`
 
 ## Returns
 
-`CSSResult`
+[`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-- A lit!CSSResult of the provided [jsonSchema](#__type)
+- A [CSSResult](https://lit.dev/docs/api/styles/#CSSResult) of the provided `jsonSchema`
 
 </body></html>

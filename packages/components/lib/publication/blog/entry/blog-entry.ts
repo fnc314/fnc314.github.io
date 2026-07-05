@@ -11,12 +11,12 @@ import { ifDefined } from "lit/directives/if-defined.js";
  * @summary Represents a published series entry.
  *
  * @property {BlogEntryJson} [blogEntry] - The JSON record to render
- * @export
  * @class BlogSeries
  * @extends {UIAwareElement}
  */
 @customElement("blog-entry")
 export class BlogEntry extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     BlogEntryStyles,

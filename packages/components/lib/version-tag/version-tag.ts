@@ -8,6 +8,7 @@ import time from "~build/time";
 
 @customElement("version-tag")
 export class VersionTag extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [
     css`
       :host {
@@ -36,7 +37,6 @@ export class VersionTag extends UIAwareElement {
    *
    * @private
    * @type {string}
-   * @memberof SettingsCard
    */
   private formattedDate: string = new Intl.DateTimeFormat(
     navigator.languages,

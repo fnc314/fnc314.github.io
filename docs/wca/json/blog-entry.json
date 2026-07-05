@@ -15,6 +15,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "array",
           "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
         },

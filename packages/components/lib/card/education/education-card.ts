@@ -15,7 +15,7 @@ import { customElement, property, state } from "lit/decorators.js";
  */
 @customElement("education-card")
 export class EducationCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     EducationCardStyles

@@ -6,7 +6,7 @@
 
 # Interface: WorkData
 
-Defined in: [packages/types/lib/experience/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/experience/index.ts#L29)
+Defined in: [packages/types/lib/experience/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/experience/index.ts#L29)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/experience/index.ts:29](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/experience/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/experience/index.ts#L30)
+[packages/types/lib/experience/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/experience/index.ts#L30)
 
 </td>
 </tr>

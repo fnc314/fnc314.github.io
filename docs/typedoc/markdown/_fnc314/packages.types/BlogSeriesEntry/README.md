@@ -6,7 +6,7 @@
 
 # Interface: BlogSeriesEntry
 
-Defined in: [packages/types/lib/blog/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L21)
+Defined in: [packages/types/lib/blog/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L20)
 
 Captures the position within a blog series that a given
 entry represents
@@ -35,7 +35,7 @@ entry represents
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L23)
+[packages/types/lib/blog/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L22)
 
 </td>
 </tr>
@@ -52,7 +52,7 @@ entry represents
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L22)
+[packages/types/lib/blog/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L21)
 
 </td>
 </tr>

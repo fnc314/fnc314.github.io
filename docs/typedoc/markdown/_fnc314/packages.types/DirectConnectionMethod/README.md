@@ -8,7 +8,7 @@
 
 &gt; **DirectConnectionMethod** = `"phone"` \| `"email"`
 
-Defined in: [packages/types/lib/connections/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/connections/index.ts#L6)
+Defined in: [packages/types/lib/connections/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L6)
 
-The two variants of the DirectConnection widget
+The two variants of the [@fnc314/packages.components!DirectConnection](../../packages.components/DirectConnection/README.md) widget
 </body></html>

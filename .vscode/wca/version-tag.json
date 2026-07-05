@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "version-tag",
-      "description": "Properties:\n\n  * `styles` - \n\n  * `formattedDate` {string} - [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]",
+      "description": "Properties:\n\n  * `styles` - [object Object],[object Object]\n\n  * `formattedDate` {string} - [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]",
       "attributes": []
     }
   ],

@@ -1114,7 +1114,7 @@
       "declarations": [
         {
           "name": "CodeRepo",
-          "description": "An instance of a given `GitHub` repository project documented through\n{@link CodeRepoData} objects from `data/code.json`",
+          "description": "An instance of a given `GitHub` repository project documented through\n{@link @fnc314/packages.types!CodeRepoData} objects from `data/code.json`\n\n@property {CodeRepoData} codeRepo - An instance of {@link @fnc314/packages.types!CodeRepoData}\nto render",
           "superclass": {
             "name": "UIAwareElement",
             "module": "mixins/ui-aware-element/ui-aware-element"
@@ -1304,7 +1304,7 @@
       "declarations": [
         {
           "name": "DirectConnection",
-          "description": "Represents a subset of content in `connections.json` as\noutlined in {@link ConnectionInstance}",
+          "description": "Represents a subset of content in `connections.json` as\noutlined in {@link @fnc314/packages.types!ConnectionInstance}\n\n@class DirectConnection",
           "superclass": {
             "name": "UIAwareElement",
             "module": "mixins/ui-aware-element/ui-aware-element"

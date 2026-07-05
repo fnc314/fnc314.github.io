@@ -21,7 +21,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("profile-card")
 export class ProfileCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     ProfileCardStyles,

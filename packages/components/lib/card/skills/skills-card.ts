@@ -14,7 +14,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("skills-card")
 export class SkillsCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [SkillsCardStyles];
 
   @property({ type: Boolean })

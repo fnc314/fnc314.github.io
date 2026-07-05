@@ -6,7 +6,7 @@
 
 # Class: WordCloud
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:36](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L36)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:36](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L36)
 
 A component that renders a cloud of words with various sorting and grouping options.
 
@@ -84,7 +84,7 @@ Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/r
 
 &gt; **\_sortedWords**: [`RenderableWordCloudWord`](../RenderableWordCloudWord/README.md)[] = `[]`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:106](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L106)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:106](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L106)
 
 ---
 
@@ -124,7 +124,7 @@ The **`HTMLElement.accessKeyLabel`** read-only property returns a string contain
 
 &gt; **appearance**: [`WordCloudAppearance`](../WordCloudAppearance/README.md) = `WordCloudAppearances.SEQUENTIAL`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:65](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L65)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:65](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L65)
 
 Controls the order in which words are animated/displayed.
 
@@ -972,10 +972,10 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:37](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L37)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
-The BreakpointLabel as determined by _SCREEN_ width against
-Breakpoints.BREAKPOINT\_LABELS
+The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
+[@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
 
 #### Inherited from
 
@@ -1183,7 +1183,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:23](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L23)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1209,7 +1209,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **delay**: `number` \| `"none"` = `"none"`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:92](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L92)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:92](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L92)
 
 The delay in milliseconds between word appearances when using sequential mode.
 
@@ -1465,7 +1465,7 @@ Returns the first child that is an element, and null otherwise.
 
 &gt; **grouping**: [`WordCloudGrouping`](../WordCloudGrouping/README.md) = `WordCloudGroupings.UNGROUPED`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:74](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L74)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:74](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L74)
 
 Controls how words are grouped together within the cloud.
 
@@ -1575,7 +1575,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **instantClear**: `boolean` = `false`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:56](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L56)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:56](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L56)
 
 Whether to clear the word cloud instantly when it is no longer visible.
 When true, the cloud resets instantly to opacity 0 instead of fading out.
@@ -3616,7 +3616,7 @@ The **`slot`** property of the Element interface returns the name of the shadow 
 
 &gt; **sorting**: [`WordCloudSorting`](../WordCloudSorting/README.md) = `WordCloudSortings.NONE`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:83](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L83)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:83](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L83)
 
 Controls how words are sorted within their groupings.
 
@@ -3692,7 +3692,7 @@ node is a Text node.
 
 &gt; **threshold**: `number` = `0.1`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:101](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L101)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:101](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L101)
 
 The intersection observer threshold for visibility detection.
 
@@ -3724,9 +3724,9 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L52)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
-Reads TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
+Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
 
 #### Inherited from
@@ -3755,7 +3755,7 @@ The **`translate`** property of the HTMLElement interface indicates whether an e
 
 &gt; **words**: [`WordCloudWord`](../WordCloudWord/README.md)[] = `[]`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:48](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L48)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:48](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L48)
 
 The list of words to display in the cloud.
 
@@ -3837,11 +3837,11 @@ from decorators.
 
 ### styles
 
-&gt; `static` **styles**: `CSSResult`[]
+&gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:38](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L38)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:38](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L38)
 
-[lit!css](https://lit.dev/docs/api/styles/#css)
+[@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
 #### Overrides
 
@@ -9710,7 +9710,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:116](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L116)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:116](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L116)
 
 Invoked when the component is added to the document's DOM.
 
@@ -9743,7 +9743,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:156](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L156)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:156](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L156)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -9826,12 +9826,12 @@ facilitate complex interactions.
 
 ### createProperty()
 
-&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;): `void`
+&gt; `static` **createProperty**(`name`: `PropertyKey`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:391
 
 Creates a property accessor on the element prototype if one does not exist
-and stores a `PropertyDeclaration` for the property with the
+and stores a [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration) for the property with the
 given options. The property setter calls the property's `hasChanged`
 property option or uses a strict identity check to determine whether or not
 to request an update.
@@ -9881,7 +9881,7 @@ static createProperty(name, options) {
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 </tr>
@@ -9902,7 +9902,7 @@ static createProperty(name, options) {
 
 ### getPropertyDescriptor()
 
-&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: `PropertyDeclaration`): `PropertyDescriptor` \| `undefined`
+&gt; `protected` `static` **getPropertyDescriptor**(`name`: `PropertyKey`, `key`: `string` \| `symbol`, `options`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)): `PropertyDescriptor` \| `undefined`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:419
 
@@ -9970,7 +9970,7 @@ class MyElement extends LitElement {
 </td>
 <td>
 
-`PropertyDeclaration`
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)
 
 </td>
 </tr>
@@ -9991,7 +9991,7 @@ class MyElement extends LitElement {
 
 ### getPropertyOptions()
 
-&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+&gt; `static` **getPropertyOptions**(`name`: `PropertyKey`): [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:434
 
@@ -10031,7 +10031,7 @@ customize the options for a given property, override
 
 #### Returns
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 #### Nocollapse
 
@@ -10111,7 +10111,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:257](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L257)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:257](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L257)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -10309,7 +10309,7 @@ update.
 
 &gt; **firstUpdated**(): `void`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:152](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L152)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:152](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L152)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.
@@ -10395,7 +10395,7 @@ update synchronously.
 
 ### requestUpdate()
 
-&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: `PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
+&gt; **requestUpdate**(`name?`: `PropertyKey`, `oldValue?`: `unknown`, `options?`: [`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;, `useNewValue?`: `boolean`, `newValue?`: `unknown`): `void`
 
 Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:619
 
@@ -10459,7 +10459,7 @@ old value of requesting property
 </td>
 <td>
 
-`PropertyDeclaration`\&lt;`unknown`, `unknown`\&gt;
+[`PropertyDeclaration`](https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration)\&lt;`unknown`, `unknown`\&gt;
 
 </td>
 <td>
@@ -10657,7 +10657,7 @@ Map of changed properties with old values
 
 &gt; **updated**(`changedProperties`: `PropertyValueMap`\&lt;`WordCloud`\&gt;): `void`
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.ts:121](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/word/cloud/word-cloud.ts#L121)
+Defined in: [packages/components/lib/word/cloud/word-cloud.ts:121](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.ts#L121)
 
 Invoked whenever the element is updated. Implement to perform
 post-updating tasks via DOM APIs, for example, focusing an element.

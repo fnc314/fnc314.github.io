@@ -500,6 +500,7 @@
         },
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "array",
           "default": "[\"TextStyles\",\"CodeRepoStyles\"]"
         },
@@ -526,6 +527,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[\"TextStyles\",\"ConnectionArtifactStyles\"]"
         },
@@ -557,6 +559,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[\"TextStyles\",\"DirectConnectionStyles\"]"
         },
@@ -586,6 +589,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[\"TextStyles\",\"ProfessionalConnectionStyles\"]"
         },
@@ -616,6 +620,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[\"TextStyles\",\"EducationInstitutionStyles\"]"
         },
@@ -641,6 +646,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "array",
           "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
         },
@@ -713,6 +719,7 @@
       "properties": [
         {
           "name": "styles",
+          "description": "[object Object],[object Object]",
           "type": "CSSResult[]",
           "default": "[null]"
         }

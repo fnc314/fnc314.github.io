@@ -16,7 +16,7 @@ import { styleMap } from "lit/directives/style-map.js";
  */
 @customElement("bento-layout")
 export class BentoLayout extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     BentoLayoutStyles,

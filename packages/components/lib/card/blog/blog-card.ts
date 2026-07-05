@@ -16,7 +16,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("blog-card")
 export class BlogCard extends UIAwareElement {
-  /** {@link lit!css} */
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     BlogCardStyles

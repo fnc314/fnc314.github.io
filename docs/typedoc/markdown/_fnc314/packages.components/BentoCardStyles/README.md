@@ -6,7 +6,7 @@
 
 # Variable: BentoCardStyles
 
-&gt; `const` **BentoCardStyles**: `CSSResult`
+&gt; `const` **BentoCardStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/card/bento/bento-card.styles.ts:15](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/components/lib/card/bento/bento-card.styles.ts#L15)
+Defined in: [packages/components/lib/card/bento/bento-card.styles.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.styles.ts#L15)
 </body></html>

@@ -409,7 +409,7 @@
             }
           ],
           "return": {
-            "description": "A boolean indicating whether the input JSON matches the expected structure of {@link ThemeJsonSchemes}"
+            "description": "A boolean indicating whether the input JSON matches the expected structure of "
           },
           "name": "jsonIsThemeJsonSchemes",
           "description": "Checks if the provided JSON conforms to the expected theme schemes structure",
@@ -426,10 +426,10 @@
             }
           ],
           "return": {
-            "description": "- A {@link lit!CSSResult} of the provided {@link jsonSchema}"
+            "description": "- A {@link CSSResult} of the provided `jsonSchema`"
           },
           "name": "readScheme",
-          "description": "Reads a `.json` defined object and produces a {@link lit!CSSResult}",
+          "description": "Reads a `.json` defined object and produces a {@link CSSResult}",
           "kind": "function"
         },
         {
@@ -449,7 +449,7 @@
             "description": " - A CSSResult containing the custom property definition, e.g., \"--md-sys-color-primary-container: #FF0000;\""
           },
           "name": "keyTransform",
-          "description": "Converts {@link jsonKey} and corresponding {@link rgb} value into a CSS custom property\nvia {@link lit!css} and {@link lit!unsafeCSS} functions",
+          "description": "Converts `jsonKey` and corresponding `rgb` value into a CSS custom property\nvia {@link css} and {@link unsafeCSS} functions",
           "kind": "function"
         }
       ],

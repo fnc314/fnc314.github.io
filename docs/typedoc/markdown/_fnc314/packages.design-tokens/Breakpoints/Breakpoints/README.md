@@ -6,17 +6,9 @@
 
 # Interface: Breakpoints
 
-Defined in: [breakpoints.ts:41](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/design-tokens/lib/breakpoints.ts#L41)
+Defined in: [breakpoints.ts:41](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L41)
 
 Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointRange](../BreakpointRange/README.md)
-
-## Hierarchy
-
-[View Summary](../../../../hierarchy.md)
-
-### Extends
-
-- [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;[`BreakpointLabel`](../BreakpointLabel/README.md), [`BreakpointRange`](../BreakpointRange/README.md)\&gt;
 
 ## Properties
 
@@ -25,7 +17,7 @@ Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointR
 <tr>
 <th>Property</th>
 <th>Type</th>
-<th>Inherited from</th>
+<th>Description</th>
 <th>Defined in</th>
 </tr>
 </thead>
@@ -43,10 +35,12 @@ Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointR
 </td>
 <td>
 
-`Record.desktop`
+The [BreakpointRange](../BreakpointRange/README.md) applied at the `desktop` breakpoint
 
 </td>
 <td>
+
+[breakpoints.ts:47](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L47)
 
 </td>
 </tr>
@@ -63,10 +57,12 @@ Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointR
 </td>
 <td>
 
-`Record.mobile`
+The [BreakpointRange](../BreakpointRange/README.md) applied at the `mobile` breakpoint
 
 </td>
 <td>
+
+[breakpoints.ts:43](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L43)
 
 </td>
 </tr>
@@ -83,10 +79,12 @@ Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointR
 </td>
 <td>
 
-`Record.tablet`
+The [BreakpointRange](../BreakpointRange/README.md) applied at the `tablet` breakpoint
 
 </td>
 <td>
+
+[breakpoints.ts:45](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L45)
 
 </td>
 </tr>

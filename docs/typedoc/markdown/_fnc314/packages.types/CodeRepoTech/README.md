@@ -6,11 +6,9 @@
 
 # Interface: CodeRepoTech
 
-Defined in: [packages/types/lib/code/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L50)
+Defined in: [packages/types/lib/code/index.ts:46](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L46)
 
 Represents a single technology entry used by a project.
-
-## Export
 
 ## Properties
 
@@ -42,7 +40,7 @@ A generated `CSS Variable` from `@fnc314/packages.types`
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:52](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L52)
+[packages/types/lib/code/index.ts:48](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L48)
 
 </td>
 </tr>
@@ -64,7 +62,7 @@ Display name for the technology (e.g., "TypeScript").
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:55](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L55)
+[packages/types/lib/code/index.ts:51](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L51)
 
 </td>
 </tr>
@@ -86,7 +84,7 @@ URL with more information about the technology.
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:58](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/code/index.ts#L58)
+[packages/types/lib/code/index.ts:54](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L54)
 
 </td>
 </tr>

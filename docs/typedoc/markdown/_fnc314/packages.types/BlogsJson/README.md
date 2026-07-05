@@ -8,7 +8,7 @@
 
 &gt; **BlogsJson** = \{ `id`: `string`; `title`: `string`; \} &amp; \{ `entries`: [`BlogsJsonEntry`](../BlogsJsonEntry/README.md)[]; `type`: `"SERIES"`; \} \| \{ `mediumUrl`: `string`; `tags`: `string`[]; `type`: `"SINGLE"`; \}
 
-Defined in: [packages/types/lib/blog/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L32)
+Defined in: [packages/types/lib/blog/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L30)
 
 Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 
@@ -36,7 +36,7 @@ Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:33](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L33)
+[packages/types/lib/blog/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L31)
 
 </td>
 </tr>
@@ -53,13 +53,10 @@ Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/29ad60983e0a139f9149ea685e2e952ced414831/packages/types/lib/blog/index.ts#L34)
+[packages/types/lib/blog/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L32)
 
 </td>
 </tr>
 </tbody>
 </table>
-
-## Export
-
 </body></html>
