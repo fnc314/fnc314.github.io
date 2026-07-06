@@ -37,7 +37,7 @@ export class BlogEntry extends UIAwareElement {
     `);
 
     const logoProperty = readCSSProperty(
-      `--icons-logos-organization-medium-${variant}-icon-base64`
+      `--icons-logos-organization-medium-${variant}-icon-svg`
     );
 
     return html`

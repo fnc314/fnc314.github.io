@@ -3,36 +3,36 @@
     "dark": {
       "icon": {
         "type": "value",
-        "value": "var(--icons-components-ui-mode-toggle-dark-empty-css-url)"
+        "value": "var(--icons-components-ui-mode-toggle-dark-empty-icon-svg-url)"
       }
     },
     "light": {
       "icon": {
         "type": "value",
-        "value": "var(--icons-components-ui-mode-toggle-light-empty-css-url)"
+        "value": "var(--icons-components-ui-mode-toggle-light-empty-icon-svg-url)"
       }
     },
     "system": {
       "icon": {
         "type": "value",
-        "value": "var(--icons-components-ui-mode-toggle-default-empty-css-url)"
+        "value": "var(--icons-components-ui-mode-toggle-default-empty-icon-svg-url)"
       }
     },
     "checkbox": {
       "icon": {
         "type": "value",
-        "value": "var(--icons-components-ui-mode-toggle-check-box-light-css-url)"
+        "value": "var(--icons-components-ui-mode-toggle-check-box-light-icon-svg-url)"
       }
     },
     "remember": {
       "icon": {
         "checked": {
           "type": "value",
-          "value": "var(--icons-components-ui-mode-toggle-remember-checked-light-css-url)"
+          "value": "var(--icons-components-ui-mode-toggle-remember-checked-light-icon-svg-url)"
         },
         "unchecked": {
           "type": "value",
-          "value": "var(--icons-components-ui-mode-toggle-remember-unchecked-light-css-url)"
+          "value": "var(--icons-components-ui-mode-toggle-remember-unchecked-light-icon-svg-url)"
         }
       }
     }
