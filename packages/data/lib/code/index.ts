@@ -15,7 +15,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: "--icons-logos-tech-kotlin-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-kotlin-dark-icon-svg",
+          light: "--icons-logos-tech-kotlin-light-icon-svg"
+        }
       }
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
@@ -28,12 +31,18 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Bash",
         url: "https://www.gnu.org/software/bash/",
-        designToken: "--icons-logos-tech-bash-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-bash-dark-icon-svg",
+          light: "--icons-logos-tech-bash-light-icon-svg"
+        }
       },
       {
         name: "Oh-My-Zsh",
         url: "https://ohmyz.sh/",
-        designToken: "--icons-logos-tech-zsh-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-zsh-dark-icon-svg",
+          light: "--icons-logos-tech-zsh-light-icon-svg"
+        }
       }
     ],
     url: "https://github.com/fnc314/mac-os-env-scripts",
@@ -46,7 +55,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Android",
         url: "https://developer.android.com/",
-        designToken: "--icons-logos-tech-android-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-android-dark-icon-svg",
+          light: "--icons-logos-tech-android-light-icon-svg"
+        }
       },
       {
         name: "Gradle",
@@ -59,7 +71,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: "--icons-logos-tech-kotlin-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-kotlin-dark-icon-svg",
+          light: "--icons-logos-tech-kotlin-light-icon-svg"
+        }
       }
     ],
     url: "https://github.com/fnc314/fnc314-kmp",
@@ -88,22 +103,34 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Vite",
         url: "https://vite.dev/",
-        designToken: "--icons-logos-tech-vite-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-vite-dark-icon-svg",
+          light: "--icons-logos-tech-vite-light-icon-svg"
+        }
       },
       {
         name: "Lit",
         url: "https://lit.dev/",
-        designToken: "--icons-logos-tech-lit-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-lit-dark-icon-svg",
+          light: "--icons-logos-tech-lit-light-icon-svg"
+        }
       },
       {
         name: "TypeScript",
         url: "https://typescriptlang.org/",
-        designToken: "--icons-logos-tech-typescript-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-typescript-dark-icon-svg",
+          light: "--icons-logos-tech-typescript-light-icon-svg"
+        }
       },
       {
         name: "Style Dictionary",
         url: "https://styledictionary.com/",
-        designToken: "--icons-logos-tech-style-dictionary-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-style-dictionary-dark-icon-svg",
+          light: "--icons-logos-tech-style-dictionary-light-icon-svg"
+        }
       },
       {
         name: "Material Components",
@@ -133,7 +160,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "HTML/CSS/JS",
         url: "https://developer.mozilla.org/",
-        designToken: "--icons-logos-tech-web-html-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-web-html-dark-icon-svg",
+          light: "--icons-logos-tech-web-html-light-icon-svg"
+        }
       },
       {
         name: "Prettier",
@@ -146,7 +176,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "ESLint",
         url: "https://eslint.org/",
-        designToken: "--icons-logos-tech-eslint-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-eslint-dark-icon-svg",
+          light: "--icons-logos-tech-eslint-light-icon-svg"
+        }
       },
       {
         name: "StyleLint",
@@ -175,7 +208,10 @@ export const Projects: CodeRepoData[] = [
       {
         name: "HTML/CSS/JS",
         url: "https://developer.mozilla.org/",
-        designToken: "--icons-logos-tech-web-html-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-web-html-dark-icon-svg",
+          light: "--icons-logos-tech-web-html-light-icon-svg"
+        }
       },
       {
         name: "Material Theme Builder",
@@ -196,12 +232,18 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Python",
         url: "https://python.org/",
-        designToken: "--icons-logos-tech-python-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-python-dark-icon-svg",
+          light: "--icons-logos-tech-python-light-icon-svg"
+        }
       },
       {
         name: "Ruby",
         url: "https://www.ruby-lang.org/en/",
-        designToken: "--icons-logos-tech-ruby-default-icon-svg"
+        designToken: {
+          dark: "--icons-logos-tech-ruby-dark-icon-svg",
+          light: "--icons-logos-tech-ruby-light-icon-svg"
+        }
       }
     ],
     url: "https://github.com/fnc314/project_euler",
