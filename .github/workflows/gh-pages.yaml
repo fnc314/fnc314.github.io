@@ -31,7 +31,9 @@ jobs:
         run: pnpm install
         shell: zsh {0}
 
-      - name: Mise Build
+      - env:
+          NODE_ENV: "production"
+        name: Mise Build
         run: mise run vite:build:production
         shell: zsh {0}
 
