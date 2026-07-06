@@ -92,6 +92,7 @@ body {
 }
 
 body {
+  background-color: var(--globals-color-background);
   container-type: size;
   min-block-size: 100dvb;
 

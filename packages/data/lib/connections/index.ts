@@ -22,8 +22,8 @@ export const Connections: {
       mdIcon: "call",
       title: "Call or text me directly",
       designToken: {
-        dark: "--md-icons-call-dark-icon-base64",
-        light: "--md-icons-call-light-icon-base64"
+        dark: "--md-icons-call-dark-icon-svg",
+        light: "--md-icons-call-light-icon-svg"
       }
     },
     email: {
@@ -32,8 +32,8 @@ export const Connections: {
       mdIcon: "mail",
       title: "Send me an email",
       designToken: {
-        dark: "--md-icons-mail-dark-icon-base64",
-        light: "--md-icons-mail-light-icon-base64"
+        dark: "--md-icons-mail-dark-icon-svg",
+        light: "--md-icons-mail-light-icon-svg"
       }
     },
   },
@@ -70,8 +70,8 @@ export const Connections: {
     googleDoc: {
       href: "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
       designToken: {
-        dark: "--icons-logos-tech-google-docs-dark-icon-base64",
-        light: "--icons-logos-tech-google-docs-light-icon-base64"
+        dark: "--icons-logos-tech-google-docs-dark-icon-svg",
+        light: "--icons-logos-tech-google-docs-light-icon-svg"
       },
       title: "View resume on Google Docs",
       mdIcon: "docs"
@@ -79,8 +79,8 @@ export const Connections: {
     pdf: {
       href: "https://fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
       designToken: {
-        dark: "--icons-logos-tech-pdf-dark-icon-base64",
-        light: "--icons-logos-tech-pdf-light-icon-base64"
+        dark: "--icons-logos-tech-pdf-dark-icon-svg",
+        light: "--icons-logos-tech-pdf-light-icon-svg"
       },
       title: "Download resume in PDF format",
       mdIcon: "picture_as_pdf"
