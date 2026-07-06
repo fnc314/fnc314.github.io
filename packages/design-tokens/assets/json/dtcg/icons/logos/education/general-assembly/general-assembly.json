@@ -1,0 +1,20 @@
+{
+  "$type": "asset",
+  "icons": {
+    "logos": {
+      "education": {
+        "general-assembly": {
+          "dark": {
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+          },
+          "default": {
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+          },
+          "light": {
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@
 #USAGE   default "none"
 #USAGE }
 #USAGE flag "--stats" help="Passes `--stats` to `eslint`" default="false"
+set -euo pipefail
 
 typeset ESLINT_LOG_FORMAT=${usage_log:=none}
 typeset ESLINT_LOG_DIR

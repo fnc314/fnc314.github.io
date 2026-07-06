@@ -9,7 +9,6 @@ export default {
         overrides: {
           // CRITICAL: Prevent SVGO from deleting the viewBox.
           // Without it, your CSS variables won't scale fluidly!
-          removeViewBox: false,
           cleanupNumericValues: { floatPrecision: 2 },
           convertPathData: { floatPrecision: 2 },
         },

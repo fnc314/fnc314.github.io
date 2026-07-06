@@ -28,8 +28,8 @@ export class BlogEntry extends UIAwareElement {
   override render() {
     const variant = this.darkMode ? "dark" : "light";
 
-    // `*-css-url` resolves to `url("data:…")` for the decorative CSS border.
-    const logoToken = `--icons-logos-organization-medium-${variant}-css-url-svg`;
+    // `*-icon-svg-url` resolves to `url("data:…")` for the decorative CSS border.
+    const logoToken = `--icons-logos-organization-medium-${variant}-icon-svg-url`;
 
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
     const borderStyle = unsafeCSS(`
@@ -37,7 +37,7 @@ export class BlogEntry extends UIAwareElement {
     `);
 
     const logoProperty = readCSSProperty(
-      `--icons-logos-organization-medium-${variant}-data-image-svg-raw`
+      `--icons-logos-organization-medium-${variant}-icon-base64`
     );
 
     return html`

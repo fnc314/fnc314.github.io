@@ -1,8 +1,8 @@
 monorepo_root = true
 
 [monorepo]
+  lockfile = true
   config_roots = [
-    ".",
     "firebase/functions/node",
     "packages/components",
     "packages/data",
@@ -20,10 +20,15 @@ monorepo_root = true
   tombi = "1.1.5"
   usage = "3.5.3"
 
+[deps.pnpm]
+  auto = true
 
 [env]
   _ = {
-    path = "[{{config_root}}/node_modules/.bin]",
+    path = {
+      path = "[{{config_root}}/node_modules/.bin]",
+      tools = true,
+    },
   }
   configureExtensionsUseSymLinks = true
   LOCAL_CONFIG_DIR = "{{config_root}}/.config"
@@ -48,3 +53,4 @@ monorepo_root = true
   terminal_progress = true
   color_theme = "dracula"
   experimental = true
+  env_file = ".env/.env"

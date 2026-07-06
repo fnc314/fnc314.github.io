@@ -2,6 +2,7 @@
 #MISE description="Invokes `pnpm cem serve`"
 #MISE alias="dx:t:@pwrs:cem:serve"
 #USAGE flag="-p [port]" help="Chooses the serving port" default="1234"
+set -euo pipefail
 
 export NODE_ENV="developmet"
 

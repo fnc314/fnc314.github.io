@@ -7,10 +7,6 @@
             "type": "asset",
             "value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
           },
-          "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
-          },
           "light": {
             "type": "asset",
             "value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"

@@ -4,6 +4,7 @@
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {
 #USAGE   choices "none" "log-all" "mise-tasks" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
+set -euo pipefail
 
 typeset LOG_STEP="${usage_logstep:=none}"
 typeset MASTER_LOG

@@ -2,6 +2,7 @@
 #MISE description="Runs `typedoc`"
 #MISE alias="dx:t:typedoc"
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/dev-ex/tools/typedoc/YYYY/MM/DD/HH:MM:SS.log`" default="false"
+set -euo pipefail
 
 typeset TYPEDOC_ARGS=(
   --options ./.config/typedoc/typedoc.config.mjs

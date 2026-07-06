@@ -180,6 +180,9 @@ export default defineConfig([
       "index.ts",
       path.join(rootDir, "packages/{components,data,design-tokens,services,types}/lib/**/*.ts"),
     ],
+    plugins: [
+      tsdoc,
+    ],
     ignores,
     languageOptions: {
       parserOptions: {

@@ -2,11 +2,11 @@
 #MISE description="Runs `vite build` using `development` for mode AND `NODE_ENV`"
 #MISE alias="v:b:d"
 #MISE depends=["vite:build:packages"]
+#MISE env={ NODE_ENV = "development" }
 #USAGE flag "-w" help="Passes `-w` to `vite build`" default="false"
 #USAGE flag "-d" help="Passes `-d` to `vite build`" default="false"
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/vite/build/development/YYYY/MM/DD/HH:MM:SS.log`" default="false"
-
-NODE_ENV="development"
+set -euo pipefail
 
 typeset LOG_DIR="logs/mise/tasks/vite/build/development"
 # Use new directory structure for date logging
@@ -16,7 +16,7 @@ typeset LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
 
 typeset -a VITE_FLAGS
 VITE_FLAGS=(
-  -m ${NODE_ENV}
+  -m "${NODE_ENV}"
   -c ./.config/vite/vite.config.ts
 )
 

@@ -7,10 +7,6 @@
             "type": "asset",
             "value": "packages/design-tokens/assets/icons/logos/tech/material-design/material-design-dark.svg"
           },
-          "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/material-design/material-design-light.svg"
-          },
           "light": {
             "type": "asset",
             "value": "packages/design-tokens/assets/icons/logos/tech/material-design/material-design-light.svg"

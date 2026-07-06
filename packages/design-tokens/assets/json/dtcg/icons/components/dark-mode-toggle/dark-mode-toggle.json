@@ -1,0 +1,35 @@
+{
+  "$type": "value",
+  "dark-mode-toggle": {
+    "dark": {
+      "icon": {
+        "$value": "var(--icons-components-ui-mode-toggle-dark-empty-css-url)"
+      }
+    },
+    "light": {
+      "icon": {
+        "$value": "var(--icons-components-ui-mode-toggle-light-empty-css-url)"
+      }
+    },
+    "system": {
+      "icon": {
+        "$value": "var(--icons-components-ui-mode-toggle-default-empty-css-url)"
+      }
+    },
+    "checkbox": {
+      "icon": {
+        "$value": "var(--icons-components-ui-mode-toggle-check-box-light-css-url)"
+      }
+    },
+    "remember": {
+      "icon": {
+        "checked": {
+          "$value": "var(--icons-components-ui-mode-toggle-remember-checked-light-css-url)"
+        },
+        "unchecked": {
+          "$value": "var(--icons-components-ui-mode-toggle-remember-unchecked-light-css-url)"
+        }
+      }
+    }
+  }
+}

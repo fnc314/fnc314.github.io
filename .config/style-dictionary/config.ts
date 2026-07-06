@@ -14,8 +14,6 @@ import { type Config as SVGOConfig, loadConfig, optimize } from "svgo";
 
 /**
  * The {@link SVGOConfig} defined elsewhere
- *
- * @type {SVGOConfig}
  */
 const svgoConfig: SVGOConfig = await loadConfig(".config/svgo/svgo.config.mjs", process.cwd());
 
@@ -23,23 +21,46 @@ const svgoConfig: SVGOConfig = await loadConfig(".config/svgo/svgo.config.mjs", 
  * Passes {@link svg} through {@link svgo} to optimize before embedding in
  *   stylesheets
  *
- * @async
- * @param {string} svg The `.svg` file content
- * @param {string} path The `.svg` file path
- * @returns {string} The optimized `.svg` content
+ * @param svg - The `.svg` file content
+ * @param path - The `.svg` file path
+ * @returns The optimized and sanitized `.svg` content
  */
 const optimizeSvg: (svg: string, path: string) => string =
   (svg: string, path: string) => {
     const { data } = optimize(svg, { ...svgoConfig, path });
-    return data;
+    return data
+      // 1. Remove line breaks and extra spacing to keep the CSS property on one line
+      .replaceAll(/[\r\n\t]+/g, " ")
+      .replaceAll(/\s{2,}/g, " ")
+
+      // 2. Escape "#" because it indicates a URL fragment identifier
+      .replaceAll("#", "%23")
+
+      // 3. Escape "<" and ">" to comply with URL character safety standards
+      .replaceAll("<", "%3C")
+      .replaceAll(">", "%3E")
+
+      // 4. Escape quotes depending on your outer CSS wrapper (assuming outer single quotes)
+      .replaceAll("'", "%27")
+
+      // 5. Escape double quotes if used inside the SVG attributes
+      .replaceAll("\"", "%22")
+
+      // 6. Escape parentheses as they would prematurely close the CSS url() function
+      .replaceAll("(", "%28")
+      .replaceAll(")", "%29")
+
+      // 7. Escape "{" and "}"
+      .replaceAll("{", "%7B")
+      .replaceAll("}", "%7D");
   }
 
 /**
  * Reads the file from {@link TransformedToken.value} and returns
  *   the string contents
  *
- * @param {TransformedToken} token A token referring to an `.svg` file
- * @returns {string}
+ * @param token - A token referring to an `.svg` file
+ * @returns The `string` contents
  */
 const readTokenFileContents: (token: TransformedToken) => string =
   (token: TransformedToken) => {
@@ -59,25 +80,17 @@ const DATA_IMAGE_SVG: string = "data:image/svg+xml"
 StyleDictionary.registerFilter({
   name: "isIconToken",
   filter: (token: TransformedToken) =>
-    [
-      "icons-size",
-      "icons-font",
-      "icons-font-sharp",
-      "md",
-      "sys",
-      "ref"
-    ].every(path => !token.path.includes(path)) &&
-    token.path.includes("icons") &&
-    token.type === "asset" &&
-    token.value.endsWith(".svg")
+    (
+      token.name.startsWith("icons-components") ||
+      token.name.startsWith("icons-logos") ||
+      token.name.startsWith("icons-material")
+    ) &&
+    token.type === "asset"
 });
 
 StyleDictionary.registerFilter({
   name: "isMaterialOverride",
-  filter: (token: TransformedToken) =>
-    token.path.includes("sys") ||
-    token.path.includes("ref") ||
-    token.path.includes("md")
+  filter: (token: TransformedToken) => token.name.startsWith("md")
 });
 
 StyleDictionary.registerFilter({
@@ -87,7 +100,15 @@ StyleDictionary.registerFilter({
 });
 
 StyleDictionary.registerTransform({
-  name: "iconEncodingToDataImageSvg",
+  name: "iconEncodingToDataImageBase64Name",
+  type: transformTypes.name,
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-icon-base64`,
+});
+
+StyleDictionary.registerTransform({
+  name: "iconEncodingToDataImageBase64",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
@@ -96,89 +117,83 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
-  name: "iconToDataImageSvg",
+  name: "iconEncodingToUrlDataImageBase64Name",
+  type: transformTypes.name,
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-icon-base64-url`,
+});
+
+StyleDictionary.registerTransform({
+  name: "iconEncodingToUrlDataImageBase64",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
-    `"${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}"`,
+    `url("${DATA_IMAGE_SVG};base64,${Buffer.from(readTokenFileContents(token), "utf-8").toString("base64")}")`
 });
 
 StyleDictionary.registerTransform({
-  name: "iconToDataImageSvgName",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-data-image-svg-raw`,
-});
-
-StyleDictionary.registerTransform({
-  name: "iconEncodingToDataImageSvgName",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-data-image-svg`,
-});
-
-StyleDictionary.registerTransform({
-  name: "urlForIcons",
+  name: "iconSvgToDataImageSvg",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
-    `url("${DATA_IMAGE_SVG};base64,${Buffer.from(readTokenFileContents(token), "utf-8").toString("base64")}")`,
+    `"${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}"`
 });
 
 StyleDictionary.registerTransform({
-  name: "urlForIconsSvg",
+  name: "iconSvgToDataImageSvgName",
+  type: transformTypes.name,
+  transitive: false,
+  transform: (token: TransformedToken) =>
+    `${token.name}-icon-svg`,
+});
+
+StyleDictionary.registerTransform({
+  name: "iconSvgToUrlDataImageSvg",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
-    `url("${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}")`,
+    `url("${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}")`
 });
 
 StyleDictionary.registerTransform({
-  name: "urlForIconsName",
+  name: "iconSvgToUrlDataImageSvgName",
   type: transformTypes.name,
   transitive: false,
   transform: (token: TransformedToken) =>
-    `${token.name}-css-url`,
+    `${token.name}-icon-svg-url`,
 });
 
-StyleDictionary.registerTransform({
-  name: "urlForIconsNameSvg",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-css-url-svg`,
-});
-
-const buildPaths = {
-  css: `${process.cwd()}/packages/design-tokens/assets/css/`,
-  json: `${process.cwd()}/packages/design-tokens/assets/json/`,
+const files = {
+  buildPaths: {
+    css: `${process.cwd()}/packages/design-tokens/assets/css/`,
+    json: `${process.cwd()}/packages/design-tokens/assets/json/`,
+  },
+  sources: [
+    `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
+  ]
 };
 
-export default {
-  source: [
-    `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
-    `!${process.cwd()}/packages/design-tokens/tokens/dtcg/**/*.json`,
-  ],
+const styleDictionaryConfig: Config = {
+  source: files.sources,
   platforms: {
-    iconsAsDataSvg: {
+    iconBase64: {
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "iconEncodingToDataImageSvg",
-        "iconEncodingToDataImageSvgName"
+        "iconEncodingToDataImageBase64",
+        "iconEncodingToDataImageBase64Name"
       ],
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
-          destination: "data_image_svg_icons.css",
+          destination: "icon-base64.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
@@ -195,20 +210,20 @@ export default {
         }
       ]
     },
-    iconsAsDataSvgRaw: {
+    iconBase64Url: {
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "iconToDataImageSvg",
-        "iconToDataImageSvgName"
+        "iconEncodingToUrlDataImageBase64",
+        "iconEncodingToUrlDataImageBase64Name"
       ],
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
-          destination: "data_image_svg_icons_raw.css",
+          destination: "icon-base64-url.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
@@ -225,20 +240,20 @@ export default {
         }
       ]
     },
-    iconsAsCssUrl: {
+    iconSvg: {
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "urlForIcons",
-        "urlForIconsName"
+        "iconSvgToDataImageSvg",
+        "iconSvgToDataImageSvgName"
       ],
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
-          destination: "css_url_icons.css",
+          destination: "icon-svg.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
@@ -255,20 +270,20 @@ export default {
         }
       ]
     },
-    iconsAsCssUrlSvg: {
+    iconSvgUrl: {
       transforms: [
         transforms.attributeCti,
         transforms.attributeColor,
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "urlForIconsSvg",
-        "urlForIconsNameSvg"
+        "iconSvgToUrlDataImageSvg",
+        "iconSvgToUrlDataImageSvgName"
       ],
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
-          destination: "css_url_icons_svg.css",
+          destination: "icon-svg-url.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {
@@ -287,7 +302,7 @@ export default {
     },
     css: {
       transformGroup: transformGroups.css,
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
           destination: "_variables.css",
@@ -314,10 +329,9 @@ export default {
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "iconEncodingToDataImageSvg",
-        "iconEncodingToDataImageSvgName"
+        "iconEncodingToDataImageBase64",
       ],
-      buildPath: buildPaths.css,
+      buildPath: files.buildPaths.css,
       files: [
         {
           destination: "_material-overrides.css",
@@ -339,7 +353,7 @@ export default {
     },
     dtcgJson: {
       transformGroup: transformGroups.web,
-      buildPath: buildPaths.json,
+      buildPath: files.buildPaths.json,
       files: [
         {
           destination: "tokens.json",
@@ -354,10 +368,14 @@ export default {
     },
   },
   log: {
-    warnings: logWarningLevels.warn,
+    warnings: logWarningLevels.error,
     verbosity: logVerbosityLevels.verbose,
     errors: {
       brokenReferences: logBrokenReferenceLevels.throw,
     }
   }
-} satisfies Config;
+};
+
+// console.log(JSON.stringify({ files, styleDictionaryConfig }, null, 2));
+
+export default styleDictionaryConfig;

@@ -6,6 +6,7 @@
 #USAGE flag "--log" help="Creates a `HHMMSS.log` file at `./logs/stylelint/{YYYYMMDD}" default="false"
 #USAGE flag "--verbose" help="Passes `-f verbose` to `stylelint`" default="false"
 #USAGE flag "--config-inspector" help="Runs `stylelint-config-inspector` instead" default="false"
+set -euo pipefail
 
 typeset STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"

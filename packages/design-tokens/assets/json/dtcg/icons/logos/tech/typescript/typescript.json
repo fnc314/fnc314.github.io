@@ -1,0 +1,20 @@
+{
+  "$type": "asset",
+  "icons": {
+    "logos": {
+      "tech": {
+        "typescript": {
+          "dark": {
+            "$value": "packages/design-tokens/assets/icons/logos/tech/typescript/typescript.svg"
+          },
+          "default": {
+            "$value": "packages/design-tokens/assets/icons/logos/tech/typescript/typescript.svg"
+          },
+          "light": {
+            "$value": "packages/design-tokens/assets/icons/logos/tech/typescript/typescript.svg"
+          }
+        }
+      }
+    }
+  }
+}

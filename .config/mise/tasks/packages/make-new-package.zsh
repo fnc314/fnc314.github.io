@@ -2,6 +2,7 @@
 #MISE description="Creates a new sub `package.json` package"
 #MISE alias="p:mnp"
 #USAGE arg "<dir>" help="The directory for the new `package.json`"
+set -euo pipefail
 
 typeset TARGET_DIR="./packages/${usage_dir}"
 

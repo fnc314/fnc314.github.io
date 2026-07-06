@@ -1,0 +1,55 @@
+{
+  "$type": "asset",
+  "icons": {
+    "logos": {
+      "tech": {
+        "web": {
+          "css": {
+            "dark": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
+            },
+            "default": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
+            },
+            "light": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css.svg"
+            }
+          },
+          "html": {
+            "dark": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+            },
+            "default": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+            },
+            "light": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+            }
+          },
+          "javascript": {
+            "dark": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
+            },
+            "default": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
+            },
+            "light": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript.svg"
+            }
+          },
+          "web-components": {
+            "dark": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+            },
+            "default": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+            },
+            "light": {
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+            }
+          }
+        }
+      }
+    }
+  }
+}

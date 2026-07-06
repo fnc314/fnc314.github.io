@@ -22,7 +22,7 @@ export function readCSSProperty(
   const computedStyle = window.getComputedStyle(computedTarget);
 
   // `getComputedStyle` returns string-typed custom properties with their
-  // surrounding quotes intact (e.g. the `*-data-image-svg` tokens resolve to
+  // surrounding quotes intact (e.g. the `*-icon-base64` tokens resolve to
   // `"data:image/svg+xml;base64,…"`). Strip a single layer of matching outer
   // quotes so callers get a directly-usable value (valid `<img src>`, etc.).
   const rawPropertyValue = computedStyle.getPropertyValue(property);

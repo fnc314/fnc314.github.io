@@ -1,6 +1,7 @@
 import { type CSSResult, css } from "lit";
 
 /**
+ * A {@link CSSResult} for {@link UiModeToggle}
  *
  * @cssprop [--icons-components-ui-mode-toggle-dark-empty]
  * @cssprop [--icons-components-ui-mode-toggle-dark-filled]
@@ -103,7 +104,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(systemThreeWayLabel) {
-        --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-filled-css-url);
+        --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-filled-icon-svg-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -116,7 +117,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(lightThreeWayLabel) {
-        --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-filled-css-url);
+        --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-filled-icon-svg-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -129,7 +130,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(darkThreeWayLabel) {
-        --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-filled-css-url);
+        --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-filled-icon-svg-url);
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -149,8 +150,8 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle.dark {
-    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-dark-css-url);
-    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-dark-css-url);
-    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-dark-css-url);
+    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-dark-icon-svg-url);
+    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-dark-icon-svg-url);
+    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-dark-icon-svg-url);
   }
 `;

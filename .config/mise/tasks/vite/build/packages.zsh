@@ -3,6 +3,7 @@
 #MISE alias="v:d:pkgs"
 #USAGE flag "-p" help="Builds for `production`" default="false"
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/vite/build/packages/YYYY/MM/DD/HH:MM:SS.log`" default="false"
+set -euo pipefail
 
 typeset PACKAGES_DIR="packages"
 typeset VITE_CONFIG_FILEPATH=".config/vite/vite.config.ts"
@@ -18,7 +19,11 @@ if [[ "${usage_p:=false}" == "true" ]]; then
   MODE="production"
 fi
 
-export NODE_ENV="${MODE}"
+mise set NODE_ENV="${MODE}"
+
+printf "First, create Style Dictionary In Mode %s (%s)\n" "${MODE}" "${NODE_ENV}"
+mise run //:dev-ex:tools:style-dictionary "${MODE}"
+printf "\n"
 
 typeset PACKAGES=(
   types
@@ -29,7 +34,7 @@ typeset PACKAGES=(
 )
 
 typeset BASE_VITE_PARAMS=(
-  -m "${MODE}"
+  -m "${NODE_ENV}"
   -v
 )
 
@@ -53,17 +58,19 @@ for pkg in "${PACKAGES[@]}"; do
       -c "${PACKAGES_DIR}/${pkg}/${VITE_CONFIG_FILEPATH}"
     )
 
-    printf "Vite Params for %s/%s: %s\n" "${PACKAGES_DIR}" "${pkg}" "${VITE_PARAMS[@]}"
+    printf "NODE_ENV => %s\n" "${NODE_ENV}"
+    printf "Vite Params for %s/%s:\n" "${PACKAGES_DIR}" "${pkg}"
+    print -l -r -- "${VITE_PARAMS[@]}"
 
     if [[ "${usage_l:=false}" == "true" ]]; then
       # Append to the same log file for all packages
-      NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
+      pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
       if (( "${pipestatus[1]}" != 0 )); then
         print -r -- "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       fi
     else
-      NODE_ENV=${MODE} pnpm vite build "${VITE_PARAMS[@]}" || {
+      pnpm vite build "${VITE_PARAMS[@]}" || {
         echo "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       }
@@ -71,3 +78,5 @@ for pkg in "${PACKAGES[@]}"; do
   fi
   VITE_PARAMS=("${BASE_VITE_PARAMS[@]}")
 done
+
+mise unset NODE_ENV

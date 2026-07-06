@@ -6,6 +6,7 @@
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/dev-ex/tools/@pwrs/cem/generate/YYYY/MM/DD/HH:MM:SS.log`" default="false"
 #USAGE flag "-d" help="Enables debug logging via `-vv` flag to `pnpm cem`" default="false"
 #USAGE flag "--trace" help="Enables trace logging via `-vvv` flag to `pnpm cem`" default="false"
+set -euo pipefail
 
 printf "Usage_trace %s\nUsage_d %s\nUsage_w\nLog %s\n" "${usage_trace}" "${usage_d}" "${usage_w}" "${usage_l}"
 

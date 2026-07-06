@@ -20,9 +20,8 @@ export const EducationJsonData: EducationInstitutionRecord[] = [
       }
     },
     designToken: {
-      dark: "--icons-logos-education-general-assembly-dark-data-image-svg",
-      default: "--icons-logos-education-general-assembly-default-data-image-svg",
-      light: "--icons-logos-education-general-assembly-light-data-image-svg"
+      dark: "--icons-logos-education-general-assembly-dark-icon-base64",
+      light: "--icons-logos-education-general-assembly-light-icon-base64"
     }
   },
   {
@@ -44,9 +43,8 @@ export const EducationJsonData: EducationInstitutionRecord[] = [
       }
     },
     designToken: {
-      dark: "--icons-logos-education-university-of-pittsburgh-dark-data-image-svg",
-      default: "--icons-logos-education-university-of-pittsburgh-default-data-image-svg",
-      light: "--icons-logos-education-university-of-pittsburgh-light-data-image-svg"
+      dark: "--icons-logos-education-university-of-pittsburgh-dark-icon-base64",
+      light: "--icons-logos-education-university-of-pittsburgh-light-icon-base64"
     }
   }
 ];

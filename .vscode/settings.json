@@ -23,6 +23,10 @@
     // "editor.formatOnType": true,
     "editor.wordBasedSuggestions": "off"
   },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.detectIndentation": true
+  },
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -33,8 +37,17 @@
     "npm:@material/web"
   ],
   "cem.lsp.debugLogging": true,
-  "cem.lsp.executable": "",
+  "cem.lsp.executable": "${workspaceFolder}/node_modules/.bin/cem",
   "cem.lsp.trace.server": "verbose",
+  "chat.agent.codeBlockProgress": true,
+  "chat.agent.enabled": true,
+  "chat.mcp.serverSampling": {
+    "fnc314.github.io/.vscode/mcp.json: ollama-gemma3-270m": {
+      "allowedModels": [
+        "ollama/Ollama/gemma4:12b"
+      ]
+    }
+  },
   "css.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
@@ -104,14 +117,6 @@
     "${workspaceFolder}/index.css",
     "${workspaceFolder}/packages/**/*.ts",
   ],
-  "evenBetterToml.formatter.allowedBlankLines": 1,
-  "evenBetterToml.formatter.arrayTrailingComma": true,
-  "evenBetterToml.formatter.compactEntries": false,
-  "evenBetterToml.formatter.compactInlineTables": false,
-  "evenBetterToml.formatter.indentEntries": true,
-  "evenBetterToml.formatter.indentString": "  ",
-  "evenBetterToml.formatter.indentTables": true,
-  "evenBetterToml.schema.links": true,
   "exportall.config.namedExports": true,
   "exportall.config.quote": "\"",
   "exportall.config.recursive": true,
@@ -133,6 +138,25 @@
   "files.trimTrailingWhitespace": true,
   "fixJson.indentationSpaces": 2,
   "git.ignoreLimitWarning": true,
+  "github.copilot.chat.agent.modelDetails.enabled": true,
+  "github.copilot.chat.cli.mcp.enabled": true,
+  "github.copilot.chat.cli.planCommand.enabled": true,
+  "github.copilot.chat.cli.terminalLinks.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.copilotDebugCommand.enabled": true,
+  "github.copilot.chat.githubMcpServer.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.localIndex.enabled": true,
+  "github.copilot.chat.projectLabels.expanded": true,
+  "github.copilot.chat.reviewAgent.enabled": true,
+  "github.copilot.chat.searchSubagent.enabled": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "github.copilot.chat.skillTool.enabled": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
+  "github.copilot.chat.tools.viewImage.enabled": true,
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.chat.workspace.codeSearchExternalIngest.enabled": true,
+  "github.copilot.chat.workspace.enableCodeSearch": true,
   "html.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.html-custom-data.json",
     "${workspaceFolder}/.vscode/wca/*.json"
@@ -694,6 +718,15 @@
   ],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "tombi.args": [
+    "-vv"
+  ],
+  "tombi.env": {},
+  "tombi.path": "tombi",
+  "wctools.mcp.enabled": true,
+  "wctools.mcp.host": "localhost",
+  "wctools.mcp.port": 3005,
+  "wctools.mcp.transport": "http",
   "workbench.tree.indent": 8,
   "zshellcheck.enable": true,
   "zshellcheck.executablePath": "zshellcheck",
