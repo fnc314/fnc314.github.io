@@ -180,66 +180,6 @@ const files = {
 const styleDictionaryConfig: Config = {
   source: files.sources,
   platforms: {
-    iconBase64: {
-      transforms: [
-        transforms.attributeCti,
-        transforms.attributeColor,
-        transforms.nameKebab,
-        transforms.colorCss,
-        transforms.assetPath,
-        "iconEncodingToDataImageBase64",
-        "iconEncodingToDataImageBase64Name"
-      ],
-      buildPath: files.buildPaths.css,
-      files: [
-        {
-          destination: "icon-base64.css",
-          format: formats.cssVariables,
-          filter: "isIconToken",
-          options: {
-            outputReferences: true,
-            outputReferenceFallbacks: true,
-            sort: "name",
-            formatting: {
-              indentation: "  ",
-              fileHeaderTimestamp: true,
-              commentPosition: "above",
-              commentStyle: "long",
-            }
-          }
-        }
-      ]
-    },
-    iconBase64Url: {
-      transforms: [
-        transforms.attributeCti,
-        transforms.attributeColor,
-        transforms.nameKebab,
-        transforms.colorCss,
-        transforms.assetPath,
-        "iconEncodingToUrlDataImageBase64",
-        "iconEncodingToUrlDataImageBase64Name"
-      ],
-      buildPath: files.buildPaths.css,
-      files: [
-        {
-          destination: "icon-base64-url.css",
-          format: formats.cssVariables,
-          filter: "isIconToken",
-          options: {
-            outputReferences: true,
-            outputReferenceFallbacks: true,
-            sort: "name",
-            formatting: {
-              indentation: "  ",
-              fileHeaderTimestamp: true,
-              commentPosition: "above",
-              commentStyle: "long",
-            }
-          }
-        }
-      ]
-    },
     iconSvg: {
       transforms: [
         transforms.attributeCti,
@@ -329,7 +269,7 @@ const styleDictionaryConfig: Config = {
         transforms.nameKebab,
         transforms.colorCss,
         transforms.assetPath,
-        "iconEncodingToDataImageBase64",
+        "iconSvgToDataImageSvg",
       ],
       buildPath: files.buildPaths.css,
       files: [

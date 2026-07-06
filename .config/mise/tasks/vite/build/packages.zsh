@@ -18,11 +18,10 @@ typeset MODE="development"
 if [[ "${usage_p:=false}" == "true" ]]; then
   MODE="production"
 fi
-
-mise set NODE_ENV="${MODE}"
+typeset NODE_ENV="${MODE}"
 
 printf "First, create Style Dictionary In Mode %s (%s)\n" "${MODE}" "${NODE_ENV}"
-mise run //:dev-ex:tools:style-dictionary "${MODE}"
+NODE_ENV="${MODE}" mise run //:dev-ex:tools:style-dictionary "${MODE}"
 printf "\n"
 
 typeset PACKAGES=(
@@ -64,13 +63,13 @@ for pkg in "${PACKAGES[@]}"; do
 
     if [[ "${usage_l:=false}" == "true" ]]; then
       # Append to the same log file for all packages
-      pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
+      NODE_ENV="${MODE}" pnpm vite build "${VITE_PARAMS[@]}" 2>&1 | tee -a "$LOG_FILE"
       if (( "${pipestatus[1]}" != 0 )); then
         print -r -- "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       fi
     else
-      pnpm vite build "${VITE_PARAMS[@]}" || {
+      NODE_ENV="${MODE}" pnpm vite build "${VITE_PARAMS[@]}" || {
         echo "Build failed for ${PACKAGES_DIR}/${pkg}, aborting" >&2
         exit 1
       }
@@ -78,5 +77,3 @@ for pkg in "${PACKAGES[@]}"; do
   fi
   VITE_PARAMS=("${BASE_VITE_PARAMS[@]}")
 done
-
-mise unset NODE_ENV

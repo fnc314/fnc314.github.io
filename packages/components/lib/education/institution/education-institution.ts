@@ -6,6 +6,11 @@ import { type EducationInstitutionRecord } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * An implementation of {@link UIAwareELement} displaying {@link EducationInstitutionRecord}
+ *
+ * @property {Object} institute - The particular {@link EducationInstitutionRecord} to render
+ */
 @customElement("education-institution")
 export class EducationInstitution extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
@@ -22,13 +27,14 @@ export class EducationInstitution extends UIAwareElement {
     const timeText = `${this.institute.graduationDate.text.month} ${this.institute.graduationDate.text.year}`
     const location =
       `${this.institute.location.city}, ${this.institute.location.state}, ${this.institute.location.country}`;
+    const imgSrc = readCSSProperty(
+      this.darkMode ? this.institute.designToken.dark : this.institute.designToken.light
+    );
     return html`
       <div class="education-institution-container">
         <img
           loading="lazy"
-          src=${readCSSProperty(
-            this.darkMode ? this.institute.designToken.dark : this.institute.designToken.light
-          )}
+          src=${imgSrc}
           alt=${`Logo for ${this.institute.institute}`}
         />
         <h3 class="md-typescale-title-large">${this.institute.institute}</h3>

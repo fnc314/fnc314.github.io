@@ -34,14 +34,3 @@ print -r -f "Generating design tokens for @fnc314/packages.design-tokens...\n\n"
 pnpm style-dictionary build "${STYLE_DICTIONARY_CLI[@]}"
 
 print -r -f "Design tokens generated successfully."
-
-# typeset -a VITE_CLI
-# VITE_CLI=(
-#   build
-#   -m ${usage_mode:=development}
-#   --config ./packages/design-tokens/.config/vite/vite.config.ts
-#   packages/design-tokens
-# )
-
-# print -r -f "Building final output with \`vite\`"
-# pnpm vite "${VITE_CLI[@]}"
