@@ -1,3 +1,4 @@
+import "@/lib/bento-layout";
 import "@/lib/bio";
 import "@/lib/blog";
 import "@/lib/code";
@@ -6,6 +7,7 @@ import "@/lib/education";
 import "@/lib/experience";
 import "@/lib/photo";
 import "@/lib/skills";
+export * from "@/lib/bento-layout";
 export * from "@/lib/bio";
 export * from "@/lib/blog";
 export * from "@/lib/code";

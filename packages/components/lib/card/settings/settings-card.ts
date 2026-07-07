@@ -1,11 +1,10 @@
-import { BENTO_BOX_TYPES } from "@/lib/bento-layout/bento-layout.types";
 import "@/lib/card/bento/bento-card";
 import { SettingsCardStyles } from "@/lib/card/settings/settings-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, themeService } from "@fnc314/packages.services";
-import { type AppConfigs, CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, THEME_NAMES, type ThemeName } from "@fnc314/packages.types";
+import { type AppConfigs, BENTO_BOX_TYPES, CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, THEME_NAMES, type ThemeName } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { html } from "lit";

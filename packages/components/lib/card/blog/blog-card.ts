@@ -1,11 +1,10 @@
-import { BENTO_BOX_TYPES } from "@/lib/bento-layout/bento-layout.types";
 import "@/lib/card/bento/bento-card";
 import { BlogCardStyles } from "@/lib/card/blog/blog-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import "@/lib/publication/blog/entry/blog-entry";
 import { TextStyles } from "@/lib/styles";
 import { Blogs } from "@fnc314/packages.data";
-import { type BlogEntryJson } from "@fnc314/packages.types";
+import { BENTO_BOX_TYPES, type BlogEntryJson } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

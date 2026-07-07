@@ -14,6 +14,9 @@ export * from "@/css/breakpoints.css";
 export * from "@/css/icon-svg-url.css";
 export * from "@/css/icon-svg.css";
 export * from "@/css/touch-screen.css";
+export * from "@/lib/breakpoints";
+export * from "@/lib/read-css-property";
+export * from "@/lib/touch-screen";
 export {
   Breakpoints, TouchScreen, readCSSProperty
 };

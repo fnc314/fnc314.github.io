@@ -1,7 +1,7 @@
-import { BENTO_BOX_TYPES, type BentoBoxType } from "@/lib/bento-layout/bento-layout.types";
 import { BentoCardStyles } from "@/lib/card/bento/bento-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { BENTO_BOX_TYPES, type BentoBoxType } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";

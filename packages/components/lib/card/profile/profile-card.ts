@@ -1,14 +1,12 @@
-import { BENTO_BOX_TYPES } from "@/lib/bento-layout/bento-layout.types";
 import { ProfileCardStyles } from "@/lib/card/profile/profile-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { Biographies, Connections, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
-  type ArtifactConnectionData,
-  type ArtifactConnectionType,
-  type ConnectionInstance,
-  type ProfessionalConnectionJsonData
+    type ArtifactConnectionData,
+    type ArtifactConnectionType, BENTO_BOX_TYPES, type ConnectionInstance,
+    type ProfessionalConnectionJsonData
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";

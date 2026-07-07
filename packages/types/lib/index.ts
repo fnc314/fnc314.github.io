@@ -1,3 +1,4 @@
+export * from "@/lib/bento-layout";
 export * from "@/lib/bio";
 export * from "@/lib/blog";
 export * from "@/lib/code";

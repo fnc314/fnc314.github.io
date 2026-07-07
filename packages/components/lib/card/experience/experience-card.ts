@@ -1,10 +1,10 @@
-import { BENTO_BOX_TYPES } from "@/lib/bento-layout/bento-layout.types";
 import "@/lib/card/bento/bento-card";
 import { WorkCardStyles } from "@/lib/card/experience/experience-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import "@/lib/work/experience/work-experience";
 import { Experiences } from "@fnc314/packages.data";
+import { BENTO_BOX_TYPES } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
