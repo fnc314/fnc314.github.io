@@ -2,8 +2,7 @@ import { BentoLayoutStyles, TransitionStyles } from "@/lib/bento-layout/bento-la
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { BentoBoxConfigsArray, } from "@fnc314/packages.data";
-import { Breakpoints } from "@fnc314/packages.design-tokens";
-import { type ABentoBoxConfig, BENTO_BOX_TYPES, type GridPosition } from "@fnc314/packages.types";
+import { type ABentoBoxConfig, BENTO_BOX_TYPES, BreakpointLabels, type GridPosition } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -31,7 +30,7 @@ export class BentoLayout extends UIAwareElement {
     const position: GridPosition = config.placement[this.breakpoint];
 
     let gridStyles = {};
-    if (position.breakpoint !== Breakpoints.BreakpointLabels.mobile) {
+    if (position.breakpoint !== BreakpointLabels.mobile) {
       const rowOffset = `${position?.offsets?.row ? `${position?.offsets?.row} / ` : ""}`;
       const colOffset = `${position?.offsets?.col ? `${position?.offsets?.col} / ` : ""}`;
       gridStyles = {

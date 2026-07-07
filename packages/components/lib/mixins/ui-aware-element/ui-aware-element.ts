@@ -1,7 +1,6 @@
-import { Breakpoints, TouchScreen, readCSSProperty } from "@fnc314/packages.design-tokens";
-import { type BreakpointLabel } from "@fnc314/packages.design-tokens/types/breakpoints.js";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { configsService } from "@fnc314/packages.services";
-import { type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { type AppConfigsChange, type BreakpointLabel, CONFIG_COLOR_SCHEME_NAMES, CSS_VARIABLE_BREAKPOINT_LABEL, CSS_VARIABLE_TOUCH_SCREEN } from "@fnc314/packages.types";
 import { type CSSResult, LitElement } from "lit";
 import { state } from "lit/decorators.js";
 
@@ -40,12 +39,12 @@ export abstract class UIAwareElement extends LitElement {
    */
   @state()
   protected breakpoint: BreakpointLabel = readCSSProperty(
-    Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL
+    CSS_VARIABLE_BREAKPOINT_LABEL
   ) as BreakpointLabel;
 
   private onBreakpointChange: () => void = () => {
     this.breakpoint = readCSSProperty(
-      Breakpoints.CSS_VARIABLE_BREAKPOINT_LABEL
+      CSS_VARIABLE_BREAKPOINT_LABEL
     ) as BreakpointLabel
   }
 
@@ -55,7 +54,7 @@ export abstract class UIAwareElement extends LitElement {
    */
   @state()
   protected touchScreen: boolean = readCSSProperty(
-    TouchScreen.CSS_VARIABLE_TOUCH_SCREEN,
+    CSS_VARIABLE_TOUCH_SCREEN,
     this,
     false
   ) === "true";

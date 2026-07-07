@@ -1,5 +1,4 @@
-import { type BreakpointLabel, Breakpoints } from "@fnc314/packages.design-tokens";
-import { type ABentoBoxConfig, type BentoBoxConfigs, type BentoBoxType } from "@fnc314/packages.types";
+import { type ABentoBoxConfig, type BentoBoxConfigs, type BentoBoxType, type BreakpointLabel, BreakpointLabels } from "@fnc314/packages.types";
 
 /** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
@@ -17,7 +16,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 2 },
       mobile: { breakpoint: "mobile", order: 2 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
   },
   code: {
     placement: {
@@ -25,7 +24,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 3 },
       mobile: { breakpoint: "mobile", order: 3 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
   },
   blog: {
     placement: {
@@ -33,7 +32,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 4 },
       mobile: { breakpoint: "mobile", order: 4 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
   },
   skills: {
     placement: {

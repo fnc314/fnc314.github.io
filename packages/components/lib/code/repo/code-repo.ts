@@ -1,8 +1,8 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { Breakpoints, readCSSProperty } from "@fnc314/packages.design-tokens";
-import { type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
+import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -64,7 +64,7 @@ export class CodeRepo extends UIAwareElement {
     const variant = imgTag === nothing
       ? "text-only"
       : (
-        this.touchScreen || this.breakpoint === Breakpoints.BreakpointLabels.mobile
+        this.touchScreen || this.breakpoint === BreakpointLabels.mobile
         ? "icon-text"
         : "icon-only"
       );
