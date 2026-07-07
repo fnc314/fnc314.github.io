@@ -180,495 +180,495 @@
   "jsdoc-generator.generateDescriptionForTypeParameters": true,
   "JSON-zain.json.autorefresh": true,
   "lit-html.format.enabled": true,
-  "lit-plugin.customHtmlData": {
-    "tags": [
-      {
-        "attributes": [],
-        "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\n---\n",
-        "name": "bento-layout",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
-            "name": "bentoCardTitle",
-            "values": []
-          },
-          {
-            "description": "Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}",
-            "name": "bentoTag",
-            "values": [
-              {
-                "name": "BentoBoxType"
-              }
-            ]
-          },
-          {
-            "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
-            "name": "expanded",
-            "values": []
-          },
-          {
-            "description": "Whether to enable scrolling for content",
-            "name": "scrollable",
-            "values": []
-          },
-          {
-            "description": "Whether to spread content over the entire body",
-            "name": "spreadContent",
-            "values": []
-          }
-        ],
-        "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Methods:**\n - **bentoTag()** - Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
-        "name": "bento-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "BlogCard - A card component displaying blog posts.\n---\n",
-        "name": "blog-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "CodeCard - A card component displaying code projects.\n---\n",
-        "name": "code-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "EducationCard - A card component displaying education history.\n---\n",
-        "name": "education-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "WorkCard - A card component displaying work experience.\n---\n",
-        "name": "experience-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "bioText",
-            "values": []
-          },
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "A responsive card component that displays a profile photo and biography.\n---\n",
-        "name": "profile-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
-        "name": "settings-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "enableFocus",
-            "values": []
-          },
-          {
-            "name": "enableHover",
-            "values": []
-          },
-          {
-            "name": "expanded",
-            "values": []
-          }
-        ],
-        "description": "SkillsCard - A card component displaying a skill word cloud.\n---\n",
-        "name": "skills-card",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "{@link CodeRepoData}",
-            "name": "codeRepo",
-            "values": [
-              {
-                "name": "CodeRepoData"
-              }
-            ]
-          }
-        ],
-        "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link CodeRepoData}",
-        "name": "code-repo",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "artifactConnectionData",
-            "values": [
-              {
-                "name": "ArtifactConnectionData"
-              }
-            ]
-          },
-          {
-            "name": "artifactConnectionType",
-            "values": [
-              {
-                "name": "ArtifactConnectionType"
-              }
-            ]
-          }
-        ],
-        "description": "\n---\n",
-        "name": "artifact-connection",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "connection-instance",
-            "values": [
-              {
-                "name": "ConnectionInstance"
-              }
-            ]
-          }
-        ],
-        "description": "\n---\n",
-        "name": "direct-connection",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "professionalConnectionData",
-            "values": [
-              {
-                "name": "ProfessionalConnectionJsonData"
-              }
-            ]
-          },
-          {
-            "name": "professionalConnectionType",
-            "values": [
-              {
-                "name": "ProfessionalConnectionType"
-              }
-            ]
-          }
-        ],
-        "description": "\n---\n",
-        "name": "professional-connection",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "name": "institute",
-            "values": [
-              {
-                "name": "EducationInstitutionRecord"
-              }
-            ]
-          }
-        ],
-        "description": "\n---\n",
-        "name": "education-institution",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "The JSON record to render",
-            "name": "blogEntry",
-            "values": [
-              {
-                "name": "BlogEntryJson"
-              }
-            ]
-          }
-        ],
-        "description": "Represents a published series entry.\n---\n\n\n### **Methods:**\n - **blogEntry()** - The JSON record to render\n\n",
-        "name": "blog-entry",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "Reflects the currently active color scheme mode.",
-            "name": "mode",
-            "values": []
-          },
-          {
-            "description": "Controls whether the selected color scheme preference is persisted across sessions.",
-            "name": "permanent",
-            "values": []
-          }
-        ],
-        "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n \n- **reset(): _void_** - Resets the UI mode toggle to its default settings.\n",
-        "name": "ui-mode-toggle",
-        "references": []
-      },
-      {
-        "attributes": [],
-        "description": "\n---\n\n\n### **Methods:**\n \n",
-        "name": "version-tag",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
-            "name": "appearance",
-            "values": [
-              {
-                "name": "WordCloudAppearance"
-              }
-            ]
-          },
-          {
-            "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
-            "name": "delay",
-            "values": [
-              {
-                "name": "none"
-              }
-            ]
-          },
-          {
-            "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
-            "name": "grouping",
-            "values": [
-              {
-                "name": "WordCloudGrouping"
-              }
-            ]
-          },
-          {
-            "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
-            "name": "instant-clear",
-            "values": []
-          },
-          {
-            "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
-            "name": "sorting",
-            "values": [
-              {
-                "name": "WordCloudSorting"
-              }
-            ]
-          },
-          {
-            "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
-            "name": "threshold",
-            "values": []
-          },
-          {
-            "description": "The list of words to display in the cloud.",
-            "name": "words",
-            "values": []
-          }
-        ],
-        "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
-        "name": "word-cloud",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
-            "name": "heaviness",
-            "values": [
-              {
-                "name": "WordTagHeaviness"
-              }
-            ]
-          },
-          {
-            "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
-            "name": "hrefUrl",
-            "values": []
-          },
-          {
-            "description": "{@link WordTagVariantAttributeConverter}",
-            "name": "variant",
-            "values": [
-              {
-                "name": "WordTagVariant"
-              }
-            ]
-          },
-          {
-            "description": "The tagged word",
-            "name": "word",
-            "values": []
-          }
-        ],
-        "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Methods:**\n \n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
-        "name": "word-tag",
-        "references": []
-      },
-      {
-        "attributes": [
-          {
-            "description": "End date information including machine-readable stamp and display text.",
-            "name": "date-end",
-            "values": [
-              {
-                "name": "WorkDate"
-              }
-            ]
-          },
-          {
-            "description": "Start date information including machine-readable stamp and display text.",
-            "name": "date-start",
-            "values": [
-              {
-                "name": "WorkDate"
-              }
-            ]
-          },
-          {
-            "description": "The name of the organization or client.",
-            "name": "experience-org",
-            "values": []
-          },
-          {
-            "description": "The title of the professional role or project.",
-            "name": "experience-role",
-            "values": []
-          },
-          {
-            "description": "An optional summary of the overall role",
-            "name": "experience-summary",
-            "values": []
-          },
-          {
-            "description": "If true, adjusts font sizes and layout for a nested appearance.",
-            "name": "is-nested",
-            "values": []
-          },
-          {
-            "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
-            "name": "jobs",
-            "values": []
-          },
-          {
-            "description": "An array of `{ item: string }` objects describing the responsibilities",
-            "name": "summaries",
-            "values": []
-          }
-        ],
-        "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n\n\n### **Methods:**\n \n",
-        "name": "work-experience",
-        "references": []
-      }
-    ],
-    "version": 1
-  },
-  "lit-plugin.logging": "verbose",
-  "lit-plugin.maxNodeModuleImportDepth": -1,
-  "lit-plugin.maxProjectImportDepth": -1,
-  "lit-plugin.rules.no-expressionless-property-binding": "error",
-  "lit-plugin.rules.no-incompatible-property-type": "error",
-  "lit-plugin.rules.no-incompatible-type-binding": "error",
-  "lit-plugin.rules.no-invalid-boolean-binding": "error",
-  "lit-plugin.rules.no-invalid-css": "off",
-  "lit-plugin.rules.no-invalid-directive-binding": "error",
-  "lit-plugin.rules.no-invalid-tag-name": "error",
-  "lit-plugin.rules.no-missing-element-type-definition": "error",
-  "lit-plugin.rules.no-missing-import": "off",
-  "lit-plugin.rules.no-nullable-attribute-binding": "error",
-  "lit-plugin.rules.no-unclosed-tag": "error",
-  "lit-plugin.rules.no-unknown-slot": "error",
-  "lit-plugin.strict": true,
+  // "lit-plugin.customHtmlData": {
+  //   "tags": [
+  //     {
+  //       "attributes": [],
+  //       "description": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.\n---\n",
+  //       "name": "bento-layout",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+  //           "name": "bentoCardTitle",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}",
+  //           "name": "bentoTag",
+  //           "values": [
+  //             {
+  //               "name": "BentoBoxType"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+  //           "name": "expanded",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Whether to enable scrolling for content",
+  //           "name": "scrollable",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Whether to spread content over the entire body",
+  //           "name": "spreadContent",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.\n---\n\n\n### **Methods:**\n - **bentoTag()** - Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}\n\n### **Slots:**\n - _default_ - Default slot for card content. Slotted `h2` elements receive standardized header styling.\n- **header** - Content to be displayed in the card's header/summary area.",
+  //       "name": "bento-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "BlogCard - A card component displaying blog posts.\n---\n",
+  //       "name": "blog-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "CodeCard - A card component displaying code projects.\n---\n",
+  //       "name": "code-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "EducationCard - A card component displaying education history.\n---\n",
+  //       "name": "education-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "WorkCard - A card component displaying work experience.\n---\n",
+  //       "name": "experience-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "bioText",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "A responsive card component that displays a profile photo and biography.\n---\n",
+  //       "name": "profile-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "A card component for managing application settings, including theme, contrast, and UI mode.\n---\n\n\n### **Events:**\n - **color_scheme.change**",
+  //       "name": "settings-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "enableFocus",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "enableHover",
+  //           "values": []
+  //         },
+  //         {
+  //           "name": "expanded",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "SkillsCard - A card component displaying a skill word cloud.\n---\n",
+  //       "name": "skills-card",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "{@link CodeRepoData}",
+  //           "name": "codeRepo",
+  //           "values": [
+  //             {
+  //               "name": "CodeRepoData"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "\n---\n\n\n### **Methods:**\n - **codeRepo()** - {@link CodeRepoData}",
+  //       "name": "code-repo",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "artifactConnectionData",
+  //           "values": [
+  //             {
+  //               "name": "ArtifactConnectionData"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "name": "artifactConnectionType",
+  //           "values": [
+  //             {
+  //               "name": "ArtifactConnectionType"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "\n---\n",
+  //       "name": "artifact-connection",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "connection-instance",
+  //           "values": [
+  //             {
+  //               "name": "ConnectionInstance"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "\n---\n",
+  //       "name": "direct-connection",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "professionalConnectionData",
+  //           "values": [
+  //             {
+  //               "name": "ProfessionalConnectionJsonData"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "name": "professionalConnectionType",
+  //           "values": [
+  //             {
+  //               "name": "ProfessionalConnectionType"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "\n---\n",
+  //       "name": "professional-connection",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "name": "institute",
+  //           "values": [
+  //             {
+  //               "name": "EducationInstitutionRecord"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "\n---\n",
+  //       "name": "education-institution",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "The JSON record to render",
+  //           "name": "blogEntry",
+  //           "values": [
+  //             {
+  //               "name": "BlogEntryJson"
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "description": "Represents a published series entry.\n---\n\n\n### **Methods:**\n - **blogEntry()** - The JSON record to render\n\n",
+  //       "name": "blog-entry",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "Reflects the currently active color scheme mode.",
+  //           "name": "mode",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+  //           "name": "permanent",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.\n---\n\n\n### **Events:**\n - **color_scheme.change** - Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed, propagating the new `AppConfigs[\"colorScheme\"]` details.\n- **colorschemechange** - Event from `dark-mode-toggle` when the scheme changes.\n- **permanentcolorscheme** - Event from `dark-mode-toggle` when the persistence changes.\n\n### **Methods:**\n \n- **reset(): _void_** - Resets the UI mode toggle to its default settings.\n",
+  //       "name": "ui-mode-toggle",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [],
+  //       "description": "\n---\n\n\n### **Methods:**\n \n",
+  //       "name": "version-tag",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+  //           "name": "appearance",
+  //           "values": [
+  //             {
+  //               "name": "WordCloudAppearance"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+  //           "name": "delay",
+  //           "values": [
+  //             {
+  //               "name": "none"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+  //           "name": "grouping",
+  //           "values": [
+  //             {
+  //               "name": "WordCloudGrouping"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+  //           "name": "instant-clear",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+  //           "name": "sorting",
+  //           "values": [
+  //             {
+  //               "name": "WordCloudSorting"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+  //           "name": "threshold",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "The list of words to display in the cloud.",
+  //           "name": "words",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "\n---\n\n\n### **Methods:**\n - **appearance()** - Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).\n\n- **grouping()** - Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.\n- **sorting()** - Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.\n\n\n### **CSS Properties:**\n - **--word-cloud-animation** - Duration of the entrance animation for each word. _(default: 150ms)_\n- **--word-cloud-animation-reduced** - Duration of the entrance animation when prefers-reduced-motion is active. _(default: 1ms)_\n- **--word-cloud-first-quartile-font-size** - Font size for words in the first weight quartile (highest weight). _(default: 1.75rem)_\n- **--word-cloud-first-quartile-line-height** - Line height for words in the first weight quartile. _(default: 1.75rem)_\n- **--word-cloud-second-quartile-font-size** - Font size for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-second-quartile-line-height** - Line height for words in the second weight quartile. _(default: 1.5rem)_\n- **--word-cloud-third-quartile-font-size** - Font size for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-third-quartile-line-height** - Line height for words in the third weight quartile. _(default: 1.25rem)_\n- **--word-cloud-fourth-quartile-font-size** - Font size for words in the fourth weight quartile (lowest weight). _(default: 1rem)_\n- **--word-cloud-fourth-quartile-line-height** - Line height for words in the fourth weight quartile. _(default: 1rem)_",
+  //       "name": "word-cloud",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "The weight of the tag (text & border), can be `\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or `\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
+  //           "name": "heaviness",
+  //           "values": [
+  //             {
+  //               "name": "WordTagHeaviness"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "A URL which, when provided, wraps this {@link WordTag} in a {@link HTMLAnchorElement}",
+  //           "name": "hrefUrl",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "{@link WordTagVariantAttributeConverter}",
+  //           "name": "variant",
+  //           "values": [
+  //             {
+  //               "name": "WordTagVariant"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "The tagged word",
+  //           "name": "word",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "Displays a word in a simple padded box in which the text color and border are synchronised\n---\n\n\n### **Methods:**\n \n\n\n### **Slots:**\n - **icon** - The optional space available for, and positioned by, the {@link variant} property\n\n### **CSS Properties:**\n - **--word-tag-color** - The text and border color _(default: --md-sys-color-on-primary-container)_\n- **--word-tag-background-color** - The background color _(default: --md-sys-color-primary-container)_\n- **--word-tag-font-family** - The font family _(default: --md-ref-typeface-brand)_\n- **--word-tag-font-size** - The font size _(default: --md-typescale-body-large-font-size)_\n- **--word-tag-font-weight** - The font weight _(default: --md-ref-typeface-weight-regular)_\n- **--word-tag-line-height** - The line height _(default: --md-typescale-body-large-lingt-height)_\n- **--word-tag-border-radius** - The corner radius (for all corners) _(default: --md-sys-shape-corner-small)_\n- **--word-tag-gap** - The `gap` between `word` and any `slot`-ed icon _(default: --spaces-gap-xs)_",
+  //       "name": "word-tag",
+  //       "references": []
+  //     },
+  //     {
+  //       "attributes": [
+  //         {
+  //           "description": "End date information including machine-readable stamp and display text.",
+  //           "name": "date-end",
+  //           "values": [
+  //             {
+  //               "name": "WorkDate"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "Start date information including machine-readable stamp and display text.",
+  //           "name": "date-start",
+  //           "values": [
+  //             {
+  //               "name": "WorkDate"
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "description": "The name of the organization or client.",
+  //           "name": "experience-org",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "The title of the professional role or project.",
+  //           "name": "experience-role",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "An optional summary of the overall role",
+  //           "name": "experience-summary",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "If true, adjusts font sizes and layout for a nested appearance.",
+  //           "name": "is-nested",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+  //           "name": "jobs",
+  //           "values": []
+  //         },
+  //         {
+  //           "description": "An array of `{ item: string }` objects describing the responsibilities",
+  //           "name": "summaries",
+  //           "values": []
+  //         }
+  //       ],
+  //       "description": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.\n---\n\n\n### **Methods:**\n \n",
+  //       "name": "work-experience",
+  //       "references": []
+  //     }
+  //   ],
+  //   "version": 1
+  // },
+  // "lit-plugin.logging": "verbose",
+  // "lit-plugin.maxNodeModuleImportDepth": -1,
+  // "lit-plugin.maxProjectImportDepth": -1,
+  // "lit-plugin.rules.no-expressionless-property-binding": "error",
+  // "lit-plugin.rules.no-incompatible-property-type": "error",
+  // "lit-plugin.rules.no-incompatible-type-binding": "error",
+  // "lit-plugin.rules.no-invalid-boolean-binding": "error",
+  // "lit-plugin.rules.no-invalid-css": "off",
+  // "lit-plugin.rules.no-invalid-directive-binding": "error",
+  // "lit-plugin.rules.no-invalid-tag-name": "error",
+  // "lit-plugin.rules.no-missing-element-type-definition": "error",
+  // "lit-plugin.rules.no-missing-import": "off",
+  // "lit-plugin.rules.no-nullable-attribute-binding": "error",
+  // "lit-plugin.rules.no-unclosed-tag": "error",
+  // "lit-plugin.rules.no-unknown-slot": "error",
+  // "lit-plugin.strict": true,
   "npm.enableRunFromFolder": true,
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
