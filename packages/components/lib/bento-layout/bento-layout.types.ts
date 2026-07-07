@@ -95,19 +95,19 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
-  blog: {
+  code: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 3 },
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 3 },
-      mobile: { breakpoint: "mobile", order: 4 },
+      mobile: { breakpoint: "mobile", order: 3 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
-  code: {
+  blog: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 4 },
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 4 },
-      mobile: { breakpoint: "mobile", order: 5 },
+      mobile: { breakpoint: "mobile", order: 4 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== Breakpoints.BreakpointLabels.mobile
   },
@@ -115,7 +115,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 7, rowSpan: 2 }, order: 5 },
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 5 },
-      mobile: { breakpoint: "mobile", order: 6 },
+      mobile: { breakpoint: "mobile", order: 5 },
     },
     isExpanded: () => false
   },
