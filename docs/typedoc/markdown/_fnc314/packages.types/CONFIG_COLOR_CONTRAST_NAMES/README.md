@@ -8,7 +8,7 @@
 
 &gt; `const` **CONFIG\_COLOR\_CONTRAST\_NAMES**: \{ `HIGH`: `"HIGH"`; `MEDIUM`: `"MEDIUM"`; `NORMAL`: `"NORMAL"`; \}
 
-Defined in: [packages/types/lib/theme/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L19)
+Defined in: [packages/types/lib/theme/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L19)
 
 ## Type Declaration
 
@@ -34,7 +34,7 @@ Defined in: [packages/types/lib/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L22)
+[packages/types/lib/theme/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L22)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/types/lib/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L21)
+[packages/types/lib/theme/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L21)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [packages/types/lib/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L20)
+[packages/types/lib/theme/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L20)
 
 </td>
 </tr>

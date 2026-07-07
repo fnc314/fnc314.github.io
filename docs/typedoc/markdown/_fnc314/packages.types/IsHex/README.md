@@ -8,7 +8,7 @@
 
 &gt; **IsHex**\&lt;`T`, `Count`\&gt; = `T` _extends_ `` `${ColorSubValue}${infer Rest}` `` ? `IsHex`\&lt;`Rest`, \[`...Count`, `any`\]\&gt; : `T` _extends_ `""` ? `Count`\[`"length"`\] _extends_ `8` ? `true` : `false` : `false`
 
-Defined in: [packages/types/lib/theme/index.ts:96](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L96)
+Defined in: [packages/types/lib/theme/index.ts:96](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L96)
 
 ## Type Parameters
 

@@ -9,7 +9,21 @@
 ### DesignTokenIcon
 
 - [DesignTokenIcon](_fnc314/packages.types/DesignTokenIcon/README.md)
+  - [DesignTokenIconWithDefault](_fnc314/packages.types/DesignTokenIconWithDefault/README.md)
+    - [MaskableDesignTokenIconWithDefault](_fnc314/packages.types/MaskableDesignTokenIconWithDefault/README.md)
   - [MaskableDesignTokenIcon](_fnc314/packages.types/MaskableDesignTokenIcon/README.md)
+
+---
+
+### DesignTokenIconDefault
+
+- [DesignTokenIconDefault](_fnc314/packages.types/DesignTokenIconDefault/README.md)
+
+---
+
+### DesignTokenIconMaskable
+
+- [DesignTokenIconMaskable](_fnc314/packages.types/DesignTokenIconMaskable/README.md)
 
 ---
 

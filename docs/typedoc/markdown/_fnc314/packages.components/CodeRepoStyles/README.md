@@ -8,7 +8,7 @@
 
 &gt; `const` **CodeRepoStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/code/repo/code-repo.styles.ts#L9)
+Defined in: [packages/components/lib/code/repo/code-repo.styles.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/code/repo/code-repo.styles.ts#L9)
 
 The [CSSResult](https://lit.dev/docs/api/styles/#CSSResult) for [@fnc314/packages.components!CodeRepo](../CodeRepo/README.md)
 </body></html>

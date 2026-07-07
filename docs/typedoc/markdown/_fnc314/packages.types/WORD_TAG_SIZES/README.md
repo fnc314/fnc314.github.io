@@ -8,7 +8,7 @@
 
 &gt; `const` **WORD\_TAG\_SIZES**: \{ `compact`: `"compact"`; `condensed`: `"condensed"`; `full`: `"full"`; \}
 
-Defined in: [packages/types/lib/code/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L11)
+Defined in: [packages/types/lib/code/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L11)
 
 A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type) of pre-defined values exposed as a custom `CSS @property`
 
@@ -36,7 +36,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L13)
+[packages/types/lib/code/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L13)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L14)
+[packages/types/lib/code/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L14)
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/types/lib/code/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/code/index.ts#L12)
+[packages/types/lib/code/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L12)
 
 </td>
 </tr>

@@ -6,7 +6,7 @@
 
 # Interface: Breakpoints
 
-Defined in: [breakpoints.ts:41](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L41)
+Defined in: [breakpoints.ts:41](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/breakpoints.ts#L41)
 
 Binds the [BreakpointLabel](../BreakpointLabel/README.md)s to their [BreakpointRange](../BreakpointRange/README.md)
 
@@ -40,7 +40,7 @@ The [BreakpointRange](../BreakpointRange/README.md) applied at the `desktop` bre
 </td>
 <td>
 
-[breakpoints.ts:47](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L47)
+[breakpoints.ts:47](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/breakpoints.ts#L47)
 
 </td>
 </tr>
@@ -62,7 +62,7 @@ The [BreakpointRange](../BreakpointRange/README.md) applied at the `mobile` brea
 </td>
 <td>
 
-[breakpoints.ts:43](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L43)
+[breakpoints.ts:43](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/breakpoints.ts#L43)
 
 </td>
 </tr>
@@ -84,7 +84,7 @@ The [BreakpointRange](../BreakpointRange/README.md) applied at the `tablet` brea
 </td>
 <td>
 
-[breakpoints.ts:45](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L45)
+[breakpoints.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/breakpoints.ts#L45)
 
 </td>
 </tr>

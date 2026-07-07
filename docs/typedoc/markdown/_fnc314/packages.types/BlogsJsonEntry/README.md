@@ -6,7 +6,7 @@
 
 # Interface: BlogsJsonEntry
 
-Defined in: [packages/types/lib/blog/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L50)
+Defined in: [packages/types/lib/blog/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L50)
 
 Alternative of [BlogEntryJson](../BlogEntryJson/README.md)
 
@@ -36,7 +36,7 @@ BlogsJsonEntry
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:51](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L51)
+[packages/types/lib/blog/index.ts:51](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L51)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ BlogsJsonEntry
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:53](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L53)
+[packages/types/lib/blog/index.ts:53](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L53)
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ BlogsJsonEntry
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:54](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L54)
+[packages/types/lib/blog/index.ts:54](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L54)
 
 </td>
 </tr>
@@ -87,7 +87,7 @@ BlogsJsonEntry
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:52](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/blog/index.ts#L52)
+[packages/types/lib/blog/index.ts:52](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L52)
 
 </td>
 </tr>

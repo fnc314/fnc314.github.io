@@ -8,7 +8,7 @@
 
 &gt; **readCSSProperty**(`property`: `string`, `element?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `null` \| `undefined`, `logComputedPropertyTransaction?`: `boolean`): `string`
 
-Defined in: [read-css-property.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/read-css-property.ts#L15)
+Defined in: [read-css-property.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/read-css-property.ts#L15)
 
 Returns the value of the provided `property`
 

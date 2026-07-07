@@ -8,5 +8,5 @@
 
 &gt; **ColorSubValue** = \`$\{"A" \| "B" \| "C" \| "D" \| "E" \| "F" \| "0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "7" \| "8" \| "9"\}\`
 
-Defined in: [packages/types/lib/theme/index.ts:88](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L88)
+Defined in: [packages/types/lib/theme/index.ts:88](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L88)
 </body></html>

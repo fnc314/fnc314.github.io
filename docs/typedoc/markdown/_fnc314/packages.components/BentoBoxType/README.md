@@ -8,7 +8,7 @@
 
 &gt; **BentoBoxType** = `"profile"` \| `"experience"` \| `"code"` \| `"blog"` \| `"settings"` \| `"education"` \| `"skills"`
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:43](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L43)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:43](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L43)
 
 The finite `bento-box` instances
 </body></html>

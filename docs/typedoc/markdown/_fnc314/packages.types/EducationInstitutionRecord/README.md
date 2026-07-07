@@ -6,7 +6,10 @@
 
 # Interface: EducationInstitutionRecord
 
-Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L17)
+Defined in: [packages/types/lib/education/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L21)
+
+Describes a single educational institution — the school, degree, location, and
+graduation date — rendered by the `education-institution` component.
 
 ## Properties
 
@@ -32,7 +35,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L19)
+[packages/types/lib/education/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L23)
 
 </td>
 </tr>
@@ -49,7 +52,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L35)
+[packages/types/lib/education/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L39)
 
 </td>
 </tr>
@@ -66,7 +69,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L25)
+[packages/types/lib/education/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L29)
 
 </td>
 </tr>
@@ -83,7 +86,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L30)
+[packages/types/lib/education/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L34)
 
 </td>
 </tr>
@@ -100,7 +103,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L31)
+[packages/types/lib/education/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L35)
 
 </td>
 </tr>
@@ -117,7 +120,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L32)
+[packages/types/lib/education/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L36)
 
 </td>
 </tr>
@@ -134,7 +137,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L26)
+[packages/types/lib/education/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L30)
 
 </td>
 </tr>
@@ -151,7 +154,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L27)
+[packages/types/lib/education/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L31)
 
 </td>
 </tr>
@@ -168,7 +171,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L28)
+[packages/types/lib/education/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L32)
 
 </td>
 </tr>
@@ -185,7 +188,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L18)
+[packages/types/lib/education/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L22)
 
 </td>
 </tr>
@@ -202,7 +205,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L20)
+[packages/types/lib/education/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L24)
 
 </td>
 </tr>
@@ -219,7 +222,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L21)
+[packages/types/lib/education/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L25)
 
 </td>
 </tr>
@@ -236,7 +239,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L23)
+[packages/types/lib/education/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L27)
 
 </td>
 </tr>
@@ -253,7 +256,7 @@ Defined in: [packages/types/lib/education/index.ts:17](https://github.com/fnc314
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/education/index.ts#L22)
+[packages/types/lib/education/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L26)
 
 </td>
 </tr>

@@ -6,7 +6,7 @@
 
 # Interface: ConnectionInstance
 
-Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L8)
+Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L8)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L13)
+[packages/types/lib/connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L13)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L9)
+[packages/types/lib/connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L9)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L10)
+[packages/types/lib/connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L10)
 
 </td>
 </tr>
@@ -83,7 +83,7 @@ Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L11)
+[packages/types/lib/connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L11)
 
 </td>
 </tr>
@@ -100,7 +100,7 @@ Defined in: [packages/types/lib/connections/index.ts:8](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/connections/index.ts#L12)
+[packages/types/lib/connections/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L12)
 
 </td>
 </tr>

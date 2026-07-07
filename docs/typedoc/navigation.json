@@ -810,6 +810,24 @@
             "isDeprecated": false
           },
           {
+            "title": "DesignTokenIconDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconDefault/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIconMaskable",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconMaskable/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIconWithDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconWithDefault/README.md",
+            "isDeprecated": false
+          },
+          {
             "title": "EducationInstitutionRecord",
             "kind": 256,
             "path": "_fnc314/packages.types/EducationInstitutionRecord/README.md",
@@ -831,6 +849,12 @@
             "title": "MaskableDesignTokenIcon",
             "kind": 256,
             "path": "_fnc314/packages.types/MaskableDesignTokenIcon/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaskableDesignTokenIconWithDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/MaskableDesignTokenIconWithDefault/README.md",
             "isDeprecated": false
           },
           {

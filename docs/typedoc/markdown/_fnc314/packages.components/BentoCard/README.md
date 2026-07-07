@@ -6,7 +6,7 @@
 
 # Class: BentoCard
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:34](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L34)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L34)
 
 ## Element
 
@@ -43,6 +43,389 @@ Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/r
 #### Inherited from
 
 [`UIAwareElement`](../UIAwareElement/README.md).[`constructor`](../UIAwareElement/README.md#constructor)
+
+## attributes
+
+### observedAttributes
+
+#### Get Signature
+
+&gt; **get** `static` **observedAttributes**(): `string`[]
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:364
+
+Returns a list of attributes corresponding to the registered properties.
+
+##### Nocollapse
+
+##### Returns
+
+`string`[]
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`observedAttributes`](../UIAwareElement/README.md#observedattributes)
+
+---
+
+### attributeChangedCallback()
+
+&gt; **attributeChangedCallback**(`name`: `string`, `_old`: `string` \| `null`, `value`: `string` \| `null`): `void`
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:597
+
+Synchronizes property values when attributes change.
+
+Specifically, when an attribute is set, the corresponding property is set.
+You should rarely need to implement this callback. If this method is
+overridden, `super.attributeChangedCallback(name, _old, value)` must be
+called.
+
+See [responding to attribute changes](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
+on MDN for more information about the `attributeChangedCallback`.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`_old`
+
+</td>
+<td>
+
+`string` \| `null`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`value`
+
+</td>
+<td>
+
+`string` \| `null`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`attributeChangedCallback`](../UIAwareElement/README.md#attributechangedcallback)
+
+## controllers
+
+### addController()
+
+&gt; **addController**(`controller`: `ReactiveController`): `void`
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:542
+
+Registers a `ReactiveController` to participate in the element's reactive
+update cycle. The element automatically calls into any registered
+controllers during its lifecycle callbacks.
+
+If the element is connected when `addController()` is called, the
+controller's `hostConnected()` callback will be immediately called.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`controller`
+
+</td>
+<td>
+
+`ReactiveController`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`addController`](../UIAwareElement/README.md#addcontroller)
+
+---
+
+### removeController()
+
+&gt; **removeController**(`controller`: `ReactiveController`): `void`
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:547
+
+Removes a `ReactiveController` from the element.
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`controller`
+
+</td>
+<td>
+
+`ReactiveController`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`removeController`](../UIAwareElement/README.md#removecontroller)
+
+## dev-mode
+
+### disableWarning?
+
+&gt; `static` `optional` **disableWarning?**: (`warningKind`: `WarningKind`) =&gt; `void`
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:241
+
+Disable the given warning category for this class.
+
+This method only exists in development builds, so it should be accessed
+with a guard like:
+
+```ts
+// Disable for all ReactiveElement subclasses
+ReactiveElement.disableWarning?.("migration");
+
+// Disable for only MyElement and subclasses
+MyElement.disableWarning?.("migration");
+```
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`warningKind`
+
+</td>
+<td>
+
+`WarningKind`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Nocollapse
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`disableWarning`](../UIAwareElement/README.md#disablewarning)
+
+---
+
+### enabledWarnings?
+
+&gt; `static` `optional` **enabledWarnings?**: `WarningKind`[]
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:205
+
+Read or set all the enabled warning categories for this class.
+
+This property is only used in development builds.
+
+#### Nocollapse
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`enabledWarnings`](../UIAwareElement/README.md#enabledwarnings)
+
+---
+
+### enableWarning?
+
+&gt; `static` `optional` **enableWarning?**: (`warningKind`: `WarningKind`) =&gt; `void`
+
+Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:223
+
+Enable the given warning category for this class.
+
+This method only exists in development builds, so it should be accessed
+with a guard like:
+
+```ts
+// Enable for all ReactiveElement subclasses
+ReactiveElement.enableWarning?.("migration");
+
+// Enable for only MyElement and subclasses
+MyElement.enableWarning?.("migration");
+```
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`warningKind`
+
+</td>
+<td>
+
+`WarningKind`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Nocollapse
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`enableWarning`](../UIAwareElement/README.md#enablewarning)
+
+## lifecycle
+
+### connectedCallback()
+
+&gt; **connectedCallback**(): `void`
+
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
+
+Invoked when the component is added to the document's DOM.
+
+In `connectedCallback()` you should setup tasks that should only occur when
+the element is connected to the document. The most common of these is
+adding event listeners to nodes external to the element, like a keydown
+event handler added to the window.
+
+```ts
+connectedCallback() {
+  super.connectedCallback();
+  addEventListener('keydown', this._handleKeydown);
+}
+```
+
+Typically, anything done in `connectedCallback()` should be undone when the
+element is disconnected, in `disconnectedCallback()`.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`connectedCallback`](../UIAwareElement/README.md#connectedcallback)
+
+---
+
+### disconnectedCallback()
+
+&gt; **disconnectedCallback**(): `void`
+
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
+
+Invoked when the component is removed from the document's DOM.
+
+This callback is the main signal to the element that it may no longer be
+used. `disconnectedCallback()` should ensure that nothing is holding a
+reference to the element (such as event listeners added to nodes external
+to the element), so that it is free to be garbage collected.
+
+```ts
+disconnectedCallback() {
+  super.disconnectedCallback();
+  window.removeEventListener('keydown', this._handleKeydown);
+}
+```
+
+An element may be re-connected after being disconnected.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`disconnectedCallback`](../UIAwareElement/README.md#disconnectedcallback)
 
 ## Other
 
@@ -914,7 +1297,7 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; **bentoCardTitle**: `string` = `""`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:82](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L82)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:82](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L82)
 
 An optional `string` which, when set, suppresses the `slot[name="header"]`
 
@@ -924,7 +1307,7 @@ An optional `string` which, when set, suppresses the `slot[name="header"]`
 
 &gt; **bentoTag**: [`BentoBoxType`](../BentoBoxType/README.md) = `BENTO_BOX_TYPES.profile`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:45](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L45)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L45)
 
 Uniquely identifies this `BentoCard` via [BENTO\_BOX\_TYPES](../BENTO_BOX_TYPES/README.md)
 
@@ -934,7 +1317,7 @@ Uniquely identifies this `BentoCard` via [BENTO\_BOX\_TYPES](../BENTO_BOX_TYPES/
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
 The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
 [@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
@@ -1145,7 +1528,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1341,7 +1724,7 @@ node is an element.
 
 &gt; **enableFocus**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:73](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L73)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:73](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L73)
 
 Opt-in to the focus-within border/shadow shift effect.
 
@@ -1351,7 +1734,7 @@ Opt-in to the focus-within border/shadow shift effect.
 
 &gt; **enableHover**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:66](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L66)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:66](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L66)
 
 Opt-in to the hover elevation/shift effect.
 
@@ -1399,7 +1782,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **expanded**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:59](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L59)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:59](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L59)
 
 Reflects and controls the open state of the card.
 
@@ -3465,7 +3848,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **scrollable**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:52](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L52)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:52](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L52)
 
 Enables internal vertical scrolling for content.
 
@@ -3587,7 +3970,7 @@ The **`spellcheck`** property of the HTMLElement interface represents a boolean 
 
 &gt; **spreadContent**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:88](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L88)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:88](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L88)
 
 Whether to spread content over the entire body
 
@@ -3657,7 +4040,7 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
 Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
@@ -3758,7 +4141,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:36](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L36)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L36)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -9305,389 +9688,6 @@ yourself.
 
 [`UIAwareElement`](../UIAwareElement/README.md).[`finalize`](../UIAwareElement/README.md#finalize)
 
-## attributes
-
-### observedAttributes
-
-#### Get Signature
-
-&gt; **get** `static` **observedAttributes**(): `string`[]
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:364
-
-Returns a list of attributes corresponding to the registered properties.
-
-##### Nocollapse
-
-##### Returns
-
-`string`[]
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`observedAttributes`](../UIAwareElement/README.md#observedattributes)
-
----
-
-### attributeChangedCallback()
-
-&gt; **attributeChangedCallback**(`name`: `string`, `_old`: `string` \| `null`, `value`: `string` \| `null`): `void`
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:597
-
-Synchronizes property values when attributes change.
-
-Specifically, when an attribute is set, the corresponding property is set.
-You should rarely need to implement this callback. If this method is
-overridden, `super.attributeChangedCallback(name, _old, value)` must be
-called.
-
-See [responding to attribute changes](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
-on MDN for more information about the `attributeChangedCallback`.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-`_old`
-
-</td>
-<td>
-
-`string` \| `null`
-
-</td>
-</tr>
-<tr>
-<td>
-
-`value`
-
-</td>
-<td>
-
-`string` \| `null`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`attributeChangedCallback`](../UIAwareElement/README.md#attributechangedcallback)
-
-## controllers
-
-### addController()
-
-&gt; **addController**(`controller`: `ReactiveController`): `void`
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:542
-
-Registers a `ReactiveController` to participate in the element's reactive
-update cycle. The element automatically calls into any registered
-controllers during its lifecycle callbacks.
-
-If the element is connected when `addController()` is called, the
-controller's `hostConnected()` callback will be immediately called.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`controller`
-
-</td>
-<td>
-
-`ReactiveController`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`addController`](../UIAwareElement/README.md#addcontroller)
-
----
-
-### removeController()
-
-&gt; **removeController**(`controller`: `ReactiveController`): `void`
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:547
-
-Removes a `ReactiveController` from the element.
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`controller`
-
-</td>
-<td>
-
-`ReactiveController`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`removeController`](../UIAwareElement/README.md#removecontroller)
-
-## dev-mode
-
-### disableWarning?
-
-&gt; `static` `optional` **disableWarning?**: (`warningKind`: `WarningKind`) =&gt; `void`
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:241
-
-Disable the given warning category for this class.
-
-This method only exists in development builds, so it should be accessed
-with a guard like:
-
-```ts
-// Disable for all ReactiveElement subclasses
-ReactiveElement.disableWarning?.("migration");
-
-// Disable for only MyElement and subclasses
-MyElement.disableWarning?.("migration");
-```
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`warningKind`
-
-</td>
-<td>
-
-`WarningKind`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Nocollapse
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`disableWarning`](../UIAwareElement/README.md#disablewarning)
-
----
-
-### enabledWarnings?
-
-&gt; `static` `optional` **enabledWarnings?**: `WarningKind`[]
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:205
-
-Read or set all the enabled warning categories for this class.
-
-This property is only used in development builds.
-
-#### Nocollapse
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`enabledWarnings`](../UIAwareElement/README.md#enabledwarnings)
-
----
-
-### enableWarning?
-
-&gt; `static` `optional` **enableWarning?**: (`warningKind`: `WarningKind`) =&gt; `void`
-
-Defined in: node\_modules/.pnpm/@lit+reactive-element@2.1.2/node\_modules/@lit/reactive-element/development/reactive-element.d.ts:223
-
-Enable the given warning category for this class.
-
-This method only exists in development builds, so it should be accessed
-with a guard like:
-
-```ts
-// Enable for all ReactiveElement subclasses
-ReactiveElement.enableWarning?.("migration");
-
-// Enable for only MyElement and subclasses
-MyElement.enableWarning?.("migration");
-```
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`warningKind`
-
-</td>
-<td>
-
-`WarningKind`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-`void`
-
-#### Nocollapse
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`enableWarning`](../UIAwareElement/README.md#enablewarning)
-
-## lifecycle
-
-### connectedCallback()
-
-&gt; **connectedCallback**(): `void`
-
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
-
-Invoked when the component is added to the document's DOM.
-
-In `connectedCallback()` you should setup tasks that should only occur when
-the element is connected to the document. The most common of these is
-adding event listeners to nodes external to the element, like a keydown
-event handler added to the window.
-
-```ts
-connectedCallback() {
-  super.connectedCallback();
-  addEventListener('keydown', this._handleKeydown);
-}
-```
-
-Typically, anything done in `connectedCallback()` should be undone when the
-element is disconnected, in `disconnectedCallback()`.
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`connectedCallback`](../UIAwareElement/README.md#connectedcallback)
-
----
-
-### disconnectedCallback()
-
-&gt; **disconnectedCallback**(): `void`
-
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
-
-Invoked when the component is removed from the document's DOM.
-
-This callback is the main signal to the element that it may no longer be
-used. `disconnectedCallback()` should ensure that nothing is holding a
-reference to the element (such as event listeners added to nodes external
-to the element), so that it is free to be garbage collected.
-
-```ts
-disconnectedCallback() {
-  super.disconnectedCallback();
-  window.removeEventListener('keydown', this._handleKeydown);
-}
-```
-
-An element may be re-connected after being disconnected.
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[`UIAwareElement`](../UIAwareElement/README.md).[`disconnectedCallback`](../UIAwareElement/README.md#disconnectedcallback)
-
 ## properties
 
 ### elementProperties
@@ -10030,7 +10030,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/lib/card/bento/bento-card.ts:100](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/card/bento/bento-card.ts#L100)
+Defined in: [packages/components/lib/card/bento/bento-card.ts:100](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/bento/bento-card.ts#L100)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

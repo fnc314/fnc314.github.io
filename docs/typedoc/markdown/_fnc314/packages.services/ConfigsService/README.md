@@ -6,7 +6,7 @@
 
 # Interface: ConfigsService
 
-Defined in: [packages/services/lib/configs/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/configs/index.ts#L4)
+Defined in: [packages/services/lib/configs/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/configs/index.ts#L4)
 
 ## Hierarchy
 
@@ -136,7 +136,7 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 
 &gt; **loadConfigs**(): `AppConfigs`
 
-Defined in: [packages/services/lib/configs/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/configs/index.ts#L7)
+Defined in: [packages/services/lib/configs/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/configs/index.ts#L7)
 
 #### Returns
 
@@ -217,7 +217,7 @@ The **`removeEventListener()`** method of the EventTarget interface removes an e
 
 &gt; **resetConfigs**(): `void`
 
-Defined in: [packages/services/lib/configs/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/configs/index.ts#L9)
+Defined in: [packages/services/lib/configs/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/configs/index.ts#L9)
 
 #### Returns
 
@@ -229,7 +229,7 @@ Defined in: [packages/services/lib/configs/index.ts:9](https://github.com/fnc314
 
 &gt; **saveConfigs**(`configs`: `AppConfigs`): `void`
 
-Defined in: [packages/services/lib/configs/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/configs/index.ts#L5)
+Defined in: [packages/services/lib/configs/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/configs/index.ts#L5)
 
 #### Parameters
 

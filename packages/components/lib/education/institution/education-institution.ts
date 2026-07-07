@@ -7,9 +7,9 @@ import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
- * An implementation of {@link UIAwareELement} displaying {@link EducationInstitutionRecord}
+ * An implementation of {@link UIAwareElement} displaying {@link @fnc314/packages.types!EducationInstitutionRecord}
  *
- * @property {Object} institute - The particular {@link EducationInstitutionRecord} to render
+ * @property {Object} institute - The particular {@link @fnc314/packages.types!EducationInstitutionRecord} to render
  */
 @customElement("education-institution")
 export class EducationInstitution extends UIAwareElement {

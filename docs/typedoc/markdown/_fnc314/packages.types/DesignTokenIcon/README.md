@@ -6,11 +6,9 @@
 
 # Interface: DesignTokenIcon
 
-Defined in: [packages/types/lib/design-tokens/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L7)
+Defined in: [packages/types/lib/design-tokens/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L4)
 
-Describes the Design Token shape for icons
-
-DesignTokenIcon
+Describes the Design Token shape for icons with a `light` and `dark` variation
 
 ## Hierarchy
 
@@ -18,6 +16,7 @@ DesignTokenIcon
 
 ### Extended by
 
+- [`DesignTokenIconWithDefault`](../DesignTokenIconWithDefault/README.md)
 - [`MaskableDesignTokenIcon`](../MaskableDesignTokenIcon/README.md)
 
 ## Properties
@@ -50,29 +49,7 @@ Display for dark mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L9)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="default"></a> `default`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-Default option
-
-</td>
-<td>
-
-[packages/types/lib/design-tokens/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L12)
+[packages/types/lib/design-tokens/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L6)
 
 </td>
 </tr>
@@ -94,7 +71,7 @@ Display for light mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/design-tokens/index.ts#L15)
+[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L9)
 
 </td>
 </tr>

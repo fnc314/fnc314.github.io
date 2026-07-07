@@ -8,5 +8,5 @@
 
 &gt; **BentoBoxConfigs** = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;[`BentoBoxType`](../BentoBoxType/README.md), [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)\&lt;[`ABentoBoxConfig`](../ABentoBoxConfig/README.md), `"type"`\&gt;\&gt;
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:78](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L78)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:78](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L78)
 </body></html>

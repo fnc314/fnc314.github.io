@@ -6,7 +6,7 @@
 
 # Interface: ThemeConfig
 
-Defined in: [packages/types/lib/theme/index.ts:131](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L131)
+Defined in: [packages/types/lib/theme/index.ts:131](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L131)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [packages/types/lib/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:133](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L133)
+[packages/types/lib/theme/index.ts:133](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L133)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/lib/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:134](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L134)
+[packages/types/lib/theme/index.ts:134](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L134)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/lib/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/lib/theme/index.ts:132](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/theme/index.ts#L132)
+[packages/types/lib/theme/index.ts:132](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L132)
 
 </td>
 </tr>

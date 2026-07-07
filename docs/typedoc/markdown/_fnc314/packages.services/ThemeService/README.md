@@ -6,7 +6,7 @@
 
 # Interface: ThemeService
 
-Defined in: [packages/services/lib/theme/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/index.ts#L25)
+Defined in: [packages/services/lib/theme/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L25)
 
 ## Methods
 
@@ -14,7 +14,7 @@ Defined in: [packages/services/lib/theme/index.ts:25](https://github.com/fnc314/
 
 &gt; **currentMaterialSchemeName**(): `MaterialSchemeNames`
 
-Defined in: [packages/services/lib/theme/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/index.ts#L28)
+Defined in: [packages/services/lib/theme/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L28)
 
 #### Returns
 
@@ -26,7 +26,7 @@ Defined in: [packages/services/lib/theme/index.ts:28](https://github.com/fnc314/
 
 &gt; **currentThemeConfig**(): `ThemeConfig`
 
-Defined in: [packages/services/lib/theme/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/index.ts#L26)
+Defined in: [packages/services/lib/theme/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L26)
 
 #### Returns
 
@@ -38,7 +38,7 @@ Defined in: [packages/services/lib/theme/index.ts:26](https://github.com/fnc314/
 
 &gt; **themeJson**(): [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;`ColorSchemeRoles`, `ColorString`\&gt;
 
-Defined in: [packages/services/lib/theme/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/index.ts#L30)
+Defined in: [packages/services/lib/theme/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L30)
 
 #### Returns
 

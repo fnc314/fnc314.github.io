@@ -8,7 +8,7 @@
 
 &gt; **GridPosition** = \{ `breakpoint`: [`Exclude`](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `offsets?`: \{ `col?`: `number` \| `0`; `row?`: `number` \| `0`; \}; `order`: `number`; `span`: [`GridSpan`](../GridSpan/README.md); \} \| \{ `breakpoint`: [`Extract`](https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union)\&lt;`BreakpointLabel`, `"mobile"`\&gt;; `order`: `number`; \}
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:19](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L19)
+Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L19)
 
 The span and order for a given breakpoint
 
@@ -46,7 +46,7 @@ The breakpoint for this position
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:21](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L21)
+[packages/components/lib/bento-layout/bento-layout.types.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L21)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Offsets
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:27](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L27)
+[packages/components/lib/bento-layout/bento-layout.types.ts:27](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L27)
 
 </td>
 </tr>
@@ -90,7 +90,7 @@ Offsets
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:29](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L29)
+[packages/components/lib/bento-layout/bento-layout.types.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L29)
 
 </td>
 </tr>
@@ -112,7 +112,7 @@ Offsets
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:28](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L28)
+[packages/components/lib/bento-layout/bento-layout.types.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L28)
 
 </td>
 </tr>
@@ -134,7 +134,7 @@ The logical order in the DOM
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:25](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L25)
+[packages/components/lib/bento-layout/bento-layout.types.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L25)
 
 </td>
 </tr>
@@ -156,7 +156,7 @@ The grid span
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:23](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L23)
+[packages/components/lib/bento-layout/bento-layout.types.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L23)
 
 </td>
 </tr>
@@ -197,7 +197,7 @@ The breakpoint for this position
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L33)
+[packages/components/lib/bento-layout/bento-layout.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L33)
 
 </td>
 </tr>
@@ -219,7 +219,7 @@ The logical order in the DOM
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:35](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/bento-layout/bento-layout.types.ts#L35)
+[packages/components/lib/bento-layout/bento-layout.types.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L35)
 
 </td>
 </tr>

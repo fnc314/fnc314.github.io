@@ -8,7 +8,7 @@
 
 &gt; `const` **Connections**: \{ `direct`: \{ `email`: `ConnectionInstance`; `phone`: `ConnectionInstance`; \}; `resume`: \{ `googleDoc`: `ArtifactConnectionData`; `pdf`: `ArtifactConnectionData`; \}; `social`: \{ `github`: `ProfessionalConnectionJsonData`; `linkedIn`: `ProfessionalConnectionJsonData`; `medium`: `ProfessionalConnectionJsonData`; \}; \}
 
-Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L3)
+Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L3)
 
 ## Type Declaration
 
@@ -34,7 +34,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L4)
+[connections/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L4)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L6)
+[connections/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L6)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L5)
+[connections/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L5)
 
 </td>
 </tr>
@@ -85,7 +85,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L13)
+[connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L13)
 
 </td>
 </tr>
@@ -102,7 +102,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L14)
+[connections/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L14)
 
 </td>
 </tr>
@@ -119,7 +119,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L15)
+[connections/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L15)
 
 </td>
 </tr>
@@ -136,7 +136,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L8)
+[connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L8)
 
 </td>
 </tr>
@@ -153,7 +153,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L10)
+[connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L10)
 
 </td>
 </tr>
@@ -170,7 +170,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L9)
+[connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L9)
 
 </td>
 </tr>
@@ -187,7 +187,7 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-[connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/data/lib/connections/index.ts#L11)
+[connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/connections/index.ts#L11)
 
 </td>
 </tr>

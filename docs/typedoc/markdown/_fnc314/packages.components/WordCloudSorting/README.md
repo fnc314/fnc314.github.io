@@ -8,5 +8,5 @@
 
 &gt; **WordCloudSorting** = _typeof_ [`WordCloudSortings`](../WordCloudSortings/README.md)\[keyof _typeof_ [`WordCloudSortings`](../WordCloudSortings/README.md)\]
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:31](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/word/cloud/word-cloud.types.ts#L31)
+Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/cloud/word-cloud.types.ts#L31)
 </body></html>

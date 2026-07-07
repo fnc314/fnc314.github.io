@@ -8,5 +8,5 @@
 
 &gt; `const` **BlogEntryStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/publication/blog/entry/blog-entry.styles.ts:4](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/components/lib/publication/blog/entry/blog-entry.styles.ts#L4)
+Defined in: [packages/components/lib/publication/blog/entry/blog-entry.styles.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/publication/blog/entry/blog-entry.styles.ts#L4)
 </body></html>

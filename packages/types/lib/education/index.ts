@@ -14,6 +14,10 @@ export type SingleDigit =
 
 export type FourDigitYear = `${SingleDigit}${SingleDigit}${SingleDigit}${SingleDigit}`;
 
+/**
+ * Describes a single educational institution — the school, degree, location, and
+ * graduation date — rendered by the `education-institution` component.
+ */
 export interface EducationInstitutionRecord {
   institute: string;
   degree: string;

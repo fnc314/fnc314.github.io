@@ -8,7 +8,7 @@
 
 &gt; `const` **BREAKPOINT\_LABELS**: [`BreakpointLabel`](../BreakpointLabel/README.md)[]
 
-Defined in: [breakpoints.ts:14](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/design-tokens/lib/breakpoints.ts#L14)
+Defined in: [breakpoints.ts:14](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/breakpoints.ts#L14)
 
 Iterable set of [BreakpointLabel](../BreakpointLabel/README.md)
 </body></html>

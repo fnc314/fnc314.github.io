@@ -81,7 +81,12 @@ export default defineConfig([
     },
     rules: {
       ...tsRules,
-      "tsdoc/syntax": "warn", // Re-enable tsdoc/syntax
+      // Disabled: `tsdoc/syntax` enforces the strict @microsoft/tsdoc declaration-reference
+      // grammar (package/member separated by `#`), but TypeDoc — the actual consumer of these
+      // `{@link}`s — uses `!` as the module-source delimiter (e.g. `{@link @lit/reactive-element!css}`,
+      // `{@link @fnc314/packages.types!WorkDate}`). The two grammars are incompatible for
+      // cross-package links, so the rule only yields false positives here. See .config/typedoc/typedoc.config.mjs.
+      "tsdoc/syntax": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -131,7 +136,9 @@ export default defineConfig([
     },
     rules: {
       ...tsRules,
-      "tsdoc/syntax": "warn", // Re-enable tsdoc/syntax
+      // See the note on `tsdoc/syntax` in the "app/typescript" config above — TypeDoc's `!`
+      // module-source syntax is incompatible with @microsoft/tsdoc's grammar.
+      "tsdoc/syntax": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

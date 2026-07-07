@@ -8,5 +8,5 @@
 
 &gt; `const` **DEFAULT\_APP\_CONFIGS**: [`AppConfigs`](../AppConfigs/README.md)
 
-Defined in: [packages/types/lib/configs/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/types/lib/configs/index.ts#L13)
+Defined in: [packages/types/lib/configs/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/configs/index.ts#L13)
 </body></html>

@@ -8,5 +8,5 @@
 
 &gt; `const` **themeService**: [`ThemeService`](../ThemeService/README.md)
 
-Defined in: [packages/services/lib/theme/index.ts:70](https://github.com/fnc314/fnc314.github.io/blob/094ccf5429ad77a6c905bda8c11a637eab1397a6/packages/services/lib/theme/index.ts#L70)
+Defined in: [packages/services/lib/theme/index.ts:70](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L70)
 </body></html>
