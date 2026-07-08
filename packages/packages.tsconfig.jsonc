@@ -52,6 +52,21 @@
         "${configDir}/lib/*"
       ]
     },
+    "plugins": [
+      {
+        // "srcRouteFromTSServer": "configure this to set the relative path between your project route and your `tsserver.js`",
+        // "designSystemPrefix": "configure this to handle a library of components with a prefix",
+        "name": "@genesiscommunitysuccess/custom-elements-lsp",
+        "parser": {
+          "dependencies": [
+            "${configDir}/dist/**/*.{js,ts}",
+            "${configDir}/custom-elements.json",
+            "./node_modules/@material/web"
+          ],
+          //   "timeout": 2000,
+        }
+      }
+    ],
     "preserveConstEnums": true,
     "preserveSymlinks": false,
     "pretty": true,

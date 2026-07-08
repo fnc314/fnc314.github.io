@@ -100,40 +100,6 @@ StyleDictionary.registerFilter({
 });
 
 StyleDictionary.registerTransform({
-  name: "iconEncodingToDataImageBase64Name",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-icon-base64`,
-});
-
-StyleDictionary.registerTransform({
-  name: "iconEncodingToDataImageBase64",
-  type: transformTypes.value,
-  filter: (token: TransformedToken) => token.type === "asset",
-  transitive: true,
-  transform: (token: TransformedToken) =>
-    `"${DATA_IMAGE_SVG};base64,${Buffer.from(readTokenFileContents(token), "utf-8").toString("base64")}"`,
-});
-
-StyleDictionary.registerTransform({
-  name: "iconEncodingToUrlDataImageBase64Name",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-icon-base64-url`,
-});
-
-StyleDictionary.registerTransform({
-  name: "iconEncodingToUrlDataImageBase64",
-  type: transformTypes.value,
-  filter: (token: TransformedToken) => token.type === "asset",
-  transitive: true,
-  transform: (token: TransformedToken) =>
-    `url("${DATA_IMAGE_SVG};base64,${Buffer.from(readTokenFileContents(token), "utf-8").toString("base64")}")`
-});
-
-StyleDictionary.registerTransform({
   name: "iconSvgToDataImageSvg",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",

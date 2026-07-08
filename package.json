@@ -1,6 +1,6 @@
 {
   "name": "@fnc314/fnc314.github.io",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Website for Franco N. Colaizzi - fnc314.com",
   "homepage": "https://fnc314.com",
   "license": "ISC",
@@ -28,7 +28,6 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "workspaces": [
-    ".",
     "firebase/functions/node",
     "packages/components",
     "packages/data",
@@ -126,7 +125,6 @@
     "eslint-plugin-wc": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "globals": "catalog:devDependencies",
-    "isomorphic-dompurify": "catalog:devDependencies",
     "lit-analyzer": "catalog:devDependencies",
     "node": "catalog:devDependencies",
     "postcss": "catalog:devDependencies",
@@ -156,12 +154,10 @@
     "typedoc-color-chip": "catalog:devDependencies",
     "typedoc-github-wiki-theme": "catalog:devDependencies",
     "typedoc-material-theme": "catalog:devDependencies",
-    "typedoc-plugin-coverage": "catalog:devDependencies",
     "typedoc-plugin-extras": "catalog:devDependencies",
     "typedoc-plugin-frontmatter": "catalog:devDependencies",
     "typedoc-plugin-markdown": "catalog:devDependencies",
     "typedoc-plugin-mdn-links": "catalog:devDependencies",
-    "typedoc-plugin-monorepo": "catalog:devDependencies",
     "typedoc-plugin-version-header": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",

@@ -186,8 +186,6 @@ export default {
   parametersFormat: "htmlTable",
   plugin: [
     "typedoc-material-theme",
-    // "typedoc-plugin-coverage",
-    // "typedoc-plugin-monorepo",
     "typedoc-plugin-extras",
     "typedoc-plugin-frontmatter",
     "typedoc-plugin-markdown",
@@ -216,7 +214,7 @@ export default {
     hideOverrides: false,
     hideSources: false,
     hideValues: false,
-    leftAlignHeaders: false,
+    leftAlignHeaders: true,
   },
   typeAliasPropertiesFormat: "htmlTable",
   typeDeclarationFormat: "htmlTable",

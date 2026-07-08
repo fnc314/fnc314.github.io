@@ -1,6 +1,6 @@
 {
   "extends": [
-    "./../packages.tsconfig.json",
+    "./../packages.tsconfig.jsonc",
   ],
   "references": [
     { "path": "./../data/tsconfig.json" },

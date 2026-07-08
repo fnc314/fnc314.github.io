@@ -20,6 +20,6 @@
     }
   ],
   "extends": [
-    "./../packages.tsconfig.json"
+    "./../packages.tsconfig.jsonc"
   ]
 }
