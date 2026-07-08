@@ -24,7 +24,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.5
+    material-symbols: 0.45.6
     prop-for-that: 0.7.8
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
