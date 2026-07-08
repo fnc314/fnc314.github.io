@@ -132,9 +132,11 @@ export class ProfileCard extends UIAwareElement {
             >
             <img
               class="profile-picture"
-              loading="lazy"
+              loading="eager"
               src=${this.photoData.src}
               alt=${this.photoData.alt}
+              fetchpriority="high"
+              decoding="sync"
             />
           </picture>
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>

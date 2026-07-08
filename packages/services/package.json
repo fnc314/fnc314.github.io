@@ -21,6 +21,9 @@
     "unplugin-info": "catalog:devDependencies",
     "vite": "catalog:devDependencies"
   },
+  "engines": {
+    "node": "26.5.0"
+  },
   "exports": {
     ".": {
       "import": "./dist/@fnc314.packages.services.js",

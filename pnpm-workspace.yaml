@@ -84,7 +84,7 @@ catalogs:
     globals: 17.7.0
     jiti: 2.7.0
     lit-analyzer: 2.0.3
-    node: runtime:26.4.0
+    node: runtime:26.5.0
     postcss: 8.5.16
     postcss-lit: 1.4.1
     prettier: 3.9.4
@@ -170,7 +170,7 @@ minimumReleaseAgeExclude:
   - vite@8.1.2
   - stylelint@17.13.0
   - vite-plugin-svgo@3.0.0
-nodeVersion: "26.4.0"
+nodeVersion: "26.5.0"
 packageManagerStrictVersion: true
 packages:
   - "firebase/functions/node"
@@ -193,4 +193,4 @@ peerDependencyRules:
     vite: "*"
     vitest: "*"
 savePrefix: ""
-useNodeVersion: "26.4.0"
+useNodeVersion: "26.5.0"
