@@ -1,3 +1,4 @@
+import { type BreakpointLabel } from "@/lib/design-tokens";
 import { type CSSResult } from "lit";
 
 export type MaterialSchemeName =
@@ -126,6 +127,7 @@ export interface PhotoJson {
   src: string;
   figcaption: string;
   alt: string;
+  srcSet: Record<BreakpointLabel, string>
 }
 
 export interface ThemeConfig {

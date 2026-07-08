@@ -4,9 +4,9 @@ import { TextStyles } from "@/lib/styles";
 import { Biographies, Connections, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
-    type ArtifactConnectionData,
-    type ArtifactConnectionType, BENTO_BOX_TYPES, type ConnectionInstance,
-    type ProfessionalConnectionJsonData
+  type ArtifactConnectionData,
+  type ArtifactConnectionType, BENTO_BOX_TYPES, type ConnectionInstance,
+  type ProfessionalConnectionJsonData
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
@@ -116,15 +116,27 @@ export class ProfileCard extends UIAwareElement {
   }
 
   private imageSection(): TemplateResult {
+    const srcSet = `
+      ${this.photoData.srcSet.mobile} 750w
+      ${this.photoData.srcSet.tablet} 1200w
+      ${this.photoData.srcSet.desktop} 15000w
+    `;
     return html`
       <section>
         <figure>
-          <img
-            class="profile-picture"
-            loading="lazy"
-            src=${this.photoData.src}
-            alt=${this.photoData.alt}
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset=${srcSet}
+              sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 33vw"
+            >
+            <img
+              class="profile-picture"
+              loading="lazy"
+              src=${this.photoData.src}
+              alt=${this.photoData.alt}
+            />
+          </picture>
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
 
