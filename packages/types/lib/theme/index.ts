@@ -135,10 +135,15 @@ export interface ThemeConfig {
 }
 
 export const THEME_NAMES = {
+  atlInWhite: "atlInWhite" as const,
   chicago: "chicago" as const,
+  downtown: "downtown" as const,
   inter: "inter" as const,
+  leatherJacket: "leatherJacket" as const,
+  ponder: "ponder" as const,
   red: "red" as const,
-  // skyline: "skyline" as const,
+  romanBus: "romanBus" as const,
+  skyline: "skyline" as const,
   sunset: "sunset" as const,
 } as const;
 

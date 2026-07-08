@@ -1,7 +1,13 @@
 import { type ConfigsService, configsService } from "@/lib/configs";
+import { AtlInWhiteThemeConfig } from "@/lib/theme/atl-in-white";
 import { ChicagoThemeConfig } from "@/lib/theme/chicago";
+import { DowntownThemeConfig } from "@/lib/theme/downtown";
 import { InterThemeConfig } from "@/lib/theme/inter";
+import { LeatherJacketThemeConfig } from "@/lib/theme/leather-jacket";
+import { PonderThemeConfig } from "@/lib/theme/ponder";
 import { RedThemeConfig } from "@/lib/theme/red";
+import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
+import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
   CONFIG_COLOR_CONTRAST_NAMES,
@@ -16,9 +22,15 @@ import {
   type ThemeConfigs,
 } from "@fnc314/packages.types";
 
+export * from "@/lib/theme/atl-in-white";
 export * from "@/lib/theme/chicago";
+export * from "@/lib/theme/downtown";
 export * from "@/lib/theme/inter";
+export * from "@/lib/theme/leather-jacket";
+export * from "@/lib/theme/ponder";
 export * from "@/lib/theme/red";
+export * from "@/lib/theme/roman-bus";
+export * from "@/lib/theme/skyline";
 export * from "@/lib/theme/sunset";
 export * from "@/lib/theme/utils";
 
@@ -76,9 +88,15 @@ declare global {
 }
 
 export const THEME_CONFIGS: ThemeConfigs = {
-  inter: InterThemeConfig,
+  atlInWhite: AtlInWhiteThemeConfig,
   chicago: ChicagoThemeConfig,
+  downtown: DowntownThemeConfig,
+  inter: InterThemeConfig,
+  leatherJacket: LeatherJacketThemeConfig,
+  ponder: PonderThemeConfig,
   red: RedThemeConfig,
+  romanBus: RomanBusThemeConfig,
+  skyline: SkylineThemeConfig,
   sunset: SunsetThemeConfig,
 };
 
