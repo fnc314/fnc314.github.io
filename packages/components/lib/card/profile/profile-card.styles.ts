@@ -5,6 +5,7 @@ export const ProfileCardStyles: CSSResult = css`
     display: block;
     block-size: 100%;
 
+    --profile-card-image-block-size: auto;
     --profile-card-image-block-size-max: 500px;
     --profile-card-image-inline-size-max: 100%;
 
@@ -66,9 +67,10 @@ export const ProfileCardStyles: CSSResult = css`
         picture, img {
           border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary-fixed);
           border-radius: var(--md-sys-shape-corner-medium);
-          max-block-size: var(--profile-card-image-block-size-max);
+          block-size: var(--profile-card-image-block-size);
           max-inline-size: var(--profile-card-image-inline-size-max);
           object-fit: cover;
+          object-position: center center;
           place-self: center;
         }
 
