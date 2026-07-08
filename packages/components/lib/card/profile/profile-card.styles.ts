@@ -63,7 +63,7 @@ export const ProfileCardStyles: CSSResult = css`
         justify-content: center;
         align-items: stretch;
 
-        img {
+        picture, img {
           border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary-fixed);
           border-radius: var(--md-sys-shape-corner-medium);
           max-block-size: var(--profile-card-image-block-size-max);

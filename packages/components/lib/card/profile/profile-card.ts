@@ -117,8 +117,8 @@ export class ProfileCard extends UIAwareElement {
 
   private imageSection(): TemplateResult {
     const srcSet = `
-      ${this.photoData.srcSet.mobile} 750w
-      ${this.photoData.srcSet.tablet} 1200w
+      ${this.photoData.srcSet.mobile} 750w,
+      ${this.photoData.srcSet.tablet} 1200w,
       ${this.photoData.srcSet.desktop} 15000w
     `;
     return html`
