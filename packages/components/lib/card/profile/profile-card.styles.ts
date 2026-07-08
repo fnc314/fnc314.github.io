@@ -67,8 +67,9 @@ export const ProfileCardStyles: CSSResult = css`
           border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary-fixed);
           border-radius: var(--md-sys-shape-corner-medium);
           max-block-size: var(--profile-card-image-block-size-max);
-          object-fit: contain;
           max-inline-size: var(--profile-card-image-inline-size-max);
+          object-fit: cover;
+          place-self: center;
         }
 
         figcaption {

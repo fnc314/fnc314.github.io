@@ -4,8 +4,8 @@
 
 for img in static/images/themes/*/profile-photo.jpg; do
   base="${img%.*}"
-  magick "$img" -quality 85 "${base}-750.webp" &
-  magick "$img" -resize 1200 -quality 85 "${base}-1200.webp" &
-  magick "$img" -resize 1500 -quality 85 "${base}-1500.webp" &
+  magick "$img" -auto-orient -quality 85 "${base}-750.webp" &
+  magick "$img" -resize 1200 -auto-orient -quality 85 "${base}-1200.webp" &
+  magick "$img" -resize 1500 -auto-orient -quality 85 "${base}-1500.webp" &
   wait
 done
