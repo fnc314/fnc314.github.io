@@ -56,8 +56,8 @@ catalogs:
     "@wc-toolkit/module-path-resolver": 1.0.0
     "@wc-toolkit/type-parser": 1.2.1
     "@web-types/lit": "2.0.0-3"
-    "@web/test-runner": 0.20.2
-    "@web/test-runner-playwright": 0.11.1
+    "@web/test-runner": 1.0.0
+    "@web/test-runner-playwright": 1.0.0
     "@webcomponents/webcomponentsjs": 2.8.0
     autoprefixer: 10.5.2
     cem-plugin-better-lit-types: 0.2.1
@@ -119,7 +119,7 @@ catalogs:
     typedoc-plugin-markdown: 4.12.0
     typedoc-plugin-mdn-links: 5.1.1
     typedoc-plugin-version-header: 1.0.0
-    typescript: 6.0.3
+    typescript: 7.0.2
     typescript-eslint: 8.63.0
     unplugin-dts: 1.0.3
     unplugin-info: 1.3.2
@@ -167,9 +167,30 @@ minimumReleaseAgeExclude:
   - "@firebase/remote-config-compat@0.2.25"
   - "@firebase/remote-config@0.8.4"
   - firebase@12.15.0
-  - vite@8.1.2
+  - vite@8.1.3
   - stylelint@17.13.0
   - vite-plugin-svgo@3.0.0
+  - '@typescript/typescript-aix-ppc64@7.0.2'
+  - '@typescript/typescript-darwin-arm64@7.0.2'
+  - '@typescript/typescript-darwin-x64@7.0.2'
+  - '@typescript/typescript-freebsd-arm64@7.0.2'
+  - '@typescript/typescript-freebsd-x64@7.0.2'
+  - '@typescript/typescript-linux-arm64@7.0.2'
+  - '@typescript/typescript-linux-arm@7.0.2'
+  - '@typescript/typescript-linux-loong64@7.0.2'
+  - '@typescript/typescript-linux-mips64el@7.0.2'
+  - '@typescript/typescript-linux-ppc64@7.0.2'
+  - '@typescript/typescript-linux-riscv64@7.0.2'
+  - '@typescript/typescript-linux-s390x@7.0.2'
+  - '@typescript/typescript-linux-x64@7.0.2'
+  - '@typescript/typescript-netbsd-arm64@7.0.2'
+  - '@typescript/typescript-netbsd-x64@7.0.2'
+  - '@typescript/typescript-openbsd-arm64@7.0.2'
+  - '@typescript/typescript-openbsd-x64@7.0.2'
+  - '@typescript/typescript-sunos-x64@7.0.2'
+  - '@typescript/typescript-win32-arm64@7.0.2'
+  - '@typescript/typescript-win32-x64@7.0.2'
+  - typescript@7.0.2
 nodeVersion: "26.5.0"
 packageManagerStrictVersion: true
 packages:

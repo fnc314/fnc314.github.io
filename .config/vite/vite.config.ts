@@ -2,7 +2,6 @@ import { DevTools } from "@vitejs/devtools";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
-import { fileURLToPath } from "node:url";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
 import { type UserConfig, defineConfig } from "vite";
@@ -29,14 +28,12 @@ interface DynamicConfigs {
   }
 }
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 /**
  * Creates {@link DynamicConfigs} from {@link process.env} and the `-m` parameter for `vite`
  *
- * @param {NodeJS.ProcessEnv} processEnv
- * @param {(string | "development" | "production")} mode
- * @returns {*}  {DynamicConfigs}
+ * @param processEnv - The {@link process.env}
+ * @param mode - Either `production` or `development`
+ * @returns An instance of {@link DynamicConfigs}
  */
 function createDynamicConfig(
   processEnv: NodeJS.ProcessEnv,
@@ -44,7 +41,7 @@ function createDynamicConfig(
 ): DynamicConfigs {
   const isProduction = processEnv.NODE_ENV === "production" && mode === "production";
   const isLocalBuild = processEnv.BUILD_ENVIRONMENT === "local";
-  const outDirSuffix = `vite/${isProduction ? "production" : "development"}`;
+  const outDirSuffix = `vite/${mode}`;
 
   const base = isLocalBuild ? `/${outDirSuffix}/` : "/";
   const pwa_manifest_scope = isProduction ? "https://fnc314.com/" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}${base}`;
@@ -311,9 +308,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     IS_PREVIEW - ${isPreview}
     process.ENV - ${JSON.stringify(process.env, null, 2)}
 
-    CWD
-      \`process.cwd()\` - ${process.cwd()}
-      \`path.resolve(__dirname)\` - ${path.resolve(__dirname)}
+    \`process.cwd()\` - ${process.cwd()}
 
     `.trim()
   );
