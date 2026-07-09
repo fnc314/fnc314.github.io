@@ -1,8 +1,25 @@
 toml-version = "v1.1.0"
 
+[schema]
+  enabled = true
+  strict = true
+
+[extensions]
+  "tombi-toml/tombi" = {
+    enabled = true,
+  }
+
+[lint]
+  rules = {
+    dotted-keys-out-of-order = "error",
+    key-empty = "error",
+    tables-out-of-order = "error",
+  }
+
 [format]
-  [format.rules]
-    array-bracket-space-width = 1
-    indent-sub-tables = true
-    indent-table-key-value-pairs = true
-    trailing-comment-alignment = true
+  rules = {
+    array-bracket-space-width = 1,
+    indent-sub-tables = true,
+    indent-table-key-value-pairs = true,
+    trailing-comment-alignment = true,
+  }

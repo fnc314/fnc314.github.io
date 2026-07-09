@@ -85,6 +85,7 @@
     "@material/material-color-utilities": "catalog:devDependencies",
     "@open-wc/testing": "catalog:devDependencies",
     "@pwrs/cem": "catalog:devDependencies",
+    "@skillit/typedoc": "catalog:devDependencies",
     "@types/eslint": "catalog:devDependencies",
     "@types/fs-extra": "catalog:devDependencies",
     "@types/node": "catalog:devDependencies",
@@ -158,6 +159,7 @@
     "typedoc-plugin-frontmatter": "catalog:devDependencies",
     "typedoc-plugin-markdown": "catalog:devDependencies",
     "typedoc-plugin-mdn-links": "catalog:devDependencies",
+    "typedoc-plugin-skillit": "catalog:devDependencies",
     "typedoc-plugin-version-header": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",
     "typescript-eslint": "catalog:devDependencies",
@@ -182,7 +184,8 @@
     "postcss": "catalog:devDependencies",
     "serialize-javascript": "catalog:overrides",
     "stylelint": "catalog:devDependencies",
-    "typedoc": "catalog:devDependencies"
+    "typedoc": "catalog:devDependencies",
+    "undici": "catalog:overrides"
   },
   "engines": {
     "node": "26.5.0"

@@ -185,6 +185,7 @@ export default {
   },
   parametersFormat: "htmlTable",
   plugin: [
+    // "@skillit/typedoc",
     "typedoc-material-theme",
     "typedoc-plugin-extras",
     "typedoc-plugin-frontmatter",

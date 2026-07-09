@@ -20,13 +20,17 @@ monorepo_root = true
   tombi = "1.1.5"
   usage = "3.5.4"
 
-[deps.pnpm]
-  auto = true
+[deps]
+  pnpm = {
+    auto = true,
+  }
 
 [env]
   _ = {
     path = {
-      path = "[{{config_root}}/node_modules/.bin]",
+      path = [
+        "{{config_root}}/node_modules/.bin",
+      ],
       tools = true,
     },
   }
@@ -47,6 +51,9 @@ monorepo_root = true
   }
   npm = {
     package_manager = "pnpm",
+  }
+  node = {
+    corepack = true,
   }
   color = true
   env_shell_expand = true
