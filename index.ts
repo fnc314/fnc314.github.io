@@ -36,13 +36,14 @@ const domLoadedListener = () => {
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 
   // Migrated from AppShell
-  document.addEventListener("color_scheme.change", (event: ColorSchemeConfigChange) => {
+  document.addEventListener("color_scheme.change", (event) => {
+    const customEvent: ColorSchemeConfigChange = event as ColorSchemeConfigChange;
     const themeConfig = themeService.currentThemeConfig();
 
     const applyTheme = () => {
       MaterialCSSStyleSheet.replaceSync(
         themeConfig.materialSchemes[
-          colorSchemeConfigsToMaterialSchemeName(event.detail)
+          colorSchemeConfigsToMaterialSchemeName(customEvent.detail)
         ].cssText
       );
       document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);

@@ -10,16 +10,16 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  type ColorSchemeConfigs,
-  type ColorSchemeRoles,
-  type ColorString,
-  type MaterialSchemeName,
-  type MaterialSchemeNames,
-  type ThemeConfig,
-  type ThemeConfigs,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    type ColorSchemeConfigs,
+    type ColorSchemeRoles,
+    type ColorString,
+    type MaterialSchemeName,
+    type MaterialSchemeNames,
+    type ThemeConfig,
+    type ThemeConfigs,
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -83,7 +83,7 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    "color_scheme.change": ColorSchemeConfigs;
+    "color_scheme.change": CustomEvent<ColorSchemeConfigs>;
   }
 }
 
@@ -100,7 +100,7 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = SunsetThemeConfig.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;

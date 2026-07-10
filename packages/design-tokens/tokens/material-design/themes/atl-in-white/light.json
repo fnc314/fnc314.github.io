@@ -1,0 +1,253 @@
+{
+  "md": {
+    "sys": {
+      "color": {
+        "primary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#805611"
+        },
+        "surfaceTint": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#805611"
+        },
+        "onPrimary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFFFFF"
+        },
+        "primaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFDDB4"
+        },
+        "onPrimaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#633F00"
+        },
+        "secondary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#705B40"
+        },
+        "onSecondary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFFFFF"
+        },
+        "secondaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FBDEBC"
+        },
+        "onSecondaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#56432B"
+        },
+        "tertiary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#52643F"
+        },
+        "onTertiary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFFFFF"
+        },
+        "tertiaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#D4EABB"
+        },
+        "onTertiaryContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#3B4C29"
+        },
+        "error": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#BA1A1A"
+        },
+        "onError": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFFFFF"
+        },
+        "errorContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFDAD6"
+        },
+        "onErrorContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#93000A"
+        },
+        "background": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFF8F4"
+        },
+        "onBackground": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#211B13"
+        },
+        "surface": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFF8F4"
+        },
+        "onSurface": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#211B13"
+        },
+        "surfaceVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#F0E0D0"
+        },
+        "onSurfaceVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#4F4539"
+        },
+        "outline": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#817567"
+        },
+        "outlineVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#D3C4B4"
+        },
+        "shadow": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#000000"
+        },
+        "scrim": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#000000"
+        },
+        "inverseSurface": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#362F27"
+        },
+        "inverseOnSurface": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FCEFE2"
+        },
+        "inversePrimary": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#F5BC6F"
+        },
+        "primaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFDDB4"
+        },
+        "onPrimaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#291800"
+        },
+        "primaryFixedDim": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#F5BC6F"
+        },
+        "onPrimaryFixedVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#633F00"
+        },
+        "secondaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FBDEBC"
+        },
+        "onSecondaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#271904"
+        },
+        "secondaryFixedDim": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#DEC2A1"
+        },
+        "onSecondaryFixedVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#56432B"
+        },
+        "tertiaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#D4EABB"
+        },
+        "onTertiaryFixed": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#101F03"
+        },
+        "tertiaryFixedDim": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#B9CDA0"
+        },
+        "onTertiaryFixedVariant": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#3B4C29"
+        },
+        "surfaceDim": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#E4D8CC"
+        },
+        "surfaceBright": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFF8F4"
+        },
+        "surfaceContainerLowest": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFFFFF"
+        },
+        "surfaceContainerLow": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#FFF1E5"
+        },
+        "surfaceContainer": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#F9ECDF"
+        },
+        "surfaceContainerHigh": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#F3E6DA"
+        },
+        "surfaceContainerHighest": {
+          "type": "value",
+          "theme": "allInWhite",
+          "value": "#EDE0D4"
+        }
+      }
+    }
+  }
+}
