@@ -1,8 +1,9 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig.json",
   "buildOptions": {
     "incremental": true,
     "traceResolution": true,
-    "verbose": true
+    "verbose": true,
   },
   "compileOnSave": true,
   "compilerOptions": {
@@ -63,13 +64,13 @@
           "dependencies": [
             "./docs/**/*.json",
             "./.vscode/**/*.json",
-            "./node_modules/@material/web"
+            "./node_modules/@material/web",
             //     "configure these globs to find manifest files from your dependencies",
             //     "and use the ! pattern to ignore manifests"
           ],
           //   "timeout": 2000,
-        }
-      }
+        },
+      },
     ],
     "preserveConstEnums": true,
     "preserveSymlinks": false,
@@ -133,31 +134,31 @@
     "packages/services/lib/**/*.ts",
     "packages/types/lib/**/*.ts",
     "packages/.config/**/*.ts",
-    "./.config/**/*.ts"
+    "./.config/**/*.ts",
   ],
   "references": [
     {
-      "path": "./packages/components/tsconfig.json"
+      "path": "./packages/components/tsconfig.json",
     },
     {
-      "path": "./packages/data/tsconfig.json"
+      "path": "./packages/data/tsconfig.json",
     },
     {
-      "path": "./packages/design-tokens/tsconfig.json"
+      "path": "./packages/design-tokens/tsconfig.json",
     },
     {
-      "path": "./packages/services/tsconfig.json"
+      "path": "./packages/services/tsconfig.json",
     },
     {
-      "path": "./packages/types/tsconfig.json"
+      "path": "./packages/types/tsconfig.json",
     },
   ],
   "ts-node": {
     "compiler": "typescript",
     "logError": true,
-    "pretty": true
+    "pretty": true,
   },
   "typeAcquisition": {
-    "enable": true
+    "enable": true,
   }
 }

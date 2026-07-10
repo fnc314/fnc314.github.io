@@ -14,7 +14,7 @@
   "types": "./dist/out",
   "main": "./dist/vite/production/assets/index.js",
   "web-types": "./.idea/web-types.json",
-  "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8",
+  "packageManager": "pnpm@11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882",
   "keywords": [
     "website",
     "homepage",
@@ -92,6 +92,7 @@
     "@types/wordcloud": "catalog:devDependencies",
     "@typescript-eslint/eslint-plugin": "catalog:devDependencies",
     "@typescript-eslint/parser": "catalog:devDependencies",
+    "@typescript/typescript6": "catalog:devDependencies",
     "@vite-pwa/assets-generator": "catalog:devDependencies",
     "@vitejs/devtools": "catalog:devDependencies",
     "@wc-toolkit/cem-inheritance": "catalog:devDependencies",
@@ -133,6 +134,7 @@
     "prettier": "catalog:devDependencies",
     "pwa-asset-generator": "catalog:devDependencies",
     "rimraf": "catalog:devDependencies",
+    "rolldown": "catalog:devDependencies",
     "rolldown-plugin-copy": "catalog:devDependencies",
     "rollup-plugin-visualizer": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",
@@ -189,5 +191,12 @@
   },
   "engines": {
     "node": "26.5.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882",
+      "onFail": "warn"
+    }
   }
 }

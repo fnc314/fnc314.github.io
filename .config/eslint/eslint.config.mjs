@@ -157,7 +157,6 @@ export default defineConfig([
   {
     name: "app/global-ignores",
     ignores: [
-      "jsconfig.json",
       "manifest.json",
       "dist/",
       "docs/",

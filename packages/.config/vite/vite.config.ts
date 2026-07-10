@@ -16,19 +16,50 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           cssFileName: `@fnc314.packages.${dirName}`,
           formats: ["es"],
         },
-        rollupOptions: {
-          external: [],
+        rolldownOptions: {
+          external: [
+            "lit",
+            "lit-element",
+            "lit-html",
+            "@material/web"
+          ],
+          logLevel: "debug",
+          output: {
+            assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
+            codeSplitting: true,
+            comments: mode !== "production",
+            dir: `${process.cwd()}/packages/${dirName}/dist`,
+            entryFileNames: `@fnc314.packages.${dirName}.js`,
+            esModule: true,
+            format: "esm",
+            minify: mode === "production",
+            // preserveModules: true,
+            // preserveModulesRoot: "lib",
+            strict: true,
+          },
+          transform: {
+            typescript: {
+                allowNamespaces: true,
+                declaration: {
+                  sourcemap: mode !== "production",
+                },
+                rewriteImportExtensions: "remove",
+              }
+          },
+          treeshake: mode === "production",
           tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
         },
         outDir: `${process.cwd()}/packages/${dirName}/dist`,
         emptyOutDir: true,
         copyPublicDir: true,
         minify: mode === "production",
+        cssMinify: mode === "production",
+        cssCodeSplit: mode === "production",
+        sourcemap: mode !== "production",
+        platform: "browser",
+        reportCompressedSize: true,
       },
       resolve: {
-        // alias: {
-        //   "@": path.resolve(process.cwd(), "packages", dirName, "lib"),
-        // },
         tsconfigPaths: true,
         extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,

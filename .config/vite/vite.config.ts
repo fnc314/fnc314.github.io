@@ -2,6 +2,7 @@ import { DevTools } from "@vitejs/devtools";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
+import { type PreRenderedAsset } from "rolldown";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
 import { type UserConfig, defineConfig } from "vite";
@@ -128,13 +129,15 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     publicDir: dynamicConfig.publicDir,
     optimizeDeps: {},
     resolve: {
-      mainFields: ["module"],
+      mainFields: ["exports", "module"],
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
     },
     build: {
       minify: dynamicConfig.isProduction,
+      chunkSizeWarningLimit: 600,
       cssMinify: dynamicConfig.isProduction,
+      cssCodeSplit: dynamicConfig.isProduction,
       sourcemap: !dynamicConfig.isProduction,
       outDir: dynamicConfig.outDir,
       assetsDir: "./assets",
@@ -173,8 +176,25 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           // viteMode: true,
         },
         logLevel: "debug",
+        output: {
+          assetFileNames: (chunkInfo: PreRenderedAsset) => {
+            if (chunkInfo.names.at(0)?.endsWith("css") ?? false) {
+              return `@fnc314/website-[hash].[ext]`;
+            }
+            return `${chunkInfo.names.at(0)!.replaceAll(/\..*/g, "-[hash].[ext]")}`;
+          },
+          codeSplitting: true,
+          comments: !dynamicConfig.isProduction,
+          dir: dynamicConfig.outDir,
+          entryFileNames: `@fnc314/website-[hash].js`,
+          esModule: true,
+          format: "esm",
+          minify: !dynamicConfig.isProduction,
+          // preserveModules: true,
+          // preserveModulesRoot: "node_modules/.pnpm/",
+          strict: true,
+        },
         platform: "browser",
-        treeshake: dynamicConfig.isProduction,
         transform: {
           typescript: {
             allowNamespaces: true,
@@ -183,7 +203,8 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             },
             rewriteImportExtensions: "remove",
           }
-        }
+        },
+        treeshake: dynamicConfig.isProduction,
       },
       reportCompressedSize: true,
       // watch: {
@@ -232,10 +253,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           id: dynamicConfig.pwa.manifest.scope,
           scope: dynamicConfig.pwa.manifest.scope,
           start_url: dynamicConfig.pwa.manifest.start_url,
-          icons: (manifest.icons || []).map((icon) => ({
-            ...icon,
-            src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
-          })),
+          // icons: (manifest.icons || []).map((icon) => ({
+          //   ...icon,
+          //   src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
+          // })),
         },
         workbox: {
           maximumFileSizeToCacheInBytes: 60_000_000,

@@ -8,6 +8,6 @@
   },
   "include": [
     ".config/**/*.mjs",
-    ".config/**/*.ts"
+    ".config/**/*.ts",
   ]
 }

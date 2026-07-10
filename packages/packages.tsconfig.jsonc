@@ -1,8 +1,9 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig.json",
   "buildOptions": {
     "incremental": true,
     "traceResolution": true,
-    "verbose": true
+    "verbose": true,
   },
   "compileOnSave": true,
   "compilerOptions": {
@@ -34,7 +35,7 @@
       "ES2023",
       "ES2024",
       "ES2025",
-      "ESNext"
+      "ESNext",
     ],
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -50,7 +51,7 @@
     "paths": {
       "@/lib/*": [
         "${configDir}/lib/*"
-      ]
+      ],
     },
     "plugins": [
       {
@@ -65,7 +66,7 @@
           ],
           //   "timeout": 2000,
         }
-      }
+      },
     ],
     "preserveConstEnums": true,
     "preserveSymlinks": false,
@@ -86,7 +87,7 @@
       "vite/client",
       "material-symbols",
       "@types/fs-extra",
-      "unplugin-info/client"
+      "unplugin-info/client",
     ],
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": false
@@ -96,18 +97,18 @@
     "${configDir}/node_modules",
     "${configDir}/dist",
     "${configDir}/.config",
-    "${configDir}/lib/**/*.test.ts"
+    "${configDir}/lib/**/*.test.ts",
   ],
   "include": [
     "${configDir}/lib/**/*.ts",
-    "${configDir}/lib/env.d.ts"
+    "${configDir}/lib/env.d.ts",
   ],
   "ts-node": {
     "compiler": "typescript",
     "logError": true,
-    "pretty": true
+    "pretty": true,
   },
   "typeAcquisition": {
-    "enable": true
+    "enable": true,
   }
 }

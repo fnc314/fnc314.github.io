@@ -21,7 +21,15 @@ fi
 typeset NODE_ENV="${MODE}"
 
 printf "First, create Style Dictionary In Mode %s (%s)\n" "${MODE}" "${NODE_ENV}"
-NODE_ENV="${MODE}" mise run //:dev-ex:tools:style-dictionary "${MODE}"
+typeset STYLE_DICTIONARY_ARGS=(
+  "${MODE}"
+)
+if [[ "${usage_l:=false}" == "true" ]]; then
+  STYLE_DICTIONARY_ARGS+=(
+    -l
+  )
+fi
+NODE_ENV="${MODE}" mise run //:dev-ex:tools:style-dictionary "${STYLE_DICTIONARY_ARGS[@]}"
 printf "\n"
 
 typeset PACKAGES=(
