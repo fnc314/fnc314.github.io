@@ -28,6 +28,11 @@
     "url": "git+https://github.com/fnc314/fnc314.github.io.git"
   },
   "workspaces": [
+    "configs/@pwrs-cem",
+    "configs/eslint",
+    "configs/prettier",
+    "configs/typedoc",
+    "configs/typescript",
     "firebase/functions/node",
     "packages/components",
     "packages/data",
