@@ -1,0 +1,31 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "direct-connection",
+      "path": "./../../../packages/components/src/connection/direct/direct-connection.ts",
+      "description": "[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"DirectConnectionStyles\"]"
+        },
+        {
+          "name": "connectionInstance",
+          "attribute": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1168 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="IE=edge"><title>@fnc314/com.fnc314.website - v2.0.5</title><link rel="icon" href="assets/favicon.svg?cache=1783411593281" type="image/svg+xml"><meta name="description" content="TypeDoc site for @fnc314/com.fnc314.website"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/style.css?cache=1783411593281"><link rel="stylesheet" href="assets/highlight.css?cache=1783411593281"><script defer="" src="assets/main.js?cache=1783411593281"></script><script async="" src="assets/icons.js?cache=1783411593281" id="tsd-icons-script"></script><script async="" src="assets/search.js?cache=1783411593281" id="tsd-search-script"></script><script async="" src="assets/navigation.js?cache=1783411593281" id="tsd-nav-script"></script><script async="" src="assets/hierarchy.js?cache=1783411593281" id="tsd-hierarchy-script"></script><style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #f6be46;
+    --md-sys-color-on-primary: #412d00;
+    --md-sys-color-primary-container: #5d4200;
+    --md-sys-color-on-primary-container: #ffdea3;
+    --md-sys-color-secondary: #d9c4a0;
+    --md-sys-color-on-secondary: #3b2f15;
+    --md-sys-color-secondary-container: #53452a;
+    --md-sys-color-on-secondary-container: #f6e0bb;
+    --md-sys-color-tertiary: #b2cfa8;
+    --md-sys-color-on-tertiary: #1e361a;
+    --md-sys-color-tertiary-container: #344d2f;
+    --md-sys-color-on-tertiary-container: #cdebc2;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffb4ab;
+    --md-sys-color-background: #1e1b16;
+    --md-sys-color-on-background: #e9e1d9;
+    --md-sys-color-surface: #1e1b16;
+    --md-sys-color-on-surface: #e9e1d9;
+    --md-sys-color-surface-variant: #4e4639;
+    --md-sys-color-on-surface-variant: #d1c5b4;
+    --md-sys-color-outline: #9a8f80;
+    --md-sys-color-outline-variant: #4e4639;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #e9e1d9;
+    --md-sys-color-inverse-on-surface: #34302a;
+    --md-sys-color-inverse-primary: #7a5900;
+    --md-sys-color-surface-dim: #16130e;
+    --md-sys-color-surface-bright: #3d3933;
+    --md-sys-color-surface-container-lowest: #110e09;
+    --md-sys-color-surface-container-low: #1e1b16;
+    --md-sys-color-surface-container: #221f1a;
+    --md-sys-color-surface-container-high: #2d2924;
+    --md-sys-color-surface-container-highest: #38342e
+  }
+}
+:root[data-theme="dark"] {
+  --md-sys-color-primary: #f6be46;
+  --md-sys-color-on-primary: #412d00;
+  --md-sys-color-primary-container: #5d4200;
+  --md-sys-color-on-primary-container: #ffdea3;
+  --md-sys-color-secondary: #d9c4a0;
+  --md-sys-color-on-secondary: #3b2f15;
+  --md-sys-color-secondary-container: #53452a;
+  --md-sys-color-on-secondary-container: #f6e0bb;
+  --md-sys-color-tertiary: #b2cfa8;
+  --md-sys-color-on-tertiary: #1e361a;
+  --md-sys-color-tertiary-container: #344d2f;
+  --md-sys-color-on-tertiary-container: #cdebc2;
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffb4ab;
+  --md-sys-color-background: #1e1b16;
+  --md-sys-color-on-background: #e9e1d9;
+  --md-sys-color-surface: #1e1b16;
+  --md-sys-color-on-surface: #e9e1d9;
+  --md-sys-color-surface-variant: #4e4639;
+  --md-sys-color-on-surface-variant: #d1c5b4;
+  --md-sys-color-outline: #9a8f80;
+  --md-sys-color-outline-variant: #4e4639;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #e9e1d9;
+  --md-sys-color-inverse-on-surface: #34302a;
+  --md-sys-color-inverse-primary: #7a5900;
+  --md-sys-color-surface-dim: #16130e;
+  --md-sys-color-surface-bright: #3d3933;
+  --md-sys-color-surface-container-lowest: #110e09;
+  --md-sys-color-surface-container-low: #1e1b16;
+  --md-sys-color-surface-container: #221f1a;
+  --md-sys-color-surface-container-high: #2d2924;
+  --md-sys-color-surface-container-highest: #38342e
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #7a5900;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffdea3;
+    --md-sys-color-on-primary-container: #261900;
+    --md-sys-color-secondary: #6c5c3f;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #f6e0bb;
+    --md-sys-color-on-secondary-container: #251a04;
+    --md-sys-color-tertiary: #4b6545;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #cdebc2;
+    --md-sys-color-on-tertiary-container: #092007;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-error-container: #ffdad6;
+    --md-sys-color-on-error-container: #410002;
+    --md-sys-color-background: #fffbff;
+    --md-sys-color-on-background: #1e1b16;
+    --md-sys-color-surface: #fffbff;
+    --md-sys-color-on-surface: #1e1b16;
+    --md-sys-color-surface-variant: #ede1cf;
+    --md-sys-color-on-surface-variant: #4e4639;
+    --md-sys-color-outline: #7f7667;
+    --md-sys-color-outline-variant: #d1c5b4;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    --md-sys-color-inverse-surface: #34302a;
+    --md-sys-color-inverse-on-surface: #f8efe7;
+    --md-sys-color-inverse-primary: #f6be46;
+    --md-sys-color-surface-dim: #e1d9d0;
+    --md-sys-color-surface-bright: #fff8f2;
+    --md-sys-color-surface-container-lowest: #ffffff;
+    --md-sys-color-surface-container-low: #fbf2e9;
+    --md-sys-color-surface-container: #f5ede4;
+    --md-sys-color-surface-container-high: #efe7de;
+    --md-sys-color-surface-container-highest: #e9e1d9
+  }
+}
+:root[data-theme="light"] {
+  --md-sys-color-primary: #7a5900;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdea3;
+  --md-sys-color-on-primary-container: #261900;
+  --md-sys-color-secondary: #6c5c3f;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #f6e0bb;
+  --md-sys-color-on-secondary-container: #251a04;
+  --md-sys-color-tertiary: #4b6545;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #cdebc2;
+  --md-sys-color-on-tertiary-container: #092007;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #1e1b16;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #1e1b16;
+  --md-sys-color-surface-variant: #ede1cf;
+  --md-sys-color-on-surface-variant: #4e4639;
+  --md-sys-color-outline: #7f7667;
+  --md-sys-color-outline-variant: #d1c5b4;
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-inverse-surface: #34302a;
+  --md-sys-color-inverse-on-surface: #f8efe7;
+  --md-sys-color-inverse-primary: #f6be46;
+  --md-sys-color-surface-dim: #e1d9d0;
+  --md-sys-color-surface-bright: #fff8f2;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #fbf2e9;
+  --md-sys-color-surface-container: #f5ede4;
+  --md-sys-color-surface-container-high: #efe7de;
+  --md-sys-color-surface-container-highest: #e9e1d9
+}
+</style><link rel="stylesheet" href="assets/material-style.css"></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">@fnc314/com.fnc314.website - v2.0.5</a>
+<div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxlength="100">
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>@fnc314/com.fnc314.website</h1></div>
+<div class="tsd-panel tsd-typography"><h1 id="bento-layout" class="tsd-anchor-link">bento-layout<a href="#bento-layout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h1 id="bento-card" class="tsd-anchor-link">bento-card<a href="#bento-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties" class="tsd-anchor-link">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bentoCardTitle</code></td>
+<td><code>bentoCardTitle</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td>The clickable text for the <code>&lt;h2&gt;</code> in the <code>&lt;summary&gt;</code> element.  When provided,<br>  the exposed <code>slot[name="header"]</code> is suppressed.</td>
+</tr>
+<tr>
+<td><code>bentoTag</code></td>
+<td><code>bentoTag</code></td>
+<td><code>BentoBoxType</code></td>
+<td>“profile”</td>
+<td>[object Object],[object Object]</td>
+</tr>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Whether to enable enhanced border and shadow styling on focus-within.<br>Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Whether to enable the lift-on-hover effect.<br>Defaults to <code>false</code> to minimize visual motion in dense layout grids.</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Reflects and controls the open state of the underlying <code>&lt;details&gt;</code> element.<br>When <code>true</code>, the card is expanded and content is visible.</td>
+</tr>
+<tr>
+<td><code>scrollable</code></td>
+<td><code>scrollable</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Whether to enable scrolling for content</td>
+</tr>
+<tr>
+<td><code>spreadContent</code></td>
+<td><code>spreadContent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Whether to spread content over the entire body</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots" class="tsd-anchor-link">Slots<a href="#slots" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Default slot for card content. Slotted <code>h2</code> elements receive standardized header styling.</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>Content to be displayed in the card’s header/summary area.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="blog-card" class="tsd-anchor-link">blog-card<a href="#blog-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-1" class="tsd-anchor-link">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h1 id="code-card" class="tsd-anchor-link">code-card<a href="#code-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-2" class="tsd-anchor-link">Properties<a href="#properties-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h1 id="education-card" class="tsd-anchor-link">education-card<a href="#education-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-3" class="tsd-anchor-link">Properties<a href="#properties-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h1 id="experience-card" class="tsd-anchor-link">experience-card<a href="#experience-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-4" class="tsd-anchor-link">Properties<a href="#properties-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h1 id="profile-card" class="tsd-anchor-link">profile-card<a href="#profile-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-5" class="tsd-anchor-link">Properties<a href="#properties-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bioText</code></td>
+<td><code>bioText</code></td>
+<td><code>string</code></td>
+<td>“long”</td>
+</tr>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>photoData</code></td>
+<td></td>
+<td><code>PhotoJson</code></td>
+<td>“Photos[configsService.loadConfigs().colorScheme.theme]”</td>
+</tr>
+</tbody>
+</table>
+<h1 id="settings-card" class="tsd-anchor-link">settings-card<a href="#settings-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-6" class="tsd-anchor-link">Properties<a href="#properties-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events" class="tsd-anchor-link">Events<a href="#events" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color_scheme.change</code></td>
+<td><code>CustomEvent&lt;ColorSchemeConfigs&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="skills-card" class="tsd-anchor-link">skills-card<a href="#skills-card" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-7" class="tsd-anchor-link">Properties<a href="#properties-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableFocus</code></td>
+<td><code>enableFocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>enableHover</code></td>
+<td><code>enableHover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h1 id="code-repo" class="tsd-anchor-link">code-repo<a href="#code-repo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>[object Object],[object Object],[object Object]</p>
+<h2 id="properties-8" class="tsd-anchor-link">Properties<a href="#properties-8" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>codeRepo</code></td>
+<td><code>codeRepo</code></td>
+<td><code>CodeRepoData</code></td>
+<td>{}</td>
+<td>[object Object],[object Object]</td>
+</tr>
+<tr>
+<td><code>object Object],[object Object],[object Object</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="artifact-connection" class="tsd-anchor-link">artifact-connection<a href="#artifact-connection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-9" class="tsd-anchor-link">Properties<a href="#properties-9" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>artifactConnectionData</code></td>
+<td><code>artifactConnectionData</code></td>
+<td><code>ArtifactConnectionData</code></td>
+<td>{}</td>
+</tr>
+<tr>
+<td><code>artifactConnectionType</code></td>
+<td><code>artifactConnectionType</code></td>
+<td><code>"googleDocs" | "pdf"</code></td>
+<td>“”</td>
+</tr>
+</tbody>
+</table>
+<h1 id="direct-connection" class="tsd-anchor-link">direct-connection<a href="#direct-connection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>[object Object],[object Object]</p>
+<h2 id="properties-10" class="tsd-anchor-link">Properties<a href="#properties-10" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connectionInstance</code></td>
+<td><code>connection-instance</code></td>
+<td><code>ConnectionInstance</code></td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<h1 id="professional-connection" class="tsd-anchor-link">professional-connection<a href="#professional-connection" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-11" class="tsd-anchor-link">Properties<a href="#properties-11" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>professionalConnectionData</code></td>
+<td><code>professionalConnectionData</code></td>
+<td><code>ProfessionalConnectionJsonData</code></td>
+<td>{}</td>
+</tr>
+<tr>
+<td><code>professionalConnectionType</code></td>
+<td><code>professionalConnectionType</code></td>
+<td><code>"linkedin" | "github" | "medium"</code></td>
+<td>“”</td>
+</tr>
+</tbody>
+</table>
+<h1 id="education-institution" class="tsd-anchor-link">education-institution<a href="#education-institution" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-12" class="tsd-anchor-link">Properties<a href="#properties-12" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>institute</code></td>
+<td><code>institute</code></td>
+<td><code>EducationInstitutionRecord</code></td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<h1 id="blog-entry" class="tsd-anchor-link">blog-entry<a href="#blog-entry" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-13" class="tsd-anchor-link">Properties<a href="#properties-13" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blogEntry</code></td>
+<td><code>blogEntry</code></td>
+<td><code>BlogEntryJson</code></td>
+<td>{}</td>
+<td>The JSON record to render</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ui-mode-toggle" class="tsd-anchor-link">ui-mode-toggle<a href="#ui-mode-toggle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-14" class="tsd-anchor-link">Properties<a href="#properties-14" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td><code>mode</code></td>
+<td><code>"light" | "dark" | "system"</code></td>
+<td>“system”</td>
+<td>Reflects the currently active color scheme mode.</td>
+</tr>
+<tr>
+<td><code>permanent</code></td>
+<td><code>permanent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Controls whether the selected color scheme preference is persisted across sessions.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods" class="tsd-anchor-link">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reset</code></td>
+<td><code>(): void</code></td>
+<td>Resets the UI mode toggle to its default settings.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events-1" class="tsd-anchor-link">Events<a href="#events-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color_scheme.change</code></td>
+<td><code>CustomEvent&lt;ColorSchemeConfigs&gt;</code></td>
+<td>Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,<br>propagating the new <code>AppConfigs["colorScheme"]</code> details.</td>
+</tr>
+<tr>
+<td><code>colorschemechange</code></td>
+<td></td>
+<td>Event from <code>dark-mode-toggle</code> when the scheme changes.</td>
+</tr>
+<tr>
+<td><code>permanentcolorscheme</code></td>
+<td></td>
+<td>Event from <code>dark-mode-toggle</code> when the persistence changes.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="version-tag" class="tsd-anchor-link">version-tag<a href="#version-tag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h1 id="word-cloud" class="tsd-anchor-link">word-cloud<a href="#word-cloud" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>A component that renders a cloud of words with various sorting and grouping options.</p>
+<h2 id="properties-15" class="tsd-anchor-link">Properties<a href="#properties-15" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>appearance</code></td>
+<td><code>appearance</code></td>
+<td><code>WordCloudAppearance</code></td>
+<td>“SEQUENTIAL”</td>
+<td>Controls the order in which words are animated/displayed.<br><br>Can be ‘sequential’ (words appear one by one) or ‘simultaneous’ (words appear all at once).</td>
+</tr>
+<tr>
+<td><code>delay</code></td>
+<td><code>delay</code></td>
+<td><code>number | "none"</code></td>
+<td>“none”</td>
+<td>The delay in milliseconds between word appearances when using sequential mode.<br><br>Set to “none” to use the component’s internal default delays.</td>
+</tr>
+<tr>
+<td><code>grouping</code></td>
+<td><code>grouping</code></td>
+<td><code>WordCloudGrouping</code></td>
+<td>“UNGROUPED”</td>
+<td>Controls how words are grouped together within the cloud.<br><br>Supported modes: ‘category’, ‘quartile’, or ‘ungrouped’.</td>
+</tr>
+<tr>
+<td><code>instantClear</code></td>
+<td><code>instant-clear</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Whether to clear the word cloud instantly when it is no longer visible.<br>When true, the cloud resets instantly to opacity 0 instead of fading out.</td>
+</tr>
+<tr>
+<td><code>sorting</code></td>
+<td><code>sorting</code></td>
+<td><code>WordCloudSorting</code></td>
+<td>“NONE”</td>
+<td>Controls how words are sorted within their groupings.<br><br>Supported modes: ‘by-weight’, ‘by-weight-reversed’, ‘by-alphabet’, ‘by-alphabet-reversed’, or ‘none’.</td>
+</tr>
+<tr>
+<td><code>threshold</code></td>
+<td><code>threshold</code></td>
+<td><code>number</code></td>
+<td>0.1</td>
+<td>The intersection observer threshold for visibility detection.<br><br>A value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.</td>
+</tr>
+<tr>
+<td><code>words</code></td>
+<td><code>words</code></td>
+<td><code>WordCloudWord[]</code></td>
+<td>[]</td>
+<td>The list of words to display in the cloud.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="css-custom-properties" class="tsd-anchor-link">CSS Custom Properties<a href="#css-custom-properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--word-cloud-animation</code></td>
+<td>“150ms”</td>
+<td>Duration of the entrance animation for each word.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-animation-reduced</code></td>
+<td>“1ms”</td>
+<td>Duration of the entrance animation when prefers-reduced-motion is active.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-first-quartile-font-size</code></td>
+<td>“1.75rem”</td>
+<td>Font size for words in the first weight quartile (highest weight).</td>
+</tr>
+<tr>
+<td><code>--word-cloud-first-quartile-line-height</code></td>
+<td>“1.75rem”</td>
+<td>Line height for words in the first weight quartile.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-fourth-quartile-font-size</code></td>
+<td>“1rem”</td>
+<td>Font size for words in the fourth weight quartile (lowest weight).</td>
+</tr>
+<tr>
+<td><code>--word-cloud-fourth-quartile-line-height</code></td>
+<td>“1rem”</td>
+<td>Line height for words in the fourth weight quartile.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-second-quartile-font-size</code></td>
+<td>“1.5rem”</td>
+<td>Font size for words in the second weight quartile.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-second-quartile-line-height</code></td>
+<td>“1.5rem”</td>
+<td>Line height for words in the second weight quartile.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-third-quartile-font-size</code></td>
+<td>“1.25rem”</td>
+<td>Font size for words in the third weight quartile.</td>
+</tr>
+<tr>
+<td><code>--word-cloud-third-quartile-line-height</code></td>
+<td>“1.25rem”</td>
+<td>Line height for words in the third weight quartile.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="word-tag" class="tsd-anchor-link">word-tag<a href="#word-tag" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-16" class="tsd-anchor-link">Properties<a href="#properties-16" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>heaviness</code></td>
+<td><code>heaviness</code></td>
+<td><code>WordTagHeaviness</code></td>
+<td>“normal”</td>
+<td>The weight of the tag (text &amp; border), can be<br><code>"normal"</code> (<code>--md-ref-typeface-weight-regular</code> &amp; <code>--sizes-thickness-hairline</code>) or<br><code>"heavy"</code> (<code>--md-ref-typeface-weight-bold</code> &amp; <code>2.5 * --sizes-thickness-hairline</code>)</td>
+</tr>
+<tr>
+<td><code>hrefUrl</code></td>
+<td><code>hrefUrl</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td></td>
+</tr>
+<tr>
+<td><code>object Object],[object Object],[object Object],[object Object</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>variant</code></td>
+<td><code>WordTagVariant</code></td>
+<td>“text-only”</td>
+<td>[object Object],[object Object]</td>
+</tr>
+<tr>
+<td><code>word</code></td>
+<td><code>word</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td>The tagged word</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots-1" class="tsd-anchor-link">Slots<a href="#slots-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object Object],[object Object],[object Object</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="css-custom-properties-1" class="tsd-anchor-link">CSS Custom Properties<a href="#css-custom-properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--word-tag-background-color</code></td>
+<td>“–md-sys-color-primary-container”</td>
+<td>The background color</td>
+</tr>
+<tr>
+<td><code>--word-tag-border-radius</code></td>
+<td>“–md-sys-shape-corner-small”</td>
+<td>The corner radius (for all corners)</td>
+</tr>
+<tr>
+<td><code>--word-tag-color</code></td>
+<td>“–md-sys-color-on-primary-container”</td>
+<td>The text and border color</td>
+</tr>
+<tr>
+<td><code>--word-tag-font-family</code></td>
+<td>“–md-ref-typeface-brand”</td>
+<td>The font family</td>
+</tr>
+<tr>
+<td><code>--word-tag-font-size</code></td>
+<td>“–md-typescale-body-large-font-size”</td>
+<td>The font size</td>
+</tr>
+<tr>
+<td><code>--word-tag-font-weight</code></td>
+<td>“–md-ref-typeface-weight-regular”</td>
+<td>The font weight</td>
+</tr>
+<tr>
+<td><code>--word-tag-gap</code></td>
+<td>“–spaces-gap-xs”</td>
+<td>The <code>gap</code> between <code>word</code> and any <code>slot</code>-ed icon</td>
+</tr>
+<tr>
+<td><code>--word-tag-line-height</code></td>
+<td>“–md-typescale-body-large-lingt-height”</td>
+<td>The line height</td>
+</tr>
+</tbody>
+</table>
+<h1 id="work-experience" class="tsd-anchor-link">work-experience<a href="#work-experience" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<h2 id="properties-17" class="tsd-anchor-link">Properties<a href="#properties-17" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dateEnd</code></td>
+<td><code>date-end</code></td>
+<td><code>WorkDate</code></td>
+<td>{“stamp”:“”,“text”:“”}</td>
+<td>End date information including machine-readable stamp and display text.</td>
+</tr>
+<tr>
+<td><code>dateStart</code></td>
+<td><code>date-start</code></td>
+<td><code>WorkDate</code></td>
+<td>{“stamp”:“”,“text”:“”}</td>
+<td>Start date information including machine-readable stamp and display text.</td>
+</tr>
+<tr>
+<td><code>experienceOrg</code></td>
+<td><code>experience-org</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td>The name of the organization or client.</td>
+</tr>
+<tr>
+<td><code>experienceRole</code></td>
+<td><code>experience-role</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td>The title of the professional role or project.</td>
+</tr>
+<tr>
+<td><code>experienceSummary</code></td>
+<td><code>experience-summary</code></td>
+<td><code>string</code></td>
+<td>“”</td>
+<td>An optional summary of the overall role</td>
+</tr>
+<tr>
+<td><code>isNested</code></td>
+<td><code>is-nested</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>If true, adjusts font sizes and layout for a nested appearance.</td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>jobs</code></td>
+<td><code>Job[]</code></td>
+<td>[]</td>
+<td>A list of sub-jobs or project assignments to be rendered as nested experiences.</td>
+</tr>
+<tr>
+<td><code>object Object],[object Object],[object Object</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>object Object],[object Object],[object Object],[object Object],[object Object</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>summaries</code></td>
+<td><code>summaries</code></td>
+<td><code>{ item: string; }[]</code></td>
+<td>[]</td>
+<td>A list of summary points describing achievements or responsibilities.</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked=""><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open="" class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#bento-layout"><span>bento-<wbr>layout</span></a><a href="#bento-card"><span>bento-<wbr>card</span></a>
+<ul>
+<li><a href="#properties"><span>Properties</span></a></li>
+<li><a href="#slots"><span>Slots</span></a></li></ul><a href="#blog-card"><span>blog-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-1"><span>Properties</span></a></li></ul><a href="#code-card"><span>code-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-2"><span>Properties</span></a></li></ul><a href="#education-card"><span>education-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-3"><span>Properties</span></a></li></ul><a href="#experience-card"><span>experience-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-4"><span>Properties</span></a></li></ul><a href="#profile-card"><span>profile-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-5"><span>Properties</span></a></li></ul><a href="#settings-card"><span>settings-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-6"><span>Properties</span></a></li>
+<li><a href="#events"><span>Events</span></a></li></ul><a href="#skills-card"><span>skills-<wbr>card</span></a>
+<ul>
+<li><a href="#properties-7"><span>Properties</span></a></li></ul><a href="#code-repo"><span>code-<wbr>repo</span></a>
+<ul>
+<li><a href="#properties-8"><span>Properties</span></a></li></ul><a href="#artifact-connection"><span>artifact-<wbr>connection</span></a>
+<ul>
+<li><a href="#properties-9"><span>Properties</span></a></li></ul><a href="#direct-connection"><span>direct-<wbr>connection</span></a>
+<ul>
+<li><a href="#properties-10"><span>Properties</span></a></li></ul><a href="#professional-connection"><span>professional-<wbr>connection</span></a>
+<ul>
+<li><a href="#properties-11"><span>Properties</span></a></li></ul><a href="#education-institution"><span>education-<wbr>institution</span></a>
+<ul>
+<li><a href="#properties-12"><span>Properties</span></a></li></ul><a href="#blog-entry"><span>blog-<wbr>entry</span></a>
+<ul>
+<li><a href="#properties-13"><span>Properties</span></a></li></ul><a href="#ui-mode-toggle"><span>ui-<wbr>mode-<wbr>toggle</span></a>
+<ul>
+<li><a href="#properties-14"><span>Properties</span></a></li>
+<li><a href="#methods"><span>Methods</span></a></li>
+<li><a href="#events-1"><span>Events</span></a></li></ul><a href="#version-tag"><span>version-<wbr>tag</span></a><a href="#word-cloud"><span>word-<wbr>cloud</span></a>
+<ul>
+<li><a href="#properties-15"><span>Properties</span></a></li>
+<li><a href="#css-custom-properties"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#word-tag"><span>word-<wbr>tag</span></a>
+<ul>
+<li><a href="#properties-16"><span>Properties</span></a></li>
+<li><a href="#slots-1"><span>Slots</span></a></li>
+<li><a href="#css-custom-properties-1"><span>CSS <wbr>Custom <wbr>Properties</span></a></li></ul><a href="#work-experience"><span>work-<wbr>experience</span></a>
+<ul>
+<li><a href="#properties-17"><span>Properties</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html">@fnc314/com.fnc314.website - v2.0.5</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a> v0.28.20<br>
+            <span id="generation-date"></span>
+            <script>
+                window.GENERATION_DATE = 1783411593369;
+
+                (() => {
+                    
+        const formatter = new Intl.RelativeTimeFormat('en', {
+            numeric: 'auto',
+            style: 'short',
+        });
+
+        const divisions = [
+            { amount: 60, name: 'seconds' },
+            { amount: 60, name: 'minutes' },
+            { amount: 24, name: 'hours' },
+            { amount: 7, name: 'days' },
+            { amount: 4.34524, name: 'weeks' },
+            { amount: 12, name: 'months' },
+            { amount: Number.POSITIVE_INFINITY, name: 'years' }
+        ];
+
+        function formatTimeAgo(date) {
+            let duration = (date - new Date()) / 1000;
+            
+            for (const division of divisions) {
+                if (Math.abs(duration) < division.amount) {
+                    return formatter.format(Math.round(duration), division.name);
+                }
+                duration /= division.amount;
+            }
+        }
+
+        document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
+        document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
+    
+                })();
+            </script>
+        </p></footer>
+<div class="overlay"></div><script>
+          try {
+            const generateLinkElement = document.querySelector(".tsd-generator a");
+            const link = document.createElement("a");
+            Object.assign(link, {
+              href: "https://github.com/dmnsgn/typedoc-material-theme",
+              target: "_blank",
+              rel: "noreferrer",
+              innerText: "typedoc-material-theme."
+            });
+            generateLinkElement.insertAdjacentElement("afterend", link);
+            generateLinkElement.insertAdjacentText("afterend", " with ");
+          } catch (error) {
+
+          }
+        </script>
+</body></html>

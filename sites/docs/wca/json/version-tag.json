@@ -1,0 +1,17 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "version-tag",
+      "path": "./../../../packages/components/src/version-tag/version-tag.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[null]"
+        }
+      ]
+    }
+  ]
+}

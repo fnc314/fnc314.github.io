@@ -1,0 +1,129 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "work-experience",
+      "path": "./../../../packages/components/src/work/experience/work-experience.ts",
+      "attributes": [
+        {
+          "name": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WorkExperienceStyles\"]"
+        },
+        {
+          "name": "experienceRole",
+          "attribute": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "dateStart",
+          "attribute": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "dateEnd",
+          "attribute": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "attribute": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "attribute": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "isNested",
+          "attribute": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experienceOrg",
+          "attribute": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experienceSummary",
+          "attribute": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object],[object Object"
+        }
+      ]
+    }
+  ]
+}

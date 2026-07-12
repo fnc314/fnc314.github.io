@@ -1,0 +1,32 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "blog-entry",
+      "path": "./../../../packages/components/src/publication/blog/entry/blog-entry.ts",
+      "attributes": [
+        {
+          "name": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
+        },
+        {
+          "name": "blogEntry",
+          "attribute": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

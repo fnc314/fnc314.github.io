@@ -1,0 +1,120 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "bento-card",
+      "path": "./../../../packages/components/src/card/bento/bento-card.ts",
+      "attributes": [
+        {
+          "name": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "scrollable",
+          "description": "Whether to enable scrolling for content",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BentoCardStyles\"]"
+        },
+        {
+          "name": "bentoTag",
+          "attribute": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "attribute": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "scrollable",
+          "attribute": "scrollable",
+          "description": "Whether to enable scrolling for content",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "attribute": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "header",
+          "description": "Content to be displayed in the card's header/summary area."
+        },
+        {
+          "name": "",
+          "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
+        }
+      ]
+    }
+  ]
+}

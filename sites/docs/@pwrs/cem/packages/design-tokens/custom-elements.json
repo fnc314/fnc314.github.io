@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "2.1.0",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/breakpoints.js",
+      "declarations": [
+        {
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "description": "The CSS Variable changed across device breakpoints",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINT_LABELS",
+          "description": "Iterable set of {@link BreakpointLabel}",
+          "type": {
+            "text": ": BreakpointLabel[]"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BreakpointLabels",
+          "description": "Type-safe constants exposed to perform checks",
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINTS",
+          "description": "A static implementation of {@link Breakpoints}",
+          "type": {
+            "text": "Breakpoints"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "declaration": {
+            "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINT_LABELS",
+          "declaration": {
+            "name": "BREAKPOINT_LABELS",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BreakpointLabels",
+          "declaration": {
+            "name": "BreakpointLabels",
+            "module": "lib/breakpoints.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINTS",
+          "declaration": {
+            "name": "BREAKPOINTS",
+            "module": "lib/breakpoints.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/read-css-property.js",
+      "declarations": [
+        {
+          "parameters": [
+            {
+              "name": "property",
+              "description": "- The particular `CSS` property\nof interest",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "return": {
+            "description": "A `string` from `CSS` or an empty `string`"
+          },
+          "name": "readCSSProperty",
+          "description": "Returns the value of the provided `property`",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "readCSSProperty",
+          "declaration": {
+            "name": "readCSSProperty",
+            "module": "lib/read-css-property.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "lib/touch-screen.js",
+      "declarations": [
+        {
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "description": "The CSS Variable set by `@media` query of `screen` and `pointer: coarse`",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "declaration": {
+            "name": "CSS_VARIABLE_TOUCH_SCREEN",
+            "module": "lib/touch-screen.js"
+          }
+        }
+      ]
+    }
+  ]
+}

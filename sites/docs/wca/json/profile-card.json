@@ -1,0 +1,68 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "profile-card",
+      "path": "./../../../packages/components/src/card/profile/profile-card.ts",
+      "attributes": [
+        {
+          "name": "bioText",
+          "type": "string",
+          "default": "\"long\""
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"ProfileCardStyles\"]"
+        },
+        {
+          "name": "photoData",
+          "type": "PhotoJson",
+          "default": "\"Photos[configsService.loadConfigs().colorScheme.theme]\""
+        },
+        {
+          "name": "bioText",
+          "attribute": "bioText",
+          "type": "string",
+          "default": "\"long\""
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "artifact-connection",
+      "path": "./../../../packages/components/src/connection/artifact/artifact-connection.ts",
+      "attributes": [
+        {
+          "name": "artifactConnectionType",
+          "type": "\"googleDocs\" | \"pdf\"",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ConnectionArtifactStyles\"]"
+        },
+        {
+          "name": "artifactConnectionType",
+          "attribute": "artifactConnectionType",
+          "type": "\"googleDocs\" | \"pdf\"",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "attribute": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

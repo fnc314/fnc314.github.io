@@ -1,0 +1,30 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "education-institution",
+      "path": "./../../../packages/components/src/education/institution/education-institution.ts",
+      "attributes": [
+        {
+          "name": "institute",
+          "type": "EducationInstitutionRecord",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"EducationInstitutionStyles\"]"
+        },
+        {
+          "name": "institute",
+          "attribute": "institute",
+          "type": "EducationInstitutionRecord",
+          "default": "{}"
+        }
+      ]
+    }
+  ]
+}

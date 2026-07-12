@@ -1,0 +1,119 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "word-tag",
+      "path": "./../../../packages/components/src/word/tag/word-tag.ts",
+      "attributes": [
+        {
+          "name": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WordTagStyles\"]"
+        },
+        {
+          "name": "hrefUrl",
+          "attribute": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "attribute": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "attribute": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-tag-color",
+          "description": "The text and border color",
+          "default": "\"--md-sys-color-on-primary-container\""
+        },
+        {
+          "name": "--word-tag-background-color",
+          "description": "The background color",
+          "default": "\"--md-sys-color-primary-container\""
+        },
+        {
+          "name": "--word-tag-font-family",
+          "description": "The font family",
+          "default": "\"--md-ref-typeface-brand\""
+        },
+        {
+          "name": "--word-tag-font-size",
+          "description": "The font size",
+          "default": "\"--md-typescale-body-large-font-size\""
+        },
+        {
+          "name": "--word-tag-font-weight",
+          "description": "The font weight",
+          "default": "\"--md-ref-typeface-weight-regular\""
+        },
+        {
+          "name": "--word-tag-line-height",
+          "description": "The line height",
+          "default": "\"--md-typescale-body-large-lingt-height\""
+        },
+        {
+          "name": "--word-tag-border-radius",
+          "description": "The corner radius (for all corners)",
+          "default": "\"--md-sys-shape-corner-small\""
+        },
+        {
+          "name": "--word-tag-gap",
+          "description": "The `gap` between `word` and any `slot`-ed icon",
+          "default": "\"--spaces-gap-xs\""
+        }
+      ]
+    }
+  ]
+}

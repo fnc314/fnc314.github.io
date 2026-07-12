@@ -1,0 +1,59 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "ui-mode-toggle",
+      "path": "./../../../packages/components/src/ui-mode-toggle/ui-mode-toggle.ts",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"UIModeToggleStyles\"]"
+        },
+        {
+          "name": "mode",
+          "attribute": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "attribute": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "color_scheme.change",
+          "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,\npropagating the new `AppConfigs[\"colorScheme\"]` details."
+        },
+        {
+          "name": "colorschemechange",
+          "description": "Event from `dark-mode-toggle` when the scheme changes."
+        },
+        {
+          "name": "permanentcolorscheme",
+          "description": "Event from `dark-mode-toggle` when the persistence changes."
+        }
+      ]
+    }
+  ]
+}

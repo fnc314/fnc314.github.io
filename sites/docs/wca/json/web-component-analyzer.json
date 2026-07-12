@@ -1,0 +1,1125 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "bento-layout",
+      "path": "./../../../packages/components/src/bento-layout/bento-layout.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BentoLayoutStyles\",\"TransitionStyles\"]"
+        }
+      ]
+    },
+    {
+      "name": "bento-card",
+      "path": "./../../../packages/components/src/card/bento/bento-card.ts",
+      "attributes": [
+        {
+          "name": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "scrollable",
+          "description": "Whether to enable scrolling for content",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BentoCardStyles\"]"
+        },
+        {
+          "name": "bentoTag",
+          "attribute": "bentoTag",
+          "description": "[object Object],[object Object]",
+          "type": "BentoBoxType",
+          "default": "\"profile\""
+        },
+        {
+          "name": "spreadContent",
+          "attribute": "spreadContent",
+          "description": "Whether to spread content over the entire body",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "scrollable",
+          "attribute": "scrollable",
+          "description": "Whether to enable scrolling for content",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "description": "Reflects and controls the open state of the underlying `<details>` element.\nWhen `true`, the card is expanded and content is visible.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "description": "Whether to enable the lift-on-hover effect.\nDefaults to `false` to minimize visual motion in dense layout grids.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "description": "Whether to enable enhanced border and shadow styling on focus-within.\nDefaults to `false`.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "bentoCardTitle",
+          "attribute": "bentoCardTitle",
+          "description": "The clickable text for the `<h2>` in the `<summary>` element.  When provided,\n  the exposed `slot[name=\"header\"]` is suppressed.",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "header",
+          "description": "Content to be displayed in the card's header/summary area."
+        },
+        {
+          "name": "",
+          "description": "Default slot for card content. Slotted `h2` elements receive standardized header styling."
+        }
+      ]
+    },
+    {
+      "name": "blog-card",
+      "path": "./../../../packages/components/src/card/blog/blog-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BlogCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "code-card",
+      "path": "./../../../packages/components/src/card/code/code-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"CodeCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "education-card",
+      "path": "./../../../packages/components/src/card/education/education-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"EducationCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "experience-card",
+      "path": "./../../../packages/components/src/card/experience/experience-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WorkCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "path": "./../../../packages/components/src/card/profile/profile-card.ts",
+      "attributes": [
+        {
+          "name": "bioText",
+          "type": "string",
+          "default": "\"long\""
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"ProfileCardStyles\"]"
+        },
+        {
+          "name": "photoData",
+          "type": "PhotoJson",
+          "default": "\"Photos[configsService.loadConfigs().colorScheme.theme]\""
+        },
+        {
+          "name": "bioText",
+          "attribute": "bioText",
+          "type": "string",
+          "default": "\"long\""
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "settings-card",
+      "path": "./../../../packages/components/src/card/settings/settings-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"SettingsCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "color_scheme.change"
+        }
+      ]
+    },
+    {
+      "name": "skills-card",
+      "path": "./../../../packages/components/src/card/skills/skills-card.ts",
+      "attributes": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"SkillsCardStyles\"]"
+        },
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableHover",
+          "attribute": "enableHover",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "enableFocus",
+          "attribute": "enableFocus",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "code-repo",
+      "path": "./../../../packages/components/src/code/repo/code-repo.ts",
+      "description": "[object Object],[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "codeRepo",
+          "attribute": "codeRepo",
+          "description": "[object Object],[object Object]",
+          "type": "CodeRepoData",
+          "default": "{}"
+        },
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"CodeRepoStyles\"]"
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ]
+    },
+    {
+      "name": "artifact-connection",
+      "path": "./../../../packages/components/src/connection/artifact/artifact-connection.ts",
+      "attributes": [
+        {
+          "name": "artifactConnectionType",
+          "type": "\"googleDocs\" | \"pdf\"",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ConnectionArtifactStyles\"]"
+        },
+        {
+          "name": "artifactConnectionType",
+          "attribute": "artifactConnectionType",
+          "type": "\"googleDocs\" | \"pdf\"",
+          "default": "\"\""
+        },
+        {
+          "name": "artifactConnectionData",
+          "attribute": "artifactConnectionData",
+          "type": "ArtifactConnectionData",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "direct-connection",
+      "path": "./../../../packages/components/src/connection/direct/direct-connection.ts",
+      "description": "[object Object],[object Object]",
+      "attributes": [
+        {
+          "name": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"DirectConnectionStyles\"]"
+        },
+        {
+          "name": "connectionInstance",
+          "attribute": "connection-instance",
+          "type": "ConnectionInstance",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "professional-connection",
+      "path": "./../../../packages/components/src/connection/professional/professional-connection.ts",
+      "attributes": [
+        {
+          "name": "professionalConnectionType",
+          "type": "\"linkedin\" | \"github\" | \"medium\"",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"ProfessionalConnectionStyles\"]"
+        },
+        {
+          "name": "professionalConnectionType",
+          "attribute": "professionalConnectionType",
+          "type": "\"linkedin\" | \"github\" | \"medium\"",
+          "default": "\"\""
+        },
+        {
+          "name": "professionalConnectionData",
+          "attribute": "professionalConnectionData",
+          "type": "ProfessionalConnectionJsonData",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "education-institution",
+      "path": "./../../../packages/components/src/education/institution/education-institution.ts",
+      "attributes": [
+        {
+          "name": "institute",
+          "type": "EducationInstitutionRecord",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[\"TextStyles\",\"EducationInstitutionStyles\"]"
+        },
+        {
+          "name": "institute",
+          "attribute": "institute",
+          "type": "EducationInstitutionRecord",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "blog-entry",
+      "path": "./../../../packages/components/src/publication/blog/entry/blog-entry.ts",
+      "attributes": [
+        {
+          "name": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"BlogEntryStyles\"]"
+        },
+        {
+          "name": "blogEntry",
+          "attribute": "blogEntry",
+          "description": "The JSON record to render",
+          "type": "BlogEntryJson",
+          "default": "{}"
+        }
+      ]
+    },
+    {
+      "name": "ui-mode-toggle",
+      "path": "./../../../packages/components/src/ui-mode-toggle/ui-mode-toggle.ts",
+      "attributes": [
+        {
+          "name": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"UIModeToggleStyles\"]"
+        },
+        {
+          "name": "mode",
+          "attribute": "mode",
+          "description": "Reflects the currently active color scheme mode.",
+          "type": "\"light\" | \"dark\" | \"system\"",
+          "default": "\"system\""
+        },
+        {
+          "name": "permanent",
+          "attribute": "permanent",
+          "description": "Controls whether the selected color scheme preference is persisted across sessions.",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "color_scheme.change",
+          "description": "Dispatched when the UI mode (light/dark/system) or color scheme contrast is changed,\npropagating the new `AppConfigs[\"colorScheme\"]` details."
+        },
+        {
+          "name": "colorschemechange",
+          "description": "Event from `dark-mode-toggle` when the scheme changes."
+        },
+        {
+          "name": "permanentcolorscheme",
+          "description": "Event from `dark-mode-toggle` when the persistence changes."
+        }
+      ]
+    },
+    {
+      "name": "version-tag",
+      "path": "./../../../packages/components/src/version-tag/version-tag.ts",
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "CSSResult[]",
+          "default": "[null]"
+        }
+      ]
+    },
+    {
+      "name": "word-cloud",
+      "path": "./../../../packages/components/src/word/cloud/word-cloud.ts",
+      "description": "A component that renders a cloud of words with various sorting and grouping options.",
+      "attributes": [
+        {
+          "name": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WordCloudStyles\"]"
+        },
+        {
+          "name": "words",
+          "attribute": "words",
+          "description": "The list of words to display in the cloud.",
+          "type": "WordCloudWord[]",
+          "default": "[]"
+        },
+        {
+          "name": "instantClear",
+          "attribute": "instant-clear",
+          "description": "Whether to clear the word cloud instantly when it is no longer visible.\nWhen true, the cloud resets instantly to opacity 0 instead of fading out.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "appearance",
+          "attribute": "appearance",
+          "description": "Controls the order in which words are animated/displayed.\n\nCan be 'sequential' (words appear one by one) or 'simultaneous' (words appear all at once).",
+          "type": "WordCloudAppearance",
+          "default": "\"SEQUENTIAL\""
+        },
+        {
+          "name": "grouping",
+          "attribute": "grouping",
+          "description": "Controls how words are grouped together within the cloud.\n\nSupported modes: 'category', 'quartile', or 'ungrouped'.",
+          "type": "WordCloudGrouping",
+          "default": "\"UNGROUPED\""
+        },
+        {
+          "name": "sorting",
+          "attribute": "sorting",
+          "description": "Controls how words are sorted within their groupings.\n\nSupported modes: 'by-weight', 'by-weight-reversed', 'by-alphabet', 'by-alphabet-reversed', or 'none'.",
+          "type": "WordCloudSorting",
+          "default": "\"NONE\""
+        },
+        {
+          "name": "delay",
+          "attribute": "delay",
+          "description": "The delay in milliseconds between word appearances when using sequential mode.\n\nSet to \"none\" to use the component's internal default delays.",
+          "type": "number | \"none\"",
+          "default": "\"none\""
+        },
+        {
+          "name": "threshold",
+          "attribute": "threshold",
+          "description": "The intersection observer threshold for visibility detection.\n\nA value between 0 and 1 indicating what percentage of the element must be visible to trigger animation.",
+          "type": "number",
+          "default": "0.1"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-cloud-animation",
+          "description": "Duration of the entrance animation for each word.",
+          "default": "\"150ms\""
+        },
+        {
+          "name": "--word-cloud-animation-reduced",
+          "description": "Duration of the entrance animation when prefers-reduced-motion is active.",
+          "default": "\"1ms\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-font-size",
+          "description": "Font size for words in the first weight quartile (highest weight).",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-first-quartile-line-height",
+          "description": "Line height for words in the first weight quartile.",
+          "default": "\"1.75rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-font-size",
+          "description": "Font size for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-second-quartile-line-height",
+          "description": "Line height for words in the second weight quartile.",
+          "default": "\"1.5rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-font-size",
+          "description": "Font size for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-third-quartile-line-height",
+          "description": "Line height for words in the third weight quartile.",
+          "default": "\"1.25rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-font-size",
+          "description": "Font size for words in the fourth weight quartile (lowest weight).",
+          "default": "\"1rem\""
+        },
+        {
+          "name": "--word-cloud-fourth-quartile-line-height",
+          "description": "Line height for words in the fourth weight quartile.",
+          "default": "\"1rem\""
+        }
+      ]
+    },
+    {
+      "name": "word-tag",
+      "path": "./../../../packages/components/src/word/tag/word-tag.ts",
+      "attributes": [
+        {
+          "name": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WordTagStyles\"]"
+        },
+        {
+          "name": "hrefUrl",
+          "attribute": "hrefUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "word",
+          "attribute": "word",
+          "description": "The tagged word",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heaviness",
+          "attribute": "heaviness",
+          "description": "The weight of the tag (text & border), can be\n`\"normal\"` (`--md-ref-typeface-weight-regular` & `--sizes-thickness-hairline`) or\n`\"heavy\"` (`--md-ref-typeface-weight-bold` & `2.5 * --sizes-thickness-hairline`)",
+          "type": "WordTagHeaviness",
+          "default": "\"normal\""
+        },
+        {
+          "name": "variant",
+          "attribute": "variant",
+          "description": "[object Object],[object Object]",
+          "type": "WordTagVariant",
+          "default": "\"text-only\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object"
+        }
+      ],
+      "slots": [
+        {
+          "name": "object Object],[object Object],[object Object"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--word-tag-color",
+          "description": "The text and border color",
+          "default": "\"--md-sys-color-on-primary-container\""
+        },
+        {
+          "name": "--word-tag-background-color",
+          "description": "The background color",
+          "default": "\"--md-sys-color-primary-container\""
+        },
+        {
+          "name": "--word-tag-font-family",
+          "description": "The font family",
+          "default": "\"--md-ref-typeface-brand\""
+        },
+        {
+          "name": "--word-tag-font-size",
+          "description": "The font size",
+          "default": "\"--md-typescale-body-large-font-size\""
+        },
+        {
+          "name": "--word-tag-font-weight",
+          "description": "The font weight",
+          "default": "\"--md-ref-typeface-weight-regular\""
+        },
+        {
+          "name": "--word-tag-line-height",
+          "description": "The line height",
+          "default": "\"--md-typescale-body-large-lingt-height\""
+        },
+        {
+          "name": "--word-tag-border-radius",
+          "description": "The corner radius (for all corners)",
+          "default": "\"--md-sys-shape-corner-small\""
+        },
+        {
+          "name": "--word-tag-gap",
+          "description": "The `gap` between `word` and any `slot`-ed icon",
+          "default": "\"--spaces-gap-xs\""
+        }
+      ]
+    },
+    {
+      "name": "work-experience",
+      "path": "./../../../packages/components/src/work/experience/work-experience.ts",
+      "attributes": [
+        {
+          "name": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "description": "[object Object],[object Object]",
+          "type": "array",
+          "default": "[\"TextStyles\",\"WorkExperienceStyles\"]"
+        },
+        {
+          "name": "experienceRole",
+          "attribute": "experience-role",
+          "description": "The title of the professional role or project.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "dateStart",
+          "attribute": "date-start",
+          "description": "Start date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "dateEnd",
+          "attribute": "date-end",
+          "description": "End date information including machine-readable stamp and display text.",
+          "type": "WorkDate",
+          "default": "{\"stamp\":\"\",\"text\":\"\"}"
+        },
+        {
+          "name": "summaries",
+          "attribute": "summaries",
+          "description": "A list of summary points describing achievements or responsibilities.",
+          "type": "{ item: string; }[]",
+          "default": "[]"
+        },
+        {
+          "name": "jobs",
+          "attribute": "jobs",
+          "description": "A list of sub-jobs or project assignments to be rendered as nested experiences.",
+          "type": "Job[]",
+          "default": "[]"
+        },
+        {
+          "name": "isNested",
+          "attribute": "is-nested",
+          "description": "If true, adjusts font sizes and layout for a nested appearance.",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "experienceOrg",
+          "attribute": "experience-org",
+          "description": "The name of the organization or client.",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "experienceSummary",
+          "attribute": "experience-summary",
+          "description": "An optional summary of the overall role",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "object Object],[object Object],[object Object"
+        },
+        {
+          "name": "object Object],[object Object],[object Object],[object Object],[object Object"
+        }
+      ]
+    }
+  ]
+}

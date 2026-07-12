@@ -1,0 +1,1150 @@
+[
+  {
+    "title": "@fnc314/packages.components",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ArtifactConnection",
+            "kind": 128,
+            "path": "_fnc314/packages.components/ArtifactConnection/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BentoCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/BentoCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BentoLayout",
+            "kind": 128,
+            "path": "_fnc314/packages.components/BentoLayout/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/BlogCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogEntry",
+            "kind": 128,
+            "path": "_fnc314/packages.components/BlogEntry/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/CodeCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeRepo",
+            "kind": 128,
+            "path": "_fnc314/packages.components/CodeRepo/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DirectConnection",
+            "kind": 128,
+            "path": "_fnc314/packages.components/DirectConnection/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/EducationCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationInstitution",
+            "kind": 128,
+            "path": "_fnc314/packages.components/EducationInstitution/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ExperienceCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/ExperienceCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnection",
+            "kind": 128,
+            "path": "_fnc314/packages.components/ProfessionalConnection/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfileCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/ProfileCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SettingsCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/SettingsCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SkillsCard",
+            "kind": 128,
+            "path": "_fnc314/packages.components/SkillsCard/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "UIAwareElement",
+            "kind": 128,
+            "path": "_fnc314/packages.components/UIAwareElement/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "UiModeToggle",
+            "kind": 128,
+            "path": "_fnc314/packages.components/UiModeToggle/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "VersionTag",
+            "kind": 128,
+            "path": "_fnc314/packages.components/VersionTag/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloud",
+            "kind": 128,
+            "path": "_fnc314/packages.components/WordCloud/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTag",
+            "kind": 128,
+            "path": "_fnc314/packages.components/WordTag/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WorkExperience",
+            "kind": 128,
+            "path": "_fnc314/packages.components/WorkExperience/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "ABentoBoxConfig",
+            "kind": 256,
+            "path": "_fnc314/packages.components/ABentoBoxConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "GridSpan",
+            "kind": 256,
+            "path": "_fnc314/packages.components/GridSpan/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudWord",
+            "kind": 256,
+            "path": "_fnc314/packages.components/WordCloudWord/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "BentoBoxConfigs",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/BentoBoxConfigs/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BentoBoxType",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/BentoBoxType/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Constructor",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/Constructor/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "GridPosition",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/GridPosition/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "RenderableWordCloudWord",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/RenderableWordCloudWord/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WeightQuartile",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WeightQuartile/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Weights",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/Weights/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudAppearance",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordCloudAppearance/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudGrouping",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordCloudGrouping/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudSorting",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordCloudSorting/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudWordCategory",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordCloudWordCategory/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTagHeaviness",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordTagHeaviness/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTagVariant",
+            "kind": 2097152,
+            "path": "_fnc314/packages.components/WordTagVariant/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "BENTO_BOX_CONFIG",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BENTO_BOX_CONFIG/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BENTO_BOX_TYPES",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BENTO_BOX_TYPES/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BentoCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BentoCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BentoLayoutStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BentoLayoutStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BlogCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogEntryStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/BlogEntryStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/CodeCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeRepoStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/CodeRepoStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ConnectionArtifactStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/ConnectionArtifactStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DirectConnectionStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/DirectConnectionStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DynamicBorderStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/DynamicBorderStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/EducationCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationInstitutionStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/EducationInstitutionStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnectionStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/ProfessionalConnectionStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfileCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/ProfileCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SettingsCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/SettingsCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SkillsCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/SkillsCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "TextStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/TextStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "TransitionStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/TransitionStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "UIModeToggleStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/UIModeToggleStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudAppearances",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordCloudAppearances/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudGroupings",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordCloudGroupings/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudSortings",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordCloudSortings/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordCloudStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordCloudStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTagStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordTagStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTagVariantAttributeConverter",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WordTagVariantAttributeConverter/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WorkCardStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WorkCardStyles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WorkExperienceStyles",
+            "kind": 32,
+            "path": "_fnc314/packages.components/WorkExperienceStyles/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "BentoBoxConfigsArray",
+            "kind": 64,
+            "path": "_fnc314/packages.components/BentoBoxConfigsArray/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "getBentoDOMOrder",
+            "kind": 64,
+            "path": "_fnc314/packages.components/getBentoDOMOrder/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "makeWordCloudWord",
+            "kind": 64,
+            "path": "_fnc314/packages.components/makeWordCloudWord/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SizeObserverElement",
+            "kind": 64,
+            "path": "_fnc314/packages.components/SizeObserverElement/README.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "_fnc314/packages.components/README.md"
+  },
+  {
+    "title": "@fnc314/packages.data",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "Biographies",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Biographies/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Blogs",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Blogs/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Connections",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Connections/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationJsonData",
+            "kind": 32,
+            "path": "_fnc314/packages.data/EducationJsonData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Experiences",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Experiences/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Photos",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Photos/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Projects",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Projects/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Skills",
+            "kind": 32,
+            "path": "_fnc314/packages.data/Skills/README.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "_fnc314/packages.data/README.md"
+  },
+  {
+    "title": "@fnc314/packages.design-tokens",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "Breakpoints",
+            "kind": 4,
+            "path": "_fnc314/packages.design-tokens/Breakpoints/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "BreakpointRange",
+                    "kind": 256,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/BreakpointRange/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "Breakpoints",
+                    "kind": 256,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/Breakpoints/README.md",
+                    "isDeprecated": false
+                  }
+                ]
+              },
+              {
+                "title": "Type Aliases",
+                "children": [
+                  {
+                    "title": "BreakpointLabel",
+                    "kind": 2097152,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/BreakpointLabel/README.md",
+                    "isDeprecated": false
+                  }
+                ]
+              },
+              {
+                "title": "Variables",
+                "children": [
+                  {
+                    "title": "BREAKPOINT_LABELS",
+                    "kind": 32,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "BreakpointLabels",
+                    "kind": 32,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/BreakpointLabels/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "BREAKPOINTS",
+                    "kind": 32,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/BREAKPOINTS-1/README.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "CSS_VARIABLE_BREAKPOINT_LABEL",
+                    "kind": 32,
+                    "path": "_fnc314/packages.design-tokens/Breakpoints/CSS_VARIABLE_BREAKPOINT_LABEL/README.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "TouchScreen",
+            "kind": 4,
+            "path": "_fnc314/packages.design-tokens/TouchScreen/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Variables",
+                "children": [
+                  {
+                    "title": "CSS_VARIABLE_TOUCH_SCREEN",
+                    "kind": 32,
+                    "path": "_fnc314/packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "readCSSProperty",
+            "kind": 64,
+            "path": "_fnc314/packages.design-tokens/readCSSProperty/README.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "_fnc314/packages.design-tokens/README.md"
+  },
+  {
+    "title": "@fnc314/packages.services",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "ConfigsService",
+            "kind": 256,
+            "path": "_fnc314/packages.services/ConfigsService/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "StorageService",
+            "kind": 256,
+            "path": "_fnc314/packages.services/StorageService/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ThemeService",
+            "kind": 256,
+            "path": "_fnc314/packages.services/ThemeService/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "ChicagoThemeConfig",
+            "kind": 32,
+            "path": "_fnc314/packages.services/ChicagoThemeConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "colorSchemeConfigsToMaterialSchemeName",
+            "kind": 32,
+            "path": "_fnc314/packages.services/colorSchemeConfigsToMaterialSchemeName/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "colorSchemeContrastToIcon",
+            "kind": 32,
+            "path": "_fnc314/packages.services/colorSchemeContrastToIcon/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "configsService",
+            "kind": 32,
+            "path": "_fnc314/packages.services/configsService-1/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "InterThemeConfig",
+            "kind": 32,
+            "path": "_fnc314/packages.services/InterThemeConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaterialCSSStyleSheet",
+            "kind": 32,
+            "path": "_fnc314/packages.services/MaterialCSSStyleSheet/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "onThemeChange",
+            "kind": 32,
+            "path": "_fnc314/packages.services/onThemeChange/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "readScheme",
+            "kind": 32,
+            "path": "_fnc314/packages.services/readScheme/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "RedThemeConfig",
+            "kind": 32,
+            "path": "_fnc314/packages.services/RedThemeConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "storageService",
+            "kind": 32,
+            "path": "_fnc314/packages.services/storageService-1/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SunsetThemeConfig",
+            "kind": 32,
+            "path": "_fnc314/packages.services/SunsetThemeConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "THEME_CONFIGS",
+            "kind": 32,
+            "path": "_fnc314/packages.services/THEME_CONFIGS/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "themeService",
+            "kind": 32,
+            "path": "_fnc314/packages.services/themeService-1/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "jsonIsThemeJsonSchemes",
+            "kind": 64,
+            "path": "_fnc314/packages.services/jsonIsThemeJsonSchemes/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "keyTransform",
+            "kind": 64,
+            "path": "_fnc314/packages.services/keyTransform/README.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "_fnc314/packages.services/README.md"
+  },
+  {
+    "title": "@fnc314/packages.types",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "AppConfigs",
+            "kind": 256,
+            "path": "_fnc314/packages.types/AppConfigs/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Bio",
+            "kind": 256,
+            "path": "_fnc314/packages.types/Bio/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogEntryJson",
+            "kind": 256,
+            "path": "_fnc314/packages.types/BlogEntryJson/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogSeriesEntry",
+            "kind": 256,
+            "path": "_fnc314/packages.types/BlogSeriesEntry/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogsJsonEntry",
+            "kind": 256,
+            "path": "_fnc314/packages.types/BlogsJsonEntry/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeRepoData",
+            "kind": 256,
+            "path": "_fnc314/packages.types/CodeRepoData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CodeRepoTech",
+            "kind": 256,
+            "path": "_fnc314/packages.types/CodeRepoTech/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorSchemeConfigs",
+            "kind": 256,
+            "path": "_fnc314/packages.types/ColorSchemeConfigs/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ConnectionInstance",
+            "kind": 256,
+            "path": "_fnc314/packages.types/ConnectionInstance/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIcon",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIcon/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIconDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconDefault/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIconMaskable",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconMaskable/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DesignTokenIconWithDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/DesignTokenIconWithDefault/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EducationInstitutionRecord",
+            "kind": 256,
+            "path": "_fnc314/packages.types/EducationInstitutionRecord/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Experience",
+            "kind": 256,
+            "path": "_fnc314/packages.types/Experience/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "Job",
+            "kind": 256,
+            "path": "_fnc314/packages.types/Job/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaskableDesignTokenIcon",
+            "kind": 256,
+            "path": "_fnc314/packages.types/MaskableDesignTokenIcon/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaskableDesignTokenIconWithDefault",
+            "kind": 256,
+            "path": "_fnc314/packages.types/MaskableDesignTokenIconWithDefault/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "PhotoJson",
+            "kind": 256,
+            "path": "_fnc314/packages.types/PhotoJson/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ThemeConfig",
+            "kind": 256,
+            "path": "_fnc314/packages.types/ThemeConfig/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WorkData",
+            "kind": 256,
+            "path": "_fnc314/packages.types/WorkData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WorkDate",
+            "kind": 256,
+            "path": "_fnc314/packages.types/WorkDate/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "AppConfigsChange",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/AppConfigsChange/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "AppConfigsSchemeTheme",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/AppConfigsSchemeTheme/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ArtifactConnectionData",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ArtifactConnectionData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ArtifactConnectionJsonData",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ArtifactConnectionJsonData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ArtifactConnectionType",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ArtifactConnectionType/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "BlogsJson",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/BlogsJson/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorScheme",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorScheme/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorSchemeConfigChange",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorSchemeConfigChange/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorSchemeContrast",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorSchemeContrast/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorSchemeRoles",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorSchemeRoles/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorString",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorString/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorSubValue",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorSubValue/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ColorValue",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ColorValue/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ConnectionJsonDirect",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ConnectionJsonDirect/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DirectConnectionIcon",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/DirectConnectionIcon/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DirectConnectionMethod",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/DirectConnectionMethod/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "FourDigitYear",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/FourDigitYear/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "IsHex",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/IsHex/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaterialScheme",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/MaterialScheme/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaterialSchemeName",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/MaterialSchemeName/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaterialSchemeNames",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/MaterialSchemeNames/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "MaterialSymbol",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/MaterialSymbol/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "PhotosJson",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/PhotosJson/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnectionJson",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ProfessionalConnectionJson/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnectionJsonData",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ProfessionalConnectionJsonData/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnectionType",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ProfessionalConnectionType/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SingleDigit",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/SingleDigit/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ThemeConfigs",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ThemeConfigs/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ThemeJsonSchemes",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ThemeJsonSchemes/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ThemeName",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ThemeName/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ValidateRGBA",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/ValidateRGBA/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WordTagSize",
+            "kind": 2097152,
+            "path": "_fnc314/packages.types/WordTagSize/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "ArtifactConnections",
+            "kind": 32,
+            "path": "_fnc314/packages.types/ArtifactConnections/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CONFIG_COLOR_CONTRAST_NAMES",
+            "kind": 32,
+            "path": "_fnc314/packages.types/CONFIG_COLOR_CONTRAST_NAMES/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CONFIG_COLOR_SCHEME_NAMES",
+            "kind": 32,
+            "path": "_fnc314/packages.types/CONFIG_COLOR_SCHEME_NAMES/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
+            "kind": 32,
+            "path": "_fnc314/packages.types/CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "DEFAULT_APP_CONFIGS",
+            "kind": 32,
+            "path": "_fnc314/packages.types/DEFAULT_APP_CONFIGS/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ProfessionalConnectionTypes",
+            "kind": 32,
+            "path": "_fnc314/packages.types/ProfessionalConnectionTypes/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "THEME_NAMES",
+            "kind": 32,
+            "path": "_fnc314/packages.types/THEME_NAMES/README.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "WORD_TAG_SIZES",
+            "kind": 32,
+            "path": "_fnc314/packages.types/WORD_TAG_SIZES/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "setRGBA",
+            "kind": 64,
+            "path": "_fnc314/packages.types/setRGBA/README.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "_fnc314/packages.types/README.md"
+  }
+]
