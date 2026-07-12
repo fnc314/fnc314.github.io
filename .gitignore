@@ -5,6 +5,7 @@
 .pnpm-store
 .rolldown
 .rollup.cache
+.turbo
 bin
 dist/
 docs/types/**/*.d.ts.map
