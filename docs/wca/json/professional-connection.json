@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "professional-connection",
-      "path": "./../../../packages/components/lib/connection/professional/professional-connection.ts",
+      "path": "./../../../packages/components/src/connection/professional/professional-connection.ts",
       "attributes": [
         {
           "name": "professionalConnectionType",

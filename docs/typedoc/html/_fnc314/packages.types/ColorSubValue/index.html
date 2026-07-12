@@ -171,7 +171,7 @@
 <h1>Type Alias ColorSubValue</h1></div>
 <div class="tsd-signature"><span class="tsd-kind-type-alias">ColorSubValue</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">`</span><span class="tsd-signature-symbol">${</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"A"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"B"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"C"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"D"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"E"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"F"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"0"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"1"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"2"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"3"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"4"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"5"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"6"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"7"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"8"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">"9"</span><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">`</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L88" class="external" target="_blank">packages/types/lib/theme/index.ts:88</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L88" class="external" target="_blank">packages/types/src/theme/index.ts:88</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -194,7 +194,7 @@
                 window.GENERATION_DATE = 1783411605312;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -212,7 +212,7 @@
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -223,7 +223,7 @@
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>

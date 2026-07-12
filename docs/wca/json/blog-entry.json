@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "blog-entry",
-      "path": "./../../../packages/components/lib/publication/blog/entry/blog-entry.ts",
+      "path": "./../../../packages/components/src/publication/blog/entry/blog-entry.ts",
       "attributes": [
         {
           "name": "blogEntry",

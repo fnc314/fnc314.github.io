@@ -184,7 +184,7 @@
 <li><span><span class="tsd-kind-parameter">color</span>: <a class="tsd-signature-type tsd-kind-type-parameter" href="#setrgbat">T</a> <span class="tsd-signature-symbol">&amp;</span> <a href="../ValidateRGBA/" class="tsd-signature-type tsd-kind-type-alias">ValidateRGBA</a><span class="tsd-signature-symbol">&lt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tsd-signature-type tsd-kind-type-parameter" href="#setrgbat">T</a><span class="tsd-signature-symbol">,</span><br><span class="tsd-signature-symbol">&gt;</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a class="tsd-signature-type tsd-kind-type-parameter" href="#setrgbat">T</a> <span class="tsd-signature-symbol">&amp;</span> <a href="../ValidateRGBA/" class="tsd-signature-type tsd-kind-type-alias">ValidateRGBA</a><span class="tsd-signature-symbol">&lt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tsd-signature-type tsd-kind-type-parameter" href="#setrgbat">T</a><span class="tsd-signature-symbol">,</span><br><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L112" class="external" target="_blank">packages/types/lib/theme/index.ts:112</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L112" class="external" target="_blank">packages/types/src/theme/index.ts:112</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -207,7 +207,7 @@
                 window.GENERATION_DATE = 1783411605457;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -225,7 +225,7 @@
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -236,7 +236,7 @@
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>

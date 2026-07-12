@@ -180,7 +180,7 @@
 <li class="tsd-parameter">
 <h5 id="tech"><span class="tsd-kind-property">tech</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Bash</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Coroutines</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">CSS</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Git</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">HTML</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Java</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">JavaScript</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">"Jetpack Compose"</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Kotlin</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Mobile</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Node</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Python</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">Ruby</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">RxJava</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-kind-property">TypeScript</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br><span class="tsd-signature-symbol">}</span></h5></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/skills/index.ts#L1" class="external" target="_blank">skills/index.ts:1</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/skills/index.ts#L1" class="external" target="_blank">skills/index.ts:1</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -203,7 +203,7 @@
                 window.GENERATION_DATE = 1783411602333;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -221,7 +221,7 @@
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -232,7 +232,7 @@
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>

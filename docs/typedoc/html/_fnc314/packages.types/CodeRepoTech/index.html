@@ -174,7 +174,7 @@
 </div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">CodeRepoTech</span> <span class="tsd-signature-symbol">{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tsd-kind-property" href="#designtoken">designToken</a><span class="tsd-signature-symbol">:</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">string</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tsd-signature-symbol">|</span> <a href="../DesignTokenIcon/" class="tsd-signature-type tsd-kind-interface">DesignTokenIcon</a><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tsd-kind-property" href="#name">name</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<a class="tsd-kind-property" href="#url">url</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L46" class="external" target="_blank">packages/types/lib/code/index.ts:46</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L46" class="external" target="_blank">packages/types/src/code/index.ts:46</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open=""><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../../../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -195,21 +195,21 @@
 <div class="tsd-comment tsd-typography"><p>A generated <code>CSS Variable</code> from <code>@fnc314/packages.types</code></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L48" class="external" target="_blank">packages/types/lib/code/index.ts:48</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L48" class="external" target="_blank">packages/types/src/code/index.ts:48</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="name"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Display name for the technology (e.g., “TypeScript”).</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L51" class="external" target="_blank">packages/types/lib/code/index.ts:51</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L51" class="external" target="_blank">packages/types/src/code/index.ts:51</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="url"><span>url</span><a href="#url" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../../../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">url</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>URL with more information about the technology.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/code/index.ts#L54" class="external" target="_blank">packages/types/lib/code/index.ts:54</a></li></ul></aside></section></section></details></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L54" class="external" target="_blank">packages/types/src/code/index.ts:54</a></li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -237,7 +237,7 @@
                 window.GENERATION_DATE = 1783411602628;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -255,7 +255,7 @@
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -266,7 +266,7 @@
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>

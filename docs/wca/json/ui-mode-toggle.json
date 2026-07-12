@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "ui-mode-toggle",
-      "path": "./../../../packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts",
+      "path": "./../../../packages/components/src/ui-mode-toggle/ui-mode-toggle.ts",
       "attributes": [
         {
           "name": "mode",

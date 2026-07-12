@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "bento-layout",
-      "path": "./../../../packages/components/lib/bento-layout/bento-layout.ts",
+      "path": "./../../../packages/components/src/bento-layout/bento-layout.ts",
       "properties": [
         {
           "name": "styles",

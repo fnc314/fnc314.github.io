@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "code-repo",
-      "path": "./../../../packages/components/lib/code/repo/code-repo.ts",
+      "path": "./../../../packages/components/src/code/repo/code-repo.ts",
       "description": "[object Object],[object Object],[object Object]",
       "attributes": [
         {

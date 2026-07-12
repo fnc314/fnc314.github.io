@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "education-institution",
-      "path": "./../../../packages/components/lib/education/institution/education-institution.ts",
+      "path": "./../../../packages/components/src/education/institution/education-institution.ts",
       "attributes": [
         {
           "name": "institute",
