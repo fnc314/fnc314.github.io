@@ -87,7 +87,7 @@ catalogs:
     jiti: 2.7.0
     lit-analyzer: 2.0.3
     node: runtime:26.5.0
-    postcss: 8.5.16
+    postcss: 8.5.17
     postcss-lit: 1.4.1
     prettier: 3.9.5
     prettier-plugin-toml: 2.0.6
@@ -107,7 +107,7 @@ catalogs:
     stylelint-plugin-use-baseline: 1.4.4
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
-    svgo: 4.0.1
+    svgo: 4.0.2
     ts-lit-plugin: 2.0.2
     ts-node: 10.9.2
     tslib: 2.8.1
