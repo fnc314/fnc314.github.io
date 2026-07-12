@@ -8,9 +8,9 @@ additionalPackages:
 generate:
   exclude:
     - .config/**/*.ts
-    - lib/**/*.test.ts
+    - src/**/*.test.ts
   files:
-    - lib/**/*.ts
+    - src/**/*.ts
 
 health:
   failBelow: 75

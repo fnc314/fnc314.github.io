@@ -10,7 +10,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
       publicDir: `${process.cwd()}/packages/${dirName}/assets`,
       build: {
         lib: {
-          entry: `${process.cwd()}/packages/${dirName}/lib/index.ts`,
+          entry: `${process.cwd()}/packages/${dirName}/src/index.ts`,
           name: `@fnc314.packages.${dirName}`,
           fileName: `@fnc314.packages.${dirName}`,
           cssFileName: `@fnc314.packages.${dirName}`,
@@ -68,7 +68,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         dts({
           // bundleTypes: true,
           tsconfigPath: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
-          entryRoot: `${process.cwd()}/packages/${dirName}/lib`,
+          entryRoot: `${process.cwd()}/packages/${dirName}/src`,
           root: `${process.cwd()}/packages/${dirName}`,
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
         }),

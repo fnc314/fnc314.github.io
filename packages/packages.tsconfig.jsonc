@@ -50,7 +50,7 @@
     "outDir": "${configDir}/dist",
     "paths": {
       "@/lib/*": [
-        "${configDir}/lib/*"
+        "${configDir}/src/*"
       ],
     },
     "plugins": [
@@ -97,11 +97,11 @@
     "${configDir}/node_modules",
     "${configDir}/dist",
     "${configDir}/.config",
-    "${configDir}/lib/**/*.test.ts",
+    "${configDir}/src/**/*.test.ts",
   ],
   "include": [
-    "${configDir}/lib/**/*.ts",
-    "${configDir}/lib/env.d.ts",
+    "${configDir}/src/**/*.ts",
+    "${configDir}/src/env.d.ts",
   ],
   "ts-node": {
     "compiler": "typescript",
