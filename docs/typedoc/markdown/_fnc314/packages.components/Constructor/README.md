@@ -8,7 +8,7 @@
 
 &gt; **Constructor**\&lt;`T`\&gt; = (...`args`: `any`[]) =&gt; `T`
 
-Defined in: [packages/components/lib/mixins/size-observer-element/size-observer-element.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/size-observer-element/size-observer-element.ts#L3)
+Defined in: [packages/components/src/mixins/size-observer-element/size-observer-element.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/size-observer-element/size-observer-element.ts#L3)
 
 ## Type Parameters
 

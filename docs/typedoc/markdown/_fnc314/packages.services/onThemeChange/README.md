@@ -8,7 +8,7 @@
 
 &gt; `const` **onThemeChange**: (`event`: [`MediaQueryListEvent`](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)) =&gt; `void`
 
-Defined in: [packages/services/lib/theme/index.ts:87](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/index.ts#L87)
+Defined in: [packages/services/src/theme/index.ts:87](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/index.ts#L87)
 
 ## Parameters
 

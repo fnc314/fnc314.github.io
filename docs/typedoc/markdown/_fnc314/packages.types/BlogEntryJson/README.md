@@ -6,7 +6,7 @@
 
 # Interface: BlogEntryJson
 
-Defined in: [packages/types/lib/blog/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L7)
+Defined in: [packages/types/src/blog/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L7)
 
 Describes a `json` record of a blog post
 
@@ -36,7 +36,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L8)
+[packages/types/src/blog/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L8)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L12)
+[packages/types/src/blog/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L12)
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L10)
+[packages/types/src/blog/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L10)
 
 </td>
 </tr>
@@ -87,7 +87,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L11)
+[packages/types/src/blog/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L11)
 
 </td>
 </tr>
@@ -104,7 +104,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L13)
+[packages/types/src/blog/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L13)
 
 </td>
 </tr>
@@ -121,7 +121,7 @@ BlogPostJson
 </td>
 <td>
 
-[packages/types/lib/blog/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/blog/index.ts#L9)
+[packages/types/src/blog/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L9)
 
 </td>
 </tr>

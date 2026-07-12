@@ -6,7 +6,7 @@
 
 # Class: BentoLayout
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.ts:18](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.ts#L18)
+Defined in: [packages/components/src/bento-layout/bento-layout.ts:18](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.ts#L18)
 
 ## Element
 
@@ -360,7 +360,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L63)
 
 Invoked when the component is added to the document's DOM.
 
@@ -393,7 +393,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L69)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -1289,7 +1289,7 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
 The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
 [@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
@@ -1500,7 +1500,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -3962,7 +3962,7 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
 Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
@@ -4063,7 +4063,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.ts#L20)
+Defined in: [packages/components/src/bento-layout/bento-layout.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.ts#L20)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -9952,7 +9952,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.ts:114](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.ts#L114)
+Defined in: [packages/components/src/bento-layout/bento-layout.ts:114](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.ts#L114)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

@@ -6,7 +6,7 @@
 
 # Interface: MaskableDesignTokenIconWithDefault
 
-Defined in: [packages/types/lib/design-tokens/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L50)
+Defined in: [packages/types/src/design-tokens/index.ts:50](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L50)
 
 Describes an icon with both [DesignTokenIconWithDefault.default](../DesignTokenIconDefault/README.md#default) and [DesignTokenIconMaskable.mask](../DesignTokenIconMaskable/README.md#mask)
 
@@ -54,7 +54,7 @@ Display for dark mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L6)
+[packages/types/src/design-tokens/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L6)
 
 </td>
 </tr>
@@ -81,7 +81,7 @@ Default option
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L17)
+[packages/types/src/design-tokens/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L17)
 
 </td>
 </tr>
@@ -108,7 +108,7 @@ Display for light mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L9)
+[packages/types/src/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L9)
 
 </td>
 </tr>
@@ -135,7 +135,7 @@ Display a masked version
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L25)
+[packages/types/src/design-tokens/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L25)
 
 </td>
 </tr>

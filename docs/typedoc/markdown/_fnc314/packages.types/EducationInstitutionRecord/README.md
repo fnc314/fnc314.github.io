@@ -6,7 +6,7 @@
 
 # Interface: EducationInstitutionRecord
 
-Defined in: [packages/types/lib/education/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L21)
+Defined in: [packages/types/src/education/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L21)
 
 Describes a single educational institution — the school, degree, location, and
 graduation date — rendered by the `education-institution` component.
@@ -35,7 +35,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L23)
+[packages/types/src/education/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L23)
 
 </td>
 </tr>
@@ -52,7 +52,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L39)
+[packages/types/src/education/index.ts:39](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L39)
 
 </td>
 </tr>
@@ -69,7 +69,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L29)
+[packages/types/src/education/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L29)
 
 </td>
 </tr>
@@ -86,7 +86,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L34)
+[packages/types/src/education/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L34)
 
 </td>
 </tr>
@@ -103,7 +103,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L35)
+[packages/types/src/education/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L35)
 
 </td>
 </tr>
@@ -120,7 +120,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L36)
+[packages/types/src/education/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L36)
 
 </td>
 </tr>
@@ -137,7 +137,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L30)
+[packages/types/src/education/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L30)
 
 </td>
 </tr>
@@ -154,7 +154,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L31)
+[packages/types/src/education/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L31)
 
 </td>
 </tr>
@@ -171,7 +171,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L32)
+[packages/types/src/education/index.ts:32](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L32)
 
 </td>
 </tr>
@@ -188,7 +188,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L22)
+[packages/types/src/education/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L22)
 
 </td>
 </tr>
@@ -205,7 +205,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L24)
+[packages/types/src/education/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L24)
 
 </td>
 </tr>
@@ -222,7 +222,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L25)
+[packages/types/src/education/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L25)
 
 </td>
 </tr>
@@ -239,7 +239,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L27)
+[packages/types/src/education/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L27)
 
 </td>
 </tr>
@@ -256,7 +256,7 @@ graduation date — rendered by the `education-institution` component.
 </td>
 <td>
 
-[packages/types/lib/education/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/education/index.ts#L26)
+[packages/types/src/education/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L26)
 
 </td>
 </tr>

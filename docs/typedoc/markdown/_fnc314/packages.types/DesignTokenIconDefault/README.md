@@ -6,7 +6,7 @@
 
 # Interface: DesignTokenIconDefault
 
-Defined in: [packages/types/lib/design-tokens/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L15)
+Defined in: [packages/types/src/design-tokens/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L15)
 
 Defines a simple `interface` with a `default` property
 
@@ -48,7 +48,7 @@ Default option
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L17)
+[packages/types/src/design-tokens/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L17)
 
 </td>
 </tr>

@@ -8,5 +8,5 @@
 
 &gt; **ArtifactConnectionType** = keyof _typeof_ [`ArtifactConnections`](../ArtifactConnections/README.md)
 
-Defined in: [packages/types/lib/connections/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L23)
+Defined in: [packages/types/src/connections/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L23)
 </body></html>

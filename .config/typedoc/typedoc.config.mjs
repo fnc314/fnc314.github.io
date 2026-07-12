@@ -96,7 +96,7 @@ export default {
       StepUpDialogStyle: "#",
       WordCloudWord: "#",
       ThemeJsonSchemes: "#",
-      BentoLayout: `${process.cwd()}/packages/components/lib/bento-layout/bento-layout.ts`,
+      BentoLayout: `${process.cwd()}/packages/components/src/bento-layout/bento-layout.ts`,
       "bento-layout": "#",
     },
     "unplugin-info": {

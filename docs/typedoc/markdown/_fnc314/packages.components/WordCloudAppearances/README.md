@@ -8,7 +8,7 @@
 
 &gt; `const` **WordCloudAppearances**: \{ `SEQUENTIAL`: `"sequential"`; `SIMULTANEOUS`: `"simultaneous"`; \}
 
-Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/cloud/word-cloud.types.ts#L33)
+Defined in: [packages/components/src/word/cloud/word-cloud.types.ts:33](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/cloud/word-cloud.types.ts#L33)
 
 ## Type Declaration
 
@@ -34,7 +34,7 @@ Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:33](https://
 </td>
 <td>
 
-[packages/components/lib/word/cloud/word-cloud.types.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/cloud/word-cloud.types.ts#L35)
+[packages/components/src/word/cloud/word-cloud.types.ts:35](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/cloud/word-cloud.types.ts#L35)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/components/lib/word/cloud/word-cloud.types.ts:33](https://
 </td>
 <td>
 
-[packages/components/lib/word/cloud/word-cloud.types.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/cloud/word-cloud.types.ts#L34)
+[packages/components/src/word/cloud/word-cloud.types.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/cloud/word-cloud.types.ts#L34)
 
 </td>
 </tr>

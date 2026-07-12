@@ -8,7 +8,7 @@
 
 &gt; `const` **BENTO\_BOX\_TYPES**: \{ `blog`: `"blog"`; `code`: `"code"`; `education`: `"education"`; `experience`: `"experience"`; `profile`: `"profile"`; `settings`: `"settings"`; `skills`: `"skills"`; \}
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:55](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L55)
+Defined in: [packages/components/src/bento-layout/bento-layout.types.ts:55](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L55)
 
 A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type) of [BentoBoxType](../BentoBoxType/README.md) definitions
 
@@ -36,7 +36,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:59](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L59)
+[packages/components/src/bento-layout/bento-layout.types.ts:59](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L59)
 
 </td>
 </tr>
@@ -53,7 +53,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:58](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L58)
+[packages/components/src/bento-layout/bento-layout.types.ts:58](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L58)
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:61](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L61)
+[packages/components/src/bento-layout/bento-layout.types.ts:61](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L61)
 
 </td>
 </tr>
@@ -87,7 +87,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L57)
+[packages/components/src/bento-layout/bento-layout.types.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L57)
 
 </td>
 </tr>
@@ -104,7 +104,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:56](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L56)
+[packages/components/src/bento-layout/bento-layout.types.ts:56](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L56)
 
 </td>
 </tr>
@@ -121,7 +121,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:60](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L60)
+[packages/components/src/bento-layout/bento-layout.types.ts:60](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L60)
 
 </td>
 </tr>
@@ -138,7 +138,7 @@ A [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recor
 </td>
 <td>
 
-[packages/components/lib/bento-layout/bento-layout.types.ts:62](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L62)
+[packages/components/src/bento-layout/bento-layout.types.ts:62](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L62)
 
 </td>
 </tr>

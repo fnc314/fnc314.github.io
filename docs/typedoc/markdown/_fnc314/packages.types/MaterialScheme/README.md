@@ -8,5 +8,5 @@
 
 &gt; **MaterialScheme** = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\&lt;[`MaterialSchemeName`](../MaterialSchemeName/README.md), [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)\&gt;
 
-Defined in: [packages/types/lib/theme/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/theme/index.ts#L11)
+Defined in: [packages/types/src/theme/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L11)
 </body></html>

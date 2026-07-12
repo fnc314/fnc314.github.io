@@ -6,7 +6,7 @@
 
 # Class: UiModeToggle
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:39](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L39)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:39](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L39)
 
 ## Element
 
@@ -378,7 +378,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:73](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L73)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:73](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L73)
 
 Invoked when the component is added to the document's DOM.
 
@@ -411,7 +411,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:80](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L80)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:80](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L80)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -1307,7 +1307,7 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
 The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
 [@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
@@ -1518,7 +1518,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1972,7 +1972,7 @@ The **`Element.localName`** read-only property returns the local part of the qua
 
 &gt; **mode**: `"dark"` \| `"light"` \| `"system"` = `"system"`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:50](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L50)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:50](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L50)
 
 Reflects the currently active color scheme mode.
 
@@ -3726,7 +3726,7 @@ The read-only **`parentNode`** property of the Node interface returns the parent
 
 &gt; **permanent**: `boolean` = `false`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:53](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L53)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:53](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L53)
 
 Controls whether the selected color scheme preference is persisted across sessions.
 
@@ -4000,7 +4000,7 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
 Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
@@ -4101,7 +4101,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:41](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L41)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:41](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L41)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -8659,7 +8659,7 @@ The **`requestPointerLock()`** method of the Element interface lets you asynchro
 
 &gt; **reset**(): `void`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:152](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L152)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:152](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L152)
 
 Resets the UI mode toggle to its default settings.
 
@@ -10004,7 +10004,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:157](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L157)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:157](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L157)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -10202,7 +10202,7 @@ update.
 
 &gt; `protected` **firstUpdated**(): `void`
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts#L69)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.ts#L69)
 
 Invoked when the element is first updated. Implement to perform one time
 work on the element after update.

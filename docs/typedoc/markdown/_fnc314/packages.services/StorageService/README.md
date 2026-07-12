@@ -6,7 +6,7 @@
 
 # Interface: StorageService
 
-Defined in: [packages/services/lib/storage/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L1)
+Defined in: [packages/services/src/storage/index.ts:1](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L1)
 
 ## Methods
 
@@ -14,7 +14,7 @@ Defined in: [packages/services/lib/storage/index.ts:1](https://github.com/fnc314
 
 &gt; **clearData**(`key`: `string`): `void`
 
-Defined in: [packages/services/lib/storage/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L6)
+Defined in: [packages/services/src/storage/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L6)
 
 #### Parameters
 
@@ -51,7 +51,7 @@ Defined in: [packages/services/lib/storage/index.ts:6](https://github.com/fnc314
 
 &gt; **getData**(`key`: `string`, `defaultValue`: `string`): \{ `isDefault`: `boolean`; `value`: `string`; \}
 
-Defined in: [packages/services/lib/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L4)
+Defined in: [packages/services/src/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L4)
 
 #### Parameters
 
@@ -116,7 +116,7 @@ Defined in: [packages/services/lib/storage/index.ts:4](https://github.com/fnc314
 </td>
 <td>
 
-[packages/services/lib/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L4)
+[packages/services/src/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L4)
 
 </td>
 </tr>
@@ -133,7 +133,7 @@ Defined in: [packages/services/lib/storage/index.ts:4](https://github.com/fnc314
 </td>
 <td>
 
-[packages/services/lib/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L4)
+[packages/services/src/storage/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L4)
 
 </td>
 </tr>
@@ -146,7 +146,7 @@ Defined in: [packages/services/lib/storage/index.ts:4](https://github.com/fnc314
 
 &gt; **saveData**(`key`: `string`, `data`: `string`): `void`
 
-Defined in: [packages/services/lib/storage/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L2)
+Defined in: [packages/services/src/storage/index.ts:2](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L2)
 
 #### Parameters
 

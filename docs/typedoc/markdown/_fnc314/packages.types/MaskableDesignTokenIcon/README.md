@@ -6,7 +6,7 @@
 
 # Interface: MaskableDesignTokenIcon
 
-Defined in: [packages/types/lib/design-tokens/index.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L42)
+Defined in: [packages/types/src/design-tokens/index.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L42)
 
 Extends [DesignTokenIcon](../DesignTokenIcon/README.md) with a [DesignTokenIconMaskable.mask](../DesignTokenIconMaskable/README.md#mask)
 
@@ -54,7 +54,7 @@ Display for dark mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L6)
+[packages/types/src/design-tokens/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L6)
 
 </td>
 </tr>
@@ -81,7 +81,7 @@ Display for light mode
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L9)
+[packages/types/src/design-tokens/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L9)
 
 </td>
 </tr>
@@ -108,7 +108,7 @@ Display a masked version
 </td>
 <td>
 
-[packages/types/lib/design-tokens/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/design-tokens/index.ts#L25)
+[packages/types/src/design-tokens/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/design-tokens/index.ts#L25)
 
 </td>
 </tr>

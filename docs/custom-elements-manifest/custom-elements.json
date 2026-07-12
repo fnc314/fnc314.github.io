@@ -4,7 +4,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.styles.ts",
+      "path": "packages/components/src/bento-layout/bento-layout.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -25,7 +25,7 @@
           "name": "BentoLayoutStyles",
           "declaration": {
             "name": "BentoLayoutStyles",
-            "module": "packages/components/lib/bento-layout/bento-layout.styles.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.styles.ts"
           }
         },
         {
@@ -33,14 +33,14 @@
           "name": "TransitionStyles",
           "declaration": {
             "name": "TransitionStyles",
-            "module": "packages/components/lib/bento-layout/bento-layout.styles.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.js",
+      "path": "packages/components/src/bento-layout/bento-layout.js",
       "declarations": [
         {
           "kind": "class",
@@ -65,7 +65,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -74,7 +74,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -86,7 +86,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -98,7 +98,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -129,7 +129,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -140,8 +140,8 @@
           "tagName": "bento-layout",
           "customElement": true,
           "summary": "BentoLayout - The primary layout component implementing a responsive Bento Grid.\nConsolidates profile photo, bio, configurations, contact info, skills, education,\nwork experience, code projects, and blog posts into individual grid cards.",
-          "modulePath": "packages/components/lib/bento-layout/bento-layout.ts",
-          "definitionPath": "packages/components/lib/bento-layout/bento-layout.ts",
+          "modulePath": "packages/components/src/bento-layout/bento-layout.ts",
+          "definitionPath": "packages/components/src/bento-layout/bento-layout.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -156,7 +156,7 @@
           "name": "bento-layout",
           "declaration": {
             "name": "BentoLayout",
-            "module": "packages/components/lib/bento-layout/bento-layout.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.ts"
           }
         },
         {
@@ -164,14 +164,14 @@
           "name": "BentoLayout",
           "declaration": {
             "name": "BentoLayout",
-            "module": "packages/components/lib/bento-layout/bento-layout.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/bento-layout/bento-layout.types.ts",
+      "path": "packages/components/src/bento-layout/bento-layout.types.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -236,7 +236,7 @@
           "name": "BENTO_BOX_CONFIG",
           "declaration": {
             "name": "BENTO_BOX_CONFIG",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.types.ts"
           }
         },
         {
@@ -244,7 +244,7 @@
           "name": "BENTO_BOX_TYPES",
           "declaration": {
             "name": "BENTO_BOX_TYPES",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.types.ts"
           }
         },
         {
@@ -252,7 +252,7 @@
           "name": "BentoBoxConfigsArray",
           "declaration": {
             "name": "BentoBoxConfigsArray",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.types.ts"
           }
         },
         {
@@ -260,14 +260,14 @@
           "name": "getBentoDOMOrder",
           "declaration": {
             "name": "getBentoDOMOrder",
-            "module": "packages/components/lib/bento-layout/bento-layout.types.ts"
+            "module": "packages/components/src/bento-layout/bento-layout.types.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/bento/bento-card.styles.ts",
+      "path": "packages/components/src/card/bento/bento-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -282,14 +282,14 @@
           "name": "BentoCardStyles",
           "declaration": {
             "name": "BentoCardStyles",
-            "module": "packages/components/lib/card/bento/bento-card.styles.ts"
+            "module": "packages/components/src/card/bento/bento-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/bento/bento-card.js",
+      "path": "packages/components/src/card/bento/bento-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -349,7 +349,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -358,7 +358,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -395,7 +395,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -407,7 +407,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -436,7 +436,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -500,8 +500,8 @@
           "tagName": "bento-card",
           "customElement": true,
           "summary": "BentoCard - A reusable card component for the bento grid.\n\nA reusable card component designed for implementation within a responsive Bento Grid layout.\nIt handles the visual properties of the grid items, including Material Design 3 container tokens,\nglassmorphism filters, and interaction states.\n\n## Features\n- **Glassmorphism**: Built-in backdrop filters and semi-transparent backgrounds.\n- **Interaction**: Optional elevation and translation on hover/focus, controlled via properties.\n- **Theming**: Integrated with Material Design 3 tokens for consistent color and corner radius.\n- **Expansion**: Built-in collapsible behavior using `<details>` and `<summary>` with smooth height transitions.\n- **Header Styling**: Automatically styles slotted `h2` or `header`-slotted elements as section headers.\n- **Scrolling**: Optional `scrollable` mode for internal content overflow.",
-          "modulePath": "packages/components/lib/card/bento/bento-card.ts",
-          "definitionPath": "packages/components/lib/card/bento/bento-card.ts",
+          "modulePath": "packages/components/src/card/bento/bento-card.ts",
+          "definitionPath": "packages/components/src/card/bento/bento-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -514,7 +514,7 @@
           "name": "bento-card",
           "declaration": {
             "name": "BentoCard",
-            "module": "packages/components/lib/card/bento/bento-card.ts"
+            "module": "packages/components/src/card/bento/bento-card.ts"
           }
         },
         {
@@ -522,14 +522,14 @@
           "name": "BentoCard",
           "declaration": {
             "name": "BentoCard",
-            "module": "packages/components/lib/card/bento/bento-card.ts"
+            "module": "packages/components/src/card/bento/bento-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/blog/blog-card.styles.ts",
+      "path": "packages/components/src/card/blog/blog-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -544,14 +544,14 @@
           "name": "BlogCardStyles",
           "declaration": {
             "name": "BlogCardStyles",
-            "module": "packages/components/lib/card/blog/blog-card.styles.ts"
+            "module": "packages/components/src/card/blog/blog-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/blog/blog-card.js",
+      "path": "packages/components/src/card/blog/blog-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -569,7 +569,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -578,7 +578,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -611,7 +611,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -623,7 +623,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -636,7 +636,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -667,8 +667,8 @@
           "tagName": "blog-card",
           "customElement": true,
           "summary": "BlogCard - A card component displaying blog posts.",
-          "modulePath": "packages/components/lib/card/blog/blog-card.ts",
-          "definitionPath": "packages/components/lib/card/blog/blog-card.ts",
+          "modulePath": "packages/components/src/card/blog/blog-card.ts",
+          "definitionPath": "packages/components/src/card/blog/blog-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -682,7 +682,7 @@
           "name": "blog-card",
           "declaration": {
             "name": "BlogCard",
-            "module": "packages/components/lib/card/blog/blog-card.ts"
+            "module": "packages/components/src/card/blog/blog-card.ts"
           }
         },
         {
@@ -690,14 +690,14 @@
           "name": "BlogCard",
           "declaration": {
             "name": "BlogCard",
-            "module": "packages/components/lib/card/blog/blog-card.ts"
+            "module": "packages/components/src/card/blog/blog-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/code/code-card.styles.ts",
+      "path": "packages/components/src/card/code/code-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -712,14 +712,14 @@
           "name": "CodeCardStyles",
           "declaration": {
             "name": "CodeCardStyles",
-            "module": "packages/components/lib/card/code/code-card.styles.ts"
+            "module": "packages/components/src/card/code/code-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/code/code-card.js",
+      "path": "packages/components/src/card/code/code-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -737,7 +737,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -746,7 +746,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -779,7 +779,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -791,7 +791,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -804,7 +804,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -835,8 +835,8 @@
           "tagName": "code-card",
           "customElement": true,
           "summary": "CodeCard - A card component displaying code projects.",
-          "modulePath": "packages/components/lib/card/code/code-card.ts",
-          "definitionPath": "packages/components/lib/card/code/code-card.ts",
+          "modulePath": "packages/components/src/card/code/code-card.ts",
+          "definitionPath": "packages/components/src/card/code/code-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -850,7 +850,7 @@
           "name": "code-card",
           "declaration": {
             "name": "CodeCard",
-            "module": "packages/components/lib/card/code/code-card.ts"
+            "module": "packages/components/src/card/code/code-card.ts"
           }
         },
         {
@@ -858,14 +858,14 @@
           "name": "CodeCard",
           "declaration": {
             "name": "CodeCard",
-            "module": "packages/components/lib/card/code/code-card.ts"
+            "module": "packages/components/src/card/code/code-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/education/education-card.styles.ts",
+      "path": "packages/components/src/card/education/education-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -880,14 +880,14 @@
           "name": "EducationCardStyles",
           "declaration": {
             "name": "EducationCardStyles",
-            "module": "packages/components/lib/card/education/education-card.styles.ts"
+            "module": "packages/components/src/card/education/education-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/education/education-card.js",
+      "path": "packages/components/src/card/education/education-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -912,7 +912,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -921,7 +921,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -954,7 +954,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -966,7 +966,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -979,7 +979,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1010,8 +1010,8 @@
           "tagName": "education-card",
           "customElement": true,
           "summary": "EducationCard - A card component displaying education history.",
-          "modulePath": "packages/components/lib/card/education/education-card.ts",
-          "definitionPath": "packages/components/lib/card/education/education-card.ts",
+          "modulePath": "packages/components/src/card/education/education-card.ts",
+          "definitionPath": "packages/components/src/card/education/education-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1025,7 +1025,7 @@
           "name": "education-card",
           "declaration": {
             "name": "EducationCard",
-            "module": "packages/components/lib/card/education/education-card.ts"
+            "module": "packages/components/src/card/education/education-card.ts"
           }
         },
         {
@@ -1033,14 +1033,14 @@
           "name": "EducationCard",
           "declaration": {
             "name": "EducationCard",
-            "module": "packages/components/lib/card/education/education-card.ts"
+            "module": "packages/components/src/card/education/education-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/experience/experience-card.styles.ts",
+      "path": "packages/components/src/card/experience/experience-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -1055,14 +1055,14 @@
           "name": "WorkCardStyles",
           "declaration": {
             "name": "WorkCardStyles",
-            "module": "packages/components/lib/card/experience/experience-card.styles.ts"
+            "module": "packages/components/src/card/experience/experience-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/experience/experience-card.js",
+      "path": "packages/components/src/card/experience/experience-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -1080,7 +1080,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1089,7 +1089,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1122,7 +1122,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1134,7 +1134,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1147,7 +1147,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1178,8 +1178,8 @@
           "tagName": "experience-card",
           "customElement": true,
           "summary": "WorkCard - A card component displaying work experience.",
-          "modulePath": "packages/components/lib/card/experience/experience-card.ts",
-          "definitionPath": "packages/components/lib/card/experience/experience-card.ts",
+          "modulePath": "packages/components/src/card/experience/experience-card.ts",
+          "definitionPath": "packages/components/src/card/experience/experience-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1193,7 +1193,7 @@
           "name": "experience-card",
           "declaration": {
             "name": "ExperienceCard",
-            "module": "packages/components/lib/card/experience/experience-card.ts"
+            "module": "packages/components/src/card/experience/experience-card.ts"
           }
         },
         {
@@ -1201,14 +1201,14 @@
           "name": "ExperienceCard",
           "declaration": {
             "name": "ExperienceCard",
-            "module": "packages/components/lib/card/experience/experience-card.ts"
+            "module": "packages/components/src/card/experience/experience-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/profile/profile-card.styles.ts",
+      "path": "packages/components/src/card/profile/profile-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -1225,14 +1225,14 @@
           "name": "ProfileCardStyles",
           "declaration": {
             "name": "ProfileCardStyles",
-            "module": "packages/components/lib/card/profile/profile-card.styles.ts"
+            "module": "packages/components/src/card/profile/profile-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/profile/profile-card.js",
+      "path": "packages/components/src/card/profile/profile-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -1263,7 +1263,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1282,7 +1282,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1325,7 +1325,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1337,7 +1337,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1355,7 +1355,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1392,8 +1392,8 @@
           "tagName": "profile-card",
           "customElement": true,
           "summary": "A responsive card component that displays a profile photo and biography.",
-          "modulePath": "packages/components/lib/card/profile/profile-card.ts",
-          "definitionPath": "packages/components/lib/card/profile/profile-card.ts",
+          "modulePath": "packages/components/src/card/profile/profile-card.ts",
+          "definitionPath": "packages/components/src/card/profile/profile-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1407,7 +1407,7 @@
           "name": "profile-card",
           "declaration": {
             "name": "ProfileCard",
-            "module": "packages/components/lib/card/profile/profile-card.ts"
+            "module": "packages/components/src/card/profile/profile-card.ts"
           }
         },
         {
@@ -1415,14 +1415,14 @@
           "name": "ProfileCard",
           "declaration": {
             "name": "ProfileCard",
-            "module": "packages/components/lib/card/profile/profile-card.ts"
+            "module": "packages/components/src/card/profile/profile-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/settings/settings-card.styles.ts",
+      "path": "packages/components/src/card/settings/settings-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -1439,14 +1439,14 @@
           "name": "SettingsCardStyles",
           "declaration": {
             "name": "SettingsCardStyles",
-            "module": "packages/components/lib/card/settings/settings-card.styles.ts"
+            "module": "packages/components/src/card/settings/settings-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/settings/settings-card.js",
+      "path": "packages/components/src/card/settings/settings-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -1511,7 +1511,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1520,7 +1520,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1553,7 +1553,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1572,7 +1572,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1585,7 +1585,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1624,8 +1624,8 @@
           "tagName": "settings-card",
           "customElement": true,
           "summary": "A card component for managing application settings, including theme, contrast, and UI mode.",
-          "modulePath": "packages/components/lib/card/settings/settings-card.ts",
-          "definitionPath": "packages/components/lib/card/settings/settings-card.ts",
+          "modulePath": "packages/components/src/card/settings/settings-card.ts",
+          "definitionPath": "packages/components/src/card/settings/settings-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1638,7 +1638,7 @@
           "name": "settings-card",
           "declaration": {
             "name": "SettingsCard",
-            "module": "packages/components/lib/card/settings/settings-card.ts"
+            "module": "packages/components/src/card/settings/settings-card.ts"
           }
         },
         {
@@ -1646,14 +1646,14 @@
           "name": "SettingsCard",
           "declaration": {
             "name": "SettingsCard",
-            "module": "packages/components/lib/card/settings/settings-card.ts"
+            "module": "packages/components/src/card/settings/settings-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/skills/skills-card.styles.ts",
+      "path": "packages/components/src/card/skills/skills-card.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -1668,14 +1668,14 @@
           "name": "SkillsCardStyles",
           "declaration": {
             "name": "SkillsCardStyles",
-            "module": "packages/components/lib/card/skills/skills-card.styles.ts"
+            "module": "packages/components/src/card/skills/skills-card.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/card/skills/skills-card.js",
+      "path": "packages/components/src/card/skills/skills-card.js",
       "declarations": [
         {
           "kind": "class",
@@ -1693,7 +1693,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1702,7 +1702,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1740,7 +1740,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1752,7 +1752,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1765,7 +1765,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1796,8 +1796,8 @@
           "tagName": "skills-card",
           "customElement": true,
           "summary": "SkillsCard - A card component displaying a skill word cloud.",
-          "modulePath": "packages/components/lib/card/skills/skills-card.ts",
-          "definitionPath": "packages/components/lib/card/skills/skills-card.ts",
+          "modulePath": "packages/components/src/card/skills/skills-card.ts",
+          "definitionPath": "packages/components/src/card/skills/skills-card.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1811,7 +1811,7 @@
           "name": "skills-card",
           "declaration": {
             "name": "SkillsCard",
-            "module": "packages/components/lib/card/skills/skills-card.ts"
+            "module": "packages/components/src/card/skills/skills-card.ts"
           }
         },
         {
@@ -1819,14 +1819,14 @@
           "name": "SkillsCard",
           "declaration": {
             "name": "SkillsCard",
-            "module": "packages/components/lib/card/skills/skills-card.ts"
+            "module": "packages/components/src/card/skills/skills-card.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/code/repo/code-repo.styles.ts",
+      "path": "packages/components/src/code/repo/code-repo.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -1844,14 +1844,14 @@
           "name": "CodeRepoStyles",
           "declaration": {
             "name": "CodeRepoStyles",
-            "module": "packages/components/lib/code/repo/code-repo.styles.ts"
+            "module": "packages/components/src/code/repo/code-repo.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/code/repo/code-repo.js",
+      "path": "packages/components/src/code/repo/code-repo.js",
       "declarations": [
         {
           "kind": "class",
@@ -1869,7 +1869,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1906,7 +1906,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1918,7 +1918,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1930,7 +1930,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -1943,7 +1943,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -1965,8 +1965,8 @@
           },
           "tagName": "code-repo",
           "customElement": true,
-          "modulePath": "packages/components/lib/code/repo/code-repo.ts",
-          "definitionPath": "packages/components/lib/code/repo/code-repo.ts",
+          "modulePath": "packages/components/src/code/repo/code-repo.ts",
+          "definitionPath": "packages/components/src/code/repo/code-repo.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -1980,7 +1980,7 @@
           "name": "code-repo",
           "declaration": {
             "name": "CodeRepo",
-            "module": "packages/components/lib/code/repo/code-repo.ts"
+            "module": "packages/components/src/code/repo/code-repo.ts"
           }
         },
         {
@@ -1988,14 +1988,14 @@
           "name": "CodeRepo",
           "declaration": {
             "name": "CodeRepo",
-            "module": "packages/components/lib/code/repo/code-repo.ts"
+            "module": "packages/components/src/code/repo/code-repo.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/artifact/artifact-connection.styles.ts",
+      "path": "packages/components/src/connection/artifact/artifact-connection.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -2012,14 +2012,14 @@
           "name": "ConnectionArtifactStyles",
           "declaration": {
             "name": "ConnectionArtifactStyles",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.styles.ts"
+            "module": "packages/components/src/connection/artifact/artifact-connection.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/artifact/artifact-connection.js",
+      "path": "packages/components/src/connection/artifact/artifact-connection.js",
       "declarations": [
         {
           "kind": "class",
@@ -2055,7 +2055,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2064,7 +2064,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2076,7 +2076,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2088,7 +2088,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2101,7 +2101,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -2131,8 +2131,8 @@
           },
           "tagName": "artifact-connection",
           "customElement": true,
-          "modulePath": "packages/components/lib/connection/artifact/artifact-connection.ts",
-          "definitionPath": "packages/components/lib/connection/artifact/artifact-connection.ts",
+          "modulePath": "packages/components/src/connection/artifact/artifact-connection.ts",
+          "definitionPath": "packages/components/src/connection/artifact/artifact-connection.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -2146,7 +2146,7 @@
           "name": "artifact-connection",
           "declaration": {
             "name": "ArtifactConnection",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.ts"
+            "module": "packages/components/src/connection/artifact/artifact-connection.ts"
           }
         },
         {
@@ -2154,14 +2154,14 @@
           "name": "ArtifactConnection",
           "declaration": {
             "name": "ArtifactConnection",
-            "module": "packages/components/lib/connection/artifact/artifact-connection.ts"
+            "module": "packages/components/src/connection/artifact/artifact-connection.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/direct/direct-connection.styles.ts",
+      "path": "packages/components/src/connection/direct/direct-connection.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -2178,14 +2178,14 @@
           "name": "DirectConnectionStyles",
           "declaration": {
             "name": "DirectConnectionStyles",
-            "module": "packages/components/lib/connection/direct/direct-connection.styles.ts"
+            "module": "packages/components/src/connection/direct/direct-connection.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/direct/direct-connection.js",
+      "path": "packages/components/src/connection/direct/direct-connection.js",
       "declarations": [
         {
           "kind": "class",
@@ -2203,7 +2203,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2221,7 +2221,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2233,7 +2233,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2245,7 +2245,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2258,7 +2258,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -2278,8 +2278,8 @@
           },
           "tagName": "direct-connection",
           "customElement": true,
-          "modulePath": "packages/components/lib/connection/direct/direct-connection.ts",
-          "definitionPath": "packages/components/lib/connection/direct/direct-connection.ts",
+          "modulePath": "packages/components/src/connection/direct/direct-connection.ts",
+          "definitionPath": "packages/components/src/connection/direct/direct-connection.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -2293,7 +2293,7 @@
           "name": "direct-connection",
           "declaration": {
             "name": "DirectConnection",
-            "module": "packages/components/lib/connection/direct/direct-connection.ts"
+            "module": "packages/components/src/connection/direct/direct-connection.ts"
           }
         },
         {
@@ -2301,14 +2301,14 @@
           "name": "DirectConnection",
           "declaration": {
             "name": "DirectConnection",
-            "module": "packages/components/lib/connection/direct/direct-connection.ts"
+            "module": "packages/components/src/connection/direct/direct-connection.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/professional/professional-connection.styles.ts",
+      "path": "packages/components/src/connection/professional/professional-connection.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -2325,14 +2325,14 @@
           "name": "ProfessionalConnectionStyles",
           "declaration": {
             "name": "ProfessionalConnectionStyles",
-            "module": "packages/components/lib/connection/professional/professional-connection.styles.ts"
+            "module": "packages/components/src/connection/professional/professional-connection.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/connection/professional/professional-connection.js",
+      "path": "packages/components/src/connection/professional/professional-connection.js",
       "declarations": [
         {
           "kind": "class",
@@ -2350,7 +2350,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2359,7 +2359,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2371,7 +2371,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2383,7 +2383,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2414,7 +2414,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -2444,8 +2444,8 @@
           },
           "tagName": "professional-connection",
           "customElement": true,
-          "modulePath": "packages/components/lib/connection/professional/professional-connection.ts",
-          "definitionPath": "packages/components/lib/connection/professional/professional-connection.ts",
+          "modulePath": "packages/components/src/connection/professional/professional-connection.ts",
+          "definitionPath": "packages/components/src/connection/professional/professional-connection.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -2459,7 +2459,7 @@
           "name": "professional-connection",
           "declaration": {
             "name": "ProfessionalConnection",
-            "module": "packages/components/lib/connection/professional/professional-connection.ts"
+            "module": "packages/components/src/connection/professional/professional-connection.ts"
           }
         },
         {
@@ -2467,14 +2467,14 @@
           "name": "ProfessionalConnection",
           "declaration": {
             "name": "ProfessionalConnection",
-            "module": "packages/components/lib/connection/professional/professional-connection.ts"
+            "module": "packages/components/src/connection/professional/professional-connection.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/education/institution/education-institution.styles.ts",
+      "path": "packages/components/src/education/institution/education-institution.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -2491,14 +2491,14 @@
           "name": "EducationInstitutionStyles",
           "declaration": {
             "name": "EducationInstitutionStyles",
-            "module": "packages/components/lib/education/institution/education-institution.styles.ts"
+            "module": "packages/components/src/education/institution/education-institution.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/education/institution/education-institution.js",
+      "path": "packages/components/src/education/institution/education-institution.js",
       "declarations": [
         {
           "kind": "class",
@@ -2516,7 +2516,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2525,7 +2525,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2546,7 +2546,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2558,7 +2558,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -2571,7 +2571,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -2592,8 +2592,8 @@
           },
           "tagName": "education-institution",
           "customElement": true,
-          "modulePath": "packages/components/lib/education/institution/education-institution.ts",
-          "definitionPath": "packages/components/lib/education/institution/education-institution.ts",
+          "modulePath": "packages/components/src/education/institution/education-institution.ts",
+          "definitionPath": "packages/components/src/education/institution/education-institution.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -2607,7 +2607,7 @@
           "name": "education-institution",
           "declaration": {
             "name": "EducationInstitution",
-            "module": "packages/components/lib/education/institution/education-institution.ts"
+            "module": "packages/components/src/education/institution/education-institution.ts"
           }
         },
         {
@@ -2615,14 +2615,14 @@
           "name": "EducationInstitution",
           "declaration": {
             "name": "EducationInstitution",
-            "module": "packages/components/lib/education/institution/education-institution.ts"
+            "module": "packages/components/src/education/institution/education-institution.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/index.ts",
+      "path": "packages/components/src/index.ts",
       "declarations": [],
       "exports": [
         {
@@ -3181,7 +3181,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/mixins/size-observer-element/size-observer-element.ts",
+      "path": "packages/components/src/mixins/size-observer-element/size-observer-element.ts",
       "declarations": [
         {
           "kind": "mixin",
@@ -3226,14 +3226,14 @@
           "name": "SizeObserverElement",
           "declaration": {
             "name": "SizeObserverElement",
-            "module": "packages/components/lib/mixins/size-observer-element/size-observer-element.ts"
+            "module": "packages/components/src/mixins/size-observer-element/size-observer-element.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.js",
+      "path": "packages/components/src/mixins/ui-aware-element/ui-aware-element.js",
       "declarations": [
         {
           "kind": "class",
@@ -3283,7 +3283,7 @@
             "package": "lit"
           },
           "customElement": true,
-          "modulePath": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+          "modulePath": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
         }
       ],
       "exports": [
@@ -3292,14 +3292,14 @@
           "name": "UIAwareElement",
           "declaration": {
             "name": "UIAwareElement",
-            "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+            "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/publication/blog/entry/blog-entry.styles.ts",
+      "path": "packages/components/src/publication/blog/entry/blog-entry.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -3316,14 +3316,14 @@
           "name": "BlogEntryStyles",
           "declaration": {
             "name": "BlogEntryStyles",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.styles.ts"
+            "module": "packages/components/src/publication/blog/entry/blog-entry.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/publication/blog/entry/blog-entry.js",
+      "path": "packages/components/src/publication/blog/entry/blog-entry.js",
       "declarations": [
         {
           "kind": "class",
@@ -3351,7 +3351,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3360,7 +3360,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3372,7 +3372,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3384,7 +3384,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3397,7 +3397,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -3420,8 +3420,8 @@
           "summary": "Represents a published series entry.",
           "tagName": "blog-entry",
           "customElement": true,
-          "modulePath": "packages/components/lib/publication/blog/entry/blog-entry.ts",
-          "definitionPath": "packages/components/lib/publication/blog/entry/blog-entry.ts",
+          "modulePath": "packages/components/src/publication/blog/entry/blog-entry.ts",
+          "definitionPath": "packages/components/src/publication/blog/entry/blog-entry.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -3435,7 +3435,7 @@
           "name": "blog-entry",
           "declaration": {
             "name": "BlogEntry",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.ts"
+            "module": "packages/components/src/publication/blog/entry/blog-entry.ts"
           }
         },
         {
@@ -3443,14 +3443,14 @@
           "name": "BlogEntry",
           "declaration": {
             "name": "BlogEntry",
-            "module": "packages/components/lib/publication/blog/entry/blog-entry.ts"
+            "module": "packages/components/src/publication/blog/entry/blog-entry.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/dynamic-border.ts",
+      "path": "packages/components/src/styles/dynamic-border.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -3467,14 +3467,14 @@
           "name": "DynamicBorderStyles",
           "declaration": {
             "name": "DynamicBorderStyles",
-            "module": "packages/components/lib/styles/dynamic-border.ts"
+            "module": "packages/components/src/styles/dynamic-border.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/index.ts",
+      "path": "packages/components/src/styles/index.ts",
       "declarations": [],
       "exports": [
         {
@@ -3601,7 +3601,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/styles/text.ts",
+      "path": "packages/components/src/styles/text.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -3619,14 +3619,14 @@
           "name": "TextStyles",
           "declaration": {
             "name": "TextStyles",
-            "module": "packages/components/lib/styles/text.ts"
+            "module": "packages/components/src/styles/text.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts",
+      "path": "packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -3643,14 +3643,14 @@
           "name": "UIModeToggleStyles",
           "declaration": {
             "name": "UIModeToggleStyles",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts"
+            "module": "packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.js",
+      "path": "packages/components/src/ui-mode-toggle/ui-mode-toggle.js",
       "declarations": [
         {
           "kind": "class",
@@ -3692,7 +3692,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3708,7 +3708,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3733,7 +3733,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3752,7 +3752,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3804,7 +3804,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -3853,8 +3853,8 @@
           "tagName": "ui-mode-toggle",
           "customElement": true,
           "summary": "A standalone component for managing and toggling the UI color scheme (light, dark, system)\nand persistence. This component acts as a wrapper around the `dark-mode-toggle` custom element,\nintegrating its functionality with the application\"s global `configsService` for state management\nand `themeService` for dynamic theme application.",
-          "modulePath": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts",
-          "definitionPath": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts",
+          "modulePath": "packages/components/src/ui-mode-toggle/ui-mode-toggle.ts",
+          "definitionPath": "packages/components/src/ui-mode-toggle/ui-mode-toggle.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -3867,7 +3867,7 @@
           "name": "ui-mode-toggle",
           "declaration": {
             "name": "UiModeToggle",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts"
+            "module": "packages/components/src/ui-mode-toggle/ui-mode-toggle.ts"
           }
         },
         {
@@ -3875,14 +3875,14 @@
           "name": "UiModeToggle",
           "declaration": {
             "name": "UiModeToggle",
-            "module": "packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts"
+            "module": "packages/components/src/ui-mode-toggle/ui-mode-toggle.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/version-tag/version-tag.js",
+      "path": "packages/components/src/version-tag/version-tag.js",
       "declarations": [
         {
           "kind": "class",
@@ -3900,7 +3900,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3909,7 +3909,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3928,7 +3928,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3940,7 +3940,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -3953,7 +3953,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -3963,8 +3963,8 @@
           },
           "tagName": "version-tag",
           "customElement": true,
-          "modulePath": "packages/components/lib/version-tag/version-tag.ts",
-          "definitionPath": "packages/components/lib/version-tag/version-tag.ts",
+          "modulePath": "packages/components/src/version-tag/version-tag.ts",
+          "definitionPath": "packages/components/src/version-tag/version-tag.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -3979,7 +3979,7 @@
           "name": "version-tag",
           "declaration": {
             "name": "VersionTag",
-            "module": "packages/components/lib/version-tag/version-tag.ts"
+            "module": "packages/components/src/version-tag/version-tag.ts"
           }
         },
         {
@@ -3987,14 +3987,14 @@
           "name": "VersionTag",
           "declaration": {
             "name": "VersionTag",
-            "module": "packages/components/lib/version-tag/version-tag.ts"
+            "module": "packages/components/src/version-tag/version-tag.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.styles.ts",
+      "path": "packages/components/src/word/cloud/word-cloud.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -4011,14 +4011,14 @@
           "name": "WordCloudStyles",
           "declaration": {
             "name": "WordCloudStyles",
-            "module": "packages/components/lib/word/cloud/word-cloud.styles.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.js",
+      "path": "packages/components/src/word/cloud/word-cloud.js",
       "declarations": [
         {
           "kind": "class",
@@ -4183,7 +4183,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4192,7 +4192,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4242,7 +4242,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4254,7 +4254,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4284,7 +4284,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4381,8 +4381,8 @@
           },
           "tagName": "word-cloud",
           "customElement": true,
-          "modulePath": "packages/components/lib/word/cloud/word-cloud.ts",
-          "definitionPath": "packages/components/lib/word/cloud/word-cloud.ts",
+          "modulePath": "packages/components/src/word/cloud/word-cloud.ts",
+          "definitionPath": "packages/components/src/word/cloud/word-cloud.ts",
           "cssParts": [],
           "cssStates": [],
           "events": [],
@@ -4395,7 +4395,7 @@
           "name": "word-cloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "packages/components/lib/word/cloud/word-cloud.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.ts"
           }
         },
         {
@@ -4403,14 +4403,14 @@
           "name": "WordCloud",
           "declaration": {
             "name": "WordCloud",
-            "module": "packages/components/lib/word/cloud/word-cloud.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/cloud/word-cloud.types.ts",
+      "path": "packages/components/src/word/cloud/word-cloud.types.ts",
       "declarations": [
         {
           "kind": "function",
@@ -4480,7 +4480,7 @@
           "name": "makeWordCloudWord",
           "declaration": {
             "name": "makeWordCloudWord",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.types.ts"
           }
         },
         {
@@ -4488,7 +4488,7 @@
           "name": "WordCloudAppearances",
           "declaration": {
             "name": "WordCloudAppearances",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.types.ts"
           }
         },
         {
@@ -4496,7 +4496,7 @@
           "name": "WordCloudGroupings",
           "declaration": {
             "name": "WordCloudGroupings",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.types.ts"
           }
         },
         {
@@ -4504,14 +4504,14 @@
           "name": "WordCloudSortings",
           "declaration": {
             "name": "WordCloudSortings",
-            "module": "packages/components/lib/word/cloud/word-cloud.types.ts"
+            "module": "packages/components/src/word/cloud/word-cloud.types.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.styles.ts",
+      "path": "packages/components/src/word/tag/word-tag.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -4528,14 +4528,14 @@
           "name": "WordTagStyles",
           "declaration": {
             "name": "WordTagStyles",
-            "module": "packages/components/lib/word/tag/word-tag.styles.ts"
+            "module": "packages/components/src/word/tag/word-tag.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.js",
+      "path": "packages/components/src/word/tag/word-tag.js",
       "declarations": [
         {
           "kind": "class",
@@ -4601,7 +4601,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4610,7 +4610,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4658,7 +4658,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4670,7 +4670,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4683,7 +4683,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4747,8 +4747,8 @@
           "summary": "Displays a word in a simple padded box in which the text color and border are synchronised",
           "tagName": "word-tag",
           "customElement": true,
-          "modulePath": "packages/components/lib/word/tag/word-tag.ts",
-          "definitionPath": "packages/components/lib/word/tag/word-tag.ts",
+          "modulePath": "packages/components/src/word/tag/word-tag.ts",
+          "definitionPath": "packages/components/src/word/tag/word-tag.ts",
           "cssParts": [],
           "cssStates": [],
           "events": []
@@ -4760,7 +4760,7 @@
           "name": "word-tag",
           "declaration": {
             "name": "WordTag",
-            "module": "packages/components/lib/word/tag/word-tag.ts"
+            "module": "packages/components/src/word/tag/word-tag.ts"
           }
         },
         {
@@ -4768,14 +4768,14 @@
           "name": "WordTag",
           "declaration": {
             "name": "WordTag",
-            "module": "packages/components/lib/word/tag/word-tag.ts"
+            "module": "packages/components/src/word/tag/word-tag.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/word/tag/word-tag.types.ts",
+      "path": "packages/components/src/word/tag/word-tag.types.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -4793,14 +4793,14 @@
           "name": "WordTagVariantAttributeConverter",
           "declaration": {
             "name": "WordTagVariantAttributeConverter",
-            "module": "packages/components/lib/word/tag/word-tag.types.ts"
+            "module": "packages/components/src/word/tag/word-tag.types.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/work/experience/work-experience.styles.ts",
+      "path": "packages/components/src/work/experience/work-experience.styles.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -4817,14 +4817,14 @@
           "name": "WorkExperienceStyles",
           "declaration": {
             "name": "WorkExperienceStyles",
-            "module": "packages/components/lib/work/experience/work-experience.styles.ts"
+            "module": "packages/components/src/work/experience/work-experience.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/components/lib/work/experience/work-experience.js",
+      "path": "packages/components/src/work/experience/work-experience.js",
       "declarations": [
         {
           "kind": "class",
@@ -4842,7 +4842,7 @@
               "description": "The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by *SCREEN* width against\n  @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4851,7 +4851,7 @@
               "privacy": "protected",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4924,7 +4924,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4936,7 +4936,7 @@
               "privacy": "private",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             },
             {
@@ -4967,7 +4967,7 @@
               "description": "Reads @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN from `:root`\n  and tests against `\"true\"`,",
               "inheritedFrom": {
                 "name": "UIAwareElement",
-                "module": "packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts"
+                "module": "packages/components/src/mixins/ui-aware-element/ui-aware-element.ts"
               }
             }
           ],
@@ -5051,8 +5051,8 @@
           "summary": "A component for displaying professional work experience entries.  Supports nesting\nfor sub-roles or specific project assignments under a single employer.",
           "tagName": "work-experience",
           "customElement": true,
-          "modulePath": "packages/components/lib/work/experience/work-experience.ts",
-          "definitionPath": "packages/components/lib/work/experience/work-experience.ts",
+          "modulePath": "packages/components/src/work/experience/work-experience.ts",
+          "definitionPath": "packages/components/src/work/experience/work-experience.ts",
           "cssProperties": [],
           "cssParts": [],
           "cssStates": [],
@@ -5066,7 +5066,7 @@
           "name": "work-experience",
           "declaration": {
             "name": "WorkExperience",
-            "module": "packages/components/lib/work/experience/work-experience.ts"
+            "module": "packages/components/src/work/experience/work-experience.ts"
           }
         },
         {
@@ -5074,14 +5074,14 @@
           "name": "WorkExperience",
           "declaration": {
             "name": "WorkExperience",
-            "module": "packages/components/lib/work/experience/work-experience.ts"
+            "module": "packages/components/src/work/experience/work-experience.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/bio/index.ts",
+      "path": "packages/data/src/bio/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5098,14 +5098,14 @@
           "name": "Biographies",
           "declaration": {
             "name": "Biographies",
-            "module": "packages/data/lib/bio/index.ts"
+            "module": "packages/data/src/bio/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/blog/index.ts",
+      "path": "packages/data/src/blog/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5122,14 +5122,14 @@
           "name": "Blogs",
           "declaration": {
             "name": "Blogs",
-            "module": "packages/data/lib/blog/index.ts"
+            "module": "packages/data/src/blog/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/code/index.ts",
+      "path": "packages/data/src/code/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5146,14 +5146,14 @@
           "name": "Projects",
           "declaration": {
             "name": "Projects",
-            "module": "packages/data/lib/code/index.ts"
+            "module": "packages/data/src/code/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/connections/index.ts",
+      "path": "packages/data/src/connections/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5170,14 +5170,14 @@
           "name": "Connections",
           "declaration": {
             "name": "Connections",
-            "module": "packages/data/lib/connections/index.ts"
+            "module": "packages/data/src/connections/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/education/index.ts",
+      "path": "packages/data/src/education/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5194,14 +5194,14 @@
           "name": "EducationJsonData",
           "declaration": {
             "name": "EducationJsonData",
-            "module": "packages/data/lib/education/index.ts"
+            "module": "packages/data/src/education/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/experience/index.ts",
+      "path": "packages/data/src/experience/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5218,14 +5218,14 @@
           "name": "Experiences",
           "declaration": {
             "name": "Experiences",
-            "module": "packages/data/lib/experience/index.ts"
+            "module": "packages/data/src/experience/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/index.ts",
+      "path": "packages/data/src/index.ts",
       "declarations": [],
       "exports": [
         {
@@ -5296,7 +5296,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/photo/index.ts",
+      "path": "packages/data/src/photo/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5313,14 +5313,14 @@
           "name": "Photos",
           "declaration": {
             "name": "Photos",
-            "module": "packages/data/lib/photo/index.ts"
+            "module": "packages/data/src/photo/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/data/lib/skills/index.ts",
+      "path": "packages/data/src/skills/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5337,7 +5337,7 @@
           "name": "Skills",
           "declaration": {
             "name": "Skills",
-            "module": "packages/data/lib/skills/index.ts"
+            "module": "packages/data/src/skills/index.ts"
           }
         }
       ]
@@ -5591,7 +5591,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/configs/index.ts",
+      "path": "packages/services/src/configs/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5608,14 +5608,14 @@
           "name": "configsService",
           "declaration": {
             "name": "configsService",
-            "module": "packages/services/lib/configs/index.ts"
+            "module": "packages/services/src/configs/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/index.ts",
+      "path": "packages/services/src/index.ts",
       "declarations": [],
       "exports": [
         {
@@ -5646,7 +5646,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/storage/index.ts",
+      "path": "packages/services/src/storage/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5663,14 +5663,14 @@
           "name": "storageService",
           "declaration": {
             "name": "storageService",
-            "module": "packages/services/lib/storage/index.ts"
+            "module": "packages/services/src/storage/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/chicago/index.ts",
+      "path": "packages/services/src/theme/chicago/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5691,14 +5691,14 @@
           "name": "ChicagoThemeConfig",
           "declaration": {
             "name": "ChicagoThemeConfig",
-            "module": "packages/services/lib/theme/chicago/index.ts"
+            "module": "packages/services/src/theme/chicago/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/index.ts",
+      "path": "packages/services/src/theme/index.ts",
       "declarations": [
         {
           "kind": "function",
@@ -5804,7 +5804,7 @@
           "name": "colorSchemeConfigsToMaterialSchemeName",
           "declaration": {
             "name": "colorSchemeConfigsToMaterialSchemeName",
-            "module": "packages/services/lib/theme/index.ts"
+            "module": "packages/services/src/theme/index.ts"
           }
         },
         {
@@ -5812,7 +5812,7 @@
           "name": "MaterialCSSStyleSheet",
           "declaration": {
             "name": "MaterialCSSStyleSheet",
-            "module": "packages/services/lib/theme/index.ts"
+            "module": "packages/services/src/theme/index.ts"
           }
         },
         {
@@ -5820,7 +5820,7 @@
           "name": "onThemeChange",
           "declaration": {
             "name": "onThemeChange",
-            "module": "packages/services/lib/theme/index.ts"
+            "module": "packages/services/src/theme/index.ts"
           }
         },
         {
@@ -5828,7 +5828,7 @@
           "name": "THEME_CONFIGS",
           "declaration": {
             "name": "THEME_CONFIGS",
-            "module": "packages/services/lib/theme/index.ts"
+            "module": "packages/services/src/theme/index.ts"
           }
         },
         {
@@ -5836,14 +5836,14 @@
           "name": "themeService",
           "declaration": {
             "name": "themeService",
-            "module": "packages/services/lib/theme/index.ts"
+            "module": "packages/services/src/theme/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/inter/index.ts",
+      "path": "packages/services/src/theme/inter/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5864,14 +5864,14 @@
           "name": "InterThemeConfig",
           "declaration": {
             "name": "InterThemeConfig",
-            "module": "packages/services/lib/theme/inter/index.ts"
+            "module": "packages/services/src/theme/inter/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/red/index.ts",
+      "path": "packages/services/src/theme/red/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5892,14 +5892,14 @@
           "name": "RedThemeConfig",
           "declaration": {
             "name": "RedThemeConfig",
-            "module": "packages/services/lib/theme/red/index.ts"
+            "module": "packages/services/src/theme/red/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/sunset/index.ts",
+      "path": "packages/services/src/theme/sunset/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -5920,14 +5920,14 @@
           "name": "SunsetThemeConfig",
           "declaration": {
             "name": "SunsetThemeConfig",
-            "module": "packages/services/lib/theme/sunset/index.ts"
+            "module": "packages/services/src/theme/sunset/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/services/lib/theme/utils.ts",
+      "path": "packages/services/src/theme/utils.ts",
       "declarations": [
         {
           "kind": "function",
@@ -6018,7 +6018,7 @@
           "name": "colorSchemeContrastToIcon",
           "declaration": {
             "name": "colorSchemeContrastToIcon",
-            "module": "packages/services/lib/theme/utils.ts"
+            "module": "packages/services/src/theme/utils.ts"
           }
         },
         {
@@ -6026,7 +6026,7 @@
           "name": "jsonIsThemeJsonSchemes",
           "declaration": {
             "name": "jsonIsThemeJsonSchemes",
-            "module": "packages/services/lib/theme/utils.ts"
+            "module": "packages/services/src/theme/utils.ts"
           }
         },
         {
@@ -6034,7 +6034,7 @@
           "name": "keyTransform",
           "declaration": {
             "name": "keyTransform",
-            "module": "packages/services/lib/theme/utils.ts"
+            "module": "packages/services/src/theme/utils.ts"
           }
         },
         {
@@ -6042,26 +6042,26 @@
           "name": "readScheme",
           "declaration": {
             "name": "readScheme",
-            "module": "packages/services/lib/theme/utils.ts"
+            "module": "packages/services/src/theme/utils.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/bio/index.ts",
+      "path": "packages/types/src/bio/index.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/blog/index.ts",
+      "path": "packages/types/src/blog/index.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/code/index.ts",
+      "path": "packages/types/src/code/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -6088,7 +6088,7 @@
           "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
           "declaration": {
             "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-            "module": "packages/types/lib/code/index.ts"
+            "module": "packages/types/src/code/index.ts"
           }
         },
         {
@@ -6096,14 +6096,14 @@
           "name": "WORD_TAG_SIZES",
           "declaration": {
             "name": "WORD_TAG_SIZES",
-            "module": "packages/types/lib/code/index.ts"
+            "module": "packages/types/src/code/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/configs/index.ts",
+      "path": "packages/types/src/configs/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -6120,14 +6120,14 @@
           "name": "DEFAULT_APP_CONFIGS",
           "declaration": {
             "name": "DEFAULT_APP_CONFIGS",
-            "module": "packages/types/lib/configs/index.ts"
+            "module": "packages/types/src/configs/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/connections/index.ts",
+      "path": "packages/types/src/connections/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -6152,7 +6152,7 @@
           "name": "ArtifactConnections",
           "declaration": {
             "name": "ArtifactConnections",
-            "module": "packages/types/lib/connections/index.ts"
+            "module": "packages/types/src/connections/index.ts"
           }
         },
         {
@@ -6160,32 +6160,32 @@
           "name": "ProfessionalConnectionTypes",
           "declaration": {
             "name": "ProfessionalConnectionTypes",
-            "module": "packages/types/lib/connections/index.ts"
+            "module": "packages/types/src/connections/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/design-tokens/index.ts",
+      "path": "packages/types/src/design-tokens/index.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/education/index.ts",
+      "path": "packages/types/src/education/index.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/experience/index.ts",
+      "path": "packages/types/src/experience/index.ts",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/index.ts",
+      "path": "packages/types/src/index.ts",
       "declarations": [],
       "exports": [
         {
@@ -6264,7 +6264,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/types/lib/theme/index.ts",
+      "path": "packages/types/src/theme/index.ts",
       "declarations": [
         {
           "kind": "variable",
@@ -6309,7 +6309,7 @@
           "name": "CONFIG_COLOR_CONTRAST_NAMES",
           "declaration": {
             "name": "CONFIG_COLOR_CONTRAST_NAMES",
-            "module": "packages/types/lib/theme/index.ts"
+            "module": "packages/types/src/theme/index.ts"
           }
         },
         {
@@ -6317,7 +6317,7 @@
           "name": "CONFIG_COLOR_SCHEME_NAMES",
           "declaration": {
             "name": "CONFIG_COLOR_SCHEME_NAMES",
-            "module": "packages/types/lib/theme/index.ts"
+            "module": "packages/types/src/theme/index.ts"
           }
         },
         {
@@ -6333,7 +6333,7 @@
           "name": "setRGBA",
           "declaration": {
             "name": "setRGBA",
-            "module": "packages/types/lib/theme/index.ts"
+            "module": "packages/types/src/theme/index.ts"
           }
         },
         {
@@ -6341,7 +6341,7 @@
           "name": "THEME_NAMES",
           "declaration": {
             "name": "THEME_NAMES",
-            "module": "packages/types/lib/theme/index.ts"
+            "module": "packages/types/src/theme/index.ts"
           }
         }
       ]

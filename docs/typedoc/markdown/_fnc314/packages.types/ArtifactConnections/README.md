@@ -8,7 +8,7 @@
 
 &gt; `const` **ArtifactConnections**: \{ `googleDocs`: `"googleDoc"`; `pdf`: `"pdf"`; \}
 
-Defined in: [packages/types/lib/connections/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L18)
+Defined in: [packages/types/src/connections/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L18)
 
 ## Type Declaration
 
@@ -34,7 +34,7 @@ Defined in: [packages/types/lib/connections/index.ts:18](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L19)
+[packages/types/src/connections/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L19)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/types/lib/connections/index.ts:18](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/lib/connections/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/lib/connections/index.ts#L20)
+[packages/types/src/connections/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L20)
 
 </td>
 </tr>

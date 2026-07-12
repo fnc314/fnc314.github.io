@@ -6,7 +6,7 @@
 
 # Class: WordTag
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L34)
+Defined in: [packages/components/src/word/tag/word-tag.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L34)
 
 ## Cssprop
 
@@ -394,7 +394,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L63)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:63](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L63)
 
 Invoked when the component is added to the document's DOM.
 
@@ -427,7 +427,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L69)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L69)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -1323,7 +1323,7 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
 The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
 [@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
@@ -1534,7 +1534,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1800,7 +1800,7 @@ Returns the first child that is an element, and null otherwise.
 
 &gt; **heaviness**: [`WordTagHeaviness`](../WordTagHeaviness/README.md) = `"normal"`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L45)
+Defined in: [packages/components/src/word/tag/word-tag.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L45)
 
 The weight of the tag (text &amp; border), can be
 `"normal"` (`--md-ref-typeface-weight-regular` &amp; `--sizes-thickness-hairline`) or
@@ -1828,7 +1828,7 @@ The HTMLElement property **`hidden`** reflects the value of the element's hidden
 
 &gt; **hrefUrl**: `string` = `""`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:48](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L48)
+Defined in: [packages/components/src/word/tag/word-tag.ts:48](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L48)
 
 A URL which, when provided, wraps this WordTag in a
 [HTMLAnchorElement](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
@@ -4019,7 +4019,7 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
 Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
@@ -4050,7 +4050,7 @@ The **`translate`** property of the HTMLElement interface indicates whether an e
 
 &gt; **variant**: [`WordTagVariant`](../WordTagVariant/README.md) = `"text-only"`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:58](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L58)
+Defined in: [packages/components/src/word/tag/word-tag.ts:58](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L58)
 
 The version of the layout to render
 
@@ -4060,7 +4060,7 @@ The version of the layout to render
 
 &gt; **word**: `string` = `""`
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L42)
+Defined in: [packages/components/src/word/tag/word-tag.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L42)
 
 The tagged word
 
@@ -4140,7 +4140,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L36)
+Defined in: [packages/components/src/word/tag/word-tag.ts:36](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L36)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -10029,7 +10029,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/components/lib/word/tag/word-tag.ts:111](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/tag/word-tag.ts#L111)
+Defined in: [packages/components/src/word/tag/word-tag.ts:111](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/tag/word-tag.ts#L111)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a

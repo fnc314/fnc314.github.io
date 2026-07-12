@@ -8,5 +8,5 @@
 
 &gt; `const` **Biographies**: `Bio`
 
-Defined in: [bio/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/bio/index.ts#L3)
+Defined in: [bio/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/bio/index.ts#L3)
 </body></html>

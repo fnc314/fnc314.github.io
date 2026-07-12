@@ -8,7 +8,7 @@
 
 &gt; `const` **BENTO\_BOX\_CONFIG**: [`BentoBoxConfigs`](../BentoBoxConfigs/README.md)
 
-Defined in: [packages/components/lib/bento-layout/bento-layout.types.ts:81](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/bento-layout/bento-layout.types.ts#L81)
+Defined in: [packages/components/src/bento-layout/bento-layout.types.ts:81](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/bento-layout/bento-layout.types.ts#L81)
 
 The final rendered [BentoBoxConfigs](../BentoBoxConfigs/README.md)
 </body></html>

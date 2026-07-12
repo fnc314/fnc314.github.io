@@ -8,5 +8,5 @@
 
 &gt; `const` **Photos**: `PhotosJson`
 
-Defined in: [photo/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/lib/photo/index.ts#L3)
+Defined in: [photo/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/photo/index.ts#L3)
 </body></html>

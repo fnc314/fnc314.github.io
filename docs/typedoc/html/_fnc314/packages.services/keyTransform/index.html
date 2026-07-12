@@ -191,7 +191,7 @@ via <a href="https://lit.dev/docs/api/styles/#css">css</a> and <a href="https://
 </ul>
 <aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/theme/utils.ts#L136" class="external" target="_blank">packages/services/lib/theme/utils.ts:136</a></li></ul></aside></div></li></ul></section></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/utils.ts#L136" class="external" target="_blank">packages/services/src/theme/utils.ts:136</a></li></ul></aside></div></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -214,7 +214,7 @@ via <a href="https://lit.dev/docs/api/styles/#css">css</a> and <a href="https://
                 window.GENERATION_DATE = 1783411602540;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -232,7 +232,7 @@ via <a href="https://lit.dev/docs/api/styles/#css">css</a> and <a href="https://
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -243,7 +243,7 @@ via <a href="https://lit.dev/docs/api/styles/#css">css</a> and <a href="https://
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>

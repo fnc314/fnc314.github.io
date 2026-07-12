@@ -1,4 +1,4 @@
-# `packages/components/lib/bento-layout/bento-layout.styles.ts`:
+# `packages/components/src/bento-layout/bento-layout.styles.ts`:
 
 ## Variables
 
@@ -13,10 +13,10 @@
 
 | Kind | Name                | Declaration       | Module                                                      | Package |
 | ---- | ------------------- | ----------------- | ----------------------------------------------------------- | ------- |
-| `js` | `BentoLayoutStyles` | BentoLayoutStyles | packages/components/lib/bento-layout/bento-layout.styles.ts |         |
-| `js` | `TransitionStyles`  | TransitionStyles  | packages/components/lib/bento-layout/bento-layout.styles.ts |         |
+| `js` | `BentoLayoutStyles` | BentoLayoutStyles | packages/components/src/bento-layout/bento-layout.styles.ts |         |
+| `js` | `TransitionStyles`  | TransitionStyles  | packages/components/src/bento-layout/bento-layout.styles.ts |         |
 
-# `packages/components/lib/bento-layout/bento-layout.js`:
+# `packages/components/src/bento-layout/bento-layout.js`:
 
 ## class: `BentoLayout`, `bento-layout`
 
@@ -53,10 +53,10 @@
 
 | Kind                        | Name           | Declaration | Module                                               | Package |
 | --------------------------- | -------------- | ----------- | ---------------------------------------------------- | ------- |
-| `custom-element-definition` | `bento-layout` | BentoLayout | packages/components/lib/bento-layout/bento-layout.ts |         |
-| `js`                        | `BentoLayout`  | BentoLayout | packages/components/lib/bento-layout/bento-layout.ts |         |
+| `custom-element-definition` | `bento-layout` | BentoLayout | packages/components/src/bento-layout/bento-layout.ts |         |
+| `js`                        | `BentoLayout`  | BentoLayout | packages/components/src/bento-layout/bento-layout.ts |         |
 
-# `packages/components/lib/bento-layout/bento-layout.types.ts`:
+# `packages/components/src/bento-layout/bento-layout.types.ts`:
 
 ## Variables
 
@@ -89,12 +89,12 @@
 
 | Kind | Name                   | Declaration          | Module                                                     | Package |
 | ---- | ---------------------- | -------------------- | ---------------------------------------------------------- | ------- |
-| `js` | `BENTO_BOX_CONFIG`     | BENTO\_BOX\_CONFIG   | packages/components/lib/bento-layout/bento-layout.types.ts |         |
-| `js` | `BENTO_BOX_TYPES`      | BENTO\_BOX\_TYPES    | packages/components/lib/bento-layout/bento-layout.types.ts |         |
-| `js` | `BentoBoxConfigsArray` | BentoBoxConfigsArray | packages/components/lib/bento-layout/bento-layout.types.ts |         |
-| `js` | `getBentoDOMOrder`     | getBentoDOMOrder     | packages/components/lib/bento-layout/bento-layout.types.ts |         |
+| `js` | `BENTO_BOX_CONFIG`     | BENTO\_BOX\_CONFIG   | packages/components/src/bento-layout/bento-layout.types.ts |         |
+| `js` | `BENTO_BOX_TYPES`      | BENTO\_BOX\_TYPES    | packages/components/src/bento-layout/bento-layout.types.ts |         |
+| `js` | `BentoBoxConfigsArray` | BentoBoxConfigsArray | packages/components/src/bento-layout/bento-layout.types.ts |         |
+| `js` | `getBentoDOMOrder`     | getBentoDOMOrder     | packages/components/src/bento-layout/bento-layout.types.ts |         |
 
-# `packages/components/lib/card/bento/bento-card.styles.ts`:
+# `packages/components/src/card/bento/bento-card.styles.ts`:
 
 ## Variables
 
@@ -108,9 +108,9 @@
 
 | Kind | Name              | Declaration     | Module                                                  | Package |
 | ---- | ----------------- | --------------- | ------------------------------------------------------- | ------- |
-| `js` | `BentoCardStyles` | BentoCardStyles | packages/components/lib/card/bento/bento-card.styles.ts |         |
+| `js` | `BentoCardStyles` | BentoCardStyles | packages/components/src/card/bento/bento-card.styles.ts |         |
 
-# `packages/components/lib/card/bento/bento-card.js`:
+# `packages/components/src/card/bento/bento-card.js`:
 
 ## class: `BentoCard`, `bento-card`
 
@@ -182,10 +182,10 @@
 
 | Kind                        | Name         | Declaration | Module                                           | Package |
 | --------------------------- | ------------ | ----------- | ------------------------------------------------ | ------- |
-| `custom-element-definition` | `bento-card` | BentoCard   | packages/components/lib/card/bento/bento-card.ts |         |
-| `js`                        | `BentoCard`  | BentoCard   | packages/components/lib/card/bento/bento-card.ts |         |
+| `custom-element-definition` | `bento-card` | BentoCard   | packages/components/src/card/bento/bento-card.ts |         |
+| `js`                        | `BentoCard`  | BentoCard   | packages/components/src/card/bento/bento-card.ts |         |
 
-# `packages/components/lib/card/blog/blog-card.styles.ts`:
+# `packages/components/src/card/blog/blog-card.styles.ts`:
 
 ## Variables
 
@@ -199,9 +199,9 @@
 
 | Kind | Name             | Declaration    | Module                                                | Package |
 | ---- | ---------------- | -------------- | ----------------------------------------------------- | ------- |
-| `js` | `BlogCardStyles` | BlogCardStyles | packages/components/lib/card/blog/blog-card.styles.ts |         |
+| `js` | `BlogCardStyles` | BlogCardStyles | packages/components/src/card/blog/blog-card.styles.ts |         |
 
-# `packages/components/lib/card/blog/blog-card.js`:
+# `packages/components/src/card/blog/blog-card.js`:
 
 ## class: `BlogCard`, `blog-card`
 
@@ -247,10 +247,10 @@
 
 | Kind                        | Name        | Declaration | Module                                         | Package |
 | --------------------------- | ----------- | ----------- | ---------------------------------------------- | ------- |
-| `custom-element-definition` | `blog-card` | BlogCard    | packages/components/lib/card/blog/blog-card.ts |         |
-| `js`                        | `BlogCard`  | BlogCard    | packages/components/lib/card/blog/blog-card.ts |         |
+| `custom-element-definition` | `blog-card` | BlogCard    | packages/components/src/card/blog/blog-card.ts |         |
+| `js`                        | `BlogCard`  | BlogCard    | packages/components/src/card/blog/blog-card.ts |         |
 
-# `packages/components/lib/card/code/code-card.styles.ts`:
+# `packages/components/src/card/code/code-card.styles.ts`:
 
 ## Variables
 
@@ -264,9 +264,9 @@
 
 | Kind | Name             | Declaration    | Module                                                | Package |
 | ---- | ---------------- | -------------- | ----------------------------------------------------- | ------- |
-| `js` | `CodeCardStyles` | CodeCardStyles | packages/components/lib/card/code/code-card.styles.ts |         |
+| `js` | `CodeCardStyles` | CodeCardStyles | packages/components/src/card/code/code-card.styles.ts |         |
 
-# `packages/components/lib/card/code/code-card.js`:
+# `packages/components/src/card/code/code-card.js`:
 
 ## class: `CodeCard`, `code-card`
 
@@ -312,10 +312,10 @@
 
 | Kind                        | Name        | Declaration | Module                                         | Package |
 | --------------------------- | ----------- | ----------- | ---------------------------------------------- | ------- |
-| `custom-element-definition` | `code-card` | CodeCard    | packages/components/lib/card/code/code-card.ts |         |
-| `js`                        | `CodeCard`  | CodeCard    | packages/components/lib/card/code/code-card.ts |         |
+| `custom-element-definition` | `code-card` | CodeCard    | packages/components/src/card/code/code-card.ts |         |
+| `js`                        | `CodeCard`  | CodeCard    | packages/components/src/card/code/code-card.ts |         |
 
-# `packages/components/lib/card/education/education-card.styles.ts`:
+# `packages/components/src/card/education/education-card.styles.ts`:
 
 ## Variables
 
@@ -329,9 +329,9 @@
 
 | Kind | Name                  | Declaration         | Module                                                          | Package |
 | ---- | --------------------- | ------------------- | --------------------------------------------------------------- | ------- |
-| `js` | `EducationCardStyles` | EducationCardStyles | packages/components/lib/card/education/education-card.styles.ts |         |
+| `js` | `EducationCardStyles` | EducationCardStyles | packages/components/src/card/education/education-card.styles.ts |         |
 
-# `packages/components/lib/card/education/education-card.js`:
+# `packages/components/src/card/education/education-card.js`:
 
 ## class: `EducationCard`, `education-card`
 
@@ -383,10 +383,10 @@
 
 | Kind                        | Name             | Declaration   | Module                                                   | Package |
 | --------------------------- | ---------------- | ------------- | -------------------------------------------------------- | ------- |
-| `custom-element-definition` | `education-card` | EducationCard | packages/components/lib/card/education/education-card.ts |         |
-| `js`                        | `EducationCard`  | EducationCard | packages/components/lib/card/education/education-card.ts |         |
+| `custom-element-definition` | `education-card` | EducationCard | packages/components/src/card/education/education-card.ts |         |
+| `js`                        | `EducationCard`  | EducationCard | packages/components/src/card/education/education-card.ts |         |
 
-# `packages/components/lib/card/experience/experience-card.styles.ts`:
+# `packages/components/src/card/experience/experience-card.styles.ts`:
 
 ## Variables
 
@@ -400,9 +400,9 @@
 
 | Kind | Name             | Declaration    | Module                                                            | Package |
 | ---- | ---------------- | -------------- | ----------------------------------------------------------------- | ------- |
-| `js` | `WorkCardStyles` | WorkCardStyles | packages/components/lib/card/experience/experience-card.styles.ts |         |
+| `js` | `WorkCardStyles` | WorkCardStyles | packages/components/src/card/experience/experience-card.styles.ts |         |
 
-# `packages/components/lib/card/experience/experience-card.js`:
+# `packages/components/src/card/experience/experience-card.js`:
 
 ## class: `ExperienceCard`, `experience-card`
 
@@ -448,10 +448,10 @@
 
 | Kind                        | Name              | Declaration    | Module                                                     | Package |
 | --------------------------- | ----------------- | -------------- | ---------------------------------------------------------- | ------- |
-| `custom-element-definition` | `experience-card` | ExperienceCard | packages/components/lib/card/experience/experience-card.ts |         |
-| `js`                        | `ExperienceCard`  | ExperienceCard | packages/components/lib/card/experience/experience-card.ts |         |
+| `custom-element-definition` | `experience-card` | ExperienceCard | packages/components/src/card/experience/experience-card.ts |         |
+| `js`                        | `ExperienceCard`  | ExperienceCard | packages/components/src/card/experience/experience-card.ts |         |
 
-# `packages/components/lib/card/profile/profile-card.styles.ts`:
+# `packages/components/src/card/profile/profile-card.styles.ts`:
 
 ## Variables
 
@@ -465,9 +465,9 @@
 
 | Kind | Name                | Declaration       | Module                                                      | Package |
 | ---- | ------------------- | ----------------- | ----------------------------------------------------------- | ------- |
-| `js` | `ProfileCardStyles` | ProfileCardStyles | packages/components/lib/card/profile/profile-card.styles.ts |         |
+| `js` | `ProfileCardStyles` | ProfileCardStyles | packages/components/src/card/profile/profile-card.styles.ts |         |
 
-# `packages/components/lib/card/profile/profile-card.js`:
+# `packages/components/src/card/profile/profile-card.js`:
 
 ## class: `ProfileCard`, `profile-card`
 
@@ -529,10 +529,10 @@
 
 | Kind                        | Name           | Declaration | Module                                               | Package |
 | --------------------------- | -------------- | ----------- | ---------------------------------------------------- | ------- |
-| `custom-element-definition` | `profile-card` | ProfileCard | packages/components/lib/card/profile/profile-card.ts |         |
-| `js`                        | `ProfileCard`  | ProfileCard | packages/components/lib/card/profile/profile-card.ts |         |
+| `custom-element-definition` | `profile-card` | ProfileCard | packages/components/src/card/profile/profile-card.ts |         |
+| `js`                        | `ProfileCard`  | ProfileCard | packages/components/src/card/profile/profile-card.ts |         |
 
-# `packages/components/lib/card/settings/settings-card.styles.ts`:
+# `packages/components/src/card/settings/settings-card.styles.ts`:
 
 ## Variables
 
@@ -546,9 +546,9 @@
 
 | Kind | Name                 | Declaration        | Module                                                        | Package |
 | ---- | -------------------- | ------------------ | ------------------------------------------------------------- | ------- |
-| `js` | `SettingsCardStyles` | SettingsCardStyles | packages/components/lib/card/settings/settings-card.styles.ts |         |
+| `js` | `SettingsCardStyles` | SettingsCardStyles | packages/components/src/card/settings/settings-card.styles.ts |         |
 
-# `packages/components/lib/card/settings/settings-card.js`:
+# `packages/components/src/card/settings/settings-card.js`:
 
 ## class: `SettingsCard`, `settings-card`
 
@@ -610,10 +610,10 @@
 
 | Kind                        | Name            | Declaration  | Module                                                 | Package |
 | --------------------------- | --------------- | ------------ | ------------------------------------------------------ | ------- |
-| `custom-element-definition` | `settings-card` | SettingsCard | packages/components/lib/card/settings/settings-card.ts |         |
-| `js`                        | `SettingsCard`  | SettingsCard | packages/components/lib/card/settings/settings-card.ts |         |
+| `custom-element-definition` | `settings-card` | SettingsCard | packages/components/src/card/settings/settings-card.ts |         |
+| `js`                        | `SettingsCard`  | SettingsCard | packages/components/src/card/settings/settings-card.ts |         |
 
-# `packages/components/lib/card/skills/skills-card.styles.ts`:
+# `packages/components/src/card/skills/skills-card.styles.ts`:
 
 ## Variables
 
@@ -627,9 +627,9 @@
 
 | Kind | Name               | Declaration      | Module                                                    | Package |
 | ---- | ------------------ | ---------------- | --------------------------------------------------------- | ------- |
-| `js` | `SkillsCardStyles` | SkillsCardStyles | packages/components/lib/card/skills/skills-card.styles.ts |         |
+| `js` | `SkillsCardStyles` | SkillsCardStyles | packages/components/src/card/skills/skills-card.styles.ts |         |
 
-# `packages/components/lib/card/skills/skills-card.js`:
+# `packages/components/src/card/skills/skills-card.js`:
 
 ## class: `SkillsCard`, `skills-card`
 
@@ -681,10 +681,10 @@
 
 | Kind                        | Name          | Declaration | Module                                             | Package |
 | --------------------------- | ------------- | ----------- | -------------------------------------------------- | ------- |
-| `custom-element-definition` | `skills-card` | SkillsCard  | packages/components/lib/card/skills/skills-card.ts |         |
-| `js`                        | `SkillsCard`  | SkillsCard  | packages/components/lib/card/skills/skills-card.ts |         |
+| `custom-element-definition` | `skills-card` | SkillsCard  | packages/components/src/card/skills/skills-card.ts |         |
+| `js`                        | `SkillsCard`  | SkillsCard  | packages/components/src/card/skills/skills-card.ts |         |
 
-# `packages/components/lib/code/repo/code-repo.styles.ts`:
+# `packages/components/src/code/repo/code-repo.styles.ts`:
 
 ## Variables
 
@@ -698,9 +698,9 @@
 
 | Kind | Name             | Declaration    | Module                                                | Package |
 | ---- | ---------------- | -------------- | ----------------------------------------------------- | ------- |
-| `js` | `CodeRepoStyles` | CodeRepoStyles | packages/components/lib/code/repo/code-repo.styles.ts |         |
+| `js` | `CodeRepoStyles` | CodeRepoStyles | packages/components/src/code/repo/code-repo.styles.ts |         |
 
-# `packages/components/lib/code/repo/code-repo.js`:
+# `packages/components/src/code/repo/code-repo.js`:
 
 ## class: `CodeRepo`, `code-repo`
 
@@ -748,10 +748,10 @@
 
 | Kind                        | Name        | Declaration | Module                                         | Package |
 | --------------------------- | ----------- | ----------- | ---------------------------------------------- | ------- |
-| `custom-element-definition` | `code-repo` | CodeRepo    | packages/components/lib/code/repo/code-repo.ts |         |
-| `js`                        | `CodeRepo`  | CodeRepo    | packages/components/lib/code/repo/code-repo.ts |         |
+| `custom-element-definition` | `code-repo` | CodeRepo    | packages/components/src/code/repo/code-repo.ts |         |
+| `js`                        | `CodeRepo`  | CodeRepo    | packages/components/src/code/repo/code-repo.ts |         |
 
-# `packages/components/lib/connection/artifact/artifact-connection.styles.ts`:
+# `packages/components/src/connection/artifact/artifact-connection.styles.ts`:
 
 ## Variables
 
@@ -765,9 +765,9 @@
 
 | Kind | Name                       | Declaration              | Module                                                                    | Package |
 | ---- | -------------------------- | ------------------------ | ------------------------------------------------------------------------- | ------- |
-| `js` | `ConnectionArtifactStyles` | ConnectionArtifactStyles | packages/components/lib/connection/artifact/artifact-connection.styles.ts |         |
+| `js` | `ConnectionArtifactStyles` | ConnectionArtifactStyles | packages/components/src/connection/artifact/artifact-connection.styles.ts |         |
 
-# `packages/components/lib/connection/artifact/artifact-connection.js`:
+# `packages/components/src/connection/artifact/artifact-connection.js`:
 
 ## class: `ArtifactConnection`, `artifact-connection`
 
@@ -811,10 +811,10 @@
 
 | Kind                        | Name                  | Declaration        | Module                                                             | Package |
 | --------------------------- | --------------------- | ------------------ | ------------------------------------------------------------------ | ------- |
-| `custom-element-definition` | `artifact-connection` | ArtifactConnection | packages/components/lib/connection/artifact/artifact-connection.ts |         |
-| `js`                        | `ArtifactConnection`  | ArtifactConnection | packages/components/lib/connection/artifact/artifact-connection.ts |         |
+| `custom-element-definition` | `artifact-connection` | ArtifactConnection | packages/components/src/connection/artifact/artifact-connection.ts |         |
+| `js`                        | `ArtifactConnection`  | ArtifactConnection | packages/components/src/connection/artifact/artifact-connection.ts |         |
 
-# `packages/components/lib/connection/direct/direct-connection.styles.ts`:
+# `packages/components/src/connection/direct/direct-connection.styles.ts`:
 
 ## Variables
 
@@ -828,9 +828,9 @@
 
 | Kind | Name                     | Declaration            | Module                                                                | Package |
 | ---- | ------------------------ | ---------------------- | --------------------------------------------------------------------- | ------- |
-| `js` | `DirectConnectionStyles` | DirectConnectionStyles | packages/components/lib/connection/direct/direct-connection.styles.ts |         |
+| `js` | `DirectConnectionStyles` | DirectConnectionStyles | packages/components/src/connection/direct/direct-connection.styles.ts |         |
 
-# `packages/components/lib/connection/direct/direct-connection.js`:
+# `packages/components/src/connection/direct/direct-connection.js`:
 
 ## class: `DirectConnection`, `direct-connection`
 
@@ -872,10 +872,10 @@
 
 | Kind                        | Name                | Declaration      | Module                                                         | Package |
 | --------------------------- | ------------------- | ---------------- | -------------------------------------------------------------- | ------- |
-| `custom-element-definition` | `direct-connection` | DirectConnection | packages/components/lib/connection/direct/direct-connection.ts |         |
-| `js`                        | `DirectConnection`  | DirectConnection | packages/components/lib/connection/direct/direct-connection.ts |         |
+| `custom-element-definition` | `direct-connection` | DirectConnection | packages/components/src/connection/direct/direct-connection.ts |         |
+| `js`                        | `DirectConnection`  | DirectConnection | packages/components/src/connection/direct/direct-connection.ts |         |
 
-# `packages/components/lib/connection/professional/professional-connection.styles.ts`:
+# `packages/components/src/connection/professional/professional-connection.styles.ts`:
 
 ## Variables
 
@@ -889,9 +889,9 @@
 
 | Kind | Name                           | Declaration                  | Module                                                                            | Package |
 | ---- | ------------------------------ | ---------------------------- | --------------------------------------------------------------------------------- | ------- |
-| `js` | `ProfessionalConnectionStyles` | ProfessionalConnectionStyles | packages/components/lib/connection/professional/professional-connection.styles.ts |         |
+| `js` | `ProfessionalConnectionStyles` | ProfessionalConnectionStyles | packages/components/src/connection/professional/professional-connection.styles.ts |         |
 
-# `packages/components/lib/connection/professional/professional-connection.js`:
+# `packages/components/src/connection/professional/professional-connection.js`:
 
 ## class: `ProfessionalConnection`, `professional-connection`
 
@@ -935,10 +935,10 @@
 
 | Kind                        | Name                      | Declaration            | Module                                                                     | Package |
 | --------------------------- | ------------------------- | ---------------------- | -------------------------------------------------------------------------- | ------- |
-| `custom-element-definition` | `professional-connection` | ProfessionalConnection | packages/components/lib/connection/professional/professional-connection.ts |         |
-| `js`                        | `ProfessionalConnection`  | ProfessionalConnection | packages/components/lib/connection/professional/professional-connection.ts |         |
+| `custom-element-definition` | `professional-connection` | ProfessionalConnection | packages/components/src/connection/professional/professional-connection.ts |         |
+| `js`                        | `ProfessionalConnection`  | ProfessionalConnection | packages/components/src/connection/professional/professional-connection.ts |         |
 
-# `packages/components/lib/education/institution/education-institution.styles.ts`:
+# `packages/components/src/education/institution/education-institution.styles.ts`:
 
 ## Variables
 
@@ -952,9 +952,9 @@
 
 | Kind | Name                         | Declaration                | Module                                                                        | Package |
 | ---- | ---------------------------- | -------------------------- | ----------------------------------------------------------------------------- | ------- |
-| `js` | `EducationInstitutionStyles` | EducationInstitutionStyles | packages/components/lib/education/institution/education-institution.styles.ts |         |
+| `js` | `EducationInstitutionStyles` | EducationInstitutionStyles | packages/components/src/education/institution/education-institution.styles.ts |         |
 
-# `packages/components/lib/education/institution/education-institution.js`:
+# `packages/components/src/education/institution/education-institution.js`:
 
 ## class: `EducationInstitution`, `education-institution`
 
@@ -996,10 +996,10 @@
 
 | Kind                        | Name                    | Declaration          | Module                                                                 | Package |
 | --------------------------- | ----------------------- | -------------------- | ---------------------------------------------------------------------- | ------- |
-| `custom-element-definition` | `education-institution` | EducationInstitution | packages/components/lib/education/institution/education-institution.ts |         |
-| `js`                        | `EducationInstitution`  | EducationInstitution | packages/components/lib/education/institution/education-institution.ts |         |
+| `custom-element-definition` | `education-institution` | EducationInstitution | packages/components/src/education/institution/education-institution.ts |         |
+| `js`                        | `EducationInstitution`  | EducationInstitution | packages/components/src/education/institution/education-institution.ts |         |
 
-# `packages/components/lib/index.ts`:
+# `packages/components/src/index.ts`:
 
 ## Exports
 
@@ -1075,7 +1075,7 @@
 | `js` | `WorkExperience`                   | WorkExperience                   | ./work/experience/work-experience                        |         |
 | `js` | `WorkExperienceStyles`             | WorkExperienceStyles             | ./work/experience/work-experience.styles                 |         |
 
-# `packages/components/lib/mixins/size-observer-element/size-observer-element.ts`:
+# `packages/components/src/mixins/size-observer-element/size-observer-element.ts`:
 
 ## mixin: `SizeObserverElement`
 
@@ -1108,9 +1108,9 @@
 
 | Kind | Name                  | Declaration         | Module                                                                        | Package |
 | ---- | --------------------- | ------------------- | ----------------------------------------------------------------------------- | ------- |
-| `js` | `SizeObserverElement` | SizeObserverElement | packages/components/lib/mixins/size-observer-element/size-observer-element.ts |         |
+| `js` | `SizeObserverElement` | SizeObserverElement | packages/components/src/mixins/size-observer-element/size-observer-element.ts |         |
 
-# `packages/components/lib/mixins/ui-aware-element/ui-aware-element.js`:
+# `packages/components/src/mixins/ui-aware-element/ui-aware-element.js`:
 
 ## class: `UIAwareElement`
 
@@ -1140,9 +1140,9 @@
 
 | Kind | Name             | Declaration    | Module                                                              | Package |
 | ---- | ---------------- | -------------- | ------------------------------------------------------------------- | ------- |
-| `js` | `UIAwareElement` | UIAwareElement | packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts |         |
+| `js` | `UIAwareElement` | UIAwareElement | packages/components/src/mixins/ui-aware-element/ui-aware-element.ts |         |
 
-# `packages/components/lib/publication/blog/entry/blog-entry.styles.ts`:
+# `packages/components/src/publication/blog/entry/blog-entry.styles.ts`:
 
 ## Variables
 
@@ -1156,9 +1156,9 @@
 
 | Kind | Name              | Declaration     | Module                                                              | Package |
 | ---- | ----------------- | --------------- | ------------------------------------------------------------------- | ------- |
-| `js` | `BlogEntryStyles` | BlogEntryStyles | packages/components/lib/publication/blog/entry/blog-entry.styles.ts |         |
+| `js` | `BlogEntryStyles` | BlogEntryStyles | packages/components/src/publication/blog/entry/blog-entry.styles.ts |         |
 
-# `packages/components/lib/publication/blog/entry/blog-entry.js`:
+# `packages/components/src/publication/blog/entry/blog-entry.js`:
 
 ## class: `BlogEntry`, `blog-entry`
 
@@ -1200,10 +1200,10 @@
 
 | Kind                        | Name         | Declaration | Module                                                       | Package |
 | --------------------------- | ------------ | ----------- | ------------------------------------------------------------ | ------- |
-| `custom-element-definition` | `blog-entry` | BlogEntry   | packages/components/lib/publication/blog/entry/blog-entry.ts |         |
-| `js`                        | `BlogEntry`  | BlogEntry   | packages/components/lib/publication/blog/entry/blog-entry.ts |         |
+| `custom-element-definition` | `blog-entry` | BlogEntry   | packages/components/src/publication/blog/entry/blog-entry.ts |         |
+| `js`                        | `BlogEntry`  | BlogEntry   | packages/components/src/publication/blog/entry/blog-entry.ts |         |
 
-# `packages/components/lib/styles/dynamic-border.ts`:
+# `packages/components/src/styles/dynamic-border.ts`:
 
 ## Variables
 
@@ -1217,9 +1217,9 @@
 
 | Kind | Name                  | Declaration         | Module                                           | Package |
 | ---- | --------------------- | ------------------- | ------------------------------------------------ | ------- |
-| `js` | `DynamicBorderStyles` | DynamicBorderStyles | packages/components/lib/styles/dynamic-border.ts |         |
+| `js` | `DynamicBorderStyles` | DynamicBorderStyles | packages/components/src/styles/dynamic-border.ts |         |
 
-# `packages/components/lib/styles/index.ts`:
+# `packages/components/src/styles/index.ts`:
 
 ## Exports
 
@@ -1241,7 +1241,7 @@
 | `js` | `DynamicBorderStyles` | DynamicBorderStyles | ./dynamic-border |                                             |
 | `js` | `TextStyles`          | TextStyles          | ./text           |                                             |
 
-# `packages/components/lib/styles/text.ts`:
+# `packages/components/src/styles/text.ts`:
 
 ## Variables
 
@@ -1255,9 +1255,9 @@
 
 | Kind | Name         | Declaration | Module                                 | Package |
 | ---- | ------------ | ----------- | -------------------------------------- | ------- |
-| `js` | `TextStyles` | TextStyles  | packages/components/lib/styles/text.ts |         |
+| `js` | `TextStyles` | TextStyles  | packages/components/src/styles/text.ts |         |
 
-# `packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts`:
+# `packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts`:
 
 ## Variables
 
@@ -1271,9 +1271,9 @@
 
 | Kind | Name                 | Declaration        | Module                                                          | Package |
 | ---- | -------------------- | ------------------ | --------------------------------------------------------------- | ------- |
-| `js` | `UIModeToggleStyles` | UIModeToggleStyles | packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts |         |
+| `js` | `UIModeToggleStyles` | UIModeToggleStyles | packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts |         |
 
-# `packages/components/lib/ui-mode-toggle/ui-mode-toggle.js`:
+# `packages/components/src/ui-mode-toggle/ui-mode-toggle.js`:
 
 ## class: `UiModeToggle`, `ui-mode-toggle`
 
@@ -1343,10 +1343,10 @@
 
 | Kind                        | Name             | Declaration  | Module                                                   | Package |
 | --------------------------- | ---------------- | ------------ | -------------------------------------------------------- | ------- |
-| `custom-element-definition` | `ui-mode-toggle` | UiModeToggle | packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts |         |
-| `js`                        | `UiModeToggle`   | UiModeToggle | packages/components/lib/ui-mode-toggle/ui-mode-toggle.ts |         |
+| `custom-element-definition` | `ui-mode-toggle` | UiModeToggle | packages/components/src/ui-mode-toggle/ui-mode-toggle.ts |         |
+| `js`                        | `UiModeToggle`   | UiModeToggle | packages/components/src/ui-mode-toggle/ui-mode-toggle.ts |         |
 
-# `packages/components/lib/version-tag/version-tag.js`:
+# `packages/components/src/version-tag/version-tag.js`:
 
 ## class: `VersionTag`, `version-tag`
 
@@ -1377,10 +1377,10 @@
 
 | Kind                        | Name          | Declaration | Module                                             | Package |
 | --------------------------- | ------------- | ----------- | -------------------------------------------------- | ------- |
-| `custom-element-definition` | `version-tag` | VersionTag  | packages/components/lib/version-tag/version-tag.ts |         |
-| `js`                        | `VersionTag`  | VersionTag  | packages/components/lib/version-tag/version-tag.ts |         |
+| `custom-element-definition` | `version-tag` | VersionTag  | packages/components/src/version-tag/version-tag.ts |         |
+| `js`                        | `VersionTag`  | VersionTag  | packages/components/src/version-tag/version-tag.ts |         |
 
-# `packages/components/lib/word/cloud/word-cloud.styles.ts`:
+# `packages/components/src/word/cloud/word-cloud.styles.ts`:
 
 ## Variables
 
@@ -1394,9 +1394,9 @@
 
 | Kind | Name              | Declaration     | Module                                                  | Package |
 | ---- | ----------------- | --------------- | ------------------------------------------------------- | ------- |
-| `js` | `WordCloudStyles` | WordCloudStyles | packages/components/lib/word/cloud/word-cloud.styles.ts |         |
+| `js` | `WordCloudStyles` | WordCloudStyles | packages/components/src/word/cloud/word-cloud.styles.ts |         |
 
-# `packages/components/lib/word/cloud/word-cloud.js`:
+# `packages/components/src/word/cloud/word-cloud.js`:
 
 ## class: `WordCloud`, `word-cloud`
 
@@ -1482,10 +1482,10 @@
 
 | Kind                        | Name         | Declaration | Module                                           | Package |
 | --------------------------- | ------------ | ----------- | ------------------------------------------------ | ------- |
-| `custom-element-definition` | `word-cloud` | WordCloud   | packages/components/lib/word/cloud/word-cloud.ts |         |
-| `js`                        | `WordCloud`  | WordCloud   | packages/components/lib/word/cloud/word-cloud.ts |         |
+| `custom-element-definition` | `word-cloud` | WordCloud   | packages/components/src/word/cloud/word-cloud.ts |         |
+| `js`                        | `WordCloud`  | WordCloud   | packages/components/src/word/cloud/word-cloud.ts |         |
 
-# `packages/components/lib/word/cloud/word-cloud.types.ts`:
+# `packages/components/src/word/cloud/word-cloud.types.ts`:
 
 ## Variables
 
@@ -1522,12 +1522,12 @@
 
 | Kind | Name                   | Declaration          | Module                                                 | Package |
 | ---- | ---------------------- | -------------------- | ------------------------------------------------------ | ------- |
-| `js` | `makeWordCloudWord`    | makeWordCloudWord    | packages/components/lib/word/cloud/word-cloud.types.ts |         |
-| `js` | `WordCloudAppearances` | WordCloudAppearances | packages/components/lib/word/cloud/word-cloud.types.ts |         |
-| `js` | `WordCloudGroupings`   | WordCloudGroupings   | packages/components/lib/word/cloud/word-cloud.types.ts |         |
-| `js` | `WordCloudSortings`    | WordCloudSortings    | packages/components/lib/word/cloud/word-cloud.types.ts |         |
+| `js` | `makeWordCloudWord`    | makeWordCloudWord    | packages/components/src/word/cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudAppearances` | WordCloudAppearances | packages/components/src/word/cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudGroupings`   | WordCloudGroupings   | packages/components/src/word/cloud/word-cloud.types.ts |         |
+| `js` | `WordCloudSortings`    | WordCloudSortings    | packages/components/src/word/cloud/word-cloud.types.ts |         |
 
-# `packages/components/lib/word/tag/word-tag.styles.ts`:
+# `packages/components/src/word/tag/word-tag.styles.ts`:
 
 ## Variables
 
@@ -1541,9 +1541,9 @@
 
 | Kind | Name            | Declaration   | Module                                              | Package |
 | ---- | --------------- | ------------- | --------------------------------------------------- | ------- |
-| `js` | `WordTagStyles` | WordTagStyles | packages/components/lib/word/tag/word-tag.styles.ts |         |
+| `js` | `WordTagStyles` | WordTagStyles | packages/components/src/word/tag/word-tag.styles.ts |         |
 
-# `packages/components/lib/word/tag/word-tag.js`:
+# `packages/components/src/word/tag/word-tag.js`:
 
 ## class: `WordTag`, `word-tag`
 
@@ -1611,10 +1611,10 @@
 
 | Kind                        | Name       | Declaration | Module                                       | Package |
 | --------------------------- | ---------- | ----------- | -------------------------------------------- | ------- |
-| `custom-element-definition` | `word-tag` | WordTag     | packages/components/lib/word/tag/word-tag.ts |         |
-| `js`                        | `WordTag`  | WordTag     | packages/components/lib/word/tag/word-tag.ts |         |
+| `custom-element-definition` | `word-tag` | WordTag     | packages/components/src/word/tag/word-tag.ts |         |
+| `js`                        | `WordTag`  | WordTag     | packages/components/src/word/tag/word-tag.ts |         |
 
-# `packages/components/lib/word/tag/word-tag.types.ts`:
+# `packages/components/src/word/tag/word-tag.types.ts`:
 
 ## Variables
 
@@ -1630,9 +1630,9 @@
 
 | Kind | Name                               | Declaration                      | Module                                             | Package |
 | ---- | ---------------------------------- | -------------------------------- | -------------------------------------------------- | ------- |
-| `js` | `WordTagVariantAttributeConverter` | WordTagVariantAttributeConverter | packages/components/lib/word/tag/word-tag.types.ts |         |
+| `js` | `WordTagVariantAttributeConverter` | WordTagVariantAttributeConverter | packages/components/src/word/tag/word-tag.types.ts |         |
 
-# `packages/components/lib/work/experience/work-experience.styles.ts`:
+# `packages/components/src/work/experience/work-experience.styles.ts`:
 
 ## Variables
 
@@ -1646,9 +1646,9 @@
 
 | Kind | Name                   | Declaration          | Module                                                            | Package |
 | ---- | ---------------------- | -------------------- | ----------------------------------------------------------------- | ------- |
-| `js` | `WorkExperienceStyles` | WorkExperienceStyles | packages/components/lib/work/experience/work-experience.styles.ts |         |
+| `js` | `WorkExperienceStyles` | WorkExperienceStyles | packages/components/src/work/experience/work-experience.styles.ts |         |
 
-# `packages/components/lib/work/experience/work-experience.js`:
+# `packages/components/src/work/experience/work-experience.js`:
 
 ## class: `WorkExperience`, `work-experience`
 
@@ -1704,10 +1704,10 @@
 
 | Kind                        | Name              | Declaration    | Module                                                     | Package |
 | --------------------------- | ----------------- | -------------- | ---------------------------------------------------------- | ------- |
-| `custom-element-definition` | `work-experience` | WorkExperience | packages/components/lib/work/experience/work-experience.ts |         |
-| `js`                        | `WorkExperience`  | WorkExperience | packages/components/lib/work/experience/work-experience.ts |         |
+| `custom-element-definition` | `work-experience` | WorkExperience | packages/components/src/work/experience/work-experience.ts |         |
+| `js`                        | `WorkExperience`  | WorkExperience | packages/components/src/work/experience/work-experience.ts |         |
 
-# `packages/data/lib/bio/index.ts`:
+# `packages/data/src/bio/index.ts`:
 
 ## Variables
 
@@ -1721,9 +1721,9 @@
 
 | Kind | Name          | Declaration | Module                         | Package |
 | ---- | ------------- | ----------- | ------------------------------ | ------- |
-| `js` | `Biographies` | Biographies | packages/data/lib/bio/index.ts |         |
+| `js` | `Biographies` | Biographies | packages/data/src/bio/index.ts |         |
 
-# `packages/data/lib/blog/index.ts`:
+# `packages/data/src/blog/index.ts`:
 
 ## Variables
 
@@ -1737,9 +1737,9 @@
 
 | Kind | Name    | Declaration | Module                          | Package |
 | ---- | ------- | ----------- | ------------------------------- | ------- |
-| `js` | `Blogs` | Blogs       | packages/data/lib/blog/index.ts |         |
+| `js` | `Blogs` | Blogs       | packages/data/src/blog/index.ts |         |
 
-# `packages/data/lib/code/index.ts`:
+# `packages/data/src/code/index.ts`:
 
 ## Variables
 
@@ -1753,9 +1753,9 @@
 
 | Kind | Name       | Declaration | Module                          | Package |
 | ---- | ---------- | ----------- | ------------------------------- | ------- |
-| `js` | `Projects` | Projects    | packages/data/lib/code/index.ts |         |
+| `js` | `Projects` | Projects    | packages/data/src/code/index.ts |         |
 
-# `packages/data/lib/connections/index.ts`:
+# `packages/data/src/connections/index.ts`:
 
 ## Variables
 
@@ -1783,9 +1783,9 @@
 
 | Kind | Name          | Declaration | Module                                 | Package |
 | ---- | ------------- | ----------- | -------------------------------------- | ------- |
-| `js` | `Connections` | Connections | packages/data/lib/connections/index.ts |         |
+| `js` | `Connections` | Connections | packages/data/src/connections/index.ts |         |
 
-# `packages/data/lib/education/index.ts`:
+# `packages/data/src/education/index.ts`:
 
 ## Variables
 
@@ -1799,9 +1799,9 @@
 
 | Kind | Name                | Declaration       | Module                               | Package |
 | ---- | ------------------- | ----------------- | ------------------------------------ | ------- |
-| `js` | `EducationJsonData` | EducationJsonData | packages/data/lib/education/index.ts |         |
+| `js` | `EducationJsonData` | EducationJsonData | packages/data/src/education/index.ts |         |
 
-# `packages/data/lib/experience/index.ts`:
+# `packages/data/src/experience/index.ts`:
 
 ## Variables
 
@@ -1815,9 +1815,9 @@
 
 | Kind | Name          | Declaration | Module                                | Package |
 | ---- | ------------- | ----------- | ------------------------------------- | ------- |
-| `js` | `Experiences` | Experiences | packages/data/lib/experience/index.ts |         |
+| `js` | `Experiences` | Experiences | packages/data/src/experience/index.ts |         |
 
-# `packages/data/lib/index.ts`:
+# `packages/data/src/index.ts`:
 
 ## Exports
 
@@ -1832,7 +1832,7 @@
 | `js` | `*`  | \*          |        | @/lib/photo       |
 | `js` | `*`  | \*          |        | @/lib/skills      |
 
-# `packages/data/lib/photo/index.ts`:
+# `packages/data/src/photo/index.ts`:
 
 ## Variables
 
@@ -1846,9 +1846,9 @@
 
 | Kind | Name     | Declaration | Module                           | Package |
 | ---- | -------- | ----------- | -------------------------------- | ------- |
-| `js` | `Photos` | Photos      | packages/data/lib/photo/index.ts |         |
+| `js` | `Photos` | Photos      | packages/data/src/photo/index.ts |         |
 
-# `packages/data/lib/skills/index.ts`:
+# `packages/data/src/skills/index.ts`:
 
 ## Variables
 
@@ -1862,7 +1862,7 @@
 
 | Kind | Name     | Declaration | Module                            | Package |
 | ---- | -------- | ----------- | --------------------------------- | ------- |
-| `js` | `Skills` | Skills      | packages/data/lib/skills/index.ts |         |
+| `js` | `Skills` | Skills      | packages/data/src/skills/index.ts |         |
 
 # `packages/design-tokens/lib/breakpoints.ts`:
 
@@ -1940,7 +1940,7 @@
 | ---- | --------------------------- | ---------------------------- | ------------------------------------------ | ------- |
 | `js` | `CSS_VARIABLE_TOUCH_SCREEN` | CSS\_VARIABLE\_TOUCH\_SCREEN | packages/design-tokens/lib/touch-screen.ts |         |
 
-# `packages/services/lib/configs/index.ts`:
+# `packages/services/src/configs/index.ts`:
 
 ## Variables
 
@@ -1954,9 +1954,9 @@
 
 | Kind | Name             | Declaration    | Module                                 | Package |
 | ---- | ---------------- | -------------- | -------------------------------------- | ------- |
-| `js` | `configsService` | configsService | packages/services/lib/configs/index.ts |         |
+| `js` | `configsService` | configsService | packages/services/src/configs/index.ts |         |
 
-# `packages/services/lib/index.ts`:
+# `packages/services/src/index.ts`:
 
 ## Exports
 
@@ -1966,7 +1966,7 @@
 | `js` | `*`  | \*          |        | @/lib/storage |
 | `js` | `*`  | \*          |        | @/lib/theme   |
 
-# `packages/services/lib/storage/index.ts`:
+# `packages/services/src/storage/index.ts`:
 
 ## Variables
 
@@ -1980,9 +1980,9 @@
 
 | Kind | Name             | Declaration    | Module                                 | Package |
 | ---- | ---------------- | -------------- | -------------------------------------- | ------- |
-| `js` | `storageService` | storageService | packages/services/lib/storage/index.ts |         |
+| `js` | `storageService` | storageService | packages/services/src/storage/index.ts |         |
 
-# `packages/services/lib/theme/chicago/index.ts`:
+# `packages/services/src/theme/chicago/index.ts`:
 
 ## Variables
 
@@ -1997,9 +1997,9 @@
 
 | Kind | Name                 | Declaration        | Module                                       | Package |
 | ---- | -------------------- | ------------------ | -------------------------------------------- | ------- |
-| `js` | `ChicagoThemeConfig` | ChicagoThemeConfig | packages/services/lib/theme/chicago/index.ts |         |
+| `js` | `ChicagoThemeConfig` | ChicagoThemeConfig | packages/services/src/theme/chicago/index.ts |         |
 
-# `packages/services/lib/theme/index.ts`:
+# `packages/services/src/theme/index.ts`:
 
 ## Variables
 
@@ -2030,13 +2030,13 @@
 | `js` | `*`                                      | \*                                     |                                      | @/lib/theme/red     |
 | `js` | `*`                                      | \*                                     |                                      | @/lib/theme/sunset  |
 | `js` | `*`                                      | \*                                     |                                      | @/lib/theme/utils   |
-| `js` | `colorSchemeConfigsToMaterialSchemeName` | colorSchemeConfigsToMaterialSchemeName | packages/services/lib/theme/index.ts |                     |
-| `js` | `MaterialCSSStyleSheet`                  | MaterialCSSStyleSheet                  | packages/services/lib/theme/index.ts |                     |
-| `js` | `onThemeChange`                          | onThemeChange                          | packages/services/lib/theme/index.ts |                     |
-| `js` | `THEME_CONFIGS`                          | THEME\_CONFIGS                         | packages/services/lib/theme/index.ts |                     |
-| `js` | `themeService`                           | themeService                           | packages/services/lib/theme/index.ts |                     |
+| `js` | `colorSchemeConfigsToMaterialSchemeName` | colorSchemeConfigsToMaterialSchemeName | packages/services/src/theme/index.ts |                     |
+| `js` | `MaterialCSSStyleSheet`                  | MaterialCSSStyleSheet                  | packages/services/src/theme/index.ts |                     |
+| `js` | `onThemeChange`                          | onThemeChange                          | packages/services/src/theme/index.ts |                     |
+| `js` | `THEME_CONFIGS`                          | THEME\_CONFIGS                         | packages/services/src/theme/index.ts |                     |
+| `js` | `themeService`                           | themeService                           | packages/services/src/theme/index.ts |                     |
 
-# `packages/services/lib/theme/inter/index.ts`:
+# `packages/services/src/theme/inter/index.ts`:
 
 ## Variables
 
@@ -2051,9 +2051,9 @@
 
 | Kind | Name               | Declaration      | Module                                     | Package |
 | ---- | ------------------ | ---------------- | ------------------------------------------ | ------- |
-| `js` | `InterThemeConfig` | InterThemeConfig | packages/services/lib/theme/inter/index.ts |         |
+| `js` | `InterThemeConfig` | InterThemeConfig | packages/services/src/theme/inter/index.ts |         |
 
-# `packages/services/lib/theme/red/index.ts`:
+# `packages/services/src/theme/red/index.ts`:
 
 ## Variables
 
@@ -2068,9 +2068,9 @@
 
 | Kind | Name             | Declaration    | Module                                   | Package |
 | ---- | ---------------- | -------------- | ---------------------------------------- | ------- |
-| `js` | `RedThemeConfig` | RedThemeConfig | packages/services/lib/theme/red/index.ts |         |
+| `js` | `RedThemeConfig` | RedThemeConfig | packages/services/src/theme/red/index.ts |         |
 
-# `packages/services/lib/theme/sunset/index.ts`:
+# `packages/services/src/theme/sunset/index.ts`:
 
 ## Variables
 
@@ -2085,9 +2085,9 @@
 
 | Kind | Name                | Declaration       | Module                                      | Package |
 | ---- | ------------------- | ----------------- | ------------------------------------------- | ------- |
-| `js` | `SunsetThemeConfig` | SunsetThemeConfig | packages/services/lib/theme/sunset/index.ts |         |
+| `js` | `SunsetThemeConfig` | SunsetThemeConfig | packages/services/src/theme/sunset/index.ts |         |
 
-# `packages/services/lib/theme/utils.ts`:
+# `packages/services/src/theme/utils.ts`:
 
 ## Functions
 
@@ -2104,12 +2104,12 @@
 
 | Kind | Name                        | Declaration               | Module                               | Package |
 | ---- | --------------------------- | ------------------------- | ------------------------------------ | ------- |
-| `js` | `colorSchemeContrastToIcon` | colorSchemeContrastToIcon | packages/services/lib/theme/utils.ts |         |
-| `js` | `jsonIsThemeJsonSchemes`    | jsonIsThemeJsonSchemes    | packages/services/lib/theme/utils.ts |         |
-| `js` | `keyTransform`              | keyTransform              | packages/services/lib/theme/utils.ts |         |
-| `js` | `readScheme`                | readScheme                | packages/services/lib/theme/utils.ts |         |
+| `js` | `colorSchemeContrastToIcon` | colorSchemeContrastToIcon | packages/services/src/theme/utils.ts |         |
+| `js` | `jsonIsThemeJsonSchemes`    | jsonIsThemeJsonSchemes    | packages/services/src/theme/utils.ts |         |
+| `js` | `keyTransform`              | keyTransform              | packages/services/src/theme/utils.ts |         |
+| `js` | `readScheme`                | readScheme                | packages/services/src/theme/utils.ts |         |
 
-# `packages/types/lib/code/index.ts`:
+# `packages/types/src/code/index.ts`:
 
 ## Variables
 
@@ -2128,10 +2128,10 @@
 
 | Kind | Name                                   | Declaration                                | Module                           | Package |
 | ---- | -------------------------------------- | ------------------------------------------ | -------------------------------- | ------- |
-| `js` | `CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE` | CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE | packages/types/lib/code/index.ts |         |
-| `js` | `WORD_TAG_SIZES`                       | WORD\_TAG\_SIZES                           | packages/types/lib/code/index.ts |         |
+| `js` | `CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE` | CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE | packages/types/src/code/index.ts |         |
+| `js` | `WORD_TAG_SIZES`                       | WORD\_TAG\_SIZES                           | packages/types/src/code/index.ts |         |
 
-# `packages/types/lib/configs/index.ts`:
+# `packages/types/src/configs/index.ts`:
 
 ## Variables
 
@@ -2152,9 +2152,9 @@
 
 | Kind | Name                  | Declaration           | Module                              | Package |
 | ---- | --------------------- | --------------------- | ----------------------------------- | ------- |
-| `js` | `DEFAULT_APP_CONFIGS` | DEFAULT\_APP\_CONFIGS | packages/types/lib/configs/index.ts |         |
+| `js` | `DEFAULT_APP_CONFIGS` | DEFAULT\_APP\_CONFIGS | packages/types/src/configs/index.ts |         |
 
-# `packages/types/lib/connections/index.ts`:
+# `packages/types/src/connections/index.ts`:
 
 ## Variables
 
@@ -2176,10 +2176,10 @@
 
 | Kind | Name                          | Declaration                 | Module                                  | Package |
 | ---- | ----------------------------- | --------------------------- | --------------------------------------- | ------- |
-| `js` | `ArtifactConnections`         | ArtifactConnections         | packages/types/lib/connections/index.ts |         |
-| `js` | `ProfessionalConnectionTypes` | ProfessionalConnectionTypes | packages/types/lib/connections/index.ts |         |
+| `js` | `ArtifactConnections`         | ArtifactConnections         | packages/types/src/connections/index.ts |         |
+| `js` | `ProfessionalConnectionTypes` | ProfessionalConnectionTypes | packages/types/src/connections/index.ts |         |
 
-# `packages/types/lib/index.ts`:
+# `packages/types/src/index.ts`:
 
 ## Exports
 
@@ -2195,7 +2195,7 @@
 | `js` | `*`  | \*          |        | @/lib/experience    |
 | `js` | `*`  | \*          |        | @/lib/theme         |
 
-# `packages/types/lib/theme/index.ts`:
+# `packages/types/src/theme/index.ts`:
 
 ## Variables
 
@@ -2233,8 +2233,8 @@
 
 | Kind | Name                          | Declaration                    | Module                            | Package |
 | ---- | ----------------------------- | ------------------------------ | --------------------------------- | ------- |
-| `js` | `CONFIG_COLOR_CONTRAST_NAMES` | CONFIG\_COLOR\_CONTRAST\_NAMES | packages/types/lib/theme/index.ts |         |
-| `js` | `CONFIG_COLOR_SCHEME_NAMES`   | CONFIG\_COLOR\_SCHEME\_NAMES   | packages/types/lib/theme/index.ts |         |
+| `js` | `CONFIG_COLOR_CONTRAST_NAMES` | CONFIG\_COLOR\_CONTRAST\_NAMES | packages/types/src/theme/index.ts |         |
+| `js` | `CONFIG_COLOR_SCHEME_NAMES`   | CONFIG\_COLOR\_SCHEME\_NAMES   | packages/types/src/theme/index.ts |         |
 | `js` | `MaterialSymbol`              | MaterialSymbol                 | material-symbols                  |         |
-| `js` | `setRGBA`                     | setRGBA                        | packages/types/lib/theme/index.ts |         |
-| `js` | `THEME_NAMES`                 | THEME\_NAMES                   | packages/types/lib/theme/index.ts |         |
+| `js` | `setRGBA`                     | setRGBA                        | packages/types/src/theme/index.ts |         |
+| `js` | `THEME_NAMES`                 | THEME\_NAMES                   | packages/types/src/theme/index.ts |         |

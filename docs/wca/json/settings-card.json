@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "settings-card",
-      "path": "./../../../packages/components/lib/card/settings/settings-card.ts",
+      "path": "./../../../packages/components/src/card/settings/settings-card.ts",
       "attributes": [
         {
           "name": "expanded",

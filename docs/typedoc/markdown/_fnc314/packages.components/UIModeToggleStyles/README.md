@@ -8,7 +8,7 @@
 
 &gt; `const` **UIModeToggleStyles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/ui-mode-toggle/ui-mode-toggle.styles.ts#L19)
+Defined in: [packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts#L19)
 
 A [CSSResult](https://lit.dev/docs/api/styles/#CSSResult) for [UiModeToggle](../UiModeToggle/README.md)
 

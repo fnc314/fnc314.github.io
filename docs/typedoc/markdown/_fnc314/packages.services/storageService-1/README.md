@@ -8,5 +8,5 @@
 
 &gt; `const` **storageService**: [`StorageService`](../StorageService/README.md)
 
-Defined in: [packages/services/lib/storage/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/lib/storage/index.ts#L29)
+Defined in: [packages/services/src/storage/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/storage/index.ts#L29)
 </body></html>

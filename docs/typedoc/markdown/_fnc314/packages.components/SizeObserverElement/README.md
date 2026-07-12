@@ -8,7 +8,7 @@
 
 &gt; **SizeObserverElement**\&lt;`T`\&gt;(`Base`: `T`): `T`
 
-Defined in: [packages/components/lib/mixins/size-observer-element/size-observer-element.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/size-observer-element/size-observer-element.ts#L5)
+Defined in: [packages/components/src/mixins/size-observer-element/size-observer-element.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/size-observer-element/size-observer-element.ts#L5)
 
 ## Type Parameters
 

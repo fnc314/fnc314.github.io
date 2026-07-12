@@ -6,7 +6,7 @@
 
 # Class: ProfileCard
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L23)
+Defined in: [packages/components/src/card/profile/profile-card.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L23)
 
 ## Element
 
@@ -360,7 +360,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L45)
+Defined in: [packages/components/src/card/profile/profile-card.ts:45](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L45)
 
 Invoked when the component is added to the document's DOM.
 
@@ -393,7 +393,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:51](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L51)
+Defined in: [packages/components/src/card/profile/profile-card.ts:51](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L51)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -1289,7 +1289,7 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 &gt; **bioText**: `string` = `Biographies.bio.long`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L34)
+Defined in: [packages/components/src/card/profile/profile-card.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L34)
 
 ---
 
@@ -1297,7 +1297,7 @@ Defined in: [packages/components/lib/card/profile/profile-card.ts:34](https://gi
 
 &gt; `protected` **breakpoint**: `BreakpointLabel`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L42)
 
 The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
 [@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
@@ -1508,7 +1508,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L28)
 
 #### Inherited from
 
@@ -1704,7 +1704,7 @@ node is an element.
 
 &gt; **enableFocus**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:43](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L43)
+Defined in: [packages/components/src/card/profile/profile-card.ts:43](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L43)
 
 ---
 
@@ -1712,7 +1712,7 @@ Defined in: [packages/components/lib/card/profile/profile-card.ts:43](https://gi
 
 &gt; **enableHover**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:40](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L40)
+Defined in: [packages/components/src/card/profile/profile-card.ts:40](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L40)
 
 ---
 
@@ -1758,7 +1758,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **expanded**: `boolean` = `false`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:37](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L37)
+Defined in: [packages/components/src/card/profile/profile-card.ts:37](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L37)
 
 ---
 
@@ -3730,7 +3730,7 @@ The read-only **`parentNode`** property of the Node interface returns the parent
 
 &gt; **photoData**: `PhotoJson`
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L31)
+Defined in: [packages/components/src/card/profile/profile-card.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L31)
 
 ---
 
@@ -4002,7 +4002,7 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L57)
 
 Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
 and tests against `"true"`,
@@ -4103,7 +4103,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L25)
+Defined in: [packages/components/src/card/profile/profile-card.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L25)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -9992,7 +9992,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/lib/card/profile/profile-card.ts:138](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/card/profile/profile-card.ts#L138)
+Defined in: [packages/components/src/card/profile/profile-card.ts:138](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/profile/profile-card.ts#L138)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
