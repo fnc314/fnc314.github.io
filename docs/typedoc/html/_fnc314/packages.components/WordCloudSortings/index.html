@@ -184,7 +184,7 @@
 <li class="tsd-parameter">
 <h5 id="none"><code class="tsd-tag">Readonly</code><span class="tsd-kind-property">NONE</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"none"</span></h5></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/lib/word/cloud/word-cloud.types.ts#L23" class="external" target="_blank">packages/components/lib/word/cloud/word-cloud.types.ts:23</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/word/cloud/word-cloud.types.ts#L23" class="external" target="_blank">packages/components/src/word/cloud/word-cloud.types.ts:23</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -207,7 +207,7 @@
                 window.GENERATION_DATE = 1783411602236;
 
                 (() => {
-                    
+
         const formatter = new Intl.RelativeTimeFormat('en', {
             numeric: 'auto',
             style: 'short',
@@ -225,7 +225,7 @@
 
         function formatTimeAgo(date) {
             let duration = (date - new Date()) / 1000;
-            
+
             for (const division of divisions) {
                 if (Math.abs(duration) < division.amount) {
                     return formatter.format(Math.round(duration), division.name);
@@ -236,7 +236,7 @@
 
         document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
         document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
-    
+
                 })();
             </script>
         </p></footer>
