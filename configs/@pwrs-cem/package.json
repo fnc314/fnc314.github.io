@@ -1,0 +1,7 @@
+{
+	"private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "name": "@fnc314/configs.@pwrs-cem"
+}
