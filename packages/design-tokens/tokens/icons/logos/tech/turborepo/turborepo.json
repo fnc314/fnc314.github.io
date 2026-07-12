@@ -1,0 +1,18 @@
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "turborepo": {
+          "dark": {
+            "type": "asset",
+            "value": "packages/design-tokens/assets/icons/logos/tech/turborepo/turborepo-dark.svg"
+          },
+          "light": {
+            "type": "asset",
+            "value": "packages/design-tokens/assets/icons/logos/tech/turborepo/turborepo-light.svg"
+          }
+        }
+      }
+    }
+  }
+}

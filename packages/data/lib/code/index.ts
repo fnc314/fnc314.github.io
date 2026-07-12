@@ -182,6 +182,14 @@ export const Projects: CodeRepoData[] = [
         }
       },
       {
+        name: "Typescript-ESLint",
+        url: "https://typescript-eslint.io/",
+        designToken: {
+          dark: "--icons-logos-tech-typescript-eslint-dark-icon-svg",
+          light: "--icons-logos-tech-typescript-eslint-light-icon-svg"
+        }
+      },
+      {
         name: "StyleLint",
         url: "https://stylelint.io/",
         designToken: {
@@ -195,6 +203,14 @@ export const Projects: CodeRepoData[] = [
         designToken: {
           dark: "--icons-logos-tech-postcss-dark-icon-svg",
           light: "--icons-logos-tech-postcss-light-icon-svg"
+        }
+      },
+      {
+        name: "Turbo Repo",
+        url: "https://turborepo.dev/",
+        designToken: {
+          dark: "--icons-logos-tech-turborepo-dark-icon-svg",
+          light: "--icons-logos-tech-turborepo-light-icon-svg"
         }
       }
     ],

@@ -1,4 +1,4 @@
-import type { ComplexAttributeConverter } from "lit";
+import { type ComplexAttributeConverter } from "lit";
 
 /**
  * The weight of the tag (text & border), can be
@@ -11,7 +11,7 @@ export type WordTagHeaviness = "normal" | "heavy";
 
 /**
  * The variations of {@link WordTag} representing the possible combinations
- *   of `text only`, `icon-only`, `icon then text`, and `text then icon`
+ *   of `text only`, `icon only`, `icon then text`, and `text then icon`
  *
  * @typedef {WordTagVariant}
  */
