@@ -15,7 +15,7 @@
 export function readCSSProperty(
   property: string,
   element: HTMLElement | null | undefined = undefined,
-  logComputedPropertyTransaction: boolean = false
+  logComputedPropertyTransaction: boolean = false,
 ) {
   const computedTarget = element ?? window.document.documentElement;
 
@@ -37,7 +37,7 @@ export function readCSSProperty(
       From element: ${element?.tagName ?? `Provided 'element' is ${element} so using 'computedTarget' = ${computedTarget.tagName}`}
       Targeting: ${computedTarget.tagName}
       ${JSON.stringify({ rawPropertyValue, trimmedPropertyValue, sanitizedPropertyValue }, null, 2)}
-      `
+      `,
     );
   }
 

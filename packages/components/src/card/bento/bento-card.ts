@@ -33,17 +33,13 @@ import { classMap } from "lit/directives/class-map.js";
 @customElement("bento-card")
 export class BentoCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    BentoCardStyles
-  ];
+  static override styles = [TextStyles, BentoCardStyles];
 
   /**
    * Uniquely identifies this `BentoCard` via {@link BENTO_BOX_TYPES}
    */
   @property({ type: String })
   bentoTag: BentoBoxType = BENTO_BOX_TYPES.profile;
-
 
   /**
    * Whether to enable scrolling for content
@@ -100,7 +96,7 @@ export class BentoCard extends UIAwareElement {
   override render() {
     const classes = {
       "bento-card": true,
-      "scrollable": this.scrollable,
+      scrollable: this.scrollable,
       "enable-hover": this.enableHover,
       "enable-focus": this.enableFocus,
       "spread-content": this.spreadContent,
@@ -116,17 +112,17 @@ export class BentoCard extends UIAwareElement {
           ?open=${this.expanded}
           @toggle=${this._handleToggle}
           aria-label=${`${this.bentoCardTitle} details`}
-          >
+        >
           <summary
             id="${htmlId}-summary"
             aria-describedby="${htmlId}"
-            >
+          >
             <md-focus-ring for="${htmlId}-summary"></md-focus-ring>
 
             <h2
               id="${htmlId}"
               class="md-typescale-display-small"
-              >
+            >
               ${this.bentoCardTitle}
             </h2>
             <md-icon>arrow_drop_down</md-icon>
@@ -135,7 +131,7 @@ export class BentoCard extends UIAwareElement {
             aria-label="${this.bentoCardTitle} content"
             id="${htmlId}-content"
             class="expansion-wrapper"
-            >
+          >
             <div class="expansion-content">
               <slot></slot>
             </div>

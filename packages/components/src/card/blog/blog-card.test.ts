@@ -12,7 +12,7 @@ describe("BlogCard Component", () => {
     const el = await fixture<BlogCard>(html`<blog-card></blog-card>`);
     const bentoCard = el.shadowRoot?.querySelector("bento-card");
     expect(bentoCard).to.exist;
-    
+
     const blogPosts = bentoCard?.querySelectorAll("blog-post");
     expect(blogPosts?.length).to.be.greaterThan(0);
   });

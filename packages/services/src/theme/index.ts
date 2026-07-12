@@ -10,16 +10,16 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-    CONFIG_COLOR_CONTRAST_NAMES,
-    CONFIG_COLOR_SCHEME_NAMES,
-    type ColorScheme,
-    type ColorSchemeConfigs,
-    type ColorSchemeRoles,
-    type ColorString,
-    type MaterialSchemeName,
-    type MaterialSchemeNames,
-    type ThemeConfig,
-    type ThemeConfigs,
+  CONFIG_COLOR_CONTRAST_NAMES,
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme,
+  type ColorSchemeConfigs,
+  type ColorSchemeRoles,
+  type ColorString,
+  type MaterialSchemeName,
+  type MaterialSchemeNames,
+  type ThemeConfig,
+  type ThemeConfigs,
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -116,27 +116,27 @@ export const onThemeChange: (event: MediaQueryListEvent) => void = (event: Media
   });
 
   MaterialCSSStyleSheet.replaceSync(
-    themeService.currentThemeConfig().materialSchemes[
-      colorSchemeConfigsToMaterialSchemeName(colorScheme)
-    ].cssText
+    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)].cssText,
   );
 
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
 export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
-  colorSchemeSettings: ColorSchemeConfigs
+  colorSchemeSettings: ColorSchemeConfigs,
 ): MaterialSchemeName => {
-  const variant = colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM
-    ? colorSchemeSettings.name.toLowerCase()
-    : (window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT
-    ).toLowerCase();
+  const variant =
+    colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+      ? colorSchemeSettings.name.toLowerCase()
+      : (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? CONFIG_COLOR_SCHEME_NAMES.DARK
+          : CONFIG_COLOR_SCHEME_NAMES.LIGHT
+        ).toLowerCase();
 
-  const contrast = colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL
-    ? ""
-    : colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
+  const contrast =
+    colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL
+      ? ""
+      : colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
 
   return `${variant}${contrast}` as MaterialSchemeName;
 };

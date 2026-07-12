@@ -37,5 +37,5 @@ export const SizeObserverElement = <T extends Constructor<UIAwareElement>>(Base:
       });
       this.resizeObserver.observe(this);
     }
-  }
+  };
 };

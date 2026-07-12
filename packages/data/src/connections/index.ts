@@ -1,19 +1,23 @@
-import { type ArtifactConnectionData, type ConnectionInstance, type ProfessionalConnectionJsonData } from "@fnc314/packages.types";
+import {
+  type ArtifactConnectionData,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData,
+} from "@fnc314/packages.types";
 
 export const Connections: {
   direct: {
-    phone: ConnectionInstance,
-    email: ConnectionInstance
-  },
+    phone: ConnectionInstance;
+    email: ConnectionInstance;
+  };
   social: {
-    linkedIn: ProfessionalConnectionJsonData,
-    github: ProfessionalConnectionJsonData,
-    medium: ProfessionalConnectionJsonData,
-  },
+    linkedIn: ProfessionalConnectionJsonData;
+    github: ProfessionalConnectionJsonData;
+    medium: ProfessionalConnectionJsonData;
+  };
   resume: {
-    googleDoc: ArtifactConnectionData,
-    pdf: ArtifactConnectionData,
-  }
+    googleDoc: ArtifactConnectionData;
+    pdf: ArtifactConnectionData;
+  };
 } = {
   direct: {
     phone: {
@@ -23,8 +27,8 @@ export const Connections: {
       title: "Call or text me directly",
       designToken: {
         dark: "--md-icons-call-dark-icon-svg",
-        light: "--md-icons-call-light-icon-svg"
-      }
+        light: "--md-icons-call-light-icon-svg",
+      },
     },
     email: {
       href: "mailto:fnc314@gmail.com",
@@ -33,8 +37,8 @@ export const Connections: {
       title: "Send me an email",
       designToken: {
         dark: "--md-icons-mail-dark-icon-svg",
-        light: "--md-icons-mail-light-icon-svg"
-      }
+        light: "--md-icons-mail-light-icon-svg",
+      },
     },
   },
   social: {
@@ -43,27 +47,27 @@ export const Connections: {
       designToken: {
         dark: "--icons-logos-organization-linkedin-dark-icon-svg-url",
         light: "--icons-logos-organization-linkedin-light-icon-svg-url",
-        mask: "--icons-logos-organization-linkedin-mask-icon-svg-url"
+        mask: "--icons-logos-organization-linkedin-mask-icon-svg-url",
       },
-      title: "Review professional profile on LinkedIn"
+      title: "Review professional profile on LinkedIn",
     },
     github: {
       href: "https://www.github.com/fnc314",
       designToken: {
         dark: "--icons-logos-organization-github-dark-icon-svg-url",
         light: "--icons-logos-organization-github-light-icon-svg-url",
-        mask: "--icons-logos-organization-github-mask-icon-svg-url"
+        mask: "--icons-logos-organization-github-mask-icon-svg-url",
       },
-      title: "See open source code on GitHub"
+      title: "See open source code on GitHub",
     },
     medium: {
       href: "https://fnc314.medium.com",
       designToken: {
         dark: "--icons-logos-organization-medium-dark-icon-svg-url",
         light: "--icons-logos-organization-medium-light-icon-svg-url",
-        mask: "--icons-logos-organization-medium-mask-icon-svg-url"
+        mask: "--icons-logos-organization-medium-mask-icon-svg-url",
       },
-      title: "Read publications on Medium"
+      title: "Read publications on Medium",
     },
   },
   resume: {
@@ -71,19 +75,19 @@ export const Connections: {
       href: "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
       designToken: {
         dark: "--icons-logos-tech-google-docs-dark-icon-svg",
-        light: "--icons-logos-tech-google-docs-light-icon-svg"
+        light: "--icons-logos-tech-google-docs-light-icon-svg",
       },
       title: "View resume on Google Docs",
-      mdIcon: "docs"
+      mdIcon: "docs",
     },
     pdf: {
       href: "https://fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
       designToken: {
         dark: "--icons-logos-tech-pdf-dark-icon-svg",
-        light: "--icons-logos-tech-pdf-light-icon-svg"
+        light: "--icons-logos-tech-pdf-light-icon-svg",
       },
       title: "Download resume in PDF format",
-      mdIcon: "picture_as_pdf"
-    }
-  }
+      mdIcon: "picture_as_pdf",
+    },
+  },
 };

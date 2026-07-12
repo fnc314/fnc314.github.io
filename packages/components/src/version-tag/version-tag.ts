@@ -5,7 +5,6 @@ import { abbreviatedSha as gitSha } from "~build/git";
 import { version as buildVersion } from "~build/package";
 import time from "~build/time";
 
-
 @customElement("version-tag")
 export class VersionTag extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
@@ -38,19 +37,15 @@ export class VersionTag extends UIAwareElement {
    * @private
    * @type {string}
    */
-  private formattedDate: string = new Intl.DateTimeFormat(
-    navigator.languages,
-    {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-      hour12: false,
-    }
-  ).format(time);
-
+  private formattedDate: string = new Intl.DateTimeFormat(navigator.languages, {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+    hour12: false,
+  }).format(time);
 
   override render() {
     return html`
@@ -60,7 +55,7 @@ export class VersionTag extends UIAwareElement {
       </div>
     `;
   }
-};
+}
 
 declare global {
   interface HTMLElementTagNameMap {

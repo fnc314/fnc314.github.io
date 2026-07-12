@@ -35,10 +35,7 @@ import { styleMap } from "lit/directives/style-map.js";
 @customElement("word-cloud")
 export class WordCloud extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    WordCloudStyles
-  ];
+  static override styles = [TextStyles, WordCloudStyles];
 
   /**
    * The list of words to display in the cloud.
@@ -160,9 +157,7 @@ export class WordCloud extends UIAwareElement {
 
   private _processWords(): RenderableWordCloudWord[] {
     // 1. Layout: Always Randomize
-    const randomized: RenderableWordCloudWord[] = this.words
-      .map((w) => ({ ...w }))
-      .sort(() => Math.random() - 0.5);
+    const randomized: RenderableWordCloudWord[] = this.words.map((w) => ({ ...w })).sort(() => Math.random() - 0.5);
 
     // 2. Determine groups
     let groups: RenderableWordCloudWord[][];
@@ -236,9 +231,7 @@ export class WordCloud extends UIAwareElement {
 
   private _getSortFunction(
     sorting: WordCloudSorting,
-  ):
-    | ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number)
-    | undefined {
+  ): ((a: RenderableWordCloudWord, b: RenderableWordCloudWord) => number) | undefined {
     switch (sorting) {
       case WordCloudSortings.BY_WEIGHT:
         return (a, b) => (a.weight as number) - (b.weight as number);
@@ -278,7 +271,10 @@ export class WordCloud extends UIAwareElement {
           };
 
           return html`
-            <li class=${classMap(classes)} style=${styleMap(styles)}>
+            <li
+              class=${classMap(classes)}
+              style=${styleMap(styles)}
+            >
               <word-tag .word=${word.word}></word-tag>
             </li>
           `;

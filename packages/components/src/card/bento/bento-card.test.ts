@@ -24,9 +24,7 @@ describe("BentoCard Component", () => {
     expect(slot).to.exist;
 
     const assignedNodes = slot?.assignedNodes();
-    const content = assignedNodes?.find(
-      (node) => (node as HTMLElement).id === "test-content"
-    );
+    const content = assignedNodes?.find((node) => (node as HTMLElement).id === "test-content");
     expect(content).to.exist;
   });
 
@@ -37,8 +35,8 @@ describe("BentoCard Component", () => {
 
     const styles = getComputedStyle(container!);
     // Verify backdrop-filter for glassmorphism
-    const hasFilter = styles.backdropFilter.includes("blur(12px)") ||
-                      styles.webkitBackdropFilter.includes("blur(12px)");
+    const hasFilter =
+      styles.backdropFilter.includes("blur(12px)") || styles.webkitBackdropFilter.includes("blur(12px)");
     expect(hasFilter).to.be.true;
   });
 
@@ -66,7 +64,12 @@ describe("BentoCard Component", () => {
   });
 
   it("should apply interaction classes based on properties", async () => {
-    const el = await fixture<BentoCard>(html`<bento-card enableHover enableFocus></bento-card>`);
+    const el = await fixture<BentoCard>(
+      html`<bento-card
+        enableHover
+        enableFocus
+      ></bento-card>`,
+    );
     const container = el.shadowRoot?.querySelector(".bento-card");
     expect(container?.classList.contains("enable-hover")).to.be.true;
     expect(container?.classList.contains("enable-focus")).to.be.true;

@@ -93,9 +93,7 @@ describe("ProfileCard Component", () => {
 
   it("should allow bioText property to be overridden", async () => {
     const customBioText = "This is a custom bio text.";
-    const customElement = await fixture<ProfileCard>(
-      html`<profile-card .bioText=${customBioText}></profile-card>`,
-    );
+    const customElement = await fixture<ProfileCard>(html`<profile-card .bioText=${customBioText}></profile-card>`);
     const bioParagraph = customElement.shadowRoot?.querySelector(".bio-content p");
     expect(bioParagraph?.textContent).to.equal(customBioText);
   });

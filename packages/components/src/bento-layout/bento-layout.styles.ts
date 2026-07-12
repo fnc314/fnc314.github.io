@@ -75,7 +75,6 @@ export const BentoLayoutStyles = css`
       place-items: stretch stretch;
     }
   }
-
 `;
 
 /**

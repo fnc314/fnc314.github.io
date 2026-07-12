@@ -1,16 +1,19 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
-import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, themeService } from "@fnc314/packages.services";
 import {
-  type AppConfigs, type AppConfigsChange, CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme
+  MaterialCSSStyleSheet,
+  colorSchemeConfigsToMaterialSchemeName,
+  configsService,
+  themeService,
+} from "@fnc314/packages.services";
+import {
+  type AppConfigs,
+  type AppConfigsChange,
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme,
 } from "@fnc314/packages.types";
-import {
-  type ColorSchemeChangeEvent,
-  DarkModeToggle,
-  type PermanentColorSchemeEvent,
-} from "dark-mode-toggle";
+import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -38,10 +41,7 @@ import { classMap } from "lit/directives/class-map.js";
 @customElement("ui-mode-toggle")
 export class UiModeToggle extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    UIModeToggleStyles
-  ];
+  static override styles = [TextStyles, UIModeToggleStyles];
 
   @query("#dark-mode-toggle")
   private _darkModeToggle!: DarkModeToggle;

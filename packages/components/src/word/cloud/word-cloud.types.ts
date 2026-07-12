@@ -4,7 +4,7 @@ export interface WordCloudWord {
   quartile: WeightQuartile;
   category: WordCloudWordCategory;
   extras: string[];
-};
+}
 
 export type WordCloudWordCategory = "tech" | "practice" | "product";
 

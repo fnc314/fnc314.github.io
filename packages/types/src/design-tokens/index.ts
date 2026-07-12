@@ -62,11 +62,7 @@ export type BreakpointLabel = "mobile" | "tablet" | "desktop";
 /**
  * Iterable set of {@link BreakpointLabel}
  */
-export const BREAKPOINT_LABELS: BreakpointLabel[] = [
-  "mobile",
-  "tablet",
-  "desktop"
-];
+export const BREAKPOINT_LABELS: BreakpointLabel[] = ["mobile", "tablet", "desktop"];
 
 /**
  * Type-safe constants exposed to perform checks
@@ -110,11 +106,11 @@ export const BREAKPOINTS: Breakpoints = {
   } as const,
   tablet: {
     min: 769 as const,
-    max: 1200 as const
+    max: 1200 as const,
   } as const,
   desktop: {
     min: 1201 as const,
-    max: Number.POSITIVE_INFINITY
+    max: Number.POSITIVE_INFINITY,
   } as const,
 } as const;
 

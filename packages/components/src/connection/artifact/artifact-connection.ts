@@ -9,13 +9,10 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("artifact-connection")
 export class ArtifactConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles: CSSResult[] = [
-    TextStyles,
-    ConnectionArtifactStyles,
-  ];
+  static override styles: CSSResult[] = [TextStyles, ConnectionArtifactStyles];
 
   @property({ type: String })
-  artifactConnectionType: ArtifactConnectionType = "" as ArtifactConnectionType
+  artifactConnectionType: ArtifactConnectionType = "" as ArtifactConnectionType;
 
   @property({ type: Object })
   artifactConnectionData: ArtifactConnectionData = {} as ArtifactConnectionData;
@@ -33,11 +30,9 @@ export class ArtifactConnection extends UIAwareElement {
         type="button"
         title=${this.artifactConnectionData.title}
         aria-label=${this.artifactConnectionData.title}
-        >
-        <md-icon>
-          ${this.artifactConnectionData.mdIcon}
-        </md-icon>
-        </md-filled-icon-button>
+      >
+        <md-icon> ${this.artifactConnectionData.mdIcon} </md-icon>
+      </md-filled-icon-button>
     `;
   }
 }

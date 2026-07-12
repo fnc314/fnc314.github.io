@@ -1,14 +1,20 @@
-import { type ABentoBoxConfig, type BentoBoxConfigs, type BentoBoxType, type BreakpointLabel, BreakpointLabels } from "@fnc314/packages.types";
+import {
+  type ABentoBoxConfig,
+  type BentoBoxConfigs,
+  type BentoBoxType,
+  type BreakpointLabel,
+  BreakpointLabels,
+} from "@fnc314/packages.types";
 
 /** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 4, rowSpan: 1 }, order: 1 },
-      tablet:  { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 1 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 1 },
       mobile: { breakpoint: "mobile", order: 1 },
     },
-    isExpanded: () => true
+    isExpanded: () => true,
   },
   experience: {
     placement: {
@@ -16,7 +22,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 2 },
       mobile: { breakpoint: "mobile", order: 2 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
   },
   code: {
     placement: {
@@ -24,7 +30,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 3 },
       mobile: { breakpoint: "mobile", order: 3 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
   },
   blog: {
     placement: {
@@ -32,7 +38,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 4 },
       mobile: { breakpoint: "mobile", order: 4 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
   },
   skills: {
     placement: {
@@ -40,15 +46,15 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 5 },
       mobile: { breakpoint: "mobile", order: 5 },
     },
-    isExpanded: () => false
+    isExpanded: () => false,
   },
   education: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 5, rowSpan: 1 }, order: 6 },
-      tablet:  { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 6 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 6 },
       mobile: { breakpoint: "mobile", order: 6 },
     },
-    isExpanded: () => false
+    isExpanded: () => false,
   },
   settings: {
     placement: {
@@ -56,8 +62,8 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
       tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
       mobile: { breakpoint: "mobile", order: 7 },
     },
-    isExpanded: () => false
-  }
+    isExpanded: () => false,
+  },
 };
 
 /**

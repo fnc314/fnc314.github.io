@@ -14,7 +14,7 @@ export const Skills = {
     Git: 5,
     Ruby: 5,
     Node: 4,
-    Python: 3
+    Python: 3,
   },
   product: {
     Android: 10,
@@ -32,7 +32,7 @@ export const Skills = {
     "Samsung Knox": 4,
     Confluence: 3,
     Trello: 3,
-    "Google Cloud": 3
+    "Google Cloud": 3,
   },
   practice: {
     "Design Systems": 10,
@@ -50,6 +50,6 @@ export const Skills = {
     Agile: 5,
     "Stakeholder Alignment": 5,
     "Dependency Injection": 5,
-    "Change Management": 4
-  }
+    "Change Management": 4,
+  },
 };

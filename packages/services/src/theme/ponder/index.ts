@@ -1,10 +1,7 @@
 import { jsonIsThemeJsonSchemes, readScheme } from "@/lib/theme/utils";
 import { Photos } from "@fnc314/packages.data";
 import JsonTheme from "@fnc314/packages.design-tokens/themes/roman-bus/roman-bus.mtb.json" with { type: "json" };
-import {
-  type ThemeConfig,
-  type ThemeJsonSchemes,
-} from "@fnc314/packages.types";
+import { type ThemeConfig, type ThemeJsonSchemes } from "@fnc314/packages.types";
 
 const json = jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes);
 

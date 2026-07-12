@@ -21,7 +21,7 @@ export const ArtifactConnections = {
 } as const;
 
 export type ArtifactConnectionType = keyof typeof ArtifactConnections;
-export type ArtifactConnectionData = { title: string, href: string, designToken: DesignTokenIcon, mdIcon: string }
+export type ArtifactConnectionData = { title: string; href: string; designToken: DesignTokenIcon; mdIcon: string };
 
 export type ArtifactConnectionJsonData = Record<ArtifactConnectionType, ArtifactConnectionData>;
 
@@ -37,6 +37,6 @@ export type ProfessionalConnectionJsonData = {
   href: string;
   designToken: MaskableDesignTokenIcon;
   title: string;
-}
+};
 
-export type ProfessionalConnectionJson = Record<ProfessionalConnectionType, ProfessionalConnectionJsonData>
+export type ProfessionalConnectionJson = Record<ProfessionalConnectionType, ProfessionalConnectionJsonData>;

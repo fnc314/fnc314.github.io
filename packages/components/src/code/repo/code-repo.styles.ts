@@ -121,7 +121,7 @@ export const CodeRepoStyles: CSSResult = css`
       padding: var(--spaces-none);
 
       & word-tag img,
-      & word-tag [slot=icon] {
+      & word-tag [slot="icon"] {
         block-size: var(--md-icon-size);
         flex-shrink: 0;
         inline-size: var(--md-icon-size);

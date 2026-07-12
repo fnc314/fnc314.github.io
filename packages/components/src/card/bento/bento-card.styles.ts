@@ -74,7 +74,6 @@ export const BentoCardStyles = css`
   }
 
   details {
-
     summary {
       position: relative;
       align-items: center;

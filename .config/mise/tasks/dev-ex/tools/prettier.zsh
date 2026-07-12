@@ -8,6 +8,7 @@
 #USAGE arg "<mode>" help="Passes `--write`` or `--check`` to `prettier`" default="check" {
 #USAGE   choices "check" "write"
 #USAGE }
+#USAGE flag "--write" help="Passes `--write` to `prettier`" default="false"
 set -euo pipefail
 
 typeset -a PRETTIER_FLAGS
@@ -19,7 +20,7 @@ PRETTIER_FLAGS=(
 )
 
 typeset PRETTIER_MODE="${usage_mode:=check}"
-if [[ "$PRETTIER_MODE" == "write" ]]; then
+if [[ "$PRETTIER_MODE" == "write" || "${usage_write:=false}" == "true" ]]; then
   PRETTIER_FLAGS+=(
     --write
   )
@@ -35,4 +36,4 @@ fi
 
 print -r -f "${PRETTIER_FLAGS}\n\n"
 
-pnpm prettier "./src/**/*.{css,json,ts}" "${PRETTIER_FLAGS[@]}"
+pnpm prettier "packages/{components,data,design-tokens,services,types}/src/**/*.{css,json,ts}" "${PRETTIER_FLAGS[@]}"

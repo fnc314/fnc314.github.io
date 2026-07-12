@@ -15,10 +15,7 @@ import { customElement, property, state } from "lit/decorators.js";
 @customElement("education-card")
 export class EducationCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    EducationCardStyles
-  ];
+  static override styles = [TextStyles, EducationCardStyles];
 
   @property({ type: Boolean })
   expanded = false;
@@ -30,19 +27,17 @@ export class EducationCard extends UIAwareElement {
   enableFocus = false;
 
   @state({})
-  _educationJsonData: EducationInstitutionRecord[] = EducationJsonData
+  _educationJsonData: EducationInstitutionRecord[] = EducationJsonData;
 
   override render() {
     const listItems = html`
-      ${
-        this._educationJsonData.map(
-          (edu: EducationInstitutionRecord) => html`
-            <li>
-              <education-institution .institute=${edu}></education-institution>
-            </li>
-          `,
-        )
-      }
+      ${this._educationJsonData.map(
+        (edu: EducationInstitutionRecord) => html`
+          <li>
+            <education-institution .institute=${edu}></education-institution>
+          </li>
+        `,
+      )}
     `;
     return html`
       <bento-card

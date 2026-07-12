@@ -9,10 +9,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("professional-connection")
 export class ProfessionalConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles: CSSResult[] = [
-    TextStyles,
-    ProfessionalConnectionStyles,
-  ];
+  static override styles: CSSResult[] = [TextStyles, ProfessionalConnectionStyles];
 
   @property({ type: String })
   professionalConnectionType: ProfessionalConnectionType = "" as ProfessionalConnectionType;
@@ -22,7 +19,7 @@ export class ProfessionalConnection extends UIAwareElement {
 
   override render(): TemplateResult {
     const style = css`
-      --professional-connection-mask: ${unsafeCSS(readCSSProperty(this.professionalConnectionData.designToken.mask))}
+      --professional-connection-mask: ${unsafeCSS(readCSSProperty(this.professionalConnectionData.designToken.mask))};
     `;
     return html`
       <md-filled-icon-button

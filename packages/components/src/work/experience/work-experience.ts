@@ -22,10 +22,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 @customElement("work-experience")
 export class WorkExperience extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    WorkExperienceStyles
-  ];
+  static override styles = [TextStyles, WorkExperienceStyles];
 
   /** If true, adjusts font sizes and layout for a nested appearance. */
   @property({ type: Boolean, attribute: "is-nested" })
@@ -61,7 +58,7 @@ export class WorkExperience extends UIAwareElement {
      * AUTO-DOC'd WITH GEMINI
      * The description of the responsibility or achievement.
      */
-    item: string
+    item: string;
   }[] = [];
 
   /** A list of sub-jobs or project assignments to be rendered as nested experiences. */

@@ -31,14 +31,15 @@ export type BlogsJson = {
   id: string;
   title: string;
 } & (
-  {
-    type: "SERIES";
-    entries: BlogsJsonEntry[];
-  } | {
-    type: "SINGLE";
-    mediumUrl: string;
-    tags: string[];
-  }
+  | {
+      type: "SERIES";
+      entries: BlogsJsonEntry[];
+    }
+  | {
+      type: "SINGLE";
+      mediumUrl: string;
+      tags: string[];
+    }
 );
 
 /**

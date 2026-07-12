@@ -1,7 +1,11 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
-import { type WordTagHeaviness, type WordTagVariant, WordTagVariantAttributeConverter } from "@/lib/word/tag/word-tag.types";
+import {
+  type WordTagHeaviness,
+  type WordTagVariant,
+  WordTagVariantAttributeConverter,
+} from "@/lib/word/tag/word-tag.types";
 import { type CSSResult, type TemplateResult, css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -33,10 +37,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("word-tag")
 export class WordTag extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    WordTagStyles,
-  ];
+  static override styles = [TextStyles, WordTagStyles];
 
   @property({ type: String })
   word = "";
@@ -55,20 +56,18 @@ export class WordTag extends UIAwareElement {
     reflect: true,
     useDefault: true,
   })
-  variant: WordTagVariant = "text-only"
+  variant: WordTagVariant = "text-only";
 
   private layoutForVariant(variant: WordTagVariant): TemplateResult {
     const fontStyles: CSSResult = css`
-      font-weight: ${this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)` };
+      font-weight: ${this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)`};
     `;
 
     const borderStyles: CSSResult = css`
       border-width: ${this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`};
     `;
 
-    const defaultWordTag = html`
-      <span style=${fontStyles.cssText}>${this.word}</span>
-    `;
+    const defaultWordTag = html` <span style=${fontStyles.cssText}>${this.word}</span> `;
 
     let contents: TemplateResult | undefined = undefined;
     switch (variant) {
@@ -85,33 +84,37 @@ export class WordTag extends UIAwareElement {
         `;
         break;
       case "icon-only":
-        contents = html`
-          <slot name="icon"></slot>
-        `;
+        contents = html` <slot name="icon"></slot> `;
         break;
       case "text-only":
-        contents = html`
-          ${defaultWordTag}
-        `;
+        contents = html` ${defaultWordTag} `;
         break;
       default:
         break;
     }
 
-    return contents ?
-      html`
-        <div style=${borderStyles.cssText} class="word-tag-variant-wrapper">
-          ${contents}
-        </div>
-      ` :
-      html`${nothing}`
-      ;
+    return contents
+      ? html`
+          <div
+            style=${borderStyles.cssText}
+            class="word-tag-variant-wrapper"
+          >
+            ${contents}
+          </div>
+        `
+      : html`${nothing}`;
   }
 
   override render() {
-    return this.hrefUrl === "" ?
-      this.layoutForVariant(this.variant) :
-      html`<a title=${this.word} href=${this.hrefUrl} target="_blank" rel="noopener noreferrer">${this.layoutForVariant(this.variant)}</a>`;
+    return this.hrefUrl === ""
+      ? this.layoutForVariant(this.variant)
+      : html`<a
+          title=${this.word}
+          href=${this.hrefUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          >${this.layoutForVariant(this.variant)}</a
+        >`;
   }
 }
 

@@ -12,7 +12,7 @@ describe("SkillsCard Component", () => {
     const el = await fixture<SkillsCard>(html`<skills-card></skills-card>`);
     const bentoCard = el.shadowRoot?.querySelector("bento-card");
     expect(bentoCard).to.exist;
-    
+
     const wordCloud = bentoCard?.querySelector("word-cloud");
     expect(wordCloud).to.exist;
   });

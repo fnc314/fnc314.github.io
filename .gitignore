@@ -13,5 +13,4 @@ docs/types/**/*.d.ts.map
 logs
 node_modules/
 stats
-website
 *.log

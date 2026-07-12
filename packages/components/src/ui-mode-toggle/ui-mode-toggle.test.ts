@@ -88,9 +88,7 @@ describe("UiModeToggle Component", () => {
         persist: true,
       },
     };
-    configsService.dispatchEvent(
-      new CustomEvent("app-configs.change", { detail: { appConfigs: newConfigs } }),
-    );
+    configsService.dispatchEvent(new CustomEvent("app-configs.change", { detail: { appConfigs: newConfigs } }));
     await element.updateComplete;
 
     expect(element.mode).to.equal("dark");
@@ -120,10 +118,9 @@ describe("UiModeToggle Component", () => {
     const darkModeToggle = element.shadowRoot?.querySelector("dark-mode-toggle");
 
     // Simulate permanentcolorscheme event
-    const permanentEvent: PermanentColorSchemeEvent = new CustomEvent(
-      "permanentcolorscheme",
-      { detail: { permanent: true } },
-    );
+    const permanentEvent: PermanentColorSchemeEvent = new CustomEvent("permanentcolorscheme", {
+      detail: { permanent: true },
+    });
     darkModeToggle?.dispatchEvent(permanentEvent);
     await element.updateComplete;
 

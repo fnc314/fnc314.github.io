@@ -3,8 +3,20 @@ import { SettingsCardStyles } from "@/lib/card/settings/settings-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
-import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, themeService } from "@fnc314/packages.services";
-import { type AppConfigs, BENTO_BOX_TYPES, CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, THEME_NAMES, type ThemeName } from "@fnc314/packages.types";
+import {
+  MaterialCSSStyleSheet,
+  colorSchemeConfigsToMaterialSchemeName,
+  configsService,
+  themeService,
+} from "@fnc314/packages.services";
+import {
+  type AppConfigs,
+  BENTO_BOX_TYPES,
+  CONFIG_COLOR_CONTRAST_NAMES,
+  type ColorSchemeContrast,
+  THEME_NAMES,
+  type ThemeName,
+} from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import { html } from "lit";
@@ -18,10 +30,7 @@ import { customElement, property, state } from "lit/decorators.js";
 @customElement("settings-card")
 export class SettingsCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    SettingsCardStyles,
-  ];
+  static override styles = [TextStyles, SettingsCardStyles];
 
   @state()
   private _appConfigs: AppConfigs = configsService.loadConfigs();
@@ -103,7 +112,10 @@ export class SettingsCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.settings}
       >
         <div class="settings-content">
-          <form toolname="adjustSiteDisplayConfigurations" tooldescription="Adjusts the theme, light/dark/system mode (and persistence), and color-contrast levels for the site">
+          <form
+            toolname="adjustSiteDisplayConfigurations"
+            tooldescription="Adjusts the theme, light/dark/system mode (and persistence), and color-contrast levels for the site"
+          >
             <fieldset>
               <legend class="md-typescale-label-large">UI Theme</legend>
               <md-outlined-select

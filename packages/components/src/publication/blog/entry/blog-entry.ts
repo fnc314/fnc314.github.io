@@ -17,10 +17,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 @customElement("blog-entry")
 export class BlogEntry extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    BlogEntryStyles,
-  ];
+  static override styles = [TextStyles, BlogEntryStyles];
 
   @property({ type: Object })
   blogEntry: BlogEntryJson = {} as BlogEntryJson;
@@ -36,19 +33,16 @@ export class BlogEntry extends UIAwareElement {
       --dynamic-border-background-image: var(${logoToken});
     `);
 
-    const logoProperty = readCSSProperty(
-      `--icons-logos-organization-medium-${variant}-icon-svg`
-    );
+    const logoProperty = readCSSProperty(`--icons-logos-organization-medium-${variant}-icon-svg`);
 
     return html`
-      <article class="dynamic-border-host" style="${borderStyle.cssText}">
+      <article
+        class="dynamic-border-host"
+        style="${borderStyle.cssText}"
+      >
         <header>
-          <h3 class="md-typescale-title-large">
-            ${this.blogEntry.title}
-          </h3>
-          <h4 class="md-typescale-title-small">
-            ${this.blogEntry.series.title} #${blogEntryPadded}
-          </h4>
+          <h3 class="md-typescale-title-large">${this.blogEntry.title}</h3>
+          <h4 class="md-typescale-title-small">${this.blogEntry.series.title} #${blogEntryPadded}</h4>
         </header>
 
         <section>
@@ -72,7 +66,10 @@ export class BlogEntry extends UIAwareElement {
               .src=${logoProperty}
               alt="Medium logo"
             />
-            <span class="md-typescale-label-large" id="medium-link-label">
+            <span
+              class="md-typescale-label-large"
+              id="medium-link-label"
+            >
               Read <em>${this.blogEntry.title}</em> on Medium<sup>&reg;</sup>
             </span>
           </a>

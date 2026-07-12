@@ -14,22 +14,16 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("education-institution")
 export class EducationInstitution extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles: CSSResult[] = [
-    TextStyles,
-    EducationInstitutionStyles
-  ]
+  static override styles: CSSResult[] = [TextStyles, EducationInstitutionStyles];
 
   @property({ type: Object })
   institute: EducationInstitutionRecord = {} as EducationInstitutionRecord;
 
   override render(): TemplateResult {
     const datetimeAttr = `${this.institute.graduationDate.date.year}-${this.institute.graduationDate.date.month}`;
-    const timeText = `${this.institute.graduationDate.text.month} ${this.institute.graduationDate.text.year}`
-    const location =
-      `${this.institute.location.city}, ${this.institute.location.state}, ${this.institute.location.country}`;
-    const imgSrc = readCSSProperty(
-      this.darkMode ? this.institute.designToken.dark : this.institute.designToken.light
-    );
+    const timeText = `${this.institute.graduationDate.text.month} ${this.institute.graduationDate.text.year}`;
+    const location = `${this.institute.location.city}, ${this.institute.location.state}, ${this.institute.location.country}`;
+    const imgSrc = readCSSProperty(this.darkMode ? this.institute.designToken.dark : this.institute.designToken.light);
     return html`
       <div class="education-institution-container">
         <img
@@ -42,7 +36,8 @@ export class EducationInstitution extends UIAwareElement {
         <h4 class="md-typescale-title-medium">${this.institute.degree}</h4>
         <time
           class="md-typescale-body-medium"
-          datetime="${datetimeAttr}">
+          datetime="${datetimeAttr}"
+        >
           ${timeText}
         </time>
       </div>

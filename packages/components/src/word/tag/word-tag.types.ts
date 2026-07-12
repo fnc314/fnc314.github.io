@@ -20,10 +20,7 @@ export type WordTagVariant = "text-only" | "icon-text" | "text-icon" | "icon-onl
 /**
  * Implements {@link ComplexAttributeConverter} for {@link WordTagVariant} properties
  */
-export const WordTagVariantAttributeConverter: ComplexAttributeConverter<
-  WordTagVariant,
-  WordTagVariant
-> = {
+export const WordTagVariantAttributeConverter: ComplexAttributeConverter<WordTagVariant, WordTagVariant> = {
   toAttribute: (value: string) => `${value}`,
   fromAttribute: (value: string) => {
     switch (value) {
@@ -38,5 +35,5 @@ export const WordTagVariantAttributeConverter: ComplexAttributeConverter<
       default:
         return "text-only";
     }
-  }
-}
+  },
+};

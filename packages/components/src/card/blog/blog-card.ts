@@ -16,10 +16,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("blog-card")
 export class BlogCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    BlogCardStyles
-  ];
+  static override styles = [TextStyles, BlogCardStyles];
 
   @property({ type: Boolean })
   expanded = false;
@@ -47,11 +44,7 @@ export class BlogCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.blog}
       >
         <div class="blog-list">
-          ${Blogs.map(
-            (entry: BlogEntryJson) => html`
-              <blog-entry .blogEntry=${entry}></blog-entry>
-            `,
-          )}
+          ${Blogs.map((entry: BlogEntryJson) => html` <blog-entry .blogEntry=${entry}></blog-entry> `)}
         </div>
       </bento-card>
     `;

@@ -1,6 +1,12 @@
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { configsService } from "@fnc314/packages.services";
-import { type AppConfigsChange, type BreakpointLabel, CONFIG_COLOR_SCHEME_NAMES, CSS_VARIABLE_BREAKPOINT_LABEL, CSS_VARIABLE_TOUCH_SCREEN } from "@fnc314/packages.types";
+import {
+  type AppConfigsChange,
+  type BreakpointLabel,
+  CONFIG_COLOR_SCHEME_NAMES,
+  CSS_VARIABLE_BREAKPOINT_LABEL,
+  CSS_VARIABLE_TOUCH_SCREEN,
+} from "@fnc314/packages.types";
 import { type CSSResult, LitElement } from "lit";
 import { state } from "lit/decorators.js";
 
@@ -27,10 +33,8 @@ export abstract class UIAwareElement extends LitElement {
   protected darkMode = configsService.loadConfigs().colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
 
   private onAppConfigChange: (event: Event) => void = (event: Event) => {
-    this.darkMode = (event as AppConfigsChange).detail
-      ?.appConfigs
-      ?.colorScheme
-      ?.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
+    this.darkMode =
+      (event as AppConfigsChange).detail?.appConfigs?.colorScheme?.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
   };
 
   /**
@@ -38,26 +42,18 @@ export abstract class UIAwareElement extends LitElement {
    *   {@link @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS}
    */
   @state()
-  protected breakpoint: BreakpointLabel = readCSSProperty(
-    CSS_VARIABLE_BREAKPOINT_LABEL
-  ) as BreakpointLabel;
+  protected breakpoint: BreakpointLabel = readCSSProperty(CSS_VARIABLE_BREAKPOINT_LABEL) as BreakpointLabel;
 
   private onBreakpointChange: () => void = () => {
-    this.breakpoint = readCSSProperty(
-      CSS_VARIABLE_BREAKPOINT_LABEL
-    ) as BreakpointLabel
-  }
+    this.breakpoint = readCSSProperty(CSS_VARIABLE_BREAKPOINT_LABEL) as BreakpointLabel;
+  };
 
   /**
    * Reads {@link @fnc314/packages.design-tokens!TouchScreen.CSS_VARIABLE_TOUCH_SCREEN} from `:root`
    *   and tests against `"true"`,
    */
   @state()
-  protected touchScreen: boolean = readCSSProperty(
-    CSS_VARIABLE_TOUCH_SCREEN,
-    this,
-    false
-  ) === "true";
+  protected touchScreen: boolean = readCSSProperty(CSS_VARIABLE_TOUCH_SCREEN, this, false) === "true";
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -70,4 +66,4 @@ export abstract class UIAwareElement extends LitElement {
     window.removeEventListener("resize", this.onBreakpointChange);
     configsService.removeEventListener("app-configs.change", this.onAppConfigChange);
   }
-};
+}

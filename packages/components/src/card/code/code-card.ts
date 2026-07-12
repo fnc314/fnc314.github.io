@@ -16,10 +16,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("code-card")
 export class CodeCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    CodeCardStyles
-  ];
+  static override styles = [TextStyles, CodeCardStyles];
 
   @property({ type: Boolean })
   expanded = false;
@@ -46,13 +43,7 @@ export class CodeCard extends UIAwareElement {
         .bentoCardTitle=${"Code"}
         .bentoTag=${BENTO_BOX_TYPES.code}
       >
-        <div class="code-list">
-          ${Projects.map(
-            (p) => html`
-              <code-repo .codeRepo="${p}"></code-repo>
-            `,
-          )}
-        </div>
+        <div class="code-list">${Projects.map((p) => html` <code-repo .codeRepo="${p}"></code-repo> `)}</div>
       </bento-card>
     `;
   }

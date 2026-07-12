@@ -5,8 +5,10 @@ import { Biographies, Connections, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
   type ArtifactConnectionData,
-  type ArtifactConnectionType, BENTO_BOX_TYPES, type ConnectionInstance,
-  type ProfessionalConnectionJsonData
+  type ArtifactConnectionType,
+  BENTO_BOX_TYPES,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
@@ -20,10 +22,7 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("profile-card")
 export class ProfileCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    ProfileCardStyles,
-  ];
+  static override styles = [TextStyles, ProfileCardStyles];
 
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
   photoData = Photos[configsService.loadConfigs().colorScheme.theme];
@@ -60,56 +59,67 @@ export class ProfileCard extends UIAwareElement {
   private contactsSection(): TemplateResult {
     const directConnections = html`
       <tr>
-        <th scope="row" class="md-typescale-title-large">Contact</th>
-        ${
-          Object.entries(Connections.direct)
-            .map(([_, instance]: [string, ConnectionInstance]) => html`
-              <td colspan="3">
-                <direct-connection .connectionInstance=${instance}></direct-connection>
-              </td>
-            `)
-        }
+        <th
+          scope="row"
+          class="md-typescale-title-large"
+        >
+          Contact
+        </th>
+        ${Object.entries(Connections.direct).map(
+          ([_, instance]: [string, ConnectionInstance]) => html`
+            <td colspan="3">
+              <direct-connection .connectionInstance=${instance}></direct-connection>
+            </td>
+          `,
+        )}
       </tr>
     `;
     const professionalConnections = html`
       <tr>
-        <th scope="row" class="md-typescale-title-large">Network</th>
-        ${
-          Object.entries(Connections.social)
-            .map(([type, data]: [string, ProfessionalConnectionJsonData]) => html`
-              <td colspan="2">
-                <professional-connection
-                  .professionalConnectionType=${type}
-                  .professionalConnectionData=${data}>
-                </professional-connection>
-              </td>
-            `)
-        }
+        <th
+          scope="row"
+          class="md-typescale-title-large"
+        >
+          Network
+        </th>
+        ${Object.entries(Connections.social).map(
+          ([type, data]: [string, ProfessionalConnectionJsonData]) => html`
+            <td colspan="2">
+              <professional-connection
+                .professionalConnectionType=${type}
+                .professionalConnectionData=${data}
+              >
+              </professional-connection>
+            </td>
+          `,
+        )}
       </tr>
     `;
     const artifactConnections = html`
       <tr>
-        <th scope="row" class="md-typescale-title-large">Resume</th>
-        ${
-          Object.entries(Connections.resume)
-            .map(([name, data]: [string, ArtifactConnectionData]) => html`
-              <td colspan="3">
-                <artifact-connection
-                  .artifactConnectionType=${name as ArtifactConnectionType}
-                  .artifactConnectionData=${data}>
-                </artifact-connection>
-              </td>
-            `
-            )
-        }
+        <th
+          scope="row"
+          class="md-typescale-title-large"
+        >
+          Resume
+        </th>
+        ${Object.entries(Connections.resume).map(
+          ([name, data]: [string, ArtifactConnectionData]) => html`
+            <td colspan="3">
+              <artifact-connection
+                .artifactConnectionType=${name as ArtifactConnectionType}
+                .artifactConnectionData=${data}
+              >
+              </artifact-connection>
+            </td>
+          `,
+        )}
       </tr>
     `;
     return html`
       <table>
         <tbody>
-          ${directConnections}
-          ${professionalConnections}
-          ${artifactConnections}
+          ${directConnections} ${professionalConnections} ${artifactConnections}
         </tbody>
       </table>
     `;
@@ -129,7 +139,7 @@ export class ProfileCard extends UIAwareElement {
               type="image/webp"
               srcset=${srcSet}
               sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 33vw"
-            >
+            />
             <img
               class="profile-picture"
               loading="eager"
@@ -158,10 +168,7 @@ export class ProfileCard extends UIAwareElement {
         .bentoCardTitle=${"Profile"}
         .bentoTag=${BENTO_BOX_TYPES.profile}
       >
-        <article>
-          ${this.imageSection()}
-          ${this.contactsSection()}
-        </article>
+        <article>${this.imageSection()} ${this.contactsSection()}</article>
       </bento-card>
     `;
   }

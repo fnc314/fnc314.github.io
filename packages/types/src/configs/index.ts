@@ -3,7 +3,7 @@ import {
   CONFIG_COLOR_SCHEME_NAMES,
   type ColorSchemeConfigs,
   THEME_NAMES,
-  type ThemeConfig
+  type ThemeConfig,
 } from "@/lib/theme";
 
 export interface AppConfigs {

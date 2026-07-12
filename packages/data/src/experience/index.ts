@@ -8,12 +8,12 @@ export const Experiences: Experience[] = [
     dates: {
       start: {
         stamp: "2014-08",
-        text: "August 2014"
+        text: "August 2014",
       },
       end: {
         stamp: "2026-01",
-        text: "January 2026"
-      }
+        text: "January 2026",
+      },
     },
     jobs: [
       {
@@ -27,24 +27,24 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2023-11",
-            text: "November 2023"
+            text: "November 2023",
           },
           end: {
             stamp: "2025-06",
-            text: "June 2025"
-          }
+            text: "June 2025",
+          },
         },
         summaries: [
           {
-            item: "Architected a \"day-zero\" native Android foundation using a modular-first approach, ensuring the codebase remains resilient against shifting executive requirements."
+            item: 'Architected a "day-zero" native Android foundation using a modular-first approach, ensuring the codebase remains resilient against shifting executive requirements.',
           },
           {
-            item: "Spearheaded a strict, cross-platform Design System governance protocol, eliminating hardcoded UI values by mandating 100% semantic role-token adoption across Design, iOS, and Android teams."
+            item: "Spearheaded a strict, cross-platform Design System governance protocol, eliminating hardcoded UI values by mandating 100% semantic role-token adoption across Design, iOS, and Android teams.",
           },
           {
-            item: "Developed a suite of interactive Bash scripts to streamline developer onboarding and feature contributions, automating the generation of templated module skeletons and dynamically configuring CI/CD pipelines to support alternative build tool integrations."
-          }
-        ]
+            item: "Developed a suite of interactive Bash scripts to streamline developer onboarding and feature contributions, automating the generation of templated module skeletons and dynamically configuring CI/CD pipelines to support alternative build tool integrations.",
+          },
+        ],
       },
       {
         client: "PNC Financial Services",
@@ -57,24 +57,24 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2020-01",
-            text: "January 2020"
+            text: "January 2020",
           },
           end: {
             stamp: "2023-11",
-            text: "November 2023"
-          }
+            text: "November 2023",
+          },
         },
         summaries: [
           {
-            item: "Directed the architectural strategy for a flagship Android app with 3.5M+ active users, personally overseeing the implementation of a high-security in-app payment processing platform."
+            item: "Directed the architectural strategy for a flagship Android app with 3.5M+ active users, personally overseeing the implementation of a high-security in-app payment processing platform.",
           },
           {
-            item: "Designed and deployed a series of custom <pre>bash</pre> scripts for CI/CD pipeline automation and environment validation, drastically reducing new-hire developer onboarding time and eliminating environment drift."
+            item: "Designed and deployed a series of custom <pre>bash</pre> scripts for CI/CD pipeline automation and environment validation, drastically reducing new-hire developer onboarding time and eliminating environment drift.",
           },
           {
-            item: "Established rigorous repository-wide coding standards, elevating the team's architectural output and technical maturity through meticulous, file-by-file pull request reviews and proactive mentorship."
-          }
-        ]
+            item: "Established rigorous repository-wide coding standards, elevating the team's architectural output and technical maturity through meticulous, file-by-file pull request reviews and proactive mentorship.",
+          },
+        ],
       },
       {
         client: "PNC Financial Services",
@@ -87,21 +87,21 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2019-08",
-            text: "August 2019"
+            text: "August 2019",
           },
           end: {
             stamp: "2020-01",
-            text: "January 2020"
-          }
+            text: "January 2020",
+          },
         },
         summaries: [
           {
-            item: "Engineered a new authentication platform and migrated 10M+ active users to a modern Android stack with zero downtime."
+            item: "Engineered a new authentication platform and migrated 10M+ active users to a modern Android stack with zero downtime.",
           },
           {
-            item: "Pioneered a multi-file Version Catalog (<pre>.toml</pre>) and <pre>Gradle KTS</pre> build-script migration, moving the build system to a fully type-safe, auditable Gradle configuration."
-          }
-        ]
+            item: "Pioneered a multi-file Version Catalog (<pre>.toml</pre>) and <pre>Gradle KTS</pre> build-script migration, moving the build system to a fully type-safe, auditable Gradle configuration.",
+          },
+        ],
       },
       {
         client: "PNC Financial Services",
@@ -114,18 +114,18 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2017-08",
-            text: "August 2018"
+            text: "August 2018",
           },
           end: {
             stamp: "2019-08",
-            text: "August 2019"
-          }
+            text: "August 2019",
+          },
         },
         summaries: [
           {
-            item: "Guided a web development crew of 25+ developers at project peak for the online banking platform redesign, laying the groundwork for organization-wide patterns while coaching teammates on best practices in modern web development."
-          }
-        ]
+            item: "Guided a web development crew of 25+ developers at project peak for the online banking platform redesign, laying the groundwork for organization-wide patterns while coaching teammates on best practices in modern web development.",
+          },
+        ],
       },
       {
         client: "PNC Financial Services",
@@ -138,18 +138,18 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2016-08",
-            text: "August 2016"
+            text: "August 2016",
           },
           end: {
             stamp: "2017-08",
-            text: "August 2017"
-          }
+            text: "August 2017",
+          },
         },
         summaries: [
           {
-            item: "Collaborated hand-in-hand with designers and product owners to develop the complex administration portal for the newly launched peer-to-peer payment platform, Zelle."
-          }
-        ]
+            item: "Collaborated hand-in-hand with designers and product owners to develop the complex administration portal for the newly launched peer-to-peer payment platform, Zelle.",
+          },
+        ],
       },
       {
         client: "Samsung",
@@ -162,18 +162,18 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2015-01",
-            text: "January 2015"
+            text: "January 2015",
           },
           end: {
             stamp: "2016-08",
-            text: "August 2016"
-          }
+            text: "August 2016",
+          },
         },
         summaries: [
           {
-            item: "Delivered an Android FIDO authenticator proof-of-concept that spring-boarded the institutional adoption of Samsung Knox and multi-factor authentication (MFA)."
-          }
-        ]
+            item: "Delivered an Android FIDO authenticator proof-of-concept that spring-boarded the institutional adoption of Samsung Knox and multi-factor authentication (MFA).",
+          },
+        ],
       },
       {
         client: "PPG Industries",
@@ -186,41 +186,42 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2015-01",
-            text: "January 2015"
+            text: "January 2015",
           },
           end: {
             stamp: "2016-08",
-            text: "August 2016"
-          }
+            text: "August 2016",
+          },
         },
         summaries: [
           {
-            item: "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined web processes and tool enhancements."
-          }
-        ]
-      }
+            item: "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined web processes and tool enhancements.",
+          },
+        ],
+      },
     ],
-    summaries: []
+    summaries: [],
   },
   {
     employer: "Pittsburgh Public Schools",
     role: "Teacher, Secondary Mathematics",
-    summary: "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
+    summary:
+      "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
     dates: {
       start: {
         stamp: "2007-09",
-        text: "September 2007"
+        text: "September 2007",
       },
       end: {
         stamp: "2012-08",
-        text: "August 2012"
-      }
+        text: "August 2012",
+      },
     },
     jobs: [],
     summaries: [
       {
-        item: "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth."
-      }
-    ]
-  }
+        item: "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth.",
+      },
+    ],
+  },
 ];

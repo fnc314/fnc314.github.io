@@ -2,12 +2,7 @@ import { type BreakpointLabel } from "@/lib/design-tokens";
 import { type CSSResult } from "lit";
 
 export type MaterialSchemeName =
-  | "light"
-  | "lightMediumContrast"
-  | "lightHighContrast"
-  | "dark"
-  | "darkMediumContrast"
-  | "darkHighContrast";
+  "light" | "lightMediumContrast" | "lightHighContrast" | "dark" | "darkMediumContrast" | "darkHighContrast";
 
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 
@@ -83,8 +78,7 @@ export type ColorSchemeRoles =
   | "tertiary"
   | "tertiaryContainer"
   | "tertiaryFixed"
-  | "tertiaryFixedDim"
-  ;
+  | "tertiaryFixedDim";
 
 export type ColorSubValue =
   `${"A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"}`;
@@ -94,32 +88,26 @@ export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 export type ColorString = `#${string}`;
 
 // Recursive helper to check if a string consists only of N hex digits
-export type IsHex<T extends string, Count extends any[] = []> =
-  T extends `${ColorSubValue}${infer Rest}`
+export type IsHex<T extends string, Count extends any[] = []> = T extends `${ColorSubValue}${infer Rest}`
   ? IsHex<Rest, [...Count, any]>
   : T extends ""
-  ? Count["length"] extends 8 ? true : false
-  : false;
+    ? Count["length"] extends 8
+      ? true
+      : false
+    : false;
 
 // The final validator constraint
-export type ValidateRGBA<T extends string> =
-  T extends `#${infer Rest}`
+export type ValidateRGBA<T extends string> = T extends `#${infer Rest}`
   ? IsHex<Rest> extends true
-  ? T
-  : "Error: Must be # followed by exactly 8 hex digits"
+    ? T
+    : "Error: Must be # followed by exactly 8 hex digits"
   : "Error: Must start with #";
 
 // Helper function to enforce the type
 export const setRGBA = <T extends string>(color: T & ValidateRGBA<T>) => color;
 
 export type MaterialSchemeNames =
-  | "light"
-  | "light-medium-contrast"
-  | "light-high-contrast"
-  | "dark"
-  | "dark-medium-contrast"
-  | "dark-high-contrast"
-  ;
+  "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
 
 export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
 
@@ -127,7 +115,7 @@ export interface PhotoJson {
   src: string;
   figcaption: string;
   alt: string;
-  srcSet: Record<BreakpointLabel, string>
+  srcSet: Record<BreakpointLabel, string>;
 }
 
 export interface ThemeConfig {

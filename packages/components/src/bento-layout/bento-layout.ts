@@ -1,7 +1,7 @@
 import { BentoLayoutStyles, TransitionStyles } from "@/lib/bento-layout/bento-layout.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { BentoBoxConfigsArray, } from "@fnc314/packages.data";
+import { BentoBoxConfigsArray } from "@fnc314/packages.data";
 import { type ABentoBoxConfig, BENTO_BOX_TYPES, BreakpointLabels, type GridPosition } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
@@ -17,11 +17,7 @@ import { styleMap } from "lit/directives/style-map.js";
 @customElement("bento-layout")
 export class BentoLayout extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    BentoLayoutStyles,
-    TransitionStyles,
-  ];
+  static override styles = [TextStyles, BentoLayoutStyles, TransitionStyles];
 
   @state()
   private _bentoBoxConfigs: ABentoBoxConfig[] = BentoBoxConfigsArray(this.breakpoint);
@@ -46,7 +42,8 @@ export class BentoLayout extends UIAwareElement {
           <profile-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </profile-card>
         `;
         break;
@@ -55,7 +52,8 @@ export class BentoLayout extends UIAwareElement {
           <education-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </education-card>
         `;
         break;
@@ -64,7 +62,8 @@ export class BentoLayout extends UIAwareElement {
           <experience-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </experience-card>
         `;
         break;
@@ -73,7 +72,8 @@ export class BentoLayout extends UIAwareElement {
           <blog-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </blog-card>
         `;
         break;
@@ -82,7 +82,8 @@ export class BentoLayout extends UIAwareElement {
           <code-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </code-card>
         `;
         break;
@@ -91,7 +92,8 @@ export class BentoLayout extends UIAwareElement {
           <skills-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </skills-card>
         `;
         break;
@@ -100,7 +102,8 @@ export class BentoLayout extends UIAwareElement {
           <settings-card
             class="animate-entry"
             style=${styleMap({ ...gridStyles, blockSize: "100%" })}
-            .expanded=${config.isExpanded(this.breakpoint)}>
+            .expanded=${config.isExpanded(this.breakpoint)}
+          >
           </settings-card>
         `;
         break;
@@ -115,7 +118,7 @@ export class BentoLayout extends UIAwareElement {
     return html`
       <main id="bento-root">
         <h1 class="md-typescale-display-large animate-entry">Franco N. Colaizzi</h1>
-        ${this._bentoBoxConfigs.map(boxConfig => this.renderBentoBox(boxConfig))}
+        ${this._bentoBoxConfigs.map((boxConfig) => this.renderBentoBox(boxConfig))}
       </main>
     `;
   }

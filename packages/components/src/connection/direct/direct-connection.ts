@@ -17,19 +17,15 @@ import { customElement, property } from "lit/decorators.js";
 @customElement("direct-connection")
 export class DirectConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles: CSSResult[] = [
-    TextStyles,
-    DirectConnectionStyles
-  ]
+  static override styles: CSSResult[] = [TextStyles, DirectConnectionStyles];
 
   @property({
     type: Object,
-    attribute: "connection-instance"
+    attribute: "connection-instance",
   })
   connectionInstance: ConnectionInstance = {} as ConnectionInstance;
 
   override render(): TemplateResult {
-
     const buttonId = `button-direct-connection-${this.connectionInstance.mdIcon}-${this.connectionInstance.text}`;
 
     return html`
@@ -41,7 +37,7 @@ export class DirectConnection extends UIAwareElement {
         type="button"
         title=${this.connectionInstance.title}
         aria-label=${this.connectionInstance.title}
-        >
+      >
         <md-icon>${this.connectionInstance.mdIcon}</md-icon>
       </md-filled-icon-button>
     `;

@@ -152,6 +152,8 @@ export const UIModeToggleStyles: CSSResult = css`
   dark-mode-toggle.dark {
     --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-dark-icon-svg-url);
     --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-dark-icon-svg-url);
-    --dark-mode-toggle-remember-icon-unchecked: var(--icons-components-ui-mode-toggle-remember-unchecked-dark-icon-svg-url);
+    --dark-mode-toggle-remember-icon-unchecked: var(
+      --icons-components-ui-mode-toggle-remember-unchecked-dark-icon-svg-url
+    );
   }
 `;

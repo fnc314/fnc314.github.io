@@ -15,7 +15,7 @@ export const WORD_TAG_SIZES = {
 } as const;
 
 /** We give {@link @fnc314/packages.components!WordTag} various treatments within this component */
-export type WordTagSize = typeof WORD_TAG_SIZES[keyof typeof WORD_TAG_SIZES];
+export type WordTagSize = (typeof WORD_TAG_SIZES)[keyof typeof WORD_TAG_SIZES];
 
 /**
  * Represents a single project entry loaded from `code.json`.

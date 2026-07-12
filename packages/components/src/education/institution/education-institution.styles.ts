@@ -50,7 +50,8 @@ export const EducationInstitutionStyles: CSSResult = css`
       grid-area: year;
     }
 
-    h3, h4 {
+    h3,
+    h4 {
       margin-block: var(--spaces-none);
     }
   }
@@ -97,5 +98,4 @@ export const EducationInstitutionStyles: CSSResult = css`
       }
     }
   }
-
 `;

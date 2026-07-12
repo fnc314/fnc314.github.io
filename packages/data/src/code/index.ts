@@ -9,21 +9,22 @@ export const Projects: CodeRepoData[] = [
         url: "https://docs.gradle.org/",
         designToken: {
           dark: "--icons-logos-tech-gradle-dark-icon-svg",
-          light: "--icons-logos-tech-gradle-light-icon-svg"
-        }
+          light: "--icons-logos-tech-gradle-light-icon-svg",
+        },
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
         designToken: {
           dark: "--icons-logos-tech-kotlin-dark-icon-svg",
-          light: "--icons-logos-tech-kotlin-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-kotlin-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
     repo: "fnc314/project-collections-gradle-settings-plugin",
-    description: "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures."
+    description:
+      "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures.",
   },
   {
     name: "mac-os-env-scripts",
@@ -33,21 +34,22 @@ export const Projects: CodeRepoData[] = [
         url: "https://www.gnu.org/software/bash/",
         designToken: {
           dark: "--icons-logos-tech-bash-dark-icon-svg",
-          light: "--icons-logos-tech-bash-light-icon-svg"
-        }
+          light: "--icons-logos-tech-bash-light-icon-svg",
+        },
       },
       {
         name: "Oh-My-Zsh",
         url: "https://ohmyz.sh/",
         designToken: {
           dark: "--icons-logos-tech-zsh-dark-icon-svg",
-          light: "--icons-logos-tech-zsh-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-zsh-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/mac-os-env-scripts",
     repo: "fnc314/mac-os-env-scripts",
-    description: "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states."
+    description:
+      "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states.",
   },
   {
     name: "fnc314-kmp",
@@ -57,29 +59,30 @@ export const Projects: CodeRepoData[] = [
         url: "https://developer.android.com/",
         designToken: {
           dark: "--icons-logos-tech-android-dark-icon-svg",
-          light: "--icons-logos-tech-android-light-icon-svg"
-        }
+          light: "--icons-logos-tech-android-light-icon-svg",
+        },
       },
       {
         name: "Gradle",
         url: "https://docs.gradle.org/",
         designToken: {
           dark: "--icons-logos-tech-gradle-dark-icon-svg",
-          light: "--icons-logos-tech-gradle-light-icon-svg"
-        }
+          light: "--icons-logos-tech-gradle-light-icon-svg",
+        },
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
         designToken: {
           dark: "--icons-logos-tech-kotlin-dark-icon-svg",
-          light: "--icons-logos-tech-kotlin-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-kotlin-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/fnc314-kmp",
     repo: "fnc314/fnc314-kmp",
-    description: "An exploratory <abbr title=\"Kotlin Multiplatform\">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets."
+    description:
+      'An exploratory <abbr title="Kotlin Multiplatform">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets.',
   },
   {
     name: "fnc314.github.io",
@@ -89,48 +92,48 @@ export const Projects: CodeRepoData[] = [
         url: "https://mise.jdx.dev/",
         designToken: {
           dark: "--icons-logos-tech-mise-dark-icon-svg",
-          light: "--icons-logos-tech-mise-light-icon-svg"
-        }
+          light: "--icons-logos-tech-mise-light-icon-svg",
+        },
       },
       {
         name: "PNPM",
         url: "https://pnpm.io/",
         designToken: {
           dark: "--icons-logos-tech-pnpm-dark-icon-svg",
-          light: "--icons-logos-tech-pnpm-light-icon-svg"
-        }
+          light: "--icons-logos-tech-pnpm-light-icon-svg",
+        },
       },
       {
         name: "Vite",
         url: "https://vite.dev/",
         designToken: {
           dark: "--icons-logos-tech-vite-dark-icon-svg",
-          light: "--icons-logos-tech-vite-light-icon-svg"
-        }
+          light: "--icons-logos-tech-vite-light-icon-svg",
+        },
       },
       {
         name: "Lit",
         url: "https://lit.dev/",
         designToken: {
           dark: "--icons-logos-tech-lit-dark-icon-svg",
-          light: "--icons-logos-tech-lit-light-icon-svg"
-        }
+          light: "--icons-logos-tech-lit-light-icon-svg",
+        },
       },
       {
         name: "TypeScript",
         url: "https://typescriptlang.org/",
         designToken: {
           dark: "--icons-logos-tech-typescript-dark-icon-svg",
-          light: "--icons-logos-tech-typescript-light-icon-svg"
-        }
+          light: "--icons-logos-tech-typescript-light-icon-svg",
+        },
       },
       {
         name: "Style Dictionary",
         url: "https://styledictionary.com/",
         designToken: {
           dark: "--icons-logos-tech-style-dictionary-dark-icon-svg",
-          light: "--icons-logos-tech-style-dictionary-light-icon-svg"
-        }
+          light: "--icons-logos-tech-style-dictionary-light-icon-svg",
+        },
       },
       {
         name: "Material Components",
@@ -138,85 +141,85 @@ export const Projects: CodeRepoData[] = [
         // repo: "material-components/material-web",
         designToken: {
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg"
-        }
+          light: "--icons-logos-tech-material-design-light-icon-svg",
+        },
       },
       {
         name: "Node",
         url: "https://nodejs.org/",
         designToken: {
           dark: "--icons-logos-tech-node-dark-icon-svg",
-          light: "--icons-logos-tech-node-light-icon-svg"
-        }
+          light: "--icons-logos-tech-node-light-icon-svg",
+        },
       },
       {
         name: "Material Theme Builder",
         url: "https://material-foundation.github.io/material-theme-builder/",
         designToken: {
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg"
-        }
+          light: "--icons-logos-tech-material-design-light-icon-svg",
+        },
       },
       {
         name: "HTML/CSS/JS",
         url: "https://developer.mozilla.org/",
         designToken: {
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
-          light: "--icons-logos-tech-web-html-light-icon-svg"
-        }
+          light: "--icons-logos-tech-web-html-light-icon-svg",
+        },
       },
       {
         name: "Prettier",
         url: "https://prettier.io/",
         designToken: {
           dark: "--icons-logos-tech-prettier-dark-icon-svg",
-          light: "--icons-logos-tech-prettier-light-icon-svg"
-        }
+          light: "--icons-logos-tech-prettier-light-icon-svg",
+        },
       },
       {
         name: "ESLint",
         url: "https://eslint.org/",
         designToken: {
           dark: "--icons-logos-tech-eslint-dark-icon-svg",
-          light: "--icons-logos-tech-eslint-light-icon-svg"
-        }
+          light: "--icons-logos-tech-eslint-light-icon-svg",
+        },
       },
       {
         name: "Typescript-ESLint",
         url: "https://typescript-eslint.io/",
         designToken: {
           dark: "--icons-logos-tech-typescript-eslint-dark-icon-svg",
-          light: "--icons-logos-tech-typescript-eslint-light-icon-svg"
-        }
+          light: "--icons-logos-tech-typescript-eslint-light-icon-svg",
+        },
       },
       {
         name: "StyleLint",
         url: "https://stylelint.io/",
         designToken: {
           dark: "--icons-logos-tech-stylelint-dark-icon-svg",
-          light: "--icons-logos-tech-stylelint-light-icon-svg"
-        }
+          light: "--icons-logos-tech-stylelint-light-icon-svg",
+        },
       },
       {
         name: "PostCSS",
         url: "https://postcss.org/",
         designToken: {
           dark: "--icons-logos-tech-postcss-dark-icon-svg",
-          light: "--icons-logos-tech-postcss-light-icon-svg"
-        }
+          light: "--icons-logos-tech-postcss-light-icon-svg",
+        },
       },
       {
         name: "Turbo Repo",
         url: "https://turborepo.dev/",
         designToken: {
           dark: "--icons-logos-tech-turborepo-dark-icon-svg",
-          light: "--icons-logos-tech-turborepo-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-turborepo-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",
-    description: "Portfolio page found at <a href=\"https://fnc314.com/\" target=\"_blank\">fnc314.com</a> (this site)"
+    description: 'Portfolio page found at <a href="https://fnc314.com/" target="_blank">fnc314.com</a> (this site)',
   },
   {
     name: "material-theme-viewer",
@@ -226,21 +229,22 @@ export const Projects: CodeRepoData[] = [
         url: "https://developer.mozilla.org/",
         designToken: {
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
-          light: "--icons-logos-tech-web-html-light-icon-svg"
-        }
+          light: "--icons-logos-tech-web-html-light-icon-svg",
+        },
       },
       {
         name: "Material Theme Builder",
         url: "https://material-foundation.github.io/material-theme-builder/",
         designToken: {
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-material-design-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/material-theme-viewer",
     repo: "fnc314/material-theme-viewer",
-    description: "Displays the output of <a href=\"https://material-foundation.github.io/material-theme-builder/\" target=\"_blank\">Material Theme Builder</a> in a simple tabbed interface"
+    description:
+      'Displays the output of <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank">Material Theme Builder</a> in a simple tabbed interface',
   },
   {
     name: "project_euler",
@@ -250,20 +254,20 @@ export const Projects: CodeRepoData[] = [
         url: "https://python.org/",
         designToken: {
           dark: "--icons-logos-tech-python-dark-icon-svg",
-          light: "--icons-logos-tech-python-light-icon-svg"
-        }
+          light: "--icons-logos-tech-python-light-icon-svg",
+        },
       },
       {
         name: "Ruby",
         url: "https://www.ruby-lang.org/en/",
         designToken: {
           dark: "--icons-logos-tech-ruby-dark-icon-svg",
-          light: "--icons-logos-tech-ruby-light-icon-svg"
-        }
-      }
+          light: "--icons-logos-tech-ruby-light-icon-svg",
+        },
+      },
     ],
     url: "https://github.com/fnc314/project_euler",
     repo: "fnc314/project_euler",
-    description: "Solutions to various <a href=\"https://projecteuler.net/\" target=\"_blank\">Project Euler</a> problems"
-  }
+    description: 'Solutions to various <a href="https://projecteuler.net/" target="_blank">Project Euler</a> problems',
+  },
 ];

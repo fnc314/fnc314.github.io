@@ -1,16 +1,6 @@
 import { type DesignTokenIcon } from "@/lib/design-tokens";
 
-export type SingleDigit =
-  "0" |
-  "1" |
-  "2" |
-  "3" |
-  "4" |
-  "5" |
-  "6" |
-  "7" |
-  "8" |
-  "9";
+export type SingleDigit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
 export type FourDigitYear = `${SingleDigit}${SingleDigit}${SingleDigit}${SingleDigit}`;
 
@@ -30,11 +20,11 @@ export interface EducationInstitutionRecord {
     text: {
       month: string;
       year: FourDigitYear;
-    },
+    };
     date: {
       month: `${SingleDigit}${SingleDigit}`;
       year: FourDigitYear;
-    }
-  },
+    };
+  };
   designToken: DesignTokenIcon;
 }

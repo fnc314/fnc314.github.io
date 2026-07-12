@@ -61,8 +61,11 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
  * @param jsonKey - The key of a `JSON` object, expected in `lowerPascalCase`
  * @returns - The same `jsonKey` but in `lower-kebab-case`
  */
-const formatJsonKey: (jsonKey: string) => string =
-  (jsonKey: string) => jsonKey.split(/(?=[A-Z])/).map((part) => part.toLowerCase()).join("-");
+const formatJsonKey: (jsonKey: string) => string = (jsonKey: string) =>
+  jsonKey
+    .split(/(?=[A-Z])/)
+    .map((part) => part.toLowerCase())
+    .join("-");
 
 /**
  * Takes the provided {@link CSSResult} and massages the underlying text with
@@ -73,7 +76,8 @@ const formatJsonKey: (jsonKey: string) => string =
  * @returns - The same {@link CSSResult} with empty lines removed
  */
 const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) => {
-  const sortedVariableRows = inputCSS.cssText.split(/\r?\n/)
+  const sortedVariableRows = inputCSS.cssText
+    .split(/\r?\n/)
     .map((line) => {
       const normalized = line.trim().replace(/\u00A0/g, " ");
       return normalized.trim() === "" ? "" : normalized;
@@ -90,12 +94,8 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
     })
     .toSorted();
 
-  const mdRows = [
-    ...sortedVariableRows.filter((line: string) => line.startsWith("--md"))
-  ].join("\n");
-  const okRows = [
-    ...sortedVariableRows.filter((line: string) => line.startsWith("--ok"))
-  ].join("\n");
+  const mdRows = [...sortedVariableRows.filter((line: string) => line.startsWith("--md"))].join("\n");
+  const okRows = [...sortedVariableRows.filter((line: string) => line.startsWith("--ok"))].join("\n");
 
   return css`
     :root {
@@ -106,7 +106,7 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
       ${unsafeCSS(okRows)};
     }
   `;
-}
+};
 
 /**
  * Reads a `.json` defined object and produces a {@link CSSResult}
@@ -115,13 +115,19 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
  * @returns - A {@link CSSResult} of the provided `jsonSchema`
  */
 export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object) => {
-  const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult =
-    ([colorRole, colorRGB]: [string, string]) => keyTransform(colorRole, colorRGB);
+  const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult = ([colorRole, colorRGB]: [
+    string,
+    string,
+  ]) => keyTransform(colorRole, colorRGB);
 
-  const transformedJson: CSSResult = Object.entries(jsonSchema).map(colorMapper).reduce(
-    (acc, curr) => css`${acc}${curr}`,
-    unsafeCSS("")
-  );
+  const transformedJson: CSSResult = Object.entries(jsonSchema)
+    .map(colorMapper)
+    .reduce(
+      (acc, curr) => css`
+        ${acc}${curr}
+      `,
+      unsafeCSS(""),
+    );
 
   return sanitizeCSS(transformedJson);
 };

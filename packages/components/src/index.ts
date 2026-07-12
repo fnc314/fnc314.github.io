@@ -38,8 +38,22 @@ export { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 export { VersionTag } from "@/lib/version-tag/version-tag";
 export { WordCloud } from "@/lib/word/cloud/word-cloud";
 export { WordCloudStyles } from "@/lib/word/cloud/word-cloud.styles";
-export { WordCloudAppearances, WordCloudGroupings, WordCloudSortings, makeWordCloudWord } from "@/lib/word/cloud/word-cloud.types";
-export type { RenderableWordCloudWord, WeightQuartile, Weights, WordCloudAppearance, WordCloudGrouping, WordCloudSorting, WordCloudWord, WordCloudWordCategory } from "@/lib/word/cloud/word-cloud.types";
+export {
+  WordCloudAppearances,
+  WordCloudGroupings,
+  WordCloudSortings,
+  makeWordCloudWord,
+} from "@/lib/word/cloud/word-cloud.types";
+export type {
+  RenderableWordCloudWord,
+  WeightQuartile,
+  Weights,
+  WordCloudAppearance,
+  WordCloudGrouping,
+  WordCloudSorting,
+  WordCloudWord,
+  WordCloudWordCategory,
+} from "@/lib/word/cloud/word-cloud.types";
 export { WordTag } from "@/lib/word/tag/word-tag";
 export { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 export { WordTagVariantAttributeConverter } from "@/lib/word/tag/word-tag.types";
