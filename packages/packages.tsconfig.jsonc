@@ -96,10 +96,10 @@
     ".config",
     "${configDir}/node_modules",
     "${configDir}/dist",
-    "${configDir}/.config",
     "${configDir}/src/**/*.test.ts",
   ],
   "include": [
+    "${configDir}/.config",
     "${configDir}/src/**/*.ts",
     "${configDir}/src/env.d.ts",
   ],

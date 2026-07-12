@@ -51,5 +51,5 @@ if [[ "${usage_config_inspector:=false}" == "true" ]]; then
   pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.ts
   exit 0
 else
-  pnpm stylelint "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" "${STYLELINT_FLAGS[@]}"
+  pnpm stylelint "packages/{components,data,design-tokens,services,types}/src/**/*.ts" "${STYLELINT_FLAGS[@]}"
 fi

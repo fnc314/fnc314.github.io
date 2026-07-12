@@ -29,7 +29,7 @@ const config: Config = {
   },
   overrides: [
     {
-      files: ["packages/{components,data,design-tokens,services,types}/lib/**/*.ts"],
+      files: ["packages/{components,data,design-tokens,services,types}/src/**/*.ts"],
       customSyntax: "postcss-lit",
     },
   ],

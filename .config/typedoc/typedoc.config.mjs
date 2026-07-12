@@ -177,7 +177,7 @@ export default {
   // documents all packages that share the `lib/index.ts` + `tsconfig.json` layout.
   packageOptions: {
     blockTags,
-    entryPoints: ["lib/index.ts"],
+    entryPoints: ["src/index.ts"],
     entryPointStrategy: "resolve",
     tsconfig: "tsconfig.json",
     exclude: ["**/*.test.ts"],

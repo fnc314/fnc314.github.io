@@ -39,7 +39,7 @@ const ignores = [
   "logs/**/*",
   "node_modules/**/*",
   "packages/{components,data,design-tokens,services,types}/{.config,node_modules,dist}/**/*",
-  "packages/{components,data,design-tokens,services,types}/lib/**/*.test.ts",
+  "packages/{components,data,design-tokens,services,types}/src/**/*.test.ts",
   "static/**/*",
   "stats/**/*",
   "**/*.html",
@@ -61,7 +61,7 @@ export default defineConfig([
     },
     basePath: rootDir,
     files: [
-      "packages/{components,data,design-tokens,services,types}/lib/**/*.ts",
+      "packages/{components,data,design-tokens,services,types}/src/**/*.ts",
     ],
     ignores,
     languageOptions: {
@@ -120,7 +120,7 @@ export default defineConfig([
       tsdoc,
     },
     files: [
-      "packages/{components,data,design-tokens,services,types}/lib/**/*.test.ts",
+      "packages/{components,data,design-tokens,services,types}/src/**/*.test.ts",
     ],
     languageOptions: {
       parser: tseslint.parser,
@@ -184,7 +184,7 @@ export default defineConfig([
     name: "app/javascript-overrides",
     files: [
       "index.ts",
-      path.join(rootDir, "packages/{components,data,design-tokens,services,types}/lib/**/*.ts"),
+      path.join(rootDir, "packages/{components,data,design-tokens,services,types}/src/**/*.ts"),
     ],
     plugins: [
       tsdoc,

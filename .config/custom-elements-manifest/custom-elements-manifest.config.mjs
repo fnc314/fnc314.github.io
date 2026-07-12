@@ -41,7 +41,7 @@ const packages = [
   "design-tokens",
   "services",
   "types",
-].map((pkg) => `${resolvePath("packages", pkg, "lib")}/**/*.ts`);
+].map((pkg) => `${resolvePath("packages", pkg, "src")}/**/*.ts`);
 
 /** @type {import('@custom-elements-manifest/analyzer').Config & import('@custom-elements-manifest/analyzer').Plugin} */
 // @ts-ignore
