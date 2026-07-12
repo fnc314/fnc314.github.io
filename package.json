@@ -38,7 +38,9 @@
     "packages/data",
     "packages/design-tokens",
     "packages/services",
-    "packages/types"
+    "packages/types",
+    "sites/docs",
+    "sites/portfolio"
   ],
   "scripts": {
     "build:vite": "mise run vite:build:development",

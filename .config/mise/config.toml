@@ -3,12 +3,19 @@ monorepo_root = true
 [monorepo]
   lockfile = true
   config_roots = [
+    "configs/@pwrs-cem",
+    "configs/eslint",
+    "configs/prettier",
+    "configs/typedoc",
+    "configs/typescript",
     "firebase/functions/node",
     "packages/components",
     "packages/data",
     "packages/design-tokens",
     "packages/services",
     "packages/types",
+    "sites/docs",
+    "sites/portfolio",
   ]
 
 [tools]

@@ -210,6 +210,8 @@ packages:
   - "packages/design-tokens"
   - "packages/services"
   - "packages/types"
+  - "sites/docs"
+  - "sites/portfolio"
 peerDependencyRules:
   allowAny:
     - vite
