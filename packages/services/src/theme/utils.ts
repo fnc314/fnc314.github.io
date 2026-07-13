@@ -7,11 +7,11 @@ export const colorSchemeContrastToIcon: (
 ) => TemplateResult = (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => {
   switch (contrast) {
     case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
-      return html`<md-icon slot=${slot}>exposure_zero</md-icon>`;
+      return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;
     case CONFIG_COLOR_CONTRAST_NAMES.MEDIUM:
-      return html`<md-icon slot=${slot}>exposure_plus_1</md-icon>`;
+      return html`<md-icon slot="${slot}">exposure_plus_1</md-icon>`;
     case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
-      return html`<md-icon slot=${slot}>exposure_plus_2</md-icon>`;
+      return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
     default:
       return html`${nothing}`;
   }
@@ -135,18 +135,19 @@ export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object
 /**
  * Converts `jsonKey` and corresponding `rgb` value into a CSS custom property
  *   via {@link css} and {@link unsafeCSS} functions
- * @param jsonKey - The key from the JSON scheme, e.g., "primaryContainer"
- * @param rgb - The RGB color value from the JSON scheme, e.g., "#FF0000"
- * @returns {lit!CSSResult} - A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"
+ * @param jsonKey - The key from the JSON scheme, e.g., `primaryContainer`
+ * @param rgb - The RGB color value from the JSON scheme, e.g., `#FF0000`
+ * @returns {lit!CSSResult} - A CSSResult containing the custom property definition, e.g., `--md-sys-color-primary-container: #FF0000;`
  */
 export function keyTransform(jsonKey: string, rgb: string): CSSResult {
-  const cssColorName = unsafeCSS(formatJsonKey(jsonKey));
-  const cssColor = unsafeCSS(rgb);
+  const formattedKey = formatJsonKey(jsonKey);
 
-  return css`
-    /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
-    --md-sys-color-${cssColorName}: ${cssColor};
-    /* stylelint-disable-next-line custom-property-pattern, value-keyword-case */
-    --oklch-md-sys-color-${cssColorName}: oklch(from ${cssColor} l c h);
-  `;
+  return unsafeCSS(
+    [
+      `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
+      `--md-sys-color-${formattedKey}: ${rgb};`,
+      `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
+      `--oklch-md-sys-color-${formattedKey}: oklch(from ${rgb} l c h);`,
+    ].join("\n"),
+  );
 }

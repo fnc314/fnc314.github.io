@@ -1,4 +1,6 @@
 {
 	"private": true,
-  "name": "@fnc314/sites.portfolio"
+  "name": "@fnc314/sites.portfolio",
+  "version": "3.0.0",
+  "type": "module"
 }

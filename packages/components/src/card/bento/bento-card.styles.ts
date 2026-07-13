@@ -30,7 +30,7 @@ export const BentoCardStyles = css`
     align-items: stretch;
 
     &:has(details[open]) {
-      // block-size: 100%;
+      /* block-size: 100%; */
     }
   }
 
@@ -143,7 +143,7 @@ export const BentoCardStyles = css`
 
   @container bento-card-container (min-width: 500px) {
     .bento-card {
-      // padding: var(--spaces-padding-m);
+      /* padding: var(--spaces-padding-m); */
     }
   }
 `;

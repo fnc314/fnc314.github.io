@@ -1,3 +1,5 @@
+import minifyHTML from "@lit-labs/rollup-plugin-minify-html-literals";
+import path from "node:path";
 import process from "node:process";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
@@ -21,7 +23,8 @@ export function buildConfig(dirName: string): UserConfigFnObject {
             "lit",
             "lit-element",
             "lit-html",
-            "@material/web"
+            "@material/web",
+            "material-symbols",
           ],
           logLevel: "debug",
           output: {
@@ -65,6 +68,25 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
       },
       plugins: [
+        minifyHTML({
+          include: [
+            path.resolve(
+              process.cwd(),
+              `packages/${dirName}`,
+              "src/**/*.ts"
+            )
+          ],
+          exclude: [
+            // CSS nesting (&::part) crashes the plugin's CSS parser
+            "**/ui-mode-toggle/ui-mode-toggle.styles.ts",
+            // Ternary css`` interpolations confuse splitHTMLByPlaceholder
+            "**/word/tag/word-tag.ts",
+          ],
+          failOnError: true,
+          options: {
+            shouldMinify: () => mode === "production"
+          }
+        }),
         dts({
           // bundleTypes: true,
           tsconfigPath: `${process.cwd()}/packages/${dirName}/tsconfig.json`,

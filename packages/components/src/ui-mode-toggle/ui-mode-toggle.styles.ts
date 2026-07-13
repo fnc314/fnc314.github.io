@@ -3,18 +3,18 @@ import { type CSSResult, css } from "lit";
 /**
  * A {@link CSSResult} for {@link UiModeToggle}
  *
- * @cssprop [--icons-components-ui-mode-toggle-dark-empty]
- * @cssprop [--icons-components-ui-mode-toggle-dark-filled]
- * @cssprop [--icons-components-ui-mode-toggle-default-empty]
- * @cssprop [--icons-components-ui-mode-toggle-default-filled]
- * @cssprop [--icons-components-ui-mode-toggle-light-empty]
- * @cssprop [--icons-components-ui-mode-toggle-light-filled]
- * @cssprop [--icons-components-ui-mode-toggle-check-box-dark]
- * @cssprop [--icons-components-ui-mode-toggle-check-box-light]
- * @cssprop [--icons-components-ui-mode-toggle-remember-checked-dark]
- * @cssprop [--icons-components-ui-mode-toggle-remember-checked-light]
- * @cssprop [--icons-components-ui-mode-toggle-remember-unchecked-dark]
- * @cssprop [--icons-components-ui-mode-toggle-remember-unchecked-light]
+ * @cssprop --icons-components-ui-mode-toggle-dark-empty
+ * @cssprop --icons-components-ui-mode-toggle-dark-filled
+ * @cssprop --icons-components-ui-mode-toggle-default-empty
+ * @cssprop --icons-components-ui-mode-toggle-default-filled
+ * @cssprop --icons-components-ui-mode-toggle-light-empty
+ * @cssprop --icons-components-ui-mode-toggle-light-filled
+ * @cssprop --icons-components-ui-mode-toggle-check-box-dark
+ * @cssprop --icons-components-ui-mode-toggle-check-box-light
+ * @cssprop --icons-components-ui-mode-toggle-remember-checked-dark
+ * @cssprop --icons-components-ui-mode-toggle-remember-checked-light
+ * @cssprop --icons-components-ui-mode-toggle-remember-unchecked-dark
+ * @cssprop --icons-components-ui-mode-toggle-remember-unchecked-light
  */
 export const UIModeToggleStyles: CSSResult = css`
   :host {

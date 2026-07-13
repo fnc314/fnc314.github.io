@@ -21,7 +21,7 @@ export const DynamicBorderStyles: CSSResult = css`
       align-items: center;
       background-color: var(--dynamic-border-background);
       background-image: var(--dynamic-border-background-image);
-      // mask: var(--dynamic-border-mask) center no-repeat / contain;
+      /* mask: var(--dynamic-border-mask) center no-repeat / contain; */
       background-origin: content-box;
       background-position: center;
       background-repeat: no-repeat;

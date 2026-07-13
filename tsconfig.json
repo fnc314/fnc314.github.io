@@ -94,6 +94,7 @@
       "vite-plugin-pwa/client",
       "vite-plugin-pwa/pwa-assets",
       "custom-elements-manifest/schema",
+      "@web-types/lit",
       "unplugin-info/client",
       "material-symbols",
       "@fnc314/packages.components",
