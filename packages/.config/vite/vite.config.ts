@@ -1,6 +1,7 @@
 import minifyHTML from "@lit-labs/rollup-plugin-minify-html-literals";
 import path from "node:path";
 import process from "node:process";
+import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
 import { type UserConfigFnObject, defineConfig } from "vite";
@@ -19,6 +20,15 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           formats: ["es"],
         },
         rolldownOptions: {
+          plugins: [
+            bundleAnalyzerPlugin({
+              fileName: "bundle-analysis.md",
+              format: "md",
+            })
+          ],
+          checks: {
+            circularDependency: true,
+          },
           external: [
             "lit",
             "lit-element",
@@ -93,10 +103,13 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           entryRoot: `${process.cwd()}/packages/${dirName}/src`,
           root: `${process.cwd()}/packages/${dirName}`,
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
+          compilerOptions: {
+            declarationMap: mode === "development"
+          }
         }),
         Info({
           github: `https://github.com/fnc314/fnc314.github.io/tree/main/packages/${dirName}`,
-          root: ".",
+          root: process.cwd(),
           cloudflare: false,
           package: {
             dependencies: true,

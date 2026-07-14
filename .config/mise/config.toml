@@ -27,7 +27,7 @@ monorepo_root = true
   pnpm = "11.13.0"
   tombi = "1.1.5"
   turbo = "2.10.4"
-  usage = "3.5.4"
+  usage = "3.5.5"
 
 [deps]
   pnpm = {

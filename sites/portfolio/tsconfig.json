@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "types": [
+      "lit",
+      "node",
+      "vite/client",
+      "material-symbols",
+      "@types/fs-extra",
+      "@web-types/lit",
+      "unplugin-info/client",
+    ],
+  },
+  "extends": [
+    "./../../tsconfig.json",
+  ]
+}

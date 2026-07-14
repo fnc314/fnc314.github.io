@@ -83,6 +83,7 @@
     "strictBindCallApply": false,
     "target": "esnext",
     "types": [
+      "lit",
       "node",
       "vite/client",
       "material-symbols",
