@@ -14,7 +14,7 @@
     "composite": true,
     "declaration": true,
     "declarationDir": "${configDir}/dist/types",
-    "declarationMap": false,
+    "declarationMap": true,
     "emitBOM": true,
     "emitDeclarationOnly": false,
     "emitDecoratorMetadata": true,

@@ -3,7 +3,7 @@
   node = "26.5.0"
   "npm:corepack" = "0.35.0"
   "npm:vite" = "8.1.4"
-  pnpm = "11.10.0"
+  pnpm = "11.13.0"
   tombi = "1.1.5"
   usage = "3.5.4"
   turbo = "2.10.4"

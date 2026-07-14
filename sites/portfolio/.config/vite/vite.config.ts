@@ -3,6 +3,7 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
 import { type PreRenderedAsset } from "rolldown";
+import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
 import { type UserConfig, defineConfig } from "vite";
@@ -173,6 +174,12 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         }
       },
       rolldownOptions: {
+        plugins: [
+          bundleAnalyzerPlugin({
+            fileName: "bundle-analysis.json",
+            format: "json",
+          })
+        ],
         tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
         devtools: {},
         experimental: {
