@@ -30,11 +30,12 @@ export function buildConfig(dirName: string): UserConfigFnObject {
             circularDependency: true,
           },
           external: [
-            "lit",
-            "lit-element",
-            "lit-html",
-            "@material/web",
-            "material-symbols",
+            /^lit($|\/)/,
+            /^lit-element($|\/)/,
+            /^lit-html($|\/)/,
+            /^@lit($|\/)/,
+            // /^@material\/web($|\/)/,
+            // /^material-symbols($|\/)/,
           ],
           logLevel: "debug",
           output: {
@@ -76,6 +77,12 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         tsconfigPaths: true,
         extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
+        dedupe: [
+          "lit",
+          "lit-html",
+          "lit-element",
+          "@lit/reactive-element",
+        ]
       },
       plugins: [
         minifyHTML({
@@ -120,7 +127,6 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           console: {
             environment: [
               "development",
-              "production",
             ],
           }
         }),

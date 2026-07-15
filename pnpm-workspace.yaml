@@ -1,7 +1,7 @@
 allowBuilds:
   "@firebase/util": false
   "@genesiscommunitysuccess/custom-elements-lsp": true
-  '@pwrs/asimonim': true
+  "@pwrs/asimonim": true
   "@pwrs/cem": true
   esbuild: true
   highlight.js: true
@@ -25,7 +25,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.7
+    material-symbols: 0.45.8
     prop-for-that: 0.7.8
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
@@ -38,21 +38,21 @@ catalogs:
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2
     "@lit-labs/gen-manifest": 0.3.6
-    '@lit-labs/rollup-plugin-minify-html-literals': 0.2.0
+    "@lit-labs/rollup-plugin-minify-html-literals": 0.2.0
     "@material/material-color-utilities": 0.4.0
     "@open-wc/testing": 5.0.0
-    '@pwrs/asimonim': 0.3.2
+    "@pwrs/asimonim": 0.3.2
     "@pwrs/cem": 0.11.0
-    '@skillit/typedoc': 2.0.1
+    "@skillit/typedoc": 2.0.1
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
     "@types/node": 26.1.1
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.64.0
     "@typescript-eslint/parser": 8.64.0
-    '@typescript/typescript6': 6.0.2
+    "@typescript/typescript6": 6.0.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.4.0
+    "@vitejs/devtools": 0.4.1
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
@@ -156,7 +156,17 @@ cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:
   "@pnpm/plugin-types-fixer": 0.1.0
+dedupePeerDependents: true
+dedupePeers: true
+engineStrict: false
+extendNodePath: true
+hoist: true
+hoistWorkspacePackages: true
+includeWorkspaceRoot: true
+linkWorkspacePackages: "deep"
 lockfile: true
+loglevel: "debug"
+
 minimumReleaseAgeExclude:
   - "@firebase/ai@2.13.0"
   - "@firebase/app-check-compat@0.4.4"
@@ -179,26 +189,26 @@ minimumReleaseAgeExclude:
   - vite@8.1.4
   - stylelint@17.13.0
   - vite-plugin-svgo@3.0.0
-  - '@typescript/typescript-aix-ppc64@7.0.2'
-  - '@typescript/typescript-darwin-arm64@7.0.2'
-  - '@typescript/typescript-darwin-x64@7.0.2'
-  - '@typescript/typescript-freebsd-arm64@7.0.2'
-  - '@typescript/typescript-freebsd-x64@7.0.2'
-  - '@typescript/typescript-linux-arm64@7.0.2'
-  - '@typescript/typescript-linux-arm@7.0.2'
-  - '@typescript/typescript-linux-loong64@7.0.2'
-  - '@typescript/typescript-linux-mips64el@7.0.2'
-  - '@typescript/typescript-linux-ppc64@7.0.2'
-  - '@typescript/typescript-linux-riscv64@7.0.2'
-  - '@typescript/typescript-linux-s390x@7.0.2'
-  - '@typescript/typescript-linux-x64@7.0.2'
-  - '@typescript/typescript-netbsd-arm64@7.0.2'
-  - '@typescript/typescript-netbsd-x64@7.0.2'
-  - '@typescript/typescript-openbsd-arm64@7.0.2'
-  - '@typescript/typescript-openbsd-x64@7.0.2'
-  - '@typescript/typescript-sunos-x64@7.0.2'
-  - '@typescript/typescript-win32-arm64@7.0.2'
-  - '@typescript/typescript-win32-x64@7.0.2'
+  - "@typescript/typescript-aix-ppc64@7.0.2"
+  - "@typescript/typescript-darwin-arm64@7.0.2"
+  - "@typescript/typescript-darwin-x64@7.0.2"
+  - "@typescript/typescript-freebsd-arm64@7.0.2"
+  - "@typescript/typescript-freebsd-x64@7.0.2"
+  - "@typescript/typescript-linux-arm64@7.0.2"
+  - "@typescript/typescript-linux-arm@7.0.2"
+  - "@typescript/typescript-linux-loong64@7.0.2"
+  - "@typescript/typescript-linux-mips64el@7.0.2"
+  - "@typescript/typescript-linux-ppc64@7.0.2"
+  - "@typescript/typescript-linux-riscv64@7.0.2"
+  - "@typescript/typescript-linux-s390x@7.0.2"
+  - "@typescript/typescript-linux-x64@7.0.2"
+  - "@typescript/typescript-netbsd-arm64@7.0.2"
+  - "@typescript/typescript-netbsd-x64@7.0.2"
+  - "@typescript/typescript-openbsd-arm64@7.0.2"
+  - "@typescript/typescript-openbsd-x64@7.0.2"
+  - "@typescript/typescript-sunos-x64@7.0.2"
+  - "@typescript/typescript-win32-arm64@7.0.2"
+  - "@typescript/typescript-win32-x64@7.0.2"
   - typescript@7.0.2
 nodeVersion: "26.5.0"
 packageManagerStrictVersion: true
@@ -226,8 +236,21 @@ peerDependencyRules:
     nanoid: "3 || 5"
     stylelint: "17.11.1"
     typedoc: "0.28.19"
-    typescript: "6.0.3"
+    typescript: "^6.0.0 || ^7.0.0"
     vite: "*"
     vitest: "*"
+preferWorkspacePackages: true
+publicHoistPattern:
+  - "configs/*"
+  - "packages/*"
+  - "sites/*"
+recursiveInstall: true
+resolutionMode: "time-based"
+resolvePeersFromWorkspaceRoot: true
+saveExact: true
 savePrefix: ""
+saveWorkspaceProtocol: "rolling"
+scriptShell: "zsh"
+sharedWorkspaceLockfile: true
+updateNotifier: true
 useNodeVersion: "26.5.0"

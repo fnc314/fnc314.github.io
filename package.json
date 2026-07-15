@@ -9,7 +9,7 @@
   "readme": "README.md",
   "icon": "./assets/icons/icon.svg",
   "type": "module",
-  "module": "src/index.ts",
+  "module": "index.ts",
   "private": true,
   "types": "./dist/out",
   "main": "./dist/vite/production/assets/index.js",

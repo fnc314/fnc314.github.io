@@ -163,7 +163,6 @@ export default defineConfig([
       "eleventy.config.js",
       "postcss.config.mjs",
       "prettier.config.mts",
-      "rollup.config.ts",
       "stylelint.config.ts",
       "vite.config.ts",
       "typedoc.config.mjs",

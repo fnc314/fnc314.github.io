@@ -9,7 +9,6 @@
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",
-    "lit": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
   "description": "Types package to support https://fnc314.com",

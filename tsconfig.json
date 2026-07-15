@@ -51,10 +51,10 @@
       "@/*": ["./*"],
     },
     "plugins": [
-      {
-        "name": "ts-lit-plugin",
-        "strict": true
-      },
+      // {
+      //   "name": "ts-lit-plugin",
+      //   "strict": true
+      // },
       {
         // "srcRouteFromTSServer": "configure this to set the relative path between your project route and your `tsserver.js`",
         // "designSystemPrefix": "configure this to handle a library of components with a prefix",

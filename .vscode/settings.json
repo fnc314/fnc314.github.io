@@ -51,6 +51,11 @@
   "css.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
+  "css.styleSheets": [
+    "node_modules/material-symbols/material-symbols-outlined.css",
+    "node_modules/@fnc314/packages.design-tokens/dist/@fnc314.packages.design-tokens.css",
+    "**/${fileBasenameNoExtension}.styles.ts",
+  ],
   "css.format.spaceAroundSelectorSeparator": true,
   "css.lint.importStatement": "ignore",
   "css.lint.vendorPrefix": "ignore",

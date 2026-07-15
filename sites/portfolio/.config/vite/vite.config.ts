@@ -133,6 +133,12 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     publicDir: dynamicConfig.publicDir,
     optimizeDeps: {},
     resolve: {
+      dedupe: [
+        "lit",
+        "lit-html",
+        "lit-element",
+        "@lit/reactive-element",
+      ],
       mainFields: ["exports", "module"],
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
@@ -171,9 +177,18 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           semicolons: true,
           wrap_func_args: true,
           webkit: true,
-        }
+        },
+
       },
       rolldownOptions: {
+        resolve: {
+          conditionNames: [
+            mode,
+            "import",
+            "browser",
+            "default",
+          ]
+        },
         plugins: [
           bundleAnalyzerPlugin({
             fileName: "bundle-analysis.json",
@@ -184,19 +199,21 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         devtools: {},
         experimental: {
           // viteMode: true,
+          attachDebugInfo: mode === "development" ? "full" : "none",
+          incrementalBuild: true,
         },
         logLevel: "debug",
         output: {
           assetFileNames: (chunkInfo: PreRenderedAsset) => {
             if (chunkInfo.names.at(0)?.endsWith("css") ?? false) {
-              return `@fnc314/site.portfolio-[hash].[ext]`;
+              return `@fnc314/sites.portfolio-[hash].[ext]`;
             }
             return `${chunkInfo.names.at(0)!.replaceAll(/\..*/g, "-[hash].[ext]")}`;
           },
           codeSplitting: true,
           comments: !dynamicConfig.isProduction,
           dir: dynamicConfig.outDir,
-          entryFileNames: `@fnc314/site.portfolio-[hash].js`,
+          entryFileNames: `@fnc314/sites.portfolio-[hash].js`,
           esModule: true,
           format: "esm",
           minify: !dynamicConfig.isProduction,
