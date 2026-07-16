@@ -1,6 +1,14 @@
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
+/**
+ * A convenience method to return {@link TemplateResult}s of `<md-icon>`
+ *
+ * @export
+ * @param {ColorSchemeContrast} contrast - The particular {@link ColorSchemeContrast} chosen by the user
+ * @param {("start" | "leading-icon")} [slot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default
+ * @returns {TemplateResult}
+ */
 export function colorSchemeContrastToIcon(
   contrast: ColorSchemeContrast,
   slot: "start" | "leading-icon" = "start",
