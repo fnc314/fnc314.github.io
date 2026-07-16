@@ -178,7 +178,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           wrap_func_args: true,
           webkit: true,
         },
-
       },
       rolldownOptions: {
         resolve: {
@@ -189,17 +188,20 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             "default",
           ]
         },
+        input: [
+          "sites/portfolio/index.html",
+        ],
         plugins: [
           bundleAnalyzerPlugin({
             fileName: "bundle-analysis.json",
             format: "json",
           })
         ],
-        tsconfig: path.resolve(process.cwd(), "tsconfig.json"),
+        tsconfig: path.resolve(process.cwd(), "sites/portfolio", "tsconfig.json"),
         devtools: {},
         experimental: {
           // viteMode: true,
-          attachDebugInfo: mode === "development" ? "full" : "none",
+          attachDebugInfo: !dynamicConfig.isProduction ? "full" : "none",
           incrementalBuild: true,
         },
         logLevel: "debug",
@@ -216,7 +218,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           entryFileNames: `@fnc314/sites.portfolio-[hash].js`,
           esModule: true,
           format: "esm",
-          minify: !dynamicConfig.isProduction,
+          minify: dynamicConfig.isProduction,
           // preserveModules: true,
           // preserveModulesRoot: "node_modules/.pnpm/",
           strict: true,
@@ -227,9 +229,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             allowNamespaces: true,
             declaration: {
               sourcemap: !dynamicConfig.isProduction,
+              stripInternal: true,
             },
             rewriteImportExtensions: "remove",
-          }
+          },
+
         },
         treeshake: dynamicConfig.isProduction,
       },

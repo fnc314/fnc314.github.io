@@ -1,15 +1,15 @@
 #!/usr/bin/env zsh
 #MISE description="Runs `vite build` using `production` for mode AND `NODE_ENV`"
-#MISE alias="v:d:p"
+#MISE alias="s:p:b:d"
 #MISE depends=["vite:build:packages -p"]
 #MISE env={ NODE_ENV = "production" }
-#USAGE flag "--use-sites-portfolio" help="Points to `sites/portfolio` for building" default="false"
+#USAGE flag "-l" help="Logs the output to `logs/mise/tasks/sites/portfolio/production/YYYY/MM/DD/HH:MM:SS.log`" default="false"
 #USAGE flag "-w" help="Passes `-w` to `vite build`" default="false"
 #USAGE flag "-d" help="Passes `-d` to `vite build`" default="false"
-#USAGE flag "-l" help="Logs the output to `logs/mise/tasks/vite/build/production/YYYY/MM/DD/HH:MM:SS.log`" default="false"
+
 set -euo pipefail
 
-typeset LOG_DIR="logs/mise/tasks/vite/build/production"
+typeset LOG_DIR="logs/mise/tasks/sites/portfolio/development"
 # Use new directory structure for date logging
 typeset LOG_FILE_PATH
 LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
@@ -17,8 +17,8 @@ typeset LOG_FILE="$LOG_DIR/$LOG_FILE_PATH"
 
 typeset -a VITE_FLAGS
 VITE_FLAGS=(
-  -m ${NODE_ENV}
-  -c ./.config/vite/vite.config.ts
+  -m "${NODE_ENV}"
+  -c ./sites/portfolio/.config/vite/vite.config.ts
 )
 
 if [[ "${usage_w:=false}" == "true" ]]; then

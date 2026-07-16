@@ -36,7 +36,7 @@ jobs:
           BUILD_ENVIRONMENT: ""
           NODE_ENV: "production"
         name: Mise Build
-        run: mise run vite:build:production
+        run: mise run //:sites:portfolio:production
         shell: zsh {0}
 
       - name: Verify build artifact
