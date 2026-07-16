@@ -114,7 +114,7 @@ export interface PhotoJson {
   src: string;
   figcaption: string;
   alt: string;
-  srcSet: Record<BreakpointLabel, string>;
+  srcSet: Record<BreakpointLabel | "thumb", string>;
 }
 
 export interface ThemeConfig {

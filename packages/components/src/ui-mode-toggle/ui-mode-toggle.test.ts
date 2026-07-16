@@ -1,7 +1,7 @@
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { type AppConfigs, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { type AppConfigs, COLOR_SCHEME_CHANGE_EVENT_NAME, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
 import { expect, fixture, html, oneEvent } from "@open-wc/testing";
 import { type ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { afterEach, before, beforeEach, type it } from "node:test";
@@ -99,7 +99,7 @@ describe("UiModeToggle Component", () => {
   });
 
   it("should handle 'colorschemechange' event from dark-mode-toggle", async () => {
-    const listener = oneEvent(element, "color_scheme.change");
+    const listener = oneEvent(element, COLOR_SCHEME_CHANGE_EVENT_NAME);
     const darkModeToggle = element.shadowRoot?.querySelector("dark-mode-toggle");
 
     // Simulate colorschemechange event

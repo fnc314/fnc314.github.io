@@ -227,8 +227,8 @@ catalogs:
       specifier: 1.0.3
       version: 1.0.3
     '@material/web':
-      specifier: 2.4.1
-      version: 2.4.1
+      specifier: 2.5.0
+      version: 2.5.0
     '@open-wc/lit-helpers':
       specifier: 0.7.0
       version: 0.7.0
@@ -631,7 +631,7 @@ importers:
         version: 1.0.3
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       '@open-wc/lit-helpers':
         specifier: catalog:dependencies
         version: 0.7.0(lit@3.3.3)
@@ -1039,7 +1039,7 @@ importers:
         version: link:../types
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       dark-mode-toggle:
         specifier: catalog:dependencies
         version: 0.18.0
@@ -1073,7 +1073,7 @@ importers:
         version: link:../types
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
         version: 0.45.8
@@ -1107,7 +1107,7 @@ importers:
         version: link:../types
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
         version: 0.45.8
@@ -1147,7 +1147,7 @@ importers:
         version: link:../types
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
         version: 0.45.8
@@ -1175,7 +1175,7 @@ importers:
     dependencies:
       '@material/web':
         specifier: catalog:dependencies
-        version: 2.4.1
+        version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
         version: 0.45.8
@@ -2965,6 +2965,9 @@ packages:
   '@lit-labs/ssr-dom-shim@1.6.0':
     resolution: {integrity: sha512-VHb0ALPMTlgKjM6yIxxoQNnpKyUKLD04VzeQdsiXkMqkvYlAHxq9glGLmgbb889/1GsohSOAjvQYoiBppXFqrQ==}
 
+  '@lit/context@1.1.6':
+    resolution: {integrity: sha512-M26qDE6UkQbZA2mQ3RjJ3Gzd8TxP+/0obMgE5HfkfLhEEyYE3Bui4A5XHiGPjy0MUGAyxB3QgVuw2ciS0kHn6A==}
+
   '@lit/localize-tools@0.8.2':
     resolution: {integrity: sha512-Hf7jMfamdX26FN4SBRtM7zoToCUeShzI8NQcLdHLdpPdNPlqbEYMjqRaTQPm/PsbzTl6uZwfE3/kV+NvvrJS2A==}
     hasBin: true
@@ -2987,8 +2990,8 @@ packages:
   '@material/material-color-utilities@0.4.0':
     resolution: {integrity: sha512-dlq6VExJReb8dhjj3a/yTigr3ncNwoFmL5Iy2ENtbDX03EmNeOEdZ+vsaGrj7RTuO+mB7L58II4LCsl4NpM8uw==}
 
-  '@material/web@2.4.1':
-    resolution: {integrity: sha512-0sk9t25acJ72Qv3r0n9r0lgDbPaAKnpm0p+QmEAAwYyZomHxuVbgrrAdtNXaRm7jFyGh+WsTr8bhtvCnpPRFjw==}
+  '@material/web@2.5.0':
+    resolution: {integrity: sha512-x2Uovyq8E/Zc1xHXd9s1eBMXF5pMHVAt70pISKd0fL3Ajj4L6zQaQUY/awcfR2RDAMKXC7i4+vr0arv1YaOR/g==}
 
   '@microsoft/tsdoc-config@0.18.1':
     resolution: {integrity: sha512-9brPoVdfN9k9g0dcWkFeA7IH9bbcttzDJlXvkf8b2OBzd5MueR1V2wkKBL0abn0otvmkHJC6aapBOTJDDeMCZg==}
@@ -12889,6 +12892,10 @@ snapshots:
 
   '@lit-labs/ssr-dom-shim@1.6.0': {}
 
+  '@lit/context@1.1.6':
+    dependencies:
+      '@lit/reactive-element': 2.1.2
+
   '@lit/localize-tools@0.8.2':
     dependencies:
       '@lit/localize': 0.12.2
@@ -12926,8 +12933,9 @@ snapshots:
 
   '@material/material-color-utilities@0.4.0': {}
 
-  '@material/web@2.4.1':
+  '@material/web@2.5.0':
     dependencies:
+      '@lit/context': 1.1.6
       lit: 3.3.3
       tslib: 2.8.1
 
@@ -22039,7 +22047,7 @@ time:
   '@lit/reactive-element@2.1.2': '2025-12-23T22:03:31.805Z'
   '@lit/task@1.0.3': '2025-07-11T03:36:50.933Z'
   '@material/material-color-utilities@0.4.0': '2026-01-21T18:35:58.484Z'
-  '@material/web@2.4.1': '2025-10-27T16:18:45.720Z'
+  '@material/web@2.5.0': '2026-07-15T14:39:18.532Z'
   '@open-wc/lit-helpers@0.7.0': '2024-02-20T12:11:07.403Z'
   '@open-wc/testing@5.0.0': '2026-07-13T14:04:51.726Z'
   '@pwrs/asimonim@0.3.2': '2026-06-10T14:03:06.061Z'

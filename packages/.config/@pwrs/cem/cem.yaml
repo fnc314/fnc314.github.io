@@ -2,7 +2,7 @@ additionalPackages:
   - "npm:lit@3.3.3"
   - "npm:lit-element@4.2.2"
   - "npm:lit-html@3.3.3"
-  - "npm:@material/web@2.4.1"
+  - "npm:@material/web@2.5.0"
   - "npm:material-symbols@0.45.8"
 
 generate:
@@ -11,6 +11,7 @@ generate:
     - src/**/*.test.ts
   files:
     - src/**/*.ts
+    - node_modules/@material/web/custom-elements.json
 
 health:
   failBelow: 75

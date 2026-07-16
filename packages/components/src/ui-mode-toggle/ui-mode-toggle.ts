@@ -2,16 +2,18 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 import {
-  MaterialCSSStyleSheet,
-  colorSchemeConfigsToMaterialSchemeName,
-  configsService,
-  themeService,
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    configsService,
+    themeService,
 } from "@fnc314/packages.services";
 import {
-  type AppConfigs,
-  type AppConfigsChange,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type AppConfigs,
+    type AppConfigsChange,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
 } from "@fnc314/packages.types";
 import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
@@ -72,14 +74,14 @@ export class UiModeToggle extends UIAwareElement {
 
   override connectedCallback(): void {
     super.connectedCallback();
-    configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
+    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
     document.addEventListener("colorschemechange", this.colorSchemeChangeEventListener);
     document.addEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
-    configsService.removeEventListener("app-configs.change", this.onAppConfigsChange);
+    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
     document.removeEventListener("colorschemechange", this.colorSchemeChangeEventListener);
     document.removeEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
   }
@@ -132,7 +134,7 @@ export class UiModeToggle extends UIAwareElement {
     configsService.saveConfigs(this._appConfigs);
 
     this.dispatchEvent(
-      new CustomEvent("color_scheme.change", {
+      new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
         bubbles: true,
         composed: true,
         detail: this._appConfigs.colorScheme,

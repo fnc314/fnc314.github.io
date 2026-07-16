@@ -40,7 +40,18 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           logLevel: "debug",
           output: {
             assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
-            codeSplitting: true,
+            codeSplitting: {
+              groups: [
+                {
+                  name: "material",
+                  test: /material/
+                },
+                {
+                  name: "lit",
+                  test: /lit/
+                }
+              ]
+            },
             comments: mode !== "production",
             dir: `${process.cwd()}/packages/${dirName}/dist`,
             entryFileNames: `@fnc314.packages.${dirName}.js`,
@@ -82,6 +93,8 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           "lit-html",
           "lit-element",
           "@lit/reactive-element",
+          "@material/web",
+          "material-symbols",
         ]
       },
       plugins: [

@@ -58,7 +58,7 @@ function createDynamicConfig(
     isLocalBuild,
     outDirSuffix,
     outDir: path.resolve(process.cwd(), `dist/${outDirSuffix}`),
-    publicDir: path.resolve(process.cwd(), "static"),
+    publicDir: path.resolve(process.cwd(), "sites/portfolio/static"),
     base,
     pwa
   };
@@ -138,6 +138,8 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         "lit-html",
         "lit-element",
         "@lit/reactive-element",
+        "@material/web",
+        "material-symbols",
       ],
       mainFields: ["exports", "module"],
       tsconfigPaths: true,
@@ -163,21 +165,24 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           drop_console: dynamicConfig.isProduction,
           drop_debugger: dynamicConfig.isProduction,
           unused: true,
+
         },
         ecma: 2025,
         format: {
           ecma: 2025,
           braces: true,
-          comments: "all",
+          comments: !dynamicConfig.isProduction,
           indent_level: 2,
           indent_start: 0,
           max_line_len: 120,
           quote_keys: true,
           quote_style: 2,
           semicolons: true,
-          wrap_func_args: true,
           webkit: true,
+          width: 120,
+          wrap_func_args: true,
         },
+        sourceMap: !dynamicConfig.isProduction,
       },
       rolldownOptions: {
         resolve: {
@@ -212,7 +217,18 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             }
             return `${chunkInfo.names.at(0)!.replaceAll(/\..*/g, "-[hash].[ext]")}`;
           },
-          codeSplitting: true,
+          codeSplitting: {
+            groups: [
+              {
+                name: "material",
+                test: /material/
+              },
+              {
+                name: "lit",
+                test: /lit/
+              }
+            ]
+          },
           comments: !dynamicConfig.isProduction,
           dir: dynamicConfig.outDir,
           entryFileNames: `@fnc314/sites.portfolio-[hash].js`,

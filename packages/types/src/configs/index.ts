@@ -18,5 +18,6 @@ export const DEFAULT_APP_CONFIGS: AppConfigs = {
   } as const,
 } as const;
 
+export const COLOR_SCHEME_CHANGE_EVENT_NAME = "color_scheme.change";
 export const APP_CONFIGS_CHANGE_EVENT_NAME = "app-configs.change";
 export type AppConfigsChange = CustomEvent<{ appConfigs: AppConfigs }>;

@@ -62,6 +62,7 @@ export default defineConfig([
     basePath: rootDir,
     files: [
       "packages/{components,data,design-tokens,services,types}/src/**/*.ts",
+      "sites/{docs,portfolio}/src/**/*.ts",
     ],
     ignores,
     languageOptions: {
@@ -121,6 +122,7 @@ export default defineConfig([
     },
     files: [
       "packages/{components,data,design-tokens,services,types}/src/**/*.test.ts",
+      "sites/{docs,portfolio}/src/**/*.test.ts",
     ],
     languageOptions: {
       parser: tseslint.parser,
@@ -184,6 +186,7 @@ export default defineConfig([
     files: [
       "index.ts",
       path.join(rootDir, "packages/{components,data,design-tokens,services,types}/src/**/*.ts"),
+      path.join(rootDir, "sites/{docs,portfolio}/src/**/*.ts"),
     ],
     plugins: [
       tsdoc,

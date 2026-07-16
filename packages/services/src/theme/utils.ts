@@ -1,10 +1,10 @@
 import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
-export const colorSchemeContrastToIcon: (
-  slot: "start" | "leading-icon",
+export function colorSchemeContrastToIcon(
   contrast: ColorSchemeContrast,
-) => TemplateResult = (slot: "start" | "leading-icon", contrast: ColorSchemeContrast) => {
+  slot: "start" | "leading-icon" = "start",
+): TemplateResult {
   switch (contrast) {
     case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
       return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;

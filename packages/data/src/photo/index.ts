@@ -4,6 +4,7 @@ export const Photos: PhotosJson = {
   atlInWhite: {
     src: "./images/themes/atl-in-white/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/atl-in-white/profile-photo-56.webp",
       mobile: "./images/themes/atl-in-white/profile-photo-750.webp",
       tablet: "./images/themes/atl-in-white/profile-photo-1200.webp",
       desktop: "./images/themes/atl-in-white/profile-photo-1500.webp",
@@ -14,6 +15,7 @@ export const Photos: PhotosJson = {
   chicago: {
     src: "./images/themes/chicago/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/chicago/profile-photo-56.webp",
       mobile: "./images/themes/chicago/profile-photo-750.webp",
       tablet: "./images/themes/chicago/profile-photo-1200.webp",
       desktop: "./images/themes/chicago/profile-photo-1500.webp",
@@ -24,6 +26,7 @@ export const Photos: PhotosJson = {
   downtown: {
     src: "./images/themes/downtown/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/downtown/profile-photo-56.webp",
       mobile: "./images/themes/downtown/profile-photo-750.webp",
       tablet: "./images/themes/downtown/profile-photo-1200.webp",
       desktop: "./images/themes/downtown/profile-photo-1500.webp",
@@ -34,6 +37,7 @@ export const Photos: PhotosJson = {
   inter: {
     src: "./images/themes/inter/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/inter/profile-photo-56.webp",
       mobile: "./images/themes/inter/profile-photo-750.webp",
       tablet: "./images/themes/inter/profile-photo-1200.webp",
       desktop: "./images/themes/inter/profile-photo-1500.webp",
@@ -44,6 +48,7 @@ export const Photos: PhotosJson = {
   leatherJacket: {
     src: "./images/themes/leather-jacket/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/leather-jacket/profile-photo-56.webp",
       mobile: "./images/themes/leather-jacket/profile-photo-750.webp",
       tablet: "./images/themes/leather-jacket/profile-photo-1200.webp",
       desktop: "./images/themes/leather-jacket/profile-photo-1500.webp",
@@ -54,6 +59,7 @@ export const Photos: PhotosJson = {
   ponder: {
     src: "./images/themes/ponder/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/ponder/profile-photo-56.webp",
       mobile: "./images/themes/ponder/profile-photo-750.webp",
       tablet: "./images/themes/ponder/profile-photo-1200.webp",
       desktop: "./images/themes/ponder/profile-photo-1500.webp",
@@ -64,6 +70,7 @@ export const Photos: PhotosJson = {
   romanBus: {
     src: "./images/themes/roman-bus/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/roman-bus/profile-photo-56.webp",
       mobile: "./images/themes/roman-bus/profile-photo-750.webp",
       tablet: "./images/themes/roman-bus/profile-photo-1200.webp",
       desktop: "./images/themes/roman-bus/profile-photo-1500.webp",
@@ -74,6 +81,7 @@ export const Photos: PhotosJson = {
   skyline: {
     src: "./images/themes/skyline/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/skyline/profile-photo-56.webp",
       mobile: "./images/themes/skyline/profile-photo-750.webp",
       tablet: "./images/themes/skyline/profile-photo-1200.webp",
       desktop: "./images/themes/skyline/profile-photo-1500.webp",
@@ -84,6 +92,7 @@ export const Photos: PhotosJson = {
   red: {
     src: "./images/themes/red/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/red/profile-photo-56.webp",
       mobile: "./images/themes/red/profile-photo-750.webp",
       tablet: "./images/themes/red/profile-photo-1200.webp",
       desktop: "./images/themes/red/profile-photo-1500.webp",
@@ -94,6 +103,7 @@ export const Photos: PhotosJson = {
   sunset: {
     src: "./images/themes/sunset/profile-photo.jpg",
     srcSet: {
+      thumb: "./images/themes/sunset/profile-photo-56.webp",
       mobile: "./images/themes/sunset/profile-photo-750.webp",
       tablet: "./images/themes/sunset/profile-photo-1200.webp",
       desktop: "./images/themes/sunset/profile-photo-1500.webp",

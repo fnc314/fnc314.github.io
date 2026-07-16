@@ -36,12 +36,12 @@ console.warn(
 );
 
 const packages = [
-  "components",
-  "data",
-  "design-tokens",
-  "services",
-  "types",
-].map((pkg) => `${resolvePath("packages", pkg, "src")}/**/*.ts`);
+  "packages/components",
+  "packages/data",
+  "packages/design-tokens",
+  "packages/services",
+  "packages/types",
+].map((pkg) => `${resolvePath(pkg, "src")}/**/*.ts`);
 
 /** @type {import('@custom-elements-manifest/analyzer').Config & import('@custom-elements-manifest/analyzer').Plugin} */
 // @ts-ignore
@@ -64,13 +64,15 @@ export default {
   resolutionOptions: {
     extensions: [".ts", ".js", ".json"],
     mainFields: ["module", "main"],
-    conditionNames: ["import", "require"],
+    conditionNames: ["import", "require", "development", "production", "default"],
     alias: {
       "~build/git": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build/package": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build/time": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build": [path.resolve(process.cwd(), "node_modules")]
     },
+    moduleType: true,
+    tsconfig: "auto"
     // tsconfig: {
     //   configFile: path.resolve(process.cwd(), "tsconfig.json"),
     // },

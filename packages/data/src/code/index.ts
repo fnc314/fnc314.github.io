@@ -208,14 +208,6 @@ export const Projects: CodeRepoData[] = [
           light: "--icons-logos-tech-postcss-light-icon-svg",
         },
       },
-      {
-        name: "Turbo Repo",
-        url: "https://turborepo.dev/",
-        designToken: {
-          dark: "--icons-logos-tech-turborepo-dark-icon-svg",
-          light: "--icons-logos-tech-turborepo-light-icon-svg",
-        },
-      },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",

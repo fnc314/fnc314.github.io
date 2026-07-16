@@ -5,7 +5,7 @@ import "@fnc314/packages.design-tokens";
 import "@fnc314/packages.services";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
 import "@fnc314/packages.types";
-import { type ColorSchemeConfigChange, type ColorSchemeConfigs } from "@fnc314/packages.types";
+import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfigChange, type ColorSchemeConfigs } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -66,7 +66,7 @@ const domLoadedListener = () => {
   );
 
   // Migrated from AppShell
-  document.addEventListener("color_scheme.change", onColorSchemeChange);
+  document.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
 
 document.addEventListener("DOMContentLoaded", domLoadedListener);

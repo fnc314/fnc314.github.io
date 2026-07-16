@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 #MISE description="Runs `vite build` using `production` for mode AND `NODE_ENV`"
-#MISE alias="s:p:b:d"
+#MISE alias="s:p:b:p"
 #MISE depends=["vite:build:packages -p"]
 #MISE env={ NODE_ENV = "production" }
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/sites/portfolio/production/YYYY/MM/DD/HH:MM:SS.log`" default="false"
@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-typeset LOG_DIR="logs/mise/tasks/sites/portfolio/development"
+typeset LOG_DIR="logs/mise/tasks/sites/portfolio/production"
 # Use new directory structure for date logging
 typeset LOG_FILE_PATH
 LOG_FILE_PATH="$(date +%Y/%m/%d/%H:%M:%S).log"
