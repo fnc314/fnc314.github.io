@@ -4,13 +4,14 @@ import { TextStyles } from "@/lib/styles";
 import { Biographies, Connections, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
-  type ArtifactConnectionData,
-  type ArtifactConnectionType,
-  BENTO_BOX_TYPES,
-  type ConnectionInstance,
-  type ProfessionalConnectionJsonData,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type ArtifactConnectionData,
+    type ArtifactConnectionType,
+    BENTO_BOX_TYPES,
+    type ConnectionInstance,
+    type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
-import { type TemplateResult, html } from "lit";
+import { type TemplateResult, html, unsafeCSS } from "lit";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
 
@@ -42,12 +43,12 @@ export class ProfileCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = "bio";
-    configsService.addEventListener("app-configs.change", this._onConfigChange);
+    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener("app-configs.change", this._onConfigChange);
+    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   private _onConfigChange = () => {
@@ -56,72 +57,71 @@ export class ProfileCard extends UIAwareElement {
     this.requestUpdate();
   };
 
-  private contactsSection(): TemplateResult {
-    const directConnections = html`
-      <tr>
-        <th
-          scope="row"
-          class="md-typescale-title-large"
-        >
-          Contact
-        </th>
-        ${Object.entries(Connections.direct).map(
-          ([_, instance]: [string, ConnectionInstance]) => html`
-            <td colspan="3">
-              <direct-connection .connectionInstance=${instance}></direct-connection>
-            </td>
-          `,
-        )}
-      </tr>
+  private contactsDefinitionList(): TemplateResult {
+    const directConnectionsCount = Object.entries(Connections.direct).length;
+    const directConnectionsColSpan = Math.floor(9 / directConnectionsCount);
+    const contact = html`
+      <div>
+        <dt class="md-typescale-title-large">Contact</dt>
+        ${
+          Object.entries(Connections.direct).map(
+            ([_, instance]: [string, ConnectionInstance], index: number) =>
+              html`
+                <dd style="${unsafeCSS(`grid-column: ${index === 0 ? 2 : index * (1 + directConnectionsColSpan)} / span ${directConnectionsColSpan}`)}">
+                  <direct-connection
+                    .connectionInstance=${instance}>
+                  </direct-connection>
+                </dd>
+              `
+          )
+        }
+      </div>
     `;
-    const professionalConnections = html`
-      <tr>
-        <th
-          scope="row"
-          class="md-typescale-title-large"
-        >
-          Network
-        </th>
+
+    const socialConnectionsCount = Object.entries(Connections.social).length;
+    const socialConnectionsColSpan = Math.floor(9 / socialConnectionsCount);
+    const network = html`
+      <div>
+        <dt class="md-typescale-title-large">Network</dt>
         ${Object.entries(Connections.social).map(
-          ([type, data]: [string, ProfessionalConnectionJsonData]) => html`
-            <td colspan="2">
+          ([type, data]: [string, ProfessionalConnectionJsonData], index: number) => html`
+            <dd style="${unsafeCSS(`grid-column: ${(index * socialConnectionsColSpan) + 1} / span ${socialConnectionsColSpan}`)}">
               <professional-connection
                 .professionalConnectionType=${type}
                 .professionalConnectionData=${data}
               >
               </professional-connection>
-            </td>
+            </dd>
           `,
         )}
-      </tr>
+      </div>
     `;
-    const artifactConnections = html`
-      <tr>
-        <th
-          scope="row"
-          class="md-typescale-title-large"
-        >
-          Resume
-        </th>
+
+    const resumeConnectionsCount = Object.entries(Connections.resume).length;
+    const resumeConnectionsColSpan = Math.floor(9 / resumeConnectionsCount);
+    const resume = html`
+      <div>
+        <dt class="md-typescale-title-large">Resume</dt>
         ${Object.entries(Connections.resume).map(
-          ([name, data]: [string, ArtifactConnectionData]) => html`
-            <td colspan="3">
+          ([name, data]: [string, ArtifactConnectionData], index: number) => html`
+            <dd style="${unsafeCSS(`grid-column: ${index === 0 ? 2 : index * (1 + resumeConnectionsColSpan)} / span ${resumeConnectionsColSpan}`)}">
               <artifact-connection
                 .artifactConnectionType=${name as ArtifactConnectionType}
                 .artifactConnectionData=${data}
               >
               </artifact-connection>
-            </td>
+            </dd>
           `,
         )}
-      </tr>
+      </div>
     `;
+
     return html`
-      <table>
-        <tbody>
-          ${directConnections} ${professionalConnections} ${artifactConnections}
-        </tbody>
-      </table>
+      <dl>
+        ${contact}
+        ${network}
+        ${resume}
+      </dl>
     `;
   }
 
@@ -168,7 +168,10 @@ export class ProfileCard extends UIAwareElement {
         .bentoCardTitle=${"Profile"}
         .bentoTag=${BENTO_BOX_TYPES.profile}
       >
-        <article>${this.imageSection()} ${this.contactsSection()}</article>
+        <article>
+          ${this.imageSection()}
+          ${this.contactsDefinitionList()}
+        </article>
       </bento-card>
     `;
   }

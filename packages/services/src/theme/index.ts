@@ -10,16 +10,17 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  type ColorSchemeConfigs,
-  type ColorSchemeRoles,
-  type ColorString,
-  type MaterialSchemeName,
-  type MaterialSchemeNames,
-  type ThemeConfig,
-  type ThemeConfigs,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    type ColorSchemeConfigChange,
+    type ColorSchemeConfigs,
+    type ColorSchemeRoles,
+    type ColorString,
+    type MaterialSchemeName,
+    type MaterialSchemeNames,
+    type ThemeConfig,
+    type ThemeConfigs,
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -83,7 +84,7 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    "color_scheme.change": CustomEvent<ColorSchemeConfigs>;
+    "color_scheme.change": ColorSchemeConfigChange;
   }
 }
 

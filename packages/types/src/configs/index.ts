@@ -1,9 +1,8 @@
 import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorSchemeConfigs,
-  THEME_NAMES,
-  type ThemeConfig,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorSchemeConfigs,
+    THEME_NAMES,
 } from "@/lib/theme";
 
 export interface AppConfigs {
@@ -19,6 +18,5 @@ export const DEFAULT_APP_CONFIGS: AppConfigs = {
   } as const,
 } as const;
 
-export type AppConfigsSchemeTheme = () => ThemeConfig;
-
+export const APP_CONFIGS_CHANGE_EVENT_NAME = "app-configs.change";
 export type AppConfigsChange = CustomEvent<{ appConfigs: AppConfigs }>;

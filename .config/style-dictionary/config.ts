@@ -2,13 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import StyleDictionary, { type Config, type TransformedToken } from "style-dictionary";
 import {
-  formats,
-  logBrokenReferenceLevels,
-  logVerbosityLevels,
-  logWarningLevels,
-  transformGroups,
-  transformTypes,
-  transforms
+    formats,
+    logBrokenReferenceLevels,
+    logVerbosityLevels,
+    logWarningLevels,
+    transformGroups,
+    transformTypes,
+    transforms
 } from "style-dictionary/enums";
 import { type Config as SVGOConfig, loadConfig, optimize } from "svgo";
 
@@ -140,6 +140,7 @@ const files = {
   },
   sources: [
     `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
+    `!${process.cwd()}/packages/design-tokens/tokens/material-design/themes/**/*.json`,
   ]
 };
 

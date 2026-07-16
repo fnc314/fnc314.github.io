@@ -25,7 +25,6 @@ export interface ColorSchemeConfigs {
   name: ColorScheme;
   contrast: ColorSchemeContrast;
   persist: boolean;
-
   theme: ThemeName;
 }
 

@@ -40,9 +40,8 @@ export const ProfileCardStyles: CSSResult = css`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: stretch;
+        align-items: center;
 
-        picture,
         img {
           border: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary-fixed);
           border-radius: var(--md-sys-shape-corner-medium);
@@ -50,7 +49,6 @@ export const ProfileCardStyles: CSSResult = css`
           max-inline-size: var(--profile-card-image-inline-size-max);
           object-fit: cover;
           object-position: center center;
-          place-self: center;
         }
 
         figcaption {
@@ -63,6 +61,7 @@ export const ProfileCardStyles: CSSResult = css`
           text-align: center;
           min-inline-size: min-content;
           padding-inline: var(--spaces-padding-xs);
+          align-self: stretch;
         }
       }
 
@@ -85,35 +84,39 @@ export const ProfileCardStyles: CSSResult = css`
           border: var(--md-sys-color-secondary-fixed) solid var(--sizes-thickness-hairline);
           border-radius: var(--md-sys-shape-corner-small);
           color: var(--md-sys-color-secondary-fixed);
+          line-height: var(--md-sys-typescale-headline-large-line-height);
           font-size: var(--md-sys-typescale-headline-large-size);
           font-weight: var(--md-ref-typeface-weight-bold);
         }
       }
     }
 
-    table {
-      table-layout: fixed;
-      border-collapse: collapse;
+    dl {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaces-gap-l);
 
-      th[scope="row"] {
-        font-weight: var(--md-ref-typeface-weight-bold);
-        width: 20%;
-        text-align: center;
-        vertical-align: middle;
-        white-space: nowrap;
-        padding: var(--spaces-padding-s) var(--spaces-none);
-        color: var(--md-sys-color-on-surface-variant);
+      div {
+        display: grid;
+        grid-template-rows: min-content auto;
+        grid-template-columns: repeat(9, 1fr);
+        gap: var(--spaces-gap-s);
+        place-items: center;
+        border-radius: var(--md-sys-shape-corner-large);
+        background-color: var(--md-sys-color-surface-container);
+        padding-block: var(--spaces-padding-s);
+
+        dt {
+          grid-row: 1 / 2;
+          grid-column: 4 / span 3;
+        }
+
+        dd {
+          grid-row: 2 / 3;
+          margin: unset;
+        }
       }
 
-      td {
-        padding: var(--spaces-padding-s);
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      tr:not(:last-child) {
-        border-bottom: var(--sizes-thickness-xs) solid var(--profile-card-filled-icon-button-container-color);
-      }
     }
   }
 `;
