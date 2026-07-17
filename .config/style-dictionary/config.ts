@@ -99,13 +99,17 @@ StyleDictionary.registerFilter({
     ["icons", "sys", "ref", "md"].every(path => !token.path.includes(path))
 });
 
+/**
+ * Has to use `'` (single quotes) to bypass postcss process **AND** retain
+ *   usefulness within `img.src` and `background-image` use cases
+ */
 StyleDictionary.registerTransform({
   name: "iconSvgToDataImageSvg",
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
-    `"${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}"`
+    `'data:image/svg+xml;utf8,${readTokenFileContents(token)}'`
 });
 
 StyleDictionary.registerTransform({
@@ -114,23 +118,6 @@ StyleDictionary.registerTransform({
   transitive: false,
   transform: (token: TransformedToken) =>
     `${token.name}-icon-svg`,
-});
-
-StyleDictionary.registerTransform({
-  name: "iconSvgToUrlDataImageSvg",
-  type: transformTypes.value,
-  filter: (token: TransformedToken) => token.type === "asset",
-  transitive: true,
-  transform: (token: TransformedToken) =>
-    `url("${DATA_IMAGE_SVG};utf8,${readTokenFileContents(token)}")`
-});
-
-StyleDictionary.registerTransform({
-  name: "iconSvgToUrlDataImageSvgName",
-  type: transformTypes.name,
-  transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-icon-svg-url`,
 });
 
 const files = {
@@ -161,36 +148,6 @@ const styleDictionaryConfig: Config = {
       files: [
         {
           destination: "icon-svg.css",
-          format: formats.cssVariables,
-          filter: "isIconToken",
-          options: {
-            outputReferences: true,
-            outputReferenceFallbacks: true,
-            sort: "name",
-            formatting: {
-              indentation: "  ",
-              fileHeaderTimestamp: true,
-              commentPosition: "above",
-              commentStyle: "long",
-            }
-          }
-        }
-      ]
-    },
-    iconSvgUrl: {
-      transforms: [
-        transforms.attributeCti,
-        transforms.attributeColor,
-        transforms.nameKebab,
-        transforms.colorCss,
-        transforms.assetPath,
-        "iconSvgToUrlDataImageSvg",
-        "iconSvgToUrlDataImageSvgName"
-      ],
-      buildPath: files.buildPaths.css,
-      files: [
-        {
-          destination: "icon-svg-url.css",
           format: formats.cssVariables,
           filter: "isIconToken",
           options: {

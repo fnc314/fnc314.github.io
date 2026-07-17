@@ -19,7 +19,7 @@ export class ProfessionalConnection extends UIAwareElement {
 
   override render(): TemplateResult {
     const style = unsafeCSS(`
-      --professional-connection-mask: ${readCSSProperty(this.professionalConnectionData.designToken.mask)};
+      --professional-connection-mask: url('${readCSSProperty(this.professionalConnectionData.designToken.mask)}');
     `);
     return html`
       <md-filled-icon-button

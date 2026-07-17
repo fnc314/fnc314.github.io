@@ -25,12 +25,11 @@ export class BlogEntry extends UIAwareElement {
   override render() {
     const variant = this.darkMode ? "dark" : "light";
 
-    // `*-icon-svg-url` resolves to `url("data:…")` for the decorative CSS border.
-    const logoToken = `--icons-logos-organization-medium-${variant}-icon-svg-url`;
-
+    const logoToken = `--icons-logos-organization-medium-${variant}-icon-svg`;
+    const logoTokenSvg = readCSSProperty(logoToken);
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
     const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: var(${logoToken});
+      --dynamic-border-background-image: url('${logoTokenSvg}');
     `);
 
     const logoProperty = readCSSProperty(`--icons-logos-organization-medium-${variant}-icon-svg`);

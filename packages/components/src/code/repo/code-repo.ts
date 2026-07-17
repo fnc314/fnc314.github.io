@@ -77,11 +77,14 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     const token = this.darkMode
-      ? "--icons-logos-organization-github-dark-icon-svg-url"
-      : "--icons-logos-organization-github-light-icon-svg-url";
+      ? "--icons-logos-organization-github-dark-icon-svg"
+      : "--icons-logos-organization-github-light-icon-svg";
+
+    const tokenSvg = readCSSProperty(token);
+
 
     const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: var(${token});
+      --dynamic-border-background-image: url('${tokenSvg}');
     `);
     return html`
       <article

@@ -1,4 +1,77 @@
-import { type CSSResult, css } from "lit";
+import { readCSSProperty } from "@fnc314/packages.design-tokens";
+import { type CSSResult, css, unsafeCSS } from "lit";
+
+const defaultFilledSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-default-filled-icon-svg"
+  )
+);
+
+const defaultEmptySvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-default-empty-icon-svg"
+  )
+);
+
+const lightFilledSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-light-filled-icon-svg"
+  )
+);
+
+const lightEmpthSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-light-empty-icon-svg"
+  )
+);
+
+const darkFilledSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-dark-filled-icon-svg"
+  )
+);
+
+const darkEmptySvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-dark-empty-icon-svg"
+  )
+);
+
+const checkboxLightSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-check-box-light-icon-svg"
+  )
+);
+
+const checkboxDarkSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-check-box-dark-icon-svg"
+  )
+);
+
+const rememberCheckedSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-remember-checked-dark-icon-svg"
+  )
+);
+
+const rememberIconCheckedSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-remember-checked-light-icon-svg"
+  )
+);
+
+const rememberUncheckedSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-remember-unchecked-dark-icon-svg"
+  )
+);
+
+const rememberIconUncheckedSvg = unsafeCSS(
+  readCSSProperty(
+    "--icons-components-ui-mode-toggle-remember-unchecked-light-icon-svg"
+  )
+);
 
 /**
  * A {@link CSSResult} for {@link UiModeToggle}
@@ -22,6 +95,12 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle {
+    --dark-mode-toggle-dark-icon: url('${darkEmptySvg}');
+    --dark-mode-toggle-light-icon: url('${lightEmpthSvg}');
+    --dark-mode-toggle-system-icon: url('${defaultEmptySvg}');
+    --dark-mode-toggle-checkbox-icon: url('${checkboxLightSvg}');
+    --dark-mode-toggle-remember-icon-checked: url('${rememberIconCheckedSvg}');
+    --dark-mode-toggle-remember-icon-unchecked: url('${rememberIconUncheckedSvg}');
     --dark-mode-toggle-icon-size: 2rem;
     --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant);
     --dark-mode-toggle-background-color: var(--colors-transparent);
@@ -104,7 +183,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(systemThreeWayLabel) {
-        --dark-mode-toggle-system-icon: var(--icons-components-ui-mode-toggle-default-filled-icon-svg-url);
+        --dark-mode-toggle-system-icon: url('${defaultFilledSvg}');
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -117,7 +196,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(lightThreeWayLabel) {
-        --dark-mode-toggle-light-icon: var(--icons-components-ui-mode-toggle-light-filled-icon-svg-url);
+        --dark-mode-toggle-light-icon: url('${lightFilledSvg}');
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -130,7 +209,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(darkThreeWayLabel) {
-        --dark-mode-toggle-dark-icon: var(--icons-components-ui-mode-toggle-dark-filled-icon-svg-url);
+        --dark-mode-toggle-dark-icon: url('${darkFilledSvg}');
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -150,10 +229,8 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle.dark {
-    --dark-mode-toggle-checkbox-icon: var(--icons-components-ui-mode-toggle-check-box-dark-icon-svg-url);
-    --dark-mode-toggle-remember-icon-checked: var(--icons-components-ui-mode-toggle-remember-checked-dark-icon-svg-url);
-    --dark-mode-toggle-remember-icon-unchecked: var(
-      --icons-components-ui-mode-toggle-remember-unchecked-dark-icon-svg-url
-    );
+    --dark-mode-toggle-checkbox-icon: url('${checkboxDarkSvg}');
+    --dark-mode-toggle-remember-icon-checked: url('${rememberCheckedSvg}');
+    --dark-mode-toggle-remember-icon-unchecked: url('${rememberUncheckedSvg}');
   }
 `;
