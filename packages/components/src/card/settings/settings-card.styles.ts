@@ -40,6 +40,19 @@ export const SettingsCardStyles: CSSResult = css`
 
         md-outlined-select {
           padding-block-start: var(--spaces-padding-s);
+
+          &#theme-select {
+            --md-outlined-select-text-field-hover-outline-color: var(--md-sys-color-tertiary);
+            --md-outlined-select-text-field-hover-outline-width: var(--sizes-thickness-xs);
+            --md-outlined-select-container-color: var(--md-sys-color-tertiary);
+          }
+
+          md-select-option {
+            img {
+              border-radius: var(--md-sys-shape-corner-extra-small);
+              border: var(--md-sys-color-outline) solid var(--sizes-thickness-xs);
+            }
+          }
         }
       }
     }

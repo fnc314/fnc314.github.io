@@ -27,6 +27,7 @@ export function colorSchemeContrastToIcon(
 
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
+ *
  * @param json - Input of an unknown type, ideally conforming to a Material 3 JSON scheme
  * @returns A boolean indicating whether the input JSON matches the expected structure of {@link @fnc314/packages.types!ThemeJsonSchemes}
  */
@@ -61,19 +62,6 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
 
   return correctValues;
 }
-
-/**
- * Converts typtical `JSON` keys in `lowerPascalCase` into `CSS` appropriate
- *   `lower-kebab-case`
- *
- * @param jsonKey - The key of a `JSON` object, expected in `lowerPascalCase`
- * @returns - The same `jsonKey` but in `lower-kebab-case`
- */
-const formatJsonKey: (jsonKey: string) => string = (jsonKey: string) =>
-  jsonKey
-    .split(/(?=[A-Z])/)
-    .map((part) => part.toLowerCase())
-    .join("-");
 
 /**
  * Takes the provided {@link CSSResult} and massages the underlying text with
@@ -143,6 +131,7 @@ export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object
 /**
  * Converts `jsonKey` and corresponding `rgb` value into a CSS custom property
  *   via {@link css} and {@link unsafeCSS} functions
+ *
  * @param jsonKey - The key from the JSON scheme, e.g., `primaryContainer`
  * @param rgb - The RGB color value from the JSON scheme, e.g., `#FF0000`
  * @returns {lit!CSSResult} - A CSSResult containing the custom property definition, e.g., `--md-sys-color-primary-container: #FF0000;`
@@ -159,3 +148,17 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
     ].join("\n"),
   );
 }
+
+/**
+ * Converts typtical `JSON` keys in `lowerPascalCase` into `CSS` appropriate
+ *   `lower-kebab-case`
+ *
+ * @param jsonKey - The key of a `JSON` object, expected in `lowerPascalCase`
+ * @returns - The same `jsonKey` but in `lower-kebab-case`
+ */
+const formatJsonKey: (jsonKey: string) => string = (jsonKey: string) =>
+  jsonKey
+    .split(/(?=[A-Z])/)
+    .map((part) => part.toLowerCase())
+    .join("-")
+    ;

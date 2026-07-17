@@ -3,23 +3,28 @@ import { SettingsCardStyles } from "@/lib/card/settings/settings-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
+import "@/lib/version-tag/version-tag";
+import { Photos } from "@fnc314/packages.data";
 import {
-  MaterialCSSStyleSheet,
-  colorSchemeConfigsToMaterialSchemeName,
-  configsService,
-  themeService,
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    colorSchemeContrastToIcon,
+    configsService,
+    themeService,
 } from "@fnc314/packages.services";
 import {
-  type AppConfigs,
-  BENTO_BOX_TYPES,
-  CONFIG_COLOR_CONTRAST_NAMES,
-  type ColorSchemeContrast,
-  THEME_NAMES,
-  type ThemeName,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type AppConfigs,
+    BENTO_BOX_TYPES,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    type ColorSchemeContrast,
+    THEME_NAMES,
+    type ThemeName,
 } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
-import { html } from "lit";
+import { type TemplateResult, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
 /**
@@ -47,12 +52,12 @@ export class SettingsCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = "settings";
-    configsService.addEventListener("app-configs.change", this.onAppConfigsChange);
+    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener("app-configs.change", this.onAppConfigsChange);
+    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
   }
 
   private onAppConfigsChange = (event: Event) => {
@@ -87,7 +92,7 @@ export class SettingsCard extends UIAwareElement {
     configsService.saveConfigs(this._appConfigs);
 
     this.dispatchEvent(
-      new CustomEvent("color_scheme.change", {
+      new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
         bubbles: true,
         composed: true,
         detail: this._appConfigs.colorScheme,
@@ -99,6 +104,68 @@ export class SettingsCard extends UIAwareElement {
         colorSchemeConfigsToMaterialSchemeName(this._appConfigs.colorScheme)
       ].cssText,
     );
+  }
+
+  /**
+   * Formats the provided {@link ThemeName} into a proper-for-display format
+   *
+   * @private
+   * @param {ThemeName} themeName - Any {@link ThemeName} to format
+   * @returns {string} The displayable name
+   */
+  private _formatThemeName(themeName: ThemeName): string {
+    const casedString = themeName.replace(/([a-z])([A-Z])/g, "$1 $2");
+    return casedString.charAt(0).toUpperCase() + casedString.slice(1);
+  }
+
+  private _uiThemeFieldSet(): TemplateResult {
+    return html`
+      <fieldset>
+        <legend class="md-typescale-label-large">UI Theme</legend>
+        <md-outlined-select
+          label="Theme"
+          id="theme-select"
+          @change=${this._onThemeChange}
+          .value=${this._appConfigs.colorScheme.theme}
+        >
+          ${
+            Object
+              .values(THEME_NAMES)
+              .map(
+                (theme) => html`
+                  <md-select-option value=${theme}>
+                    <img loading="lazy" width="56" src=${Photos[theme].srcSet.thumb} alt=${Photos[theme].alt} slot="start" />
+                    <div slot="headline">${this._formatThemeName(theme)}</div>
+                  </md-select-option>
+                `,
+              )
+            }
+        </md-outlined-select>
+      </fieldset>
+    `;
+  }
+
+  private _uiContrastFieldSet(): TemplateResult {
+    return html`
+      <fieldset>
+        <legend class="md-typescale-label-large">UI Contrast</legend>
+        <md-outlined-select
+          label="Contrast"
+          id="contrast-select"
+          @change=${this._onContrastChange}
+          .value=${this._appConfigs.colorScheme.contrast}
+        >
+          ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+            (contrast: ColorSchemeContrast) => html`
+              <md-select-option value=${contrast}>
+                ${colorSchemeContrastToIcon(contrast)}
+                <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
+              </md-select-option>
+            `,
+          )}
+        </md-outlined-select>
+      </fieldset>
+    `;
   }
 
   override render() {
@@ -116,41 +183,9 @@ export class SettingsCard extends UIAwareElement {
             toolname="adjustSiteDisplayConfigurations"
             tooldescription="Adjusts the theme, light/dark/system mode (and persistence), and color-contrast levels for the site"
           >
-            <fieldset>
-              <legend class="md-typescale-label-large">UI Theme</legend>
-              <md-outlined-select
-                label="Theme"
-                id="theme-select"
-                @change=${this._onThemeChange}
-                .value=${this._appConfigs.colorScheme.theme}
-              >
-                ${Object.values(THEME_NAMES).map(
-                  (theme) => html`
-                    <md-select-option value=${theme}>
-                      <div slot="headline">${theme.charAt(0).toUpperCase() + theme.slice(1)}</div>
-                    </md-select-option>
-                  `,
-                )}
-              </md-outlined-select>
-            </fieldset>
+            ${this._uiThemeFieldSet()}
 
-            <fieldset>
-              <legend class="md-typescale-label-large">UI Contrast</legend>
-              <md-outlined-select
-                label="Contrast"
-                id="contrast-select"
-                @change=${this._onContrastChange}
-                .value=${this._appConfigs.colorScheme.contrast}
-              >
-                ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
-                  (contrast) => html`
-                    <md-select-option value=${contrast}>
-                      <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
-                    </md-select-option>
-                  `,
-                )}
-              </md-outlined-select>
-            </fieldset>
+            ${this._uiContrastFieldSet()}
 
             <ui-mode-toggle></ui-mode-toggle>
           </form>
