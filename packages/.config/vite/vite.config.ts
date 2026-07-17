@@ -40,24 +40,13 @@ export function buildConfig(dirName: string): UserConfigFnObject {
           logLevel: "debug",
           output: {
             assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
-            codeSplitting: {
-              groups: [
-                {
-                  name: "material",
-                  test: /material/
-                },
-                {
-                  name: "lit",
-                  test: /lit/
-                }
-              ]
-            },
+            codeSplitting: true,
             comments: mode !== "production",
             dir: `${process.cwd()}/packages/${dirName}/dist`,
             entryFileNames: `@fnc314.packages.${dirName}.js`,
             esModule: true,
             format: "esm",
-            minify: mode === "production",
+            minify: false,
             // preserveModules: true,
             // preserveModulesRoot: "lib",
             strict: true,
