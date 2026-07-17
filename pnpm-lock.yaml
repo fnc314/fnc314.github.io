@@ -558,8 +558,8 @@ catalogs:
       specifier: 1.3.2
       version: 1.3.2
     vite:
-      specifier: 8.1.4
-      version: 8.1.4
+      specifier: 8.1.5
+      version: 8.1.5
     vite-plugin-cem:
       specifier: 0.8.5
       version: 0.8.5
@@ -734,7 +734,7 @@ importers:
         version: 1.0.2
       '@vitejs/devtools':
         specifier: catalog:devDependencies
-        version: 0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.4)
+        version: 0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.5)
       '@wc-toolkit/cem-inheritance':
         specifier: catalog:devDependencies
         version: 1.2.2
@@ -950,34 +950,34 @@ importers:
         version: 8.64.0(@types/eslint@9.6.1)(eslint@10.7.0)(typescript@7.0.2)
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
       vite-plugin-cem:
         specifier: catalog:devDependencies
-        version: 0.8.5(vite@8.1.4)
+        version: 0.8.5(vite@8.1.5)
       vite-plugin-cp:
         specifier: catalog:devDependencies
         version: 6.0.3
       vite-plugin-dts:
         specifier: catalog:devDependencies
-        version: 5.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 5.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       vite-plugin-lit-css:
         specifier: catalog:devDependencies
-        version: 3.0.0(lit@3.3.3)(vite@8.1.4)
+        version: 3.0.0(lit@3.3.3)(vite@8.1.5)
       vite-plugin-pwa:
         specifier: catalog:devDependencies
-        version: 1.3.0(@vite-pwa/assets-generator@1.0.2)(vite@8.1.4)(workbox-build@7.4.1)(workbox-window@7.4.1)
+        version: 1.3.0(@vite-pwa/assets-generator@1.0.2)(vite@8.1.5)(workbox-build@7.4.1)(workbox-window@7.4.1)
       vite-plugin-svgo:
         specifier: catalog:devDependencies
-        version: 3.0.0(typescript@7.0.2)(vite@8.1.4)
+        version: 3.0.0(typescript@7.0.2)(vite@8.1.5)
       vite-plugin-version-mark:
         specifier: catalog:devDependencies
-        version: 0.2.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(vite@8.1.4)
+        version: 0.2.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(vite@8.1.5)
       web-component-analyzer:
         specifier: catalog:devDependencies
         version: 2.0.0
@@ -1058,13 +1058,13 @@ importers:
         version: 7.0.2
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   packages/data:
     dependencies:
@@ -1092,13 +1092,13 @@ importers:
         version: 7.0.2
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   packages/design-tokens:
     dependencies:
@@ -1126,13 +1126,13 @@ importers:
         version: 7.0.2
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   packages/services:
     dependencies:
@@ -1163,13 +1163,13 @@ importers:
         version: 7.0.2
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   packages/types:
     dependencies:
@@ -1191,13 +1191,13 @@ importers:
         version: 7.0.2
       unplugin-dts:
         specifier: catalog:devDependencies
-        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+        version: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
       unplugin-info:
         specifier: catalog:devDependencies
-        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4)
+        version: 1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5)
       vite:
         specifier: catalog:devDependencies
-        version: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+        version: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   sites/docs: {}
 
@@ -10343,8 +10343,8 @@ packages:
       '@nuxt/schema': '>3.3.0'
       vite: '*'
 
-  vite@8.1.4:
-    resolution: {integrity: sha512-bTT9PsdWO+MQMNG9ZXIP/qM9wGh37DFxTV/sPq9cFpHr3w4jkgef032PkAL9jAqhk3Nz8NQw3O8n6/xFkqO4QQ==}
+  vite@8.1.5:
+    resolution: {integrity: sha512-7ULLwsCdYx/nRyrpiEwvqb5TFHrMVZyBt+rg/OAXT7rgj/z+DtTDyKFeLAdDkubDVDKD8jOsndmy7m55XcfUsw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -11704,25 +11704,25 @@ snapshots:
       tinyexec: 1.2.4
       zigpty: 0.2.1
 
-  '@devframes/plugin-inspect@0.6.0(devframe@0.6.0)(valibot@1.4.2)(vite@8.1.4)':
+  '@devframes/plugin-inspect@0.6.0(devframe@0.6.0)(valibot@1.4.2)(vite@8.1.5)':
     dependencies:
       '@valibot/to-json-schema': 1.7.1(valibot@1.4.2)
       devframe: 0.6.0(srvx@0.11.16)(typescript@7.0.2)
       nostics: 1.1.4
     optionalDependencies:
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - valibot
 
-  '@devframes/plugin-messages@0.6.0(@devframes/hub@0.6.0)(devframe@0.6.0)(vite@8.1.4)':
+  '@devframes/plugin-messages@0.6.0(@devframes/hub@0.6.0)(devframe@0.6.0)(vite@8.1.5)':
     dependencies:
       '@devframes/hub': 0.6.0(devframe@0.6.0)
       devframe: 0.6.0(srvx@0.11.16)(typescript@7.0.2)
       nostics: 1.1.4
     optionalDependencies:
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
-  '@devframes/plugin-terminals@0.6.0(devframe@0.6.0)(typescript@7.0.2)(vite@8.1.4)':
+  '@devframes/plugin-terminals@0.6.0(devframe@0.6.0)(typescript@7.0.2)(vite@8.1.5)':
     dependencies:
       '@xterm/addon-fit': 0.11.0
       '@xterm/xterm': 6.0.0
@@ -11732,7 +11732,7 @@ snapshots:
       valibot: 1.4.2(typescript@7.0.2)
       zigpty: 0.2.1
     optionalDependencies:
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - typescript
 
@@ -14630,7 +14630,7 @@ snapshots:
       sharp-ico: 0.1.5
       unconfig: 7.5.0
 
-  '@vitejs/devtools-kit@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)':
+  '@vitejs/devtools-kit@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)':
     dependencies:
       '@devframes/hub': 0.5.4(devframe@0.5.4)
       birpc: 4.0.0
@@ -14640,7 +14640,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.4
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - bufferutil
@@ -14649,23 +14649,23 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  '@vitejs/devtools-kit@0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.4)':
+  '@vitejs/devtools-kit@0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.5)':
     dependencies:
       '@devframes/hub': 0.6.0(devframe@0.6.0)
       devframe: 0.6.0(srvx@0.11.16)(typescript@7.0.2)
       mlly: 1.8.2
       nostics: 1.1.4
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - srvx
       - typescript
 
-  '@vitejs/devtools-rolldown@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)(vue@3.5.39)':
+  '@vitejs/devtools-rolldown@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)(vue@3.5.39)':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@rolldown/debug': 1.1.5
-      '@vitejs/devtools-kit': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)
+      '@vitejs/devtools-kit': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)
       birpc: 4.0.0
       cac: 7.0.0
       d3-shape: 3.2.0
@@ -14713,11 +14713,11 @@ snapshots:
       - vue
     optional: true
 
-  '@vitejs/devtools-rolldown@0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.4)(vue@3.5.39)':
+  '@vitejs/devtools-rolldown@0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.5)(vue@3.5.39)':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@rolldown/debug': 1.1.5
-      '@vitejs/devtools-kit': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.4)
+      '@vitejs/devtools-kit': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.5)
       d3-shape: 3.2.0
       diff: 9.0.0
       nostics: 1.1.4
@@ -14730,11 +14730,11 @@ snapshots:
       - vite
       - vue
 
-  '@vitejs/devtools@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)':
+  '@vitejs/devtools@0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)':
     dependencies:
       '@devframes/hub': 0.5.4(devframe@0.5.4)
-      '@vitejs/devtools-kit': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)
-      '@vitejs/devtools-rolldown': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)(vue@3.5.39)
+      '@vitejs/devtools-kit': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)
+      '@vitejs/devtools-rolldown': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)(vue@3.5.39)
       birpc: 4.0.0
       cac: 7.0.0
       devframe: 0.5.4(crossws@0.4.10)(typescript@7.0.2)
@@ -14745,7 +14745,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.4
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
       vue: 3.5.39(typescript@7.0.2)
       ws: 8.21.0
     transitivePeerDependencies:
@@ -14775,14 +14775,14 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  '@vitejs/devtools@0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.4)':
+  '@vitejs/devtools@0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.5)':
     dependencies:
       '@devframes/hub': 0.6.0(devframe@0.6.0)
-      '@devframes/plugin-inspect': 0.6.0(devframe@0.6.0)(valibot@1.4.2)(vite@8.1.4)
-      '@devframes/plugin-messages': 0.6.0(@devframes/hub@0.6.0)(devframe@0.6.0)(vite@8.1.4)
-      '@devframes/plugin-terminals': 0.6.0(devframe@0.6.0)(typescript@7.0.2)(vite@8.1.4)
-      '@vitejs/devtools-kit': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.4)
-      '@vitejs/devtools-rolldown': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.4)(vue@3.5.39)
+      '@devframes/plugin-inspect': 0.6.0(devframe@0.6.0)(valibot@1.4.2)(vite@8.1.5)
+      '@devframes/plugin-messages': 0.6.0(@devframes/hub@0.6.0)(devframe@0.6.0)(vite@8.1.5)
+      '@devframes/plugin-terminals': 0.6.0(devframe@0.6.0)(typescript@7.0.2)(vite@8.1.5)
+      '@vitejs/devtools-kit': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.5)
+      '@vitejs/devtools-rolldown': 0.4.1(srvx@0.11.16)(typescript@7.0.2)(vite@8.1.5)(vue@3.5.39)
       birpc: 4.0.0
       cac: 7.0.0
       devframe: 0.6.0(srvx@0.11.16)(typescript@7.0.2)
@@ -14791,7 +14791,7 @@ snapshots:
       nostics: 1.1.4
       obug: 2.1.3
       pathe: 2.0.3
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
       vue: 3.5.39(typescript@7.0.2)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
@@ -21355,7 +21355,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-dts@1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4):
+  unplugin-dts@1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5):
     dependencies:
       '@rollup/pluginutils': 5.4.0(rollup@4.62.0)
       '@volar/typescript': 2.4.28
@@ -21370,11 +21370,11 @@ snapshots:
       esbuild: 0.28.1
       rolldown: 1.2.0
       rollup: 4.62.0
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
-  unplugin-info@1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.4):
+  unplugin-info@1.3.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(esbuild@0.28.1)(rollup@4.62.0)(vite@8.1.5):
     dependencies:
       ci-info: 4.4.0
       git-url-parse: 16.1.0
@@ -21385,7 +21385,7 @@ snapshots:
       '@nuxt/schema': 4.4.8
       esbuild: 0.28.1
       rollup: 4.62.0
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -21531,13 +21531,13 @@ snapshots:
       unist-util-stringify-position: 2.0.3
       vfile-message: 2.0.4
 
-  vite-plugin-cem@0.8.5(vite@8.1.4):
+  vite-plugin-cem@0.8.5(vite@8.1.5):
     dependencies:
       '@custom-elements-manifest/analyzer': 0.10.10
       '@types/glob': 8.1.0
       glob: 8.1.0
       typescript: 5.7.3
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
   vite-plugin-cp@6.0.3:
     dependencies:
@@ -21549,12 +21549,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-dts@5.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4):
+  vite-plugin-dts@5.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5):
     dependencies:
-      unplugin-dts: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.4)
+      unplugin-dts: 1.0.3(esbuild@0.28.1)(rolldown@1.2.0)(rollup@4.62.0)(typescript@7.0.2)(vite@8.1.5)
     optionalDependencies:
       rollup: 4.62.0
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@rspack/core'
       - '@vue/language-core'
@@ -21564,18 +21564,18 @@ snapshots:
       - typescript
       - webpack
 
-  vite-plugin-lit-css@3.0.0(lit@3.3.3)(vite@8.1.4):
+  vite-plugin-lit-css@3.0.0(lit@3.3.3)(vite@8.1.5):
     dependencies:
       lit: 3.3.3
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
-  vite-plugin-pwa@1.3.0(@vite-pwa/assets-generator@1.0.2)(vite@8.1.4)(workbox-build@7.4.1)(workbox-window@7.4.1):
+  vite-plugin-pwa@1.3.0(@vite-pwa/assets-generator@1.0.2)(vite@8.1.5)(workbox-build@7.4.1)(workbox-window@7.4.1):
     dependencies:
       '@types/debug': 4.1.13
       debug: 4.4.3
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.17
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
       workbox-build: 7.4.1(@types/babel__core@7.20.5)
       workbox-window: 7.4.1
     optionalDependencies:
@@ -21583,19 +21583,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-svgo@3.0.0(typescript@7.0.2)(vite@8.1.4):
+  vite-plugin-svgo@3.0.0(typescript@7.0.2)(vite@8.1.5):
     dependencies:
       svgo: 4.0.1
       typescript: 7.0.2
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
-  vite-plugin-version-mark@0.2.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(vite@8.1.4):
+  vite-plugin-version-mark@0.2.2(@nuxt/kit@4.4.8)(@nuxt/schema@4.4.8)(vite@8.1.5):
     dependencies:
       '@nuxt/kit': 4.4.8
       '@nuxt/schema': 4.4.8
-      vite: 8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
+      vite: 8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0)
 
-  vite@8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0):
+  vite@8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.3.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
@@ -21604,7 +21604,7 @@ snapshots:
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 26.1.1
-      '@vitejs/devtools': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.4)
+      '@vitejs/devtools': 0.3.4(crossws@0.4.10)(typescript@7.0.2)(vite@8.1.5)
       esbuild: 0.28.1
       fsevents: 2.3.3
       jiti: 2.7.0
@@ -21612,7 +21612,7 @@ snapshots:
       tsx: 4.23.1
       yaml: 2.9.0
 
-  vite@8.1.4(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0):
+  vite@8.1.5(@types/node@26.1.1)(@vitejs/devtools@0.4.1)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.1)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
@@ -21621,7 +21621,7 @@ snapshots:
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 26.1.1
-      '@vitejs/devtools': 0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.4)
+      '@vitejs/devtools': 0.4.1(crossws@0.4.10)(srvx@0.11.16)(typescript@7.0.2)(valibot@1.4.2)(vite@8.1.5)
       esbuild: 0.28.1
       fsevents: 2.3.3
       jiti: 2.7.0
@@ -22154,5 +22154,5 @@ time:
   vite-plugin-pwa@1.3.0: '2026-05-05T15:04:06.752Z'
   vite-plugin-svgo@3.0.0: '2026-06-30T12:39:17.048Z'
   vite-plugin-version-mark@0.2.2: '2025-08-05T02:20:00.333Z'
-  vite@8.1.4: '2026-07-09T04:44:45.017Z'
+  vite@8.1.5: '2026-07-16T06:51:13.015Z'
   web-component-analyzer@2.0.0: '2023-10-18T22:54:39.891Z'
