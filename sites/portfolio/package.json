@@ -1,7 +1,7 @@
 {
 	"private": true,
   "name": "@fnc314/sites.portfolio",
-  "version": "3.0.0",
+  "version": "2.1.0",
   "type": "module",
   "dependencies": {
     "@fnc314/packages.components": "workspace:*",

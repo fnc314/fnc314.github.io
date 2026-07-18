@@ -29,7 +29,7 @@ export const BentoLayoutStyles = css`
     gap: var(--spaces-gap-s);
     padding: var(--spaces-padding-xs);
 
-    h1 {
+    header {
       background-color: var(--md-sys-color-primary-container);
       border: var(--sizes-thickness-hairline) solid var(--md-sys-color-on-primary-container);
       border-radius: var(--md-sys-shape-corner-large);
@@ -38,8 +38,22 @@ export const BentoLayoutStyles = css`
       inline-size: 100%;
       margin-inline: auto;
       padding-block: var(--spaces-padding-l);
-      text-align: center;
-      font-variant: small-caps;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spaces-gap-m);
+
+      h1 {
+        text-align: center;
+        font-variant: small-caps;
+        margin-block: var(--spaces-none);
+      }
+
+      p {
+        text-align: center;
+        margin-block: var(--spaces-none);
+      }
     }
   }
 

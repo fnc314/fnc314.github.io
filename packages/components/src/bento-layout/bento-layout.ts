@@ -117,7 +117,12 @@ export class BentoLayout extends UIAwareElement {
   override render() {
     return html`
       <main id="bento-root">
-        <h1 class="md-typescale-display-large animate-entry">Franco N. Colaizzi</h1>
+        <header class="animate-entry">
+          <h1 class="md-typescale-display-large">Franco N. Colaizzi</h1>
+          <p class="md-typescale-title-large">
+            Principal Software Engineer &#124; Enterprise Android & System Architecture &#124; Building High-Performing Teams, Modern Platforms, and the Engineering Foundations Behind Great Products
+          </p>
+        </header>
         ${this._bentoBoxConfigs.map((boxConfig) => this.renderBentoBox(boxConfig))}
       </main>
     `;

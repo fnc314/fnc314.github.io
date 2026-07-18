@@ -79,19 +79,19 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
       return normalized.trim() === "" ? "" : normalized;
     })
     .filter((line) => line.length > 0 && line.startsWith("--"))
-    .sort((var1: string, var2: string) => {
-      if (var1.startsWith("--md") && var2.startsWith("--ok")) {
-        return -1;
-      } else if (var1.startsWith("--ok") && var2.startsWith("--md")) {
-        return 1;
-      } else {
-        return 0;
-      }
-    })
+    // .sort((var1: string, var2: string) => {
+    //   if (var1.startsWith("--md") && var2.startsWith("--ok")) {
+    //     return -1;
+    //   } else if (var1.startsWith("--ok") && var2.startsWith("--md")) {
+    //     return 1;
+    //   } else {
+    //     return 0;
+    //   }
+    // })
     .toSorted();
 
   const mdRows = [...sortedVariableRows.filter((line: string) => line.startsWith("--md"))].join("\n");
-  const okRows = [...sortedVariableRows.filter((line: string) => line.startsWith("--ok"))].join("\n");
+  // const okRows = [...sortedVariableRows.filter((line: string) => line.startsWith("--ok"))].join("\n");
 
   return css`
     :root {
@@ -137,7 +137,7 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
 
   return unsafeCSS(
     [
-      `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
+      // `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
       `--md-sys-color-${formattedKey}: ${rgb};`,
       // `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
       // `--oklch-md-sys-color-${formattedKey}: oklch(from ${rgb} l c h);`,

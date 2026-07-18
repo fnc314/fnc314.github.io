@@ -19,9 +19,9 @@ export class VersionTag extends UIAwareElement {
       div {
         align-items: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spaces-gap-m);
-        justify-content: center;
+        justify-content: space-between;
 
         p {
           margin: var(--spaces-none);
@@ -50,8 +50,8 @@ export class VersionTag extends UIAwareElement {
   override render() {
     return html`
       <div class="version-tag">
-        <p>Version: ${buildVersion} (Built: <time datetime="${time.toISOString()}">${this.formattedDate}</time>)</p>
-        <p>SHA: ${gitSha}</p>
+        <p>Version: ${buildVersion} | SHA: ${gitSha}</p>
+        <p>Built: <time datetime="${time.toISOString()}">${this.formattedDate}</time></p>
       </div>
     `;
   }
