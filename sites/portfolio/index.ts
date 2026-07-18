@@ -1,7 +1,6 @@
 import "@/index.css";
 import "@fnc314/packages.components";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
-import "@fnc314/packages.types";
 import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfigChange, type ColorSchemeConfigs } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";

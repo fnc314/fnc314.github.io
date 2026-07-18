@@ -3,6 +3,7 @@
   "customElements": "custom-elements.json",
   "dependencies": {
     "@fnc314/packages.types": "workspace:*",
+    "lit": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },

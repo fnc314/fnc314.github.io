@@ -1108,6 +1108,9 @@ importers:
       '@material/web':
         specifier: catalog:dependencies
         version: 2.5.0
+      lit:
+        specifier: catalog:dependencies
+        version: 3.3.3
       material-symbols:
         specifier: catalog:dependencies
         version: 0.45.8
@@ -1201,7 +1204,17 @@ importers:
 
   sites/docs: {}
 
-  sites/portfolio: {}
+  sites/portfolio:
+    dependencies:
+      '@fnc314/packages.components':
+        specifier: workspace:*
+        version: link:../../packages/components
+      '@fnc314/packages.services':
+        specifier: workspace:*
+        version: link:../../packages/services
+      '@fnc314/packages.types':
+        specifier: workspace:*
+        version: link:../../packages/types
 
 packages:
 

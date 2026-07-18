@@ -2,5 +2,10 @@
 	"private": true,
   "name": "@fnc314/sites.portfolio",
   "version": "3.0.0",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@fnc314/packages.components": "workspace:*",
+    "@fnc314/packages.services": "workspace:*",
+    "@fnc314/packages.types": "workspace:*"
+  }
 }
