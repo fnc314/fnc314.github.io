@@ -61,4 +61,14 @@ export const SettingsCardStyles: CSSResult = css`
       padding-block-start: var(--spaces-padding-m);
     }
   }
+
+  @media screen and (width >= 1201px) {
+    .settings-content {
+      form {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: unset;
+      }
+    }
+  }
 `;

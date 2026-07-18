@@ -159,6 +159,6 @@ export const UIModeToggleStyles: CSSResult = css`
   dark-mode-toggle.dark {
     --dark-mode-toggle-checkbox-icon: url('${DarkModeToggleSvgs.checkbox.dark}');
     --dark-mode-toggle-remember-icon-checked: url('${DarkModeToggleSvgs.remember.checked.dark}');
-    --dark-mode-toggle-remember-icon-unchecked: url('${DarkModeToggleSvgs.remember.checked.dark}');
+    --dark-mode-toggle-remember-icon-unchecked: url('${DarkModeToggleSvgs.remember.unchecked.dark}');
   }
 `;

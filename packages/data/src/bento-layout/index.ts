@@ -1,9 +1,9 @@
 import {
-  type ABentoBoxConfig,
-  type BentoBoxConfigs,
-  type BentoBoxType,
-  type BreakpointLabel,
-  BreakpointLabels,
+    type ABentoBoxConfig,
+    type BentoBoxConfigs,
+    type BentoBoxType,
+    type BreakpointLabel,
+    BreakpointLabels,
 } from "@fnc314/packages.types";
 
 /** The final rendered {@link BentoBoxConfigs} */
@@ -58,7 +58,7 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", offsets: { col: 8 }, span: { colSpan: 5, rowSpan: 1 }, order: 7 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 12, rowSpan: 1 }, order: 7 },
       tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
       mobile: { breakpoint: "mobile", order: 7 },
     },
