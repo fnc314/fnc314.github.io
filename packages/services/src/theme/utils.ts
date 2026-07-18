@@ -97,10 +97,6 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
     :root {
       ${unsafeCSS(mdRows)};
     }
-
-    :root {
-      ${unsafeCSS(okRows)};
-    }
   `;
 };
 
@@ -143,8 +139,8 @@ export function keyTransform(jsonKey: string, rgb: string): CSSResult {
     [
       `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
       `--md-sys-color-${formattedKey}: ${rgb};`,
-      `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
-      `--oklch-md-sys-color-${formattedKey}: oklch(from ${rgb} l c h);`,
+      // `/* stylelint-disable-next-line custom-property-pattern, value-keyword-case */`,
+      // `--oklch-md-sys-color-${formattedKey}: oklch(from ${rgb} l c h);`,
     ].join("\n"),
   );
 }
