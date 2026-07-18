@@ -366,8 +366,8 @@ catalogs:
       specifier: 2.8.0
       version: 2.8.0
     autoprefixer:
-      specifier: 10.5.3
-      version: 10.5.3
+      specifier: 10.5.4
+      version: 10.5.4
     cem-plugin-better-lit-types:
       specifier: 0.2.1
       version: 0.2.1
@@ -770,7 +770,7 @@ importers:
         version: 2.8.0
       autoprefixer:
         specifier: catalog:devDependencies
-        version: 10.5.3(postcss@8.5.19)
+        version: 10.5.4(postcss@8.5.19)
       cem-plugin-better-lit-types:
         specifier: catalog:devDependencies
         version: 0.2.1
@@ -5297,8 +5297,8 @@ packages:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
 
-  autoprefixer@10.5.3:
-    resolution: {integrity: sha512-bJRzflk8GgE4JX+iZNEwz9f9p460NCHnU7bd+CZ9vIjIlZuTkt6F3WSl2oNO8StZBFx17nLEsiQ6H2wcZiY7nA==}
+  autoprefixer@10.5.4:
+    resolution: {integrity: sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -5552,6 +5552,9 @@ packages:
 
   caniuse-lite@1.0.30001805:
     resolution: {integrity: sha512-52noaS3DubycKSXaU30TwPGIp+POyQSUVa5jBEq3vkRkY0kjyb3LQgvhU6WGyCcyXqVLWO0Cw0Q6BSdD0kUfVA==}
+
+  caniuse-lite@1.0.30001806:
+    resolution: {integrity: sha512-72Cuvd95zbSYPKq6Fhg8eDJRlzgWDf7/mtoZv6Qe/DYNCEBdNxoA3+rZAU2ZhGCpZlns3EssFavaZomckT5Uuw==}
 
   capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -15322,10 +15325,10 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  autoprefixer@10.5.3(postcss@8.5.19):
+  autoprefixer@10.5.4(postcss@8.5.19):
     dependencies:
       browserslist: 4.28.6
-      caniuse-lite: 1.0.30001805
+      caniuse-lite: 1.0.30001806
       fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.5.19
@@ -15625,6 +15628,8 @@ snapshots:
   camelcase@6.3.0: {}
 
   caniuse-lite@1.0.30001805: {}
+
+  caniuse-lite@1.0.30001806: {}
 
   capital-case@1.0.4:
     dependencies:
@@ -22074,7 +22079,7 @@ time:
   '@web/test-runner@1.0.0': '2026-07-07T14:15:17.607Z'
   '@webcomponents/webcomponentsjs@2.8.0': '2023-03-30T21:35:04.570Z'
   animate-css-grid@1.5.1: '2023-03-02T16:10:49.357Z'
-  autoprefixer@10.5.3: '2026-07-14T16:41:39.358Z'
+  autoprefixer@10.5.4: '2026-07-16T10:30:10.614Z'
   cem-plugin-better-lit-types@0.2.1: '2024-03-19T10:12:21.175Z'
   cem-plugin-jsdoc-example@0.0.9: '2022-03-23T15:56:11.305Z'
   cem-plugin-readme@0.1.4: '2021-07-12T07:12:38.448Z'
