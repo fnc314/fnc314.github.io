@@ -8,12 +8,13 @@ import {
     type ArtifactConnectionData,
     type ArtifactConnectionType,
     BENTO_BOX_TYPES,
+    type BioExtended,
     type ConnectionInstance,
     type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
 import { type TemplateResult, html, unsafeCSS } from "lit";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary A responsive card component that displays a profile photo and biography.
@@ -28,8 +29,8 @@ export class ProfileCard extends UIAwareElement {
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
   photoData = Photos[configsService.loadConfigs().colorScheme.theme];
 
-  @property({ type: String })
-  bioText: string = Biographies.bio.long;
+  @property({ type: Object })
+  aboutMe: BioExtended = Biographies.bio.extended;
 
   @property({ type: Boolean })
   expanded = false;
@@ -56,6 +57,48 @@ export class ProfileCard extends UIAwareElement {
     this.photoData = Photos[themeName];
     this.requestUpdate();
   };
+
+  private renderAboutMe(): TemplateResult {
+    const summary = this.aboutMe.summary
+      .map((sentence) => html`
+        <p class="md-typescale-body-large">
+          ${sentence}
+        </p>
+      `);
+    const sections = this.aboutMe.sections
+      .filter((section) => !!section.title && (section.content.length > 0 && section.content.filter((content) => content.trim().length > 0)))
+      .map((section) => html`
+        <section aria-labelledby="about-me-section-header">
+          <header>
+            <h4 class="md-typescale-title-small" id="about-me-section-header">${section.title}</h4>
+          </header>
+          ${
+            section.content
+              .map((sentence) => html`
+                <p class="md-typescale-body-large">${unsafeHTML(sentence)}</p>
+              `)
+          }
+        </section>
+      `);
+    return html`
+      <article aria-labelledby="about-me-heading">
+        <header>
+          <h3 id="about-me-heading">About Me</h3>
+          <p class="md-typescale-label-medium">${this.aboutMe.opener}</p>
+        </header>
+
+        <section aria-label="summary">
+          ${summary}
+        </section>
+
+        ${sections}
+
+        <footer>
+          <p class="md-typescale-body-large accented">${this.aboutMe.closer}</p>
+        </footer>
+      </article>
+    `;
+  }
 
   private contactsDefinitionList(): TemplateResult {
     const directConnectionsCount = Object.entries(Connections.direct).length;
@@ -152,7 +195,7 @@ export class ProfileCard extends UIAwareElement {
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
 
-        ${unsafeHTML(this.bioText)}
+        ${this.renderAboutMe()}
       </section>
     `;
   }

@@ -65,7 +65,7 @@ export const ProfileCardStyles: CSSResult = css`
         }
       }
 
-      p {
+      p.accented {
         padding-block: var(--spaces-padding-m);
         padding-inline: var(--spaces-padding-xs);
         margin: var(--spaces-none);
