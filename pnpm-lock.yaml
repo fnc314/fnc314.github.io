@@ -10,55 +10,55 @@ importers:
         version: 0.1.0
     packageManagerDependencies:
       '@pnpm/exe':
-        specifier: 11.14.0
-        version: 11.14.0
+        specifier: 11.15.1
+        version: 11.15.1
       pnpm:
-        specifier: 11.14.0
-        version: 11.14.0
+        specifier: 11.15.1
+        version: 11.15.1
 
 packages:
 
-  '@pnpm/exe@11.14.0':
-    resolution: {integrity: sha512-Hs8iYQgleaPjoXJWvjAKVhk42d0YGiIX6ACL0CFqvoAgb6ar+9dgDttdN6cb51ARIwlOYncJQFiyw/Js0VRU0A==}
+  '@pnpm/exe@11.15.1':
+    resolution: {integrity: sha512-+e+DQrUPtDqH+9blSre23l7od3P3lRy43HN8TOKHNvbtuTNDRQtqQ0seHk/kn7iJl+ZSKBALFrQXPvbItNgRwA==}
     hasBin: true
 
-  '@pnpm/linux-arm64@11.14.0':
-    resolution: {integrity: sha512-0a7ZLvlnqyy42rdrgaj3wLH2T2PPBrPQ/Gr8hO+PTi0A0MnhPv4oW62vJTlimIHwCL5CwYMrelsjkHVQSYMLDw==}
+  '@pnpm/linux-arm64@11.15.1':
+    resolution: {integrity: sha512-8QOTdBeklXcE/AY4cAR2RJ4809I38kLxtInAYW4sVDfQoWYjmEIoU/ZxpHsk78KM8VU0BehtOB+iZsMxSCyiLQ==}
     cpu: [arm64]
     os: [linux]
 
-  '@pnpm/linux-x64@11.14.0':
-    resolution: {integrity: sha512-labtF4P2ERMbeDHP/ca/RJSCZM6mv85cOxqoUO3RhknIDxJLeenvP73l7dnG8ijwmeym5l/NXtU9oVexBnz/zQ==}
+  '@pnpm/linux-x64@11.15.1':
+    resolution: {integrity: sha512-hbhuC2Rh5Zw9ERUsQhOSLPnwfWSRTU6phtuFdK2I2raYCXa7v5C4i+XKTH+sKLPG5vJiKPyi4Hd62UECHZoy2w==}
     cpu: [x64]
     os: [linux]
 
-  '@pnpm/linuxstatic-arm64@11.14.0':
-    resolution: {integrity: sha512-q8+VTA4XrUo293lZpgJw5AblEUUGxIusHjX01AfwRoaYGI/qbvuIG6IM4X3L9PJizMdV6HGQ89pmY1oNz6QJ3A==}
+  '@pnpm/linuxstatic-arm64@11.15.1':
+    resolution: {integrity: sha512-xEL9kDvLXnNYAgQak9tfIhO/BaBf1R/1+/dzzntuquzSqrEaPs0x0P4qMmwq02hVBDfAGA2MAD4n9kmc6Q//tw==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/linuxstatic-x64@11.14.0':
-    resolution: {integrity: sha512-rRIOqarcN+i9OX9o4hWCsKyVLIc4QO5YayYegHiIN59auZjTco6XdF1ZkANE1p84buTS3pg+glAPk0Hz6B6zFA==}
+  '@pnpm/linuxstatic-x64@11.15.1':
+    resolution: {integrity: sha512-SLJ4neJx649ri4qHdseQN6SnAy6nNFnsLGi7g+EH32cVux4aWX7tjMNTPHrUKJ6Oc7C6oPGXUpLmemEvAwCPOg==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/macos-arm64@11.14.0':
-    resolution: {integrity: sha512-gwSVsP0rUF8Ov9QY7nkiSDao1HFZpkJoPt4ubkUhIpShdm4hWbtLQ2Q2BCIGI2T9Cf2ZLiqXzhUvdvXA3K/UfA==}
+  '@pnpm/macos-arm64@11.15.1':
+    resolution: {integrity: sha512-GbIUQcDZgO/i1Ql38Pk269KNYpEbSCWYcSXBHgT62y8qVTrpEbmi+TKNaLVYuUkK0k/hMibySRa5GUs7/vnNyw==}
     cpu: [arm64]
     os: [darwin]
 
   '@pnpm/plugin-types-fixer@0.1.0':
     resolution: {integrity: sha512-bLww63gRHi7siYTqFJb5qNdcXadU0jv20Et6z5AryMZ7FlLolbEJOrXLpg8+amQZNHHNW1dfFUBGVw/9ezQbFg==}
 
-  '@pnpm/win-arm64@11.14.0':
-    resolution: {integrity: sha512-Im4RutIC/cHXVZVQ+PSi5zmeIAH+BzWkVQpxjXdHhOWgrgCwxrM+M9gCjQ97tVF1d0rw/BOsulFKj/38yo7zSg==}
+  '@pnpm/win-arm64@11.15.1':
+    resolution: {integrity: sha512-pLlcpdtoaHJxVfhWahoQg5U7Mv9b6/X/8og+dY1GX1GvsZU3Wf7Y+LlA1sfxqoPcohtQdo6MdJkWiOZ3nIFMCQ==}
     cpu: [arm64]
     os: [win32]
 
-  '@pnpm/win-x64@11.14.0':
-    resolution: {integrity: sha512-dZGwv7yuzxf7G2I7lx+QHaTgR9Mwq2dXrf3pQSKn3sfQ36buHcacwYKyqTkNoEV3mbM8rKAVfdVGZyvMWtIlCw==}
+  '@pnpm/win-x64@11.15.1':
+    resolution: {integrity: sha512-gAvQjBOrNb8zHXRQawBfZRtjDWEFe6p9aSBi8uuMtWB4XAaj0+YuzstsR93llZ/UgP67oTkbkCOITBLayRVGGQ==}
     cpu: [x64]
     os: [win32]
 
@@ -122,47 +122,47 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  pnpm@11.14.0:
-    resolution: {integrity: sha512-ZsGsTH1HYtbX3eRMfz5ac1ke0KCAbnUdTtMtTwBPJbIoWpBrH9ip4+Yh3ztOKFi/iOUODPYmvtvpd/5DSlyvhQ==}
+  pnpm@11.15.1:
+    resolution: {integrity: sha512-gTULB+U8lTigLx8jA7QpD6LXvgTlbiqXDEzEtBfcdh3hlu2r1J1Vx9yVgNuBAHxEFD5OPX5GKzAA0jwlUSLQZQ==}
     engines: {node: '>=22.13'}
     hasBin: true
 
 snapshots:
 
-  '@pnpm/exe@11.14.0':
+  '@pnpm/exe@11.15.1':
     dependencies:
       '@reflink/reflink': 0.1.19
       detect-libc: 2.1.2
     optionalDependencies:
-      '@pnpm/linux-arm64': 11.14.0
-      '@pnpm/linux-x64': 11.14.0
-      '@pnpm/linuxstatic-arm64': 11.14.0
-      '@pnpm/linuxstatic-x64': 11.14.0
-      '@pnpm/macos-arm64': 11.14.0
-      '@pnpm/win-arm64': 11.14.0
-      '@pnpm/win-x64': 11.14.0
+      '@pnpm/linux-arm64': 11.15.1
+      '@pnpm/linux-x64': 11.15.1
+      '@pnpm/linuxstatic-arm64': 11.15.1
+      '@pnpm/linuxstatic-x64': 11.15.1
+      '@pnpm/macos-arm64': 11.15.1
+      '@pnpm/win-arm64': 11.15.1
+      '@pnpm/win-x64': 11.15.1
 
-  '@pnpm/linux-arm64@11.14.0':
+  '@pnpm/linux-arm64@11.15.1':
     optional: true
 
-  '@pnpm/linux-x64@11.14.0':
+  '@pnpm/linux-x64@11.15.1':
     optional: true
 
-  '@pnpm/linuxstatic-arm64@11.14.0':
+  '@pnpm/linuxstatic-arm64@11.15.1':
     optional: true
 
-  '@pnpm/linuxstatic-x64@11.14.0':
+  '@pnpm/linuxstatic-x64@11.15.1':
     optional: true
 
-  '@pnpm/macos-arm64@11.14.0':
+  '@pnpm/macos-arm64@11.15.1':
     optional: true
 
   '@pnpm/plugin-types-fixer@0.1.0': {}
 
-  '@pnpm/win-arm64@11.14.0':
+  '@pnpm/win-arm64@11.15.1':
     optional: true
 
-  '@pnpm/win-x64@11.14.0':
+  '@pnpm/win-x64@11.15.1':
     optional: true
 
   '@reflink/reflink-darwin-arm64@0.1.19':
@@ -202,7 +202,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  pnpm@11.14.0: {}
+  pnpm@11.15.1: {}
 
 ---
 lockfileVersion: '9.0'
@@ -441,8 +441,8 @@ catalogs:
       specifier: runtime:26.5.0
       version: 26.5.0
     postcss:
-      specifier: 8.5.19
-      version: 8.5.19
+      specifier: 8.5.20
+      version: 8.5.20
     postcss-lit:
       specifier: 1.4.1
       version: 1.4.1
@@ -770,7 +770,7 @@ importers:
         version: 2.8.0
       autoprefixer:
         specifier: catalog:devDependencies
-        version: 10.5.4(postcss@8.5.19)
+        version: 10.5.4(postcss@8.5.20)
       cem-plugin-better-lit-types:
         specifier: catalog:devDependencies
         version: 0.2.1
@@ -839,10 +839,10 @@ importers:
         version: runtime:26.5.0
       postcss:
         specifier: catalog:devDependencies
-        version: 8.5.19
+        version: 8.5.20
       postcss-lit:
         specifier: catalog:devDependencies
-        version: 1.4.1(jiti@2.7.0)(postcss@8.5.19)(tsx@4.23.1)(yaml@2.9.0)
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.20)(tsx@4.23.1)(yaml@2.9.0)
       prettier:
         specifier: catalog:devDependencies
         version: 3.9.5
@@ -8326,6 +8326,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   napi-postinstall@0.3.4:
     resolution: {integrity: sha512-PHI5f1O0EP5xJ9gQmFGMS6IZcrVvTjpXjz7Na41gTE7eE2hK11lg04CECCYEEjdc17EV4DO+fkGEtt7TpTaTiQ==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -8883,6 +8888,10 @@ packages:
 
   postcss@8.5.19:
     resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.20:
+    resolution: {integrity: sha512-lW616l85ucIQL+FocMmL7pQFPqBmwejrCMg+iPxyImlrANNJG9NHq/RkyCZopDhd8C3LA03PHRJDjkbGu8vvug==}
     engines: {node: ^10 || ^12 || >=14}
 
   powershell-utils@0.1.0:
@@ -14178,7 +14187,7 @@ snapshots:
 
   '@types/postcss-safe-parser@5.0.4':
     dependencies:
-      postcss: 8.5.19
+      postcss: 8.5.20
 
   '@types/pretty@2.0.3': {}
 
@@ -15338,13 +15347,13 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  autoprefixer@10.5.4(postcss@8.5.19):
+  autoprefixer@10.5.4(postcss@8.5.20):
     dependencies:
       browserslist: 4.28.6
       caniuse-lite: 1.0.30001806
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.19
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -19217,6 +19226,8 @@ snapshots:
 
   nanoid@3.3.12: {}
 
+  nanoid@3.3.16: {}
+
   napi-postinstall@0.3.4: {}
 
   natural-compare@1.4.0: {}
@@ -19698,47 +19709,53 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-lit@1.4.1(jiti@2.7.0)(postcss@8.5.19)(tsx@4.23.1)(yaml@2.9.0):
+  postcss-lit@1.4.1(jiti@2.7.0)(postcss@8.5.20)(tsx@4.23.1)(yaml@2.9.0):
     dependencies:
       '@babel/generator': 7.29.7
       '@babel/parser': 7.29.7
       '@babel/traverse': 7.29.7
       lilconfig: 3.1.3
-      postcss: 8.5.19
-      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.19)(tsx@4.23.1)(yaml@2.9.0)
+      postcss: 8.5.20
+      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.20)(tsx@4.23.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - jiti
       - supports-color
       - tsx
       - yaml
 
-  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.19)(tsx@4.23.1)(yaml@2.9.0):
+  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.20)(tsx@4.23.1)(yaml@2.9.0):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 2.7.0
-      postcss: 8.5.19
+      postcss: 8.5.20
       tsx: 4.23.1
       yaml: 2.9.0
 
-  postcss-safe-parser@7.0.1(postcss@8.5.19):
+  postcss-safe-parser@7.0.1(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.19
+      postcss: 8.5.20
 
   postcss-selector-parser@7.1.4:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-sorting@9.1.0(postcss@8.5.19):
+  postcss-sorting@9.1.0(postcss@8.5.20):
     dependencies:
-      postcss: 8.5.19
+      postcss: 8.5.20
 
   postcss-value-parser@4.2.0: {}
 
   postcss@8.5.19:
     dependencies:
       nanoid: 3.3.12
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.20:
+    dependencies:
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -20683,8 +20700,8 @@ snapshots:
 
   stylelint-order@7.0.1(stylelint@17.14.0):
     dependencies:
-      postcss: 8.5.19
-      postcss-sorting: 9.1.0(postcss@8.5.19)
+      postcss: 8.5.20
+      postcss-sorting: 9.1.0(postcss@8.5.20)
       stylelint: 17.14.0(typescript@7.0.2)
 
   stylelint-plugin-logical-css@2.1.0(stylelint@17.14.0):
@@ -20704,7 +20721,7 @@ snapshots:
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0
-      postcss: 8.5.19
+      postcss: 8.5.20
       postcss-value-parser: 4.2.0
       stylelint: 17.14.0(typescript@7.0.2)
 
@@ -20756,8 +20773,8 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.5.19
-      postcss-safe-parser: 7.0.1(postcss@8.5.19)
+      postcss: 8.5.20
+      postcss-safe-parser: 7.0.1(postcss@8.5.20)
       postcss-selector-parser: 7.1.4
       postcss-value-parser: 4.2.0
       string-width: 8.2.1
@@ -21617,7 +21634,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
-      postcss: 8.5.19
+      postcss: 8.5.20
       rolldown: 1.1.5
       tinyglobby: 0.2.17
     optionalDependencies:
@@ -21634,7 +21651,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
-      postcss: 8.5.19
+      postcss: 8.5.20
       rolldown: 1.1.5
       tinyglobby: 0.2.17
     optionalDependencies:
@@ -22126,7 +22143,7 @@ time:
   lit@3.3.3: '2026-05-14T03:55:58.007Z'
   material-symbols@0.45.8: '2026-07-14T04:39:43.528Z'
   postcss-lit@1.4.1: '2026-02-23T15:19:14.618Z'
-  postcss@8.5.19: '2026-07-13T10:42:25.757Z'
+  postcss@8.5.20: '2026-07-19T08:44:44.719Z'
   prettier@3.9.5: '2026-07-09T16:17:00.997Z'
   prop-for-that@0.7.8: '2026-07-01T20:40:26.033Z'
   pwa-asset-generator@8.1.5: '2026-06-01T09:36:00.765Z'

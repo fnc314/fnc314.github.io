@@ -90,7 +90,7 @@ catalogs:
     jiti: 2.7.0
     lit-analyzer: 2.0.3
     node: runtime:26.5.0
-    postcss: 8.5.19
+    postcss: 8.5.20
     postcss-lit: 1.4.1
     prettier: 3.9.5
     prettier-plugin-toml: 2.0.6
