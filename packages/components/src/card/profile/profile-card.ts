@@ -207,6 +207,8 @@ export class ProfileCard extends UIAwareElement {
           </picture>
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
+
+        ${unsafeHTML(Biographies.bio.long)}
       </section>
     `;
   }
@@ -225,7 +227,6 @@ export class ProfileCard extends UIAwareElement {
         <article>
           ${this.imageSection()}
           <!-- ${this.renderAboutMe()} -->
-          ${unsafeHTML(Biographies.bio.long)}
           ${this.contactsDefinitionList()}
         </article>
       </bento-card>
