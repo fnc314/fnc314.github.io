@@ -226,7 +226,6 @@ export class ProfileCard extends UIAwareElement {
       >
         <article>
           ${this.imageSection()}
-          <!-- ${this.renderAboutMe()} -->
           ${this.contactsDefinitionList()}
         </article>
       </bento-card>
