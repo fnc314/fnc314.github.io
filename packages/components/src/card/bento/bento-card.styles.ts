@@ -35,13 +35,14 @@ export const BentoCardStyles = css`
 
   .bento-card {
     backdrop-filter: blur(12px);
-    background-color: var(--md-sys-color-surface-container-lowest);
+    background-color: var(--bento-layout-card-background);
     block-size: 100%;
     inline-size: 100%;
     border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-sys-shape-corner-large);
+    border-radius: var(--bento-layout-card-shape);
     box-shadow: var(--md-sys-elevation-level1);
     box-sizing: border-box;
+    color: var(--bento-layout-card-color);
     display: flex;
     flex-direction: column;
 

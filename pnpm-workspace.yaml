@@ -101,7 +101,7 @@ catalogs:
     rollup-plugin-minify-html-literals: 1.2.6
     rollup-plugin-visualizer: 7.0.1
     style-dictionary: 5.5.0
-    stylelint: 17.14.0
+    stylelint: 17.14.1
     stylelint-config-alphabetical-order: 2.0.0
     stylelint-config-inspector: 2.3.4
     stylelint-config-standard: 40.0.0

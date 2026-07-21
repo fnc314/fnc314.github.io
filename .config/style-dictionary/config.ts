@@ -215,21 +215,21 @@ const styleDictionaryConfig: Config = {
         }
       ],
     },
-    dtcgJson: {
-      transformGroup: transformGroups.web,
-      buildPath: files.buildPaths.json,
-      files: [
-        {
-          destination: "tokens.json",
-          format: formats.jsonNested, // DTCG compliant format for now
-          options: {
-            outputReferences: true,
-            outputReferenceFallbacks: true,
-            sort: "name",
-          }
-        }
-      ]
-    },
+    // dtcgJson: {
+    //   transformGroup: transformGroups.web,
+    //   buildPath: files.buildPaths.json,
+    //   files: [
+    //     {
+    //       destination: "tokens.json",
+    //       format: formats.jsonNested, // DTCG compliant format for now
+    //       options: {
+    //         outputReferences: true,
+    //         outputReferenceFallbacks: true,
+    //         sort: "name",
+    //       }
+    //     }
+    //   ]
+    // },
   },
   log: {
     warnings: logWarningLevels.error,

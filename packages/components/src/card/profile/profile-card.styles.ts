@@ -10,11 +10,12 @@ export const ProfileCardStyles: CSSResult = css`
     --profile-card-image-inline-size-max: 100%;
 
     --profile-card-filled-icon-button-scale: 2.25;
-    --profile-card-filled-icon-button-container-color: var(--md-sys-color-tertiary-container);
+    --profile-card-filled-icon-button-container-color: var(--bento-layout-card-background);
     --profile-card-filled-icon-button-container-size: calc(
       var(--profile-card-filled-icon-button-scale) * var(--md-icon-size)
     );
-    --profile-card-filled-icon-button-icon-color: var(--md-sys-color-on-tertiary-container);
+    --profile-card-filled-icon-button-container-shape: var(--bento-layout-card-shape);
+    --profile-card-filled-icon-button-icon-color: var(--bento-layout-card-color);
     --profile-card-filled-icon-button-icon-scale: 0.75;
     --profile-card-filled-icon-button-icon-size: calc(
       var(--profile-card-filled-icon-button-icon-scale) * var(--profile-card-filled-icon-button-container-size)
@@ -23,11 +24,11 @@ export const ProfileCardStyles: CSSResult = css`
     --md-filled-icon-button-container-color: var(--profile-card-filled-icon-button-container-color);
     --md-filled-icon-button-container-height: var(--profile-card-filled-icon-button-container-size);
     --md-filled-icon-button-container-width: var(--profile-card-filled-icon-button-container-size);
-    --md-filled-icon-button-container-shape: var(--md-sys-shape-corner-medium);
+    --md-filled-icon-button-container-shape: var(--profile-card-filled-icon-button-container-shape);
     --md-filled-icon-button-icon-color: var(--profile-card-filled-icon-button-icon-color);
+    --md-filled-icon-button-icon-size: var(--profile-card-filled-icon-button-icon-size);
     --md-filled-icon-button-focus-icon-color: var(--profile-card-filled-icon-button-icon-color);
     --md-filled-icon-button-hover-icon-color: var(--profile-card-filled-icon-button-icon-color);
-    --md-filled-icon-button-icon-size: var(--profile-card-filled-icon-button-icon-size);
   }
 
   article {
@@ -102,18 +103,22 @@ export const ProfileCardStyles: CSSResult = css`
         grid-template-columns: repeat(9, 1fr);
         gap: var(--spaces-gap-s);
         place-items: center;
-        border-radius: var(--md-sys-shape-corner-large);
-        background-color: var(--md-sys-color-surface-container);
+        border-radius: var(--profile-card-filled-icon-button-container-shape);
+        border: solid var(--sizes-thickness-xxs) var(--profile-card-filled-icon-button-icon-color);
+        background-color: var(--md-sys-color-surface-container-highest);
         padding-block: var(--spaces-padding-s);
 
         dt {
           grid-row: 1 / 2;
           grid-column: 4 / span 3;
+          color: var(--profile-card-filled-icon-button-icon-color);
         }
 
         dd {
           grid-row: 2 / 3;
           margin: unset;
+          border: solid var(--sizes-thickness-xxs) var(--profile-card-filled-icon-button-icon-color);
+          border-radius: var(--profile-card-filled-icon-button-container-shape);
         }
       }
 

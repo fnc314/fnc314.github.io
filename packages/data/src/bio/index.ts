@@ -20,18 +20,18 @@ export const Biographies: Bio = {
           content: [
             "I enjoy building software, but I care just as much about building engineering environments where people can do their best work.",
             "Whether I am mentoring an engineer through their first architecture decision, establishing standards that improve code quality across an organization, or partnering with product and design to find the best path forward, I believe great technology is always the result of great collaboration.",
-          ]
+          ],
         },
         {
           title: "Execution Style",
-          content: [""]
+          content: [""],
         },
         {
           title: "Key Traits",
           content: [
             "I believe the best architecture is measured by how easy it makes life for the engineers who inherit it, not by how impressive it looks on a whiteboard.",
             "I hope every project I leave behind is better documented, easier to maintain, and built by a team that feels stronger than when we started.",
-          ]
+          ],
         }
       ],
       closer: "",

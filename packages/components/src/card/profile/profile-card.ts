@@ -66,7 +66,13 @@ export class ProfileCard extends UIAwareElement {
         </p>
       `);
     const sections = this.aboutMe.sections
-      .filter((section) => !!section.title && (section.content.length > 0 && section.content.filter((content) => content.trim().length > 0)))
+      .filter((section) =>
+        section.title.length > 0 &&
+        (
+          section.content.length > 0 &&
+          section.content.filter((content) => content.trim().length > 0).length > 0
+        )
+      )
       .map((section) => html`
         <section aria-labelledby="about-me-section-header">
           <header>
@@ -83,7 +89,7 @@ export class ProfileCard extends UIAwareElement {
     return html`
       <article aria-labelledby="about-me-heading">
         <header>
-          <h3 id="about-me-heading">About Me</h3>
+          <h3 class="md-typescale-title-small" id="about-me-heading">About Me</h3>
           <p class="md-typescale-label-medium">${this.aboutMe.opener}</p>
         </header>
 

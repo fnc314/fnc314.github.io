@@ -13,6 +13,9 @@ import { css } from "lit";
 export const BentoLayoutStyles = css`
   :host {
     --bento-layout-column-count: 1;
+    --bento-layout-card-background: var(--md-sys-color-surface-container-lowest);
+    --bento-layout-card-color: var(--md-sys-color-on-surface);
+    --bento-layout-card-shape: var(--md-sys-shape-corner-medium);
 
     background-color: var(--globals-color-background);
     color: var(--md-sys-color-on-surface);
