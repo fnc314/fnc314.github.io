@@ -10,7 +10,7 @@ export const ProfessionalConnectionStyles: CSSResult = css`
   }
 
   span {
-    background-color: var(--md-filled-icon-button-icon-color);
+    background-color: var(--connections-card-filled-icon-button-icon-color);
     mask: var(--professional-connection-mask) no-repeat center / contain;
   }
 `;

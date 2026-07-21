@@ -17,29 +17,29 @@ export const titles: string = [
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 4, rowSpan: 1 }, order: 1 },
-      tablet: { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 1 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 4, rowSpan: 2 }, order: 1 },
+      tablet: { breakpoint: "tablet", offsets: { row: 1 }, span: { colSpan: 2, rowSpan: 1 }, order: 1 },
       mobile: { breakpoint: "mobile", order: 1 },
     },
     isExpanded: () => true,
   },
-  experience: {
+  connections: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 8, rowSpan: 1 }, order: 2 },
       tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 2 },
       mobile: { breakpoint: "mobile", order: 2 },
     },
-    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
+    isExpanded: () => true,
   },
-  code: {
+  experience: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 3 },
-      tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 3 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 8, rowSpan: 1 }, order: 3 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 3 },
       mobile: { breakpoint: "mobile", order: 3 },
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
   },
-  blog: {
+  code: {
     placement: {
       desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 4 },
       tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 4 },
@@ -47,30 +47,38 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
     },
     isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
   },
+  blog: {
+    placement: {
+      desktop: { breakpoint: "desktop", span: { colSpan: 6, rowSpan: 1 }, order: 5 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 3, rowSpan: 1 }, order: 5 },
+      mobile: { breakpoint: "mobile", order: 5 },
+    },
+    isExpanded: (breakpoint: BreakpointLabel) => breakpoint !== BreakpointLabels.mobile,
+  },
   skills: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 7, rowSpan: 2 }, order: 5 },
-      tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 5 },
-      mobile: { breakpoint: "mobile", order: 5 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 7, rowSpan: 2 }, order: 6 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 4, rowSpan: 1 }, order: 6 },
+      mobile: { breakpoint: "mobile", order: 6 },
     },
     isExpanded: () => false,
   },
   education: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 5, rowSpan: 1 }, order: 6 },
-      tablet: { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 6 },
-      mobile: { breakpoint: "mobile", order: 6 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 5, rowSpan: 1 }, order: 7 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 2, rowSpan: 1 }, order: 7 },
+      mobile: { breakpoint: "mobile", order: 7 },
     },
     isExpanded: () => false,
   },
   settings: {
     placement: {
-      desktop: { breakpoint: "desktop", span: { colSpan: 12, rowSpan: 1 }, order: 7 },
-      tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 7 },
-      mobile: { breakpoint: "mobile", order: 7 },
+      desktop: { breakpoint: "desktop", span: { colSpan: 12, rowSpan: 1 }, order: 8 },
+      tablet: { breakpoint: "tablet", span: { colSpan: 6, rowSpan: 1 }, order: 8 },
+      mobile: { breakpoint: "mobile", order: 8 },
     },
     isExpanded: () => false,
-  },
+  }
 };
 
 /**

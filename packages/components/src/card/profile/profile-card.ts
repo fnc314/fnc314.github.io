@@ -1,18 +1,14 @@
 import { ProfileCardStyles } from "@/lib/card/profile/profile-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { Biographies, Connections, Photos } from "@fnc314/packages.data";
+import { Biographies, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
     APP_CONFIGS_CHANGE_EVENT_NAME,
-    type ArtifactConnectionData,
-    type ArtifactConnectionType,
     BENTO_BOX_TYPES,
-    type BioExtended,
-    type ConnectionInstance,
-    type ProfessionalConnectionJsonData,
+    type BioExtended
 } from "@fnc314/packages.types";
-import { type TemplateResult, html, unsafeCSS } from "lit";
+import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -94,13 +90,13 @@ export class ProfileCard extends UIAwareElement {
         </section>
       `);
     return html`
-      <article aria-labelledby="about-me-heading">
+      <article aria-label="About Me">
         <header>
           <h3 class="md-typescale-title-small" id="about-me-heading">About Me</h3>
-          <p class="md-typescale-label-medium">${this.aboutMe.opener}</p>
+          <p class="md-typescale-body-medium">${this.aboutMe.opener}</p>
         </header>
 
-        <section aria-label="summary">
+        <section aria-label="Summary">
           ${summary}
         </section>
 
@@ -110,74 +106,6 @@ export class ProfileCard extends UIAwareElement {
           <p class="md-typescale-body-large accented">${this.aboutMe.closer}</p>
         </footer>
       </article>
-    `;
-  }
-
-  private contactsDefinitionList(): TemplateResult {
-    const directConnectionsCount = Object.entries(Connections.direct).length;
-    const directConnectionsColSpan = Math.floor(9 / directConnectionsCount);
-    const contact = html`
-      <div>
-        <dt class="md-typescale-title-large">Contact</dt>
-        ${
-          Object.entries(Connections.direct).map(
-            ([_, instance]: [string, ConnectionInstance], index: number) =>
-              html`
-                <dd style="${unsafeCSS(`grid-column: ${index === 0 ? 2 : index * (1 + directConnectionsColSpan)} / span ${directConnectionsColSpan}`)}">
-                  <direct-connection
-                    .connectionInstance=${instance}>
-                  </direct-connection>
-                </dd>
-              `
-          )
-        }
-      </div>
-    `;
-
-    const socialConnectionsCount = Object.entries(Connections.social).length;
-    const socialConnectionsColSpan = Math.floor(9 / socialConnectionsCount);
-    const network = html`
-      <div>
-        <dt class="md-typescale-title-large">Network</dt>
-        ${Object.entries(Connections.social).map(
-          ([type, data]: [string, ProfessionalConnectionJsonData], index: number) => html`
-            <dd style="${unsafeCSS(`grid-column: ${(index * socialConnectionsColSpan) + 1} / span ${socialConnectionsColSpan}`)}">
-              <professional-connection
-                .professionalConnectionType=${type}
-                .professionalConnectionData=${data}
-              >
-              </professional-connection>
-            </dd>
-          `,
-        )}
-      </div>
-    `;
-
-    const resumeConnectionsCount = Object.entries(Connections.resume).length;
-    const resumeConnectionsColSpan = Math.floor(9 / resumeConnectionsCount);
-    const resume = html`
-      <div>
-        <dt class="md-typescale-title-large">Resume</dt>
-        ${Object.entries(Connections.resume).map(
-          ([name, data]: [string, ArtifactConnectionData], index: number) => html`
-            <dd style="${unsafeCSS(`grid-column: ${index === 0 ? 2 : index * (1 + resumeConnectionsColSpan)} / span ${resumeConnectionsColSpan}`)}">
-              <artifact-connection
-                .artifactConnectionType=${name as ArtifactConnectionType}
-                .artifactConnectionData=${data}
-              >
-              </artifact-connection>
-            </dd>
-          `,
-        )}
-      </div>
-    `;
-
-    return html`
-      <dl>
-        ${contact}
-        ${network}
-        ${resume}
-      </dl>
     `;
   }
 
@@ -207,8 +135,6 @@ export class ProfileCard extends UIAwareElement {
           </picture>
           <figcaption class="md-typescale-title-medium profile-figcaption">${this.photoData.figcaption}</figcaption>
         </figure>
-
-        ${unsafeHTML(Biographies.bio.long)}
       </section>
     `;
   }
@@ -216,7 +142,6 @@ export class ProfileCard extends UIAwareElement {
   override render() {
     return html`
       <bento-card
-        class="profile-bio-wrapper"
         scrollable
         ?expanded=${this.expanded}
         ?enableHover=${this.enableHover}
@@ -226,7 +151,7 @@ export class ProfileCard extends UIAwareElement {
       >
         <article>
           ${this.imageSection()}
-          ${this.contactsDefinitionList()}
+          ${this.renderAboutMe()}
         </article>
       </bento-card>
     `;
