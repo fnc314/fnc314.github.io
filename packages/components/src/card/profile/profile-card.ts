@@ -74,16 +74,23 @@ export class ProfileCard extends UIAwareElement {
         )
       )
       .map((section) => html`
-        <section aria-labelledby="about-me-section-header">
+        <section aria-label="${section.title}">
           <header>
-            <h4 class="md-typescale-title-small" id="about-me-section-header">${section.title}</h4>
+            <h4
+              class="md-typescale-title-small"
+              id="about-me-section-header"
+              >
+              ${section.title}
+            </h4>
           </header>
+          <ul>
           ${
             section.content
               .map((sentence) => html`
-                <p class="md-typescale-body-large">${unsafeHTML(sentence)}</p>
+                <li class="md-typescale-body-large">${unsafeHTML(sentence)}</li>
               `)
           }
+          </ul>
         </section>
       `);
     return html`
@@ -217,7 +224,8 @@ export class ProfileCard extends UIAwareElement {
       >
         <article>
           ${this.imageSection()}
-          ${this.renderAboutMe()}
+          <!-- ${this.renderAboutMe()} -->
+          ${unsafeHTML(Biographies.bio.long)}
           ${this.contactsDefinitionList()}
         </article>
       </bento-card>

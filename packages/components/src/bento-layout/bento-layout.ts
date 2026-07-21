@@ -1,11 +1,13 @@
 import { BentoLayoutStyles, TransitionStyles } from "@/lib/bento-layout/bento-layout.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { BentoBoxConfigsArray } from "@fnc314/packages.data";
+import { BentoBoxConfigsArray, titles } from "@fnc314/packages.data";
 import { type ABentoBoxConfig, BENTO_BOX_TYPES, BreakpointLabels, type GridPosition } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { author } from "~build/package";
 
 /**
  * @summary BentoLayout - The primary layout component implementing a responsive Bento Grid.
@@ -115,15 +117,19 @@ export class BentoLayout extends UIAwareElement {
   }
 
   override render() {
+    const header = html`
+      <header class="animate-entry">
+        <h1 class="md-typescale-display-large">${author}</h1>
+        <p class="md-typescale-title-medium">
+          ${unsafeHTML(titles)}
+        </p>
+      </header>
+    `;
+    const boxes = this._bentoBoxConfigs.map((boxConfig) => this.renderBentoBox(boxConfig));
     return html`
       <main id="bento-root">
-        <header class="animate-entry">
-          <h1 class="md-typescale-display-large">Franco N. Colaizzi</h1>
-          <p class="md-typescale-title-large">
-            Principal Software Engineer &#124; Enterprise Android & System Architecture &#124; Building High-Performing Teams, Modern Platforms, and the Engineering Foundations Behind Great Products
-          </p>
-        </header>
-        ${this._bentoBoxConfigs.map((boxConfig) => this.renderBentoBox(boxConfig))}
+        ${header}
+        ${boxes}
       </main>
     `;
   }

@@ -6,6 +6,13 @@ import {
     BreakpointLabels,
 } from "@fnc314/packages.types";
 
+/** Titles to grab attention, joined with `|` but in HTML Entity Code (`&#124;`) */
+export const titles: string = [
+  "Principal Software Engineer",
+  "Enterprise Android & System Architecture",
+  "Leading High-Performing Teams, Building Modern Platforms, and the Engineering Foundations Behind Great Products",
+].join(" &#124; ");
+
 /** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   profile: {

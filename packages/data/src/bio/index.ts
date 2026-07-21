@@ -30,7 +30,7 @@ export const Biographies: Bio = {
           title: "Key Traits",
           content: [
             "I believe the best architecture is measured by how easy it makes life for the engineers who inherit it, not by how impressive it looks on a whiteboard.",
-            "I hope every project I leave behind is better documented, easier to maintain, and built by a team that feels stronger than when we started.",
+            "I ensure every project I leave behind is better documented, easier to maintain, and built by a team that feels stronger than when we started.",
           ],
         }
       ],
