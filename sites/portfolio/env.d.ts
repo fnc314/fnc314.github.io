@@ -1,4 +1,3 @@
-declare module "*.css";
 declare module "*.json";
 declare module "cem-plugin-jsdoc-example";
 declare module "cem-plugin-readme";
