@@ -2,12 +2,15 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 import {
-  type WordTagHeaviness,
-  type WordTagVariant,
-  WordTagVariantAttributeConverter,
+    type WordTagHeaviness,
+    type WordTagVariant,
+    WordTagVariantAttributeConverter,
+    WordTagVariants,
 } from "@/lib/word/tag/word-tag.types";
-import { type CSSResult, type TemplateResult, css, html, nothing } from "lit";
+import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { map } from "lit/directives/map.js";
+import { when } from "lit/directives/when.js";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
@@ -19,6 +22,8 @@ import { customElement, property } from "lit/decorators.js";
  * @property [variant="text-only"] - The version of the layout to render
  * @property [hrefUrl=""] - A URL which, when provided, wraps this {@link WordTag} in a
  *  {@link HTMLAnchorElement}
+ * @property [urlObject={text=this.word,url=this.hrefUrl}] - An object configuring a `url`
+ *  and link text
  *
  * @cssprop [--word-tag-color="--md-sys-color-on-primary-container"] - The text and border color
  * @cssprop [--word-tag-background-color="--md-sys-color-primary-container"] - The background color
@@ -29,7 +34,8 @@ import { customElement, property } from "lit/decorators.js";
  * @cssprop [--word-tag-border-radius="--md-sys-shape-corner-small"] - The corner radius (for all corners)
  * @cssprop [--word-tag-gap="--spaces-gap-xs"] - The `gap` between `word` and any `slot`-ed icon
  *
- * @slot icon - The optional space available for, and positioned by, the {@link variant} property
+ * @slot [icon] - The optional space available for, and positioned by, the {@link variant} property
+ * @slot [popover] - The `popover` content
  *
  * @class WordTag
  * @extends {UIAwareElement}
@@ -48,6 +54,12 @@ export class WordTag extends UIAwareElement {
   @property({ type: String })
   hrefUrl = "";
 
+  @property({ type: Object })
+  urlObject: { text: string, url: string } = { text: this.word, url: this.hrefUrl }
+
+  @property({ attribute: false })
+  popoverContent: string | string[] = "";
+
   /** {@link WordTagVariantAttributeConverter} */
   @property({
     attribute: "variant",
@@ -59,35 +71,43 @@ export class WordTag extends UIAwareElement {
   variant: WordTagVariant = "text-only";
 
   private layoutForVariant(variant: WordTagVariant): TemplateResult {
-    const fontStyles: CSSResult = css`
-      font-weight: ${this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)`};
-    `;
+    const fontWeight = this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)`;
+    const fontStyles: CSSResult = unsafeCSS(`
+      font-weight: ${fontWeight};
+    `);
 
-    const borderStyles: CSSResult = css`
-      border-width: ${this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`};
-    `;
+    const borderWidth = this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`;
+    const borderStyles: CSSResult = unsafeCSS(`
+      border-width: ${borderWidth};
+    `);
 
-    const defaultWordTag = html` <span style=${fontStyles.cssText}>${this.word}</span> `;
+    const defaultWordTag = html`
+      <span style=${fontStyles.cssText}>${this.word}</span>
+    `;
 
     let contents: TemplateResult | undefined = undefined;
     switch (variant) {
-      case "text-icon":
+      case WordTagVariants["text-icon"]:
         contents = html`
           ${defaultWordTag}
           <slot name="icon"></slot>
         `;
         break;
-      case "icon-text":
+      case WordTagVariants["icon-text"]:
         contents = html`
           <slot name="icon"></slot>
           ${defaultWordTag}
         `;
         break;
-      case "icon-only":
-        contents = html` <slot name="icon"></slot> `;
+      case WordTagVariants["icon-only"]:
+        contents = html`
+          <slot name="icon"></slot>
+        `;
         break;
-      case "text-only":
-        contents = html` ${defaultWordTag} `;
+      case WordTagVariants["text-only"]:
+        contents = html`
+          ${defaultWordTag}
+        `;
         break;
       default:
         break;
@@ -95,26 +115,57 @@ export class WordTag extends UIAwareElement {
 
     return contents
       ? html`
-          <div
-            style=${borderStyles.cssText}
-            class="word-tag-variant-wrapper"
-          >
-            ${contents}
-          </div>
+          ${
+            when(
+              this.hrefUrl,
+              () => html`
+                <button
+                  style=${borderStyles.cssText}
+                  popovertarget=${this.word}>
+                  ${contents}
+                </button>
+              `,
+              () => html`
+                <div
+                  style=${borderStyles.cssText}
+                  >
+                  ${contents}
+                </div>
+              `
+            )
+          }
         `
       : html`${nothing}`;
   }
 
   override render() {
-    return this.hrefUrl === ""
-      ? this.layoutForVariant(this.variant)
-      : html`<a
-          title=${this.word}
-          href=${this.hrefUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          >${this.layoutForVariant(this.variant)}</a
-        >`;
+    const tag = this.layoutForVariant(this.variant);
+
+    const popoverContent = when(
+      Array.isArray(this.popoverContent),
+      () => html`
+        <ul>
+          ${map(this.popoverContent, (content: string) => html`<li>${content}</li>`)}
+        </ul>
+      `,
+      () => html`
+        <p>${this.popoverContent}</p>
+      `
+    );
+      return html`
+        <word-popover
+          popover
+          id=${this.word}
+          .word="${this.word}"
+          .footerURL="${this.urlObject}"
+          >
+          <slot name="header-icon"></slot>
+          <slot name="popover">
+            ${popoverContent}
+          </slot>
+        </word-popover>
+        ${tag}
+      `;
   }
 }
 

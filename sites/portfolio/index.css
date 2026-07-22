@@ -77,8 +77,7 @@
     stroke var(--color-transition-duration) var(--color-transition-timing),
     fill var(--color-transition-duration) var(--color-transition-timing),
     border-color var(--color-transition-duration) var(--color-transition-timing),
-    background-color var(--color-transition-duration)
-      var(--color-transition-timing),
+    background-color var(--color-transition-duration) var(--color-transition-timing),
     color var(--color-transition-duration) var(--color-transition-timing);
 }
 

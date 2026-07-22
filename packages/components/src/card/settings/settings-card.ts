@@ -178,7 +178,7 @@ export class SettingsCard extends UIAwareElement {
         .bentoCardTitle=${"Settings"}
         .bentoTag=${BENTO_BOX_TYPES.settings}
       >
-        <div class="settings-content">
+        <article>
           <form
             toolname="adjustSiteDisplayConfigurations"
             tooldescription="Adjusts the theme, light/dark/system mode (and persistence), and color-contrast levels for the site"
@@ -190,7 +190,9 @@ export class SettingsCard extends UIAwareElement {
             <ui-mode-toggle></ui-mode-toggle>
           </form>
 
-          <version-tag></version-tag>
+          <footer>
+            <version-tag></version-tag>
+          </footer>
         </div>
       </bento-card>
     `;

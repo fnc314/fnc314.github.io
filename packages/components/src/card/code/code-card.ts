@@ -9,7 +9,7 @@ import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 /**
- * @summary CodeCard - A card component displaying code projects.
+ * @summary A card component displaying code projects.
  *
  * @element code-card
  */
@@ -43,7 +43,13 @@ export class CodeCard extends UIAwareElement {
         .bentoCardTitle=${"Code"}
         .bentoTag=${BENTO_BOX_TYPES.code}
       >
-        <div class="code-list">${Projects.map((p) => html` <code-repo .codeRepo="${p}"></code-repo> `)}</div>
+        <div class="code-list">
+          ${
+            Projects.map((codeRepo) => html`
+              <code-repo .codeRepo="${codeRepo}"></code-repo>
+            `)
+          }
+        </div>
       </bento-card>
     `;
   }

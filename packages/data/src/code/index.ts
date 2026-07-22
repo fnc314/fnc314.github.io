@@ -11,6 +11,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-gradle-dark-icon-svg",
           light: "--icons-logos-tech-gradle-light-icon-svg",
         },
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more"
       },
       {
         name: "Kotlin",
@@ -19,6 +20,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-kotlin-dark-icon-svg",
           light: "--icons-logos-tech-kotlin-light-icon-svg",
         },
+        popoverContent: "JetBrains' modern JVM languange"
       },
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
@@ -36,6 +38,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-bash-dark-icon-svg",
           light: "--icons-logos-tech-bash-light-icon-svg",
         },
+        popoverContent: "Shell scripting"
       },
       {
         name: "Oh-My-Zsh",
@@ -44,6 +47,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-zsh-dark-icon-svg",
           light: "--icons-logos-tech-zsh-light-icon-svg",
         },
+        popoverContent: "Shell scripting"
       },
     ],
     url: "https://github.com/fnc314/mac-os-env-scripts",
@@ -61,6 +65,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-android-dark-icon-svg",
           light: "--icons-logos-tech-android-light-icon-svg",
         },
+        popoverContent: "World's most used, open-source operating system",
       },
       {
         name: "Gradle",
@@ -69,6 +74,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-gradle-dark-icon-svg",
           light: "--icons-logos-tech-gradle-light-icon-svg",
         },
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
       },
       {
         name: "Kotlin",
@@ -77,6 +83,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-kotlin-dark-icon-svg",
           light: "--icons-logos-tech-kotlin-light-icon-svg",
         },
+        popoverContent: "JetBrains' modern JVM languange",
       },
     ],
     url: "https://github.com/fnc314/fnc314-kmp",
@@ -94,6 +101,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-mise-dark-icon-svg",
           light: "--icons-logos-tech-mise-light-icon-svg",
         },
+        popoverContent: "Development Environment Tool Manager",
       },
       {
         name: "PNPM",
@@ -102,6 +110,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-pnpm-dark-icon-svg",
           light: "--icons-logos-tech-pnpm-light-icon-svg",
         },
+        popoverContent: "Alternative `Node` package manager",
       },
       {
         name: "Vite",
@@ -110,6 +119,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-vite-dark-icon-svg",
           light: "--icons-logos-tech-vite-light-icon-svg",
         },
+        popoverContent: "Modern JavaScript toolchain based on Rust",
       },
       {
         name: "Lit",
@@ -118,6 +128,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-lit-dark-icon-svg",
           light: "--icons-logos-tech-lit-light-icon-svg",
         },
+        popoverContent: "JavaScript library for building Web Components",
       },
       {
         name: "TypeScript",
@@ -126,6 +137,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-typescript-dark-icon-svg",
           light: "--icons-logos-tech-typescript-light-icon-svg",
         },
+        popoverContent: "Microsoft's modern JavaScript superset language",
       },
       {
         name: "Style Dictionary",
@@ -134,6 +146,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-style-dictionary-dark-icon-svg",
           light: "--icons-logos-tech-style-dictionary-light-icon-svg",
         },
+        popoverContent: "NPM Package for generating design tokens from `json` files",
       },
       {
         name: "Material Components",
@@ -143,6 +156,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
           light: "--icons-logos-tech-material-design-light-icon-svg",
         },
+        popoverContent: "Web Components library adhering to Material Design principles",
       },
       {
         name: "Node",
@@ -151,6 +165,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-node-dark-icon-svg",
           light: "--icons-logos-tech-node-light-icon-svg",
         },
+        popoverContent: "JavaScript Runtime"
       },
       {
         name: "Material Theme Builder",
@@ -159,6 +174,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
           light: "--icons-logos-tech-material-design-light-icon-svg",
         },
+        popoverContent: "Online tool to generate Material Theme colors from provided images",
       },
       {
         name: "HTML/CSS/JS",
@@ -167,6 +183,11 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
           light: "--icons-logos-tech-web-html-light-icon-svg",
         },
+        popoverContent: [
+          "HTML5",
+          "CSS",
+          "JavaScript",
+        ]
       },
       {
         name: "Prettier",
@@ -175,6 +196,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-prettier-dark-icon-svg",
           light: "--icons-logos-tech-prettier-light-icon-svg",
         },
+        popoverContent: "Formatting library for Node",
       },
       {
         name: "ESLint",
@@ -183,6 +205,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-eslint-dark-icon-svg",
           light: "--icons-logos-tech-eslint-light-icon-svg",
         },
+        popoverContent: "Linting library for Node",
       },
       {
         name: "Typescript-ESLint",
@@ -191,6 +214,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-typescript-eslint-dark-icon-svg",
           light: "--icons-logos-tech-typescript-eslint-light-icon-svg",
         },
+        popoverContent: "TypeScript Linting library for Node",
       },
       {
         name: "StyleLint",
@@ -199,6 +223,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-stylelint-dark-icon-svg",
           light: "--icons-logos-tech-stylelint-light-icon-svg",
         },
+        popoverContent: "Formatting library for Node",
       },
       {
         name: "PostCSS",
@@ -207,6 +232,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-postcss-dark-icon-svg",
           light: "--icons-logos-tech-postcss-light-icon-svg",
         },
+        popoverContent: "CSS processing library for Node",
       },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
@@ -223,6 +249,11 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
           light: "--icons-logos-tech-web-html-light-icon-svg",
         },
+        popoverContent: [
+          "HTML5",
+          "CSS",
+          "JavaScript",
+        ]
       },
       {
         name: "Material Theme Builder",
@@ -231,6 +262,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-material-design-dark-icon-svg",
           light: "--icons-logos-tech-material-design-light-icon-svg",
         },
+        popoverContent: "Online tool to generate Material Theme colors from provided images",
       },
     ],
     url: "https://github.com/fnc314/material-theme-viewer",
@@ -248,6 +280,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-python-dark-icon-svg",
           light: "--icons-logos-tech-python-light-icon-svg",
         },
+        popoverContent: "Popular scripting language",
       },
       {
         name: "Ruby",
@@ -256,6 +289,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-ruby-dark-icon-svg",
           light: "--icons-logos-tech-ruby-light-icon-svg",
         },
+        popoverContent: "Formerly popular scripting language",
       },
     ],
     url: "https://github.com/fnc314/project_euler",

@@ -16,6 +16,7 @@ export const BentoLayoutStyles = css`
     --bento-layout-card-background: var(--md-sys-color-surface-container-lowest);
     --bento-layout-card-color: var(--md-sys-color-on-surface);
     --bento-layout-card-shape: var(--md-sys-shape-corner-medium);
+    --bento-layout-card-border-color: var(--md-sys-color-primary);
 
     background-color: var(--globals-color-background);
     color: var(--md-sys-color-on-surface);
