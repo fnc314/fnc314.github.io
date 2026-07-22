@@ -1,9 +1,7 @@
 export interface Bio {
-  bio: {
-    short: string;
-    long: string;
-    extended: BioExtended;
-  };
+  short: string;
+  long: string;
+  extended: BioExtended;
 };
 
 export interface BioExtended {

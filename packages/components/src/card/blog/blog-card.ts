@@ -29,7 +29,7 @@ export class BlogCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "blog";
+    this.id = BENTO_BOX_TYPES.blog;
   }
 
   override render() {

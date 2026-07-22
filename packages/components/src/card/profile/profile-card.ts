@@ -26,10 +26,10 @@ export class ProfileCard extends UIAwareElement {
   photoData = Photos[configsService.loadConfigs().colorScheme.theme];
 
   @property({ type: Object })
-  aboutMe: BioExtended = Biographies.bio.extended;
+  aboutMe: BioExtended = Biographies.extended;
 
   @property({ type: Boolean })
-  expanded = false;
+  expanded = true;
 
   @property({ type: Boolean })
   enableHover = false;
@@ -39,7 +39,7 @@ export class ProfileCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "bio";
+    this.id = BENTO_BOX_TYPES.profile;
     configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 

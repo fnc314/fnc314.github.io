@@ -24,7 +24,7 @@
     "editor.wordBasedSuggestions": "off"
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.defaultFormatter": "tombi-toml.tombi",
     "editor.detectIndentation": true
   },
   "[typescript]": {
@@ -750,5 +750,8 @@
     "**/zlogout"
   ],
   "zshellcheck.run": "onSave",
-  "zshellcheck.useWorkspaceRootAsCwd": true
+  "zshellcheck.useWorkspaceRootAsCwd": true,
+  "[postcss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  }
 }

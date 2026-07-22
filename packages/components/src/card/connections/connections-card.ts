@@ -6,6 +6,14 @@ import { type ArtifactConnectionData, type ArtifactConnectionType, BENTO_BOX_TYP
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * @summary The collection of connection components wrapped in a `dl`
+ *
+ * @export
+ * @class ConnectionsCard
+ * @typedef {ConnectionsCard}
+ * @extends {UIAwareElement}
+ */
 @customElement("connections-card")
 export class ConnectionsCard extends UIAwareElement {
 

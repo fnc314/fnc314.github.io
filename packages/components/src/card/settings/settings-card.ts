@@ -51,7 +51,7 @@ export class SettingsCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "settings";
+    this.id = BENTO_BOX_TYPES.settings;
     configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
   }
 

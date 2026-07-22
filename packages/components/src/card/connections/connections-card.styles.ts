@@ -32,37 +32,39 @@ export const ConnectionsCardStyles: CSSResult = css`
     --md-filled-icon-button-hover-icon-color: var(--connections-card-filled-icon-button-icon-color);
   }
 
-  dl {
-    display: flex;
-    flex-direction: row;
-    gap: var(--spaces-gap-s);
-    flex-wrap: wrap;
-    justify-content: space-around;
+  article {
+    dl {
+      display: flex;
+      flex-direction: row;
+      gap: var(--spaces-gap-s);
+      flex-wrap: wrap;
+      justify-content: space-around;
 
-    div {
-      display: grid;
-      grid-template-rows: min-content auto;
-      grid-template-columns: repeat(var(--dl-div-column-count), 1fr);
-      row-gap: var(--spaces-gap-s);
-      column-gap: var(--spaces-gap-xs);
-      place-items: center;
-      border-radius: var(--connections-card-filled-icon-button-container-shape);
-      border: solid var(--sizes-thickness-xxs) var(--connections-card-filled-icon-button-icon-color);
-      background-color: var(--md-sys-color-surface-container-highest);
-      padding-block: var(--spaces-padding-s);
-      flex: 1 0 min-content;
-
-      dt {
-        grid-row: 1 / 2;
-        grid-column: span var(--dl-div-column-count);
-        color: var(--connections-card-filled-icon-button-icon-color);
-      }
-
-      dd {
-        grid-row: 2 / 3;
-        margin: unset;
-        border: solid var(--sizes-thickness-xxs) var(--connections-card-filled-icon-button-icon-color);
+      div {
+        display: grid;
+        grid-template-rows: min-content auto;
+        grid-template-columns: repeat(var(--dl-div-column-count), 1fr);
+        row-gap: var(--spaces-gap-s);
+        column-gap: var(--spaces-gap-xs);
+        place-items: center;
         border-radius: var(--connections-card-filled-icon-button-container-shape);
+        border: solid var(--sizes-thickness-xxs) var(--connections-card-filled-icon-button-icon-color);
+        background-color: var(--md-sys-color-surface-container-highest);
+        padding-block: var(--spaces-padding-s);
+        flex: 1 0 min-content;
+
+        dt {
+          grid-row: 1 / 2;
+          grid-column: span var(--dl-div-column-count);
+          color: var(--connections-card-filled-icon-button-icon-color);
+        }
+
+        dd {
+          grid-row: 2 / 3;
+          margin: unset;
+          border: solid var(--sizes-thickness-xxs) var(--connections-card-filled-icon-button-icon-color);
+          border-radius: var(--connections-card-filled-icon-button-container-shape);
+        }
       }
     }
   }

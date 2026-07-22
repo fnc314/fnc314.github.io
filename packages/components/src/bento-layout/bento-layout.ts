@@ -1,10 +1,10 @@
 import { BentoLayoutStyles, TransitionStyles } from "@/lib/bento-layout/bento-layout.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { BentoBoxConfigsArray, titles } from "@fnc314/packages.data";
-import { type ABentoBoxConfig, BENTO_BOX_TYPES, BreakpointLabels } from "@fnc314/packages.types";
+import { BENTO_BOX_CONFIG, titles } from "@fnc314/packages.data";
+import { BENTO_BOX_TYPES, type BentoBoxConfig, type BentoBoxType, BreakpointLabels } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { author } from "~build/package";
@@ -21,13 +21,10 @@ export class BentoLayout extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, BentoLayoutStyles, TransitionStyles];
 
-  @state()
-  private _bentoBoxConfigs: ABentoBoxConfig[] = BentoBoxConfigsArray(this.breakpoint);
-
-  private renderBentoBox(config: ABentoBoxConfig): TemplateResult {
+  private renderBentoBox(configName: BentoBoxType, config: BentoBoxConfig): TemplateResult {
     let cardStyles = { };
     if (this.breakpoint !== BreakpointLabels.mobile) {
-      cardStyles = { gridArea: config.type };
+      cardStyles = { gridArea: configName };
     }
 
     cardStyles = {
@@ -35,7 +32,7 @@ export class BentoLayout extends UIAwareElement {
       blockSize: "100%"
     };
 
-    switch (config.type) {
+    switch (configName) {
       case BENTO_BOX_TYPES.profile:
         return html`
           <profile-card
@@ -122,7 +119,16 @@ export class BentoLayout extends UIAwareElement {
         </p>
       </header>
     `;
-    const boxes = this._bentoBoxConfigs.map((boxConfig) => this.renderBentoBox(boxConfig));
+    const boxes = Object
+      .entries(BENTO_BOX_CONFIG)
+      .sort(
+        (configA: [string, BentoBoxConfig], configB: [string, BentoBoxConfig]) =>
+          configA[1].order - configB[1].order
+      )
+      .map(
+        ([configName, boxConfig]: [string, BentoBoxConfig]) =>
+          this.renderBentoBox(configName as BentoBoxType, boxConfig)
+      );
     return html`
       <main id="bento-root">
         ${header}

@@ -29,7 +29,7 @@ export class CodeCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "code";
+    this.id = BENTO_BOX_TYPES.code;
   }
 
   override render() {

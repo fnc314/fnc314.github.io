@@ -29,7 +29,7 @@ export class ExperienceCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "experience";
+    this.id = BENTO_BOX_TYPES.experience;
   }
 
   override render() {
