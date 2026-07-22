@@ -20,15 +20,15 @@
           "html": {
             "dark": {
               "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-dark.svg"
             },
             "default": {
               "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-default.svg"
             },
             "light": {
               "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/web/html.svg"
+              "value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-light.svg"
             }
           },
           "javascript": {

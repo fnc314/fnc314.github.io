@@ -2,7 +2,7 @@ import { type CSSResult, css } from "lit";
 
 export const WordPopoverStyles: CSSResult = css`
   :host {
-
+    --md-icon-size: calc(2 * var(--md-icon-size));
   }
 
   article {
@@ -14,15 +14,30 @@ export const WordPopoverStyles: CSSResult = css`
     overscroll-behavior: contain;
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
+    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-surface-variant);
+    border-radius: var(--bento-layout-card-shape);
+    justify-content: space-around;
 
     header {
-      h3 {
+      display: grid;
+      grid-template-areas:
+        ". icon ."
+        "header header header";
+      place-items: center;
 
+      & ::slotted(*) {
+        grid-area: icon;
+        aspect-ratio: 1;
+        max-inline-size: 33%;
+      }
+
+      h3 {
+        grid-area: header;
       }
     }
 
     section {
-
+      padding-inline: var(--spaces-padding-m);
     }
 
     footer {

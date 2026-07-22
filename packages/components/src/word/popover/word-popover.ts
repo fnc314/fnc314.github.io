@@ -40,7 +40,7 @@ export class WordPopover extends UIAwareElement {
         </header>
 
         <section>
-          <slot></slot>
+          <slot name="popover-content"></slot>
         </section>
 
         <footer>

@@ -45,7 +45,7 @@ export interface CodeRepoData {
  */
 export interface CodeRepoTech extends CodeRepoPopover {
   /** A generated `CSS Variable` from `@fnc314/packages.types` */
-  designToken: string | DesignTokenIcon;
+  designToken: DesignTokenIcon;
 
   /** Display name for the technology (e.g., "TypeScript"). */
   name: string;

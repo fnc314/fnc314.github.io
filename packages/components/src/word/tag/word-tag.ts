@@ -9,7 +9,6 @@ import {
 } from "@/lib/word/tag/word-tag.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { map } from "lit/directives/map.js";
 import { when } from "lit/directives/when.js";
 
 /**
@@ -113,59 +112,45 @@ export class WordTag extends UIAwareElement {
         break;
     }
 
-    return contents
-      ? html`
-          ${
-            when(
-              this.hrefUrl,
-              () => html`
-                <button
-                  style=${borderStyles.cssText}
-                  popovertarget=${this.word}>
-                  ${contents}
-                </button>
-              `,
-              () => html`
-                <div
-                  style=${borderStyles.cssText}
-                  >
-                  ${contents}
-                </div>
-              `
-            )
-          }
+    return when(
+      contents,
+      () => when(
+        this.hrefUrl,
+        () => html`
+          <button
+            style=${borderStyles.cssText}
+            popovertarget=${this.word}
+            >
+            ${contents}
+          </button>
+        `,
+        () => html`
+          <div
+            style=${borderStyles.cssText}
+            >
+            ${contents}
+          </div>
         `
-      : html`${nothing}`;
+      ),
+      () => html`${nothing}`
+    );
   }
 
   override render() {
     const tag = this.layoutForVariant(this.variant);
 
-    const popoverContent = when(
-      Array.isArray(this.popoverContent),
-      () => html`
-        <ul>
-          ${map(this.popoverContent, (content: string) => html`<li>${content}</li>`)}
-        </ul>
-      `,
-      () => html`
-        <p>${this.popoverContent}</p>
-      `
-    );
-      return html`
-        <word-popover
-          popover
-          id=${this.word}
-          .word="${this.word}"
-          .footerURL="${this.urlObject}"
-          >
-          <slot name="header-icon"></slot>
-          <slot name="popover">
-            ${popoverContent}
-          </slot>
-        </word-popover>
-        ${tag}
-      `;
+    return html`
+      <word-popover
+        popover
+        id=${this.word}
+        .word="${this.word}"
+        .footerURL=${this.urlObject}
+        >
+        <slot name="header-icon" slot="header-icon"></slot>
+        <slot name="popover-content" slot="popover-content"></slot>
+      </word-popover>
+      ${tag}
+    `;
   }
 }
 
