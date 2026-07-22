@@ -26,7 +26,7 @@ export class WordPopover extends UIAwareElement {
   @property({ type: String })
   popoverId: string = this.word;
 
-  @property({ type: Object })
+  @property({ type: Object, attribute: false })
   footerURL: { text: string, url: string } = { text: this.word, url: "" }
 
   override render(): TemplateResult {
@@ -46,8 +46,8 @@ export class WordPopover extends UIAwareElement {
         <footer>
           <a
             class="md-typescale-body-large"
-            title=${this.footerURL.text}
-            href=${this.footerURL.url}
+            title="${this.footerURL.text}"
+            href="${this.footerURL.url}"
             target="_blank"
             rel="noopener noreferrer"
             >

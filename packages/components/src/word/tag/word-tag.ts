@@ -53,7 +53,7 @@ export class WordTag extends UIAwareElement {
   @property({ type: String })
   hrefUrl = "";
 
-  @property({ type: Object })
+  @property({ type: Object, attribute: false })
   urlObject: { text: string, url: string } = { text: this.word, url: this.hrefUrl }
 
   @property({ attribute: false })
@@ -144,7 +144,7 @@ export class WordTag extends UIAwareElement {
         popover
         id=${this.word}
         .word="${this.word}"
-        .footerURL=${this.urlObject}
+        .footerURL=${{ text: this.word, url: this.hrefUrl }}
         >
         <slot name="header-icon" slot="header-icon"></slot>
         <slot name="popover-content" slot="popover-content"></slot>
