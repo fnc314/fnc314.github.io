@@ -5,7 +5,8 @@ export const DL_DIV_COLUMN_COUNT: number = 6;
 export const ConnectionsCardStyles: CSSResult = css`
   :host {
     display: block;
-    block-size: 100%;
+    inline-size: 100%;
+    container-type: inline-size;
 
     --dl-div-column-count: ${DL_DIV_COLUMN_COUNT};
 
@@ -65,6 +66,14 @@ export const ConnectionsCardStyles: CSSResult = css`
           border: solid var(--sizes-thickness-xxs) var(--connections-card-filled-icon-button-icon-color);
           border-radius: var(--connections-card-filled-icon-button-container-shape);
         }
+      }
+    }
+  }
+
+  @container (max-width: 600px) {
+    article {
+      dl {
+        flex-direction: column;
       }
     }
   }
