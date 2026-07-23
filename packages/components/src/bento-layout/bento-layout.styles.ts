@@ -57,6 +57,7 @@ export const BentoLayoutStyles = css`
       p {
         text-align: center;
         margin-block: var(--spaces-none);
+        font-family: var(--md-ref-typeface-brand);
       }
     }
   }

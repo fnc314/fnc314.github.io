@@ -6,10 +6,9 @@ import {
 
 /** Titles to grab attention, joined with `|` but in HTML Entity Code (`&#124;`) */
 export const titles: string = [
-  "Principal Software Engineer",
-  "Enterprise Android & System Architecture",
-  "Leading High-Performing Teams, Building Modern Platforms, and the Engineering Foundations Behind Great Products",
-].join(" &#124; ");
+  "Principal Software Engineer &#124; Enterprise Android & System Architecture",
+  "Leading High-Performing Teams, Building Modern Platforms, &amp; Engineering Foundations Behind Great Products",
+].join("<br>");
 
 /** The final rendered {@link BentoBoxConfigs} */
 export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
