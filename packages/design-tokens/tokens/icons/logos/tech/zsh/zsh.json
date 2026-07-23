@@ -5,11 +5,15 @@
         "zsh": {
           "dark": {
             "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-dark.svg"
+          },
+          "default": {
+            "type": "asset",
+            "value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-default.svg"
           },
           "light": {
             "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh.svg"
+            "value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-light.svg"
           }
         }
       }
