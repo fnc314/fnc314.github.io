@@ -69,23 +69,51 @@ export class WordTag extends UIAwareElement {
   })
   variant: WordTagVariant = "text-only";
 
-  private layoutForVariant(variant: WordTagVariant): TemplateResult {
-    const fontWeight = this.heaviness === "normal" ? css`var(--md-ref-typeface-weight-regular)` : css`var(--md-ref-typeface-weight-bold)`;
-    const fontStyles: CSSResult = unsafeCSS(`
+  private buildWord(): TemplateResult {
+    const fontWeight = this.heaviness === "normal" ?
+      css`var(--md-ref-typeface-weight-regular)` :
+      css`var(--md-ref-typeface-weight-bold)`;
+
+      const fontStyles: CSSResult = unsafeCSS(`
       font-weight: ${fontWeight};
     `);
 
+    return html`
+      <span style=${fontStyles}>${this.word}</span>
+    `;
+  }
+
+  private wrapContents(contents: TemplateResult): TemplateResult {
     const borderWidth = this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`;
     const borderStyles: CSSResult = unsafeCSS(`
       border-width: ${borderWidth};
     `);
+    return when(
+      this.hrefUrl,
+      () => html`
+        <button
+          style=${borderStyles}
+          popovertarget=${this.word}
+          >
+          ${contents}
+        </button>
+      `,
+      () => html`
+        <div
+          style=${borderStyles}
+          >
+          ${contents}
+        </div>
+      `
+    );
+  }
 
-    const defaultWordTag = html`
-      <span style=${fontStyles.cssText}>${this.word}</span>
-    `;
+  private layoutForVariant(): TemplateResult {
+
+    const defaultWordTag = this.buildWord();
 
     let contents: TemplateResult | undefined = undefined;
-    switch (variant) {
+    switch (this.variant) {
       case WordTagVariants["text-icon"]:
         contents = html`
           ${defaultWordTag}
@@ -114,31 +142,13 @@ export class WordTag extends UIAwareElement {
 
     return when(
       contents,
-      () => when(
-        this.hrefUrl,
-        () => html`
-          <button
-            style=${borderStyles.cssText}
-            popovertarget=${this.word}
-            >
-            ${contents}
-          </button>
-        `,
-        () => html`
-          <div
-            style=${borderStyles.cssText}
-            >
-            ${contents}
-          </div>
-        `
-      ),
+      () => this.wrapContents(contents!),
       () => html`${nothing}`
     );
   }
 
   override render() {
-    const tag = this.layoutForVariant(this.variant);
-
+    const tag = this.layoutForVariant();
     return html`
       <word-popover
         popover

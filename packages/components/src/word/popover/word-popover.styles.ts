@@ -20,15 +20,18 @@ export const WordPopoverStyles: CSSResult = css`
 
     header {
       display: grid;
-      grid-template-areas:
-        ". icon ."
-        "header header header";
+      grid-template-areas: "icon header header";
+      grid-template-columns: minmax(auto, 1fr) 1fr 1fr;
       place-items: center;
 
-      & ::slotted(*) {
+      slot[name="header-icon"] {
         grid-area: icon;
-        aspect-ratio: 1;
-        max-inline-size: 33%;
+
+        &::slotted(img) {
+          aspect-ratio: 1;
+          max-inline-size: 33%;
+          width: 33%;
+        }
       }
 
       h3 {
