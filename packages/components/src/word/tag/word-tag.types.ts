@@ -10,12 +10,24 @@ import { type ComplexAttributeConverter } from "lit";
 export type WordTagHeaviness = "normal" | "heavy";
 
 /**
+ * @summary A `const` declaration from which {@link WordTagVariant} is defined
+ *
+ * @type {{ readonly "text-only": "text-only"; readonly "icon-text": "icon-text"; readonly "text-icon": "text-icon"; readonly "icon-only": "icon-only"; }}
+ */
+export const WordTagVariants = {
+  "text-only": "text-only" as const,
+  "icon-text": "icon-text" as const,
+  "text-icon": "text-icon" as const,
+  "icon-only": "icon-only" as const,
+} as const;
+
+/**
  * The variations of {@link WordTag} representing the possible combinations
  *   of `text only`, `icon only`, `icon then text`, and `text then icon`
  *
  * @typedef {WordTagVariant}
  */
-export type WordTagVariant = "text-only" | "icon-text" | "text-icon" | "icon-only";
+export type WordTagVariant = keyof typeof WordTagVariants;
 
 /**
  * Implements {@link ComplexAttributeConverter} for {@link WordTagVariant} properties
@@ -24,16 +36,16 @@ export const WordTagVariantAttributeConverter: ComplexAttributeConverter<WordTag
   toAttribute: (value: string) => `${value}`,
   fromAttribute: (value: string) => {
     switch (value) {
-      case "icon-text":
-        return "icon-text";
-      case "text-icon":
-        return "text-icon";
-      case "text-only":
-        return "text-only";
-      case "icon-only":
-        return "icon-only";
+      case WordTagVariants["icon-text"]:
+        return WordTagVariants["icon-text"];
+      case WordTagVariants["text-icon"]:
+        return WordTagVariants["text-icon"];
+      case WordTagVariants["text-only"]:
+        return WordTagVariants["text-only"];
+      case WordTagVariants["icon-only"]:
+        return WordTagVariants["icon-only"];
       default:
-        return "text-only";
+        return WordTagVariants["text-only"];
     }
   },
 };

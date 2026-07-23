@@ -120,7 +120,6 @@ export const CodeRepoStyles: CSSResult = css`
       margin: var(--spaces-none);
       padding: var(--spaces-none);
 
-      & word-tag img,
       & word-tag [slot="icon"] {
         block-size: var(--md-icon-size);
         flex-shrink: 0;

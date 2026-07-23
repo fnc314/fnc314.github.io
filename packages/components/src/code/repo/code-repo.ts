@@ -5,6 +5,8 @@ import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { map } from "lit/directives/map.js";
+import { when } from "lit/directives/when.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
@@ -27,18 +29,9 @@ export class CodeRepo extends UIAwareElement {
 
   private createWordTagLI(tech: CodeRepoTech): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
-    const imgSrc =
-      typeof tech.designToken === "string"
-        ? readCSSProperty(tech.designToken)
-        : readCSSProperty(this.darkMode ? tech.designToken.dark : tech.designToken.light);
+    const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
 
-    const tagId: string = `${
-      typeof tech.designToken === "string"
-        ? tech.designToken
-        : this.darkMode
-          ? tech.designToken.dark
-          : tech.designToken.light
-    }-${techWord}-word-tag`;
+    const tagId: string = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag`;
 
     const imgTag = imgSrc
       ? html`
@@ -61,6 +54,18 @@ export class CodeRepo extends UIAwareElement {
           ? "icon-text"
           : "icon-only";
 
+    const popoverContent = when(
+      Array.isArray(tech.popoverContent),
+      () => html`
+        <ul slot="popover-content">
+          ${map(tech.popoverContent, (content: string) => html`<li class="md-typescale-body-large">${content}</li>`)}
+        </ul>
+      `,
+      () => html`
+        <p slot="popover-content" class="md-typescale-body-large">${tech.popoverContent}</p>
+      `
+    );
+
     return html`
       <li>
         <word-tag
@@ -70,6 +75,16 @@ export class CodeRepo extends UIAwareElement {
           .variant=${variant}
         >
           ${imgTag}
+          <img
+            slot="header-icon"
+            loading="lazy"
+            role="img"
+            aria-describedby="${tagId}"
+            src="${imgSrc}"
+            alt="${tech.name}"
+            title="${tech.name}"
+          />
+          ${popoverContent}
         </word-tag>
       </li>
     `;
@@ -81,7 +96,6 @@ export class CodeRepo extends UIAwareElement {
       : "--icons-logos-organization-github-light-icon-svg";
 
     const tokenSvg = readCSSProperty(token);
-
 
     const borderStyle = unsafeCSS(`
       --dynamic-border-background-image: url('${tokenSvg}');

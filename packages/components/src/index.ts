@@ -6,6 +6,8 @@ export { BlogCard } from "@/lib/card/blog/blog-card";
 export { BlogCardStyles } from "@/lib/card/blog/blog-card.styles";
 export { CodeCard } from "@/lib/card/code/code-card";
 export { CodeCardStyles } from "@/lib/card/code/code-card.styles";
+export { ConnectionsCard } from "@/lib/card/connections/connections-card";
+export { ConnectionsCardStyles, DL_DIV_COLUMN_COUNT } from "@/lib/card/connections/connections-card.styles";
 export { EducationCard } from "@/lib/card/education/education-card";
 export { EducationCardStyles } from "@/lib/card/education/education-card.styles";
 export { ExperienceCard } from "@/lib/card/experience/experience-card";
@@ -38,22 +40,10 @@ export { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 export { VersionTag } from "@/lib/version-tag/version-tag";
 export { WordCloud } from "@/lib/word/cloud/word-cloud";
 export { WordCloudStyles } from "@/lib/word/cloud/word-cloud.styles";
-export {
-  WordCloudAppearances,
-  WordCloudGroupings,
-  WordCloudSortings,
-  makeWordCloudWord,
-} from "@/lib/word/cloud/word-cloud.types";
-export type {
-  RenderableWordCloudWord,
-  WeightQuartile,
-  Weights,
-  WordCloudAppearance,
-  WordCloudGrouping,
-  WordCloudSorting,
-  WordCloudWord,
-  WordCloudWordCategory,
-} from "@/lib/word/cloud/word-cloud.types";
+export { WordCloudAppearances, WordCloudGroupings, WordCloudSortings, makeWordCloudWord } from "@/lib/word/cloud/word-cloud.types";
+export type { RenderableWordCloudWord, WeightQuartile, Weights, WordCloudAppearance, WordCloudGrouping, WordCloudSorting, WordCloudWord, WordCloudWordCategory } from "@/lib/word/cloud/word-cloud.types";
+export { WordPopover } from "@/lib/word/popover/word-popover";
+export { WordPopoverStyles } from "@/lib/word/popover/word-popover.styles";
 export { WordTag } from "@/lib/word/tag/word-tag";
 export { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 export { WordTagVariantAttributeConverter } from "@/lib/word/tag/word-tag.types";

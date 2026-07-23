@@ -29,7 +29,7 @@ export class BlogCard extends UIAwareElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    this.id = "blog";
+    this.id = BENTO_BOX_TYPES.blog;
   }
 
   override render() {
@@ -44,7 +44,7 @@ export class BlogCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.blog}
       >
         <div class="blog-list">
-          ${Blogs.map((entry: BlogEntryJson) => html` <blog-entry .blogEntry=${entry}></blog-entry> `)}
+          ${Blogs.map((blogEntry: BlogEntryJson) => html`<blog-entry .blogEntry=${blogEntry}></blog-entry>`)}
         </div>
       </bento-card>
     `;

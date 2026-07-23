@@ -17,6 +17,9 @@
   "[lit]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[postcss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.defaultFormatter": "ms-python.python",
@@ -24,7 +27,7 @@
     "editor.wordBasedSuggestions": "off"
   },
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.defaultFormatter": "tombi-toml.tombi",
     "editor.detectIndentation": true
   },
   "[typescript]": {
@@ -48,20 +51,27 @@
       ]
     }
   },
+  "css.completion.completePropertyWithSemicolon": true,
   "css.customData": [
     "${workspaceFolder}/.vscode/custom-elements-manifest/vscode.css-custom-data.json"
   ],
+  "css.format.enable": true,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "css.hover.documentation": true,
+  "css.hover.references": true,
+  "css.lint.importStatement": "ignore",
+  "css.lint.vendorPrefix": "ignore",
   "css.styleSheets": [
     "node_modules/material-symbols/material-symbols-outlined.css",
     "node_modules/@fnc314/packages.design-tokens/dist/@fnc314.packages.design-tokens.css",
     "**/${fileBasenameNoExtension}.styles.ts",
+    "${workspaceFolder}/packages/design-tokens/assets/css/*.css",
   ],
-  "css.format.spaceAroundSelectorSeparator": true,
-  "css.lint.importStatement": "ignore",
-  "css.lint.vendorPrefix": "ignore",
+  "css.trace.server": "verbose",
+  "css.validate": true,
   "cssCustomProperties.files": [
-    "${workspaceFolder}/index.css",
-    "${workspaceFolder}/packages/design-tokens/**/*.css",
+    "${workspaceFolder}/sites/portfolio/index.css",
+    "${workspaceFolder}/packages/design-tokens/assets/css/*.css",
     "${workspaceFolder}/node_modules/@fnc314/packages.design-tokens/@fnc314.packages.design-tokens.css",
   ],
   "debug.javascript.defaultRuntimeExecutable": {

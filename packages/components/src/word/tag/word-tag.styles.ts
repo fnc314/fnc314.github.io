@@ -29,6 +29,9 @@ export const WordTagStyles: CSSResult = css`
     /** @ignore */
     --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs));
 
+    /** @ignore */
+    --internal-word-tag-backdrop-blur: var(--word-tag-backdrop-blur, 0.25rem);
+
     display: contents;
 
     @media (prefers-reduced-motion: reduce) {
@@ -36,7 +39,11 @@ export const WordTagStyles: CSSResult = css`
     }
   }
 
-  .word-tag-variant-wrapper {
+  ::backdrop {
+    backdrop-filter: blur(var(--internal-word-tag-backdrop-blur));
+  }
+
+  button, div {
     align-items: center;
     background-color: var(--internal-word-tag-background-color);
     border-color: var(--internal-word-tag-color);

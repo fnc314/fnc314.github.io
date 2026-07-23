@@ -20,7 +20,7 @@ export const BentoCardStyles = css`
     display: block;
     inline-size: 100%;
 
-    --md-focus-ring-shape: var(--md-sys-shape-corner-small);
+    --md-focus-ring-shape: var(--bento-layout-card-shape);
   }
 
   article {
@@ -28,6 +28,8 @@ export const BentoCardStyles = css`
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    border-radius: var(--bento-layout-card-shape);
+    border: solid var(--sizes-thickness-hairline) var(--bento-layout-card-border-color);
 
     &:has(details[open]) {
     }
@@ -45,8 +47,8 @@ export const BentoCardStyles = css`
     color: var(--bento-layout-card-color);
     display: flex;
     flex-direction: column;
-
     padding: var(--spaces-padding-s);
+    will-change: transform, box-shadow, border-color, background-color;
     transition:
       transform var(--motions-duration-short) var(--motions-easing-emphasized),
       box-shadow var(--motions-duration-short) var(--motions-easing-base),

@@ -16,6 +16,7 @@ export const BentoLayoutStyles = css`
     --bento-layout-card-background: var(--md-sys-color-surface-container-lowest);
     --bento-layout-card-color: var(--md-sys-color-on-surface);
     --bento-layout-card-shape: var(--md-sys-shape-corner-medium);
+    --bento-layout-card-border-color: var(--md-sys-color-primary);
 
     background-color: var(--globals-color-background);
     color: var(--md-sys-color-on-surface);
@@ -23,6 +24,7 @@ export const BentoLayoutStyles = css`
     inline-size: 100%;
     padding-block-end: var(--spaces-padding-xl);
     container-name: bento-layout;
+    container-type: inline-size;
   }
 
   main {
@@ -37,7 +39,6 @@ export const BentoLayoutStyles = css`
       border: var(--sizes-thickness-hairline) solid var(--md-sys-color-on-primary-container);
       border-radius: var(--md-sys-shape-corner-large);
       color: var(--md-sys-color-on-primary-container);
-      grid-area: span 1 / span var(--bento-layout-column-count);
       inline-size: 100%;
       margin-inline: auto;
       padding-block: var(--spaces-padding-l);
@@ -56,6 +57,7 @@ export const BentoLayoutStyles = css`
       p {
         text-align: center;
         margin-block: var(--spaces-none);
+        font-family: var(--md-ref-typeface-brand);
       }
     }
   }
@@ -65,6 +67,10 @@ export const BentoLayoutStyles = css`
       display: grid;
       grid-auto-flow: dense;
       grid-template-columns: repeat(var(--bento-layout-column-count), 1fr);
+    }
+
+    header {
+      grid-area: header;
     }
   }
 
@@ -77,6 +83,14 @@ export const BentoLayoutStyles = css`
       align-items: unset;
       gap: var(--spaces-gap-m);
       padding: var(--spaces-padding-s);
+      grid-template-areas:
+        "header header header header header header"
+        "profile profile connections connections connections connections"
+        "profile profile experience experience experience experience"
+        "code code code blog blog blog"
+        "skills skills skills skills education education"
+        "settings settings settings settings settings settings"
+        ;
     }
   }
 
@@ -87,6 +101,14 @@ export const BentoLayoutStyles = css`
 
     main {
       gap: var(--spaces-gap-l);
+      grid-template-areas:
+        "header header header header header header header header header header header header"
+        "profile profile profile profile connections connections connections connections connections connections connections connections"
+        "profile profile profile profile experience experience experience experience experience experience experience experience"
+        "code code code code code code blog blog blog blog blog blog"
+        "skills skills skills skills skills skills skills skills education education education education"
+        "settings settings settings settings settings settings settings settings settings settings settings settings"
+        ;
       margin: var(--spaces-none) auto;
       padding: var(--spaces-padding-m);
       place-items: stretch stretch;
@@ -148,6 +170,10 @@ export const TransitionStyles = css`
     }
 
     > *:nth-child(9) {
+      animation-delay: var(--motions-delay-xxxl);
+    }
+
+    > *:nth-child(10) {
       animation-delay: var(--motions-delay-xxxl);
     }
   }

@@ -6,7 +6,7 @@ export const SettingsCardStyles: CSSResult = css`
     display: block;
   }
 
-  .settings-content {
+  article {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -57,13 +57,13 @@ export const SettingsCardStyles: CSSResult = css`
       }
     }
 
-    version-tag {
+    footer {
       padding-block-start: var(--spaces-padding-m);
     }
   }
 
   @media screen and (width >= 1201px) {
-    .settings-content {
+    article {
       form {
         flex-direction: row;
         justify-content: space-evenly;

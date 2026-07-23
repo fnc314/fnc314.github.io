@@ -15,7 +15,7 @@ export const WORD_TAG_SIZES = {
 } as const;
 
 /** We give {@link @fnc314/packages.components!WordTag} various treatments within this component */
-export type WordTagSize = (typeof WORD_TAG_SIZES)[keyof typeof WORD_TAG_SIZES];
+export type WordTagSize = keyof typeof WORD_TAG_SIZES;
 
 /**
  * Represents a single project entry loaded from `code.json`.
@@ -43,13 +43,24 @@ export interface CodeRepoData {
 /**
  * Represents a single technology entry used by a project.
  */
-export interface CodeRepoTech {
+export interface CodeRepoTech extends CodeRepoPopover {
   /** A generated `CSS Variable` from `@fnc314/packages.types` */
-  designToken: string | DesignTokenIcon;
+  designToken: DesignTokenIcon;
 
   /** Display name for the technology (e.g., "TypeScript"). */
   name: string;
 
   /** URL with more information about the technology. */
   url: string;
-}
+};
+
+/**
+ * @summary The content used to drive the `popover`s in the `<word-tag>`
+ *
+ * @export
+ * @interface CodeRepoPopover
+ * @typedef {CodeRepoPopover}
+ */
+export interface CodeRepoPopover {
+  popoverContent: string | string[];
+};
