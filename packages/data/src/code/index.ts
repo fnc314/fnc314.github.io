@@ -177,17 +177,22 @@ export const Projects: CodeRepoData[] = [
         popoverContent: "Online tool to generate Material Theme colors from provided images",
       },
       {
-        name: "HTML/CSS/JS",
+        name: "HTML",
         url: "https://developer.mozilla.org/",
         designToken: {
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
           light: "--icons-logos-tech-web-html-light-icon-svg",
         },
-        popoverContent: [
-          "HTML5",
-          "CSS",
-          "JavaScript",
-        ]
+        popoverContent: "HTML5 for templates"
+      },
+      {
+        name: "CSS",
+        url: "https://developer.mozilla.org/",
+        designToken: {
+          dark: "--icons-logos-tech-web-css-dark-icon-svg",
+          light: "--icons-logos-tech-web-css-light-icon-svg",
+        },
+        popoverContent: "CSS for styles"
       },
       {
         name: "Prettier",
@@ -243,17 +248,31 @@ export const Projects: CodeRepoData[] = [
     name: "material-theme-viewer",
     tech: [
       {
-        name: "HTML/CSS/JS",
+        name: "HTML",
         url: "https://developer.mozilla.org/",
         designToken: {
           dark: "--icons-logos-tech-web-html-dark-icon-svg",
           light: "--icons-logos-tech-web-html-light-icon-svg",
         },
-        popoverContent: [
-          "HTML5",
-          "CSS",
-          "JavaScript",
-        ]
+        popoverContent: "HTML5 for templates"
+      },
+      {
+        name: "CSS",
+        url: "https://developer.mozilla.org/",
+        designToken: {
+          dark: "--icons-logos-tech-web-css-dark-icon-svg",
+          light: "--icons-logos-tech-web-css-light-icon-svg",
+        },
+        popoverContent: "CSS for styles"
+      },
+      {
+        name: "JavaScript",
+        url: "https://developer.mozilla.org/",
+        designToken: {
+          dark: "--icons-logos-tech-web-javascript-dark-icon-svg",
+          light: "--icons-logos-tech-web-javascript-light-icon-svg",
+        },
+        popoverContent: "JavaScript for simple interactivity"
       },
       {
         name: "Material Theme Builder",
