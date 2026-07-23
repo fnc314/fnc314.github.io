@@ -10,7 +10,6 @@ import {
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary A responsive card component that displays a profile photo and biography.
@@ -55,56 +54,39 @@ export class ProfileCard extends UIAwareElement {
   };
 
   private renderAboutMe(): TemplateResult {
-    const summary = this.aboutMe.summary
-      .map((sentence) => html`
-        <p class="md-typescale-body-large">
-          ${sentence}
-        </p>
-      `);
     const sections = this.aboutMe.sections
       .filter((section) =>
-        section.title.length > 0 &&
-        (
-          section.content.length > 0 &&
-          section.content.filter((content) => content.trim().length > 0).length > 0
-        )
+        section.title.trim().length > 0 &&
+        section.content.trim().length > 0
       )
       .map((section) => html`
         <section aria-label="${section.title}">
           <header>
             <h4
-              class="md-typescale-title-small"
+              class="md-typescale-title-medium"
               id="about-me-section-header"
               >
               ${section.title}
             </h4>
           </header>
-          <ul>
-          ${
-            section.content
-              .map((sentence) => html`
-                <li class="md-typescale-body-large">${unsafeHTML(sentence)}</li>
-              `)
-          }
-          </ul>
+          <section>
+            <p class="md-typescale-body-medium">
+              ${section.content}
+            </p>
+          </section>
         </section>
       `);
     return html`
       <article aria-label="About Me">
         <header>
-          <h3 class="md-typescale-title-small" id="about-me-heading">About Me</h3>
-          <p class="md-typescale-body-medium">${this.aboutMe.opener}</p>
+          <h3 class="md-typescale-title-large" id="about-me-heading">About Me</h3>
         </header>
 
         <section aria-label="Summary">
-          ${summary}
+          <p class="md-typescale-body-medium">${this.aboutMe.opener}</p>
         </section>
 
         ${sections}
-
-        <footer>
-          <p class="md-typescale-body-large accented">${this.aboutMe.closer}</p>
-        </footer>
       </article>
     `;
   }

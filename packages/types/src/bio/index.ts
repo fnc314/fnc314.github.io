@@ -6,7 +6,5 @@ export interface Bio {
 
 export interface BioExtended {
   opener: string;
-  summary: string[];
-  sections: { title: string, content: string[] }[];
-  closer: string;
+  sections: { title: string, content: string }[];
 }

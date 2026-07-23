@@ -72,10 +72,8 @@ export const ProfileCardStyles: CSSResult = css`
     }
 
     article {
-      section {
-        ul {
-          padding-inline-start: unset;
-        }
+      h3, h4 {
+        margin-block: unset;
       }
     }
   }
