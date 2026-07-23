@@ -1,0 +1,7 @@
+[mcp_servers."io.github.wonderwhy-er/desktop-commander"]
+  command = "npx"
+  args = [
+    "--registry",
+    "https://registry.npmjs.org",
+    "@wonderwhy-er/desktop-commander@0.2.43",
+  ]
