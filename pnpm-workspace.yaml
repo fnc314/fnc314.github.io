@@ -25,7 +25,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.8
+    material-symbols: 0.45.9
     prop-for-that: 0.7.8
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
@@ -52,7 +52,7 @@ catalogs:
     "@typescript-eslint/parser": 8.65.0
     "@typescript/typescript6": 6.0.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.4.3
+    "@vitejs/devtools": 0.4.4
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5

@@ -3,7 +3,7 @@ additionalPackages:
   - "npm:lit-element@4.2.2"
   - "npm:lit-html@3.3.3"
   - "npm:@material/web@2.5.0"
-  - "npm:material-symbols@0.45.8"
+  - "npm:material-symbols@0.45.9"
 
 generate:
   exclude:
