@@ -8,7 +8,7 @@ The personal portfolio website for Franco N. Colaizzi (fnc314.com), built as a s
 
 ## Toolchain: pnpm + mise
 
-- Package manager is **pnpm 11.5** (not npm). Node 26, Firebase CLI, and other tools are pinned via **mise** (`mise.toml`). Run `mise install` before first use.
+- Package manager is **pnpm** (not npm). Node 26, Firebase CLI, and other tools are pinned via **mise** (`mise.toml`). Run `mise install` before first use.
 - Dependency *versions* are not in `package.json` — every dep reads `catalog:<group>` and the actual version is resolved from the catalogs in `pnpm-workspace.yaml`. To change a version, edit the catalog there, not `package.json`.
 - `bin/*` are thin shell wrappers that `exec mise run <task>`. Task definitions live in `.mise/tasks/`.
 

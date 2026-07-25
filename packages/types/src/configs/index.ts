@@ -1,12 +1,12 @@
 import {
     CONFIG_COLOR_CONTRAST_NAMES,
     CONFIG_COLOR_SCHEME_NAMES,
-    type ColorSchemeConfigs,
+    type ColorSchemeConfig,
     THEME_NAMES,
 } from "@/lib/theme";
 
 export interface AppConfigs {
-  colorScheme: ColorSchemeConfigs;
+  colorScheme: ColorSchemeConfig;
 }
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {

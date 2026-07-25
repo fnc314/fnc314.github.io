@@ -31,7 +31,12 @@ export class WordPopover extends UIAwareElement {
 
   override render(): TemplateResult {
     return html`
-      <article id="${this.word}" popover>
+      <article>
+        <md-icon-button
+          @click=${() => this.dispatchEvent(new CustomEvent("hide-popover", { composed: true, bubbles: true }))}
+          >
+          <md-icon>close</md-icon>
+        </md-icon-button>
         <header>
           <slot name="header-icon"></slot>
           <h3 class="md-typescale-display-medium">

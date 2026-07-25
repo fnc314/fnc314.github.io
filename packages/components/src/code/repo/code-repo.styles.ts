@@ -8,6 +8,7 @@ import { type CSSResult, css } from "lit";
  */
 export const CodeRepoStyles: CSSResult = css`
   ${DynamicBorderStyles}
+
   :host {
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);

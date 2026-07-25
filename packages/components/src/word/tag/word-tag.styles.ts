@@ -29,18 +29,11 @@ export const WordTagStyles: CSSResult = css`
     /** @ignore */
     --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs));
 
-    /** @ignore */
-    --internal-word-tag-backdrop-blur: var(--word-tag-backdrop-blur, 0.25rem);
-
     display: contents;
 
     @media (prefers-reduced-motion: reduce) {
       --internal-word-tag-animation-duration: 0ms;
     }
-  }
-
-  ::backdrop {
-    backdrop-filter: blur(var(--internal-word-tag-backdrop-blur));
   }
 
   button, div {

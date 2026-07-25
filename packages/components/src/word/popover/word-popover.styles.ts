@@ -3,13 +3,12 @@ import { type CSSResult, css } from "lit";
 export const WordPopoverStyles: CSSResult = css`
   :host {
     --md-icon-size: calc(2 * var(--md-icon-size));
+    --internal-word-popover-backdrop-blur: var(--word-popover-backdrop-blur, 0.25rem);
   }
 
   article {
     display: flex;
     flex-direction: column;
-    block-size: 75%;
-    inline-size: 75%;
     overflow-y: auto;
     overscroll-behavior: contain;
     background-color: var(--md-sys-color-surface);
@@ -17,6 +16,12 @@ export const WordPopoverStyles: CSSResult = css`
     border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-surface-variant);
     border-radius: var(--bento-layout-card-shape);
     justify-content: space-around;
+
+    md-icon-button, button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
     header {
       display: grid;

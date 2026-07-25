@@ -1,8 +1,12 @@
 import { type CSSResult, css } from "lit";
 
 export const WordPopoverAnimations: CSSResult = css`
+  :host {
+    --internal-word-popover-backdrop-blur: var(--word-popover-backdrop-blur, 0.25rem);
+  }
+
   ::backdrop {
-    backdrop-filter: blur(var(--internal-word-tag-backdrop-blur));
+    backdrop-filter: blur(var(--internal-word-popover-backdrop-blur));
   }
 
   /* Transition for the popover itself */
@@ -34,6 +38,7 @@ export const WordPopoverAnimations: CSSResult = css`
 
   /* Transition for the popover's backdrop */
   [popover]::backdrop {
+    backdrop-filter: blur(var(--internal-word-tag-backdrop-blur));
     background-color: transparent;
     transition:
       display 0.7s allow-discrete,
@@ -45,7 +50,7 @@ export const WordPopoverAnimations: CSSResult = css`
   }
 
   [popover]:popover-open::backdrop {
-
+    backdrop-filter: blur(var(--internal-word-popover-backdrop-blur));
   }
 
   /* The nesting selector (&) cannot represent pseudo-elements

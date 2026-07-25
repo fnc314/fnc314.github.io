@@ -13,14 +13,14 @@ import {
     CONFIG_COLOR_CONTRAST_NAMES,
     CONFIG_COLOR_SCHEME_NAMES,
     type ColorScheme,
+    type ColorSchemeConfig,
     type ColorSchemeConfigChange,
-    type ColorSchemeConfigs,
     type ColorSchemeRoles,
     type ColorString,
     type MaterialSchemeName,
     type MaterialSchemeNames,
     type ThemeConfig,
-    type ThemeConfigs,
+    type ThemeConfigs
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -123,8 +123,8 @@ export const onThemeChange: (event: MediaQueryListEvent) => void = (event: Media
   document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
 };
 
-export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfigs) => MaterialSchemeName = (
-  colorSchemeSettings: ColorSchemeConfigs,
+export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfig) => MaterialSchemeName = (
+  colorSchemeSettings: ColorSchemeConfig,
 ): MaterialSchemeName => {
   const variant =
     colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM

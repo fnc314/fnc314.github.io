@@ -21,7 +21,7 @@ export const CONFIG_COLOR_CONTRAST_NAMES = {
 export type ColorScheme = (typeof CONFIG_COLOR_SCHEME_NAMES)[keyof typeof CONFIG_COLOR_SCHEME_NAMES];
 export type ColorSchemeContrast = (typeof CONFIG_COLOR_CONTRAST_NAMES)[keyof typeof CONFIG_COLOR_CONTRAST_NAMES];
 
-export interface ColorSchemeConfigs {
+export interface ColorSchemeConfig {
   name: ColorScheme;
   contrast: ColorSchemeContrast;
   persist: boolean;
@@ -144,4 +144,4 @@ export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
 
 export { type MaterialSymbol } from "material-symbols";
 
-export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfigs>;
+export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfig>;

@@ -75,15 +75,15 @@ export class CodeRepo extends UIAwareElement {
           .variant=${variant}
         >
           ${imgTag}
-          <img
-            slot="header-icon"
-            loading="lazy"
-            role="img"
-            aria-describedby="${tagId}"
-            src="${imgSrc}"
-            alt="${tech.name}"
-            title="${tech.name}"
-          />
+           <img
+              slot="header-icon"
+              loading="lazy"
+              role="img"
+              aria-describedby="${tagId}"
+              src="${imgSrc}"
+              alt="${tech.name}"
+              title="${tech.name}"
+            />
           ${popoverContent}
         </word-tag>
       </li>

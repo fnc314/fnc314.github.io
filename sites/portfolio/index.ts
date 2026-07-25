@@ -1,7 +1,7 @@
 import "@/index.css";
 import "@fnc314/packages.components";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
-import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfigChange, type ColorSchemeConfigs } from "@fnc314/packages.types";
+import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfig, type ColorSchemeConfigChange } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -34,9 +34,9 @@ const onColorSchemeChange = (event: ColorSchemeConfigChange) => {
 /**
  * Applys the provided `configs`
  *
- * @param configs - Particular {@link ColorSchemeConfigs} to apply
+ * @param configs - Particular {@link ColorSchemeConfig} to apply
  */
-const applyColorSchemeConfigs: (configs: ColorSchemeConfigs) => void = (configs: ColorSchemeConfigs) => {
+const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: ColorSchemeConfig) => {
   const matScheme = themeService.currentThemeConfig().materialSchemes[
     colorSchemeConfigsToMaterialSchemeName(configs)
   ];

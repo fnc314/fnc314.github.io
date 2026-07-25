@@ -1,5 +1,7 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { type WordPopover } from "@/lib/word/popover/word-popover";
+import { WordPopoverAnimations } from "@/lib/word/popover/word-popover-animations.styles";
 import { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 import {
     type WordTagHeaviness,
@@ -8,7 +10,7 @@ import {
     WordTagVariants,
 } from "@/lib/word/tag/word-tag.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, query } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
 
 /**
@@ -42,7 +44,10 @@ import { when } from "lit/directives/when.js";
 @customElement("word-tag")
 export class WordTag extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [TextStyles, WordTagStyles];
+  static override styles = [TextStyles, WordPopoverAnimations, WordTagStyles, /* WordPopoverAnimations */];
+
+  @query("word-popover")
+  private _popover!: WordPopover;
 
   @property({ type: String })
   word = "";
@@ -69,14 +74,18 @@ export class WordTag extends UIAwareElement {
   })
   variant: WordTagVariant = "text-only";
 
+  private _hidePopover() {
+    this._popover.hidePopover()
+  }
+
   private buildWord(): TemplateResult {
     const fontWeight = this.heaviness === "normal" ?
       css`var(--md-ref-typeface-weight-regular)` :
       css`var(--md-ref-typeface-weight-bold)`;
 
       const fontStyles: CSSResult = unsafeCSS(`
-      font-weight: ${fontWeight};
-    `);
+        font-weight: ${fontWeight};
+      `);
 
     return html`
       <span style=${fontStyles}>${this.word}</span>
@@ -84,16 +93,20 @@ export class WordTag extends UIAwareElement {
   }
 
   private wrapContents(contents: TemplateResult): TemplateResult {
-    const borderWidth = this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`;
+    const borderWidth = this.heaviness === "normal" ?
+      css`var(--sizes-thickness-hairline)` :
+      css`var(--sizes-thickness-s)`;
+
     const borderStyles: CSSResult = unsafeCSS(`
       border-width: ${borderWidth};
     `);
+
     return when(
       this.hrefUrl,
       () => html`
         <button
           style=${borderStyles}
-          popovertarget=${this.word}
+          popovertarget="${this.word}-word-popover"
           >
           ${contents}
         </button>
@@ -148,18 +161,24 @@ export class WordTag extends UIAwareElement {
   }
 
   override render() {
-    const tag = this.layoutForVariant();
     return html`
       <word-popover
         popover
-        id=${this.word}
+        id="${this.word}-word-popover"
         .word="${this.word}"
         .footerURL=${{ text: this.word, url: this.hrefUrl }}
+        @hide-popover=${this._hidePopover}
         >
-        <slot name="header-icon" slot="header-icon"></slot>
+        ${
+          when(
+            this.variant !== WordTagVariants["text-only"],
+            () => html`<slot name="header-icon" slot="header-icon"></slot>`,
+            () => html`${nothing}`,
+          )
+        }
         <slot name="popover-content" slot="popover-content"></slot>
       </word-popover>
-      ${tag}
+      ${this.layoutForVariant()}
     `;
   }
 }
