@@ -66,7 +66,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         outDir: `${process.cwd()}/packages/${dirName}/dist`,
         emptyOutDir: true,
         copyPublicDir: true,
-        minify: mode === "production",
+        minify: false,
         cssMinify: mode === "production",
         cssCodeSplit: mode === "production",
         sourcemap: mode !== "production",
