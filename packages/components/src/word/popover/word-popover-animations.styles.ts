@@ -16,6 +16,12 @@ export const WordPopoverAnimations: CSSResult = css`
   }
 
   [popover] {
+    overscroll-behavior: contain;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-surface-variant);
+    border-radius: var(--bento-layout-card-shape);
+    padding: var(--spaces-padding-m);
     /* Final state of the exit animation */
     opacity: 0;
     transform: scaleX(0);
@@ -38,8 +44,11 @@ export const WordPopoverAnimations: CSSResult = css`
 
   /* Transition for the popover's backdrop */
   [popover]::backdrop {
-    backdrop-filter: blur(var(--internal-word-tag-backdrop-blur));
+    overscroll-behavior: contain;
+    overflow: hidden;
+    backdrop-filter: blur(var(--internal-word-popover-backdrop-blur));
     background-color: transparent;
+    pointer-events: none;
     transition:
       display 0.7s allow-discrete,
       overlay 0.7s allow-discrete,

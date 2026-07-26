@@ -29,10 +29,40 @@ export class WordPopover extends UIAwareElement {
   @property({ type: Object, attribute: false })
   footerURL: { text: string, url: string } = { text: this.word, url: "" }
 
+  override connectedCallback(): void {
+    super.connectedCallback();
+    this.addEventListener("beforetoggle", this._handleToggle as EventListener);
+  }
+
+  override disconnectedCallback(): void {
+    this.removeEventListener("beforetoggle", this._handleToggle as EventListener);
+    super.disconnectedCallback();
+  }
+
+  public lastClosedAt = 0;
+
+  private _scrollY = 0;
+
+  private _handleToggle = (e: ToggleEvent) => {
+    if (e.newState === "open") {
+      this._scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${this._scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      this.lastClosedAt = Date.now();
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, this._scrollY);
+    }
+  }
+
   override render(): TemplateResult {
     return html`
       <article>
         <md-icon-button
+          aria-label="Close popover for ${this.word}"
           @click=${() => this.dispatchEvent(new CustomEvent("hide-popover", { composed: true, bubbles: true }))}
           >
           <md-icon>close</md-icon>
@@ -51,7 +81,7 @@ export class WordPopover extends UIAwareElement {
         <footer>
           <a
             class="md-typescale-body-large"
-            title="${this.footerURL.text}"
+            title="Open ${this.footerURL.text} as a separate page"
             href="${this.footerURL.url}"
             target="_blank"
             rel="noopener noreferrer"

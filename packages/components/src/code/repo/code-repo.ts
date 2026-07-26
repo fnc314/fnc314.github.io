@@ -1,6 +1,7 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { WordPopoverAnimations } from "@/lib/word/popover/word-popover-animations.styles";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
@@ -25,7 +26,7 @@ export class CodeRepo extends UIAwareElement {
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
   /** {@link @lit/reactive-element!css} */
-  static override styles = [TextStyles, CodeRepoStyles];
+  static override styles = [TextStyles, WordPopoverAnimations, CodeRepoStyles];
 
   private createWordTagLI(tech: CodeRepoTech): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
@@ -66,26 +67,57 @@ export class CodeRepo extends UIAwareElement {
       `
     );
 
+    const popoverId = `${tagId}-popover`;
+
+    const tagEl = html`
+      <word-tag
+        id="${tagId}"
+        .hrefUrl=${tech.url}
+        .word=${tech.name}
+        .variant=${variant}
+        @click=${() => {
+          if (tech.url) {
+            const popover = this.shadowRoot?.getElementById(popoverId) as any;
+            // Prevent reopening if it was just light-dismissed by this exact click
+            if (popover && (Date.now() - (popover.lastClosedAt || 0) > 100)) {
+              popover.showPopover();
+            }
+          }
+        }}
+      >
+        ${imgTag}
+      </word-tag>
+    `;
+
+    const popoverEl = tech.url
+      ? html`
+          <word-popover
+            id="${popoverId}"
+            popover="auto"
+            .word=${tech.name}
+            .footerURL=${{ text: tech.name, url: tech.url }}
+            @hide-popover=${() => (this.shadowRoot?.getElementById(popoverId) as any)?.hidePopover()}
+          >
+            ${imgSrc ? html`
+              <img
+                slot="header-icon"
+                loading="lazy"
+                role="img"
+                aria-describedby="${popoverId}"
+                src="${imgSrc}"
+                alt="${tech.name}"
+                title="${tech.name}"
+              />
+            ` : nothing}
+            ${popoverContent}
+          </word-popover>
+        `
+      : nothing;
+
     return html`
       <li>
-        <word-tag
-          id="${tagId}"
-          .hrefUrl=${tech.url}
-          .word=${tech.name}
-          .variant=${variant}
-        >
-          ${imgTag}
-           <img
-              slot="header-icon"
-              loading="lazy"
-              role="img"
-              aria-describedby="${tagId}"
-              src="${imgSrc}"
-              alt="${tech.name}"
-              title="${tech.name}"
-            />
-          ${popoverContent}
-        </word-tag>
+        ${tagEl}
+        ${popoverEl}
       </li>
     `;
   }
