@@ -67,7 +67,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         emptyOutDir: true,
         copyPublicDir: true,
         minify: false,
-        cssMinify: mode === "production",
+        cssMinify: false,
         cssCodeSplit: mode === "production",
         sourcemap: mode !== "production",
         platform: "browser",
