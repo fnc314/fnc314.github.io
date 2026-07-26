@@ -85,14 +85,11 @@ html,
 body {
   font-family: var(--md-ref-typeface-plain);
   margin: unset;
+  overscroll-behavior: contain;
   padding: unset;
   scroll-padding-block-end: var(--globals-buffer-height);
   scrollbar-gutter: stable;
   writing-mode: horizontal-tb;
-
-  &:has([popover]:popover-open) {
-    overflow: hidden;
-  }
 }
 
 body {
