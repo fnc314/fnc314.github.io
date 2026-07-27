@@ -26,7 +26,7 @@ catalogs:
     lit-element: 4.2.2
     lit-html: 3.3.3
     material-symbols: 0.45.9
-    prop-for-that: 0.7.8
+    prop-for-that: 0.7.12
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
     "@custom-elements-manifest/analyzer": 0.11.0
@@ -108,7 +108,7 @@ catalogs:
     stylelint-declaration-strict-value: 1.11.1
     stylelint-plugin-logical-css: 2.1.0
     stylelint-plugin-rhythmguard: 2.0.1
-    stylelint-plugin-use-baseline: 1.4.4
+    stylelint-plugin-use-baseline: 1.4.5
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
     svgo: 4.0.2
