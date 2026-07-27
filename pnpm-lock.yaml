@@ -432,8 +432,8 @@ catalogs:
       specifier: 11.4.0
       version: 11.4.0
     globals:
-      specifier: 17.7.0
-      version: 17.7.0
+      specifier: 17.8.0
+      version: 17.8.0
     lit-analyzer:
       specifier: 2.0.3
       version: 2.0.3
@@ -830,7 +830,7 @@ importers:
         version: 11.4.0
       globals:
         specifier: catalog:devDependencies
-        version: 17.7.0
+        version: 17.8.0
       lit-analyzer:
         specifier: catalog:devDependencies
         version: 2.0.3
@@ -6955,8 +6955,8 @@ packages:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
-  globals@17.7.0:
-    resolution: {integrity: sha512-Czmyns5dUsq4seFBR/Kdydhmo8y9kC79hiSkPn0YcGtNnYWnrgt0vjrSjx9tspoDGWm2CMarffRuLjM4xUz8xg==}
+  globals@17.8.0:
+    resolution: {integrity: sha512-Zz/LMDZScFmkakeL2cTHzf+PbWKdpU3uclqkZT7TjDG58j5WPt0PpA+n9uPI24fZtlw07q0OtEi84K+umsRzqQ==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -17404,7 +17404,7 @@ snapshots:
 
   globals@14.0.0: {}
 
-  globals@17.7.0: {}
+  globals@17.8.0: {}
 
   globalthis@1.0.4:
     dependencies:
@@ -22186,7 +22186,7 @@ time:
   firebase-functions@7.2.5: '2026-04-08T22:16:58.535Z'
   firebase@12.16.0: '2026-07-09T12:15:36.040Z'
   fs-extra@11.4.0: '2026-07-23T19:52:08.773Z'
-  globals@17.7.0: '2026-06-22T17:20:20.100Z'
+  globals@17.8.0: '2026-07-26T16:39:39.297Z'
   lit-analyzer@2.0.3: '2024-01-09T01:03:53.904Z'
   lit-element@4.2.2: '2025-12-23T22:03:30.237Z'
   lit-html@3.3.3: '2026-05-14T03:55:59.172Z'
