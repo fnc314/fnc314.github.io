@@ -90,6 +90,7 @@ export class WordTag extends UIAwareElement {
           style=${borderStyles}
           aria-label="Click/Tap for more information on ${this.word}"
           title="Click/Tap for more information on ${this.word}"
+          aria-haspopup="dialog"
           >
           ${contents}
         </button>

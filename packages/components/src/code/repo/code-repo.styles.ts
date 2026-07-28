@@ -20,7 +20,6 @@ export const CodeRepoStyles: CSSResult = css`
 
     align-self: stretch;
     box-sizing: border-box;
-    container-type: inline-size;
     display: block;
     flex-grow: 1;
     inline-size: 100%;
@@ -29,7 +28,7 @@ export const CodeRepoStyles: CSSResult = css`
 
   article {
     --dynamic-border-size: var(--sizes-width-l);
-
+    container-type: inline-size;
     background-color: var(--md-sys-color-surface);
     block-size: 100%;
     border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);

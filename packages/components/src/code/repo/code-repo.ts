@@ -1,12 +1,13 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { WordPopoverAnimations } from "@/lib/word/popover/word-popover-animations.styles";
+import { WordDialog } from "@/lib/word/dialog/word-dialog";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, queryAll } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { when } from "lit/directives/when.js";
 
 /**
@@ -26,9 +27,13 @@ export class CodeRepo extends UIAwareElement {
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
   /** {@link @lit/reactive-element!css} */
-  static override styles = [TextStyles, WordPopoverAnimations, CodeRepoStyles];
+  static override styles = [TextStyles, CodeRepoStyles];
 
-  private createWordTagLI(tech: CodeRepoTech): TemplateResult {
+  /** All of the `<word-popover>` instances in this {@link CodeRepo} */
+  @queryAll("word-popover")
+  private _wordPopovers!: NodeList
+
+  private createWordTagLI(tech: CodeRepoTech, wordIndex: number): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
 
@@ -55,70 +60,75 @@ export class CodeRepo extends UIAwareElement {
           ? "icon-text"
           : "icon-only";
 
+    return html`
+      <li>
+        <word-tag
+          id="${tagId}"
+          .hrefUrl=${tech.url}
+          .word=${tech.name}
+          .variant=${variant}
+          @click=${() => {
+            if (tech.url) {
+              // Prevent reopening if it was just light-dismissed by this exact click
+              const popover = this._wordPopovers[wordIndex] as WordDialog;
+              if (popover && (Date.now() - (popover.lastClosedAt || 0) > 100)) {
+                popover.showModal();
+              }
+            }
+          }}
+        >
+          ${imgTag}
+        </word-tag>
+      </li>
+    `;
+  }
+
+  private createWordPopover(tech: CodeRepoTech, wordIndex: number): TemplateResult {
+    if (!tech.url) return html`${nothing}`;
+
+    const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
+    const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
+    const popoverId = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag-dialog`;
+
     const popoverContent = when(
       Array.isArray(tech.popoverContent),
       () => html`
-        <ul slot="popover-content">
-          ${map(tech.popoverContent, (content: string) => html`<li class="md-typescale-body-large">${content}</li>`)}
+        <ul slot="dialog-content">
+          ${map(tech.popoverContent, (content: string) => html`<li class="md-typescale-body-large">${unsafeHTML(content)}</li>`)}
         </ul>
       `,
       () => html`
-        <p slot="popover-content" class="md-typescale-body-large">${tech.popoverContent}</p>
+        <p slot="dialog-content" class="md-typescale-body-large">${unsafeHTML(tech.popoverContent as string)}</p>
       `
     );
 
-    const popoverId = `${tagId}-popover`;
-
-    const tagEl = html`
-      <word-tag
-        id="${tagId}"
-        .hrefUrl=${tech.url}
-        .word=${tech.name}
-        .variant=${variant}
-        @click=${() => {
-          if (tech.url) {
-            const popover = this.shadowRoot?.getElementById(popoverId) as any;
-            // Prevent reopening if it was just light-dismissed by this exact click
-            if (popover && (Date.now() - (popover.lastClosedAt || 0) > 100)) {
-              popover.showPopover();
-            }
-          }
-        }}
-      >
-        ${imgTag}
-      </word-tag>
-    `;
-
-    const popoverEl = tech.url
-      ? html`
-          <word-popover
-            id="${popoverId}"
-            popover="auto"
-            .word=${tech.name}
-            .footerURL=${{ text: tech.name, url: tech.url }}
-            @hide-popover=${() => (this.shadowRoot?.getElementById(popoverId) as any)?.hidePopover()}
-          >
-            ${imgSrc ? html`
-              <img
-                slot="header-icon"
-                loading="lazy"
-                role="img"
-                aria-describedby="${popoverId}"
-                src="${imgSrc}"
-                alt="${tech.name}"
-                title="${tech.name}"
-              />
-            ` : nothing}
-            ${popoverContent}
-          </word-popover>
-        `
-      : nothing;
+    const imgTag = when(
+      imgSrc,
+      () => html`
+        <img
+          slot="header-icon"
+          loading="lazy"
+          role="img"
+          aria-describedby="${popoverId}"
+          src="${imgSrc}"
+          alt="${tech.name}"
+          title="${tech.name}"
+          width="250"
+        />
+      `,
+      () => html`${nothing}`
+    );
 
     return html`
-      <li>
-        ${tagEl}
-        ${popoverEl}
-      </li>
+      <word-dialog
+        id="${popoverId}"
+        .word=${tech.name}
+        .footerURL=${{ text: tech.name, url: tech.url }}
+        @hide-dialog=${() => (this._wordPopovers[wordIndex] as WordDialog)?.close()}
+      >
+        ${imgTag}
+        ${popoverContent}
+      </word-dialog>
     `;
   }
 
@@ -135,7 +145,7 @@ export class CodeRepo extends UIAwareElement {
     return html`
       <article
         class="dynamic-border-host"
-        style="${borderStyle.cssText}"
+        style=${borderStyle.cssText}
       >
         <header>
           <h3 class="md-typescale-headline-small">${this.codeRepo.name}</h3>
@@ -157,10 +167,12 @@ export class CodeRepo extends UIAwareElement {
 
         <footer aria-label="Technologies used">
           <ul>
-            ${this.codeRepo.tech.map((tech) => this.createWordTagLI(tech))}
+            ${this.codeRepo.tech.map((tech, index) => this.createWordTagLI(tech, index))}
           </ul>
         </footer>
       </article>
+
+      ${this.codeRepo.tech.map((tech, index) => this.createWordPopover(tech, index))}
     `;
   }
 }
