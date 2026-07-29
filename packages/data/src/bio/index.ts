@@ -42,7 +42,7 @@ export const Biography: BioExtended = {
       title: "Let's Build What's Next",
       content: {
         content: `
-          I am seeking an organization where I can translate technical strategy into lasting product and business value. I am open to Software Engineer/Architect roles at the Staff/Principal level and technical-leadership opportunities where mobile platforms, engineering excellence, and organizational scale matter. If you are seeking a leader who can establish a modern technical foundation while helping teams do their best work, I would welcome a conversation. Please connect with me here or through my website. Together, we can deliver exceptional software experiences that delight users and drive measurable growth. I bring passion, precision, and proven execution to every challenge.
+          I am seeking an organization where I can translate technical strategy into lasting product and business value. I am open to Software Engineer/Architect roles at the Staff/Principal level and technical-leadership opportunities where mobile platforms, engineering excellence, and organizational scale matter. If you are seeking a leader who can establish a modern technical foundation while helping teams do their best work, I would welcome a conversation. Together, we can deliver exceptional software experiences that delight users and drive measurable growth. I bring passion, precision, and proven execution to every challenge.
         `,
       }
     }
