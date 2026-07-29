@@ -130,6 +130,17 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   /**
+   * Target slotted <pre> elements inside word-popover components
+   * so they correctly inherit inline-block layout styling.
+   */
+  word-popover {
+    p pre,
+    ul li pre {
+      display: inline-block;
+    }
+  }
+
+  /**
    * Tablet Scenario: Screen 769px - 1200px.
    * Widget is 1/2 width (3 out of 6 columns).
    * Container width range: ~385px to 600px.

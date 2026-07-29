@@ -8,3 +8,5 @@ export * from "@/lib/design-tokens";
 export * from "@/lib/education";
 export * from "@/lib/experience";
 export * from "@/lib/theme";
+export * from "@/lib/word/cloud";
+export * from "@/lib/word/tag";

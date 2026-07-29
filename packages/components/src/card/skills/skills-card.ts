@@ -2,8 +2,8 @@ import "@/lib/card/bento/bento-card";
 import { SkillsCardStyles } from "@/lib/card/skills/skills-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import "@/lib/word/cloud/word-cloud";
-import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@/lib/word/cloud/word-cloud.types";
 import { Skills } from "@fnc314/packages.data";
+import { type Weights, type WordCloudWordCategory, makeWordCloudWord } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

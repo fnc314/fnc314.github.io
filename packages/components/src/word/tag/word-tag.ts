@@ -6,7 +6,7 @@ import {
     type WordTagVariant,
     WordTagVariantAttributeConverter,
     WordTagVariants,
-} from "@/lib/word/tag/word-tag.types";
+} from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";

@@ -110,7 +110,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-pnpm-dark-icon-svg",
           light: "--icons-logos-tech-pnpm-light-icon-svg",
         },
-        popoverContent: "Alternative `Node` package manager",
+        popoverContent: "Alternative <pre>Node</pre> package manager",
       },
       {
         name: "Vite",
@@ -146,7 +146,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-style-dictionary-dark-icon-svg",
           light: "--icons-logos-tech-style-dictionary-light-icon-svg",
         },
-        popoverContent: "NPM Package for generating design tokens from `json` files",
+        popoverContent: "NPM Package for generating design tokens from <pre>json</pre> files",
       },
       {
         name: "Material Components",
@@ -201,7 +201,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-prettier-dark-icon-svg",
           light: "--icons-logos-tech-prettier-light-icon-svg",
         },
-        popoverContent: "Formatting library for Node",
+        popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "ESLint",
@@ -210,7 +210,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-eslint-dark-icon-svg",
           light: "--icons-logos-tech-eslint-light-icon-svg",
         },
-        popoverContent: "Linting library for Node",
+        popoverContent: "Linting library for <pre>Node</pre>",
       },
       {
         name: "Typescript-ESLint",
@@ -219,7 +219,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-typescript-eslint-dark-icon-svg",
           light: "--icons-logos-tech-typescript-eslint-light-icon-svg",
         },
-        popoverContent: "TypeScript Linting library for Node",
+        popoverContent: "TypeScript linting library for <pre>Node</pre>",
       },
       {
         name: "StyleLint",
@@ -228,7 +228,7 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-stylelint-dark-icon-svg",
           light: "--icons-logos-tech-stylelint-light-icon-svg",
         },
-        popoverContent: "Formatting library for Node",
+        popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "PostCSS",
@@ -237,12 +237,12 @@ export const Projects: CodeRepoData[] = [
           dark: "--icons-logos-tech-postcss-dark-icon-svg",
           light: "--icons-logos-tech-postcss-light-icon-svg",
         },
-        popoverContent: "CSS processing library for Node",
+        popoverContent: "CSS processing library for <pre>Node</pre>",
       },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",
-    description: 'Portfolio page found at <a href="https://fnc314.com/" target="_blank">fnc314.com</a> (this site)',
+    description: `Portfolio page found at <a href="https://fnc314.com/" target="_blank">fnc314.com</a> (this site)`,
   },
   {
     name: "material-theme-viewer",
@@ -313,6 +313,6 @@ export const Projects: CodeRepoData[] = [
     ],
     url: "https://github.com/fnc314/project_euler",
     repo: "fnc314/project_euler",
-    description: 'Solutions to various <a href="https://projecteuler.net/" target="_blank">Project Euler</a> problems',
+    description: `Solutions to various <a href="https://projecteuler.net/" target="_blank">Project Euler</a> problems`,
   },
 ];

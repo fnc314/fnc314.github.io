@@ -2,15 +2,15 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordCloudStyles } from "@/lib/word/cloud/word-cloud.styles";
 import {
-  type RenderableWordCloudWord,
-  type WordCloudAppearance,
-  WordCloudAppearances,
-  type WordCloudGrouping,
-  WordCloudGroupings,
-  type WordCloudSorting,
-  WordCloudSortings,
-  type WordCloudWord,
-} from "@/lib/word/cloud/word-cloud.types";
+    type RenderableWordCloudWord,
+    type WordCloudAppearance,
+    WordCloudAppearances,
+    type WordCloudGrouping,
+    WordCloudGroupings,
+    type WordCloudSorting,
+    WordCloudSortings,
+    type WordCloudWord,
+} from "@fnc314/packages.types";
 import { type PropertyValues, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";

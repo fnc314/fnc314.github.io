@@ -1,7 +1,7 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { WordDialog } from "@/lib/word/dialog/word-dialog";
+import { WordPopover } from "@/lib/word/popover/word-popover";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
@@ -69,9 +69,8 @@ export class CodeRepo extends UIAwareElement {
           .variant=${variant}
           @click=${() => {
             if (tech.url) {
-              // Prevent reopening if it was just light-dismissed by this exact click
-              const popover = this._wordPopovers[wordIndex] as WordDialog;
-              if (popover && (Date.now() - (popover.lastClosedAt || 0) > 100)) {
+              const popover = this._wordPopovers[wordIndex] as WordPopover;
+              if (popover && (Date.now() - (popover.lastClosedAt || 0) > 150)) {
                 popover.showModal();
               }
             }
@@ -88,17 +87,31 @@ export class CodeRepo extends UIAwareElement {
 
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
-    const popoverId = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag-dialog`;
+    const popoverId = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-popover`;
 
     const popoverContent = when(
       Array.isArray(tech.popoverContent),
       () => html`
-        <ul slot="dialog-content">
-          ${map(tech.popoverContent, (content: string) => html`<li class="md-typescale-body-large">${unsafeHTML(content)}</li>`)}
+        <ul slot="popover-content">
+          ${
+            map(
+              tech.popoverContent,
+              (content: string) => html`
+                <li
+                  class="md-typescale-body-large">
+                  ${unsafeHTML(content)}
+                </li>
+              `
+            )
+          }
         </ul>
       `,
       () => html`
-        <p slot="dialog-content" class="md-typescale-body-large">${unsafeHTML(tech.popoverContent as string)}</p>
+        <p
+          slot="popover-content"
+          class="md-typescale-body-large">
+            ${unsafeHTML(tech.popoverContent as string)}
+        </p>
       `
     );
 
@@ -120,15 +133,15 @@ export class CodeRepo extends UIAwareElement {
     );
 
     return html`
-      <word-dialog
+      <word-popover
         id="${popoverId}"
         .word=${tech.name}
         .footerURL=${{ text: tech.name, url: tech.url }}
-        @hide-dialog=${() => (this._wordPopovers[wordIndex] as WordDialog)?.close()}
+        @hide-popover=${() => (this._wordPopovers[wordIndex] as WordPopover)?.close()}
       >
         ${imgTag}
         ${popoverContent}
-      </word-dialog>
+      </word-popover>
     `;
   }
 
