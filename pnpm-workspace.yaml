@@ -46,13 +46,13 @@ catalogs:
     "@skillit/typedoc": 2.0.1
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
-    "@types/node": 26.1.1
+    "@types/node": 26.1.2
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.65.0
     "@typescript-eslint/parser": 8.65.0
     "@typescript/typescript6": 6.0.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.4.8
+    "@vitejs/devtools": 0.4.9
     "@wc-toolkit/cem-inheritance": 1.2.2
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
