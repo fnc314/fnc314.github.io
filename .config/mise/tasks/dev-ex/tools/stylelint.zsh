@@ -10,7 +10,7 @@ set -euo pipefail
 
 typeset STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"
-typeset STYLELINT_CONFIG_FILE=".config/stylelint/stylelint.config.ts"
+typeset STYLELINT_CONFIG_FILE=".config/stylelint/stylelint.config.mjs"
 typeset STYLELINT_IGNORE_FILE=".config/stylelint/.stylelintignore"
 
 typeset -a STYLELINT_FLAGS
@@ -48,7 +48,7 @@ printf "%s\n\n" "${STYLELINT_FLAGS}"
 
 if [[ "${usage_config_inspector:=false}" == "true" ]]; then
   printf "Running stylelint-config-inspector\n\n"
-  pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.ts
+  pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.mjs
   exit 0
 else
   pnpm stylelint "packages/{components,data,design-tokens,services,types}/src/**/*.ts" "${STYLELINT_FLAGS[@]}"
