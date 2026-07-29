@@ -89,8 +89,8 @@ catalogs:
     globals: 17.8.0
     jiti: 2.7.0
     lit-analyzer: 2.0.3
-    node: runtime:26.5.0
-    postcss: 8.5.23
+    node: runtime:26.5.1
+    postcss: 8.5.24
     postcss-lit: 1.4.1
     prettier: 3.9.6
     prettier-plugin-toml: 2.0.6
@@ -210,7 +210,7 @@ minimumReleaseAgeExclude:
   - "@typescript/typescript-win32-arm64@7.0.2"
   - "@typescript/typescript-win32-x64@7.0.2"
   - typescript@7.0.2
-nodeVersion: "26.5.0"
+nodeVersion: "26.5.1"
 packageManagerStrictVersion: true
 packages:
   - "configs/@pwrs-cem"
@@ -253,4 +253,4 @@ saveWorkspaceProtocol: "rolling"
 scriptShell: "zsh"
 sharedWorkspaceLockfile: true
 updateNotifier: true
-useNodeVersion: "26.5.0"
+useNodeVersion: "26.5.1"

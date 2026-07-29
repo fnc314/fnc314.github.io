@@ -1,6 +1,6 @@
 [tools]
   firebase = "15.24.0"
-  node = "26.5.0"
+  node = "26.5.1"
   tombi = "1.1.5"
   usage = "4.0.0"
   pnpm = "11.17.0"

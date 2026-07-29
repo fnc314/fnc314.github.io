@@ -21,7 +21,7 @@
     "vite": "catalog:devDependencies"
   },
   "engines": {
-    "node": "26.5.0"
+    "node": "26.5.1"
   },
   "devEngines": {
     "packageManager": {
