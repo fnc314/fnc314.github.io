@@ -716,8 +716,8 @@
   },
   "shellcheck.logLevel": "trace",
   "shellcheck.run": "onSave",
-  "stylelint.configFile": "./.config/stylelint/stylelint.config.ts",
-  "stylelint.ignorePath": "./.config/stylelint/.stylelintignore",
+  "stylelint.configFile": "${workspaceFolder}/.config/stylelint/stylelint.config.mjs",
+  "stylelint.ignorePath": "${workspaceFolder}/.config/stylelint/.stylelintignore",
   "stylelint.packageManager": "pnpm",
   "stylelint.reportDescriptionlessDisables": true,
   "stylelint.reportInvalidScopeDisables": true,
@@ -725,11 +725,15 @@
   "stylelint.run": "onSave",
   "stylelint.snippet": [
     "css",
-    "postcss"
+    "postcss",
+    "ts",
+    "typescript",
   ],
   "stylelint.validate": [
     "css",
-    "postcss"
+    "postcss",
+    "ts",
+    "typescript",
   ],
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",

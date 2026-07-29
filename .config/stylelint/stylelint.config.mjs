@@ -1,6 +1,5 @@
-import { type Config } from "stylelint";
-
-const config: Config = {
+/** @type {import('stylelint').Config} */
+const config = {
   defaultSeverity: "warning",
   formatter: "verbose",
   ignoreFiles: [
@@ -68,4 +67,4 @@ const config: Config = {
   }
 };
 
-export default config satisfies Config;
+export default config;
