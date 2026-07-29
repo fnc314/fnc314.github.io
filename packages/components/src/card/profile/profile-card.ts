@@ -1,7 +1,7 @@
 import { ProfileCardStyles } from "@/lib/card/profile/profile-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { Biographies, Photos } from "@fnc314/packages.data";
+import { Biography, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import {
     APP_CONFIGS_CHANGE_EVENT_NAME,
@@ -26,7 +26,7 @@ export class ProfileCard extends UIAwareElement {
   photoData = Photos[configsService.loadConfigs().colorScheme.theme];
 
   @property({ type: Object })
-  aboutMe: BioExtended = Biographies.extended;
+  aboutMe: BioExtended = Biography;
 
   @property({ type: Boolean })
   expanded = true;
@@ -63,20 +63,20 @@ export class ProfileCard extends UIAwareElement {
         let sectionContent: TemplateResult = html`${nothing}`
         if ("listLeadingParagraph" in section.content) {
           sectionContent = html`
-            <p class="md-typescale-body-medium">${unsafeHTML(section.content.listLeadingParagraph)}</p>
+            <p class="md-typescale-body-large">${unsafeHTML(section.content.listLeadingParagraph)}</p>
             <ul class="about-me-list">
-              ${section.content.list.map((li) => html`<li class="md-typescale-body-medium">${unsafeHTML(li)}</li>`)}
+              ${section.content.list.map((li) => html`<li class="md-typescale-body-large">${unsafeHTML(li)}</li>`)}
             </ul>
           `;
         } else if ("list" in section.content) {
           sectionContent = html`
             <ul class="about-me-list">
-              ${section.content.list.map((li) => html`<li class="md-typescale-body-medium">${unsafeHTML(li)}</li>`)}
+              ${section.content.list.map((li) => html`<li class="md-typescale-body-large">${unsafeHTML(li)}</li>`)}
             </ul>
           `;
         } else {
           sectionContent = html`
-            <p class="md-typescale-body-medium">
+            <p class="md-typescale-body-large">
               ${unsafeHTML(section.content.content)}
             </p>
           `;
@@ -88,7 +88,7 @@ export class ProfileCard extends UIAwareElement {
           <section class="about-me-section" aria-label="${section.title}">
             <header>
               <h4
-                class="md-typescale-title-medium"
+                class="md-typescale-title-large"
                 id=${sectionHeaderId}
                 >
                 ${section.title}
@@ -104,11 +104,11 @@ export class ProfileCard extends UIAwareElement {
     return html`
       <article aria-label="About Me">
         <header>
-          <h3 class="md-typescale-title-large" id="about-me-heading">About Me</h3>
+          <h3 class="md-typescale-headline-small" id="about-me-heading">About Me</h3>
         </header>
 
         <section aria-label="Summary">
-          <p class="md-typescale-body-medium">${this.aboutMe.opener}</p>
+          <p class="md-typescale-body-large">${this.aboutMe.opener}</p>
         </section>
 
         ${sections}

@@ -84,12 +84,12 @@ export const BentoLayoutStyles = css`
       gap: var(--spaces-gap-m);
       padding: var(--spaces-padding-s);
       grid-template-areas:
-        "header header header header header header"
-        "profile profile connections connections connections connections"
-        "profile profile experience experience experience experience"
-        "code code code blog blog blog"
-        "skills skills skills skills education education"
-        "settings settings settings settings settings settings"
+        "header   header   header      header      header      header"
+        "profile   profile   connections connections connections connections"
+        "profile   profile   experience  experience  experience  experience"
+        "code     code     code        blog        blog        blog"
+        "skills   skills   skills      skills      education   education"
+        "settings settings settings    settings    settings    settings"
         ;
     }
   }
@@ -103,10 +103,10 @@ export const BentoLayoutStyles = css`
       gap: var(--spaces-gap-l);
       grid-template-areas:
         "header header header header header header header header header header header header"
-        "profile profile profile profile connections connections connections connections connections connections connections connections"
-        "profile profile profile profile experience experience experience experience experience experience experience experience"
-        "code code code code code code blog blog blog blog blog blog"
-        "skills skills skills skills skills skills skills skills education education education education"
+        "profile   profile   profile   profile connections connections connections connections connections connections connections connections"
+        "profile   profile   profile   profile experience  experience  experience  experience  experience  experience  experience  experience"
+        "code     code     code     code   code        code        blog        blog        blog        blog        blog        blog"
+        "skills   skills   skills   skills skills      skills      skills      skills      education   education   education   education"
         "settings settings settings settings settings settings settings settings settings settings settings settings"
         ;
       margin: var(--spaces-none) auto;

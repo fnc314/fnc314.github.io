@@ -50,11 +50,13 @@ export const ProfileCardStyles: CSSResult = css`
       h3, h4 {
         margin-block: unset;
         font-family: var(--md-ref-typeface-brand);
+        font-variant: small-caps;
       }
 
       section[aria-label="Summary"],
       section.about-me-section {
         p {
+          margin-block: var(--spaces-margin-xs);
           text-indent: 1rem;
         }
 
@@ -62,6 +64,9 @@ export const ProfileCardStyles: CSSResult = css`
         ul.about-me-list {
           padding: unset;
           padding-inline-start: var(--spaces-padding-s);
+          display: flex;
+          flex-direction: column;
+          gap: var(--spaces-gap-xs);
         }
       }
 
