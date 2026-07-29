@@ -44,36 +44,45 @@ export const ProfileCardStyles: CSSResult = css`
           align-self: stretch;
         }
       }
-
-      p.accented {
-        padding-block: var(--spaces-padding-m);
-        padding-inline: var(--spaces-padding-xs);
-        margin: var(--spaces-none);
-        white-space: pre-wrap;
-        text-indent: 1rem each-line;
-
-        &::first-line {
-          font-size: var(--md-sys-typescale-headline-medium-size);
-          line-height: var(--md-sys-typescale-headline-medium-line-height);
-          font-family: var(--md-ref-typeface-brand);
-          font-variant: small-caps;
-        }
-
-        &::first-letter {
-          background-color: var(--md-sys-color-on-secondary-fixed);
-          border: var(--md-sys-color-secondary-fixed) solid var(--sizes-thickness-hairline);
-          border-radius: var(--md-sys-shape-corner-small);
-          color: var(--md-sys-color-secondary-fixed);
-          line-height: var(--md-sys-typescale-headline-large-line-height);
-          font-size: var(--md-sys-typescale-headline-large-size);
-          font-weight: var(--md-ref-typeface-weight-bold);
-        }
-      }
     }
 
     article {
       h3, h4 {
         margin-block: unset;
+      }
+
+      section[aria-label="Summary"],
+      section.about-me-section {
+        p {
+          text-indent: 1rem;
+        }
+
+        ol.about-me-list,
+        ul.about-me-list {
+          padding: unset;
+          padding-inline-start: var(--spaces-padding-s);
+        }
+      }
+
+      section[aria-label="Summary"] {
+        p {
+          &::first-line {
+            font-size: var(--md-sys-typescale-headline-medium-size);
+            line-height: var(--md-sys-typescale-headline-medium-line-height);
+            font-family: var(--md-ref-typeface-brand);
+            font-variant: small-caps;
+          }
+
+          &::first-letter {
+            background-color: var(--md-sys-color-on-secondary-fixed);
+            border: var(--md-sys-color-secondary-fixed) solid var(--sizes-thickness-hairline);
+            border-radius: var(--md-sys-shape-corner-small);
+            color: var(--md-sys-color-secondary-fixed);
+            line-height: var(--md-sys-typescale-headline-large-line-height);
+            font-size: var(--md-sys-typescale-headline-large-size);
+            font-weight: var(--md-ref-typeface-weight-bold);
+          }
+        }
       }
     }
   }

@@ -1,15 +1,21 @@
 import { type CSSResult, css } from "lit";
 
+/**
+ * The {@link CSSResult} for {@link @fnc314/packages.components!WordDialog}
+ *
+ * @type {CSSResult}
+ */
 export const WordDialogStyles: CSSResult = css`
   :host {
     --md-icon-size: 2.5rem;
     --internal-word-dialog-icon-width: 25dvw;
   }
 
-  /* Full-viewport transparent container when open */
-  /* Apply layout to the base dialog so it persists during exit animations */
-  /* Let native dialog center itself natively in the Top Layer */
+  /* Full-viewport flex container layout */
   dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     inset: 0;
     width: auto;
@@ -21,18 +27,13 @@ export const WordDialogStyles: CSSResult = css`
     padding: 0;
     margin: auto;
     overscroll-behavior: contain;
-    align-items: center;
-    justify-content: center;
-
-    &[open] {
-      display: flex;
-    }
   }
 
-  /* Scrim covers the absolute viewport behind the content card */
-  .scrim {
-    position: fixed;
-    inset: 0;
+  /* Forcefully override browser default UA black backdrop */
+  dialog::backdrop {
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
   }
 
   /* Card layout */
@@ -86,6 +87,12 @@ export const WordDialogStyles: CSSResult = css`
 
     section {
       text-align: center;
+
+      slot[name="dialog-content"] {
+        pre {
+          display: inline-block;
+        }
+      }
     }
 
     footer {
@@ -93,10 +100,6 @@ export const WordDialogStyles: CSSResult = css`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      a {
-
-      }
     }
   }
 `;

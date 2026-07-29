@@ -8,8 +8,9 @@ import {
     BENTO_BOX_TYPES,
     type BioExtended
 } from "@fnc314/packages.types";
-import { type TemplateResult, html } from "lit";
+import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * @summary A responsive card component that displays a profile photo and biography.
@@ -56,26 +57,50 @@ export class ProfileCard extends UIAwareElement {
   private renderAboutMe(): TemplateResult {
     const sections = this.aboutMe.sections
       .filter((section) =>
-        section.title.trim().length > 0 &&
-        section.content.trim().length > 0
+        section.title.trim().length > 0
       )
-      .map((section) => html`
-        <section aria-label="${section.title}">
-          <header>
-            <h4
-              class="md-typescale-title-medium"
-              id="about-me-section-header"
-              >
-              ${section.title}
-            </h4>
-          </header>
-          <section>
+      .map((section) => {
+        let sectionContent: TemplateResult = html`${nothing}`
+        if ("listLeadingParagraph" in section.content) {
+          sectionContent = html`
+            <p class="md-typescale-body-medium">${unsafeHTML(section.content.listLeadingParagraph)}</p>
+            <ul class="about-me-list">
+              ${section.content.list.map((li) => html`<li class="md-typescale-body-medium">${unsafeHTML(li)}</li>`)}
+            </ul>
+          `;
+        } else if ("list" in section.content) {
+          sectionContent = html`
+            <ul class="about-me-list">
+              ${section.content.list.map((li) => html`<li class="md-typescale-body-medium">${unsafeHTML(li)}</li>`)}
+            </ul>
+          `;
+        } else {
+          sectionContent = html`
             <p class="md-typescale-body-medium">
-              ${section.content}
+              ${unsafeHTML(section.content.content)}
             </p>
+          `;
+        }
+
+        const sectionHeaderId = section.title.replaceAll(" ", "-").toLowerCase();
+
+        return html`
+          <section class="about-me-section" aria-label="${section.title}">
+            <header>
+              <h4
+                class="md-typescale-title-medium"
+                id=${sectionHeaderId}
+                >
+                ${section.title}
+              </h4>
+            </header>
+            <section>
+              ${sectionContent}
+            </section>
           </section>
-        </section>
-      `);
+        `;
+      });
+
     return html`
       <article aria-label="About Me">
         <header>

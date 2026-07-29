@@ -16,6 +16,7 @@ import { customElement, property, query } from "lit/decorators.js";
  */
 @customElement("word-dialog")
 export class WordDialog extends UIAwareElement {
+  /** {@link @lit/reactive-element!css} */
   static override styles = [
     TextStyles,
     WordDialogStyles,
@@ -34,7 +35,13 @@ export class WordDialog extends UIAwareElement {
   @query("dialog")
   dialog!: HTMLDialogElement;
 
+  @query("md-icon-button")
+  closeButton!: HTMLElement;
+
   private _previousBodyOverflow: string = '';
+  private _previousBodyPosition: string = '';
+  private _previousBodyTop: string = '';
+  private _previousBodyWidth: string = '';
   public lastClosedAt = 0;
   private currentScrollY: number = 0;
 
@@ -44,17 +51,30 @@ export class WordDialog extends UIAwareElement {
 
   public showModal() {
     this._previousBodyOverflow = document.body.style.overflow;
-    this.currentScrollY = window.scrollY; // Capture current position
+    this._previousBodyPosition = document.body.style.position;
+    this._previousBodyTop = document.body.style.top;
+    this._previousBodyWidth = document.body.style.width;
+    this.currentScrollY = window.scrollY;
 
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${this.currentScrollY}px`;
+    document.body.style.width = "100%";
     document.body.style.overflow = "hidden";
+
     this.dialog?.showModal();
+
+    if (this.closeButton && typeof this.closeButton.focus === "function") {
+      this.closeButton.focus({ preventScroll: true });
+    }
   }
 
   private _handleClosed() {
-    // Immediately lock the window scroll back to where the user was
-    window.scrollTo(0, this.currentScrollY);
-    // Restore original overflow
+    document.body.style.position = this._previousBodyPosition;
+    document.body.style.top = this._previousBodyTop;
+    document.body.style.width = this._previousBodyWidth;
     document.body.style.overflow = this._previousBodyOverflow;
+    window.scrollTo(0, this.currentScrollY);
+
     this.lastClosedAt = Date.now();
     this.dispatchEvent(
       new CustomEvent(
@@ -66,7 +86,7 @@ export class WordDialog extends UIAwareElement {
 
   /**
    * Close the dialog when clicking outside the `.content` card
-   * (i.e., on the scrim or the transparent dialog surface).
+   * (i.e., on the transparent dialog surface).
    */
   private _handleDialogClick(e: MouseEvent) {
     const target = e.target as HTMLElement;
@@ -82,13 +102,11 @@ export class WordDialog extends UIAwareElement {
         @click=${this._handleDialogClick}
         aria-label="Information about ${this.word}"
       >
-        <div class="scrim"></div>
         <article class="content">
           <md-icon-button
-            autofocus
             aria-label="Close dialog for ${this.word}"
             @click=${() => this.close()}
-            >
+          >
             <md-icon>close</md-icon>
           </md-icon-button>
           <header>
@@ -109,7 +127,7 @@ export class WordDialog extends UIAwareElement {
               href="${this.footerURL.url}"
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
               ${this.word}
             </a>
           </footer>
