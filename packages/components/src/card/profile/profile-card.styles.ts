@@ -49,6 +49,7 @@ export const ProfileCardStyles: CSSResult = css`
     article {
       h3, h4 {
         margin-block: unset;
+        font-family: var(--md-ref-typeface-brand);
       }
 
       section[aria-label="Summary"],
