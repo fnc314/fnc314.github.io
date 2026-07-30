@@ -8,7 +8,7 @@ import { type CSSResult, css } from "lit";
 export const CodeRevealStyles: CSSResult = css`
   :host {
     --md-icon-button-icon-size: var(--md-icon-size);
-    --md-icon-button-icon-color: var(--md-sys-color-on-secondary-container);
+    --md-icon-button-icon-color: var(--md-sys-color-on-tertiary-container);
 
     display: block;
     width: 100%;
@@ -67,9 +67,9 @@ export const CodeRevealStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-secondary-container);
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-tertiary-container);
     border-radius: var(--bento-layout-card-shape);
     padding-inline: var(--spaces-padding-l);
     gap: var(--spaces-gap-m);
@@ -112,7 +112,7 @@ export const CodeRevealStyles: CSSResult = css`
 
       h3 {
         margin: 0;
-        color: var(--md-sys-color-on-secondary-container);
+        color: var(--md-sys-color-on-tertiary-container);
       }
     }
 
@@ -121,7 +121,7 @@ export const CodeRevealStyles: CSSResult = css`
 
       p, ul {
         margin: 0;
-        color: var(--md-sys-color-on-secondary-container);
+        color: var(--md-sys-color-on-tertiary-container);
       }
 
       ul {
