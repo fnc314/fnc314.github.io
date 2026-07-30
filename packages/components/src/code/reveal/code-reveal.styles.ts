@@ -7,6 +7,8 @@ import { type CSSResult, css } from "lit";
  */
 export const CodeRevealStyles: CSSResult = css`
   :host {
+    --md-icon-button-icon-size: var(--md-icon-size);
+
     display: block;
     width: 100%;
   }
@@ -64,9 +66,9 @@ export const CodeRevealStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--md-sys-color-surface-container-high, var(--md-sys-color-surface));
-    color: var(--md-sys-color-on-surface);
-    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-secondary-container);
     border-radius: var(--bento-layout-card-shape);
     padding-inline: var(--spaces-padding-l);
     gap: var(--spaces-gap-m);
@@ -102,7 +104,6 @@ export const CodeRevealStyles: CSSResult = css`
         max-width: 20dvw;
 
         &::slotted(img) {
-          aspect-ratio: 1;
           max-inline-size: 20dvw;
           border-radius: var(--md-sys-shape-corner-medium);
         }
