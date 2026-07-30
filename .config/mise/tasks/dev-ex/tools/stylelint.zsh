@@ -12,11 +12,13 @@ typeset STYLELINT_LOG_DIR
 STYLELINT_LOG_DIR="./logs/stylelint/$(date +%Y%m%d)"
 typeset STYLELINT_CONFIG_FILE=".config/stylelint/stylelint.config.mjs"
 typeset STYLELINT_IGNORE_FILE=".config/stylelint/.stylelintignore"
+typeset STYLELINT_CACHE_LOCATION=".cache/stylelint"
 
 typeset -a STYLELINT_FLAGS
 STYLELINT_FLAGS=(
   -c "$STYLELINT_CONFIG_FILE"
   --ignore-path "$STYLELINT_IGNORE_FILE"
+  --cache-location "$STYLELINT_CACHE_LOCATION"
 )
 
 if [[ "${usage_log:=false}" == "true" ]]; then
@@ -48,8 +50,8 @@ printf "%s\n\n" "${STYLELINT_FLAGS}"
 
 if [[ "${usage_config_inspector:=false}" == "true" ]]; then
   printf "Running stylelint-config-inspector\n\n"
-  pnpm stylelint-config-inspector --config ./config/stylelint/stylelint.config.mjs
+  pnpm stylelint-config-inspector --config ./.config/stylelint/stylelint.config.mjs
   exit 0
 else
-  pnpm stylelint "packages/{components,data,design-tokens,services,types}/src/**/*.ts" "${STYLELINT_FLAGS[@]}"
+  pnpm stylelint "packages/components/src/**/*.styles.ts" "${STYLELINT_FLAGS[@]}"
 fi

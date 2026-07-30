@@ -20,6 +20,7 @@ export { SkillsCard } from "@/lib/card/skills/skills-card";
 export { SkillsCardStyles } from "@/lib/card/skills/skills-card.styles";
 export { CodeRepo } from "@/lib/code/repo/code-repo";
 export { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
+export { CodeReveal } from "@/lib/code/reveal/code-reveal";
 export { ArtifactConnection } from "@/lib/connection/artifact/artifact-connection";
 export { ConnectionArtifactStyles } from "@/lib/connection/artifact/artifact-connection.styles";
 export { DirectConnection } from "@/lib/connection/direct/direct-connection";
@@ -28,8 +29,7 @@ export { ProfessionalConnection } from "@/lib/connection/professional/profession
 export { ProfessionalConnectionStyles } from "@/lib/connection/professional/professional-connection.styles";
 export { EducationInstitution } from "@/lib/education/institution/education-institution";
 export { EducationInstitutionStyles } from "@/lib/education/institution/education-institution.styles";
-export { SizeObserverElement } from "@/lib/mixins/size-observer-element/size-observer-element";
-export type { Constructor } from "@/lib/mixins/size-observer-element/size-observer-element";
+export { type Constructor, SizeObserverElement } from "@/lib/mixins/size-observer-element/size-observer-element";
 export { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 export { BlogEntry } from "@/lib/publication/blog/entry/blog-entry";
 export { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";

@@ -1,4 +1,5 @@
 !.idea/web-types.json
+.cache
 .DS_Store
 .firebase
 .idea/*

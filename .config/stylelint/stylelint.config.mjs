@@ -30,7 +30,7 @@ const config = {
   },
   overrides: [
     {
-      files: ["packages/{components,data,design-tokens,services,types}/src/**/*.ts"],
+      files: ["packages/components/src/**/*.styles.ts"],
       customSyntax: "postcss-lit",
     },
   ],
@@ -43,7 +43,7 @@ const config = {
     "stylelint-no-unresolved-module",
   ],
   rules: {
-    "order/properties-alphabetical-order": true,
+	  "order/properties-alphabetical-order": true,
     "order/custom-properties-alphabetical-order": true,
     "import-notation": "string",
     "scale-unlimited/declaration-strict-value": [
