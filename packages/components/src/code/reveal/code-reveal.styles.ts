@@ -80,6 +80,7 @@ export const CodeRevealStyles: CSSResult = css`
       flex-direction: column;
       align-items: center;
       gap: var(--spaces-gap-s);
+      text-align: center;
 
       slot[name="header-icon"] {
         display: flex;
