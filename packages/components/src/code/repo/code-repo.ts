@@ -1,11 +1,11 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
+import "@/lib/code/reveal/code-reveal"; // Register code-repo-reveal
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { WordPopover } from "@/lib/word/popover/word-popover";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
-import { customElement, property, queryAll } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { when } from "lit/directives/when.js";
@@ -26,32 +26,31 @@ export class CodeRepo extends UIAwareElement {
   @property({ type: Object })
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
+  /** Index of currently active inline reveal, or null if none */
+  @state()
+  private activeRevealIndex: number | null = null;
+
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, CodeRepoStyles];
-
-  /** All of the `<word-popover>` instances in this {@link CodeRepo} */
-  @queryAll("word-popover")
-  private _wordPopovers!: NodeList
 
   private createWordTagLI(tech: CodeRepoTech, wordIndex: number): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
-
     const tagId: string = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag`;
 
-    const imgTag = imgSrc
-      ? html`
-          <img
-            loading="lazy"
-            role="img"
-            aria-describedby="${tagId}"
-            src="${imgSrc}"
-            alt="${tech.name}"
-            slot="icon"
-            title="${tech.name}"
-          />
-        `
-      : nothing;
+    const imgTag = imgSrc ?
+      html`
+        <img
+          loading="lazy"
+          role="img"
+          aria-describedby="${tagId}"
+          src="${imgSrc}"
+          alt="${tech.name}"
+          slot="icon"
+          title="${tech.name}"
+        />
+      ` :
+      nothing;
 
     const variant =
       imgTag === nothing
@@ -69,10 +68,8 @@ export class CodeRepo extends UIAwareElement {
           .variant=${variant}
           @click=${() => {
             if (tech.url) {
-              const popover = this._wordPopovers[wordIndex] as WordPopover;
-              if (popover && (Date.now() - (popover.lastClosedAt || 0) > 150)) {
-                popover.showModal();
-              }
+              // Toggle or switch active inline reveal
+              this.activeRevealIndex = this.activeRevealIndex === wordIndex ? null : wordIndex;
             }
           }}
         >
@@ -82,35 +79,29 @@ export class CodeRepo extends UIAwareElement {
     `;
   }
 
-  private createWordPopover(tech: CodeRepoTech, wordIndex: number): TemplateResult {
+  private createRevealPanel(tech: CodeRepoTech): TemplateResult {
     if (!tech.url) return html`${nothing}`;
 
-    const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
-    const popoverId = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-popover`;
+    const revealId = `${this.whichDesignToken(tech.designToken)}-reveal`;
 
-    const popoverContent = when(
+    const revealContent = when(
       Array.isArray(tech.popoverContent),
       () => html`
-        <ul slot="popover-content">
-          ${
-            map(
-              tech.popoverContent,
-              (content: string) => html`
-                <li
-                  class="md-typescale-body-large">
-                  ${unsafeHTML(content)}
-                </li>
-              `
-            )
-          }
+        <ul slot="reveal-content">
+          ${map(
+            tech.popoverContent,
+            (content: string) => html`
+              <li class="md-typescale-body-large">
+                ${unsafeHTML(content)}
+              </li>
+            `
+          )}
         </ul>
       `,
       () => html`
-        <p
-          slot="popover-content"
-          class="md-typescale-body-large">
-            ${unsafeHTML(tech.popoverContent as string)}
+        <p slot="reveal-content" class="md-typescale-body-large">
+          ${unsafeHTML(tech.popoverContent as string)}
         </p>
       `
     );
@@ -122,26 +113,26 @@ export class CodeRepo extends UIAwareElement {
           slot="header-icon"
           loading="lazy"
           role="img"
-          aria-describedby="${popoverId}"
+          aria-describedby="${revealId}"
           src="${imgSrc}"
           alt="${tech.name}"
           title="${tech.name}"
-          width="250"
+          width="200"
         />
       `,
       () => html`${nothing}`
     );
 
     return html`
-      <word-popover
-        id="${popoverId}"
+      <code-reveal
+        id="${revealId}"
         .word=${tech.name}
         .footerURL=${{ text: tech.name, url: tech.url }}
-        @hide-popover=${() => (this._wordPopovers[wordIndex] as WordPopover)?.close()}
+        @hide-reveal=${() => (this.activeRevealIndex = null)}
       >
         ${imgTag}
-        ${popoverContent}
-      </word-popover>
+        ${revealContent}
+      </code-reveal>
     `;
   }
 
@@ -151,10 +142,10 @@ export class CodeRepo extends UIAwareElement {
       : "--icons-logos-organization-github-light-icon-svg";
 
     const tokenSvg = readCSSProperty(token);
-
     const borderStyle = unsafeCSS(`
       --dynamic-border-background-image: url('${tokenSvg}');
     `);
+
     return html`
       <article
         class="dynamic-border-host"
@@ -178,14 +169,20 @@ export class CodeRepo extends UIAwareElement {
           <p .innerHTML="${this.codeRepo.description}"></p>
         </section>
 
+        ${
+          when(
+            this.activeRevealIndex !== null && this.codeRepo.tech[this.activeRevealIndex],
+            () => this.createRevealPanel(this.codeRepo.tech[this.activeRevealIndex!]),
+            () => html`${nothing}`
+          )
+        }
+
         <footer aria-label="Technologies used">
           <ul>
             ${this.codeRepo.tech.map((tech, index) => this.createWordTagLI(tech, index))}
           </ul>
         </footer>
       </article>
-
-      ${this.codeRepo.tech.map((tech, index) => this.createWordPopover(tech, index))}
     `;
   }
 }

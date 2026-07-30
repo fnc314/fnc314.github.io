@@ -39,6 +39,7 @@ export const CodeRepoStyles: CSSResult = css`
       "header"
       "divider"
       "description"
+      "reveal"
       "tech";
     grid-template-columns: 1fr;
     justify-content: flex-start;
@@ -130,10 +131,12 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   /**
-   * Target slotted <pre> elements inside word-popover components
+   * Target slotted <pre> elements inside <code-reveal> components
    * so they correctly inherit inline-block layout styling.
    */
-  word-popover {
+  code-reveal {
+    grid-area: reveal;
+
     p pre,
     ul li pre {
       display: inline-block;
@@ -174,10 +177,10 @@ export const CodeRepoStyles: CSSResult = css`
       gap: var(--spaces-gap-l);
       grid-template-areas:
         "header description"
+        "reveal reveal"
         "tech tech";
       grid-template-columns: 1fr 1.5fr;
       grid-template-rows: auto 1fr;
-      padding-block: var(--spaces-padding-xs);
       padding-inline-end: unset;
       padding-inline-start: var(--spaces-padding-xl);
 
