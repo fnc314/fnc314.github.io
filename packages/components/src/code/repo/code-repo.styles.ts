@@ -26,22 +26,19 @@ export const CodeRepoStyles: CSSResult = css`
     min-inline-size: 0;
   }
 
+  /* 3D Perspective container for the folding panel effect */
   article {
     --dynamic-border-size: var(--sizes-width-l);
     container-type: inline-size;
+    perspective: 1400px;
+    transform-style: preserve-3d;
     background-color: var(--md-sys-color-surface);
     block-size: 100%;
     border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-sys-shape-corner-medium);
+    border-radius: var(--bento-layout-card-shape);
     box-sizing: border-box;
-    display: grid;
-    grid-template-areas:
-      "header"
-      "divider"
-      "description"
-      "reveal"
-      "tech";
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     min-inline-size: 0;
     overflow: hidden;
@@ -49,11 +46,37 @@ export const CodeRepoStyles: CSSResult = css`
     padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs);
   }
 
+  .fold-top,
+  .fold-bottom {
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) translateY(0px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: var(--md-sys-color-surface);
+    will-change: transform;
+  }
+
+  .fold-top {
+    transform-origin: bottom center;
+  }
+
+  .fold-bottom {
+    transform-origin: top center;
+  }
+
+  /* Split and tilt fold sections synchronously when folded */
+  article.is-folded {
+    .fold-top {
+      transform: translateY(-10px) rotateX(12deg);
+    }
+    .fold-bottom {
+      transform: translateY(10px) rotateX(-12deg);
+    }
+  }
+
   header {
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-xs);
-    grid-area: header;
     justify-content: space-between;
     margin-block: var(--spaces-margin-xs);
     min-inline-size: 0;
@@ -84,12 +107,10 @@ export const CodeRepoStyles: CSSResult = css`
   }
 
   md-divider {
-    grid-area: divider;
     margin-block: var(--spaces-none) var(--spaces-margin-m);
   }
 
-  section {
-    grid-area: description;
+  section.synopsis {
     min-inline-size: 0;
 
     p {
@@ -110,7 +131,6 @@ export const CodeRepoStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
-    grid-area: tech;
     margin-block-start: auto;
 
     ul {
@@ -130,24 +150,12 @@ export const CodeRepoStyles: CSSResult = css`
     }
   }
 
-  /**
-   * Target slotted <pre> elements inside <code-reveal> components
-   * so they correctly inherit inline-block layout styling.
-   */
   code-reveal {
-    grid-area: reveal;
-
-    p pre,
-    ul li pre {
-      display: inline-block;
-    }
+    display: block;
+    width: 100%;
+    margin-block: var(--spaces-margin-s);
   }
 
-  /**
-   * Tablet Scenario: Screen 769px - 1200px.
-   * Widget is 1/2 width (3 out of 6 columns).
-   * Container width range: ~385px to 600px.
-   */
   @container (min-width: 385px) {
     article {
       gap: var(--spaces-gap-m);
@@ -158,7 +166,7 @@ export const CodeRepoStyles: CSSResult = css`
         margin-block: var(--spaces-none);
       }
 
-      section {
+      section.synopsis {
         p {
           margin-block-end: var(--spaces-margin-m);
         }
@@ -166,21 +174,10 @@ export const CodeRepoStyles: CSSResult = css`
     }
   }
 
-  /**
-   * Desktop Scenario: Screen 1201px+.
-   * Widget is full width (12 out of 12 columns).
-   * Container width range: 1201px+.
-   */
   @container (min-width: 1201px) {
     article {
-      align-items: start;
+      align-items: stretch;
       gap: var(--spaces-gap-l);
-      grid-template-areas:
-        "header description"
-        "reveal reveal"
-        "tech tech";
-      grid-template-columns: 1fr 1.5fr;
-      grid-template-rows: auto 1fr;
       padding-inline-end: unset;
       padding-inline-start: var(--spaces-padding-xl);
 

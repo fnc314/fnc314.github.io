@@ -9,18 +9,41 @@ export const CodeRevealStyles: CSSResult = css`
   :host {
     display: block;
     width: 100%;
-    margin-block-start: var(--spaces-margin-m);
-    animation: scale-in-ver-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
-  @keyframes scale-in-ver-center {
+  article.reveal-card {
+    animation: unfold-panel 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+    transform-origin: top center;
+  }
+
+  article.reveal-card.is-closing {
+    animation: fold-panel 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+    transform-origin: top center;
+  }
+
+  @keyframes unfold-panel {
     0% {
-      transform: scaleY(0);
+      transform: scaleY(0) rotateX(90deg);
       opacity: 0;
+      max-height: 0;
     }
     100% {
-      transform: scaleY(1);
+      transform: scaleY(1) rotateX(0deg);
       opacity: 1;
+      max-height: 800px;
+    }
+  }
+
+  @keyframes fold-panel {
+    0% {
+      transform: scaleY(1) rotateX(0deg);
+      opacity: 1;
+      max-height: 800px;
+    }
+    100% {
+      transform: scaleY(0) rotateX(90deg);
+      opacity: 0;
+      max-height: 0;
     }
   }
 
@@ -29,12 +52,13 @@ export const CodeRevealStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--md-sys-color-surface-container-low, var(--md-sys-color-surface));
+    background-color: var(--md-sys-color-surface-container-high, var(--md-sys-color-surface));
     color: var(--md-sys-color-on-surface);
-    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-outline-variant);
+    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-primary);
     border-radius: var(--bento-layout-card-shape);
     padding: var(--spaces-padding-l);
     gap: var(--spaces-gap-m);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 
     button.close-btn {
       position: absolute;

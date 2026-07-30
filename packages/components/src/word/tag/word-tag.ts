@@ -60,6 +60,21 @@ export class WordTag extends UIAwareElement {
   })
   variant: WordTagVariant = "text-only";
 
+  @property({ type: String, attribute: "aria-expanded" })
+  override ariaExpanded: string | null = null;
+
+  @property({ type: String, attribute: "aria-controls" })
+  ariaControls: string | null = null;
+
+  override focus(options?: FocusOptions) {
+    const focusable = this.shadowRoot?.querySelector("button, div");
+    if (focusable && focusable instanceof HTMLElement) {
+      focusable.focus(options);
+    } else {
+      super.focus(options);
+    }
+  }
+
   private buildWord(): TemplateResult {
     const fontWeight = this.heaviness === "normal" ?
       css`var(--md-ref-typeface-weight-regular)` :
@@ -91,6 +106,8 @@ export class WordTag extends UIAwareElement {
           aria-label="Click/Tap for more information on ${this.word}"
           title="Click/Tap for more information on ${this.word}"
           aria-haspopup="dialog"
+          aria-expanded=${this.ariaExpanded || nothing}
+          aria-controls=${this.ariaControls || nothing}
           >
           ${contents}
         </button>
