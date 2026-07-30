@@ -153,7 +153,6 @@ export const CodeRepoStyles: CSSResult = css`
   code-reveal {
     display: block;
     width: 100%;
-    margin-block: var(--spaces-margin-s);
   }
 
   @container (min-width: 385px) {

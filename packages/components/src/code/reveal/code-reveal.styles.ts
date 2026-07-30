@@ -26,11 +26,17 @@ export const CodeRevealStyles: CSSResult = css`
       transform: scaleY(0) rotateX(90deg);
       opacity: 0;
       max-height: 0;
+      margin-block: 0;
+      padding-block: 0;
+      border-width: 0;
     }
     100% {
       transform: scaleY(1) rotateX(0deg);
       opacity: 1;
       max-height: 800px;
+      margin-block: var(--spaces-margin-s);
+      padding-block: var(--spaces-padding-l);
+      border-width: var(--sizes-thickness-hairline);
     }
   }
 
@@ -39,11 +45,17 @@ export const CodeRevealStyles: CSSResult = css`
       transform: scaleY(1) rotateX(0deg);
       opacity: 1;
       max-height: 800px;
+      margin-block: var(--spaces-margin-s);
+      padding-block: var(--spaces-padding-l);
+      border-width: var(--sizes-thickness-hairline);
     }
     100% {
       transform: scaleY(0) rotateX(90deg);
       opacity: 0;
       max-height: 0;
+      margin-block: 0;
+      padding-block: 0;
+      border-width: 0;
     }
   }
 
@@ -56,9 +68,10 @@ export const CodeRevealStyles: CSSResult = css`
     color: var(--md-sys-color-on-surface);
     border: solid var(--sizes-thickness-hairline) var(--md-sys-color-primary);
     border-radius: var(--bento-layout-card-shape);
-    padding: var(--spaces-padding-l);
+    padding-inline: var(--spaces-padding-l);
     gap: var(--spaces-gap-m);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 
     button.close-btn {
       position: absolute;
