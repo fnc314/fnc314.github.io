@@ -8,6 +8,7 @@ import { type CSSResult, css } from "lit";
 export const CodeRevealStyles: CSSResult = css`
   :host {
     --md-icon-button-icon-size: var(--md-icon-size);
+    --md-icon-button-icon-color: var(--md-sys-color-on-secondary-container);
 
     display: block;
     width: 100%;
@@ -111,7 +112,7 @@ export const CodeRevealStyles: CSSResult = css`
 
       h3 {
         margin: 0;
-        color: var(--md-sys-color-on-surface);
+        color: var(--md-sys-color-on-secondary-container);
       }
     }
 
@@ -120,7 +121,7 @@ export const CodeRevealStyles: CSSResult = css`
 
       p, ul {
         margin: 0;
-        color: var(--md-sys-color-on-surface-variant);
+        color: var(--md-sys-color-on-secondary-container);
       }
 
       ul {
