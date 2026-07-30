@@ -104,7 +104,7 @@ export const CodeRevealStyles: CSSResult = css`
         &::slotted(img) {
           aspect-ratio: 1;
           max-inline-size: 20dvw;
-          object-fit: fill;
+          object-fit: scale-down;
           border-radius: var(--md-sys-shape-corner-medium);
         }
       }
