@@ -3,16 +3,16 @@
     "material": {
       "picture_as_pdf": {
         "dark": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-dark.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-dark.svg"
         },
         "default": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg"
         },
         "light": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-light.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-light.svg"
         }
       }
     }

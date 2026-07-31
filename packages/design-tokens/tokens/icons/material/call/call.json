@@ -3,16 +3,16 @@
     "material": {
       "call": {
         "dark": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/call/call-dark.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/call/call-dark.svg"
         },
         "default": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/call/call-default.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/call/call-default.svg"
         },
         "light": {
-          "type": "asset",
-          "value": "packages/design-tokens/assets/icons/material/call/call-light.svg"
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/material/call/call-light.svg"
         }
       }
     }

@@ -4,12 +4,12 @@
       "tech": {
         "kotlin": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/kotlin/kotlin.svg"
           }
         }
       }

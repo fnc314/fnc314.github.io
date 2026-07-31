@@ -4,12 +4,12 @@
       "tech": {
         "vite": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/vite/vite.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/vite/vite.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/vite/vite.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/vite/vite.svg"
           }
         }
       }

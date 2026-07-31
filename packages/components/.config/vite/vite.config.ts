@@ -1,3 +1,3 @@
-import { buildConfig } from "./../../../.config/vite/vite.config";
+import { buildConfig } from "./../../../.config/vite/vite.config.ts";
 
 export default buildConfig("components");

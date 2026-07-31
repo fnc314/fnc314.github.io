@@ -4,20 +4,20 @@
       "organization": {
         "linkedin": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-dark.svg"
           },
           "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-default.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-default.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-light.svg"
           },
           "mask": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-mask.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-mask.svg"
           }
         }
       }

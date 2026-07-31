@@ -8,9 +8,13 @@ import { classMap } from "lit/directives/class-map.js";
 import { map } from "lit/directives/map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { when } from "lit/directives/when.js";
+import { MdIconButton } from "@material/web/iconbutton/icon-button";
 
 /**
  * @summary An inline reveal panel displaying expanded technology details inside {@link CodeRepo}
+ *
+ * @fires start-hide-reveal - Dispatched when the user initiates closing, triggering the fold animation.
+ * @fires hide-reveal - Dispatched when the folding animation completely finishes, signaling the parent to reset state.
  *
  * @export
  * @class CodeReveal
@@ -21,6 +25,10 @@ export class CodeReveal extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, CodeRevealStyles];
 
+  /**
+   * The active technology data object to render. 
+   * When this is set to null, the component renders nothing.
+   */
   @property({ type: Object })
   tech: CodeRepoTech | null = null;
 
@@ -47,7 +55,7 @@ export class CodeReveal extends UIAwareElement {
     super.updated(changedProperties);
     if (changedProperties.has("tech") && this.tech && !this._isClosing) {
       this.updateComplete.then(() => {
-        const closeBtn = this.shadowRoot?.querySelector(".close-btn") as HTMLElement & { updateComplete?: Promise<boolean> };
+        const closeBtn = this.shadowRoot?.querySelector("md-icon-button") as MdIconButton & { updateComplete?: Promise<boolean> };
         if (closeBtn) {
           // Material Web components often need an additional tick to render their internal shadow DOM
           const ready = closeBtn.updateComplete || Promise.resolve(true);
@@ -91,14 +99,16 @@ export class CodeReveal extends UIAwareElement {
       Array.isArray(this.tech.popoverContent),
       () => html`
         <ul slot="reveal-content">
-          ${map(
-            this.tech!.popoverContent,
-            (content: string) => html`
-              <li class="md-typescale-body-large">
-                ${unsafeHTML(content)}
-              </li>
-            `
-          )}
+          ${
+            map(
+              this.tech!.popoverContent,
+              (content: string) => html`
+                <li class="md-typescale-body-large">
+                  ${unsafeHTML(content)}
+                </li>
+              `
+              )
+            }
         </ul>
       `,
       () => html`
@@ -108,15 +118,17 @@ export class CodeReveal extends UIAwareElement {
       `
     );
 
+    const classes = {
+      "reveal-card": true,
+      "is-closing": this._isClosing
+    };
+
     return html`
       <article
         id="reveal-panel"
         role="region"
         aria-labelledby="reveal-header"
-        class=${classMap({
-          "reveal-card": true,
-          "is-closing": this._isClosing
-        })}
+        class=${classMap(classes)}
         aria-live="polite"
         @animationend=${this._handleAnimationEnd}
       >
@@ -140,7 +152,7 @@ export class CodeReveal extends UIAwareElement {
         <footer>
           <a
             class="md-typescale-body-large"
-            title="Open ${this.tech.name} as a separate page"
+            title="Open ${this.tech.name} homepage as a new tab"
             href="${this.tech.url}"
             target="_blank"
             rel="noopener noreferrer"

@@ -4,16 +4,16 @@
       "education": {
         "general-assembly": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           },
           "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/education/general-assembly/general-assembly.svg"
           }
         }
       }

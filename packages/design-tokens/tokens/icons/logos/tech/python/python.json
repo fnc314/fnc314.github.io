@@ -4,12 +4,12 @@
       "tech": {
         "python": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/python/python.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/python/python.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/python/python.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/python/python.svg"
           }
         }
       }

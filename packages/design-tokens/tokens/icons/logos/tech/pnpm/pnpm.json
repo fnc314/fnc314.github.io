@@ -4,12 +4,12 @@
       "tech": {
         "pnpm": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/pnpm/pnpm-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/pnpm/pnpm-dark.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/pnpm/pnpm-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/pnpm/pnpm-light.svg"
           }
         }
       }

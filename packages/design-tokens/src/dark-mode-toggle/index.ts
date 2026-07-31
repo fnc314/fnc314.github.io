@@ -1,5 +1,5 @@
 import { unsafeCSS } from "lit";
-import { readCSSProperty } from "../read-css-property";
+import { readCSSProperty } from "@/lib/read-css-property";
 
 export const DarkModeToggleSvgs = {
   mode: {

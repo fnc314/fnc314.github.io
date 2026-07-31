@@ -1,8 +1,8 @@
 {
   "colors": {
     "transparent": {
-      "type": "color",
-      "value": "transparent"
+      "$type": "color",
+      "$value": "transparent"
     }
   }
 }

@@ -5,16 +5,16 @@
         "google": {
           "docs": {
             "dark": {
-              "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "$type": "asset",
+              "$value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             },
             "default": {
-              "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "$type": "asset",
+              "$value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             },
             "light": {
-              "type": "asset",
-              "value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
+              "$type": "asset",
+              "$value": "packages/design-tokens/assets/icons/logos/tech/google/docs/google-docs.svg"
             }
           }
         }

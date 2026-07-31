@@ -37,6 +37,10 @@ export const WordTagStyles: CSSResult = css`
   }
 
   button, div {
+    position: relative;
+    --md-focus-ring-shape: var(--word-tag-focus-ring-shape, var(--internal-word-tag-border-radius));
+    --md-focus-ring-color: var(--word-tag-focus-ring-color);
+
     align-items: center;
     background-color: var(--internal-word-tag-background-color);
     border-color: var(--internal-word-tag-color);

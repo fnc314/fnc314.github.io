@@ -4,12 +4,12 @@
       "tech": {
         "typescript-eslint": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/typescript-eslint/typescript-eslint.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/typescript-eslint/typescript-eslint.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/tech/typescript-eslint/typescript-eslint.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/typescript-eslint/typescript-eslint.svg"
           }
         }
       }

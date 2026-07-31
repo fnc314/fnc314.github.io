@@ -5,62 +5,62 @@
         "symbols": {
           "sharp": {
             "family": {
-              "type": "value",
-              "value": "\"Material Symbols Sharp\""
+              "$type": "$value",
+              "$value": "\"Material Symbols Sharp\""
             },
             "face": {
               "weight": {
                 "min": {
-                  "type": "value",
-                  "value": 100
+                  "$type": "$value",
+                  "$value": 100
                 },
                 "max": {
-                  "type": "value",
-                  "value": 700
+                  "$type": "$value",
+                  "$value": 700
                 }
               }
             },
             "weight": {
-              "type": "value",
-              "value": "normal"
+              "$type": "$value",
+              "$value": "normal"
             },
             "size": {
-              "type": "value",
-              "value": "24px"
+              "$type": "$value",
+              "$value": "24px"
             },
             "line-height": {
-              "value": "1",
-              "type": "value"
+              "$value": "1",
+              "$type": "$value"
             }
           },
           "outlined": {
             "family": {
-              "type": "value",
-              "value": "\"Material Symbols Outlined\""
+              "$type": "$value",
+              "$value": "\"Material Symbols Outlined\""
             },
             "face": {
               "weight": {
                 "min": {
-                  "type": "value",
-                  "value": 100
+                  "$type": "$value",
+                  "$value": 100
                 },
                 "max": {
-                  "type": "value",
-                  "value": 700
+                  "$type": "$value",
+                  "$value": 700
                 }
               }
             },
             "weight": {
-              "type": "value",
-              "value": "normal"
+              "$type": "$value",
+              "$value": "normal"
             },
             "size": {
-              "type": "value",
-              "value": "24px"
+              "$type": "$value",
+              "$value": "24px"
             },
             "line-height": {
-              "value": "1",
-              "type": "value"
+              "$value": "1",
+              "$type": "$value"
             }
           }
         }
@@ -69,20 +69,20 @@
     "ref": {
       "typeface": {
         "brand": {
-          "value": "monospace"
+          "$value": "monospace"
         },
         "plain": {
-          "value": "inter, sans-serif"
+          "$value": "inter, sans-serif"
         },
         "weight": {
           "regular": {
-            "value": "400"
+            "$value": "400"
           },
           "medium": {
-            "value": "500"
+            "$value": "500"
           },
           "bold": {
-            "value": "700"
+            "$value": "700"
           }
         }
       }
@@ -92,226 +92,226 @@
         "body": {
           "large": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1.5rem"
+              "$value": "1.5rem"
             },
             "size": {
-              "value": "1rem"
+              "$value": "1rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "medium": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1.25rem"
+              "$value": "1.25rem"
             },
             "size": {
-              "value": "0.875rem"
+              "$value": "0.875rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "small": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1rem"
+              "$value": "1rem"
             },
             "size": {
-              "value": "0.75rem"
+              "$value": "0.75rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           }
         },
         "display": {
           "large": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "4rem"
+              "$value": "4rem"
             },
             "size": {
-              "value": "3.5625rem"
+              "$value": "3.5625rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "medium": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "3.25rem"
+              "$value": "3.25rem"
             },
             "size": {
-              "value": "2.8125rem"
+              "$value": "2.8125rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "small": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "2.75rem"
+              "$value": "2.75rem"
             },
             "size": {
-              "value": "2.25rem"
+              "$value": "2.25rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           }
         },
         "headline": {
           "large": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "2.5rem"
+              "$value": "2.5rem"
             },
             "size": {
-              "value": "2rem"
+              "$value": "2rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "medium": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "2.25rem"
+              "$value": "2.25rem"
             },
             "size": {
-              "value": "1.75rem"
+              "$value": "1.75rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "small": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "2rem"
+              "$value": "2rem"
             },
             "size": {
-              "value": "1.5rem"
+              "$value": "1.5rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           }
         },
         "label": {
           "large": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1.25rem"
+              "$value": "1.25rem"
             },
             "size": {
-              "value": "0.875rem"
+              "$value": "0.875rem"
             },
             "weight": {
-              "value": "500"
+              "$value": "500"
             },
             "weightProminent": {
-              "value": "700"
+              "$value": "700"
             }
           },
           "medium": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1rem"
+              "$value": "1rem"
             },
             "size": {
-              "value": "0.75rem"
+              "$value": "0.75rem"
             },
             "weight": {
-              "value": "500"
+              "$value": "500"
             },
             "weightProminent": {
-              "value": "700"
+              "$value": "700"
             }
           },
           "small": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1rem"
+              "$value": "1rem"
             },
             "size": {
-              "value": "0.6875rem"
+              "$value": "0.6875rem"
             },
             "weight": {
-              "value": "500"
+              "$value": "500"
             }
           }
         },
         "title": {
           "large": {
             "font": {
-              "value": "var(--md-ref-typeface-brand)"
+              "$value": "var(--md-ref-typeface-brand)"
             },
             "lineHeight": {
-              "value": "1.75rem"
+              "$value": "1.75rem"
             },
             "size": {
-              "value": "1.375rem"
+              "$value": "1.375rem"
             },
             "weight": {
-              "value": "400"
+              "$value": "400"
             }
           },
           "medium": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1.5rem"
+              "$value": "1.5rem"
             },
             "size": {
-              "value": "1rem"
+              "$value": "1rem"
             },
             "weight": {
-              "value": "500"
+              "$value": "500"
             }
           },
           "small": {
             "font": {
-              "value": "var(--md-ref-typeface-plain)"
+              "$value": "var(--md-ref-typeface-plain)"
             },
             "lineHeight": {
-              "value": "1.25rem"
+              "$value": "1.25rem"
             },
             "size": {
-              "value": "0.875rem"
+              "$value": "0.875rem"
             },
             "weight": {
-              "value": "500"
+              "$value": "500"
             }
           }
         }

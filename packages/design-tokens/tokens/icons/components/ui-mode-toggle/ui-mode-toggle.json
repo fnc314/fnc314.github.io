@@ -4,62 +4,62 @@
       "ui-mode-toggle": {
         "dark": {
           "empty": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-empty.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-empty.svg"
           },
           "filled": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-filled.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-filled.svg"
           }
         },
         "default": {
           "empty": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-empty.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-empty.svg"
           },
           "filled": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-filled.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-filled.svg"
           }
         },
         "light": {
           "empty": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-empty.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-empty.svg"
           },
           "filled": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-filled.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-filled.svg"
           }
         },
         "check-box": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-dark.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-light.svg"
           }
         },
         "remember-checked": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-dark.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-light.svg"
           }
         },
         "remember-unchecked": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-dark.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-light.svg"
           }
         }
       }

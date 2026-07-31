@@ -3,10 +3,11 @@ import "@/lib/code/reveal/code-reveal";
 import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { WordTag } from "@/lib/word/tag/word-tag";
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
-import { customElement, property, query, state } from "lit/decorators.js";
+import { customElement, property, query, queryAll, state } from "lit/decorators.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
@@ -24,17 +25,23 @@ export class CodeRepo extends UIAwareElement {
   @property({ type: Object })
   codeRepo: CodeRepoData = {} as CodeRepoData;
 
+  /** The index of the technology tag currently expanded in the reveal panel. */
   @state()
   private activeRevealIndex: number | null = null;
 
+  /** The index of the technology tag waiting to expand after the current panel closes. */
   @state()
   private pendingRevealIndex: number | null = null;
 
+  /** True if the reveal panel is currently playing its closing animation. */
   @state()
   private isClosing: boolean = false;
 
   @query("code-reveal")
   private codeRevealComp!: CodeReveal;
+
+  @queryAll("word-tag")
+  private wordTags!: NodeListOf<WordTag>;
 
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, CodeRepoStyles];
@@ -66,6 +73,31 @@ export class CodeRepo extends UIAwareElement {
     const tagToFocus = this.shadowRoot?.querySelector(`#${tagId}`) as HTMLElement;
     if (tagToFocus) {
       tagToFocus.focus();
+    }
+  }
+
+  private _handleGridKeyDown(e: KeyboardEvent) {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+
+    const tags = Array.from(this.wordTags || []);
+    if (!tags.length) return;
+
+    const activeElement = this.shadowRoot?.activeElement;
+    if (!activeElement || activeElement.tagName.toLowerCase() !== "word-tag") return;
+
+    const currentIndex = tags.indexOf(activeElement as WordTag);
+    if (currentIndex === -1) return;
+
+    let nextIndex = currentIndex;
+    if (e.key === "ArrowLeft") {
+      nextIndex = currentIndex === 0 ? tags.length - 1 : currentIndex - 1;
+    } else if (e.key === "ArrowRight") {
+      nextIndex = currentIndex === tags.length - 1 ? 0 : currentIndex + 1;
+    }
+
+    if (nextIndex !== currentIndex) {
+      e.preventDefault();
+      (tags[nextIndex] as WordTag).focus();
     }
   }
 
@@ -180,7 +212,7 @@ export class CodeRepo extends UIAwareElement {
         <!-- BOTTOM FOLD SECTION: Technology Tags Footer -->
         <div class="fold-bottom">
           <footer aria-label="Technologies used">
-            <ul>
+            <ul @keydown=${this._handleGridKeyDown}>
               ${this.codeRepo.tech.map((tech, index) => this.createWordTagLI(tech, index))}
             </ul>
           </footer>

@@ -4,20 +4,20 @@
       "organization": {
         "medium": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-dark.svg"
           },
           "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
           },
           "mask": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg"
           }
         }
       }

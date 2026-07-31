@@ -10,7 +10,6 @@
  *   invocations can expose the `property` read from the `element` and the
  *   returned value
  * @return A `string` from `CSS` or an empty `string`
- * @typedef (property: string) => string
  */
 export function readCSSProperty(
   property: string,

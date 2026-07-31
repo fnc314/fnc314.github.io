@@ -4,20 +4,20 @@
       "organization": {
         "github": {
           "dark": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/github/github-dark.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-dark.svg"
           },
           "default": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
           },
           "light": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
           },
           "mask": {
-            "type": "asset",
-            "value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg"
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg"
           }
         }
       }
