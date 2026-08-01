@@ -11,6 +11,7 @@
     "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",
     "dark-mode-toggle": "catalog:dependencies",
+    "lit": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
   "description": "Types package to support https://fnc314.com",

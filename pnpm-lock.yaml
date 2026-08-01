@@ -251,8 +251,8 @@ catalogs:
       specifier: 3.3.3
       version: 3.3.3
     material-symbols:
-      specifier: 0.45.9
-      version: 0.45.9
+      specifier: 0.45.10
+      version: 0.45.10
     prop-for-that:
       specifier: 0.7.12
       version: 0.7.12
@@ -434,12 +434,12 @@ catalogs:
     globals:
       specifier: 17.8.0
       version: 17.8.0
+    json-to-ts:
+      specifier: 2.1.0
+      version: 2.1.0
     lit-analyzer:
       specifier: 2.0.3
       version: 2.0.3
-    node:
-      specifier: runtime:26.5.1
-      version: 26.5.1
     postcss:
       specifier: 8.5.25
       version: 8.5.25
@@ -641,6 +641,9 @@ importers:
       '@open-wc/lit-helpers':
         specifier: catalog:dependencies
         version: 0.7.0(lit@3.3.3)
+      '@types/node':
+        specifier: catalog:devDependencies
+        version: 26.1.2
       animate-css-grid:
         specifier: catalog:dependencies
         version: 1.5.1
@@ -661,7 +664,10 @@ importers:
         version: 3.3.3
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
+      node:
+        specifier: runtime:26.5.1
+        version: runtime:26.5.1
       prop-for-that:
         specifier: catalog:dependencies
         version: 0.7.12
@@ -720,9 +726,6 @@ importers:
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
-      '@types/node':
-        specifier: catalog:devDependencies
-        version: 26.1.2
       '@types/wordcloud':
         specifier: catalog:devDependencies
         version: 1.2.2
@@ -837,12 +840,12 @@ importers:
       globals:
         specifier: catalog:devDependencies
         version: 17.8.0
+      json-to-ts:
+        specifier: catalog:devDependencies
+        version: 2.1.0
       lit-analyzer:
         specifier: catalog:devDependencies
         version: 2.0.3
-      node:
-        specifier: catalog:devDependencies
-        version: runtime:26.5.1
       postcss:
         specifier: catalog:devDependencies
         version: 8.5.25
@@ -1055,9 +1058,12 @@ importers:
       dark-mode-toggle:
         specifier: catalog:dependencies
         version: 0.18.0
+      lit:
+        specifier: catalog:dependencies
+        version: 3.3.3
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -1088,7 +1094,7 @@ importers:
         version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -1125,7 +1131,7 @@ importers:
         version: 3.3.3
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -1165,7 +1171,7 @@ importers:
         version: 2.5.0
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -1191,9 +1197,12 @@ importers:
       '@material/web':
         specifier: catalog:dependencies
         version: 2.5.0
+      lit:
+        specifier: catalog:dependencies
+        version: 3.3.3
       material-symbols:
         specifier: catalog:dependencies
-        version: 0.45.9
+        version: 0.45.10
     devDependencies:
       '@types/fs-extra':
         specifier: catalog:devDependencies
@@ -4197,6 +4206,9 @@ packages:
   '@types/picomatch@4.0.3':
     resolution: {integrity: sha512-iG0T6+nYJ9FAPmx9SsUlnwcq1ZVRuCXcVEvWnntoPlrOpwtSTKNDC9uVAxTsC3PUvJ+99n4RpAcNgBbHX3JSnQ==}
 
+  '@types/pluralize@0.0.27':
+    resolution: {integrity: sha512-+lR8ro9Z9kxv4khmcWUiNy1bBgBXHGORCOEwQKP4MC+KLAJBrIqin8sJticU3uTVWP3qXE7po4+5oStAFdYKqA==}
+
   '@types/postcss-safe-parser@5.0.4':
     resolution: {integrity: sha512-5zGTm1jsW3j4+omgND1SIDbrZOcigTuxa4ihppvKbLkg2INUGBHV/fWNRSRFibK084tU3fxqZ/kVoSIGqRHnrQ==}
 
@@ -5089,6 +5101,10 @@ packages:
 
   array.prototype.flatmap@1.3.3:
     resolution: {integrity: sha512-Y7Wt51eKJSyi80hFrJCePGGNo5ktJCslFuboqJsbf57CCPcm5zztluPlc4/aD8sWsKvlwatezpV4U1efk8kpjg==}
+    engines: {node: '>= 0.4'}
+
+  array.prototype.reduce@1.0.8:
+    resolution: {integrity: sha512-DwuEqgXFBwbmZSRqt3BpQigWNUoqw9Ml2dTWdF3B2zQlQX4OeUE0zyuzX0fX0IbTvjdkZbcBTU3idgpO78qkTw==}
     engines: {node: '>= 0.4'}
 
   arraybuffer.prototype.slice@1.0.4:
@@ -6090,6 +6106,9 @@ packages:
     resolution: {integrity: sha512-2FpH9Q5i2RRwyEP1AylXe6nYLR5OhaJTZwmlcP0dL/+JCbgg7yyEo/sEK6HeGZRf3dFpWwThaRHVApXSkW3xeg==}
     engines: {node: '>= 0.4'}
 
+  es-array-method-boxes-properly@1.0.0:
+    resolution: {integrity: sha512-wd6JXUmyHmt8T5a2xreUwKcGPq6f1f+WwIJkijUqiGcJz1qqnZgP6XIK+QyIWU5lT7imeNxUll48bziG+TSYcA==}
+
   es-define-property@1.0.1:
     resolution: {integrity: sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==}
     engines: {node: '>= 0.4'}
@@ -6122,6 +6141,10 @@ packages:
 
   es-toolkit@1.47.1:
     resolution: {integrity: sha512-5RAqEwf4P4E17p+W75KLOWw/nOvKZzSQpxM32IpI2KZLaVonjTrZ0Ai5ghMaVI9eKC2p8eoQgcBdkEDgzFk6+Q==}
+
+  es7-shim@6.0.0:
+    resolution: {integrity: sha512-aiQ/QyJBVJbabtsSediM1S4qI+P3p8F5J5YR5o/bH003BCnnclzxK9pi5Qd2Hg01ktAtZCaQBdejHrkOBGwf5Q==}
+    engines: {node: '>=0.4.0'}
 
   esbuild@0.28.1:
     resolution: {integrity: sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==}
@@ -6842,6 +6865,9 @@ packages:
     resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
     engines: {node: '>= 0.4'}
 
+  hash.js@1.1.7:
+    resolution: {integrity: sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==}
+
   hashery@1.5.1:
     resolution: {integrity: sha512-iZyKG96/JwPz1N55vj2Ie2vXbhu440zfUfJvSwEqEbeLluk7NnapfGqa7LH0mOsnDxTF85Mx8/dyR6HfqcbmbQ==}
     engines: {node: '>=20'}
@@ -7492,6 +7518,9 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
+  json-to-ts@2.1.0:
+    resolution: {integrity: sha512-JeScjtIGYAxQVxEYgQUKROU0329eS+rsTSviGtuKiwKuXpcIU7DxhDYm2tey0vcBetwc9kD0+YHDI5KvEexMew==}
+
   json5@1.0.2:
     resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
@@ -7937,8 +7966,8 @@ packages:
   marky@1.3.0:
     resolution: {integrity: sha512-ocnPZQLNpvbedwTy9kNrQEsknEfgvcLMvOtz3sFeWApDq1MXH1TqkCIx58xlpESsfwQOnuBO9beyQuNGzVvuhQ==}
 
-  material-symbols@0.45.9:
-    resolution: {integrity: sha512-CuNJwHm/c13L2NDGvap4k90iFBZFoMQrjBU+GHO/9bh9sUOe5tm3WHFPLa3BEWukMw6dAxwu5PvtlfWh3NppYA==}
+  material-symbols@0.45.10:
+    resolution: {integrity: sha512-2A2mgdfZO4es9DFpIOSMAx3d/7erCLQWRm7zGxA3iXt9jV8e2vNLOszbG3kxzYQ6qp5GAWXVl13de8lS2oHVng==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -8161,6 +8190,9 @@ packages:
   minify-html-literals@1.3.5:
     resolution: {integrity: sha512-p8T8ryePRR8FVfJZLVFmM53WY25FL0moCCTycUDuAu6rf9GMLwy0gNjXBGNin3Yun7Y+tIWd28axOf0t2EpAlQ==}
 
+  minimalistic-assert@1.0.1:
+    resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
+
   minimatch@10.2.5:
     resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
     engines: {node: 18 || 20 || >=22}
@@ -8369,6 +8401,28 @@ packages:
           targets:
             - cpu: x64
               os: win32
+        - resolution:
+            archive: tarball
+            bin:
+              node: bin/node
+            integrity: sha256-NPYguNrW6MkYhiPkayDxoHKD3LGzLrpHHvsIylc0RLM=
+            type: binary
+            url: https://unofficial-builds.nodejs.org/download/release/v26.5.1/node-v26.5.1-linux-arm64-musl.tar.gz
+          targets:
+            - cpu: arm64
+              os: linux
+              libc: musl
+        - resolution:
+            archive: tarball
+            bin:
+              node: bin/node
+            integrity: sha256-lcqQm7uAaIJixbJ9mM7Xh4vez/LPH2IGn6fJxhr8Cls=
+            type: binary
+            url: https://unofficial-builds.nodejs.org/download/release/v26.5.1/node-v26.5.1-linux-x64-musl.tar.gz
+          targets:
+            - cpu: x64
+              os: linux
+              libc: musl
     version: 26.5.1
     hasBin: true
 
@@ -8429,6 +8483,10 @@ packages:
 
   object.fromentries@2.0.8:
     resolution: {integrity: sha512-k6E21FzySsSK5a21KRADBd/NGneRegFO5pLHfdQLpRDETUNJueLXs3WCzyQ3tFRDYgbq3KHGXfTbi2bs8WQ6rQ==}
+    engines: {node: '>= 0.4'}
+
+  object.getownpropertydescriptors@2.1.9:
+    resolution: {integrity: sha512-mt8YM6XwsTTovI+kdZdHSxoyF2DI59up034orlC9NfweclcWOt7CVascNNLp6U+bjFVCVCIh9PwS76tDM/rH8g==}
     engines: {node: '>= 0.4'}
 
   object.groupby@1.0.3:
@@ -8689,6 +8747,9 @@ packages:
     resolution: {integrity: sha512-hheHdokM8cdqCb0lcE3s+zT4t4W+vvjpGxsZlDnikarzx8tSzMebh3UiFtgqwFwnTnjYQcsyMF8ei2mCO/tpeA==}
     engines: {node: '>=18'}
     hasBin: true
+
+  pluralize@3.1.0:
+    resolution: {integrity: sha512-2wcybwjwXOzGI1rlxWtlcs0/nSYK0OzNPqsg35TKxJFQlGhFu3cZ1x7EHS4r4bubQlhzyF4YxxlJqQnIhkUQCw==}
 
   popmotion@8.7.6:
     resolution: {integrity: sha512-gzU0mRAik8FIEOP4Nk5yqYptJIvHLoq/IRU+rANmKjDZ7tynAivYQ9cIJAxVaoS9h0zfXvN0cFBAg93ncmHHkA==}
@@ -9312,6 +9373,11 @@ packages:
   streamx@2.28.0:
     resolution: {integrity: sha512-1Yowhzjf0ivGMrTIkY9hav5TxobO9qIVqUE41fiCGMGgc3CLlf4MY+9AHmZqBWgDTue0fY9zWjYFVyf6Diuobw==}
 
+  string-at@1.1.0:
+    resolution: {integrity: sha512-jCpPowWKBn0NFdvtmK2qxK40Ol4jPcgCt8qYnKpPx6B5eDwHMDhRvq9MCsDEgsOTNtbXY6beAMHMRT2qPJXllA==}
+    engines: {node: '>= 0.4'}
+    deprecated: The original `String.prototype.at` proposal has been replaced by a new one; please use v1 or later of `string.prototype.at` instead
+
   string-length@4.0.2:
     resolution: {integrity: sha512-+l6rNN5fYHNhZZy41RXsYptCjA2Igmq4EG7kZAYFQI1E1VTXarr6ZPXBg6eq7Y6eK4FEhY6AJlyuFIb/v/S0VQ==}
     engines: {node: '>=10'}
@@ -9336,12 +9402,28 @@ packages:
     resolution: {integrity: sha512-6CC9uyBL+/48dYizRf7H7VAYCMCNTBeM78x/VTUe9bFEaxBepPJDa1Ow99LqI/1yF7kuy7Q3cQsYMrcjGUcskA==}
     engines: {node: '>= 0.4'}
 
+  string.prototype.padend@3.1.6:
+    resolution: {integrity: sha512-XZpspuSB7vJWhvJc9DLSlrXl1mcA2BdoY5jjnS135ydXqLoqhs96JjDtCkjJEQHvfqZIp9hBuBMgI589peyx9Q==}
+    engines: {node: '>= 0.4'}
+
+  string.prototype.padstart@3.1.7:
+    resolution: {integrity: sha512-hc5ZFzw8H2Bl4AeHxE5s+CniFg+bPcr7lRRS189GCM6KhJQBACNRhtMsdcnpBNbjc1XisnUOqbP0c94RZU4GCw==}
+    engines: {node: '>= 0.4'}
+
   string.prototype.trim@1.2.11:
     resolution: {integrity: sha512-PwvK7BU+CMTJGYQCTZb5RWXIML92lftJLhQz1tBzgKiqGxJaMlBAa48POXaNAC2s4y8jr3EFqrkF9+44neS46w==}
     engines: {node: '>= 0.4'}
 
   string.prototype.trimend@1.0.10:
     resolution: {integrity: sha512-2+3aDAOmPTmuFwjDnmJG2ctEkQKVki7vOSqaxkv42Mowj1V6PnvuwFCRrR5lChUux1TBskPjfkeTOhqczDMxTw==}
+    engines: {node: '>= 0.4'}
+
+  string.prototype.trimleft@2.1.3:
+    resolution: {integrity: sha512-699Ibssmj/awVzvdNk4g83/Iu8U9vDohzmA/ly2BrQWGhamuY4Tlvs5XKmKliDt3ky6SKbE1bzPhASKCFlx9Sg==}
+    engines: {node: '>= 0.4'}
+
+  string.prototype.trimright@2.1.3:
+    resolution: {integrity: sha512-hoOq56oRFnnfDuXNy2lGHiwT77MehHv9d0zGfRZ8QdC+4zjrkFB9vd5i/zYTd/ymFBd4YxtbdgHt3U6ksGeuBw==}
     engines: {node: '>= 0.4'}
 
   string.prototype.trimstart@1.0.8:
@@ -13875,6 +13957,8 @@ snapshots:
 
   '@types/picomatch@4.0.3': {}
 
+  '@types/pluralize@0.0.27': {}
+
   '@types/postcss-safe-parser@5.0.4':
     dependencies:
       postcss: 8.5.25
@@ -14870,6 +14954,17 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.24.2
       es-shim-unscopables: 1.1.0
+
+  array.prototype.reduce@1.0.8:
+    dependencies:
+      call-bind: 1.0.9
+      call-bound: 1.0.4
+      define-properties: 1.2.1
+      es-abstract: 1.24.2
+      es-array-method-boxes-properly: 1.0.0
+      es-errors: 1.3.0
+      es-object-atoms: 1.1.2
+      is-string: 1.1.1
 
   arraybuffer.prototype.slice@1.0.4:
     dependencies:
@@ -15997,6 +16092,8 @@ snapshots:
       unbox-primitive: 1.1.0
       which-typed-array: 1.1.22
 
+  es-array-method-boxes-properly@1.0.0: {}
+
   es-define-property@1.0.1: {}
 
   es-errors@1.3.0: {}
@@ -16031,6 +16128,18 @@ snapshots:
       is-symbol: 1.1.1
 
   es-toolkit@1.47.1: {}
+
+  es7-shim@6.0.0:
+    dependencies:
+      array-includes: 3.1.9
+      object.entries: 1.1.9
+      object.getownpropertydescriptors: 2.1.9
+      object.values: 1.2.1
+      string-at: 1.1.0
+      string.prototype.padend: 3.1.6
+      string.prototype.padstart: 3.1.7
+      string.prototype.trimleft: 2.1.3
+      string.prototype.trimright: 2.1.3
 
   esbuild@0.28.1:
     optionalDependencies:
@@ -17065,6 +17174,11 @@ snapshots:
       '@types/has-symbols': 1.1.0
       has-symbols: 1.1.0
 
+  hash.js@1.1.7:
+    dependencies:
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
+
   hashery@1.5.1:
     dependencies:
       hookified: 1.15.1
@@ -17939,6 +18053,13 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
+  json-to-ts@2.1.0:
+    dependencies:
+      '@types/pluralize': 0.0.27
+      es7-shim: 6.0.0
+      hash.js: 1.1.7
+      pluralize: 3.1.0
+
   json5@1.0.2:
     dependencies:
       minimist: 1.2.8
@@ -18390,7 +18511,7 @@ snapshots:
 
   marky@1.3.0: {}
 
-  material-symbols@0.45.9: {}
+  material-symbols@0.45.10: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -18772,6 +18893,8 @@ snapshots:
       magic-string: 0.25.9
       parse-literals: 1.2.1
 
+  minimalistic-assert@1.0.1: {}
+
   minimatch@10.2.5:
     dependencies:
       brace-expansion: 5.0.6
@@ -18931,6 +19054,16 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.24.2
       es-object-atoms: 1.1.2
+
+  object.getownpropertydescriptors@2.1.9:
+    dependencies:
+      array.prototype.reduce: 1.0.8
+      call-bind: 1.0.9
+      define-properties: 1.2.1
+      es-abstract: 1.24.2
+      es-object-atoms: 1.1.2
+      gopd: 1.2.0
+      safe-array-concat: 1.1.4
 
   object.groupby@1.0.3:
     dependencies:
@@ -19237,6 +19370,8 @@ snapshots:
       playwright-core: 1.60.0
     optionalDependencies:
       fsevents: 2.3.2
+
+  pluralize@3.1.0: {}
 
   popmotion@8.7.6:
     dependencies:
@@ -20038,6 +20173,11 @@ snapshots:
       - bare-abort-controller
       - react-native-b4a
 
+  string-at@1.1.0:
+    dependencies:
+      define-properties: 1.2.1
+      es-abstract: 1.24.2
+
   string-length@4.0.2:
     dependencies:
       char-regex: 1.0.2
@@ -20082,6 +20222,21 @@ snapshots:
       set-function-name: 2.0.2
       side-channel: 1.1.1
 
+  string.prototype.padend@3.1.6:
+    dependencies:
+      call-bind: 1.0.9
+      define-properties: 1.2.1
+      es-abstract: 1.24.2
+      es-object-atoms: 1.1.2
+
+  string.prototype.padstart@3.1.7:
+    dependencies:
+      call-bind: 1.0.9
+      call-bound: 1.0.4
+      define-properties: 1.2.1
+      es-abstract: 1.24.2
+      es-object-atoms: 1.1.2
+
   string.prototype.trim@1.2.11:
     dependencies:
       call-bind: 1.0.9
@@ -20099,6 +20254,18 @@ snapshots:
       call-bound: 1.0.4
       define-properties: 1.2.1
       es-object-atoms: 1.1.2
+
+  string.prototype.trimleft@2.1.3:
+    dependencies:
+      call-bind: 1.0.9
+      define-properties: 1.2.1
+      string.prototype.trimstart: 1.0.8
+
+  string.prototype.trimright@2.1.3:
+    dependencies:
+      call-bind: 1.0.9
+      define-properties: 1.2.1
+      string.prototype.trimend: 1.0.10
 
   string.prototype.trimstart@1.0.8:
     dependencies:
@@ -21633,11 +21800,12 @@ time:
   firebase@12.17.0: '2026-07-30T18:26:11.265Z'
   fs-extra@11.4.0: '2026-07-23T19:52:08.773Z'
   globals@17.8.0: '2026-07-26T16:39:39.297Z'
+  json-to-ts@2.1.0: '2024-04-18T19:52:58.441Z'
   lit-analyzer@2.0.3: '2024-01-09T01:03:53.904Z'
   lit-element@4.2.2: '2025-12-23T22:03:30.237Z'
   lit-html@3.3.3: '2026-05-14T03:55:59.172Z'
   lit@3.3.3: '2026-05-14T03:55:58.007Z'
-  material-symbols@0.45.9: '2026-07-23T05:13:34.206Z'
+  material-symbols@0.45.10: '2026-07-31T05:07:23.652Z'
   postcss-lit@1.4.1: '2026-02-23T15:19:14.618Z'
   postcss@8.5.25: '2026-07-29T13:01:35.017Z'
   prettier@3.9.6: '2026-07-21T05:51:53.987Z'

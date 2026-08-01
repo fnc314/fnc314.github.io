@@ -28,6 +28,7 @@ CSS `mask-image` requires a `url()` value. **This correctly stays as a CSS data 
 ### Pattern C — CSS `url()` for `background-image` on decorative border ✅ Keep
 
 **Where:**
+
 - [code-repo.ts L152-155](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/code/repo/code-repo.ts#L148-L155)
 - [blog-entry.ts L31-33](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/publication/blog/entry/blog-entry.ts#L31-L33)
 
@@ -54,12 +55,12 @@ In a single pass via an automated script, we will inject a `$extensions` block i
     "logos": {
       "tech": {
         "android": {
-          "$extensions": {
-            "fnc314.usage": "inline-svg" 
-          },
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           // ...
         }
@@ -70,6 +71,7 @@ In a single pass via an automated script, we will inject a `$extensions` block i
 ```
 
 **Usage Values:**
+
 - `"inline-svg"` (Default): Emitted to `icons.ts` for Lit usage.
 - `"css-data-uri"`: Emitted to `icon-svg.css` for `mask`, `background-image`, and 3rd-party widget CSS.
 - `"both"`: Emitted to both files (e.g., GitHub and Medium logos, which are used as both inline elements and background borders).
@@ -128,6 +130,7 @@ This file will be exported by `packages/design-tokens/src/index.ts`.
 We will use a script to run a single-pass edit over all TypeScript files in `packages/data/src/**/*.ts` to convert the `designToken` properties from CSS custom property strings to our new nested namespace references.
 
 **Before:**
+
 ```typescript
 designToken: {
   dark: "--icons-logos-tech-gradle-dark-icon-svg",
@@ -136,9 +139,11 @@ designToken: {
 ```
 
 **After:**
+
 ```typescript
 designToken: Icons.Logos.Tech.Gradle
 ```
+
 *(Note: Since `Icons.Logos.Tech.Gradle` yields an `IconVariants` object containing both `dark` and `light`, the `designToken` property on data models can simply store the object itself, eliminating the need to explicitly specify `dark:` and `light:` in the data layer!)*
 
 ---
@@ -177,6 +182,7 @@ const iconTag = html`<span slot="icon" role="img">${iconSvg}</span>`;
 ## Verification Plan
 
 ### Automated Commands
+
 ```bash
 # 1. Rebuild design tokens
 mise run //:dev-ex:tools:style-dictionary
@@ -187,6 +193,7 @@ mise run //:dev-ex:tools:eslint
 ```
 
 ### Manual Verification
+
 - Check the dev server at `http://localhost:9100` (started via `mise run //:sites:portfolio:development`):
   - `code-repo` word-tags: icons render, dark/light switching works
   - `code-reveal` panel: header icon renders inline

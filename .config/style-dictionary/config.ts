@@ -103,6 +103,95 @@ StyleDictionary.registerFilter({
     ["icons", "sys", "ref", "md"].every(path => !token.path.includes(path))
 });
 
+StyleDictionary.registerFilter({
+  name: "usage.inlineSvgIcon",
+  filter: (token: TransformedToken) =>
+    token.$type === "asset" &&
+    (token.$extensions?.["fnc314.usage"] === "inline-svg" || token.$extensions?.["fnc314.usage"] === "both")
+});
+
+StyleDictionary.registerFilter({
+  name: "usage.cssDataUriIcon",
+  filter: (token: TransformedToken) =>
+    token.$type === "asset" &&
+    (token.$extensions?.["fnc314.usage"] === "css-data-uri" || token.$extensions?.["fnc314.usage"] === "both")
+});
+
+/**
+ * Custom format to generate a namespaced Lit `svg` template TypeScript module
+ */
+StyleDictionary.registerFormat({
+  name: "typescript/namespaced-lit-svg",
+  format: async function({ dictionary, file, options }) {
+    const header = await fileHeader({ file, commentStyle: commentStyles.long, formatting: {}, options });
+
+    let code = `${header}\nimport { svg } from "lit";\nimport { type IconVariants } from "@fnc314/packages.types";\n\n`;
+
+    // Group tokens by their path hierarchy excluding the root "icons" category
+    const nestedStructure: Record<string, any> = {};
+
+    for (const token of dictionary.allTokens) {
+      const filePath = path.resolve(token.$value);
+      if (!fs.existsSync(filePath)) continue;
+
+      const rawSvg = fs.readFileSync(filePath, "utf-8");
+      const optimizedSvg = optimizeSvg(rawSvg, filePath).trim();
+
+      // Path parts, e.g., ["logos", "organization", "github", "dark"]
+      const pathParts = token.path.filter(p => p !== "icons");
+      if (pathParts.length === 0) continue;
+
+      const categoryOrItem = pathParts.slice(0, -1);
+      const variantKey = pathParts[pathParts.length - 1]; // dark, light, default, mask, etc.
+
+      let current = nestedStructure;
+      for (const part of categoryOrItem) {
+        // Convert kebab-case parts to PascalCase/camelCase as appropriate for object keys
+        const formattedPart = part
+          .replace(/-([a-z])/g, (_, c) => c.toUpperCase())
+          .replace(/-/g, "");
+
+        if (!current[formattedPart]) {
+          current[formattedPart] = {};
+        }
+        current = current[formattedPart];
+      }
+
+      // Store the optimized template result string for this variant
+      current[variantKey] = `svg\`${optimizedSvg}\``;
+    }
+
+    /**
+     * Recursively serializes the nested object structure into TypeScript code strings
+     */
+    function serializeNode(node: Record<string, any>, indent = "  "): string {
+      const entries = Object.entries(node);
+      if (entries.length === 0) return "{}";
+
+      // Check if this node is a leaf containing variant templates (e.g., has dark/light/etc.)
+      const isVariantLeaf = entries.some(([k]) => ["dark", "light", "default", "mask"].includes(k));
+
+      if (isVariantLeaf) {
+        const variantEntries = entries.map(([vKey, vVal]) => `${indent}${vKey}: ${vVal},`).join("\n");
+        return `{\n${variantEntries}\n${indent.slice(2)}} as IconVariants`;
+      }
+
+      const objEntries = entries.map(([key, val]) => {
+        // Capitalize the top-level property identifiers (Logos, Material, etc.)
+        const propertyKey = key.charAt(0).toUpperCase() + key.slice(1);
+        return `${indent}${propertyKey}: ${serializeNode(val, indent + "  ")},\n`;
+      }).join("");
+
+      return `{\n${objEntries}${indent.slice(2)}}`;
+    }
+
+    const exportedTree = serializeNode(nestedStructure);
+    code += `export const Icons = ${exportedTree} as const;\n\n`;
+
+    return code;
+  },
+});
+
 /**
  * Custom format to generate Lit `svg` template TypeScript modules from asset tokens
  */
@@ -184,7 +273,7 @@ const styleDictionaryConfig: Config = {
         {
           destination: "icon-svg.css",
           format: formats.cssVariables,
-          filter: "isIconToken",
+          filter: "usage.cssDataUriIcon",
           options: {
             outputReferences: true,
             outputReferenceFallbacks: true,
@@ -209,8 +298,8 @@ const styleDictionaryConfig: Config = {
       files: [
         {
           destination: "icons.ts",
-          format: "typescript/lit-svg",
-          filter: "isIconToken",
+          format: "typescript/namespaced-lit-svg",
+          filter: "usage.inlineSvgIcon",
           options: {
             formatting: {
               fileHeaderTimestamp: true,
