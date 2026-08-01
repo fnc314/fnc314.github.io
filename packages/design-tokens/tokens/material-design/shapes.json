@@ -11,7 +11,7 @@
           "none": { "$value": "0" },
           "small": { "$value": "0.5rem" },
           "circle": {
-            "$type": "$value",
+            "$type": "value",
             "$value": "50%"
           }
         }

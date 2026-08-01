@@ -10,6 +10,8 @@ export const CodeRevealStyles: CSSResult = css`
     --md-icon-button-icon-size: var(--md-icon-size);
     --md-icon-button-icon-color: var(--md-sys-color-on-tertiary-container);
 
+    --code-reveal-header-icon-min-inline-size: var(--sizes-dynamic-width-m);
+
     display: block;
     width: 100%;
   }
@@ -102,10 +104,10 @@ export const CodeRevealStyles: CSSResult = css`
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 20dvw;
+        min-inline-size: var(--code-reveal-header-icon-min-inline-size);
 
-        &::slotted(img) {
-          max-inline-size: 20dvw;
+        &::slotted(span) {
+          min-inline-size: var(--code-reveal-header-icon-min-inline-size);
           border-radius: var(--md-sys-shape-corner-medium);
         }
       }

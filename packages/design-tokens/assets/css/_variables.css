@@ -1,6 +1,6 @@
 /**
  * Do not edit directly, this file was auto-generated.
- * Generated on Sat, 01 Aug 2026 12:12:52 GMT
+ * Generated on Sat, 01 Aug 2026 14:59:08 GMT
  */
 
 :root {
@@ -60,6 +60,24 @@
   --motions-rotation-none: 0deg;
   --motions-transform-hover-lift: -4px;
   --motions-translate-y-fade-in-up: 20px;
+  --sizes-dynamic-height-l: 25dvh;
+  --sizes-dynamic-height-m: 20dvh;
+  --sizes-dynamic-height-s: 15dvh;
+  --sizes-dynamic-height-xl: 30dvh;
+  --sizes-dynamic-height-xs: 10dvh;
+  --sizes-dynamic-height-xxl: 40dvh;
+  --sizes-dynamic-height-xxs: 5dvh;
+  --sizes-dynamic-height-xxxl: 50dvh;
+  --sizes-dynamic-height-xxxs: 1dvh;
+  --sizes-dynamic-width-l: 25dvw;
+  --sizes-dynamic-width-m: 20dvw;
+  --sizes-dynamic-width-s: 15dvw;
+  --sizes-dynamic-width-xl: 30dvw;
+  --sizes-dynamic-width-xs: 10dvw;
+  --sizes-dynamic-width-xxl: 40dvw;
+  --sizes-dynamic-width-xxs: 5dvw;
+  --sizes-dynamic-width-xxxl: 50dvw;
+  --sizes-dynamic-width-xxxs: 1dvw;
   --sizes-height-l: 1.5rem;
   --sizes-height-m: 1rem;
   --sizes-height-s: 0.75rem;

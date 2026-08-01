@@ -3,21 +3,21 @@
     "fade-in-up": {
       "from": {
         "opacity": {
-          "$type": "$value",
+          "$type": "value",
           "$value": "0"
         },
         "translate": {
-          "$type": "$value",
+          "$type": "value",
           "$value": "translateY(var(--keyframes-fade-in-up-motions-translate-y-from))"
         }
       },
       "to": {
         "opacity": {
-          "$type": "$value",
+          "$type": "value",
           "$value": "1"
         },
         "translate": {
-          "$type": "$value",
+          "$type": "value",
           "$value": "translateY(var(--keyframes-fade-in-up-motions-translate-y-to))"
         }
       },
@@ -25,11 +25,11 @@
         "translate": {
           "y": {
             "from": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "20px"
             },
             "to": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "0px"
             }
           }

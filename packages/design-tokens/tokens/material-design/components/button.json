@@ -4,7 +4,7 @@
       "button": {
         "container": {
           "shape": {
-            "$type": "$value",
+            "$type": "value",
             "$value": "var(--md-sys-shape-corner-small)"
           }
         }
@@ -14,7 +14,7 @@
       "button": {
         "container": {
           "shape": {
-            "$type": "$value",
+            "$type": "value",
             "$value": "var(--md-sys-shape-corner-small)"
           }
         }
