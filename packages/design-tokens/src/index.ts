@@ -5,3 +5,5 @@ export * from "@/css/icon-svg.css";
 export * from "@/css/touch-screen.css";
 export * from "@/lib/dark-mode-toggle";
 export * from "@/lib/read-css-property";
+
+export { Icons } from "@/assets/ts/icons";

@@ -5,19 +5,31 @@
         "linkedin": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-default.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-light.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "mask": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-mask.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-mask.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           }
         }
       }

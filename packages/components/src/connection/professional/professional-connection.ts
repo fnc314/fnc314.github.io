@@ -1,7 +1,6 @@
 import { ProfessionalConnectionStyles } from "@/lib/connection/professional/professional-connection.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -19,7 +18,7 @@ export class ProfessionalConnection extends UIAwareElement {
 
   override render(): TemplateResult {
     const style = unsafeCSS(`
-      --professional-connection-mask: url('${readCSSProperty(this.professionalConnectionData.designToken.mask)}');
+      --professional-connection-mask: ${this.professionalConnectionData.designToken.mask};
     `);
     return html`
       <md-filled-icon-button

@@ -1,7 +1,7 @@
 {
   "globals": {
     "color-scheme": {
-      "$type": "$value",
+      "$type": "value",
       "$value": "light dark"
     },
     "transition": {
@@ -12,7 +12,7 @@
     },
     "buffer": {
       "height": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "10rem"
       }
     },
@@ -25,7 +25,7 @@
     },
     "color": {
       "background": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "var(--md-sys-color-surface-container-highest)"
       }
     }

@@ -2,130 +2,208 @@
   "sizes": {
     "height": {
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.5rem"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1rem"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.75rem"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2rem"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.5rem"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "3rem"
       },
       "xxxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "4rem"
       },
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.25rem"
       },
       "xxxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.125rem"
       }
     },
     "none": {
-      "$type": "$value",
+      "$type": "value",
       "$value": "0"
     },
     "ratio": {
       "square": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1"
       },
       "tall": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "9 / 16"
       },
       "wide": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "16 / 9"
       }
     },
     "thickness": {
       "hairline": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1px"
       },
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "7px"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "6px"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "5px"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "8px"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "4px"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "9px"
       },
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2px"
       }
     },
     "width": {
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.5rem"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1rem"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.75rem"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2rem"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.5rem"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "3rem"
       },
       "xxxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "4rem"
       },
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.25rem"
       },
       "xxxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.125rem"
+      }
+    },
+    "dynamic": {
+      "width": {
+        "l": {
+          "$type": "value",
+          "$value": "25dvw"
+        },
+        "m": {
+          "$type": "value",
+          "$value": "20dvw"
+        },
+        "s": {
+          "$type": "value",
+          "$value": "15dvw"
+        },
+        "xl": {
+          "$type": "value",
+          "$value": "30dvw"
+        },
+        "xs": {
+          "$type": "value",
+          "$value": "10dvw"
+        },
+        "xxl": {
+          "$type": "value",
+          "$value": "40dvw"
+        },
+        "xxxl": {
+          "$type": "value",
+          "$value": "50dvw"
+        },
+        "xxs": {
+          "$type": "value",
+          "$value": "5dvw"
+        },
+        "xxxs": {
+          "$type": "value",
+          "$value": "1dvw"
+        }
+      },
+      "height": {
+        "l": {
+          "$type": "value",
+          "$value": "25dvh"
+        },
+        "m": {
+          "$type": "value",
+          "$value": "20dvh"
+        },
+        "s": {
+          "$type": "value",
+          "$value": "15dvh"
+        },
+        "xl": {
+          "$type": "value",
+          "$value": "30dvh"
+        },
+        "xs": {
+          "$type": "value",
+          "$value": "10dvh"
+        },
+        "xxl": {
+          "$type": "value",
+          "$value": "40dvh"
+        },
+        "xxxl": {
+          "$type": "value",
+          "$value": "50dvh"
+        },
+        "xxs": {
+          "$type": "value",
+          "$value": "5dvh"
+        },
+        "xxxs": {
+          "$type": "value",
+          "$value": "1dvh"
+        }
       }
     }
   }

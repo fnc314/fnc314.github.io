@@ -5,27 +5,27 @@
         "symbols": {
           "sharp": {
             "family": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "\"Material Symbols Sharp\""
             },
             "face": {
               "weight": {
                 "min": {
-                  "$type": "$value",
+                  "$type": "value",
                   "$value": 100
                 },
                 "max": {
-                  "$type": "$value",
+                  "$type": "value",
                   "$value": 700
                 }
               }
             },
             "weight": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "normal"
             },
             "size": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "24px"
             },
             "line-height": {
@@ -35,27 +35,27 @@
           },
           "outlined": {
             "family": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "\"Material Symbols Outlined\""
             },
             "face": {
               "weight": {
                 "min": {
-                  "$type": "$value",
+                  "$type": "value",
                   "$value": 100
                 },
                 "max": {
-                  "$type": "$value",
+                  "$type": "value",
                   "$value": 700
                 }
               }
             },
             "weight": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "normal"
             },
             "size": {
-              "$type": "$value",
+              "$type": "value",
               "$value": "24px"
             },
             "line-height": {

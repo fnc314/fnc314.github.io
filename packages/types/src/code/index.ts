@@ -1,4 +1,4 @@
-import { type DesignTokenIcon } from "@/lib/design-tokens";
+import { type IconVariants } from "@/lib/design-tokens";
 
 /**
  * The `const` for the `CSS @property`
@@ -45,7 +45,7 @@ export interface CodeRepoData {
  */
 export interface CodeRepoTech extends CodeRepoPopover {
   /** A generated `CSS Variable` from `@fnc314/packages.types` */
-  designToken: DesignTokenIcon;
+  designToken: IconVariants;
 
   /** Display name for the technology (e.g., "TypeScript"). */
   name: string;

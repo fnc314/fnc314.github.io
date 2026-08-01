@@ -5,15 +5,24 @@
         "gradle": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-default.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           }
         }
       }

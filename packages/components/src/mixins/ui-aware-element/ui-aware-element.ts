@@ -7,8 +7,9 @@ import {
     CSS_VARIABLE_BREAKPOINT_LABEL,
     CSS_VARIABLE_TOUCH_SCREEN,
     type DesignTokenIcon,
+    type IconVariants,
 } from "@fnc314/packages.types";
-import { type CSSResult, LitElement } from "lit";
+import { type CSSResult, LitElement, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";
 
 /**
@@ -77,5 +78,9 @@ export abstract class UIAwareElement extends LitElement {
    */
   protected whichDesignToken(designToken: DesignTokenIcon): string {
     return this.darkMode ? designToken.dark : designToken.light;
+  }
+
+  protected getActiveIcon(variants: IconVariants): TemplateResult {
+    return this.darkMode ? variants.dark : variants.light;
   }
 }

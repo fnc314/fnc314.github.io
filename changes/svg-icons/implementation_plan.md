@@ -1,0 +1,203 @@
+# SVG Icon Consumption: Lit `svg` vs `<img src>` vs CSS `url()` — Assessment & Migration Plan (Revised)
+
+## Problem Statement
+
+The codebase currently has **two parallel style-dictionary output platforms** for SVG icons:
+
+1. **`iconSvg`** → [icon-svg.css](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/design-tokens/assets/css/icon-svg.css) — CSS custom properties with data-URI-encoded SVG values
+2. **`litSvg`** → [icons.ts](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/design-tokens/assets/ts/icons.ts) — TypeScript module exporting Lit `svg` tagged template literals
+
+The `litSvg` output **exists but is never imported** by any component. Instead, every component that needs to render an SVG icon uses the `readCSSProperty()` hack to extract the data-URI from the CSS custom property at runtime, strip quotes, and jam it into `<img src>` or `url()`. This is architecturally backwards for a Lit-based app.
+
+---
+
+## Current SVG Consumption Patterns
+
+### Pattern A — CSS `url()` for 3rd-party widget custom properties ✅ Keep
+
+**Where:** [ui-mode-toggle.styles.ts](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/ui-mode-toggle/ui-mode-toggle.styles.ts) via [DarkModeToggleSvgs](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/design-tokens/src/dark-mode-toggle/index.ts)
+
+The `<dark-mode-toggle>` 3rd-party web component consumes icons exclusively through CSS custom properties like `--dark-mode-toggle-dark-icon: url('…')`. **This pattern is correct and must remain as CSS `url()` data URIs.**
+
+### Pattern B — CSS `url()` for `mask-image` ✅ Keep
+
+**Where:** [professional-connection.ts](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/connection/professional/professional-connection.ts#L22)
+
+CSS `mask-image` requires a `url()` value. **This correctly stays as a CSS data URI.**
+
+### Pattern C — CSS `url()` for `background-image` on decorative border ✅ Keep
+
+**Where:**
+
+- [code-repo.ts L152-155](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/code/repo/code-repo.ts#L148-L155)
+- [blog-entry.ts L31-33](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/publication/blog/entry/blog-entry.ts#L31-L33)
+
+These are consumed by `dynamic-border.ts`. **Must remain CSS `url()` data URIs.**
+
+### Pattern D — `readCSSProperty()` → `<img src>` hack ❌ Migrate to Lit `svg`
+
+**Where:** `code-repo` word-tags, `code-reveal` header icon, `education-institution` logos, `blog-entry` footer logos.
+**Why this is a hack:** Doing a `window.getComputedStyle()` call at render time to extract data-URIs is fragile, breaks tree-shaking, and yields opaque `<img src>` elements instead of natively stylable, accessible inline `<svg>` elements.
+
+---
+
+## Proposed Migration
+
+### Phase 1 — Enhance Style-Dictionary Config & Token JSON
+
+#### 1a. Mass-Edit Token JSON files with `$extensions`
+
+In a single pass via an automated script, we will inject a `$extensions` block into every JSON file in `packages/design-tokens/tokens/icons/`. According to the [DTCG 2025.10 Spec](https://www.designtokens.org/tr/2025.10/format/#extensions-0), the key must be namespaced. We'll use `fnc314.usage`.
+
+```jsonc
+{
+  "icons": {
+    "logos": {
+      "tech": {
+        "android": {
+          "dark": {
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/android/android.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
+          },
+          // ...
+        }
+      }
+    }
+  }
+}
+```
+
+**Usage Values:**
+
+- `"inline-svg"` (Default): Emitted to `icons.ts` for Lit usage.
+- `"css-data-uri"`: Emitted to `icon-svg.css` for `mask`, `background-image`, and 3rd-party widget CSS.
+- `"both"`: Emitted to both files (e.g., GitHub and Medium logos, which are used as both inline elements and background borders).
+
+#### 1b. Update Style-Dictionary Config
+
+We will add two custom filters (`isInlineSvgIcon` and `isCssDataUriIcon`) to [config.ts](file:///Users/fnc314/Code/websites/fnc314.github.io/.config/style-dictionary/config.ts) to direct output based on the extension value.
+
+---
+
+### Phase 2 — Generate a Namespaced Icon Map & Move Types
+
+#### 2a. Move `IconVariants` to `packages/types`
+
+We will define the new type in `packages/types/src/design-tokens/index.ts`:
+
+```typescript
+import { type TemplateResult } from "lit";
+
+export interface IconVariants {
+  dark: TemplateResult;
+  light: TemplateResult;
+  default?: TemplateResult;
+  mask?: TemplateResult;
+}
+```
+
+#### 2b. Generate `Icons` Namespace via Style-Dictionary
+
+Instead of outputting a flat file of camelCase constants, we will create a custom Style Dictionary format (`typescript/namespaced-lit-svg`) that builds a deeply nested object from the token paths. The generated file at `packages/design-tokens/assets/ts/icons.ts` will look like:
+
+```typescript
+// AUTO-GENERATED by style-dictionary
+import { type TemplateResult, svg } from "lit";
+import { type IconVariants } from "@fnc314/packages.types";
+
+export const Icons = {
+  Logos: {
+    Tech: {
+      Android: {
+        dark: svg`<svg>...</svg>`,
+        light: svg`<svg>...</svg>`,
+      } as IconVariants,
+      // ...
+    }
+  }
+} as const;
+```
+
+This file will be exported by `packages/design-tokens/src/index.ts`.
+
+---
+
+### Phase 3 — Mass-Edit Data Layer
+
+We will use a script to run a single-pass edit over all TypeScript files in `packages/data/src/**/*.ts` to convert the `designToken` properties from CSS custom property strings to our new nested namespace references.
+
+**Before:**
+
+```typescript
+designToken: {
+  dark: "--icons-logos-tech-gradle-dark-icon-svg",
+  light: "--icons-logos-tech-gradle-light-icon-svg",
+}
+```
+
+**After:**
+
+```typescript
+designToken: Icons.Logos.Tech.Gradle
+```
+
+*(Note: Since `Icons.Logos.Tech.Gradle` yields an `IconVariants` object containing both `dark` and `light`, the `designToken` property on data models can simply store the object itself, eliminating the need to explicitly specify `dark:` and `light:` in the data layer!)*
+
+---
+
+### Phase 4 — Migrate Components
+
+#### 4a. Update UI-Aware Mixin
+
+[ui-aware-element.ts](file:///Users/fnc314/Code/websites/fnc314.github.io/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts) will be updated to accept `IconVariants` instead of `DesignTokenIcon` (string-based):
+
+```typescript
+protected getActiveIcon(variants: IconVariants): TemplateResult {
+  return this.darkMode ? variants.dark : variants.light;
+}
+```
+
+#### 4b. Refactor `code-repo`, `education-institution`, and `blog-entry`
+
+Instead of `readCSSProperty()`, components will render the `TemplateResult` directly:
+
+```typescript
+const iconSvg = this.getActiveIcon(tech.designToken);
+const iconTag = html`<span slot="icon" role="img">${iconSvg}</span>`;
+```
+
+---
+
+### Phase 5 — Eliminate Dead Code
+
+- Remove `readCSSProperty()` import from `education-institution.ts` entirely.
+- The `isIconToken` filter in style-dictionary is replaced by the usage filters.
+- `icon-svg.css` custom properties for `inline-svg`-only tokens will vanish, reducing the CSS footprint.
+
+---
+
+## Verification Plan
+
+### Automated Commands
+
+```bash
+# 1. Rebuild design tokens
+mise run //:dev-ex:tools:style-dictionary
+
+# 2. Linting checks
+mise run //:dev-ex:tools:stylelint
+mise run //:dev-ex:tools:eslint
+```
+
+### Manual Verification
+
+- Check the dev server at `http://localhost:9100` (started via `mise run //:sites:portfolio:development`):
+  - `code-repo` word-tags: icons render, dark/light switching works
+  - `code-reveal` panel: header icon renders inline
+  - `education-institution`: school logos render
+  - `blog-entry`: Medium logo in footer renders, border decoration still shows
+  - `ui-mode-toggle`: unchanged, icons still appear in the 3rd-party widget
+  - `professional-connection`: CSS mask still works

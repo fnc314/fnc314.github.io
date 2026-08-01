@@ -4,7 +4,10 @@
       "call": {
         "dark": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/call/call-dark.svg"
+          "$value": "packages/design-tokens/assets/icons/material/call/call-dark.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "default": {
           "$type": "asset",
@@ -12,7 +15,10 @@
         },
         "light": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/call/call-light.svg"
+          "$value": "packages/design-tokens/assets/icons/material/call/call-light.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         }
       }
     }

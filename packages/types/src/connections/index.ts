@@ -1,4 +1,4 @@
-import { type DesignTokenIcon, type MaskableDesignTokenIcon } from "@/lib/design-tokens";
+import { type IconVariants } from "@/lib/design-tokens";
 
 /**
  * The two variants of the {@link @fnc314/packages.components!DirectConnection} widget
@@ -10,7 +10,7 @@ export interface ConnectionInstance {
   mdIcon: DirectConnectionIcon;
   text: string;
   title: string;
-  designToken: DesignTokenIcon;
+  designToken: IconVariants;
   label: string;
 }
 
@@ -25,7 +25,7 @@ export type ArtifactConnectionType = keyof typeof ArtifactConnections;
 export type ArtifactConnectionData = {
   title: string;
   href: string;
-  designToken: DesignTokenIcon;
+  designToken: IconVariants;
   mdIcon: string;
   label: string;
 };
@@ -42,7 +42,7 @@ export type ProfessionalConnectionType = keyof typeof ProfessionalConnectionType
 
 export type ProfessionalConnectionJsonData = {
   href: string;
-  designToken: MaskableDesignTokenIcon;
+  designToken: IconVariants;
   title: string;
   label: string;
 };

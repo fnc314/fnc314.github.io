@@ -1,96 +1,96 @@
 {
   "spaces": {
     "none": {
-      "$type": "$value",
+      "$type": "value",
       "$value": "0"
     },
     "padding": {
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.25rem"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.5rem"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1rem"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.5rem"
       },
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2rem"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2.5rem"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "3rem"
       }
     },
     "margin": {
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.2rem"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.4rem"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.8rem"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.2rem"
       },
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.6rem"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2.4rem"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "3rem"
       }
     },
     "gap": {
       "xxs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.2rem"
       },
       "xs": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.4rem"
       },
       "s": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "0.8rem"
       },
       "m": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.2rem"
       },
       "l": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "1.6rem"
       },
       "xl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "2.4rem"
       },
       "xxl": {
-        "$type": "$value",
+        "$type": "value",
         "$value": "3rem"
       }
     }

@@ -21,5 +21,8 @@
   ],
   "extends": [
     "./../packages.tsconfig.jsonc"
+  ],
+  "files": [
+    "./assets/ts/icons.ts",
   ]
 }

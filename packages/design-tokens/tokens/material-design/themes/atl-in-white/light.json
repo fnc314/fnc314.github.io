@@ -3,247 +3,247 @@
     "sys": {
       "color": {
         "primary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#805611"
         },
         "surfaceTint": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#805611"
         },
         "onPrimary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFFFFF"
         },
         "primaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFDDB4"
         },
         "onPrimaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#633F00"
         },
         "secondary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#705B40"
         },
         "onSecondary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFFFFF"
         },
         "secondaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FBDEBC"
         },
         "onSecondaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#56432B"
         },
         "tertiary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#52643F"
         },
         "onTertiary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFFFFF"
         },
         "tertiaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#D4EABB"
         },
         "onTertiaryContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#3B4C29"
         },
         "error": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#BA1A1A"
         },
         "onError": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFFFFF"
         },
         "errorContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFDAD6"
         },
         "onErrorContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#93000A"
         },
         "background": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFF8F4"
         },
         "onBackground": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#211B13"
         },
         "surface": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFF8F4"
         },
         "onSurface": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#211B13"
         },
         "surfaceVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#F0E0D0"
         },
         "onSurfaceVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#4F4539"
         },
         "outline": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#817567"
         },
         "outlineVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#D3C4B4"
         },
         "shadow": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#000000"
         },
         "scrim": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#000000"
         },
         "inverseSurface": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#362F27"
         },
         "inverseOnSurface": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FCEFE2"
         },
         "inversePrimary": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#F5BC6F"
         },
         "primaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFDDB4"
         },
         "onPrimaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#291800"
         },
         "primaryFixedDim": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#F5BC6F"
         },
         "onPrimaryFixedVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#633F00"
         },
         "secondaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FBDEBC"
         },
         "onSecondaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#271904"
         },
         "secondaryFixedDim": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#DEC2A1"
         },
         "onSecondaryFixedVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#56432B"
         },
         "tertiaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#D4EABB"
         },
         "onTertiaryFixed": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#101F03"
         },
         "tertiaryFixedDim": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#B9CDA0"
         },
         "onTertiaryFixedVariant": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#3B4C29"
         },
         "surfaceDim": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#E4D8CC"
         },
         "surfaceBright": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFF8F4"
         },
         "surfaceContainerLowest": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFFFFF"
         },
         "surfaceContainerLow": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#FFF1E5"
         },
         "surfaceContainer": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#F9ECDF"
         },
         "surfaceContainerHigh": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#F3E6DA"
         },
         "surfaceContainerHighest": {
-          "$type": "$value",
+          "$type": "value",
           "theme": "allInWhite",
           "$value": "#EDE0D4"
         }
