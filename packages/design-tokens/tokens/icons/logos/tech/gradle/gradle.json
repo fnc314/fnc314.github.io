@@ -14,6 +14,9 @@
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg"
+          },
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
           }
         }
       }

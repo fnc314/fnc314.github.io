@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import StyleDictionary, { type Config, type TransformedToken } from "style-dictionary";
 import {
+    commentStyles,
     formats,
     logBrokenReferenceLevels,
     logVerbosityLevels,
@@ -10,6 +11,7 @@ import {
     transformTypes,
     transforms
 } from "style-dictionary/enums";
+import { fileHeader } from "style-dictionary/utils";
 import { type Config as SVGOConfig, loadConfig, optimize } from "svgo";
 
 /**
@@ -19,7 +21,7 @@ const svgoConfig: SVGOConfig = await loadConfig(".config/svgo/svgo.config.mjs", 
 
 /**
  * Passes {@link svg} through {@link svgo} to optimize before embedding in
- *   stylesheets
+ *   stylesheets or Lit components
  *
  * @param svg - The `.svg` file content
  * @param path - The `.svg` file path
@@ -28,6 +30,15 @@ const svgoConfig: SVGOConfig = await loadConfig(".config/svgo/svgo.config.mjs", 
 const optimizeSvg: (svg: string, path: string) => string =
   (svg: string, path: string) => {
     const { data } = optimize(svg, { ...svgoConfig, path });
+    return data;
+  };
+
+/**
+ * Passes {@link svg} through {@link svgo} and encodes for CSS data URIs
+ */
+const optimizeSvgForCss: (svg: string, path: string) => string =
+  (svg: string, path: string) => {
+    const data = optimizeSvg(svg, path);
     return data
       // 1. Remove line breaks and extra spacing to keep the CSS property on one line
       .replaceAll(/[\r\n\t]+/g, " ")
@@ -57,25 +68,18 @@ const optimizeSvg: (svg: string, path: string) => string =
 
 /**
  * Reads the file from {@link TransformedToken.value} and returns
- *   the string contents
+ *   the string contents optimized for CSS
  *
  * @param token - A token referring to an `.svg` file
  * @returns The `string` contents
  */
-const readTokenFileContents: (token: TransformedToken) => string =
+const readTokenFileContentsForCss: (token: TransformedToken) => string =
   (token: TransformedToken) => {
     const filePath = path.resolve(token.value);
     if (!fs.existsSync(filePath)) return token.value;
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    return optimizeSvg(fileContent, filePath);
+    return optimizeSvgForCss(fileContent, filePath);
   };
-
-/**
- * Required portion of `url()` values in `css`
- *
- * @type {string}
- */
-const DATA_IMAGE_SVG: string = "data:image/svg+xml"
 
 StyleDictionary.registerFilter({
   name: "isIconToken",
@@ -85,7 +89,7 @@ StyleDictionary.registerFilter({
       token.name.startsWith("icons-logos") ||
       token.name.startsWith("icons-material")
     ) &&
-    token.type === "asset"
+    token.$type === "asset"
 });
 
 StyleDictionary.registerFilter({
@@ -100,6 +104,36 @@ StyleDictionary.registerFilter({
 });
 
 /**
+ * Custom format to generate Lit `svg` template TypeScript modules from asset tokens
+ */
+StyleDictionary.registerFormat({
+  name: "typescript/lit-svg",
+  format: async function ({ dictionary, file, options }) {
+    const header = await fileHeader({ file, commentStyle: commentStyles.long, formatting: {}, options });
+
+    let code = `${header}\nimport { svg, type TemplateResult } from "lit";\n\n`;
+
+    for (const token of dictionary.allTokens) {
+      const filePath = path.resolve(token.$value);
+      if (!fs.existsSync(filePath)) continue;
+
+      const rawSvg = fs.readFileSync(filePath, "utf-8");
+      const optimizedSvg = optimizeSvg(rawSvg, filePath).trim();
+
+      // Convert kebab-case token name (e.g., icons-components-github) to camelCase constant name
+      const constName = token.name
+        .replace(/-([a-z])/g, (g) => g[1].toUpperCase())
+        .replace(/-/g, "");
+
+      code += `/** ${token.description || token.name} */\n`;
+      code += `export const ${constName}: TemplateResult = svg\`${optimizedSvg}\`;\n\n`;
+    }
+
+    return code;
+  },
+});
+
+/**
  * Has to use `'` (single quotes) to bypass postcss process **AND** retain
  *   usefulness within `img.src` and `background-image` use cases
  */
@@ -109,7 +143,7 @@ StyleDictionary.registerTransform({
   filter: (token: TransformedToken) => token.type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
-    `'data:image/svg+xml;utf8,${readTokenFileContents(token)}'`
+    `'data:image/svg+xml;utf8,${readTokenFileContentsForCss(token)}'`
 });
 
 StyleDictionary.registerTransform({
@@ -123,6 +157,7 @@ StyleDictionary.registerTransform({
 const files = {
   buildPaths: {
     css: `${process.cwd()}/packages/design-tokens/assets/css/`,
+    ts: `${process.cwd()}/packages/design-tokens/assets/ts/`,
     json: `${process.cwd()}/packages/design-tokens/assets/json/`,
   },
   sources: [
@@ -156,6 +191,28 @@ const styleDictionaryConfig: Config = {
             sort: "name",
             formatting: {
               indentation: "  ",
+              fileHeaderTimestamp: true,
+              commentPosition: "above",
+              commentStyle: "long",
+            }
+          }
+        }
+      ]
+    },
+    litSvg: {
+      transforms: [
+        transforms.attributeCti,
+        transforms.nameKebab,
+        transforms.assetPath
+      ],
+      buildPath: files.buildPaths.ts,
+      files: [
+        {
+          destination: "icons.ts",
+          format: "typescript/lit-svg",
+          filter: "isIconToken",
+          options: {
+            formatting: {
               fileHeaderTimestamp: true,
               commentPosition: "above",
               commentStyle: "long",
@@ -215,21 +272,6 @@ const styleDictionaryConfig: Config = {
         }
       ],
     },
-    // dtcgJson: {
-    //   transformGroup: transformGroups.web,
-    //   buildPath: files.buildPaths.json,
-    //   files: [
-    //     {
-    //       destination: "tokens.json",
-    //       format: formats.jsonNested, // DTCG compliant format for now
-    //       options: {
-    //         outputReferences: true,
-    //         outputReferenceFallbacks: true,
-    //         sort: "name",
-    //       }
-    //     }
-    //   ]
-    // },
   },
   log: {
     warnings: logWarningLevels.error,
@@ -239,7 +281,5 @@ const styleDictionaryConfig: Config = {
     }
   }
 };
-
-// console.log(JSON.stringify({ files, styleDictionaryConfig }, null, 2));
 
 export default styleDictionaryConfig;

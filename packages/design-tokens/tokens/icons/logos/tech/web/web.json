@@ -15,6 +15,9 @@
             "light": {
               "$type": "asset",
               "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-light.svg"
+            },
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
             }
           },
           "html": {
@@ -29,6 +32,9 @@
             "light": {
               "$type": "asset",
               "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-light.svg"
+            },
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
             }
           },
           "javascript": {
@@ -43,6 +49,9 @@
             "light": {
               "$type": "asset",
               "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-light.svg"
+            },
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
             }
           },
           "web-components": {
@@ -57,6 +66,9 @@
             "light": {
               "$type": "asset",
               "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+            },
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
             }
           }
         }

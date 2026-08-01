@@ -1,3 +1,15 @@
+import { type TemplateResult } from "lit";
+
+/**
+ * Design Tokens v2
+ */
+export interface IconVariants {
+  dark: TemplateResult;
+  light: TemplateResult;
+  default?: TemplateResult;
+  mask?: TemplateResult;
+}
+
 /**
  * Describes the Design Token shape for icons with a `light` and `dark` variation
  */

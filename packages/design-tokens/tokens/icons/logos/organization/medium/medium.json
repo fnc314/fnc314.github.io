@@ -18,6 +18,9 @@
           "mask": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg"
+          },
+          "$extensions": {
+            "fnc314.usage": "both"
           }
         }
       }

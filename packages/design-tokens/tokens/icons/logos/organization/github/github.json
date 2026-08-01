@@ -18,6 +18,9 @@
           "mask": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg"
+          },
+          "$extensions": {
+            "fnc314.usage": "both"
           }
         }
       }
