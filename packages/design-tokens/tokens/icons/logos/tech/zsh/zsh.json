@@ -5,18 +5,24 @@
         "zsh": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-default.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-light.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "$value": "packages/design-tokens/assets/icons/logos/tech/zsh/zsh-light.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
           }
         }
       }

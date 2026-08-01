@@ -4,7 +4,10 @@
       "mail": {
         "dark": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/mail/mail-dark.svg"
+          "$value": "packages/design-tokens/assets/icons/material/mail/mail-dark.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "default": {
           "$type": "asset",
@@ -12,10 +15,10 @@
         },
         "light": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/mail/mail-light.svg"
-        },
-        "$extensions": {
-          "fnc314.usage": "inline-svg"
+          "$value": "packages/design-tokens/assets/icons/material/mail/mail-light.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         }
       }
     }

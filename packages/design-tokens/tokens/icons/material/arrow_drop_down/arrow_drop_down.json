@@ -4,7 +4,10 @@
       "arrow_drop_down": {
         "dark": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg"
+          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "default": {
           "$type": "asset",
@@ -12,10 +15,10 @@
         },
         "light": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg"
-        },
-        "$extensions": {
-          "fnc314.usage": "inline-svg"
+          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         }
       }
     }

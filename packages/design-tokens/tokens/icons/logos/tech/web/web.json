@@ -6,69 +6,93 @@
           "css": {
             "dark": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-dark.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-dark.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "default": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-default.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-default.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "light": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-light.svg"
-            },
-            "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/css/css-light.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             }
           },
           "html": {
             "dark": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-dark.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-dark.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "default": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-default.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-default.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "light": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-light.svg"
-            },
-            "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/html/html-light.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             }
           },
           "javascript": {
             "dark": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-dark.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-dark.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "default": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-default.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-default.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "light": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-light.svg"
-            },
-            "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/javascript/javascript-light.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             }
           },
           "web-components": {
             "dark": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "default": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             },
             "light": {
               "$type": "asset",
-              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg"
-            },
-            "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "$value": "packages/design-tokens/assets/icons/logos/tech/web/web-components.svg",
+              "$extensions": {
+                "fnc314.usage": "inline-svg"
+              }
             }
           }
         }

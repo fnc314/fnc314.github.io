@@ -5,22 +5,31 @@
         "github": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "mask": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "both"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           }
         }
       }

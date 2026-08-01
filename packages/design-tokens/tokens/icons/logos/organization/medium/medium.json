@@ -5,22 +5,31 @@
         "medium": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-light.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           },
           "mask": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "both"
+            "$value": "packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg",
+            "$extensions": {
+              "fnc314.usage": "both"
+            }
           }
         }
       }

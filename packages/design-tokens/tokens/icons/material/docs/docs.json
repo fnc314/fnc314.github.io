@@ -4,7 +4,10 @@
       "docs": {
         "dark": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/docs/docs-dark.svg"
+          "$value": "packages/design-tokens/assets/icons/material/docs/docs-dark.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "default": {
           "$type": "asset",
@@ -12,10 +15,10 @@
         },
         "light": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/docs/docs-light.svg"
-        },
-        "$extensions": {
-          "fnc314.usage": "inline-svg"
+          "$value": "packages/design-tokens/assets/icons/material/docs/docs-light.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         }
       }
     }

@@ -5,79 +5,97 @@
         "dark": {
           "empty": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-empty.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-empty.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "filled": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-filled.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/dark-mode/dark-mode-filled.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         },
         "default": {
           "empty": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-empty.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-empty.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "filled": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-filled.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/default/default-filled.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         },
         "light": {
           "empty": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-empty.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-empty.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "filled": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-filled.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/light-mode/light-mode-filled.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         },
         "check-box": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-light.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/check-box/check-box-light.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         },
         "remember-checked": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-light.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/checked/remember-checked-light.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         },
         "remember-unchecked": {
           "dark": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-dark.svg"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-dark.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           },
           "light": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-light.svg"
-          },
-          "$extensions": {
-            "fnc314.usage": "css-data-uri"
+            "$value": "packages/design-tokens/assets/icons/components/ui-mode-toggle/remember/unchecked/remember-unchecked-light.svg",
+            "$extensions": {
+              "fnc314.usage": "css-data-uri"
+            }
           }
         }
       }
