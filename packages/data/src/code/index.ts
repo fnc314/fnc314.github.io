@@ -1,3 +1,4 @@
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type CodeRepoData } from "@fnc314/packages.types";
 
 export const Projects: CodeRepoData[] = [
@@ -7,19 +8,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Gradle",
         url: "https://docs.gradle.org/",
-        designToken: {
-          dark: "--icons-logos-tech-gradle-dark-icon-svg",
-          light: "--icons-logos-tech-gradle-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Gradle,
         popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more"
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: {
-          dark: "--icons-logos-tech-kotlin-dark-icon-svg",
-          light: "--icons-logos-tech-kotlin-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Kotlin,
         popoverContent: "JetBrains' modern JVM languange"
       },
     ],
@@ -34,19 +29,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Bash",
         url: "https://www.gnu.org/software/bash/",
-        designToken: {
-          dark: "--icons-logos-tech-bash-dark-icon-svg",
-          light: "--icons-logos-tech-bash-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Bash,
         popoverContent: "Shell scripting"
       },
       {
         name: "Oh-My-Zsh",
         url: "https://ohmyz.sh/",
-        designToken: {
-          dark: "--icons-logos-tech-zsh-dark-icon-svg",
-          light: "--icons-logos-tech-zsh-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Zsh,
         popoverContent: "Shell scripting"
       },
     ],
@@ -61,28 +50,19 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Android",
         url: "https://developer.android.com/",
-        designToken: {
-          dark: "--icons-logos-tech-android-dark-icon-svg",
-          light: "--icons-logos-tech-android-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Android,
         popoverContent: "World's most used, open-source operating system",
       },
       {
         name: "Gradle",
         url: "https://docs.gradle.org/",
-        designToken: {
-          dark: "--icons-logos-tech-gradle-dark-icon-svg",
-          light: "--icons-logos-tech-gradle-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Gradle,
         popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: {
-          dark: "--icons-logos-tech-kotlin-dark-icon-svg",
-          light: "--icons-logos-tech-kotlin-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Kotlin,
         popoverContent: "JetBrains' modern JVM languange",
       },
     ],
@@ -97,146 +77,97 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Mise",
         url: "https://mise.jdx.dev/",
-        designToken: {
-          dark: "--icons-logos-tech-mise-dark-icon-svg",
-          light: "--icons-logos-tech-mise-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Mise,
         popoverContent: "Development Environment Tool Manager",
       },
       {
         name: "PNPM",
         url: "https://pnpm.io/",
-        designToken: {
-          dark: "--icons-logos-tech-pnpm-dark-icon-svg",
-          light: "--icons-logos-tech-pnpm-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Pnpm,
         popoverContent: "Alternative <pre>Node</pre> package manager",
       },
       {
         name: "Vite",
         url: "https://vite.dev/",
-        designToken: {
-          dark: "--icons-logos-tech-vite-dark-icon-svg",
-          light: "--icons-logos-tech-vite-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Vite,
         popoverContent: "Modern JavaScript toolchain based on Rust",
       },
       {
         name: "Lit",
         url: "https://lit.dev/",
-        designToken: {
-          dark: "--icons-logos-tech-lit-dark-icon-svg",
-          light: "--icons-logos-tech-lit-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Lit,
         popoverContent: "JavaScript library for building Web Components",
       },
       {
         name: "TypeScript",
         url: "https://typescriptlang.org/",
-        designToken: {
-          dark: "--icons-logos-tech-typescript-dark-icon-svg",
-          light: "--icons-logos-tech-typescript-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Typescript,
         popoverContent: "Microsoft's modern JavaScript superset language",
       },
       {
         name: "Style Dictionary",
         url: "https://styledictionary.com/",
-        designToken: {
-          dark: "--icons-logos-tech-style-dictionary-dark-icon-svg",
-          light: "--icons-logos-tech-style-dictionary-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.StyleDictionary,
         popoverContent: "NPM Package for generating design tokens from <pre>json</pre> files",
       },
       {
         name: "Material Components",
         url: "https://github.com/material-components/material-web",
-        // repo: "material-components/material-web",
-        designToken: {
-          dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.MaterialDesign,
         popoverContent: "Web Components library adhering to Material Design principles",
       },
       {
         name: "Node",
         url: "https://nodejs.org/",
-        designToken: {
-          dark: "--icons-logos-tech-node-dark-icon-svg",
-          light: "--icons-logos-tech-node-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Node,
         popoverContent: "JavaScript Runtime"
       },
       {
         name: "Material Theme Builder",
         url: "https://material-foundation.github.io/material-theme-builder/",
-        designToken: {
-          dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.MaterialDesign,
         popoverContent: "Online tool to generate Material Theme colors from provided images",
       },
       {
         name: "HTML",
         url: "https://developer.mozilla.org/",
-        designToken: {
-          dark: "--icons-logos-tech-web-html-dark-icon-svg",
-          light: "--icons-logos-tech-web-html-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Web.Html,
         popoverContent: "HTML5 for templates"
       },
       {
         name: "CSS",
         url: "https://developer.mozilla.org/",
-        designToken: {
-          dark: "--icons-logos-tech-web-css-dark-icon-svg",
-          light: "--icons-logos-tech-web-css-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Web.Css,
         popoverContent: "CSS for styles"
       },
       {
         name: "Prettier",
         url: "https://prettier.io/",
-        designToken: {
-          dark: "--icons-logos-tech-prettier-dark-icon-svg",
-          light: "--icons-logos-tech-prettier-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Prettier,
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "ESLint",
         url: "https://eslint.org/",
-        designToken: {
-          dark: "--icons-logos-tech-eslint-dark-icon-svg",
-          light: "--icons-logos-tech-eslint-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Eslint,
         popoverContent: "Linting library for <pre>Node</pre>",
       },
       {
         name: "Typescript-ESLint",
         url: "https://typescript-eslint.io/",
-        designToken: {
-          dark: "--icons-logos-tech-typescript-eslint-dark-icon-svg",
-          light: "--icons-logos-tech-typescript-eslint-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.TypescriptEslint,
         popoverContent: "TypeScript linting library for <pre>Node</pre>",
       },
       {
         name: "StyleLint",
         url: "https://stylelint.io/",
-        designToken: {
-          dark: "--icons-logos-tech-stylelint-dark-icon-svg",
-          light: "--icons-logos-tech-stylelint-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Stylelint,
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "PostCSS",
         url: "https://postcss.org/",
-        designToken: {
-          dark: "--icons-logos-tech-postcss-dark-icon-svg",
-          light: "--icons-logos-tech-postcss-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Postcss,
         popoverContent: "CSS processing library for <pre>Node</pre>",
       },
     ],
@@ -250,37 +181,25 @@ export const Projects: CodeRepoData[] = [
       {
         name: "HTML",
         url: "https://developer.mozilla.org/",
-        designToken: {
-          dark: "--icons-logos-tech-web-html-dark-icon-svg",
-          light: "--icons-logos-tech-web-html-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Web.Html,
         popoverContent: "HTML5 for templates"
       },
       {
         name: "CSS",
         url: "https://developer.mozilla.org/",
-        designToken: {
-          dark: "--icons-logos-tech-web-css-dark-icon-svg",
-          light: "--icons-logos-tech-web-css-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Web.Css,
         popoverContent: "CSS for styles"
       },
       {
         name: "JavaScript",
         url: "https://developer.mozilla.org/",
-        designToken: {
-          dark: "--icons-logos-tech-web-javascript-dark-icon-svg",
-          light: "--icons-logos-tech-web-javascript-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Web.Javascript,
         popoverContent: "JavaScript for simple interactivity"
       },
       {
         name: "Material Theme Builder",
         url: "https://material-foundation.github.io/material-theme-builder/",
-        designToken: {
-          dark: "--icons-logos-tech-material-design-dark-icon-svg",
-          light: "--icons-logos-tech-material-design-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.MaterialDesign,
         popoverContent: "Online tool to generate Material Theme colors from provided images",
       },
     ],
@@ -295,19 +214,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Python",
         url: "https://python.org/",
-        designToken: {
-          dark: "--icons-logos-tech-python-dark-icon-svg",
-          light: "--icons-logos-tech-python-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Python,
         popoverContent: "Popular scripting language",
       },
       {
         name: "Ruby",
         url: "https://www.ruby-lang.org/en/",
-        designToken: {
-          dark: "--icons-logos-tech-ruby-dark-icon-svg",
-          light: "--icons-logos-tech-ruby-light-icon-svg",
-        },
+        designToken: Icons.Logos.Tech.Ruby,
         popoverContent: "Formerly popular scripting language",
       },
     ],

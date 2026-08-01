@@ -8,6 +8,7 @@ import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
@@ -68,9 +69,9 @@ export class CodeRepo extends UIAwareElement {
     if (index === null || !this.codeRepo.tech[index]) return;
     const tech = this.codeRepo.tech[index];
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
-    const tagId = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag`;
+    const tagId: string = `${techWord}-word-tag-${index}`;
     await this.updateComplete;
-    const tagToFocus = this.shadowRoot?.querySelector(`#${tagId}`) as HTMLElement;
+    const tagToFocus = this.shadowRoot?.querySelector(`#${tagId}`) as WordTag;
     if (tagToFocus) {
       tagToFocus.focus();
     }
@@ -103,29 +104,13 @@ export class CodeRepo extends UIAwareElement {
 
   private createWordTagLI(tech: CodeRepoTech, wordIndex: number): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
-    const imgSrc = readCSSProperty(this.whichDesignToken(tech.designToken));
-    const tagId: string = `${this.whichDesignToken(tech.designToken)}-${techWord}-word-tag`;
-
-    const imgTag = imgSrc
-      ? html`
-          <img
-            loading="lazy"
-            role="img"
-            aria-describedby="${tagId}"
-            src="${imgSrc}"
-            alt="${tech.name}"
-            slot="icon"
-            title="${tech.name}"
-          />
-        `
-      : nothing;
+    const tagId: string = `${techWord}-word-tag-${wordIndex}`;
+    const imgTemplate = this.getActiveIcon(tech.designToken);
 
     const variant =
-      imgTag === nothing
-        ? "text-only"
-        : this.touchScreen || this.breakpoint === BreakpointLabels.mobile
-          ? "icon-text"
-          : "icon-only";
+      this.touchScreen || this.breakpoint === BreakpointLabels.mobile
+        ? "icon-text"
+        : "icon-only";
 
     return html`
       <li>
@@ -138,7 +123,7 @@ export class CodeRepo extends UIAwareElement {
           aria-controls="reveal-panel"
           @click=${() => this._toggleReveal(tech, wordIndex)}
         >
-          ${imgTag}
+          <span slot="icon">${imgTemplate}</span>
         </word-tag>
       </li>
     `;
@@ -155,8 +140,7 @@ export class CodeRepo extends UIAwareElement {
     `);
 
     const activeTech = this.activeRevealIndex !== null ? this.codeRepo.tech[this.activeRevealIndex] : null;
-    const activeToken = activeTech ? this.whichDesignToken(activeTech.designToken) : "";
-    const imgSrc = activeToken ? readCSSProperty(activeToken) : "";
+    const activeToken = activeTech ? this.getActiveIcon(activeTech.designToken) : html`${nothing}`;
     const isFolded = this.activeRevealIndex !== null && !this.isClosing;
 
     return html`
@@ -181,7 +165,7 @@ export class CodeRepo extends UIAwareElement {
           <md-divider></md-divider>
 
           <section class="synopsis" aria-label="Synopsis">
-            <p .innerHTML="${this.codeRepo.description}"></p>
+            <p class="md-typescale-body-large">${unsafeHTML(this.codeRepo.description)}</p>
           </section>
         </div>
 
@@ -206,7 +190,7 @@ export class CodeRepo extends UIAwareElement {
             }
           }}
         >
-          ${imgSrc ? html`<img slot="header-icon" loading="lazy" src="${imgSrc}" alt="${activeTech?.name}" width="200" />` : nothing}
+          <span slot="header-icon">${activeToken}</span>
         </code-reveal>
 
         <!-- BOTTOM FOLD SECTION: Technology Tags Footer -->

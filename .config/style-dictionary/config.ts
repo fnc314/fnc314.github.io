@@ -149,6 +149,7 @@ StyleDictionary.registerFormat({
         // Convert kebab-case parts to PascalCase/camelCase as appropriate for object keys
         const formattedPart = part
           .replace(/-([a-z])/g, (_, c) => c.toUpperCase())
+          .replace(/_([a-z])/g, (_, c) => c.toUpperCase())
           .replace(/-/g, "");
 
         if (!current[formattedPart]) {

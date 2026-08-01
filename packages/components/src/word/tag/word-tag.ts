@@ -7,10 +7,10 @@ import {
     WordTagVariantAttributeConverter,
     WordTagVariants,
 } from "@fnc314/packages.types";
+import "@material/web/focus/md-focus-ring.js";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
-import "@material/web/focus/md-focus-ring.js";
 
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
@@ -133,18 +133,18 @@ export class WordTag extends UIAwareElement {
       case WordTagVariants["text-icon"]:
         contents = html`
           ${defaultWordTag}
-          <slot name="icon"></slot>
+          <slot id="icon-slot" name="icon"></slot>
         `;
         break;
       case WordTagVariants["icon-text"]:
         contents = html`
-          <slot name="icon"></slot>
+          <slot id="icon-slot" name="icon"></slot>
           ${defaultWordTag}
         `;
         break;
       case WordTagVariants["icon-only"]:
         contents = html`
-          <slot name="icon"></slot>
+          <slot id="icon-slot" name="icon"></slot>
         `;
         break;
       case WordTagVariants["text-only"]:

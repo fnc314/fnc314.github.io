@@ -29,6 +29,12 @@ export const WordTagStyles: CSSResult = css`
     /** @ignore */
     --internal-word-tag-gap: var(--word-tag-gap, var(--spaces-gap-xs));
 
+    --internal-word-tag-icon-width: var(--word-tag-icon-width, var(--md-sys-typescale-body-large-line-height));
+
+    --internal-word-tag-icon-height: var(--word-tag-icon-height, var(--md-sys-typescale-body-large-line-height));
+
+    --internal-word-tag-icon-aspect-ratio: var(--word-tag-icon-aspect-ratio, calc(var(--internal-word-tag-icon-width) / var(--internal-word-tag-icon-height)));
+
     display: contents;
 
     @media (prefers-reduced-motion: reduce) {
@@ -61,6 +67,12 @@ export const WordTagStyles: CSSResult = css`
       line-height: var(--internal-word-tag-line-height);
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    #icon-slot {
+      width: var(--internal-word-tag-icon-width);
+      height: var(--internal-word-tag-icon-height);
+      aspect-ratio: var(--internal-word-tag-icon-aspect-ratio);
     }
   }
 `;

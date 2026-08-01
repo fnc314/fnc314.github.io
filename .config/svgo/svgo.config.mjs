@@ -11,10 +11,18 @@ export default {
           // Without it, your CSS variables won't scale fluidly!
           cleanupNumericValues: { floatPrecision: 2 },
           convertPathData: { floatPrecision: 2 },
+          cleanupIds: {
+            minify: false,
+
+          }
         },
       },
     },
     // Recommended for CSS variables: cuts down string lengths by removing xmlns attributes
     // "removeXMLNS"
+    // Replaces width/height with viewBox
+    "removeDimensions",
+    "removeXlink",
+    "removeTitle",
   ]
 };
