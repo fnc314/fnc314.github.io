@@ -75,8 +75,8 @@ const optimizeSvgForCss: (svg: string, path: string) => string =
  */
 const readTokenFileContentsForCss: (token: TransformedToken) => string =
   (token: TransformedToken) => {
-    const filePath = path.resolve(token.value);
-    if (!fs.existsSync(filePath)) return token.value;
+    const filePath = path.resolve(token.$value);
+    if (!fs.existsSync(filePath)) return token.$value;
     const fileContent = fs.readFileSync(filePath, "utf-8");
     return optimizeSvgForCss(fileContent, filePath);
   };
@@ -230,7 +230,7 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerTransform({
   name: "iconSvgToDataImageSvg",
   type: transformTypes.value,
-  filter: (token: TransformedToken) => token.type === "asset",
+  filter: (token: TransformedToken) => token.$type === "asset",
   transitive: true,
   transform: (token: TransformedToken) =>
     `'data:image/svg+xml;utf8,${readTokenFileContentsForCss(token)}'`
