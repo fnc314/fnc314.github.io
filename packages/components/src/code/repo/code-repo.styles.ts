@@ -142,6 +142,8 @@ export const CodeRepoStyles: CSSResult = css`
       padding: var(--spaces-none);
 
       & word-tag [slot="icon"] {
+        display: flex;
+        justify-content: center;
         block-size: var(--md-icon-size);
         flex-shrink: 0;
         inline-size: var(--md-icon-size);
