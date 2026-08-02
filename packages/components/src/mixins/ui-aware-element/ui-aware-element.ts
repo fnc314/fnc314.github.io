@@ -80,6 +80,14 @@ export abstract class UIAwareElement extends LitElement {
     return this.darkMode ? designToken.dark : designToken.light;
   }
 
+  /**
+   * Parses the provided `variant` for the proper {@link TemplateResult}
+   *   to render
+   *
+   * @protected
+   * @param {IconVariants} variants An {@link IconVariants} instance
+   * @returns {TemplateResult} The rendered {@link TemplateResult}
+   */
   protected getActiveIcon(variants: IconVariants): TemplateResult {
     return this.darkMode ? variants.dark : variants.light;
   }
