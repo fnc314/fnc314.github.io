@@ -100,6 +100,8 @@ export function buildConfig(dirName: string): UserConfigFnObject {
             "**/ui-mode-toggle/ui-mode-toggle.styles.ts",
             // Ternary css`` interpolations confuse splitHTMLByPlaceholder
             "**/word/tag/word-tag.ts",
+            // Breaks with dynamic svg insertion
+            "**/code/repo/code-repo.ts",
           ],
           failOnError: true,
           options: {
