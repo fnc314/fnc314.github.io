@@ -2,7 +2,7 @@ import { ProfessionalConnectionStyles } from "@/lib/connection/professional/prof
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
-import { type CSSResult, type TemplateResult, html, unsafeCSS } from "lit";
+import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("professional-connection")
@@ -17,9 +17,6 @@ export class ProfessionalConnection extends UIAwareElement {
   professionalConnectionData: ProfessionalConnectionJsonData = {} as ProfessionalConnectionJsonData;
 
   override render(): TemplateResult {
-    const style = unsafeCSS(`
-      --professional-connection-mask: ${this.professionalConnectionData.designToken.mask};
-    `);
     return html`
       <md-filled-icon-button
         href="${this.professionalConnectionData.href}"
@@ -29,7 +26,7 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}
       >
-        <span style="${style.cssText}"></span>
+        <span>${this.professionalConnectionData.designToken.mask}</span>
       </md-filled-icon-button>
     `;
   }

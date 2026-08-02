@@ -61,7 +61,7 @@ export class ConnectionsCard extends UIAwareElement {
           ([type, data]: [string, ProfessionalConnectionJsonData]) => html`
             <dd style="grid-column: span ${socialConnectionsColSpan}">
               <professional-connection
-                .professionalConnectionType=${type}
+                .professionalConnectionType=${type.toLowerCase()}
                 .professionalConnectionData=${data}
               >
               </professional-connection>

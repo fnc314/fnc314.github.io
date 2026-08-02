@@ -42,13 +42,13 @@ export const Connections: {
     linkedIn: {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/fnc314",
-      designToken: Icons.Logos.Organization.LinkedIn,
+      designToken: Icons.Logos.Organization.Linkedin,
       title: "Review professional profile on LinkedIn",
     },
     github: {
       label: "GitHub",
       href: "https://www.github.com/fnc314",
-      designToken: Icons.Logos.Organization.GitHub,
+      designToken: Icons.Logos.Organization.Github,
       title: "See open source code on GitHub",
     },
     medium: {
@@ -62,7 +62,7 @@ export const Connections: {
     googleDoc: {
       label: "Google Docs",
       href: "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
-      designToken: Icons.Material.Docs,
+      designToken: Icons.Logos.Tech.Google.Docs,
       title: "View resume on Google Docs",
       mdIcon: "docs",
     },
