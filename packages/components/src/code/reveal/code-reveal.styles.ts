@@ -7,15 +7,16 @@ import { type CSSResult, css } from "lit";
  */
 export const CodeRevealStyles: CSSResult = css`
   :host {
-    --md-icon-button-icon-size: var(--md-icon-size);
-    --md-icon-button-icon-color: var(--md-sys-color-on-tertiary-container);
-    --md-icon-button-focus-color: var(--md-sys-color-on-tertiary-container);
-    --md-icon-button-focus-icon-color: var(--md-sys-color-on-tertiary-container);
-    --md-icon-button-hover-icon-color: var(--md-sys-color-on-tertiary-container);
+    --md-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+    --md-icon-button-icon-color: var(--md-sys-color-tertiary);
+    --md-icon-button-focus-color: var(--md-sys-color-tertiary);
+    --md-icon-button-focus-icon-color: var(--md-sys-color-tertiary);
+    --md-icon-button-hover-icon-color: var(--md-sys-color-tertiary);
 
-    --md-focus-ring-color: var(--md-sys-color-on-tertiary-container);
+    --md-focus-ring-color: var(--md-sys-color-tertiary);
 
     --code-reveal-header-icon-inline-size: var(--sizes-dynamic-width-xs);
+    --code-reveal-color: var(--md-sys-color-tertiary);
 
     display: block;
     width: 100%;
@@ -74,9 +75,9 @@ export const CodeRevealStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--md-sys-color-tertiary-container);
-    color: var(--md-sys-color-on-tertiary-container);
-    border: solid var(--sizes-thickness-hairline) var(--md-sys-color-on-tertiary-container);
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--code-reveal-color);
+    border: solid var(--sizes-thickness-hairline) var(--code-reveal-color);
     border-radius: var(--bento-layout-card-shape);
     padding-inline: var(--spaces-padding-l);
     gap: var(--spaces-gap-m);
@@ -90,7 +91,7 @@ export const CodeRevealStyles: CSSResult = css`
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--md-sys-color-on-surface);
+      color: var(--code-reveal-color);
 
       md-icon {
         width: 2rem;
@@ -116,8 +117,9 @@ export const CodeRevealStyles: CSSResult = css`
       }
 
       h3 {
+        font-family: var(--md-ref-typeface-brand);
         margin: 0;
-        color: var(--md-sys-color-on-tertiary-container);
+        color: var(--code-reveal-color);
       }
     }
 
@@ -126,7 +128,7 @@ export const CodeRevealStyles: CSSResult = css`
 
       p, ul {
         margin: 0;
-        color: var(--md-sys-color-on-tertiary-container);
+        color: var(--code-reveal-color);
       }
 
       ul {
@@ -148,7 +150,7 @@ export const CodeRevealStyles: CSSResult = css`
       justify-content: center;
 
       a {
-        color: var(--md-sys-color-on-tertiary-container);
+        color: var(--code-reveal-color);
         text-decoration: none;
 
         &:hover,
