@@ -60,7 +60,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
                 rewriteImportExtensions: "remove",
               }
           },
-          treeshake: mode === "production",
+          treeshake: false,
           tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
         },
         outDir: `${process.cwd()}/packages/${dirName}/dist`,
