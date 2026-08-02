@@ -34,8 +34,8 @@ printf "\n"
 
 typeset PACKAGES=(
   types
-  data
   design-tokens
+  data
   services
   components
 )
