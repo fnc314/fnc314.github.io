@@ -1086,6 +1086,9 @@ importers:
 
   packages/data:
     dependencies:
+      '@fnc314/packages.design-tokens':
+        specifier: workspace:*
+        version: link:../design-tokens
       '@fnc314/packages.types':
         specifier: workspace:*
         version: link:../types

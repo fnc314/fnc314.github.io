@@ -701,6 +701,7 @@
   "prettier.useEditorConfig": true,
   "python-envs.defaultEnvManager": "ms-python.python:system",
   "python.analysis.autoImportCompletions": true,
+  "python.terminal.useEnvFile": true,
   "python.defaultInterpreterPath": "${workspaceFolder}/.vscode/mise-tools/python",
   "search.defaultViewMode": "tree",
   "search.showLineNumbers": true,
