@@ -20,7 +20,7 @@ export const EducationInstitutionStyles: CSSResult = css`
     text-align: center;
     align-items: center;
 
-    img {
+    span#svg {
       aspect-ratio: 1;
       background-color: var(--md-sys-color-surface-container-highest);
       block-size: var(--education-icon-size);
@@ -29,6 +29,9 @@ export const EducationInstitutionStyles: CSSResult = css`
       inline-size: var(--education-icon-size);
       place-self: center;
       padding: var(--spaces-padding-xs);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     h3 {
@@ -79,7 +82,7 @@ export const EducationInstitutionStyles: CSSResult = css`
       gap: var(--spaces-gap-xs) var(--spaces-gap-m);
       text-align: end;
 
-      img {
+      span#svg {
         place-self: flex-start center;
       }
     }
@@ -93,7 +96,7 @@ export const EducationInstitutionStyles: CSSResult = css`
       grid-template-columns: var(--education-icon-size) repeat(2, 1fr);
       text-align: end;
 
-      img {
+      span#svg {
         place-self: center;
       }
     }

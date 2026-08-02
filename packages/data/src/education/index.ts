@@ -1,3 +1,4 @@
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type EducationInstitutionRecord } from "@fnc314/packages.types";
 
 export const EducationJsonData: EducationInstitutionRecord[] = [
@@ -19,10 +20,7 @@ export const EducationJsonData: EducationInstitutionRecord[] = [
         year: "2014",
       },
     },
-    designToken: {
-      dark: "--icons-logos-education-general-assembly-dark-icon-svg",
-      light: "--icons-logos-education-general-assembly-light-icon-svg",
-    },
+    designToken: Icons.Logos.Education.GeneralAssembly,
   },
   {
     institute: "University of Pittsburgh",
@@ -42,9 +40,6 @@ export const EducationJsonData: EducationInstitutionRecord[] = [
         year: "2011",
       },
     },
-    designToken: {
-      dark: "--icons-logos-education-university-of-pittsburgh-dark-icon-svg",
-      light: "--icons-logos-education-university-of-pittsburgh-light-icon-svg",
-    },
+    designToken: Icons.Logos.Education.UniversityOfPittsburgh,
   },
 ];
