@@ -3,6 +3,7 @@
     "./../packages.tsconfig.jsonc",
   ],
   "references": [
+    { "path": "./../design-tokens/tsconfig.json" },
     { "path": "./../types/tsconfig.json" },
   ]
 }
