@@ -1233,6 +1233,12 @@ importers:
       '@fnc314/packages.components':
         specifier: workspace:*
         version: link:../../packages/components
+      '@fnc314/packages.data':
+        specifier: workspace:*
+        version: link:../../packages/data
+      '@fnc314/packages.design-tokens':
+        specifier: workspace:*
+        version: link:../../packages/design-tokens
       '@fnc314/packages.services':
         specifier: workspace:*
         version: link:../../packages/services
