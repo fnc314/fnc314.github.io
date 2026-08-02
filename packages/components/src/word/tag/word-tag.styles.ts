@@ -69,7 +69,7 @@ export const WordTagStyles: CSSResult = css`
       white-space: nowrap;
     }
 
-    #icon-slot {
+    slot[name="icon"] {
       width: var(--internal-word-tag-icon-width);
       height: var(--internal-word-tag-icon-height);
       aspect-ratio: var(--internal-word-tag-icon-aspect-ratio);

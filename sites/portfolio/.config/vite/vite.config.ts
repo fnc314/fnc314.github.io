@@ -300,10 +300,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           id: dynamicConfig.pwa.manifest.scope,
           scope: dynamicConfig.pwa.manifest.scope,
           start_url: dynamicConfig.pwa.manifest.start_url,
-          // icons: (manifest.icons || []).map((icon) => ({
-          //   ...icon,
-          //   src: `${dynamicConfig.pwa.manifest.scope}${icon.src}`,
-          // })),
         },
         workbox: {
           maximumFileSizeToCacheInBytes: 60_000_000,

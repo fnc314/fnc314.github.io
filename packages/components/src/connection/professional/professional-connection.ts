@@ -26,7 +26,7 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}
       >
-        <span>${this.professionalConnectionData.designToken.mask}</span>
+        ${this.professionalConnectionData.designToken.mask}
       </md-filled-icon-button>
     `;
   }

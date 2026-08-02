@@ -9,6 +9,7 @@ import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
 /**
  * An instance of a given `GitHub` repository project documented through
@@ -190,7 +191,7 @@ export class CodeRepo extends UIAwareElement {
             }
           }}
         >
-          <span slot="header-icon">${activeToken}</span>
+          ${unsafeSVG(activeToken.strings.join().replace("<svg", `<svg slot="header-icon"`))}
         </code-reveal>
 
         <!-- BOTTOM FOLD SECTION: Technology Tags Footer -->

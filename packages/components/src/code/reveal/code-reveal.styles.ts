@@ -15,7 +15,7 @@ export const CodeRevealStyles: CSSResult = css`
 
     --md-focus-ring-color: var(--md-sys-color-on-tertiary-container);
 
-    --code-reveal-header-icon-min-inline-size: var(--sizes-dynamic-width-m);
+    --code-reveal-header-icon-inline-size: var(--sizes-dynamic-width-xs);
 
     display: block;
     width: 100%;
@@ -109,14 +109,9 @@ export const CodeRevealStyles: CSSResult = css`
         display: flex;
         justify-content: center;
         align-items: center;
-        min-inline-size: var(--code-reveal-header-icon-min-inline-size);
 
-        &::slotted(span) {
-          min-inline-size: var(--code-reveal-header-icon-min-inline-size);
-          border-radius: var(--md-sys-shape-corner-medium);
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        &::slotted(svg) {
+          inline-size: var(--code-reveal-header-icon-inline-size);
         }
       }
 

@@ -31,7 +31,7 @@ export class ArtifactConnection extends UIAwareElement {
         title=${this.artifactConnectionData.title}
         aria-label=${this.artifactConnectionData.title}
       >
-        <md-icon> ${this.artifactConnectionData.mdIcon} </md-icon>
+        <md-icon>${this.artifactConnectionData.mdIcon}</md-icon>
       </md-filled-icon-button>
     `;
   }

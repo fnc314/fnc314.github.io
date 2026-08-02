@@ -9,8 +9,7 @@ export const ProfessionalConnectionStyles: CSSResult = css`
     gap: var(--spaces-gap-s);
   }
 
-  span {
+  svg {
     color: var(--connections-card-filled-icon-button-icon-color);
-    /* mask: var(--professional-connection-mask) no-repeat center / contain; */
   }
 `;
