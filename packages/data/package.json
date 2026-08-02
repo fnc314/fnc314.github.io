@@ -5,6 +5,7 @@
   },
   "customElements": "custom-elements.json",
   "dependencies": {
+    "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
