@@ -157,6 +157,9 @@ catalogs:
     serialize-javascript: 7.0.5
     undici: 7.28.0
     uuid: 14.0.0
+  typescript:
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    typescript7: "npm:@typescript/typescript@7.0.2"
 cleanupUnusedCatalogs: false
 color: "always"
 configDependencies:

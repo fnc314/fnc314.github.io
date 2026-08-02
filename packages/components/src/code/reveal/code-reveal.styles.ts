@@ -9,6 +9,11 @@ export const CodeRevealStyles: CSSResult = css`
   :host {
     --md-icon-button-icon-size: var(--md-icon-size);
     --md-icon-button-icon-color: var(--md-sys-color-on-tertiary-container);
+    --md-icon-button-focus-color: var(--md-sys-color-on-tertiary-container);
+    --md-icon-button-focus-icon-color: var(--md-sys-color-on-tertiary-container);
+    --md-icon-button-hover-icon-color: var(--md-sys-color-on-tertiary-container);
+
+    --md-focus-ring-color: var(--md-sys-color-on-tertiary-container);
 
     --code-reveal-header-icon-min-inline-size: var(--sizes-dynamic-width-m);
 
@@ -109,6 +114,9 @@ export const CodeRevealStyles: CSSResult = css`
         &::slotted(span) {
           min-inline-size: var(--code-reveal-header-icon-min-inline-size);
           border-radius: var(--md-sys-shape-corner-medium);
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
 
@@ -145,7 +153,7 @@ export const CodeRevealStyles: CSSResult = css`
       justify-content: center;
 
       a {
-        color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-tertiary-container);
         text-decoration: none;
 
         &:hover,

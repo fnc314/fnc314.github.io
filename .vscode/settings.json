@@ -734,8 +734,10 @@
     "css",
     "postcss",
     "ts",
-    "typescript",
+    "lit",
+    // "typescript",
   ],
+  "stylelint.lintFiles.glob": "**/*.styles.ts",
   "tailwindCSS.experimental.configFile": "${workspaceFolder}/.config/tailwind/tailwind.config.ts",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "tombi.args": [
