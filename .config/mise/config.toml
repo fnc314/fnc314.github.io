@@ -35,12 +35,14 @@ monorepo_root = true
 
 [env]
   _ = {
-    path = {
-      path = [
-        "{{config_root}}/node_modules/.bin",
-      ],
-      tools = true,
-    },
+    path = [
+      {
+        path = [
+          "{{config_root}}/node_modules/.bin",
+        ],
+        tools = true,
+      }
+    ],
   }
   configureExtensionsUseSymLinks = true
   LOCAL_CONFIG_DIR = "{{config_root}}/.config"
