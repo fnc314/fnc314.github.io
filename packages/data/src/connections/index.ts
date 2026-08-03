@@ -1,8 +1,8 @@
 import { Icons } from "@fnc314/packages.design-tokens";
 import {
-  type ArtifactConnectionData,
-  type ConnectionInstance,
-  type ProfessionalConnectionJsonData,
+    type ArtifactConnectionData,
+    type ConnectionInstance,
+    type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
 
 export const Connections: {
@@ -68,7 +68,7 @@ export const Connections: {
     },
     pdf: {
       label: "View PDF Resume",
-      href: "https://fnc314.com/files/pdfs/FrancoNColaizzi_Resume.pdf",
+      href: "https://files.fnc314.com/pdfs/FrancoNColaizzi_Resume.pdf",
       designToken: Icons.Material.PictureAsPdf,
       title: "Download resume in PDF format",
       mdIcon: "picture_as_pdf",
