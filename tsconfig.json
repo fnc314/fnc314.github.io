@@ -138,6 +138,9 @@
   ],
   "references": [
     {
+      "path": "./configs/typescript/tsconfig.json",
+    },
+    {
       "path": "./packages/components/tsconfig.json",
     },
     {

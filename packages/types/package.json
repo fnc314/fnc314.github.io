@@ -11,6 +11,7 @@
   },
   "description": "Types package to support https://fnc314.com",
   "devDependencies": {
+    "@fnc314/configs.typescript": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "typescript": "catalog:devDependencies",

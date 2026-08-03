@@ -1,5 +1,5 @@
 {
   "extends": [
-    "./../packages.tsconfig.jsonc"
+    "@fnc314/configs.typescript"
   ]
 }

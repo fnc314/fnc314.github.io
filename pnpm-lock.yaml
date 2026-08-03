@@ -1040,6 +1040,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@fnc314/packages.data':
         specifier: workspace:*
         version: link:../data
@@ -1086,6 +1089,9 @@ importers:
 
   packages/data:
     dependencies:
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@fnc314/packages.design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
@@ -1136,6 +1142,9 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
@@ -1160,6 +1169,9 @@ importers:
 
   packages/services:
     dependencies:
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@fnc314/packages.data':
         specifier: workspace:*
         version: link:../data
@@ -1207,6 +1219,9 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4

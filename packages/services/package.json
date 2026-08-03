@@ -5,6 +5,7 @@
   },
   "customElements": "custom-elements.json",
   "dependencies": {
+    "@fnc314/configs.typescript": "workspace:*",
     "@fnc314/packages.data": "workspace:*",
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.types": "workspace:*",

@@ -20,7 +20,7 @@
     }
   ],
   "extends": [
-    "./../packages.tsconfig.jsonc"
+    "@fnc314/configs.typescript",
   ],
   "files": [
     "./assets/ts/icons.ts",

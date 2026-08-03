@@ -9,6 +9,7 @@
   },
   "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "devDependencies": {
+    "@fnc314/configs.typescript": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",

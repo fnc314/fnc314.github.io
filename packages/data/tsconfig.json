@@ -1,6 +1,6 @@
 {
   "extends": [
-    "./../packages.tsconfig.jsonc",
+    "@fnc314/configs.typescript",
   ],
   "references": [
     { "path": "./../design-tokens/tsconfig.json" },
