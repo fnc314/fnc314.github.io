@@ -6,8 +6,7 @@ import {
     CONFIG_COLOR_SCHEME_NAMES,
     CSS_VARIABLE_BREAKPOINT_LABEL,
     CSS_VARIABLE_TOUCH_SCREEN,
-    type DesignTokenIcon,
-    type IconVariants,
+    type IconVariants
 } from "@fnc314/packages.types";
 import { type CSSResult, LitElement, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";
@@ -67,17 +66,6 @@ export abstract class UIAwareElement extends LitElement {
     super.disconnectedCallback();
     window.removeEventListener("resize", this.onBreakpointChange);
     configsService.removeEventListener("app-configs.change", this.onAppConfigChange);
-  }
-
-  /**
-   * Determines which field of the `designToken` should be rendered based on `darkMode`
-   *
-   * @protected
-   * @param designToken - A {@link DesignTokenIcon} to read
-   * @returns {string} - The actual token
-   */
-  protected whichDesignToken(designToken: DesignTokenIcon): string {
-    return this.darkMode ? designToken.dark : designToken.light;
   }
 
   /**

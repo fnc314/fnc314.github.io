@@ -1,6 +1,6 @@
 import "@fnc314/packages.components";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
-import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfig, type ColorSchemeConfigChange } from "@fnc314/packages.types";
+import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfig, type ColorSchemeConfigChange, ELEMENT_ID_META_TAG, EVENT_DOM_CONTENT_LOADED, WINDOW_MEDIA_PREFERS_COLOR_SCHEME } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -13,7 +13,7 @@ import "./index.css";
  * @param color - A `#`-prefixed `string`
  */
 const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =>
-  document.getElementById("meta-theme-color")?.setAttribute("content", color);
+  document.getElementById(ELEMENT_ID_META_TAG)?.setAttribute("content", color);
 
 /**
  * A listener for {@link ColorSchemeConfiChange} events
@@ -25,9 +25,7 @@ const onColorSchemeChange = (event: ColorSchemeConfigChange) => {
   if (!document.startViewTransition) {
     applyColorSchemeConfigs(customEvent.detail)
   } else {
-    document.startViewTransition(() => {
-      applyColorSchemeConfigs(customEvent.detail)
-    });
+    document.startViewTransition(() => applyColorSchemeConfigs(customEvent.detail));
   }
 };
 
@@ -45,11 +43,11 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
   setMetaThemeColor(themeService.themeJson().primary);
 }
 
-/** Bootstrapping listener for `DOMContentLoaded` */
+/** Bootstrapping listener for {@link EVENT_DOM_CONTENT_LOADED} */
 const domLoadedListener = () => {
-  document.removeEventListener("DOMContentLoaded", domLoadedListener);
+  document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
 
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onThemeChange);
+  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME).addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
@@ -61,8 +59,7 @@ const domLoadedListener = () => {
     configsService.loadConfigs().colorScheme
   );
 
-  // Migrated from AppShell
   document.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
 
-document.addEventListener("DOMContentLoaded", domLoadedListener);
+document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
