@@ -61,14 +61,14 @@ export const Connections: {
   resume: {
     googleDoc: {
       label: "Google Docs",
-      href: "https://docs.google.com/document/d/e/2PACX-1vS5hE6a7a8zK9mHt7cR-nf2hQXXV6bx8uPPpDBjsKKp7UlFLBbLFPK8ib2f-QVVpG1AEEc-_OinCI0g/pub",
+      href: "https://docs.google.com/document/d/e/2PACX-1vRScLyUSNJFYd3VoqStxDQpyQf4b9BpzE6YdjqSLWLDUA-2CsqAyWHIkkY3cpunEA/pub",
       designToken: Icons.Logos.Tech.Google.Docs,
       title: "View resume on Google Docs",
       mdIcon: "docs",
     },
     pdf: {
       label: "View PDF Resume",
-      href: "https://files.fnc314.com/pdfs/FrancoNColaizzi_Resume.pdf",
+      href: `https://files.fnc314.com/pdfs/FrancoNColaizzi_Resume.pdf?timestamp=${Date.now()}`,
       designToken: Icons.Material.PictureAsPdf,
       title: "Download resume in PDF format",
       mdIcon: "picture_as_pdf",
