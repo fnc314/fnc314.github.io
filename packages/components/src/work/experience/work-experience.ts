@@ -67,8 +67,9 @@ export class WorkExperience extends UIAwareElement {
 
   /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
-    const headerRole = this.isNested
-      ? html`<h4 class="md-typescale-headline-small">${this.experienceRole}</h4>`
+    const headerRole =
+      this.isNested ?
+        html`<h4 class="md-typescale-headline-small">${this.experienceRole}</h4>`
       : html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`;
 
     const org = html`
@@ -91,8 +92,9 @@ export class WorkExperience extends UIAwareElement {
       </p>
     `;
 
-    const summary = this.experienceSummary.length
-      ? html`
+    const summary =
+      this.experienceSummary.length ?
+        html`
           <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>
             ${unsafeHTML(this.experienceSummary)}
           </p>
@@ -101,8 +103,9 @@ export class WorkExperience extends UIAwareElement {
 
     const info = html`<header class="experience-info">${headerRole} ${org} ${dates} ${summary}</header>`;
 
-    const content = this.jobs.length
-      ? html`
+    const content =
+      this.jobs.length ?
+        html`
           <div class="nested-experience">
             ${this.jobs.map(
               (job) => html`
@@ -122,8 +125,9 @@ export class WorkExperience extends UIAwareElement {
         `
       : nothing;
 
-    const summaries = this.summaries.length
-      ? html`
+    const summaries =
+      this.summaries.length ?
+        html`
           <ul class="nested-summary">
             ${this.summaries.map((summary) => {
               const contentArray = summary.item.split(" ");
@@ -142,8 +146,8 @@ export class WorkExperience extends UIAwareElement {
         `
       : nothing;
 
-    return this.isNested
-      ? html`<section class="experience-container">${info} ${summaries}</section>`
+    return this.isNested ?
+        html`<section class="experience-container">${info} ${summaries}</section>`
       : html`<section class="experience-container">${info} ${content} ${summaries}</section>`;
   }
 }

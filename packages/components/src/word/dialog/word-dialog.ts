@@ -17,11 +17,7 @@ import { customElement, property, query } from "lit/decorators.js";
 @customElement("word-dialog")
 export class WordDialog extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    WordDialogStyles,
-    WordDialogAnimations
-  ]
+  static override styles = [TextStyles, WordDialogStyles, WordDialogAnimations];
 
   @property({ type: String })
   word = "";
@@ -30,7 +26,7 @@ export class WordDialog extends UIAwareElement {
   popoverId: string = this.word;
 
   @property({ type: Object, attribute: false })
-  footerURL: { text: string, url: string } = { text: this.word, url: "" }
+  footerURL: { text: string; url: string } = { text: this.word, url: "" };
 
   @query("dialog")
   dialog!: HTMLDialogElement;
@@ -38,10 +34,10 @@ export class WordDialog extends UIAwareElement {
   @query("md-icon-button")
   closeButton!: HTMLElement;
 
-  private _previousBodyOverflow: string = '';
-  private _previousBodyPosition: string = '';
-  private _previousBodyTop: string = '';
-  private _previousBodyWidth: string = '';
+  private _previousBodyOverflow: string = "";
+  private _previousBodyPosition: string = "";
+  private _previousBodyTop: string = "";
+  private _previousBodyWidth: string = "";
   public lastClosedAt = 0;
   private currentScrollY: number = 0;
 
@@ -76,12 +72,7 @@ export class WordDialog extends UIAwareElement {
     window.scrollTo(0, this.currentScrollY);
 
     this.lastClosedAt = Date.now();
-    this.dispatchEvent(
-      new CustomEvent(
-        "hide-dialog",
-        { composed: true, bubbles: true }
-      )
-    );
+    this.dispatchEvent(new CustomEvent("hide-dialog", { composed: true, bubbles: true }));
   }
 
   /**
@@ -111,9 +102,7 @@ export class WordDialog extends UIAwareElement {
           </md-icon-button>
           <header>
             <slot name="header-icon"></slot>
-            <h3 class="md-typescale-display-medium">
-              ${this.word}
-            </h3>
+            <h3 class="md-typescale-display-medium">${this.word}</h3>
           </header>
 
           <section>

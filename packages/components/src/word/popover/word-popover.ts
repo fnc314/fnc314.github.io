@@ -16,11 +16,7 @@ import { customElement, property, query } from "lit/decorators.js";
 @customElement("word-popover")
 export class WordPopover extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
-  static override styles = [
-    TextStyles,
-    WordPopoverStyles,
-    WordPopoverAnimations
-  ]
+  static override styles = [TextStyles, WordPopoverStyles, WordPopoverAnimations];
 
   @property({ type: String })
   word = "";
@@ -29,7 +25,7 @@ export class WordPopover extends UIAwareElement {
   popoverId: string = this.word;
 
   @property({ type: Object, attribute: false })
-  footerURL: { text: string, url: string } = { text: this.word, url: "" }
+  footerURL: { text: string; url: string } = { text: this.word, url: "" };
 
   @query("[popover]")
   popoverElement!: HTMLElement;
@@ -59,12 +55,7 @@ export class WordPopover extends UIAwareElement {
   private _handleToggle(e: ToggleEvent) {
     if (e.newState === "closed") {
       this.lastClosedAt = Date.now();
-      this.dispatchEvent(
-        new CustomEvent(
-          "hide-popover",
-          { composed: true, bubbles: true }
-        )
-      );
+      this.dispatchEvent(new CustomEvent("hide-popover", { composed: true, bubbles: true }));
     }
   }
 
@@ -86,9 +77,7 @@ export class WordPopover extends UIAwareElement {
           </md-icon-button>
           <header>
             <slot name="header-icon"></slot>
-            <h3 class="md-typescale-display-medium">
-              ${this.word}
-            </h3>
+            <h3 class="md-typescale-display-medium">${this.word}</h3>
           </header>
 
           <section>

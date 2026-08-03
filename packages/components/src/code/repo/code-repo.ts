@@ -108,10 +108,7 @@ export class CodeRepo extends UIAwareElement {
     const tagId: string = `${techWord}-word-tag-${wordIndex}`;
     const imgTemplate = this.getActiveIcon(tech.designToken);
 
-    const variant =
-      this.touchScreen || this.breakpoint === BreakpointLabels.mobile
-        ? "icon-text"
-        : "icon-only";
+    const variant = this.touchScreen || this.breakpoint === BreakpointLabels.mobile ? "icon-text" : "icon-only";
 
     return html`
       <li>
@@ -131,8 +128,9 @@ export class CodeRepo extends UIAwareElement {
   }
 
   override render() {
-    const token = this.darkMode
-      ? "--icons-logos-organization-github-dark-icon-svg"
+    const token =
+      this.darkMode ?
+        "--icons-logos-organization-github-dark-icon-svg"
       : "--icons-logos-organization-github-light-icon-svg";
 
     const tokenSvg = readCSSProperty(token);
@@ -165,7 +163,10 @@ export class CodeRepo extends UIAwareElement {
 
           <md-divider></md-divider>
 
-          <section class="synopsis" aria-label="Synopsis">
+          <section
+            class="synopsis"
+            aria-label="Synopsis"
+          >
             <p class="md-typescale-body-large">${unsafeHTML(this.codeRepo.description)}</p>
           </section>
         </div>

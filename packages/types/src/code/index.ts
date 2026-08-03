@@ -52,7 +52,7 @@ export interface CodeRepoTech extends CodeRepoPopover {
 
   /** URL with more information about the technology. */
   url: string;
-};
+}
 
 /**
  * @summary The content used to drive the `popover`s in the `<word-tag>`
@@ -63,4 +63,4 @@ export interface CodeRepoTech extends CodeRepoPopover {
  */
 export interface CodeRepoPopover {
   popoverContent: string | string[];
-};
+}

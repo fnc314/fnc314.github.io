@@ -1,8 +1,4 @@
-import {
-    type BentoBoxConfigs,
-    type BreakpointLabel,
-    BreakpointLabels
-} from "@fnc314/packages.types";
+import { type BentoBoxConfigs, type BreakpointLabel, BreakpointLabels } from "@fnc314/packages.types";
 
 /** Titles to grab attention, joined with `|` but in HTML Entity Code (`&#124;`) */
 export const titles: string = [
@@ -43,5 +39,5 @@ export const BENTO_BOX_CONFIG: BentoBoxConfigs = {
   settings: {
     isExpanded: () => false,
     order: 8,
-  }
+  },
 };

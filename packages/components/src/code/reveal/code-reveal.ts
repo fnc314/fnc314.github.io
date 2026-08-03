@@ -26,7 +26,7 @@ export class CodeReveal extends UIAwareElement {
   static override styles = [TextStyles, CodeRevealStyles];
 
   /**
-   * The active technology data object to render. 
+   * The active technology data object to render.
    * When this is set to null, the component renders nothing.
    */
   @property({ type: Object })
@@ -55,7 +55,9 @@ export class CodeReveal extends UIAwareElement {
     super.updated(changedProperties);
     if (changedProperties.has("tech") && this.tech && !this._isClosing) {
       this.updateComplete.then(() => {
-        const closeBtn = this.shadowRoot?.querySelector("md-icon-button") as MdIconButton & { updateComplete?: Promise<boolean> };
+        const closeBtn = this.shadowRoot?.querySelector("md-icon-button") as MdIconButton & {
+          updateComplete?: Promise<boolean>;
+        };
         if (closeBtn) {
           // Material Web components often need an additional tick to render their internal shadow DOM
           const ready = closeBtn.updateComplete || Promise.resolve(true);
@@ -87,7 +89,7 @@ export class CodeReveal extends UIAwareElement {
         new CustomEvent("hide-reveal", {
           composed: true,
           bubbles: true,
-        })
+        }),
       );
     }
   }
@@ -99,28 +101,25 @@ export class CodeReveal extends UIAwareElement {
       Array.isArray(this.tech.popoverContent),
       () => html`
         <ul slot="reveal-content">
-          ${
-            map(
-              this.tech!.popoverContent,
-              (content: string) => html`
-                <li class="md-typescale-body-large">
-                  ${unsafeHTML(content)}
-                </li>
-              `
-              )
-            }
+          ${map(
+            this.tech!.popoverContent,
+            (content: string) => html` <li class="md-typescale-body-large">${unsafeHTML(content)}</li> `,
+          )}
         </ul>
       `,
       () => html`
-        <p slot="reveal-content" class="md-typescale-body-large">
+        <p
+          slot="reveal-content"
+          class="md-typescale-body-large"
+        >
           ${unsafeHTML(this.tech!.popoverContent as string)}
         </p>
-      `
+      `,
     );
 
     const classes = {
       "reveal-card": true,
-      "is-closing": this._isClosing
+      "is-closing": this._isClosing,
     };
 
     return html`
@@ -142,12 +141,15 @@ export class CodeReveal extends UIAwareElement {
         </md-icon-button>
         <header>
           <slot name="header-icon"></slot>
-          <h3 id="reveal-header" class="md-typescale-headline-medium">${this.tech.name}</h3>
+          <h3
+            id="reveal-header"
+            class="md-typescale-headline-medium"
+          >
+            ${this.tech.name}
+          </h3>
         </header>
 
-        <section>
-          ${popoverContent}
-        </section>
+        <section>${popoverContent}</section>
 
         <footer>
           <a

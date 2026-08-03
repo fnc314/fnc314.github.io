@@ -8,11 +8,7 @@ export interface BioExtendedSection {
   content: BioExtendedSectionContent;
 }
 
-export type BioExtendedSectionContent =
-  ListWithLeadingParagraph |
-  SingleContent |
-  ListContent
-  ;
+export type BioExtendedSectionContent = ListWithLeadingParagraph | SingleContent | ListContent;
 
 export interface ListWithLeadingParagraph {
   listLeadingParagraph: string;

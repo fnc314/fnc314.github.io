@@ -48,7 +48,8 @@ export const WordDialogStyles: CSSResult = css`
     border-radius: var(--bento-layout-card-shape);
     padding: var(--spaces-padding-xl);
 
-    md-icon-button, button {
+    md-icon-button,
+    button {
       position: absolute;
       top: 0;
       right: 0;

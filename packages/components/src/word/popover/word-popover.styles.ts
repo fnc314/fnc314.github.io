@@ -53,7 +53,8 @@ export const WordPopoverStyles: CSSResult = css`
     padding: var(--spaces-padding-xl);
     pointer-events: auto;
 
-    md-icon-button, button {
+    md-icon-button,
+    button {
       position: absolute;
       top: 0;
       right: 0;

@@ -22,14 +22,14 @@ export class BentoLayout extends UIAwareElement {
   static override styles = [TextStyles, BentoLayoutStyles, TransitionStyles];
 
   private renderBentoBox(configName: BentoBoxType, config: BentoBoxConfig): TemplateResult {
-    let cardStyles = { };
+    let cardStyles = {};
     if (this.breakpoint !== BreakpointLabels.mobile) {
       cardStyles = { gridArea: configName };
     }
 
     cardStyles = {
       ...cardStyles,
-      blockSize: "100%"
+      blockSize: "100%",
     };
 
     switch (configName) {
@@ -114,27 +114,17 @@ export class BentoLayout extends UIAwareElement {
     const header = html`
       <header class="animate-entry">
         <h1 class="md-typescale-display-large">${author}</h1>
-        <p class="md-typescale-title-medium">
-          ${unsafeHTML(titles)}
-        </p>
+        <p class="md-typescale-title-medium">${unsafeHTML(titles)}</p>
       </header>
     `;
-    const boxes = Object
-      .entries(BENTO_BOX_CONFIG)
+    const boxes = Object.entries(BENTO_BOX_CONFIG)
       .sort(
-        (configA: [string, BentoBoxConfig], configB: [string, BentoBoxConfig]) =>
-          configA[1].order - configB[1].order
+        (configA: [string, BentoBoxConfig], configB: [string, BentoBoxConfig]) => configA[1].order - configB[1].order,
       )
-      .map(
-        ([configName, boxConfig]: [string, BentoBoxConfig]) =>
-          this.renderBentoBox(configName as BentoBoxType, boxConfig)
+      .map(([configName, boxConfig]: [string, BentoBoxConfig]) =>
+        this.renderBentoBox(configName as BentoBoxType, boxConfig),
       );
-    return html`
-      <main id="bento-root">
-        ${header}
-        ${boxes}
-      </main>
-    `;
+    return html` <main id="bento-root">${header} ${boxes}</main> `;
   }
 }
 

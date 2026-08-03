@@ -23,12 +23,12 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle {
-    --dark-mode-toggle-dark-icon: url('${DarkModeToggleSvgs.mode.dark.empty}');
-    --dark-mode-toggle-light-icon: url('${DarkModeToggleSvgs.mode.light.empty}');
-    --dark-mode-toggle-system-icon: url('${DarkModeToggleSvgs.mode.default.empty}');
-    --dark-mode-toggle-checkbox-icon: url('${DarkModeToggleSvgs.checkbox.light}');
-    --dark-mode-toggle-remember-icon-checked: url('${DarkModeToggleSvgs.remember.checked.light}');
-    --dark-mode-toggle-remember-icon-unchecked: url('${DarkModeToggleSvgs.remember.unchecked.light}');
+    --dark-mode-toggle-dark-icon: url("${DarkModeToggleSvgs.mode.dark.empty}");
+    --dark-mode-toggle-light-icon: url("${DarkModeToggleSvgs.mode.light.empty}");
+    --dark-mode-toggle-system-icon: url("${DarkModeToggleSvgs.mode.default.empty}");
+    --dark-mode-toggle-checkbox-icon: url("${DarkModeToggleSvgs.checkbox.light}");
+    --dark-mode-toggle-remember-icon-checked: url("${DarkModeToggleSvgs.remember.checked.light}");
+    --dark-mode-toggle-remember-icon-unchecked: url("${DarkModeToggleSvgs.remember.unchecked.light}");
     --dark-mode-toggle-icon-size: 2rem;
     --dark-mode-toggle-color: var(--md-sys-color-on-surface-variant);
     --dark-mode-toggle-background-color: var(--colors-transparent);
@@ -111,7 +111,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(systemThreeWayLabel) {
-        --dark-mode-toggle-system-icon: url('${DarkModeToggleSvgs.mode.default.filled}');
+        --dark-mode-toggle-system-icon: url("${DarkModeToggleSvgs.mode.default.filled}");
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -124,7 +124,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(lightThreeWayLabel) {
-        --dark-mode-toggle-light-icon: url('${DarkModeToggleSvgs.mode.light.filled}');
+        --dark-mode-toggle-light-icon: url("${DarkModeToggleSvgs.mode.light.filled}");
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -137,7 +137,7 @@ export const UIModeToggleStyles: CSSResult = css`
       }
 
       &::part(darkThreeWayLabel) {
-        --dark-mode-toggle-dark-icon: url('${DarkModeToggleSvgs.mode.dark.filled}');
+        --dark-mode-toggle-dark-icon: url("${DarkModeToggleSvgs.mode.dark.filled}");
 
         color: var(--md-sys-color-on-primary-container);
       }
@@ -157,8 +157,8 @@ export const UIModeToggleStyles: CSSResult = css`
   }
 
   dark-mode-toggle.dark {
-    --dark-mode-toggle-checkbox-icon: url('${DarkModeToggleSvgs.checkbox.dark}');
-    --dark-mode-toggle-remember-icon-checked: url('${DarkModeToggleSvgs.remember.checked.dark}');
-    --dark-mode-toggle-remember-icon-unchecked: url('${DarkModeToggleSvgs.remember.unchecked.dark}');
+    --dark-mode-toggle-checkbox-icon: url("${DarkModeToggleSvgs.checkbox.dark}");
+    --dark-mode-toggle-remember-icon-checked: url("${DarkModeToggleSvgs.remember.checked.dark}");
+    --dark-mode-toggle-remember-icon-unchecked: url("${DarkModeToggleSvgs.remember.unchecked.dark}");
   }
 `;

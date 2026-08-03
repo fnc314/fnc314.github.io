@@ -43,8 +43,8 @@ export class ExperienceCard extends UIAwareElement {
         .bentoCardTitle=${"Experience"}
         .bentoTag=${BENTO_BOX_TYPES.experience}
       >
-        ${
-          Experiences.map((exp) => html`
+        ${Experiences.map(
+          (exp) => html`
             <work-experience
               .isNested="${false}"
               .experienceOrg="${exp.employer}"
@@ -56,8 +56,7 @@ export class ExperienceCard extends UIAwareElement {
               .summaries="${exp.summaries ?? []}"
             ></work-experience>
           `,
-          )
-        }
+        )}
       </bento-card>
     `;
   }

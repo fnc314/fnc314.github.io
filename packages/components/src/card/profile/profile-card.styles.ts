@@ -47,7 +47,8 @@ export const ProfileCardStyles: CSSResult = css`
     }
 
     article {
-      h3, h4 {
+      h3,
+      h4 {
         margin-block: unset;
         font-family: var(--md-ref-typeface-brand);
         font-variant: small-caps;

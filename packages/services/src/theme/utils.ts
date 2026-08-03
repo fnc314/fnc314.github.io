@@ -23,7 +23,7 @@ export function colorSchemeContrastToIcon(
     default:
       return html`${nothing}`;
   }
-};
+}
 
 /**
  * Checks if the provided JSON conforms to the expected theme schemes structure
@@ -156,5 +156,4 @@ const formatJsonKey: (jsonKey: string) => string = (jsonKey: string) =>
   jsonKey
     .split(/(?=[A-Z])/)
     .map((part) => part.toLowerCase())
-    .join("-")
-    ;
+    .join("-");

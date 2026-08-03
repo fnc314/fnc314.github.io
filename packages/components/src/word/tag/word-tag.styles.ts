@@ -33,7 +33,10 @@ export const WordTagStyles: CSSResult = css`
 
     --internal-word-tag-icon-height: var(--word-tag-icon-height, var(--md-sys-typescale-body-large-line-height));
 
-    --internal-word-tag-icon-aspect-ratio: var(--word-tag-icon-aspect-ratio, calc(var(--internal-word-tag-icon-width) / var(--internal-word-tag-icon-height)));
+    --internal-word-tag-icon-aspect-ratio: var(
+      --word-tag-icon-aspect-ratio,
+      calc(var(--internal-word-tag-icon-width) / var(--internal-word-tag-icon-height))
+    );
 
     display: contents;
 
@@ -42,7 +45,8 @@ export const WordTagStyles: CSSResult = css`
     }
   }
 
-  button, div {
+  button,
+  div {
     position: relative;
     --md-focus-ring-shape: var(--word-tag-focus-ring-shape, var(--internal-word-tag-border-radius));
     --md-focus-ring-color: var(--word-tag-focus-ring-color);

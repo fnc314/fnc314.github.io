@@ -6,21 +6,21 @@ import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import "@/lib/version-tag/version-tag";
 import { Photos } from "@fnc314/packages.data";
 import {
-    MaterialCSSStyleSheet,
-    colorSchemeConfigsToMaterialSchemeName,
-    colorSchemeContrastToIcon,
-    configsService,
-    themeService,
+  MaterialCSSStyleSheet,
+  colorSchemeConfigsToMaterialSchemeName,
+  colorSchemeContrastToIcon,
+  configsService,
+  themeService,
 } from "@fnc314/packages.services";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
-    type AppConfigs,
-    BENTO_BOX_TYPES,
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
-    CONFIG_COLOR_CONTRAST_NAMES,
-    type ColorSchemeContrast,
-    THEME_NAMES,
-    type ThemeName,
+  APP_CONFIGS_CHANGE_EVENT_NAME,
+  type AppConfigs,
+  BENTO_BOX_TYPES,
+  COLOR_SCHEME_CHANGE_EVENT_NAME,
+  CONFIG_COLOR_CONTRAST_NAMES,
+  type ColorSchemeContrast,
+  THEME_NAMES,
+  type ThemeName,
 } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
@@ -128,18 +128,20 @@ export class SettingsCard extends UIAwareElement {
           @change=${this._onThemeChange}
           .value=${this._appConfigs.colorScheme.theme}
         >
-          ${
-            Object
-              .values(THEME_NAMES)
-              .map(
-                (theme) => html`
-                  <md-select-option value=${theme}>
-                    <img loading="lazy" width="56" src=${Photos[theme].srcSet.thumb} alt=${Photos[theme].alt} slot="start" />
-                    <div slot="headline">${this._formatThemeName(theme)}</div>
-                  </md-select-option>
-                `,
-              )
-            }
+          ${Object.values(THEME_NAMES).map(
+            (theme) => html`
+              <md-select-option value=${theme}>
+                <img
+                  loading="lazy"
+                  width="56"
+                  src=${Photos[theme].srcSet.thumb}
+                  alt=${Photos[theme].alt}
+                  slot="start"
+                />
+                <div slot="headline">${this._formatThemeName(theme)}</div>
+              </md-select-option>
+            `,
+          )}
         </md-outlined-select>
       </fieldset>
     `;

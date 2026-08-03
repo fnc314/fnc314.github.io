@@ -1,12 +1,12 @@
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { configsService } from "@fnc314/packages.services";
 import {
-    type AppConfigsChange,
-    type BreakpointLabel,
-    CONFIG_COLOR_SCHEME_NAMES,
-    CSS_VARIABLE_BREAKPOINT_LABEL,
-    CSS_VARIABLE_TOUCH_SCREEN,
-    type IconVariants
+  type AppConfigsChange,
+  type BreakpointLabel,
+  CONFIG_COLOR_SCHEME_NAMES,
+  CSS_VARIABLE_BREAKPOINT_LABEL,
+  CSS_VARIABLE_TOUCH_SCREEN,
+  type IconVariants,
 } from "@fnc314/packages.types";
 import { type CSSResult, LitElement, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";

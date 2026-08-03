@@ -1,5 +1,10 @@
 import { type StorageService, storageService } from "@/lib/storage";
-import { APP_CONFIGS_CHANGE_EVENT_NAME, type AppConfigs, type AppConfigsChange, DEFAULT_APP_CONFIGS } from "@fnc314/packages.types";
+import {
+  APP_CONFIGS_CHANGE_EVENT_NAME,
+  type AppConfigs,
+  type AppConfigsChange,
+  DEFAULT_APP_CONFIGS,
+} from "@fnc314/packages.types";
 
 export interface ConfigsService extends EventTarget {
   saveConfigs(configs: AppConfigs): void;

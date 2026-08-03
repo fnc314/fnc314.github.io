@@ -1,8 +1,8 @@
 import { Icons } from "@fnc314/packages.design-tokens";
 import {
-    type ArtifactConnectionData,
-    type ConnectionInstance,
-    type ProfessionalConnectionJsonData,
+  type ArtifactConnectionData,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
 
 export const Connections: {

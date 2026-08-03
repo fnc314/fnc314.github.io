@@ -44,11 +44,7 @@ export class CodeCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.code}
       >
         <div class="code-list">
-          ${
-            Projects.map((codeRepo) => html`
-              <code-repo .codeRepo="${codeRepo}"></code-repo>
-            `)
-          }
+          ${Projects.map((codeRepo) => html` <code-repo .codeRepo="${codeRepo}"></code-repo> `)}
         </div>
       </bento-card>
     `;

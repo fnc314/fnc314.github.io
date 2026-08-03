@@ -9,13 +9,13 @@ export const Projects: CodeRepoData[] = [
         name: "Gradle",
         url: "https://docs.gradle.org/",
         designToken: Icons.Logos.Tech.Gradle,
-        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more"
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
         designToken: Icons.Logos.Tech.Kotlin,
-        popoverContent: "JetBrains' modern JVM languange"
+        popoverContent: "JetBrains' modern JVM languange",
       },
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
@@ -30,13 +30,13 @@ export const Projects: CodeRepoData[] = [
         name: "Bash",
         url: "https://www.gnu.org/software/bash/",
         designToken: Icons.Logos.Tech.Bash,
-        popoverContent: "Shell scripting"
+        popoverContent: "Shell scripting",
       },
       {
         name: "Oh-My-Zsh",
         url: "https://ohmyz.sh/",
         designToken: Icons.Logos.Tech.Zsh,
-        popoverContent: "Shell scripting"
+        popoverContent: "Shell scripting",
       },
     ],
     url: "https://github.com/fnc314/mac-os-env-scripts",
@@ -120,7 +120,7 @@ export const Projects: CodeRepoData[] = [
         name: "Node",
         url: "https://nodejs.org/",
         designToken: Icons.Logos.Tech.Node,
-        popoverContent: "JavaScript Runtime"
+        popoverContent: "JavaScript Runtime",
       },
       {
         name: "Material Theme Builder",
@@ -132,13 +132,13 @@ export const Projects: CodeRepoData[] = [
         name: "HTML",
         url: "https://developer.mozilla.org/",
         designToken: Icons.Logos.Tech.Web.Html,
-        popoverContent: "HTML5 for templates"
+        popoverContent: "HTML5 for templates",
       },
       {
         name: "CSS",
         url: "https://developer.mozilla.org/",
         designToken: Icons.Logos.Tech.Web.Css,
-        popoverContent: "CSS for styles"
+        popoverContent: "CSS for styles",
       },
       {
         name: "Prettier",
@@ -182,19 +182,19 @@ export const Projects: CodeRepoData[] = [
         name: "HTML",
         url: "https://developer.mozilla.org/",
         designToken: Icons.Logos.Tech.Web.Html,
-        popoverContent: "HTML5 for templates"
+        popoverContent: "HTML5 for templates",
       },
       {
         name: "CSS",
         url: "https://developer.mozilla.org/",
         designToken: Icons.Logos.Tech.Web.Css,
-        popoverContent: "CSS for styles"
+        popoverContent: "CSS for styles",
       },
       {
         name: "JavaScript",
         url: "https://developer.mozilla.org/",
         designToken: Icons.Logos.Tech.Web.Javascript,
-        popoverContent: "JavaScript for simple interactivity"
+        popoverContent: "JavaScript for simple interactivity",
       },
       {
         name: "Material Theme Builder",

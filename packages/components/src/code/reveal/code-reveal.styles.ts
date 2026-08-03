@@ -126,7 +126,8 @@ export const CodeRevealStyles: CSSResult = css`
     section {
       text-align: center;
 
-      p, ul {
+      p,
+      ul {
         margin: 0;
         color: var(--code-reveal-color);
       }

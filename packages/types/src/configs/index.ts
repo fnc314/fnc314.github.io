@@ -1,8 +1,8 @@
 import {
-    CONFIG_COLOR_CONTRAST_NAMES,
-    CONFIG_COLOR_SCHEME_NAMES,
-    type ColorSchemeConfig,
-    THEME_NAMES,
+  CONFIG_COLOR_CONTRAST_NAMES,
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorSchemeConfig,
+  THEME_NAMES,
 } from "@/lib/theme";
 
 export interface AppConfigs {

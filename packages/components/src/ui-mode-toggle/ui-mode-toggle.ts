@@ -2,18 +2,18 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 import {
-    MaterialCSSStyleSheet,
-    colorSchemeConfigsToMaterialSchemeName,
-    configsService,
-    themeService,
+  MaterialCSSStyleSheet,
+  colorSchemeConfigsToMaterialSchemeName,
+  configsService,
+  themeService,
 } from "@fnc314/packages.services";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
-    type AppConfigs,
-    type AppConfigsChange,
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
-    CONFIG_COLOR_SCHEME_NAMES,
-    type ColorScheme,
+  APP_CONFIGS_CHANGE_EVENT_NAME,
+  type AppConfigs,
+  type AppConfigsChange,
+  COLOR_SCHEME_CHANGE_EVENT_NAME,
+  CONFIG_COLOR_SCHEME_NAMES,
+  type ColorScheme,
 } from "@fnc314/packages.types";
 import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
@@ -97,9 +97,9 @@ export class UiModeToggle extends UIAwareElement {
     this.onColorThemeModeContrastChange({
       ...this._appConfigs.colorScheme,
       name:
-        event.detail.colorScheme.length > 0
-          ? (event.detail.colorScheme.toUpperCase() as ColorScheme)
-          : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
+        event.detail.colorScheme.length > 0 ?
+          (event.detail.colorScheme.toUpperCase() as ColorScheme)
+        : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
     });
   };
 
@@ -118,10 +118,10 @@ export class UiModeToggle extends UIAwareElement {
   private onColorThemeModeContrastChange(colorScheme: AppConfigs["colorScheme"]) {
     const current = this._appConfigs.colorScheme;
     if (
-      current.name === colorScheme.name &&
-      current.contrast === colorScheme.contrast &&
-      current.theme === colorScheme.theme &&
-      current.persist === colorScheme.persist
+      current.name === colorScheme.name
+      && current.contrast === colorScheme.contrast
+      && current.theme === colorScheme.theme
+      && current.persist === colorScheme.persist
     ) {
       return;
     }

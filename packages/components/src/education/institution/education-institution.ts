@@ -25,7 +25,11 @@ export class EducationInstitution extends UIAwareElement {
     const svg = this.getActiveIcon(this.institute.designToken);
     return html`
       <div class="education-institution-container">
-        <span id="svg" aria-label=${`Logo for ${this.institute.institute}`}>${svg}</span>
+        <span
+          id="svg"
+          aria-label=${`Logo for ${this.institute.institute}`}
+          >${svg}</span
+        >
         <h3 class="md-typescale-title-large">${this.institute.institute}</h3>
         <span class="md-typescale-body-large">${location}</span>
         <h4 class="md-typescale-title-medium">${this.institute.degree}</h4>

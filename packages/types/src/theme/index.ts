@@ -87,18 +87,19 @@ export type ColorValue = `${ColorSubValue}${ColorSubValue}`;
 export type ColorString = `#${string}`;
 
 // Recursive helper to check if a string consists only of N hex digits
-export type IsHex<T extends string, Count extends any[] = []> = T extends `${ColorSubValue}${infer Rest}`
-  ? IsHex<Rest, [...Count, any]>
-  : T extends ""
-    ? Count["length"] extends 8
-      ? true
-      : false
-    : false;
+export type IsHex<T extends string, Count extends any[] = []> =
+  T extends `${ColorSubValue}${infer Rest}` ? IsHex<Rest, [...Count, any]>
+  : T extends "" ?
+    Count["length"] extends 8 ?
+      true
+    : false
+  : false;
 
 // The final validator constraint
-export type ValidateRGBA<T extends string> = T extends `#${infer Rest}`
-  ? IsHex<Rest> extends true
-    ? T
+export type ValidateRGBA<T extends string> =
+  T extends `#${infer Rest}` ?
+    IsHex<Rest> extends true ?
+      T
     : "Error: Must be # followed by exactly 8 hex digits"
   : "Error: Must start with #";
 

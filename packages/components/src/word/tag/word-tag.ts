@@ -2,10 +2,10 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 import {
-    type WordTagHeaviness,
-    type WordTagVariant,
-    WordTagVariantAttributeConverter,
-    WordTagVariants,
+  type WordTagHeaviness,
+  type WordTagVariant,
+  WordTagVariantAttributeConverter,
+  WordTagVariants,
 } from "@fnc314/packages.types";
 import "@material/web/focus/md-focus-ring.js";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
@@ -77,23 +77,21 @@ export class WordTag extends UIAwareElement {
   }
 
   private buildWord(): TemplateResult {
-    const fontWeight = this.heaviness === "normal" ?
-      css`var(--md-ref-typeface-weight-regular)` :
-      css`var(--md-ref-typeface-weight-bold)`;
+    const fontWeight =
+      this.heaviness === "normal" ?
+        css`var(--md-ref-typeface-weight-regular)`
+      : css`var(--md-ref-typeface-weight-bold)`;
 
-      const fontStyles: CSSResult = unsafeCSS(`
+    const fontStyles: CSSResult = unsafeCSS(`
         font-weight: ${fontWeight};
       `);
 
-    return html`
-      <span style=${fontStyles}>${this.word}</span>
-    `;
+    return html` <span style=${fontStyles}>${this.word}</span> `;
   }
 
   private wrapContents(contents: TemplateResult): TemplateResult {
-    const borderWidth = this.heaviness === "normal" ?
-      css`var(--sizes-thickness-hairline)` :
-      css`var(--sizes-thickness-s)`;
+    const borderWidth =
+      this.heaviness === "normal" ? css`var(--sizes-thickness-hairline)` : css`var(--sizes-thickness-s)`;
 
     const borderStyles: CSSResult = unsafeCSS(`
       border-width: ${borderWidth};
@@ -109,23 +107,16 @@ export class WordTag extends UIAwareElement {
           aria-haspopup="dialog"
           aria-expanded=${this.ariaExpanded || nothing}
           aria-controls=${this.ariaControls || nothing}
-          >
+        >
           <md-focus-ring></md-focus-ring>
           ${contents}
         </button>
       `,
-      () => html`
-        <div
-          style=${borderStyles}
-          >
-          ${contents}
-        </div>
-      `
+      () => html` <div style=${borderStyles}>${contents}</div> `,
     );
   }
 
   private layoutForVariant(): TemplateResult {
-
     const defaultWordTag = this.buildWord();
 
     let contents: TemplateResult | undefined = undefined;
@@ -133,24 +124,31 @@ export class WordTag extends UIAwareElement {
       case WordTagVariants["text-icon"]:
         contents = html`
           ${defaultWordTag}
-          <slot id="icon-slot" name="icon"></slot>
+          <slot
+            id="icon-slot"
+            name="icon"
+          ></slot>
         `;
         break;
       case WordTagVariants["icon-text"]:
         contents = html`
-          <slot id="icon-slot" name="icon"></slot>
+          <slot
+            id="icon-slot"
+            name="icon"
+          ></slot>
           ${defaultWordTag}
         `;
         break;
       case WordTagVariants["icon-only"]:
         contents = html`
-          <slot id="icon-slot" name="icon"></slot>
+          <slot
+            id="icon-slot"
+            name="icon"
+          ></slot>
         `;
         break;
       case WordTagVariants["text-only"]:
-        contents = html`
-          ${defaultWordTag}
-        `;
+        contents = html` ${defaultWordTag} `;
         break;
       default:
         break;
@@ -159,14 +157,12 @@ export class WordTag extends UIAwareElement {
     return when(
       contents,
       () => this.wrapContents(contents!),
-      () => html`${nothing}`
+      () => html`${nothing}`,
     );
   }
 
   override render() {
-    return html`
-      ${this.layoutForVariant()}
-    `;
+    return html` ${this.layoutForVariant()} `;
   }
 }
 

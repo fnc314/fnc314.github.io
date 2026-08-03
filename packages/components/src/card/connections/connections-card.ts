@@ -2,7 +2,13 @@ import { ConnectionsCardStyles, DL_DIV_COLUMN_COUNT } from "@/lib/card/connectio
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { Connections } from "@fnc314/packages.data";
-import { type ArtifactConnectionData, type ArtifactConnectionType, BENTO_BOX_TYPES, type ConnectionInstance, type ProfessionalConnectionJsonData } from "@fnc314/packages.types";
+import {
+  type ArtifactConnectionData,
+  type ArtifactConnectionType,
+  BENTO_BOX_TYPES,
+  type ConnectionInstance,
+  type ProfessionalConnectionJsonData,
+} from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -16,11 +22,7 @@ import { customElement, property } from "lit/decorators.js";
  */
 @customElement("connections-card")
 export class ConnectionsCard extends UIAwareElement {
-
-  static override styles = [
-    TextStyles,
-    ConnectionsCardStyles
-  ]
+  static override styles = [TextStyles, ConnectionsCardStyles];
 
   @property({ type: Boolean })
   expanded = true;
@@ -37,18 +39,13 @@ export class ConnectionsCard extends UIAwareElement {
     const contact = html`
       <div>
         <dt class="md-typescale-title-large">Contact</dt>
-        ${
-          Object.entries(Connections.direct).map(
-            ([_, instance]: [string, ConnectionInstance]) =>
-              html`
-                <dd style="grid-column: span ${directConnectionsColSpan}">
-                  <direct-connection
-                    .connectionInstance=${instance}>
-                  </direct-connection>
-                </dd>
-              `
-          )
-        }
+        ${Object.entries(Connections.direct).map(
+          ([_, instance]: [string, ConnectionInstance]) => html`
+            <dd style="grid-column: span ${directConnectionsColSpan}">
+              <direct-connection .connectionInstance=${instance}> </direct-connection>
+            </dd>
+          `,
+        )}
       </div>
     `;
 
@@ -90,13 +87,7 @@ export class ConnectionsCard extends UIAwareElement {
       </div>
     `;
 
-    return html`
-      <dl>
-        ${contact}
-        ${network}
-        ${resume}
-      </dl>
-    `;
+    return html` <dl>${contact} ${network} ${resume}</dl> `;
   }
 
   override render() {
@@ -109,9 +100,7 @@ export class ConnectionsCard extends UIAwareElement {
         .bentoCardTitle=${"Connections"}
         .bentoTag=${BENTO_BOX_TYPES.connections}
       >
-        <article>
-          ${this.contactsDefinitionList()}
-        </article>
+        <article>${this.contactsDefinitionList()}</article>
       </bento-card>
     `;
   }
@@ -119,6 +108,6 @@ export class ConnectionsCard extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "connections-card": ConnectionsCard
+    "connections-card": ConnectionsCard;
   }
 }
