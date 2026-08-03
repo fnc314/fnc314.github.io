@@ -1,5 +1,29 @@
 # TODOS
 
+## 2026-08-03 | Local Tool Config Packages | `configs/*` migration
+
+Drive by draft: `changes/local-configs/implementation_plan.md`. Migrate the `configs/` npm packages so
+tools expose their configs through `configs/prettier` / `configs/eslint` (and sibling packages), make
+`packages/*` depend on them, rewrite `.config/mise/tasks` to use the local (package-exported) configs per
+package, and split TS6/TS7 so `tsc` runs on `@typescript/typescript6` while source stays on
+`@typescript/typescript`. Reference pattern: `configs/typescript` (already done).
+
+- [ ] Resolve open scope/design decisions (plan `D0.1`–`D0.6`): which config packages to migrate, config
+      canonical location, dependency placement, mise-task shape, lockfile regen, verification depth.
+- [ ] **Prettier**: move `.config/prettier/{prettier.config.mts,.prettierignore}` → `configs/prettier`; wire
+      `exports` in `configs/prettier/package.json`.
+- [ ] **Eslint**: make `configs/eslint` canonical; make packages/mise consume `@fnc314/configs.eslint`
+      (file already exported at `"."` → `eslint.config.mjs`).
+- [ ] **Typedoc / @pwrs-cem**: move configs into their `configs/<tool>` packages; wire `exports`.
+- [ ] **Packages**: add `workspace:*` deps on the config packages for
+      `packages/{components,data,design-tokens,services,types}`; standardize placement.
+- [ ] **Mise tasks**: add/rewrite per-package tool tasks in `.config/mise/tasks/dev-ex/...` to run each
+      tool with the package-exported config on a given package dir.
+- [ ] **TS6/TS7 split**: in every `package.json` using `"typescript": "catalog:typescript"`, point
+      `typescript` at `catalog:typescript` (→ TS6 for `tsc`) and keep TS7 available for source/toolchain.
+- [ ] **Lockfile + verify**: `pnpm install` to regen `pnpm-lock.yaml`; run migrated tools on a
+      representative package; confirm `tsc` (TS6) and TS7 source compile.
+
 ## 2026-06-01 @ 15:56:11 | Component Migration | Spaghetti `import`s
 
 Findings from an import-coupling audit run while scoping the `component-migration`
