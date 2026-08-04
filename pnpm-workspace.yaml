@@ -147,7 +147,7 @@ catalogs:
     vitest: 4.1.7
     web-component-analyzer: 2.0.0
   functionsDependencies:
-    firebase-admin: 14.0.0
+    firebase-admin: 14.2.0
     firebase-functions: 7.2.5
   functionsDevDependencies:
     firebase-functions-test: 3.5.0

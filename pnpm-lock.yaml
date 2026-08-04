@@ -592,8 +592,8 @@ catalogs:
       version: 2.0.0
   functionsDependencies:
     firebase-admin:
-      specifier: 14.0.0
-      version: 14.0.0
+      specifier: 14.2.0
+      version: 14.2.0
     firebase-functions:
       specifier: 7.2.5
       version: 7.2.5
@@ -1026,10 +1026,10 @@ importers:
     dependencies:
       firebase-admin:
         specifier: catalog:functionsDependencies
-        version: 14.0.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
+        version: 14.2.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
       firebase-functions:
         specifier: catalog:functionsDependencies
-        version: 7.2.5(firebase-admin@14.0.0)(supports-color@10.2.2)
+        version: 7.2.5(firebase-admin@14.2.0)(supports-color@10.2.2)
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: catalog:devDependencies
@@ -1048,7 +1048,7 @@ importers:
         version: 2.32.0(@types/eslint@9.6.1)(@typescript-eslint/parser@8.66.0)(eslint@10.8.0)(supports-color@10.2.2)
       firebase-functions-test:
         specifier: catalog:functionsDevDependencies
-        version: 3.5.0(firebase-admin@14.0.0)(firebase-functions@7.2.5)(jest@30.4.2)
+        version: 3.5.0(firebase-admin@14.2.0)(firebase-functions@7.2.5)(jest@30.4.2)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -4109,8 +4109,8 @@ packages:
   '@types/jsonfile@6.1.4':
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
-  '@types/jsonwebtoken@8.5.1':
-    resolution: {integrity: sha512-rNAPdomlIUX0i0cg2+I+Q1wOUr531zHBQ+cV/28PJ39bSPKjahatZZ2LMuhiguETkCgLVzfruw/ZvNMNkKoSzw==}
+  '@types/jsonwebtoken@8.5.9':
+    resolution: {integrity: sha512-272FMnFGzAVMGtu9tkr29hRL6bZj4Zs1KZNeHLnKqAvp06tAIcarTMwOh8/8bz4FmKRcMxZhZNeUAQsNLoiPhg==}
 
   '@types/jsonwebtoken@9.0.10':
     resolution: {integrity: sha512-asx5hIG9Qmf/1oStypjanR7iKTv0gXQ1Ov/jfrX6kS/EO0OFni8orbmGCn0672NHR3kXHwpAwR+B368ZGN/2rA==}
@@ -6455,10 +6455,6 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
 
-  farmhash-modern@1.1.0:
-    resolution: {integrity: sha512-6ypT4XfgqJk/F3Yuv4SX26I3doUjt0GTG4a+JgWxXQpxXzTBq8fPUeGHfcYMMDPHJHm3yPOSjaeBwBGAHWXCdA==}
-    engines: {node: '>=18.0.0'}
-
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
@@ -6558,8 +6554,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-admin@14.0.0:
-    resolution: {integrity: sha512-U88/r6VWiBQ05+UlLaF1A1AN4Y3SAGQKcQWawzafEAnXVaCZ21+2KclMPdlIQAAF5pUtN+FkXCSQnJEpc6QDZA==}
+  firebase-admin@14.2.0:
+    resolution: {integrity: sha512-zfs5PdccEgjX479bbMmz95Rqc7ttQ4LV3qkGFlPiqOaOu/suBZc3fG52Qzn2hQjiSHkBM4NP2AZV5r2NvAt0TQ==}
     engines: {node: '>=22'}
 
   firebase-functions-test@3.5.0:
@@ -13711,7 +13707,7 @@ snapshots:
     dependencies:
       '@types/node': 26.1.2
 
-  '@types/jsonwebtoken@8.5.1':
+  '@types/jsonwebtoken@8.5.9':
     dependencies:
       '@types/node': 26.1.2
 
@@ -16426,8 +16422,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  farmhash-modern@1.1.0: {}
-
   fast-deep-equal@3.1.3: {}
 
   fast-diff@1.3.0: {}
@@ -16547,13 +16541,12 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-admin@14.0.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2):
+  firebase-admin@14.2.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2):
     dependencies:
       '@fastify/busboy': 3.2.0
       '@firebase/database-compat': 2.1.5(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)
       '@firebase/database-types': 1.0.21
-      '@types/jsonwebtoken': 8.5.1
-      farmhash-modern: 1.1.0
+      '@types/jsonwebtoken': 8.5.9
       fast-deep-equal: 3.1.3
       google-auth-library: 10.7.0(supports-color@10.2.2)
       jsonwebtoken: 9.0.3
@@ -16567,22 +16560,22 @@ snapshots:
       - encoding
       - supports-color
 
-  firebase-functions-test@3.5.0(firebase-admin@14.0.0)(firebase-functions@7.2.5)(jest@30.4.2):
+  firebase-functions-test@3.5.0(firebase-admin@14.2.0)(firebase-functions@7.2.5)(jest@30.4.2):
     dependencies:
       '@types/lodash': 4.17.24
-      firebase-admin: 14.0.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
-      firebase-functions: 7.2.5(firebase-admin@14.0.0)(supports-color@10.2.2)
+      firebase-admin: 14.2.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
+      firebase-functions: 7.2.5(firebase-admin@14.2.0)(supports-color@10.2.2)
       jest: 30.4.2(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@26.1.2)(supports-color@10.2.2)(ts-node@10.9.2)
       lodash: 4.18.1
       ts-deepmerge: 2.0.7
 
-  firebase-functions@7.2.5(firebase-admin@14.0.0)(supports-color@10.2.2):
+  firebase-functions@7.2.5(firebase-admin@14.2.0)(supports-color@10.2.2):
     dependencies:
       '@types/cors': 2.8.19
       '@types/express': 4.17.25
       cors: 2.8.6
       express: 4.22.2(supports-color@10.2.2)
-      firebase-admin: 14.0.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
+      firebase-admin: 14.2.0(@firebase/app-compat@0.5.16)(@firebase/app@0.16.0)(supports-color@10.2.2)
       protobufjs: 7.6.4
     transitivePeerDependencies:
       - supports-color
@@ -21671,7 +21664,7 @@ time:
   eslint-plugin-tsdoc@0.5.2: '2026-02-25T22:59:31.633Z'
   eslint-plugin-wc@3.1.0: '2026-02-09T12:23:47.008Z'
   eslint@10.8.0: '2026-07-24T20:15:20.693Z'
-  firebase-admin@14.0.0: '2026-06-08T22:34:33.584Z'
+  firebase-admin@14.2.0: '2026-07-16T17:59:10.207Z'
   firebase-functions-test@3.5.0: '2026-05-08T21:21:33.788Z'
   firebase-functions@7.2.5: '2026-04-08T22:16:58.535Z'
   firebase@12.17.0: '2026-07-30T18:26:11.265Z'
