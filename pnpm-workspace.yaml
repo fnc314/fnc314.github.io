@@ -48,11 +48,11 @@ catalogs:
     "@types/fs-extra": 11.0.4
     "@types/node": 26.1.2
     "@types/wordcloud": 1.2.2
-    "@typescript-eslint/eslint-plugin": 8.65.0
-    "@typescript-eslint/parser": 8.65.0
+    "@typescript-eslint/eslint-plugin": 8.66.0
+    "@typescript-eslint/parser": 8.66.0
     "@typescript/typescript6": 6.0.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.4.10
+    "@vitejs/devtools": 0.4.11
     "@wc-toolkit/cem-inheritance": 1.2.5
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5
@@ -98,7 +98,7 @@ catalogs:
     prettier-plugin-toml: 2.0.6
     pwa-asset-generator: 8.1.5
     rimraf: 6.1.3
-    rolldown: 1.2.1
+    rolldown: 1.2.2
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-minify-html-literals: 1.2.6
     rollup-plugin-visualizer: 7.0.1
@@ -132,7 +132,7 @@ catalogs:
     typedoc-plugin-mdn-links: 5.1.1
     typedoc-plugin-skillit: 2.0.3
     typedoc-plugin-version-header: 1.0.0
-    typescript-eslint: 8.65.0
+    typescript-eslint: 8.66.0
     unplugin-dts: 1.0.3
     unplugin-info: 1.3.2
     vite: 8.2.0
