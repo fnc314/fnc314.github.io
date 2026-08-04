@@ -108,6 +108,7 @@ catalogs:
     stylelint-config-inspector: 2.3.4
     stylelint-config-standard: 40.0.0
     stylelint-declaration-strict-value: 1.11.1
+    stylelint-define-config: 17.14.0
     stylelint-no-unresolved-module: 2.5.2
     stylelint-order: 8.1.1
     stylelint-plugin-logical-css: 2.1.0
