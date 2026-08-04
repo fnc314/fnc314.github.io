@@ -131,7 +131,6 @@ catalogs:
     typedoc-plugin-mdn-links: 5.1.1
     typedoc-plugin-skillit: 2.0.3
     typedoc-plugin-version-header: 1.0.0
-    typescript: 7.0.2
     typescript-eslint: 8.65.0
     unplugin-dts: 1.0.3
     unplugin-info: 1.3.2
