@@ -33,7 +33,9 @@ export default defineConfig({
   overrides: [
     {
       files: ["packages/components/src/**/*.styles.ts"],
-      customSyntax: "postcss-lit",
+      languageOptions: {
+        customSyntax: "postcss-lit",
+      }
     },
     {
       files: ["sites/portfolio/index.css"],
@@ -68,12 +70,6 @@ export default defineConfig({
           "grid-template-rows",
         ],
       },
-    ],
-    "import-notation": [
-      "string",
-      {
-        severity: undefined,
-      }
     ],
   }
 });

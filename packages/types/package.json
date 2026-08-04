@@ -11,11 +11,13 @@
   },
   "description": "Types package to support https://fnc314.com",
   "devDependencies": {
+    "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "typescript": "catalog:typescript",
     "typescript7": "catalog:typescript",
+    "postcss-lit": "catalog:devDependencies",
     "unplugin-dts": "catalog:devDependencies",
     "unplugin-info": "catalog:devDependencies",
     "vite": "catalog:devDependencies"

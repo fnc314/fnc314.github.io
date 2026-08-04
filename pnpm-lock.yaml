@@ -1014,6 +1014,8 @@ importers:
 
   configs/eslint: {}
 
+  configs/postcss: {}
+
   configs/prettier: {}
 
   configs/typedoc: {}
@@ -1056,9 +1058,6 @@ importers:
 
   packages/components:
     dependencies:
-      '@fnc314/configs.typescript':
-        specifier: workspace:*
-        version: link:../../configs/typescript
       '@fnc314/packages.data':
         specifier: workspace:*
         version: link:../data
@@ -1084,12 +1083,21 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:../../configs/postcss
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
       fs-extra:
         specifier: catalog:devDependencies
         version: 11.4.0
+      postcss-lit:
+        specifier: catalog:devDependencies
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.25)(supports-color@10.2.2)(tsx@4.23.5)(yaml@2.9.0)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -1108,9 +1116,6 @@ importers:
 
   packages/data:
     dependencies:
-      '@fnc314/configs.typescript':
-        specifier: workspace:*
-        version: link:../../configs/typescript
       '@fnc314/packages.design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
@@ -1124,12 +1129,21 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:../../configs/postcss
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
       fs-extra:
         specifier: catalog:devDependencies
         version: 11.4.0
+      postcss-lit:
+        specifier: catalog:devDependencies
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.25)(supports-color@10.2.2)(tsx@4.23.5)(yaml@2.9.0)
       style-dictionary:
         specifier: catalog:devDependencies
         version: 5.5.0(tslib@2.8.1)
@@ -1164,6 +1178,9 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:../../configs/postcss
       '@fnc314/configs.typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -1173,6 +1190,9 @@ importers:
       fs-extra:
         specifier: catalog:devDependencies
         version: 11.4.0
+      postcss-lit:
+        specifier: catalog:devDependencies
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.25)(supports-color@10.2.2)(tsx@4.23.5)(yaml@2.9.0)
       style-dictionary:
         specifier: catalog:devDependencies
         version: 5.5.0(tslib@2.8.1)
@@ -1194,9 +1214,6 @@ importers:
 
   packages/services:
     dependencies:
-      '@fnc314/configs.typescript':
-        specifier: workspace:*
-        version: link:../../configs/typescript
       '@fnc314/packages.data':
         specifier: workspace:*
         version: link:../data
@@ -1213,12 +1230,21 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:../../configs/postcss
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:../../configs/typescript
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
       fs-extra:
         specifier: catalog:devDependencies
         version: 11.4.0
+      postcss-lit:
+        specifier: catalog:devDependencies
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.25)(supports-color@10.2.2)(tsx@4.23.5)(yaml@2.9.0)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -1247,6 +1273,9 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:../../configs/postcss
       '@fnc314/configs.typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -1256,6 +1285,9 @@ importers:
       fs-extra:
         specifier: catalog:devDependencies
         version: 11.4.0
+      postcss-lit:
+        specifier: catalog:devDependencies
+        version: 1.4.1(jiti@2.7.0)(postcss@8.5.25)(supports-color@10.2.2)(tsx@4.23.5)(yaml@2.9.0)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'

@@ -30,6 +30,7 @@
   "workspaces": [
     "configs/@pwrs-cem",
     "configs/eslint",
+    "configs/postcss",
     "configs/prettier",
     "configs/typedoc",
     "configs/typescript",

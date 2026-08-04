@@ -87,6 +87,13 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         ]
       },
       plugins: [
+        // postcssLit.rollupPostCSSLit({
+        //   globInclude: path.resolve(
+        //     process.cwd(),
+        //     `packages/${dirName}`,
+        //     "src/**/*.styles.ts",
+        //   ),
+        // }),
         minifyHTML({
           include: [
             path.resolve(
