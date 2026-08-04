@@ -49,11 +49,11 @@
     "outDir": "./dist/out",
     "paths": {
       "@/*": ["./*"],
-      "@fnc314/packages.components": ["./packages/components/src/index.ts"],
-      "@fnc314/packages.data": ["./packages/data/src/index.ts"],
-      "@fnc314/packages.design-tokens": ["./packages/design-tokens/src/index.ts"],
-      "@fnc314/packages.services": ["./packages/services/src/index.ts"],
-      "@fnc314/packages.types": ["./packages/types/src/index.ts"],
+      "@fnc314/packages.components": ["./packages/components/dist/index.d.ts"],
+      "@fnc314/packages.data": ["./packages/data/dist/index.d.ts"],
+      "@fnc314/packages.design-tokens": ["./packages/design-tokens/dist/index.d.ts"],
+      "@fnc314/packages.services": ["./packages/services/dist/index.d.ts"],
+      "@fnc314/packages.types": ["./packages/types/dist/index.d.ts"],
     },
     "plugins": [
       // {
