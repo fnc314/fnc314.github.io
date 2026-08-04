@@ -60,11 +60,11 @@
 /* MATERIAL SYMBOLS */
 
 :root {
+  --color-transition-duration: var(--globals-transition-color-duration);
+  --color-transition-timing: var(--globals-transition-color-timing);
   --hover-focus-animation-translate-y: var(
     --globals-hover-focus-animation-translate-y
   );
-  --color-transition-duration: var(--globals-transition-color-duration);
-  --color-transition-timing: var(--globals-transition-color-timing);
 
   color-scheme: var(--globals-color-scheme);
 }
@@ -77,7 +77,8 @@
     stroke var(--color-transition-duration) var(--color-transition-timing),
     fill var(--color-transition-duration) var(--color-transition-timing),
     border-color var(--color-transition-duration) var(--color-transition-timing),
-    background-color var(--color-transition-duration) var(--color-transition-timing),
+    background-color var(--color-transition-duration)
+      var(--color-transition-timing),
     color var(--color-transition-duration) var(--color-transition-timing);
 }
 
