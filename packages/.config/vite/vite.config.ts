@@ -4,10 +4,20 @@ import process from "node:process";
 import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
-import { type UserConfigFnObject, defineConfig } from "vite";
+import { type UserConfigFnPromise } from "vite";
 
-export function buildConfig(dirName: string): UserConfigFnObject {
-  return defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
+async function readPackageJson(dirName: string): Promise<any & { peerDependecies: Record<string, string> }> {
+  const dirPath: string = path.resolve(
+    process.cwd(),
+    `packages/${dirName}`
+  );
+  const jsonFile = await import(`${dirPath}/package.json`, { with: { type: 'json' } });
+  return jsonFile.default;
+}
+
+export function buildConfig(dirName: string): UserConfigFnPromise {
+  return async ({ command, mode, isSsrBuild, isPreview }) => {
+    const pkjson = await readPackageJson(dirName);
     return {
       root: `${process.cwd()}/packages/${dirName}`,
       publicDir: `${process.cwd()}/packages/${dirName}/assets`,
@@ -30,6 +40,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
             circularDependency: true,
           },
           external: [
+            ...Object.keys(pkjson.peerDependencies || {}),
             /^lit($|\/)/,
             /^lit-element($|\/)/,
             /^lit-html($|\/)/,
@@ -74,6 +85,7 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         reportCompressedSize: true,
       },
       resolve: {
+        preserveSymlinks: true,
         tsconfigPaths: true,
         extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
@@ -143,5 +155,5 @@ export function buildConfig(dirName: string): UserConfigFnObject {
         }),
       ]
     };
-  });
+  }
 }

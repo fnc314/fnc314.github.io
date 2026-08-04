@@ -49,6 +49,11 @@
     "outDir": "./dist/out",
     "paths": {
       "@/*": ["./*"],
+      "@fnc314/packages.components": ["./packages/components/src/index.ts"],
+      "@fnc314/packages.data": ["./packages/data/src/index.ts"],
+      "@fnc314/packages.design-tokens": ["./packages/design-tokens/src/index.ts"],
+      "@fnc314/packages.services": ["./packages/services/src/index.ts"],
+      "@fnc314/packages.types": ["./packages/types/src/index.ts"],
     },
     "plugins": [
       // {
@@ -88,6 +93,7 @@
     "target": "esnext",
     "tsBuildInfoFile": "./stats/.tsbuildinfo",
     "types": [
+      "lit",
       "node",
       "eslint",
       "vite/client",
@@ -101,6 +107,8 @@
       "@fnc314/packages.design-tokens",
       "@fnc314/packages.services",
       "@fnc314/packages.types",
+      "@types/fs-extra",
+      "@web-types/lit",
     ],
     "useDefineForClassFields": false,
     "verbatimModuleSyntax": false

@@ -1,16 +1,19 @@
 {
   "author": "Franco N. Colaizzi",
   "customElements": "custom-elements.json",
+  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "dependencies": {
-    "@fnc314/packages.types": "workspace:*",
     "lit": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
-  "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
+  "peerDependencies": {
+    "@fnc314/packages.types": "workspace:*"
+  },
   "devDependencies": {
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
+    "@fnc314/packages.types": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",

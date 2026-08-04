@@ -134,6 +134,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     optimizeDeps: {},
     resolve: {
       dedupe: [
+        "@fnc314/packages.*",
         "lit",
         "lit-html",
         "lit-element",
@@ -141,6 +142,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         "@material/web",
         "material-symbols",
       ],
+      preserveSymlinks: true,
       mainFields: ["exports", "module"],
       tsconfigPaths: true,
       extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
@@ -186,6 +188,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       },
       rolldownOptions: {
         resolve: {
+
           conditionNames: [
             mode,
             "import",
