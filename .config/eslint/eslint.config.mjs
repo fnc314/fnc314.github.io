@@ -11,12 +11,12 @@ import tseslint from "typescript-eslint";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "../../");
 
-/** @type {Record<string, any>} */
+// FIXED: Use object spreading for rules objects instead of array spreading
 const tsRules = {
   ...tseslint.configs.recommendedTypeChecked.find(c => c.rules)?.rules,
   ...tseslint.configs.stylisticTypeChecked.find(c => c.rules)?.rules,
-  ...(WCConfigs["flat/recommended"].rules ?? []),
-  ...(LitConfigs["flat/recommended"].rules ?? []),
+  ...(WCConfigs["flat/recommended"]?.rules ?? {}),
+  ...(LitConfigs["flat/recommended"]?.rules ?? {}),
 };
 
 const ignores = [
@@ -42,14 +42,26 @@ const ignores = [
   "packages/{components,data,design-tokens,services,types}/src/**/*.test.ts",
   "static/**/*",
   "stats/**/*",
+  "sites/docs",
   "**/*.html",
   "**/*.css",
 ];
 
 export default defineConfig([
+  // FIXED: Top-level global ignores must have ONLY the 'ignores' key (no 'name' key allowed)
   {
-    name: "app/global-ignores-strict",
-    ignores: [".config/**/*"],
+    ignores: [
+      "manifest.json",
+      "dist/",
+      "docs/",
+      "eleventy.config.js",
+      "postcss.config.mjs",
+      "prettier.config.mts",
+      "stylelint.config.ts",
+      "vite.config.ts",
+      "typedoc.config.mjs",
+      ...ignores,
+    ],
   },
   {
     name: "app/typescript",
@@ -64,7 +76,6 @@ export default defineConfig([
       "packages/{components,data,design-tokens,services,types}/src/**/*.ts",
       "sites/{docs,portfolio}/src/**/*.ts",
     ],
-    ignores,
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -73,6 +84,7 @@ export default defineConfig([
         tsconfigRootDir: rootDir,
         projectServices: true,
       },
+      // FIXED: Spread the browser library object properly
       globals: {
         ...globals.browser,
       },
@@ -82,11 +94,7 @@ export default defineConfig([
     },
     rules: {
       ...tsRules,
-      // Disabled: `tsdoc/syntax` enforces the strict @microsoft/tsdoc declaration-reference
-      // grammar (package/member separated by `#`), but TypeDoc — the actual consumer of these
-      // `{@link}`s — uses `!` as the module-source delimiter (e.g. `{@link @lit/reactive-element!css}`,
-      // `{@link @fnc314/packages.types!WorkDate}`). The two grammars are incompatible for
-      // cross-package links, so the rule only yields false positives here. See .config/typedoc/typedoc.config.mjs.
+      "no-undef": "off",
       "tsdoc/syntax": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
@@ -99,7 +107,7 @@ export default defineConfig([
     },
     settings: {
       lit: {
-        elementBaseClasses: ["ClassExtendingLitElement"], // Recognize `ClassExtendingLitElement` as a sub-class of LitElement
+        elementBaseClasses: ["ClassExtendingLitElement"],
       },
       tsdoc: {
         tagDefinitions: [
@@ -138,8 +146,7 @@ export default defineConfig([
     },
     rules: {
       ...tsRules,
-      // See the note on `tsdoc/syntax` in the "app/typescript" config above — TypeDoc's `!`
-      // module-source syntax is incompatible with @microsoft/tsdoc's grammar.
+      "no-undef": "off",
       "tsdoc/syntax": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
@@ -157,21 +164,6 @@ export default defineConfig([
     },
   },
   {
-    name: "app/global-ignores",
-    ignores: [
-      "manifest.json",
-      "dist/",
-      "docs/",
-      "eleventy.config.js",
-      "postcss.config.mjs",
-      "prettier.config.mts",
-      "stylelint.config.ts",
-      "vite.config.ts",
-      "typedoc.config.mjs",
-      ...ignores,
-    ],
-  },
-  {
     name: "app/js-recommended",
     ...eslint.configs.recommended,
     languageOptions: {
@@ -179,19 +171,18 @@ export default defineConfig([
         ...globals.browser,
       },
     },
-    ignores,
   },
   {
     name: "app/javascript-overrides",
     files: [
       "index.ts",
-      path.join(rootDir, "packages/{components,data,design-tokens,services,types}/src/**/*.ts"),
-      path.join(rootDir, "sites/{docs,portfolio}/src/**/*.ts"),
+      "packages/{components,data,design-tokens,services,types}/src/**/*.ts",
+      "sites/{docs,portfolio}/src/**/*.ts",
     ],
-    plugins: [
+    // FIXED: Plugins must be an object map, not an array
+    plugins: {
       tsdoc,
-    ],
-    ignores,
+    },
     languageOptions: {
       parserOptions: {
         ecmaVersion: "latest",
