@@ -28,7 +28,6 @@
     "eslint-plugin-import": "catalog:devDependencies",
     "firebase-functions-test": "catalog:functionsDevDependencies",
     "typescript": "catalog:typescript",
-    "typescript7": "catalog:typescript",
     "typescript7": "catalog:typescript"
   },
   "overrides": {
