@@ -217,7 +217,7 @@ minimumReleaseAgeExclude:
   - "@typescript/typescript-win32-arm64@7.0.2"
   - "@typescript/typescript-win32-x64@7.0.2"
   - typescript@7.0.2
-nodeVersion: "26.5.1"
+nodeVersion: "26.6.0"
 packageManagerStrictVersion: true
 packages:
   - "configs/@pwrs-cem"
@@ -260,4 +260,4 @@ saveWorkspaceProtocol: "rolling"
 scriptShell: "zsh"
 sharedWorkspaceLockfile: true
 updateNotifier: true
-useNodeVersion: "26.5.1"
+useNodeVersion: "26.6.0"
