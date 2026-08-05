@@ -60,7 +60,7 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
 
 /** Bootstrapping listener for {@link EVENT_DOM_CONTENT_LOADED} */
 const domLoadedListener = () => {
-  window.document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+  // window.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
 
   window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
 
@@ -76,5 +76,5 @@ const domLoadedListener = () => {
 
   window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
-
-window.document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+window.onload = domLoadedListener
+// window.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
