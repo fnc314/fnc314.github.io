@@ -15,6 +15,7 @@ import {
     CONFIG_COLOR_SCHEME_NAMES,
     type ColorScheme
 } from "@fnc314/packages.types";
+import "dark-mode-toggle";
 import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -121,11 +122,14 @@ export class UiModeToggle extends UIAwareElement {
     configsService.saveConfigs(this._appConfigs);
 
     window.dispatchEvent(
-      new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
-        bubbles: true,
-        composed: true,
-        detail: this._appConfigs.colorScheme,
-      }),
+      new CustomEvent(
+        COLOR_SCHEME_CHANGE_EVENT_NAME,
+        {
+          bubbles: true,
+          composed: true,
+          detail: this._appConfigs.colorScheme,
+        }
+      ),
     );
 
     MaterialCSSStyleSheet.replaceSync(

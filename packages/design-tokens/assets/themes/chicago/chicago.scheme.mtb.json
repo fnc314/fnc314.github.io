@@ -50,7 +50,7 @@
     "surfaceContainerHigh": "#F6E5DD",
     "surfaceContainerHighest": "#F0DFD7"
   },
-  "light-medium-contrast": {
+  "lightMediumContrast": {
     "primary": "#5A2803",
     "surfaceTint": "#8C4E28",
     "onPrimary": "#FFFFFF",
@@ -101,7 +101,7 @@
     "surfaceContainerHigh": "#EAD9D2",
     "surfaceContainerHighest": "#DFCEC7"
   },
-  "light-high-contrast": {
+  "lightHighContrast": {
     "primary": "#4C1F00",
     "surfaceTint": "#8C4E28",
     "onPrimary": "#FFFFFF",
@@ -203,7 +203,7 @@
     "surfaceContainerHigh": "#312823",
     "surfaceContainerHighest": "#3D332D"
   },
-  "dark-medium-contrast": {
+  "darkMediumContrast": {
     "primary": "#FFD3BD",
     "surfaceTint": "#FFB68D",
     "onPrimary": "#421A00",
@@ -254,7 +254,7 @@
     "surfaceContainerHigh": "#3A302B",
     "surfaceContainerHighest": "#463B36"
   },
-  "dark-high-contrast": {
+  "darkHighContrast": {
     "primary": "#FFECE4",
     "surfaceTint": "#FFB68D",
     "onPrimary": "#000000",

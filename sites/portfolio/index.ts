@@ -1,7 +1,13 @@
 import "@fnc314/packages.components";
 import "@fnc314/packages.data";
 import "@fnc314/packages.design-tokens";
-import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
+import {
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    configsService,
+    onThemeChange,
+    themeService
+} from "@fnc314/packages.services";
 import {
     COLOR_SCHEME_CHANGE_EVENT_NAME,
     type ColorSchemeConfig,

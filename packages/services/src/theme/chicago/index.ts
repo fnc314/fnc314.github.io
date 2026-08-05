@@ -10,11 +10,11 @@ export const ChicagoThemeConfig: ThemeConfig = {
   json,
   materialSchemes: {
     light: readScheme(json.light),
-    lightMediumContrast: readScheme(json["light-medium-contrast"]),
-    lightHighContrast: readScheme(json["light-high-contrast"]),
+    lightMediumContrast: readScheme(json.lightMediumContrast),
+    lightHighContrast: readScheme(json.lightHighContrast),
     dark: readScheme(json.dark),
-    darkMediumContrast: readScheme(json["dark-medium-contrast"]),
-    darkHighContrast: readScheme(json["dark-high-contrast"]),
+    darkMediumContrast: readScheme(json.darkMediumContrast),
+    darkHighContrast: readScheme(json.darkHighContrast),
   },
 };
 

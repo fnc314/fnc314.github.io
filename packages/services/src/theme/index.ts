@@ -110,7 +110,7 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.dark.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
@@ -126,10 +126,13 @@ export const onThemeChange: (event: MediaQueryListEvent) => void = (event: Media
   });
 
   MaterialCSSStyleSheet.replaceSync(
-    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)].cssText,
+    themeService.currentThemeConfig().materialSchemes[
+      colorSchemeConfigsToMaterialSchemeName(colorScheme)
+    ].cssText,
   );
 
-  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+  window.document.getElementById("meta-theme-color")
+    ?.setAttribute("content", themeService.themeJson().primary);
 };
 
 export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfig) => MaterialSchemeName = (
