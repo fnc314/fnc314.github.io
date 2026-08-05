@@ -7,16 +7,16 @@ import { type CSSResult, css } from "lit";
  */
 export const CodeRevealStyles: CSSResult = css`
   :host {
-    --md-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
-    --md-icon-button-icon-color: var(--md-sys-color-tertiary);
-    --md-icon-button-focus-color: var(--md-sys-color-tertiary);
-    --md-icon-button-focus-icon-color: var(--md-sys-color-tertiary);
-    --md-icon-button-hover-icon-color: var(--md-sys-color-tertiary);
-
-    --md-focus-ring-color: var(--md-sys-color-tertiary);
-
     --code-reveal-header-icon-inline-size: var(--sizes-dynamic-width-xs);
-    --code-reveal-color: var(--md-sys-color-tertiary);
+    --code-reveal-background-color: var(--md-sys-color-surface-container-lowest);
+    --code-reveal-color: var(--md-sys-color-on-surface-variant);
+
+    --md-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+    --md-icon-button-icon-color: var(--code-reveal-color);
+    --md-icon-button-focus-color: var(--code-reveal-color);
+    --md-icon-button-focus-icon-color: var(--code-reveal-color);
+    --md-icon-button-hover-icon-color: var(--code-reveal-color);
+    --md-focus-ring-color: var(--code-reveal-color);
 
     display: block;
     width: 100%;
@@ -75,7 +75,7 @@ export const CodeRevealStyles: CSSResult = css`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--md-sys-color-surface-container-highest);
+    background-color: var(--code-reveal-background-color);
     color: var(--code-reveal-color);
     border: solid var(--sizes-thickness-hairline) var(--code-reveal-color);
     border-radius: var(--bento-layout-card-shape);

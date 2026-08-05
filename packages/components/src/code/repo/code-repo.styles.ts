@@ -15,8 +15,12 @@ export const CodeRepoStyles: CSSResult = css`
     --dynamic-border-background: var(--md-sys-color-tertiary-container);
     --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
-    --word-tag-background-color: var(--md-sys-color-tertiary-container);
+    --word-tag-background-color: var(--md-sys-color-surface-container-lowest);
     --word-tag-color: var(--md-sys-color-on-tertiary-container);
+
+    --code-repo-background-color: var(--md-sys-color-surface-container-high);
+    --code-repo-link-color: var(--md-sys-color-primary);
+    --code-repo-color: var(--md-sys-color-on-surface);
 
     align-self: stretch;
     box-sizing: border-box;
@@ -32,9 +36,9 @@ export const CodeRepoStyles: CSSResult = css`
     container-type: inline-size;
     perspective: 1400px;
     transform-style: preserve-3d;
-    background-color: var(--md-sys-color-surface);
+    background-color: var(--code-repo-background-color);
     block-size: 100%;
-    border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
+    border: var(--sizes-thickness-hairline) solid var(--code-repo-color);
     border-radius: var(--bento-layout-card-shape);
     box-sizing: border-box;
     display: flex;
@@ -51,7 +55,7 @@ export const CodeRepoStyles: CSSResult = css`
     transform-style: preserve-3d;
     transform: rotateX(0deg) translateY(0px);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    background-color: var(--md-sys-color-surface);
+    background-color: var(--code-repo-background-color);
     will-change: transform;
   }
 
@@ -82,7 +86,7 @@ export const CodeRepoStyles: CSSResult = css`
     min-inline-size: 0;
 
     h3 {
-      color: var(--md-sys-color-on-surface);
+      color: var(--code-repo-color);
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
       word-break: break-word;
@@ -90,7 +94,7 @@ export const CodeRepoStyles: CSSResult = css`
 
     a {
       align-items: center;
-      color: var(--md-sys-color-primary);
+      color: var(--code-repo-link-color);
       display: inline-flex;
       gap: var(--spaces-gap-xs);
       max-inline-size: 100%;
@@ -114,7 +118,7 @@ export const CodeRepoStyles: CSSResult = css`
     min-inline-size: 0;
 
     p {
-      color: var(--md-sys-color-on-surface-variant);
+      color: var(--code-repo-color);
       margin-block: var(--spaces-none) var(--spaces-margin-m);
       min-inline-size: 0;
       word-break: break-word;

@@ -13,6 +13,9 @@ import { css } from "lit";
 export const BentoLayoutStyles = css`
   :host {
     --bento-layout-column-count: 1;
+    --bento-layout-background-color: var(--md-sys-color-surface);
+    --bento-layout-header-color: var(--md-sys-color-on-primary-container);
+    --bento-layout-header-background-color: var(--md-sys-color-primary-container);
     --bento-layout-card-background: var(--md-sys-color-surface-container-lowest);
     --bento-layout-card-color: var(--md-sys-color-on-surface);
     --bento-layout-card-shape: var(--md-sys-shape-corner-medium);
@@ -33,12 +36,13 @@ export const BentoLayoutStyles = css`
     flex-direction: column;
     gap: var(--spaces-gap-s);
     padding: var(--spaces-padding-xs);
+    background-color: var(--bento-layout-background-color);
 
     header {
-      background-color: var(--md-sys-color-primary-container);
-      border: var(--sizes-thickness-hairline) solid var(--md-sys-color-on-primary-container);
+      background-color: var(--bento-layout-header-background-color);
+      border: var(--sizes-thickness-hairline) solid var(--bento-layout-header-color);
       border-radius: var(--md-sys-shape-corner-large);
-      color: var(--md-sys-color-on-primary-container);
+      color: var(--bento-layout-header-color);
       inline-size: 100%;
       margin-inline: auto;
       padding-block: var(--spaces-padding-l);

@@ -26,7 +26,7 @@
     "color": {
       "background": {
         "$type": "value",
-        "$value": "var(--md-sys-color-surface-container-highest)"
+        "$value": "var(--md-sys-color-surface)"
       }
     }
   }

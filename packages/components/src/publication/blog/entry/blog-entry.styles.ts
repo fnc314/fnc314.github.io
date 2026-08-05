@@ -15,12 +15,16 @@ export const BlogEntryStyles: CSSResult = css`
     --dynamic-border-background: var(--md-sys-color-tertiary-container);
     --dynamic-border-size: var(--sizes-width-l);
     --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
+
+    --publication-blog-entry-color: var(--md-sys-color-on-surface);
+    --publication-blog-entry-secondary-color: var(--md-sys-color-primary);
+    --publication-blog-entry-background-color: var(--md-sys-color-surface);
   }
 
   article {
-    background-color: var(--md-sys-color-surface);
+    background-color: var(--publication-blog-entry-background-color);
     block-size: 100%;
-    border: var(--sizes-thickness-hairline) solid var(--md-sys-color-outline-variant);
+    border: var(--sizes-thickness-hairline) solid var(--publication-blog-entry-color);
     border-radius: var(--md-sys-shape-corner-medium);
     box-sizing: border-box;
     display: grid;
@@ -50,7 +54,7 @@ export const BlogEntryStyles: CSSResult = css`
     min-inline-size: 0;
 
     h3 {
-      color: var(--md-sys-color-on-surface);
+      color: var(--publication-blog-entry-color);
       font-family: var(--md-ref-typeface-brand);
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
@@ -58,7 +62,7 @@ export const BlogEntryStyles: CSSResult = css`
     }
 
     h4 {
-      color: var(--md-sys-color-primary);
+      color: var(--publication-blog-entry-secondary-color);
       font-style: italic;
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
@@ -70,7 +74,7 @@ export const BlogEntryStyles: CSSResult = css`
     min-inline-size: 0;
 
     p {
-      color: var(--md-sys-color-on-surface-variant);
+      color: var(--publication-blog-entry-color);
       margin-block: var(--spaces-margin-xs);
       min-inline-size: 0;
       word-break: break-word;
@@ -89,7 +93,7 @@ export const BlogEntryStyles: CSSResult = css`
 
     a {
       align-items: center;
-      color: var(--md-sys-color-inverse-surface);
+      color: var(--publication-blog-entry-secondary-color);
       display: inline-flex;
       gap: var(--spaces-gap-s);
       text-decoration: none;
