@@ -11,7 +11,10 @@
         },
         "default": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg"
+          "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "light": {
           "$type": "asset",
