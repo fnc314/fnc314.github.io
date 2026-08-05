@@ -57,6 +57,7 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
         theme: DEFAULT_APP_CONFIGS.colorScheme.theme,
       },
     };
+
     this.saveConfigs(updatedConfigs);
     return updatedConfigs;
   }

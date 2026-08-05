@@ -11,7 +11,7 @@ export interface AppConfigs {
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
-    theme: THEME_NAMES.sunset,
+    theme: THEME_NAMES.inter,
     name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
     contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,
     persist: false,

@@ -75,13 +75,15 @@ class ThemeServiceImpl implements ThemeService {
         appConfigs.colorScheme.name
     ).toLowerCase();
 
-    const contrastPascalCase: string = appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-      "" :
-      `${appConfigs.colorScheme.contrast.at(0)?.toUpperCase()}${appConfigs.colorScheme.contrast.slice(1)?.toLowerCase()}Contrast`
+    const contrastPascalCase: string =
+      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+        "" :
+        `${appConfigs.colorScheme.contrast.at(0)?.toUpperCase()}${appConfigs.colorScheme.contrast.slice(1)?.toLowerCase()}Contrast`
 
-    const contrast = appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-      "" :
-      contrastPascalCase;
+    const contrast =
+      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+        "" :
+        contrastPascalCase;
 
     return `${schemeMode}${contrast}` as MaterialSchemeName;
   }
@@ -112,7 +114,7 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;

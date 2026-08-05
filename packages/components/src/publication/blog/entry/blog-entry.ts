@@ -24,7 +24,6 @@ export class BlogEntry extends UIAwareElement {
 
   override render() {
     const variant = this.darkMode ? "dark" : "light";
-
     const logoToken = `--icons-logos-organization-medium-${variant}-icon-svg`;
     const logoTokenSvg = readCSSProperty(logoToken);
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
@@ -32,12 +31,10 @@ export class BlogEntry extends UIAwareElement {
       --dynamic-border-background-image: url('${logoTokenSvg}');
     `);
 
-    const logoProperty = readCSSProperty(`--icons-logos-organization-medium-${variant}-icon-svg`);
-
     return html`
       <article
         class="dynamic-border-host"
-        style="${borderStyle.cssText}"
+        style=${borderStyle.cssText}
       >
         <header>
           <h3 class="md-typescale-title-large">${this.blogEntry.title}</h3>
@@ -56,13 +53,13 @@ export class BlogEntry extends UIAwareElement {
             rel="noopener noreferrer"
             aria-labelledby="medium-link-label"
             aria-describedby="medium-link-label"
-            title="${`Read ${this.blogEntry.title} on Medium`}"
+            title=${`Read ${this.blogEntry.title} on Medium`}
           >
             <img
               loading="lazy"
               role="img"
               aria-describedby="medium-link-label"
-              .src=${logoProperty}
+              .src=${logoTokenSvg}
               alt="Medium logo"
             />
             <span
