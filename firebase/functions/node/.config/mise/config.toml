@@ -1,7 +1,7 @@
 [tools]
-  firebase = "15.24.0"
+  firebase = "15.25.1"
   node = "26.6.0"
-  tombi = "1.1.5"
+  tombi = "1.2.6"
   usage = "4.1.0"
   pnpm = "11.20.0"
   "npm:vite" = "8.2.0"
