@@ -36,12 +36,12 @@ export class ProfileCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = BENTO_BOX_TYPES.profile;
-    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   private _onConfigChange = () => {
