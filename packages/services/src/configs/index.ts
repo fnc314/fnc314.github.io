@@ -28,13 +28,16 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
     this.#storageService.saveData("configs", JSON.stringify(configs));
     this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
     window.dispatchEvent(
-      new CustomEvent(APP_CONFIGS_CHANGE_EVENT_NAME, {
-        bubbles: true,
-        composed: true,
-        detail: {
-          appConfigs: configs,
-        },
-      }),
+      new CustomEvent(
+        APP_CONFIGS_CHANGE_EVENT_NAME,
+        {
+          bubbles: true,
+          composed: true,
+          detail: {
+            appConfigs: configs,
+          },
+        }
+      ),
     );
   }
 

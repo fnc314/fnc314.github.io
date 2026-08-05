@@ -22,7 +22,7 @@ import "./index.css";
  * @param color - A `#`-prefixed `string`
  */
 const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =>
-  document.getElementById(ELEMENT_ID_META_TAG)?.setAttribute("content", color);
+  window.document.getElementById(ELEMENT_ID_META_TAG)?.setAttribute("content", color);
 
 /**
  * A listener for {@link ColorSchemeConfiChange} events
@@ -31,10 +31,10 @@ const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =
  */
 const onColorSchemeChange = (event: ColorSchemeConfigChange) => {
   const customEvent: ColorSchemeConfigChange = event;
-  if (!document.startViewTransition) {
+  if (!window.document.startViewTransition) {
     applyColorSchemeConfigs(customEvent.detail)
   } else {
-    document.startViewTransition(() => applyColorSchemeConfigs(customEvent.detail));
+    window.document.startViewTransition(() => applyColorSchemeConfigs(customEvent.detail));
   }
 };
 
@@ -54,15 +54,15 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
 
 /** Bootstrapping listener for {@link EVENT_DOM_CONTENT_LOADED} */
 const domLoadedListener = () => {
-  document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+  window.document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
 
   window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    window.document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
 
-  document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
+  window.document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   applyColorSchemeConfigs(
     configsService.loadConfigs().colorScheme
@@ -71,4 +71,4 @@ const domLoadedListener = () => {
   window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
 
-document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+window.document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
