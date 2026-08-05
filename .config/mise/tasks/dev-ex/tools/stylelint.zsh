@@ -53,5 +53,5 @@ if [[ "${usage_config_inspector:=false}" == "true" ]]; then
   pnpm stylelint-config-inspector --config ./.config/stylelint/stylelint.config.mjs
   exit 0
 else
-  pnpm stylelint "packages/components/src/**/*.styles.ts" "${STYLELINT_FLAGS[@]}"
+  pnpm stylelint "packages/components/src/**/*.styles.ts" "sites/portfolio/*.css" "${STYLELINT_FLAGS[@]}"
 fi

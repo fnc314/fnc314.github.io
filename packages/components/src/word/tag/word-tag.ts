@@ -2,10 +2,10 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTagStyles } from "@/lib/word/tag/word-tag.styles";
 import {
-  type WordTagHeaviness,
-  type WordTagVariant,
-  WordTagVariantAttributeConverter,
-  WordTagVariants,
+    type WordTagHeaviness,
+    type WordTagVariant,
+    WordTagVariantAttributeConverter,
+    WordTagVariants,
 } from "@fnc314/packages.types";
 import "@material/web/focus/md-focus-ring.js";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
@@ -67,7 +67,8 @@ export class WordTag extends UIAwareElement {
   @property({ type: String, attribute: "aria-controls" })
   ariaControls: string | null = null;
 
-  override focus(options?: FocusOptions) {
+  /** @see FocusOptions */
+  override focus(options?: { focusVisible: boolean, preventScroll: boolean }) {
     const focusable = this.shadowRoot?.querySelector("button, div");
     if (focusable && focusable instanceof HTMLElement) {
       focusable.focus(options);

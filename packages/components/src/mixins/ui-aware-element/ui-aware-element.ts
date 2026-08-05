@@ -1,12 +1,13 @@
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { configsService } from "@fnc314/packages.services";
 import {
-  type AppConfigsChange,
-  type BreakpointLabel,
-  CONFIG_COLOR_SCHEME_NAMES,
-  CSS_VARIABLE_BREAKPOINT_LABEL,
-  CSS_VARIABLE_TOUCH_SCREEN,
-  type IconVariants,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type AppConfigsChangeEvent,
+    type BreakpointLabel,
+    CONFIG_COLOR_SCHEME_NAMES,
+    CSS_VARIABLE_BREAKPOINT_LABEL,
+    CSS_VARIABLE_TOUCH_SCREEN,
+    type IconVariants,
 } from "@fnc314/packages.types";
 import { type CSSResult, LitElement, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";
@@ -31,12 +32,13 @@ export abstract class UIAwareElement extends LitElement {
   static override styles: CSSResult[] = [];
 
   @state()
-  protected darkMode = configsService.loadConfigs().colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
+  protected darkMode: boolean = configsService.loadConfigs().colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
 
-  private onAppConfigChange: (event: Event) => void = (event: Event) => {
-    this.darkMode =
-      (event as AppConfigsChange).detail?.appConfigs?.colorScheme?.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
-  };
+  private onAppConfigChange: (event: AppConfigsChangeEvent) => void =
+    (event: AppConfigsChangeEvent) => {
+      this.darkMode =
+        event.detail.appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
+    };
 
   /**
    * The {@link @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel} as determined by *SCREEN* width against
@@ -59,13 +61,13 @@ export abstract class UIAwareElement extends LitElement {
   override connectedCallback(): void {
     super.connectedCallback();
     window.addEventListener("resize", this.onBreakpointChange);
-    configsService.addEventListener("app-configs.change", this.onAppConfigChange);
+    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigChange);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
     window.removeEventListener("resize", this.onBreakpointChange);
-    configsService.removeEventListener("app-configs.change", this.onAppConfigChange);
+    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigChange);
   }
 
   /**

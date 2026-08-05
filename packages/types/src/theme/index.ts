@@ -106,10 +106,7 @@ export type ValidateRGBA<T extends string> =
 // Helper function to enforce the type
 export const setRGBA = <T extends string>(color: T & ValidateRGBA<T>) => color;
 
-export type MaterialSchemeNames =
-  "light" | "light-medium-contrast" | "light-high-contrast" | "dark" | "dark-medium-contrast" | "dark-high-contrast";
-
-export type ThemeJsonSchemes = Record<MaterialSchemeNames, Record<ColorSchemeRoles, ColorString>>;
+export type ThemeJsonSchemes = Record<MaterialSchemeName, Record<ColorSchemeRoles, ColorString>>;
 
 export interface PhotoJson {
   src: string;

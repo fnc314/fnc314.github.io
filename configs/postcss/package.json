@@ -1,0 +1,11 @@
+{
+	"private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "3.1.0",
+  "exports": {
+    ".": "./postcss.config.mjs"
+  },
+  "name": "@fnc314/configs.postcss"
+}

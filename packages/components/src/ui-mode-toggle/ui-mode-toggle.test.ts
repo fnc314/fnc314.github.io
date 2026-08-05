@@ -1,7 +1,7 @@
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { type AppConfigs, COLOR_SCHEME_CHANGE_EVENT_NAME, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { APP_CONFIGS_CHANGE_EVENT_NAME, type AppConfigs, COLOR_SCHEME_CHANGE_EVENT_NAME, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
 import { expect, fixture, html, oneEvent } from "@open-wc/testing";
 import { type ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { afterEach, before, beforeEach, type it } from "node:test";
@@ -88,7 +88,7 @@ describe("UiModeToggle Component", () => {
         persist: true,
       },
     };
-    configsService.dispatchEvent(new CustomEvent("app-configs.change", { detail: { appConfigs: newConfigs } }));
+    configsService.dispatchEvent(new CustomEvent(APP_CONFIGS_CHANGE_EVENT_NAME, { detail: { appConfigs: newConfigs } }));
     await element.updateComplete;
 
     expect(element.mode).to.equal("dark");

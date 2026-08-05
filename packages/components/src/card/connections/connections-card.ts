@@ -3,11 +3,11 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { Connections } from "@fnc314/packages.data";
 import {
-  type ArtifactConnectionData,
-  type ArtifactConnectionType,
-  BENTO_BOX_TYPES,
-  type ConnectionInstance,
-  type ProfessionalConnectionJsonData,
+    type ArtifactConnectionData,
+    type ArtifactConnectionType,
+    BENTO_BOX_TYPES,
+    type ConnectionInstance,
+    type ProfessionalConnectionJsonData,
 } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -39,10 +39,10 @@ export class ConnectionsCard extends UIAwareElement {
     const contact = html`
       <div>
         <dt class="md-typescale-title-large">Contact</dt>
-        ${Object.entries(Connections.direct).map(
-          ([_, instance]: [string, ConnectionInstance]) => html`
+        ${Object.values(Connections.direct).map(
+          (instance: ConnectionInstance) => html`
             <dd style="grid-column: span ${directConnectionsColSpan}">
-              <direct-connection .connectionInstance=${instance}> </direct-connection>
+              <direct-connection .connectionInstance=${instance}></direct-connection>
             </dd>
           `,
         )}

@@ -2,19 +2,20 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 import {
-  MaterialCSSStyleSheet,
-  colorSchemeConfigsToMaterialSchemeName,
-  configsService,
-  themeService,
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    configsService,
+    themeService,
 } from "@fnc314/packages.services";
 import {
-  APP_CONFIGS_CHANGE_EVENT_NAME,
-  type AppConfigs,
-  type AppConfigsChange,
-  COLOR_SCHEME_CHANGE_EVENT_NAME,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type AppConfigs,
+    type AppConfigsChangeEvent,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme
 } from "@fnc314/packages.types";
+import "dark-mode-toggle";
 import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
@@ -72,25 +73,12 @@ export class UiModeToggle extends UIAwareElement {
     this._ready = true;
   }
 
-  override connectedCallback(): void {
-    super.connectedCallback();
-    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
-    document.addEventListener("colorschemechange", this.colorSchemeChangeEventListener);
-    document.addEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
-  }
-
-  override disconnectedCallback(): void {
-    super.disconnectedCallback();
-    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
-    document.removeEventListener("colorschemechange", this.colorSchemeChangeEventListener);
-    document.removeEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
-  }
-
-  private onAppConfigsChange = (event: Event) => {
-    this._appConfigs = (event as AppConfigsChange).detail.appConfigs;
-    this.mode = this._appConfigs.colorScheme.name.toLowerCase() as "light" | "dark" | "system";
-    this.permanent = this._appConfigs.colorScheme.persist;
-  };
+  private onAppConfigsChange: (event: AppConfigsChangeEvent) => void =
+    (event: AppConfigsChangeEvent) => {
+      this._appConfigs = event.detail.appConfigs;
+      this.mode = this._appConfigs.colorScheme.name.toLowerCase() as "light" | "dark" | "system";
+      this.permanent = this._appConfigs.colorScheme.persist;
+    };
 
   private colorSchemeChangeEventListener = (event: ColorSchemeChangeEvent) => {
     if (!this._ready) return;
@@ -133,12 +121,15 @@ export class UiModeToggle extends UIAwareElement {
 
     configsService.saveConfigs(this._appConfigs);
 
-    this.dispatchEvent(
-      new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
-        bubbles: true,
-        composed: true,
-        detail: this._appConfigs.colorScheme,
-      }),
+    window.dispatchEvent(
+      new CustomEvent(
+        COLOR_SCHEME_CHANGE_EVENT_NAME,
+        {
+          bubbles: true,
+          composed: true,
+          detail: this._appConfigs.colorScheme,
+        }
+      ),
     );
 
     MaterialCSSStyleSheet.replaceSync(
@@ -156,15 +147,30 @@ export class UiModeToggle extends UIAwareElement {
     this.onColorThemeModeContrastChange(configsService.loadConfigs().colorScheme);
   }
 
+  override connectedCallback(): void {
+    super.connectedCallback();
+    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    document.addEventListener("colorschemechange", this.colorSchemeChangeEventListener);
+    document.addEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    document.removeEventListener("colorschemechange", this.colorSchemeChangeEventListener);
+    document.removeEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
+  }
+
   override render(): TemplateResult {
     const classes = {
       dark: this.mode === "dark",
+      variant: true,
     };
 
     return html`
       <dark-mode-toggle
         id="dark-mode-toggle"
-        class="variant ${classMap(classes)}"
+        class=${classMap(classes)}
         .mode=${this.mode}
         ?permanent=${this.permanent}
         appearance="three-way"

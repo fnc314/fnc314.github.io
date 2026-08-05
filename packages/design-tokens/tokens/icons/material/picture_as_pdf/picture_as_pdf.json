@@ -11,7 +11,10 @@
         },
         "default": {
           "$type": "asset",
-          "$value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg"
+          "$value": "packages/design-tokens/assets/icons/material/picture_as_pdf/picture_as_pdf-default.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
         },
         "light": {
           "$type": "asset",
