@@ -13,7 +13,6 @@ import {
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
     ELEMENT_ID_META_TAG,
-    EVENT_DOM_CONTENT_LOADED,
     WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK
 } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
@@ -58,9 +57,8 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
   setMetaThemeColor(themeService.themeJson().primary);
 }
 
-/** Bootstrapping listener for {@link EVENT_DOM_CONTENT_LOADED} */
-const domLoadedListener = () => {
-  // window.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+/** Bootstrapping listener for {@link window.onload} */
+const windowOnLoad = () => {
 
   window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
 
@@ -76,5 +74,5 @@ const domLoadedListener = () => {
 
   window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
-window.onload = domLoadedListener
-// window.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+
+window.onload = windowOnLoad
