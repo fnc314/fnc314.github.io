@@ -37,6 +37,8 @@ export * from "@/lib/theme/sunset";
 export * from "@/lib/theme/utils";
 
 export interface ThemeService {
+  devicePreference(): ColorScheme;
+
   currentThemeConfig(): ThemeConfig;
 
   currentMaterialSchemeName(): MaterialSchemeNames;
@@ -50,7 +52,7 @@ class ThemeServiceImpl implements ThemeService {
     this.#configService = configService;
   }
 
-  #devicePreference(): ColorScheme {
+  devicePreference(): ColorScheme {
     return window.matchMedia("(prefers-color-scheme: dark)").matches ?
       CONFIG_COLOR_SCHEME_NAMES.DARK :
       (
@@ -68,8 +70,9 @@ class ThemeServiceImpl implements ThemeService {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
       appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
-        this.#devicePreference()
-      : appConfigs.colorScheme.name).toLowerCase();
+        this.devicePreference() :
+        appConfigs.colorScheme.name
+    ).toLowerCase();
 
     const contrast =
       appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?

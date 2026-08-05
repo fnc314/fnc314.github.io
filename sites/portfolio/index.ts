@@ -21,7 +21,7 @@ const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =
  * @param event - The particular `event`
  */
 const onColorSchemeChange = (event: ColorSchemeConfigChange) => {
-  const customEvent: ColorSchemeConfigChange = event as ColorSchemeConfigChange;
+  const customEvent: ColorSchemeConfigChange = event;
   if (!document.startViewTransition) {
     applyColorSchemeConfigs(customEvent.detail)
   } else {
