@@ -4,7 +4,7 @@ import { TextStyles } from "@/lib/styles";
 import { Biography, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
 import { APP_CONFIGS_CHANGE_EVENT_NAME, BENTO_BOX_TYPES, type BioExtended } from "@fnc314/packages.types";
-import { type TemplateResult, html, nothing } from "lit";
+import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -36,12 +36,12 @@ export class ProfileCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = BENTO_BOX_TYPES.profile;
-    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
   }
 
   private _onConfigChange = () => {
@@ -54,7 +54,7 @@ export class ProfileCard extends UIAwareElement {
     const sections = this.aboutMe.sections
       .filter((section) => section.title.trim().length > 0)
       .map((section) => {
-        let sectionContent: TemplateResult = html`${nothing}`;
+        let sectionContent: TemplateResult;
         if ("listLeadingParagraph" in section.content) {
           sectionContent = html`
             <p class="md-typescale-body-large">${unsafeHTML(section.content.listLeadingParagraph)}</p>
@@ -69,7 +69,7 @@ export class ProfileCard extends UIAwareElement {
             </ul>
           `;
         } else {
-          sectionContent = html` <p class="md-typescale-body-large">${unsafeHTML(section.content.content)}</p> `;
+          sectionContent = html`<p class="md-typescale-body-large">${unsafeHTML(section.content.content)}</p>`;
         }
 
         const sectionHeaderId = section.title.replaceAll(" ", "-").toLowerCase();

@@ -1,19 +1,19 @@
 import { jsonIsThemeJsonSchemes, readScheme } from "@/lib/theme/utils";
 import { Photos } from "@fnc314/packages.data";
-import JsonTheme from "@fnc314/packages.design-tokens/themes/red/red.mtb.json" with { type: "json" };
+import JsonTheme from "@fnc314/packages.design-tokens/themes/red/red.scheme.mtb.json" with { type: "json" };
 import { type ThemeConfig, type ThemeJsonSchemes } from "@fnc314/packages.types";
 
-const json = jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes);
+const json = jsonIsThemeJsonSchemes(JsonTheme) ? JsonTheme: ({} as ThemeJsonSchemes);
 
 export const RedThemeConfig: ThemeConfig = {
   themePhoto: Photos.red,
   json,
   materialSchemes: {
     light: readScheme(json.light),
-    lightMediumContrast: readScheme(json["light-medium-contrast"]),
-    lightHighContrast: readScheme(json["light-high-contrast"]),
+    lightMediumContrast: readScheme(json.lightMediumContrast),
+    lightHighContrast: readScheme(json.lightHighContrast),
     dark: readScheme(json.dark),
-    darkMediumContrast: readScheme(json["dark-medium-contrast"]),
-    darkHighContrast: readScheme(json["dark-high-contrast"]),
+    darkMediumContrast: readScheme(json.darkMediumContrast),
+    darkHighContrast: readScheme(json.darkHighContrast),
   },
 };

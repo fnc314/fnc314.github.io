@@ -1,5 +1,7 @@
+import defineConfig from "stylelint-define-config";
+
 /** @type {import('stylelint').Config} */
-const config = {
+export default defineConfig({
   defaultSeverity: "warning",
   formatter: "verbose",
   ignoreFiles: [
@@ -31,8 +33,13 @@ const config = {
   overrides: [
     {
       files: ["packages/components/src/**/*.styles.ts"],
-      customSyntax: "postcss-lit",
+      languageOptions: {
+        customSyntax: "postcss-lit",
+      }
     },
+    {
+      files: ["sites/portfolio/index.css"],
+    }
   ],
   plugins: [
     "stylelint-order",
@@ -65,6 +72,4 @@ const config = {
       },
     ],
   }
-};
-
-export default config;
+});

@@ -10,17 +10,19 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  type ColorSchemeConfig,
-  type ColorSchemeConfigChange,
-  type ColorSchemeRoles,
-  type ColorString,
-  type MaterialSchemeName,
-  type MaterialSchemeNames,
-  type ThemeConfig,
-  type ThemeConfigs,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    type ColorSchemeConfig,
+    type ColorSchemeConfigChange,
+    type ColorSchemeRoles,
+    type ColorString,
+    type MaterialSchemeName,
+    type ThemeConfig,
+    type ThemeConfigs,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -36,9 +38,11 @@ export * from "@/lib/theme/sunset";
 export * from "@/lib/theme/utils";
 
 export interface ThemeService {
+  devicePreference(): ColorScheme;
+
   currentThemeConfig(): ThemeConfig;
 
-  currentMaterialSchemeName(): MaterialSchemeNames;
+  currentMaterialSchemeName(): MaterialSchemeName;
 
   themeJson(): Record<ColorSchemeRoles, ColorString>;
 }
@@ -49,29 +53,39 @@ class ThemeServiceImpl implements ThemeService {
     this.#configService = configService;
   }
 
-  #devicePreference(): ColorScheme {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ?
-        CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
+  devicePreference(): ColorScheme {
+    return window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
+      CONFIG_COLOR_SCHEME_NAMES.DARK :
+      (
+        window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT).matches ?
+          CONFIG_COLOR_SCHEME_NAMES.LIGHT :
+          CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+      );
   }
 
   currentThemeConfig(): ThemeConfig {
     return THEME_CONFIGS[this.#configService.loadConfigs().colorScheme.theme];
   }
 
-  currentMaterialSchemeName(): MaterialSchemeNames {
+  currentMaterialSchemeName(): MaterialSchemeName {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
       appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
-        this.#devicePreference()
-      : appConfigs.colorScheme.name).toLowerCase();
+        this.devicePreference() :
+        appConfigs.colorScheme.name
+    ).toLowerCase();
+
+    const contrastPascalCase: string =
+      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+        "" :
+        `${appConfigs.colorScheme.contrast.at(0)?.toUpperCase()}${appConfigs.colorScheme.contrast.slice(1)?.toLowerCase()}Contrast`
 
     const contrast =
       appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-        ""
-      : `-${appConfigs.colorScheme.contrast}-contrast`.toLowerCase();
+        "" :
+        contrastPascalCase;
 
-    return `${schemeMode}${contrast}` as MaterialSchemeNames;
+    return `${schemeMode}${contrast}` as MaterialSchemeName;
   }
 
   themeJson(): Record<ColorSchemeRoles, ColorString> {
@@ -83,7 +97,7 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    "color_scheme.change": ColorSchemeConfigChange;
+    [COLOR_SCHEME_CHANGE_EVENT_NAME]: ColorSchemeConfigChange;
   }
 }
 
@@ -100,7 +114,7 @@ export const THEME_CONFIGS: ThemeConfigs = {
   sunset: SunsetThemeConfig,
 };
 
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.sunset.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
@@ -116,10 +130,13 @@ export const onThemeChange: (event: MediaQueryListEvent) => void = (event: Media
   });
 
   MaterialCSSStyleSheet.replaceSync(
-    themeService.currentThemeConfig().materialSchemes[colorSchemeConfigsToMaterialSchemeName(colorScheme)].cssText,
+    themeService.currentThemeConfig().materialSchemes[
+      colorSchemeConfigsToMaterialSchemeName(colorScheme)
+    ].cssText,
   );
 
-  document.getElementById("meta-theme-color")?.setAttribute("content", themeService.themeJson().primary);
+  window.document.getElementById("meta-theme-color")
+    ?.setAttribute("content", themeService.themeJson().primary);
 };
 
 export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: ColorSchemeConfig) => MaterialSchemeName = (
@@ -127,10 +144,10 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
 ): MaterialSchemeName => {
   const variant =
     colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
-      colorSchemeSettings.name.toLowerCase()
-    : (window.matchMedia("(prefers-color-scheme: dark)").matches ?
-        CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT
+      colorSchemeSettings.name.toLowerCase() :
+      (window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
+        CONFIG_COLOR_SCHEME_NAMES.DARK :
+        CONFIG_COLOR_SCHEME_NAMES.LIGHT
       ).toLowerCase();
 
   const contrast =

@@ -3,7 +3,6 @@
 #MISE alias="v:d:p"
 #MISE depends=["vite:build:packages -p"]
 #MISE env={ NODE_ENV = "production" }
-#USAGE flag "--use-sites-portfolio" help="Points to `sites/portfolio` for building" default="false"
 #USAGE flag "-w" help="Passes `-w` to `vite build`" default="false"
 #USAGE flag "-d" help="Passes `-d` to `vite build`" default="false"
 #USAGE flag "-l" help="Logs the output to `logs/mise/tasks/vite/build/production/YYYY/MM/DD/HH:MM:SS.log`" default="false"

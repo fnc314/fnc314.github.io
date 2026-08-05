@@ -3,7 +3,7 @@
 Invokes `style-dictionary` with `./.config/style-dictionary/config.ts`
 
 
-- **Usage**: `dev-ex:tools:style-dictionary [mode, m]`
+- **Usage**: `dev-ex:tools:style-dictionary [-l] [mode, m]`
 - **Aliases**: `dx:t:style-dictionary`
 
 ### Arguments
@@ -18,3 +18,11 @@ The `mode` flag for `vite`
 - `production`
 
 **Default:** `development`
+
+### Flags
+
+#### `-l`
+
+Writes the output to a file under `logs`
+
+**Default:** `false`

@@ -8,6 +8,7 @@ import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
@@ -43,6 +44,7 @@ export class CodeRepo extends UIAwareElement {
   private codeRevealComp!: CodeReveal;
 
   @queryAll("word-tag")
+  /* eslint-disable-next-line no-undef */
   private wordTags!: NodeListOf<WordTag>;
 
   /** {@link @lit/reactive-element!css} */
@@ -141,10 +143,13 @@ export class CodeRepo extends UIAwareElement {
     const activeTech = this.activeRevealIndex !== null ? this.codeRepo.tech[this.activeRevealIndex] : null;
     const activeToken = activeTech ? this.getActiveIcon(activeTech.designToken) : html`${nothing}`;
     const isFolded = this.activeRevealIndex !== null && !this.isClosing;
-
+    const classes = {
+      "dynamic-border-host": true,
+      "is-folded": isFolded,
+    };
     return html`
       <article
-        class="dynamic-border-host ${isFolded ? "is-folded" : ""}"
+        class=${classMap(classes)}
         style=${borderStyle.cssText}
       >
         <!-- TOP FOLD SECTION: Header & Synopsis -->

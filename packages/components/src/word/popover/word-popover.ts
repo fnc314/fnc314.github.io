@@ -37,7 +37,7 @@ export class WordPopover extends UIAwareElement {
       try {
         this.popoverElement.showPopover();
       } catch (e) {
-        // Fallback if already open
+        console.error(e);
       }
     }
   }
@@ -47,7 +47,7 @@ export class WordPopover extends UIAwareElement {
       try {
         this.popoverElement.hidePopover();
       } catch (e) {
-        // Fallback if already closed
+        console.error(e);
       }
     }
   }
