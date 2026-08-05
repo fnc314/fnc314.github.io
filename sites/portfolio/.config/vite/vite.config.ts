@@ -188,7 +188,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       },
       rolldownOptions: {
         resolve: {
-
           conditionNames: [
             mode,
             "import",
