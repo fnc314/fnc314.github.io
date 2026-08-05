@@ -10,17 +10,18 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-  CONFIG_COLOR_CONTRAST_NAMES,
-  CONFIG_COLOR_SCHEME_NAMES,
-  type ColorScheme,
-  type ColorSchemeConfig,
-  type ColorSchemeConfigChange,
-  type ColorSchemeRoles,
-  type ColorString,
-  type MaterialSchemeName,
-  type MaterialSchemeNames,
-  type ThemeConfig,
-  type ThemeConfigs,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    CONFIG_COLOR_SCHEME_NAMES,
+    type ColorScheme,
+    type ColorSchemeConfig,
+    type ColorSchemeConfigChange,
+    type ColorSchemeRoles,
+    type ColorString,
+    type MaterialSchemeName,
+    type MaterialSchemeNames,
+    type ThemeConfig,
+    type ThemeConfigs,
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -51,8 +52,12 @@ class ThemeServiceImpl implements ThemeService {
 
   #devicePreference(): ColorScheme {
     return window.matchMedia("(prefers-color-scheme: dark)").matches ?
-        CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
+      CONFIG_COLOR_SCHEME_NAMES.DARK :
+      (
+        window.matchMedia("(prefers-color-scheme: light)").matches ?
+          CONFIG_COLOR_SCHEME_NAMES.LIGHT :
+          CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+      );
   }
 
   currentThemeConfig(): ThemeConfig {
@@ -83,7 +88,7 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    "color_scheme.change": ColorSchemeConfigChange;
+    [COLOR_SCHEME_CHANGE_EVENT_NAME]: ColorSchemeConfigChange;
   }
 }
 

@@ -59,7 +59,7 @@ const domLoadedListener = () => {
     configsService.loadConfigs().colorScheme
   );
 
-  document.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
+  window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
 
 document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);

@@ -120,7 +120,7 @@ export class UiModeToggle extends UIAwareElement {
 
     configsService.saveConfigs(this._appConfigs);
 
-    this.dispatchEvent(
+    window.dispatchEvent(
       new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
         bubbles: true,
         composed: true,
