@@ -19,7 +19,6 @@ import {
     type ColorSchemeRoles,
     type ColorString,
     type MaterialSchemeName,
-    type MaterialSchemeNames,
     type ThemeConfig,
     type ThemeConfigs,
     WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK,
@@ -43,7 +42,7 @@ export interface ThemeService {
 
   currentThemeConfig(): ThemeConfig;
 
-  currentMaterialSchemeName(): MaterialSchemeNames;
+  currentMaterialSchemeName(): MaterialSchemeName;
 
   themeJson(): Record<ColorSchemeRoles, ColorString>;
 }
@@ -68,7 +67,7 @@ class ThemeServiceImpl implements ThemeService {
     return THEME_CONFIGS[this.#configService.loadConfigs().colorScheme.theme];
   }
 
-  currentMaterialSchemeName(): MaterialSchemeNames {
+  currentMaterialSchemeName(): MaterialSchemeName {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
       appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
@@ -76,12 +75,15 @@ class ThemeServiceImpl implements ThemeService {
         appConfigs.colorScheme.name
     ).toLowerCase();
 
-    const contrast =
-      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-        ""
-      : `-${appConfigs.colorScheme.contrast}-contrast`.toLowerCase();
+    const contrastPascalCase: string = appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+      "" :
+      `${appConfigs.colorScheme.contrast.at(0)?.toUpperCase()}${appConfigs.colorScheme.contrast.slice(1)?.toLowerCase()}Contrast`
 
-    return `${schemeMode}${contrast}` as MaterialSchemeNames;
+    const contrast = appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+      "" :
+      contrastPascalCase;
+
+    return `${schemeMode}${contrast}` as MaterialSchemeName;
   }
 
   themeJson(): Record<ColorSchemeRoles, ColorString> {
