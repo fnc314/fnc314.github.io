@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.data](../README.md) / Blogs
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.data](../README.md) / Blogs
 
 # Variable: Blogs
 
-&gt; `const` **Blogs**: `BlogEntryJson`[]
+&gt; `const` **Blogs**: [`BlogEntryJson`](../../packages.types/BlogEntryJson/README.md)[]
 
-Defined in: [blog/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/blog/index.ts#L3)
+Defined in: [blog/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/blog/index.ts#L3)
 </body></html>

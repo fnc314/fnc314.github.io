@@ -7,6 +7,8 @@ import { html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+export { type BlogEntryJson } from "@fnc314/packages.types";
+
 /**
  * @summary Represents a published series entry.
  *

@@ -12,6 +12,8 @@ import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
+export { type CodeRepoData } from "@fnc314/packages.types";
+
 /**
  * An instance of a given `GitHub` repository project documented through
  *   {@link @fnc314/packages.types!CodeRepoData} objects from `data/code.json`

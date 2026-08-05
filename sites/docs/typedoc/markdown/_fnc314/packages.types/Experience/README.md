@@ -1,21 +1,21 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / Experience
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / Experience
 
 # Interface: Experience
 
-Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L17)
+Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L17)
 
 ## Properties
 
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -32,7 +32,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L21)
+[packages/types/src/experience/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L21)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L23)
+[packages/types/src/experience/index.ts:23](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L23)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L22)
+[packages/types/src/experience/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L22)
 
 </td>
 </tr>
@@ -83,7 +83,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L18)
+[packages/types/src/experience/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L18)
 
 </td>
 </tr>
@@ -100,7 +100,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L25)
+[packages/types/src/experience/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L25)
 
 </td>
 </tr>
@@ -117,7 +117,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L19)
+[packages/types/src/experience/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L19)
 
 </td>
 </tr>
@@ -134,7 +134,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L26)
+[packages/types/src/experience/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L26)
 
 </td>
 </tr>
@@ -151,7 +151,7 @@ Defined in: [packages/types/src/experience/index.ts:17](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L20)
+[packages/types/src/experience/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L20)
 
 </td>
 </tr>

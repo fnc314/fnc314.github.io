@@ -3,7 +3,11 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "lib/configs/index.js",
+      "path": "node_modules/@material/web/custom-elements.json"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/configs/index.js",
       "declarations": [
         {
           "name": "configsService",
@@ -63,18 +67,18 @@
           "name": "configsService",
           "declaration": {
             "name": "configsService",
-            "module": "lib/configs/index.js"
+            "module": "src/configs/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/index.js"
+      "path": "src/index.js"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/storage/index.js",
+      "path": "src/storage/index.js",
       "declarations": [
         {
           "name": "storageService",
@@ -126,7 +130,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "{ value: string; isDefault: boolean; }"
+                  "text": "{ value: string; isDefault: boolean }"
                 }
               },
               "name": "getData",
@@ -159,14 +163,37 @@
           "name": "storageService",
           "declaration": {
             "name": "storageService",
-            "module": "lib/storage/index.js"
+            "module": "src/storage/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/chicago/index.js",
+      "path": "src/theme/atl-in-white/index.js",
+      "declarations": [
+        {
+          "name": "AtlInWhiteThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AtlInWhiteThemeConfig",
+          "declaration": {
+            "name": "AtlInWhiteThemeConfig",
+            "module": "src/theme/atl-in-white/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/chicago/index.js",
       "declarations": [
         {
           "name": "ChicagoThemeConfig",
@@ -182,14 +209,37 @@
           "name": "ChicagoThemeConfig",
           "declaration": {
             "name": "ChicagoThemeConfig",
-            "module": "lib/theme/chicago/index.js"
+            "module": "src/theme/chicago/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/index.js",
+      "path": "src/theme/downtown/index.js",
+      "declarations": [
+        {
+          "name": "DowntownThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DowntownThemeConfig",
+          "declaration": {
+            "name": "DowntownThemeConfig",
+            "module": "src/theme/downtown/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/index.js",
       "declarations": [
         {
           "name": "themeService",
@@ -229,7 +279,7 @@
             {
               "name": "colorSchemeSettings",
               "type": {
-                "text": "ColorSchemeConfigs"
+                "text": "ColorSchemeConfig"
               }
             }
           ],
@@ -242,6 +292,15 @@
             {
               "return": {
                 "type": {
+                  "text": "ColorScheme"
+                }
+              },
+              "name": "devicePreference",
+              "kind": "method"
+            },
+            {
+              "return": {
+                "type": {
                   "text": "ThemeConfig"
                 }
               },
@@ -251,7 +310,7 @@
             {
               "return": {
                 "type": {
-                  "text": "MaterialSchemeNames"
+                  "text": "MaterialSchemeName"
                 }
               },
               "name": "currentMaterialSchemeName",
@@ -276,7 +335,7 @@
           "name": "themeService",
           "declaration": {
             "name": "themeService",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -284,7 +343,7 @@
           "name": "THEME_CONFIGS",
           "declaration": {
             "name": "THEME_CONFIGS",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -292,7 +351,7 @@
           "name": "MaterialCSSStyleSheet",
           "declaration": {
             "name": "MaterialCSSStyleSheet",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -300,7 +359,7 @@
           "name": "onThemeChange",
           "declaration": {
             "name": "onThemeChange",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -308,14 +367,14 @@
           "name": "colorSchemeConfigsToMaterialSchemeName",
           "declaration": {
             "name": "colorSchemeConfigsToMaterialSchemeName",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/inter/index.js",
+      "path": "src/theme/inter/index.js",
       "declarations": [
         {
           "name": "InterThemeConfig",
@@ -331,14 +390,60 @@
           "name": "InterThemeConfig",
           "declaration": {
             "name": "InterThemeConfig",
-            "module": "lib/theme/inter/index.js"
+            "module": "src/theme/inter/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/red/index.js",
+      "path": "src/theme/leather-jacket/index.js",
+      "declarations": [
+        {
+          "name": "LeatherJacketThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LeatherJacketThemeConfig",
+          "declaration": {
+            "name": "LeatherJacketThemeConfig",
+            "module": "src/theme/leather-jacket/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/ponder/index.js",
+      "declarations": [
+        {
+          "name": "PonderThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PonderThemeConfig",
+          "declaration": {
+            "name": "PonderThemeConfig",
+            "module": "src/theme/ponder/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/red/index.js",
       "declarations": [
         {
           "name": "RedThemeConfig",
@@ -354,14 +459,60 @@
           "name": "RedThemeConfig",
           "declaration": {
             "name": "RedThemeConfig",
-            "module": "lib/theme/red/index.js"
+            "module": "src/theme/red/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/sunset/index.js",
+      "path": "src/theme/roman-bus/index.js",
+      "declarations": [
+        {
+          "name": "RomanBusThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RomanBusThemeConfig",
+          "declaration": {
+            "name": "RomanBusThemeConfig",
+            "module": "src/theme/roman-bus/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/skyline/index.js",
+      "declarations": [
+        {
+          "name": "SkylineThemeConfig",
+          "type": {
+            "text": ": ThemeConfig"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SkylineThemeConfig",
+          "declaration": {
+            "name": "SkylineThemeConfig",
+            "module": "src/theme/skyline/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/theme/sunset/index.js",
       "declarations": [
         {
           "name": "SunsetThemeConfig",
@@ -377,25 +528,32 @@
           "name": "SunsetThemeConfig",
           "declaration": {
             "name": "SunsetThemeConfig",
-            "module": "lib/theme/sunset/index.js"
+            "module": "src/theme/sunset/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/utils.js",
+      "path": "src/theme/utils.js",
       "declarations": [
         {
           "parameters": [
             {
-              "name": "slot",
+              "name": "contrast",
+              "description": "- The particular  chosen by the user",
               "type": {
-                "text": "\"start\" | \"leading-icon\""
+                "text": "ColorSchemeContrast"
               }
             }
           ],
+          "return": {
+            "type": {
+              "text": "TemplateResult"
+            }
+          },
           "name": "colorSchemeContrastToIcon",
+          "description": "A convenience method to return {@link TemplateResult}s of `\u003cmd-icon\u003e`",
           "kind": "function"
         },
         {
@@ -421,7 +579,7 @@
               "name": "jsonSchema",
               "description": "- Any `object`",
               "type": {
-                "text": "object"
+                "text": "Record\u003cColorSchemeRoles, ColorString\u003e"
               }
             }
           ],
@@ -436,7 +594,7 @@
           "parameters": [
             {
               "name": "jsonKey",
-              "description": "- The key from the JSON scheme, e.g., \"primaryContainer\"",
+              "description": "- The key from the JSON scheme, e.g., `primaryContainer`",
               "type": {
                 "text": "string"
               }
@@ -446,7 +604,7 @@
             "type": {
               "text": "lit!CSSResult"
             },
-            "description": " - A CSSResult containing the custom property definition, e.g., \"--md-sys-color-primary-container: #FF0000;\""
+            "description": " - A CSSResult containing the custom property definition, e.g., `--md-sys-color-primary-container: #FF0000;`"
           },
           "name": "keyTransform",
           "description": "Converts `jsonKey` and corresponding `rgb` value into a CSS custom property\nvia {@link css} and {@link unsafeCSS} functions",
@@ -459,7 +617,7 @@
           "name": "colorSchemeContrastToIcon",
           "declaration": {
             "name": "colorSchemeContrastToIcon",
-            "module": "lib/theme/utils.js"
+            "module": "src/theme/utils.js"
           }
         },
         {
@@ -467,7 +625,7 @@
           "name": "jsonIsThemeJsonSchemes",
           "declaration": {
             "name": "jsonIsThemeJsonSchemes",
-            "module": "lib/theme/utils.js"
+            "module": "src/theme/utils.js"
           }
         },
         {
@@ -475,7 +633,7 @@
           "name": "readScheme",
           "declaration": {
             "name": "readScheme",
-            "module": "lib/theme/utils.js"
+            "module": "src/theme/utils.js"
           }
         },
         {
@@ -483,7 +641,7 @@
           "name": "keyTransform",
           "declaration": {
             "name": "keyTransform",
-            "module": "lib/theme/utils.js"
+            "module": "src/theme/utils.js"
           }
         }
       ]

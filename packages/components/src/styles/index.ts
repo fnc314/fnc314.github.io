@@ -1,3 +1,5 @@
+export { DynamicBorderStyles } from "@/lib/styles/dynamic-border";
+export { TextStyles } from "@/lib/styles/text";
 export * from "@material/web/divider/divider";
 export * from "@material/web/elevation/elevation";
 export * from "@material/web/focus/md-focus-ring";
@@ -11,5 +13,3 @@ export * from "@material/web/list/list";
 export * from "@material/web/list/list-item";
 export * from "@material/web/select/outlined-select";
 export * from "@material/web/select/select-option";
-export { DynamicBorderStyles } from "./dynamic-border";
-export { TextStyles } from "./text";

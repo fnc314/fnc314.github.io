@@ -96,7 +96,6 @@
       "vite/client",
       "material-symbols",
       "@types/fs-extra",
-      "@web-types/lit",
       "unplugin-info/client",
     ],
     "useDefineForClassFields": false,

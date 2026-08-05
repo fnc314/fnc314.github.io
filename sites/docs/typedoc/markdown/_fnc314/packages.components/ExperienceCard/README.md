@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.components](../README.md) / ExperienceCard
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.components](../README.md) / ExperienceCard
 
 # Class: ExperienceCard
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L17)
+Defined in: [packages/components/src/card/experience/experience-card.ts:17](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L17)
 
 ## Element
 
@@ -81,8 +81,8 @@ on MDN for more information about the `attributeChangedCallback`.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -153,8 +153,8 @@ controller's `hostConnected()` callback will be immediately called.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -196,8 +196,8 @@ Removes a `ReactiveController` from the element.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -250,8 +250,8 @@ MyElement.disableWarning?.("migration");
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -324,8 +324,8 @@ MyElement.enableWarning?.("migration");
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -360,7 +360,7 @@ MyElement.enableWarning?.("migration");
 
 &gt; **connectedCallback**(): `void`
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:33](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L33)
+Defined in: [packages/components/src/card/experience/experience-card.ts:30](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L30)
 
 Invoked when the component is added to the document's DOM.
 
@@ -393,7 +393,7 @@ element is disconnected, in `disconnectedCallback()`.
 
 &gt; **disconnectedCallback**(): `void`
 
-Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:69](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L69)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:67](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L67)
 
 Invoked when the component is removed from the document's DOM.
 
@@ -1287,12 +1287,12 @@ The read-only **`baseURI`** property of the Node interface returns the absolute 
 
 ### breakpoint
 
-&gt; `protected` **breakpoint**: `BreakpointLabel`
+&gt; `protected` **breakpoint**: [`BreakpointLabel`](../../packages.types/BreakpointLabel/README.md)
 
-Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:42](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L42)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:48](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L48)
 
-The [@fnc314/packages.design-tokens!Breakpoints.BreakpointLabel](../../packages.design-tokens/Breakpoints/BreakpointLabel/README.md) as determined by _SCREEN_ width against
-[@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS](../../packages.design-tokens/Breakpoints/BREAKPOINT_LABELS/README.md)
+The @fnc314/packages.design-tokens!Breakpoints.BreakpointLabel as determined by _SCREEN_ width against
+@fnc314/packages.design-tokens!Breakpoints.BREAKPOINT\_LABELS
 
 #### Inherited from
 
@@ -1500,7 +1500,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; `protected` **darkMode**: `boolean`
 
-Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L28)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:35](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L35)
 
 #### Inherited from
 
@@ -1696,7 +1696,7 @@ node is an element.
 
 &gt; **enableFocus**: `boolean` = `false`
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L31)
+Defined in: [packages/components/src/card/experience/experience-card.ts:28](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L28)
 
 ---
 
@@ -1704,7 +1704,7 @@ Defined in: [packages/components/src/card/experience/experience-card.ts:31](http
 
 &gt; **enableHover**: `boolean` = `false`
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L28)
+Defined in: [packages/components/src/card/experience/experience-card.ts:25](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L25)
 
 ---
 
@@ -1750,7 +1750,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 &gt; **expanded**: `boolean` = `false`
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L25)
+Defined in: [packages/components/src/card/experience/experience-card.ts:22](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L22)
 
 ---
 
@@ -3986,9 +3986,9 @@ The **`HTMLElement.title`** property represents the title of the element: the te
 
 &gt; `protected` **touchScreen**: `boolean`
 
-Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:57](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L57)
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:59](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L59)
 
-Reads [@fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN](../../packages.design-tokens/TouchScreen/CSS_VARIABLE_TOUCH_SCREEN/README.md) from `:root`
+Reads @fnc314/packages.design-tokens!TouchScreen.CSS\_VARIABLE\_TOUCH\_SCREEN from `:root`
 and tests against `"true"`,
 
 #### Inherited from
@@ -4087,7 +4087,7 @@ from decorators.
 
 &gt; `static` **styles**: [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)[]
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L19)
+Defined in: [packages/components/src/card/experience/experience-card.ts:19](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L19)
 
 [@lit/reactive-element!css](https://lit.dev/docs/api/styles/#css)
 
@@ -4124,8 +4124,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4181,8 +4181,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4236,8 +4236,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4295,8 +4295,8 @@ The **`textContent`** property of the Node interface represents the text content
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4338,7 +4338,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -4357,8 +4357,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4420,8 +4420,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4491,8 +4491,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4534,8 +4534,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4593,8 +4593,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4638,7 +4638,7 @@ The **`appendChild()`** method of the Node interface adds a node to the end of t
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -4657,8 +4657,8 @@ The **`appendChild()`** method of the Node interface adds a node to the end of t
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4722,8 +4722,8 @@ The **`Element.attachShadow()`** method attaches a shadow DOM tree to the specif
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4769,8 +4769,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4832,8 +4832,8 @@ The **`checkVisibility()`** method of the Element interface checks whether the e
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4897,8 +4897,8 @@ The **`cloneNode()`** method of the Node interface returns a duplicate of the no
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -4944,7 +4944,7 @@ The **`closest()`** method of the Element interface traverses the element and it
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -4963,8 +4963,8 @@ The **`closest()`** method of the Element interface traverses the element and it
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5002,7 +5002,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5021,8 +5021,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5060,7 +5060,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5079,8 +5079,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5118,8 +5118,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
-<th>Default type</th>
+<th align="left">Type Parameter</th>
+<th align="left">Default type</th>
 </tr>
 </thead>
 <tbody>
@@ -5143,8 +5143,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5188,8 +5188,8 @@ The **`compareDocumentPosition()`** method of the Node interface reports the pos
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5253,8 +5253,8 @@ The **`contains()`** method of the Node interface returns a boolean value indica
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5298,8 +5298,8 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5341,8 +5341,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5371,6 +5371,58 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 
 ---
 
+### getActiveIcon()
+
+&gt; `protected` **getActiveIcon**(`variants`: [`IconVariants`](../../packages.types/IconVariants/README.md)): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
+
+Defined in: [packages/components/src/mixins/ui-aware-element/ui-aware-element.ts:81](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/ui-aware-element/ui-aware-element.ts#L81)
+
+Parses the provided `variant` for the proper [TemplateResult](https://lit.dev/docs/api/templates/#TemplateResult)
+to render
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`variants`
+
+</td>
+<td>
+
+[`IconVariants`](../../packages.types/IconVariants/README.md)
+
+</td>
+<td>
+
+An [IconVariants](../../packages.types/IconVariants/README.md) instance
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+[`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
+
+The rendered [TemplateResult](https://lit.dev/docs/api/templates/#TemplateResult)
+
+#### Inherited from
+
+[`UIAwareElement`](../UIAwareElement/README.md).[`getActiveIcon`](../UIAwareElement/README.md#getactiveicon)
+
+---
+
 ### getAnimations()
 
 &gt; **getAnimations**(`options?`: `GetAnimationsOptions`): [`Animation`](https://developer.mozilla.org/docs/Web/API/Animation)[]
@@ -5384,8 +5436,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5429,8 +5481,8 @@ The **`getAttribute()`** method of the Element interface returns the value of a 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5494,8 +5546,8 @@ Returns the specified attribute of the specified element, as an Attr node.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5539,8 +5591,8 @@ The **`getAttributeNodeNS()`** method of the Element interface returns the names
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5596,8 +5648,8 @@ The **`getAttributeNS()`** method of the Element interface returns the string va
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5693,8 +5745,8 @@ The Element method **`getElementsByClassName()`** returns a live HTMLCollection 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5740,7 +5792,7 @@ The **`Element.getElementsByTagName()`** method returns a live HTMLCollection of
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5759,8 +5811,8 @@ The **`Element.getElementsByTagName()`** method returns a live HTMLCollection of
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5798,7 +5850,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5817,8 +5869,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5856,7 +5908,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5875,8 +5927,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5914,7 +5966,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -5933,8 +5985,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -5974,8 +6026,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6021,8 +6073,8 @@ The **`Element.getElementsByTagNameNS()`** method returns a live HTMLCollection 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6072,8 +6124,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6123,8 +6175,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6174,8 +6226,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6231,8 +6283,8 @@ The **`getHTML()`** method of the Element interface is used to serialize an elem
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6276,8 +6328,8 @@ The **`getRootNode()`** method of the Node interface returns the context object'
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6321,8 +6373,8 @@ The **`Element.hasAttribute()`** method returns a Boolean value indicating wheth
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6366,8 +6418,8 @@ The **`hasAttributeNS()`** method of the Element interface returns a boolean val
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6463,8 +6515,8 @@ The **`hasPointerCapture()`** method of the Element interface checks whether the
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6517,7 +6569,7 @@ The **`hidePopover()`** method of the HTMLElement interface hides a popover elem
 
 &gt; **hidePopover**(): `void`
 
-Defined in: node\_modules/.pnpm/@material+web@2.4.1/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:17
+Defined in: node\_modules/.pnpm/@material+web@2.5.0/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:17
 
 ##### Returns
 
@@ -6544,8 +6596,8 @@ The **`insertAdjacentElement()`** method of the Element interface inserts a give
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6601,8 +6653,8 @@ The **`insertAdjacentHTML()`** method of the Element interface parses the specif
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6658,8 +6710,8 @@ The **`insertAdjacentText()`** method of the Element interface, given a relative
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6715,7 +6767,7 @@ The **`insertBefore()`** method of the Node interface inserts a node before a re
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -6734,8 +6786,8 @@ The **`insertBefore()`** method of the Node interface inserts a node before a re
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6791,8 +6843,8 @@ The **`isDefaultNamespace()`** method of the Node interface accepts a namespace 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6836,8 +6888,8 @@ The **`isEqualNode()`** method of the Node interface tests whether two nodes are
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6881,8 +6933,8 @@ The **`isSameNode()`** method of the Node interface is a legacy alias the for th
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6926,8 +6978,8 @@ The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as pa
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -6971,8 +7023,8 @@ The **`lookupPrefix()`** method of the Node interface returns a string containin
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7018,7 +7070,7 @@ The **`matches()`** method of the Element interface tests whether the element wo
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7037,8 +7089,8 @@ The **`matches()`** method of the Element interface tests whether the element wo
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7076,7 +7128,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7095,8 +7147,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7134,7 +7186,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7153,8 +7205,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7192,8 +7244,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7235,8 +7287,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7314,8 +7366,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7361,7 +7413,7 @@ Returns the first element that is a descendant of node that matches selectors.
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7380,8 +7432,8 @@ Returns the first element that is a descendant of node that matches selectors.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7419,7 +7471,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7438,8 +7490,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7477,7 +7529,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7496,8 +7548,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7535,7 +7587,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7554,8 +7606,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7595,8 +7647,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
-<th>Default type</th>
+<th align="left">Type Parameter</th>
+<th align="left">Default type</th>
 </tr>
 </thead>
 <tbody>
@@ -7620,8 +7672,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7667,7 +7719,7 @@ Returns all element descendants of node that match selectors.
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7686,8 +7738,8 @@ Returns all element descendants of node that match selectors.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7725,7 +7777,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7744,8 +7796,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7783,7 +7835,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7802,8 +7854,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7841,7 +7893,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -7860,8 +7912,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7901,8 +7953,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
-<th>Default type</th>
+<th align="left">Type Parameter</th>
+<th align="left">Default type</th>
 </tr>
 </thead>
 <tbody>
@@ -7926,8 +7978,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -7971,8 +8023,8 @@ The **`releasePointerCapture()`** method of the Element interface releases (stop
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8036,8 +8088,8 @@ The Element method **`removeAttribute()`** removes the attribute with the specif
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8081,8 +8133,8 @@ The **`removeAttributeNode()`** method of the Element interface removes the spec
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8126,8 +8178,8 @@ The **`removeAttributeNS()`** method of the Element interface removes the specif
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8183,7 +8235,7 @@ The **`removeChild()`** method of the Node interface removes a child node from t
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -8202,8 +8254,8 @@ The **`removeChild()`** method of the Node interface removes a child node from t
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8245,7 +8297,7 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -8264,8 +8316,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8327,8 +8379,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8396,7 +8448,7 @@ The **`replaceChild()`** method of the Node interface replaces a child node with
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -8415,8 +8467,8 @@ The **`replaceChild()`** method of the Node interface replaces a child node with
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8474,8 +8526,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8521,8 +8573,8 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8566,8 +8618,8 @@ The **`Element.requestFullscreen()`** method issues an asynchronous request to m
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8611,8 +8663,8 @@ The **`requestPointerLock()`** method of the Element interface lets you asynchro
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8658,8 +8710,8 @@ The **`scroll()`** method of the Element interface scrolls the element to a part
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8697,8 +8749,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8756,8 +8808,8 @@ The **`scrollBy()`** method of the Element interface scrolls an element by the g
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8795,8 +8847,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8852,8 +8904,8 @@ The Element interface's **`scrollIntoView()`** method scrolls the element's ance
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8899,8 +8951,8 @@ The **`scrollTo()`** method of the Element interface scrolls to a particular set
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8938,8 +8990,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -8995,8 +9047,8 @@ The **`setAttribute()`** method of the Element interface sets the value of an at
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9052,8 +9104,8 @@ The **`setAttributeNode()`** method of the Element interface adds a new Attr nod
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9097,8 +9149,8 @@ The **`setAttributeNodeNS()`** method of the Element interface adds a new namesp
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9142,8 +9194,8 @@ The **`setAttributeNS()`** method of the Element interface adds a new attribute 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9211,8 +9263,8 @@ The **`setHTMLUnsafe()`** method of the Element interface is used to parse HTML 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9256,8 +9308,8 @@ The **`setPointerCapture()`** method of the Element interface is used to designa
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9303,8 +9355,8 @@ The **`showPopover()`** method of the HTMLElement interface shows a popover elem
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9335,7 +9387,7 @@ The **`showPopover()`** method of the HTMLElement interface shows a popover elem
 
 &gt; **showPopover**(): `void`
 
-Defined in: node\_modules/.pnpm/@material+web@2.4.1/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:16
+Defined in: node\_modules/.pnpm/@material+web@2.5.0/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:16
 
 ##### Returns
 
@@ -9362,8 +9414,8 @@ The **`toggleAttribute()`** method of the Element interface toggles a Boolean at
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9421,8 +9473,8 @@ The **`togglePopover()`** method of the HTMLElement interface toggles a popover 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9453,15 +9505,15 @@ The **`togglePopover()`** method of the HTMLElement interface toggles a popover 
 
 &gt; **togglePopover**(`force`: `boolean`): `void`
 
-Defined in: node\_modules/.pnpm/@material+web@2.4.1/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:18
+Defined in: node\_modules/.pnpm/@material+web@2.5.0/node\_modules/@material/web/menu/internal/controllers/surfacePositionController.d.ts:18
 
 ##### Parameters
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9501,8 +9553,8 @@ Defined in: node\_modules/.pnpm/typescript@6.0.3/node\_modules/typescript/lib/li
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9578,8 +9630,8 @@ starting with superclasses and progressing to the instance's class.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9721,8 +9773,8 @@ static createProperty(name, options) {
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9798,8 +9850,8 @@ class MyElement extends LitElement {
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9874,8 +9926,8 @@ customize the options for a given property, override
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -9931,7 +9983,7 @@ to an open shadowRoot.
 
 #### Inherited from
 
-[`SettingsCard`](../SettingsCard/README.md).[`renderRoot`](../SettingsCard/README.md#renderroot)
+[`UIAwareElement`](../UIAwareElement/README.md).[`renderRoot`](../UIAwareElement/README.md#renderroot)
 
 ---
 
@@ -9976,7 +10028,7 @@ Defined in: node\_modules/.pnpm/lit-element@4.2.2/node\_modules/lit-element/deve
 
 &gt; **render**(): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)\&lt;`1`\&gt;
 
-Defined in: [packages/components/src/card/experience/experience-card.ts:38](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/card/experience/experience-card.ts#L38)
+Defined in: [packages/components/src/card/experience/experience-card.ts:35](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/card/experience/experience-card.ts#L35)
 
 Invoked on each update to perform rendering tasks. This method may return
 any value renderable by lit-html's `ChildPart` - typically a
@@ -10031,8 +10083,8 @@ that last added styles override previous styles.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -10140,8 +10192,8 @@ update.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -10193,9 +10245,9 @@ again after this update cycle completes.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -10307,9 +10359,9 @@ options are honored.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -10462,9 +10514,9 @@ customized to control when to update.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -10513,9 +10565,9 @@ this method will _not_ trigger another update.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -10566,9 +10618,9 @@ again after this update cycle completes.
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -10631,8 +10683,8 @@ render() {
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>

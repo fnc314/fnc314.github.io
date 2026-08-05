@@ -1,23 +1,23 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / CONFIG\_COLOR\_CONTRAST\_NAMES
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / CONFIG\_COLOR\_CONTRAST\_NAMES
 
 # Variable: CONFIG\_COLOR\_CONTRAST\_NAMES
 
 &gt; `const` **CONFIG\_COLOR\_CONTRAST\_NAMES**: \{ `HIGH`: `"HIGH"`; `MEDIUM`: `"MEDIUM"`; `NORMAL`: `"NORMAL"`; \}
 
-Defined in: [packages/types/src/theme/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L19)
+Defined in: [packages/types/src/theme/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L15)
 
 ## Type Declaration
 
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -34,7 +34,7 @@ Defined in: [packages/types/src/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L22)
+[packages/types/src/theme/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L18)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/types/src/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L21)
+[packages/types/src/theme/index.ts:17](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L17)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [packages/types/src/theme/index.ts:19](https://github.com/fnc314/fnc
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L20)
+[packages/types/src/theme/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L16)
 
 </td>
 </tr>

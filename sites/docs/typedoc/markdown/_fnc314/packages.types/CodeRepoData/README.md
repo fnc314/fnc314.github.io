@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / CodeRepoData
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / CodeRepoData
 
 # Interface: CodeRepoData
 
-Defined in: [packages/types/src/code/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L26)
+Defined in: [packages/types/src/code/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L26)
 
 Represents a single project entry loaded from `code.json`.
 
@@ -18,10 +18,10 @@ components that render project cards in the `code` partial.
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -43,7 +43,7 @@ Short description or summary of the project.
 </td>
 <td>
 
-[packages/types/src/code/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L28)
+[packages/types/src/code/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L28)
 
 </td>
 </tr>
@@ -65,7 +65,7 @@ Human-readable project title.
 </td>
 <td>
 
-[packages/types/src/code/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L31)
+[packages/types/src/code/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L31)
 
 </td>
 </tr>
@@ -87,7 +87,7 @@ The bit of [url](#url) which begins with `fnc314/`
 </td>
 <td>
 
-[packages/types/src/code/index.ts:40](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L40)
+[packages/types/src/code/index.ts:40](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L40)
 
 </td>
 </tr>
@@ -109,7 +109,7 @@ Array of technologies used by the project.
 </td>
 <td>
 
-[packages/types/src/code/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L34)
+[packages/types/src/code/index.ts:34](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L34)
 
 </td>
 </tr>
@@ -131,7 +131,7 @@ Public URL for the project (website or repository).
 </td>
 <td>
 
-[packages/types/src/code/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L37)
+[packages/types/src/code/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L37)
 
 </td>
 </tr>

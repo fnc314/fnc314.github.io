@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / SingleDigit
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / SingleDigit
 
 # Type Alias: SingleDigit
 
 &gt; **SingleDigit** = `"0"` \| `"1"` \| `"2"` \| `"3"` \| `"4"` \| `"5"` \| `"6"` \| `"7"` \| `"8"` \| `"9"`
 
-Defined in: [packages/types/src/education/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/education/index.ts#L3)
+Defined in: [packages/types/src/education/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/education/index.ts#L3)
 </body></html>

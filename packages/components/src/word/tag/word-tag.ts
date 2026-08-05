@@ -12,6 +12,8 @@ import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } fr
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
 
+export { type WordTagHeaviness, type WordTagVariant } from "@fnc314/packages.types";
+
 /**
  * @summary Displays a word in a simple padded box in which the text color and border are synchronised
  *

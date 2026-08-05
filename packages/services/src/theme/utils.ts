@@ -4,7 +4,6 @@ import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } fr
 /**
  * A convenience method to return {@link TemplateResult}s of `<md-icon>`
  *
- * @export
  * @param {ColorSchemeContrast} contrast - The particular {@link ColorSchemeContrast} chosen by the user
  * @param {("start" | "leading-icon")} [slot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default
  * @returns {TemplateResult}

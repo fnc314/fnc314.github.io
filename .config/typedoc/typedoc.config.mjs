@@ -34,8 +34,8 @@ export default {
   cleanOutputDir: true,
   cname: "https://fnc314.com",
   commentStyle: "all",
-  customDescription: "TypeDoc site for @fnc314/com.fnc314.website",
-  customTitle: "@fnc314/com.fnc314.website",
+  customDescription: "TypeDoc site for @fnc314/sites.portfolio",
+  customTitle: "@fnc314/sites.docs",
   darkHighlightTheme: "material-theme-darker",
   disableSources: false,
   displayBasePath: process.cwd(),
@@ -149,7 +149,7 @@ export default {
   },
   markdownLinkExternal: true,
   mergeReadme: true,
-  name: "@fnc314/com.fnc314.website",
+  name: "@fnc314/sites.docs",
   navigation: {
     compactFolders: true,
     excludeReferences: false,
@@ -157,19 +157,19 @@ export default {
     includeFolders: true,
     includeGroups: true,
   },
-  navigationJson: `${process.cwd()}/docs/typedoc/navigation.json`,
+  navigationJson: `${process.cwd()}/sites/docs/typedoc/navigation.json`,
   outputs: [
     {
       name: "html",
-      path: `${process.cwd()}/docs/typedoc/html`,
+      path: `${process.cwd()}/sites/docs/typedoc/html`,
     },
     {
       name: "json",
-      path: `${process.cwd()}/docs/typedoc/json/typedoc.json`,
+      path: `${process.cwd()}/sites/docs/typedoc/json/typedoc.json`,
     },
     {
       name: "markdown",
-      path: `${process.cwd()}/docs/typedoc/markdown`,
+      path: `${process.cwd()}/sites/docs/typedoc/markdown`,
     },
   ],
   // Applied to every package listed in `entryPoints` (packages mode). Relative
@@ -196,9 +196,11 @@ export default {
   preserveLinkText: true,
   pretty: true,
   prettierConfigFile: `${process.cwd()}/.config/prettier/prettier.config.mts`,
-  projectDocuments: [`${process.cwd()}/docs/wca/markdown/*.md`],
+  projectDocuments: [
+    `${process.cwd()}/sites/docs/wca/markdown/*.md`
+  ],
   propertyMembersFormat: "htmlTable",
-  readme: `${process.cwd()}/docs/wca/markdown/README.md`,
+  readme: `${process.cwd()}/sites/docs/wca/markdown/README.md`,
   resolveUtilityTypes: true,
   router: "structure-dir",
   searchInComments: true,

@@ -3,15 +3,40 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "lib/bio/index.js"
+      "path": "node_modules/@material/web/custom-elements.json"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/blog/index.js"
+      "path": "src/bento-layout/index.js",
+      "declarations": [
+        {
+          "name": "BENTO_BOX_TYPES",
+          "description": "A {@link Record} of {@link BentoBoxType} definitions",
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BENTO_BOX_TYPES",
+          "declaration": {
+            "name": "BENTO_BOX_TYPES",
+            "module": "src/bento-layout/index.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/code/index.js",
+      "path": "src/bio/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/blog/index.js"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/code/index.js",
       "declarations": [
         {
           "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
@@ -30,7 +55,7 @@
           "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
           "declaration": {
             "name": "CSS_PROPERTY_CODE_REPO_WORD_TAG_SIZE",
-            "module": "lib/code/index.js"
+            "module": "src/code/index.js"
           }
         },
         {
@@ -38,19 +63,55 @@
           "name": "WORD_TAG_SIZES",
           "declaration": {
             "name": "WORD_TAG_SIZES",
-            "module": "lib/code/index.js"
+            "module": "src/code/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/configs/index.js",
+      "path": "src/configs/index.js",
       "declarations": [
         {
           "name": "DEFAULT_APP_CONFIGS",
           "type": {
             "text": ": AppConfigs"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "COLOR_SCHEME_CHANGE_EVENT_NAME",
+          "kind": "variable"
+        },
+        {
+          "name": "APP_CONFIGS_CHANGE_EVENT_NAME",
+          "kind": "variable"
+        },
+        {
+          "name": "ELEMENT_ID_META_TAG",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT",
+          "type": {
+            "text": ": string"
           },
           "kind": "variable"
         }
@@ -61,14 +122,62 @@
           "name": "DEFAULT_APP_CONFIGS",
           "declaration": {
             "name": "DEFAULT_APP_CONFIGS",
-            "module": "lib/configs/index.js"
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "COLOR_SCHEME_CHANGE_EVENT_NAME",
+          "declaration": {
+            "name": "COLOR_SCHEME_CHANGE_EVENT_NAME",
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "APP_CONFIGS_CHANGE_EVENT_NAME",
+          "declaration": {
+            "name": "APP_CONFIGS_CHANGE_EVENT_NAME",
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ELEMENT_ID_META_TAG",
+          "declaration": {
+            "name": "ELEMENT_ID_META_TAG",
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME",
+          "declaration": {
+            "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME",
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK",
+          "declaration": {
+            "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK",
+            "module": "src/configs/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT",
+          "declaration": {
+            "name": "WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT",
+            "module": "src/configs/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/connections/index.js",
+      "path": "src/connections/index.js",
       "declarations": [
         {
           "name": "ArtifactConnections",
@@ -85,7 +194,7 @@
           "name": "ArtifactConnections",
           "declaration": {
             "name": "ArtifactConnections",
-            "module": "lib/connections/index.js"
+            "module": "src/connections/index.js"
           }
         },
         {
@@ -93,30 +202,111 @@
           "name": "ProfessionalConnectionTypes",
           "declaration": {
             "name": "ProfessionalConnectionTypes",
-            "module": "lib/connections/index.js"
+            "module": "src/connections/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/design-tokens/index.js"
+      "path": "src/design-tokens/index.js",
+      "declarations": [
+        {
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "description": "The CSS Variable changed across device breakpoints",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINT_LABELS",
+          "description": "Iterable set of {@link BreakpointLabel}",
+          "type": {
+            "text": ": BreakpointLabel[]"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BreakpointLabels",
+          "description": "Type-safe constants exposed to perform checks",
+          "kind": "variable"
+        },
+        {
+          "name": "BREAKPOINTS",
+          "description": "A static implementation of {@link Breakpoints}",
+          "type": {
+            "text": "Breakpoints"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "description": "The CSS Variable set by `@media` query of `screen` and `pointer: coarse`",
+          "type": {
+            "text": ": string"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+          "declaration": {
+            "name": "CSS_VARIABLE_BREAKPOINT_LABEL",
+            "module": "src/design-tokens/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINT_LABELS",
+          "declaration": {
+            "name": "BREAKPOINT_LABELS",
+            "module": "src/design-tokens/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BreakpointLabels",
+          "declaration": {
+            "name": "BreakpointLabels",
+            "module": "src/design-tokens/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BREAKPOINTS",
+          "declaration": {
+            "name": "BREAKPOINTS",
+            "module": "src/design-tokens/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CSS_VARIABLE_TOUCH_SCREEN",
+          "declaration": {
+            "name": "CSS_VARIABLE_TOUCH_SCREEN",
+            "module": "src/design-tokens/index.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/education/index.js"
+      "path": "src/education/index.js"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/experience/index.js"
+      "path": "src/experience/index.js"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/index.js"
+      "path": "src/index.js"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/theme/index.js",
+      "path": "src/theme/index.js",
       "declarations": [
         {
           "name": "CONFIG_COLOR_SCHEME_NAMES",
@@ -137,7 +327,7 @@
           "name": "CONFIG_COLOR_SCHEME_NAMES",
           "declaration": {
             "name": "CONFIG_COLOR_SCHEME_NAMES",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -145,7 +335,7 @@
           "name": "CONFIG_COLOR_CONTRAST_NAMES",
           "declaration": {
             "name": "CONFIG_COLOR_CONTRAST_NAMES",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -153,7 +343,7 @@
           "name": "setRGBA",
           "declaration": {
             "name": "setRGBA",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
           }
         },
         {
@@ -161,7 +351,111 @@
           "name": "THEME_NAMES",
           "declaration": {
             "name": "THEME_NAMES",
-            "module": "lib/theme/index.js"
+            "module": "src/theme/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/word/cloud/index.js",
+      "declarations": [
+        {
+          "name": "WordCloudGroupings",
+          "kind": "variable"
+        },
+        {
+          "name": "WordCloudSortings",
+          "kind": "variable"
+        },
+        {
+          "name": "WordCloudAppearances",
+          "kind": "variable"
+        },
+        {
+          "parameters": [
+            {
+              "name": "word",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "name": "makeWordCloudWord",
+          "kind": "function"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordCloudGroupings",
+          "declaration": {
+            "name": "WordCloudGroupings",
+            "module": "src/word/cloud/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudSortings",
+          "declaration": {
+            "name": "WordCloudSortings",
+            "module": "src/word/cloud/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordCloudAppearances",
+          "declaration": {
+            "name": "WordCloudAppearances",
+            "module": "src/word/cloud/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "makeWordCloudWord",
+          "declaration": {
+            "name": "makeWordCloudWord",
+            "module": "src/word/cloud/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/word/tag/index.js",
+      "declarations": [
+        {
+          "name": "WordTagVariants",
+          "summary": "A `const` declaration from which {@link WordTagVariant} is defined",
+          "type": {
+            "text": "{ readonly \"text-only\": \"text-only\"; readonly \"icon-text\": \"icon-text\"; readonly \"text-icon\": \"text-icon\"; readonly \"icon-only\": \"icon-only\"; }"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "WordTagVariantAttributeConverter",
+          "description": "Implements {@link ComplexAttributeConverter} for {@link WordTagVariant} properties",
+          "type": {
+            "text": ": ComplexAttributeConverter\u003cWordTagVariant, WordTagVariant\u003e"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WordTagVariants",
+          "declaration": {
+            "name": "WordTagVariants",
+            "module": "src/word/tag/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WordTagVariantAttributeConverter",
+          "declaration": {
+            "name": "WordTagVariantAttributeConverter",
+            "module": "src/word/tag/index.js"
           }
         }
       ]

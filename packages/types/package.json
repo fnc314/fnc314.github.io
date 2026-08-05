@@ -3,7 +3,7 @@
   "bugs": {
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
-  "customElements": "custom-elements.json",
+  "customElements": "./custom-elements.json",
   "dependencies": {
     "@material/web": "catalog:dependencies",
     "lit": "catalog:dependencies",
@@ -23,7 +23,7 @@
     "vite": "catalog:devDependencies"
   },
   "engines": {
-    "node": "26.6.0"
+    "node": "26.7.0"
   },
   "devEngines": {
     "packageManager": {
@@ -37,6 +37,7 @@
       "import": "./dist/@fnc314.packages.types.js",
       "types": "./dist/types/index.d.ts"
     },
+    "./custom-elements.json": "./custom-elements.json",
     "./types/*": "./dist/types/*"
   },
   "files": [

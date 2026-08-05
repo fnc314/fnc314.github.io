@@ -1,14 +1,14 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.design-tokens](../README.md) / readCSSProperty
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.design-tokens](../README.md) / readCSSProperty
 
 # Function: readCSSProperty()
 
 &gt; **readCSSProperty**(`property`: `string`, `element?`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `null` \| `undefined`, `logComputedPropertyTransaction?`: `boolean`): `string`
 
-Defined in: [read-css-property.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/design-tokens/lib/read-css-property.ts#L15)
+Defined in: [src/read-css-property/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/design-tokens/src/read-css-property/index.ts#L14)
 
 Returns the value of the provided `property`
 
@@ -17,10 +17,10 @@ Returns the value of the provided `property`
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default value</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Default value</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

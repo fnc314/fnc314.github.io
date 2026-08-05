@@ -33,7 +33,6 @@ export interface BentoBoxConfig {
 /**
  * @summary The complete configuration for `bento-layout`
  *
- * @export
  * @typedef {BentoBoxConfigs}
  */
 export type BentoBoxConfigs = Record<BentoBoxType, BentoBoxConfig>;

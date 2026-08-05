@@ -1,22 +1,22 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / IsHex
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / IsHex
 
 # Type Alias: IsHex\<t, count\="">
 
 &gt; **IsHex**\&lt;`T`, `Count`\&gt; = `T` _extends_ `` `${ColorSubValue}${infer Rest}` `` ? `IsHex`\&lt;`Rest`, \[`...Count`, `any`\]\&gt; : `T` _extends_ `""` ? `Count`\[`"length"`\] _extends_ `8` ? `true` : `false` : `false`
 
-Defined in: [packages/types/src/theme/index.ts:96](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L96)
+Defined in: [packages/types/src/theme/index.ts:90](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L90)
 
 ## Type Parameters
 
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
-<th>Default type</th>
+<th align="left">Type Parameter</th>
+<th align="left">Default type</th>
 </tr>
 </thead>
 <tbody>

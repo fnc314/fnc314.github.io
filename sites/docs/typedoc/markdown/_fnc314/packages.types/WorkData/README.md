@@ -1,21 +1,21 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / WorkData
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / WorkData
 
 # Interface: WorkData
 
-Defined in: [packages/types/src/experience/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L29)
+Defined in: [packages/types/src/experience/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L29)
 
 ## Properties
 
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -32,7 +32,7 @@ Defined in: [packages/types/src/experience/index.ts:29](https://github.com/fnc31
 </td>
 <td>
 
-[packages/types/src/experience/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/experience/index.ts#L30)
+[packages/types/src/experience/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/experience/index.ts#L30)
 
 </td>
 </tr>

@@ -1,14 +1,14 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / jsonIsThemeJsonSchemes
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / jsonIsThemeJsonSchemes
 
 # Function: jsonIsThemeJsonSchemes()
 
 &gt; **jsonIsThemeJsonSchemes**(`json`: `unknown`): `json is ThemeJsonSchemes`
 
-Defined in: [packages/services/src/theme/utils.ts:25](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/utils.ts#L25)
+Defined in: [packages/services/src/theme/utils.ts:33](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/theme/utils.ts#L33)
 
 Checks if the provided JSON conforms to the expected theme schemes structure
 
@@ -17,9 +17,9 @@ Checks if the provided JSON conforms to the expected theme schemes structure
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>

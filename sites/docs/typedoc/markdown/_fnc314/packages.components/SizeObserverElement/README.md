@@ -1,21 +1,21 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.components](../README.md) / SizeObserverElement
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.components](../README.md) / SizeObserverElement
 
 # Function: SizeObserverElement()
 
 &gt; **SizeObserverElement**\&lt;`T`\&gt;(`Base`: `T`): `T`
 
-Defined in: [packages/components/src/mixins/size-observer-element/size-observer-element.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/components/src/mixins/size-observer-element/size-observer-element.ts#L5)
+Defined in: [packages/components/src/mixins/size-observer-element/size-observer-element.ts:5](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/components/src/mixins/size-observer-element/size-observer-element.ts#L5)
 
 ## Type Parameters
 
 <table>
 <thead>
 <tr>
-<th>Type Parameter</th>
+<th align="left">Type Parameter</th>
 </tr>
 </thead>
 <tbody>
@@ -34,8 +34,8 @@ Defined in: [packages/components/src/mixins/size-observer-element/size-observer-
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>

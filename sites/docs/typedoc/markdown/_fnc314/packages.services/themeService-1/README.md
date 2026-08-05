@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / themeService
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / themeService
 
 # Variable: themeService
 
 &gt; `const` **themeService**: [`ThemeService`](../ThemeService/README.md)
 
-Defined in: [packages/services/src/theme/index.ts:70](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/index.ts#L70)
+Defined in: [packages/services/src/theme/index.ts:96](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/theme/index.ts#L96)
 </body></html>

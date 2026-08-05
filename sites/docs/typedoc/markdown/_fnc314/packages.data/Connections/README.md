@@ -1,23 +1,23 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.data](../README.md) / Connections
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.data](../README.md) / Connections
 
 # Variable: Connections
 
-&gt; `const` **Connections**: \{ `direct`: \{ `email`: `ConnectionInstance`; `phone`: `ConnectionInstance`; \}; `resume`: \{ `googleDoc`: `ArtifactConnectionData`; `pdf`: `ArtifactConnectionData`; \}; `social`: \{ `github`: `ProfessionalConnectionJsonData`; `linkedIn`: `ProfessionalConnectionJsonData`; `medium`: `ProfessionalConnectionJsonData`; \}; \}
+&gt; `const` **Connections**: \{ `direct`: \{ `email`: [`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md); `phone`: [`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md); \}; `resume`: \{ `googleDoc`: [`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md); `pdf`: [`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md); \}; `social`: \{ `github`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); `linkedIn`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); `medium`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); \}; \}
 
-Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L3)
+Defined in: [connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L8)
 
 ## Type Declaration
 
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -29,12 +29,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-\{ `email`: `ConnectionInstance`; `phone`: `ConnectionInstance`; \}
+\{ `email`: [`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md); `phone`: [`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md); \}
 
 </td>
 <td>
 
-[connections/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L4)
+[connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L9)
 
 </td>
 </tr>
@@ -46,12 +46,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ConnectionInstance`
+[`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L6)
+[connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L11)
 
 </td>
 </tr>
@@ -63,12 +63,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ConnectionInstance`
+[`ConnectionInstance`](../../packages.types/ConnectionInstance/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L5)
+[connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L10)
 
 </td>
 </tr>
@@ -80,12 +80,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-\{ `googleDoc`: `ArtifactConnectionData`; `pdf`: `ArtifactConnectionData`; \}
+\{ `googleDoc`: [`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md); `pdf`: [`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md); \}
 
 </td>
 <td>
 
-[connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L13)
+[connections/index.ts:18](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L18)
 
 </td>
 </tr>
@@ -97,12 +97,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ArtifactConnectionData`
+[`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L14)
+[connections/index.ts:19](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L19)
 
 </td>
 </tr>
@@ -114,12 +114,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ArtifactConnectionData`
+[`ArtifactConnectionData`](../../packages.types/ArtifactConnectionData/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L15)
+[connections/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L20)
 
 </td>
 </tr>
@@ -131,12 +131,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-\{ `github`: `ProfessionalConnectionJsonData`; `linkedIn`: `ProfessionalConnectionJsonData`; `medium`: `ProfessionalConnectionJsonData`; \}
+\{ `github`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); `linkedIn`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); `medium`: [`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md); \}
 
 </td>
 <td>
 
-[connections/index.ts:8](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L8)
+[connections/index.ts:13](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L13)
 
 </td>
 </tr>
@@ -148,12 +148,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ProfessionalConnectionJsonData`
+[`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L10)
+[connections/index.ts:15](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L15)
 
 </td>
 </tr>
@@ -165,12 +165,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ProfessionalConnectionJsonData`
+[`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L9)
+[connections/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L14)
 
 </td>
 </tr>
@@ -182,12 +182,12 @@ Defined in: [connections/index.ts:3](https://github.com/fnc314/fnc314.github.io/
 </td>
 <td>
 
-`ProfessionalConnectionJsonData`
+[`ProfessionalConnectionJsonData`](../../packages.types/ProfessionalConnectionJsonData/README.md)
 
 </td>
 <td>
 
-[connections/index.ts:11](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/data/src/connections/index.ts#L11)
+[connections/index.ts:16](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/data/src/connections/index.ts#L16)
 
 </td>
 </tr>

@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 #MISE description="Run dx-refresh"
 #MISE alias="dxr"
+#MISE env={ NODE_ENV = "development" }
 #USAGE arg "[logstep]" help="Creates a .log file timestamped by execution point in ./logs/<choice>/<timestamp>.log" default="none" {
 #USAGE   choices "none" "log-all" "mise-tasks" "pwrs/cem" "cem-analyze" "wca" "typedoc"
 #USAGE }
@@ -31,13 +32,13 @@ create_log() {
 
 print -r -- "Running dx-refresh"
 print -r --
-rm -rfv docs
+rm -rfv site/docs
 echo
 
 [[ "$LOG_STEP" == "mise-tasks" || "$LOG_STEP" == "log-all" ]] && create_log "mise-tasks"
 print -r -- "Recreate Mise Task Docs"
-mkdir -p docs/mise/tasks
-mise generate task-docs -m -o docs/mise/tasks
+mkdir -p sites/docs/mise/tasks
+mise generate task-docs -m -o sites/docs/mise/tasks
 echo
 
 [[ "$LOG_STEP" == "cem-analyze" || "$LOG_STEP" == "log-all" ]] && create_log "cem-analyze"
@@ -62,10 +63,10 @@ echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
 print -r -- "dx:wca"
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/json/web-component-analyzer.json --format json
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./docs/wca/json --format json
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./docs/wca/markdown/README.md --format markdown
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./docs/wca/markdown --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./sites/docs/wca/json/web-component-analyzer.json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./sites/docs/wca/json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./sites/docs/wca/markdown/README.md --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./sites/docs/wca/markdown --format markdown
 pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir .vscode/wca --format vscode
 echo
 

@@ -15,7 +15,6 @@ import { customElement, property } from "lit/decorators.js";
 /**
  * @summary The collection of connection components wrapped in a `dl`
  *
- * @export
  * @class ConnectionsCard
  * @typedef {ConnectionsCard}
  * @extends {UIAwareElement}

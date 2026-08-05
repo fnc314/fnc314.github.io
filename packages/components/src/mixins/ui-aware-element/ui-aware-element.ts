@@ -23,6 +23,7 @@ import { state } from "lit/decorators.js";
  * @abstract
  * @class UIModeAwareElement
  * @extends {LitElement}
+ * @tag **
  */
 export abstract class UIAwareElement extends LitElement {
   /**

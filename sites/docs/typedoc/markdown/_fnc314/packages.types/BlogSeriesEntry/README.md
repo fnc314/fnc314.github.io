@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / BlogSeriesEntry
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / BlogSeriesEntry
 
 # Interface: BlogSeriesEntry
 
-Defined in: [packages/types/src/blog/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L20)
+Defined in: [packages/types/src/blog/index.ts:20](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/blog/index.ts#L20)
 
 Captures the position within a blog series that a given
 entry represents
@@ -16,9 +16,9 @@ entry represents
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -35,7 +35,7 @@ entry represents
 </td>
 <td>
 
-[packages/types/src/blog/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L22)
+[packages/types/src/blog/index.ts:22](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/blog/index.ts#L22)
 
 </td>
 </tr>
@@ -52,7 +52,7 @@ entry represents
 </td>
 <td>
 
-[packages/types/src/blog/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/blog/index.ts#L21)
+[packages/types/src/blog/index.ts:21](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/blog/index.ts#L21)
 
 </td>
 </tr>

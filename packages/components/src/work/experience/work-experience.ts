@@ -6,6 +6,8 @@ import { html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
+export { type Job, type WorkDate } from "@fnc314/packages.types";
+
 /**
  * @summary A component for displaying professional work experience entries.  Supports nesting
  *   for sub-roles or specific project assignments under a single employer.
@@ -108,7 +110,7 @@ export class WorkExperience extends UIAwareElement {
         html`
           <div class="nested-experience">
             ${this.jobs.map(
-              (job) => html`
+              (job: Job) => html`
                 <work-experience
                   .isNested="${true}"
                   .dateStart=${job.dates.start}

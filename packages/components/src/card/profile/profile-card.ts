@@ -8,6 +8,8 @@ import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
+export { type BioExtended } from "@fnc314/packages.types";
+
 /**
  * @summary A responsive card component that displays a profile photo and biography.
  *

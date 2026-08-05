@@ -8,7 +8,6 @@ import { customElement, property, query } from "lit/decorators.js";
 /**
  * @summary A popover element displayed instead of launching clicks on {@link WordTag}s
  *
- * @export
  * @class WordPopover
  * @typedef {WordPopover}
  * @extends {UIAwareElement}

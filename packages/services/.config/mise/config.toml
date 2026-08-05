@@ -1,6 +1,6 @@
 [tools]
   firebase = "15.25.1"
-  node = "26.6.0"
+  node = "26.7.0"
   "npm:corepack" = "0.35.0"
   "npm:vite" = "8.2.0"
   pnpm = "11.20.0"

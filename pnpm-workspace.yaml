@@ -90,7 +90,7 @@ catalogs:
     jiti: 2.7.0
     json-to-ts: 2.1.0
     lit-analyzer: 2.0.3
-    node: runtime:26.6.0
+    node: runtime:26.7.0
     postcss: 8.5.25
     postcss-html: 1.8.1
     postcss-lit: 1.4.1
@@ -217,7 +217,7 @@ minimumReleaseAgeExclude:
   - "@typescript/typescript-win32-arm64@7.0.2"
   - "@typescript/typescript-win32-x64@7.0.2"
   - typescript@7.0.2
-nodeVersion: "26.6.0"
+nodeVersion: "26.7.0"
 packageManagerStrictVersion: true
 packages:
   - "configs/@pwrs-cem"
@@ -261,4 +261,4 @@ saveWorkspaceProtocol: "rolling"
 scriptShell: "zsh"
 sharedWorkspaceLockfile: true
 updateNotifier: true
-useNodeVersion: "26.6.0"
+useNodeVersion: "26.7.0"

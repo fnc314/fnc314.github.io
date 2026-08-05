@@ -1,6 +1,6 @@
 {
   "author": "Franco N. Colaizzi",
-  "customElements": "custom-elements.json",
+  "customElements": "./custom-elements.json",
   "description": "Design tokens for fnc314.github.io, managed by Style Dictionary.",
   "dependencies": {
     "lit": "catalog:dependencies",
@@ -25,7 +25,7 @@
     "vite": "catalog:devDependencies"
   },
   "engines": {
-    "node": "26.6.0"
+    "node": "26.7.0"
   },
   "devEngines": {
     "packageManager": {
@@ -57,7 +57,8 @@
       "style": "./dist/@fnc314.packages.design-tokens.css"
     },
     "./themes/*": "./dist/themes/*",
-    "./types/*": "./dist/types/*"
+    "./types/*": "./dist/types/*",
+    "./custom-elements.json": "./custom-elements.json"
   },
   "files": [
     "./dist/@fnc314.packages.design-tokens.css",

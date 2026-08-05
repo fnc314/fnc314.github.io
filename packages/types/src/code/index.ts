@@ -57,7 +57,6 @@ export interface CodeRepoTech extends CodeRepoPopover {
 /**
  * @summary The content used to drive the `popover`s in the `<word-tag>`
  *
- * @export
  * @interface CodeRepoPopover
  * @typedef {CodeRepoPopover}
  */

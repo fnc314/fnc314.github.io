@@ -26,7 +26,7 @@ typeset PACKAGES=(
 )
 
 typeset SHARED_CONFIG="packages/.config/@pwrs/cem/cem.yaml"
-typeset DOCS_DIR="docs/@pwrs/cem/packages"
+typeset DOCS_DIR="sites/docs/@pwrs/cem/packages"
 
 typeset BASE_CEM_ARGS=(
   --config "${SHARED_CONFIG}"

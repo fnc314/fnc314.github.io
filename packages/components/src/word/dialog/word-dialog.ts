@@ -9,7 +9,6 @@ import { customElement, property, query } from "lit/decorators.js";
  * @summary A `<dialog>` `HTML` element displayed instead of launching clicks
  *   on {@link WordTag}s
  *
- * @export
  * @class WordDialog
  * @typedef {WordDialog}
  * @extends {UIAwareElement}

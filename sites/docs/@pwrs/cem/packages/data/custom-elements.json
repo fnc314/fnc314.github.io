@@ -3,12 +3,24 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "lib/bio/index.js",
+      "path": "node_modules/@material/web/custom-elements.json"
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/bento-layout/index.js",
       "declarations": [
         {
-          "name": "Biographies",
+          "name": "titles",
+          "description": "Titles to grab attention, joined with `|` but in HTML Entity Code (`\u0026#124;`)",
           "type": {
-            "text": ": Bio"
+            "text": ": string"
+          },
+          "kind": "variable"
+        },
+        {
+          "name": "BENTO_BOX_CONFIG",
+          "type": {
+            "text": ": BentoBoxConfigs"
           },
           "kind": "variable"
         }
@@ -16,17 +28,48 @@
       "exports": [
         {
           "kind": "js",
-          "name": "Biographies",
+          "name": "titles",
           "declaration": {
-            "name": "Biographies",
-            "module": "lib/bio/index.js"
+            "name": "titles",
+            "module": "src/bento-layout/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BENTO_BOX_CONFIG",
+          "declaration": {
+            "name": "BENTO_BOX_CONFIG",
+            "module": "src/bento-layout/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/blog/index.js",
+      "path": "src/bio/index.js",
+      "declarations": [
+        {
+          "name": "Biography",
+          "type": {
+            "text": ": BioExtended"
+          },
+          "kind": "variable"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Biography",
+          "declaration": {
+            "name": "Biography",
+            "module": "src/bio/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/blog/index.js",
       "declarations": [
         {
           "name": "Blogs",
@@ -42,14 +85,14 @@
           "name": "Blogs",
           "declaration": {
             "name": "Blogs",
-            "module": "lib/blog/index.js"
+            "module": "src/blog/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/code/index.js",
+      "path": "src/code/index.js",
       "declarations": [
         {
           "name": "Projects",
@@ -65,19 +108,19 @@
           "name": "Projects",
           "declaration": {
             "name": "Projects",
-            "module": "lib/code/index.js"
+            "module": "src/code/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/connections/index.js",
+      "path": "src/connections/index.js",
       "declarations": [
         {
           "name": "Connections",
           "type": {
-            "text": ": {\n  direct: {\n    phone: ConnectionInstance,\n    email: ConnectionInstance\n  },\n  social: {\n    linkedIn: ProfessionalConnectionJsonData,\n    github: ProfessionalConnectionJsonData,\n    medium: ProfessionalConnectionJsonData,\n  },\n  resume: {\n    googleDoc: ArtifactConnectionData,\n    pdf: ArtifactConnectionData,\n  }\n}"
+            "text": ": {\n  direct: {\n    phone: ConnectionInstance;\n    email: ConnectionInstance;\n  };\n  social: {\n    linkedIn: ProfessionalConnectionJsonData;\n    github: ProfessionalConnectionJsonData;\n    medium: ProfessionalConnectionJsonData;\n  };\n  resume: {\n    googleDoc: ArtifactConnectionData;\n    pdf: ArtifactConnectionData;\n  };\n}"
           },
           "kind": "variable"
         }
@@ -88,14 +131,14 @@
           "name": "Connections",
           "declaration": {
             "name": "Connections",
-            "module": "lib/connections/index.js"
+            "module": "src/connections/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/education/index.js",
+      "path": "src/education/index.js",
       "declarations": [
         {
           "name": "EducationJsonData",
@@ -111,14 +154,14 @@
           "name": "EducationJsonData",
           "declaration": {
             "name": "EducationJsonData",
-            "module": "lib/education/index.js"
+            "module": "src/education/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/experience/index.js",
+      "path": "src/experience/index.js",
       "declarations": [
         {
           "name": "Experiences",
@@ -134,18 +177,18 @@
           "name": "Experiences",
           "declaration": {
             "name": "Experiences",
-            "module": "lib/experience/index.js"
+            "module": "src/experience/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/index.js"
+      "path": "src/index.js"
     },
     {
       "kind": "javascript-module",
-      "path": "lib/photo/index.js",
+      "path": "src/photo/index.js",
       "declarations": [
         {
           "name": "Photos",
@@ -161,14 +204,14 @@
           "name": "Photos",
           "declaration": {
             "name": "Photos",
-            "module": "lib/photo/index.js"
+            "module": "src/photo/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "lib/skills/index.js",
+      "path": "src/skills/index.js",
       "declarations": [
         {
           "name": "Skills",
@@ -181,7 +224,7 @@
           "name": "Skills",
           "declaration": {
             "name": "Skills",
-            "module": "lib/skills/index.js"
+            "module": "src/skills/index.js"
           }
         }
       ]

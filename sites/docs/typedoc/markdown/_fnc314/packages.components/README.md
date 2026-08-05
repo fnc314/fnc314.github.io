@@ -1,8 +1,8 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../README.md) / @fnc314/packages.components
+[@fnc314/sites.docs](../../README.md) / @fnc314/packages.components
 
 # @fnc314/packages.components
 
@@ -15,6 +15,8 @@
 - [BlogEntry](BlogEntry/README.md)
 - [CodeCard](CodeCard/README.md)
 - [CodeRepo](CodeRepo/README.md)
+- [CodeReveal](CodeReveal/README.md)
+- [ConnectionsCard](ConnectionsCard/README.md)
 - [DirectConnection](DirectConnection/README.md)
 - [EducationCard](EducationCard/README.md)
 - [EducationInstitution](EducationInstitution/README.md)
@@ -27,35 +29,17 @@
 - [UiModeToggle](UiModeToggle/README.md)
 - [VersionTag](VersionTag/README.md)
 - [WordCloud](WordCloud/README.md)
+- [WordDialog](WordDialog/README.md)
+- [WordPopover](WordPopover/README.md)
 - [WordTag](WordTag/README.md)
 - [WorkExperience](WorkExperience/README.md)
 
-## Interfaces
-
-- [ABentoBoxConfig](ABentoBoxConfig/README.md)
-- [GridSpan](GridSpan/README.md)
-- [WordCloudWord](WordCloudWord/README.md)
-
 ## Type Aliases
 
-- [BentoBoxConfigs](BentoBoxConfigs/README.md)
-- [BentoBoxType](BentoBoxType/README.md)
 - [Constructor](Constructor/README.md)
-- [GridPosition](GridPosition/README.md)
-- [RenderableWordCloudWord](RenderableWordCloudWord/README.md)
-- [WeightQuartile](WeightQuartile/README.md)
-- [Weights](Weights/README.md)
-- [WordCloudAppearance](WordCloudAppearance/README.md)
-- [WordCloudGrouping](WordCloudGrouping/README.md)
-- [WordCloudSorting](WordCloudSorting/README.md)
-- [WordCloudWordCategory](WordCloudWordCategory/README.md)
-- [WordTagHeaviness](WordTagHeaviness/README.md)
-- [WordTagVariant](WordTagVariant/README.md)
 
 ## Variables
 
-- [BENTO\_BOX\_CONFIG](BENTO_BOX_CONFIG/README.md)
-- [BENTO\_BOX\_TYPES](BENTO_BOX_TYPES/README.md)
 - [BentoCardStyles](BentoCardStyles/README.md)
 - [BentoLayoutStyles](BentoLayoutStyles/README.md)
 - [BlogCardStyles](BlogCardStyles/README.md)
@@ -63,7 +47,9 @@
 - [CodeCardStyles](CodeCardStyles/README.md)
 - [CodeRepoStyles](CodeRepoStyles/README.md)
 - [ConnectionArtifactStyles](ConnectionArtifactStyles/README.md)
+- [ConnectionsCardStyles](ConnectionsCardStyles/README.md)
 - [DirectConnectionStyles](DirectConnectionStyles/README.md)
+- [DL\_DIV\_COLUMN\_COUNT](DL_DIV_COLUMN_COUNT/README.md)
 - [DynamicBorderStyles](DynamicBorderStyles/README.md)
 - [EducationCardStyles](EducationCardStyles/README.md)
 - [EducationInstitutionStyles](EducationInstitutionStyles/README.md)
@@ -74,20 +60,14 @@
 - [TextStyles](TextStyles/README.md)
 - [TransitionStyles](TransitionStyles/README.md)
 - [UIModeToggleStyles](UIModeToggleStyles/README.md)
-- [WordCloudAppearances](WordCloudAppearances/README.md)
-- [WordCloudGroupings](WordCloudGroupings/README.md)
-- [WordCloudSortings](WordCloudSortings/README.md)
 - [WordCloudStyles](WordCloudStyles/README.md)
+- [WordPopoverStyles](WordPopoverStyles/README.md)
 - [WordTagStyles](WordTagStyles/README.md)
-- [WordTagVariantAttributeConverter](WordTagVariantAttributeConverter/README.md)
 - [WorkCardStyles](WorkCardStyles/README.md)
 - [WorkExperienceStyles](WorkExperienceStyles/README.md)
 
 ## Functions
 
-- [BentoBoxConfigsArray](BentoBoxConfigsArray/README.md)
-- [getBentoDOMOrder](getBentoDOMOrder/README.md)
-- [makeWordCloudWord](makeWordCloudWord/README.md)
 - [SizeObserverElement](SizeObserverElement/README.md)
 
 </body></html>

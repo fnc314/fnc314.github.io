@@ -7,6 +7,7 @@
   "author": "Franco N. Colaizzi",
   "org": "@fnc314",
   "readme": "README.md",
+  "customElements": "./sites/docs/custom-elements-manifest/custom-elements-manifest.json",
   "icon": "./assets/icons/icon.svg",
   "type": "module",
   "module": "index.ts",
@@ -206,10 +207,10 @@
     "undici": "catalog:overrides"
   },
   "engines": {
-    "node": "26.6.0",
+    "node": "26.7.0",
     "runtime": {
       "name": "node",
-      "version": "26.6.0",
+      "version": "26.7.0",
       "onFail": "download"
     }
   },

@@ -2,19 +2,27 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordCloudStyles } from "@/lib/word/cloud/word-cloud.styles";
 import {
-  type RenderableWordCloudWord,
-  type WordCloudAppearance,
-  WordCloudAppearances,
-  type WordCloudGrouping,
-  WordCloudGroupings,
-  type WordCloudSorting,
-  WordCloudSortings,
-  type WordCloudWord,
+    type RenderableWordCloudWord,
+    type WordCloudAppearance,
+    WordCloudAppearances,
+    type WordCloudGrouping,
+    WordCloudGroupings,
+    type WordCloudSorting,
+    WordCloudSortings,
+    type WordCloudWord,
 } from "@fnc314/packages.types";
 import { type PropertyValues, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
+
+export {
+    type RenderableWordCloudWord,
+    type WordCloudAppearance,
+    type WordCloudGrouping,
+    type WordCloudSorting,
+    type WordCloudWord
+} from "@fnc314/packages.types";
 
 /**
  * A component that renders a cloud of words with various sorting and grouping options.
@@ -31,6 +39,8 @@ import { styleMap } from "lit/directives/style-map.js";
  * @cssprop [--word-cloud-third-quartile-line-height=1.25rem] - Line height for words in the third weight quartile.
  * @cssprop [--word-cloud-fourth-quartile-font-size=1rem] - Font size for words in the fourth weight quartile (lowest weight).
  * @cssprop [--word-cloud-fourth-quartile-line-height=1rem] - Line height for words in the fourth weight quartile.
+ *
+ * @tag word-cloud
  */
 @customElement("word-cloud")
 export class WordCloud extends UIAwareElement {

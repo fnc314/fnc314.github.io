@@ -5,6 +5,17 @@ import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } 
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+export { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
+
+/**
+ * Box for links to LinkedIn, GitHub, and Medium
+ *
+ * @export
+ * @class ProfessionalConnection
+ * @typedef {ProfessionalConnection}
+ * @extends {UIAwareElement}
+ * @tag <professional-connection>
+ */
 @customElement("professional-connection")
 export class ProfessionalConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */

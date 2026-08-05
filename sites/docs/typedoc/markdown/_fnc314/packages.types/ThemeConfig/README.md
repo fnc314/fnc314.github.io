@@ -1,21 +1,21 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / ThemeConfig
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / ThemeConfig
 
 # Interface: ThemeConfig
 
-Defined in: [packages/types/src/theme/index.ts:131](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L131)
+Defined in: [packages/types/src/theme/index.ts:118](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L118)
 
 ## Properties
 
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -32,7 +32,7 @@ Defined in: [packages/types/src/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:133](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L133)
+[packages/types/src/theme/index.ts:120](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L120)
 
 </td>
 </tr>
@@ -49,7 +49,7 @@ Defined in: [packages/types/src/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:134](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L134)
+[packages/types/src/theme/index.ts:121](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L121)
 
 </td>
 </tr>
@@ -66,7 +66,7 @@ Defined in: [packages/types/src/theme/index.ts:131](https://github.com/fnc314/fn
 </td>
 <td>
 
-[packages/types/src/theme/index.ts:132](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/theme/index.ts#L132)
+[packages/types/src/theme/index.ts:119](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/theme/index.ts#L119)
 
 </td>
 </tr>

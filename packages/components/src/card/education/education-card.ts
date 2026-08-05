@@ -7,6 +7,8 @@ import { BENTO_BOX_TYPES, type EducationInstitutionRecord } from "@fnc314/packag
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
+export { type EducationInstitutionRecord } from "@fnc314/packages.types";
+
 /**
  * @summary EducationCard - A card component displaying education history.
  *

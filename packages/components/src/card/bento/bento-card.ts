@@ -6,6 +6,8 @@ import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
+export { type BentoBoxType } from "@fnc314/packages.types";
+
 /**
  * @summary BentoCard - A reusable card component for the bento grid.
  *

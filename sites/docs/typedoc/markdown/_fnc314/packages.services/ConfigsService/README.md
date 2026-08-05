@@ -1,12 +1,12 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / ConfigsService
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / ConfigsService
 
 # Interface: ConfigsService
 
-Defined in: [packages/services/src/configs/index.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/configs/index.ts#L4)
+Defined in: [packages/services/src/configs/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/configs/index.ts#L9)
 
 ## Hierarchy
 
@@ -33,8 +33,8 @@ The **`addEventListener()`** method of the EventTarget interface sets up a funct
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -102,8 +102,8 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -134,13 +134,13 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 
 ### loadConfigs()
 
-&gt; **loadConfigs**(): `AppConfigs`
+&gt; **loadConfigs**(): [`AppConfigs`](../../packages.types/AppConfigs/README.md)
 
-Defined in: [packages/services/src/configs/index.ts:7](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/configs/index.ts#L7)
+Defined in: [packages/services/src/configs/index.ts:12](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/configs/index.ts#L12)
 
 #### Returns
 
-`AppConfigs`
+[`AppConfigs`](../../packages.types/AppConfigs/README.md)
 
 ---
 
@@ -159,8 +159,8 @@ The **`removeEventListener()`** method of the EventTarget interface removes an e
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -217,7 +217,7 @@ The **`removeEventListener()`** method of the EventTarget interface removes an e
 
 &gt; **resetConfigs**(): `void`
 
-Defined in: [packages/services/src/configs/index.ts:9](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/configs/index.ts#L9)
+Defined in: [packages/services/src/configs/index.ts:14](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/configs/index.ts#L14)
 
 #### Returns
 
@@ -227,17 +227,17 @@ Defined in: [packages/services/src/configs/index.ts:9](https://github.com/fnc314
 
 ### saveConfigs()
 
-&gt; **saveConfigs**(`configs`: `AppConfigs`): `void`
+&gt; **saveConfigs**(`configs`: [`AppConfigs`](../../packages.types/AppConfigs/README.md)): `void`
 
-Defined in: [packages/services/src/configs/index.ts:5](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/configs/index.ts#L5)
+Defined in: [packages/services/src/configs/index.ts:10](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/configs/index.ts#L10)
 
 #### Parameters
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -249,7 +249,7 @@ Defined in: [packages/services/src/configs/index.ts:5](https://github.com/fnc314
 </td>
 <td>
 
-`AppConfigs`
+[`AppConfigs`](../../packages.types/AppConfigs/README.md)
 
 </td>
 </tr>

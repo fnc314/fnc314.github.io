@@ -6,6 +6,8 @@ import "@material/web/iconbutton/filled-icon-button";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+export { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
+
 @customElement("artifact-connection")
 export class ArtifactConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */

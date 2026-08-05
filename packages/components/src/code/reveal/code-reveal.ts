@@ -2,13 +2,15 @@ import { CodeRevealStyles } from "@/lib/code/reveal/code-reveal.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { type CodeRepoTech } from "@fnc314/packages.types";
+import { MdIconButton } from "@material/web/iconbutton/icon-button";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { map } from "lit/directives/map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { when } from "lit/directives/when.js";
-import { MdIconButton } from "@material/web/iconbutton/icon-button";
+
+export { type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
 
 /**
  * @summary An inline reveal panel displaying expanded technology details inside {@link CodeRepo}
@@ -16,7 +18,6 @@ import { MdIconButton } from "@material/web/iconbutton/icon-button";
  * @fires start-hide-reveal - Dispatched when the user initiates closing, triggering the fold animation.
  * @fires hide-reveal - Dispatched when the folding animation completely finishes, signaling the parent to reset state.
  *
- * @export
  * @class CodeReveal
  * @extends {UIAwareElement}
  */

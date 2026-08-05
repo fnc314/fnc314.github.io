@@ -1,37 +1,29 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / colorSchemeContrastToIcon
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / colorSchemeContrastToIcon
 
-# Variable: colorSchemeContrastToIcon
+# Function: colorSchemeContrastToIcon()
 
-&gt; `const` **colorSchemeContrastToIcon**: (`slot`: `"start"` \| `"leading-icon"`, `contrast`: `ColorSchemeContrast`) =&gt; [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
+&gt; **colorSchemeContrastToIcon**(`contrast`: [`ColorSchemeContrast`](../../packages.types/ColorSchemeContrast/README.md), `slot?`: `"start"` \| `"leading-icon"`): [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
 
-Defined in: [packages/services/src/theme/utils.ts:4](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/utils.ts#L4)
+Defined in: [packages/services/src/theme/utils.ts:11](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/theme/utils.ts#L11)
+
+A convenience method to return [TemplateResult](https://lit.dev/docs/api/templates/#TemplateResult)s of `<md-icon>`
 
 ## Parameters
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Default value</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-
-`slot`
-
-</td>
-<td>
-
-`"start"` \| `"leading-icon"`
-
-</td>
-</tr>
 <tr>
 <td>
 
@@ -40,7 +32,39 @@ Defined in: [packages/services/src/theme/utils.ts:4](https://github.com/fnc314/f
 </td>
 <td>
 
-`ColorSchemeContrast`
+[`ColorSchemeContrast`](../../packages.types/ColorSchemeContrast/README.md)
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+<td>
+
+The particular [ColorSchemeContrast](../../packages.types/ColorSchemeContrast/README.md) chosen by the user
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slot?`
+
+</td>
+<td>
+
+`"start"` \| `"leading-icon"`
+
+</td>
+<td>
+
+`"start"`
+
+</td>
+<td>
+
+Either `"start"` or `"leading-icon"` with `"start"` as default
 
 </td>
 </tr>
@@ -50,4 +74,4 @@ Defined in: [packages/services/src/theme/utils.ts:4](https://github.com/fnc314/f
 ## Returns
 
 [`TemplateResult`](https://lit.dev/docs/api/templates/#TemplateResult)
-</body></html>
+</md-icon></body></html>

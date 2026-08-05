@@ -6,6 +6,8 @@ import "@material/web/iconbutton/filled-tonal-icon-button";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+export { type ConnectionInstance } from "@fnc314/packages.types";
+
 /**
  * Represents a subset of content in `connections.json` as
  *   outlined in {@link @fnc314/packages.types!ConnectionInstance}

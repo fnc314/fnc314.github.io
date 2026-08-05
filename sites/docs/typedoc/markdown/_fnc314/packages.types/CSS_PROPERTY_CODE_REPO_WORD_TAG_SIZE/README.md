@@ -1,14 +1,14 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE
 
 # Variable: CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE
 
 &gt; `const` **CSS\_PROPERTY\_CODE\_REPO\_WORD\_TAG\_SIZE**: `"--code-repo-word-tag-size"` = `"--code-repo-word-tag-size"`
 
-Defined in: [packages/types/src/code/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/code/index.ts#L6)
+Defined in: [packages/types/src/code/index.ts:6](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/code/index.ts#L6)
 
 The `const` for the `CSS @property`
 </body></html>

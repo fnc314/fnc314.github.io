@@ -1,23 +1,23 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / ArtifactConnectionData
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / ArtifactConnectionData
 
 # Type Alias: ArtifactConnectionData
 
-&gt; **ArtifactConnectionData** = \{ `designToken`: [`DesignTokenIcon`](../DesignTokenIcon/README.md); `href`: `string`; `mdIcon`: `string`; `title`: `string`; \}
+&gt; **ArtifactConnectionData** = \{ `designToken`: [`IconVariants`](../IconVariants/README.md); `href`: `string`; `label`: `string`; `mdIcon`: `string`; `title`: `string`; \}
 
-Defined in: [packages/types/src/connections/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L24)
+Defined in: [packages/types/src/connections/index.ts:25](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L25)
 
 ## Properties
 
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -29,12 +29,12 @@ Defined in: [packages/types/src/connections/index.ts:24](https://github.com/fnc3
 </td>
 <td>
 
-[`DesignTokenIcon`](../DesignTokenIcon/README.md)
+[`IconVariants`](../IconVariants/README.md)
 
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L24)
+[packages/types/src/connections/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L28)
 
 </td>
 </tr>
@@ -51,7 +51,24 @@ Defined in: [packages/types/src/connections/index.ts:24](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L24)
+[packages/types/src/connections/index.ts:27](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L27)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="label"></a> `label`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+[packages/types/src/connections/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L30)
 
 </td>
 </tr>
@@ -68,7 +85,7 @@ Defined in: [packages/types/src/connections/index.ts:24](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L24)
+[packages/types/src/connections/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L29)
 
 </td>
 </tr>
@@ -85,7 +102,7 @@ Defined in: [packages/types/src/connections/index.ts:24](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:24](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L24)
+[packages/types/src/connections/index.ts:26](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L26)
 
 </td>
 </tr>

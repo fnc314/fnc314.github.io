@@ -1,23 +1,23 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.types](../README.md) / ProfessionalConnectionTypes
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.types](../README.md) / ProfessionalConnectionTypes
 
 # Variable: ProfessionalConnectionTypes
 
 &gt; `const` **ProfessionalConnectionTypes**: \{ `github`: `"github"`; `linkedin`: `"linkedin"`; `medium`: `"medium"`; \}
 
-Defined in: [packages/types/src/connections/index.ts:28](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L28)
+Defined in: [packages/types/src/connections/index.ts:35](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L35)
 
 ## Type Declaration
 
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Defined in</th>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Defined in</th>
 </tr>
 </thead>
 <tbody>
@@ -34,7 +34,7 @@ Defined in: [packages/types/src/connections/index.ts:28](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:30](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L30)
+[packages/types/src/connections/index.ts:37](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L37)
 
 </td>
 </tr>
@@ -51,7 +51,7 @@ Defined in: [packages/types/src/connections/index.ts:28](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:29](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L29)
+[packages/types/src/connections/index.ts:36](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L36)
 
 </td>
 </tr>
@@ -68,7 +68,7 @@ Defined in: [packages/types/src/connections/index.ts:28](https://github.com/fnc3
 </td>
 <td>
 
-[packages/types/src/connections/index.ts:31](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/types/src/connections/index.ts#L31)
+[packages/types/src/connections/index.ts:38](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/types/src/connections/index.ts#L38)
 
 </td>
 </tr>

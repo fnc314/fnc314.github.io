@@ -1,14 +1,14 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / keyTransform
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / keyTransform
 
 # Function: keyTransform()
 
 &gt; **keyTransform**(`jsonKey`: `string`, `rgb`: `string`): [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-Defined in: [packages/services/src/theme/utils.ts:136](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/utils.ts#L136)
+Defined in: [packages/services/src/theme/utils.ts:132](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/theme/utils.ts#L132)
 
 Converts `jsonKey` and corresponding `rgb` value into a CSS custom property
 via [css](https://lit.dev/docs/api/styles/#css) and [unsafeCSS](https://lit.dev/docs/api/styles/#unsafeCSS) functions
@@ -18,9 +18,9 @@ via [css](https://lit.dev/docs/api/styles/#css) and [unsafeCSS](https://lit.dev/
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -37,7 +37,7 @@ via [css](https://lit.dev/docs/api/styles/#css) and [unsafeCSS](https://lit.dev/
 </td>
 <td>
 
-The key from the JSON scheme, e.g., "primaryContainer"
+The key from the JSON scheme, e.g., `primaryContainer`
 
 </td>
 </tr>
@@ -54,7 +54,7 @@ The key from the JSON scheme, e.g., "primaryContainer"
 </td>
 <td>
 
-The RGB color value from the JSON scheme, e.g., "#FF0000"
+The RGB color value from the JSON scheme, e.g., `#FF0000`
 
 </td>
 </tr>
@@ -65,6 +65,6 @@ The RGB color value from the JSON scheme, e.g., "#FF0000"
 
 [`CSSResult`](https://lit.dev/docs/api/styles/#CSSResult)
 
-- A CSSResult containing the custom property definition, e.g., "--md-sys-color-primary-container: #FF0000;"
+- A CSSResult containing the custom property definition, e.g., `--md-sys-color-primary-container: #FF0000;`
 
 </body></html>

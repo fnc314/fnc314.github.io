@@ -1,22 +1,22 @@
-<html><head></head><body>[**@fnc314/com.fnc314.website v2.0.5**](../../../README.md)
+<html><head></head><body>[**@fnc314/sites.docs v3.1.0**](../../../README.md)
 
 ---
 
-[@fnc314/com.fnc314.website](../../../README.md) / [@fnc314/packages.services](../README.md) / colorSchemeConfigsToMaterialSchemeName
+[@fnc314/sites.docs](../../../README.md) / [@fnc314/packages.services](../README.md) / colorSchemeConfigsToMaterialSchemeName
 
 # Variable: colorSchemeConfigsToMaterialSchemeName
 
-&gt; `const` **colorSchemeConfigsToMaterialSchemeName**: (`colorSchemeSettings`: `ColorSchemeConfigs`) =&gt; `MaterialSchemeName`
+&gt; `const` **colorSchemeConfigsToMaterialSchemeName**: (`colorSchemeSettings`: [`ColorSchemeConfig`](../../packages.types/ColorSchemeConfig/README.md)) =&gt; [`MaterialSchemeName`](../../packages.types/MaterialSchemeName/README.md)
 
-Defined in: [packages/services/src/theme/index.ts:109](https://github.com/fnc314/fnc314.github.io/blob/382a425c5d6173823ecd4263148231cb7990379c/packages/services/src/theme/index.ts#L109)
+Defined in: [packages/services/src/theme/index.ts:142](https://github.com/fnc314/fnc314.github.io/blob/b4bec566ddb5c54e1c2da88affc95a038489d32a/packages/services/src/theme/index.ts#L142)
 
 ## Parameters
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Type</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
 </tr>
 </thead>
 <tbody>
@@ -28,7 +28,7 @@ Defined in: [packages/services/src/theme/index.ts:109](https://github.com/fnc314
 </td>
 <td>
 
-`ColorSchemeConfigs`
+[`ColorSchemeConfig`](../../packages.types/ColorSchemeConfig/README.md)
 
 </td>
 </tr>
@@ -37,5 +37,5 @@ Defined in: [packages/services/src/theme/index.ts:109](https://github.com/fnc314
 
 ## Returns
 
-`MaterialSchemeName`
+[`MaterialSchemeName`](../../packages.types/MaterialSchemeName/README.md)
 </body></html>
