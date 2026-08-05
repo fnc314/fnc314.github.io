@@ -1,6 +1,20 @@
 import "@fnc314/packages.components";
-import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
-import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfig, type ColorSchemeConfigChange, ELEMENT_ID_META_TAG, EVENT_DOM_CONTENT_LOADED, WINDOW_MEDIA_PREFERS_COLOR_SCHEME } from "@fnc314/packages.types";
+import "@fnc314/packages.data";
+import "@fnc314/packages.design-tokens";
+import {
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    configsService,
+    onThemeChange,
+    themeService
+} from "@fnc314/packages.services";
+import {
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    type ColorSchemeConfig,
+    type ColorSchemeConfigChange,
+    ELEMENT_ID_META_TAG,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK
+} from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -13,7 +27,7 @@ import "./index.css";
  * @param color - A `#`-prefixed `string`
  */
 const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =>
-  document.getElementById(ELEMENT_ID_META_TAG)?.setAttribute("content", color);
+  window.document.getElementById(ELEMENT_ID_META_TAG)?.setAttribute("content", color);
 
 /**
  * A listener for {@link ColorSchemeConfiChange} events
@@ -21,11 +35,11 @@ const setMetaThemeColor: (color: `#${string}`) => void = (color: `#${string}`) =
  * @param event - The particular `event`
  */
 const onColorSchemeChange = (event: ColorSchemeConfigChange) => {
-  const customEvent: ColorSchemeConfigChange = event as ColorSchemeConfigChange;
-  if (!document.startViewTransition) {
+  const customEvent: ColorSchemeConfigChange = event;
+  if (!window.document.startViewTransition) {
     applyColorSchemeConfigs(customEvent.detail)
   } else {
-    document.startViewTransition(() => applyColorSchemeConfigs(customEvent.detail));
+    window.document.startViewTransition(() => applyColorSchemeConfigs(customEvent.detail));
   }
 };
 
@@ -43,23 +57,22 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
   setMetaThemeColor(themeService.themeJson().primary);
 }
 
-/** Bootstrapping listener for {@link EVENT_DOM_CONTENT_LOADED} */
-const domLoadedListener = () => {
-  document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+/** Bootstrapping listener for {@link window.onload} */
+const windowOnLoad = () => {
 
-  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME).addEventListener("change", onThemeChange);
+  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    window.document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   }
 
-  document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
+  window.document.adoptedStyleSheets.push(MaterialCSSStyleSheet);
 
   applyColorSchemeConfigs(
     configsService.loadConfigs().colorScheme
   );
 
-  document.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
+  window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
 };
 
-document.addEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
+window.onload = windowOnLoad

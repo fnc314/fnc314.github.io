@@ -4,20 +4,26 @@
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
   "customElements": "custom-elements.json",
+  "description": "Data package to support https://fnc314.com",
   "dependencies": {
-    "@fnc314/configs.typescript": "workspace:*",
-    "@fnc314/packages.design-tokens": "workspace:*",
-    "@fnc314/packages.types": "workspace:*",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
-  "description": "Data package to support https://fnc314.com",
+  "peerDependencies": {
+    "@fnc314/packages.design-tokens": "workspace:*",
+    "@fnc314/packages.types": "workspace:*"
+  },
   "devDependencies": {
+    "@fnc314/configs.postcss": "workspace:*",
+    "@fnc314/configs.typescript": "workspace:*",
+    "@fnc314/packages.design-tokens": "workspace:*",
+    "@fnc314/packages.types": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "style-dictionary": "catalog:devDependencies",
     "typescript": "catalog:typescript",
     "typescript7": "catalog:typescript",
+    "postcss-lit": "catalog:devDependencies",
     "unplugin-dts": "catalog:devDependencies",
     "unplugin-info": "catalog:devDependencies",
     "vite": "catalog:devDependencies"

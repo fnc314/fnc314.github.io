@@ -82,19 +82,9 @@ const readTokenFileContentsForCss: (token: TransformedToken) => string =
   };
 
 StyleDictionary.registerFilter({
-  name: "isIconToken",
-  filter: (token: TransformedToken) =>
-    (
-      token.name.startsWith("icons-components") ||
-      token.name.startsWith("icons-logos") ||
-      token.name.startsWith("icons-material")
-    ) &&
-    token.$type === "asset"
-});
-
-StyleDictionary.registerFilter({
   name: "isMaterialOverride",
-  filter: (token: TransformedToken) => token.name.startsWith("md")
+  filter: (token: TransformedToken) =>
+    token.name.startsWith("md") && !token.name.includes("sys-color")
 });
 
 StyleDictionary.registerFilter({
@@ -194,36 +184,6 @@ StyleDictionary.registerFormat({
 });
 
 /**
- * Custom format to generate Lit `svg` template TypeScript modules from asset tokens
- */
-StyleDictionary.registerFormat({
-  name: "typescript/lit-svg",
-  format: async function ({ dictionary, file, options }) {
-    const header = await fileHeader({ file, commentStyle: commentStyles.long, formatting: {}, options });
-
-    let code = `${header}\nimport { svg, type TemplateResult } from "lit";\n\n`;
-
-    for (const token of dictionary.allTokens) {
-      const filePath = path.resolve(token.$value);
-      if (!fs.existsSync(filePath)) continue;
-
-      const rawSvg = fs.readFileSync(filePath, "utf-8");
-      const optimizedSvg = optimizeSvg(rawSvg, filePath).trim();
-
-      // Convert kebab-case token name (e.g., icons-components-github) to camelCase constant name
-      const constName = token.name
-        .replace(/-([a-z])/g, (g) => g[1].toUpperCase())
-        .replace(/-/g, "");
-
-      code += `/** ${token.description || token.name} */\n`;
-      code += `export const ${constName}: TemplateResult = svg\`${optimizedSvg}\`;\n\n`;
-    }
-
-    return code;
-  },
-});
-
-/**
  * Has to use `'` (single quotes) to bypass postcss process **AND** retain
  *   usefulness within `img.src` and `background-image` use cases
  */
@@ -252,6 +212,7 @@ const files = {
   },
   sources: [
     `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
+    `!${process.cwd()}/packages/design-tokens/tokens/material-design/icons.json`,
     `!${process.cwd()}/packages/design-tokens/tokens/material-design/themes/**/*.json`,
   ]
 };

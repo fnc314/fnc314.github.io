@@ -1,4 +1,4 @@
-import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ThemeJsonSchemes } from "@fnc314/packages.types";
+import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 /**
@@ -39,11 +39,11 @@ export function jsonIsThemeJsonSchemes(json: unknown): json is ThemeJsonSchemes 
   const correctKeys = Object.keys(json).every((key) =>
     [
       "light",
-      "light-medium-contrast",
-      "light-high-contrast",
+      "lightMediumContrast",
+      "lightHighContrast",
       "dark",
-      "dark-medium-contrast",
-      "dark-high-contrast",
+      "darkMediumContrast",
+      "darkHighContrast",
     ].includes(key),
   );
 
@@ -106,11 +106,9 @@ const sanitizeCSS: (inputCSS: CSSResult) => CSSResult = (inputCSS: CSSResult) =>
  * @param jsonSchema - Any `object`
  * @returns - A {@link CSSResult} of the provided `jsonSchema`
  */
-export const readScheme: (jsonSchema: object) => CSSResult = (jsonSchema: object) => {
-  const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult = ([colorRole, colorRGB]: [
-    string,
-    string,
-  ]) => keyTransform(colorRole, colorRGB);
+export const readScheme: (jsonSchema: Record<ColorSchemeRoles, ColorString>) => CSSResult = (jsonSchema: Record<ColorSchemeRoles, ColorString>) => {
+  const colorMapper: ([colorRole, colorRGB]: [string, string]) => CSSResult =
+    ([colorRole, colorRGB]: [ string, string ]) => keyTransform(colorRole, colorRGB);
 
   const transformedJson: CSSResult = Object.entries(jsonSchema)
     .map(colorMapper)

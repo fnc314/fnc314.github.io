@@ -6,21 +6,22 @@ import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import "@/lib/version-tag/version-tag";
 import { Photos } from "@fnc314/packages.data";
 import {
-  MaterialCSSStyleSheet,
-  colorSchemeConfigsToMaterialSchemeName,
-  colorSchemeContrastToIcon,
-  configsService,
-  themeService,
+    MaterialCSSStyleSheet,
+    colorSchemeConfigsToMaterialSchemeName,
+    colorSchemeContrastToIcon,
+    configsService,
+    themeService,
 } from "@fnc314/packages.services";
 import {
-  APP_CONFIGS_CHANGE_EVENT_NAME,
-  type AppConfigs,
-  BENTO_BOX_TYPES,
-  COLOR_SCHEME_CHANGE_EVENT_NAME,
-  CONFIG_COLOR_CONTRAST_NAMES,
-  type ColorSchemeContrast,
-  THEME_NAMES,
-  type ThemeName,
+    APP_CONFIGS_CHANGE_EVENT_NAME,
+    type AppConfigs,
+    type AppConfigsChangeEvent,
+    BENTO_BOX_TYPES,
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    CONFIG_COLOR_CONTRAST_NAMES,
+    type ColorSchemeContrast,
+    THEME_NAMES,
+    type ThemeName,
 } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
@@ -52,16 +53,16 @@ export class SettingsCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = BENTO_BOX_TYPES.settings;
-    configsService.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    configsService.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
   }
 
-  private onAppConfigsChange = (event: Event) => {
-    this._appConfigs = (event as any).detail.appConfigs;
+  private onAppConfigsChange = (event: AppConfigsChangeEvent) => {
+    this._appConfigs = event.detail.appConfigs;
     this.requestUpdate();
   };
 
@@ -91,7 +92,7 @@ export class SettingsCard extends UIAwareElement {
 
     configsService.saveConfigs(this._appConfigs);
 
-    this.dispatchEvent(
+    window.dispatchEvent(
       new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
         bubbles: true,
         composed: true,

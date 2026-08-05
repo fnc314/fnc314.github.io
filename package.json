@@ -30,6 +30,7 @@
   "workspaces": [
     "configs/@pwrs-cem",
     "configs/eslint",
+    "configs/postcss",
     "configs/prettier",
     "configs/typedoc",
     "configs/typescript",
@@ -153,6 +154,7 @@
     "stylelint-config-inspector": "catalog:devDependencies",
     "stylelint-config-standard": "catalog:devDependencies",
     "stylelint-declaration-strict-value": "catalog:devDependencies",
+    "stylelint-define-config": "catalog:devDependencies",
     "stylelint-no-unresolved-module": "catalog:devDependencies",
     "stylelint-order": "catalog:devDependencies",
     "stylelint-plugin-logical-css": "catalog:devDependencies",
