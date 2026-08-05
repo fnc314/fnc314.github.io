@@ -52,7 +52,7 @@ catalogs:
     "@typescript-eslint/parser": 8.66.0
     "@typescript/typescript6": 6.0.2
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.4.11
+    "@vitejs/devtools": 0.4.12
     "@wc-toolkit/cem-inheritance": 1.2.5
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.5.5

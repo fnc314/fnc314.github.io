@@ -22,6 +22,8 @@ import {
     type MaterialSchemeNames,
     type ThemeConfig,
     type ThemeConfigs,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -53,10 +55,10 @@ class ThemeServiceImpl implements ThemeService {
   }
 
   devicePreference(): ColorScheme {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ?
+    return window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
       CONFIG_COLOR_SCHEME_NAMES.DARK :
       (
-        window.matchMedia("(prefers-color-scheme: light)").matches ?
+        window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT).matches ?
           CONFIG_COLOR_SCHEME_NAMES.LIGHT :
           CONFIG_COLOR_SCHEME_NAMES.SYSTEM
       );
@@ -135,10 +137,10 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
 ): MaterialSchemeName => {
   const variant =
     colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
-      colorSchemeSettings.name.toLowerCase()
-    : (window.matchMedia("(prefers-color-scheme: dark)").matches ?
-        CONFIG_COLOR_SCHEME_NAMES.DARK
-      : CONFIG_COLOR_SCHEME_NAMES.LIGHT
+      colorSchemeSettings.name.toLowerCase() :
+      (window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
+        CONFIG_COLOR_SCHEME_NAMES.DARK :
+        CONFIG_COLOR_SCHEME_NAMES.LIGHT
       ).toLowerCase();
 
   const contrast =

@@ -1,6 +1,15 @@
 import "@fnc314/packages.components";
+import "@fnc314/packages.data";
+import "@fnc314/packages.design-tokens";
 import { MaterialCSSStyleSheet, colorSchemeConfigsToMaterialSchemeName, configsService, onThemeChange, themeService } from "@fnc314/packages.services";
-import { COLOR_SCHEME_CHANGE_EVENT_NAME, type ColorSchemeConfig, type ColorSchemeConfigChange, ELEMENT_ID_META_TAG, EVENT_DOM_CONTENT_LOADED, WINDOW_MEDIA_PREFERS_COLOR_SCHEME } from "@fnc314/packages.types";
+import {
+    COLOR_SCHEME_CHANGE_EVENT_NAME,
+    type ColorSchemeConfig,
+    type ColorSchemeConfigChange,
+    ELEMENT_ID_META_TAG,
+    EVENT_DOM_CONTENT_LOADED,
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK
+} from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
 import "material-symbols/sharp.css";
@@ -47,7 +56,7 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
 const domLoadedListener = () => {
   document.removeEventListener(EVENT_DOM_CONTENT_LOADED, domLoadedListener);
 
-  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME).addEventListener("change", onThemeChange);
+  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);

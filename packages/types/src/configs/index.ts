@@ -25,3 +25,5 @@ export type AppConfigsChangeEvent = CustomEvent<{ appConfigs: AppConfigs }>;
 export const ELEMENT_ID_META_TAG: string = "meta-theme-color";
 export const EVENT_DOM_CONTENT_LOADED: string = "DOMContentLoaded";
 export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME: string = "(prefers-color-scheme: dark)";
+export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK: string = "(prefers-color-scheme: dark)";
+export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT: string = "(prefers-color-scheme: light)";

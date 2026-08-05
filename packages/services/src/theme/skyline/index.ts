@@ -1,9 +1,9 @@
 import { jsonIsThemeJsonSchemes, readScheme } from "@/lib/theme/utils";
 import { Photos } from "@fnc314/packages.data";
-import JsonTheme from "@fnc314/packages.design-tokens/themes/skyline/skyline.mtb.json" with { type: "json" };
+import JsonTheme from "@fnc314/packages.design-tokens/themes/skyline/skyline.scheme.mtb.json" with { type: "json" };
 import { type ThemeConfig, type ThemeJsonSchemes } from "@fnc314/packages.types";
 
-const json = jsonIsThemeJsonSchemes(JsonTheme.schemes) ? JsonTheme.schemes : ({} as ThemeJsonSchemes);
+const json = jsonIsThemeJsonSchemes(JsonTheme) ? JsonTheme: ({} as ThemeJsonSchemes);
 
 export const SkylineThemeConfig: ThemeConfig = {
   themePhoto: Photos.skyline,
