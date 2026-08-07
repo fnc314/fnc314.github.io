@@ -17,9 +17,6 @@
   "devDependencies": {
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
-    "@fnc314/packages.data": "workspace:*",
-    "@fnc314/packages.design-tokens": "workspace:*",
-    "@fnc314/packages.types": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",
     "typescript": "catalog:typescript",

@@ -134,7 +134,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     optimizeDeps: {},
     resolve: {
       dedupe: [
-        "@fnc314/packages.*",
+        "@fnc314/packages.components",
+        "@fnc314/packages.data",
+        "@fnc314/packages.design-tokens",
+        "@fnc314/packages.services",
+        "@fnc314/packages.types",
         "lit",
         "lit-html",
         "lit-element",
@@ -160,14 +164,15 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       emptyOutDir: true,
       copyPublicDir: true,
       terserOptions: {
+        mangle: dynamicConfig.isProduction,
         compress: {
           ecma: 2025,
           builtins_ecma: 2025,
           dead_code: true,
           drop_console: dynamicConfig.isProduction,
           drop_debugger: dynamicConfig.isProduction,
+          lhs_constants: true,
           unused: true,
-
         },
         ecma: 2025,
         format: {
@@ -176,14 +181,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           comments: !dynamicConfig.isProduction,
           indent_level: 2,
           indent_start: 0,
+          keep_numbers: false,
           max_line_len: 120,
           quote_keys: true,
-          quote_style: 2,
+          quote_style: 0,
           semicolons: true,
           webkit: true,
           width: 120,
           wrap_func_args: true,
         },
+        module: true,
         sourceMap: !dynamicConfig.isProduction,
       },
       rolldownOptions: {
@@ -207,7 +214,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         tsconfig: path.resolve(process.cwd(), "sites/portfolio", "tsconfig.json"),
         devtools: {},
         experimental: {
-          // viteMode: true,
           attachDebugInfo: !dynamicConfig.isProduction ? "full" : "none",
           incrementalBuild: true,
         },
@@ -350,7 +356,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         title: "Vite Bundle Visualizer",
         filename: path.resolve(process.cwd(), `stats/vite/visualizer/${mode}-${process.env.NODE_ENV}/${new Date().toISOString()}.html`),
         sourcemap: !dynamicConfig.isProduction,
-        template: "network",
+        template: "treemap",
         gzipSize: true,
         brotliSize: true,
         projectRoot: path.resolve(process.cwd()),

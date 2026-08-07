@@ -10,17 +10,19 @@ export const CodeRepoStyles: CSSResult = css`
   ${DynamicBorderStyles}
 
   :host {
+    --code-repo-background-color: var(--md-sys-color-surface-container-high);
+    --code-repo-link-color: var(--md-sys-color-tertiary);
+    --code-repo-color: var(--md-sys-color-on-surface);
+
     --md-divider-color: var(--md-sys-color-on-surface-variant);
     --md-divider-thickness: var(--sizes-thickness-hairline);
-    --dynamic-border-background: var(--md-sys-color-tertiary-container);
-    --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
+    --dynamic-border-size: var(--sizes-width-l);
+    --dynamic-border-background: var(--md-sys-color-primary-container);
+    --dynamic-border-color: var(--code-repo-color);
+    --word-tag-border-color: var(--md-sys-color-secondary);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-surface-container-lowest);
     --word-tag-color: var(--md-sys-color-on-tertiary-container);
-
-    --code-repo-background-color: var(--md-sys-color-surface-container-high);
-    --code-repo-link-color: var(--md-sys-color-primary);
-    --code-repo-color: var(--md-sys-color-on-surface);
 
     align-self: stretch;
     box-sizing: border-box;
@@ -32,7 +34,6 @@ export const CodeRepoStyles: CSSResult = css`
 
   /* 3D Perspective container for the folding panel effect */
   article {
-    --dynamic-border-size: var(--sizes-width-l);
     container-type: inline-size;
     perspective: 1400px;
     transform-style: preserve-3d;
@@ -87,8 +88,7 @@ export const CodeRepoStyles: CSSResult = css`
 
     h3 {
       color: var(--code-repo-color);
-      margin-block: var(--spaces-none);
-      margin-inline: var(--spaces-none);
+      margin: var(--spaces-none);
       word-break: break-word;
     }
 
@@ -102,16 +102,30 @@ export const CodeRepoStyles: CSSResult = css`
       overflow-wrap: break-word;
       text-decoration: none;
       word-break: break-all;
+      flex-direction: row;
+
 
       &:hover,
       &:focus {
         text-decoration: underline;
       }
+
+      span[aria-hidden="true"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          block-size: var(--md-icon-size);
+          inline-size: var(--md-icon-size);
+        }
+      }
     }
   }
 
   md-divider {
-    margin-block: var(--spaces-none) var(--spaces-margin-m);
+    color: var(--code-repo-color);
+    margin-block: var(--spaces-margin-m);
   }
 
   section.synopsis {
@@ -184,7 +198,6 @@ export const CodeRepoStyles: CSSResult = css`
       align-items: stretch;
       gap: var(--spaces-gap-l);
       padding-inline-end: unset;
-      padding-inline-start: var(--spaces-padding-xl);
 
       md-divider {
         display: none;

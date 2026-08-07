@@ -5,7 +5,7 @@ export const DynamicBorderStyles: CSSResult = css`
     --dynamic-border-content: "";
     --dynamic-border-mask: none;
     --dynamic-border-background-image: none;
-    --dynamic-border-size: calc(var(--sizes-thickness-hairline) * 8);
+    --dynamic-border-size: var(--sizes-thickness-xl);
     --dynamic-border-color: var(--md-sys-color-on-primary-container);
     --dynamic-border-background: var(--md-sys-color-primary-container);
 

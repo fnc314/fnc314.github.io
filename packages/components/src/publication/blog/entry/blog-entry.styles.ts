@@ -12,13 +12,15 @@ export const BlogEntryStyles: CSSResult = css`
     inline-size: 100%;
     min-inline-size: 0;
 
-    --dynamic-border-background: var(--md-sys-color-tertiary-container);
-    --dynamic-border-size: var(--sizes-width-l);
-    --dynamic-border-color: var(--md-sys-color-on-tertiary-container);
-
     --publication-blog-entry-color: var(--md-sys-color-on-surface);
-    --publication-blog-entry-secondary-color: var(--md-sys-color-primary);
-    --publication-blog-entry-background-color: var(--md-sys-color-surface);
+    --publication-blog-entry-secondary-color: var(--md-sys-color-on-surface-variant);
+    --publication-blog-entry-link-color: var(--md-sys-color-tertiary);
+    --publication-blog-entry-background-color: var(--md-sys-color-surface-container-high);
+
+    --dynamic-border-background: var(--md-sys-color-primary-container);
+    --dynamic-border-size: var(--sizes-width-l);
+    --dynamic-border-color: var(--publication-blog-entry-color);
+
   }
 
   article {
@@ -91,9 +93,14 @@ export const BlogEntryStyles: CSSResult = css`
     margin-block-start: auto;
     padding-block-start: var(--spaces-padding-xs);
 
+    md-divider {
+      margin-block: var(--spaces-margin-m);
+      color: var(--publication-blog-entry-color);
+    }
+
     a {
       align-items: center;
-      color: var(--publication-blog-entry-secondary-color);
+      color: var(--publication-blog-entry-link-color);
       display: inline-flex;
       gap: var(--spaces-gap-s);
       text-decoration: none;
@@ -103,9 +110,16 @@ export const BlogEntryStyles: CSSResult = css`
         text-decoration: underline;
       }
 
-      img {
-        block-size: var(--md-icon-size);
-        inline-size: var(--md-icon-size);
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          block-size: var(--md-icon-size);
+          inline-size: var(--md-icon-size);
+
+        }
       }
     }
   }

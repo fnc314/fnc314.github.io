@@ -9,5 +9,9 @@
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.services": "workspace:*",
     "@fnc314/packages.types": "workspace:*"
+  },
+  "devDependencies": {
+    "@fnc314/configs.typescript": "workspace:*",
+    "@fnc314/configs.eslint": "workspace:*"
   }
 }

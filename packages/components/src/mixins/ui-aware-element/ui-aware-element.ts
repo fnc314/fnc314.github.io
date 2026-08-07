@@ -1,5 +1,5 @@
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
-import { configsService } from "@fnc314/packages.services";
+import { configsService, themeService } from "@fnc314/packages.services";
 import {
     APP_CONFIGS_CHANGE_EVENT_NAME,
     type AppConfigsChangeEvent,
@@ -80,6 +80,21 @@ export abstract class UIAwareElement extends LitElement {
    * @returns {TemplateResult} The rendered {@link TemplateResult}
    */
   protected getActiveIcon(variants: IconVariants): TemplateResult {
-    return this.darkMode ? variants.dark : variants.light;
+    switch (configsService.loadConfigs().colorScheme.name) {
+      case CONFIG_COLOR_SCHEME_NAMES.DARK:
+        return variants.dark;
+      case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
+        return variants.light;
+      case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
+      default:
+        switch (themeService.devicePreference()) {
+          case CONFIG_COLOR_SCHEME_NAMES.DARK:
+            return variants.dark;
+          case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
+            return variants.light;
+          case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
+            return variants.default ?? variants.light;
+        }
+    }
   }
 }

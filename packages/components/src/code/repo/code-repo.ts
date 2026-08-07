@@ -4,9 +4,9 @@ import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
-import { readCSSProperty } from "@fnc314/packages.design-tokens";
+import { Icons } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
-import { type TemplateResult, html, nothing, unsafeCSS } from "lit";
+import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
@@ -132,16 +132,6 @@ export class CodeRepo extends UIAwareElement {
   }
 
   override render() {
-    const token =
-      this.darkMode ?
-        "--icons-logos-organization-github-dark-icon-svg"
-      : "--icons-logos-organization-github-light-icon-svg";
-
-    const tokenSvg = readCSSProperty(token);
-    const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: url('${tokenSvg}');
-    `);
-
     const activeTech = this.activeRevealIndex !== null ? this.codeRepo.tech[this.activeRevealIndex] : null;
     const activeToken = activeTech ? this.getActiveIcon(activeTech.designToken) : html`${nothing}`;
     const isFolded = this.activeRevealIndex !== null && !this.isClosing;
@@ -152,23 +142,27 @@ export class CodeRepo extends UIAwareElement {
     return html`
       <article
         class=${classMap(classes)}
-        style=${borderStyle.cssText}
       >
         <!-- TOP FOLD SECTION: Header & Synopsis -->
         <div class="fold-top">
           <header>
-            <h3 class="md-typescale-headline-small">${this.codeRepo.name}</h3>
+            <h3 id="repo-name" class="md-typescale-headline-small">${this.codeRepo.name}</h3>
             <a
               href="${this.codeRepo.url}"
               target="_blank"
               rel="noopener noreferrer"
               title="${this.codeRepo.repo}"
             >
-              ${this.codeRepo.repo}
+              <span aria-hidden="true">
+                ${Icons.Logos.Organization.Github.mask}
+              </span>
+              <span>
+                ${this.codeRepo.repo}
+              </span>
             </a>
           </header>
 
-          <md-divider></md-divider>
+          <md-divider inset></md-divider>
 
           <section
             class="synopsis"

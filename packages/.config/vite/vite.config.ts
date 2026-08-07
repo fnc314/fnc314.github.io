@@ -18,7 +18,8 @@ async function readPackageJson(dirName: string): Promise<any & { peerDependecies
 export function buildConfig(dirName: string): UserConfigFnPromise {
   return async ({ command, mode, isSsrBuild, isPreview }) => {
     const pkjson = await readPackageJson(dirName);
-    return {
+
+    const config = {
       root: `${process.cwd()}/packages/${dirName}`,
       publicDir: `${process.cwd()}/packages/${dirName}/assets`,
       build: {
@@ -90,6 +91,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
         dedupe: [
+          "@fnc314/packages.*",
           "lit",
           "lit-html",
           "lit-element",
@@ -155,5 +157,19 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         }),
       ]
     };
+
+    console.log(
+      JSON.stringify(
+        {
+          dirName,
+          pkjson,
+          config
+        },
+        null,
+        2
+      )
+    );
+
+    return config;
   }
 }

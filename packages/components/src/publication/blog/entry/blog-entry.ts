@@ -1,14 +1,15 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
 import { TextStyles } from "@/lib/styles";
-import { readCSSProperty } from "@fnc314/packages.design-tokens";
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type BlogEntryJson } from "@fnc314/packages.types";
-import { html, unsafeCSS } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 export { type BlogEntryJson } from "@fnc314/packages.types";
 
+export const TAG_NAME: string = "blog-entry";
 /**
  * @summary Represents a published series entry.
  *
@@ -16,7 +17,7 @@ export { type BlogEntryJson } from "@fnc314/packages.types";
  * @class BlogSeries
  * @extends {UIAwareElement}
  */
-@customElement("blog-entry")
+@customElement(TAG_NAME)
 export class BlogEntry extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, BlogEntryStyles];
@@ -25,18 +26,11 @@ export class BlogEntry extends UIAwareElement {
   blogEntry: BlogEntryJson = {} as BlogEntryJson;
 
   override render() {
-    const variant = this.darkMode ? "dark" : "light";
-    const logoToken = `--icons-logos-organization-medium-${variant}-icon-svg`;
-    const logoTokenSvg = readCSSProperty(logoToken);
     const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
-    const borderStyle = unsafeCSS(`
-      --dynamic-border-background-image: url('${logoTokenSvg}');
-    `);
 
     return html`
       <article
         class="dynamic-border-host"
-        style=${borderStyle.cssText}
       >
         <header>
           <h3 class="md-typescale-title-large">${this.blogEntry.title}</h3>
@@ -57,13 +51,11 @@ export class BlogEntry extends UIAwareElement {
             aria-describedby="medium-link-label"
             title=${`Read ${this.blogEntry.title} on Medium`}
           >
-            <img
-              loading="lazy"
-              role="img"
+            <span
               aria-describedby="medium-link-label"
-              .src=${logoTokenSvg}
-              alt="Medium logo"
-            />
+              >
+              ${Icons.Logos.Organization.Medium.mask}
+            </span>
             <span
               class="md-typescale-label-large"
               id="medium-link-label"
@@ -79,6 +71,6 @@ export class BlogEntry extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "blog-entry": BlogEntry;
+    [TAG_NAME]: BlogEntry;
   }
 }
