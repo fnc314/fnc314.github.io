@@ -84,6 +84,7 @@
   },
   "devDependencies": {
     "@addasoft/skeleton-component-generator": "catalog:devDependencies",
+    "@arcmantle/vite-plugin-minify-css-literal": "catalog:devDependencies",
     "@custom-elements-manifest/analyzer": "catalog:devDependencies",
     "@custom-elements-manifest/find-dependencies": "catalog:devDependencies",
     "@custom-elements-manifest/to-markdown": "catalog:devDependencies",

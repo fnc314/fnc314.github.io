@@ -29,6 +29,7 @@ catalogs:
     prop-for-that: 0.7.12
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
+    "@arcmantle/vite-plugin-minify-css-literal": 1.0.3 # https://www.npmjs.com/package/@arcmantle/vite-plugin-minify-css-literal
     "@custom-elements-manifest/analyzer": 0.11.0
     "@custom-elements-manifest/find-dependencies": 0.0.7
     "@custom-elements-manifest/to-markdown": 0.1.0
