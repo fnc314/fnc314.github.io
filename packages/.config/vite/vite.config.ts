@@ -91,7 +91,11 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         extensions: [".ts", ".mts", ".js", ".mjs", ".json", ".css"],
         tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
         dedupe: [
-          "@fnc314/packages.*",
+          "@fnc314/packages.components",
+          "@fnc314/packages.data",
+          "@fnc314/packages.design-tokens",
+          "@fnc314/packages.services",
+          "@fnc314/packages.types",
           "lit",
           "lit-html",
           "lit-element",

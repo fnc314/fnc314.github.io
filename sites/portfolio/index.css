@@ -89,6 +89,7 @@ body {
   overscroll-behavior: contain;
   padding: unset;
   scroll-padding-block-end: var(--globals-buffer-height);
+  scrollbar-color: var(--md-sys-color-on-primary-container) var(--md-sys-color-primary-container);
   scrollbar-gutter: stable;
   writing-mode: horizontal-tb;
 }
