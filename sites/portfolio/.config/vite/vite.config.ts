@@ -2,7 +2,7 @@ import { DevTools } from "@vitejs/devtools";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
-import { type PreRenderedAsset } from "rolldown";
+import { type PreRenderedAsset, type PreRenderedChunk } from "rolldown";
 import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import visualizer from "rollup-plugin-visualizer";
 import Info from "unplugin-info/vite";
@@ -207,8 +207,8 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         ],
         plugins: [
           bundleAnalyzerPlugin({
-            fileName: "bundle-analysis.json",
-            format: "json",
+            fileName: ".vite/bundle-analysis.md",
+            format: "md",
           })
         ],
         tsconfig: path.resolve(process.cwd(), "sites/portfolio", "tsconfig.json"),
@@ -221,7 +221,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         output: {
           assetFileNames: (chunkInfo: PreRenderedAsset) => {
             if (chunkInfo.names.at(0)?.endsWith("css") ?? false) {
-              return `@fnc314/sites.portfolio-[hash].[ext]`;
+              return `@fnc314/sites.portfolio/site-[hash].[ext]`;
             }
             return `${chunkInfo.names.at(0)!.replaceAll(/\..*/g, "-[hash].[ext]")}`;
           },
@@ -234,18 +234,24 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
               {
                 name: "lit",
                 test: /lit/
+              },
+              {
+                name: "design-tokens",
+                test: /packages\.design-tokens/
               }
             ]
           },
           comments: !dynamicConfig.isProduction,
           dir: dynamicConfig.outDir,
-          entryFileNames: `@fnc314/sites.portfolio-[hash].js`,
+          entryFileNames: `@fnc314/sites.portfolio/site-[hash].js`,
+          chunkFileNames: (chunkInfo: PreRenderedChunk) => `@fnc314/sites.portfolio/[name]-[hash].js`,
           esModule: true,
           format: "esm",
           minify: dynamicConfig.isProduction,
           // preserveModules: true,
           // preserveModulesRoot: "node_modules/.pnpm/",
           strict: true,
+          cleanDir: true,
         },
         platform: "browser",
         transform: {
