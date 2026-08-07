@@ -18,6 +18,8 @@
     "@fnc314/packages.types": "workspace:*"
   },
   "devDependencies": {
+    "@fnc314/configs.custom-elements-manifest": "workspace:*",
+    "@fnc314/configs.mise": "workspace:*",
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
     "@fnc314/packages.data": "workspace:*",

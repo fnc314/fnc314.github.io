@@ -1100,6 +1100,12 @@ importers:
         specifier: catalog:dependencies
         version: 0.45.10
     devDependencies:
+      '@fnc314/configs.custom-elements-manifest':
+        specifier: workspace:*
+        version: link:../../configs/custom-elements-manifest
+      '@fnc314/configs.mise':
+        specifier: workspace:*
+        version: link:../../configs/mise
       '@fnc314/configs.postcss':
         specifier: workspace:*
         version: link:../../configs/postcss
