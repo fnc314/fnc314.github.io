@@ -33,7 +33,7 @@ jobs:
         shell: zsh {0}
 
       - name: Mise Deps
-        run: mise deps -vv
+        run: mise deps -vv -f --monorepo
         shell: zsh {0}
 
       - env:

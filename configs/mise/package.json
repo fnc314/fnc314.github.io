@@ -5,6 +5,6 @@
     "access": "public"
   },
   "files": [
-    "mise.toml"
+    "mise-config.toml"
   ]
 }
