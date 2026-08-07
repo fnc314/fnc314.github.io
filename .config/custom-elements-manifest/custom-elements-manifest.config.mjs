@@ -4,7 +4,6 @@ import { cemValidatorPlugin } from "@wc-toolkit/cem-validator";
 import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
 import { modulePathResolverPlugin } from "@wc-toolkit/module-path-resolver";
 import { typeParserPlugin } from "@wc-toolkit/type-parser";
-import BetterLitTypesPlugin from "cem-plugin-better-lit-types";
 import { jsdocExamplePlugin } from "cem-plugin-jsdoc-example";
 import { readmePlugin } from "cem-plugin-readme";
 import path from "node:path";
@@ -71,7 +70,6 @@ export default {
       "~build/time": [path.resolve(process.cwd(), ".config/custom-elements-manifest/empty-module.js")],
       "~build": [path.resolve(process.cwd(), "node_modules")],
     },
-    moduleType: true,
     tsconfig: "auto",
     modules: [
       "node_modules",
@@ -79,7 +77,6 @@ export default {
       "configs",
     ],
     moduleType: true,
-    preferRelative: true,
     // tsconfig: {
     //   configFile: path.resolve(process.cwd(), "tsconfig.json"),
     // },
@@ -118,11 +115,11 @@ export default {
     }),
     typeParserPlugin({
       debug: isDev,
-      parseObjectTypes: "full",
+      parseObjectTypes: "none",
       parseParameters: true,
       propertyName: "parsedType",
     }),
-    BetterLitTypesPlugin,
+    // BetterLitTypesPlugin,
     modulePathResolverPlugin({
       fileName: customElementsManifestJSON,
       modulePathTemplate: (modulePath) => {
@@ -131,7 +128,7 @@ export default {
             modulePath,
           }, null, 2)
         );
-        return modulePath.replace("src", "dist/types").replace(".ts", ".js");
+        return modulePath;
       },
       outdir: docsDir,
       debug: true,

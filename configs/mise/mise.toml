@@ -1,0 +1,17 @@
+# Reusable monorepo package documentation tasks
+[tasks."docs:cem"]
+  description = "Execute local isolated Custom Elements Manifest analysis"
+  run = "pnpm custom-elements-manifest analyze"
+  inputs = ["src/**/*.ts", "package.json"]
+  # Automatically targets the centralized sites directory based on consumer mapping
+  outputs = ["../../sites/docs/custom-elements-manifest/{{ exec(command='basename', args=[config_dir]) }}/custom-elements-manifest.json"]
+
+[tasks."docs:wca-json"]
+  description = "Generate local web component analysis json metadata file"
+  run = "pnpm web-component-analyzer src/**/*.ts --outFile ../../sites/docs/wca/json/{{ exec(command='basename', args=[config_dir]) }}.json --format json"
+  inputs = ["src/**/*.ts"]
+
+[tasks."docs:wca-md"]
+  description = "Generate local web component analysis markdown documentation"
+  run = "pnpm web-component-analyzer src/**/*.ts --outFile ../../sites/docs/wca/markdown/{{ exec(command='basename', args=[config_dir]) }}.md --format markdown"
+  inputs = ["src/**/*.ts"]

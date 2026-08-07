@@ -1,0 +1,19 @@
+{
+  "name": "@fnc314/configs.custom-elements-manifest",
+  "version": "3.1.0",
+  "type": "module",
+  "main": "./custom-elements-manifest.config.mjs",
+  "files": [
+    "custom-elements-manifest.config.mjs"
+  ],
+  "peerDependencies": {
+    "@custom-elements-manifest/analyzer": "catalog:devDependencies",
+    "@wc-toolkit/cem-inheritance": "catalog:devDependencies",
+    "@wc-toolkit/cem-sorter": "catalog:devDependencies",
+    "@wc-toolkit/cem-validator": "catalog:devDependencies",
+    "@wc-toolkit/jsdoc-tags": "catalog:devDependencies",
+    "@wc-toolkit/type-parser": "catalog:devDependencies",
+    "cem-plugin-jsdoc-example": "catalog:devDependencies",
+    "cem-plugin-readme": "catalog:devDependencies"
+  }
+}

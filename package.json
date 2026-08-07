@@ -30,7 +30,9 @@
   },
   "workspaces": [
     "configs/@pwrs-cem",
+    "configs/custom-elements-manifest",
     "configs/eslint",
+    "configs/mise",
     "configs/postcss",
     "configs/prettier",
     "configs/typedoc",

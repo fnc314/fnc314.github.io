@@ -63,11 +63,11 @@ echo
 
 [[ "$LOG_STEP" == "wca" || "$LOG_STEP" == "log-all" ]] && create_log "wca"
 print -r -- "dx:wca"
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./sites/docs/wca/json/web-component-analyzer.json --format json
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./sites/docs/wca/json --format json
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outFile ./sites/docs/wca/markdown/README.md --format markdown
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir ./sites/docs/wca/markdown --format markdown
-pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/lib/**/*.ts" --outDir .vscode/wca --format vscode
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/src/**/*.ts" --outFile ./sites/docs/wca/json/web-component-analyzer.json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/src/**/*.ts" --outDir ./sites/docs/wca/json --format json
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/src/**/*.ts" --outFile ./sites/docs/wca/markdown/README.md --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/src/**/*.ts" --outDir ./sites/docs/wca/markdown --format markdown
+pnpm web-component-analyzer "packages/{components,data,design-tokens,services,types}/src/**/*.ts" --outDir .vscode/wca --format vscode
 echo
 
 [[ "$LOG_STEP" == "typedoc" || "$LOG_STEP" == "log-all" ]] && create_log "typedoc"

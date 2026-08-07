@@ -88,6 +88,21 @@ export default {
       PropertyDeclaration: "https://lit.dev/docs/api/ReactiveElement/#PropertyDeclaration",
       unsafeCSS: "https://lit.dev/docs/api/styles/#unsafeCSS",
     },
+    "@fnc314/packages.components": {
+      "*": `${process.cwd()}/packages/components`
+    },
+    "@fnc314/packages.data": {
+      "*": `${process.cwd()}/packages/data`
+    },
+    "@fnc314/packages.design-tokens": {
+      "*": `${process.cwd()}/packages/design-tokens`
+    },
+    "@fnc314/packages.services": {
+      "*": `${process.cwd()}/packages/services`
+    },
+    "@fnc314/packages.types": {
+      "*": `${process.cwd()}/packages/types`
+    },
     "@fnc314/fnc314.github.io": {
       NavComponent: "#",
       WordTag: "#",
