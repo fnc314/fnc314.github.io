@@ -73,7 +73,7 @@ export class WorkExperience extends UIAwareElement {
    *   material `md-typescale` classes to {@link isNested}
    *
    * @private
-   * @param {boolean} forHeading A `boolean` toggling between `-headline-` and `-label-` styles
+   * @param {boolean} forHeading A `boolean` toggling between `-headline-` and `-title-` styles
    * @returns {Record<string, boolean>} The {@link Record} passed into {@link classMap}
    */
   private getTypescaleClassMap(forHeading: boolean): Record<string, boolean> {
@@ -83,8 +83,8 @@ export class WorkExperience extends UIAwareElement {
         "md-typescale-headline-medium": !this.isNested,
       } :
       {
-        "md-typescale-label-medium": this.isNested,
-        "md-typescale-label-large": !this.isNested,
+        "md-typescale-title-small": this.isNested,
+        "md-typescale-title-medium": !this.isNested,
       };
   }
 

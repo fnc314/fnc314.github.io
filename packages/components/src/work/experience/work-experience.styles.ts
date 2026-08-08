@@ -86,7 +86,7 @@ export const WorkExperienceStyles: CSSResult = css`
 
     /* ORG */
     > p:nth-child(2) {
-      color: var(--md-sys-color-tertiary);
+      color: var(--md-sys-color-on-primary-container);
       font-style: italic;
     }
 

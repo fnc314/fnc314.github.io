@@ -47,6 +47,10 @@ export const ProfileCardStyles: CSSResult = css`
     }
 
     article {
+      a {
+        color: var(--md-sys-color-on-surface-variant);
+      }
+
       h3,
       h4 {
         margin-block: unset;

@@ -10,12 +10,14 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type BioExtended } from "@fnc314/packages.types";
 
+export const TAG_NAME_CARD_PROFILE: string = "profile-card";
+
 /**
  * @summary A responsive card component that displays a profile photo and biography.
  *
  * @element profile-card
  */
-@customElement("profile-card")
+@customElement(TAG_NAME_CARD_PROFILE)
 export class ProfileCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, ProfileCardStyles];
@@ -79,9 +81,9 @@ export class ProfileCard extends UIAwareElement {
         return html`
           <section
             class="about-me-section"
-            aria-label="${section.title}"
+            .ariaLabelledby=${sectionHeaderId}
           >
-            <header>
+            <header .ariaLabelledby=${sectionHeaderId}>
               <h4
                 class="md-typescale-title-large"
                 id=${sectionHeaderId}
@@ -95,8 +97,8 @@ export class ProfileCard extends UIAwareElement {
       });
 
     return html`
-      <article aria-label="About Me">
-        <header>
+      <article aria-labelledby="about-me-heading">
+        <header aria-labelledby="about-me-heading">
           <h3
             class="md-typescale-headline-small"
             id="about-me-heading"
@@ -154,7 +156,10 @@ export class ProfileCard extends UIAwareElement {
         .bentoCardTitle=${"Profile"}
         .bentoTag=${BENTO_BOX_TYPES.profile}
       >
-        <article>${this.imageSection()} ${this.renderAboutMe()}</article>
+        <article>
+          ${this.imageSection()}
+          ${this.renderAboutMe()}
+        </article>
       </bento-card>
     `;
   }
@@ -162,6 +167,6 @@ export class ProfileCard extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "profile-card": ProfileCard;
+    [TAG_NAME_CARD_PROFILE]: ProfileCard;
   }
 }

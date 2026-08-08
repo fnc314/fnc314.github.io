@@ -149,10 +149,10 @@ export class CodeRepo extends UIAwareElement {
           <header aria-labelledby="repo-name">
             <h3 id="repo-name" class="md-typescale-headline-small">${this.codeRepo.name}</h3>
             <a
-              href="${this.codeRepo.url}"
+              href=${this.codeRepo.url}
               target="_blank"
               rel="noopener noreferrer"
-              title="${this.codeRepo.repo}"
+              title=${this.codeRepo.repo}
             >
               <span aria-hidden="true">
                 ${Icons.Logos.Organization.Github.mask}
@@ -175,6 +175,7 @@ export class CodeRepo extends UIAwareElement {
 
         <!-- 3D FOLDING REVEAL PANEL -->
         <code-reveal
+          id="reveal-panel"
           .tech=${activeTech}
           @start-hide-reveal=${() => {
             this.isClosing = true;
