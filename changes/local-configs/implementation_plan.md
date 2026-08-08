@@ -19,7 +19,7 @@ TS6/TS7 split so `tsc` uses `@typescript/typescript6` while source stays on
 ## Current state (verified)
 
 | Tool | Config package | Real config today | Exported? | Consumed? |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | typescript | `@fnc314/configs.typescript` | `configs/typescript/tsconfig.json` | ✅ `"."` → `./tsconfig.json` | ✅ packages `extends` + `workspace:*` |
 | eslint | `@fnc314/configs.eslint` | `configs/eslint/eslint.config.mjs` (dup of `.config/eslint/…`) | ✅ `"."` → `./eslint.config.mjs` | ❌ task uses `.config/eslint/…` |
 | prettier | `@fnc314/configs.prettier` | `.config/prettier/prettier.config.mts` + `.prettierignore` | ❌ | ❌ |
@@ -75,10 +75,11 @@ each config package consumed, e.g. `@fnc314/configs.prettier`, `@fnc314/configs.
   `dev-ex/tools/*.zsh`), pointing `--config` at the package-exported config and running within each
   package dir: eslint, prettier, typedoc, stylelint, cem.
 
-## Phase 6 — TS6/TS7 split (`tsc` on typescript6, source on typescript7)
+## ~~Phase 6 — TS6/TS7 split (`tsc` on typescript6, source on typescript7)~~ - DONE
 
 For every `package.json` currently using `"typescript": "catalog:typescript"`
 (root, `packages/*`, `firebase/functions/node`):
+
 - change to `"typescript": "catalog:typescript"` (→ `@typescript/typescript6`, TS 6, so `tsc`/eslint tooling works);
 - add/keep a TS7 identity for source/toolchain, e.g. `"typescript7": "catalog:typescript"` (→ `@typescript/typescript` 7.x).
 - confirm any vite/`unplugin-dts`/`ts-node` references that should consume `typescript7`.

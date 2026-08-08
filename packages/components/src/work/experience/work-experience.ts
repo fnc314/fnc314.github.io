@@ -4,6 +4,7 @@ import { WorkExperienceStyles } from "@/lib/work/experience/work-experience.styl
 import { type Job, type WorkDate } from "@fnc314/packages.types";
 import { html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type Job, type WorkDate } from "@fnc314/packages.types";
@@ -67,27 +68,46 @@ export class WorkExperience extends UIAwareElement {
   @property({ type: Array, attribute: "jobs" })
   jobs: Job[] = [];
 
+  /**
+   * Creates a {@link Record} of `string`: `boolean` relationships mapping
+   *   material `md-typescale` classes to {@link isNested}
+   *
+   * @private
+   * @param {boolean} forHeading A `boolean` toggling between `-headline-` and `-label-` styles
+   * @returns {Record<string, boolean>} The {@link Record} passed into {@link classMap}
+   */
+  private getTypescaleClassMap(forHeading: boolean): Record<string, boolean> {
+    return forHeading ?
+      {
+        "md-typescale-headline-small": this.isNested,
+        "md-typescale-headline-medium": !this.isNested,
+      } :
+      {
+        "md-typescale-label-medium": this.isNested,
+        "md-typescale-label-large": !this.isNested,
+      };
+  }
+
   /** Renders the experience entry, conditionally applying styles based on nesting level. */
   override render() {
-    const headerRole =
-      this.isNested ?
-        html`<h4 class="md-typescale-headline-small">${this.experienceRole}</h4>`
-      : html`<h3 class="md-typescale-headline-medium">${this.experienceRole}</h3>`;
+    const headerElement = this.isNested ?
+      html`<h4 class=${classMap(this.getTypescaleClassMap(true))}>${this.experienceRole}</h4>` :
+      html`<h3 class=${classMap(this.getTypescaleClassMap(true))}>${this.experienceRole}</h3>`;
 
     const org = html`
-      <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>${this.experienceOrg}</p>
+      <p class=${classMap(this.getTypescaleClassMap(false))}>${this.experienceOrg}</p>
     `;
 
     const dates = html`
       <p>
         <time
-          class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}
+          class=${classMap(this.getTypescaleClassMap(false))}
           datetime="${this.dateStart.stamp}"
           >${this.dateStart.text}</time
         >
         &mdash;
         <time
-          class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}
+          class=${classMap(this.getTypescaleClassMap(false))}
           datetime="${this.dateEnd.stamp}"
           >${this.dateEnd.text}</time
         >
@@ -97,13 +117,20 @@ export class WorkExperience extends UIAwareElement {
     const summary =
       this.experienceSummary.length ?
         html`
-          <p class=${this.isNested ? "md-typescale-label-medium" : "md-typescale-label-large"}>
+          <p class=${classMap(this.getTypescaleClassMap(false))}>
             ${unsafeHTML(this.experienceSummary)}
           </p>
-        `
-      : nothing;
+        ` :
+        html`${nothing}`;
 
-    const info = html`<header class="experience-info">${headerRole} ${org} ${dates} ${summary}</header>`;
+    const info = html`
+      <header class="experience-info">
+        ${headerElement}
+        ${org}
+        ${dates}
+        ${summary}
+      </header>
+    `;
 
     const content =
       this.jobs.length ?
@@ -112,13 +139,13 @@ export class WorkExperience extends UIAwareElement {
             ${this.jobs.map(
               (job: Job) => html`
                 <work-experience
-                  .isNested="${true}"
+                  .isNested=${true}
                   .dateStart=${job.dates.start}
                   .dateEnd=${job.dates.end}
                   .summaries=${job.summaries}
                   .experienceSummary=${job.summary ?? ""}
-                  .experienceRole="${job.role}"
-                  .experienceOrg="${job.client}"
+                  .experienceRole=${job.role}
+                  .experienceOrg=${job.client}
                 >
                 </work-experience>
               `,
@@ -133,24 +160,20 @@ export class WorkExperience extends UIAwareElement {
           <ul class="nested-summary">
             ${this.summaries.map((summary) => {
               const contentArray = summary.item.split(" ");
-              const newContent = contentArray
-                .map((word, index) => {
-                  if (index === 0) {
-                    return `<span class="first-word">${word}</span>`;
-                  } else {
-                    return word;
-                  }
-                })
-                .join(" ");
+              const newContent = [
+                `<span class="first-word">${contentArray.at(0)}</span>`,
+                ...contentArray.splice(1)
+              ].join(" ");
+
               return html`<li class="md-typescale-body-medium">${unsafeHTML(newContent)}</li>`;
             })}
           </ul>
-        `
-      : nothing;
+        ` :
+        html`${nothing}`;
 
     return this.isNested ?
-        html`<section class="experience-container">${info} ${summaries}</section>`
-      : html`<section class="experience-container">${info} ${content} ${summaries}</section>`;
+      html`<section class="experience-container">${info} ${summaries}</section>` :
+      html`<article class="experience-container">${info} ${content} ${summaries}</article>`;
   }
 }
 

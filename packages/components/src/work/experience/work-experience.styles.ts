@@ -25,7 +25,6 @@ export const WorkExperienceStyles: CSSResult = css`
 
   time {
     font-weight: var(--md-ref-typeface-weight-bold);
-    opacity: 0.8;
   }
 
   .nested-experiences {
@@ -34,7 +33,7 @@ export const WorkExperienceStyles: CSSResult = css`
   }
 
   .nested-experience {
-    border-inline-start: 2px solid var(--md-sys-color-primary);
+    border-inline-start: var(--sizes-thickness-xxs) solid var(--md-sys-color-primary);
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-s);
@@ -57,7 +56,7 @@ export const WorkExperienceStyles: CSSResult = css`
     span.first-word {
       color: var(--md-sys-color-on-surface-variant);
       font-family: var(--md-ref-typeface-brand);
-      font-size: var(--md-sys-typescale-title-small-size);
+      font-size: var(--md-sys-typescale-body-large-size);
       font-weight: var(--md-ref-typeface-weight-bold);
     }
 

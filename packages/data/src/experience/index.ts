@@ -2,9 +2,25 @@ import { type Experience } from "@fnc314/packages.types";
 
 export const Experiences: Experience[] = [
   {
+    employer: "Self",
+    role: "Freelance Software Engineer",
+    summary: "Developed a location-based dating app using React Native, Firebase, and Google Cloud Platform. Leveraged generative AI platforms (Claude, Gemini) to accelerate feature prototyping while retaining strict output validation.",
+    dates: {
+      start: {
+        stamp: "2026-01",
+        text: "January 2026"
+      },
+      end: {
+        stamp: "",
+        text: "current",
+      }
+    },
+    jobs: [],
+  },
+  {
     employer: "CGI Technologies and Solutions, Inc.",
     role: "Director, Consulting Expert",
-    summary: "",
+    summary: "Served as a technical expert, mentoring peer engineers and defining architectural strategy for enterprise applications across clients including PNC Financial Services, PPG Industries, and Samsung Electronics. Founded the CGI I.T. Girl Challenge, authoring foundational documentation and onboarding community partners including Pittsburgh Public Schools.",
     dates: {
       start: {
         stamp: "2014-08",
@@ -19,11 +35,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Mobile Redesign Architect Lead",
-        summary: "",
-        // date: {
-        //   start: "November 2023",
-        //   end: "June 2025"
-        // },
+        summary: "Led major architectural transformations, instituting a 'best-practice-by-default' philosophy to seamlessly bridge Android and backend systems.",
         dates: {
           start: {
             stamp: "2023-11",
@@ -36,24 +48,29 @@ export const Experiences: Experience[] = [
         },
         summaries: [
           {
-            item: 'Architected a "day-zero" native Android foundation using a modular-first approach, ensuring the codebase remains resilient against shifting executive requirements.',
+            item: "Coordinated cross-platform Design System governance, eliminating hardcoded UI values by mandating 100% semantic token adoption.",
           },
           {
-            item: "Spearheaded a strict, cross-platform Design System governance protocol, eliminating hardcoded UI values by mandating 100% semantic role-token adoption across Design, iOS, and Android teams.",
+            item: "Engineered a Gradle module-generation workflow to enforce project-wide naming conventions and prevent architectural drift.",
           },
           {
-            item: "Developed a suite of interactive Bash scripts to streamline developer onboarding and feature contributions, automating the generation of templated module skeletons and dynamically configuring CI/CD pipelines to support alternative build tool integrations.",
+            item: "Created a centralized workflow with enforced PR restrictions and direct integration with string management platforms (GL Strings/Applanga).",
           },
+          {
+            item: "Crafted interactive Bash scripts to streamline feature contributions and empower teams to build independently.",
+          },
+          {
+            item: "Accelerated development by enforcing a design token system, launching dynamic screen sizes, dark mode, and branded themes without increasing project scope.",
+          },
+          {
+            item: "Accelerated app development by enforcing design tokens, seamlessly integrating dark mode, branded themes, and dynamic screen sizes from day one without increasing scope or timeline."
+          }
         ],
       },
       {
         client: "PNC Financial Services",
         role: "Android Mobile Project Tech Lead",
-        summary: "",
-        // date: {
-        //   start: "January 2020",
-        //   end: "November 2023"
-        // },
+        summary: "Lead Architect for the flagship Android app (3.5M+ MAU), designing the mobile-to-backend interface for a highly resilient, high-volume in-app payment processing platform.",
         dates: {
           start: {
             stamp: "2020-01",
@@ -66,24 +83,29 @@ export const Experiences: Experience[] = [
         },
         summaries: [
           {
-            item: "Directed the architectural strategy for a flagship Android app with 3.5M+ active users, personally overseeing the implementation of a high-security in-app payment processing platform.",
+            item: "Modularized the entire codebase from a single “god-module” into a properly organized multi-module repository, reducing build times by 70% and isolating code contributions thereby reducing conflicts in merges.",
           },
           {
-            item: "Designed and deployed a series of custom <pre>bash</pre> scripts for CI/CD pipeline automation and environment validation, drastically reducing new-hire developer onboarding time and eliminating environment drift.",
+            item: "Automated credential setup and environment validation with custom Bash scripts, reducing developer onboarding time by 80%.",
           },
           {
-            item: "Established rigorous repository-wide coding standards, elevating the team's architectural output and technical maturity through meticulous, file-by-file pull request reviews and proactive mentorship.",
+            item: "Set technical standards and drove adoption across teams, breaking down complex initiatives into executable phases.",
           },
+          {
+            item: "Drove the implementation of in-app card payment acceptance integrating with a paired Bluetooth (BLE) card-reader device and third-party SDK.",
+          },
+          {
+            item: "Produced comprehensive technical documentation to facilitate knowledge sharing and maintain feature parity.",
+          },
+          {
+            item: "Partnered with Product and UX leadership to define roadmaps, aligning high-impact technical debt reduction with business value for stakeholders.",
+          }
         ],
       },
       {
         client: "PNC Financial Services",
         role: "Android Security & Authentication Tech Lead",
-        summary: "",
-        // date: {
-        //   start: "August 2019",
-        //   end: "January 2020"
-        // },
+        summary: "Engineered a modern authentication platform, migrating 10M+ active users with zero downtime. Leveraged a robust communication pipeline to maintain project coordination.",
         dates: {
           start: {
             stamp: "2019-08",
@@ -96,21 +118,20 @@ export const Experiences: Experience[] = [
         },
         summaries: [
           {
-            item: "Engineered a new authentication platform and migrated 10M+ active users to a modern Android stack with zero downtime.",
+            item: "Pioneered a Version Catalog (.toml) and KTS migration, creating a fully type-safe, auditable Gradle build system.",
           },
           {
-            item: "Pioneered a multi-file Version Catalog (<pre>.toml</pre>) and <pre>Gradle KTS</pre> build-script migration, moving the build system to a fully type-safe, auditable Gradle configuration.",
+            item: "Secured 98% of mobile fraud avenues and streamlined security integrations to enable rapid team adoption.",
+          },
+          {
+            item: "Designed observability patterns to pinpoint trouble spots in user flows and streamline issue reproduction.",
           },
         ],
       },
       {
         client: "PNC Financial Services",
         role: "Web Developer Lead",
-        summary: "",
-        // date: {
-        //   start: "August 2017",
-        //   end: "August 2019"
-        // },
+        summary: "Guided the growth and development of peer engineers with mentoring and coaching across a 25+ person organization, delivering high-impact, scalable solutions during the redesign of a large-scale enterprise platform.",
         dates: {
           start: {
             stamp: "2017-08",
@@ -121,20 +142,12 @@ export const Experiences: Experience[] = [
             text: "August 2019",
           },
         },
-        summaries: [
-          {
-            item: "Guided a web development crew of 25+ developers at project peak for the online banking platform redesign, laying the groundwork for organization-wide patterns while coaching teammates on best practices in modern web development.",
-          },
-        ],
+        summaries: [],
       },
       {
         client: "PNC Financial Services",
         role: "Web Developer",
-        summary: "",
-        // date: {
-        //   start: "August 2016",
-        //   end: "August 2017"
-        // },
+        summary: "Partnered closely with product owners and designers to architect and deliver the administration portal supporting the launch of the Zelle peer-to-peer payment platform.",
         dates: {
           start: {
             stamp: "2016-08",
@@ -145,20 +158,12 @@ export const Experiences: Experience[] = [
             text: "August 2017",
           },
         },
-        summaries: [
-          {
-            item: "Collaborated hand-in-hand with designers and product owners to develop the complex administration portal for the newly launched peer-to-peer payment platform, Zelle.",
-          },
-        ],
+        summaries: [],
       },
       {
         client: "Samsung",
         role: "Android Developer",
-        summary: "",
-        // date: {
-        //   start: "January 2015",
-        //   end: "August 2016"
-        // },
+        summary: "Designed solutions for complex, cross-system initiatives, delivering an Android FIDO authenticator proof-of-concept that spring-boarded institutional adoption of Samsung Knox and MFA.",
         dates: {
           start: {
             stamp: "2015-01",
@@ -169,20 +174,12 @@ export const Experiences: Experience[] = [
             text: "August 2016",
           },
         },
-        summaries: [
-          {
-            item: "Delivered an Android FIDO authenticator proof-of-concept that spring-boarded the institutional adoption of Samsung Knox and multi-factor authentication (MFA).",
-          },
-        ],
+        summaries: [],
       },
       {
         client: "PPG Industries",
         role: "Web Developer",
-        summary: "",
-        // date: {
-        //   start: "January 2015",
-        //   end: "August 2016"
-        // },
+        summary: "Reduced deployment time for brand-specific white-label applications from days to hours by streamlining deployment processes and enhancing automation tools.",
         dates: {
           start: {
             stamp: "2015-01",
@@ -205,8 +202,7 @@ export const Experiences: Experience[] = [
   {
     employer: "Pittsburgh Public Schools",
     role: "Teacher, Secondary Mathematics",
-    summary:
-      "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
+    summary: "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
     dates: {
       start: {
         stamp: "2007-09",

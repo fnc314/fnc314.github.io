@@ -2,7 +2,7 @@ import { type BioExtended } from "@fnc314/packages.types";
 
 export const Biography: BioExtended = {
   opener: `
-    I am a Principal Software Engineer and Mobile Architect with 10+ years of experience turning complex product ambitions into resilient, scalable systems. My specialties include enterprise Android, modular platforms, developer experience, and the standards that let teams move quickly without sacrificing quality or security.
+    I am a Principal Android Software Engineer with 10+ years of experience defining technical strategy and architecture for large-scale mobile platforms. Proven track record of leading cross-functional teams through major architectural transformations across Android and distributed backend systems. Trusted by leadership to foster engineering excellence, standardize best practices, reduce technical debt, and align technical initiatives with business value.
   `,
   sections: [
     {
