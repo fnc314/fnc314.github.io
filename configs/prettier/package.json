@@ -1,8 +1,11 @@
 {
-	"private": true,
+  "name": "@fnc314/configs.prettier",
+  "private": true,
   "version": "3.1.0",
   "publishConfig": {
     "access": "public"
   },
-  "name": "@fnc314/configs.prettier"
+  "exports": {
+    ".": "./prettier.config.mts"
+  }
 }

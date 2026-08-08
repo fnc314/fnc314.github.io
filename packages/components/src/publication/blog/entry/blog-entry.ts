@@ -6,6 +6,7 @@ import { type BlogEntryJson } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type BlogEntryJson } from "@fnc314/packages.types";
 
@@ -38,7 +39,7 @@ export class BlogEntry extends UIAwareElement {
         </header>
 
         <section>
-          <p class="md-typescale-body-large">${this.blogEntry.summary}</p>
+          <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
         </section>
 
         <footer>

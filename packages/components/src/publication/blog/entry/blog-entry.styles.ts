@@ -80,6 +80,10 @@ export const BlogEntryStyles: CSSResult = css`
       margin-block: var(--spaces-margin-xs);
       min-inline-size: 0;
       word-break: break-word;
+
+      pre {
+        display: inline;
+      }
     }
   }
 
@@ -94,7 +98,7 @@ export const BlogEntryStyles: CSSResult = css`
     padding-block-start: var(--spaces-padding-xs);
 
     md-divider {
-      margin-block: var(--spaces-margin-m);
+      margin-block: var(--spaces-margin-s);
       color: var(--publication-blog-entry-color);
     }
 

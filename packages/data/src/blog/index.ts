@@ -33,7 +33,7 @@ export const Blogs: BlogEntryJson[] = [
     },
     title: "Plugins Over Copy-Paste",
     summary:
-      "Eliminating build.gradle.kts boilerplate by abstracting configuration logic into custom Gradle plugins and extension functions for fine-grained sub-project control.",
+      "Eliminating <pre>build.gradle.kts</pre> boilerplate by abstracting configuration logic into custom Gradle plugins and extension functions for fine-grained sub-project control.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
   },

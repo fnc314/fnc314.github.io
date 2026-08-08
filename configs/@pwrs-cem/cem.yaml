@@ -1,0 +1,32 @@
+additionalPackages:
+  - "npm:lit@3.3.3"
+  - "npm:lit-element@4.2.2"
+  - "npm:lit-html@3.3.3"
+  - "npm:@material/web@2.5.0"
+  - "npm:material-symbols@0.45.10"
+
+generate:
+  exclude:
+    - .config/**/*.ts
+    - src/**/*.test.ts
+  files:
+    - src/**/*.ts
+    - node_modules/@material/web/custom-elements.json
+
+health:
+  failBelow: 75
+
+serve:
+  demos:
+    rendering: light
+  importMap:
+    generate: true
+  port: 9888
+  transforms:
+    css:
+      enabled: true
+      include:
+        - "node_modules/@fnc314/packages.design-tokens/dist/@fnc314.packages.design-tokens.css"
+        - "node_modules/material-symbols/**/*.css"
+
+sourceControlRootUrl: "https://github.com/fnc314/fnc314.github.io/tree/main/"

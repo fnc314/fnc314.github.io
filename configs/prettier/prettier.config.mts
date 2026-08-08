@@ -1,0 +1,22 @@
+import { type Config } from "prettier";
+
+const config: Config = {
+  arrowParens: "always",
+  bracketSameLine: false,
+  bracketSpacing: true,
+  parser: "typescript",
+  experimentalOperatorPosition: "start",
+  embeddedLanguageFormatting: "auto",
+  experimentalTernaries: true,
+  printWidth: 120,
+  quoteProps: "as-needed",
+  semi: true,
+  singleAttributePerLine: true,
+  singleQuote: false,
+  tabWidth: 2,
+  trailingComma: "all",
+  useTabs: false,
+  plugins: [],
+};
+
+export default config;

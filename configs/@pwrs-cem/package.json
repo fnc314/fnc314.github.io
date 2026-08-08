@@ -1,8 +1,11 @@
 {
-	"private": true,
+  "name": "@fnc314/configs.@pwrs-cem",
   "version": "3.1.0",
+	"private": true,
   "publishConfig": {
     "access": "public"
   },
-  "name": "@fnc314/configs.@pwrs-cem"
+  "exports": {
+    ".": "./cem.yaml"
+  }
 }

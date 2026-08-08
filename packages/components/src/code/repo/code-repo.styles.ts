@@ -204,6 +204,7 @@ export const CodeRepoStyles: CSSResult = css`
       }
 
       header {
+        flex-direction: row;
         margin-block: var(--spaces-none);
       }
     }

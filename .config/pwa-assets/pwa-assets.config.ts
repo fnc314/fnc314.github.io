@@ -15,6 +15,7 @@ export default defineConfig({
   images: [
     path.resolve(
       process.cwd(),
+      "sites/portfolio",
       "static/icons/icon.svg"
     )
   ],
