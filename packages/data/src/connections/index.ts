@@ -25,7 +25,6 @@ export const Connections: {
       label: "Call",
       href: "tel:+14127219550",
       text: "412-721-9550",
-      mdIcon: "call",
       title: "Call or text me directly",
       designToken: Icons.Material.Call,
     },
@@ -33,9 +32,8 @@ export const Connections: {
       label: "Email",
       href: "mailto:fnc314@gmail.com",
       text: "fnc314@gmail.com",
-      mdIcon: "mail",
       title: "Send me an email",
-      designToken: Icons.Material.Email,
+      designToken: Icons.Material.Mail,
     },
   },
   social: {
@@ -62,16 +60,14 @@ export const Connections: {
     googleDoc: {
       label: "Google Docs",
       href: "https://docs.google.com/document/d/e/2PACX-1vRScLyUSNJFYd3VoqStxDQpyQf4b9BpzE6YdjqSLWLDUA-2CsqAyWHIkkY3cpunEA/pub",
-      designToken: Icons.Logos.Tech.Google.Docs,
+      designToken: Icons.Material.Docs,
       title: "View resume on Google Docs",
-      mdIcon: "docs",
     },
     pdf: {
       label: "View PDF Resume",
       href: `https://files.fnc314.com/pdfs/FrancoNColaizzi_Resume.pdf?timestamp=${Date.now()}`,
       designToken: Icons.Material.PictureAsPdf,
       title: "Download resume in PDF format",
-      mdIcon: "picture_as_pdf",
     },
   },
 };

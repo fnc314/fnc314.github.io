@@ -238,6 +238,14 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
               {
                 name: "design-tokens",
                 test: /packages\.design-tokens/
+              },
+              {
+                name: "data",
+                test: /packages\.data/
+              },
+              {
+                name: "services",
+                test: /packages\.services/
               }
             ]
           },

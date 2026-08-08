@@ -4,10 +4,8 @@ import { type IconVariants } from "@/lib/design-tokens";
  * The two variants of the {@link @fnc314/packages.components!DirectConnection} widget
  */
 export type DirectConnectionMethod = "phone" | "email";
-export type DirectConnectionIcon = "call" | "mail";
 export interface ConnectionInstance {
   href: string;
-  mdIcon: DirectConnectionIcon;
   text: string;
   title: string;
   designToken: IconVariants;
@@ -26,7 +24,6 @@ export type ArtifactConnectionData = {
   title: string;
   href: string;
   designToken: IconVariants;
-  mdIcon: string;
   label: string;
 };
 

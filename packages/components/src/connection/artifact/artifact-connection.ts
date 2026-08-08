@@ -8,7 +8,21 @@ import { customElement, property } from "lit/decorators.js";
 
 export { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
 
-@customElement("artifact-connection")
+export const TAG_NAME_CONNECTION_ARTIFACT: string = "artifact-connection";
+
+/**
+ * A wrapper for `md-filled-icon-button` used to link to `.pdf` and `Google Doc`
+ *   artifacts
+ *
+ * @property {ArtifactConnectionType} artifactConnectionType - The type of the connection
+ * @property {ArtifactConnectionData} artifactConnectionData - The particular data driving widget variation
+ *
+ * @export
+ * @class ArtifactConnection
+ * @typedef {ArtifactConnection}
+ * @extends {UIAwareElement}
+ */
+@customElement(TAG_NAME_CONNECTION_ARTIFACT)
 export class ArtifactConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [TextStyles, ConnectionArtifactStyles];
@@ -20,20 +34,16 @@ export class ArtifactConnection extends UIAwareElement {
   artifactConnectionData: ArtifactConnectionData = {} as ArtifactConnectionData;
 
   override render(): TemplateResult {
-    // const imgSrc = readCSSProperty(
-    //   this.darkMode ? this.artifactConnectionData.designToken.dark : this.artifactConnectionData.designToken.light
-    // );
-    const cacheBustingUrl = `${this.artifactConnectionData.href}?t=${Date.now()}`;
     return html`
       <md-filled-icon-button
-        href="${cacheBustingUrl}"
+        href=${this.artifactConnectionData.href}
         target="_blank"
-        @click=${() => window.open(cacheBustingUrl, "_blank")}
+        @click=${() => window.open(this.artifactConnectionData.href, "_blank")}
         type="button"
         title=${this.artifactConnectionData.title}
         aria-label=${this.artifactConnectionData.title}
       >
-        <md-icon>${this.artifactConnectionData.mdIcon}</md-icon>
+        ${this.getActiveIcon(this.artifactConnectionData.designToken)}
       </md-filled-icon-button>
     `;
   }
@@ -41,6 +51,6 @@ export class ArtifactConnection extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "artifact-connection": ArtifactConnection;
+    [TAG_NAME_CONNECTION_ARTIFACT]: ArtifactConnection;
   }
 }

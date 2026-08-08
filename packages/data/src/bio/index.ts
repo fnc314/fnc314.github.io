@@ -34,7 +34,7 @@ export const Biography: BioExtended = {
       title: "Leadership Beyond The Codebase",
       content: {
         content: `
-          In addition to my technical capacities, I am deeply committed to widening access to technology opportunities for the next generation. I was a primary driver in launching CGI’s I.T. Girl Challenge (now <a href="https://www.pghtech.org/Innovate_IT" target="_blank">CGI Innovate I.T. Challenge</a>), a scholarship program awarding a $20,000 prize to students, <a href="https://www.cgi.com/sites/default/files/2021-01/2021-cgi-it-girl-challenge-participant-guide_1.pdf" target="_blank">drafting key documentation</a> and onboarding Pittsburgh Public Schools and The Academy Charter School.
+          In addition to my technical capacities, I am deeply committed to widening access to technology opportunities for the next generation. I was a primary driver in launching CGI’s I.T. Girl Challenge (now <a href="https://www.pghtech.org/Innovate_IT" target="_blank">CGI Innovate I.T. Challenge</a>), a scholarship program awarding a $20,000 prize to students, <a href="https://files.fnc314.com/pdfs/2021-cgi-it-girl-challenge-participant-guide_1.pdf" target="_blank">drafting key documentation</a> and onboarding Pittsburgh Public Schools and The Academy Charter School.
         `,
       },
     },

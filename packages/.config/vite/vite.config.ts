@@ -52,7 +52,33 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           logLevel: "debug",
           output: {
             assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
-            codeSplitting: true,
+            codeSplitting: {
+              groups: [
+                {
+                  name: "design-tokens",
+                  test: /packages\.design-tokens/
+                },
+                {
+                  name: "data",
+                  test: /packages\.data/
+                },
+                {
+                  name: "components",
+                  test: /packages\.components/
+                },
+                {
+                  name: "services",
+                  test: /packages\.services/
+                },
+                {
+                  name: "types",
+                  test: /packages\.types/
+                },
+              ].filter((g) =>
+                g.name !== dirName &&
+                Object.keys(pkjson.peerDependencies || {}).includes(`@fnc314/packages.${g.name}`)
+              ),
+            },
             comments: mode !== "production",
             dir: `${process.cwd()}/packages/${dirName}/dist`,
             entryFileNames: `@fnc314.packages.${dirName}.js`,

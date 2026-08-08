@@ -8,15 +8,18 @@ import { customElement, property } from "lit/decorators.js";
 
 export { type ConnectionInstance } from "@fnc314/packages.types";
 
+export const TAG_NAME_CONNECTION_DIRECT: string = "direct-connection";
+
 /**
  * Represents a subset of content in `connections.json` as
  *   outlined in {@link @fnc314/packages.types!ConnectionInstance}
  *
+ * @property {ConnectionInstance} connectionInstance - The data driving the widget variation
  * @class DirectConnection
  * @typedef {DirectConnection}
  * @extends {UIAwareElement}
  */
-@customElement("direct-connection")
+@customElement(TAG_NAME_CONNECTION_DIRECT)
 export class DirectConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [TextStyles, DirectConnectionStyles];
@@ -28,11 +31,8 @@ export class DirectConnection extends UIAwareElement {
   connectionInstance: ConnectionInstance = {} as ConnectionInstance;
 
   override render(): TemplateResult {
-    const buttonId = `button-direct-connection-${this.connectionInstance.mdIcon}-${this.connectionInstance.text}`;
-
     return html`
       <md-filled-icon-button
-        id="${buttonId}"
         href="${this.connectionInstance.href}"
         target="_blank"
         @click=${() => window.open(this.connectionInstance.href, "_blank")}
@@ -40,7 +40,7 @@ export class DirectConnection extends UIAwareElement {
         title=${this.connectionInstance.title}
         aria-label=${this.connectionInstance.title}
       >
-        <md-icon>${this.connectionInstance.mdIcon}</md-icon>
+        ${this.getActiveIcon(this.connectionInstance.designToken)}
       </md-filled-icon-button>
     `;
   }
@@ -48,6 +48,6 @@ export class DirectConnection extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "direct-connection": DirectConnection;
+    [TAG_NAME_CONNECTION_DIRECT]: DirectConnection;
   }
 }

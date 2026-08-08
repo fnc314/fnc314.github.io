@@ -7,8 +7,13 @@ import { customElement, property } from "lit/decorators.js";
 
 export { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
 
+export const TAG_NAME_CONNECTION_PROFESSIONAL: string = "professional-connection";
+
 /**
  * Box for links to LinkedIn, GitHub, and Medium
+ *
+ * @property {ProfessionalConnectionType} professionalConnectionType - To where the link directs
+ * @property {ProfessionalConnectionData} professionalConnectionData - Data driving widget variation
  *
  * @export
  * @class ProfessionalConnection
@@ -16,7 +21,7 @@ export { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } 
  * @extends {UIAwareElement}
  * @tag <professional-connection>
  */
-@customElement("professional-connection")
+@customElement(TAG_NAME_CONNECTION_PROFESSIONAL)
 export class ProfessionalConnection extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles: CSSResult[] = [TextStyles, ProfessionalConnectionStyles];
@@ -45,6 +50,6 @@ export class ProfessionalConnection extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "professional-connection": ProfessionalConnection;
+    [TAG_NAME_CONNECTION_PROFESSIONAL]: ProfessionalConnection;
   }
 }
