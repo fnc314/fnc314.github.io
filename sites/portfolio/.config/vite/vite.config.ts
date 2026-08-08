@@ -155,7 +155,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       minify: dynamicConfig.isProduction,
       chunkSizeWarningLimit: 600,
       cssMinify: dynamicConfig.isProduction,
-      cssCodeSplit: dynamicConfig.isProduction,
+      cssCodeSplit: false,
       sourcemap: !dynamicConfig.isProduction,
       outDir: dynamicConfig.outDir,
       assetsDir: "./assets",
