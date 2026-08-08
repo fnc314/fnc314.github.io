@@ -32,17 +32,18 @@ export class BlogEntry extends UIAwareElement {
     return html`
       <article
         class="dynamic-border-host"
+        aria-labelledby="blog-name"
       >
-        <header>
-          <h3 class="md-typescale-title-large">${this.blogEntry.title}</h3>
+        <header aria-labelledby="blog-name">
+          <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
           <h4 class="md-typescale-title-small">${this.blogEntry.series.title} #${blogEntryPadded}</h4>
         </header>
 
-        <section>
+        <section .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>
           <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
         </section>
 
-        <footer>
+        <footer aria-labelledby="medium-link-label">
           <md-divider inset></md-divider>
           <a
             href=${ifDefined(this.blogEntry.mediumUrl)}
@@ -53,7 +54,7 @@ export class BlogEntry extends UIAwareElement {
             title=${`Read ${this.blogEntry.title} on Medium`}
           >
             <span
-              aria-describedby="medium-link-label"
+              aria-labelledby="medium-link-label"
               >
               ${Icons.Logos.Organization.Medium.mask}
             </span>

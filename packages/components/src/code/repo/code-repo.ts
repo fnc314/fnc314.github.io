@@ -115,13 +115,13 @@ export class CodeRepo extends UIAwareElement {
     const variant = this.touchScreen || this.breakpoint === BreakpointLabels.mobile ? "icon-text" : "icon-only";
 
     return html`
-      <li>
+      <li .ariaLabel=${tech.name}>
         <word-tag
-          id="${tagId}"
+          id=${tagId}
           .hrefUrl=${tech.url}
           .word=${tech.name}
           .variant=${variant}
-          aria-expanded=${this.activeRevealIndex === wordIndex ? "true" : "false"}
+          .ariaExpanded=${this.activeRevealIndex === wordIndex ? "true" : "false"}
           aria-controls="reveal-panel"
           @click=${() => this._toggleReveal(tech, wordIndex)}
         >
@@ -142,10 +142,11 @@ export class CodeRepo extends UIAwareElement {
     return html`
       <article
         class=${classMap(classes)}
+        aria-labelledby="repo-name"
       >
         <!-- TOP FOLD SECTION: Header & Synopsis -->
         <div class="fold-top">
-          <header>
+          <header aria-labelledby="repo-name">
             <h3 id="repo-name" class="md-typescale-headline-small">${this.codeRepo.name}</h3>
             <a
               href="${this.codeRepo.url}"
@@ -166,7 +167,7 @@ export class CodeRepo extends UIAwareElement {
 
           <section
             class="synopsis"
-            aria-label="Synopsis"
+            .ariaLabel=${`Synopsys for ${this.codeRepo.name}`}
           >
             <p class="md-typescale-body-large">${unsafeHTML(this.codeRepo.description)}</p>
           </section>
@@ -200,7 +201,7 @@ export class CodeRepo extends UIAwareElement {
         <div class="fold-bottom">
           <footer aria-label="Technologies used">
             <ul @keydown=${this._handleGridKeyDown}>
-              ${this.codeRepo.tech.map((tech, index) => this.createWordTagLI(tech, index))}
+              ${this.codeRepo.tech.map(this.createWordTagLI)}
             </ul>
           </footer>
         </div>
