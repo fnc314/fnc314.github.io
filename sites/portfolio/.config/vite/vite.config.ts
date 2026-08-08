@@ -236,6 +236,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
                 test: /lit/
               },
               {
+                name: "components",
+                test: /packages\.components/
+              },
+              {
                 name: "design-tokens",
                 test: /packages\.design-tokens/
               },
@@ -246,6 +250,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
               {
                 name: "services",
                 test: /packages\.services/
+              },
+              {
+                name: "types",
+                test: /packages\.types/
               }
             ]
           },
@@ -254,7 +262,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           entryFileNames: `@fnc314/sites.portfolio/site-[hash].js`,
           chunkFileNames: (chunkInfo: PreRenderedChunk) => `@fnc314/sites.portfolio/[name]-[hash].js`,
           esModule: true,
-          format: "esm",
           minify: dynamicConfig.isProduction,
           // preserveModules: true,
           // preserveModulesRoot: "node_modules/.pnpm/",

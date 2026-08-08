@@ -4,7 +4,7 @@ import process from "node:process";
 import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
-import { type UserConfigFnPromise } from "vite";
+import { type LibraryFormats, type UserConfigFnPromise } from "vite";
 
 async function readPackageJson(dirName: string): Promise<any & { peerDependecies: Record<string, string> }> {
   const dirPath: string = path.resolve(
@@ -28,7 +28,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           name: `@fnc314.packages.${dirName}`,
           fileName: `@fnc314.packages.${dirName}`,
           cssFileName: `@fnc314.packages.${dirName}`,
-          formats: ["es"],
+          formats: ["es" as LibraryFormats],
         },
         rolldownOptions: {
           plugins: [
@@ -49,41 +49,21 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
             // /^@material\/web($|\/)/,
             // /^material-symbols($|\/)/,
           ],
-          logLevel: "debug",
           output: {
             assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
             codeSplitting: {
-              groups: [
-                {
-                  name: "design-tokens",
-                  test: /packages\.design-tokens/
-                },
-                {
-                  name: "data",
-                  test: /packages\.data/
-                },
-                {
-                  name: "components",
-                  test: /packages\.components/
-                },
-                {
-                  name: "services",
-                  test: /packages\.services/
-                },
-                {
-                  name: "types",
-                  test: /packages\.types/
-                },
-              ].filter((g) =>
-                g.name !== dirName &&
-                Object.keys(pkjson.peerDependencies || {}).includes(`@fnc314/packages.${g.name}`)
-              ),
+              groups: Object.keys(pkjson.peerDependencies || {}).map((dep) => {
+                const depGroupName = dep.replace("@fnc314/packages.", "");
+                return {
+                  name: depGroupName,
+                  test: new RegExp(`/packages\.${depGroupName}/`)
+                };
+              })
             },
             comments: mode !== "production",
             dir: `${process.cwd()}/packages/${dirName}/dist`,
             entryFileNames: `@fnc314.packages.${dirName}.js`,
             esModule: true,
-            format: "esm",
             minify: false,
             // preserveModules: true,
             // preserveModulesRoot: "lib",
@@ -91,12 +71,12 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           },
           transform: {
             typescript: {
-                allowNamespaces: true,
-                declaration: {
-                  sourcemap: mode !== "production",
-                },
-                rewriteImportExtensions: "remove",
-              }
+              allowNamespaces: true,
+              declaration: {
+                sourcemap: mode !== "production",
+              },
+              rewriteImportExtensions: true,
+            }
           },
           treeshake: false,
           tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
@@ -106,7 +86,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         copyPublicDir: true,
         minify: false,
         cssMinify: false,
-        cssCodeSplit: mode === "production",
+        cssCodeSplit: false,
         sourcemap: mode !== "production",
         platform: "browser",
         reportCompressedSize: true,
