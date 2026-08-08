@@ -46,10 +46,16 @@ export abstract class UIAwareElement extends LitElement {
    *   {@link @fnc314/packages.design-tokens!Breakpoints.BREAKPOINT_LABELS}
    */
   @state()
-  protected breakpoint: BreakpointLabel = readCSSProperty(CSS_VARIABLE_BREAKPOINT_LABEL) as BreakpointLabel;
+  protected breakpoint: BreakpointLabel = readCSSProperty(
+    CSS_VARIABLE_BREAKPOINT_LABEL,
+    window.document.documentElement
+  ) as BreakpointLabel;
 
   private onBreakpointChange: () => void = () => {
-    this.breakpoint = readCSSProperty(CSS_VARIABLE_BREAKPOINT_LABEL) as BreakpointLabel;
+    this.breakpoint = readCSSProperty(
+      CSS_VARIABLE_BREAKPOINT_LABEL,
+      window.document.documentElement
+    ) as BreakpointLabel;
   };
 
   /**
@@ -57,7 +63,7 @@ export abstract class UIAwareElement extends LitElement {
    *   and tests against `"true"`,
    */
   @state()
-  protected touchScreen: boolean = readCSSProperty(CSS_VARIABLE_TOUCH_SCREEN, this, false) === "true";
+  protected touchScreen: boolean = readCSSProperty(CSS_VARIABLE_TOUCH_SCREEN, window.document.documentElement, false) === "true";
 
   override connectedCallback(): void {
     super.connectedCallback();

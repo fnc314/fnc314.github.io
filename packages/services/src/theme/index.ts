@@ -16,13 +16,15 @@ import {
     type ColorScheme,
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
+    type ColorSchemeContrast,
     type ColorSchemeRoles,
     type ColorString,
     type MaterialSchemeName,
     type ThemeConfig,
     type ThemeConfigs,
     WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK,
-    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT
+    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT,
+    WINDOW_MEDIA_PREFERS_CONTRAST_MORE
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -40,6 +42,10 @@ export * from "@/lib/theme/utils";
 export interface ThemeService {
   devicePreference(): ColorScheme;
 
+  deviceColorScheme(): ColorScheme;
+
+  deviceColorContrast(): ColorSchemeContrast;
+
   currentThemeConfig(): ThemeConfig;
 
   currentMaterialSchemeName(): MaterialSchemeName;
@@ -51,6 +57,15 @@ class ThemeServiceImpl implements ThemeService {
   #configService: ConfigsService;
   constructor(configService: ConfigsService) {
     this.#configService = configService;
+  }
+
+  deviceColorScheme(): ColorScheme {
+    return this.devicePreference();
+  }
+
+  deviceColorContrast(): ColorSchemeContrast {
+    return window.matchMedia(WINDOW_MEDIA_PREFERS_CONTRAST_MORE).matches ?
+      CONFIG_COLOR_CONTRAST_NAMES.HIGH : CONFIG_COLOR_CONTRAST_NAMES.NORMAL;
   }
 
   devicePreference(): ColorScheme {

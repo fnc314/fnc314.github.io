@@ -24,5 +24,9 @@ export type AppConfigsChangeEvent = CustomEvent<{ appConfigs: AppConfigs }>;
 
 export const ELEMENT_ID_META_TAG: string = "meta-theme-color";
 export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME: string = "(prefers-color-scheme: dark)";
+export const WINDOW_MEDIA_PREFERS_CONTRAST_MORE: string = "(prefers-contrast: more)";
+export const WINDOW_MEDIA_PREFERS_CONTRAST_LESS: string = "(prefers-contrast: less)";
+export const WINDOW_MEDIA_PREFERS_CONTRAST_NONE: string = "(prefers-contrast: no-preference)";
+export const WINDOW_MEDIA_PREFERS_CONTRAST_CUSTOM: string = "(prefers-contrast: custom)";
 export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK: string = "(prefers-color-scheme: dark)";
 export const WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT: string = "(prefers-color-scheme: light)";

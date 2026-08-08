@@ -201,7 +201,7 @@ export class CodeRepo extends UIAwareElement {
         <div class="fold-bottom">
           <footer aria-label="Technologies used">
             <ul @keydown=${this._handleGridKeyDown}>
-              ${this.codeRepo.tech.map(this.createWordTagLI)}
+              ${this.codeRepo.tech.map((tech, index) => this.createWordTagLI(tech, index))}
             </ul>
           </footer>
         </div>
