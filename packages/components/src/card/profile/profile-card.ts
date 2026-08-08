@@ -132,6 +132,7 @@ export class ProfileCard extends UIAwareElement {
               sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 33vw"
             />
             <img
+              type="image/webp"
               class="profile-picture"
               loading="eager"
               src=${this.photoData.src}

@@ -8,7 +8,9 @@
     "@fnc314/packages.data": "workspace:*",
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.services": "workspace:*",
-    "@fnc314/packages.types": "workspace:*"
+    "@fnc314/packages.types": "workspace:*",
+    "@material/web": "catalog:dependencies",
+    "material-symbols": "catalog:dependencies"
   },
   "devDependencies": {
     "@fnc314/configs.typescript": "workspace:*",
