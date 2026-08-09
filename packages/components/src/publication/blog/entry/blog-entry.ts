@@ -11,6 +11,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 export { type BlogEntryJson } from "@fnc314/packages.types";
 
 export const TAG_NAME: string = "blog-entry";
+
 /**
  * @summary Represents a published series entry.
  *

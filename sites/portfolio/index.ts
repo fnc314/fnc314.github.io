@@ -13,7 +13,7 @@ import {
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
     ELEMENT_ID_META_TAG,
-    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK
+    WindowMedia
 } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 import "material-symbols/outlined.css";
@@ -60,7 +60,7 @@ const applyColorSchemeConfigs: (configs: ColorSchemeConfig) => void = (configs: 
 /** Bootstrapping listener for {@link window.onload} */
 const windowOnLoad = () => {
 
-  window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).addEventListener("change", onThemeChange);
+  window.matchMedia(WindowMedia.PrefersColorScheme.Dark).addEventListener("change", onThemeChange);
 
   if (typescaleStyles.styleSheet) {
     window.document.adoptedStyleSheets.push(typescaleStyles.styleSheet);

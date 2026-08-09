@@ -22,9 +22,7 @@ import {
     type MaterialSchemeName,
     type ThemeConfig,
     type ThemeConfigs,
-    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK,
-    WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT,
-    WINDOW_MEDIA_PREFERS_CONTRAST_MORE
+    WindowMedia
 } from "@fnc314/packages.types";
 
 export * from "@/lib/theme/atl-in-white";
@@ -64,15 +62,15 @@ class ThemeServiceImpl implements ThemeService {
   }
 
   deviceColorContrast(): ColorSchemeContrast {
-    return window.matchMedia(WINDOW_MEDIA_PREFERS_CONTRAST_MORE).matches ?
+    return window.matchMedia(WindowMedia.PrefersContrast.More).matches ?
       CONFIG_COLOR_CONTRAST_NAMES.HIGH : CONFIG_COLOR_CONTRAST_NAMES.NORMAL;
   }
 
   devicePreference(): ColorScheme {
-    return window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
+    return window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
       CONFIG_COLOR_SCHEME_NAMES.DARK :
       (
-        window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_LIGHT).matches ?
+        window.matchMedia(WindowMedia.PrefersColorScheme.Light).matches ?
           CONFIG_COLOR_SCHEME_NAMES.LIGHT :
           CONFIG_COLOR_SCHEME_NAMES.SYSTEM
       );
@@ -160,15 +158,15 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
   const variant =
     colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
       colorSchemeSettings.name.toLowerCase() :
-      (window.matchMedia(WINDOW_MEDIA_PREFERS_COLOR_SCHEME_DARK).matches ?
+      (window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
         CONFIG_COLOR_SCHEME_NAMES.DARK :
         CONFIG_COLOR_SCHEME_NAMES.LIGHT
       ).toLowerCase();
 
   const contrast =
     colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
-      ""
-    : colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
+      "" :
+      colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
 
   return `${variant}${contrast}` as MaterialSchemeName;
 };
