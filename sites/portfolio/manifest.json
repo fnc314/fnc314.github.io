@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "scope": "https://fnc314.com/",
+  "scope": "https://www.fnc314.com/",
   "orientation": "any",
   "dir": "ltr",
   "lang": "en",
@@ -21,8 +21,8 @@
     "development",
     "networking"
   ],
-  "start_url": "https://fnc314.com/",
-  "id": "https://fnc314.com/",
+  "start_url": "https://www.fnc314.com/",
+  "id": "https://www.fnc314.com/",
   "screenshots": [],
   "protocol_handlers": [],
   "shortcuts": [],
