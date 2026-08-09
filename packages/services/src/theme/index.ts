@@ -1,5 +1,4 @@
 import { type ConfigsService, configsService } from "@/lib/configs";
-import { AtlInWhiteThemeConfig } from "@/lib/theme/atl-in-white";
 import { ChicagoThemeConfig } from "@/lib/theme/chicago";
 import { DowntownThemeConfig } from "@/lib/theme/downtown";
 import { InterThemeConfig } from "@/lib/theme/inter";
@@ -10,22 +9,20 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
-    CONFIG_COLOR_CONTRAST_NAMES,
-    CONFIG_COLOR_SCHEME_NAMES,
     type ColorScheme,
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
     type ColorSchemeContrast,
     type ColorSchemeRoles,
     type ColorString,
+    EventNames,
     type MaterialSchemeName,
     type ThemeConfig,
     type ThemeConfigs,
+    ThemeNames,
     WindowMedia
 } from "@fnc314/packages.types";
 
-export * from "@/lib/theme/atl-in-white";
 export * from "@/lib/theme/chicago";
 export * from "@/lib/theme/downtown";
 export * from "@/lib/theme/inter";
@@ -63,16 +60,16 @@ class ThemeServiceImpl implements ThemeService {
 
   deviceColorContrast(): ColorSchemeContrast {
     return window.matchMedia(WindowMedia.PrefersContrast.More).matches ?
-      CONFIG_COLOR_CONTRAST_NAMES.HIGH : CONFIG_COLOR_CONTRAST_NAMES.NORMAL;
+      ThemeNames.Contrast.High : ThemeNames.Contrast.Normal;
   }
 
   devicePreference(): ColorScheme {
     return window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
-      CONFIG_COLOR_SCHEME_NAMES.DARK :
+      ThemeNames.Scheme.Dark :
       (
         window.matchMedia(WindowMedia.PrefersColorScheme.Light).matches ?
-          CONFIG_COLOR_SCHEME_NAMES.LIGHT :
-          CONFIG_COLOR_SCHEME_NAMES.SYSTEM
+          ThemeNames.Scheme.Light :
+          ThemeNames.Scheme.System
       );
   }
 
@@ -83,18 +80,18 @@ class ThemeServiceImpl implements ThemeService {
   currentMaterialSchemeName(): MaterialSchemeName {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
-      appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
+      appConfigs.colorScheme.name === ThemeNames.Scheme.System ?
         this.devicePreference() :
         appConfigs.colorScheme.name
     ).toLowerCase();
 
     const contrastPascalCase: string =
-      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+      appConfigs.colorScheme.contrast === ThemeNames.Contrast.Normal ?
         "" :
         `${appConfigs.colorScheme.contrast.at(0)?.toUpperCase()}${appConfigs.colorScheme.contrast.slice(1)?.toLowerCase()}Contrast`
 
     const contrast =
-      appConfigs.colorScheme.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+      appConfigs.colorScheme.contrast === ThemeNames.Contrast.Normal ?
         "" :
         contrastPascalCase;
 
@@ -110,12 +107,11 @@ export const themeService: ThemeService = new ThemeServiceImpl(configsService);
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    [COLOR_SCHEME_CHANGE_EVENT_NAME]: ColorSchemeConfigChange;
+    [EventNames.Change.ColorScheme]: ColorSchemeConfigChange;
   }
 }
 
 export const THEME_CONFIGS: ThemeConfigs = {
-  atlInWhite: AtlInWhiteThemeConfig,
   chicago: ChicagoThemeConfig,
   downtown: DowntownThemeConfig,
   inter: InterThemeConfig,
@@ -130,7 +126,7 @@ export const THEME_CONFIGS: ThemeConfigs = {
 export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
-  const name = event.matches ? CONFIG_COLOR_SCHEME_NAMES.DARK : CONFIG_COLOR_SCHEME_NAMES.LIGHT;
+  const name = event.matches ? ThemeNames.Scheme.Dark : ThemeNames.Scheme.Light;
 
   const appSettings = configsService.loadConfigs();
   const colorScheme = {
@@ -156,15 +152,15 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
   colorSchemeSettings: ColorSchemeConfig,
 ): MaterialSchemeName => {
   const variant =
-    colorSchemeSettings.name !== CONFIG_COLOR_SCHEME_NAMES.SYSTEM ?
+    colorSchemeSettings.name !== ThemeNames.Scheme.System ?
       colorSchemeSettings.name.toLowerCase() :
       (window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
-        CONFIG_COLOR_SCHEME_NAMES.DARK :
-        CONFIG_COLOR_SCHEME_NAMES.LIGHT
+        ThemeNames.Scheme.Dark :
+        ThemeNames.Scheme.Light
       ).toLowerCase();
 
   const contrast =
-    colorSchemeSettings.contrast === CONFIG_COLOR_CONTRAST_NAMES.NORMAL ?
+    colorSchemeSettings.contrast === ThemeNames.Contrast.Normal ?
       "" :
       colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
 

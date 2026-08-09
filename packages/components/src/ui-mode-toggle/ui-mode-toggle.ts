@@ -8,18 +8,19 @@ import {
     themeService,
 } from "@fnc314/packages.services";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
     type AppConfigs,
     type AppConfigsChangeEvent,
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
-    CONFIG_COLOR_SCHEME_NAMES,
-    type ColorScheme
+    type ColorScheme,
+    EventNames,
+    ThemeNames
 } from "@fnc314/packages.types";
 import "dark-mode-toggle";
 import { type ColorSchemeChangeEvent, DarkModeToggle, type PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+
+export const TAG_NAME_UI_MODE_TOGGLE: string = "ui-mode-toggle";
 
 /**
  * @summary A standalone component for managing and toggling the UI color scheme (light, dark, system)
@@ -41,7 +42,7 @@ import { classMap } from "lit/directives/class-map.js";
  * The component applies custom styling to the encapsulated `dark-mode-toggle` using CSS parts
  * to align with the application"s Material Design 3 aesthetic.
  */
-@customElement("ui-mode-toggle")
+@customElement(TAG_NAME_UI_MODE_TOGGLE)
 export class UiModeToggle extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, UIModeToggleStyles];
@@ -87,7 +88,7 @@ export class UiModeToggle extends UIAwareElement {
       name:
         event.detail.colorScheme.length > 0 ?
           (event.detail.colorScheme.toUpperCase() as ColorScheme)
-        : CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
+        : ThemeNames.Scheme.System,
     });
   };
 
@@ -123,7 +124,7 @@ export class UiModeToggle extends UIAwareElement {
 
     window.dispatchEvent(
       new CustomEvent(
-        COLOR_SCHEME_CHANGE_EVENT_NAME,
+        EventNames.Change.ColorScheme,
         {
           bubbles: true,
           composed: true,
@@ -149,14 +150,14 @@ export class UiModeToggle extends UIAwareElement {
 
   override connectedCallback(): void {
     super.connectedCallback();
-    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.addEventListener(EventNames.Change.AppConfigs, this.onAppConfigsChange);
     document.addEventListener("colorschemechange", this.colorSchemeChangeEventListener);
     document.addEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
-    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.removeEventListener(EventNames.Change.AppConfigs, this.onAppConfigsChange);
     document.removeEventListener("colorschemechange", this.colorSchemeChangeEventListener);
     document.removeEventListener("permanentcolorscheme", this.permanentColorSchemeEventListener);
   }
@@ -188,6 +189,6 @@ export class UiModeToggle extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "ui-mode-toggle": UiModeToggle;
+    [TAG_NAME_UI_MODE_TOGGLE]: UiModeToggle;
   }
 }

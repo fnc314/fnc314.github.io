@@ -13,15 +13,13 @@ import {
     themeService,
 } from "@fnc314/packages.services";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
     type AppConfigs,
     type AppConfigsChangeEvent,
     BENTO_BOX_TYPES,
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
-    CONFIG_COLOR_CONTRAST_NAMES,
     type ColorSchemeContrast,
-    THEME_NAMES,
+    EventNames,
     type ThemeName,
+    ThemeNames
 } from "@fnc314/packages.types";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
@@ -53,12 +51,12 @@ export class SettingsCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = BENTO_BOX_TYPES.settings;
-    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.addEventListener(EventNames.Change.AppConfigs, this.onAppConfigsChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigsChange);
+    window.removeEventListener(EventNames.Change.AppConfigs, this.onAppConfigsChange);
   }
 
   private onAppConfigsChange = (event: AppConfigsChangeEvent) => {
@@ -93,7 +91,7 @@ export class SettingsCard extends UIAwareElement {
     configsService.saveConfigs(this._appConfigs);
 
     window.dispatchEvent(
-      new CustomEvent(COLOR_SCHEME_CHANGE_EVENT_NAME, {
+      new CustomEvent(EventNames.Change.AppConfigs, {
         bubbles: true,
         composed: true,
         detail: this._appConfigs.colorScheme,
@@ -129,7 +127,7 @@ export class SettingsCard extends UIAwareElement {
           @change=${this._onThemeChange}
           .value=${this._appConfigs.colorScheme.theme}
         >
-          ${Object.values(THEME_NAMES).map(
+          ${Object.values(ThemeNames.Themes).map(
             (theme) => html`
               <md-select-option value=${theme}>
                 <img
@@ -158,11 +156,11 @@ export class SettingsCard extends UIAwareElement {
           @change=${this._onContrastChange}
           .value=${this._appConfigs.colorScheme.contrast}
         >
-          ${Object.values(CONFIG_COLOR_CONTRAST_NAMES).map(
+          ${Object.values(ThemeNames.Contrast).map(
             (contrast: ColorSchemeContrast) => html`
               <md-select-option value=${contrast}>
                 ${colorSchemeContrastToIcon(contrast)}
-                <div slot="headline">${contrast.charAt(0) + contrast.slice(1).toLowerCase()}</div>
+                <div slot="headline">${contrast.charAt(0).toUpperCase() + contrast.slice(1).toLowerCase()}</div>
               </md-select-option>
             `,
           )}

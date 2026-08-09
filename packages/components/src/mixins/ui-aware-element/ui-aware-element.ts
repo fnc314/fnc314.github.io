@@ -1,13 +1,13 @@
 import { readCSSProperty } from "@fnc314/packages.design-tokens";
 import { configsService, themeService } from "@fnc314/packages.services";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
     type AppConfigsChangeEvent,
     type BreakpointLabel,
-    CONFIG_COLOR_SCHEME_NAMES,
     CSS_VARIABLE_BREAKPOINT_LABEL,
     CSS_VARIABLE_TOUCH_SCREEN,
+    EventNames,
     type IconVariants,
+    ThemeNames
 } from "@fnc314/packages.types";
 import { type CSSResult, LitElement, type TemplateResult } from "lit";
 import { state } from "lit/decorators.js";
@@ -33,12 +33,12 @@ export abstract class UIAwareElement extends LitElement {
   static override styles: CSSResult[] = [];
 
   @state()
-  protected darkMode: boolean = configsService.loadConfigs().colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
+  protected darkMode: boolean = configsService.loadConfigs().colorScheme.name === ThemeNames.Scheme.Dark;
 
   private onAppConfigChange: (event: AppConfigsChangeEvent) => void =
     (event: AppConfigsChangeEvent) => {
       this.darkMode =
-        event.detail.appConfigs.colorScheme.name === CONFIG_COLOR_SCHEME_NAMES.DARK;
+        event.detail.appConfigs.colorScheme.name === ThemeNames.Scheme.Dark;
     };
 
   /**
@@ -68,13 +68,13 @@ export abstract class UIAwareElement extends LitElement {
   override connectedCallback(): void {
     super.connectedCallback();
     window.addEventListener("resize", this.onBreakpointChange);
-    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigChange);
+    window.addEventListener(EventNames.Change.AppConfigs, this.onAppConfigChange);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
     window.removeEventListener("resize", this.onBreakpointChange);
-    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this.onAppConfigChange);
+    window.removeEventListener(EventNames.Change.AppConfigs, this.onAppConfigChange);
   }
 
   /**
@@ -87,18 +87,18 @@ export abstract class UIAwareElement extends LitElement {
    */
   protected getActiveIcon(variants: IconVariants): TemplateResult {
     switch (configsService.loadConfigs().colorScheme.name) {
-      case CONFIG_COLOR_SCHEME_NAMES.DARK:
+      case ThemeNames.Scheme.Dark:
         return variants.dark;
-      case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
+      case ThemeNames.Scheme.Light:
         return variants.light;
-      case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
+      case ThemeNames.Scheme.System:
       default:
         switch (themeService.devicePreference()) {
-          case CONFIG_COLOR_SCHEME_NAMES.DARK:
+          case ThemeNames.Scheme.Dark:
             return variants.dark;
-          case CONFIG_COLOR_SCHEME_NAMES.LIGHT:
+          case ThemeNames.Scheme.Light:
             return variants.light;
-          case CONFIG_COLOR_SCHEME_NAMES.SYSTEM:
+          case ThemeNames.Scheme.System:
             return variants.default ?? variants.light;
         }
     }

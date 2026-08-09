@@ -69,6 +69,7 @@
     "@fnc314/packages.types": "workspace:*",
     "@lit-labs/motion": "catalog:dependencies",
     "@lit-labs/router": "catalog:dependencies",
+    "@lit/context": "catalog:dependencies",
     "@lit/reactive-element": "catalog:dependencies",
     "@lit/task": "catalog:dependencies",
     "@material/web": "catalog:dependencies",

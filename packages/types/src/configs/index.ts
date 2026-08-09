@@ -1,8 +1,6 @@
 import {
-    CONFIG_COLOR_CONTRAST_NAMES,
-    CONFIG_COLOR_SCHEME_NAMES,
     type ColorSchemeConfig,
-    THEME_NAMES,
+    ThemeNames
 } from "@/lib/theme";
 
 export interface AppConfigs {
@@ -11,15 +9,21 @@ export interface AppConfigs {
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
-    theme: THEME_NAMES.inter,
-    name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
-    contrast: CONFIG_COLOR_CONTRAST_NAMES.NORMAL,
+    theme: ThemeNames.Themes.inter,
+    name: ThemeNames.Scheme.System,
+    contrast: ThemeNames.Contrast.Normal,
     persist: false,
   } as const,
 } as const;
 
-export const COLOR_SCHEME_CHANGE_EVENT_NAME = "color_scheme.change";
-export const APP_CONFIGS_CHANGE_EVENT_NAME = "app-configs.change";
+/** Various event names */
+export const EventNames = {
+  Change: {
+    ColorScheme: "color_scheme.change" as const,
+    AppConfigs: "app-configs.change" as const,
+  } as const,
+} as const;
+
 export type AppConfigsChangeEvent = CustomEvent<{ appConfigs: AppConfigs }>;
 
 export const ELEMENT_ID_META_TAG: string = "meta-theme-color";
@@ -35,5 +39,5 @@ export const WindowMedia = {
   PrefersColorScheme: {
     Dark: "(prefers-color-scheme: dark)" as const,
     Light: "(prefers-color-scheme: light)" as const,
-  }
+  } as const,
 } as const;

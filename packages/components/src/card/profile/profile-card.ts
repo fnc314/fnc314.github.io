@@ -3,7 +3,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { Biography, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
-import { APP_CONFIGS_CHANGE_EVENT_NAME, BENTO_BOX_TYPES, type BioExtended } from "@fnc314/packages.types";
+import { BENTO_BOX_TYPES, type BioExtended, EventNames } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
@@ -40,12 +40,12 @@ export class ProfileCard extends UIAwareElement {
   override connectedCallback() {
     super.connectedCallback();
     this.id = BENTO_BOX_TYPES.profile;
-    window.addEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.addEventListener(EventNames.Change.AppConfigs, this._onConfigChange);
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener(APP_CONFIGS_CHANGE_EVENT_NAME, this._onConfigChange);
+    window.removeEventListener(EventNames.Change.AppConfigs, this._onConfigChange);
   }
 
   private _onConfigChange = () => {

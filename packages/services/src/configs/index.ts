@@ -1,9 +1,9 @@
 import { type StorageService, storageService } from "@/lib/storage";
 import {
-    APP_CONFIGS_CHANGE_EVENT_NAME,
     type AppConfigs,
     type AppConfigsChangeEvent,
     DEFAULT_APP_CONFIGS,
+    EventNames
 } from "@fnc314/packages.types";
 
 export interface ConfigsService extends EventTarget {
@@ -29,7 +29,7 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
     this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
     window.dispatchEvent(
       new CustomEvent(
-        APP_CONFIGS_CHANGE_EVENT_NAME,
+        EventNames.Change.AppConfigs,
         {
           bubbles: true,
           composed: true,
@@ -71,6 +71,6 @@ export const configsService: ConfigsService = new ConfigsServiceImpl(storageServ
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    [APP_CONFIGS_CHANGE_EVENT_NAME]: AppConfigsChangeEvent;
+    [EventNames.Change.AppConfigs]: AppConfigsChangeEvent;
   }
 }

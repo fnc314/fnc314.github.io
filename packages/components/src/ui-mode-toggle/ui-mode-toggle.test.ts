@@ -1,7 +1,7 @@
 import "@/lib/ui-mode-toggle/ui-mode-toggle";
 import { configsService } from "@/services/configs/configs-service";
 import { themeService } from "@/services/theme/theme-service";
-import { APP_CONFIGS_CHANGE_EVENT_NAME, type AppConfigs, COLOR_SCHEME_CHANGE_EVENT_NAME, CONFIG_COLOR_SCHEME_NAMES } from "@fnc314/packages.types";
+import { type AppConfigs, EventNames, ThemeNames } from "@fnc314/packages.types";
 import { expect, fixture, html, oneEvent } from "@open-wc/testing";
 import { type ColorSchemeChangeEvent, PermanentColorSchemeEvent } from "dark-mode-toggle";
 import { afterEach, before, beforeEach, type it } from "node:test";
@@ -16,15 +16,11 @@ describe("UiModeToggle Component", () => {
 
   const mockAppConfigs: AppConfigs = {
     colorScheme: {
-      name: CONFIG_COLOR_SCHEME_NAMES.SYSTEM,
-      theme: "material-theme",
-      contrast: "standard",
+      name: ThemeNames.Scheme.System,
+      theme: ThemeNames.Themes.Inter,
+      contrast: ThemeNames.Contrast.Normal,
       persist: false,
     },
-    debugger: {
-      active: false,
-    },
-    fontSize: "medium",
   };
 
   before(() => {
@@ -82,13 +78,13 @@ describe("UiModeToggle Component", () => {
     const newConfigs: AppConfigs = {
       ...mockAppConfigs,
       colorScheme: {
-        name: CONFIG_COLOR_SCHEME_NAMES.DARK,
+        name: ThemeNames.Scheme.Dark,
         theme: "material-theme",
         contrast: "standard",
         persist: true,
       },
     };
-    configsService.dispatchEvent(new CustomEvent(APP_CONFIGS_CHANGE_EVENT_NAME, { detail: { appConfigs: newConfigs } }));
+    configsService.dispatchEvent(new CustomEvent(EventNames.Change.AppConfigs, { detail: { appConfigs: newConfigs } }));
     await element.updateComplete;
 
     expect(element.mode).to.equal("dark");
@@ -99,7 +95,7 @@ describe("UiModeToggle Component", () => {
   });
 
   it("should handle 'colorschemechange' event from dark-mode-toggle", async () => {
-    const listener = oneEvent(element, COLOR_SCHEME_CHANGE_EVENT_NAME);
+    const listener = oneEvent(element, EventNames.Change.ColorScheme);
     const darkModeToggle = element.shadowRoot?.querySelector("dark-mode-toggle");
 
     // Simulate colorschemechange event
@@ -110,7 +106,7 @@ describe("UiModeToggle Component", () => {
 
     const event = await listener;
     expect(event).to.exist;
-    expect(event.detail.name).to.equal(CONFIG_COLOR_SCHEME_NAMES.DARK);
+    expect(event.detail.name).to.equal(ThemeNames.Scheme.Dark);
     expect(element.mode).to.equal("dark");
   });
 

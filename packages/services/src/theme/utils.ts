@@ -1,4 +1,4 @@
-import { CONFIG_COLOR_CONTRAST_NAMES, type ColorSchemeContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes } from "@fnc314/packages.types";
+import { type ColorSchemeContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes, ThemeNames } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 /**
@@ -13,11 +13,11 @@ export function colorSchemeContrastToIcon(
   slot: "start" | "leading-icon" = "start",
 ): TemplateResult {
   switch (contrast) {
-    case CONFIG_COLOR_CONTRAST_NAMES.NORMAL:
+    case ThemeNames.Contrast.Normal:
       return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;
-    case CONFIG_COLOR_CONTRAST_NAMES.MEDIUM:
+    case ThemeNames.Contrast.Medium:
       return html`<md-icon slot="${slot}">exposure_plus_1</md-icon>`;
-    case CONFIG_COLOR_CONTRAST_NAMES.HIGH:
+    case ThemeNames.Contrast.High:
       return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
     default:
       return html`${nothing}`;

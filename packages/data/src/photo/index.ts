@@ -1,17 +1,6 @@
 import { type PhotosJson } from "@fnc314/packages.types";
 
 export const Photos: PhotosJson = {
-  atlInWhite: {
-    src: "./images/themes/atl-in-white/profile-photo.jpg",
-    srcSet: {
-      thumb: "./images/themes/atl-in-white/profile-photo-56.webp",
-      mobile: "./images/themes/atl-in-white/profile-photo-750.webp",
-      tablet: "./images/themes/atl-in-white/profile-photo-1200.webp",
-      desktop: "./images/themes/atl-in-white/profile-photo-1500.webp",
-    },
-    figcaption: "Me in white at a hotel in Atlanta, USA in 2025",
-    alt: "Profile Photo of Franco N. Colaizzi at a hotel in Atlanta, USA, wearing all white, in 2025",
-  },
   chicago: {
     src: "./images/themes/chicago/profile-photo.jpg",
     srcSet: {

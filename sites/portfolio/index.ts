@@ -9,10 +9,10 @@ import {
     themeService
 } from "@fnc314/packages.services";
 import {
-    COLOR_SCHEME_CHANGE_EVENT_NAME,
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
     ELEMENT_ID_META_TAG,
+    EventNames,
     WindowMedia
 } from "@fnc314/packages.types";
 import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
@@ -72,7 +72,10 @@ const windowOnLoad = () => {
     configsService.loadConfigs().colorScheme
   );
 
-  window.addEventListener(COLOR_SCHEME_CHANGE_EVENT_NAME, onColorSchemeChange);
+  window.addEventListener(EventNames.Change.ColorScheme, onColorSchemeChange);
+
+  // We don't need this after first run
+  window.onload = null;
 };
 
 window.onload = windowOnLoad

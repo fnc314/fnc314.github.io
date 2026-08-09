@@ -220,6 +220,9 @@ catalogs:
     '@lit-labs/router':
       specifier: 0.1.4
       version: 0.1.4
+    '@lit/context':
+      specifier: 1.1.6
+      version: 1.1.6
     '@lit/reactive-element':
       specifier: 2.1.2
       version: 2.1.2
@@ -639,6 +642,9 @@ importers:
       '@lit-labs/router':
         specifier: catalog:dependencies
         version: 0.1.4
+      '@lit/context':
+        specifier: catalog:dependencies
+        version: 1.1.6
       '@lit/reactive-element':
         specifier: catalog:dependencies
         version: 2.1.2
@@ -21717,6 +21723,7 @@ time:
   '@lit-labs/motion@1.1.0': '2025-12-23T22:03:25.792Z'
   '@lit-labs/rollup-plugin-minify-html-literals@0.2.0': '2026-05-14T03:55:57.048Z'
   '@lit-labs/router@0.1.4': '2025-02-14T17:25:00.103Z'
+  '@lit/context@1.1.6': '2025-07-11T03:36:46.340Z'
   '@lit/reactive-element@2.1.2': '2025-12-23T22:03:31.805Z'
   '@lit/task@1.0.3': '2025-07-11T03:36:50.933Z'
   '@material/material-color-utilities@0.4.0': '2026-01-21T18:35:58.484Z'

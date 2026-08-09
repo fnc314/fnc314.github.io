@@ -1,25 +1,45 @@
 import { type BreakpointLabel } from "@/lib/design-tokens";
 import { type CSSResult } from "lit";
 
-export type MaterialSchemeName =
-  "light" | "lightMediumContrast" | "lightHighContrast" | "dark" | "darkMediumContrast" | "darkHighContrast";
+/** A convenient construct of `const` definitions used for managing theme and general UI style */
+export const ThemeNames = {
+  Themes: {
+    Chicago: "chicago" as const,
+    Downtown: "downtown" as const,
+    Inter: "inter" as const,
+    LeatherJacket: "leatherJacket" as const,
+    Ponder: "ponder" as const,
+    Red: "red" as const,
+    RomanBus: "romanBus" as const,
+    Skyline: "skyline" as const,
+    Sunset: "sunset" as const,
+  } as const,
+  Scheme: {
+    Dark: "dark" as const,
+    Light: "light" as const,
+    System: "system" as const,
+  } as const,
+  Contrast: {
+    Normal: "normal" as const,
+    Medium: "medium" as const,
+    High: "high" as const,
+  } as const,
+  MaterialScheme: {
+    Light: "light" as const,
+    LightMediumContrast: "lightMediumContrast" as const,
+    LightHighContrast: "lightHighContrast" as const,
+    Dark: "dark" as const,
+    DarkMediumContrast: "darkMediumContrast" as const,
+    DarkHighContrast: "darkHighContrast" as const,
+  } as const,
+} as const;
+
+export type MaterialSchemeName = (typeof ThemeNames.MaterialScheme)[keyof typeof ThemeNames.MaterialScheme];
 
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 
-export const CONFIG_COLOR_SCHEME_NAMES = {
-  DARK: "DARK" as const,
-  LIGHT: "LIGHT" as const,
-  SYSTEM: "SYSTEM" as const,
-} as const;
-
-export const CONFIG_COLOR_CONTRAST_NAMES = {
-  NORMAL: "NORMAL" as const,
-  MEDIUM: "MEDIUM" as const,
-  HIGH: "HIGH" as const,
-} as const;
-
-export type ColorScheme = (typeof CONFIG_COLOR_SCHEME_NAMES)[keyof typeof CONFIG_COLOR_SCHEME_NAMES];
-export type ColorSchemeContrast = (typeof CONFIG_COLOR_CONTRAST_NAMES)[keyof typeof CONFIG_COLOR_CONTRAST_NAMES];
+export type ColorScheme = (typeof ThemeNames.Scheme)[keyof typeof ThemeNames.Scheme];
+export type ColorSchemeContrast = (typeof ThemeNames.Contrast)[keyof typeof ThemeNames.Contrast];
 
 export interface ColorSchemeConfig {
   name: ColorScheme;
@@ -121,20 +141,7 @@ export interface ThemeConfig {
   materialSchemes: MaterialScheme;
 }
 
-export const THEME_NAMES = {
-  atlInWhite: "atlInWhite" as const,
-  chicago: "chicago" as const,
-  downtown: "downtown" as const,
-  inter: "inter" as const,
-  leatherJacket: "leatherJacket" as const,
-  ponder: "ponder" as const,
-  red: "red" as const,
-  romanBus: "romanBus" as const,
-  skyline: "skyline" as const,
-  sunset: "sunset" as const,
-} as const;
-
-export type ThemeName = (typeof THEME_NAMES)[keyof typeof THEME_NAMES];
+export type ThemeName = (typeof ThemeNames.Themes)[keyof typeof ThemeNames.Themes];
 
 export type PhotosJson = Record<ThemeName, PhotoJson>;
 
