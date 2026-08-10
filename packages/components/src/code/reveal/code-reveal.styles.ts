@@ -11,7 +11,7 @@ export const CodeRevealStyles: CSSResult = css`
     --code-reveal-background-color: var(--md-sys-color-surface-container-lowest);
     --code-reveal-color: var(--md-sys-color-on-surface-variant);
 
-    --md-icon-button-icon-size: calc(1.5 * var(--md-icon-size));
+    --md-icon-button-icon-size: var(--sizes-width-xl);
     --md-icon-button-icon-color: var(--code-reveal-color);
     --md-icon-button-focus-color: var(--code-reveal-color);
     --md-icon-button-focus-icon-color: var(--code-reveal-color);
@@ -93,9 +93,9 @@ export const CodeRevealStyles: CSSResult = css`
       cursor: pointer;
       color: var(--code-reveal-color);
 
-      md-icon {
-        width: 2rem;
-        height: 2rem;
+      md-icon, svg {
+        inline-size: var(--sizes-width-xl);
+        block-size: var(--sizes-height-xl);
       }
     }
 

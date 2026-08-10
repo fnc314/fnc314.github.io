@@ -51,7 +51,7 @@ export class UiModeToggle extends UIAwareElement {
   private _darkModeToggle!: DarkModeToggle;
 
   @property({ type: String })
-  mode: "light" | "dark" | "system" = "system";
+  mode: ColorScheme | "light" | "dark" | "system" = "system";
 
   @property({ type: Boolean })
   permanent = false;
@@ -77,7 +77,7 @@ export class UiModeToggle extends UIAwareElement {
   private onAppConfigsChange: (event: AppConfigsChangeEvent) => void =
     (event: AppConfigsChangeEvent) => {
       this._appConfigs = event.detail.appConfigs;
-      this.mode = this._appConfigs.colorScheme.name.toLowerCase() as "light" | "dark" | "system";
+      this.mode = this._appConfigs.colorScheme.name as "light" | "dark" | "system";
       this.permanent = this._appConfigs.colorScheme.persist;
     };
 
@@ -87,8 +87,8 @@ export class UiModeToggle extends UIAwareElement {
       ...this._appConfigs.colorScheme,
       name:
         event.detail.colorScheme.length > 0 ?
-          (event.detail.colorScheme.toUpperCase() as ColorScheme)
-        : ThemeNames.Scheme.System,
+          (event.detail.colorScheme.toLowerCase() as ColorScheme) :
+          ThemeNames.Scheme.System,
     });
   };
 
@@ -164,7 +164,7 @@ export class UiModeToggle extends UIAwareElement {
 
   override render(): TemplateResult {
     const classes = {
-      dark: this.mode === "dark",
+      dark: this.mode === ThemeNames.Scheme.Dark,
       variant: true,
     };
 

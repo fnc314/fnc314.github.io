@@ -91,7 +91,7 @@ export class SettingsCard extends UIAwareElement {
     configsService.saveConfigs(this._appConfigs);
 
     window.dispatchEvent(
-      new CustomEvent(EventNames.Change.AppConfigs, {
+      new CustomEvent(EventNames.Change.ColorScheme, {
         bubbles: true,
         composed: true,
         detail: this._appConfigs.colorScheme,

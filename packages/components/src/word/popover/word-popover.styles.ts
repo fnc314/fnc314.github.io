@@ -60,8 +60,8 @@ export const WordPopoverStyles: CSSResult = css`
       right: 0;
 
       md-icon {
-        width: var(--md-icon-size);
-        height: var(--md-icon-size);
+        inline-size: var(--md-icon-size);
+        block-size: var(--md-icon-size);
       }
     }
 

@@ -113,12 +113,21 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
             strict: true,
           },
           transform: {
+            assumptions: {
+              // ignoreFunctionLength: true,
+              noDocumentAll: true,
+              // objectRestNoSymbols: true,
+              pureGetters: true,
+              setPublicClassFields: true,
+            },
             typescript: {
               allowNamespaces: true,
               declaration: {
                 sourcemap: mode !== "production",
               },
               rewriteImportExtensions: true,
+              onlyRemoveTypeImports: true,
+              removeClassFieldsWithoutInitializer: true,
             },
           },
           treeshake: false,

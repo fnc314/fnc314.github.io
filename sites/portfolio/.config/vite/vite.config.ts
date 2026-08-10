@@ -194,6 +194,31 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         sourceMap: !dynamicConfig.isProduction,
       },
       rolldownOptions: {
+        checks: {
+          circularDependency: true,
+          eval: true,
+          missingGlobalName: true,
+          missingNameOptionForIifeExport: true,
+          invalidAnnotation: true,
+          mixedExports: true,
+          unresolvedEntry: true,
+          unresolvedImport: true,
+          filenameConflict: true,
+          commonJsVariableInEsm: true,
+          importIsUndefined: true,
+          emptyImportMeta: true,
+          toleratedTransform: true,
+          cannotCallNamespace: true,
+          configurationFieldConflict: true,
+          preferBuiltinFeature: true,
+          couldNotCleanDirectory: true,
+          pluginTimings: true,
+          duplicateShebang: true,
+          unsupportedTsconfigOption: true,
+          ineffectiveDynamicImport: true,
+          largeBarrelModules: true,
+          sourcemapBroken: true,
+        },
         resolve: {
           conditionNames: [
             mode,
@@ -275,13 +300,33 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         },
         platform: "browser",
         transform: {
+          assumptions: {
+            ignoreFunctionLength: true,
+            noDocumentAll: true,
+            objectRestNoSymbols: true,
+            pureGetters: true,
+            setPublicClassFields: true,
+          },
+          decorator: {
+            legacy: false,
+            emitDecoratorMetadata: true,
+            strictNullChecks: true,
+          },
+          helpers: {
+            mode: "Runtime",
+          },
+          target: "esnext",
           typescript: {
             allowNamespaces: true,
             declaration: {
               sourcemap: !dynamicConfig.isProduction,
               stripInternal: true,
             },
+            onlyRemoveTypeImports: true,
+            optimizeConstEnums: false,
+            optimizeEnums: false,
             rewriteImportExtensions: "remove",
+            removeClassFieldsWithoutInitializer: true,
           },
 
         },

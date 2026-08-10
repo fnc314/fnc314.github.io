@@ -2,6 +2,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordDialogAnimations } from "@/lib/word/dialog/word-dialog-animations.styles";
 import { WordDialogStyles } from "@/lib/word/dialog/word-dialog.styles";
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 
@@ -97,7 +98,7 @@ export class WordDialog extends UIAwareElement {
             aria-label="Close dialog for ${this.word}"
             @click=${() => this.close()}
           >
-            <md-icon>close</md-icon>
+            ${Icons.Material.Close.default}
           </md-icon-button>
           <header>
             <slot name="header-icon"></slot>
