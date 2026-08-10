@@ -1,6 +1,8 @@
 import { type BreakpointLabel } from "@/lib/design-tokens";
 import { type CSSResult } from "lit";
 
+export { type MaterialSymbol } from "material-symbols";
+
 /** A convenient construct of `const` definitions used for managing theme and general UI style */
 export const ThemeNames = {
   Themes: {
@@ -146,7 +148,5 @@ export type ThemeName = (typeof ThemeNames.Themes)[keyof typeof ThemeNames.Theme
 export type PhotosJson = Record<ThemeName, PhotoJson>;
 
 export type ThemeConfigs = Record<ThemeName, ThemeConfig>;
-
-export { type MaterialSymbol } from "material-symbols";
 
 export type ColorSchemeConfigChange = CustomEvent<ColorSchemeConfig>;

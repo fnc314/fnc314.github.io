@@ -29,7 +29,7 @@ monorepo_root = true
   "npm:vite" = "8.2.1"
   pnpm = "11.20.0"
   tombi = "1.2.6"
-  usage = "4.1.0"
+  usage = "5.1.0"
 
 [deps]
   pnpm = {

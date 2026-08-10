@@ -1,17 +1,15 @@
 import minifyHTML from "@lit-labs/rollup-plugin-minify-html-literals";
 import path from "node:path";
 import process from "node:process";
+import type { CodeSplittingGroup } from "rolldown";
 import { bundleAnalyzerPlugin } from "rolldown/experimental";
 import dts from "unplugin-dts/vite";
 import Info from "unplugin-info/vite";
-import { type LibraryFormats, type UserConfigFnPromise } from "vite";
+import { type LibraryFormats, type UserConfig, type UserConfigFnPromise } from "vite";
 
 async function readPackageJson(dirName: string): Promise<any & { peerDependecies: Record<string, string> }> {
-  const dirPath: string = path.resolve(
-    process.cwd(),
-    `packages/${dirName}`
-  );
-  const jsonFile = await import(`${dirPath}/package.json`, { with: { type: 'json' } });
+  const dirPath: string = path.resolve(process.cwd(), `packages/${dirName}`);
+  const jsonFile = await import(`${dirPath}/package.json`, { with: { type: "json" } });
   return jsonFile.default;
 }
 
@@ -19,7 +17,28 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
   return async ({ command, mode, isSsrBuild, isPreview }) => {
     const pkjson = await readPackageJson(dirName);
 
-    const config = {
+    const codeSplittingGroups: CodeSplittingGroup[] = Object.keys(
+      pkjson.peerDependencies || {}
+    )
+      .map((dep) => {
+        const depGroupName = dep.replace("@fnc314/packages.", "");
+        return {
+          name: depGroupName,
+          test: (moduleId: string) => moduleId.includes(`packages.${depGroupName}`),
+        };
+      })
+      .concat(
+        {
+          name: "material",
+          test: (moduleId: string) => moduleId.includes("material"),
+        },
+        {
+          name: "lit",
+          test: (moduleId: string) => moduleId.includes("lit"),
+        },
+      );
+
+    const config: UserConfig = {
       root: `${process.cwd()}/packages/${dirName}`,
       publicDir: `${process.cwd()}/packages/${dirName}/assets`,
       build: {
@@ -35,7 +54,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
             bundleAnalyzerPlugin({
               fileName: "bundle-analysis.md",
               format: "md",
-            })
+            }),
           ],
           checks: {
             circularDependency: true,
@@ -50,23 +69,47 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
             // /^material-symbols($|\/)/,
           ],
           output: {
+            name: `@fnc314/packages.${dirName}`,
             assetFileNames: `@fnc314.packages.${dirName}.[ext]`,
             codeSplitting: {
-              groups: Object.keys(pkjson.peerDependencies || {}).map((dep) => {
-                const depGroupName = dep.replace("@fnc314/packages.", "");
-                return {
-                  name: depGroupName,
-                  test: new RegExp(`/packages\.${depGroupName}/`)
-                };
-              })
+              groups: codeSplittingGroups,
+            },
+            chunkFileNames: ({
+              name,
+              isEntry,
+              isDynamicEntry,
+              facadeModuleId,
+              moduleIds,
+              exports,
+            }: {
+              name: string;
+              isEntry: boolean;
+              isDynamicEntry: boolean;
+              facadeModuleId?: string;
+              moduleIds: Array<string>;
+              exports: Array<string>;
+            }) => {
+              console.log(
+                JSON.stringify(
+                  {
+                    name,
+                    isEntry,
+                    isDynamicEntry,
+                    facadeModuleId,
+                    moduleIds,
+                    exports,
+                  },
+                  null,
+                  2
+                )
+              );
+              return `deps/[name]-[hash].js`;
             },
             comments: mode !== "production",
             dir: `${process.cwd()}/packages/${dirName}/dist`,
             entryFileNames: `@fnc314.packages.${dirName}.js`,
             esModule: true,
             minify: false,
-            // preserveModules: true,
-            // preserveModulesRoot: "lib",
             strict: true,
           },
           transform: {
@@ -76,7 +119,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
                 sourcemap: mode !== "production",
               },
               rewriteImportExtensions: true,
-            }
+            },
           },
           treeshake: false,
           tsconfig: `${process.cwd()}/packages/${dirName}/tsconfig.json`,
@@ -88,9 +131,9 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         cssMinify: false,
         cssCodeSplit: false,
         sourcemap: mode !== "production",
-        platform: "browser",
         reportCompressedSize: true,
       },
+
       resolve: {
         preserveSymlinks: true,
         tsconfigPaths: true,
@@ -105,10 +148,11 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           "lit",
           "lit-html",
           "lit-element",
+          "@lit/context",
           "@lit/reactive-element",
           "@material/web",
           "material-symbols",
-        ]
+        ],
       },
       plugins: [
         // postcssLit.rollupPostCSSLit({
@@ -119,13 +163,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         //   ),
         // }),
         minifyHTML({
-          include: [
-            path.resolve(
-              process.cwd(),
-              `packages/${dirName}`,
-              "src/**/*.ts"
-            )
-          ],
+          include: [path.resolve(process.cwd(), `packages/${dirName}`, "src/**/*.ts")],
           exclude: [
             // CSS nesting (&::part) crashes the plugin's CSS parser
             "**/ui-mode-toggle/ui-mode-toggle.styles.ts",
@@ -136,8 +174,8 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           ],
           failOnError: true,
           options: {
-            shouldMinify: () => mode === "production"
-          }
+            shouldMinify: () => mode === "production",
+          },
         }),
         dts({
           // bundleTypes: true,
@@ -146,8 +184,8 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           root: `${process.cwd()}/packages/${dirName}`,
           outDirs: `${process.cwd()}/packages/${dirName}/dist/types`,
           compilerOptions: {
-            declarationMap: mode === "development"
-          }
+            declarationMap: mode === "development",
+          },
         }),
         Info({
           github: `https://github.com/fnc314/fnc314.github.io/tree/main/packages/${dirName}`,
@@ -160,12 +198,10 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
             overrides: true,
           },
           console: {
-            environment: [
-              "development",
-            ],
-          }
+            environment: ["development"],
+          },
         }),
-      ]
+      ],
     };
 
     console.log(
@@ -173,13 +209,13 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         {
           dirName,
           pkjson,
-          config
+          config,
         },
         null,
-        2
-      )
+        2,
+      ),
     );
 
     return config;
-  }
+  };
 }

@@ -6,6 +6,7 @@
   "customElements": "./custom-elements.json",
   "description": "Types package to support https://fnc314.com",
   "dependencies": {
+    "@lit/context": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "dark-mode-toggle": "catalog:dependencies",
     "lit": "catalog:dependencies",
@@ -22,10 +23,6 @@
     "@fnc314/configs.mise": "workspace:*",
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
-    "@fnc314/packages.data": "workspace:*",
-    "@fnc314/packages.design-tokens": "workspace:*",
-    "@fnc314/packages.services": "workspace:*",
-    "@fnc314/packages.types": "workspace:*",
     "@types/fs-extra": "catalog:devDependencies",
     "@web-types/lit": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",

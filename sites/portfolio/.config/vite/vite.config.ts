@@ -219,6 +219,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         },
         logLevel: "debug",
         output: {
+          name: `@fnc314/sites.portfolio`,
           assetFileNames: (chunkInfo: PreRenderedAsset) => {
             if (chunkInfo.names.at(0)?.endsWith("css") ?? false) {
               return `@fnc314/sites.portfolio/site-[hash].[ext]`;
@@ -260,11 +261,15 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           comments: !dynamicConfig.isProduction,
           dir: dynamicConfig.outDir,
           entryFileNames: `@fnc314/sites.portfolio/site-[hash].js`,
-          chunkFileNames: (chunkInfo: PreRenderedChunk) => `@fnc314/sites.portfolio/[name]-[hash].js`,
+          chunkFileNames: (chunkInfo: PreRenderedChunk) => {
+            console.log(
+              JSON.stringify(chunkInfo, null, 2)
+            );
+            return `@fnc314/sites.portfolio/[name]-[hash].js`;
+          },
           esModule: true,
           minify: dynamicConfig.isProduction,
-          // preserveModules: true,
-          // preserveModulesRoot: "node_modules/.pnpm/",
+
           strict: true,
           cleanDir: true,
         },

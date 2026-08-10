@@ -10,7 +10,9 @@
     "@fnc314/packages.design-tokens": "workspace:*",
     "@fnc314/packages.services": "workspace:*",
     "@fnc314/packages.types": "workspace:*",
+    "@lit/context": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
+    "lit": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
   "devDependencies": {

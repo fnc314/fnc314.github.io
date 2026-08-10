@@ -6,6 +6,7 @@
   "customElements": "./custom-elements.json",
   "description": "Types package to support https://fnc314.com",
   "dependencies": {
+    "@lit/context": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
