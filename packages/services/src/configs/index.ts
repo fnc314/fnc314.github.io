@@ -6,7 +6,7 @@ import {
     EventNames
 } from "@fnc314/packages.types";
 
-export interface ConfigsService extends EventTarget {
+export interface ConfigsService {
   saveConfigs(configs: AppConfigs): void;
 
   loadConfigs(): AppConfigs;
@@ -14,11 +14,10 @@ export interface ConfigsService extends EventTarget {
   resetConfigs(): void;
 }
 
-class ConfigsServiceImpl extends EventTarget implements ConfigsService {
+class ConfigsServiceImpl implements ConfigsService {
   #storageService: StorageService;
 
   constructor(storageService: StorageService) {
-    super();
     this.#storageService = storageService;
   }
 
@@ -26,7 +25,7 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
     this.#storageService.clearData("configs");
     this.#storageService.clearData("dark-mode-toggle");
     this.#storageService.saveData("configs", JSON.stringify(configs));
-    this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name.toLowerCase());
+    this.#storageService.saveData("dark-mode-toggle", configs.colorScheme.name);
     window.dispatchEvent(
       new CustomEvent(
         EventNames.Change.AppConfigs,
@@ -58,7 +57,7 @@ class ConfigsServiceImpl extends EventTarget implements ConfigsService {
       },
     };
 
-    this.saveConfigs(updatedConfigs);
+    // this.saveConfigs(updatedConfigs);
     return updatedConfigs;
   }
 

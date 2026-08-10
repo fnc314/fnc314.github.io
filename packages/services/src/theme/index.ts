@@ -9,10 +9,10 @@ import { RomanBusThemeConfig } from "@/lib/theme/roman-bus";
 import { SkylineThemeConfig } from "@/lib/theme/skyline";
 import { SunsetThemeConfig } from "@/lib/theme/sunset";
 import {
+    type ColorContrast,
     type ColorScheme,
     type ColorSchemeConfig,
     type ColorSchemeConfigChange,
-    type ColorSchemeContrast,
     type ColorSchemeRoles,
     type ColorString,
     EventNames,
@@ -39,7 +39,7 @@ export interface ThemeService {
 
   deviceColorScheme(): ColorScheme;
 
-  deviceColorContrast(): ColorSchemeContrast;
+  deviceColorContrast(): ColorContrast;
 
   currentThemeConfig(): ThemeConfig;
 
@@ -58,7 +58,7 @@ class ThemeServiceImpl implements ThemeService {
     return this.devicePreference();
   }
 
-  deviceColorContrast(): ColorSchemeContrast {
+  deviceColorContrast(): ColorContrast {
     return window.matchMedia(WindowMedia.PrefersContrast.More).matches ?
       ThemeNames.Contrast.High : ThemeNames.Contrast.Normal;
   }

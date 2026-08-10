@@ -41,11 +41,11 @@ export type MaterialSchemeName = (typeof ThemeNames.MaterialScheme)[keyof typeof
 export type MaterialScheme = Record<MaterialSchemeName, CSSResult>;
 
 export type ColorScheme = (typeof ThemeNames.Scheme)[keyof typeof ThemeNames.Scheme];
-export type ColorSchemeContrast = (typeof ThemeNames.Contrast)[keyof typeof ThemeNames.Contrast];
+export type ColorContrast = (typeof ThemeNames.Contrast)[keyof typeof ThemeNames.Contrast];
 
 export interface ColorSchemeConfig {
   name: ColorScheme;
-  contrast: ColorSchemeContrast;
+  contrast: ColorContrast;
   persist: boolean;
   theme: ThemeName;
 }

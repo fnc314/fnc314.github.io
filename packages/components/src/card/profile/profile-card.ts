@@ -3,7 +3,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { Biography, Photos } from "@fnc314/packages.data";
 import { configsService } from "@fnc314/packages.services";
-import { BENTO_BOX_TYPES, type BioExtended, EventNames } from "@fnc314/packages.types";
+import { BENTO_BOX_TYPES, type BioExtended, EventNames, type PhotoJson, type ThemeName } from "@fnc314/packages.types";
 import { type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
@@ -23,7 +23,7 @@ export class ProfileCard extends UIAwareElement {
   static override styles = [TextStyles, ProfileCardStyles];
 
   @property({ type: Object, attribute: false, noAccessor: true, state: true })
-  photoData = Photos[configsService.loadConfigs().colorScheme.theme];
+  photoData: PhotoJson = Photos[configsService.loadConfigs().colorScheme.theme as ThemeName] as PhotoJson;
 
   @property({ type: Object })
   aboutMe: BioExtended = Biography;
@@ -49,7 +49,7 @@ export class ProfileCard extends UIAwareElement {
   }
 
   private _onConfigChange = () => {
-    const themeName = configsService.loadConfigs().colorScheme.theme;
+    const themeName: ThemeName = configsService.loadConfigs().colorScheme.theme;
     this.photoData = Photos[themeName];
     this.requestUpdate();
   };

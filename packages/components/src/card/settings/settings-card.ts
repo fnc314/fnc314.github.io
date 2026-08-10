@@ -16,7 +16,7 @@ import {
     type AppConfigs,
     type AppConfigsChangeEvent,
     BENTO_BOX_TYPES,
-    type ColorSchemeContrast,
+    type ColorContrast,
     EventNames,
     type ThemeName,
     ThemeNames
@@ -74,7 +74,7 @@ export class SettingsCard extends UIAwareElement {
   }
 
   private _onContrastChange(event: Event) {
-    const value = (event.target as HTMLSelectElement).value as ColorSchemeContrast;
+    const value = (event.target as HTMLSelectElement).value as ColorContrast;
     const newColorScheme = {
       ...this._appConfigs.colorScheme,
       contrast: value,
@@ -157,7 +157,7 @@ export class SettingsCard extends UIAwareElement {
           .value=${this._appConfigs.colorScheme.contrast}
         >
           ${Object.values(ThemeNames.Contrast).map(
-            (contrast: ColorSchemeContrast) => html`
+            (contrast: ColorContrast) => html`
               <md-select-option value=${contrast}>
                 ${colorSchemeContrastToIcon(contrast)}
                 <div slot="headline">${contrast.charAt(0).toUpperCase() + contrast.slice(1).toLowerCase()}</div>

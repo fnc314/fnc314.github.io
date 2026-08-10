@@ -21,6 +21,9 @@ export const BentoCardStyles = css`
     inline-size: 100%;
 
     --md-focus-ring-shape: var(--bento-layout-card-shape);
+
+    --bento-card-expand-icon-width: var(--sizes-width-xl);
+    --bento-card-expand-icon-height: var(--sizes-height-xl);
   }
 
   article {
@@ -102,9 +105,11 @@ export const BentoCardStyles = css`
         padding-block-end: var(--spaces-padding-xs);
       }
 
-      md-icon {
-        --md-icon-size: 2rem;
+      svg {
+        inline-size: var(--bento-card-expand-icon-width);
+        block-size: var(--bento-card-expand-icon-height);
         color: var(--md-sys-color-primary);
+        fill: var(--md-sys-color-primary);
         transition: transform var(--motions-duration-medium) var(--motions-easing-standard);
       }
     }
@@ -118,7 +123,7 @@ export const BentoCardStyles = css`
     }
 
     &[open] {
-      md-icon {
+      svg {
         transform: rotate(var(--motions-rotation-180));
       }
 

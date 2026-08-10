@@ -1,15 +1,15 @@
-import { type ColorSchemeContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes, ThemeNames } from "@fnc314/packages.types";
+import { type ColorContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes, ThemeNames } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 /**
  * A convenience method to return {@link TemplateResult}s of `<md-icon>`
  *
- * @param {ColorSchemeContrast} contrast - The particular {@link ColorSchemeContrast} chosen by the user
+ * @param {ColorContrast} contrast - The particular {@link ColorContrast} chosen by the user
  * @param {("start" | "leading-icon")} [slot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default
  * @returns {TemplateResult}
  */
 export function colorSchemeContrastToIcon(
-  contrast: ColorSchemeContrast,
+  contrast: ColorContrast,
   slot: "start" | "leading-icon" = "start",
 ): TemplateResult {
   switch (contrast) {

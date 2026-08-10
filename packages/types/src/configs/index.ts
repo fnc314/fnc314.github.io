@@ -9,10 +9,10 @@ export interface AppConfigs {
 
 export const DEFAULT_APP_CONFIGS: AppConfigs = {
   colorScheme: {
-    theme: ThemeNames.Themes.inter,
+    theme: ThemeNames.Themes.Inter,
     name: ThemeNames.Scheme.System,
     contrast: ThemeNames.Contrast.Normal,
-    persist: false,
+    persist: false as const,
   } as const,
 } as const;
 
