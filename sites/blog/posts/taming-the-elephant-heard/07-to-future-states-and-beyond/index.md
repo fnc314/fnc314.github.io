@@ -1,24 +1,26 @@
 ---
 layout: "page"
-title: From Mayhem to Micro-Managed
-description: The first of seven entries in the `Taming the Elephant Heard` series.
+title: To Future States and Beyond
+description: The seventh of seven entries in the `Taming the Elephant Heard` series.
 ---
 
-# 07\. Taming the Elephant Heard \- To Future States and Beyond
+# 07. Taming the Elephant Heard - To Future States and Beyond
+
+{{ $frontmatter.description }}
 
 ## Intro
 
 My name is Franco and I’m a systems architect who specializes in mobile systems and particularly Android applications.  I recently had the opportunity to work in and subsequently oversee the customer-facing Android application codebase for a large organization.  Over this period, and out of equal parts curiosity and need, I had the chance to not only learn, but come to greatly enjoy the wonderful world of Gradle.
-
+<br></br>
 This series of blog posts will recant the multi-year, multi-pronged approach I undertook to transform this Android project’s general structure from an afterthought to a self-regulating, hyper-organized monolith.  Below is the table of contents for this series:
 
-01 \- From Mayhem to Micro-Managed
-02 \- Establishing Existing Order
-03 \- Plugins Over Copy-Paste
-04 \- Into the Wider Infrastructure
-05 \- Right Tool for the Job
-06 \- Screaming and Scripted Architecture
-07 \- To Future States and Beyond (this article)
+01 From Mayhem to Micro-Managed
+02 Establishing Existing Order
+03 Plugins Over Copy-Paste
+04 Into the Wider Infrastructure
+05 Right Tool for the Job
+06 Screaming and Scripted Architecture
+07 To Future States and Beyond (this article)
 
 ## To Future States and Beyond
 

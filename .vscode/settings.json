@@ -758,6 +758,7 @@
     "vue",
     "markdown"
   ],
+  "markdownlint.configFile": ".markdownlint.jsonc",
   "vue.suggest.componentNameCasing": "alwaysKebabCase",
   "vue.trace.server": "messages",
   "wctools.mcp.enabled": true,
