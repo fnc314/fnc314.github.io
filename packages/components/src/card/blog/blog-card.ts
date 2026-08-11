@@ -8,12 +8,13 @@ import { BENTO_BOX_TYPES, type BlogEntryJson } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+export const TAG_NAME_CARD_BLOG: string = "blog-card";
 /**
  * @summary BlogCard - A card component displaying blog posts.
  *
  * @element blog-card
  */
-@customElement("blog-card")
+@customElement(TAG_NAME_CARD_BLOG)
 export class BlogCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, BlogCardStyles];
@@ -53,6 +54,6 @@ export class BlogCard extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "blog-card": BlogCard;
+    [TAG_NAME_CARD_BLOG]: BlogCard;
   }
 }

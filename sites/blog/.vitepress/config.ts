@@ -1,5 +1,12 @@
 import { defineConfig } from 'vitepress';
 
+const workingDir = process.cwd().endsWith("blog") ?
+  "" : "sites/blog";
+
+const iconsDir = workingDir === "" ?
+  "packages/design-tokens/assets/icons/organization" :
+  "../../packages/design-tokens/assets/icons/organization"
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Franco's Blog",
@@ -9,12 +16,12 @@ export default defineConfig({
   base: "/",
   // dir: "",
   // outDir: "dist/vitepress/blog",
-  srcDir: "posts",
+  // srcDir: "",
   cleanUrls: true,
   vite: {
-    base: "/",
+    base: `/${workingDir}/`,
     // root: "sites/blog",
-    configFile: ".config/vite/vite.config.ts",
+    configFile: `${workingDir}/.config/vite/vite.config.ts`,
   },
   markdown: {
     breaks: true,
@@ -37,6 +44,9 @@ export default defineConfig({
         }
       ]
     },
+  },
+  sitemap: {
+    hostname: "https://blog.fnc314.com",
   },
   themeConfig: {
     externalLinkIcon: true,
@@ -78,17 +88,17 @@ export default defineConfig({
     outline: "deep",
     socialLinks: [
       {
-        icon: `${process.cwd()}/packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg`,
+        icon: `${iconsDir}/github/github-mask.svg`,
         link: "https://www.github.com/fnc314",
         ariaLabel: "Link to GitHub"
       },
       {
-        icon: `${process.cwd()}/packages/design-tokens/assets/icons/logos/organization/linkedin/linkedin-mask.svg`,
+        icon: `${iconsDir}/linkedin/linkedin-mask.svg`,
         link: "https://www.linkedin.com/in/fnc314",
         ariaLabel: "Link to LinkedIn"
       },
       {
-        icon: `${process.cwd()}/packages/design-tokens/assets/icons/logos/organization/medium/medium-mask.svg`,
+        icon: `${iconsDir}/medium/medium-mask.svg`,
         link: "https://fnc314.medium.com",
         ariaLabel: "Link to Medium"
       },
