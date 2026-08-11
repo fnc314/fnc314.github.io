@@ -77,15 +77,13 @@ export class WorkExperience extends UIAwareElement {
    * @returns {Record<string, boolean>} The {@link Record} passed into {@link classMap}
    */
   private getTypescaleClassMap(forHeading: boolean): Record<string, boolean> {
-    return forHeading ?
-      {
-        "md-typescale-headline-small": this.isNested,
-        "md-typescale-headline-medium": !this.isNested,
-      } :
-      {
-        "md-typescale-title-small": this.isNested,
-        "md-typescale-title-medium": !this.isNested,
-      };
+    const typescaleType = forHeading ? "headline" : "title";
+    const small = `md-typescale-${typescaleType}-small`;
+    const medium = `md-typescale-${typescaleType}-medium`;
+    return {
+      [small]: this.isNested,
+      [medium]: !this.isNested,
+    };
   }
 
   /** Renders the experience entry, conditionally applying styles based on nesting level. */

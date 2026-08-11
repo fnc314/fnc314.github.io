@@ -179,7 +179,7 @@ export const Experiences: Experience[] = [
       {
         client: "PPG Industries",
         role: "Web Developer",
-        summary: "Reduced deployment time for brand-specific white-label applications from days to hours by streamlining deployment processes and enhancing automation tools.",
+        summary: "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined web processes and tool enhancements.",
         dates: {
           start: {
             stamp: "2015-01",
@@ -190,11 +190,7 @@ export const Experiences: Experience[] = [
             text: "August 2016",
           },
         },
-        summaries: [
-          {
-            item: "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined web processes and tool enhancements.",
-          },
-        ],
+        summaries: [],
       },
     ],
     summaries: [],
@@ -202,7 +198,7 @@ export const Experiences: Experience[] = [
   {
     employer: "Pittsburgh Public Schools",
     role: "Teacher, Secondary Mathematics",
-    summary: "Worked with elementary students (during the summer) and high school students (during the school year) primarily focusing on Mathematics educational development and growth.",
+    summary: "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth.",
     dates: {
       start: {
         stamp: "2007-09",
@@ -214,10 +210,6 @@ export const Experiences: Experience[] = [
       },
     },
     jobs: [],
-    summaries: [
-      {
-        item: "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth.",
-      },
-    ],
+    summaries: [],
   },
 ];
