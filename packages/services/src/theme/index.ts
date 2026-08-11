@@ -35,8 +35,6 @@ export * from "@/lib/theme/sunset";
 export * from "@/lib/theme/utils";
 
 export interface ThemeService {
-  devicePreference(): ColorScheme;
-
   deviceColorScheme(): ColorScheme;
 
   deviceColorContrast(): ColorContrast;
@@ -49,21 +47,23 @@ export interface ThemeService {
 }
 
 class ThemeServiceImpl implements ThemeService {
+  #themeConfigs: ThemeConfigs = {
+    chicago: ChicagoThemeConfig,
+    downtown: DowntownThemeConfig,
+    inter: InterThemeConfig,
+    leatherJacket: LeatherJacketThemeConfig,
+    ponder: PonderThemeConfig,
+    red: RedThemeConfig,
+    romanBus: RomanBusThemeConfig,
+    skyline: SkylineThemeConfig,
+    sunset: SunsetThemeConfig,
+  };
   #configService: ConfigsService;
   constructor(configService: ConfigsService) {
     this.#configService = configService;
   }
 
   deviceColorScheme(): ColorScheme {
-    return this.devicePreference();
-  }
-
-  deviceColorContrast(): ColorContrast {
-    return window.matchMedia(WindowMedia.PrefersContrast.More).matches ?
-      ThemeNames.Contrast.High : ThemeNames.Contrast.Normal;
-  }
-
-  devicePreference(): ColorScheme {
     return window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
       ThemeNames.Scheme.Dark :
       (
@@ -73,15 +73,20 @@ class ThemeServiceImpl implements ThemeService {
       );
   }
 
+  deviceColorContrast(): ColorContrast {
+    return window.matchMedia(WindowMedia.PrefersContrast.More).matches ?
+      ThemeNames.Contrast.High : ThemeNames.Contrast.Normal;
+  }
+
   currentThemeConfig(): ThemeConfig {
-    return THEME_CONFIGS[this.#configService.loadConfigs().colorScheme.theme];
+    return this.#themeConfigs[this.#configService.loadConfigs().colorScheme.theme];
   }
 
   currentMaterialSchemeName(): MaterialSchemeName {
     const appConfigs = this.#configService.loadConfigs();
     const schemeMode = (
       appConfigs.colorScheme.name === ThemeNames.Scheme.System ?
-        this.devicePreference() :
+        this.deviceColorScheme() :
         appConfigs.colorScheme.name
     ).toLowerCase();
 
@@ -111,19 +116,7 @@ declare global {
   }
 }
 
-export const THEME_CONFIGS: ThemeConfigs = {
-  chicago: ChicagoThemeConfig,
-  downtown: DowntownThemeConfig,
-  inter: InterThemeConfig,
-  leatherJacket: LeatherJacketThemeConfig,
-  ponder: PonderThemeConfig,
-  red: RedThemeConfig,
-  romanBus: RomanBusThemeConfig,
-  skyline: SkylineThemeConfig,
-  sunset: SunsetThemeConfig,
-};
-
-export const MaterialCSSStyleSheet: CSSStyleSheet = THEME_CONFIGS.inter.materialSchemes.light.styleSheet!;
+export const MaterialCSSStyleSheet: CSSStyleSheet = InterThemeConfig.materialSchemes.light.styleSheet!;
 
 export const onThemeChange: (event: MediaQueryListEvent) => void = (event: MediaQueryListEvent) => {
   const name = event.matches ? ThemeNames.Scheme.Dark : ThemeNames.Scheme.Light;
@@ -153,16 +146,13 @@ export const colorSchemeConfigsToMaterialSchemeName: (colorSchemeSettings: Color
 ): MaterialSchemeName => {
   const variant =
     colorSchemeSettings.name !== ThemeNames.Scheme.System ?
-      colorSchemeSettings.name.toLowerCase() :
-      (window.matchMedia(WindowMedia.PrefersColorScheme.Dark).matches ?
-        ThemeNames.Scheme.Dark :
-        ThemeNames.Scheme.Light
-      ).toLowerCase();
+      colorSchemeSettings.name :
+      themeService.deviceColorScheme();
 
   const contrast =
     colorSchemeSettings.contrast === ThemeNames.Contrast.Normal ?
       "" :
-      colorSchemeSettings.contrast.charAt(0) + colorSchemeSettings.contrast.slice(1).toLowerCase() + "Contrast";
+      colorSchemeSettings.contrast.charAt(0).toUpperCase() + colorSchemeSettings.contrast.slice(1) + "Contrast";
 
   return `${variant}${contrast}` as MaterialSchemeName;
 };

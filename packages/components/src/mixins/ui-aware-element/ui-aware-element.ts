@@ -23,7 +23,6 @@ import { state } from "lit/decorators.js";
  * @abstract
  * @class UIModeAwareElement
  * @extends {LitElement}
- * @tag **
  */
 export abstract class UIAwareElement extends LitElement {
   /**
@@ -95,13 +94,15 @@ export abstract class UIAwareElement extends LitElement {
         return variants.light;
       case ThemeNames.Scheme.System:
       default:
-        switch (themeService.devicePreference()) {
+        switch (themeService.deviceColorScheme()) {
           case ThemeNames.Scheme.Dark:
             return variants.dark;
           case ThemeNames.Scheme.Light:
             return variants.light;
           case ThemeNames.Scheme.System:
             return variants.default ?? variants.light;
+          default:
+            return variants.light;
         }
     }
   }
