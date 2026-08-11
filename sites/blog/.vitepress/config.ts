@@ -4,18 +4,24 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default async () => {
 
-  const workingDir = process.cwd().endsWith("blog") ?
-    "" : "sites/blog/";
+  // Determine if VitePress is running from monorepo root or nested app root
+  const isNestedRun = process.cwd().endsWith("blog");
 
-  const iconsDir = workingDir === "" ?
+  // Fix: If running "vitepress build sites/blog", process.cwd() is the root,
+  // but VitePress shifts its internal execution root to "sites/blog".
+  // Therefore, srcDir should just be "." because VitePress is already inside "sites/blog".
+  const srcDir = ".";
+
+  // Keep your monorepo-root relative asset paths intact
+  const iconsDir = isNestedRun ?
     "../../packages/design-tokens/assets/icons/organization" :
-    "packages/design-tokens/assets/icons/organization"
+    "packages/design-tokens/assets/icons/organization";
 
   console.log(
     JSON.stringify(
       {
         "process.cwd": process.cwd(),
-        workingDir,
+        isNestedRun,
         iconsDir,
       },
       null,
@@ -29,15 +35,15 @@ export default async () => {
     lang: "en-US",
     lastUpdated: true,
     base: "/",
-    dir: workingDir,
-    srcDir: workingDir,
+    dir: srcDir,
+    srcDir: srcDir,
     // outDir: "dist/vitepress/blog",
     cleanUrls: true,
     vite: {
       base: "/",
-      root: `${process.cwd()}/${workingDir}`,
-      // root: "sites/blog",
-      configFile: `${workingDir}.config/vite/vite.config.ts`,
+      // Ensure Vite resolves correctly relative to your command execution
+      root: isNestedRun ? process.cwd() : `${process.cwd()}/sites/blog`,
+      configFile: isNestedRun ? ".config/vite/vite.config.ts" : "sites/blog/.config/vite/vite.config.ts",
     },
     markdown: {
       breaks: true,
@@ -63,6 +69,7 @@ export default async () => {
     },
     sitemap: {
       hostname: "https://blog.fnc314.dev",
+      lastmodDateOnly: true,
     },
     themeConfig: {
       externalLinkIcon: true,
@@ -90,7 +97,7 @@ export default async () => {
         alt: "Blog Site Logo",
       },
       logoLink: {
-        link: "https://www.fnc314.com/blog",
+        link: "https://blog.fnc314.dev",
         rel: "noopener noreferrer",
         target: "_blank",
       },
@@ -103,6 +110,11 @@ export default async () => {
       },
       outline: "deep",
       socialLinks: [
+        {
+          icon: "",
+          link: "https://www.fnc314.dev",
+          ariaLabel: "Link to Portfolio Site"
+        },
         {
           icon: `${iconsDir}/github/github-mask.svg`,
           link: "https://www.github.com/fnc314",
