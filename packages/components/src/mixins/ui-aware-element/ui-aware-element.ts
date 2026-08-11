@@ -39,6 +39,7 @@ export abstract class UIAwareElement extends LitElement {
     (event: AppConfigsChangeEvent) => {
       this.darkMode =
         event.detail.appConfigs.colorScheme.name === ThemeNames.Scheme.Dark;
+      this.requestUpdate();
     };
 
   /**
@@ -56,6 +57,7 @@ export abstract class UIAwareElement extends LitElement {
       CSS_VARIABLE_BREAKPOINT_LABEL,
       window.document.documentElement
     ) as BreakpointLabel;
+    this.requestUpdate();
   };
 
   /**
