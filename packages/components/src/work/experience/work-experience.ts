@@ -98,17 +98,26 @@ export class WorkExperience extends UIAwareElement {
       <p class=${classMap(this.getTypescaleClassMap(false))}>${this.experienceOrg}</p>
     `;
 
+    const currentDate = new Date();
+
+    const currentMonth = `${currentDate.getMonth()}`.length === 2 ?
+      `${currentDate.getMonth() + 1}` : `0${currentDate.getMonth() + 1}`
+
+    const endDatetime: string = this.dateEnd.stamp.trim() === "" ?
+      currentMonth :
+      this.dateEnd.stamp;
+
     const dates = html`
       <p>
         <time
           class=${classMap(this.getTypescaleClassMap(false))}
-          datetime="${this.dateStart.stamp}"
+          datetime=${this.dateStart.stamp}
           >${this.dateStart.text}</time
         >
         &mdash;
         <time
           class=${classMap(this.getTypescaleClassMap(false))}
-          datetime="${this.dateEnd.stamp}"
+          datetime=${endDatetime}
           >${this.dateEnd.text}</time
         >
       </p>

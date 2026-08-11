@@ -12,7 +12,7 @@ export const Experiences: Experience[] = [
       },
       end: {
         stamp: "",
-        text: "current",
+        text: "Present",
       }
     },
     jobs: [],
