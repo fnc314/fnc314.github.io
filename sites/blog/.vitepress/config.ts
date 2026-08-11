@@ -61,7 +61,7 @@ export default async () => {
       },
     },
     sitemap: {
-      hostname: "https://blog.fnc314.com",
+      hostname: "https://blog.fnc314.dev",
     },
     themeConfig: {
       externalLinkIcon: true,
@@ -94,7 +94,7 @@ export default async () => {
         target: "_blank",
       },
       notFound: {
-        linkLabel: "Return to https://www.fnc314.dev/blog",
+        linkLabel: "Return to https://blog.fnc314.dev",
         linkText: "Get Outta Here",
         quote: "This is not the page you're looking for...",
         title: "Not Found",

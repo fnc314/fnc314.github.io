@@ -1,6 +1,6 @@
 ---
 title: Taming The Elephant Heard
-titleTemplate: - Taming The Elephant Heard
+titleTemplate: Taming The Elephant Heard
 description: A series of modernation, stabilization, and how a near decade old codebase was reworked into a future-proof workhorse.
 ---
 
