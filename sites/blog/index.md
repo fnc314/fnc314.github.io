@@ -6,4 +6,4 @@ home: true
 
 thing
 
-[link](/sites/blog/posts/api-examples.md)
+[link](/sites/blog/posts/index.md)

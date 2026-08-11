@@ -1,4 +1,5 @@
 ---
+layout: "page"
 title: From Mayhem to Micro-Managed
 description: The first of seven entries in the `Taming the Elephant Heard` series.
 ---

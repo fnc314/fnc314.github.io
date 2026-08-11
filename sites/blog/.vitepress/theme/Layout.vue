@@ -11,6 +11,7 @@ const { frontmatter, site } = useData()
     <ul>
       <li><a href="/sites/blog/posts/markdown-examples.html">Markdown Examples</a></li>
       <li><a href="/sites/blog/posts/api-examples.html">API Examples</a></li>
+      <li><a href="/sites/blog/posts/taming-the-elephant-heard/index.html">Taming the Elephant Heard</a></li>
       <li><a href="/sites/blog/posts/index.html">Index</a></li>
     </ul>
   </div>
