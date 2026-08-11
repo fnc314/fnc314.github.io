@@ -11,13 +11,13 @@ const { site, frontmatter, theme } = useData()
     <p>{{ site.description }}</p>
     <p>{{ theme.lastUpdated.formatOptions }}</p>
     <ul>
-      <li><a href="/blog/markdown-examples.html">Markdown Examples</a></li>
-      <li><a href="/blog/api-examples.html">API Examples</a></li>
-      <li><a href="/blog/index.html">Index</a></li>
+      <li><a href="/markdown-examples.html">Markdown Examples</a></li>
+      <li><a href="/api-examples.html">API Examples</a></li>
+      <li><a href="/index.html">Index</a></li>
     </ul>
   </div>
   <div v-else>
-    <a href="/blog/">Home</a>
+    <a href="/">Home</a>
     <Content />
   </div>
 </template>
