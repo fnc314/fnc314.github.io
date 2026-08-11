@@ -36,6 +36,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
   "cem.additionalPackages": [
     "npm:@material/web"
   ],
@@ -185,6 +188,7 @@
   "java.import.gradle.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "java.jdt.ls.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "jdk.jdkhome": "${workspaceFolder}/.vscode/mise-tools/java",
+  "js/ts.experimental.useTsgo": true,
   "js/ts.format.semicolons": "insert",
   "js/ts.preferences.quoteStyle": "double",
   "js/ts.preferGoToSourceDefinition": true,
@@ -747,10 +751,15 @@
   ],
   "tombi.env": {},
   "tombi.path": "tombi",
+  "vue.format.script.initialIndent": true,
+  "vue.format.style.initialIndent": true,
+  "vue.format.wrapAttributes": "force-aligned",
   "vue.server.includeLanguages": [
     "vue",
     "markdown"
   ],
+  "vue.suggest.componentNameCasing": "alwaysKebabCase",
+  "vue.trace.server": "messages",
   "wctools.mcp.enabled": true,
   "wctools.mcp.host": "localhost",
   "wctools.mcp.port": 3005,
@@ -773,8 +782,5 @@
     "**/zlogout"
   ],
   "zshellcheck.run": "onSave",
-  "zshellcheck.useWorkspaceRootAsCwd": true,
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  }
+  "zshellcheck.useWorkspaceRootAsCwd": true
 }
