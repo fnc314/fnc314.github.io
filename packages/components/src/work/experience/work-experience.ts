@@ -104,7 +104,7 @@ export class WorkExperience extends UIAwareElement {
       `${currentDate.getMonth() + 1}` : `0${currentDate.getMonth() + 1}`
 
     const endDatetime: string = this.dateEnd.stamp.trim() === "" ?
-      currentMonth :
+      `${currentDate.getFullYear()}-${currentMonth}` :
       this.dateEnd.stamp;
 
     const dates = html`
