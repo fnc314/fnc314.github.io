@@ -43,6 +43,7 @@
     "packages/design-tokens",
     "packages/services",
     "packages/types",
+    "sites/blog",
     "sites/docs",
     "sites/portfolio"
   ],
@@ -59,7 +60,10 @@
     "test:dev": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs",
     "test:prod": "MODE=prod pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs",
     "test:prod:watch": "MODE=prod pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch",
-    "test:watch": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch"
+    "test:watch": "pnpm wtr --config ./.config/web-test-runner/web-test-runner.config.mjs --watch",
+    "docs:dev": "vitepress dev sites/blog",
+    "docs:build": "vitepress build sites/blog",
+    "docs:preview": "vitepress preview sites/blog"
   },
   "dependencies": {
     "@fnc314/packages.components": "workspace:*",
@@ -195,6 +199,7 @@
     "vite-plugin-pwa": "catalog:devDependencies",
     "vite-plugin-svgo": "catalog:devDependencies",
     "vite-plugin-version-mark": "catalog:devDependencies",
+    "vitepress": "catalog:devDependencies",
     "web-component-analyzer": "catalog:devDependencies"
   },
   "overrides": {

@@ -747,6 +747,10 @@
   ],
   "tombi.env": {},
   "tombi.path": "tombi",
+  "vue.server.includeLanguages": [
+    "vue",
+    "markdown"
+  ],
   "wctools.mcp.enabled": true,
   "wctools.mcp.host": "localhost",
   "wctools.mcp.port": 3005,
@@ -769,5 +773,8 @@
     "**/zlogout"
   ],
   "zshellcheck.run": "onSave",
-  "zshellcheck.useWorkspaceRootAsCwd": true
+  "zshellcheck.useWorkspaceRootAsCwd": true,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
 }

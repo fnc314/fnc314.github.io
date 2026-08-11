@@ -146,6 +146,7 @@ catalogs:
     vite-plugin-svgo: 3.0.0
     vite-plugin-version-mark: 0.2.2
     vite-plus: 0.2.8
+    vitepress: 1.6.4
     vitest: 4.1.10
     web-component-analyzer: 2.0.0
   functionsDependencies:
@@ -236,6 +237,7 @@ packages:
   - "packages/design-tokens"
   - "packages/services"
   - "packages/types"
+  - "sites/blog"
   - "sites/docs"
   - "sites/portfolio"
 peerDependencyRules:

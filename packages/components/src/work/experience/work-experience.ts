@@ -9,6 +9,8 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type Job, type WorkDate } from "@fnc314/packages.types";
 
+export const TAG_NAME_WORK_EXPERIENCE: string = "work-experience";
+
 /**
  * @summary A component for displaying professional work experience entries.  Supports nesting
  *   for sub-roles or specific project assignments under a single employer.
@@ -22,7 +24,7 @@ export { type Job, type WorkDate } from "@fnc314/packages.types";
  * @property {Array<{ item: string }>} [summaries=[]] - An array of `{ item: string }` objects describing the responsibilities
  * @property {Array<Job>} [jobs=[]] - An array of {@link @fnc314/packages.types!Job}s rendered as nested {@link WorkExperience} instances
  */
-@customElement("work-experience")
+@customElement(TAG_NAME_WORK_EXPERIENCE)
 export class WorkExperience extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, WorkExperienceStyles];
@@ -186,6 +188,6 @@ export class WorkExperience extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "work-experience": WorkExperience;
+    [TAG_NAME_WORK_EXPERIENCE]: WorkExperience;
   }
 }

@@ -15,3 +15,5 @@ logs
 node_modules/
 stats
 *.log
+sites/blog/.vitepress/dist
+sites/blog/.vitepress/cache

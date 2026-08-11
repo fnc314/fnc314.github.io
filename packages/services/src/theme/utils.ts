@@ -1,3 +1,4 @@
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type ColorContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes, ThemeNames } from "@fnc314/packages.types";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
@@ -14,11 +15,11 @@ export function colorSchemeContrastToIcon(
 ): TemplateResult {
   switch (contrast) {
     case ThemeNames.Contrast.Normal:
-      return html`<md-icon slot="${slot}">exposure_zero</md-icon>`;
+      return Icons.Material.Exposure.Zero;
     case ThemeNames.Contrast.Medium:
-      return html`<md-icon slot="${slot}">exposure_plus_1</md-icon>`;
+      return Icons.Material.Exposure.One;
     case ThemeNames.Contrast.High:
-      return html`<md-icon slot="${slot}">exposure_plus_2</md-icon>`;
+      return Icons.Material.Exposure.Two;
     default:
       return html`${nothing}`;
   }

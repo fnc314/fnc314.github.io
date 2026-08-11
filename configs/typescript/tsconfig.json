@@ -94,6 +94,7 @@
       "lit",
       "node",
       "vite/client",
+      "vitepress/client",
       "material-symbols",
       "@types/fs-extra",
       "unplugin-info/client",
@@ -111,5 +112,7 @@
     "${configDir}/.config",
     "${configDir}/src/**/*.ts",
     "${configDir}/src/env.d.ts",
+    "${configDir}/**/*.md",
+    "${configDir}/**/*.vue",
   ],
 }

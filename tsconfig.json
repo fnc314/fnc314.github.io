@@ -97,6 +97,7 @@
       "node",
       "eslint",
       "vite/client",
+      "vitepress/client",
       "vite-plugin-pwa/client",
       "vite-plugin-pwa/pwa-assets",
       "custom-elements-manifest/schema",
@@ -163,6 +164,9 @@
     {
       "path": "./packages/types/tsconfig.json",
     },
+    {
+      "path": "./sites/blog/tsconfig.json",
+    }
   ],
   "ts-node": {
     "compiler": "typescript",
