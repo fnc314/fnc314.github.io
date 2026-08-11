@@ -5,11 +5,11 @@ import { defineConfig } from 'vitepress';
 export default async () => {
 
   const workingDir = process.cwd().endsWith("blog") ?
-    "" : "sites/blog";
+    "" : "sites/blog/";
 
   const iconsDir = workingDir === "" ?
-    "packages/design-tokens/assets/icons/organization" :
-    "../../packages/design-tokens/assets/icons/organization"
+    "../../packages/design-tokens/assets/icons/organization" :
+    "packages/design-tokens/assets/icons/organization"
 
   console.log(
     JSON.stringify(
@@ -34,9 +34,9 @@ export default async () => {
     // srcDir: "",
     cleanUrls: true,
     vite: {
-      base: `/${workingDir}/`,
+      base: "/",
       // root: "sites/blog",
-      configFile: `${workingDir}/.config/vite/vite.config.ts`,
+      configFile: `${workingDir}.config/vite/vite.config.ts`,
     },
     markdown: {
       breaks: true,
