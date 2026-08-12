@@ -173,7 +173,7 @@ export const Projects: CodeRepoData[] = [
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",
-    description: `Portfolio page found at <a href="https://www.fnc314.com/" target="_blank">https://www.fnc314.com</a> (this site)`,
+    description: `Portfolio page found at <a href="https://www.fnc314.dev/" target="_blank">https://www.fnc314.dev</a> (this site)`,
   },
   {
     name: "material-theme-viewer",
