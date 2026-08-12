@@ -1,10 +1,13 @@
 ---
 layout: "doc"
-title: From Mayhem to Micro-Managed
-description: The first of seven entries in the `Taming the Elephant Heard` series.
+sequence: 2
+title: Establishing Existing Order
+description: The second of seven entries in the `Taming the Elephant Heard` series.
 ---
 
-# 02\. Taming the Elephant Heard \- Establishing Existing Order
+# \#{{ $frontmatter.sequence }} - {{ $frontmatter.title }}
+
+<p class="frontmatter-description">{{ $frontmatter.description }}</p>
 
 ## Intro
 

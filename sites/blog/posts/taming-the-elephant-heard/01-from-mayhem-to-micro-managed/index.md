@@ -27,8 +27,9 @@ description: The first of seven entries in the `Taming the Elephant Heard` serie
   }
 </style>
 
-<h1>{{ $frontmatter.sequence}} {{ $frontmatter.title }}</h1>
+# \#{{ $frontmatter.sequence }} - {{ $frontmatter.title }}
 
+<p class="frontmatter-description">{{ $frontmatter.description }}</p>
 
 ## Intro
 

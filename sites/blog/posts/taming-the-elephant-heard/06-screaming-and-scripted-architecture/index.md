@@ -1,10 +1,13 @@
 ---
 layout: "doc"
-title: From Mayhem to Micro-Managed
-description: The first of seven entries in the `Taming the Elephant Heard` series.
+sequence: 6
+title: Screaming and Scripted Architecture
+description: The sixth of seven entries in the `Taming the Elephant Heard` series.
 ---
 
-# 06\. Taming the Elephant Heard \- Screaming and Scripted Architecture
+# \#{{ $frontmatter.sequence }} - {{ $frontmatter.title }}
+
+<p class="frontmatter-description">{{ $frontmatter.description }}</p>
 
 ## Intro
 
@@ -50,7 +53,16 @@ It was apparent that the team needed an automated way to produce, at least, a co
 
 Empty (Kotlin) `object`s were placed in the lowest level of randomly named directories that started *after* packages aligned with the project’s location.  For example, consider a collection of projects `.libs` and a developer aims to contribute a library `acme-sdk` into the project.  The team definitions say that *code to wrap a third-party/vendor SDK, lives in `.libs` and borrows its name from the SDK, without the letters “SDK”*.  The scripts, then, would produce
 
-`$projectRoot/libs/acme/src/[main|debug|...]/com/company[/suborg][/mobile]/android/lib/acme/random/sub/dir/[SomeObject|DebugSomeObject|...].kt`
+```kotlin
+// File Path: $projectRoot/libs/acme/src/[main|debug|...]/com/company[/suborg][/mobile]/android/lib/acme/sub/package/AFile.kt
+
+package com.company[.suborg][.mobile].android.lib.acme.some.package
+
+interface SomeObject
+
+// maybe?
+class DebugSomeObject : SomeObject
+```
 
 The use of separate names allowed the project to compile without requiring a more complicated scaffolding to set up.
 

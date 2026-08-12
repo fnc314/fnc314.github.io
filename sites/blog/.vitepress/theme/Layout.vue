@@ -13,19 +13,19 @@ const { frontmatter, site, page } = useData()
   </div>
   <div v-if="frontmatter.home">
     <h1>{{ site.title }}</h1>
-    <ul>
+    <ol>
       <li><a href="/posts/markdown-examples">Markdown Examples</a></li>
       <li><a href="/posts/api-examples">API Examples</a></li>
       <li><a href="/posts/taming-the-elephant-heard/">Taming the Elephant Heard</a></li>
-      <li><a href="/posts/index">Index</a></li>
-      <li><a href="/index">Index ROOT</a></li>
-    </ul>
+      <li><a href="/posts/index">Posts Index</a></li>
+      <li><a href="/index">Root</a></li>
+    </ol>
     <Content />
   </div>
   <div v-else>
     <a class="home-link" href="/">Home</a>
     <main>
-      <Content />
+      <Content class="main-content" />
     </main>
   </div>
 </template>

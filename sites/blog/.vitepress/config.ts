@@ -82,6 +82,11 @@ export default async () => {
       lastmodDateOnly: true,
     },
     themeConfig: {
+      footer: {
+        copyright: `Franco N. Colaizzi - &copy; ${new Date().getUTCFullYear()}`,
+        message: "All Rights Reserved",
+      },
+      siteTitle: false,
       externalLinkIcon: true,
       lastUpdated: {
         formatOptions: {

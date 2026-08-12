@@ -1,12 +1,13 @@
 ---
 layout: "doc"
+sequence: 7
 title: To Future States and Beyond
 description: The seventh of seven entries in the `Taming the Elephant Heard` series.
 ---
 
-# 07. Taming the Elephant Heard - To Future States and Beyond
+# \#{{ $frontmatter.sequence }} - {{ $frontmatter.title }}
 
-{{ $frontmatter.description }}
+<p class="frontmatter-description">{{ $frontmatter.description }}</p>
 
 ## Intro
 

@@ -11,8 +11,20 @@ main {
   align-items: center;
   justify-content: center;
 
-  div {
+  h1, h2 {
+    margin-block-start: var(--sizes-margin-m);
+  }
+
+  .main-content {
     max-inline-size: var(--sizes-dynamic-width-xl);
+  }
+
+  .frontmatter-description {
+    font-style: italic;
+    font-size: var(--p-emphasis-font-size);
+    line-height: var(--p-emphasis-line-height);
+    text-align: center;
+    margin-block: var(--sizes-margin-s) var(--sizes-margin-l);
   }
 
   p {
@@ -28,5 +40,9 @@ main {
   a {
     color: revert;
     text-decoration: revert;
+  }
+
+  .custom-block {
+    margin-block: var(--sizes-margin-l);
   }
 }

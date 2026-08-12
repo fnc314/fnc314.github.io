@@ -1,10 +1,13 @@
 ---
 layout: "doc"
-title: From Mayhem to Micro-Managed
-description: The first of seven entries in the `Taming the Elephant Heard` series.
+sequence: 4
+title: Into the Wider Infrastructure
+description: The fourth of seven entries in the `Taming the Elephant Heard` series.
 ---
 
-# 04\. Taming the Elephant Heard \- Into the Wider Infrastructure
+# \#{{ $frontmatter.sequence }} - {{ $frontmatter.title }}
+
+<p class="frontmatter-description">{{ $frontmatter.description }}</p>
 
 ## Intro
 
