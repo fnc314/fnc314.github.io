@@ -2,6 +2,7 @@ import { type DefaultTheme, type UserConfig, defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default async () => {
+  const currentYear = new Date().getUTCFullYear();
 
   // Determine if VitePress is running from monorepo root or nested app root
   const isNestedRun = process.cwd().endsWith("blog");
@@ -67,7 +68,7 @@ export default async () => {
     },
     themeConfig: {
       footer: {
-        copyright: `Franco N. Colaizzi - &copy; ${new Date().getUTCFullYear()}`,
+        copyright: `Franco N. Colaizzi - &copy; ${currentYear}`,
         message: `All Rights Reserved - <a href="/">Home</a>`,
       },
       nav: [],
