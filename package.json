@@ -97,6 +97,7 @@
     "@eslint/eslintrc": "catalog:devDependencies",
     "@eslint/js": "catalog:devDependencies",
     "@genesiscommunitysuccess/custom-elements-lsp": "catalog:devDependencies",
+    "@iconify-json/simple-icons": "catalog:devDependencies",
     "@lit-labs/cli": "catalog:devDependencies",
     "@lit-labs/cli-localize": "catalog:devDependencies",
     "@lit-labs/gen-manifest": "catalog:devDependencies",

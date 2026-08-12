@@ -154,6 +154,7 @@
   },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "firebase.debug": true,
   "firebase.firebasePath": "~/.local/share/mise/installs/firebase/15.24.0/firebase",
   "firebase.hosting.useFrameworks": true,
   "fixJson.indentationSpaces": 2,
@@ -201,6 +202,7 @@
   "jsdoc-generator.generateDescriptionForTypeParameters": true,
   "JSON-zain.json.autorefresh": true,
   "lit-html.format.enabled": true,
+  "markdownlint.configFile": ".markdownlint.jsonc",
   // "lit-plugin.customHtmlData": {
   //   "tags": [
   //     {
@@ -758,7 +760,6 @@
     "vue",
     "markdown"
   ],
-  "markdownlint.configFile": ".markdownlint.jsonc",
   "vue.suggest.componentNameCasing": "alwaysKebabCase",
   "vue.trace.server": "messages",
   "wctools.mcp.enabled": true,

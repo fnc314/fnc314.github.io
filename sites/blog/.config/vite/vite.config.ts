@@ -10,6 +10,7 @@ export default defineConfig(
         copyPublicDir: true,
         emptyOutDir: true,
       },
+      publicDir: "public",
       root: process.cwd().endsWith("blog") ? "." : "sites/blog",
     };
   }

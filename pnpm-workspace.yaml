@@ -38,6 +38,7 @@ catalogs:
     "@eslint/eslintrc": 3.3.6
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
+    '@iconify-json/simple-icons': 1.2.93
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2
     "@lit-labs/gen-manifest": 0.3.6

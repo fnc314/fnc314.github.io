@@ -9,6 +9,7 @@
     "@fnc314/configs.prettier": "workspace:*"
   },
   "devDependencies": {
+    "@iconify-json/simple-icons": "catalog:devDependencies",
     "typescript": "catalog:typescript",
     "typescript7": "catalog:typescript",
     "vite": "catalog:devDependencies",

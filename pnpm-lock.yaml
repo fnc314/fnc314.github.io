@@ -287,6 +287,9 @@ catalogs:
     '@genesiscommunitysuccess/custom-elements-lsp':
       specifier: 5.0.3
       version: 5.0.3
+    '@iconify-json/simple-icons':
+      specifier: 1.2.93
+      version: 1.2.93
     '@lit-labs/cli':
       specifier: 0.6.6
       version: 0.6.6
@@ -721,6 +724,9 @@ importers:
       '@genesiscommunitysuccess/custom-elements-lsp':
         specifier: catalog:devDependencies
         version: 5.0.3
+      '@iconify-json/simple-icons':
+        specifier: catalog:devDependencies
+        version: 1.2.93
       '@lit-labs/cli':
         specifier: catalog:devDependencies
         version: 0.6.6
@@ -1393,6 +1399,9 @@ importers:
         specifier: catalog:dependencies
         version: 3.5.41(@typescript/typescript6@6.0.2)
     devDependencies:
+      '@iconify-json/simple-icons':
+        specifier: catalog:devDependencies
+        version: 1.2.93
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -22965,6 +22974,7 @@ time:
   '@eslint/eslintrc@3.3.6': '2026-07-10T20:07:59.036Z'
   '@eslint/js@10.0.1': '2026-02-06T22:34:56.290Z'
   '@genesiscommunitysuccess/custom-elements-lsp@5.0.3': '2024-02-14T13:52:15.401Z'
+  '@iconify-json/simple-icons@1.2.93': '2026-08-03T04:18:14.709Z'
   '@lit-labs/cli-localize@0.2.2': '2025-12-23T22:03:23.431Z'
   '@lit-labs/cli@0.6.6': '2025-12-23T22:03:23.594Z'
   '@lit-labs/gen-manifest@0.3.6': '2026-05-14T03:55:57.514Z'

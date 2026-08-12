@@ -2,8 +2,6 @@ import { type DefaultTheme, type UserConfig, defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default async () => {
-  const currentYear = new Date().getUTCFullYear();
-
   // Determine if VitePress is running from monorepo root or nested app root
   const isNestedRun = process.cwd().endsWith("blog");
 
@@ -26,8 +24,12 @@ export default async () => {
     dir: srcDir,
     srcDir: srcDir,
     cleanUrls: true,
-    assetsDir: "static",
+    assetsDir: "public",
     metaChunk: true,
+    // scrollOffset: {
+    //   selector: "figure",
+    //   padding: 0,
+    // },
     appearance: {
       deep: true,
       initOnMounted: true,
@@ -56,6 +58,18 @@ export default async () => {
       image: {
         lazyLoading: true,
       },
+      linkify: false,
+      frontmatter: {
+        renderExcerpt: true,
+        grayMatterOptions: {
+          eval: true,
+          excerpt: true,
+        }
+      },
+      html: true,
+      toc: {
+        shouldAllowNested: true,
+      },
       theme: {
         light: "one-light",
         dark: "material-theme-ocean",
@@ -67,12 +81,14 @@ export default async () => {
       lastmodDateOnly: true,
     },
     themeConfig: {
-      footer: {
-        copyright: `Franco N. Colaizzi - &copy; ${currentYear}`,
-        message: `All Rights Reserved - <a href="/">Home</a>`,
-      },
+      aside: false,
+      sidebar: {},
       nav: [],
       siteTitle: false,
+      footer: {
+        copyright: `All Rights Reserved`,
+        message: `Franco N. Colaizzi - <a href="/">Home</a>`,
+      },
       externalLinkIcon: true,
       lastUpdated: {
         text: "Updated on",
@@ -92,13 +108,14 @@ export default async () => {
           // weekday: "long",
         },
       },
+      lightModeSwitchTitle: "Switch to Light Mode",
       darkModeSwitchLabel: "Dark Mode",
       darkModeSwitchTitle: "Switch to Dark Mode",
       returnToTopLabel: "",
       logo: {
-        // src: `./../../static/icon/icon.svg`,
-        dark: isNestedRun ? `/static/icon/icon-dark.svg` : `/static/icon/icon-dark.svg`,
-        light: isNestedRun ? `/static/icon/icon-light.svg` : `/static/icon/icon-light.svg`,
+        // src: `./../../public/icon/icon.svg`,
+        dark: isNestedRun ? `/public/icon/icon-dark.svg` : `/public/icon/icon-dark.svg`,
+        light: isNestedRun ? `/public/icon/icon-light.svg` : `/public/icon/icon-light.svg`,
         alt: "Blog Site Logo",
       },
       logoLink: {
@@ -133,22 +150,30 @@ export default async () => {
       },
       socialLinks: [
         {
-          icon: isNestedRun ? "./static/icon/icon.svg" : "./sites/blog/static/icon/icon.svg",
+          icon: {
+            svg: isNestedRun ? "./public/icon/icon.svg" : "/sites/blog/public/icon/icon.svg"
+          },
           link: "/",
           ariaLabel: "Link to Portfolio Site"
         },
         {
-          icon: `${iconsDir}/github/github-mask.svg`,
+          icon: {
+            svg: `${iconsDir}/github/github-mask.svg`
+          },
           link: "https://www.github.com/fnc314",
           ariaLabel: "Link to GitHub"
         },
         {
-          icon: `${iconsDir}/linkedin/linkedin-mask.svg`,
+          icon: {
+            svg: `${iconsDir}/linkedin/linkedin-mask.svg`
+          },
           link: "https://www.linkedin.com/in/fnc314",
           ariaLabel: "Link to LinkedIn"
         },
         {
-          icon: `${iconsDir}/medium/medium-mask.svg`,
+          icon: {
+            svg: `${iconsDir}/medium/medium-mask.svg`
+          },
           link: "https://fnc314.medium.com",
           ariaLabel: "Link to Medium"
         },
