@@ -1,5 +1,4 @@
-import { defineConfig } from 'vitepress';
-
+import { type DefaultTheme, type UserConfig, defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default async () => {
@@ -17,19 +16,7 @@ export default async () => {
     "../../packages/design-tokens/assets/icons/logos/organization" :
     "packages/design-tokens/assets/icons/logos/organization";
 
-  console.log(
-    JSON.stringify(
-      {
-        "process.cwd": process.cwd(),
-        isNestedRun,
-        iconsDir,
-      },
-      null,
-      2
-    )
-  );
-
-  return defineConfig({
+  const userConfig: UserConfig<DefaultTheme.Config> = {
     title: "Franco's Blog",
     description: "Blog Site",
     lang: "en-US",
@@ -40,10 +27,18 @@ export default async () => {
     cleanUrls: true,
     assetsDir: "static",
     metaChunk: true,
+    appearance: {
+      deep: true,
+      initOnMounted: true,
+      listenToStorageChanges: true,
+      mergeDefaults: true,
+      shallow: true,
+      writeDefaults: true,
+    },
     vite: {
-      base: "/",
+      // base: "/",
       // Ensure Vite resolves correctly relative to your command execution
-      root: isNestedRun ? process.cwd() : `${process.cwd()}/sites/blog`,
+      // root: isNestedRun ? process.cwd() : `${process.cwd()}/sites/blog`,
       configFile: isNestedRun ? ".config/vite/vite.config.ts" : "sites/blog/.config/vite/vite.config.ts",
     },
     vue: {
@@ -101,8 +96,8 @@ export default async () => {
       returnToTopLabel: "",
       logo: {
         // src: `./../../static/icon/icon.svg`,
-        dark: `./../../static/icon/icon-dark.svg`,
-        light: `./../../static/icon/icon-light.svg`,
+        dark: isNestedRun ? `/static/icon/icon-dark.svg` : `/static/icon/icon-dark.svg`,
+        light: isNestedRun ? `/static/icon/icon-light.svg` : `/static/icon/icon-light.svg`,
         alt: "Blog Site Logo",
       },
       logoLink: {
@@ -137,7 +132,7 @@ export default async () => {
       },
       socialLinks: [
         {
-          icon: "sites/blog/static/icon.svg",
+          icon: isNestedRun ? "./static/icon/icon.svg" : "./sites/blog/static/icon/icon.svg",
           link: "/",
           ariaLabel: "Link to Portfolio Site"
         },
@@ -158,5 +153,23 @@ export default async () => {
         },
       ],
     }
-  });
+  };
+
+  const definedConfig = defineConfig(userConfig);
+
+  console.log(
+    JSON.stringify(
+      {
+        "process.cwd": process.cwd(),
+        isNestedRun,
+        iconsDir,
+        userConfig,
+        definedConfig,
+      },
+      null,
+      2
+    )
+  );
+
+  return definedConfig;
 };

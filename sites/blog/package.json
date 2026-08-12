@@ -15,6 +15,7 @@
     "vitepress": "catalog:devDependencies"
   },
   "dependencies": {
+    "@fnc314/packages.design-tokens": "workspace:*",
     "vue": "catalog:dependencies"
   },
   "engines": {

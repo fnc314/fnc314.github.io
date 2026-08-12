@@ -1386,6 +1386,9 @@ importers:
       '@fnc314/configs.typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
+      '@fnc314/packages.design-tokens':
+        specifier: workspace:*
+        version: link:../../packages/design-tokens
       vue:
         specifier: catalog:dependencies
         version: 3.5.41(@typescript/typescript6@6.0.2)

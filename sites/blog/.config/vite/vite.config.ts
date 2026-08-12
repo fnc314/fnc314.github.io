@@ -5,7 +5,12 @@ export default defineConfig(
   async ({ command, mode, isSsrBuild, isPreview }) => {
 
     return {
-
+      base: "/",
+      build: {
+        copyPublicDir: true,
+        emptyOutDir: true,
+      },
+      root: process.cwd().endsWith("blog") ? "." : "sites/blog",
     };
   }
 );
