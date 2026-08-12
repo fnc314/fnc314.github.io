@@ -64,17 +64,6 @@ export default async () => {
         light: "one-light",
         dark: "material-theme-ocean",
         semanticHighlighting: true,
-        settings: [
-          {
-            name: "typography",
-            scope: "",
-            settings: {
-              fontStyle: "monospace",
-              background: "white",
-              foreground: "black",
-            }
-          }
-        ]
       },
     },
     sitemap: {
@@ -111,9 +100,9 @@ export default async () => {
       darkModeSwitchTitle: "Switch to Dark Mode",
       returnToTopLabel: "",
       logo: {
-        src: `./static/icon.svg`,
-        dark: `./static/icon.svg`,
-        light: `./static/icon.svg`,
+        // src: `./../../static/icon/icon.svg`,
+        dark: `./../../static/icon/icon-dark.svg`,
+        light: `./../../static/icon/icon-light.svg`,
         alt: "Blog Site Logo",
       },
       logoLink: {
