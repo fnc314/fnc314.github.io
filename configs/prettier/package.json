@@ -1,7 +1,7 @@
 {
   "name": "@fnc314/configs.prettier",
   "private": true,
-  "version": "3.1.0",
+  "version": "3.5.0",
   "publishConfig": {
     "access": "public"
   },

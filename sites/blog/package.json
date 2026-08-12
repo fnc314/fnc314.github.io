@@ -1,6 +1,6 @@
 {
   "name": "@fnc314/sites.blog",
-  "version": "3.1.0",
+  "version": "3.5.0",
   "type": "module",
   "peerDependencies": {
     "@fnc314/configs.typescript": "workspace:*",
