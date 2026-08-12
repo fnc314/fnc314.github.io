@@ -2,6 +2,7 @@
 import { type Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import Layout from "./Layout.vue";
+import "./overrides.css";
 import "./style.css";
 import "./tokens.css";
 

@@ -4,6 +4,8 @@
     "./.vitepress/theme/index.ts",
     "./.vitepress/theme/Layout.vue",
     "./.vitepress/theme/index.css",
+    "./.vitepress/theme/tokens.css",
+    "./.vitepress/theme/overrides.css",
   ],
   "vueCompilerOptions": {
     "vitePressExtensions": [".md"],

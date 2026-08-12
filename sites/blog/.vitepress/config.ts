@@ -14,8 +14,8 @@ export default async () => {
 
   // Keep your monorepo-root relative asset paths intact
   const iconsDir = isNestedRun ?
-    "../../packages/design-tokens/assets/icons/organization" :
-    "packages/design-tokens/assets/icons/organization";
+    "../../packages/design-tokens/assets/icons/logos/organization" :
+    "packages/design-tokens/assets/icons/logos/organization";
 
   console.log(
     JSON.stringify(
@@ -84,40 +84,42 @@ export default async () => {
     themeConfig: {
       footer: {
         copyright: `Franco N. Colaizzi - &copy; ${new Date().getUTCFullYear()}`,
-        message: "All Rights Reserved",
+        message: `All Rights Reserved - <a href="/">Home</a>`,
       },
+      nav: [],
       siteTitle: false,
       externalLinkIcon: true,
       lastUpdated: {
+        text: "Updated on",
         formatOptions: {
           dateStyle: "full",
           timeStyle: "full",
-          timeZoneName: "longOffset",
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-          dayPeriod: "long",
-          era: "long",
-          weekday: "long",
+          // timeZoneName: "longOffset",
+          // day: "2-digit",
+          // month: "2-digit",
+          // year: "numeric",
+          // hour: "2-digit",
+          // minute: "2-digit",
+          // second: "2-digit",
+          // hour12: false,
+          // dayPeriod: "long",
+          // era: "long",
+          // weekday: "long",
         },
       },
       darkModeSwitchLabel: "Dark Mode",
       darkModeSwitchTitle: "Switch to Dark Mode",
-      returnToTopLabel: "TOP",
+      returnToTopLabel: "",
       logo: {
-        src: "sites/blog/static/icon.svg",
-        dark: "sites/blog/static/icon.svg",
-        light: "sites/blog/static/icon.svg",
+        src: `./static/icon.svg`,
+        dark: `./static/icon.svg`,
+        light: `./static/icon.svg`,
         alt: "Blog Site Logo",
       },
       logoLink: {
-        link: "https://blog.fnc314.dev",
+        link: "/",
         rel: "noopener noreferrer",
-        target: "_blank",
+        // target: "_blank",
       },
       notFound: {
         linkLabel: "Return to https://blog.fnc314.dev",
@@ -130,10 +132,24 @@ export default async () => {
         level: "deep",
         label: "Outline"
       },
+      search: {
+        provider: "local",
+        options: {
+          disableQueryPersistence: true,
+          miniSearch: {
+            searchOptions: {
+              weights: {
+                fuzzy: 0.5,
+                prefix: 0.5,
+              },
+            },
+          }
+        }
+      },
       socialLinks: [
         {
           icon: "sites/blog/static/icon.svg",
-          link: "https://www.fnc314.dev",
+          link: "/",
           ariaLabel: "Link to Portfolio Site"
         },
         {

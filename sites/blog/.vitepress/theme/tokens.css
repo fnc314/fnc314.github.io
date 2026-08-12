@@ -12,6 +12,8 @@
   --p-emphasis-font-size: 1.1rem;
   --p-emphasis-line-height: 1.25rem;
 
+  --sizes-gap-m: 1rem;
+
   --sizes-margin-xxs: 0.125rem;
   --sizes-margin-xs: 0.25rem;
   --sizes-margin-s: 0.5rem;
@@ -20,5 +22,6 @@
   --sizes-margin-xl: 2rem;
   --sizes-margin-xxl: 3rem;
 
+  --sizes-dynamic-width-xs: 35dvw;
   --sizes-dynamic-width-xl: 85dvw;
 }
