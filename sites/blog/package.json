@@ -14,7 +14,9 @@
     "vite": "catalog:devDependencies",
     "vitepress": "catalog:devDependencies"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "catalog:dependencies"
+  },
   "engines": {
     "node": "26.7.0"
   },

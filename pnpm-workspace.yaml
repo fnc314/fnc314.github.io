@@ -28,6 +28,7 @@ catalogs:
     lit-html: 3.3.3
     material-symbols: 0.45.10
     prop-for-that: 0.7.12
+    vue: 3.5.41
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
     "@arcmantle/vite-plugin-minify-css-literal": 1.0.3 # https://www.npmjs.com/package/@arcmantle/vite-plugin-minify-css-literal

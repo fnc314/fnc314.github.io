@@ -1,5 +1,5 @@
 ---
-layout: "page"
+layout: "doc"
 title: From Mayhem to Micro-Managed
 description: The first of seven entries in the `Taming the Elephant Heard` series.
 ---
@@ -12,13 +12,13 @@ My name is Franco and I’m a systems architect who specializes in mobile system
 
 This series of blog posts will recant the multi-year, multi-pronged approach I undertook to transform this Android project’s general structure from an afterthought to a self-regulating, hyper-organized monolith.  Below is the table of contents for this series:
 
-01 \- From Mayhem to Micro-Managed
-02 \- Establishing Existing Order
-03 \- Plugins Over Copy-Paste
-04 \- Into the Wider Infrastructure
-05 \- Right Tool for the Job
-06 \- Screaming and Scripted Architecture (this article)
-07 \- To Future States and Beyond
+1. [From Mayhem to Micro-Managed](../01-from-mayhem-to-micro-managed/)
+2. [Establishing Existing Order](../02-establishing-existing-order/)
+3. [Plugins Over Copy-Paste](../03-plugins-over-copy-paste/)
+4. [Into the Wider Infrastructure](../04-into-the-wider-infrastructure/)
+5. [Right Tool for the Job](../05-right-tool-for-the-job/)
+6. Screaming and Scripted Architecture (this article)
+7. [To Future States and Beyond](../07-to-future-states-and-beyond/)
 
 ## Screaming and Scripted Architecture
 

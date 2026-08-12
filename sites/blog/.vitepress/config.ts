@@ -37,13 +37,21 @@ export default async () => {
     base: "/",
     dir: srcDir,
     srcDir: srcDir,
-    // outDir: "dist/vitepress/blog",
     cleanUrls: true,
+    assetsDir: "static",
+    metaChunk: true,
     vite: {
       base: "/",
       // Ensure Vite resolves correctly relative to your command execution
       root: isNestedRun ? process.cwd() : `${process.cwd()}/sites/blog`,
       configFile: isNestedRun ? ".config/vite/vite.config.ts" : "sites/blog/.config/vite/vite.config.ts",
+    },
+    vue: {
+      features: {
+        customElement: false,
+        prodHydrationMismatchDetails: true,
+        propsDestructure: true,
+      }
     },
     markdown: {
       breaks: true,
@@ -58,6 +66,8 @@ export default async () => {
         semanticHighlighting: true,
         settings: [
           {
+            name: "typography",
+            scope: "",
             settings: {
               fontStyle: "monospace",
               background: "white",
@@ -90,10 +100,13 @@ export default async () => {
           weekday: "long",
         },
       },
+      darkModeSwitchLabel: "Dark Mode",
+      darkModeSwitchTitle: "Switch to Dark Mode",
+      returnToTopLabel: "TOP",
       logo: {
-        src: "",
-        dark: "",
-        light: "",
+        src: "sites/blog/static/icon.svg",
+        dark: "sites/blog/static/icon.svg",
+        light: "sites/blog/static/icon.svg",
         alt: "Blog Site Logo",
       },
       logoLink: {
@@ -108,10 +121,13 @@ export default async () => {
         title: "Not Found",
         code: "404",
       },
-      outline: "deep",
+      outline: {
+        level: "deep",
+        label: "Outline"
+      },
       socialLinks: [
         {
-          icon: "",
+          icon: "sites/blog/static/icon.svg",
           link: "https://www.fnc314.dev",
           ariaLabel: "Link to Portfolio Site"
         },

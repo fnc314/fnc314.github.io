@@ -1,5 +1,32 @@
-
 html {
-  font-family: Arial, Helvetica;
+  font-family: ui-monospace, ui-sans-serif;
 }
 
+.home-link {
+  margin: var(--sizes-margin-m);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    max-inline-size: var(--sizes-dynamic-width-xl);
+  }
+
+  p {
+    margin-block: var(--sizes-margin-s);
+    text-indent: var(--text-indent);
+  }
+
+  ol {
+    list-style: revert;
+    padding: revert;
+  }
+
+  a {
+    color: revert;
+    text-decoration: revert;
+  }
+}

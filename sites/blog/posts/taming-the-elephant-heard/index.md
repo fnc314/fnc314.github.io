@@ -1,5 +1,5 @@
 ---
-layout: "page"
+layout: "doc"
 title: Taming The Elephant Heard
 titleTemplate: Taming The Elephant Heard
 description: A series of modernation, stabilization, and how a near decade old codebase was reworked into a future-proof workhorse.
@@ -16,3 +16,5 @@ description: A series of modernation, stabilization, and how a near decade old c
 5. [Right Tool for the Job](./05-right-tool-for-the-job/index)
 6. [Screaming and Scripted Architecture](./06-screaming-and-scripted-architecture/index)
 7. [To Future States and Beyond](./07-to-future-states-and-beyond/index)
+
+{{ $frontmatter }}
