@@ -112,7 +112,5 @@
     "${configDir}/.config",
     "${configDir}/src/**/*.ts",
     "${configDir}/src/env.d.ts",
-    "${configDir}/**/*.md",
-    "${configDir}/**/*.vue",
   ],
 }

@@ -113,7 +113,6 @@
     "@typescript-eslint/parser": "catalog:devDependencies",
     "@vite-pwa/assets-generator": "catalog:devDependencies",
     "@vitejs/devtools": "catalog:devDependencies",
-    "@vue/language-core": "catalog:devDependencies",
     "@wc-toolkit/cem-inheritance": "catalog:devDependencies",
     "@wc-toolkit/cem-sorter": "catalog:devDependencies",
     "@wc-toolkit/cem-utilities": "catalog:devDependencies",
