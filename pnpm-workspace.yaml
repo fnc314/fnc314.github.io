@@ -254,7 +254,6 @@ packages:
   - "packages/design-tokens"
   - "packages/services"
   - "packages/types"
-  - "sites/blog"
   - "sites/docs"
   - "sites/portfolio"
 peerDependencyRules:

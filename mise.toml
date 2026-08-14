@@ -17,7 +17,6 @@ monorepo_root = true
     "packages/design-tokens",
     "packages/services",
     "packages/types",
-    "sites/blog",
     "sites/docs",
     "sites/portfolio",
   ]
