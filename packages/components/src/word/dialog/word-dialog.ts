@@ -6,6 +6,8 @@ import { Icons } from "@fnc314/packages.design-tokens";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 
+export const TAG_NAME_WORD_DIALOG: string = "word-dialog";
+
 /**
  * @summary A `<dialog>` `HTML` element displayed instead of launching clicks
  *   on {@link WordTag}s
@@ -14,7 +16,7 @@ import { customElement, property, query } from "lit/decorators.js";
  * @typedef {WordDialog}
  * @extends {UIAwareElement}
  */
-@customElement("word-dialog")
+@customElement(TAG_NAME_WORD_DIALOG)
 export class WordDialog extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, WordDialogStyles, WordDialogAnimations];
@@ -128,6 +130,6 @@ export class WordDialog extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "word-dialog": WordDialog;
+    [TAG_NAME_WORD_DIALOG]: WordDialog;
   }
 }

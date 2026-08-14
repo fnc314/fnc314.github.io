@@ -56,7 +56,7 @@ export default defineConfig({
     "scale-unlimited/declaration-strict-value": [
       ["/color/", "fill", "stroke", "border-color", "padding", "margin", "gap", "font-size", "line-height", "font-weight", "border-radius"],
       {
-        "ignoreValues": ["0", "inherit", "transparent", "initial", "none", "unset"],
+        "ignoreValues": ["0", "inherit", "transparent", "initial", "none", "unset", "revert"],
         "message": "Use design tokens for ${property}. See `packages/design-tokens/README.md` for guidance."
       }
     ],

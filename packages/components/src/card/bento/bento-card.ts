@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 
 export { type BentoBoxType } from "@fnc314/packages.types";
 
+export const TAG_NAME_BENTO_CARD: string = "bento-card";
+
 /**
  * @summary BentoCard - A reusable card component for the bento grid.
  *
@@ -33,7 +35,7 @@ export { type BentoBoxType } from "@fnc314/packages.types";
  * @slot header - Content to be displayed in the card's header/summary area.
  * @slot - Default slot for card content. Slotted `h2` elements receive standardized header styling.
  */
-@customElement("bento-card")
+@customElement(TAG_NAME_BENTO_CARD)
 export class BentoCard extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, BentoCardStyles];
@@ -147,6 +149,6 @@ export class BentoCard extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "bento-card": BentoCard;
+    [TAG_NAME_BENTO_CARD]: BentoCard;
   }
 }

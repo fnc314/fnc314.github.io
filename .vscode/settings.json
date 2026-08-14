@@ -36,6 +36,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
   "cem.additionalPackages": [
     "npm:@material/web"
   ],
@@ -151,6 +154,7 @@
   },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "firebase.debug": true,
   "firebase.firebasePath": "~/.local/share/mise/installs/firebase/15.24.0/firebase",
   "firebase.hosting.useFrameworks": true,
   "fixJson.indentationSpaces": 2,
@@ -185,6 +189,7 @@
   "java.import.gradle.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "java.jdt.ls.java.home": "${workspaceFolder}/.vscode/mise-tools/java",
   "jdk.jdkhome": "${workspaceFolder}/.vscode/mise-tools/java",
+  "js/ts.experimental.useTsgo": true,
   "js/ts.format.semicolons": "insert",
   "js/ts.preferences.quoteStyle": "double",
   "js/ts.preferGoToSourceDefinition": true,
@@ -197,6 +202,7 @@
   "jsdoc-generator.generateDescriptionForTypeParameters": true,
   "JSON-zain.json.autorefresh": true,
   "lit-html.format.enabled": true,
+  "markdownlint.configFile": ".markdownlint.jsonc",
   // "lit-plugin.customHtmlData": {
   //   "tags": [
   //     {
@@ -747,10 +753,15 @@
   ],
   "tombi.env": {},
   "tombi.path": "tombi",
+  "vue.format.script.initialIndent": true,
+  "vue.format.style.initialIndent": true,
+  "vue.format.wrapAttributes": "force-aligned",
   "vue.server.includeLanguages": [
     "vue",
     "markdown"
   ],
+  "vue.suggest.componentNameCasing": "alwaysKebabCase",
+  "vue.trace.server": "messages",
   "wctools.mcp.enabled": true,
   "wctools.mcp.host": "localhost",
   "wctools.mcp.port": 3005,
@@ -773,8 +784,5 @@
     "**/zlogout"
   ],
   "zshellcheck.run": "onSave",
-  "zshellcheck.useWorkspaceRootAsCwd": true,
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  }
+  "zshellcheck.useWorkspaceRootAsCwd": true
 }
