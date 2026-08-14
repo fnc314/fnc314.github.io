@@ -170,6 +170,12 @@ export const Projects: CodeRepoData[] = [
         designToken: Icons.Logos.Tech.Postcss,
         popoverContent: "CSS processing library for <pre>Node</pre>",
       },
+      {
+        name: "VitePress",
+        url: "https://vuejs.github.io/vitepress/v1/",
+        designToken: Icons.Logos.Tech.Vitepress,
+        popoverContent: `Static Site Generator based on <a href="https://vite.dev/" target="_blank">Vite</a>`,
+      }
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",
