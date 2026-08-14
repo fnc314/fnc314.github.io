@@ -13,6 +13,10 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
+    "@iconify/json": 2.2.516
+    "@iconify/tools": 5.0.12
+    "@iconify/types": 2.0.0
+    "@iconify/utils": 3.1.4
     "@lit-labs/motion": 1.1.0
     "@lit-labs/router": 0.1.4
     "@lit/context": 1.1.6
@@ -23,6 +27,7 @@ catalogs:
     animate-css-grid: 1.5.1
     dark-mode-toggle: 0.18.0
     firebase: 12.17.1
+    iconify-icon: 3.0.2
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
@@ -38,6 +43,7 @@ catalogs:
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
     "@iconify-json/simple-icons": 1.2.93
+    "@iconify/unplugin": 0.1.7
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2
     "@lit-labs/gen-manifest": 0.3.6

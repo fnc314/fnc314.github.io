@@ -170,16 +170,6 @@ export const Icons = {
     },
   },
   Material: {
-    ArrowDropDown: {
-      dark: svg`<svg xmlns="http://www.w3.org/2000/svg" class="arrow_drop_down" viewBox="0 -960 400 200"><path d="M200-760 0-960h400z" style="fill:#fff"/></svg>`,
-      default: svg`<svg xmlns="http://www.w3.org/2000/svg" class="arrow_drop_down" viewBox="0 -960 960 960"><path d="M480-360 280-560h400z"/></svg>`,
-      light: svg`<svg xmlns="http://www.w3.org/2000/svg" class="arrow_drop_down" viewBox="0 -960 400 200"><path d="M200-760 0-960h400z"/></svg>`,
-    } as IconVariants,
-    Call: {
-      dark: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 720 720"><path d="M678-240q-125 0-247-54.5T209-449 54.5-671 0-918q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T267-506q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T550-510l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12M121-720l66-66-17-94H81q5 41 14 81t26 79m358 358q39 17 79.5 27t81.5 13v-88l-94-19zm0 0" style="fill:#fff"/></svg>`,
-      default: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M798-120q-125 0-247-54.5T329-329 174.5-551 120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12M241-600l66-66-17-94h-89q5 41 14 81t26 79m358 358q39 17 79.5 27t81.5 13v-88l-94-19zm0 0"/></svg>`,
-      light: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 720 720"><path d="M678-240q-125 0-247-54.5T209-449 54.5-671 0-918q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T267-506q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T550-510l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12M121-720l66-66-17-94H81q5 41 14 81t26 79m358 358q39 17 79.5 27t81.5 13v-88l-94-19zm0 0" style="fill:#010101"/></svg>`,
-    } as IconVariants,
     Close: {
       dark: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="m252-226-25-26 228-228-228-229 25-26 229 229 227-229 25 26-227 229 227 228-25 26-227-229z"/></svg>`,
       default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="m252-226-25-26 228-228-228-229 25-26 229 229 227-229 25 26-227 229 227 228-25 26-227-229z"/></svg>`,
@@ -206,11 +196,6 @@ export const Icons = {
         default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M209-259v-121H88v-120h121v-120h120v120h121v120H329v121zm252 102v-122l211-239q33-35 44-54t11-38q0-22.51-15.5-40.26T666-668q-36 0-55.5 24T583-585l-128-51q20-70 75-118.5T667-803q92 0 145.5 55.44T866-616q0 55-25 99t-70 95L653-288l1 1h218v130z"/></svg>`,
       } as IconVariants,
     },
-    Mail: {
-      dark: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 801 641"><path d="M80.5-319.5q-33 0-56.5-23.5T.5-399.5v-480q0-33 23.5-56.5t56.5-23.5h640q33 0 56.5 23.5t23.5 56.5v480q0 33-23.5 56.5t-56.5 23.5zm320-280-320-200v400h640v-400zm0-80 320-200h-640zm-320-120v-80 480z" style="fill:#fefefe;stroke:#fff"/></svg>`,
-      default: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160zm320-280L160-640v400h640v-400zm0-80 320-200H160zM160-640v-80 480z"/></svg>`,
-      light: svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 801 641"><path d="M80.5-319.5q-33 0-56.5-23.5T.5-399.5v-480q0-33 23.5-56.5t56.5-23.5h640q33 0 56.5 23.5t23.5 56.5v480q0 33-23.5 56.5t-56.5 23.5zm320-280-320-200v400h640v-400zm0-80 320-200h-640zm-320-120v-80 480z" style="stroke:#fff"/></svg>`,
-    } as IconVariants,
     PictureAsPdf: {
       dark: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 800 800"><path d="M280-540h40v-80h40q17 0 28.5-11.5T400-660v-40q0-17-11.5-28.5T360-740h-80zm40-120v-40h40v40zm120 120h80q17 0 28.5-11.5T560-580v-120q0-17-11.5-28.5T520-740h-80zm40-40v-120h40v120zm120 40h40v-80h40v-40h-40v-40h40v-40h-80zM240-320q-33 0-56.5-23.5T160-400v-480q0-33 23.5-56.5T240-960h480q33 0 56.5 23.5T800-880v480q0 33-23.5 56.5T720-320Zm0-80h480v-480H240ZM80-160q-33 0-56.5-23.5T0-240v-560h80v560h560v80zm160-720v480z" style="fill:#fff"/></svg>`,
       default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M360-460h40v-80h40q17 0 28.5-11.5T480-580v-40q0-17-11.5-28.5T440-660h-80zm40-120v-40h40v40zm120 120h80q17 0 28.5-11.5T640-500v-120q0-17-11.5-28.5T600-660h-80zm40-40v-120h40v120zm120 40h40v-80h40v-40h-40v-40h40v-40h-80zM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240zm0-80h480v-480H320zM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80zm160-720v480z"/></svg>`,

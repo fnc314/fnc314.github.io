@@ -1,3 +1,4 @@
+import Icons from '@iconify/unplugin/vite';
 import minifyHTML from "@lit-labs/rollup-plugin-minify-html-literals";
 import path from "node:path";
 import process from "node:process";
@@ -171,6 +172,17 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
         //     "src/**/*.styles.ts",
         //   ),
         // }),
+        Icons({
+          compiler: "raw",
+          css: "embed",
+          allowAPI: true,
+          cssHash: {
+            length: 15,
+            throwOnCollision: true,
+          },
+          mode: "svg",
+          namespace: "iconify",
+        }),
         minifyHTML({
           include: [path.resolve(process.cwd(), `packages/${dirName}`, "src/**/*.ts")],
           exclude: [

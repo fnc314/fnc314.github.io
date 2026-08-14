@@ -1,8 +1,8 @@
 import { BentoCardStyles } from "@/lib/card/bento/bento-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { Icons } from "@fnc314/packages.design-tokens";
 import { BENTO_BOX_TYPES, type BentoBoxType } from "@fnc314/packages.types";
+import "iconify-icon";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -130,7 +130,13 @@ export class BentoCard extends UIAwareElement {
             >
               ${this.bentoCardTitle}
             </h2>
-            ${Icons.Material.ArrowDropDown.default}
+            <iconify-icon
+              width="none"
+              height="none"
+              style="width: var(--bento-card-expand-icon-width); height: var(--bento-card-expand-icon-height);"
+              icon="material-symbols:arrow-drop-down"
+              ></iconify-icon>
+
           </summary>
           <div
             aria-label="${this.bentoCardTitle} content"

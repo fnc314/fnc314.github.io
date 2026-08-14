@@ -6,21 +6,21 @@
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-dark.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         },
         "default": {
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-default.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         },
         "light": {
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/arrow_drop_down/arrow_drop_down-light.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         }
       }

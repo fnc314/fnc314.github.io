@@ -10,6 +10,7 @@ export interface ConnectionInstance {
   title: string;
   designToken: IconVariants;
   label: string;
+  iconifyIcon: string;
 }
 
 export type ConnectionJsonDirect = Record<DirectConnectionMethod, ConnectionInstance>;

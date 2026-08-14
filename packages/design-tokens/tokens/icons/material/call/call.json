@@ -6,21 +6,21 @@
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/call/call-dark.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         },
         "default": {
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/call/call-default.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         },
         "light": {
           "$type": "asset",
           "$value": "packages/design-tokens/assets/icons/material/call/call-light.svg",
           "$extensions": {
-            "fnc314.usage": "inline-svg"
+            "fnc314.usage": "none"
           }
         }
       }

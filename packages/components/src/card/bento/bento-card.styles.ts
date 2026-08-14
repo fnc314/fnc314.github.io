@@ -105,7 +105,7 @@ export const BentoCardStyles = css`
         padding-block-end: var(--spaces-padding-xs);
       }
 
-      svg {
+      svg, iconify-icon {
         inline-size: var(--bento-card-expand-icon-width);
         block-size: var(--bento-card-expand-icon-height);
         color: var(--md-sys-color-primary);
@@ -123,7 +123,7 @@ export const BentoCardStyles = css`
     }
 
     &[open] {
-      svg {
+      svg, iconify-icon {
         transform: rotate(var(--motions-rotation-180));
       }
 

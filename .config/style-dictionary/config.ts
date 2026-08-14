@@ -97,14 +97,22 @@ StyleDictionary.registerFilter({
   name: "usage.inlineSvgIcon",
   filter: (token: TransformedToken) =>
     token.$type === "asset" &&
-    (token.$extensions?.["fnc314.usage"] === "inline-svg" || token.$extensions?.["fnc314.usage"] === "both")
+    token.$extensions?.["fnc314.usage"] !== "none" &&
+    (
+      token.$extensions?.["fnc314.usage"] === "inline-svg" ||
+      token.$extensions?.["fnc314.usage"] === "both"
+    )
 });
 
 StyleDictionary.registerFilter({
   name: "usage.cssDataUriIcon",
   filter: (token: TransformedToken) =>
     token.$type === "asset" &&
-    (token.$extensions?.["fnc314.usage"] === "css-data-uri" || token.$extensions?.["fnc314.usage"] === "both")
+    token.$extensions?.["fnc314.usage"] !== "none" &&
+    (
+      token.$extensions?.["fnc314.usage"] === "css-data-uri" ||
+      token.$extensions?.["fnc314.usage"] === "both"
+    )
 });
 
 /**

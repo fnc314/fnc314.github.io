@@ -214,6 +214,18 @@ settings:
 
 catalogs:
   dependencies:
+    '@iconify/json':
+      specifier: 2.2.516
+      version: 2.2.516
+    '@iconify/tools':
+      specifier: 5.0.12
+      version: 5.0.12
+    '@iconify/types':
+      specifier: 2.0.0
+      version: 2.0.0
+    '@iconify/utils':
+      specifier: 3.1.4
+      version: 3.1.4
     '@lit-labs/motion':
       specifier: 1.1.0
       version: 1.1.0
@@ -244,6 +256,9 @@ catalogs:
     firebase:
       specifier: 12.17.1
       version: 12.17.1
+    iconify-icon:
+      specifier: 3.0.2
+      version: 3.0.2
     lit:
       specifier: 3.3.3
       version: 3.3.3
@@ -287,6 +302,9 @@ catalogs:
     '@iconify-json/simple-icons':
       specifier: 1.2.93
       version: 1.2.93
+    '@iconify/unplugin':
+      specifier: 0.1.7
+      version: 0.1.7
     '@lit-labs/cli':
       specifier: 0.6.6
       version: 0.6.6
@@ -639,6 +657,21 @@ importers:
       '@fnc314/packages.types':
         specifier: workspace:*
         version: link:packages/types
+      '@iconify/json':
+        specifier: catalog:dependencies
+        version: 2.2.516
+      '@iconify/tools':
+        specifier: catalog:dependencies
+        version: 5.0.12
+      '@iconify/types':
+        specifier: catalog:dependencies
+        version: 2.0.0
+      '@iconify/unplugin':
+        specifier: catalog:devDependencies
+        version: 0.1.7(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.0)(vite@8.2.1)
+      '@iconify/utils':
+        specifier: catalog:dependencies
+        version: 3.1.4
       '@lit-labs/motion':
         specifier: catalog:dependencies
         version: 1.1.0
@@ -672,6 +705,9 @@ importers:
       firebase:
         specifier: catalog:dependencies
         version: 12.17.1
+      iconify-icon:
+        specifier: catalog:dependencies
+        version: 3.0.2
       lit:
         specifier: catalog:dependencies
         version: 3.3.3
@@ -1126,6 +1162,9 @@ importers:
       dark-mode-toggle:
         specifier: catalog:dependencies
         version: 0.18.0
+      iconify-icon:
+        specifier: catalog:dependencies
+        version: 3.0.2
       lit:
         specifier: catalog:dependencies
         version: 3.3.3
@@ -1145,6 +1184,9 @@ importers:
       '@fnc314/configs.typescript':
         specifier: workspace:*
         version: link:../../configs/typescript
+      '@iconify/unplugin':
+        specifier: catalog:devDependencies
+        version: 0.1.7(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.0)(vite@8.2.1)
       '@types/fs-extra':
         specifier: catalog:devDependencies
         version: 11.0.4
@@ -1490,6 +1532,9 @@ packages:
   '@algolia/requester-node-http@5.56.0':
     resolution: {integrity: sha512-PIOUXlSnrqM0S+WOgDRb4RzotydJH7ZoT6tOyL7tAO7qJOfvX5wsEW8Pe+PMKMwvuI4/gIyK9cg2H7lJXqnc4Q==}
     engines: {node: '>= 14.0.0'}
+
+  '@antfu/install-pkg@1.1.0':
+    resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
   '@apideck/better-ajv-errors@0.3.7':
     resolution: {integrity: sha512-TajUJwGWbDwkCx/CZi7tRE8PVB7simCvKJfHUsSdvps+aTM/PDPP4gkLmKnc+x3CE//y9i/nj74GqdL/hwk7Iw==}
@@ -2285,6 +2330,9 @@ packages:
   '@custom-elements-manifest/to-markdown@0.1.0':
     resolution: {integrity: sha512-Bq7ppygs7H0Mbrhuj23cfwWC4krw+ZWQAmIvOYBSbt0xQVWpkDxxXlX1xdgvEEHE2vDxThPELW2VvlUYf0DKjw==}
 
+  '@cyberalien/svg-utils@1.2.19':
+    resolution: {integrity: sha512-paDJoDu+LhuH5Ma1q0BDqBpg6d16Xk22cZZrlg/s/J9oB8KgnnpU/snaEETJu2G1pwYcWQINUz6WUqu0Wm9k6A==}
+
   '@devframes/hub@0.8.0':
     resolution: {integrity: sha512-0eaxezZG+u/n0GKpf9jVlujBzpOvPKeBbvl/5IWD+p/Yv+1Pr5NaTOQBHvWK3B1M96whylnNdErHwoalcPrHJA==}
     peerDependencies:
@@ -3011,8 +3059,20 @@ packages:
   '@iconify-json/simple-icons@1.2.93':
     resolution: {integrity: sha512-/XhANjfGYOuqvSR3TmUnkQkINvQ4GVjVuukvymRbxtVFBvIq/yiXJqCDycKcQPT401OYT9H2vIY6ihAlz1QIAw==}
 
+  '@iconify/json@2.2.516':
+    resolution: {integrity: sha512-mtYele8PmlAO/Vpeu984VemT5GsdtMNqJsnlFKUG/63kOuDmKaD6WKpu4KWiP953qooiG2P9U7j23Q8uOmQOnw==}
+
+  '@iconify/tools@5.0.12':
+    resolution: {integrity: sha512-aFPwSFmFphUPVjNLUkgxgUPSPVgTEEjv0mE7NgvfoQBuE5TtsMrKa4HTY65cM5oXZ2a1xKQcW/RKhiOKEiAarw==}
+
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+
+  '@iconify/unplugin@0.1.7':
+    resolution: {integrity: sha512-3qrtr8mSkeIxVtAh7nWvQDaXkqf4TjlWUue7pTrlJGnOqfPMC1NUJEHqbN1u1K9GjrRsaAQiFlBSwG9wiT97ow==}
+
+  '@iconify/utils@3.1.4':
+    resolution: {integrity: sha512-b1S7B1k9ohZ+iNTi2ATxbRYG9fTrJmUT0rc46bvVnNxqNRGW7dyo/vRREwyniI5IRN2RSJHDcm+s3BjWrSAjHw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -7161,6 +7221,9 @@ packages:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
 
+  fflate@0.8.3:
+    resolution: {integrity: sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==}
+
   figlet@1.11.0:
     resolution: {integrity: sha512-EEx3OS/l2bFqcUNN2NM9FPJp8vAMrgbCxsbl2hbcJNNxOEwVe3mEzrhan7TbJQViZa8mMqhihlbCaqD+LyYKTQ==}
     engines: {node: '>= 17.0.0'}
@@ -7689,6 +7752,9 @@ packages:
 
   ico-endec@0.1.6:
     resolution: {integrity: sha512-ZdLU38ZoED3g1j3iEyzcQj+wAkY2xfWNkymszfJPoxucIUhK7NayQ+/C4Kv0nDFMIsbtbEHldv3V8PU494/ueQ==}
+
+  iconify-icon@3.0.2:
+    resolution: {integrity: sha512-DYPAumiUeUeT/GHT8x2wrAVKn1FqZJqFH0Y5pBefapWRreV1BBvqBVMb0020YQ2njmbR59r/IathL2d2OrDrxA==}
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -8908,6 +8974,10 @@ packages:
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
 
+  modern-tar@0.7.7:
+    resolution: {integrity: sha512-t9VmxaqrmANnEOBhpSDI6HD192Ge48k8vmWqQQL7hSFEqHEYwZbbsu49+aKLWZeRvFs3j1pMhXOqqF4kPlvjkQ==}
+    engines: {node: '>=18.0.0'}
+
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -9279,6 +9349,9 @@ packages:
 
   package-json-type@1.1.2:
     resolution: {integrity: sha512-QMy9vgEVIkHp/6LI0H7v6P+7ZFp0zQyPZfv8rGV/JoDhu63WMgzoQS34Pm+T0S5j/b9Zbkrx4SE8YOv2huou6Q==}
+
+  package-manager-detector@1.8.0:
+    resolution: {integrity: sha512-yQA4H19AmPEoMUeavPMDIe1higySl/gH/yaQrkT/s07Qp+7pp2hYz30N3z2l5BkjVkF9Ow6o0wjJamm2y7Sn0A==}
 
   pako@2.1.0:
     resolution: {integrity: sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==}
@@ -10902,6 +10975,39 @@ packages:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
     engines: {node: '>=18.12.0'}
 
+  unplugin@3.3.0:
+    resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@farmfe/core': '*'
+      '@rspack/core': '*'
+      bun-types-no-globals: '*'
+      esbuild: '*'
+      rolldown: '*'
+      rollup: '*'
+      unloader: '*'
+      vite: '*'
+      webpack: '*'
+    peerDependenciesMeta:
+      '@farmfe/core':
+        optional: true
+      '@rspack/core':
+        optional: true
+      bun-types-no-globals:
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      unloader:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+
   unrs-resolver@1.12.2:
     resolution: {integrity: sha512-dmlRxBJJayXjqTwC+JtF1HhJmgf3ftQ3YejFcZrf4+KKtJv0qDsK1pjqaaVjG7wJ5NJ6UVP1OqRMQ71Z4C3rxQ==}
 
@@ -11557,6 +11663,11 @@ snapshots:
   '@algolia/requester-node-http@5.56.0':
     dependencies:
       '@algolia/client-common': 5.56.0
+
+  '@antfu/install-pkg@1.1.0':
+    dependencies:
+      package-manager-detector: 1.8.0
+      tinyexec: 1.2.4
 
   '@apideck/better-ajv-errors@0.3.7(ajv@8.20.0)':
     dependencies:
@@ -12548,6 +12659,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@cyberalien/svg-utils@1.2.19':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@devframes/hub@0.8.0(devframe@0.8.0)':
     dependencies:
       '@standard-schema/spec': 1.1.0
@@ -13290,7 +13405,45 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify/json@2.2.516':
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 2.0.3
+
+  '@iconify/tools@5.0.12':
+    dependencies:
+      '@cyberalien/svg-utils': 1.2.19
+      '@iconify/types': 2.0.0
+      '@iconify/utils': 3.1.4
+      fflate: 0.8.3
+      modern-tar: 0.7.7
+      pathe: 2.0.3
+      svgo: 4.0.2
+
   '@iconify/types@2.0.0': {}
+
+  '@iconify/unplugin@0.1.7(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.0)(vite@8.2.1)':
+    dependencies:
+      '@cyberalien/svg-utils': 1.2.19
+      '@iconify/types': 2.0.0
+      local-pkg: 1.2.1
+      unplugin: 3.3.0(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.0)(vite@8.2.1)
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rspack/core'
+      - bun-types-no-globals
+      - esbuild
+      - rolldown
+      - rollup
+      - unloader
+      - vite
+      - webpack
+
+  '@iconify/utils@3.1.4':
+    dependencies:
+      '@antfu/install-pkg': 1.1.0
+      '@iconify/types': 2.0.0
+      import-meta-resolve: 4.2.0
 
   '@img/colour@1.1.0': {}
 
@@ -17841,6 +17994,8 @@ snapshots:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.3.3
 
+  fflate@0.8.3: {}
+
   figlet@1.11.0:
     dependencies:
       commander: 14.0.3
@@ -18604,6 +18759,10 @@ snapshots:
   hyperdyperid@1.2.0: {}
 
   ico-endec@0.1.6: {}
+
+  iconify-icon@3.0.2:
+    dependencies:
+      '@iconify/types': 2.0.0
 
   iconv-lite@0.4.24:
     dependencies:
@@ -20215,6 +20374,8 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.4
 
+  modern-tar@0.7.7: {}
+
   mri@1.2.0: {}
 
   mrmime@2.0.1: {}
@@ -20504,6 +20665,8 @@ snapshots:
   package-json-from-dist@1.0.1: {}
 
   package-json-type@1.1.2: {}
+
+  package-manager-detector@1.8.0: {}
 
   pako@2.1.0: {}
 
@@ -22568,6 +22731,18 @@ snapshots:
       picomatch: 4.0.5
       webpack-virtual-modules: 0.6.2
 
+  unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.0)(vite@8.2.1):
+    dependencies:
+      '@jridgewell/remapping': 2.3.5
+      '@types/picomatch': 4.0.3
+      picomatch: 4.0.5
+      webpack-virtual-modules: 0.6.2
+    optionalDependencies:
+      esbuild: 0.28.2
+      rolldown: 1.2.4
+      rollup: 4.62.0
+      vite: 8.2.1(@types/node@26.2.0)(@vitejs/devtools@0.4.12)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.12)(yaml@2.9.0)
+
   unrs-resolver@1.12.2:
     dependencies:
       napi-postinstall: 0.3.4
@@ -23242,6 +23417,11 @@ time:
   '@eslint/js@10.0.1': '2026-02-06T22:34:56.290Z'
   '@genesiscommunitysuccess/custom-elements-lsp@5.0.3': '2024-02-14T13:52:15.401Z'
   '@iconify-json/simple-icons@1.2.93': '2026-08-03T04:18:14.709Z'
+  '@iconify/json@2.2.516': '2026-08-13T11:53:39.269Z'
+  '@iconify/tools@5.0.12': '2026-05-21T05:44:23.026Z'
+  '@iconify/types@2.0.0': '2022-09-08T06:23:03.369Z'
+  '@iconify/unplugin@0.1.7': '2026-05-29T19:04:23.651Z'
+  '@iconify/utils@3.1.4': '2026-07-05T07:00:35.946Z'
   '@lit-labs/cli-localize@0.2.2': '2025-12-23T22:03:23.431Z'
   '@lit-labs/cli@0.6.6': '2025-12-23T22:03:23.594Z'
   '@lit-labs/gen-manifest@0.3.6': '2026-05-14T03:55:57.514Z'
@@ -23307,6 +23487,7 @@ time:
   firebase@12.17.1: '2026-08-04T22:44:27.337Z'
   fs-extra@11.4.0: '2026-07-23T19:52:08.773Z'
   globals@17.11.0: '2026-08-12T11:07:59.530Z'
+  iconify-icon@3.0.2: '2025-10-25T07:18:48.522Z'
   json-to-ts@2.1.0: '2024-04-18T19:52:58.441Z'
   lit-analyzer@2.0.3: '2024-01-09T01:03:53.904Z'
   lit-element@4.2.2: '2025-12-23T22:03:30.237Z'

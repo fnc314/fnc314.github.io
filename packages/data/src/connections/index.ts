@@ -27,6 +27,7 @@ export const Connections: {
       text: "412-721-9550",
       title: "Call or text me directly",
       designToken: Icons.Material.Call,
+      iconifyIcon: "material-symbols:call"
     },
     email: {
       label: "Email",
@@ -34,6 +35,7 @@ export const Connections: {
       text: "fnc314@gmail.com",
       title: "Send me an email",
       designToken: Icons.Material.Mail,
+      iconifyIcon: "material-symbols:mail",
     },
   },
   social: {

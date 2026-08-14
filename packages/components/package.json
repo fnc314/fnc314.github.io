@@ -9,6 +9,7 @@
     "@lit/context": "catalog:dependencies",
     "@material/web": "catalog:dependencies",
     "dark-mode-toggle": "catalog:dependencies",
+    "iconify-icon": "catalog:dependencies",
     "lit": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
@@ -23,6 +24,7 @@
     "@fnc314/configs.mise": "workspace:*",
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",
+    "@iconify/unplugin": "catalog:devDependencies",
     "@types/fs-extra": "catalog:devDependencies",
     "@web-types/lit": "catalog:devDependencies",
     "fs-extra": "catalog:devDependencies",

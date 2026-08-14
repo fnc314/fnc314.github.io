@@ -3,6 +3,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { type ConnectionInstance } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-tonal-icon-button";
+import "iconify-icon";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -40,7 +41,12 @@ export class DirectConnection extends UIAwareElement {
         title=${this.connectionInstance.title}
         aria-label=${this.connectionInstance.title}
       >
-        ${this.getActiveIcon(this.connectionInstance.designToken)}
+        <iconify-icon
+          width="none"
+          height="none"
+          icon=${this.connectionInstance.iconifyIcon}
+        ></iconify-icon>
+
       </md-filled-icon-button>
     `;
   }
