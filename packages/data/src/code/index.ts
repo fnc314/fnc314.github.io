@@ -182,6 +182,20 @@ export const Projects: CodeRepoData[] = [
     description: `Portfolio page found at <a href="https://www.fnc314.dev/" target="_blank">https://www.fnc314.dev</a> (this site)`,
   },
   {
+    name: "blog.fnc314.dev",
+    tech: [
+      {
+        name: "VitePress",
+        url: "https://vuejs.github.io/vitepress/v1/",
+        designToken: Icons.Logos.Tech.Vitepress,
+        popoverContent: `Static Site Generator based on <a href="https://vite.dev/" target="_blank">Vite</a>`,
+      }
+    ],
+    url: "https://github.com/fnc314/blog-fnc314-dev",
+    repo: "fnc314/blog-fnc314-dev",
+    description: `Dedicated <a https="https://vuejs.github.io/vitepress/v1/">VitePress</a> site hosting the content also posted to <a href="https://fnc314.medium.com">Medium &copy;</a>.`
+  },
+  {
     name: "material-theme-viewer",
     tech: [
       {
