@@ -2,6 +2,8 @@ import { ProfessionalConnectionStyles } from "@/lib/connection/professional/prof
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
+import "@material/web/iconbutton/filled-tonal-icon-button";
+import "iconify-icon";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
@@ -42,7 +44,11 @@ export class ProfessionalConnection extends UIAwareElement {
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}
       >
-        ${this.professionalConnectionData.designToken.mask}
+        <iconify-icon
+          height="none"
+          width="none"
+          icon=${this.professionalConnectionData.iconifyIcon}
+        ></iconify-icon>
       </md-filled-icon-button>
     `;
   }

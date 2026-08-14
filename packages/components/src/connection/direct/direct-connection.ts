@@ -46,7 +46,6 @@ export class DirectConnection extends UIAwareElement {
           height="none"
           icon=${this.connectionInstance.iconifyIcon}
         ></iconify-icon>
-
       </md-filled-icon-button>
     `;
   }

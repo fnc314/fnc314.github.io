@@ -162,6 +162,7 @@ export function buildConfig(dirName: string): UserConfigFnPromise {
           "@lit/reactive-element",
           "@material/web",
           "material-symbols",
+          "iconify-icon",
         ],
       },
       plugins: [

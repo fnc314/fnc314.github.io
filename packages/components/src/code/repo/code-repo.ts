@@ -4,8 +4,8 @@ import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
-import { Icons } from "@fnc314/packages.design-tokens";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
+import "iconify-icon";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -154,9 +154,16 @@ export class CodeRepo extends UIAwareElement {
               rel="noopener noreferrer"
               title=${this.codeRepo.repo}
             >
-              <span aria-hidden="true">
-                ${Icons.Logos.Organization.Github.mask}
-              </span>
+              <iconify-icon
+                width="none"
+                height="none"
+                icon="simple-icons:github"
+                aria-hidden="true"
+                style="
+                  width: var(--md-icon-size);
+                  height: var(--md-icon-size);
+                "
+                ></iconify-icon>
               <span>
                 ${this.codeRepo.repo}
               </span>

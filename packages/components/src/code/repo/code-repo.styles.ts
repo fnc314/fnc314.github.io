@@ -109,17 +109,6 @@ export const CodeRepoStyles: CSSResult = css`
       &:focus {
         text-decoration: underline;
       }
-
-      span[aria-hidden="true"] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        svg {
-          block-size: var(--md-icon-size);
-          inline-size: var(--md-icon-size);
-        }
-      }
     }
   }
 

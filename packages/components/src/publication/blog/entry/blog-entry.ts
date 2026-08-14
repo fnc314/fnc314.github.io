@@ -1,8 +1,8 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
 import { TextStyles } from "@/lib/styles";
-import { Icons } from "@fnc314/packages.design-tokens";
 import { type BlogEntryJson } from "@fnc314/packages.types";
+import "iconify-icon";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -54,11 +54,17 @@ export class BlogEntry extends UIAwareElement {
             aria-describedby="medium-link-label"
             title=${`Read ${this.blogEntry.title} on Medium`}
           >
-            <span
+            <iconify-icon
+              width="none"
+              height="none"
+              icon="simple-icons:medium"
+              aria-hidden="true"
+              style="
+                width: var(--md-icon-size);
+                height: var(--md-icon-size);
+              "
               aria-labelledby="medium-link-label"
-              >
-              ${Icons.Logos.Organization.Medium.mask}
-            </span>
+              ></iconify-icon>
             <span
               class="md-typescale-label-large"
               id="medium-link-label"

@@ -3,9 +3,9 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-icon-button";
+import "iconify-icon";
 import { type CSSResult, type TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
 export { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
 
 export const TAG_NAME_CONNECTION_ARTIFACT: string = "artifact-connection";
@@ -43,7 +43,11 @@ export class ArtifactConnection extends UIAwareElement {
         title=${this.artifactConnectionData.title}
         aria-label=${this.artifactConnectionData.title}
       >
-        ${this.getActiveIcon(this.artifactConnectionData.designToken)}
+        <iconify-icon
+          width="none"
+          height="none"
+          icon=${this.artifactConnectionData.iconifyIcon}
+        ></iconify-icon>
       </md-filled-icon-button>
     `;
   }

@@ -7,28 +7,28 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-dark.svg",
             "$extensions": {
-              "fnc314.usage": "both"
+              "fnc314.usage": "none"
             }
           },
           "default": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg",
             "$extensions": {
-              "fnc314.usage": "both"
+              "fnc314.usage": "none"
             }
           },
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-light.svg",
             "$extensions": {
-              "fnc314.usage": "both"
+              "fnc314.usage": "none"
             }
           },
           "mask": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/organization/github/github-mask.svg",
             "$extensions": {
-              "fnc314.usage": "both"
+              "fnc314.usage": "none"
             }
           }
         }
