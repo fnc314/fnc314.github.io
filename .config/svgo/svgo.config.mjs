@@ -1,8 +1,10 @@
+import { extendDefaultPlugins } from "svgo";
+
 /** @type {import("svgo").Config} */
 export default {
   multipass: true,
   // datauri: "base64",
-  plugins: [
+  plugins: extendDefaultPlugins([
     {
       name: "preset-default",
       params: {
@@ -24,5 +26,5 @@ export default {
     "removeDimensions",
     "removeXlink",
     "removeTitle",
-  ]
+  ])
 };

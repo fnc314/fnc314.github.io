@@ -31,7 +31,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.45.10
+    material-symbols: 0.46.0
     prop-for-that: 0.7.12
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
@@ -109,7 +109,7 @@ catalogs:
     rolldown: 1.2.4
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-minify-html-literals: 1.2.6
-    rollup-plugin-visualizer: 7.0.1
+    rollup-plugin-visualizer: 7.1.1
     style-dictionary: 5.5.1
     stylelint: 17.14.1
     stylelint-config-alphabetical-order: 2.0.0
