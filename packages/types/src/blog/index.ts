@@ -10,6 +10,7 @@ export interface BlogEntryJson {
   series: BlogSeriesEntry;
   summary: string;
   mediumUrl: string;
+  blogDotDevUrl: string;
   tags: string[];
 }
 

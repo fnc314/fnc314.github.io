@@ -12,6 +12,7 @@ export const Blogs: BlogEntryJson[] = [
       "A deep dive into migrating scattered dependencies to a centralized Version Catalog (.toml) and taming fragile build infrastructure in large-scale multi-module applications.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-from-mayhem-to-micro-managed-be02d1f58aa8",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/01-from-mayhem-to-micro-managed/index",
   },
   {
     id: "019d373f-6a75-c7b4-c630-a259f07cd762",
@@ -24,6 +25,7 @@ export const Blogs: BlogEntryJson[] = [
       "Strategies for drawing hard architectural boundaries, uncoupling inherited black-box code, and establishing directory-level modularization to speed up parallel feature development.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-establishing-existing-order-6dc2aa452571",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/02-establishing-existing-order/index",
   },
   {
     id: "019d373f-8a35-d7d6-72d0-dfdcdfbbcdc2",
@@ -36,6 +38,7 @@ export const Blogs: BlogEntryJson[] = [
       "Eliminating <pre>build.gradle.kts</pre> boilerplate by abstracting configuration logic into custom Gradle plugins and extension functions for fine-grained sub-project control.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-plugins-over-copy-paste-6fcb83c596a7",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/03-plugins-over-copy-paste/index",
   },
   {
     id: "019d3840-8c09-c722-36a8-2218697f8ef2",
@@ -48,6 +51,7 @@ export const Blogs: BlogEntryJson[] = [
       "Navigating resource limits and harmonizing the Android Gradle build with external CI/CD pipelines, platform-agnostic distribution tools, and automated signing processes.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-into-the-wider-infrastructure-4ffcd2865901",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/04-into-the-wider-infrastructure/index",
   },
   {
     id: "019d3892-b181-07dc-2aeb-e3346efe7a1f",
@@ -60,6 +64,7 @@ export const Blogs: BlogEntryJson[] = [
       "Leveraging Gradle Composite Builds and automated Dokka integrations to create a deterministic, highly-praised internal tooling ecosystem that eliminates deprecation warnings.",
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-right-tool-for-the-job-27f7f7ea3d57",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/05-right-tool-for-the-job/index",
   },
   {
     id: "019d3892-b655-2753-4a5d-41cb13148ffd",
@@ -72,6 +77,7 @@ export const Blogs: BlogEntryJson[] = [
       'Achieving a "DX-Complete" repository using interactive Bash scripting workflows to automate developer onboarding, standardize contribution patterns, and instantly nuke/restore local environments.',
     mediumUrl: "https://medium.com/@fnc314/taming-the-elephant-heard-screaming-and-scripted-architecture-49c449e84e20",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/06-screaming-and-scripted-architecture/index",
   },
   {
     id: "019d3892-bfa7-8761-de82-94078b4007f4",
@@ -84,5 +90,6 @@ export const Blogs: BlogEntryJson[] = [
       "From the pressure of ever-changing business requirements, we undertake the final phase of the elephant heard taming process.",
     mediumUrl: "https://fnc314.medium.com/07-taming-the-elephant-heard-to-future-states-and-beyond-2f9fb794d6ee",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
+    blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-heard/07-to-future-states-and-beyond/index",
   },
 ];

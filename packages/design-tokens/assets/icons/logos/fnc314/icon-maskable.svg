@@ -9,16 +9,17 @@
   >
   <style>
     :root {
-      --grad-top-stop-color-0: #E12F45;
-      --grad-top-stop-color-100: #920021;
-      --stroke: #524343;
-      --grad-bottom-stop-color-0: #FF888B;
-      --grad-bottom-stop-color-100: #BD0B30;
+      --grad-top-stop-color-0: currentColor;
+      --grad-top-stop-color-100: currentColor;
+      --stroke: currentColor;
+      --grad-bottom-stop-color-0: currentColor;
+      --grad-bottom-stop-color-100: currentColor;
       --top-bottom-half-stroke-width: 1;
       --text-stroke-width: 0.5;
-      --text-fill: #FFEDEC;
-      --shadow-flood-color: #000000;
-      --background-field-fill: currentColor;
+      --text-fill: currentColor;
+      --shadow-flood-color: currentColor;
+      --shadow-flood-opacity: 0.4;
+      --background-field-fill: transparent;
     }
 
     #top-half {
@@ -50,11 +51,11 @@
       <stop offset="100%" style="stop-color:var(--grad-bottom-stop-color-100);stop-opacity:1" />
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="4" dy="-4" stdDeviation="4" flood-color="var(--shadow-flood-color)" flood-opacity="0.4" />
+      <feDropShadow dx="4" dy="-4" stdDeviation="4" flood-color="var(--shadow-flood-color)" flood-opacity="var(--shadow-flood-opacity)" />
     </filter>
   </defs>
   <rect x="-256" y="-256" width="512" height="512" fill="var(--background-field-fill)" />
-  <g transform="scale(0.8)">
+  <g transform="scale(1)">
     <path
       class="icon-fill icon-stroke"
       id="top-half"

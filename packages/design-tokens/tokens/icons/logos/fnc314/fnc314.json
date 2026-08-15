@@ -1,0 +1,36 @@
+{
+  "icons": {
+    "logos": {
+      "fnc314": {
+        "mask": {
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/logos/fnc314/icon-maskable.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
+        },
+        "light": {
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/logos/fnc314/icon-maskable.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
+        },
+        "dark": {
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/logos/fnc314/icon-maskable.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
+        },
+        "default": {
+          "$type": "asset",
+          "$value": "packages/design-tokens/assets/icons/logos/fnc314/icon-maskable.svg",
+          "$extensions": {
+            "fnc314.usage": "inline-svg"
+          }
+        }
+      }
+    }
+  }
+}

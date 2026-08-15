@@ -113,6 +113,20 @@ export const BlogEntryStyles: CSSResult = css`
       &:focus {
         text-decoration: underline;
       }
+
+      pre {
+        display: inline;
+      }
+
+      span.icon-wrapper {
+        display: contents;
+
+        svg {
+          inline-size: var(--md-icon-size);
+          block-size: var(--md-icon-size);
+        }
+      }
+
     }
   }
 

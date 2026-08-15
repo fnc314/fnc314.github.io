@@ -1,6 +1,7 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
 import { TextStyles } from "@/lib/styles";
+import { Icons } from "@fnc314/packages.design-tokens";
 import { type BlogEntryJson } from "@fnc314/packages.types";
 import "iconify-icon";
 import { html } from "lit";
@@ -46,6 +47,24 @@ export class BlogEntry extends UIAwareElement {
 
         <footer aria-labelledby="medium-link-label">
           <md-divider inset></md-divider>
+          <a
+            href=${ifDefined(this.blogEntry.blogDotDevUrl)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-labelledby="medium-link-label"
+            aria-describedby="medium-link-label"
+            title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
+          >
+            <span class="icon-wrapper" aria-hidden="true">
+              ${Icons.Logos.Fnc314.mask}
+            </span>
+            <span
+              class="md-typescale-label-large"
+              id="medium-link-label"
+            >
+              Read <em>${this.blogEntry.title}</em> on <pre>blog.fnc314.dev</pre>.
+            </span>
+          </a>
           <a
             href=${ifDefined(this.blogEntry.mediumUrl)}
             target="_blank"
