@@ -11,7 +11,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type BlogEntryJson } from "@fnc314/packages.types";
 
-export const TAG_NAME: string = "blog-entry";
+export const TAG_NAME_BLOG_ENTRY: string = "blog-entry";
 
 /**
  * @summary Represents a published series entry.
@@ -20,7 +20,7 @@ export const TAG_NAME: string = "blog-entry";
  * @class BlogSeries
  * @extends {UIAwareElement}
  */
-@customElement(TAG_NAME)
+@customElement(TAG_NAME_BLOG_ENTRY)
 export class BlogEntry extends UIAwareElement {
   /** {@link @lit/reactive-element!css} */
   static override styles = [TextStyles, BlogEntryStyles];
@@ -99,6 +99,6 @@ export class BlogEntry extends UIAwareElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [TAG_NAME]: BlogEntry;
+    [TAG_NAME_BLOG_ENTRY]: BlogEntry;
   }
 }
