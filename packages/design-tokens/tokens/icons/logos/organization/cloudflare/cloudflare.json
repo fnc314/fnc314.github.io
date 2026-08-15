@@ -1,0 +1,38 @@
+{
+  "icons": {
+    "logos": {
+      "organization": {
+        "cloudflare": {
+          "dark": {
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/cloudflare/cloudflare-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
+          },
+          "default": {
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/cloudflare/cloudflare-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
+          },
+          "light": {
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/cloudflare/cloudflare-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
+          },
+          "mask": {
+            "$type": "asset",
+            "$value": "packages/design-tokens/assets/icons/logos/organization/cloudflare/cloudflare-default.svg",
+            "$extensions": {
+              "fnc314.usage": "inline-svg"
+            }
+          }
+        }
+      }
+    }
+  }
+}

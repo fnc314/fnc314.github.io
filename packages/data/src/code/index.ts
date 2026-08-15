@@ -169,12 +169,6 @@ export const Projects: CodeRepoData[] = [
         url: "https://postcss.org/",
         designToken: Icons.Logos.Tech.Postcss,
         popoverContent: "CSS processing library for <pre>Node</pre>",
-      },
-      {
-        name: "VitePress",
-        url: "https://vuejs.github.io/vitepress/v1/",
-        designToken: Icons.Logos.Tech.Vitepress,
-        popoverContent: `Static Site Generator based on <a href="https://vite.dev/" target="_blank">Vite</a>`,
       }
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
@@ -189,6 +183,12 @@ export const Projects: CodeRepoData[] = [
         url: "https://vuejs.github.io/vitepress/v1/",
         designToken: Icons.Logos.Tech.Vitepress,
         popoverContent: `Static Site Generator based on <a href="https://vite.dev/" target="_blank">Vite</a>`,
+      },
+      {
+        name: "Cloudflare",
+        url: "https://cloudflare.com",
+        designToken: Icons.Logos.Organization.Cloudflare,
+        popoverContent: `Uses Cloudflare Pages for hosting blog content`,
       }
     ],
     url: "https://github.com/fnc314/blog-fnc314-dev",
