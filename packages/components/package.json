@@ -4,7 +4,7 @@
     "url": "https://github.com/fnc314/fnc314.github.io/issues"
   },
   "customElements": "./custom-elements.json",
-  "description": "Types package to support https://fnc314.com",
+  "description": "Types package to support https://www.fnc314.dev",
   "dependencies": {
     "@lit/context": "catalog:dependencies",
     "@material/web": "catalog:dependencies",

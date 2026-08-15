@@ -46,7 +46,7 @@ function createDynamicConfig(
   const outDirSuffix = `vite/${mode}`;
 
   const base = isLocalBuild ? `/${outDirSuffix}/` : "/";
-  const pwa_manifest_scope = isProduction ? "https://www.fnc314.com/" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}${base}`;
+  const pwa_manifest_scope = isProduction ? "https://www.fnc314.dev/" : `http://localhost:${process.env.LOCAL_BUILD_PYTHON_SERVER_PORT}${base}`;
   const pwa = {
     manifest: {
       scope: pwa_manifest_scope,
@@ -375,7 +375,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         },
         manifest: {
           ...(manifest as Partial<ManifestOptions>),
-          name: "fnc314.com",
+          name: "fnc314.dev",
           id: dynamicConfig.pwa.manifest.scope,
           scope: dynamicConfig.pwa.manifest.scope,
           start_url: dynamicConfig.pwa.manifest.start_url,

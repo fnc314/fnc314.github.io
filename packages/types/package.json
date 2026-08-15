@@ -9,7 +9,7 @@
     "lit": "catalog:dependencies",
     "material-symbols": "catalog:dependencies"
   },
-  "description": "Types package to support https://fnc314.com",
+  "description": "Types package to support https://www.fnc314.dev",
   "devDependencies": {
     "@fnc314/configs.postcss": "workspace:*",
     "@fnc314/configs.typescript": "workspace:*",

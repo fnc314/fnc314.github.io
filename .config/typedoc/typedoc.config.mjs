@@ -32,7 +32,7 @@ export default {
   cacheBust: true,
   classPropertiesFormat: "htmlTable",
   cleanOutputDir: true,
-  cname: "https://fnc314.com",
+  cname: "https://www.fnc314.dev",
   commentStyle: "all",
   customDescription: "TypeDoc site for @fnc314/sites.portfolio",
   customTitle: "@fnc314/sites.docs",

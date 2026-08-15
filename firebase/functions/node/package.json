@@ -2,7 +2,7 @@
   "name": "@fnc314/functions.node",
   "version": "3.5.0",
   "private": true,
-  "description": "Firebase Cloud Functions for www.fnc314.com",
+  "description": "Firebase Cloud Functions for www.fnc314.dev",
   "author": "Franco N. Colaizzi",
   "type": "module",
   "main": "lib/index.js",

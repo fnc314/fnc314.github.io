@@ -64,7 +64,7 @@ export const Connections: {
     },
     pdf: {
       label: "View PDF Resume",
-      href: `https://files.fnc314.com/pdfs/FrancoNColaizzi_Resume.pdf?timestamp=${Date.now()}`,
+      href: `https://files.fnc314.dev/pdfs/FrancoNColaizzi_Resume.pdf?timestamp=${Date.now()}`,
       title: "Download resume in PDF format",
       iconifyIcon: "material-symbols:picture-as-pdf",
     },

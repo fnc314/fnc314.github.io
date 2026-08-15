@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "scope": "https://www.fnc314.com/",
+  "scope": "https://www.fnc314.dev/",
   "orientation": "any",
   "dir": "ltr",
   "lang": "en",
-  "short_name": "fnc314.com",
+  "short_name": "fnc314.dev",
   "author": "Franco N. Colaizzi",
   "description": "Personal Website of Franco N. Colaizzi - fnc314",
   "version": "3.5.0",
-  "name": "fnc314.com",
+  "name": "fnc314.dev",
   "manifest_version": "3",
   "display": "standalone",
   "display_override": [
@@ -21,8 +21,8 @@
     "development",
     "networking"
   ],
-  "start_url": "https://www.fnc314.com/",
-  "id": "https://www.fnc314.com/",
+  "start_url": "https://www.fnc314.dev/",
+  "id": "https://www.fnc314.dev/",
   "screenshots": [],
   "protocol_handlers": [],
   "shortcuts": [],
