@@ -8,6 +8,8 @@ import { type CSSResult, css } from "lit";
 export const CodeRevealStyles: CSSResult = css`
   :host {
     --code-reveal-header-icon-inline-size: var(--sizes-dynamic-width-xs);
+    --code-reveal-header-icon-block-size: var(--sizes-dynamic-height-xs);
+    --code-reveal-header-icon-aspect-ratio: 1;
     --code-reveal-background-color: var(--md-sys-color-surface-container-lowest);
     --code-reveal-color: var(--md-sys-color-on-surface-variant);
 
@@ -93,7 +95,7 @@ export const CodeRevealStyles: CSSResult = css`
       cursor: pointer;
       color: var(--code-reveal-color);
 
-      md-icon, svg {
+      iconify-icon {
         inline-size: var(--sizes-width-xl);
         block-size: var(--sizes-height-xl);
       }
@@ -111,8 +113,10 @@ export const CodeRevealStyles: CSSResult = css`
         justify-content: center;
         align-items: center;
 
-        &::slotted(svg) {
+        &::slotted(svg),
+        &::slotted(iconify-icon) {
           inline-size: var(--code-reveal-header-icon-inline-size);
+          color: var(--code-reveal-color);
         }
       }
 

@@ -84,6 +84,7 @@ export const WordTagStyles: CSSResult = css`
       width: var(--internal-word-tag-icon-width);
       height: var(--internal-word-tag-icon-height);
       aspect-ratio: var(--internal-word-tag-icon-aspect-ratio);
+      color: var(--internal-word-tag-color);
     }
   }
 `;

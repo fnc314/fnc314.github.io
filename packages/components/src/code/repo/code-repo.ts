@@ -4,13 +4,14 @@ import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
-import { BreakpointLabels, type CodeRepoData, type CodeRepoTech } from "@fnc314/packages.types";
+import { BreakpointLabels, type CodeRepoData, type CodeRepoTech, type IconVariants } from "@fnc314/packages.types";
 import "iconify-icon";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
+import { when } from "lit/directives/when.js";
 
 export { type CodeRepoData } from "@fnc314/packages.types";
 
@@ -110,8 +111,6 @@ export class CodeRepo extends UIAwareElement {
   private createWordTagLI(tech: CodeRepoTech, wordIndex: number): TemplateResult {
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const tagId: string = `${techWord}-word-tag-${wordIndex}`;
-    const imgTemplate = this.getActiveIcon(tech.designToken);
-
     const variant = this.touchScreen || this.breakpoint === BreakpointLabels.mobile ? "icon-text" : "icon-only";
 
     return html`
@@ -125,7 +124,20 @@ export class CodeRepo extends UIAwareElement {
           aria-controls="reveal-panel"
           @click=${() => this._toggleReveal(tech, wordIndex)}
         >
-          <span slot="icon">${imgTemplate}</span>
+          ${
+            when(
+              typeof tech.designToken === "string",
+              () => html`
+                <iconify-icon
+                  width="none"
+                  height="none"
+                  icon=${tech.designToken}
+                  slot="icon"
+                ></iconify-icon>
+              `,
+              () => html`<span slot="icon">${this.getActiveIcon(tech.designToken as IconVariants)}</span>`
+            )
+          }
         </word-tag>
       </li>
     `;
@@ -133,12 +145,27 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     const activeTech = this.activeRevealIndex !== null ? this.codeRepo.tech[this.activeRevealIndex] : null;
-    const activeToken = activeTech ? this.getActiveIcon(activeTech.designToken) : html`${nothing}`;
+    const activeToken = activeTech ?
+      (
+        typeof activeTech.designToken === "string" ?
+          html`
+            <iconify-icon
+              width="none"
+              height="none"
+              slot="header-icon"
+              icon=${activeTech.designToken}
+              ></iconify-icon>
+          ` :
+          this.getActiveIcon(activeTech.designToken)
+      ) :
+      html`${nothing}`;
+
     const isFolded = this.activeRevealIndex !== null && !this.isClosing;
     const classes = {
       "dynamic-border-host": true,
       "is-folded": isFolded,
     };
+
     return html`
       <article
         class=${classMap(classes)}
@@ -202,7 +229,13 @@ export class CodeRepo extends UIAwareElement {
             }
           }}
         >
-          ${unsafeSVG(activeToken.strings.join().replace("<svg", `<svg slot="header-icon"`))}
+          ${
+            when(
+              typeof activeTech?.designToken === "string",
+              () => html`${activeToken}`,
+              () => html`${unsafeSVG(activeToken.strings.join().replace("<svg", `<svg slot="header-icon"`))}`
+            )
+          }
         </code-reveal>
 
         <!-- BOTTOM FOLD SECTION: Technology Tags Footer -->

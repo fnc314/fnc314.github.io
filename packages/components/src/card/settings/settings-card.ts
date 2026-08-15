@@ -159,7 +159,7 @@ export class SettingsCard extends UIAwareElement {
           ${Object.values(ThemeNames.Contrast).map(
             (contrast: ColorContrast) => html`
               <md-select-option value=${contrast}>
-                ${colorSchemeContrastToIcon(contrast)}
+                ${colorSchemeContrastToIcon(contrast, "start")}
                 <div slot="headline">${contrast.charAt(0).toUpperCase() + contrast.slice(1).toLowerCase()}</div>
               </md-select-option>
             `,

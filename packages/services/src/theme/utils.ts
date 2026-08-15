@@ -1,25 +1,46 @@
-import { Icons } from "@fnc314/packages.design-tokens";
 import { type ColorContrast, type ColorSchemeRoles, type ColorString, type ThemeJsonSchemes, ThemeNames } from "@fnc314/packages.types";
+import "iconify-icon";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 /**
  * A convenience method to return {@link TemplateResult}s of `<md-icon>`
  *
  * @param {ColorContrast} contrast - The particular {@link ColorContrast} chosen by the user
- * @param {("start" | "leading-icon")} [slot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default
+ * @param {("start" | "leading-icon")} [theSlot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default
  * @returns {TemplateResult}
  */
 export function colorSchemeContrastToIcon(
   contrast: ColorContrast,
-  slot: "start" | "leading-icon" = "start",
+  theSlot: "start" | "leading-icon" = "start",
 ): TemplateResult {
   switch (contrast) {
     case ThemeNames.Contrast.Normal:
-      return Icons.Material.Exposure.Zero;
+      return html`
+        <iconify-icon
+          width="none"
+          height="none"
+          icon="material-symbols:exposure-zero"
+          slot=${theSlot}
+        ></iconify-icon>
+      `;
     case ThemeNames.Contrast.Medium:
-      return Icons.Material.Exposure.One;
+      return html`
+        <iconify-icon
+          width="none"
+          height="none"
+          icon="material-symbols:exposure-plus-1"
+          slot=${theSlot}
+        ></iconify-icon>
+      `;
     case ThemeNames.Contrast.High:
-      return Icons.Material.Exposure.Two;
+      return html`
+        <iconify-icon
+          width="none"
+          height="none"
+          icon="material-symbols:exposure-plus-2"
+          slot=${theSlot}
+        ></iconify-icon>
+      `;
     default:
       return html`${nothing}`;
   }

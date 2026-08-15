@@ -7,21 +7,21 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/zero/zero-dark.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "default": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/zero/zero-default.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/zero/zero-light.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           }
         },
@@ -30,21 +30,21 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/one/one-dark.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "default": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/one/one-default.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/one/one-light.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           }
         },
@@ -53,21 +53,21 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/two/two-dark.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "default": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/two/two-default.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/material/exposure/two-light.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           }
         }

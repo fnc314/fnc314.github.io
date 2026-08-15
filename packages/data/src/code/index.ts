@@ -83,13 +83,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "PNPM",
         url: "https://pnpm.io/",
-        designToken: Icons.Logos.Tech.Pnpm,
+        designToken: /* Icons.Logos.Tech.Pnpm */ "simple-icons:pnpm",
         popoverContent: "Alternative <pre>Node</pre> package manager",
       },
       {
         name: "Vite",
         url: "https://vite.dev/",
-        designToken: Icons.Logos.Tech.Vite,
+        designToken: /* Icons.Logos.Tech.Vite */ "simple-icons:vite",
         popoverContent: "Modern JavaScript toolchain based on Rust",
       },
       {

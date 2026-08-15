@@ -1,9 +1,9 @@
 import { CodeRevealStyles } from "@/lib/code/reveal/code-reveal.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
-import { Icons } from "@fnc314/packages.design-tokens";
 import { type CodeRepoTech } from "@fnc314/packages.types";
 import { MdIconButton } from "@material/web/iconbutton/icon-button";
+import "iconify-icon";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -139,7 +139,11 @@ export class CodeReveal extends UIAwareElement {
           aria-label="Close details for ${this.tech.name}"
           @click=${() => this.triggerClose()}
         >
-          ${Icons.Material.Close.default}
+          <iconify-icon
+            width="none"
+            height="none"
+            icon="material-symbols:close"
+            ></iconify-icon>
         </md-icon-button>
         <header>
           <slot name="header-icon"></slot>

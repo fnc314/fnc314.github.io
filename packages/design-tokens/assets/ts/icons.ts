@@ -169,22 +169,6 @@ export const Icons = {
       default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="m252-226-25-26 228-228-228-229 25-26 229 229 227-229 25 26-227 229 227 228-25 26-227-229z"/></svg>`,
       light: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#212121" viewBox="0 -960 960 960"><path d="m252-226-25-26 228-228-228-229 25-26 229 229 227-229 25 26-227 229 227 228-25 26-227-229z"/></svg>`,
     } as IconVariants,
-    Exposure: {
-      Zero: {
-        dark: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M289.5-249.5Q217-342 217-480q0-141 72.5-232T480-803t190.5 92.5T743-480t-72.5 230.5T480-157t-190.5-92.5M573-347.21q31-58.21 31-132.79t-31-132.79T480-671t-93 58.21T356-480t31 132.79T480-289t93-58.21"/></svg>`,
-        default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M289.5-249.5Q217-342 217-480q0-141 72.5-232T480-803t190.5 92.5T743-480t-72.5 230.5T480-157t-190.5-92.5M573-347.21q31-58.21 31-132.79t-31-132.79T480-671t-93 58.21T356-480t31 132.79T480-289t93-58.21"/></svg>`,
-        light: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#212121" viewBox="0 -960 960 960"><path d="M289.5-249.5Q217-342 217-480q0-141 72.5-232T480-803t190.5 92.5T743-480t-72.5 230.5T480-157t-190.5-92.5M573-347.21q31-58.21 31-132.79t-31-132.79T480-671t-93 58.21T356-480t31 132.79T480-289t93-58.21"/></svg>`,
-      } as IconVariants,
-      One: {
-        dark: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M219-259v-121H98v-120h121v-120h120v120h121v120H339v121zm407 102v-484l-90 65-67-102 172-125h125v646z"/></svg>`,
-        default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M219-259v-121H98v-120h121v-120h120v120h121v120H339v121zm407 102v-484l-90 65-67-102 172-125h125v646z"/></svg>`,
-        light: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#212121" viewBox="0 -960 960 960"><path d="M219-259v-121H98v-120h121v-120h120v120h121v120H339v121zm407 102v-484l-90 65-67-102 172-125h125v646z"/></svg>`,
-      } as IconVariants,
-      Two: {
-        dark: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="#e3e3e3" viewBox="0 -960 960 960"><path d="M209-259v-121H88v-120h121v-120h120v120h121v120H329v121zm252 102v-122l211-239q33-35 44-54t11-38q0-22.51-15.5-40.26T666-668q-36 0-55.5 24T583-585l-128-51q20-70 75-118.5T667-803q92 0 145.5 55.44T866-616q0 55-25 99t-70 95L653-288l1 1h218v130z"/></svg>`,
-        default: svg`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960"><path d="M209-259v-121H88v-120h121v-120h120v120h121v120H329v121zm252 102v-122l211-239q33-35 44-54t11-38q0-22.51-15.5-40.26T666-668q-36 0-55.5 24T583-585l-128-51q20-70 75-118.5T667-803q92 0 145.5 55.44T866-616q0 55-25 99t-70 95L653-288l1 1h218v130z"/></svg>`,
-      } as IconVariants,
-    },
   },
 } as const;
 
