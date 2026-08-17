@@ -163,7 +163,7 @@ catalogs:
   overrides:
     lodash: 4.18.1
     nanoid: 6.0.0
-    serialize-javascript: 7.0.7
+    serialize-javascript: 7.1.0
     undici: 8.9.0
     uuid: 14.0.1
   typescript:
