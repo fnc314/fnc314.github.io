@@ -9,7 +9,7 @@ import {
     logWarningLevels,
     transformGroups,
     transformTypes,
-    transforms
+    transforms,
 } from "style-dictionary/enums";
 import { fileHeader } from "style-dictionary/utils";
 import { type Config as SVGOConfig, loadConfig, optimize } from "svgo";
@@ -27,19 +27,18 @@ const svgoConfig: SVGOConfig = await loadConfig(".config/svgo/svgo.config.mjs", 
  * @param path - The `.svg` file path
  * @returns The optimized and sanitized `.svg` content
  */
-const optimizeSvg: (svg: string, path: string) => string =
-  (svg: string, path: string) => {
-    const { data } = optimize(svg, { ...svgoConfig, path });
-    return data;
-  };
+const optimizeSvg: (svg: string, path: string) => string = (svg: string, path: string) => {
+  const { data } = optimize(svg, { ...svgoConfig, path });
+  return data;
+};
 
 /**
  * Passes {@link svg} through {@link svgo} and encodes for CSS data URIs
  */
-const optimizeSvgForCss: (svg: string, path: string) => string =
-  (svg: string, path: string) => {
-    const data = optimizeSvg(svg, path);
-    return data
+const optimizeSvgForCss: (svg: string, path: string) => string = (svg: string, path: string) => {
+  const data = optimizeSvg(svg, path);
+  return (
+    data
       // 1. Remove line breaks and extra spacing to keep the CSS property on one line
       .replaceAll(/[\r\n\t]+/g, " ")
       .replaceAll(/\s{2,}/g, " ")
@@ -55,7 +54,7 @@ const optimizeSvgForCss: (svg: string, path: string) => string =
       .replaceAll("'", "%27")
 
       // 5. Escape double quotes if used inside the SVG attributes
-      .replaceAll("\"", "%22")
+      .replaceAll('"', "%22")
 
       // 6. Escape parentheses as they would prematurely close the CSS url() function
       .replaceAll("(", "%28")
@@ -63,8 +62,9 @@ const optimizeSvgForCss: (svg: string, path: string) => string =
 
       // 7. Escape "{" and "}"
       .replaceAll("{", "%7B")
-      .replaceAll("}", "%7D");
-  }
+      .replaceAll("}", "%7D")
+  );
+};
 
 /**
  * Reads the file from {@link TransformedToken.value} and returns
@@ -73,24 +73,21 @@ const optimizeSvgForCss: (svg: string, path: string) => string =
  * @param token - A token referring to an `.svg` file
  * @returns The `string` contents
  */
-const readTokenFileContentsForCss: (token: TransformedToken) => string =
-  (token: TransformedToken) => {
-    const filePath = path.resolve(token.$value);
-    if (!fs.existsSync(filePath)) return token.$value;
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    return optimizeSvgForCss(fileContent, filePath);
-  };
+const readTokenFileContentsForCss: (token: TransformedToken) => string = (token: TransformedToken) => {
+  const filePath = path.resolve(token.$value);
+  if (!fs.existsSync(filePath)) return token.$value;
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  return optimizeSvgForCss(fileContent, filePath);
+};
 
 StyleDictionary.registerFilter({
   name: "isMaterialOverride",
-  filter: (token: TransformedToken) =>
-    token.name.startsWith("md") && !token.name.includes("sys-color")
+  filter: (token: TransformedToken) => token.name.startsWith("md") && !token.name.includes("sys-color"),
 });
 
 StyleDictionary.registerFilter({
   name: "isCustomToken",
-  filter: (token: TransformedToken) =>
-    ["icons", "sys", "ref", "md"].every(path => !token.path.includes(path))
+  filter: (token: TransformedToken) => ["icons", "sys", "ref", "md"].every((path) => !token.path.includes(path)),
 });
 
 StyleDictionary.registerFilter({
@@ -120,7 +117,7 @@ StyleDictionary.registerFilter({
  */
 StyleDictionary.registerFormat({
   name: "typescript/namespaced-lit-svg",
-  format: async function({ dictionary, file, options }) {
+  format: async function ({ dictionary, file, options }) {
     const header = await fileHeader({ file, commentStyle: commentStyles.long, formatting: {}, options });
 
     let code = `${header}\nimport { svg } from "lit";\nimport { type IconVariants } from "@fnc314/packages.types";\n\n`;
@@ -136,7 +133,7 @@ StyleDictionary.registerFormat({
       const optimizedSvg = optimizeSvg(rawSvg, filePath).trim();
 
       // Path parts, e.g., ["logos", "organization", "github", "dark"]
-      const pathParts = token.path.filter(p => p !== "icons");
+      const pathParts = token.path.filter((p) => p !== "icons");
       if (pathParts.length === 0) continue;
 
       const categoryOrItem = pathParts.slice(0, -1);
@@ -175,11 +172,13 @@ StyleDictionary.registerFormat({
         return `{\n${variantEntries}\n${indent.slice(2)}} as IconVariants`;
       }
 
-      const objEntries = entries.map(([key, val]) => {
-        // Capitalize the top-level property identifiers (Logos, Material, etc.)
-        const propertyKey = key.charAt(0).toUpperCase() + key.slice(1);
-        return `${indent}${propertyKey}: ${serializeNode(val, indent + "  ")},\n`;
-      }).join("");
+      const objEntries = entries
+        .map(([key, val]) => {
+          // Capitalize the top-level property identifiers (Logos, Material, etc.)
+          const propertyKey = key.charAt(0).toUpperCase() + key.slice(1);
+          return `${indent}${propertyKey}: ${serializeNode(val, indent + "  ")},\n`;
+        })
+        .join("");
 
       return `{\n${objEntries}${indent.slice(2)}}`;
     }
@@ -200,16 +199,14 @@ StyleDictionary.registerTransform({
   type: transformTypes.value,
   filter: (token: TransformedToken) => token.$type === "asset",
   transitive: true,
-  transform: (token: TransformedToken) =>
-    `'data:image/svg+xml;utf8,${readTokenFileContentsForCss(token)}'`
+  transform: (token: TransformedToken) => `'data:image/svg+xml;utf8,${readTokenFileContentsForCss(token)}'`,
 });
 
 StyleDictionary.registerTransform({
   name: "iconSvgToDataImageSvgName",
   type: transformTypes.name,
   transitive: false,
-  transform: (token: TransformedToken) =>
-    `${token.name}-icon-svg`,
+  transform: (token: TransformedToken) => `${token.name}-icon-svg`,
 });
 
 const files = {
@@ -222,7 +219,7 @@ const files = {
     `${process.cwd()}/packages/design-tokens/tokens/**/*.json`,
     `!${process.cwd()}/packages/design-tokens/tokens/material-design/icons.json`,
     `!${process.cwd()}/packages/design-tokens/tokens/material-design/themes/**/*.json`,
-  ]
+  ],
 };
 
 const styleDictionaryConfig: Config = {
@@ -236,7 +233,7 @@ const styleDictionaryConfig: Config = {
         transforms.colorCss,
         transforms.assetPath,
         "iconSvgToDataImageSvg",
-        "iconSvgToDataImageSvgName"
+        "iconSvgToDataImageSvgName",
       ],
       buildPath: files.buildPaths.css,
       files: [
@@ -253,16 +250,16 @@ const styleDictionaryConfig: Config = {
               fileHeaderTimestamp: true,
               commentPosition: "above",
               commentStyle: "long",
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     },
     litSvg: {
       transforms: [
         transforms.attributeCti,
         transforms.nameKebab,
-        transforms.assetPath
+        transforms.assetPath,
       ],
       buildPath: files.buildPaths.ts,
       files: [
@@ -275,10 +272,10 @@ const styleDictionaryConfig: Config = {
               fileHeaderTimestamp: true,
               commentPosition: "above",
               commentStyle: "long",
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     },
     css: {
       transformGroup: transformGroups.css,
@@ -297,9 +294,9 @@ const styleDictionaryConfig: Config = {
               fileHeaderTimestamp: true,
               commentPosition: "above",
               commentStyle: "long",
-            }
-          }
-        }
+            },
+          },
+        },
       ],
     },
     materialCss: {
@@ -326,9 +323,9 @@ const styleDictionaryConfig: Config = {
               fileHeaderTimestamp: true,
               commentPosition: "above",
               commentStyle: "long",
-            }
-          }
-        }
+            },
+          },
+        },
       ],
     },
   },
@@ -337,8 +334,8 @@ const styleDictionaryConfig: Config = {
     verbosity: logVerbosityLevels.verbose,
     errors: {
       brokenReferences: logBrokenReferenceLevels.throw,
-    }
-  }
+    },
+  },
 };
 
 export default styleDictionaryConfig;

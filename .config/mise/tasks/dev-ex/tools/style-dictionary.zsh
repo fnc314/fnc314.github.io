@@ -25,12 +25,12 @@ if [[ "${usage_l:=false}" == "true" ]]; then
   mkdir -pv "$(dirname "$LOG_FILE")"
   printf "Cleaning design tokens for @fnc314/packages.design-tokens...\n\n"
   pnpm style-dictionary clean "${STYLE_DICTIONARY_CLI[@]}" 2>&1 | tee -a "${LOG_FILE}"
-  print -r -f "Generating design tokens for @fnc314/packages.design-tokens...\n\n"
+  printf "Generating design tokens for @fnc314/packages.design-tokens...\n\n"
   pnpm style-dictionary build "${STYLE_DICTIONARY_CLI[@]}" 2>&1 | tee -a "${LOG_FILE}"
 fi
 printf "Cleaning design tokens\nfor @fnc314/packages.design-tokens...\n\n"
 pnpm style-dictionary clean "${STYLE_DICTIONARY_CLI[@]}"
-print -r -f "Generating design tokens for @fnc314/packages.design-tokens...\n\n"
+printf "Generating design tokens for @fnc314/packages.design-tokens...\n\n"
 pnpm style-dictionary build "${STYLE_DICTIONARY_CLI[@]}"
 
-print -r -f "Design tokens generated successfully."
+printf "Design tokens generated successfully."
