@@ -51,8 +51,8 @@ export class BlogEntry extends UIAwareElement {
             href=${ifDefined(this.blogEntry.blogDotDevUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            aria-labelledby="medium-link-label"
-            aria-describedby="medium-link-label"
+            aria-labelledby="blog-link-label"
+            aria-describedby="blog-link-label"
             title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
           >
             <span class="icon-wrapper" aria-hidden="true">
@@ -60,9 +60,9 @@ export class BlogEntry extends UIAwareElement {
             </span>
             <span
               class="md-typescale-label-large"
-              id="medium-link-label"
+              id="blog-link-label"
             >
-              Read <em>${this.blogEntry.title}</em> on <pre>blog.fnc314.dev</pre>.
+              Read&nbsp;<em>${this.blogEntry.title}</em>&nbsp;on&nbsp;<pre>blog.fnc314.dev</pre>.
             </span>
           </a>
           <a
@@ -88,7 +88,7 @@ export class BlogEntry extends UIAwareElement {
               class="md-typescale-label-large"
               id="medium-link-label"
             >
-              Read <em>${this.blogEntry.title}</em> on Medium<sup>&reg;</sup>
+              Read&nbsp;<em>${this.blogEntry.title}</em>&nbsp;on&nbsp;Medium<sup>&reg;</sup>
             </span>
           </a>
         </footer>
