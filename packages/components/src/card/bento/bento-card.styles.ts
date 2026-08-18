@@ -27,6 +27,8 @@ export const BentoCardStyles = css`
   }
 
   article {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
