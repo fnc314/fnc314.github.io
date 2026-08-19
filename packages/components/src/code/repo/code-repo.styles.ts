@@ -22,7 +22,7 @@ export const CodeRepoStyles: CSSResult = css`
     --word-tag-border-color: var(--md-sys-color-secondary);
     --word-tag-border-radius: var(--md-sys-shape-corner-medium);
     --word-tag-background-color: var(--md-sys-color-surface-container-lowest);
-    --word-tag-color: var(--md-sys-color-on-tertiary-container);
+    --word-tag-color: var(--md-sys-color-on-surface-variant);
 
     align-self: stretch;
     box-sizing: border-box;
