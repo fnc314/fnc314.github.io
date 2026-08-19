@@ -3,7 +3,7 @@ import "iconify-icon";
 import { type CSSResult, type TemplateResult, css, html, nothing, unsafeCSS } from "lit";
 
 /**
- * A convenience method to return {@link TemplateResult}s of `<md-icon>`
+ * A convenience method to return {@link TemplateResult}s of `<iconify-icon>`
  *
  * @param {ColorContrast} contrast - The particular {@link ColorContrast} chosen by the user
  * @param {("start" | "leading-icon")} [theSlot="start"] - Either `"start"` or `"leading-icon"` with `"start"` as default

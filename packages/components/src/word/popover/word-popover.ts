@@ -2,7 +2,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordPopoverAnimations } from "@/lib/word/popover/word-popover.animations.styles";
 import { WordPopoverStyles } from "@/lib/word/popover/word-popover.styles";
-import { Icons } from "@fnc314/packages.design-tokens";
+import "iconify-icon";
 import { type TemplateResult, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 
@@ -73,7 +73,11 @@ export class WordPopover extends UIAwareElement {
             aria-label="Close popover for ${this.word}"
             @click=${() => this.close()}
           >
-            ${Icons.Material.Close.default}
+            <iconify-icon
+              width="none"
+              height="none"
+              icon="material-symbols:close"
+              ></iconify-icon>
           </md-icon-button>
           <header>
             <slot name="header-icon"></slot>

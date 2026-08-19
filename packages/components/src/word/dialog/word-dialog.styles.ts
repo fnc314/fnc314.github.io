@@ -54,7 +54,7 @@ export const WordDialogStyles: CSSResult = css`
       top: 0;
       right: 0;
 
-      md-icon {
+      iconify-icon {
         inline-size: var(--md-icon-size);
         block-size: var(--md-icon-size);
       }

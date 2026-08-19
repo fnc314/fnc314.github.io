@@ -79,31 +79,40 @@ export abstract class UIAwareElement extends LitElement {
   }
 
   /**
-   * Parses the provided `variant` for the proper {@link TemplateResult}
-   *   to render
+   * Parses the provided `variants` for the proper {@link TemplateResult}
+   *   to render.  Conditionally bypasses logic involving {@link configsService}
+   *   when `suppressVariation` is `true`.
    *
    * @protected
    * @param {IconVariants} variants An {@link IconVariants} instance
+   * @param suppressVariation A flag which, when `true` bypasses logic
+   *   between {@link IconVariants.dark} and {@link IconVariants.light} in favor
+   *   of {@link IconVariants.default}, if defined.  If missing, {@link IconVariants.light}
+   *   is returned.  The default is `false`.
    * @returns {TemplateResult} The rendered {@link TemplateResult}
    */
-  protected getActiveIcon(variants: IconVariants): TemplateResult {
-    switch (configsService.loadConfigs().colorScheme.name) {
-      case ThemeNames.Scheme.Dark:
-        return variants.dark;
-      case ThemeNames.Scheme.Light:
-        return variants.light;
-      case ThemeNames.Scheme.System:
-      default:
-        switch (themeService.deviceColorScheme()) {
-          case ThemeNames.Scheme.Dark:
-            return variants.dark;
-          case ThemeNames.Scheme.Light:
-            return variants.light;
-          case ThemeNames.Scheme.System:
-            return variants.default ?? variants.light;
-          default:
-            return variants.light;
-        }
+  protected getActiveIcon(variants: IconVariants, suppressVariation: boolean = false): TemplateResult {
+    if (suppressVariation) {
+      return variants.default ?? variants.light;
+    } else {
+      switch (configsService.loadConfigs().colorScheme.name) {
+        case ThemeNames.Scheme.Dark:
+          return variants.dark;
+        case ThemeNames.Scheme.Light:
+          return variants.light;
+        case ThemeNames.Scheme.System:
+        default:
+          switch (themeService.deviceColorScheme()) {
+            case ThemeNames.Scheme.Dark:
+              return variants.dark;
+            case ThemeNames.Scheme.Light:
+              return variants.light;
+            case ThemeNames.Scheme.System:
+              return variants.default ?? variants.light;
+            default:
+              return variants.light;
+          }
+      }
     }
   }
 }
