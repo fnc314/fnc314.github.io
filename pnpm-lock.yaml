@@ -10,55 +10,55 @@ importers:
         version: 0.1.0
     packageManagerDependencies:
       '@pnpm/exe':
-        specifier: 11.22.0
-        version: 11.22.0
+        specifier: 11.23.0
+        version: 11.23.0
       pnpm:
-        specifier: 11.22.0
-        version: 11.22.0
+        specifier: 11.23.0
+        version: 11.23.0
 
 packages:
 
-  '@pnpm/exe@11.22.0':
-    resolution: {integrity: sha512-B1SGeKm+v9pX9YkzMmrnO2FbgBd8TDwzZ3jSj6J6ThxdyGvI4TsOfMeHARW4Wb25visPpmMDfIXrU76EZdJM4g==}
+  '@pnpm/exe@11.23.0':
+    resolution: {integrity: sha512-jBLtRlIloG7OdqEI4DCIQIIVrGMRlnMQxV+cq2BuBB8dhRVBHrNLHi1X2in1bI8Oa6xusPZtEWYgLwm8VkaNmQ==}
     hasBin: true
 
-  '@pnpm/linux-arm64@11.22.0':
-    resolution: {integrity: sha512-xzzn3jYG9QaiFZPaHcWM3yX4Fm9UGz5E42mzpbvUEvXYf5O9fwNolenOhGLpRl2qS5u35fjZSvDZbWlOwHMcug==}
+  '@pnpm/linux-arm64@11.23.0':
+    resolution: {integrity: sha512-IthFHf+6VvyfBJQXVPbYOhwexdrxD99uKJrPCd0i5igUI99c2QP85BnE0tLUZwes9eETBlE8gbCuXIIdhjFY6Q==}
     cpu: [arm64]
     os: [linux]
 
-  '@pnpm/linux-x64@11.22.0':
-    resolution: {integrity: sha512-isvaPctGinbsM2hsTtRsMarN8Sr5QhXDTNmn8Xv9Lp1PjincCvH2RBbhpo+xYIOxzgls1dtQSdgoORUbfRVALQ==}
+  '@pnpm/linux-x64@11.23.0':
+    resolution: {integrity: sha512-DuxEM0gZqo/oq+OgJU09tYCGvoKow8xAntuqWVvH5+OQiiGU0raEJu7Gj/lsKj4Q5aPWG5vpUeN8S8ClbrtNwQ==}
     cpu: [x64]
     os: [linux]
 
-  '@pnpm/linuxstatic-arm64@11.22.0':
-    resolution: {integrity: sha512-i4J+AQWW0T3JBdXaLsvxu8ZmMG1HLS6JZQESdOR9uBv8Zumb4yg8GYT83eWRLacr6ngVdhEBiC3W4eOG64MFbA==}
+  '@pnpm/linuxstatic-arm64@11.23.0':
+    resolution: {integrity: sha512-d0lt2+zCtclW1URgeBZKEd8frAlBVvRgPxHq0ED4Zfrprm4wrilBi5enzZ5JtePVN7PSiPmj8wfpHRBzWBox2A==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/linuxstatic-x64@11.22.0':
-    resolution: {integrity: sha512-QYzk8jhSuSbVthW/OxEOhU3f3zhjpw4HqgedrlwbVNb7btCWn5del2Hb5PsYYka2PbmKq5EtF5IzYN8Yp1CfxQ==}
+  '@pnpm/linuxstatic-x64@11.23.0':
+    resolution: {integrity: sha512-MrQVTtzneSy9DSFr3FdOA7u+o2ci/YsAGnRQ7u/IuQTzvJpLv9d4u2orB1MjB9f2/Hqb3FyAdrAYBvPxss1Ldg==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/macos-arm64@11.22.0':
-    resolution: {integrity: sha512-Io8Axk5kutPgMuAfOg1QGj3J0/KpLvH5iiPcmp7up8D4q7BNWT02ndQo3RyGWqrlkf5nwspM41GFpWTShrZ4Aw==}
+  '@pnpm/macos-arm64@11.23.0':
+    resolution: {integrity: sha512-sdMdxDAhtznQjGQxP9msVIiBm7R9J1yHw/oIdKJepLbG6UtLFASkZ/GlJNm+mxifTinsFplntrA4qigiVesfcw==}
     cpu: [arm64]
     os: [darwin]
 
   '@pnpm/plugin-types-fixer@0.1.0':
     resolution: {integrity: sha512-bLww63gRHi7siYTqFJb5qNdcXadU0jv20Et6z5AryMZ7FlLolbEJOrXLpg8+amQZNHHNW1dfFUBGVw/9ezQbFg==}
 
-  '@pnpm/win-arm64@11.22.0':
-    resolution: {integrity: sha512-QgaRuKGQKov7xW2utPCgDT83fn/PU5cD6HFgib48oTslz7wv26E89d4jMCxL4GRmEL2YCfkYuj5ITj1oVWg5WQ==}
+  '@pnpm/win-arm64@11.23.0':
+    resolution: {integrity: sha512-d60y5JBlWmGJ2ve7Ob/P9TePSL1uPqW40r5k1i1MZeR28n6GUgIeeGlMAU6mb9ACP3i8BFbu3AnP7q3kpOYmPQ==}
     cpu: [arm64]
     os: [win32]
 
-  '@pnpm/win-x64@11.22.0':
-    resolution: {integrity: sha512-iWYsiSwpgxqur+TwsnSoPdOQaEfd4ygB84mb5tJUOgim6PHr1xhKJBndaQzH+At/WkLxLdYN+K8dYc4M7naezg==}
+  '@pnpm/win-x64@11.23.0':
+    resolution: {integrity: sha512-I4CY5dtaSfH2Ws1Ya8IB3cABqsJ+FS8yJgKG53bq1Ya2WMnB7rTR1LQcgyDoN0baEYD8kjXy1ehHikP11UBziw==}
     cpu: [x64]
     os: [win32]
 
@@ -122,47 +122,47 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  pnpm@11.22.0:
-    resolution: {integrity: sha512-H/hwxMYTPf2I+yr8Rt0T1H8JyXlLQ4xv20fKmMrzvBY4HuC+k6CRuOOCTPAfiJ9G19niCRD7C+GrD7W6qA3WIQ==}
+  pnpm@11.23.0:
+    resolution: {integrity: sha512-8ACC5bKDoZm3Tgedoo0VXACP4jL0TIoG6n3foBTs9xn8Ni95DsxnsoEG3awq+yTEmpoHkVnaVgss59Hpjv0Rrw==}
     engines: {node: '>=22.13'}
     hasBin: true
 
 snapshots:
 
-  '@pnpm/exe@11.22.0':
+  '@pnpm/exe@11.23.0':
     dependencies:
       '@reflink/reflink': 0.1.19
       detect-libc: 2.1.2
     optionalDependencies:
-      '@pnpm/linux-arm64': 11.22.0
-      '@pnpm/linux-x64': 11.22.0
-      '@pnpm/linuxstatic-arm64': 11.22.0
-      '@pnpm/linuxstatic-x64': 11.22.0
-      '@pnpm/macos-arm64': 11.22.0
-      '@pnpm/win-arm64': 11.22.0
-      '@pnpm/win-x64': 11.22.0
+      '@pnpm/linux-arm64': 11.23.0
+      '@pnpm/linux-x64': 11.23.0
+      '@pnpm/linuxstatic-arm64': 11.23.0
+      '@pnpm/linuxstatic-x64': 11.23.0
+      '@pnpm/macos-arm64': 11.23.0
+      '@pnpm/win-arm64': 11.23.0
+      '@pnpm/win-x64': 11.23.0
 
-  '@pnpm/linux-arm64@11.22.0':
+  '@pnpm/linux-arm64@11.23.0':
     optional: true
 
-  '@pnpm/linux-x64@11.22.0':
+  '@pnpm/linux-x64@11.23.0':
     optional: true
 
-  '@pnpm/linuxstatic-arm64@11.22.0':
+  '@pnpm/linuxstatic-arm64@11.23.0':
     optional: true
 
-  '@pnpm/linuxstatic-x64@11.22.0':
+  '@pnpm/linuxstatic-x64@11.23.0':
     optional: true
 
-  '@pnpm/macos-arm64@11.22.0':
+  '@pnpm/macos-arm64@11.23.0':
     optional: true
 
   '@pnpm/plugin-types-fixer@0.1.0': {}
 
-  '@pnpm/win-arm64@11.22.0':
+  '@pnpm/win-arm64@11.23.0':
     optional: true
 
-  '@pnpm/win-x64@11.22.0':
+  '@pnpm/win-x64@11.23.0':
     optional: true
 
   '@reflink/reflink-darwin-arm64@0.1.19':
@@ -202,7 +202,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  pnpm@11.22.0: {}
+  pnpm@11.23.0: {}
 
 ---
 lockfileVersion: '9.0'
@@ -215,8 +215,8 @@ settings:
 catalogs:
   dependencies:
     '@iconify/json':
-      specifier: 2.2.518
-      version: 2.2.518
+      specifier: 2.2.519
+      version: 2.2.519
     '@iconify/tools':
       specifier: 5.0.12
       version: 5.0.12
@@ -525,8 +525,8 @@ catalogs:
       specifier: 2.0.1
       version: 2.0.1
     stylelint-plugin-use-baseline:
-      specifier: 1.4.5
-      version: 1.4.5
+      specifier: 1.4.6
+      version: 1.4.6
     stylelint-prettier:
       specifier: 5.0.3
       version: 5.0.3
@@ -594,8 +594,8 @@ catalogs:
       specifier: 0.8.5
       version: 0.8.5
     vite-plugin-cp:
-      specifier: 8.0.0
-      version: 8.0.0
+      specifier: 8.0.1
+      version: 8.0.1
     vite-plugin-dts:
       specifier: 5.0.3
       version: 5.0.3
@@ -659,7 +659,7 @@ importers:
         version: link:packages/types
       '@iconify/json':
         specifier: catalog:dependencies
-        version: 2.2.518
+        version: 2.2.519
       '@iconify/tools':
         specifier: catalog:dependencies
         version: 5.0.12
@@ -966,7 +966,7 @@ importers:
         version: 2.0.1(stylelint@17.14.1)(tailwindcss@4.3.1)
       stylelint-plugin-use-baseline:
         specifier: catalog:devDependencies
-        version: 1.4.5(stylelint@17.14.1)
+        version: 1.4.6(stylelint@17.14.1)
       stylelint-prettier:
         specifier: catalog:devDependencies
         version: 5.0.3(prettier@3.9.6)(stylelint@17.14.1)
@@ -1041,7 +1041,7 @@ importers:
         version: 0.8.5(vite@8.2.2)
       vite-plugin-cp:
         specifier: catalog:devDependencies
-        version: 8.0.0(supports-color@10.2.2)
+        version: 8.0.1(supports-color@10.2.2)
       vite-plugin-dts:
         specifier: catalog:devDependencies
         version: 5.0.3(@typescript/typescript6@6.0.2)(@vue/language-core@3.3.9)(esbuild@0.28.2)(rolldown@1.2.5)(rollup@4.62.0)(supports-color@10.2.2)(vite@8.2.2)
@@ -3152,8 +3152,8 @@ packages:
   '@iconify-json/simple-icons@1.2.93':
     resolution: {integrity: sha512-/XhANjfGYOuqvSR3TmUnkQkINvQ4GVjVuukvymRbxtVFBvIq/yiXJqCDycKcQPT401OYT9H2vIY6ihAlz1QIAw==}
 
-  '@iconify/json@2.2.518':
-    resolution: {integrity: sha512-RhUkCc/lF+0hWiYLIMPOf4oy5owjN8r9PGqDQKb7bh76QiWHTerIApDhtOcEWe85VjUcsuU88Rg56Od+a64wMA==}
+  '@iconify/json@2.2.519':
+    resolution: {integrity: sha512-zwjQIYYLnT8b2SUELffIDzsfftTjdYTUfE+iaZGUg8jEckx69CU/tWqt65GZt7B3D2pKk7f651lbY9QYWIKOYA==}
 
   '@iconify/tools@5.0.12':
     resolution: {integrity: sha512-aFPwSFmFphUPVjNLUkgxgUPSPVgTEEjv0mE7NgvfoQBuE5TtsMrKa4HTY65cM5oXZ2a1xKQcW/RKhiOKEiAarw==}
@@ -10555,8 +10555,8 @@ packages:
     peerDependencies:
       stylelint: ^16.0.0 || ^17.0.0
 
-  stylelint-plugin-use-baseline@1.4.5:
-    resolution: {integrity: sha512-/AHhNgy3VQKx8bEc3ZeTc2tVOqU3Gdyr+55ZzUHrTtY0L/uGw9gyeIDWUQWpQiY4EwpAlQ009bSvQDt8cdqvmw==}
+  stylelint-plugin-use-baseline@1.4.6:
+    resolution: {integrity: sha512-8FyloHsa3YXt0y3wVYToV1frYgX/p7GYOCV7EjV/BjiNFzzGnqJvcKK94vNBfI/BOUi1d8L+VdgBqx5zNMF3uw==}
     peerDependencies:
       stylelint: ^16.0.2 || ^17.0.0
 
@@ -11266,8 +11266,8 @@ packages:
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  vite-plugin-cp@8.0.0:
-    resolution: {integrity: sha512-cf7k8BUP0FELd2T3wQS9K9VKgcxHCzmewzp7fMS2G8An2QqfCBHSx9DWwZXOdP1jueflSSyZqtDiUoWmUGwf+A==}
+  vite-plugin-cp@8.0.1:
+    resolution: {integrity: sha512-CJT+7Z5BH6GylhrzdgRsvdOIFUEMXLLKJQqoxWwXXjuSDX9lDmnvrMEartVR9HSFZ1CTOjHUJwMLGMkMzxz3Gw==}
     engines: {node: ^20.19.0 || >=22.12.0, vite: '>=8.0.0'}
 
   vite-plugin-dts@5.0.3:
@@ -13658,7 +13658,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.518':
+  '@iconify/json@2.2.519':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 2.0.3
@@ -22289,7 +22289,7 @@ snapshots:
     transitivePeerDependencies:
       - tailwindcss
 
-  stylelint-plugin-use-baseline@1.4.5(stylelint@17.14.1):
+  stylelint-plugin-use-baseline@1.4.6(stylelint@17.14.1):
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0
@@ -23179,7 +23179,7 @@ snapshots:
       typescript: 5.7.3
       vite: 8.2.2(@types/node@26.2.0)(@vitejs/devtools@0.5.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.12)(yaml@2.9.0)
 
-  vite-plugin-cp@8.0.0(supports-color@10.2.2):
+  vite-plugin-cp@8.0.1(supports-color@10.2.2):
     dependencies:
       '@types/fs-extra': 11.0.4
       fs-extra: 11.4.0
@@ -23717,7 +23717,7 @@ time:
   '@eslint/js@10.0.1': '2026-02-06T22:34:56.290Z'
   '@genesiscommunitysuccess/custom-elements-lsp@5.0.3': '2024-02-14T13:52:15.401Z'
   '@iconify-json/simple-icons@1.2.93': '2026-08-03T04:18:14.709Z'
-  '@iconify/json@2.2.518': '2026-08-18T15:43:48.811Z'
+  '@iconify/json@2.2.519': '2026-08-22T04:32:50.058Z'
   '@iconify/tools@5.0.12': '2026-05-21T05:44:23.026Z'
   '@iconify/types@2.0.0': '2022-09-08T06:23:03.369Z'
   '@iconify/unplugin@0.1.7': '2026-05-29T19:04:23.651Z'
@@ -23814,7 +23814,7 @@ time:
   stylelint-order@8.1.1: '2026-03-15T00:02:45.544Z'
   stylelint-plugin-logical-css@2.1.0: '2026-03-29T08:28:07.147Z'
   stylelint-plugin-rhythmguard@2.0.1: '2026-06-17T08:37:36.131Z'
-  stylelint-plugin-use-baseline@1.4.5: '2026-07-25T16:08:22.623Z'
+  stylelint-plugin-use-baseline@1.4.6: '2026-08-22T01:24:05.477Z'
   stylelint-prettier@5.0.3: '2025-01-27T04:47:07.921Z'
   stylelint-use-nesting@6.0.2: '2026-02-19T16:05:15.526Z'
   stylelint@17.14.1: '2026-07-20T01:00:57.084Z'
@@ -23838,7 +23838,7 @@ time:
   unplugin-dts@1.0.3: '2026-06-24T08:15:01.703Z'
   unplugin-info@1.3.2: '2026-03-30T11:56:02.951Z'
   vite-plugin-cem@0.8.5: '2026-03-27T14:00:28.659Z'
-  vite-plugin-cp@8.0.0: '2026-08-20T18:09:38.597Z'
+  vite-plugin-cp@8.0.1: '2026-08-22T17:07:49.798Z'
   vite-plugin-dts@5.0.3: '2026-06-24T08:15:50.406Z'
   vite-plugin-lit-css@3.0.0: '2026-05-10T13:58:50.852Z'
   vite-plugin-pwa@1.3.0: '2026-05-05T15:04:06.752Z'
