@@ -87,13 +87,14 @@ export abstract class UIAwareElement extends LitElement {
    * @param {IconVariants} variants An {@link IconVariants} instance
    * @param suppressVariation A flag which, when `true` bypasses logic
    *   between {@link IconVariants.dark} and {@link IconVariants.light} in favor
-   *   of {@link IconVariants.default}, if defined.  If missing, {@link IconVariants.light}
-   *   is returned.  The default is `false`.
+   *   of {@link IconVariants.default}, if defined.  If missing, `getActiveIcon` is
+   *   invoked again, but with `suppressVariation` forced to `false`.  The default
+   *   is `false`.
    * @returns {TemplateResult} The rendered {@link TemplateResult}
    */
   protected getActiveIcon(variants: IconVariants, suppressVariation: boolean = false): TemplateResult {
     if (suppressVariation) {
-      return variants.default ?? variants.light;
+      return variants.default ?? this.getActiveIcon(variants, false);
     } else {
       switch (configsService.loadConfigs().colorScheme.name) {
         case ThemeNames.Scheme.Dark:
