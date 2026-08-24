@@ -29,7 +29,7 @@ monorepo_root = true
   "npm:vite" = "8.2.2"
   pnpm = "11.23.0"
   tombi = "1.4.1"
-  usage = "6.1.1"
+  usage = "6.4.0"
 
 [deps]
   pnpm = {
@@ -38,15 +38,15 @@ monorepo_root = true
 
 [env]
   _ = {
-      path = [
-        {
-          path = [
-            "{{config_root}}/node_modules/.bin",
-          ],
-          tools = true,
-        }
-      ],
-    }
+    path = [
+      {
+        path = [
+          "{{config_root}}/node_modules/.bin",
+        ],
+        tools = true,
+      }
+    ],
+  }
   configureExtensionsUseSymLinks = true
   LOCAL_CONFIG_DIR = "{{config_root}}/.config"
   LOCAL_BUILD_PYTHON_SERVER_PORT = "9100"
