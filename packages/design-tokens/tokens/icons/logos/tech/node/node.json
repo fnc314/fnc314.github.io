@@ -7,7 +7,7 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/node/node-dark.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "default" : {
@@ -21,7 +21,7 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/node/node-light.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           }
         }

@@ -3,7 +3,7 @@
     "icon": {
       "size": {
         "$type": "value",
-        "$value": "1.5rem"
+        "$value": "1.75rem"
       },
       "font": {
         "$type": "value",

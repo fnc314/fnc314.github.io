@@ -85,7 +85,7 @@ export abstract class UIAwareElement extends LitElement {
    *
    * @protected
    * @param {IconVariants} variants An {@link IconVariants} instance
-   * @param suppressVariation A flag which, when `true` bypasses logic
+   * @param suppressVariation A flag which, when `true`, bypasses logic
    *   between {@link IconVariants.dark} and {@link IconVariants.light} in favor
    *   of {@link IconVariants.default}, if defined.  If missing, `getActiveIcon` is
    *   invoked again, but with `suppressVariation` forced to `false`.  The default

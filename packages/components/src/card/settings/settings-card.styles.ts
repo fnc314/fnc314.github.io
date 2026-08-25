@@ -4,6 +4,25 @@ export const SettingsCardStyles: CSSResult = css`
   :host {
     block-size: 100%;
     display: block;
+
+    --md-menu-item-leading-icon-color: var(--md-sys-color-primary);
+    --md-menu-item-trailing-icon-color: var(--md-sys-color-primary);
+    --md-menu-item-label-text-color: var(--md-sys-color-primary);
+
+    --md-outlined-select-text-field-container-shape: var(--md-sys-shape-corner-small);
+    --md-outlined-select-text-field-trailing-icon-size: var(--md-icon-size);
+
+    --md-outlined-select-text-field-focus-input-text-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-focus-label-text-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-focus-trailing-icon-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-focus-outline-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-focus-outline-width: var(--sizes-thickness-xs);
+
+    --md-outlined-select-text-field-hover-label-text-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-hover-input-text-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-hover-trailing-icon-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-hover-outline-color: var(--md-sys-color-primary);
+    --md-outlined-select-text-field-hover-outline-width: var(--sizes-thickness-xs);
   }
 
   article {
@@ -40,11 +59,6 @@ export const SettingsCardStyles: CSSResult = css`
 
         md-outlined-select {
           padding-block-start: var(--spaces-padding-s);
-          --md-menu-item-leading-icon-color: var(--md-sys-color-primary);
-          --md-menu-item-label-text-color: var(--md-sys-color-primary);
-          --md-outlined-select-text-field-hover-outline-color: var(--md-sys-color-primary);
-          --md-outlined-select-text-field-hover-outline-width: var(--sizes-thickness-xs);
-          --md-outlined-select-container-color: var(--md-sys-color-tertiary);
 
           md-select-option {
             img {

@@ -3,13 +3,34 @@
     "sys": {
       "shape": {
         "corner": {
-          "extra-large": { "$value": "2rem" },
-          "extra-small": { "$value": "0.25rem" },
-          "full": { "$value": "100%" },
-          "large": { "$value": "1.5rem" },
-          "medium": { "$value": "1rem" },
-          "none": { "$value": "0" },
-          "small": { "$value": "0.5rem" },
+          "extra-large": {
+            "$type": "value",
+            "$value": "2rem"
+          },
+          "extra-small": {
+            "$type": "value",
+            "$value": "0.25rem"
+          },
+          "full": {
+            "$type": "value",
+            "$value": "100%"
+          },
+          "large": {
+            "$type": "value",
+            "$value": "1.5rem"
+          },
+          "medium": {
+            "$type": "value",
+            "$value": "1rem"
+          },
+          "none": {
+            "$type": "value",
+            "$value": "0"
+          },
+          "small": {
+            "$type": "value",
+            "$value": "0.5rem"
+          },
           "circle": {
             "$type": "value",
             "$value": "50%"

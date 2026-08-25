@@ -19,7 +19,7 @@
           },
           "default": {
             "$type": "asset",
-            "$value": "packages/design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary-mask.svg",
+            "$value": "packages/design-tokens/assets/icons/logos/tech/style-dictionary/style-dictionary-default.svg",
             "$extensions": {
               "fnc314.usage": "none"
             }

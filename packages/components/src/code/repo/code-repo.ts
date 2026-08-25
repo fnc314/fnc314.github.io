@@ -72,7 +72,9 @@ export class CodeRepo extends UIAwareElement {
   }
 
   private async _restoreFocus(index: number) {
-    if (index === null || !this.codeRepo.tech[index]) return;
+    if (index === null || !this.codeRepo.tech[index]) {
+      return;
+    }
     const tech = this.codeRepo.tech[index];
     const techWord = tech.name.replaceAll(" ", "-").toLowerCase();
     const tagId: string = `${techWord}-word-tag-${index}`;
@@ -84,16 +86,24 @@ export class CodeRepo extends UIAwareElement {
   }
 
   private _handleGridKeyDown(e: KeyboardEvent) {
-    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
+      return;
+    }
 
     const tags = Array.from(this.wordTags || []);
-    if (!tags.length) return;
+    if (!tags.length) {
+      return;
+    }
 
     const activeElement = this.shadowRoot?.activeElement;
-    if (!activeElement || activeElement.tagName.toLowerCase() !== "word-tag") return;
+    if (!activeElement || activeElement.tagName.toLowerCase() !== "word-tag") {
+      return;
+    }
 
     const currentIndex = tags.indexOf(activeElement as WordTag);
-    if (currentIndex === -1) return;
+    if (currentIndex === -1) {
+      return;
+    }
 
     let nextIndex = currentIndex;
     if (e.key === "ArrowLeft") {
@@ -135,7 +145,7 @@ export class CodeRepo extends UIAwareElement {
                   slot="icon"
                 ></iconify-icon>
               `,
-              () => html`<span slot="icon">${this.getActiveIcon(tech.designToken as IconVariants)}</span>`
+              () => html`<span slot="icon">${this.getActiveIcon(tech.designToken as IconVariants, true)}</span>`
             )
           }
         </word-tag>
@@ -145,20 +155,22 @@ export class CodeRepo extends UIAwareElement {
 
   override render() {
     const activeTech = this.activeRevealIndex !== null ? this.codeRepo.tech[this.activeRevealIndex] : null;
-    const activeToken = activeTech ?
-      (
-        typeof activeTech.designToken === "string" ?
-          html`
-            <iconify-icon
-              width="none"
-              height="none"
-              slot="header-icon"
-              icon=${activeTech.designToken}
-              ></iconify-icon>
-          ` :
-          this.getActiveIcon(activeTech.designToken)
-      ) :
-      html`${nothing}`;
+    const activeToken = when(
+      activeTech !== null,
+      () => when(
+        activeTech && typeof activeTech.designToken === "string",
+        () => html`
+          <iconify-icon
+            width="none"
+            height="none"
+            slot="header-icon"
+            icon=${activeTech!.designToken}
+            ></iconify-icon>
+        `,
+        () => this.getActiveIcon(activeTech!.designToken as IconVariants, true)
+      ),
+      () => html`${nothing}`
+    );
 
     const isFolded = this.activeRevealIndex !== null && !this.isClosing;
     const classes = {

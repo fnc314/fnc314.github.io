@@ -7,21 +7,21 @@
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-dark.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "default": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-default.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           },
           "light": {
             "$type": "asset",
             "$value": "packages/design-tokens/assets/icons/logos/tech/gradle/gradle-light.svg",
             "$extensions": {
-              "fnc314.usage": "inline-svg"
+              "fnc314.usage": "none"
             }
           }
         }

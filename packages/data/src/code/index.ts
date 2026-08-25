@@ -8,13 +8,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Gradle",
         url: "https://docs.gradle.org/",
-        designToken: Icons.Logos.Tech.Gradle,
+        designToken: "simple-icons:gradle" /* Icons.Logos.Tech.Gradle */,
         popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: Icons.Logos.Tech.Kotlin,
+        designToken: "simple-icons:kotlin", /* Icons.Logos.Tech.Kotlin, */
         popoverContent: "JetBrains' modern JVM languange",
       },
     ],
@@ -29,7 +29,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Bash",
         url: "https://www.gnu.org/software/bash/",
-        designToken: Icons.Logos.Tech.Bash,
+        designToken: /* "simple-icons:gnubash", */ Icons.Logos.Tech.Bash,
         popoverContent: "Shell scripting",
       },
       {
@@ -50,19 +50,19 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Android",
         url: "https://developer.android.com/",
-        designToken: Icons.Logos.Tech.Android,
+        designToken: "simple-icons:android", /* Icons.Logos.Tech.Android, */
         popoverContent: "World's most used, open-source operating system",
       },
       {
         name: "Gradle",
         url: "https://docs.gradle.org/",
-        designToken: Icons.Logos.Tech.Gradle,
+        designToken: "simple-icons:gradle" /* Icons.Logos.Tech.Gradle */,
         popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
       },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: Icons.Logos.Tech.Kotlin,
+        designToken: "simple-icons:kotlin", /* Icons.Logos.Tech.Kotlin, */
         popoverContent: "JetBrains' modern JVM languange",
       },
     ],
@@ -83,25 +83,25 @@ export const Projects: CodeRepoData[] = [
       {
         name: "PNPM",
         url: "https://pnpm.io/",
-        designToken: /* Icons.Logos.Tech.Pnpm */ "simple-icons:pnpm",
+        designToken: "simple-icons:pnpm", /* Icons.Logos.Tech.Pnpm, */
         popoverContent: "Alternative <pre>Node</pre> package manager",
       },
       {
         name: "Vite",
         url: "https://vite.dev/",
-        designToken: /* Icons.Logos.Tech.Vite */ "simple-icons:vite",
+        designToken: "simple-icons:vite", /* Icons.Logos.Tech.Vite, */
         popoverContent: "Modern JavaScript toolchain based on Rust",
       },
       {
         name: "Lit",
         url: "https://lit.dev/",
-        designToken: Icons.Logos.Tech.Lit,
+        designToken: "simple-icons:lit", /* Icons.Logos.Tech.Lit, */
         popoverContent: "JavaScript library for building Web Components",
       },
       {
         name: "TypeScript",
         url: "https://typescriptlang.org/",
-        designToken: Icons.Logos.Tech.Typescript,
+        designToken: "simple-icons:typescript", /* Icons.Logos.Tech.Typescript, */
         popoverContent: "Microsoft's modern JavaScript superset language",
       },
       {
@@ -119,7 +119,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Node",
         url: "https://nodejs.org/",
-        designToken: Icons.Logos.Tech.Node,
+        designToken: /* "simple-icons:nodedotjs", */ Icons.Logos.Tech.Node,
         popoverContent: "JavaScript Runtime",
       },
       {
@@ -131,25 +131,25 @@ export const Projects: CodeRepoData[] = [
       {
         name: "HTML",
         url: "https://developer.mozilla.org/",
-        designToken: Icons.Logos.Tech.Web.Html,
+        designToken: /* "simple-icons:html5", */ Icons.Logos.Tech.Web.Html,
         popoverContent: "HTML5 for templates",
       },
       {
         name: "CSS",
         url: "https://developer.mozilla.org/",
-        designToken: Icons.Logos.Tech.Web.Css,
+        designToken: /* "simple-icons:css3", */ Icons.Logos.Tech.Web.Css,
         popoverContent: "CSS for styles",
       },
       {
         name: "Prettier",
         url: "https://prettier.io/",
-        designToken: Icons.Logos.Tech.Prettier,
+        designToken: "simple-icons:prettier", /* Icons.Logos.Tech.Prettier, */
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "ESLint",
         url: "https://eslint.org/",
-        designToken: Icons.Logos.Tech.Eslint,
+        designToken: "simple-icons:eslint", /* Icons.Logos.Tech.Eslint, */
         popoverContent: "Linting library for <pre>Node</pre>",
       },
       {
@@ -161,13 +161,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "StyleLint",
         url: "https://stylelint.io/",
-        designToken: Icons.Logos.Tech.Stylelint,
+        designToken: "simple-icons:stylelint", /* Icons.Logos.Tech.Stylelint, */
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "PostCSS",
         url: "https://postcss.org/",
-        designToken: Icons.Logos.Tech.Postcss,
+        designToken: "simple-icons:postcss", // Icons.Logos.Tech.Postcss,
         popoverContent: "CSS processing library for <pre>Node</pre>",
       }
     ],
@@ -181,13 +181,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "VitePress",
         url: "https://vuejs.github.io/vitepress/v1/",
-        designToken: Icons.Logos.Tech.Vitepress,
+        designToken: "simple-icons:vitepress", // Icons.Logos.Tech.Vitepress,
         popoverContent: `Static Site Generator based on <a href="https://vite.dev/" target="_blank">Vite</a>`,
       },
       {
         name: "Cloudflare",
         url: "https://cloudflare.com",
-        designToken: Icons.Logos.Organization.Cloudflare,
+        designToken: "simple-icons:cloudflare", // Icons.Logos.Organization.Cloudflare,
         popoverContent: `Uses Cloudflare Pages for hosting blog content`,
       }
     ],
@@ -234,13 +234,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Python",
         url: "https://python.org/",
-        designToken: Icons.Logos.Tech.Python,
+        designToken: "simple-icons:python", /* Icons.Logos.Tech.Python, */
         popoverContent: "Popular scripting language",
       },
       {
         name: "Ruby",
         url: "https://www.ruby-lang.org/en/",
-        designToken: Icons.Logos.Tech.Ruby,
+        designToken: "simple-icons:ruby", /* Icons.Logos.Tech.Ruby, */
         popoverContent: "Formerly popular scripting language",
       },
     ],
