@@ -60,7 +60,7 @@ catalogs:
     "@typescript-eslint/eslint-plugin": 8.67.0
     "@typescript-eslint/parser": 8.67.0
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.5.2
+    "@vitejs/devtools": 0.6.0
     "@wc-toolkit/cem-inheritance": 1.2.5
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.6.0
@@ -186,7 +186,6 @@ includeWorkspaceRoot: true
 linkWorkspacePackages: "deep"
 lockfile: true
 loglevel: "debug"
-managePackageManagerVersions: true
 minimumReleaseAgeExclude:
   - "@firebase/ai@2.13.0"
   - "@firebase/app-check-compat@0.4.4"
@@ -242,7 +241,6 @@ minimumReleaseAgeExclude:
   - nanoid@3.3.18
   - svgo@4.0.2
 nodeVersion: "26.7.0"
-packageManagerStrictVersion: true
 packages:
   - "configs/@pwrs-cem"
   - "configs/custom-elements-manifest"
@@ -287,4 +285,3 @@ saveWorkspaceProtocol: "rolling"
 scriptShell: "zsh"
 sharedWorkspaceLockfile: true
 updateNotifier: true
-useNodeVersion: "26.7.0"
