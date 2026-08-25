@@ -369,6 +369,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         }
       }),
       VitePWA({
+        includeManifestIcons: true,
+        injectRegister: false,
+        showMaximumFileSizeToCacheInBytesWarning: true,
+        selfDestroying: true,
+        mode: dynamicConfig.isProduction ? "production" : "development",
         base: `${dynamicConfig.base}`,
         devOptions: {
           enabled: dynamicConfig.isLocalBuild,
