@@ -14,7 +14,7 @@ catalogMode: "strict"
 catalogs:
   dependencies:
     "@iconify/json": 2.2.519
-    "@iconify/tools": 5.0.12
+    "@iconify/tools": 5.0.13
     "@iconify/types": 2.0.0
     "@iconify/utils": 3.1.4
     "@lit-labs/motion": 1.1.0
