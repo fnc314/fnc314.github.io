@@ -2,7 +2,6 @@
 concurrency:
   cancel-in-progress: false
   group: "pages"
-# run-name: "Deploy to GitHub Pages by @${{ github.actor }}"
 
 jobs:
   # Build job
@@ -37,7 +36,7 @@ jobs:
         shell: zsh {0}
 
       - name: Mise Deps
-        run: mise deps -vv -f --monorepo
+        run: mise deps -v -f --monorepo
         shell: zsh {0}
 
       - env:
@@ -87,3 +86,5 @@ permissions:
   contents: read
   id-token: write
   pages: write
+
+run-name: "Deploy to GitHub Pages by @${{ github.actor }}"
