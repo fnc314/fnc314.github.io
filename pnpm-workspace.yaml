@@ -13,7 +13,7 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
-    "@iconify/json": 2.2.521
+    "@iconify/json": 2.2.522
     "@iconify/tools": 5.0.14
     "@iconify/types": 2.0.0
     "@iconify/utils": 3.1.4
@@ -42,7 +42,7 @@ catalogs:
     "@eslint/eslintrc": 3.3.6
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
-    "@iconify-json/simple-icons": 1.2.93
+    "@iconify-json/simple-icons": 1.2.94
     "@iconify/unplugin": 0.1.7
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2

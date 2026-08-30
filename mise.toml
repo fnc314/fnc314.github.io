@@ -33,7 +33,15 @@ monorepo_root = true
 
 [deps]
   pnpm = {
-    auto = true,
+    auto = false,
+    description = "Force `mise` to invoke `pnpm install`",
+    run = "pnpm install --force -w -r --loglevel debug",
+    outputs = [
+      "node_modules",
+    ],
+    sources = [
+      "pnpm-workspace.yaml",
+    ]
   }
 
 [env]
