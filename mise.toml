@@ -63,8 +63,9 @@ monorepo_root = true
 [settings]
   status = {
     show_tools = true,
-  truncate = false,
+    truncate = false,
   }
+  auto_env = true
   task = {
     show_full_cmd = true,
   }
