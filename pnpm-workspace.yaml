@@ -13,10 +13,10 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
-    "@iconify/json": 2.2.525
+    "@iconify/json": 2.2.526
     "@iconify/tools": 5.0.14
     "@iconify/types": 2.0.0
-    "@iconify/utils": 3.1.4
+    "@iconify/utils": 3.1.7
     "@lit-labs/motion": 1.1.0
     "@lit-labs/router": 0.1.4
     "@lit/context": 1.1.6
@@ -31,7 +31,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.47.0
+    material-symbols: 0.47.1
     prop-for-that: 0.7.12
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
@@ -42,7 +42,7 @@ catalogs:
     "@eslint/eslintrc": 3.3.7
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
-    "@iconify-json/simple-icons": 1.2.94
+    "@iconify-json/simple-icons": 1.2.95
     "@iconify/unplugin": 0.1.7
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2
@@ -55,12 +55,12 @@ catalogs:
     "@skillit/typedoc": 2.0.3
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
-    "@types/node": 26.4.1
+    "@types/node": 26.5.0
     "@types/wordcloud": 1.2.2
     "@typescript-eslint/eslint-plugin": 8.69.0
     "@typescript-eslint/parser": 8.69.0
     "@vite-pwa/assets-generator": 1.0.2
-    "@vitejs/devtools": 0.7.1
+    "@vitejs/devtools": 0.7.2
     "@wc-toolkit/cem-inheritance": 1.2.5
     "@wc-toolkit/cem-sorter": 1.0.1
     "@wc-toolkit/cem-utilities": 1.6.0
@@ -72,18 +72,18 @@ catalogs:
     "@web/test-runner": 1.0.0
     "@web/test-runner-playwright": 1.0.0
     "@webcomponents/webcomponentsjs": 2.8.0
-    autoprefixer: 10.5.4
+    autoprefixer: 10.5.5
     cem-plugin-better-lit-types: 0.2.1
     cem-plugin-jsdoc-example: 0.0.9
     cem-plugin-readme: 0.1.4
     cem-plugin-readonly: 0.0.5
     cem-plugin-type-descriptions-markdown: 0.0.4
-    custom-element-jet-brains-integration: 1.7.0
+    custom-element-jet-brains-integration: 1.8.0
     custom-element-vs-code-integration: 1.5.0
     custom-elements-manifest: 2.1.0
     diff: 9.0.0
     esbuild: 0.28.2
-    eslint: 10.9.1
+    eslint: 10.10.0
     eslint-config-google: 0.14.0
     eslint-formatter-html: 2.7.3
     eslint-plugin-import: 2.32.0
@@ -110,17 +110,17 @@ catalogs:
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-minify-html-literals: 1.2.6
     rollup-plugin-visualizer: 7.1.1
-    style-dictionary: 5.5.2
-    stylelint: 17.14.1
+    style-dictionary: 5.5.3
+    stylelint: 17.15.0
     stylelint-config-alphabetical-order: 2.0.0
-    stylelint-config-inspector: 2.3.5
+    stylelint-config-inspector: 2.3.7
     stylelint-config-standard: 40.0.0
     stylelint-declaration-strict-value: 1.12.1
-    stylelint-define-config: 17.14.0
+    stylelint-define-config: 17.15.0
     stylelint-no-unresolved-module: 2.5.2
     stylelint-order: 8.1.1
     stylelint-plugin-logical-css: 2.1.0
-    stylelint-plugin-rhythmguard: 2.0.1
+    stylelint-plugin-rhythmguard: 3.4.0
     stylelint-plugin-use-baseline: 1.4.6
     stylelint-prettier: 5.0.3
     stylelint-use-nesting: 6.0.2
