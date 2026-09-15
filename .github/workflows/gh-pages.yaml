@@ -18,6 +18,7 @@ jobs:
 
       - env:
           MISE_MINIMUM_RELEASE_AGE: "0s"
+          MISE_OS: "linux"
           MISE_VERBOSE: "1"
           RUST_BACKTRACE: "full"
         name: Install Mise
