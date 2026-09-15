@@ -30,7 +30,7 @@ jobs:
           install: true
           install_args: "--monorepo -vv"
           log_level: "verbose"
-          minimum_release_age: "0"
+          minimum_release_age: 0
 
       - name: PNPM Install
         run: pnpm install -r --force -w --loglevel debug
