@@ -17,6 +17,7 @@ jobs:
           sudo apt-get install -y zsh
 
       - env:
+          MISE_MINIMUM_RELEASE_AGE: "0s"
           MISE_VERBOSE: "1"
           RUST_BACKTRACE: "full"
         name: Install Mise
@@ -30,7 +31,7 @@ jobs:
           install: true
           install_args: "--monorepo -vv"
           log_level: "verbose"
-          minimum_release_age: 0
+          minimum_release_age: "0s"
 
       - name: PNPM Install
         run: pnpm install -r --force -w --loglevel debug
