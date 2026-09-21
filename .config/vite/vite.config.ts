@@ -11,8 +11,8 @@ import cp from "vite-plugin-cp";
 import type { ManifestOptions } from "vite-plugin-pwa";
 import { VitePWA } from "vite-plugin-pwa";
 import { vitePluginVersionMark } from "vite-plugin-version-mark";
-import manifest from "./../../manifest.json" with { type: "json" };
 import packageJson from "./../../package.json" with { type: "json" };
+import manifest from "./../../sites/portfolio/manifest.json" with { type: "json" };
 
 interface DynamicConfigs {
   isProduction: boolean;
@@ -261,7 +261,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         workbox: {
           maximumFileSizeToCacheInBytes: 60_000_000,
         },
-        manifestFilename: "manifest.json",
+        manifestFilename: path.resolve(process.cwd(), "sites/portfolio", "manifest.json"),
         minify: dynamicConfig.isProduction,
         outDir: dynamicConfig.outDir,
         pwaAssets: {

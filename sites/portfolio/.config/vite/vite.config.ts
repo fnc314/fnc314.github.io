@@ -1,4 +1,3 @@
-import { DevTools } from "@vitejs/devtools";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
@@ -82,13 +81,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   const dynamicConfig: DynamicConfigs = createDynamicConfig(process.env, mode);
 
   const debugPlugins = [
-    DevTools({
-      builtinDevTools: true,
-      build: {
-        withApp: false,
-        outDir: dynamicConfig.outDir,
-      },
-    }),
+    // DevTools({
+    //   builtinDevTools: true,
+    //   build: {
+    //     withApp: false,
+    //     outDir: dynamicConfig.outDir,
+    //   },
+    // }),
     VitePluginCustomElementsManifest({
       config: path.resolve(
         `${process.cwd()}`,
@@ -110,6 +109,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       ],
     })
   ];
+
+  console.error(
+    "adjfklsdjfakl;sdjfklsajfklasjflkasjfkl;asdjfklasdjfkl;asdjf;klasdjf;laksdfjasdl;kfjsad;klfj"
+  );
 
   const userConfig: UserConfig = {
     devtools: {
@@ -395,7 +398,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           disabled: false,
           injectThemeColor: false,
           overrideManifestIcons: false,
-          config: path.resolve(process.cwd(), ".config/pwa-assets/pwa-assets.config.ts"),
+          config: path.resolve(process.cwd(), "sites/portfolio/.config/pwa-assets/pwa-assets.config.ts"),
         },
         srcDir: path.resolve(process.cwd(), "static"),
         disable: false,
