@@ -187,7 +187,7 @@ linkWorkspacePackages: "deep"
 lockfile: true
 loglevel: "debug"
 minimumReleaseAge: 0
-nodeVersion: "26.8.2"
+nodeVersion: "26.10.0"
 packages:
   - "configs/@pwrs-cem"
   - "configs/custom-elements-manifest"
