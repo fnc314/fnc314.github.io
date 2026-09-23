@@ -13,7 +13,7 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
-    "@iconify/json": 2.2.532
+    "@iconify/json": 2.2.533
     "@iconify/tools": 5.0.14
     "@iconify/types": 2.0.0
     "@iconify/utils": 3.1.7
@@ -102,11 +102,11 @@ catalogs:
     postcss: 8.5.28
     postcss-html: 2.0.0
     postcss-lit: 1.4.1
-    prettier: 3.9.8
+    prettier: 3.9.9
     prettier-plugin-toml: 2.0.6
     pwa-asset-generator: 8.1.7
     rimraf: 6.1.3
-    rolldown: 1.2.9
+    rolldown: 1.2.10
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-minify-html-literals: 1.2.6
     rollup-plugin-visualizer: 7.1.1
