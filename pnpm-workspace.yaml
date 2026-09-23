@@ -189,12 +189,12 @@ loglevel: "debug"
 minimumReleaseAge: 0
 nodeVersion: "26.10.0"
 packages:
-  - "configs/@pwrs-cem"
   - "configs/custom-elements-manifest"
   - "configs/eslint"
   - "configs/mise"
   - "configs/postcss"
   - "configs/prettier"
+  - "configs/pwrs-cem"
   - "configs/typedoc"
   - "configs/typescript"
   - "firebase/functions/node"

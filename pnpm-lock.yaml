@@ -599,21 +599,9 @@ importers:
 
   .:
     dependencies:
-      '@fnc314/packages.components':
+      '@fnc314/sites.portfolio':
         specifier: workspace:*
-        version: link:packages/components
-      '@fnc314/packages.data':
-        specifier: workspace:*
-        version: link:packages/data
-      '@fnc314/packages.design-tokens':
-        specifier: workspace:*
-        version: link:packages/design-tokens
-      '@fnc314/packages.services':
-        specifier: workspace:*
-        version: link:packages/services
-      '@fnc314/packages.types':
-        specifier: workspace:*
-        version: link:packages/types
+        version: link:sites/portfolio
       '@iconify/json':
         specifier: catalog:dependencies
         version: 2.2.533
@@ -702,6 +690,45 @@ importers:
       '@eslint/js':
         specifier: catalog:devDependencies
         version: 10.0.1(eslint@10.11.0)
+      '@fnc314/configs.custom-elements-manifest':
+        specifier: workspace:*
+        version: link:configs/custom-elements-manifest
+      '@fnc314/configs.eslint':
+        specifier: workspace:*
+        version: link:configs/eslint
+      '@fnc314/configs.mise':
+        specifier: workspace:*
+        version: link:configs/mise
+      '@fnc314/configs.postcss':
+        specifier: workspace:*
+        version: link:configs/postcss
+      '@fnc314/configs.prettier':
+        specifier: workspace:*
+        version: link:configs/prettier
+      '@fnc314/configs.pwrs-cem':
+        specifier: workspace:*
+        version: link:configs/pwrs-cem
+      '@fnc314/configs.typedoc':
+        specifier: workspace:*
+        version: link:configs/typedoc
+      '@fnc314/configs.typescript':
+        specifier: workspace:*
+        version: link:configs/typescript
+      '@fnc314/packages.components':
+        specifier: workspace:*
+        version: link:packages/components
+      '@fnc314/packages.data':
+        specifier: workspace:*
+        version: link:packages/data
+      '@fnc314/packages.design-tokens':
+        specifier: workspace:*
+        version: link:packages/design-tokens
+      '@fnc314/packages.services':
+        specifier: workspace:*
+        version: link:packages/services
+      '@fnc314/packages.types':
+        specifier: workspace:*
+        version: link:packages/types
       '@genesiscommunitysuccess/custom-elements-lsp':
         specifier: catalog:devDependencies
         version: 5.0.3
@@ -1021,8 +1048,6 @@ importers:
         specifier: catalog:devDependencies
         version: 2.0.0
 
-  configs/@pwrs-cem: {}
-
   configs/custom-elements-manifest:
     dependencies:
       '@custom-elements-manifest/analyzer':
@@ -1057,6 +1082,8 @@ importers:
   configs/postcss: {}
 
   configs/prettier: {}
+
+  configs/pwrs-cem: {}
 
   configs/typedoc: {}
 
@@ -15096,22 +15123,6 @@ snapshots:
       - ocache
       - srvx
 
-  '@vitejs/devtools-kit@0.7.5(@devframes/agentic@1.0.0)(cac@7.0.0)(crossws@0.4.12)(srvx@1.0.5)(vite@8.3.0)':
-    dependencies:
-      '@devframes/hub': 1.0.0(@devframes/agentic@1.0.0)(crossws@0.4.12)(devframe@1.0.0)
-      '@devframes/json-render': 1.0.0(@devframes/hub@1.0.0)(devframe@1.0.0)
-      devframe: 1.0.0(@devframes/agentic@1.0.0)(cac@7.0.0)(srvx@1.0.5)
-      local-pkg: 1.2.1
-      nostics: 1.2.0
-      package-manager-detector: 1.8.0
-      vite: 8.3.0(@types/node@26.6.2)(@vitejs/devtools@0.7.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.15)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@devframes/agentic'
-      - cac
-      - crossws
-      - ocache
-      - srvx
-
   '@vitejs/devtools@0.7.5(@devframes/json-render@1.0.0)(crossws@0.4.12)(srvx@0.12.7)(vite@8.3.0)':
     dependencies:
       '@devframes/agentic': 1.0.0(crossws@0.4.12)(devframe@1.0.0)
@@ -15124,33 +15135,6 @@ snapshots:
       '@vitejs/devtools-kit': 0.7.5(@devframes/agentic@1.0.0)(cac@7.0.0)(crossws@0.4.12)(srvx@0.12.7)(vite@8.3.0)
       cac: 7.0.0
       devframe: 1.0.0(@devframes/agentic@1.0.0)(cac@7.0.0)(srvx@0.12.7)
-      h3: 2.0.1-rc.32(crossws@0.4.12)
-      local-pkg: 1.2.1
-      nostics: 1.2.0
-      obug: 3.0.0
-      pathe: 2.0.3
-      vite: 8.3.0(@types/node@26.6.2)(@vitejs/devtools@0.7.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(tsx@4.23.15)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@devframes/json-render'
-      - '@devframes/plugin-inspect--assets'
-      - '@devframes/plugin-messages--assets'
-      - '@devframes/plugin-terminals--assets'
-      - crossws
-      - ocache
-      - srvx
-
-  '@vitejs/devtools@0.7.5(@devframes/json-render@1.0.0)(crossws@0.4.12)(srvx@1.0.5)(vite@8.3.0)':
-    dependencies:
-      '@devframes/agentic': 1.0.0(crossws@0.4.12)(devframe@1.0.0)
-      '@devframes/hub': 1.0.0(@devframes/agentic@1.0.0)(crossws@0.4.12)(devframe@1.0.0)
-      '@devframes/hub-ui': 1.0.0(@devframes/hub@1.0.0)(@devframes/json-render@1.0.0)(devframe@1.0.0)
-      '@devframes/json-render-ui': 1.0.0(@devframes/hub@1.0.0)(devframe@1.0.0)
-      '@devframes/plugin-inspect': 1.0.0(devframe@1.0.0)(vite@8.3.0)
-      '@devframes/plugin-messages': 1.0.0(@devframes/hub@1.0.0)(devframe@1.0.0)(vite@8.3.0)
-      '@devframes/plugin-terminals': 1.0.0(@devframes/hub-ui@1.0.0)(@devframes/hub@1.0.0)(devframe@1.0.0)(vite@8.3.0)
-      '@vitejs/devtools-kit': 0.7.5(@devframes/agentic@1.0.0)(cac@7.0.0)(crossws@0.4.12)(srvx@1.0.5)(vite@8.3.0)
-      cac: 7.0.0
-      devframe: 1.0.0(@devframes/agentic@1.0.0)(cac@7.0.0)(srvx@1.0.5)
       h3: 2.0.1-rc.32(crossws@0.4.12)
       local-pkg: 1.2.1
       nostics: 1.2.0
@@ -16448,10 +16432,6 @@ snapshots:
     optionalDependencies:
       srvx: 0.12.7
 
-  crossws@0.4.12(srvx@1.0.5):
-    optionalDependencies:
-      srvx: 1.0.5
-
   crypto-random-string@2.0.0: {}
 
   css-functions-list@3.3.3: {}
@@ -16649,19 +16629,6 @@ snapshots:
   devframe@1.0.0(@devframes/agentic@1.0.0)(cac@7.0.0)(srvx@0.12.7):
     dependencies:
       crossws: 0.4.12(srvx@0.12.7)
-      h3: 2.0.1-rc.32(crossws@0.4.12)
-      nostics: 1.2.0
-      pathe: 2.0.3
-    optionalDependencies:
-      '@devframes/agentic': 1.0.0(crossws@0.4.12)(devframe@1.0.0)
-      cac: 7.0.0
-    transitivePeerDependencies:
-      - ocache
-      - srvx
-
-  devframe@1.0.0(@devframes/agentic@1.0.0)(cac@7.0.0)(srvx@1.0.5):
-    dependencies:
-      crossws: 0.4.12(srvx@1.0.5)
       h3: 2.0.1-rc.32(crossws@0.4.12)
       nostics: 1.2.0
       pathe: 2.0.3
