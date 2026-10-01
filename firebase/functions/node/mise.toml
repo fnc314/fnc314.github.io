@@ -1,5 +1,5 @@
 [tools]
-  firebase = "15.32.0"
+  firebase = "15.32.1"
   node = "26.10.0"
   tombi = "1.6.1"
   usage = "6.11.0"
