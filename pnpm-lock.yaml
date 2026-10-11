@@ -430,8 +430,8 @@ catalogs:
       specifier: 1.4.1
       version: 1.4.1
     prettier:
-      specifier: 3.9.9
-      version: 3.9.9
+      specifier: 3.9.10
+      version: 3.9.10
     pwa-asset-generator:
       specifier: 8.1.7
       version: 8.1.7
@@ -451,8 +451,8 @@ catalogs:
       specifier: 7.1.1
       version: 7.1.1
     style-dictionary:
-      specifier: 5.6.0
-      version: 5.6.0
+      specifier: 5.6.1
+      version: 5.6.1
     stylelint:
       specifier: 17.16.0
       version: 17.16.0
@@ -475,8 +475,8 @@ catalogs:
       specifier: 2.6.0
       version: 2.6.0
     stylelint-order:
-      specifier: 8.1.1
-      version: 8.1.1
+      specifier: 8.1.2
+      version: 8.1.2
     stylelint-plugin-logical-css:
       specifier: 2.1.0
       version: 2.1.0
@@ -484,8 +484,8 @@ catalogs:
       specifier: 3.8.0
       version: 3.8.0
     stylelint-plugin-use-baseline:
-      specifier: 1.4.6
-      version: 1.4.6
+      specifier: 1.4.7
+      version: 1.4.7
     stylelint-prettier:
       specifier: 5.0.3
       version: 5.0.3
@@ -841,10 +841,10 @@ importers:
         version: 0.0.4(@custom-elements-manifest/analyzer@0.11.0)
       custom-element-jet-brains-integration:
         specifier: catalog:devDependencies
-        version: 1.8.0(prettier@3.9.9)
+        version: 1.8.0(prettier@3.9.10)
       custom-element-vs-code-integration:
         specifier: catalog:devDependencies
-        version: 1.5.0(prettier@3.9.9)
+        version: 1.5.0(prettier@3.9.10)
       custom-elements-manifest:
         specifier: catalog:devDependencies
         version: 2.1.0
@@ -871,7 +871,7 @@ importers:
         version: 5.1.1(@types/eslint@9.6.1)(eslint@10.12.0)
       eslint-plugin-prettier:
         specifier: catalog:devDependencies
-        version: 5.5.6(@types/eslint@9.6.1)(eslint@10.12.0)(prettier@3.9.9)
+        version: 5.5.6(@types/eslint@9.6.1)(eslint@10.12.0)(prettier@3.9.10)
       eslint-plugin-tsdoc:
         specifier: catalog:devDependencies
         version: 0.5.4(@types/eslint@9.6.1)(@typescript/typescript6@6.0.2)(eslint@10.12.0)(supports-color@10.2.2)
@@ -898,7 +898,7 @@ importers:
         version: 1.4.1(jiti@2.7.0)(postcss@8.5.29)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.0)
       prettier:
         specifier: catalog:devDependencies
-        version: 3.9.9
+        version: 3.9.10
       pwa-asset-generator:
         specifier: catalog:devDependencies
         version: 8.1.7(@types/yauzl@2.10.3)(supports-color@10.2.2)(yauzl@2.10.0)
@@ -919,7 +919,7 @@ importers:
         version: 7.1.1(rolldown@1.2.13)(rollup@2.80.0)
       style-dictionary:
         specifier: catalog:devDependencies
-        version: 5.6.0(tslib@2.8.1)
+        version: 5.6.1(tslib@2.8.1)
       stylelint:
         specifier: catalog:devDependencies
         version: 17.16.0(@typescript/typescript6@6.0.2)(supports-color@10.2.2)
@@ -943,7 +943,7 @@ importers:
         version: 2.6.0(stylelint@17.16.0)
       stylelint-order:
         specifier: catalog:devDependencies
-        version: 8.1.1(stylelint@17.16.0)
+        version: 8.1.2(stylelint@17.16.0)
       stylelint-plugin-logical-css:
         specifier: catalog:devDependencies
         version: 2.1.0(stylelint@17.16.0)
@@ -952,10 +952,10 @@ importers:
         version: 3.8.0(stylelint-config-tailwindcss@1.0.1)(stylelint-plugin-logical-css@2.1.0)(stylelint@17.16.0)
       stylelint-plugin-use-baseline:
         specifier: catalog:devDependencies
-        version: 1.4.6(stylelint@17.16.0)
+        version: 1.4.7(stylelint@17.16.0)
       stylelint-prettier:
         specifier: catalog:devDependencies
-        version: 5.0.3(prettier@3.9.9)(stylelint@17.16.0)
+        version: 5.0.3(prettier@3.9.10)(stylelint@17.16.0)
       stylelint-use-nesting:
         specifier: catalog:devDependencies
         version: 6.0.2(stylelint@17.16.0)
@@ -1233,7 +1233,7 @@ importers:
         version: 1.4.1(jiti@2.7.0)(postcss@8.5.29)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.0)
       style-dictionary:
         specifier: catalog:devDependencies
-        version: 5.6.0(tslib@2.8.1)
+        version: 5.6.1(tslib@2.8.1)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -1282,7 +1282,7 @@ importers:
         version: 1.4.1(jiti@2.7.0)(postcss@8.5.29)(supports-color@10.2.2)(tsx@4.23.15)(yaml@2.9.0)
       style-dictionary:
         specifier: catalog:devDependencies
-        version: 5.6.0(tslib@2.8.1)
+        version: 5.6.1(tslib@2.8.1)
       typescript:
         specifier: catalog:typescript
         version: '@typescript/typescript6@6.0.2'
@@ -4905,9 +4905,6 @@ packages:
 
   '@types/node@16.18.126':
     resolution: {integrity: sha512-OTcgaiwfGFBKacvfwuHzzn1KLxH/er8mluiy8/uM3sGXHaRe73RrSIj01jow9t4kJEW633Ov+cOexXeiApTyAw==}
-
-  '@types/node@26.6.4':
-    resolution: {integrity: sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==}
 
   '@types/node@26.6.5':
     resolution: {integrity: sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==}
@@ -9684,8 +9681,8 @@ packages:
     resolution: {integrity: sha512-SxToR7P8Y2lWmv/kTzVLC1t/GDI2WGjMwNhLLE9qtH8Q13C+aEmuRlzDst4Up4s0Wc8sF2M+J57iB3cMLqftfg==}
     engines: {node: '>=6.0.0'}
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -10387,8 +10384,8 @@ packages:
   stubs@3.0.0:
     resolution: {integrity: sha512-PdHt7hHUJKxvTCgbKX9C1V/ftOcjJQgz8BZwNfV5c4B6dcGqlpelTbJ999jBGZ2jYiPAwcX5dP6oBwVlBlUbxw==}
 
-  style-dictionary@5.6.0:
-    resolution: {integrity: sha512-OxJXLa0aGza7AnudQpI83VNSu33goo1mlr7o12Js5xCPwCI0VkFYqs8o2KGFwpfl9AMxQ3RH/F0sgtpJLSM7Qw==}
+  style-dictionary@5.6.1:
+    resolution: {integrity: sha512-aDYbNr38jKIGTWHAJl5yZLWLftEopmR7RNT035Wjenshr3VnPfXO2ns/E1kPdNDi7Akl1h1iXSeQ+o8IN60+ew==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -10450,8 +10447,8 @@ packages:
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
 
-  stylelint-order@8.1.1:
-    resolution: {integrity: sha512-LqsEB6VggJuu5v10RtkrQsBObcdwBE7GuAOlwfc/LR3VL/w8UqKX2BOLIjhyGt0Gne/njo7gRNGiJAKhfmPMNw==}
+  stylelint-order@8.1.2:
+    resolution: {integrity: sha512-A+bxnIMVmzkWr6KlIwHnjQqTWBXPlIixoJa962BpK1N5bkhq3lXhKHjs4fY8ecooktjd3B3TtRiqoLSj+MfbxQ==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
@@ -10478,8 +10475,8 @@ packages:
       stylelint-plugin-logical-css:
         optional: true
 
-  stylelint-plugin-use-baseline@1.4.6:
-    resolution: {integrity: sha512-8FyloHsa3YXt0y3wVYToV1frYgX/p7GYOCV7EjV/BjiNFzzGnqJvcKK94vNBfI/BOUi1d8L+VdgBqx5zNMF3uw==}
+  stylelint-plugin-use-baseline@1.4.7:
+    resolution: {integrity: sha512-5mFGYObiJ6kr6nqT0GyvIiKkpJuLoW/oG15pseJdF4S8zndb1ZQoT0I+3lEFjOmhwWuqq6MEBEtUMRlGuSBiwQ==}
     peerDependencies:
       stylelint: ^16.0.2 || ^17.0.0
 
@@ -11659,7 +11656,7 @@ snapshots:
     dependencies:
       commander: 12.1.0
       lit: 3.3.3
-      prettier: 3.9.9
+      prettier: 3.9.10
       tslib: 2.8.1
 
   '@algolia/abtesting@1.22.0':
@@ -14544,10 +14541,10 @@ snapshots:
       style-value-types: 3.2.0
       tslib: 1.14.1
 
-  '@prettier/sync@0.5.5(prettier@3.9.9)':
+  '@prettier/sync@0.5.5(prettier@3.9.10)':
     dependencies:
       make-synchronized: 0.4.2
-      prettier: 3.9.9
+      prettier: 3.9.10
 
   '@protobufjs/aspromise@1.1.2': {}
 
@@ -15083,7 +15080,7 @@ snapshots:
 
   '@types/cors@2.8.19':
     dependencies:
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
 
   '@types/cross-spawn@6.0.6':
     dependencies:
@@ -15111,7 +15108,7 @@ snapshots:
 
   '@types/duplexify@3.6.5':
     dependencies:
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
     optional: true
 
   '@types/escodegen@0.0.7': {}
@@ -15293,16 +15290,16 @@ snapshots:
 
   '@types/jsonwebtoken@8.5.9':
     dependencies:
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
 
   '@types/jsonwebtoken@9.0.10':
     dependencies:
       '@types/ms': 2.1.0
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
 
   '@types/jws@3.2.11':
     dependencies:
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
 
   '@types/keygrip@1.0.6': {}
 
@@ -15415,7 +15412,7 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
       form-data: 4.0.6
     optional: true
 
@@ -15425,10 +15422,6 @@ snapshots:
 
   '@types/node@16.18.126':
     optional: true
-
-  '@types/node@26.6.4':
-    dependencies:
-      undici-types: 8.9.0
 
   '@types/node@26.6.5':
     dependencies:
@@ -15496,7 +15489,7 @@ snapshots:
   '@types/request@2.48.13':
     dependencies:
       '@types/caseless': 0.12.5
-      '@types/node': 26.6.4
+      '@types/node': 26.6.5
       '@types/tough-cookie': 4.0.5
       form-data: 2.5.6
     optional: true
@@ -17322,7 +17315,7 @@ snapshots:
   css-tree@3.2.1:
     dependencies:
       mdn-data: 2.27.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   css-what@6.2.2: {}
 
@@ -17336,15 +17329,15 @@ snapshots:
 
   csstype@3.2.3: {}
 
-  custom-element-jet-brains-integration@1.8.0(prettier@3.9.9):
+  custom-element-jet-brains-integration@1.8.0(prettier@3.9.10):
     dependencies:
-      '@prettier/sync': 0.5.5(prettier@3.9.9)
+      '@prettier/sync': 0.5.5(prettier@3.9.10)
     transitivePeerDependencies:
       - prettier
 
-  custom-element-vs-code-integration@1.5.0(prettier@3.9.9):
+  custom-element-vs-code-integration@1.5.0(prettier@3.9.10):
     dependencies:
-      '@prettier/sync': 0.5.5(prettier@3.9.9)
+      '@prettier/sync': 0.5.5(prettier@3.9.10)
     transitivePeerDependencies:
       - prettier
 
@@ -17940,10 +17933,10 @@ snapshots:
       parse5: 8.0.1
       parse5-htmlparser2-tree-adapter: 8.0.1
 
-  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint@10.12.0)(prettier@3.9.9):
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint@10.12.0)(prettier@3.9.10):
     dependencies:
       eslint: 10.12.0(@types/eslint@9.6.1)(jiti@2.7.0)(supports-color@10.2.2)
-      prettier: 3.9.9
+      prettier: 3.9.10
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     optionalDependencies:
@@ -21111,7 +21104,7 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier@3.9.9: {}
+  prettier@3.9.10: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -22087,7 +22080,7 @@ snapshots:
   stubs@3.0.0:
     optional: true
 
-  style-dictionary@5.6.0(tslib@2.8.1):
+  style-dictionary@5.6.1(tslib@2.8.1):
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
@@ -22101,7 +22094,7 @@ snapshots:
       is-plain-obj: 4.1.0
       json5: 2.2.3
       path-unified: 0.2.0
-      prettier: 3.9.9
+      prettier: 3.9.10
       tinycolor2: 1.6.0
     transitivePeerDependencies:
       - tslib
@@ -22190,7 +22183,7 @@ snapshots:
       postcss-sorting: 9.1.0(postcss@8.5.29)
       stylelint: 17.16.0(@typescript/typescript6@6.0.2)(supports-color@10.2.2)
 
-  stylelint-order@8.1.1(stylelint@17.16.0):
+  stylelint-order@8.1.2(stylelint@17.16.0):
     dependencies:
       postcss: 8.5.29
       postcss-sorting: 10.0.0(postcss@8.5.29)
@@ -22210,7 +22203,7 @@ snapshots:
       stylelint-config-tailwindcss: 1.0.1(stylelint@17.16.0)(tailwindcss@4.3.1)
       stylelint-plugin-logical-css: 2.1.0(stylelint@17.16.0)
 
-  stylelint-plugin-use-baseline@1.4.6(stylelint@17.16.0):
+  stylelint-plugin-use-baseline@1.4.7(stylelint@17.16.0):
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0
@@ -22218,9 +22211,9 @@ snapshots:
       postcss-value-parser: 4.2.0
       stylelint: 17.16.0(@typescript/typescript6@6.0.2)(supports-color@10.2.2)
 
-  stylelint-prettier@5.0.3(prettier@3.9.9)(stylelint@17.16.0):
+  stylelint-prettier@5.0.3(prettier@3.9.10)(stylelint@17.16.0):
     dependencies:
-      prettier: 3.9.9
+      prettier: 3.9.10
       prettier-linter-helpers: 1.0.1
       stylelint: 17.16.0(@typescript/typescript6@6.0.2)(supports-color@10.2.2)
 
@@ -23776,7 +23769,7 @@ time:
   material-symbols@0.48.0: '2026-10-09T08:00:36.082Z'
   postcss-lit@1.4.1: '2026-02-23T15:19:14.618Z'
   postcss@8.5.29: '2026-10-05T09:28:55.780Z'
-  prettier@3.9.9: '2026-09-23T06:31:34.693Z'
+  prettier@3.9.10: '2026-10-10T08:35:28.472Z'
   prop-for-that@0.7.12: '2026-07-25T22:36:16.308Z'
   pwa-asset-generator@8.1.7: '2026-09-21T10:02:44.201Z'
   rimraf@6.1.3: '2026-02-16T00:59:39.538Z'
@@ -23784,17 +23777,17 @@ time:
   rolldown@1.2.13: '2026-10-07T14:20:03.410Z'
   rollup-plugin-minify-html-literals@1.2.6: '2021-03-09T08:09:32.857Z'
   rollup-plugin-visualizer@7.1.1: '2026-08-14T07:53:43.553Z'
-  style-dictionary@5.6.0: '2026-10-03T16:03:43.480Z'
+  style-dictionary@5.6.1: '2026-10-10T11:53:26.988Z'
   stylelint-config-alphabetical-order@2.0.0: '2025-12-24T09:21:06.344Z'
   stylelint-config-inspector@2.4.0: '2026-09-30T00:36:34.076Z'
   stylelint-config-standard@40.0.0: '2026-01-15T12:10:27.794Z'
   stylelint-declaration-strict-value@1.12.1: '2026-08-24T18:56:29.569Z'
   stylelint-define-config@17.15.0: '2026-09-07T09:15:11.720Z'
   stylelint-no-unresolved-module@2.6.0: '2026-09-15T17:26:50.864Z'
-  stylelint-order@8.1.1: '2026-03-15T00:02:45.544Z'
+  stylelint-order@8.1.2: '2026-10-10T10:25:11.645Z'
   stylelint-plugin-logical-css@2.1.0: '2026-03-29T08:28:07.147Z'
   stylelint-plugin-rhythmguard@3.8.0: '2026-09-17T22:17:11.405Z'
-  stylelint-plugin-use-baseline@1.4.6: '2026-08-22T01:24:05.477Z'
+  stylelint-plugin-use-baseline@1.4.7: '2026-10-10T14:20:02.455Z'
   stylelint-prettier@5.0.3: '2025-01-27T04:47:07.921Z'
   stylelint-use-nesting@6.0.2: '2026-02-19T16:05:15.526Z'
   stylelint@17.16.0: '2026-10-01T10:17:13.977Z'
