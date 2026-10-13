@@ -98,7 +98,7 @@ catalogs:
     jiti: 2.7.0
     json-to-ts: 2.1.0
     lit-analyzer: 2.0.3
-    node: runtime:26.8.2
+    node: runtime:26.11.1
     postcss: 8.5.30
     postcss-html: 2.0.0
     postcss-lit: 1.4.1
@@ -187,7 +187,7 @@ linkWorkspacePackages: "deep"
 lockfile: true
 loglevel: "debug"
 minimumReleaseAge: 0
-nodeVersion: "26.10.0"
+nodeVersion: "26.11.1"
 packages:
   - "configs/custom-elements-manifest"
   - "configs/eslint"
@@ -218,6 +218,11 @@ peerDependencyRules:
     typescript: "^6.0.0 || ^7.0.0"
     vite: "*"
     vitest: "*"
+permissions:
+  '@skillit/typedoc':
+    skills: true
+  typedoc-plugin-skillit:
+    skills: true
 preferWorkspacePackages: true
 publicHoistPattern:
   - "configs/*"
