@@ -50,8 +50,8 @@ catalogs:
     "@lit-labs/rollup-plugin-minify-html-literals": 0.2.0
     "@material/material-color-utilities": 0.4.0
     "@open-wc/testing": 5.0.0
-    "@pwrs/asimonim": 0.3.2
-    "@pwrs/cem": 0.11.0
+    "@pwrs/asimonim": 0.3.3
+    "@pwrs/cem": 0.11.4
     "@skillit/typedoc": 2.0.4
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
