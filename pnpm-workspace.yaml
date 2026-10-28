@@ -13,7 +13,7 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
-    "@iconify/json": 2.2.548
+    "@iconify/json": 2.2.549
     "@iconify/tools": 5.0.14
     "@iconify/types": 2.0.0
     "@iconify/utils": 3.1.7
@@ -31,7 +31,7 @@ catalogs:
     lit: 3.3.3
     lit-element: 4.2.2
     lit-html: 3.3.3
-    material-symbols: 0.48.1
+    material-symbols: 0.48.2
     prop-for-that: 0.7.12
   devDependencies:
     "@addasoft/skeleton-component-generator": 1.1.0
