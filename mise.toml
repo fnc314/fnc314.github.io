@@ -1,14 +1,14 @@
 monorepo_root = true
 
 [tools]
-  firebase = "15.34.2"
+  firebase = "15.35.0"
   node = "26.13.0"
-  npm = "12.2.1"
+  npm = "12.2.2"
   "npm:corepack" = "0.36.0"
-  "npm:vite" = "8.3.5"
+  "npm:vite" = "8.3.6"
   pnpm = "12.16.1"
-  tombi = "1.9.8"
-  usage = { version = "7.1.5", workflow = "publish-cli.yml" }
+  tombi = "1.10.0"
+  usage = { version = "7.2.0", workflow = "publish-cli.yml" }
 
 [env]
   _ = { path = "[{ path = [{{config_root}}/node_modules/.bin], tools = true }]" }
