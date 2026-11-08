@@ -7,8 +7,8 @@ monorepo_root = true
   "npm:corepack" = "0.36.0"
   "npm:vite" = "8.3.6"
   pnpm = "12.18.0"
-  tombi = "1.10.0"
-  usage = { version = "7.2.0", workflow = "publish-cli.yml" }
+  tombi = "1.11.0"
+  usage = { version = "7.3.0", workflow = "publish-cli.yml" }
 
 [env]
   _ = { path = "[{ path = [{{config_root}}/node_modules/.bin], tools = true }]" }
