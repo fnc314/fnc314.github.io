@@ -1,1 +1,4 @@
-pnpm-*
+# pnpm
+/pnpm-@skillit+typedoc-skillit-docs
+/pnpm-typedoc-plugin-skillit-skillit-docs
+# pnpm end
