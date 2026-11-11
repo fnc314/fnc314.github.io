@@ -5,9 +5,9 @@ monorepo_root = true
   node = "26.13.0"
   npm = "12.2.2"
   "npm:corepack" = "0.36.0"
-  "npm:vite" = "8.3.6"
+  "npm:vite" = "8.3.8"
   pnpm = "12.18.0"
-  tombi = "1.11.0"
+  tombi = "1.11.2"
   usage = { version = "7.3.0", workflow = "publish-cli.yml" }
 
 [env]
