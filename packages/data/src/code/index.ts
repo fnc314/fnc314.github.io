@@ -3,6 +3,26 @@ import { type CodeRepoData } from "@fnc314/packages.types";
 
 export const Projects: CodeRepoData[] = [
   {
+    name: "ai-job-tracker",
+    tech: [
+      {
+        name: "Kotlin",
+        url: "https://kotlinlang.org/",
+        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
+        popoverContent: "JetBrains' modern JVM languange",
+      },
+      {
+        name: "Gemini",
+        url: "https://gemini.google.com/",
+        designToken: "simple-icons:googlegemini",
+        popoverContent: "Google's Forefront AI Models",
+      },
+    ],
+    url: "https://github.com/fnc314/ai-job-tracker",
+    repo: "fnc314/ai-job-tracker",
+    description: `A comprehensive suite of tools to manage the entire job application process, from initial research to final offer acceptance, driven in part by AI assistance.`,
+  },
+  {
     name: "project-collections-gradle-settings-plugin",
     tech: [
       {
@@ -14,7 +34,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: "simple-icons:kotlin", /* Icons.Logos.Tech.Kotlin, */
+        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
         popoverContent: "JetBrains' modern JVM languange",
       },
     ],
@@ -50,7 +70,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Android",
         url: "https://developer.android.com/",
-        designToken: "simple-icons:android", /* Icons.Logos.Tech.Android, */
+        designToken: "simple-icons:android" /* Icons.Logos.Tech.Android, */,
         popoverContent: "World's most used, open-source operating system",
       },
       {
@@ -62,7 +82,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: "simple-icons:kotlin", /* Icons.Logos.Tech.Kotlin, */
+        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
         popoverContent: "JetBrains' modern JVM languange",
       },
     ],
@@ -83,25 +103,25 @@ export const Projects: CodeRepoData[] = [
       {
         name: "PNPM",
         url: "https://pnpm.io/",
-        designToken: "simple-icons:pnpm", /* Icons.Logos.Tech.Pnpm, */
+        designToken: "simple-icons:pnpm" /* Icons.Logos.Tech.Pnpm, */,
         popoverContent: "Alternative <pre>Node</pre> package manager",
       },
       {
         name: "Vite",
         url: "https://vite.dev/",
-        designToken: "simple-icons:vite", /* Icons.Logos.Tech.Vite, */
+        designToken: "simple-icons:vite" /* Icons.Logos.Tech.Vite, */,
         popoverContent: "Modern JavaScript toolchain based on Rust",
       },
       {
         name: "Lit",
         url: "https://lit.dev/",
-        designToken: "simple-icons:lit", /* Icons.Logos.Tech.Lit, */
+        designToken: "simple-icons:lit" /* Icons.Logos.Tech.Lit, */,
         popoverContent: "JavaScript library for building Web Components",
       },
       {
         name: "TypeScript",
         url: "https://typescriptlang.org/",
-        designToken: "simple-icons:typescript", /* Icons.Logos.Tech.Typescript, */
+        designToken: "simple-icons:typescript" /* Icons.Logos.Tech.Typescript, */,
         popoverContent: "Microsoft's modern JavaScript superset language",
       },
       {
@@ -143,13 +163,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Prettier",
         url: "https://prettier.io/",
-        designToken: "simple-icons:prettier", /* Icons.Logos.Tech.Prettier, */
+        designToken: "simple-icons:prettier" /* Icons.Logos.Tech.Prettier, */,
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
         name: "ESLint",
         url: "https://eslint.org/",
-        designToken: "simple-icons:eslint", /* Icons.Logos.Tech.Eslint, */
+        designToken: "simple-icons:eslint" /* Icons.Logos.Tech.Eslint, */,
         popoverContent: "Linting library for <pre>Node</pre>",
       },
       {
@@ -161,7 +181,7 @@ export const Projects: CodeRepoData[] = [
       {
         name: "StyleLint",
         url: "https://stylelint.io/",
-        designToken: "simple-icons:stylelint", /* Icons.Logos.Tech.Stylelint, */
+        designToken: "simple-icons:stylelint" /* Icons.Logos.Tech.Stylelint, */,
         popoverContent: "Formatting library for <pre>Node</pre>",
       },
       {
@@ -169,7 +189,7 @@ export const Projects: CodeRepoData[] = [
         url: "https://postcss.org/",
         designToken: "simple-icons:postcss", // Icons.Logos.Tech.Postcss,
         popoverContent: "CSS processing library for <pre>Node</pre>",
-      }
+      },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
     repo: "fnc314/fnc314.github.io",
@@ -189,11 +209,11 @@ export const Projects: CodeRepoData[] = [
         url: "https://cloudflare.com",
         designToken: "simple-icons:cloudflare", // Icons.Logos.Organization.Cloudflare,
         popoverContent: `Uses Cloudflare Pages for hosting blog content`,
-      }
+      },
     ],
     url: "https://github.com/fnc314/blog-fnc314-dev",
     repo: "fnc314/blog-fnc314-dev",
-    description: `Dedicated <a https="https://vuejs.github.io/vitepress/v1/">VitePress</a> site hosting the content also posted to <a href="https://fnc314.medium.com">Medium &copy;</a>.`
+    description: `Dedicated <a https="https://vuejs.github.io/vitepress/v1/">VitePress</a> site hosting the content also posted to <a href="https://fnc314.medium.com">Medium &copy;</a>.`,
   },
   {
     name: "material-theme-viewer",
@@ -234,13 +254,13 @@ export const Projects: CodeRepoData[] = [
       {
         name: "Python",
         url: "https://python.org/",
-        designToken: "simple-icons:python", /* Icons.Logos.Tech.Python, */
+        designToken: "simple-icons:python" /* Icons.Logos.Tech.Python, */,
         popoverContent: "Popular scripting language",
       },
       {
         name: "Ruby",
         url: "https://www.ruby-lang.org/en/",
-        designToken: "simple-icons:ruby", /* Icons.Logos.Tech.Ruby, */
+        designToken: "simple-icons:ruby" /* Icons.Logos.Tech.Ruby, */,
         popoverContent: "Formerly popular scripting language",
       },
     ],
