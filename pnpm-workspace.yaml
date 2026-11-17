@@ -157,7 +157,7 @@ catalogs:
     web-component-analyzer: 2.0.0
   functionsDependencies:
     firebase-admin: 14.3.0
-    firebase-functions: 7.3.2
+    firebase-functions: 7.4.0
   functionsDevDependencies:
     firebase-functions-test: 3.5.0
   overrides:
