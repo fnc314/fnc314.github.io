@@ -4,7 +4,7 @@ export const Experiences: Experience[] = [
   {
     employer: "Self",
     role: "Freelance Software Engineer",
-    summary: "Developed a location-based dating app using React Native, Firebase, and Google Cloud Platform. Leveraged generative AI platforms (Claude, Gemini) to accelerate feature prototyping while retaining strict output validation.",
+    summary: "Developed a location-based dating app using React Native (Expo), Firebase, and Google Cloud Platform. Leveraged generative AI platforms (Claude Code, Gemini) to accelerate feature prototyping while retaining strict output validation. Authored the technical engineering series 'Taming the Elephant Herd' at blog.fnc314.dev.",
     dates: {
       start: {
         stamp: "2026-01",
@@ -135,7 +135,7 @@ export const Experiences: Experience[] = [
         dates: {
           start: {
             stamp: "2017-08",
-            text: "August 2018",
+            text: "August 2017",
           },
           end: {
             stamp: "2019-08",

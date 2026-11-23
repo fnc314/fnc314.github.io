@@ -26,7 +26,7 @@ export const Biography: BioExtended = {
       title: "Multiplying Engineering Effectiveness",
       content: {
         content: `
-          All of my success stories share core techniques: patterns designed to be comprehensible, repeatable, and maintainable. Enforcing conventions, introducing automations, and establishing quality standards are some of my primary means to accomplishing objectives. This approach is documented in my seven-part <a href="https://fnc314.medium.com" target="_blank">Medium series <b>Taming the Elephant Heard</b></a>.
+          All of my success stories share core techniques: patterns designed to be comprehensible, repeatable, and maintainable. Enforcing conventions, introducing automations, and establishing quality standards are some of my primary means to accomplishing objectives. This approach is documented in my seven-part engineering series <b>Taming the Elephant Herd</b>, available on <a href="https://blog.fnc314.dev/posts/taming-the-elephant-herd/index" target="_blank"><b>blog.fnc314.dev</b></a> and cross-published on <a href="https://fnc314.medium.com" target="_blank"><b>Medium</b></a>.
         `,
       },
     },
