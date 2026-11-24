@@ -11,7 +11,9 @@ export const WorkExperienceStyles: CSSResult = css`
 
     h3,
     h4,
-    p {
+    p,
+    address {
+      font-style: normal;
       margin: unset;
     }
   }
@@ -42,8 +44,6 @@ export const WorkExperienceStyles: CSSResult = css`
   }
 
   .nested-summary {
-    grid-column: 2;
-    grid-row: 4;
     margin-block: unset;
     padding-inline: var(--spaces-padding-m);
 
@@ -65,7 +65,7 @@ export const WorkExperienceStyles: CSSResult = css`
     }
   }
 
-  /* --- LAYOUT: CONTEXTUAL (Grid / Container Query) --- */
+  /* --- LAYOUT: FLOW & TYPOGRAPHY --- */
   .experience-container {
     display: flex;
     flex-direction: column;
@@ -73,96 +73,85 @@ export const WorkExperienceStyles: CSSResult = css`
     padding-block: var(--spaces-padding-xs);
   }
 
-  .experience-info,
-  .nested-experience-info {
+  .experience-info {
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-xxs);
 
-    > h3,
-    > h4 {
-      color: var(--md-sys-color-primary);
+    .experience-headline-group {
+      align-items: baseline;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaces-gap-xxxs);
+
+      > h3,
+      > h4 {
+        color: var(--md-sys-color-primary);
+      }
+
+      .experience-dates {
+        color: var(--md-sys-color-on-surface);
+      }
     }
 
-    /* ORG */
-    > p:nth-child(2) {
-      color: var(--md-sys-color-on-primary-container);
-      font-style: italic;
+    .experience-subhead-group {
+      align-items: baseline;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaces-gap-xxxs);
+
+      .experience-org {
+        color: var(--md-sys-color-on-primary-container);
+        font-style: italic;
+      }
+
+      .experience-location {
+        color: var(--md-sys-color-outline);
+        font-family: var(--md-ref-typeface-plain);
+      }
     }
 
-    /* Dates */
-    > p:nth-child(3) {
-      color: var(--md-sys-color-on-surface);
-    }
-
-    /* Summary */
-    > p:nth-child(4) {
+    .experience-summary {
       color: var(--md-sys-color-on-surface-variant);
     }
   }
 
-  .nested-experience-container {
-    display: grid;
-    grid-template-columns: subgrid;
-  }
-
+  /* --- DESKTOP (WIDE CONTAINER): Natural 2-Row Header with Full-Width Content --- */
   @container experience-container (min-inline-size: 600px) {
-    div.experience-container {
-      gap: var(--spaces-gap-xs) var(--spaces-margin-s);
+    .experience-container {
+      gap: var(--spaces-gap-s);
     }
 
-    .experience-container {
-      align-items: baseline;
-      display: grid;
-      gap: var(--spaces-gap-xs) var(--spaces-margin-s);
-      grid-template-columns: minmax(20ch, max-content) 1fr;
+    .experience-info {
+      gap: var(--spaces-gap-xxs);
 
-      .experience-info {
-        display: contents;
+      .experience-headline-group {
+        align-items: baseline;
+        flex-direction: row;
+        justify-content: space-between;
 
-        /* Role */
-        > h3,
-        > h4 {
-          color: var(--md-sys-color-primary);
-          grid-column: 2;
-          grid-row: 1;
-        }
-
-        /* Org */
-        > p:nth-child(2) {
-          color: var(--md-sys-color-tertiary);
-          font-style: italic;
-          grid-column: 2;
-          grid-row: 2;
-        }
-
-        /* Dates */
-        > p:nth-child(3) {
+        .experience-dates {
           color: var(--md-sys-color-on-surface);
-          grid-column: 1;
-          grid-row: 1;
-          inset-block-start: 0;
+          flex-shrink: 0;
           text-align: end;
-        }
-
-        /* Summary */
-        > p:nth-child(4) {
-          color: var(--md-sys-color-on-surface-variant);
-          font-style: italic;
-          grid-column: 2 / -1;
-          grid-row: 3 / 4;
         }
       }
 
-      /* Nested content */
-      .nested-experience {
-        border-inline-start: none;
-        container-type: inline-size;
-        display: grid;
-        grid-column: auto / span 2;
-        grid-row: 4;
-        grid-template-columns: subgrid;
-        padding-inline-start: 0;
+      .experience-subhead-group {
+        align-items: baseline;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .experience-org {
+          color: var(--md-sys-color-tertiary);
+          font-style: italic;
+        }
+
+        .experience-location {
+          color: var(--md-sys-color-outline);
+          flex-shrink: 0;
+          text-align: end;
+        }
       }
     }
   }

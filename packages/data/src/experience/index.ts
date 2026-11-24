@@ -1,9 +1,16 @@
-import { type Experience } from "@fnc314/packages.types";
+import { type Experience, type WorkLocation } from "@fnc314/packages.types";
+
+const PITTSBURGH_LOCATION: WorkLocation = {
+  city: "Pittsburgh",
+  state: "PA",
+  country: "USA"
+};
 
 export const Experiences: Experience[] = [
   {
     employer: "Self",
     role: "Freelance Software Engineer",
+    location: PITTSBURGH_LOCATION,
     summary: "Developed a location-based dating app using React Native (Expo), Firebase, and Google Cloud Platform. Leveraged generative AI platforms (Claude Code, Gemini) to accelerate feature prototyping while retaining strict output validation. Authored the technical engineering series 'Taming the Elephant Herd' at blog.fnc314.dev.",
     dates: {
       start: {
@@ -20,6 +27,7 @@ export const Experiences: Experience[] = [
   {
     employer: "CGI Technologies and Solutions, Inc.",
     role: "Director, Consulting Expert",
+    location: PITTSBURGH_LOCATION,
     summary: "Served as a technical expert, mentoring peer engineers and defining architectural strategy for enterprise applications across clients including PNC Financial Services, PPG Industries, and Samsung Electronics. Founded the CGI I.T. Girl Challenge, authoring foundational documentation and onboarding community partners including Pittsburgh Public Schools.",
     dates: {
       start: {
@@ -35,6 +43,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Mobile Redesign Architect Lead",
+        location: PITTSBURGH_LOCATION,
         summary: "Led major architectural transformations, instituting a 'best-practice-by-default' philosophy to seamlessly bridge Android and backend systems.",
         dates: {
           start: {
@@ -70,6 +79,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Android Mobile Project Tech Lead",
+        location: PITTSBURGH_LOCATION,
         summary: "Lead Architect for the flagship Android app (3.5M+ MAU), designing the mobile-to-backend interface for a highly resilient, high-volume in-app payment processing platform.",
         dates: {
           start: {
@@ -105,6 +115,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Android Security & Authentication Tech Lead",
+        location: PITTSBURGH_LOCATION,
         summary: "Engineered a modern authentication platform, migrating 10M+ active users with zero downtime. Leveraged a robust communication pipeline to maintain project coordination.",
         dates: {
           start: {
@@ -131,6 +142,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Web Developer Lead",
+        location: PITTSBURGH_LOCATION,
         summary: "Guided the growth and development of peer engineers with mentoring and coaching across a 25+ person organization, delivering high-impact, scalable solutions during the redesign of a large-scale enterprise platform.",
         dates: {
           start: {
@@ -147,6 +159,7 @@ export const Experiences: Experience[] = [
       {
         client: "PNC Financial Services",
         role: "Web Developer",
+        location: PITTSBURGH_LOCATION,
         summary: "Partnered closely with product owners and designers to architect and deliver the administration portal supporting the launch of the Zelle peer-to-peer payment platform.",
         dates: {
           start: {
@@ -163,6 +176,7 @@ export const Experiences: Experience[] = [
       {
         client: "Samsung",
         role: "Android Developer",
+        location: PITTSBURGH_LOCATION,
         summary: "Designed solutions for complex, cross-system initiatives, delivering an Android FIDO authenticator proof-of-concept that spring-boarded institutional adoption of Samsung Knox and MFA.",
         dates: {
           start: {
@@ -179,6 +193,7 @@ export const Experiences: Experience[] = [
       {
         client: "PPG Industries",
         role: "Web Developer",
+        location: PITTSBURGH_LOCATION,
         summary: "Reduced deployment time for brand-specific white-label applications from days to hours through streamlined web processes and tool enhancements.",
         dates: {
           start: {
@@ -198,6 +213,7 @@ export const Experiences: Experience[] = [
   {
     employer: "Pittsburgh Public Schools",
     role: "Teacher, Secondary Mathematics",
+    location: PITTSBURGH_LOCATION,
     summary: "Mentored and educated elementary students during summer programs and high school students during the academic year, focusing heavily on mathematical development, analytical problem-solving, and educational growth.",
     dates: {
       start: {

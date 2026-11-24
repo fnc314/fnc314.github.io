@@ -49,6 +49,7 @@ export class ExperienceCard extends UIAwareElement {
               .isNested="${false}"
               .experienceOrg="${exp.employer}"
               .experienceRole="${exp.role}"
+              .experienceLocation="${exp.location}"
               .experienceSummary="${exp.summary}"
               .dateStart="${exp.dates.start}"
               .dateEnd="${exp.dates.end}"

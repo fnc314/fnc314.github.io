@@ -1,13 +1,13 @@
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WorkExperienceStyles } from "@/lib/work/experience/work-experience.styles";
-import { type Job, type WorkDate } from "@fnc314/packages.types";
+import { type Job, type WorkDate, type WorkLocation } from "@fnc314/packages.types";
 import { html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
-export { type Job, type WorkDate } from "@fnc314/packages.types";
+export { type Job, type WorkDate, type WorkLocation } from "@fnc314/packages.types";
 
 export const TAG_NAME_WORK_EXPERIENCE: string = "work-experience";
 
@@ -18,6 +18,7 @@ export const TAG_NAME_WORK_EXPERIENCE: string = "work-experience";
  * @property {boolean} [isNested=false] - Whether this is a nested instance
  * @property {string} [experienceRole=""] - The formal role from the {@link WorkExperience} instance
  * @property {string} [experienceOrg=""] - The employer formal name
+ * @property {WorkLocation} [experienceLocation] - The location object { city, state, country }
  * @property {string} [experienceSummary=""] - An optional summary of the overall role
  * @property {WorkDate} [dateStart={ stamp: "", text: "" }] - A {@link @fnc314/packages.types!WorkDate} instance describing employment start date
  * @property {WorkDate} [dateEnd={ stamp: "", text: "" }] - A {@link @fnc314/packages.types!WorkDate} instance describing employment end date
@@ -40,6 +41,10 @@ export class WorkExperience extends UIAwareElement {
   /** The name of the organization or client. */
   @property({ type: String, attribute: "experience-org" })
   experienceOrg = "";
+
+  /** The location of the role. */
+  @property({ type: Object, attribute: "experience-location" })
+  experienceLocation?: WorkLocation;
 
   @property({ type: String, attribute: "experience-summary" })
   experienceSummary = "";
@@ -95,7 +100,7 @@ export class WorkExperience extends UIAwareElement {
       html`<h3 class=${classMap(this.getTypescaleClassMap(true))}>${this.experienceRole}</h3>`;
 
     const org = html`
-      <p class=${classMap(this.getTypescaleClassMap(false))}>${this.experienceOrg}</p>
+      <p class="experience-org ${classMap(this.getTypescaleClassMap(false))}">${this.experienceOrg}</p>
     `;
 
     const currentDate = new Date();
@@ -108,7 +113,7 @@ export class WorkExperience extends UIAwareElement {
       this.dateEnd.stamp;
 
     const dates = html`
-      <p>
+      <p class="experience-dates">
         <time
           class=${classMap(this.getTypescaleClassMap(false))}
           datetime=${this.dateStart.stamp}
@@ -123,10 +128,26 @@ export class WorkExperience extends UIAwareElement {
       </p>
     `;
 
+    const location = this.experienceLocation ?
+      html`
+        <address
+          class="experience-location md-typescale-body-small"
+          itemprop="jobLocation"
+          itemscope
+          itemtype="https://schema.org/Place"
+        >
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">${this.experienceLocation.city}</span>,
+            <span itemprop="addressRegion">${this.experienceLocation.state}</span>,
+            <span itemprop="addressCountry">${this.experienceLocation.country}</span>
+          </span>
+        </address>
+      ` : nothing;
+
     const summary =
       this.experienceSummary.length ?
         html`
-          <p class=${classMap(this.getTypescaleClassMap(false))}>
+          <p class="experience-summary ${classMap(this.getTypescaleClassMap(false))}">
             ${unsafeHTML(this.experienceSummary)}
           </p>
         ` :
@@ -134,9 +155,14 @@ export class WorkExperience extends UIAwareElement {
 
     const info = html`
       <header class="experience-info">
-        ${headerElement}
-        ${org}
-        ${dates}
+        <div class="experience-headline-group">
+          ${headerElement}
+          ${dates}
+        </div>
+        <div class="experience-subhead-group">
+          ${org}
+          ${location}
+        </div>
         ${summary}
       </header>
     `;
@@ -155,6 +181,7 @@ export class WorkExperience extends UIAwareElement {
                   .experienceSummary=${job.summary ?? ""}
                   .experienceRole=${job.role}
                   .experienceOrg=${job.client}
+                  .experienceLocation=${job.location}
                 >
                 </work-experience>
               `,

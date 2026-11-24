@@ -3,9 +3,16 @@ export interface WorkDate {
   text: string;
 }
 
+export interface WorkLocation {
+  city: string;
+  state: string;
+  country: string;
+}
+
 export interface Job {
   role: string;
   client: string;
+  location?: WorkLocation;
   dates: {
     start: WorkDate;
     end: WorkDate;
@@ -17,6 +24,7 @@ export interface Job {
 export interface Experience {
   employer: string;
   role: string;
+  location?: WorkLocation;
   summary: string;
   dates: {
     start: WorkDate;
