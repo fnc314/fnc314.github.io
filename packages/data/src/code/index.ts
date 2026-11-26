@@ -23,6 +23,27 @@ export const Projects: CodeRepoData[] = [
     description: `A comprehensive suite of tools to manage the entire job application process, from initial research to final offer acceptance, driven in part by AI assistance.`,
   },
   {
+    name: "version-catalogs-builder-gradle-settings-plugin",
+    tech: [
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: "simple-icons:gradle",
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
+      },
+      {
+        name: "Kotlin",
+        url: "https://kotlinlang.org/",
+        designToken: "simple-icons:kotlin",
+        popoverContent: "JetBrains' modern JVM languange",
+      },
+    ],
+    url: "https://github.com/fnc314/version-catalogs-builder-gradle-settings-plugin",
+    repo: "fnc314/version-catalogs-builder-gradle-settings-plugin",
+    description:
+      "A convention Gradle Settings plugin orchestrating workspace root auto-discovery, repository defaults, Version Catalog registrations, and composite tool build inclusions across multi-repo and monorepo architectures.",
+  },
+  {
     name: "project-collections-gradle-settings-plugin",
     tech: [
       {

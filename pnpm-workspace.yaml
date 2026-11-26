@@ -13,7 +13,7 @@ allowBuilds:
 catalogMode: "strict"
 catalogs:
   dependencies:
-    "@iconify/json": 2.2.557
+    "@iconify/json": 2.2.561
     "@iconify/tools": 5.0.14
     "@iconify/types": 2.0.0
     "@iconify/utils": 3.1.7
@@ -42,7 +42,7 @@ catalogs:
     "@eslint/eslintrc": 3.3.7
     "@eslint/js": 10.0.1
     "@genesiscommunitysuccess/custom-elements-lsp": 5.0.3
-    "@iconify-json/simple-icons": 1.2.102
+    "@iconify-json/simple-icons": 1.2.104
     "@iconify/unplugin": 0.1.8
     "@lit-labs/cli": 0.6.6
     "@lit-labs/cli-localize": 0.2.2
@@ -55,10 +55,10 @@ catalogs:
     "@skillit/typedoc": 2.0.4
     "@types/eslint": 9.6.1
     "@types/fs-extra": 11.0.4
-    "@types/node": 26.6.6
+    "@types/node": 26.6.10
     "@types/wordcloud": 1.2.2
-    "@typescript-eslint/eslint-plugin": 8.73.0
-    "@typescript-eslint/parser": 8.73.0
+    "@typescript-eslint/eslint-plugin": 8.74.0
+    "@typescript-eslint/parser": 8.74.0
     "@vite-pwa/assets-generator": 2.0.0
     "@vitejs/devtools": 0.8.3
     "@wc-toolkit/cem-inheritance": 1.2.5
@@ -71,8 +71,8 @@ catalogs:
     "@web-types/lit": "2.0.0-3"
     "@web/test-runner": 1.0.1
     "@web/test-runner-playwright": 1.0.2
-    "@webcomponents/webcomponentsjs": 2.8.0
-    autoprefixer: 10.6.2
+    "@webcomponents/webcomponentsjs": 2.8.1
+    autoprefixer: 10.7.0
     cem-plugin-better-lit-types: 0.2.1
     cem-plugin-jsdoc-example: 0.0.9
     cem-plugin-readme: 0.1.4
@@ -106,22 +106,22 @@ catalogs:
     prettier-plugin-toml: 2.0.6
     pwa-asset-generator: 8.1.7
     rimraf: 6.1.4
-    rolldown: 1.3.2
+    rolldown: 1.3.3
     rolldown-plugin-copy: 0.2.0
     rollup-plugin-minify-html-literals: 1.2.6
-    rollup-plugin-visualizer: 7.1.3
+    rollup-plugin-visualizer: 7.3.0
     style-dictionary: 5.8.0
-    stylelint: 18.0.0
+    stylelint: 18.1.0
     stylelint-config-alphabetical-order: 3.0.0
     stylelint-config-inspector: 2.4.0
-    stylelint-config-standard: 41.0.0
+    stylelint-config-standard: 41.1.0
     stylelint-declaration-strict-value: 1.13.0
     stylelint-define-config: 18.0.0
     stylelint-no-unresolved-module: 2.6.0
-    stylelint-order: 8.1.3
-    stylelint-plugin-logical-css: 2.1.0
+    stylelint-order: 9.0.0
+    stylelint-plugin-logical-css: 2.1.1
     stylelint-plugin-rhythmguard: 3.20.1
-    stylelint-plugin-use-baseline: 1.4.8
+    stylelint-plugin-use-baseline: 1.5.0
     stylelint-prettier: 5.1.0
     stylelint-use-nesting: 6.0.2
     svgo: 4.1.0
@@ -140,12 +140,12 @@ catalogs:
     typedoc-plugin-mdn-links: 5.1.1
     typedoc-plugin-skillit: 2.0.4
     typedoc-plugin-version-header: 2.0.1
-    typescript-eslint: 8.73.0
+    typescript-eslint: 8.74.0
     unplugin-dts: 1.1.2
     unplugin-info: 1.4.0
     vite: 8.3.8
     vite-plugin-cem: 0.8.5
-    vite-plugin-cp: 8.0.1
+    vite-plugin-cp: 8.0.2
     vite-plugin-dts: 5.1.2
     vite-plugin-lit-css: 3.1.0
     vite-plugin-pwa: 2.0.0
