@@ -4,6 +4,7 @@ import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
+import { AnalyticsService } from "@fnc314/packages.services";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech, type IconVariants } from "@fnc314/packages.types";
 import "iconify-icon";
 import { type TemplateResult, html, nothing } from "lit";
@@ -191,6 +192,16 @@ export class CodeRepo extends UIAwareElement {
               href=${this.codeRepo.url}
               target="_blank"
               rel="noopener noreferrer"
+              @click=${() => {
+                AnalyticsService.trackEvent("click_outbound", {
+                  category: "outbound",
+                  label: `GitHub Repo: ${this.codeRepo.repo}`,
+                  destination: this.codeRepo.url,
+                  repo_name: this.codeRepo.name,
+                  repo_slug: this.codeRepo.repo,
+                  platform: "github",
+                });
+              }}
               title=${this.codeRepo.repo}
             >
               <iconify-icon

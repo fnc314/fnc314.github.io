@@ -2,6 +2,7 @@ import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
 import { TextStyles } from "@/lib/styles";
 import { Icons } from "@fnc314/packages.design-tokens";
+import { AnalyticsService } from "@fnc314/packages.services";
 import { type BlogEntryJson } from "@fnc314/packages.types";
 import "iconify-icon";
 import { html } from "lit";
@@ -51,6 +52,19 @@ export class BlogEntry extends UIAwareElement {
             href=${ifDefined(this.blogEntry.blogDotDevUrl)}
             target="_blank"
             rel="noopener noreferrer"
+            @click=${() => {
+              if (this.blogEntry.blogDotDevUrl) {
+                AnalyticsService.trackEvent("click_outbound", {
+                  category: "outbound",
+                  label: `Blog: ${this.blogEntry.title}`,
+                  destination: this.blogEntry.blogDotDevUrl,
+                  article_title: this.blogEntry.title,
+                  series_title: this.blogEntry.series?.title,
+                  series_entry: this.blogEntry.series?.entry,
+                  platform: "blog.fnc314.dev",
+                });
+              }
+            }}
             aria-labelledby="blog-link-label"
             aria-describedby="blog-link-label"
             title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
@@ -69,6 +83,19 @@ export class BlogEntry extends UIAwareElement {
             href=${ifDefined(this.blogEntry.mediumUrl)}
             target="_blank"
             rel="noopener noreferrer"
+            @click=${() => {
+              if (this.blogEntry.mediumUrl) {
+                AnalyticsService.trackEvent("click_outbound", {
+                  category: "social",
+                  label: `Medium: ${this.blogEntry.title}`,
+                  destination: this.blogEntry.mediumUrl,
+                  article_title: this.blogEntry.title,
+                  series_title: this.blogEntry.series?.title,
+                  series_entry: this.blogEntry.series?.entry,
+                  platform: "medium",
+                });
+              }
+            }}
             aria-labelledby="medium-link-label"
             aria-describedby="medium-link-label"
             title=${`Read ${this.blogEntry.title} on Medium`}

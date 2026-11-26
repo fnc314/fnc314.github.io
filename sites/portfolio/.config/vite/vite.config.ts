@@ -131,6 +131,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     root: path.resolve(process.cwd(), "sites/portfolio"),
     define: {
       "import.meta.env.VITE_GIT_COMMIT_HASH": JSON.stringify(getGitInfo()),
+      "import.meta.env.VITE_GA_MEASUREMENT_ID": JSON.stringify(
+        dynamicConfig.isProduction ? (process.env.VITE_GA_MEASUREMENT_ID || "G-PPQXH0KLWL") : ""
+      ),
     },
     base: dynamicConfig.base,
     publicDir: dynamicConfig.publicDir,

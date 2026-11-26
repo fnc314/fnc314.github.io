@@ -42,7 +42,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; connect-src 'self' https://api.iconify.design; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://googlechromelabs.github.io;"
+      content="default-src 'self'; connect-src 'self' https://api.iconify.design https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://googlechromelabs.github.io https://*.google-analytics.com https://*.googletagmanager.com;"
     />
     <link
       rel="canonical"
@@ -157,6 +157,30 @@
       type="module"
       src="index.ts"
     ></script>
+    <script type="module">
+      const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+      if (gaId) {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', gaId, {
+          cookie_domain: 'auto',
+          send_page_view: true
+        });
+      } else {
+        window.gtag = function(...args) {
+          if (import.meta.env.DEV) {
+            console.debug('[Analytics (DEV DUMMY)]', ...args);
+          }
+        };
+      }
+    </script>
   </head>
   <body>
     <bento-layout></bento-layout>

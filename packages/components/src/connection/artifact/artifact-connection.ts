@@ -1,6 +1,7 @@
 import { ConnectionArtifactStyles } from "@/lib/connection/artifact/artifact-connection.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { AnalyticsService } from "@fnc314/packages.services";
 import { type ArtifactConnectionData, type ArtifactConnectionType } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-icon-button";
 import "iconify-icon";
@@ -33,12 +34,18 @@ export class ArtifactConnection extends UIAwareElement {
   @property({ type: Object })
   artifactConnectionData: ArtifactConnectionData = {} as ArtifactConnectionData;
 
+  private _handleClick() {
+    const format = this.artifactConnectionType === "pdf" ? "pdf" : "google_doc";
+    AnalyticsService.trackResume(format, this.artifactConnectionData.href);
+    window.open(this.artifactConnectionData.href, "_blank");
+  }
+
   override render(): TemplateResult {
     return html`
       <md-filled-icon-button
         href=${this.artifactConnectionData.href}
         target="_blank"
-        @click=${() => window.open(this.artifactConnectionData.href, "_blank")}
+        @click=${() => this._handleClick()}
         type="button"
         title=${this.artifactConnectionData.title}
         aria-label=${this.artifactConnectionData.title}

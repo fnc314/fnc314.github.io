@@ -1,6 +1,7 @@
 import { ProfessionalConnectionStyles } from "@/lib/connection/professional/professional-connection.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { AnalyticsService } from "@fnc314/packages.services";
 import { type ProfessionalConnectionJsonData, type ProfessionalConnectionType } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-tonal-icon-button";
 import "iconify-icon";
@@ -34,12 +35,24 @@ export class ProfessionalConnection extends UIAwareElement {
   @property({ type: Object })
   professionalConnectionData: ProfessionalConnectionJsonData = {} as ProfessionalConnectionJsonData;
 
+  private _handleClick() {
+    AnalyticsService.trackOutbound(
+      this.professionalConnectionData.href,
+      `Social: ${this.professionalConnectionType}`,
+      "social",
+      {
+        platform: this.professionalConnectionType,
+      }
+    );
+    window.open(this.professionalConnectionData.href, "_blank");
+  }
+
   override render(): TemplateResult {
     return html`
       <md-filled-icon-button
         href="${this.professionalConnectionData.href}"
         target="_blank"
-        @click=${() => window.open(this.professionalConnectionData.href, "_blank")}
+        @click=${() => this._handleClick()}
         type="button"
         title=${this.professionalConnectionData.title}
         aria-label=${this.professionalConnectionData.title}

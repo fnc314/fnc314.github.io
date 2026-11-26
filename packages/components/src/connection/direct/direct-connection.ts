@@ -1,6 +1,7 @@
 import { DirectConnectionStyles } from "@/lib/connection/direct/direct-connection.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
+import { AnalyticsService } from "@fnc314/packages.services";
 import { type ConnectionInstance } from "@fnc314/packages.types";
 import "@material/web/iconbutton/filled-tonal-icon-button";
 import "iconify-icon";
@@ -31,12 +32,18 @@ export class DirectConnection extends UIAwareElement {
   })
   connectionInstance: ConnectionInstance = {} as ConnectionInstance;
 
+  private _handleClick() {
+    const isPhone = this.connectionInstance.href.startsWith("tel:");
+    AnalyticsService.trackContact(isPhone ? "phone" : "email", this.connectionInstance.href);
+    window.open(this.connectionInstance.href, "_blank");
+  }
+
   override render(): TemplateResult {
     return html`
       <md-filled-icon-button
         href="${this.connectionInstance.href}"
         target="_blank"
-        @click=${() => window.open(this.connectionInstance.href, "_blank")}
+        @click=${() => this._handleClick()}
         type="button"
         title=${this.connectionInstance.title}
         aria-label=${this.connectionInstance.title}
