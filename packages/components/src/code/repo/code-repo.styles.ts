@@ -92,6 +92,13 @@ export const CodeRepoStyles: CSSResult = css`
       word-break: break-word;
     }
 
+    .repo-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaces-gap-xs);
+      min-inline-size: 0;
+    }
+
     a {
       align-items: center;
       color: var(--code-repo-link-color);

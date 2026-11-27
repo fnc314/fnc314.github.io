@@ -2,15 +2,16 @@ import "@/lib/card/bento/bento-card";
 import { BlogCardStyles } from "@/lib/card/blog/blog-card.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import "@/lib/publication/blog/entry/blog-entry";
+import "@/lib/publication/blog/series/blog-series";
 import { TextStyles } from "@/lib/styles";
-import { Blogs } from "@fnc314/packages.data";
-import { BENTO_BOX_TYPES, type BlogEntryJson } from "@fnc314/packages.types";
+import { Publications } from "@fnc314/packages.data";
+import { BENTO_BOX_TYPES, type PublicationItem } from "@fnc314/packages.types";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 export const TAG_NAME_CARD_BLOG: string = "blog-card";
 /**
- * @summary BlogCard - A card component displaying blog posts.
+ * @summary BlogCard - A card component displaying blog posts and series.
  *
  * @element blog-card
  */
@@ -45,7 +46,11 @@ export class BlogCard extends UIAwareElement {
         .bentoTag=${BENTO_BOX_TYPES.blog}
       >
         <div class="blog-list">
-          ${Blogs.map((blogEntry: BlogEntryJson) => html`<blog-entry .blogEntry=${blogEntry}></blog-entry>`)}
+          ${Publications.map((item: PublicationItem) =>
+            item.type === "series"
+              ? html`<blog-series .series=${item.series}></blog-series>`
+              : html`<blog-entry .blogEntry=${item.post}></blog-entry>`
+          )}
         </div>
       </bento-card>
     `;

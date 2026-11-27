@@ -188,36 +188,76 @@ export class CodeRepo extends UIAwareElement {
         <div class="fold-top">
           <header aria-labelledby="repo-name">
             <h3 id="repo-name" class="md-typescale-headline-small">${this.codeRepo.name}</h3>
-            <a
-              href=${this.codeRepo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              @click=${() => {
-                AnalyticsService.trackEvent("click_outbound", {
-                  category: "outbound",
-                  label: `GitHub Repo: ${this.codeRepo.repo}`,
-                  destination: this.codeRepo.url,
-                  repo_name: this.codeRepo.name,
-                  repo_slug: this.codeRepo.repo,
-                  platform: "github",
-                });
-              }}
-              title=${this.codeRepo.repo}
-            >
-              <iconify-icon
-                width="none"
-                height="none"
-                icon="simple-icons:github"
-                aria-hidden="true"
-                style="
-                  width: var(--md-icon-size);
-                  height: var(--md-icon-size);
-                "
-                ></iconify-icon>
-              <span>
-                ${this.codeRepo.repo}
-              </span>
-            </a>
+            <div class="repo-links">
+              ${
+                when(
+                  this.codeRepo.siteUrl,
+                  () => html`
+                    <a
+                      href=${this.codeRepo.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="site-link"
+                      @click=${() => {
+                        AnalyticsService.trackEvent("click_outbound", {
+                          category: "outbound",
+                          label: `Project Site: ${this.codeRepo.siteUrl}`,
+                          destination: this.codeRepo.siteUrl,
+                          repo_name: this.codeRepo.name,
+                          repo_slug: this.codeRepo.repo,
+                          platform: "docs",
+                        });
+                      }}
+                      title=${`Documentation for ${this.codeRepo.name}`}
+                    >
+                      <iconify-icon
+                        width="none"
+                        height="none"
+                        icon="material-symbols:open-in-new"
+                        aria-hidden="true"
+                        style="
+                          width: var(--md-icon-size);
+                          height: var(--md-icon-size);
+                        "
+                      ></iconify-icon>
+                      <span>
+                        ${this.codeRepo.siteUrl?.replace(/^https?:\/\//, "")}
+                      </span>
+                    </a>
+                  `
+                )
+              }
+              <a
+                href=${this.codeRepo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                @click=${() => {
+                  AnalyticsService.trackEvent("click_outbound", {
+                    category: "outbound",
+                    label: `GitHub Repo: ${this.codeRepo.repo}`,
+                    destination: this.codeRepo.url,
+                    repo_name: this.codeRepo.name,
+                    repo_slug: this.codeRepo.repo,
+                    platform: "github",
+                  });
+                }}
+                title=${this.codeRepo.repo}
+              >
+                <iconify-icon
+                  width="none"
+                  height="none"
+                  icon="simple-icons:github"
+                  aria-hidden="true"
+                  style="
+                    width: var(--md-icon-size);
+                    height: var(--md-icon-size);
+                  "
+                  ></iconify-icon>
+                <span>
+                  ${this.codeRepo.repo}
+                </span>
+              </a>
+            </div>
           </header>
 
           <md-divider inset></md-divider>

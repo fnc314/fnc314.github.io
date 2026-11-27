@@ -33,6 +33,8 @@ export { type Constructor, SizeObserverElement } from "@/lib/mixins/size-observe
 export { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 export { BlogEntry } from "@/lib/publication/blog/entry/blog-entry";
 export { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
+export { BlogSeries } from "@/lib/publication/blog/series/blog-series";
+export { BlogSeriesStyles } from "@/lib/publication/blog/series/blog-series.styles";
 export { DynamicBorderStyles } from "@/lib/styles/dynamic-border";
 export { TextStyles } from "@/lib/styles/text";
 export { UiModeToggle } from "@/lib/ui-mode-toggle/ui-mode-toggle";

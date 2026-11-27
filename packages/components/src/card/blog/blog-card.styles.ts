@@ -35,5 +35,10 @@ export const BlogCardStyles = css`
       min-inline-size: 80%;
       scroll-snap-align: start;
     }
+
+    blog-series {
+      min-inline-size: 90%;
+      scroll-snap-align: start;
+    }
   }
 `;

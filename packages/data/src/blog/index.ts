@@ -1,4 +1,4 @@
-import { type BlogEntryJson } from "@fnc314/packages.types";
+import { type BlogEntryJson, type BlogSeriesData, type PublicationItem } from "@fnc314/packages.types";
 
 export const Blogs: BlogEntryJson[] = [
   {
@@ -92,4 +92,23 @@ export const Blogs: BlogEntryJson[] = [
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
     blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-herd/07-to-future-states-and-beyond/index",
   },
+];
+
+export const BlogSeries: BlogSeriesData[] = [
+  {
+    id: "taming-the-elephant-herd",
+    title: "Taming the Elephant Herd",
+    description:
+      "An in-depth 7-part engineering series recounting the real-world architectural transformation, modularization, build optimization, and developer experience overhaul of large enterprise Android Gradle codebases.",
+    entries: Blogs.filter((b) => b.series?.title === "Taming the Elephant Herd").sort(
+      (a, b) => (a.series?.entry ?? 0) - (b.series?.entry ?? 0)
+    ),
+  },
+];
+
+export const StandaloneBlogs: BlogEntryJson[] = Blogs.filter((b) => !b.series);
+
+export const Publications: PublicationItem[] = [
+  ...BlogSeries.map((series): PublicationItem => ({ type: "series", series })),
+  ...StandaloneBlogs.map((post): PublicationItem => ({ type: "post", post })),
 ];

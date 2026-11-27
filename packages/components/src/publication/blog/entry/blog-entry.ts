@@ -30,7 +30,9 @@ export class BlogEntry extends UIAwareElement {
   blogEntry: BlogEntryJson = {} as BlogEntryJson;
 
   override render() {
-    const blogEntryPadded = this.blogEntry.series.entry.toString().padStart(2, "0");
+    const blogEntryPadded = this.blogEntry.series
+      ? this.blogEntry.series.entry.toString().padStart(2, "0")
+      : null;
 
     return html`
       <article
@@ -39,7 +41,12 @@ export class BlogEntry extends UIAwareElement {
       >
         <header aria-labelledby="blog-name">
           <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
-          <h4 class="md-typescale-title-small">${this.blogEntry.series.title} #${blogEntryPadded}</h4>
+          ${
+            when(
+              this.blogEntry.series && blogEntryPadded !== null,
+              () => html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
+            )
+          }
         </header>
 
         <section .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>

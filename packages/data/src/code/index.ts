@@ -39,6 +39,7 @@ export const Projects: CodeRepoData[] = [
       },
     ],
     url: "https://github.com/fnc314/version-catalogs-builder-gradle-settings-plugin",
+    siteUrl: "https://version-catalogs-builder-gradle-settings-plugin.fnc314.dev",
     repo: "fnc314/version-catalogs-builder-gradle-settings-plugin",
     description:
       "A convention Gradle Settings plugin orchestrating workspace root auto-discovery, repository defaults, Version Catalog registrations, and composite tool build inclusions across multi-repo and monorepo architectures.",
@@ -60,6 +61,7 @@ export const Projects: CodeRepoData[] = [
       },
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
+    siteUrl: "https://project-collections-settings-gradle-plugin.fnc314.dev",
     repo: "fnc314/project-collections-gradle-settings-plugin",
     description:
       "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures.",

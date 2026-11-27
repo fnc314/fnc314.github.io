@@ -1,5 +1,5 @@
 /**
- * Describes a `json` record of a blog post
+ * Describes a `json` record of a blog post or an entry in a series
  *
  * @interface BlogPostJson
  * @typedef {BlogEntryJson}
@@ -7,11 +7,11 @@
 export interface BlogEntryJson {
   id: string;
   title: string;
-  series: BlogSeriesEntry;
+  series?: BlogSeriesEntry;
   summary: string;
-  mediumUrl: string;
-  blogDotDevUrl: string;
-  tags: string[];
+  mediumUrl?: string;
+  blogDotDevUrl?: string;
+  tags?: string[];
 }
 
 /**
@@ -22,6 +22,23 @@ export interface BlogSeriesEntry {
   title: string;
   entry: number;
 }
+
+/**
+ * Represents a Blog Series containing metadata and ordered posts/entries
+ */
+export interface BlogSeriesData {
+  id: string;
+  title: string;
+  description?: string;
+  entries: BlogEntryJson[];
+}
+
+/**
+ * Represents a publication item: either a BlogSeriesData or an individual standalone BlogEntryJson
+ */
+export type PublicationItem =
+  | { type: "series"; series: BlogSeriesData }
+  | { type: "post"; post: BlogEntryJson };
 
 /**
  * Alternative of {@link BlogEntryJson}

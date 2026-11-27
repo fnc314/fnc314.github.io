@@ -38,6 +38,9 @@ export interface CodeRepoData {
 
   /** The bit of {@link url} which begins with `fnc314/` */
   repo: `fnc314/${string}`;
+
+  /** Optional documentation or project site URL */
+  siteUrl?: string;
 }
 
 /**
