@@ -42,10 +42,9 @@ export class BlogEntry extends UIAwareElement {
         <header aria-labelledby="blog-name">
           <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
           ${
-            when(
-              this.blogEntry.series && blogEntryPadded !== null,
-              () => html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
-            )
+            this.blogEntry.series && blogEntryPadded !== null
+              ? html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
+              : null
           }
         </header>
 

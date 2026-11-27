@@ -7,7 +7,6 @@ import { type BlogSeriesData } from "@fnc314/packages.types";
 import "iconify-icon";
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { when } from "lit/directives/when.js";
 
 export const TAG_NAME_BLOG_SERIES: string = "blog-series";
 
@@ -55,10 +54,11 @@ export class BlogSeries extends UIAwareElement {
             ${this.series.title}
           </h3>
 
-          ${when(
-            this.series.description,
-            () => html`<p class="series-description md-typescale-body-medium">${this.series.description}</p>`
-          )}
+          ${
+            this.series.description
+              ? html`<p class="series-description md-typescale-body-medium">${this.series.description}</p>`
+              : null
+          }
 
           <button
             class="series-toggle-btn"
@@ -75,16 +75,17 @@ export class BlogSeries extends UIAwareElement {
           </button>
         </header>
 
-        ${when(
-          this.expanded,
-          () => html`
-            <div id="series-entries-${this.series.id}" class="series-entries">
-              ${this.series.entries.map(
-                (entry) => html`<blog-entry .blogEntry=${entry}></blog-entry>`
-              )}
-            </div>
-          `
-        )}
+        ${
+          this.expanded
+            ? html`
+              <div id="series-entries-${this.series.id}" class="series-entries">
+                ${this.series.entries.map(
+                  (entry) => html`<blog-entry .blogEntry=${entry}></blog-entry>`
+                )}
+              </div>
+            `
+            : null
+        }
       </div>
     `;
   }
