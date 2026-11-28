@@ -156,7 +156,7 @@ export const CodeRepoStyles: CSSResult = css`
 
   md-divider {
     color: var(--code-repo-color);
-    margin-block: var(--spaces-margin-m);
+    margin-block: var(--spaces-margin-xs);
   }
 
   section.synopsis {
@@ -164,7 +164,7 @@ export const CodeRepoStyles: CSSResult = css`
 
     p {
       color: var(--code-repo-color);
-      margin-block: var(--spaces-none) var(--spaces-margin-m);
+      margin-block: var(--spaces-none) var(--spaces-margin-s);
       min-inline-size: 0;
       word-break: break-word;
 
@@ -218,7 +218,7 @@ export const CodeRepoStyles: CSSResult = css`
 
       section.synopsis {
         p {
-          margin-block-end: var(--spaces-margin-m);
+          margin-block-end: var(--spaces-margin-s);
         }
       }
     }

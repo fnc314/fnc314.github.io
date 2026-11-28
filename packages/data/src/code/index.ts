@@ -12,17 +12,17 @@ export const Projects: CodeRepoData[] = [
         popoverContent: "JetBrains' modern JVM languange",
       },
       {
-        name: "Gemini",
-        url: "https://gemini.google.com/",
-        designToken: "simple-icons:googlegemini",
-        popoverContent: "Google's Forefront AI Models",
-      },
-      {
         name: "Mise",
         url: "https://mise.jdx.dev/",
         designToken: Icons.Logos.Tech.Mise,
         popoverContent: "Development Environment Tool Manager",
       },
+      {
+        name: "Gemini",
+        url: "https://gemini.google.com/",
+        designToken: "simple-icons:googlegemini",
+        popoverContent: "Google's Forefront AI Models",
+      }
     ],
     url: "https://github.com/fnc314/ai-job-tracker",
     siteUrl: "https://ai-job-tracker.fnc314.dev/",
@@ -32,12 +32,6 @@ export const Projects: CodeRepoData[] = [
   {
     name: "version-catalogs-builder-gradle-settings-plugin",
     tech: [
-      {
-        name: "Gradle",
-        url: "https://docs.gradle.org/",
-        designToken: "simple-icons:gradle",
-        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
-      },
       {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
@@ -50,6 +44,12 @@ export const Projects: CodeRepoData[] = [
         designToken: Icons.Logos.Tech.Mise,
         popoverContent: "Development Environment Tool Manager",
       },
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: "simple-icons:gradle",
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
+      }
     ],
     url: "https://github.com/fnc314/version-catalogs-builder-gradle-settings-plugin",
     siteUrl: "https://version-catalogs-builder-gradle-settings-plugin.fnc314.dev",
@@ -61,15 +61,9 @@ export const Projects: CodeRepoData[] = [
     name: "project-collections-gradle-settings-plugin",
     tech: [
       {
-        name: "Gradle",
-        url: "https://docs.gradle.org/",
-        designToken: "simple-icons:gradle" /* Icons.Logos.Tech.Gradle */,
-        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
-      },
-      {
         name: "Kotlin",
         url: "https://kotlinlang.org/",
-        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
+        designToken: "simple-icons:kotlin",
         popoverContent: "JetBrains' modern JVM languange",
       },
       {
@@ -78,6 +72,12 @@ export const Projects: CodeRepoData[] = [
         designToken: Icons.Logos.Tech.Mise,
         popoverContent: "Development Environment Tool Manager",
       },
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: "simple-icons:gradle",
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
+      }
     ],
     url: "https://github.com/fnc314/project-collections-gradle-settings-plugin",
     siteUrl: "https://project-collections-settings-gradle-plugin.fnc314.dev",
@@ -214,6 +214,12 @@ export const Projects: CodeRepoData[] = [
   {
     name: "fnc314-kmp",
     tech: [
+      {
+        name: "Mise",
+        url: "https://mise.jdx.dev/",
+        designToken: Icons.Logos.Tech.Mise,
+        popoverContent: "Development Environment Tool Manager",
+      },
       {
         name: "Android",
         url: "https://developer.android.com/",

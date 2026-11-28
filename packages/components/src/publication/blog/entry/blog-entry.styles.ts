@@ -128,7 +128,7 @@ export const BlogEntryStyles: CSSResult = css`
 
   md-divider {
     color: var(--publication-blog-entry-color);
-    margin-block: var(--spaces-margin-m);
+    margin-block: var(--spaces-margin-xs);
   }
 
   section {
@@ -136,7 +136,7 @@ export const BlogEntryStyles: CSSResult = css`
 
     p {
       color: var(--publication-blog-entry-color);
-      margin-block: var(--spaces-margin-xs);
+      margin-block: var(--spaces-none) var(--spaces-margin-s);
       min-inline-size: 0;
       word-break: break-word;
 
