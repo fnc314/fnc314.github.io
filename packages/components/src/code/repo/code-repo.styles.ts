@@ -89,6 +89,7 @@ export const CodeRepoStyles: CSSResult = css`
     h3 {
       color: var(--code-repo-color);
       margin: var(--spaces-none);
+      text-align: center;
       word-break: break-word;
     }
 

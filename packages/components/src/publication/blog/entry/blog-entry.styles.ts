@@ -60,6 +60,7 @@ export const BlogEntryStyles: CSSResult = css`
       font-family: var(--md-ref-typeface-brand);
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
+      text-align: center;
       word-break: break-word;
     }
 
@@ -68,6 +69,7 @@ export const BlogEntryStyles: CSSResult = css`
       font-style: italic;
       margin-block: var(--spaces-none);
       margin-inline: var(--spaces-none);
+      text-align: center;
     }
   }
 
