@@ -96,6 +96,7 @@ export const CodeRepoStyles: CSSResult = css`
       align-items: center;
       display: flex;
       flex-direction: row;
+      flex-grow: 1;
       gap: var(--spaces-gap-m);
       inline-size: 100%;
       justify-content: space-between;

@@ -254,6 +254,7 @@ export const Projects: CodeRepoData[] = [
       },
     ],
     url: "https://github.com/fnc314/blog-fnc314-dev",
+    siteUrl: "https://blog.fnc314.dev",
     repo: "fnc314/blog-fnc314-dev",
     description: `Dedicated <a https="https://vuejs.github.io/vitepress/v1/">VitePress</a> site hosting the content also posted to <a href="https://fnc314.medium.com">Medium &copy;</a>.`,
   },

@@ -220,7 +220,7 @@ export class CodeRepo extends UIAwareElement {
                         "
                       ></iconify-icon>
                       <span>
-                        ${this.codeRepo.siteUrl?.replace(/^https?:\/\//, "")}
+                        Project Site
                       </span>
                     </a>
                   `
@@ -244,7 +244,7 @@ export class CodeRepo extends UIAwareElement {
                 title=${this.codeRepo.repo}
               >
                 <span>
-                  ${this.codeRepo.repo}
+                  Project Repo
                 </span>
                 <iconify-icon
                   width="none"
