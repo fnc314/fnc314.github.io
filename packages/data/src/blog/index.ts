@@ -87,7 +87,7 @@ export const Blogs: BlogEntryJson[] = [
     },
     title: "To Future States and Beyond",
     summary:
-      "From the pressure of ever-changing business requirements, we undertake the final phase of the elephant heard taming process.",
+      "From the pressure of ever-changing business requirements, we undertake the final phase of the elephant herd taming process.",
     mediumUrl: "https://fnc314.medium.com/07-taming-the-elephant-herd-to-future-states-and-beyond-2f9fb794d6ee",
     tags: ["Gradle", "Android Developer", "Android Gradle Plugin", "Android"],
     blogDotDevUrl: "https://blog.fnc314.dev/posts/taming-the-elephant-herd/07-to-future-states-and-beyond/index",
