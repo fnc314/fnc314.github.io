@@ -151,7 +151,7 @@ catalogs:
     vite-plugin-pwa: 2.0.0
     vite-plugin-svgo: 3.0.2
     vite-plugin-version-mark: 0.2.2
-    vite-plus: 0.2.9
+    vite-plus: 1.7.0
     vitepress: 1.6.4
     vitest: 4.1.11
     web-component-analyzer: 2.0.0
