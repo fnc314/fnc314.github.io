@@ -37,6 +37,8 @@ export { BlogSeries } from "@/lib/publication/blog/series/blog-series";
 export { BlogSeriesStyles } from "@/lib/publication/blog/series/blog-series.styles";
 export { DynamicBorderStyles } from "@/lib/styles/dynamic-border";
 export { TextStyles } from "@/lib/styles/text";
+export { IconTextLink, TAG_NAME_ICON_TEXT_LINK } from "@/lib/link/icon-text-link";
+export { IconTextLinkStyles } from "@/lib/link/icon-text-link.styles";
 export { UiModeToggle } from "@/lib/ui-mode-toggle/ui-mode-toggle";
 export { UIModeToggleStyles } from "@/lib/ui-mode-toggle/ui-mode-toggle.styles";
 export { VersionTag } from "@/lib/version-tag/version-tag";

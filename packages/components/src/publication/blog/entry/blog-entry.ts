@@ -1,9 +1,10 @@
+import "@/lib/link/icon-text-link";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { BlogEntryStyles } from "@/lib/publication/blog/entry/blog-entry.styles";
 import { TextStyles } from "@/lib/styles";
 import { Icons } from "@fnc314/packages.design-tokens";
 import { AnalyticsService } from "@fnc314/packages.services";
-import { type BlogEntryJson } from "@fnc314/packages.types";
+import { type BlogEntryJson, IconTextLinkOrientations } from "@fnc314/packages.types";
 import "iconify-icon";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
@@ -50,11 +51,14 @@ export class BlogEntry extends UIAwareElement {
             ${
               this.blogEntry.blogDotDevUrl
                 ? html`
-                  <a
-                    href=${this.blogEntry.blogDotDevUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <icon-text-link
                     class="blog-link"
+                    .orientation=${IconTextLinkOrientations.ICON_FIRST}
+                    .text=${"blog.fnc314.dev"}
+                    .icon=${Icons.Logos.Fnc314.mask}
+                    .link=${this.blogEntry.blogDotDevUrl}
+                    .newTab=${true}
+                    .ariaLabelText=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
                     @click=${() => {
                       AnalyticsService.trackEvent("click_outbound", {
                         category: "outbound",
@@ -66,31 +70,21 @@ export class BlogEntry extends UIAwareElement {
                         platform: "blog.fnc314.dev",
                       });
                     }}
-                    aria-labelledby="blog-link-label"
-                    aria-describedby="blog-link-label"
-                    title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
-                  >
-                    <span class="icon-wrapper" aria-hidden="true">
-                      ${Icons.Logos.Fnc314.mask}
-                    </span>
-                    <span
-                      class="md-typescale-label-large"
-                      id="blog-link-label"
-                    >
-                      blog.fnc314.dev
-                    </span>
-                  </a>
+                  ></icon-text-link>
                 `
                 : html`<span class="link-placeholder"></span>`
             }
             ${
               this.blogEntry.mediumUrl
                 ? html`
-                  <a
-                    href=${this.blogEntry.mediumUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <icon-text-link
                     class="medium-link"
+                    .orientation=${IconTextLinkOrientations.TEXT_FIRST}
+                    .text=${"Medium.com"}
+                    .icon=${"simple-icons:medium"}
+                    .link=${this.blogEntry.mediumUrl}
+                    .newTab=${true}
+                    .ariaLabelText=${`Read ${this.blogEntry.title} on Medium`}
                     @click=${() => {
                       AnalyticsService.trackEvent("click_outbound", {
                         category: "social",
@@ -102,28 +96,7 @@ export class BlogEntry extends UIAwareElement {
                         platform: "medium",
                       });
                     }}
-                    aria-labelledby="medium-link-label"
-                    aria-describedby="medium-link-label"
-                    title=${`Read ${this.blogEntry.title} on Medium`}
-                  >
-                    <span
-                      class="md-typescale-label-large"
-                      id="medium-link-label"
-                    >
-                      Medium.com
-                    </span>
-                    <iconify-icon
-                      width="none"
-                      height="none"
-                      icon="simple-icons:medium"
-                      aria-hidden="true"
-                      style="
-                        width: var(--md-icon-size);
-                        height: var(--md-icon-size);
-                      "
-                      aria-labelledby="medium-link-label"
-                    ></iconify-icon>
-                  </a>
+                  ></icon-text-link>
                 `
                 : html`<span class="link-placeholder"></span>`
             }

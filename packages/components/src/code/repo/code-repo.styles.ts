@@ -47,12 +47,14 @@ export const CodeRepoStyles: CSSResult = css`
     justify-content: flex-start;
     min-inline-size: 0;
     overflow: hidden;
-    padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs);
+    padding-block: var(--spaces-padding-xs);
     padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs);
   }
 
   .fold-top,
   .fold-bottom {
+    display: flex;
+    flex-direction: column;
     transform-style: preserve-3d;
     transform: rotateX(0deg) translateY(0px);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -83,7 +85,7 @@ export const CodeRepoStyles: CSSResult = css`
     flex-direction: column;
     gap: var(--spaces-gap-xs);
     justify-content: space-between;
-    margin-block: var(--spaces-margin-xs);
+    margin-block: var(--spaces-none);
     min-inline-size: 0;
 
     h3 {
@@ -108,20 +110,12 @@ export const CodeRepoStyles: CSSResult = css`
       }
 
       .site-link {
-        align-items: center;
-        display: inline-flex;
-        gap: var(--spaces-gap-xs);
         justify-content: flex-start;
-        text-align: start;
       }
 
       .repo-link {
-        align-items: center;
-        display: inline-flex;
-        gap: var(--spaces-gap-xs);
         justify-content: flex-end;
         margin-inline-start: auto;
-        text-align: end;
       }
     }
 
@@ -164,7 +158,7 @@ export const CodeRepoStyles: CSSResult = css`
 
     p {
       color: var(--code-repo-color);
-      margin-block: var(--spaces-none) var(--spaces-margin-s);
+      margin-block: var(--spaces-none) var(--spaces-margin-xs);
       min-inline-size: 0;
       word-break: break-word;
 

@@ -34,7 +34,7 @@ export const BlogEntryStyles: CSSResult = css`
     justify-content: flex-start;
     min-inline-size: 0;
     overflow: hidden;
-    padding-block: var(--spaces-padding-xs) var(--spaces-padding-xs);
+    padding-block: var(--spaces-padding-xs);
     padding-inline: var(--spaces-padding-xl) var(--spaces-padding-xs);
 
     * {
@@ -47,7 +47,7 @@ export const BlogEntryStyles: CSSResult = css`
     flex-direction: column;
     gap: var(--spaces-gap-xs);
     justify-content: space-between;
-    margin-block: var(--spaces-margin-xs);
+    margin-block: var(--spaces-none);
     min-inline-size: 0;
 
     h3 {
@@ -82,20 +82,12 @@ export const BlogEntryStyles: CSSResult = css`
       }
 
       .blog-link {
-        align-items: center;
-        display: inline-flex;
-        gap: var(--spaces-gap-s);
         justify-content: flex-start;
-        text-align: start;
       }
 
       .medium-link {
-        align-items: center;
-        display: inline-flex;
-        gap: var(--spaces-gap-s);
         justify-content: flex-end;
         margin-inline-start: auto;
-        text-align: end;
       }
     }
 
@@ -136,7 +128,7 @@ export const BlogEntryStyles: CSSResult = css`
 
     p {
       color: var(--publication-blog-entry-color);
-      margin-block: var(--spaces-none) var(--spaces-margin-s);
+      margin-block: var(--spaces-none) var(--spaces-margin-xs);
       min-inline-size: 0;
       word-break: break-word;
 

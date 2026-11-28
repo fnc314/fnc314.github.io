@@ -1,12 +1,19 @@
 import { CodeRepoStyles } from "@/lib/code/repo/code-repo.styles";
 import "@/lib/code/reveal/code-reveal";
 import { CodeReveal } from "@/lib/code/reveal/code-reveal";
+import "@/lib/link/icon-text-link";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
 import { Icons } from "@fnc314/packages.design-tokens";
 import { AnalyticsService } from "@fnc314/packages.services";
-import { BreakpointLabels, type CodeRepoData, type CodeRepoTech, type IconVariants } from "@fnc314/packages.types";
+import {
+  BreakpointLabels,
+  type CodeRepoData,
+  type CodeRepoTech,
+  IconTextLinkOrientations,
+  type IconVariants,
+} from "@fnc314/packages.types";
 import "iconify-icon";
 import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property, query, queryAll, state } from "lit/decorators.js";
@@ -193,11 +200,14 @@ export class CodeRepo extends UIAwareElement {
               ${
                 this.codeRepo.siteUrl
                   ? html`
-                    <a
-                      href=${this.codeRepo.siteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <icon-text-link
                       class="site-link"
+                      .orientation=${IconTextLinkOrientations.ICON_FIRST}
+                      .text=${"Project Site"}
+                      .icon=${Icons.Logos.Fnc314.mask}
+                      .link=${this.codeRepo.siteUrl}
+                      .newTab=${true}
+                      .ariaLabelText=${`Documentation for ${this.codeRepo.name}`}
                       @click=${() => {
                         AnalyticsService.trackEvent("click_outbound", {
                           category: "outbound",
@@ -208,23 +218,18 @@ export class CodeRepo extends UIAwareElement {
                           platform: "docs",
                         });
                       }}
-                      title=${`Documentation for ${this.codeRepo.name}`}
-                    >
-                      <span class="icon-wrapper" aria-hidden="true">
-                        ${Icons.Logos.Fnc314.mask}
-                      </span>
-                      <span>
-                        Project Site
-                      </span>
-                    </a>
+                    ></icon-text-link>
                   `
                   : html`<span class="link-placeholder"></span>`
               }
-              <a
-                href=${this.codeRepo.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <icon-text-link
                 class="repo-link"
+                .orientation=${IconTextLinkOrientations.TEXT_FIRST}
+                .text=${"Project Repo"}
+                .icon=${"simple-icons:github"}
+                .link=${this.codeRepo.url}
+                .newTab=${true}
+                .ariaLabelText=${this.codeRepo.repo}
                 @click=${() => {
                   AnalyticsService.trackEvent("click_outbound", {
                     category: "outbound",
@@ -235,22 +240,7 @@ export class CodeRepo extends UIAwareElement {
                     platform: "github",
                   });
                 }}
-                title=${this.codeRepo.repo}
-              >
-                <span>
-                  Project Repo
-                </span>
-                <iconify-icon
-                  width="none"
-                  height="none"
-                  icon="simple-icons:github"
-                  aria-hidden="true"
-                  style="
-                    width: var(--md-icon-size);
-                    height: var(--md-icon-size);
-                  "
-                ></iconify-icon>
-              </a>
+              ></icon-text-link>
             </div>
           </header>
 

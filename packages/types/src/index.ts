@@ -9,5 +9,6 @@ export * from "@/lib/education";
 export * from "@/lib/experience";
 export * from "@/lib/mixins";
 export * from "@/lib/theme";
+export * from "@/lib/link/icon-text-link";
 export * from "@/lib/word/cloud";
 export * from "@/lib/word/tag";
