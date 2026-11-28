@@ -158,11 +158,9 @@ export const CodeRepoStyles: CSSResult = css`
 
     p {
       color: var(--code-repo-color);
-      hyphens: auto;
       margin-block: var(--spaces-none) var(--spaces-margin-xs);
       min-inline-size: 0;
-      text-align: justify;
-      text-justify: inter-word;
+      text-wrap: pretty;
       word-break: break-word;
 
       pre {

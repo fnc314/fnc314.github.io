@@ -125,11 +125,9 @@ export const BlogEntryStyles: CSSResult = css`
 
     p {
       color: var(--publication-blog-entry-color);
-      hyphens: auto;
       margin-block: var(--spaces-none) var(--spaces-margin-xs);
       min-inline-size: 0;
-      text-align: justify;
-      text-justify: inter-word;
+      text-wrap: pretty;
       word-break: break-word;
 
       pre {
