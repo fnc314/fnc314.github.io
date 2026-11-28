@@ -4,6 +4,7 @@ import { CodeReveal } from "@/lib/code/reveal/code-reveal";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import { WordTag } from "@/lib/word/tag/word-tag";
+import { Icons } from "@fnc314/packages.design-tokens";
 import { AnalyticsService } from "@fnc314/packages.services";
 import { BreakpointLabels, type CodeRepoData, type CodeRepoTech, type IconVariants } from "@fnc314/packages.types";
 import "iconify-icon";
@@ -209,16 +210,9 @@ export class CodeRepo extends UIAwareElement {
                       }}
                       title=${`Documentation for ${this.codeRepo.name}`}
                     >
-                      <iconify-icon
-                        width="none"
-                        height="none"
-                        icon="material-symbols:globe"
-                        aria-hidden="true"
-                        style="
-                          width: var(--md-icon-size);
-                          height: var(--md-icon-size);
-                        "
-                      ></iconify-icon>
+                      <span class="icon-wrapper" aria-hidden="true">
+                        ${Icons.Logos.Fnc314.mask}
+                      </span>
                       <span>
                         Project Site
                       </span>

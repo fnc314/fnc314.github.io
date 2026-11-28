@@ -141,6 +141,15 @@ export const CodeRepoStyles: CSSResult = css`
       &:focus {
         text-decoration: underline;
       }
+
+      span.icon-wrapper {
+        display: contents;
+
+        svg {
+          inline-size: var(--md-icon-size);
+          block-size: var(--md-icon-size);
+        }
+      }
     }
   }
 
