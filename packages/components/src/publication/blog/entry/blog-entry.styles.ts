@@ -142,7 +142,7 @@ export const BlogEntryStyles: CSSResult = css`
     article {
       gap: var(--spaces-gap-m);
       padding-block: var(--spaces-padding-xl) var(--spaces-padding-s);
-      padding-inline: var(--spaces-padding-m);
+      padding-inline: var(--spaces-padding-s) var(--spaces-padding-s);
 
       header {
         margin-block: var(--spaces-none);
@@ -152,11 +152,16 @@ export const BlogEntryStyles: CSSResult = css`
 
   @container (min-width: 1201px) {
     article {
-      padding-block: var(--spaces-padding-xs);
+      align-items: stretch;
+      gap: var(--spaces-gap-l);
       padding-inline-end: unset;
-      padding-inline-start: var(--spaces-padding-xl);
+
+      md-divider {
+        display: none;
+      }
 
       header {
+        flex-direction: row;
         margin-block: var(--spaces-none);
       }
     }

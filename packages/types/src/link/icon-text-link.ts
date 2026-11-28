@@ -1,3 +1,6 @@
+import { type TemplateResult } from "lit";
+import { type IconVariants } from "../icons/icons";
+
 export const IconTextLinkOrientations = {
   ICON_FIRST: "icon-first",
   TEXT_FIRST: "text-first",
@@ -9,3 +12,6 @@ export type IconTextLinkOrientation =
   | "text-first"
   | "ICON_FIRST"
   | "TEXT_FIRST";
+
+export type IconTextLinkIcon = string | IconVariants | TemplateResult;
+

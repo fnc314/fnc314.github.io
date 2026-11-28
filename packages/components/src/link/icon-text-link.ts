@@ -2,17 +2,19 @@ import { IconTextLinkStyles } from "@/lib/link/icon-text-link.styles";
 import { UIAwareElement } from "@/lib/mixins/ui-aware-element/ui-aware-element";
 import { TextStyles } from "@/lib/styles";
 import {
+  type IconTextLinkIcon,
   type IconTextLinkOrientation,
   IconTextLinkOrientations,
   type IconVariants,
 } from "@fnc314/packages.types";
 import "iconify-icon";
-import { html, nothing } from "lit";
+import { type TemplateResult, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
 export {
+  type IconTextLinkIcon,
   type IconTextLinkOrientation,
   IconTextLinkOrientations,
 } from "@fnc314/packages.types";
@@ -24,7 +26,7 @@ export const TAG_NAME_ICON_TEXT_LINK: string = "icon-text-link";
  *
  * @property {IconTextLinkOrientation} [orientation="icon-first"] - ICON_FIRST or TEXT_FIRST
  * @property {string} [text=""] - The label text for the link
- * @property {string | IconVariants} [icon] - An Iconify icon slug string, an SVG string, or IconVariants
+ * @property {IconTextLinkIcon} [icon] - An Iconify icon slug string, an SVG string, a Lit TemplateResult, or IconVariants
  * @property {string} [link=""] - Destination URL for click
  * @property {boolean} [newTab=true] - When true, opens in a new tab with rel="noopener noreferrer"
  */
@@ -39,7 +41,7 @@ export class IconTextLink extends UIAwareElement {
   text: string = "";
 
   @property({ type: Object })
-  icon: string | IconVariants = "";
+  icon: IconTextLinkIcon = "";
 
   @property({ type: String })
   link: string = "";
@@ -80,12 +82,25 @@ export class IconTextLink extends UIAwareElement {
       `;
     }
 
-    const svgResult = this.getActiveIcon(this.icon as IconVariants, true);
-    return html`
-      <span class="icon-wrapper" aria-hidden="true">
-        ${svgResult}
-      </span>
-    `;
+    if (typeof this.icon === "object" && this.icon !== null) {
+      // Check if it's already a Lit TemplateResult (like Icons.Logos.Fnc314.mask)
+      if ("_$litType$" in this.icon || "strings" in this.icon) {
+        return html`
+          <span class="icon-wrapper" aria-hidden="true">
+            ${this.icon as unknown as TemplateResult}
+          </span>
+        `;
+      }
+
+      const svgResult = this.getActiveIcon(this.icon as IconVariants, true);
+      return html`
+        <span class="icon-wrapper" aria-hidden="true">
+          ${svgResult}
+        </span>
+      `;
+    }
+
+    return nothing;
   }
 
   override render() {

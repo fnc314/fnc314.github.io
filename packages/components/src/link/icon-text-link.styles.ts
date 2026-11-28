@@ -16,7 +16,8 @@ export const IconTextLinkStyles: CSSResult = css`
     min-inline-size: 0;
     text-decoration: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: var(--icon-text-link-font-size, var(--md-sys-typescale-label-large-size, 0.875rem));
+    line-height: var(--icon-text-link-line-height, var(--md-sys-typescale-label-large-line-height, 1.25rem));
 
     &:hover,
     &:focus {
