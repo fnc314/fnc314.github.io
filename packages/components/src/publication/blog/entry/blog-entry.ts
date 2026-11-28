@@ -46,14 +46,6 @@ export class BlogEntry extends UIAwareElement {
               ? html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
               : null
           }
-        </header>
-
-        <section .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>
-          <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
-        </section>
-
-        <footer aria-labelledby="medium-link-label">
-          <md-divider inset></md-divider>
           <div class="blog-links">
             ${
               this.blogEntry.blogDotDevUrl
@@ -136,7 +128,13 @@ export class BlogEntry extends UIAwareElement {
                 : html`<span class="link-placeholder"></span>`
             }
           </div>
-        </footer>
+        </header>
+
+        <md-divider inset></md-divider>
+
+        <section .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>
+          <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
+        </section>
       </article>
     `;
   }

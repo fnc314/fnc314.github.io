@@ -29,12 +29,8 @@ export const BlogEntryStyles: CSSResult = css`
     border: var(--sizes-thickness-hairline) solid var(--publication-blog-entry-color);
     border-radius: var(--md-sys-shape-corner-medium);
     box-sizing: border-box;
-    display: grid;
-    grid-template-areas:
-      "header"
-      "description"
-      "footer";
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     min-inline-size: 0;
     overflow: hidden;
@@ -49,8 +45,7 @@ export const BlogEntryStyles: CSSResult = css`
   header {
     display: flex;
     flex-direction: column;
-    gap: var(--spaces-gap-xxs);
-    grid-area: header;
+    gap: var(--spaces-gap-xs);
     justify-content: space-between;
     margin-block: var(--spaces-margin-xs);
     min-inline-size: 0;
@@ -71,43 +66,12 @@ export const BlogEntryStyles: CSSResult = css`
       margin-inline: var(--spaces-none);
       text-align: center;
     }
-  }
-
-  section {
-    grid-area: description;
-    min-inline-size: 0;
-
-    p {
-      color: var(--publication-blog-entry-color);
-      margin-block: var(--spaces-margin-xs);
-      min-inline-size: 0;
-      word-break: break-word;
-
-      pre {
-        display: inline;
-      }
-    }
-  }
-
-  footer {
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spaces-gap-s);
-    grid-area: footer;
-    justify-content: space-between;
-    margin-block-start: auto;
-    padding-block-start: var(--spaces-padding-xs);
-
-    md-divider {
-      margin-block: var(--spaces-margin-s);
-      color: var(--publication-blog-entry-color);
-    }
 
     .blog-links {
       align-items: center;
       display: flex;
       flex-direction: row;
+      flex-grow: 1;
       gap: var(--spaces-gap-m);
       inline-size: 100%;
       justify-content: space-between;
@@ -159,7 +123,26 @@ export const BlogEntryStyles: CSSResult = css`
           block-size: var(--md-icon-size);
         }
       }
+    }
+  }
 
+  md-divider {
+    color: var(--publication-blog-entry-color);
+    margin-block: var(--spaces-margin-m);
+  }
+
+  section {
+    min-inline-size: 0;
+
+    p {
+      color: var(--publication-blog-entry-color);
+      margin-block: var(--spaces-margin-xs);
+      min-inline-size: 0;
+      word-break: break-word;
+
+      pre {
+        display: inline;
+      }
     }
   }
 
@@ -177,13 +160,6 @@ export const BlogEntryStyles: CSSResult = css`
 
   @container (min-width: 1201px) {
     article {
-      align-items: start;
-      gap: var(--spaces-gap-l);
-      grid-template-areas:
-        "header description"
-        "footer footer";
-      grid-template-columns: 1fr 1.5fr;
-      grid-template-rows: auto 1fr;
       padding-block: var(--spaces-padding-xs);
       padding-inline-end: unset;
       padding-inline-start: var(--spaces-padding-xl);
