@@ -5735,10 +5735,9 @@ packages:
   '@webcomponents/webcomponentsjs@2.8.1':
     resolution: {integrity: sha512-Os7Q60kFzM6GyzG276LdbuJWP1tRSWtxETIXmebNk+7nC0RbAuYK/4H5t/ufiCIHLx3V0yFx2YV6rIEAp0kybQ==}
 
-  '@xmldom/xmldom@0.8.13':
-    resolution: {integrity: sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==}
+  '@xmldom/xmldom@0.8.15':
+    resolution: {integrity: sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==}
     engines: {node: '>=10.0.0'}
-    deprecated: this version has critical issues, please update to the latest version
 
   '@xn-sakina/rml-darwin-arm64@2.8.0':
     resolution: {integrity: sha512-B8XpWn/t3vALCePi8DnbHQWVQnmKybwPIKbfzL1L75w2V/ELXn0OguFayujf2eZdmCIBPC+Drqxztn6fDV08Ww==}
@@ -14103,7 +14102,7 @@ snapshots:
       '@parse5/tools': 0.3.0
       '@types/fs-extra': 9.0.13
       '@types/minimist': 1.2.5
-      '@xmldom/xmldom': 0.8.13
+      '@xmldom/xmldom': 0.8.15
       fast-glob: 3.3.3
       fs-extra: 10.1.0
       jsonschema: 1.5.0
@@ -16369,7 +16368,7 @@ snapshots:
 
   '@webcomponents/webcomponentsjs@2.8.1': {}
 
-  '@xmldom/xmldom@0.8.13': {}
+  '@xmldom/xmldom@0.8.15': {}
 
   '@xn-sakina/rml-darwin-arm64@2.8.0':
     optional: true
