@@ -40,74 +40,76 @@ export class BlogEntry extends UIAwareElement {
         class="dynamic-border-host"
         aria-labelledby="blog-name"
       >
-        <header aria-labelledby="blog-name">
-          <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
-          ${
-            this.blogEntry.series && blogEntryPadded !== null
-              ? html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
-              : null
-          }
-          <div class="blog-links">
+        <div class="blog-top">
+          <header aria-labelledby="blog-name">
+            <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
             ${
-              this.blogEntry.blogDotDevUrl
-                ? html`
-                  <icon-text-link
-                    class="blog-link"
-                    .orientation=${IconTextLinkOrientations.ICON_FIRST}
-                    .text=${"blog.fnc314.dev"}
-                    .icon=${Icons.Logos.Fnc314.mask}
-                    .link=${this.blogEntry.blogDotDevUrl}
-                    .newTab=${true}
-                    .ariaLabelText=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
-                    @click=${() => {
-                      AnalyticsService.trackEvent("click_outbound", {
-                        category: "outbound",
-                        label: `Blog: ${this.blogEntry.title}`,
-                        destination: this.blogEntry.blogDotDevUrl,
-                        article_title: this.blogEntry.title,
-                        series_title: this.blogEntry.series?.title,
-                        series_entry: this.blogEntry.series?.entry,
-                        platform: "blog.fnc314.dev",
-                      });
-                    }}
-                  ></icon-text-link>
-                `
-                : html`<span class="link-placeholder"></span>`
+              this.blogEntry.series && blogEntryPadded !== null
+                ? html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
+                : null
             }
-            ${
-              this.blogEntry.mediumUrl
-                ? html`
-                  <icon-text-link
-                    class="medium-link"
-                    .orientation=${IconTextLinkOrientations.TEXT_FIRST}
-                    .text=${"Medium.com"}
-                    .icon=${"simple-icons:medium"}
-                    .link=${this.blogEntry.mediumUrl}
-                    .newTab=${true}
-                    .ariaLabelText=${`Read ${this.blogEntry.title} on Medium`}
-                    @click=${() => {
-                      AnalyticsService.trackEvent("click_outbound", {
-                        category: "social",
-                        label: `Medium: ${this.blogEntry.title}`,
-                        destination: this.blogEntry.mediumUrl,
-                        article_title: this.blogEntry.title,
-                        series_title: this.blogEntry.series?.title,
-                        series_entry: this.blogEntry.series?.entry,
-                        platform: "medium",
-                      });
-                    }}
-                  ></icon-text-link>
-                `
-                : html`<span class="link-placeholder"></span>`
-            }
-          </div>
-        </header>
+            <div class="blog-links">
+              ${
+                this.blogEntry.blogDotDevUrl
+                  ? html`
+                    <icon-text-link
+                      class="blog-link"
+                      .orientation=${IconTextLinkOrientations.ICON_FIRST}
+                      .text=${"blog.fnc314.dev"}
+                      .icon=${Icons.Logos.Fnc314.mask}
+                      .link=${this.blogEntry.blogDotDevUrl}
+                      .newTab=${true}
+                      .ariaLabelText=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
+                      @click=${() => {
+                        AnalyticsService.trackEvent("click_outbound", {
+                          category: "outbound",
+                          label: `Blog: ${this.blogEntry.title}`,
+                          destination: this.blogEntry.blogDotDevUrl,
+                          article_title: this.blogEntry.title,
+                          series_title: this.blogEntry.series?.title,
+                          series_entry: this.blogEntry.series?.entry,
+                          platform: "blog.fnc314.dev",
+                        });
+                      }}
+                    ></icon-text-link>
+                  `
+                  : html`<span class="link-placeholder"></span>`
+              }
+              ${
+                this.blogEntry.mediumUrl
+                  ? html`
+                    <icon-text-link
+                      class="medium-link"
+                      .orientation=${IconTextLinkOrientations.TEXT_FIRST}
+                      .text=${"Medium.com"}
+                      .icon=${"simple-icons:medium"}
+                      .link=${this.blogEntry.mediumUrl}
+                      .newTab=${true}
+                      .ariaLabelText=${`Read ${this.blogEntry.title} on Medium`}
+                      @click=${() => {
+                        AnalyticsService.trackEvent("click_outbound", {
+                          category: "social",
+                          label: `Medium: ${this.blogEntry.title}`,
+                          destination: this.blogEntry.mediumUrl,
+                          article_title: this.blogEntry.title,
+                          series_title: this.blogEntry.series?.title,
+                          series_entry: this.blogEntry.series?.entry,
+                          platform: "medium",
+                        });
+                      }}
+                    ></icon-text-link>
+                  `
+                  : html`<span class="link-placeholder"></span>`
+              }
+            </div>
+          </header>
 
-        <md-divider inset></md-divider>
+          <md-divider inset></md-divider>
 
-        <section .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>
-          <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
-        </section>
+          <section class="synopsis" .ariaLabel=${`Synopsis for ${this.blogEntry.title}`}>
+            <p class="md-typescale-body-large">${unsafeHTML(this.blogEntry.summary)}</p>
+          </section>
+        </div>
       </article>
     `;
   }

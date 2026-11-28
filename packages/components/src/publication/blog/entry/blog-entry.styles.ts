@@ -42,6 +42,11 @@ export const BlogEntryStyles: CSSResult = css`
     }
   }
 
+  .blog-top {
+    display: flex;
+    flex-direction: column;
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -123,7 +128,7 @@ export const BlogEntryStyles: CSSResult = css`
     margin-block: var(--spaces-margin-xs);
   }
 
-  section {
+  section.synopsis {
     min-inline-size: 0;
 
     p {
@@ -146,6 +151,12 @@ export const BlogEntryStyles: CSSResult = css`
 
       header {
         margin-block: var(--spaces-none);
+      }
+
+      section.synopsis {
+        p {
+          margin-block-end: var(--spaces-margin-s);
+        }
       }
     }
   }
