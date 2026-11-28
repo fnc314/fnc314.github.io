@@ -190,9 +190,8 @@ export class CodeRepo extends UIAwareElement {
             <h3 id="repo-name" class="md-typescale-headline-small">${this.codeRepo.name}</h3>
             <div class="repo-links">
               ${
-                when(
-                  this.codeRepo.siteUrl,
-                  () => html`
+                this.codeRepo.siteUrl
+                  ? html`
                     <a
                       href=${this.codeRepo.siteUrl}
                       target="_blank"
@@ -225,12 +224,13 @@ export class CodeRepo extends UIAwareElement {
                       </span>
                     </a>
                   `
-                )
+                  : html`<span class="link-placeholder"></span>`
               }
               <a
                 href=${this.codeRepo.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                class="repo-link"
                 @click=${() => {
                   AnalyticsService.trackEvent("click_outbound", {
                     category: "outbound",
@@ -243,6 +243,9 @@ export class CodeRepo extends UIAwareElement {
                 }}
                 title=${this.codeRepo.repo}
               >
+                <span>
+                  ${this.codeRepo.repo}
+                </span>
                 <iconify-icon
                   width="none"
                   height="none"
@@ -252,10 +255,7 @@ export class CodeRepo extends UIAwareElement {
                     width: var(--md-icon-size);
                     height: var(--md-icon-size);
                   "
-                  ></iconify-icon>
-                <span>
-                  ${this.codeRepo.repo}
-                </span>
+                ></iconify-icon>
               </a>
             </div>
           </header>

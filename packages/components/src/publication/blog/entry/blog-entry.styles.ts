@@ -102,6 +102,37 @@ export const BlogEntryStyles: CSSResult = css`
       color: var(--publication-blog-entry-color);
     }
 
+    .blog-links {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: var(--spaces-gap-m);
+      inline-size: 100%;
+      justify-content: space-between;
+      min-inline-size: 0;
+
+      .link-placeholder {
+        display: inline-block;
+      }
+
+      .blog-link {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--spaces-gap-s);
+        justify-content: flex-start;
+        text-align: start;
+      }
+
+      .medium-link {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--spaces-gap-s);
+        justify-content: flex-end;
+        margin-inline-start: auto;
+        text-align: end;
+      }
+    }
+
     a {
       align-items: center;
       color: var(--publication-blog-entry-link-color);

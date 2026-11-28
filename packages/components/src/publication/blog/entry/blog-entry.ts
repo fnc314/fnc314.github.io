@@ -54,76 +54,88 @@ export class BlogEntry extends UIAwareElement {
 
         <footer aria-labelledby="medium-link-label">
           <md-divider inset></md-divider>
-          <a
-            href=${ifDefined(this.blogEntry.blogDotDevUrl)}
-            target="_blank"
-            rel="noopener noreferrer"
-            @click=${() => {
-              if (this.blogEntry.blogDotDevUrl) {
-                AnalyticsService.trackEvent("click_outbound", {
-                  category: "outbound",
-                  label: `Blog: ${this.blogEntry.title}`,
-                  destination: this.blogEntry.blogDotDevUrl,
-                  article_title: this.blogEntry.title,
-                  series_title: this.blogEntry.series?.title,
-                  series_entry: this.blogEntry.series?.entry,
-                  platform: "blog.fnc314.dev",
-                });
-              }
-            }}
-            aria-labelledby="blog-link-label"
-            aria-describedby="blog-link-label"
-            title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
-          >
-            <span class="icon-wrapper" aria-hidden="true">
-              ${Icons.Logos.Fnc314.mask}
-            </span>
-            <span
-              class="md-typescale-label-large"
-              id="blog-link-label"
-            >
-              Read&nbsp;<em>${this.blogEntry.title}</em>&nbsp;on&nbsp;<pre>blog.fnc314.dev</pre>.
-            </span>
-          </a>
-          <a
-            href=${ifDefined(this.blogEntry.mediumUrl)}
-            target="_blank"
-            rel="noopener noreferrer"
-            @click=${() => {
-              if (this.blogEntry.mediumUrl) {
-                AnalyticsService.trackEvent("click_outbound", {
-                  category: "social",
-                  label: `Medium: ${this.blogEntry.title}`,
-                  destination: this.blogEntry.mediumUrl,
-                  article_title: this.blogEntry.title,
-                  series_title: this.blogEntry.series?.title,
-                  series_entry: this.blogEntry.series?.entry,
-                  platform: "medium",
-                });
-              }
-            }}
-            aria-labelledby="medium-link-label"
-            aria-describedby="medium-link-label"
-            title=${`Read ${this.blogEntry.title} on Medium`}
-          >
-            <iconify-icon
-              width="none"
-              height="none"
-              icon="simple-icons:medium"
-              aria-hidden="true"
-              style="
-                width: var(--md-icon-size);
-                height: var(--md-icon-size);
-              "
-              aria-labelledby="medium-link-label"
-              ></iconify-icon>
-            <span
-              class="md-typescale-label-large"
-              id="medium-link-label"
-            >
-              Read&nbsp;<em>${this.blogEntry.title}</em>&nbsp;on&nbsp;Medium<sup>&reg;</sup>
-            </span>
-          </a>
+          <div class="blog-links">
+            ${
+              this.blogEntry.blogDotDevUrl
+                ? html`
+                  <a
+                    href=${this.blogEntry.blogDotDevUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="blog-link"
+                    @click=${() => {
+                      AnalyticsService.trackEvent("click_outbound", {
+                        category: "outbound",
+                        label: `Blog: ${this.blogEntry.title}`,
+                        destination: this.blogEntry.blogDotDevUrl,
+                        article_title: this.blogEntry.title,
+                        series_title: this.blogEntry.series?.title,
+                        series_entry: this.blogEntry.series?.entry,
+                        platform: "blog.fnc314.dev",
+                      });
+                    }}
+                    aria-labelledby="blog-link-label"
+                    aria-describedby="blog-link-label"
+                    title=${`Read ${this.blogEntry.title} on blog.fnc314.dev`}
+                  >
+                    <span class="icon-wrapper" aria-hidden="true">
+                      ${Icons.Logos.Fnc314.mask}
+                    </span>
+                    <span
+                      class="md-typescale-label-large"
+                      id="blog-link-label"
+                    >
+                      blog.fnc314.dev
+                    </span>
+                  </a>
+                `
+                : html`<span class="link-placeholder"></span>`
+            }
+            ${
+              this.blogEntry.mediumUrl
+                ? html`
+                  <a
+                    href=${this.blogEntry.mediumUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="medium-link"
+                    @click=${() => {
+                      AnalyticsService.trackEvent("click_outbound", {
+                        category: "social",
+                        label: `Medium: ${this.blogEntry.title}`,
+                        destination: this.blogEntry.mediumUrl,
+                        article_title: this.blogEntry.title,
+                        series_title: this.blogEntry.series?.title,
+                        series_entry: this.blogEntry.series?.entry,
+                        platform: "medium",
+                      });
+                    }}
+                    aria-labelledby="medium-link-label"
+                    aria-describedby="medium-link-label"
+                    title=${`Read ${this.blogEntry.title} on Medium`}
+                  >
+                    <span
+                      class="md-typescale-label-large"
+                      id="medium-link-label"
+                    >
+                      Medium.com
+                    </span>
+                    <iconify-icon
+                      width="none"
+                      height="none"
+                      icon="simple-icons:medium"
+                      aria-hidden="true"
+                      style="
+                        width: var(--md-icon-size);
+                        height: var(--md-icon-size);
+                      "
+                      aria-labelledby="medium-link-label"
+                    ></iconify-icon>
+                  </a>
+                `
+                : html`<span class="link-placeholder"></span>`
+            }
+          </div>
         </footer>
       </article>
     `;

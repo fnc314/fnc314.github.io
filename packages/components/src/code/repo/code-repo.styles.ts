@@ -93,10 +93,34 @@ export const CodeRepoStyles: CSSResult = css`
     }
 
     .repo-links {
+      align-items: center;
       display: flex;
-      flex-direction: column;
-      gap: var(--spaces-gap-xs);
+      flex-direction: row;
+      gap: var(--spaces-gap-m);
+      inline-size: 100%;
+      justify-content: space-between;
       min-inline-size: 0;
+
+      .link-placeholder {
+        display: inline-block;
+      }
+
+      .site-link {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--spaces-gap-xs);
+        justify-content: flex-start;
+        text-align: start;
+      }
+
+      .repo-link {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--spaces-gap-xs);
+        justify-content: flex-end;
+        margin-inline-start: auto;
+        text-align: end;
+      }
     }
 
     a {
