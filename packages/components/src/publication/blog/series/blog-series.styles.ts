@@ -34,13 +34,37 @@ export const BlogSeriesStyles: CSSResult = css`
     gap: var(--spaces-gap-s);
     min-inline-size: 0;
     overflow: hidden;
-    padding: var(--spaces-padding-m);
+    padding-block: var(--spaces-padding-m);
+    padding-inline: var(--spaces-padding-xl) var(--spaces-padding-m);
   }
 
   .series-header {
     display: flex;
     flex-direction: column;
     gap: var(--spaces-gap-xs);
+    margin-block-start: var(--spaces-margin-xs);
+  }
+
+  @container (min-width: 385px) {
+    .series-card {
+      padding-block: var(--spaces-padding-xl) var(--spaces-padding-m);
+      padding-inline: var(--spaces-padding-m);
+    }
+
+    .series-header {
+      margin-block-start: var(--spaces-margin-s);
+    }
+  }
+
+  @container (min-width: 1201px) {
+    .series-card {
+      padding-block: var(--spaces-padding-m);
+      padding-inline: var(--spaces-padding-xl) var(--spaces-padding-m);
+    }
+
+    .series-header {
+      margin-block-start: var(--spaces-none);
+    }
   }
 
   .series-meta {
