@@ -86,54 +86,6 @@ export const Projects: CodeRepoData[] = [
       "A custom Gradle Settings plugin written in Kotlin that aggressively reduces boilerplate configuration by automating <pre>Settings.include</pre> invocations for deeply nested, multi-module project architectures.",
   },
   {
-    name: "mac-os-env-scripts",
-    tech: [
-      {
-        name: "Bash",
-        url: "https://www.gnu.org/software/bash/",
-        designToken: /* "simple-icons:gnubash", */ Icons.Logos.Tech.Bash,
-        popoverContent: "Shell scripting",
-      },
-      {
-        name: "Oh-My-Zsh",
-        url: "https://ohmyz.sh/",
-        designToken: Icons.Logos.Tech.Zsh,
-        popoverContent: "Shell scripting",
-      },
-    ],
-    url: "https://github.com/fnc314/mac-os-env-scripts",
-    repo: "fnc314/mac-os-env-scripts",
-    description:
-      "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states.",
-  },
-  {
-    name: "fnc314-kmp",
-    tech: [
-      {
-        name: "Android",
-        url: "https://developer.android.com/",
-        designToken: "simple-icons:android" /* Icons.Logos.Tech.Android, */,
-        popoverContent: "World's most used, open-source operating system",
-      },
-      {
-        name: "Gradle",
-        url: "https://docs.gradle.org/",
-        designToken: "simple-icons:gradle" /* Icons.Logos.Tech.Gradle */,
-        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
-      },
-      {
-        name: "Kotlin",
-        url: "https://kotlinlang.org/",
-        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
-        popoverContent: "JetBrains' modern JVM languange",
-      },
-    ],
-    url: "https://github.com/fnc314/fnc314-kmp",
-    repo: "fnc314/fnc314-kmp",
-    description:
-      'An exploratory <abbr title="Kotlin Multiplatform">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets.',
-  },
-  {
     name: "fnc314.github.io",
     tech: [
       {
@@ -234,6 +186,7 @@ export const Projects: CodeRepoData[] = [
       },
     ],
     url: "https://github.com/fnc314/fnc314.github.io",
+    siteUrl: "https://www.fnc314.dev/",
     repo: "fnc314/fnc314.github.io",
     description: `Portfolio page found at <a href="https://www.fnc314.dev/" target="_blank">https://www.fnc314.dev</a> (this site)`,
   },
@@ -257,6 +210,54 @@ export const Projects: CodeRepoData[] = [
     siteUrl: "https://blog.fnc314.dev",
     repo: "fnc314/blog-fnc314-dev",
     description: `Dedicated <a https="https://vuejs.github.io/vitepress/v1/">VitePress</a> site hosting the content also posted to <a href="https://fnc314.medium.com">Medium &copy;</a>.`,
+  },
+  {
+    name: "fnc314-kmp",
+    tech: [
+      {
+        name: "Android",
+        url: "https://developer.android.com/",
+        designToken: "simple-icons:android" /* Icons.Logos.Tech.Android, */,
+        popoverContent: "World's most used, open-source operating system",
+      },
+      {
+        name: "Gradle",
+        url: "https://docs.gradle.org/",
+        designToken: "simple-icons:gradle" /* Icons.Logos.Tech.Gradle */,
+        popoverContent: "JVM Build Tool for Java, Kotlin, Android, and more",
+      },
+      {
+        name: "Kotlin",
+        url: "https://kotlinlang.org/",
+        designToken: "simple-icons:kotlin" /* Icons.Logos.Tech.Kotlin, */,
+        popoverContent: "JetBrains' modern JVM languange",
+      },
+    ],
+    url: "https://github.com/fnc314/fnc314-kmp",
+    repo: "fnc314/fnc314-kmp",
+    description:
+      'An exploratory <abbr title="Kotlin Multiplatform">KMP</abbr> architecture demonstrating shared business logic, state management, and build infrastructure across native client targets.',
+  },
+  {
+    name: "mac-os-env-scripts",
+    tech: [
+      {
+        name: "Bash",
+        url: "https://www.gnu.org/software/bash/",
+        designToken: /* "simple-icons:gnubash", */ Icons.Logos.Tech.Bash,
+        popoverContent: "Shell scripting",
+      },
+      {
+        name: "Oh-My-Zsh",
+        url: "https://ohmyz.sh/",
+        designToken: Icons.Logos.Tech.Zsh,
+        popoverContent: "Shell scripting",
+      },
+    ],
+    url: "https://github.com/fnc314/mac-os-env-scripts",
+    repo: "fnc314/mac-os-env-scripts",
+    description:
+      "A suite of interactive <pre>Bash/Zsh</pre> scripts engineered to standardize developer environments, automate repetitive CLI workflows, and instantly restore broken local states.",
   },
   {
     name: "material-theme-viewer",
