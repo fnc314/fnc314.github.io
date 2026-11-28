@@ -213,7 +213,7 @@ export class CodeRepo extends UIAwareElement {
                       <iconify-icon
                         width="none"
                         height="none"
-                        icon="material-symbols:open-in-new"
+                        icon="material-symbols:globe"
                         aria-hidden="true"
                         style="
                           width: var(--md-icon-size);
