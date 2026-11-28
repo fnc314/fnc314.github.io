@@ -35,6 +35,10 @@ export class BlogEntry extends UIAwareElement {
       ? this.blogEntry.series.entry.toString().padStart(2, "0")
       : null;
 
+    const displayTitle = blogEntryPadded
+      ? `#${blogEntryPadded} ${this.blogEntry.title}`
+      : this.blogEntry.title;
+
     return html`
       <article
         class="dynamic-border-host"
@@ -42,12 +46,7 @@ export class BlogEntry extends UIAwareElement {
       >
         <div class="blog-top">
           <header aria-labelledby="blog-name">
-            <h3 id="blog-name" class="md-typescale-title-large">${this.blogEntry.title}</h3>
-            ${
-              this.blogEntry.series && blogEntryPadded !== null
-                ? html`<h4 class="md-typescale-title-small">${this.blogEntry.series?.title} #${blogEntryPadded}</h4>`
-                : null
-            }
+            <h3 id="blog-name" class="md-typescale-title-large">${displayTitle}</h3>
             <div class="blog-links">
               ${
                 this.blogEntry.blogDotDevUrl

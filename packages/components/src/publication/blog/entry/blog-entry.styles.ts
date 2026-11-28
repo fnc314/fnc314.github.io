@@ -64,14 +64,6 @@ export const BlogEntryStyles: CSSResult = css`
       word-break: break-word;
     }
 
-    h4 {
-      color: var(--publication-blog-entry-secondary-color);
-      font-style: italic;
-      margin-block: var(--spaces-none);
-      margin-inline: var(--spaces-none);
-      text-align: center;
-    }
-
     .blog-links {
       align-items: center;
       display: flex;
