@@ -8,7 +8,6 @@ import { type BlogEntryJson, IconTextLinkOrientations } from "@fnc314/packages.t
 import "iconify-icon";
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 export { type BlogEntryJson } from "@fnc314/packages.types";
